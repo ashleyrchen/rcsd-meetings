@@ -15,10 +15,12 @@
     "extract:links": ".venv/bin/python3 scripts/extract-agenda-links.py",
     "map:timestamps": "node scripts/map-timestamps.mjs",
     "map:timestamps:llm": "node scripts/map-timestamps-llm.mjs",
-    "upload": "node scripts/upload-to-r2.mjs"
+    "upload": "node scripts/upload-to-r2.mjs",
+    "scrape:packets": "node scripts/scrape-board-packets.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.78.0",
-    "dotenv": "^16.6.1"
+    "dotenv": "^16.6.1",
+    "playwright": "^1.58.2"
   }
 }

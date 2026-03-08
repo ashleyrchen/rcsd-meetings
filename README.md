@@ -39,6 +39,29 @@ Quick rebuild (steps 6-7 only):
 npm run build
 ```
 
+### Board packet scraping
+
+Simbli uses Incapsula/Imperva bot protection that blocks all non-browser HTTP requests.
+The `scrape:packets` script uses Playwright to open a real Chromium browser, navigate
+each meeting page (which sets Incapsula cookies), then fetches PDFs from within the
+browser context.
+
+```bash
+npx playwright install chromium  # one-time setup
+npm run scrape:packets           # scrape all 19 meetings
+npm run scrape:packets -- --date 2026-02-26  # single meeting
+npm run scrape:packets -- --dry-run          # show what would be scraped
+npm run scrape:packets -- --skip-existing    # skip meetings with existing memo JSON
+```
+
+**Output:**
+- `artifacts/board-packets/{date}/*.pdf` — downloaded PDFs (gitignored)
+- `data/board-memos/{date}.json` — structured memo data per meeting
+
+**Caching:** Individual PDFs that exist on disk and pass validation (>1KB, starts with
+`%PDF`) are skipped. Safe to re-run at any time. Pacing (2-5s between downloads,
+30-60s between meetings) avoids triggering bot detection.
+
 ## Setup
 
 ```bash
