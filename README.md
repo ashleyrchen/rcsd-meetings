@@ -2,7 +2,7 @@
 
 Open data pipeline for [Redwood City School District](https://www.rcsdk8.net) board meetings. Aggregates agendas, attachments, video timestamps, and transcripts from multiple public sources into a single searchable page.
 
-**Live site:** [dweekly.github.io/rcsd-meetings](https://dweekly.github.io/rcsd-meetings/)
+**Live site:** [rcsd.info](https://rcsd.info)
 
 ## What's here
 
