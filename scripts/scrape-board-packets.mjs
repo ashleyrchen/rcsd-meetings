@@ -34,6 +34,8 @@ const MEETINGS = [
   { date: '2025-09-18', mid: 42596 },
   { date: '2025-10-08', mid: 43741 },
   { date: '2025-10-16', mid: 45228 },
+  { date: '2025-10-22', mid: 43742 },
+  { date: '2025-11-12', mid: 45781 },
   { date: '2025-11-19', mid: 48981 },
   { date: '2025-12-10', mid: 48982 },
   { date: '2025-12-17', mid: 48983 },
@@ -264,6 +266,7 @@ async function scrapeOneMeeting(meeting, pdfDir, memoDir) {
     const items = [];
     let firstItemTitle = null;
     let itemOrder = 0;
+    const meetingFilenames = new Set(); // track filenames across entire meeting to avoid collisions
     const MAX_ITEMS = 60; // safety limit
 
     while (itemOrder < MAX_ITEMS) {
@@ -291,7 +294,12 @@ async function scrapeOneMeeting(meeting, pdfDir, memoDir) {
       // Process attachments
       const downloadedAttachments = [];
       for (const att of itemData.attachments) {
-        const filename = sanitizeFilename(att.name) + '.pdf';
+        let filename = sanitizeFilename(att.name) + '.pdf';
+        // Disambiguate collisions (e.g. long names truncated to same 80 chars)
+        if (meetingFilenames.has(filename)) {
+          filename = sanitizeFilename(att.name).substring(0, 70) + `-${att.aid}.pdf`;
+        }
+        meetingFilenames.add(filename);
         const savePath = resolve(pdfDir, filename);
 
         // Check cache
