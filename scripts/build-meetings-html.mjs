@@ -162,7 +162,8 @@ const LOCALES = {
     vicePresident: 'Vice President',
     clerk: 'Clerk',
     disclaimer: 'Not an official District document; independently assembled by',
-    disclaimerSuffix: 'May contain errors.',
+    disclaimerSuffix: 'May contain errors. Questions?',
+    disclaimerContact: 'Contact us',
     siteNavMeetings: 'Meetings',
     siteNavDistrict: 'District',
     siteNavDocs: 'Docs',
@@ -245,6 +246,7 @@ const LOCALES = {
     clerk: 'Secretaria',
     disclaimer: 'No es un documento oficial del Distrito; compilado independientemente por',
     disclaimerSuffix: 'Puede contener errores.',
+    disclaimerContact: 'Cont\u00e1ctenos',
     siteNavMeetings: 'Reuniones',
     siteNavDistrict: 'Distrito',
     siteNavDocs: 'Docs',
@@ -1943,7 +1945,7 @@ const html = `<!DOCTYPE html>
 </header>
 
 <div class="disclaimer">
-  ${L.disclaimer} <a href="https://github.com/dweekly/rcsd-meetings" style="color:#664d03">David Weekly</a>. ${L.disclaimerSuffix}
+  ${L.disclaimer} <a href="https://github.com/dweekly/rcsd-meetings" style="color:#664d03">David Weekly</a>. ${L.disclaimerSuffix} <a href="mailto:team@rcsd.info" style="color:#664d03">${L.disclaimerContact}</a>.
 </div>
 
 <nav class="toc">
