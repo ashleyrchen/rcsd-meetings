@@ -608,9 +608,92 @@
     .toc a { padding: 0.8rem 0.6rem; font-size: 0.6rem; }
     .goal-metrics { grid-template-columns: 1fr; }
   }
+
+  /* ---- SITE NAV ---- */
+  .site-nav {
+    background: #1a2e1a;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .site-nav-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .site-nav-tabs {
+    display: flex;
+    gap: 0;
+  }
+
+  .site-nav-tab {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: rgba(255,255,255,0.45);
+    padding: 0.7rem 1rem;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .site-nav-tab:hover {
+    color: rgba(255,255,255,0.8);
+  }
+
+  .site-nav-tab.active {
+    color: #fff;
+    border-bottom-color: var(--green-light);
+  }
+
+  .site-nav-right {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .site-nav-lang {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: rgba(255,255,255,0.35);
+    padding: 0.3rem 0.6rem;
+    border: 1px solid rgba(255,255,255,0.15);
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .site-nav-lang:hover {
+    color: rgba(255,255,255,0.8);
+    border-color: rgba(255,255,255,0.3);
+  }
+
+  @media (max-width: 640px) {
+    .site-nav-tab { padding: 0.6rem 0.7rem; font-size: 0.6rem; }
+    .site-nav-inner { padding: 0 1.2rem; }
+  }
 </style>
 </head>
 <body>
+
+<nav class="site-nav">
+  <div class="site-nav-inner">
+    <div class="site-nav-tabs">
+      <a href="/" class="site-nav-tab">Home</a>
+      <a href="/meetings/" class="site-nav-tab">Meetings</a>
+      <a href="/district/" class="site-nav-tab active">District</a>
+      <a href="https://github.com/dweekly/rcsd-meetings" class="site-nav-tab">Code</a>
+    </div>
+    <div class="site-nav-right">
+      <a href="/distrito/" class="site-nav-lang">ES</a>
+    </div>
+  </div>
+</nav>
 
 <header class="site-header">
   <div class="header-inner">
@@ -643,7 +726,7 @@
 </div>
 
 <div class="lang-switch">
-  <a href="../distrito/">Leer en espa&ntilde;ol</a>
+  <a href="/distrito/">Leer en espa&ntilde;ol</a>
 </div>
 
 <nav class="toc">
@@ -1185,8 +1268,10 @@
 <footer class="site-footer">
   Compiled from publicly available RCSD documents. Source documents are available at <a href="https://www.rcsdk8.net">rcsdk8.net</a> and through the <a href="https://simbli.eboardsolutions.com/SB_Meetings/SB_MeetingListing.aspx?S=36030397">GAMUT board portal</a>.
   <div class="footer-nav">
-    <a href="../">Board Meeting Index &#8599;</a>
-    <a href="../distrito/">Resumen del Distrito &#8599;</a>
+    <a href="/">Home</a>
+    <a href="/meetings/">Meetings</a>
+    <a href="/distrito/">Resumen del Distrito</a>
+    <a href="https://github.com/dweekly/rcsd-meetings">Source Code &#8599;</a>
   </div>
 </footer>
 

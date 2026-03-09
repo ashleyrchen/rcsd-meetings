@@ -164,9 +164,9 @@ const LOCALES = {
     disclaimer: 'Not an official District document; independently assembled by',
     disclaimerSuffix: 'May contain errors. Questions?',
     disclaimerContact: 'Contact us',
+    siteNavHome: 'Home',
     siteNavMeetings: 'Meetings',
     siteNavDistrict: 'District',
-    siteNavDocs: 'Docs',
     siteNavCode: 'Code',
     navTopics: 'Key Topics',
     navDocuments: 'Documents',
@@ -214,8 +214,8 @@ const LOCALES = {
     footerDistrito: 'Resumen del Distrito',
     meetingTypes: {},
     altLangLink: 'Reuniones (Espa\u00f1ol)',
-    altLangHref: 'reuniones/',
-    outFile: 'docs/index.html',
+    altLangHref: '/reuniones/',
+    outFile: 'docs/meetings/index.html',
     threadLabels: {
       'superintendent-search': 'Superintendent Search',
       'budget': 'Budget & Resource Alignment',
@@ -247,9 +247,9 @@ const LOCALES = {
     disclaimer: 'No es un documento oficial del Distrito; compilado independientemente por',
     disclaimerSuffix: 'Puede contener errores.',
     disclaimerContact: 'Cont\u00e1ctenos',
+    siteNavHome: 'Inicio',
     siteNavMeetings: 'Reuniones',
     siteNavDistrict: 'Distrito',
-    siteNavDocs: 'Docs',
     siteNavCode: 'C\u00f3digo',
     navTopics: 'Temas Clave',
     navDocuments: 'Documentos',
@@ -305,7 +305,7 @@ const LOCALES = {
       'Board Meeting': 'Reuni\u00f3n de la Junta',
     },
     altLangLink: 'Meetings (English)',
-    altLangHref: '../',
+    altLangHref: '/meetings/',
     outFile: 'docs/reuniones/index.html',
     threadLabels: {
       'superintendent-search': 'B\u00fasqueda de Superintendente',
@@ -1889,9 +1889,9 @@ const html = `<!DOCTYPE html>
 <nav class="site-nav">
   <div class="site-nav-inner">
     <div class="site-nav-tabs">
-      <a href="./" class="site-nav-tab active">${L.siteNavMeetings}</a>
-      <a href="${L.lang === 'en' ? 'district/' : '../distrito/'}" class="site-nav-tab">${L.siteNavDistrict}</a>
-      <a href="#" class="site-nav-tab" style="opacity:0.3;pointer-events:none">${L.siteNavDocs}</a>
+      <a href="/" class="site-nav-tab">${L.siteNavHome}</a>
+      <a href="${L.lang === 'en' ? '/meetings/' : '/reuniones/'}" class="site-nav-tab active">${L.siteNavMeetings}</a>
+      <a href="${L.lang === 'en' ? '/district/' : '/distrito/'}" class="site-nav-tab">${L.siteNavDistrict}</a>
       <a href="https://github.com/dweekly/rcsd-meetings" class="site-nav-tab">${L.siteNavCode}</a>
     </div>
     <div class="site-nav-right">
@@ -1973,6 +1973,9 @@ ${renderResources(data)}
 <footer class="site-footer">
   ${L.footerText} <a href="https://www.rcsdk8.net">rcsdk8.net</a> ${L.footerAnd} <a href="https://simbli.eboardsolutions.com/SB_Meetings/SB_MeetingListing.aspx?S=36030397">${L.footerPortal}</a>.
   <div class="footer-nav">
+    <a href="/">${L.siteNavHome}</a>
+    <a href="${L.lang === 'en' ? '/meetings/' : '/reuniones/'}">${L.siteNavMeetings}</a>
+    <a href="${L.lang === 'en' ? '/district/' : '/distrito/'}">${L.siteNavDistrict}</a>
     <a href="https://github.com/dweekly/rcsd-meetings">${L.navSourceCode} &#8599;</a>
   </div>
 </footer>

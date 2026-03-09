@@ -5,7 +5,8 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "build": "node scripts/build-meetings.mjs && node scripts/build-meetings-html.mjs",
+    "build": "node scripts/build-homepage.mjs && node scripts/build-meetings.mjs && node scripts/build-meetings-html.mjs",
+    "build:home": "node scripts/build-homepage.mjs",
     "build:data": "node scripts/build-meetings.mjs",
     "build:html": "node scripts/build-meetings-html.mjs",
     "scrape:boarddocs": "node scripts/scrape-boarddocs.mjs",
