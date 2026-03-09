@@ -1,12 +1,12 @@
 {
-  "generated": "2026-03-07",
+  "generated": "2026-03-09",
   "stats": {
     "total": 58,
     "withVideo": 49,
     "withTranscript": 48,
     "withMinutes": 54,
     "totalItems": 1141,
-    "totalAttachments": 1483,
+    "totalAttachments": 1724,
     "simbli": 24,
     "boarddocs": 34
   },
@@ -30,35 +30,99 @@
       "items": [
         {
           "title": "Approval of Agreement Between the Redwood City School District and Eide Bailly",
-          "attachments": []
+          "attachments": [
+            {
+              "title": "SOW -Bond Performance Audit _ Eide Bailly",
+              "aid": "1436662"
+            },
+            {
+              "title": "Eide Bailly Master_Services_Agreement",
+              "aid": "1435344"
+            },
+            {
+              "title": "SOW-District Audit RCSD _ Eide Bailly",
+              "aid": "1441374"
+            },
+            {
+              "title": "Eide Bailly Master_Services_Agreement",
+              "aid": "1435343"
+            }
+          ]
         },
         {
           "title": "Roosevelt School Presentation and School Plan for Student Achievement (SPSA) Approval",
-          "attachments": []
+          "attachments": [
+            {
+              "title": "Roosevelt 2025-26_SPSA(Spring)_20260303",
+              "aid": "1441309"
+            },
+            {
+              "title": "Roosevelt 25-26 Board presentation",
+              "aid": "1441310"
+            }
+          ]
         },
         {
           "title": "McKinley Institute of Tech School Presentation and School Plan for Student Achievement (SPSA) Approval",
-          "attachments": []
+          "attachments": [
+            {
+              "title": "MIT 25-26 Data for Board presentation",
+              "aid": "1441319"
+            },
+            {
+              "title": "MIT SPSA 2025-26__McKinley_Institute_of_Technology_20260304-combined",
+              "aid": "1441261"
+            }
+          ]
         },
         {
           "title": "Hoover School Presentation and School Plan for Student Achievement (SPSA) Approval",
-          "attachments": []
+          "attachments": [
+            {
+              "title": "Hoover_ SPSA 2026",
+              "aid": "1441348"
+            },
+            {
+              "title": "Hoover 25-26 Data for Board presentation",
+              "aid": "1441349"
+            }
+          ]
         },
         {
           "title": "Approval of the February 4, 2026, Regular Meeting Minutes",
-          "attachments": []
+          "attachments": [
+            {
+              "title": "2026.02.04 Minutes  DRAFT - Closed.Regular",
+              "aid": "1442579"
+            }
+          ]
         },
         {
           "title": "Approval of the February 26, 2026, Special Meeting Minutes",
-          "attachments": []
+          "attachments": [
+            {
+              "title": "2026.02.26 Minutes DRAFT - Special",
+              "aid": "1436744"
+            }
+          ]
         },
         {
           "title": "Approval of the Addendum to the Measure U Application for Roosevelt Elementary School for the 2025-2026 School Year",
-          "attachments": []
+          "attachments": [
+            {
+              "title": "2025-26 Roosevelt Measure U Addendum",
+              "aid": "1405780"
+            }
+          ]
         },
         {
           "title": "Approval of the Addendum to the Measure U Application for McKinley Middle School for the 2025-2026 School Year",
-          "attachments": []
+          "attachments": [
+            {
+              "title": "2025-26 McKinley Inst. of Tech Measure U Addendum_signed",
+              "aid": "1428368"
+            }
+          ]
         },
         {
           "title": "Approval of the Addendum to the Measure U Application for Hoover Community School for the 2025-2026 School Year",
@@ -66,23 +130,100 @@
         },
         {
           "title": "Approval of Roy Cloud Field Trip to Marine Science Institute – March 25, 2026",
-          "attachments": []
+          "attachments": [
+            {
+              "title": "25-26 RoyCloud. MSI. FT",
+              "aid": "1407346"
+            }
+          ]
         },
         {
           "title": "Approval of North Star Academy Field Trip to Pinnacles National Park – May 19 – May 22, 2026",
-          "attachments": []
+          "attachments": [
+            {
+              "title": "25-26 NSA.Pinnacles Natl Park",
+              "aid": "1417519"
+            }
+          ]
         },
         {
           "title": "Approval of the Agreement between Redwood City School District and Soliant Health, LLC, to provide a School Psychologist for the 2025-2026 School Year",
-          "attachments": []
+          "attachments": [
+            {
+              "title": "Soliant Agreement_board 3.11.26",
+              "aid": "1436471"
+            }
+          ]
         },
         {
           "title": "Approval of Amendment No. 2 between Redwood City School District and Nicole Linette Campbell for a SPED Speech and Language Pathologist for the 2025-2026 School Year",
-          "attachments": []
+          "attachments": [
+            {
+              "title": "N Campbell Original Agreement",
+              "aid": "1437244"
+            },
+            {
+              "title": "N Campbell 2nd Amend_Board 3.11.26",
+              "aid": "1436570"
+            },
+            {
+              "title": "N Campbell 1st Amend Board 1.21.26",
+              "aid": "1435363"
+            }
+          ]
         },
         {
           "title": "Approval of the 2025 School Accountability Report Cards (SARCs)",
-          "attachments": []
+          "attachments": [
+            {
+              "title": "Taft-2025SARC",
+              "aid": "1436606"
+            },
+            {
+              "title": "RoyCloud-2025SARC",
+              "aid": "1436607"
+            },
+            {
+              "title": "Roosevelt-2025SARC",
+              "aid": "1436608"
+            },
+            {
+              "title": "OrionAlternative-2025SARC",
+              "aid": "1436609"
+            },
+            {
+              "title": "NorthStar-2025SARC",
+              "aid": "1436610"
+            },
+            {
+              "title": "MIT-2025SARC",
+              "aid": "1436611"
+            },
+            {
+              "title": "Kennedy-2025SARC",
+              "aid": "1436612"
+            },
+            {
+              "title": "Hoover-2025SARC",
+              "aid": "1436613"
+            },
+            {
+              "title": "HenryFord-2025SARCpdf",
+              "aid": "1436614"
+            },
+            {
+              "title": "Garfield-2025SARC",
+              "aid": "1436615"
+            },
+            {
+              "title": "Clifford-2025SARC",
+              "aid": "1436616"
+            },
+            {
+              "title": "AdelanteSelby-2025SARC",
+              "aid": "1436617"
+            }
+          ]
         },
         {
           "title": "Approval of the 2025-26 School Attendance Review Board (SARB)",
@@ -98,11 +239,34 @@
         },
         {
           "title": "Ratification of Warrant Registers, February 1, 2026 – February 28, 2026",
-          "attachments": []
+          "attachments": [
+            {
+              "title": "Warrant Register February 2026",
+              "aid": "1433020"
+            }
+          ]
         },
         {
           "title": "Information on San Mateo County Investment Fund - January 2026",
           "attachments": []
+        }
+      ],
+      "extraAttachments": [
+        {
+          "title": "2025-26 Hoover Community School Measure U Addendum",
+          "aid": "1415139"
+        },
+        {
+          "title": "NV5-RCSD TO13 EVSE Amendment 1 with Original Contract",
+          "aid": "1442341"
+        },
+        {
+          "title": "25-26 Schedule of Board Agenda Items",
+          "aid": "1437735"
+        },
+        {
+          "title": "25-26 RCSD Board Meeting Calendar",
+          "aid": "1437749"
         }
       ],
       "hasTranscript": false
@@ -152,7 +316,12 @@
       "durationSeconds": 800,
       "minutes": {
         "approvedAt": "2026-03-11",
-        "documents": []
+        "documents": [
+          {
+            "title": "2026.02.26 Minutes DRAFT - Special",
+            "href": "https://simbli.eboardsolutions.com/Meetings/Attachment.aspx?S=36030397&AID=1436744&MID=50616"
+          }
+        ]
       }
     },
     {
@@ -741,7 +910,12 @@
       "durationSeconds": 6025,
       "minutes": {
         "approvedAt": "2026-03-11",
-        "documents": []
+        "documents": [
+          {
+            "title": "2026.02.04 Minutes  DRAFT - Closed.Regular",
+            "href": "https://simbli.eboardsolutions.com/Meetings/Attachment.aspx?S=36030397&AID=1442579&MID=50616"
+          }
+        ]
       }
     },
     {
@@ -2375,6 +2549,484 @@
           "timestampSeconds": 11788
         }
       ],
+      "extraAttachments": [
+        {
+          "title": "251112 - Geotechnical and Other Services Agreement between RCSD and Ninyo and Moore - Signed by Ninyo and Moore",
+          "aid": "1298771"
+        },
+        {
+          "title": "250811 RCSD Solar Ph 2 Geotech Special Testing and Inspection Proposal with N&M",
+          "aid": "1296769"
+        },
+        {
+          "title": "Community Schools Board Report 2025",
+          "aid": "1299449"
+        },
+        {
+          "title": "Mental Health in RCSD - 2025",
+          "aid": "1299566"
+        },
+        {
+          "title": "BP 3311.1 - Uniform Public Construction Cost Accounting Procedures - New - Marked",
+          "aid": "1300100"
+        },
+        {
+          "title": "BP 3311.1 - Uniform Public Construction Cost Accounting Procedures - New - Clean",
+          "aid": "1300101"
+        },
+        {
+          "title": "BP 0420.4 - Charter School Authorization - Marked",
+          "aid": "1300224"
+        },
+        {
+          "title": "AR 0420.4 - Charter School Authorization - For Reference Only - Marked",
+          "aid": "1300225"
+        },
+        {
+          "title": "BP 0420.4 - Charter School Authorization - Clean",
+          "aid": "1300226"
+        },
+        {
+          "title": "AR 0420.4 - Charter School Authorization - For Reference Only - Clean",
+          "aid": "1300227"
+        },
+        {
+          "title": "BP 0420.41 - Charter School Oversight - New - Marked",
+          "aid": "1300253"
+        },
+        {
+          "title": "E 0420.41 - Charter School Oversight - First Reading - Marked",
+          "aid": "1300254"
+        },
+        {
+          "title": "BP 0420.41 - Charter School Oversight - New - Clean",
+          "aid": "1300255"
+        },
+        {
+          "title": "E 0420.41 - Charter School Oversight - First Reading - Clean",
+          "aid": "1300256"
+        },
+        {
+          "title": "BP 3100 - Budget - First Reading - Marked",
+          "aid": "1300407"
+        },
+        {
+          "title": "AR 3100 - Budget - For Reference Only - First Reading - Marked",
+          "aid": "1300408"
+        },
+        {
+          "title": "BP 3100 - Budget - First Reading - Clean",
+          "aid": "1300409"
+        },
+        {
+          "title": "AR 3100 - Budget - For Reference Only - First Reading - Clean",
+          "aid": "1300410"
+        },
+        {
+          "title": "BP 3260 - Fees and Charges - First Reading - Marked",
+          "aid": "1298423"
+        },
+        {
+          "title": "AR 3260 - Fees and Charges - First Reading - Marked",
+          "aid": "1298424"
+        },
+        {
+          "title": "BP 3260 - Fees and Charges - First Reading - Clean",
+          "aid": "1298425"
+        },
+        {
+          "title": "AR 3260 - Fees and Charges - First Reading - Clean",
+          "aid": "1298426"
+        },
+        {
+          "title": "BP 3311 - Bids - First Reading - Marked",
+          "aid": "1300471"
+        },
+        {
+          "title": "AR 3311 - Bids - First Reading - Marked",
+          "aid": "1300472"
+        },
+        {
+          "title": "BP 3311 - Bids - First Reading - Clean",
+          "aid": "1300473"
+        },
+        {
+          "title": "AR 3311 - Bids - First Reading - Clean",
+          "aid": "1300474"
+        },
+        {
+          "title": "BP 3312 - Contracts - First Reading - Marked",
+          "aid": "1300587"
+        },
+        {
+          "title": "BP 3312 - Contracts - First Reading - Clean",
+          "aid": "1300588"
+        },
+        {
+          "title": "BP 3550 - Food Service-Child Nutrition Program - Marked",
+          "aid": "1303162"
+        },
+        {
+          "title": "AR 3550 - Food Service-Child Nutrition Program - Marked",
+          "aid": "1303163"
+        },
+        {
+          "title": "BP 3550 - Food Service-Child Nutrition Program - Clean",
+          "aid": "1303164"
+        },
+        {
+          "title": "AR 3550 - Food Service-Child Nutrition Program - Clean",
+          "aid": "1303165"
+        },
+        {
+          "title": "BP 3551 - Food Service Operations_Cafeteria Fund - First Reading - Marked",
+          "aid": "1307807"
+        },
+        {
+          "title": "BP 3551 - Food Service Operations_Cafeteria Fund - First Reading - Clean",
+          "aid": "1307808"
+        },
+        {
+          "title": "AR 3551 - Food Service Operations_Cafeteria Fund - First Reading - Marked",
+          "aid": "1307809"
+        },
+        {
+          "title": "AR 3551 - Food Service Operations_Cafeteria Fund - First Reading - Clean",
+          "aid": "1307810"
+        },
+        {
+          "title": "BP 3553 - Free And Reduced Price Meals - First Reading - Marked",
+          "aid": "1301135"
+        },
+        {
+          "title": "AR 3553 - Free And Reduced Price Meals - First Reading - For Reference Only - Marked",
+          "aid": "1301136"
+        },
+        {
+          "title": "BP 3553 - Free And Reduced Price Meals - First Reading - Clean",
+          "aid": "1301137"
+        },
+        {
+          "title": "AR 3553 - Free And Reduced Price Meals - First Reading - For Reference Only - Clean",
+          "aid": "1301138"
+        },
+        {
+          "title": "BP 4121 - Temporary_Substitute Personnel - New - First Reading - Marked",
+          "aid": "1297748"
+        },
+        {
+          "title": "BP 4121 - Temporary_Substitute Personnel - New - First Reading - Clean",
+          "aid": "1297749"
+        },
+        {
+          "title": "AR 4121 - Temporary_Substitute Personnel - First Reading - For Reference Only - Marked",
+          "aid": "1297750"
+        },
+        {
+          "title": "AR 4121 - Temporary_Substitute Personnel - First Reading - For Reference Only - Clean",
+          "aid": "1297751"
+        },
+        {
+          "title": "BP 6144 - Controversial Issues - First Reading - Marked",
+          "aid": "1301175"
+        },
+        {
+          "title": "BP 6144 - Controversial Issues - First Reading - Clean",
+          "aid": "1301176"
+        },
+        {
+          "title": "BP 7214 - General Obligation Bonds - New - First Reading - Marked",
+          "aid": "1301584"
+        },
+        {
+          "title": "AR 7214 - General Obligation Bonds - New - First Reading - Marked",
+          "aid": "1301585"
+        },
+        {
+          "title": "BP 7214 - General Obligation Bonds - New - First Reading - Clean",
+          "aid": "1301586"
+        },
+        {
+          "title": "AR 7214 - General Obligation Bonds - New - First Reading - Clean",
+          "aid": "1301587"
+        },
+        {
+          "title": "Exhibit 9250 - Remuneration, Reimbursement, and Other Benefits - Resolution Draft",
+          "aid": "1301520"
+        },
+        {
+          "title": "Board Bylaw 9250 - Remuneration, Reimbursement And Other Benefits - First Reading - New - Marked",
+          "aid": "1298368"
+        },
+        {
+          "title": "Board Bylaw 9250_ Remuneration, Reimbursement And Other Benefits - First Reading - New - Clean",
+          "aid": "1298369"
+        },
+        {
+          "title": "BP 3515.2 - Disruptions - Second Reading",
+          "aid": "1299547"
+        },
+        {
+          "title": "AR 3515.2 - Disruptions - Second Reading",
+          "aid": "1299548"
+        },
+        {
+          "title": "BP 4020 - Drug and Alcohol Free Workplace - Second Reading",
+          "aid": "1299563"
+        },
+        {
+          "title": "BP 4200 - Classified Personnel - Second Reading",
+          "aid": "1299567"
+        },
+        {
+          "title": "AR 4200 - Classified Personnel - Second Reading",
+          "aid": "1299568"
+        },
+        {
+          "title": "BP 4313.4 - Temporary Modified Light-Duty Assignment - Second Reading",
+          "aid": "1299601"
+        },
+        {
+          "title": "BP 4315 - Evaluation Supervision - New - Second Reading",
+          "aid": "1300008"
+        },
+        {
+          "title": "BP 4257 - Employee Safety - Second Reading",
+          "aid": "1299633"
+        },
+        {
+          "title": "AR 4257 - Employee Safety  - Second Reading",
+          "aid": "1299634"
+        },
+        {
+          "title": "BP 4357 - Employee Safety - Second Reading",
+          "aid": "1299656"
+        },
+        {
+          "title": "AR 4357 - Employee Safety - Second Reading",
+          "aid": "1299657"
+        },
+        {
+          "title": "BP 4158 - Employee Security - Second Reading",
+          "aid": "1299712"
+        },
+        {
+          "title": "AR 4158 - Employee Security - Second Reading",
+          "aid": "1299713"
+        },
+        {
+          "title": "BP 4258 - Employee Security - Second Reading",
+          "aid": "1299718"
+        },
+        {
+          "title": "AR 4258 - Employee Security - Second Reading",
+          "aid": "1299719"
+        },
+        {
+          "title": "BP 4358 - Employee Security - Second Reading",
+          "aid": "1299722"
+        },
+        {
+          "title": "AR 4358 - Employee Security - Second Reading",
+          "aid": "1299723"
+        },
+        {
+          "title": "BP 4259 - Employee Assistance Programs - Second Reading",
+          "aid": "1299734"
+        },
+        {
+          "title": "BP 4359 - Employee Assistance Programs - Second Reading",
+          "aid": "1299739"
+        },
+        {
+          "title": "BP 5131.6 - Alcohol And Other Drugs - Second Reading",
+          "aid": "1299742"
+        },
+        {
+          "title": "AR 5131.6 - Alcohol And Other Drugs - Second Reading",
+          "aid": "1299743"
+        },
+        {
+          "title": "BP 6142.93 - Science Instruction - Second Reading",
+          "aid": "1299751"
+        },
+        {
+          "title": "BP 6142.94 - History-Social Science Instruction - Second Reading",
+          "aid": "1299755"
+        },
+        {
+          "title": "BP 6161.11 - Supplementary Instructional Materials - Second Reading",
+          "aid": "1299762"
+        },
+        {
+          "title": "BP 6163.2 - Animals At School - Second Reading",
+          "aid": "1299759"
+        },
+        {
+          "title": "AR 6163.2 - Animals At School - Second Reading",
+          "aid": "1299760"
+        },
+        {
+          "title": "2025.10.08 Minutes DRAFT - Closed.Regular",
+          "aid": "1301547"
+        },
+        {
+          "title": "2025.10.16 Minutes DRAFT - Study Session",
+          "aid": "1301551"
+        },
+        {
+          "title": "2025.10.22 Minutes DRAFT - Regular",
+          "aid": "1301583"
+        },
+        {
+          "title": "Hoover PHC",
+          "aid": "1304281"
+        },
+        {
+          "title": "Henry Ford PHC",
+          "aid": "1304282"
+        },
+        {
+          "title": "909 Roosevelt PHC",
+          "aid": "1304283"
+        },
+        {
+          "title": "Fair Oaks PHC",
+          "aid": "1304284"
+        },
+        {
+          "title": "Harper Academy PHC",
+          "aid": "1304285"
+        },
+        {
+          "title": "Creative Learning Center PHC",
+          "aid": "1304286"
+        },
+        {
+          "title": "Clifford PHC",
+          "aid": "1304287"
+        },
+        {
+          "title": "Taft PHC",
+          "aid": "1304288"
+        },
+        {
+          "title": "Adelante Selby PHC",
+          "aid": "1304289"
+        },
+        {
+          "title": "Roy Cloud PHC",
+          "aid": "1304290"
+        },
+        {
+          "title": "Roosevelt PHC",
+          "aid": "1304291"
+        },
+        {
+          "title": "McKinley PHC",
+          "aid": "1304292"
+        },
+        {
+          "title": "Orion PHC",
+          "aid": "1304293"
+        },
+        {
+          "title": "Kennedy PHC",
+          "aid": "1304294"
+        },
+        {
+          "title": "Harper Academy 2025",
+          "aid": "1304295"
+        },
+        {
+          "title": "Garfield 2025",
+          "aid": "1304296"
+        },
+        {
+          "title": "Fair Oaks 2025",
+          "aid": "1304297"
+        },
+        {
+          "title": "Creative Learning Center 2025",
+          "aid": "1304298"
+        },
+        {
+          "title": "Clifford 2025",
+          "aid": "1304299"
+        },
+        {
+          "title": "Taft 2025",
+          "aid": "1304300"
+        },
+        {
+          "title": "Adelante Selby 2025",
+          "aid": "1304301"
+        },
+        {
+          "title": "McKinley 2025",
+          "aid": "1304302"
+        },
+        {
+          "title": "Roy Cloud 2025",
+          "aid": "1304303"
+        },
+        {
+          "title": "Roosevelt 2025",
+          "aid": "1304304"
+        },
+        {
+          "title": "Kennedy 2025",
+          "aid": "1304305"
+        },
+        {
+          "title": "Orion 2025",
+          "aid": "1304306"
+        },
+        {
+          "title": "Hoover 2025",
+          "aid": "1304307"
+        },
+        {
+          "title": "Henry Ford 2025",
+          "aid": "1304308"
+        },
+        {
+          "title": "909 Roosevelt 2025",
+          "aid": "1304309"
+        },
+        {
+          "title": "Hoover - American Trash Quote# 001584",
+          "aid": "1296772"
+        },
+        {
+          "title": "San Joaquin COE 25-26 SEIS Billing Contract",
+          "aid": "1305034"
+        },
+        {
+          "title": "BMR Original Agreement 25.26",
+          "aid": "1305167"
+        },
+        {
+          "title": "BMR First Amendment 25-26",
+          "aid": "1305168"
+        },
+        {
+          "title": "25-26 Orion. Outdoor Ed",
+          "aid": "1298807"
+        },
+        {
+          "title": "One Life 2025",
+          "aid": "1305039"
+        },
+        {
+          "title": "One Life First Amendment",
+          "aid": "1305040"
+        },
+        {
+          "title": "25-26 Schedule of Board Agenda Items",
+          "aid": "1304547"
+        }
+      ],
       "hasTranscript": true,
       "duration": "4h 5m",
       "durationSeconds": 14732,
@@ -2407,7 +3059,16 @@
       "items": [
         {
           "title": "Integrated ELD Instructional Coaching Report — coaching model for administrators, instructional coaches, and classroom teachers for English Learners. Funding: $302,500 ($272,500 AMIM Grant + $30,000 Title III). (Katherine Rivera, Director of Multilingual EL)",
-          "attachments": [],
+          "attachments": [
+            {
+              "title": "2025.10.22 Update Integrated ELD Board Report",
+              "aid": "1274020"
+            },
+            {
+              "title": "Integrated ELD Board Report_2025.10.22",
+              "aid": "1258815"
+            }
+          ],
           "timestamp": "00:01:45",
           "timestampSeconds": 105
         },
@@ -2447,7 +3108,12 @@
         },
         {
           "title": "Personnel report",
-          "attachments": []
+          "attachments": [
+            {
+              "title": "Personnel Report - 10.22.2025",
+              "aid": "1258979"
+            }
+          ]
         },
         {
           "title": "Release of Temporary Teacher (EE# 1365)",
@@ -2476,6 +3142,336 @@
         {
           "title": "San Mateo County Investment Fund — Aug 2025 (3.933%), Sep 2025 (3.887%)",
           "attachments": []
+        }
+      ],
+      "extraAttachments": [
+        {
+          "title": "RCSD I-Ready Assessment",
+          "aid": "1257211"
+        },
+        {
+          "title": "BP 3515.2 - Disruptions - First Reading - Marked",
+          "aid": "1255402"
+        },
+        {
+          "title": "AR 3515.2 - Disruptions - First Reading - For Reference Only - Marked",
+          "aid": "1255403"
+        },
+        {
+          "title": "BP 3515.2 - Disruptions - First Reading - Clean",
+          "aid": "1255404"
+        },
+        {
+          "title": "AR 3515.2 - Disruptions - First Reading - For Reference Only - Clean",
+          "aid": "1255405"
+        },
+        {
+          "title": "BP 4020 - Drug and Alcohol Free Workplace - First Reading - Clean",
+          "aid": "1255411"
+        },
+        {
+          "title": "BP 4020 - Drug and Alcohol Free Workplace - First Reading - Marked",
+          "aid": "1255412"
+        },
+        {
+          "title": "BP 4112.42 - Drug and Alcohol Testing For School Bus Drivers - New - First Reading - Marked",
+          "aid": "1255415"
+        },
+        {
+          "title": "AR 4112.42 - Drug and Alcohol Testing For School Bus Drivers - New - First Reading - Marked",
+          "aid": "1255416"
+        },
+        {
+          "title": "BP 4112.42 - Drug and Alcohol Testing For School Bus Drivers - New - First Reading - Clean",
+          "aid": "1255417"
+        },
+        {
+          "title": "AR 4112.42 - Drug and Alcohol Testing For School Bus Drivers - New - First Reading - Clean",
+          "aid": "1255418"
+        },
+        {
+          "title": "BP 4121 - Temporary_Substitute Personnel - New - First Reading - Marked",
+          "aid": "1255421"
+        },
+        {
+          "title": "AR 4121 - Temporary_Substitute Personnel - First Reading - For Reference Only - Marked",
+          "aid": "1255422"
+        },
+        {
+          "title": "BP 4121 - Temporary_Substitute Personnel - New - First Reading - Clean",
+          "aid": "1255423"
+        },
+        {
+          "title": "AR 4121 - Temporary_Substitute Personnel - First Reading - For Reference Only - Clean",
+          "aid": "1255424"
+        },
+        {
+          "title": "BP 4158 - Employee Security - First Reading - Marked",
+          "aid": "1255432"
+        },
+        {
+          "title": "AR 4158 - Employee Security - First Reading - Marked",
+          "aid": "1255433"
+        },
+        {
+          "title": "BP 4158 - Employee Security - First Reading - Clean",
+          "aid": "1255434"
+        },
+        {
+          "title": "AR 4158 - Employee Security - First Reading - Clean",
+          "aid": "1255435"
+        },
+        {
+          "title": "BP 4200 - Classified Personnel - First Reading - Marked",
+          "aid": "1255439"
+        },
+        {
+          "title": "AR 4200 - Classified Personnel - First Reading - For Reference Only - Marked",
+          "aid": "1255440"
+        },
+        {
+          "title": "BP 4200 - Classified Personnel - First Reading - Clean",
+          "aid": "1255441"
+        },
+        {
+          "title": "AR 4200 - Classified Personnel - First Reading - For Reference Only - Clean",
+          "aid": "1255442"
+        },
+        {
+          "title": "BP 4257 - Employee Safety - New - First Reading - Marked",
+          "aid": "1255444"
+        },
+        {
+          "title": "AR 4257 - Employee Safety - New - First Reading - For Reference Only - Marked",
+          "aid": "1255445"
+        },
+        {
+          "title": "BP 4257 - Employee Safety - New - First Reading - Clean",
+          "aid": "1255446"
+        },
+        {
+          "title": "AR 4257 - Employee Safety - New - First Reading - For Reference Only - Clean",
+          "aid": "1255447"
+        },
+        {
+          "title": "BP 4258  - Employee Security - New - First Reading - Marked",
+          "aid": "1255460"
+        },
+        {
+          "title": "AR 4258  - Employee Security - New - First Reading - For Reference Only - Marked",
+          "aid": "1255461"
+        },
+        {
+          "title": "BP 4258 - Employee Security - New - First Reading - Clean",
+          "aid": "1255462"
+        },
+        {
+          "title": "AR 4258 - Employee Security - New - First Reading - For Reference Only - Clean",
+          "aid": "1255463"
+        },
+        {
+          "title": "BP 4259 - Employee Assistance Programs - New - First Reading - Marked",
+          "aid": "1255480"
+        },
+        {
+          "title": "BP 4259 - Employee Assistance Programs - New - First Reading - Clean",
+          "aid": "1255481"
+        },
+        {
+          "title": "BP 4313.4 - Temporary Modified_Light-Duty Assignment - New - First Reading - Marked",
+          "aid": "1255486"
+        },
+        {
+          "title": "BP 4313.4 - Temporary Modified_Light-Duty Assignment - New - First Reading - Clean",
+          "aid": "1255487"
+        },
+        {
+          "title": "BP 4315 - Evaluation_Supervision - New - First Reading - Marked",
+          "aid": "1255513"
+        },
+        {
+          "title": "BP 4315 - Evaluation_Supervision - New - First Reading - Clean",
+          "aid": "1255514"
+        },
+        {
+          "title": "BP 4357 - Employee Safety - New - First Reading - Marked",
+          "aid": "1255517"
+        },
+        {
+          "title": "AR 4357 - Employee Safety - New - First Reading - For Reference Only - Marked",
+          "aid": "1255518"
+        },
+        {
+          "title": "BP 4357 - Employee Safety - New - First Reading - Clean",
+          "aid": "1255519"
+        },
+        {
+          "title": "AR 4357 - Employee Safety - New - First Reading - For Reference Only - Clean",
+          "aid": "1255520"
+        },
+        {
+          "title": "BP 4358  - Employee Security - New - First Reading - Marked",
+          "aid": "1255546"
+        },
+        {
+          "title": "AR 4358  - Employee Security - New - First Reading - For Reference Only - Marked",
+          "aid": "1255547"
+        },
+        {
+          "title": "BP 4258 - Employee Security - New - First Reading - Clean",
+          "aid": "1255548"
+        },
+        {
+          "title": "AR 4358 - Employee Security - New - First Reading - For Reference Only",
+          "aid": "1255549"
+        },
+        {
+          "title": "BP 4359 - Employee Assistance Programs - New - First Reading - Marked",
+          "aid": "1255541"
+        },
+        {
+          "title": "BP 4359 - Employee Assistance Programs - New - First Reading - Clean",
+          "aid": "1255542"
+        },
+        {
+          "title": "BP 5131.6 - Alcohol And Other Drugs - First Reading - Marked",
+          "aid": "1255643"
+        },
+        {
+          "title": "AR 5131.6 - Alcohol And Other Drugs - First Reading - For Reference Only - Marked",
+          "aid": "1255644"
+        },
+        {
+          "title": "BP 5131.6 - Alcohol And Other Drugs - First Reading - Clean",
+          "aid": "1255645"
+        },
+        {
+          "title": "AR 5131.6 - Alcohol And Other Drugs - First Reading - For Reference Only - Clean",
+          "aid": "1255646"
+        },
+        {
+          "title": "BP 6142.93 - Science Instruction - First Reading - Marked",
+          "aid": "1257842"
+        },
+        {
+          "title": "BP 6142.93 - Science Instruction - First Reading - Clean",
+          "aid": "1257843"
+        },
+        {
+          "title": "BP 6142.94 - History-Social Science Instruction - New - First Reading - Marked",
+          "aid": "1257860"
+        },
+        {
+          "title": "BP 6142.94 - History-Social Science Instruction - New - First Reading - Clean",
+          "aid": "1257861"
+        },
+        {
+          "title": "BP 6161.11 - Supplementary Instructional Materials - First Reading - Marked",
+          "aid": "1257896"
+        },
+        {
+          "title": "BP 6161.11 - Supplementary Instructional Materials - First Reading - Clean",
+          "aid": "1257897"
+        },
+        {
+          "title": "AR 6163.2 - Animals At School - First Reading - For Reference Only - Marked",
+          "aid": "1257900"
+        },
+        {
+          "title": "AR 6163.2 - Animals At School - First Reading - Clean",
+          "aid": "1257901"
+        },
+        {
+          "title": "BP 6163.2  - Animals At School - First Reading - Marked",
+          "aid": "1257902"
+        },
+        {
+          "title": "BP 6163.2 - Animals At School - First Reading - Clean",
+          "aid": "1257903"
+        },
+        {
+          "title": "25-26 NSA. Pier 40",
+          "aid": "1248686"
+        },
+        {
+          "title": "2025-26 Garfield School Measure U Addendum No. 1",
+          "aid": "1259724"
+        },
+        {
+          "title": "BP 0520 - Intervention in Underperforming Schools - Second Reading",
+          "aid": "1257930"
+        },
+        {
+          "title": "BP 5131 - Conduct - Second Reading",
+          "aid": "1257936"
+        },
+        {
+          "title": "BP 5141.52 - Suicide Prevention - Second Reading",
+          "aid": "1257943"
+        },
+        {
+          "title": "BP 6154 - Homework_Makeup Work - Second Reading",
+          "aid": "1257956"
+        },
+        {
+          "title": "BP 6174 - Education For English Learners - Second Reading",
+          "aid": "1257957"
+        },
+        {
+          "title": "AchieveKids 25-26",
+          "aid": "1260314"
+        },
+        {
+          "title": "ASMA Agreement 25.26",
+          "aid": "1270374"
+        },
+        {
+          "title": "Warrant Register Sept 2025",
+          "aid": "1257346"
+        },
+        {
+          "title": "Continued Funding Application RCSD CSPP SY 2026-27",
+          "aid": "1259053"
+        },
+        {
+          "title": "Resolution No 14 2026-27 SY",
+          "aid": "1259052"
+        },
+        {
+          "title": "Williams UCP Q 1 report 2025-26",
+          "aid": "1258950"
+        },
+        {
+          "title": "Connect 2024-25 Unaudited Actuals",
+          "aid": "1255151"
+        },
+        {
+          "title": "Connect 24-25 Unaudited Actuals Review Letter",
+          "aid": "1255152"
+        },
+        {
+          "title": "KIPP 24-25 Unaudited Actuals Review Letter",
+          "aid": "1255160"
+        },
+        {
+          "title": "KIPP Excelencia 2024-25 Unaudited Actuals",
+          "aid": "1255159"
+        },
+        {
+          "title": "Rocketship Unaudited Actuals Review Letter - FY 2024-25",
+          "aid": "1255184"
+        },
+        {
+          "title": "Rocketship Redwood City 2024-25 Unaudited Actuals",
+          "aid": "1255185"
+        },
+        {
+          "title": "25-26 Schedule of Board Agenda Items",
+          "aid": "1260442"
+        },
+        {
+          "title": "25-26 RCSD Board Meeting Calendar",
+          "aid": "1260440"
         }
       ],
       "hasTranscript": true,

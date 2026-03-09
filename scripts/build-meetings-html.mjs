@@ -57,6 +57,25 @@ try {
   }
 } catch {}
 
+// Build AID → R2 path lookup from board-memo JSON files
+// Maps attachment AID to "board-packets/{date}/{filename}" for R2-hosted PDFs
+const aidToR2Path = {};
+const memoDir = resolve(ROOT, 'data/board-memos');
+try {
+  for (const f of readdirSync(memoDir)) {
+    if (!f.endsWith('.json')) continue;
+    const memo = JSON.parse(readFileSync(resolve(memoDir, f), 'utf-8'));
+    for (const item of memo.items) {
+      for (const att of item.attachments) {
+        if (att.aid && att.filename) {
+          aidToR2Path[att.aid] = `board-packets/${memo.date}/${att.filename}`;
+        }
+      }
+    }
+  }
+  console.log(`Loaded ${Object.keys(aidToR2Path).length} board-packet R2 paths from memo files`);
+} catch {}
+
 // Map meeting date+type to agenda filename slug
 function agendaSlug(type) {
   const t = type.toLowerCase();
@@ -496,7 +515,8 @@ function renderAgendaItems(m) {
       itemsHtml += '<div class="agenda-attachments">';
       for (const att of item.attachments) {
         const name = att.title || att.name || 'Attachment';
-        const href = att.href || (att.aid ? `https://simbli.eboardsolutions.com/Meetings/Attachment.aspx?S=36030397&AID=${att.aid}&MID=${m.mid}` : '#');
+        const r2Path = att.aid && aidToR2Path[att.aid];
+        const href = att.href || (r2Path ? `${R2_BASE}/${r2Path}` : (att.aid ? `https://simbli.eboardsolutions.com/Meetings/Attachment.aspx?S=36030397&AID=${att.aid}&MID=${m.mid}` : '#'));
         const size = att.size ? ` <span class="agenda-attachment-size">(${att.size})</span>` : '';
         itemsHtml += `<a class="agenda-attachment" href="${escapeHtml(href)}" target="_blank" rel="noopener">${escapeHtml(name)}${size}</a>`;
       }
@@ -510,7 +530,8 @@ function renderAgendaItems(m) {
     itemsHtml += '<div class="agenda-attachments">';
     for (const att of m.extraAttachments) {
       const name = att.title || 'Attachment';
-      const href = att.href || (att.aid ? `https://simbli.eboardsolutions.com/Meetings/Attachment.aspx?S=36030397&AID=${att.aid}&MID=${m.mid}` : '#');
+      const r2Path = att.aid && aidToR2Path[att.aid];
+      const href = att.href || (r2Path ? `${R2_BASE}/${r2Path}` : (att.aid ? `https://simbli.eboardsolutions.com/Meetings/Attachment.aspx?S=36030397&AID=${att.aid}&MID=${m.mid}` : '#'));
       itemsHtml += `<a class="agenda-attachment" href="${escapeHtml(href)}" target="_blank" rel="noopener">${escapeHtml(name)}</a>`;
     }
     itemsHtml += '</div>';
@@ -565,7 +586,10 @@ function renderMeeting(m) {
   } else if (m.minutes) {
     if (m.minutes.documents && m.minutes.documents.length > 0 && m.minutes.documents[0].href) {
       const doc = m.minutes.documents[0];
-      links += `<a href="${escapeHtml(doc.href)}" class="meeting-link meeting-link--minutes" target="_blank" rel="noopener">&#128196; ${L.minutes}</a>`;
+      const docAid = doc.aid || doc.href.match(/AID=(\d+)/)?.[1];
+      const r2Min = docAid && aidToR2Path[docAid];
+      const minHref = r2Min ? `${R2_BASE}/${r2Min}` : doc.href;
+      links += `<a href="${escapeHtml(minHref)}" class="meeting-link meeting-link--minutes" target="_blank" rel="noopener">&#128196; ${L.minutes}</a>`;
     } else if (m.minutes.approvedAt) {
       const approver = data.meetings.find(x => x.date === m.minutes.approvedAt);
       const approverUrl = approver?.simbli || approver?.boarddocs;
@@ -707,7 +731,8 @@ function findGovernanceCalendar(data) {
   }
   if (!latest) return null;
 
-  const href = latest.href || (latest.aid ? `https://simbli.eboardsolutions.com/Meetings/Attachment.aspx?S=36030397&AID=${latest.aid}&MID=${latest.mid}` : null);
+  const r2Path = latest.aid && aidToR2Path[latest.aid];
+  const href = latest.href || (r2Path ? `${R2_BASE}/${r2Path}` : (latest.aid ? `https://simbli.eboardsolutions.com/Meetings/Attachment.aspx?S=36030397&AID=${latest.aid}&MID=${latest.mid}` : null));
   if (!href) return null;
 
   return { date: latest.date, href };

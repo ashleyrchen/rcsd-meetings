@@ -8,7 +8,7 @@
  * Outputs: data/meetings-data.json
  */
 
-import { readFileSync, writeFileSync, existsSync } from 'fs';
+import { readFileSync, writeFileSync, existsSync, readdirSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
@@ -350,6 +350,68 @@ if (existsSync(agendaAttPath)) {
   console.log(`Replaced attachments for ${replaced} Simbli meetings from agenda PDFs (${Object.keys(agendaAtt).length} available)`);
 } else {
   console.log('No agenda-attachments.json found (run extract-agenda-links.py first)');
+}
+
+// ---- Merge board-memo attachments for meetings without agenda-attachments ----
+
+const memoDir = resolve(ROOT, 'data/board-memos');
+if (existsSync(memoDir)) {
+  const agendaAtt = existsSync(agendaAttPath)
+    ? JSON.parse(readFileSync(agendaAttPath, 'utf-8'))
+    : {};
+  let memoMerged = 0;
+
+  for (const f of readdirSync(memoDir).filter(f => f.endsWith('.json'))) {
+    const date = f.replace('.json', '');
+    if (agendaAtt[date]) continue; // already handled by agenda-attachments
+
+    const memo = JSON.parse(readFileSync(resolve(memoDir, f), 'utf-8'));
+    const meeting = simbliMeetings.find(m => m.date === date);
+    if (!meeting) continue;
+
+    // Match board-memo items to meeting items by title similarity
+    for (const memoItem of memo.items) {
+      if (!memoItem.attachments || memoItem.attachments.length === 0) continue;
+
+      // Clean memo title: strip leading "N. " prefix and trailing " - X min/hr" timing
+      const cleanTitle = memoItem.title
+        .replace(/^\d+\.\s*/, '')
+        .replace(/\s*-\s*\d+\s*(min|hr|hour)s?\s*$/i, '')
+        .toLowerCase();
+
+      // Find best matching meeting item
+      let bestItem = null;
+      let bestScore = 0;
+      for (const item of meeting.items) {
+        const itemTitle = item.title.toLowerCase();
+        // Check for substring containment (either direction)
+        if (itemTitle.includes(cleanTitle) || cleanTitle.includes(itemTitle)) {
+          const score = Math.max(cleanTitle.length, itemTitle.length);
+          if (score > bestScore) {
+            bestScore = score;
+            bestItem = item;
+          }
+        }
+      }
+
+      if (bestItem) {
+        if (!bestItem.attachments) bestItem.attachments = [];
+        for (const att of memoItem.attachments) {
+          bestItem.attachments.push({ title: att.name, aid: att.aid });
+        }
+      } else {
+        // Unmatched — add to meeting-level extras
+        if (!meeting.extraAttachments) meeting.extraAttachments = [];
+        for (const att of memoItem.attachments) {
+          meeting.extraAttachments.push({ title: att.name, aid: att.aid });
+        }
+      }
+    }
+    memoMerged++;
+  }
+  if (memoMerged > 0) {
+    console.log(`Merged board-memo attachments for ${memoMerged} meetings without agenda-attachments`);
+  }
 }
 
 // ---- Merge and sort ----
