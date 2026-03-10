@@ -216,7 +216,7 @@ ${pageCSS}
 
 // ---- Site nav bar ----
 // Params:
-//   activePage: 'home' | 'meetings' | 'district' | null
+//   activePage: 'home' | 'meetings' | 'schools' | 'district' | 'budget' | null
 //   lang: 'en' | 'es'
 //   altLangHref: string | null  (if provided, shows lang switch)
 
@@ -224,14 +224,18 @@ const NAV_TABS = {
   en: [
     { id: 'home',     label: 'Home',     href: '/' },
     { id: 'meetings', label: 'Meetings', href: '/meetings/' },
+    { id: 'schools',  label: 'Schools',  href: '/schools/' },
     { id: 'district', label: 'District', href: '/district/' },
+    { id: 'budget',   label: 'Budget',   href: '/budget/' },
     { id: 'code',     label: 'Code',     href: 'https://github.com/dweekly/rcsd-meetings' },
   ],
   es: [
-    { id: 'home',     label: 'Inicio',    href: '/' },
-    { id: 'meetings', label: 'Reuniones', href: '/reuniones/' },
-    { id: 'district', label: 'Distrito',  href: '/distrito/' },
-    { id: 'code',     label: 'Código',  href: 'https://github.com/dweekly/rcsd-meetings' },
+    { id: 'home',     label: 'Inicio',       href: '/' },
+    { id: 'meetings', label: 'Reuniones',    href: '/reuniones/' },
+    { id: 'schools',  label: 'Escuelas',     href: '/escuelas/' },
+    { id: 'district', label: 'Distrito',     href: '/distrito/' },
+    { id: 'budget',   label: 'Presupuesto',  href: '/presupuesto/' },
+    { id: 'code',     label: 'C\u00f3digo',  href: 'https://github.com/dweekly/rcsd-meetings' },
   ],
 };
 

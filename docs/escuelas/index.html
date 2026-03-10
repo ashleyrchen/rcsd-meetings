@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<title>Escuelas — Distrito Escolar de Redwood City</title>
+<meta name="description" content="Las 12 escuelas del Distrito Escolar de Redwood City: datos, financiamiento, rendimiento y recursos.">
+<meta name="theme-color" content="#1a3a2a">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="canonical" href="https://rcsd.info/escuelas/">
+<link rel="alternate" hreflang="en" href="https://rcsd.info/schools/">
+<link rel="alternate" hreflang="es" href="https://rcsd.info/escuelas/">
+<meta property="og:title" content="Escuelas — Distrito Escolar de Redwood City">
+<meta property="og:description" content="Las 12 escuelas del Distrito Escolar de Redwood City: datos, financiamiento, rendimiento y recursos.">
+<meta property="og:url" content="https://rcsd.info/escuelas/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://rcsd.info/og-1200.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="es_US">
+<meta property="og:site_name" content="RCSD Open Data">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://rcsd.info/og-1200.jpg">
+<meta name="twitter:title" content="Escuelas — Distrito Escolar de Redwood City">
+<meta name="twitter:description" content="Las 12 escuelas del Distrito Escolar de Redwood City: datos, financiamiento, rendimiento y recursos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+
+<style>
+
+  :root {
+    --green-deep: #1a3a2a;
+    --green-mid: #2d5a3f;
+    --green-light: #4a8c6a;
+    --green-pale: #dcebd5;
+    --green-wash: #f0f6ed;
+    --cream: #faf8f4;
+    --cream-dark: #f2efe8;
+    --amber: #c4842d;
+    --amber-light: #f0d9a8;
+    --coral: #c45d4a;
+    --coral-light: #f5ddd8;
+    --text: #2a2a28;
+    --text-secondary: #5a5a56;
+    --text-muted: #8a8a84;
+    --rule: #d4d0c8;
+    --rule-light: #e8e4dc;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html {
+    font-size: 17px;
+    scroll-behavior: smooth;
+    background: var(--cream);
+  }
+
+  body {
+    font-family: 'Newsreader', Georgia, serif;
+    color: var(--text);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    background: var(--cream);
+  }
+
+  a {
+    color: var(--green-mid);
+    text-decoration-color: var(--rule);
+    text-underline-offset: 2px;
+    transition: color 0.15s, text-decoration-color 0.15s;
+  }
+  a:hover {
+    color: var(--green-deep);
+    text-decoration-color: var(--green-mid);
+  }
+
+  /* ---- SITE NAV ---- */
+  .site-nav {
+    background: #1a2e1a;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .site-nav-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .site-nav-tabs { display: flex; gap: 0; }
+  .site-nav-tab {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: rgba(255,255,255,0.45);
+    padding: 0.7rem 1rem;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .site-nav-tab:hover { color: rgba(255,255,255,0.8); }
+  .site-nav-tab.active { color: #fff; border-bottom-color: var(--green-light); }
+
+  .site-nav-right {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .site-nav-lang {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.04em;
+    color: rgba(255,255,255,0.45);
+    text-decoration: none;
+    padding: 0.35rem 0.65rem;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 3px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .site-nav-lang:hover {
+    color: rgba(255,255,255,0.8);
+    border-color: rgba(255,255,255,0.4);
+  }
+
+  /* ---- FOOTER ---- */
+  .site-footer {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2rem 2rem 4rem;
+    border-top: 1px solid var(--rule);
+    text-align: center;
+  }
+  .site-footer p {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    font-style: italic;
+  }
+  .site-footer a { color: var(--green-mid); }
+  .footer-nav {
+    margin-top: 0.8rem;
+    font-style: normal;
+  }
+  .footer-nav a {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--green-mid);
+    text-decoration: none;
+    margin: 0 0.75rem;
+  }
+  .footer-nav a:hover { text-decoration: underline; }
+
+  /* ---- RESPONSIVE (nav + footer) ---- */
+  @media (max-width: 640px) {
+    .site-nav-tab { padding: 0.6rem 0.7rem; font-size: 0.6rem; }
+    .site-nav-inner { padding: 0 1.2rem; }
+  }
+
+  .schools-header { padding: 3rem 0 0; }
+  .schools-header h1 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 400;
+    color: var(--green-deep);
+    margin-bottom: 1rem;
+  }
+  .schools-header p { max-width: 640px; margin-bottom: 2rem; }
+  .schools-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .schools-table-wrap table { width: 100%; border-collapse: collapse; font-size: 0.88rem; line-height: 1.45; }
+  .schools-table-wrap thead th {
+    font-family: 'IBM Plex Mono', monospace; font-size: 0.65rem; font-weight: 500;
+    letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted);
+    text-align: left; padding: 0.6rem 0.8rem; border-bottom: 2px solid var(--green-deep); white-space: nowrap;
+  }
+  .schools-table-wrap thead th.num { text-align: right; }
+  .schools-table-wrap tbody td {
+    padding: 0.55rem 0.8rem; border-bottom: 1px solid var(--rule-light); vertical-align: top;
+  }
+  .schools-table-wrap tbody td.num {
+    text-align: right; font-family: 'IBM Plex Mono', monospace; font-size: 0.82rem; white-space: nowrap;
+  }
+  .schools-table-wrap tbody td.school-name { font-weight: 500; white-space: nowrap; }
+  .schools-table-wrap tbody td.school-name a { color: var(--green-mid); text-decoration: underline; text-decoration-color: var(--rule); text-underline-offset: 2px; }
+  .schools-table-wrap tbody td.school-name a:hover { color: var(--green-deep); text-decoration-color: var(--green-mid); }
+  .schools-table-wrap tbody td.school-name .arrow { color: var(--text-muted); font-size: 0.8em; transition: transform 0.15s, color 0.15s; display: inline-block; }
+  .schools-table-wrap tbody tr:hover td { background: var(--green-wash); }
+  .schools-table-wrap tbody tr:hover .arrow { color: var(--green-mid); transform: translateX(3px); }
+  .schools-table-wrap tbody tr:last-child td { border-bottom: 2px solid var(--rule); }
+  .bar { display: inline-block; height: 6px; border-radius: 3px; margin-right: 0.5rem; vertical-align: middle; }
+  .bar-green { background: var(--green-light); }
+  .bar-amber { background: var(--amber); }
+  .bar-coral { background: var(--coral); }
+  .schools-content { max-width: 960px; margin: 0 auto; padding: 0 2rem 6rem; }
+  @media (max-width: 640px) { .schools-content { padding: 0 1.2rem 4rem; } }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="site-nav-inner">
+    <div class="site-nav-tabs">
+      <a href="/" class="site-nav-tab">Inicio</a>
+      <a href="/reuniones/" class="site-nav-tab">Reuniones</a>
+      <a href="/escuelas/" class="site-nav-tab active">Escuelas</a>
+      <a href="/distrito/" class="site-nav-tab">Distrito</a>
+      <a href="/presupuesto/" class="site-nav-tab">Presupuesto</a>
+      <a href="https://github.com/dweekly/rcsd-meetings" class="site-nav-tab">Código</a>
+    </div>
+    <div class="site-nav-right">
+      <a href="/schools/" class="site-nav-lang">EN</a>
+    </div>
+  </div>
+</nav>
+
+<div class="schools-content">
+  <div class="schools-header">
+    <h1>Escuelas del distrito</h1>
+    <p>Seleccione una escuela para ver datos detallados sobre rendimiento académico, demografía, financiamiento y recursos.</p>
+  </div>
+
+  <div class="schools-table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Escuela</th>
+          <th>Grados</th>
+          <th class="num">Inscripción</th>
+          <th class="num">% alta necesidad</th>
+          <th class="num">Crecimiento ELA</th>
+          <th class="num">Crecimiento Mat</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr onclick="location.href='/escuelas/adelante-selby/'" style="cursor:pointer">
+            <td class="school-name"><a href="/escuelas/adelante-selby/">Adelante Selby <span class="arrow">&rarr;</span></a></td>
+            <td>TK-5</td>
+            <td class="num">630</td>
+            <td class="num">65%</td>
+            <td class="num"><span class="bar bar-green" style="width:26px"></span>22%</td>
+            <td class="num"><span class="bar bar-coral" style="width:19px"></span>9%</td>
+          </tr>
+          <tr onclick="location.href='/escuelas/clifford/'" style="cursor:pointer">
+            <td class="school-name"><a href="/escuelas/clifford/">Clifford <span class="arrow">&rarr;</span></a></td>
+            <td>TK-8</td>
+            <td class="num">664</td>
+            <td class="num">52%</td>
+            <td class="num"><span class="bar bar-coral" style="width:15px"></span>13%</td>
+            <td class="num"><span class="bar bar-coral" style="width:20px"></span>10%</td>
+          </tr>
+          <tr onclick="location.href='/escuelas/garfield/'" style="cursor:pointer">
+            <td class="school-name"><a href="/escuelas/garfield/">Garfield <span class="arrow">&rarr;</span></a></td>
+            <td>K-5</td>
+            <td class="num">260</td>
+            <td class="num">97%</td>
+            <td class="num"><span class="bar bar-green" style="width:58px"></span>49%</td>
+            <td class="num"><span class="bar bar-green" style="width:47px"></span>23%</td>
+          </tr>
+          <tr onclick="location.href='/escuelas/henry-ford/'" style="cursor:pointer">
+            <td class="school-name"><a href="/escuelas/henry-ford/">Henry Ford <span class="arrow">&rarr;</span></a></td>
+            <td>TK-5</td>
+            <td class="num">461</td>
+            <td class="num">70%</td>
+            <td class="num"><span class="bar bar-amber" style="width:18px"></span>15%</td>
+            <td class="num"><span class="bar bar-coral" style="width:21px"></span>10%</td>
+          </tr>
+          <tr onclick="location.href='/escuelas/hoover/'" style="cursor:pointer">
+            <td class="school-name"><a href="/escuelas/hoover/">Hoover <span class="arrow">&rarr;</span></a></td>
+            <td>TK-8</td>
+            <td class="num">659</td>
+            <td class="num">97%</td>
+            <td class="num"><span class="bar bar-green" style="width:43px"></span>36%</td>
+            <td class="num"><span class="bar bar-green" style="width:53px"></span>26%</td>
+          </tr>
+          <tr onclick="location.href='/escuelas/kennedy/'" style="cursor:pointer">
+            <td class="school-name"><a href="/escuelas/kennedy/">Kennedy Middle <span class="arrow">&rarr;</span></a></td>
+            <td>6-8</td>
+            <td class="num">788</td>
+            <td class="num">69%</td>
+            <td class="num"><span class="bar bar-amber" style="width:18px"></span>15%</td>
+            <td class="num"><span class="bar bar-coral" style="width:23px"></span>11%</td>
+          </tr>
+          <tr onclick="location.href='/escuelas/mckinley-mit/'" style="cursor:pointer">
+            <td class="school-name"><a href="/escuelas/mckinley-mit/">McKinley MIT <span class="arrow">&rarr;</span></a></td>
+            <td>6-8</td>
+            <td class="num">401</td>
+            <td class="num">93%</td>
+            <td class="num"><span class="bar bar-green" style="width:26px"></span>22%</td>
+            <td class="num"><span class="bar bar-green" style="width:41px"></span>20%</td>
+          </tr>
+          <tr onclick="location.href='/escuelas/north-star/'" style="cursor:pointer">
+            <td class="school-name"><a href="/escuelas/north-star/">North Star <span class="arrow">&rarr;</span></a></td>
+            <td>3-8</td>
+            <td class="num">553</td>
+            <td class="num">1%</td>
+            <td class="num"><span class="bar bar-coral" style="width:11px"></span>10%</td>
+            <td class="num"><span class="bar bar-coral" style="width:22px"></span>11%</td>
+          </tr>
+          <tr onclick="location.href='/escuelas/orion/'" style="cursor:pointer">
+            <td class="school-name"><a href="/escuelas/orion/">Orion <span class="arrow">&rarr;</span></a></td>
+            <td>TK-5</td>
+            <td class="num">549</td>
+            <td class="num">32%</td>
+            <td class="num"><span class="bar bar-coral" style="width:13px"></span>11%</td>
+            <td class="num"><span class="bar bar-coral" style="width:23px"></span>11%</td>
+          </tr>
+          <tr onclick="location.href='/escuelas/roosevelt/'" style="cursor:pointer">
+            <td class="school-name"><a href="/escuelas/roosevelt/">Roosevelt <span class="arrow">&rarr;</span></a></td>
+            <td>TK-5</td>
+            <td class="num">344</td>
+            <td class="num">73%</td>
+            <td class="num"><span class="bar bar-green" style="width:25px"></span>22%</td>
+            <td class="num"><span class="bar bar-amber" style="width:35px"></span>17%</td>
+          </tr>
+          <tr onclick="location.href='/escuelas/roy-cloud/'" style="cursor:pointer">
+            <td class="school-name"><a href="/escuelas/roy-cloud/">Roy Cloud <span class="arrow">&rarr;</span></a></td>
+            <td>TK-8</td>
+            <td class="num">665</td>
+            <td class="num">16%</td>
+            <td class="num"><span class="bar bar-amber" style="width:21px"></span>18%</td>
+            <td class="num"><span class="bar bar-amber" style="width:33px"></span>16%</td>
+          </tr>
+          <tr onclick="location.href='/escuelas/taft/'" style="cursor:pointer">
+            <td class="school-name"><a href="/escuelas/taft/">Taft <span class="arrow">&rarr;</span></a></td>
+            <td>TK-5</td>
+            <td class="num">325</td>
+            <td class="num">97%</td>
+            <td class="num"><span class="bar bar-green" style="width:27px"></span>23%</td>
+            <td class="num"><span class="bar bar-green" style="width:57px"></span>28%</td>
+          </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <p>Preparado con documentos públicos de RCSD. Los documentos originales están disponibles en <a href="https://www.rcsdk8.net">rcsdk8.net</a> y en el <a href="https://simbli.eboardsolutions.com/SB_Meetings/SB_MeetingListing.aspx?S=36030397">portal de la mesa directiva GAMUT</a>.</p>
+  <div class="footer-nav">
+    <a href="/">Inicio</a>
+    <a href="/reuniones/">Reuniones</a>
+    <a href="/escuelas/">Escuelas</a>
+    <a href="/distrito/">Distrito</a>
+    <a href="/presupuesto/">Presupuesto</a>
+    <a href="https://github.com/dweekly/rcsd-meetings">Código Fuente &#8599;</a>
+    <a href="mailto:team@rcsd.info">team@rcsd.info</a>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<title>Escuela Henry Ford — RCSD Open Data</title>
+<meta name="description" content="Datos públicos de Escuela Henry Ford: rendimiento académico, demografía, financiamiento y personal para el año escolar 2025-26.">
+<meta name="theme-color" content="#1a3a2a">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="canonical" href="https://rcsd.info/escuelas/henry-ford/">
+<link rel="alternate" hreflang="en" href="https://rcsd.info/schools/henry-ford/">
+<link rel="alternate" hreflang="es" href="https://rcsd.info/escuelas/henry-ford/">
+<meta property="og:title" content="Escuela Henry Ford — RCSD Open Data">
+<meta property="og:description" content="Datos públicos de Escuela Henry Ford: rendimiento académico, demografía, financiamiento y personal para el año escolar 2025-26.">
+<meta property="og:url" content="https://rcsd.info/escuelas/henry-ford/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://rcsd.info/og-1200.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="es_US">
+<meta property="og:site_name" content="RCSD Open Data">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://rcsd.info/og-1200.jpg">
+<meta name="twitter:title" content="Escuela Henry Ford — RCSD Open Data">
+<meta name="twitter:description" content="Datos públicos de Escuela Henry Ford: rendimiento académico, demografía, financiamiento y personal para el año escolar 2025-26.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+
+<style>
+
+  :root {
+    --green-deep: #1a3a2a;
+    --green-mid: #2d5a3f;
+    --green-light: #4a8c6a;
+    --green-pale: #dcebd5;
+    --green-wash: #f0f6ed;
+    --cream: #faf8f4;
+    --cream-dark: #f2efe8;
+    --amber: #c4842d;
+    --amber-light: #f0d9a8;
+    --coral: #c45d4a;
+    --coral-light: #f5ddd8;
+    --text: #2a2a28;
+    --text-secondary: #5a5a56;
+    --text-muted: #8a8a84;
+    --rule: #d4d0c8;
+    --rule-light: #e8e4dc;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html {
+    font-size: 17px;
+    scroll-behavior: smooth;
+    background: var(--cream);
+  }
+
+  body {
+    font-family: 'Newsreader', Georgia, serif;
+    color: var(--text);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    background: var(--cream);
+  }
+
+  a {
+    color: var(--green-mid);
+    text-decoration-color: var(--rule);
+    text-underline-offset: 2px;
+    transition: color 0.15s, text-decoration-color 0.15s;
+  }
+  a:hover {
+    color: var(--green-deep);
+    text-decoration-color: var(--green-mid);
+  }
+
+  /* ---- SITE NAV ---- */
+  .site-nav {
+    background: #1a2e1a;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .site-nav-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .site-nav-tabs { display: flex; gap: 0; }
+  .site-nav-tab {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: rgba(255,255,255,0.45);
+    padding: 0.7rem 1rem;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .site-nav-tab:hover { color: rgba(255,255,255,0.8); }
+  .site-nav-tab.active { color: #fff; border-bottom-color: var(--green-light); }
+
+  .site-nav-right {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .site-nav-lang {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.04em;
+    color: rgba(255,255,255,0.45);
+    text-decoration: none;
+    padding: 0.35rem 0.65rem;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 3px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .site-nav-lang:hover {
+    color: rgba(255,255,255,0.8);
+    border-color: rgba(255,255,255,0.4);
+  }
+
+  /* ---- FOOTER ---- */
+  .site-footer {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2rem 2rem 4rem;
+    border-top: 1px solid var(--rule);
+    text-align: center;
+  }
+  .site-footer p {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    font-style: italic;
+  }
+  .site-footer a { color: var(--green-mid); }
+  .footer-nav {
+    margin-top: 0.8rem;
+    font-style: normal;
+  }
+  .footer-nav a {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--green-mid);
+    text-decoration: none;
+    margin: 0 0.75rem;
+  }
+  .footer-nav a:hover { text-decoration: underline; }
+
+  /* ---- RESPONSIVE (nav + footer) ---- */
+  @media (max-width: 640px) {
+    .site-nav-tab { padding: 0.6rem 0.7rem; font-size: 0.6rem; }
+    .site-nav-inner { padding: 0 1.2rem; }
+  }
+
+  .section a {
+    color: var(--green-mid);
+    text-decoration-color: var(--rule);
+    text-underline-offset: 2px;
+    transition: color 0.15s, text-decoration-color 0.15s;
+  }
+  .section a:hover {
+    color: var(--green-deep);
+    text-decoration-color: var(--green-mid);
+  }
+
+  /* ---- HEADER ---- */
+  .site-header {
+    background: var(--green-deep);
+    color: var(--cream);
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .site-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 20% 80%, rgba(74,140,106,0.3) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 20%, rgba(196,132,45,0.15) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .header-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 3.5rem 2rem 3rem;
+    position: relative;
+  }
+
+  .header-district {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--green-light);
+    margin-bottom: 0.5rem;
+  }
+
+  .header-district a {
+    color: var(--green-light);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .header-district a:hover {
+    color: #fff;
+  }
+
+  .header-title {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: clamp(1.8rem, 4.5vw, 2.8rem);
+    font-weight: 300;
+    line-height: 1.15;
+    color: #fff;
+    max-width: 600px;
+    font-optical-sizing: auto;
+  }
+
+  .header-subtitle {
+    margin-top: 1rem;
+    font-size: 0.92rem;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.6;
+    max-width: 520px;
+    font-style: italic;
+  }
+
+  .header-meta {
+    margin-top: 1.8rem;
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .header-stat {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .header-stat-value {
+    font-family: 'Fraunces', serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #fff;
+    line-height: 1;
+  }
+
+  .header-stat-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+    margin-top: 0.35rem;
+  }
+
+  /* ---- SCHOOL TYPE BADGE ---- */
+  .school-badge {
+    display: inline-block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.6rem;
+    border-radius: 3px;
+    margin-top: 1rem;
+  }
+  .school-badge.neighborhood {
+    background: rgba(255,255,255,0.12);
+    color: rgba(255,255,255,0.7);
+  }
+  .school-badge.choice {
+    background: rgba(196,132,45,0.25);
+    color: var(--amber-light);
+  }
+  .school-badge.community {
+    background: rgba(74,140,106,0.25);
+    color: var(--green-pale);
+    margin-left: 0.4rem;
+  }
+
+  /* ---- DISCLAIMER ---- */
+  .disclaimer {
+    background: #fff3cd;
+    border-bottom: 2px solid #e0c36a;
+    padding: 0.75rem 1.5rem;
+    text-align: center;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.01em;
+    line-height: 1.6;
+    color: #664d03;
+  }
+
+  /* ---- LANG SWITCH ---- */
+  .lang-switch {
+    background: var(--cream-dark);
+    border-bottom: 1px solid var(--rule);
+    text-align: center;
+    padding: 0.5rem 1rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+  }
+  .lang-switch a {
+    color: var(--green-mid);
+    text-decoration: none;
+  }
+  .lang-switch a:hover {
+    text-decoration: underline;
+  }
+
+  /* ---- NAV ---- */
+  .toc {
+    background: var(--cream-dark);
+    border-bottom: 1px solid var(--rule);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .toc-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .toc-inner::-webkit-scrollbar { display: none; }
+
+  .toc a {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    text-decoration: none;
+    padding: 0.9rem 0.9rem;
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .toc a:hover {
+    color: var(--green-mid);
+    border-bottom-color: var(--green-light);
+  }
+
+  /* ---- MAIN ---- */
+  .content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 2rem 6rem;
+  }
+
+  /* ---- SECTIONS ---- */
+  .section {
+    padding-top: 3.5rem;
+  }
+
+  .section-rule {
+    width: 100%;
+    height: 1px;
+    background: var(--rule);
+    margin-bottom: 0;
+  }
+
+  .section-num {
+    font-family: 'Fraunces', serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--green-light);
+    display: inline-block;
+    margin-bottom: 0.3rem;
+    letter-spacing: 0.02em;
+  }
+
+  h2 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--green-deep);
+    margin-bottom: 1.5rem;
+    font-optical-sizing: auto;
+  }
+
+  h3 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-top: 2.5rem;
+    margin-bottom: 0.8rem;
+    line-height: 1.3;
+  }
+
+  p {
+    margin-bottom: 1rem;
+    max-width: 640px;
+  }
+
+  .wide p {
+    max-width: none;
+  }
+
+  .source {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-style: italic;
+  }
+  .source a {
+    color: var(--text-muted);
+    text-decoration: underline;
+    text-decoration-color: var(--rule-light);
+    text-underline-offset: 2px;
+  }
+  .source a:hover {
+    color: var(--green-mid);
+    text-decoration-color: var(--green-mid);
+  }
+
+  /* ---- TABLES ---- */
+  .table-wrap {
+    overflow-x: auto;
+    margin: 1.2rem 0 1.5rem;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+    line-height: 1.45;
+  }
+
+  thead th {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    text-align: left;
+    padding: 0.6rem 0.8rem;
+    border-bottom: 2px solid var(--green-deep);
+    white-space: nowrap;
+  }
+
+  thead th.num {
+    text-align: right;
+  }
+
+  tbody td {
+    padding: 0.55rem 0.8rem;
+    border-bottom: 1px solid var(--rule-light);
+    vertical-align: top;
+  }
+
+  tbody td.num {
+    text-align: right;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.82rem;
+    white-space: nowrap;
+  }
+
+  tbody td.label-cell {
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  tbody tr:last-child td {
+    border-bottom: 2px solid var(--rule);
+  }
+
+  tbody tr.total-row td {
+    font-weight: 500;
+    border-top: 2px solid var(--green-deep);
+    border-bottom: 2px solid var(--green-deep);
+    background: var(--green-wash);
+  }
+
+  tbody tr:hover td {
+    background: var(--green-wash);
+  }
+
+  /* Visual bar inside table cells */
+  .bar-cell {
+    position: relative;
+    min-width: 100px;
+  }
+
+  .bar {
+    display: inline-block;
+    height: 6px;
+    border-radius: 3px;
+    margin-right: 0.5rem;
+    vertical-align: middle;
+    transition: width 0.4s ease;
+  }
+
+  .bar-green { background: var(--green-light); }
+  .bar-amber { background: var(--amber); }
+  .bar-coral { background: var(--coral); }
+
+  /* ---- CALLOUT BOXES ---- */
+  .callout {
+    background: var(--green-wash);
+    border-left: 3px solid var(--green-light);
+    padding: 1.2rem 1.5rem;
+    margin: 1.5rem 0;
+    font-size: 0.92rem;
+    max-width: none;
+  }
+
+  .callout p {
+    max-width: none;
+    margin-bottom: 0.5rem;
+  }
+
+  .callout p:last-child { margin-bottom: 0; }
+
+  .callout-amber {
+    background: #fef8ee;
+    border-left-color: var(--amber);
+  }
+
+  /* ---- STAT GRID ---- */
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+
+  .stat-card {
+    background: #fff;
+    border: 1px solid var(--rule-light);
+    padding: 1.2rem;
+  }
+
+  .stat-card-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.3rem;
+  }
+
+  .stat-card-value {
+    font-family: 'Fraunces', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.1;
+    color: var(--green-deep);
+  }
+
+  .stat-card-note {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    margin-top: 0.3rem;
+    line-height: 1.4;
+  }
+
+  /* ---- RESOURCE CARDS ---- */
+  .resource-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+
+  .resource-card {
+    background: #fff;
+    border: 1px solid var(--rule-light);
+    padding: 1.2rem 1.5rem;
+    transition: border-color 0.2s;
+  }
+
+  .resource-card:hover {
+    border-color: var(--green-light);
+  }
+
+  .resource-card h4 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--green-mid);
+    margin-bottom: 0.4rem;
+  }
+
+  .resource-card p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    max-width: none;
+    margin-bottom: 0;
+    line-height: 1.5;
+  }
+
+  .resource-card a {
+    color: var(--green-mid);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .resource-card a:hover {
+    text-decoration: underline;
+  }
+
+  .resource-card .coming-soon {
+    font-style: italic;
+    color: var(--text-muted);
+  }
+
+  /* ---- BACK LINK ---- */
+  .back-link {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    margin-bottom: 2rem;
+    transition: color 0.2s;
+  }
+  .back-link:hover {
+    color: var(--green-mid);
+  }
+
+  /* ---- FUNDING BREAKDOWN ---- */
+  .funding-bar {
+    display: flex;
+    height: 18px;
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 1rem 0 0.8rem;
+    background: var(--rule-light);
+  }
+  .funding-bar-segment {
+    height: 100%;
+    transition: width 0.4s ease;
+  }
+  .funding-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem 1.5rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+  }
+  .funding-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+  .funding-legend-swatch {
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+
+  /* ---- RESPONSIVE ---- */
+  @media (max-width: 640px) {
+    html { font-size: 15px; }
+    .header-inner { padding: 2.5rem 1.2rem 2rem; }
+    .content { padding: 0 1.2rem 4rem; }
+    .header-meta { gap: 1.5rem; }
+    .stat-grid { grid-template-columns: 1fr 1fr; }
+    .resource-grid { grid-template-columns: 1fr; }
+    .toc a { padding: 0.8rem 0.6rem; font-size: 0.6rem; }
+  }
+
+  /* page-specific footer overrides */
+  .site-footer { font-size: 0.8rem; text-align: left; }
+  .footer-nav { margin-top: 1rem; }
+  .footer-nav a { font-size: 0.68rem; margin: 0 1.5rem 0 0; }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="site-nav-inner">
+    <div class="site-nav-tabs">
+      <a href="/" class="site-nav-tab">Inicio</a>
+      <a href="/reuniones/" class="site-nav-tab">Reuniones</a>
+      <a href="/escuelas/" class="site-nav-tab active">Escuelas</a>
+      <a href="/distrito/" class="site-nav-tab">Distrito</a>
+      <a href="/presupuesto/" class="site-nav-tab">Presupuesto</a>
+      <a href="https://github.com/dweekly/rcsd-meetings" class="site-nav-tab">Código</a>
+    </div>
+    <div class="site-nav-right">
+      <a href="/schools/henry-ford/" class="site-nav-lang">EN</a>
+    </div>
+  </div>
+</nav>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-district"><a href="/distrito/">Distrito Escolar de Redwood City</a></div>
+    <h1 class="header-title">Escuela Henry Ford</h1>
+    <p class="header-subtitle">Henry Ford es una Escuela Comunitaria de vecindario TK-5 que sirve a una población con necesidades moderadamente altas. Tiene una fuerte credencialización docente pero la mayor disparidad demográfica entre personal y estudiantes del distrito.</p>
+    <div style="margin-top:0.8rem">
+      <span class="school-badge neighborhood">Vecindario</span><span class="school-badge community">Escuela Comunitaria</span>
+    </div>
+    <div class="header-meta">
+      <div class="header-stat">
+        <span class="header-stat-value">TK-5</span>
+        <span class="header-stat-label">Grados</span>
+      </div>
+      <div class="header-stat">
+        <span class="header-stat-value">461</span>
+        <span class="header-stat-label">Inscripción</span>
+      </div>
+      <div class="header-stat">
+        <span class="header-stat-value">70%</span>
+        <span class="header-stat-label">Alta necesidad</span>
+      </div>
+      <div class="header-stat">
+        <a href="https://henryford.rcsdk8.net/our-school/meet-our-school-leadership" style="color:#fff; text-decoration:underline; text-decoration-color:rgba(255,255,255,0.3); text-underline-offset:2px"><span class="header-stat-value">Jennifer Sanchez</span></a>
+        <span class="header-stat-label">Director/a</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="disclaimer">
+  <strong>Documento borrador.</strong> Preparado personalmente por David Weekly; esto no es una representación del distrito o de la Mesa Directiva y puede contener errores materiales. Para información oficial, visite <a href="https://www.rcsdk8.net" style="color:#664d03; text-decoration:underline">rcsdk8.net</a>.
+</div>
+
+<div class="lang-switch">
+  <a href="/schools/henry-ford/">Read in English</a>
+</div>
+
+<nav class="toc">
+  <div class="toc-inner">
+    <a href="#overview">Resumen</a>
+    <a href="#academics">Rendimiento Académico</a>
+    <a href="#demographics">Demografía Estudiantil</a>
+    <a href="#funding">Financiamiento</a>
+    <a href="#staffing">Personal</a>
+    <a href="#resources">Documentos y Recursos</a>
+  </div>
+</nav>
+
+<main class="content">
+
+  <!-- ======== 1. OVERVIEW ======== -->
+  <section class="section" id="overview">
+    <div class="section-rule"></div>
+    <div class="section-num">01</div>
+    <h2>Resumen</h2>
+
+    <div class="stat-grid">
+      <div class="stat-card">
+        <div class="stat-card-label">Grados</div>
+        <div class="stat-card-value">TK-5</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-label">Inscripción</div>
+        <div class="stat-card-value">461</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-label">Alta necesidad</div>
+        <div class="stat-card-value">70%</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-label">Director/a</div>
+        <div class="stat-card-value" style="font-size:1.1rem"><a href="https://henryford.rcsdk8.net/our-school/meet-our-school-leadership" style="color:var(--green-mid); text-decoration:underline; text-decoration-color:var(--rule); text-underline-offset:2px">Jennifer Sanchez</a></div>
+      </div>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <tbody>
+          <tr><td class="label-cell">Tipo de escuela</td><td>Vecindario</td></tr>
+          <tr><td class="label-cell">Escuela Comunitaria</td><td>Sí</td></tr>
+          <tr><td class="label-cell">Dirección</td><td>2498 Massachusetts Avenue, Redwood City, CA 94061</td></tr>
+          <tr><td class="label-cell">Teléfono</td><td>(650) 482-2404</td></tr>
+          <tr><td class="label-cell">Sitio web de la escuela</td><td><a href="https://henryford.rcsdk8.net">henryford.rcsdk8.net</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ======== 2. ACADEMIC PERFORMANCE ======== -->
+  <section class="section" id="academics">
+    <div class="section-rule"></div>
+    <div class="section-num">02</div>
+    <h2>Rendimiento Académico</h2>
+
+    <h3>Crecimiento Estudiantil</h3>
+
+    <div class="stat-grid">
+      <div class="stat-card">
+        <div class="stat-card-label">Crecimiento en ELA</div>
+        <div class="stat-card-value">15.2%</div>
+        <div class="stat-card-note">de estudiantes lograron 105%+ del crecimiento esperado (6 maestros evaluados)</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-label">Crecimiento en Matemáticas</div>
+        <div class="stat-card-value">10.2%</div>
+        <div class="stat-card-note">de estudiantes lograron 105%+ del crecimiento esperado</div>
+      </div>
+    </div>
+
+    <h3>Competencia CAASPP (2023-24)</h3>
+
+    <div class="stat-grid">
+      <div class="stat-card">
+        <div class="stat-card-label">Competencia en ELA</div>
+        <div class="stat-card-value">46%</div>
+        <div class="stat-card-note"><span class="bar bar-amber" style="width:28px"></span>Promedio del distrito: 42%</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-label">Competencia en Matemáticas</div>
+        <div class="stat-card-value">38%</div>
+        <div class="stat-card-note"><span class="bar bar-amber" style="width:23px"></span>Promedio del distrito: 35%</div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <p>El crecimiento estudiantil mide el porcentaje de estudiantes que logran más del 105% del crecimiento esperado en CAASPP. Indica cuánto aprenden los estudiantes cada año, independientemente de su punto de partida. La competencia mide cuántos estudiantes están al nivel de grado o por encima.</p>
+    </div>
+
+    <p class="source">Fuentes: SARCs 2024-25, SPSAs 2025-26, LCAP 2025-26, informes de recursos humanos (feb. 2026). Competencia CAASPP de las pruebas 2023-24. Crecimiento estudiantil de evaluaciones 2024-25.</p>
+  </section>
+
+  <!-- ======== 3. STUDENT DEMOGRAPHICS ======== -->
+  <section class="section" id="demographics">
+    <div class="section-rule"></div>
+    <div class="section-num">03</div>
+    <h2>Demografía Estudiantil</h2>
+
+    <div class="stat-grid">
+      <div class="stat-card">
+        <div class="stat-card-label">Desventaja Socioeconómica</div>
+        <div class="stat-card-value">63.1%</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-label">Estudiantes de Inglés</div>
+        <div class="stat-card-value">36.2%</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-label">Absentismo Crónico</div>
+        <div class="stat-card-value">24.8%</div>
+        <div class="stat-card-note">Promedio del distrito: 18.3%</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-label">Tasa de Suspensión</div>
+        <div class="stat-card-value">1%</div>
+        <div class="stat-card-note">Promedio del distrito: 2.2%</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== 4. FUNDING ======== -->
+  <section class="section" id="funding">
+    <div class="section-rule"></div>
+    <div class="section-num">04</div>
+    <h2>Financiamiento</h2>
+
+    <div class="callout">
+      <p>El distrito gasta un promedio de $25,260 por alumno del fondo general (salarios, administración, instalaciones), pero la distribución varía por escuela según las necesidades estudiantiles y las fórmulas de financiamiento estatal/federal. Los montos del SPSA a continuación representan financiamiento suplementario adicional específico del sitio.</p>
+    </div>
+
+    <div class="stat-grid">
+      <div class="stat-card">
+        <div class="stat-card-label">Suplementario (SPSA)</div>
+        <div class="stat-card-value">$681K</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-label">SPSA Por Alumno</div>
+        <div class="stat-card-value">$1,523</div>
+      </div>
+    </div>
+
+    <h3>Desglose de Fuentes SPSA</h3>
+
+    <div class="funding-bar">
+      <div class="funding-bar-segment" style="width:9.0%; background:#4a8c6a"></div><div class="funding-bar-segment" style="width:36.6%; background:#1a3a2a"></div><div class="funding-bar-segment" style="width:11.0%; background:#c4842d"></div><div class="funding-bar-segment" style="width:21.6%; background:#5b9bd5"></div><div class="funding-bar-segment" style="width:11.0%; background:#9b7cb8"></div>
+    </div>
+    <div class="funding-legend">
+      <span class="funding-legend-item"><span class="funding-legend-swatch" style="background:#4a8c6a"></span>Título I: $61K</span>
+          <span class="funding-legend-item"><span class="funding-legend-swatch" style="background:#1a3a2a"></span>Distrito: $249K</span>
+          <span class="funding-legend-item"><span class="funding-legend-swatch" style="background:#c4842d"></span>PTO/PTA: $75K</span>
+          <span class="funding-legend-item"><span class="funding-legend-swatch" style="background:#5b9bd5"></span>Medida U: $147K</span>
+          <span class="funding-legend-item"><span class="funding-legend-swatch" style="background:#9b7cb8"></span>Prop 28: $75K</span>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Fuente</th>
+            <th class="num">Monto</th>
+            <th class="num">% del Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="label-cell">Título I</td>
+            <td class="num">$61K</td>
+            <td class="num">9%</td>
+          </tr>
+          <tr>
+            <td class="label-cell">Distrito</td>
+            <td class="num">$249K</td>
+            <td class="num">37%</td>
+          </tr>
+          <tr>
+            <td class="label-cell">PTO/PTA</td>
+            <td class="num">$75K</td>
+            <td class="num">11%</td>
+          </tr>
+          <tr>
+            <td class="label-cell">Medida U</td>
+            <td class="num">$147K</td>
+            <td class="num">22%</td>
+          </tr>
+          <tr>
+            <td class="label-cell">Prop 28</td>
+            <td class="num">$75K</td>
+            <td class="num">11%</td>
+          </tr>
+          <tr class="total-row">
+            <td class="label-cell">Total</td>
+            <td class="num">$681K</td>
+            <td class="num">100%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout">
+      <p>Esta escuela recibe financiamiento federal del Título I.</p>
+    </div>
+
+    <p class="source">Los presupuestos SPSA representan gastos suplementarios a nivel de sitio (enriquecimiento, consejería, desarrollo profesional, materiales). Los costos operativos base (salarios de maestros, administración, instalaciones) provienen del fondo general y varían por escuela.</p>
+  </section>
+
+  <!-- ======== 5. STAFFING ======== -->
+  <section class="section" id="staffing">
+    <div class="section-rule"></div>
+    <div class="section-num">05</div>
+    <h2>Personal</h2>
+
+    <div class="stat-grid">
+      <div class="stat-card">
+        <div class="stat-card-label">Con Credencial Completa</div>
+        <div class="stat-card-value">90.6%</div>
+        <div class="stat-card-note"><span class="bar bar-green" style="width:54px"></span>Promedio del distrito: 75%</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-label">Asignación Incorrecta</div>
+        <div class="stat-card-value">1.7%</div>
+      </div>
+      
+    </div>
+
+    <p class="source">Meta del distrito: 100% para 2027</p>
+
+    
+    <h3>Datos demográficos del personal docente</h3>
+    <div class="table-wrap">
+      <table>
+        <tbody>
+          <tr><td class="label-cell">Personal hispano</td><td class="num">7.7%</td></tr>
+          <tr><td class="label-cell">Personal blanco</td><td class="num">76.9%</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    
+    <div class="callout">
+      <p>La mayor disparidad demográfica entre personal y estudiantes: 77% personal blanco sirviendo a 67% estudiantes hispanos. 20% población de educación especial.</p>
+    </div>
+  </section>
+
+  <!-- ======== 6. DOCUMENTS & RESOURCES ======== -->
+  <section class="section" id="resources">
+    <div class="section-rule"></div>
+    <div class="section-num">06</div>
+    <h2>Documentos y Recursos</h2>
+
+    <div class="resource-grid">
+      <div class="resource-card">
+        <h4>Informe de Responsabilidad Escolar (SARC)</h4>
+        <p>Informe anual estatal sobre las condiciones escolares y los resultados estudiantiles.</p>
+        <p style="margin-top:0.5rem"><a href="https://www.sarconline.org/SarcPdfs/16/41690056044499" target="_blank">Ver en SARC Online &#8599;</a></p>
+      </div>
+      <div class="resource-card">
+        <h4>Plan Escolar para el Logro Estudiantil (SPSA)</h4>
+        <p>Plan a nivel de sitio sobre cómo se gastan los fondos suplementarios.</p>
+        <p style="margin-top:0.5rem"><a href="https://www.cde.ca.gov/re/lc/spsalcapplansummary.asp" target="_blank">Ver en CDE &#8599;</a></p>
+      </div>
+      <div class="resource-card">
+        <h4>Horario Escolar</h4>
+        <p>Inicio: 8:15 AM<br>Fin: 2:50 PM<br>Salida temprana: 1:05 PM</p>
+      </div>
+      <div class="resource-card">
+        <h4>Menú de Almuerzo</h4>
+        <p><a href="https://menus.healthepro.com/organizations/1184/sites/9278/menus/103766" target="_blank">Ver menú &#8599;</a></p>
+      </div>
+      <div class="resource-card">
+        <h4>PTO / PTA</h4>
+        <p><a href="https://henryford.rcsdk8.net/our-community/our-school-pta" target="_blank">Visitar sitio web de PTO/PTA &#8599;</a></p>
+      </div>
+      <div class="resource-card">
+        <h4>Plan Integral de Seguridad</h4>
+        <p class="coming-soon">Próximamente</p>
+      </div>
+      <div class="resource-card">
+        <h4>Consejo del Sitio Escolar</h4>
+        <p class="coming-soon">Próximamente</p>
+      </div>
+      <div class="resource-card">
+        <h4>Programas Extracurriculares</h4>
+        <p class="coming-soon">Próximamente</p>
+      </div>
+    </div>
+
+    <p style="margin-top:2rem"><a href="https://henryford.rcsdk8.net" target="_blank">Sitio web de la escuela: henryford.rcsdk8.net &#8599;</a></p>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>Preparado con documentos públicos de RCSD. Los documentos originales están disponibles en <a href="https://www.rcsdk8.net">rcsdk8.net</a> y en el <a href="https://simbli.eboardsolutions.com/SB_Meetings/SB_MeetingListing.aspx?S=36030397">portal de la mesa directiva GAMUT</a>.</p>
+  <div class="footer-nav">
+    <a href="/">Inicio</a>
+    <a href="/reuniones/">Reuniones</a>
+    <a href="/escuelas/">Escuelas</a>
+    <a href="/distrito/">Distrito</a>
+    <a href="/presupuesto/">Presupuesto</a>
+    <a href="https://github.com/dweekly/rcsd-meetings">Código Fuente &#8599;</a>
+    <a href="mailto:team@rcsd.info">team@rcsd.info</a>
+  </div>
+</footer>
+
+</body>
+</html>
