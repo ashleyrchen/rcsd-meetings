@@ -1,0 +1,939 @@
+{
+  "school": "North Star Academy",
+  "cdsCode": "41-69005-6115026",
+  "fiscalYear": "2022-23",
+  "dataYear": "2023-24",
+  "contact": {
+    "principal": "Erin Kekos",
+    "email": "ekekos@rcsdk8.net",
+    "phone": "(650) 482-2411",
+    "address": "400 Duane St., Redwood City, CA 94062",
+    "website": "https://northstar.rcsdk8.net",
+    "gradeSpan": "3-8",
+    "district": "Redwood City School District",
+    "county": "San Mateo"
+  },
+  "description": "North Star Academy offers an educational experience where students demonstrate critical, logical, and creative thinking skills throughout the core curriculum, and use emerging technologies as tools in all areas of the curriculum to solve problems, to think critically, to express their creativity, and to communicate effectively. North Star Academy allows students a compacted curriculum approach to mastering the core curriculum so that they can move ahead at their own pace and have more time during the school day to pursue a deeper understanding of the curriculum and pursue enriching activities. Enrichment activities at North Star reflect the diverse interests and passions of teachers and students, including field trips, a robust performing arts program, multimedia presentations, engineering, chess, robotics, computer programming, comic book making, science fiction studies, visual arts, after school sports, and independent study. The program focuses on the combination of creativity, task commitment, and high academic rigor, to support students in developing to their fullest potential. The pace of responsive instruction, the depth and complexity of the grade level curriculum, the types of assignments, and the range of experiences provide a learning atmosphere that promotes excellence. All students are expected to demonstrate personal growth through the development of self-discipline, leadership skills, community involvement, and character growth. North Star Academy students thrive because the staff nurtures our students' social and emotional needs, in addition to their academic desires. Our very engaged and supportive parent community provides volunteer support in and out of the classroom, as well as before and after school.",
+  "enrollment": {
+    "total": 527,
+    "byGrade": {
+      "3": 89,
+      "4": 90,
+      "5": 90,
+      "6": 89,
+      "7": 84,
+      "8": 85
+    }
+  },
+  "demographics": {
+    "female": 50.9,
+    "male": 49.1,
+    "americanIndian": 0,
+    "asian": 18.6,
+    "black": 0,
+    "filipino": 2.1,
+    "hispanicLatino": 13.9,
+    "pacificIslander": 0.2,
+    "white": 49.5,
+    "twoOrMoreRaces": 15.7,
+    "englishLearners": 2.5,
+    "socioeconomicallyDisadvantaged": 8,
+    "studentsWithDisabilities": 8.9,
+    "fosterYouth": null,
+    "homeless": 0.6,
+    "migrant": null
+  },
+  "teachers": [
+    {
+      "year": "2020-21",
+      "totalFTE": 19,
+      "fullyCredentialedPct": 73.33,
+      "withoutFullCredentialPct": 2.1,
+      "teachingOutsideSubjectPct": 16.9,
+      "misassignedTeachersOfELPct": 0,
+      "misassignedOtherPct": 0.4,
+      "totalMisassignedOrVacantPct": 0.4
+    },
+    {
+      "year": "2021-22",
+      "totalFTE": 19.4,
+      "fullyCredentialedPct": 70.13,
+      "withoutFullCredentialPct": 11.48,
+      "teachingOutsideSubjectPct": 9.78,
+      "misassignedTeachersOfELPct": 33.3,
+      "misassignedOtherPct": 2.2,
+      "totalMisassignedOrVacantPct": 2.2
+    },
+    {
+      "year": "2022-23",
+      "totalFTE": 19,
+      "fullyCredentialedPct": 75.79,
+      "withoutFullCredentialPct": 12.68,
+      "teachingOutsideSubjectPct": 7.16,
+      "misassignedTeachersOfELPct": 25,
+      "misassignedOtherPct": 2.4,
+      "totalMisassignedOrVacantPct": 2.4
+    }
+  ],
+  "textbooks": {
+    "sufficientForAll": true,
+    "bySubject": [
+      {
+        "subject": "Reading/Language Arts",
+        "adopted": "2017-2015-2009",
+        "publisher": "Benchmark Education Company, Amplify Education Inc., Pearson",
+        "sufficient": true
+      },
+      {
+        "subject": "Mathematics",
+        "adopted": "2023-2016",
+        "publisher": "Imagine Learning, CPM Educational Program",
+        "sufficient": true
+      },
+      {
+        "subject": "Science",
+        "adopted": "2013-2021",
+        "publisher": "Delta Education, Amplify",
+        "sufficient": true
+      },
+      {
+        "subject": "History-Social Science",
+        "adopted": "2006-2021",
+        "publisher": "Macmillan/McGraw-Hill, Teachers' Curriculum Institute",
+        "sufficient": true
+      }
+    ]
+  },
+  "facilities": {
+    "inspectionDate": "2024-12-12",
+    "overallRating": "Good",
+    "systems": [
+      {
+        "system": "Gas Leaks, Mechanical/HVAC, Sewer",
+        "status": "Good",
+        "deficiencyFound": false,
+        "note": null
+      },
+      {
+        "system": "Interior Surfaces",
+        "status": "Good",
+        "deficiencyFound": true,
+        "note": "WO#110054 NEAR FRONT OF THE ROOM A CUT OUT NEEDS A COVER PLATE"
+      },
+      {
+        "system": "Overall Cleanliness, Pest/Vermin Infestation",
+        "status": "Good",
+        "deficiencyFound": false,
+        "note": null
+      },
+      {
+        "system": "Electrical",
+        "status": "Good",
+        "deficiencyFound": true,
+        "note": "WO#109991 CHECK LIGHTS"
+      },
+      {
+        "system": "Restrooms, Sinks/Fountains",
+        "status": "Good",
+        "deficiencyFound": true,
+        "note": "WO#110008 BATTERIES NEED REPLACEMENT IN THE SINK FAUCET, WO#110083 BATTERIES NEED REPLACEMENT IN THE SINK FAUCET, WO#110002 TOILET CLOGGED"
+      },
+      {
+        "system": "Fire Safety, Hazardous Materials",
+        "status": "Good",
+        "deficiencyFound": true,
+        "note": "WO#110053 BLOCKED VENT, WO#110052 HIGH STORAGE"
+      },
+      {
+        "system": "Structural Damage, Roofs",
+        "status": "Good",
+        "deficiencyFound": false,
+        "note": null
+      },
+      {
+        "system": "Playground/School Grounds, Windows/Doors/Gates/Fences",
+        "status": "Good",
+        "deficiencyFound": false,
+        "note": null
+      }
+    ]
+  },
+  "caaspp": {
+    "ela": [
+      {
+        "group": "All Students",
+        "tested": 528,
+        "metExceededPct": 94.7,
+        "exceededPct": null
+      },
+      {
+        "group": "Female",
+        "tested": 267,
+        "metExceededPct": 95.51,
+        "exceededPct": null
+      },
+      {
+        "group": "Male",
+        "tested": 261,
+        "metExceededPct": 93.87,
+        "exceededPct": null
+      },
+      {
+        "group": "American Indian or Alaska Native",
+        "tested": 0,
+        "metExceededPct": null,
+        "exceededPct": null
+      },
+      {
+        "group": "Asian",
+        "tested": 97,
+        "metExceededPct": 96.91,
+        "exceededPct": null
+      },
+      {
+        "group": "Black or African American",
+        "tested": 0,
+        "metExceededPct": null,
+        "exceededPct": null
+      },
+      {
+        "group": "Filipino",
+        "tested": 11,
+        "metExceededPct": 100,
+        "exceededPct": null
+      },
+      {
+        "group": "Hispanic or Latino",
+        "tested": 74,
+        "metExceededPct": 86.49,
+        "exceededPct": null
+      },
+      {
+        "group": "Native Hawaiian or Pacific Islander",
+        "tested": null,
+        "metExceededPct": null,
+        "exceededPct": null
+      },
+      {
+        "group": "Two or More Races",
+        "tested": 83,
+        "metExceededPct": 97.59,
+        "exceededPct": null
+      },
+      {
+        "group": "White",
+        "tested": 262,
+        "metExceededPct": 95.04,
+        "exceededPct": null
+      },
+      {
+        "group": "English Learners",
+        "tested": null,
+        "metExceededPct": null,
+        "exceededPct": null
+      },
+      {
+        "group": "Foster Youth",
+        "tested": 0,
+        "metExceededPct": null,
+        "exceededPct": null
+      },
+      {
+        "group": "Homeless",
+        "tested": 0,
+        "metExceededPct": null,
+        "exceededPct": null
+      },
+      {
+        "group": "Military",
+        "tested": 0,
+        "metExceededPct": null,
+        "exceededPct": null
+      },
+      {
+        "group": "Socioeconomically Disadvantaged",
+        "tested": 47,
+        "metExceededPct": 80.85,
+        "exceededPct": null
+      },
+      {
+        "group": "Students Receiving Migrant Education Services",
+        "tested": 0,
+        "metExceededPct": null,
+        "exceededPct": null
+      },
+      {
+        "group": "Students with Disabilities",
+        "tested": 43,
+        "metExceededPct": 93.02,
+        "exceededPct": null
+      }
+    ],
+    "math": [
+      {
+        "group": "All Students",
+        "tested": 526,
+        "metExceededPct": 95.63,
+        "exceededPct": null
+      },
+      {
+        "group": "Female",
+        "tested": 265,
+        "metExceededPct": 94.34,
+        "exceededPct": null
+      },
+      {
+        "group": "Male",
+        "tested": 261,
+        "metExceededPct": 96.93,
+        "exceededPct": null
+      },
+      {
+        "group": "American Indian or Alaska Native",
+        "tested": 0,
+        "metExceededPct": null,
+        "exceededPct": null
+      },
+      {
+        "group": "Asian",
+        "tested": 97,
+        "metExceededPct": 98.97,
+        "exceededPct": null
+      },
+      {
+        "group": "Black or African American",
+        "tested": 0,
+        "metExceededPct": null,
+        "exceededPct": null
+      },
+      {
+        "group": "Filipino",
+        "tested": 11,
+        "metExceededPct": 100,
+        "exceededPct": null
+      },
+      {
+        "group": "Hispanic or Latino",
+        "tested": 74,
+        "metExceededPct": 87.84,
+        "exceededPct": null
+      },
+      {
+        "group": "Native Hawaiian or Pacific Islander",
+        "tested": null,
+        "metExceededPct": null,
+        "exceededPct": null
+      },
+      {
+        "group": "Two or More Races",
+        "tested": 83,
+        "metExceededPct": 97.59,
+        "exceededPct": null
+      },
+      {
+        "group": "White",
+        "tested": 260,
+        "metExceededPct": 95.77,
+        "exceededPct": null
+      },
+      {
+        "group": "English Learners",
+        "tested": null,
+        "metExceededPct": null,
+        "exceededPct": null
+      },
+      {
+        "group": "Foster Youth",
+        "tested": 0,
+        "metExceededPct": null,
+        "exceededPct": null
+      },
+      {
+        "group": "Homeless",
+        "tested": 0,
+        "metExceededPct": null,
+        "exceededPct": null
+      },
+      {
+        "group": "Military",
+        "tested": 0,
+        "metExceededPct": null,
+        "exceededPct": null
+      },
+      {
+        "group": "Socioeconomically Disadvantaged",
+        "tested": 45,
+        "metExceededPct": 86.67,
+        "exceededPct": null
+      },
+      {
+        "group": "Students Receiving Migrant Education Services",
+        "tested": 0,
+        "metExceededPct": null,
+        "exceededPct": null
+      },
+      {
+        "group": "Students with Disabilities",
+        "tested": 43,
+        "metExceededPct": 90.7,
+        "exceededPct": null
+      }
+    ],
+    "science": [
+      {
+        "group": "All Students",
+        "tested": 175,
+        "metExceededPct": 90.86,
+        "exceededPct": null
+      },
+      {
+        "group": "Female",
+        "tested": 95,
+        "metExceededPct": 92.63,
+        "exceededPct": null
+      },
+      {
+        "group": "Male",
+        "tested": 80,
+        "metExceededPct": 88.75,
+        "exceededPct": null
+      },
+      {
+        "group": "American Indian or Alaska Native",
+        "tested": 0,
+        "metExceededPct": null,
+        "exceededPct": null
+      },
+      {
+        "group": "Asian",
+        "tested": 34,
+        "metExceededPct": 94.12,
+        "exceededPct": null
+      },
+      {
+        "group": "Black or African American",
+        "tested": 0,
+        "metExceededPct": null,
+        "exceededPct": null
+      },
+      {
+        "group": "Filipino",
+        "tested": 0,
+        "metExceededPct": null,
+        "exceededPct": null
+      },
+      {
+        "group": "Hispanic or Latino",
+        "tested": 23,
+        "metExceededPct": 82.61,
+        "exceededPct": null
+      },
+      {
+        "group": "Native Hawaiian or Pacific Islander",
+        "tested": null,
+        "metExceededPct": null,
+        "exceededPct": null
+      },
+      {
+        "group": "Two or More Races",
+        "tested": 18,
+        "metExceededPct": 83.33,
+        "exceededPct": null
+      },
+      {
+        "group": "White",
+        "tested": 99,
+        "metExceededPct": 92.93,
+        "exceededPct": null
+      },
+      {
+        "group": "English Learners",
+        "tested": 0,
+        "metExceededPct": null,
+        "exceededPct": null
+      },
+      {
+        "group": "Foster Youth",
+        "tested": 0,
+        "metExceededPct": null,
+        "exceededPct": null
+      },
+      {
+        "group": "Homeless",
+        "tested": 0,
+        "metExceededPct": null,
+        "exceededPct": null
+      },
+      {
+        "group": "Military",
+        "tested": 0,
+        "metExceededPct": null,
+        "exceededPct": null
+      },
+      {
+        "group": "Socioeconomically Disadvantaged",
+        "tested": 15,
+        "metExceededPct": 86.67,
+        "exceededPct": null
+      },
+      {
+        "group": "Students Receiving Migrant Education Services",
+        "tested": 0,
+        "metExceededPct": null,
+        "exceededPct": null
+      },
+      {
+        "group": "Students with Disabilities",
+        "tested": 13,
+        "metExceededPct": 84.62,
+        "exceededPct": null
+      }
+    ]
+  },
+  "physicalFitness": [
+    {
+      "grade": 5,
+      "aerobicCapacityPct": 99,
+      "abdominalStrengthPct": 98,
+      "trunkExtensorPct": 100,
+      "upperBodyStrengthPct": 99,
+      "flexibilityPct": 93
+    },
+    {
+      "grade": 7,
+      "aerobicCapacityPct": 99,
+      "abdominalStrengthPct": 99,
+      "trunkExtensorPct": 98,
+      "upperBodyStrengthPct": 96,
+      "flexibilityPct": 95
+    }
+  ],
+  "chronicAbsenteeism": [
+    {
+      "group": "All Students",
+      "enrolled": 530,
+      "absentCount": 17,
+      "absentPct": 3.2
+    },
+    {
+      "group": "Female",
+      "enrolled": 268,
+      "absentCount": 7,
+      "absentPct": 2.6
+    },
+    {
+      "group": "Male",
+      "enrolled": 262,
+      "absentCount": 10,
+      "absentPct": 3.8
+    },
+    {
+      "group": "Non-Binary",
+      "enrolled": null,
+      "absentCount": null,
+      "absentPct": null
+    },
+    {
+      "group": "American Indian or Alaska Native",
+      "enrolled": null,
+      "absentCount": null,
+      "absentPct": null
+    },
+    {
+      "group": "Asian",
+      "enrolled": 99,
+      "absentCount": 2,
+      "absentPct": 2
+    },
+    {
+      "group": "Black or African American",
+      "enrolled": null,
+      "absentCount": null,
+      "absentPct": null
+    },
+    {
+      "group": "Filipino",
+      "enrolled": 11,
+      "absentCount": 0,
+      "absentPct": 0
+    },
+    {
+      "group": "Hispanic or Latino",
+      "enrolled": 74,
+      "absentCount": 3,
+      "absentPct": 4.1
+    },
+    {
+      "group": "Native Hawaiian or Pacific Islander",
+      "enrolled": null,
+      "absentCount": null,
+      "absentPct": null
+    },
+    {
+      "group": "Two or More Races",
+      "enrolled": 83,
+      "absentCount": 0,
+      "absentPct": 0
+    },
+    {
+      "group": "White",
+      "enrolled": 262,
+      "absentCount": 12,
+      "absentPct": 4.6
+    },
+    {
+      "group": "English Learners",
+      "enrolled": 13,
+      "absentCount": 1,
+      "absentPct": 7.7
+    },
+    {
+      "group": "Foster Youth",
+      "enrolled": null,
+      "absentCount": null,
+      "absentPct": null
+    },
+    {
+      "group": "Homeless",
+      "enrolled": null,
+      "absentCount": null,
+      "absentPct": null
+    },
+    {
+      "group": "Socioeconomically Disadvantaged",
+      "enrolled": 48,
+      "absentCount": 3,
+      "absentPct": 6.3
+    },
+    {
+      "group": "Students Receiving Migrant Education Services",
+      "enrolled": null,
+      "absentCount": null,
+      "absentPct": null
+    },
+    {
+      "group": "Students with Disabilities",
+      "enrolled": 53,
+      "absentCount": 2,
+      "absentPct": 3.8
+    }
+  ],
+  "suspensions": {
+    "byYear": [
+      {
+        "year": "2021-22",
+        "suspensionRate": 0.19,
+        "expulsionRate": 0
+      },
+      {
+        "year": "2022-23",
+        "suspensionRate": 1.74,
+        "expulsionRate": 0
+      },
+      {
+        "year": "2023-24",
+        "suspensionRate": 0.19,
+        "expulsionRate": 0
+      }
+    ],
+    "byGroup": [
+      {
+        "group": "All Students",
+        "suspensionRate": 0.19,
+        "expulsionRate": 0
+      },
+      {
+        "group": "Female",
+        "suspensionRate": 0,
+        "expulsionRate": 0
+      },
+      {
+        "group": "Male",
+        "suspensionRate": 0.38,
+        "expulsionRate": 0
+      },
+      {
+        "group": "Non-Binary",
+        "suspensionRate": 0,
+        "expulsionRate": 0
+      },
+      {
+        "group": "American Indian or Alaska Native",
+        "suspensionRate": 0,
+        "expulsionRate": 0
+      },
+      {
+        "group": "Asian",
+        "suspensionRate": 0,
+        "expulsionRate": 0
+      },
+      {
+        "group": "Black or African American",
+        "suspensionRate": 0,
+        "expulsionRate": 0
+      },
+      {
+        "group": "Filipino",
+        "suspensionRate": 0,
+        "expulsionRate": 0
+      },
+      {
+        "group": "Hispanic or Latino",
+        "suspensionRate": 1.35,
+        "expulsionRate": 0
+      },
+      {
+        "group": "Native Hawaiian or Pacific Islander",
+        "suspensionRate": 0,
+        "expulsionRate": 0
+      },
+      {
+        "group": "Two or More Races",
+        "suspensionRate": 0,
+        "expulsionRate": 0
+      },
+      {
+        "group": "White",
+        "suspensionRate": 0,
+        "expulsionRate": 0
+      },
+      {
+        "group": "English Learners",
+        "suspensionRate": 0,
+        "expulsionRate": 0
+      },
+      {
+        "group": "Foster Youth",
+        "suspensionRate": 0,
+        "expulsionRate": 0
+      },
+      {
+        "group": "Homeless",
+        "suspensionRate": 0,
+        "expulsionRate": 0
+      },
+      {
+        "group": "Socioeconomically Disadvantaged",
+        "suspensionRate": 2.08,
+        "expulsionRate": 0
+      },
+      {
+        "group": "Students Receiving Migrant Education Services",
+        "suspensionRate": 0,
+        "expulsionRate": 0
+      },
+      {
+        "group": "Students with Disabilities",
+        "suspensionRate": 0,
+        "expulsionRate": 0
+      }
+    ]
+  },
+  "classSize": [
+    {
+      "year": "2021-22",
+      "byGrade": {
+        "3": 13,
+        "4": 17,
+        "5": 17,
+        "6": 28,
+        "Other": 19
+      },
+      "distribution": [
+        {
+          "grade": "3",
+          "1-20": 4,
+          "21-32": 3,
+          "33+": 0
+        },
+        {
+          "grade": "4",
+          "1-20": 2,
+          "21-32": 3,
+          "33+": 0
+        },
+        {
+          "grade": "5",
+          "1-20": 2,
+          "21-32": 3,
+          "33+": 0
+        },
+        {
+          "grade": "6",
+          "1-20": 3,
+          "21-32": 15,
+          "33+": 1
+        },
+        {
+          "grade": "Other",
+          "1-20": 6,
+          "21-32": 3,
+          "33+": 0
+        }
+      ]
+    },
+    {
+      "year": "2022-23",
+      "byGrade": {
+        "3": 28,
+        "4": 29,
+        "5": 30,
+        "6": 27,
+        "Other": 18
+      },
+      "distribution": [
+        {
+          "grade": "3",
+          "1-20": 0,
+          "21-32": 3,
+          "33+": 0
+        },
+        {
+          "grade": "4",
+          "1-20": 0,
+          "21-32": 3,
+          "33+": 0
+        },
+        {
+          "grade": "5",
+          "1-20": 0,
+          "21-32": 3,
+          "33+": 0
+        },
+        {
+          "grade": "6",
+          "1-20": 0,
+          "21-32": 21,
+          "33+": 0
+        },
+        {
+          "grade": "Other",
+          "1-20": 8,
+          "21-32": 5,
+          "33+": 0
+        }
+      ]
+    },
+    {
+      "year": "2023-24",
+      "byGrade": {
+        "3": 30,
+        "4": 30,
+        "5": 25,
+        "6": 28,
+        "Other": 18
+      },
+      "distribution": [
+        {
+          "grade": "3",
+          "1-20": 0,
+          "21-32": 6,
+          "33+": 0
+        },
+        {
+          "grade": "4",
+          "1-20": 0,
+          "21-32": 6,
+          "33+": 0
+        },
+        {
+          "grade": "5",
+          "1-20": 1,
+          "21-32": 5,
+          "33+": 0
+        },
+        {
+          "grade": "6",
+          "1-20": 3,
+          "21-32": 23,
+          "33+": 1
+        },
+        {
+          "grade": "Other",
+          "1-20": 7,
+          "21-32": 7,
+          "33+": 0
+        }
+      ]
+    }
+  ],
+  "supportStaff": {
+    "counselorAcademic": 0.8,
+    "counselorGuidance": null,
+    "librarian": null,
+    "psychologist": null,
+    "socialWorker": null,
+    "nurse": null,
+    "speechPathologist": null,
+    "resourceSpecialistNonTeaching": null,
+    "other": 2
+  },
+  "expenditures": {
+    "schoolSite": {
+      "totalPerPupil": 18729,
+      "restrictedPerPupil": 8321,
+      "unrestrictedPerPupil": 10408,
+      "avgTeacherSalary": 101998
+    },
+    "district": {
+      "unrestrictedPerPupil": 11482,
+      "avgTeacherSalary": 95778
+    },
+    "state": {
+      "unrestrictedPerPupil": 10771,
+      "avgTeacherSalary": 96325
+    },
+    "pctDiffFromDistrict": {
+      "unrestricted": -9.8,
+      "teacherSalary": 6.3
+    },
+    "pctDiffFromState": {
+      "unrestricted": -3.4,
+      "teacherSalary": 5.7
+    }
+  },
+  "servicesFunded": [
+    "Title I: Migrant Education",
+    "Special Education",
+    "Title II: Part A Teacher Quality",
+    "Title III: Limited English Proficiency",
+    "Medi-Cal Billing Option",
+    "Lottery: Instructional Materials"
+  ],
+  "salaries": {
+    "beginningTeacher": 60926,
+    "midRangeTeacher": 93211,
+    "highestTeacher": 118571,
+    "avgPrincipalElementary": 169852,
+    "avgPrincipalMiddle": 162335,
+    "avgPrincipalHigh": null,
+    "superintendent": 259190,
+    "pctBudgetTeacherSalaries": 27,
+    "pctBudgetAdminSalaries": 9
+  },
+  "professionalDevelopment": {
+    "daysPerYear": [
+      5,
+      5,
+      5
+    ],
+    "focusAreas": [
+      "Illustrative Math K-5 mathematics curriculum",
+      "Supplemental English Learning Development Curriculum from Language Power K-8",
+      "Integrated English Learner Development strategies grades 3-8",
+      "Student Goal-Setting Conferences",
+      "Professional Learning Cycles",
+      "Multi-Tiered System of Support (MTSS)",
+      "Inclusive practices",
+      "Welcoming environments",
+      "Equity stance",
+      "RCSD Student Learner Profile",
+      "Universal Design for Learning (UDL)",
+      "Science of Reading",
+      "California Reading and Literacy Project",
+      "STEAM professional development",
+      "Creative communicators",
+      "Empowered learners"
+    ]
+  }
+}

@@ -9,7 +9,7 @@
  *   - hr-data-briefing-2026-03.md (student growth, teacher demographics)
  */
 
-import { readFileSync, writeFileSync, mkdirSync } from 'fs';
+import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { headMeta, siteNav, siteFooter } from './html-parts.mjs';
@@ -19,6 +19,15 @@ const ROOT = resolve(__dirname, '..');
 
 // ---- Load schools.json for base directory data ----
 const schoolsData = JSON.parse(readFileSync(resolve(ROOT, 'data/schools.json'), 'utf-8'));
+
+// ---- Load SARC data (expenditures per pupil) ----
+const SARC_DATA = {};
+for (const school of schoolsData.schools) {
+  const sarcPath = resolve(ROOT, 'data/sarc', `${school.slug}.json`);
+  if (existsSync(sarcPath)) {
+    SARC_DATA[school.slug] = JSON.parse(readFileSync(sarcPath, 'utf-8'));
+  }
+}
 
 // ---- Per-school enrichment data (from analysis docs) ----
 // All numbers sourced from district-analysis-2025-26.md and hr-data-briefing-2026-03.md
@@ -851,6 +860,13 @@ const LABELS = {
     suspension: 'Suspension Rate',
     districtAvgAbsent: 'District avg: 18.3%',
     districtAvgSuspension: 'District avg: 2.2%',
+    sarcTotalPerPupil: 'Total Per Pupil',
+    sarcRestricted: 'Restricted',
+    sarcUnrestricted: 'Unrestricted',
+    sarcEstSchoolCost: 'Est. School Cost',
+    sarcAvgTeacherSalary: 'Avg Teacher Salary',
+    sarcDistrictLabel: 'District',
+    sarcExpenditureNote: 'Expenditure data from the 2022-23 SARC. Restricted funds include Title I, special ed, and EL programs. Unrestricted funds are general operating.',
     spsaBudget: 'Supplemental (SPSA)',
     perPupil: 'SPSA Per Pupil',
     fundingBreakdown: 'SPSA Source Breakdown',
@@ -932,6 +948,13 @@ const LABELS = {
     suspension: 'Tasa de Suspensión',
     districtAvgAbsent: 'Promedio del distrito: 18.3%',
     districtAvgSuspension: 'Promedio del distrito: 2.2%',
+    sarcTotalPerPupil: 'Total Por Alumno',
+    sarcRestricted: 'Restringido',
+    sarcUnrestricted: 'No Restringido',
+    sarcEstSchoolCost: 'Costo Est. Escolar',
+    sarcAvgTeacherSalary: 'Salario Prom. Maestro',
+    sarcDistrictLabel: 'Distrito',
+    sarcExpenditureNote: 'Datos de gastos del SARC 2022-23. Los fondos restringidos incluyen Título I, educación especial y programas para estudiantes de inglés. Los fondos no restringidos son operación general.',
     spsaBudget: 'Suplementario (SPSA)',
     perPupil: 'SPSA Por Alumno',
     fundingBreakdown: 'Desglose de Fuentes SPSA',
@@ -1019,6 +1042,12 @@ function buildSchoolPage(school, data, lang) {
   const fundingLegendHtml = fundingSources.map(s =>
     `<span class="funding-legend-item"><span class="funding-legend-swatch" style="background:${s.color}"></span>${s.label}: ${fmtDollar(s.amount)}</span>`
   ).join('\n          ');
+
+  // SARC expenditure data
+  const sarc = SARC_DATA[slug];
+  const sarcExp = sarc?.expenditures?.schoolSite;
+  const sarcEnrollment = sarc?.enrollment?.total;
+  const estSchoolCost = sarcExp && sarcEnrollment ? sarcExp.totalPerPupil * sarcEnrollment : null;
 
   // Teacher demo highlights
   const demoItems = [];
@@ -1227,11 +1256,31 @@ ${siteNav({ activePage: 'schools', lang, altLangHref })}
     <div class="section-num">04</div>
     <h2>${L.funding}</h2>
 
-    <div class="callout">
-      <p>${isEs
-        ? 'El distrito gasta un promedio de $25,260 por alumno del fondo general (salarios, administración, instalaciones), pero la distribución varía por escuela según las necesidades estudiantiles y las fórmulas de financiamiento estatal/federal. Los montos del SPSA a continuación representan financiamiento suplementario adicional específico del sitio.'
-        : 'The district spends an average of $25,260 per student from the general fund (salaries, admin, facilities), but the actual amount varies by school based on student needs and state/federal funding formulas. The SPSA amounts below represent additional site-specific supplemental funding.'}</p>
+    ${sarcExp ? `
+    <div class="stat-grid">
+      <div class="stat-card">
+        <div class="stat-card-label">${L.sarcTotalPerPupil}</div>
+        <div class="stat-card-value">$${fmt(sarcExp.totalPerPupil)}</div>
+        <div class="stat-card-note">${L.sarcRestricted}: $${fmt(sarcExp.restrictedPerPupil)} · ${L.sarcUnrestricted}: $${fmt(sarcExp.unrestrictedPerPupil)}</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-label">${L.sarcEstSchoolCost}</div>
+        <div class="stat-card-value">${fmtDollar(estSchoolCost)}</div>
+        <div class="stat-card-note">${fmt(sarcEnrollment)} ${isEs ? 'alumnos' : 'students'} &times; $${fmt(sarcExp.totalPerPupil)}/${isEs ? 'alumno' : 'student'}</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-label">${L.sarcAvgTeacherSalary}</div>
+        <div class="stat-card-value">$${fmt(sarcExp.avgTeacherSalary)}</div>
+        <div class="stat-card-note">${L.sarcDistrictLabel}: $${fmt(sarc.expenditures.district.avgTeacherSalary)}</div>
+      </div>
     </div>
+
+    <div class="callout">
+      <p>${L.sarcExpenditureNote}</p>
+    </div>
+    ` : ''}
+
+    <h3 style="margin-top:2rem">${isEs ? 'Financiamiento Suplementario del Sitio (SPSA) 2025-26' : 'Site Supplemental (SPSA) 2025-26'}</h3>
 
     <div class="stat-grid">
       <div class="stat-card">
