@@ -6,20 +6,6 @@
 <meta name="robots" content="index, follow">
 <title>RCSD Open Data — Redwood City School District Public Records</title>
 <meta name="description" content="Open data portal for the Redwood City School District. 12 schools, 6,299 students, 58 board meetings with agendas, minutes, and video. Bilingual English/Spanish.">
-<meta property="og:title" content="RCSD Open Data — Redwood City School District">
-<meta property="og:description" content="Open data portal for RCSD: board meetings, school directory, district overview, and key documents.">
-<meta property="og:url" content="https://rcsd.info/">
-<meta property="og:type" content="website">
-<meta property="og:image" content="https://rcsd.info/og-1200.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:locale" content="en_US">
-<meta property="og:locale:alternate" content="es_US">
-<meta property="og:site_name" content="RCSD Open Data">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://rcsd.info/og-1200.jpg">
-<meta name="twitter:title" content="RCSD Open Data — Redwood City School District">
-<meta name="twitter:description" content="Open data portal for RCSD: board meetings, school directory, district overview, and key documents.">
 <meta name="theme-color" content="#1a3a2a">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
@@ -30,6 +16,19 @@
 <link rel="alternate" hreflang="x-default" href="https://rcsd.info/">
 <link rel="alternate" hreflang="en" href="https://rcsd.info/">
 <link rel="alternate" hreflang="es" href="https://rcsd.info/">
+<meta property="og:title" content="RCSD Open Data — Redwood City School District Public Records">
+<meta property="og:description" content="Open data portal for the Redwood City School District. 12 schools, 6,299 students, 58 board meetings with agendas, minutes, and video. Bilingual English/Spanish.">
+<meta property="og:url" content="https://rcsd.info/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://rcsd.info/og-1200.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="RCSD Open Data">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://rcsd.info/og-1200.jpg">
+<meta name="twitter:title" content="RCSD Open Data — Redwood City School District Public Records">
+<meta name="twitter:description" content="Open data portal for the Redwood City School District. 12 schools, 6,299 students, 58 board meetings with agendas, minutes, and video. Bilingual English/Spanish.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -189,7 +188,9 @@
   ]
 }
 </script>
+<meta property="og:locale:alternate" content="es_US">
 <style>
+
   :root {
     --green-deep: #1a3a2a;
     --green-mid: #2d5a3f;
@@ -263,6 +264,60 @@
   }
   .site-nav-tab:hover { color: rgba(255,255,255,0.8); }
   .site-nav-tab.active { color: #fff; border-bottom-color: var(--green-light); }
+
+  .site-nav-right {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .site-nav-lang {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.04em;
+    color: rgba(255,255,255,0.45);
+    text-decoration: none;
+    padding: 0.35rem 0.65rem;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 3px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .site-nav-lang:hover {
+    color: rgba(255,255,255,0.8);
+    border-color: rgba(255,255,255,0.4);
+  }
+
+  /* ---- FOOTER ---- */
+  .site-footer {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2rem 2rem 4rem;
+    border-top: 1px solid var(--rule);
+    text-align: center;
+  }
+  .site-footer p {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    font-style: italic;
+  }
+  .site-footer a { color: var(--green-mid); }
+  .footer-nav {
+    margin-top: 0.8rem;
+    font-style: normal;
+  }
+  .footer-nav a {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--green-mid);
+    text-decoration: none;
+    margin: 0 0.75rem;
+  }
+  .footer-nav a:hover { text-decoration: underline; }
+
+  /* ---- RESPONSIVE (nav + footer) ---- */
+  @media (max-width: 640px) {
+    .site-nav-tab { padding: 0.6rem 0.7rem; font-size: 0.6rem; }
+    .site-nav-inner { padding: 0 1.2rem; }
+  }
 
   /* ---- BILINGUAL TWO-COLUMN CORE ---- */
   .bi-row {
@@ -613,34 +668,7 @@
     border-radius: 2px;
   }
 
-  /* ---- FOOTER ---- */
-  .site-footer {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 2rem 2rem 4rem;
-    border-top: 1px solid var(--rule);
-    text-align: center;
-  }
-  .site-footer p {
-    font-size: 0.78rem;
-    color: var(--text-muted);
-    font-style: italic;
-  }
-  .site-footer a { color: var(--green-mid); }
-  .footer-nav {
-    margin-top: 0.8rem;
-    font-style: normal;
-  }
-  .footer-nav a {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.65rem;
-    color: var(--green-mid);
-    text-decoration: none;
-    margin: 0 0.75rem;
-  }
-  .footer-nav a:hover { text-decoration: underline; }
-
-  /* ---- RESPONSIVE ---- */
+  /* ---- RESPONSIVE (page-specific) ---- */
   @media (max-width: 640px) {
     html { font-size: 15px; }
     .bi-row { grid-template-columns: 1fr; }
@@ -655,8 +683,6 @@
     .school-section { padding: 1rem 1.2rem 0; }
     .school-grid { grid-template-columns: 1fr; }
     .ai-section { margin: 2rem 1.2rem 0; }
-    .site-nav-tab { padding: 0.6rem 0.7rem; font-size: 0.6rem; }
-    .site-nav-inner { padding: 0 1.2rem; }
     .events-col.bi-en .event-row { flex-direction: row; text-align: left; }
   }
 </style>

@@ -1,12 +1,14 @@
 #!/usr/bin/env node
 /**
- * Generate docs/index.html (bilingual homepage), robots.txt, humans.txt
+ * Generate docs/index.html (bilingual homepage), docs/404.html,
+ * robots.txt, humans.txt, sitemap.xml
  * Run before build-meetings-html.mjs
  */
 
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
+import { headMeta, siteNav, siteFooter } from './html-parts.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
@@ -118,152 +120,8 @@ function eventRowEs(e) {
         </div>`;
 }
 
-// ---- Generate homepage HTML ----
-const html = `<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="index, follow">
-<title>RCSD Open Data — Redwood City School District Public Records</title>
-<meta name="description" content="Open data portal for the Redwood City School District. ${numSchools} schools, ${totalEnrollment.toLocaleString()} students, ${meetingStats.total} board meetings with agendas, minutes, and video. Bilingual English/Spanish.">
-<meta property="og:title" content="RCSD Open Data — Redwood City School District">
-<meta property="og:description" content="Open data portal for RCSD: board meetings, school directory, district overview, and key documents.">
-<meta property="og:url" content="https://rcsd.info/">
-<meta property="og:type" content="website">
-<meta property="og:image" content="https://rcsd.info/og-1200.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:locale" content="en_US">
-<meta property="og:locale:alternate" content="es_US">
-<meta property="og:site_name" content="RCSD Open Data">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://rcsd.info/og-1200.jpg">
-<meta name="twitter:title" content="RCSD Open Data — Redwood City School District">
-<meta name="twitter:description" content="Open data portal for RCSD: board meetings, school directory, district overview, and key documents.">
-<meta name="theme-color" content="#1a3a2a">
-<link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
-<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="manifest" href="/site.webmanifest">
-<link rel="canonical" href="https://rcsd.info/">
-<link rel="alternate" hreflang="x-default" href="https://rcsd.info/">
-<link rel="alternate" hreflang="en" href="https://rcsd.info/">
-<link rel="alternate" hreflang="es" href="https://rcsd.info/">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "RCSD Open Data",
-  "url": "https://rcsd.info/",
-  "description": "Open data portal for the Redwood City School District",
-  "publisher": {
-    "@type": "Person",
-    "name": "David Weekly",
-    "url": "https://david.weekly.org"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ItemList",
-  "name": "RCSD Schools",
-  "numberOfItems": ${numSchools},
-  "itemListElement": [
-${sortedSchools.map((s, i) => `    {
-      "@type": "ListItem",
-      "position": ${i + 1},
-      "item": {
-        "@type": "School",
-        "name": "${s.name}",
-        "address": "${s.address}",
-        "telephone": "${s.phone}",
-        "url": "${s.website}"
-      }
-    }`).join(',\n')}
-  ]
-}
-</script>
-<style>
-  :root {
-    --green-deep: #1a3a2a;
-    --green-mid: #2d5a3f;
-    --green-light: #4a8c6a;
-    --green-pale: #dcebd5;
-    --green-wash: #f0f6ed;
-    --cream: #faf8f4;
-    --cream-dark: #f2efe8;
-    --amber: #c4842d;
-    --amber-light: #f0d9a8;
-    --coral: #c45d4a;
-    --coral-light: #f5ddd8;
-    --text: #2a2a28;
-    --text-secondary: #5a5a56;
-    --text-muted: #8a8a84;
-    --rule: #d4d0c8;
-    --rule-light: #e8e4dc;
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  html {
-    font-size: 17px;
-    scroll-behavior: smooth;
-    background: var(--cream);
-  }
-
-  body {
-    font-family: 'Newsreader', Georgia, serif;
-    color: var(--text);
-    line-height: 1.65;
-    -webkit-font-smoothing: antialiased;
-    background: var(--cream);
-  }
-
-  a {
-    color: var(--green-mid);
-    text-decoration-color: var(--rule);
-    text-underline-offset: 2px;
-    transition: color 0.15s, text-decoration-color 0.15s;
-  }
-  a:hover {
-    color: var(--green-deep);
-    text-decoration-color: var(--green-mid);
-  }
-
-  /* ---- SITE NAV ---- */
-  .site-nav {
-    background: #1a2e1a;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-  }
-  .site-nav-inner {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .site-nav-tabs { display: flex; gap: 0; }
-  .site-nav-tab {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.65rem;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: rgba(255,255,255,0.45);
-    padding: 0.7rem 1rem;
-    border-bottom: 2px solid transparent;
-    transition: color 0.2s, border-color 0.2s;
-  }
-  .site-nav-tab:hover { color: rgba(255,255,255,0.8); }
-  .site-nav-tab.active { color: #fff; border-bottom-color: var(--green-light); }
-
+// ---- Page-specific CSS (everything not in baseCSS) ----
+const homepageCSS = `
   /* ---- BILINGUAL TWO-COLUMN CORE ---- */
   .bi-row {
     display: grid;
@@ -613,34 +471,7 @@ ${sortedSchools.map((s, i) => `    {
     border-radius: 2px;
   }
 
-  /* ---- FOOTER ---- */
-  .site-footer {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 2rem 2rem 4rem;
-    border-top: 1px solid var(--rule);
-    text-align: center;
-  }
-  .site-footer p {
-    font-size: 0.78rem;
-    color: var(--text-muted);
-    font-style: italic;
-  }
-  .site-footer a { color: var(--green-mid); }
-  .footer-nav {
-    margin-top: 0.8rem;
-    font-style: normal;
-  }
-  .footer-nav a {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.65rem;
-    color: var(--green-mid);
-    text-decoration: none;
-    margin: 0 0.75rem;
-  }
-  .footer-nav a:hover { text-decoration: underline; }
-
-  /* ---- RESPONSIVE ---- */
+  /* ---- RESPONSIVE (page-specific) ---- */
   @media (max-width: 640px) {
     html { font-size: 15px; }
     .bi-row { grid-template-columns: 1fr; }
@@ -655,24 +486,69 @@ ${sortedSchools.map((s, i) => `    {
     .school-section { padding: 1rem 1.2rem 0; }
     .school-grid { grid-template-columns: 1fr; }
     .ai-section { margin: 2rem 1.2rem 0; }
-    .site-nav-tab { padding: 0.6rem 0.7rem; font-size: 0.6rem; }
-    .site-nav-inner { padding: 0 1.2rem; }
     .events-col.bi-en .event-row { flex-direction: row; text-align: left; }
+  }`;
+
+// ---- JSON-LD ----
+const jsonLdBlocks = `<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "RCSD Open Data",
+  "url": "https://rcsd.info/",
+  "description": "Open data portal for the Redwood City School District",
+  "publisher": {
+    "@type": "Person",
+    "name": "David Weekly",
+    "url": "https://david.weekly.org"
   }
-</style>
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "RCSD Schools",
+  "numberOfItems": ${numSchools},
+  "itemListElement": [
+${sortedSchools.map((s, i) => `    {
+      "@type": "ListItem",
+      "position": ${i + 1},
+      "item": {
+        "@type": "School",
+        "name": "${s.name}",
+        "address": "${s.address}",
+        "telephone": "${s.phone}",
+        "url": "${s.website}"
+      }
+    }`).join(',\n')}
+  ]
+}
+</script>`;
+
+// ---- Generate homepage HTML ----
+const ogDesc = 'Open data portal for RCSD: board meetings, school directory, district overview, and key documents.';
+const html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+${headMeta({
+  title: 'RCSD Open Data — Redwood City School District Public Records',
+  description: `Open data portal for the Redwood City School District. ${numSchools} schools, ${totalEnrollment.toLocaleString()} students, ${meetingStats.total} board meetings with agendas, minutes, and video. Bilingual English/Spanish.`,
+  canonical: 'https://rcsd.info/',
+  ogLocale: 'en_US',
+  hreflang: [
+    { lang: 'x-default', href: 'https://rcsd.info/' },
+    { lang: 'en', href: 'https://rcsd.info/' },
+    { lang: 'es', href: 'https://rcsd.info/' },
+  ],
+  jsonLd: jsonLdBlocks,
+  extraHead: '<meta property="og:locale:alternate" content="es_US">',
+  pageCSS: homepageCSS,
+})}
 </head>
 <body>
 
-<nav class="site-nav">
-  <div class="site-nav-inner">
-    <div class="site-nav-tabs">
-      <a href="/" class="site-nav-tab active">Home</a>
-      <a href="/meetings/" class="site-nav-tab">Meetings</a>
-      <a href="/district/" class="site-nav-tab">District</a>
-      <a href="https://github.com/dweekly/rcsd-meetings" class="site-nav-tab">Code</a>
-    </div>
-  </div>
-</nav>
+${siteNav({ activePage: 'home', lang: 'en' })}
 
 <header class="hero">
   <div class="hero-inner">
@@ -879,16 +755,7 @@ Contact: team@rcsd.info</pre>
 
 </main>
 
-<footer class="site-footer">
-  <p>Independently compiled from publicly available RCSD documents. Source documents at <a href="https://www.rcsdk8.net">rcsdk8.net</a> and the <a href="https://simbli.eboardsolutions.com/SB_Meetings/SB_MeetingListing.aspx?S=36030397">GAMUT board portal</a>.</p>
-  <div class="footer-nav">
-    <a href="/">Home</a>
-    <a href="/meetings/">Meetings</a>
-    <a href="/district/">District</a>
-    <a href="https://github.com/dweekly/rcsd-meetings">Source Code &#8599;</a>
-    <a href="mailto:team@rcsd.info">team@rcsd.info</a>
-  </div>
-</footer>
+${siteFooter({ lang: 'en' })}
 
 </body>
 </html>`;
@@ -896,6 +763,110 @@ Contact: team@rcsd.info</pre>
 // ---- Write homepage ----
 writeFileSync(resolve(ROOT, 'docs/index.html'), html);
 console.log('Wrote docs/index.html (homepage)');
+
+// ---- 404 page ----
+const fourOhFourCSS = `
+  body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  .content {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 6rem 2rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .code {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 5rem;
+    font-weight: 300;
+    color: var(--green-deep);
+    line-height: 1;
+    opacity: 0.3;
+  }
+  h1 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--green-deep);
+    margin-top: 1rem;
+  }
+  .subtitle {
+    color: var(--text-muted);
+    font-style: italic;
+    font-size: 0.92rem;
+    margin-top: 0.5rem;
+  }
+  .links {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+  }
+  .links a { text-decoration: none; }
+  .links a:hover { text-decoration: underline; }
+  .bi {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--rule);
+    color: var(--text-muted);
+    font-style: italic;
+    font-size: 0.85rem;
+  }
+  .site-footer { width: 100%; }
+  @media (max-width: 640px) {
+    html { font-size: 15px; }
+    .content { padding: 4rem 1.2rem; }
+    .code { font-size: 3.5rem; }
+  }`;
+
+const fourOhFour = `<!DOCTYPE html>
+<html lang="en">
+<head>
+${headMeta({
+  title: 'Page Not Found — RCSD Open Data',
+  description: 'The page you are looking for does not exist.',
+  robots: 'noindex',
+  pageCSS: fourOhFourCSS,
+})}
+</head>
+<body>
+
+${siteNav({ lang: 'en' })}
+
+<main class="content">
+  <div class="code">404</div>
+  <h1>Page Not Found</h1>
+  <p class="subtitle">The page you're looking for doesn't exist or may have moved.</p>
+  <div class="links">
+    <a href="/">Home</a>
+    <a href="/meetings/">Meetings</a>
+    <a href="/district/">District</a>
+    <a href="https://data.rcsd.info">Data</a>
+  </div>
+  <div class="bi" lang="es">
+    Pagina no encontrada. <a href="/">Volver al inicio</a>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <p><a href="mailto:team@rcsd.info">team@rcsd.info</a></p>
+</footer>
+
+</body>
+</html>`;
+
+writeFileSync(resolve(ROOT, 'docs/404.html'), fourOhFour);
+console.log('Wrote docs/404.html');
 
 // ---- robots.txt ----
 const robots = `User-agent: *

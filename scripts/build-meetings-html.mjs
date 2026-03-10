@@ -7,6 +7,7 @@
 import { readFileSync, writeFileSync, existsSync, readdirSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
+import { headMeta, siteNav, siteFooter } from './html-parts.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
@@ -918,75 +919,7 @@ function renderDocuments() {
 
 function generatePage() {
 
-const html = `<!DOCTYPE html>
-<html lang="${L.lang}">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="index, follow">
-<title>${L.title}</title>
-<meta name="description" content="${L.metaDescription}">
-<meta name="theme-color" content="#1a3a2a">
-<link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
-<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="manifest" href="/site.webmanifest">
-<link rel="canonical" href="${L.canonicalUrl}">
-<link rel="alternate" hreflang="${L.lang}" href="${L.canonicalUrl}">
-<link rel="alternate" hreflang="${L.hreflangAltLang}" href="${L.hreflangAlt}">
-<meta property="og:title" content="${L.title}">
-<meta property="og:description" content="${L.metaDescription}">
-<meta property="og:url" content="${L.canonicalUrl}">
-<meta property="og:type" content="website">
-<meta property="og:image" content="https://rcsd.info/og-1200.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:locale" content="${L.ogLocale}">
-<meta property="og:site_name" content="RCSD Open Data">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://rcsd.info/og-1200.jpg">
-<meta name="twitter:title" content="${L.title}">
-<meta name="twitter:description" content="${L.metaDescription}">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --green-deep: #1a3a2a;
-    --green-mid: #2d5a3f;
-    --green-light: #4a8c6a;
-    --green-pale: #dcebd5;
-    --green-wash: #f0f6ed;
-    --cream: #faf8f4;
-    --cream-dark: #f2efe8;
-    --amber: #c4842d;
-    --amber-light: #f0d9a8;
-    --coral: #c45d4a;
-    --coral-light: #f5ddd8;
-    --text: #2a2a28;
-    --text-secondary: #5a5a56;
-    --text-muted: #8a8a84;
-    --rule: #d4d0c8;
-    --rule-light: #e8e4dc;
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  html {
-    font-size: 17px;
-    scroll-behavior: smooth;
-    background: var(--cream);
-  }
-
-  body {
-    font-family: 'Newsreader', Georgia, serif;
-    color: var(--text);
-    line-height: 1.65;
-    -webkit-font-smoothing: antialiased;
-    background: var(--cream);
-  }
-
+const pageCSS = `
   .section a {
     color: var(--green-mid);
     text-decoration-color: var(--rule);
@@ -1079,70 +1012,6 @@ const html = `<!DOCTYPE html>
     text-transform: uppercase;
     color: rgba(255,255,255,0.45);
     margin-top: 0.35rem;
-  }
-
-  /* ---- SITE NAV ---- */
-  .site-nav {
-    background: #1a2e1a;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-  }
-
-  .site-nav-inner {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .site-nav-tabs {
-    display: flex;
-    gap: 0;
-  }
-
-  .site-nav-tab {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.65rem;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: rgba(255,255,255,0.45);
-    padding: 0.7rem 1rem;
-    border-bottom: 2px solid transparent;
-    transition: color 0.2s, border-color 0.2s;
-  }
-
-  .site-nav-tab:hover {
-    color: rgba(255,255,255,0.8);
-  }
-
-  .site-nav-tab.active {
-    color: #fff;
-    border-bottom-color: var(--green-light);
-  }
-
-  .site-nav-right {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  .site-nav-lang {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.6rem;
-    letter-spacing: 0.04em;
-    color: rgba(255,255,255,0.45);
-    text-decoration: none;
-    padding: 0.35rem 0.65rem;
-    border: 1px solid rgba(255,255,255,0.2);
-    border-radius: 3px;
-    transition: color 0.2s, border-color 0.2s;
-  }
-
-  .site-nav-lang:hover {
-    color: rgba(255,255,255,0.8);
-    border-color: rgba(255,255,255,0.4);
   }
 
   /* ---- DISCLAIMER ---- */
@@ -1863,46 +1732,12 @@ const html = `<!DOCTYPE html>
     margin: 0.8rem 0 0.3rem;
   }
 
-  /* ---- FOOTER ---- */
-  .site-footer {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 2rem 2rem 4rem;
-    border-top: 1px solid var(--rule);
-    font-size: 0.8rem;
-    color: var(--text-muted);
-    font-style: italic;
-  }
-
-  .site-footer a {
-    color: var(--green-mid);
-  }
-
-  .footer-nav {
-    margin-top: 1rem;
-    font-style: normal;
-  }
-
-  .footer-nav a {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.68rem;
-    color: var(--green-mid);
-    text-decoration: none;
-    margin-right: 1.5rem;
-  }
-
-  .footer-nav a:hover {
-    text-decoration: underline;
-  }
-
-  /* ---- RESPONSIVE ---- */
+  /* ---- RESPONSIVE (page-specific) ---- */
   @media (max-width: 640px) {
     html { font-size: 15px; }
     .header-inner { padding: 3rem 1.2rem 2.5rem; }
     .content { padding: 0 1.2rem 4rem; }
     .header-meta { gap: 1.5rem; }
-    .site-nav-tab { padding: 0.6rem 0.7rem; font-size: 0.6rem; }
-    .site-nav-inner { padding: 0 1.2rem; }
     .toc a { padding: 0.8rem 0.6rem; font-size: 0.6rem; }
     .meeting-row { gap: 0.8rem; }
     .meeting-date { width: 2.6rem; }
@@ -1915,23 +1750,31 @@ const html = `<!DOCTYPE html>
     .doc-school-grid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); }
     .doc-tab { padding: 0.6rem 0.8rem; font-size: 0.6rem; }
   }
-</style>
+
+  /* page-specific footer overrides */
+  .site-footer { font-size: 0.8rem; text-align: left; }
+  .footer-nav { margin-top: 1rem; }
+  .footer-nav a { font-size: 0.68rem; margin: 0 1.5rem 0 0; }
+`;
+
+const html = `<!DOCTYPE html>
+<html lang="${L.lang}">
+<head>
+${headMeta({
+  title: L.title,
+  description: L.metaDescription,
+  canonical: L.canonicalUrl,
+  ogLocale: L.ogLocale,
+  hreflang: [
+    { lang: L.lang, href: L.canonicalUrl },
+    { lang: L.hreflangAltLang, href: L.hreflangAlt },
+  ],
+  pageCSS,
+})}
 </head>
 <body>
 
-<nav class="site-nav">
-  <div class="site-nav-inner">
-    <div class="site-nav-tabs">
-      <a href="/" class="site-nav-tab">${L.siteNavHome}</a>
-      <a href="${L.lang === 'en' ? '/meetings/' : '/reuniones/'}" class="site-nav-tab active">${L.siteNavMeetings}</a>
-      <a href="${L.lang === 'en' ? '/district/' : '/distrito/'}" class="site-nav-tab">${L.siteNavDistrict}</a>
-      <a href="https://github.com/dweekly/rcsd-meetings" class="site-nav-tab">${L.siteNavCode}</a>
-    </div>
-    <div class="site-nav-right">
-      <a href="${L.altLangHref}" class="site-nav-lang">${L.lang === 'en' ? 'ES' : 'EN'}</a>
-    </div>
-  </div>
-</nav>
+${siteNav({ activePage: 'meetings', lang: L.lang, altLangHref: L.altLangHref })}
 
 <header class="site-header">
   <div class="header-inner">
@@ -2003,15 +1846,7 @@ ${renderDocuments()}
 ${renderResources(data)}
 </main>
 
-<footer class="site-footer">
-  ${L.footerText} <a href="https://www.rcsdk8.net">rcsdk8.net</a> ${L.footerAnd} <a href="https://simbli.eboardsolutions.com/SB_Meetings/SB_MeetingListing.aspx?S=36030397">${L.footerPortal}</a>.
-  <div class="footer-nav">
-    <a href="/">${L.siteNavHome}</a>
-    <a href="${L.lang === 'en' ? '/meetings/' : '/reuniones/'}">${L.siteNavMeetings}</a>
-    <a href="${L.lang === 'en' ? '/district/' : '/distrito/'}">${L.siteNavDistrict}</a>
-    <a href="https://github.com/dweekly/rcsd-meetings">${L.navSourceCode} &#8599;</a>
-  </div>
-</footer>
+${siteFooter({ lang: L.lang })}
 
 <script>
 (function() {
