@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Page Not Found — RCSD Open Data</title>
+<meta name="theme-color" content="#1a3a2a">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green-deep: #1a3a2a;
+    --green-mid: #2d5a3f;
+    --green-light: #4a8c6a;
+    --cream: #faf8f4;
+    --cream-dark: #f2efe8;
+    --text: #2a2a28;
+    --text-secondary: #5a5a56;
+    --text-muted: #8a8a84;
+    --rule: #d4d0c8;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { font-size: 17px; background: var(--cream); }
+  body {
+    font-family: 'Newsreader', Georgia, serif;
+    color: var(--text);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  a {
+    color: var(--green-mid);
+    text-decoration-color: var(--rule);
+    text-underline-offset: 2px;
+  }
+  a:hover { color: var(--green-deep); }
+
+  .site-nav {
+    background: #1a2e1a;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .site-nav-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+  }
+  .site-nav-tabs { display: flex; gap: 0; }
+  .site-nav-tab {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: rgba(255,255,255,0.45);
+    padding: 0.7rem 1rem;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s;
+  }
+  .site-nav-tab:hover { color: rgba(255,255,255,0.8); }
+
+  .content {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 6rem 2rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .code {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 5rem;
+    font-weight: 300;
+    color: var(--green-deep);
+    line-height: 1;
+    opacity: 0.3;
+  }
+  h1 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--green-deep);
+    margin-top: 1rem;
+  }
+  .subtitle {
+    color: var(--text-muted);
+    font-style: italic;
+    font-size: 0.92rem;
+    margin-top: 0.5rem;
+  }
+  .links {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+  }
+  .links a { text-decoration: none; }
+  .links a:hover { text-decoration: underline; }
+
+  .bi {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--rule);
+    color: var(--text-muted);
+    font-style: italic;
+    font-size: 0.85rem;
+  }
+
+  .site-footer {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2rem;
+    border-top: 1px solid var(--rule);
+    text-align: center;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    font-style: italic;
+    width: 100%;
+  }
+  .site-footer a { color: var(--green-mid); }
+
+  @media (max-width: 640px) {
+    html { font-size: 15px; }
+    .content { padding: 4rem 1.2rem; }
+    .code { font-size: 3.5rem; }
+    .site-nav-tab { padding: 0.6rem 0.7rem; font-size: 0.6rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="site-nav-inner">
+    <div class="site-nav-tabs">
+      <a href="/" class="site-nav-tab">Home</a>
+      <a href="/meetings/" class="site-nav-tab">Meetings</a>
+      <a href="/district/" class="site-nav-tab">District</a>
+      <a href="https://github.com/dweekly/rcsd-meetings" class="site-nav-tab">Code</a>
+    </div>
+  </div>
+</nav>
+
+<main class="content">
+  <div class="code">404</div>
+  <h1>Page Not Found</h1>
+  <p class="subtitle">The page you're looking for doesn't exist or may have moved.</p>
+  <div class="links">
+    <a href="/">Home</a>
+    <a href="/meetings/">Meetings</a>
+    <a href="/district/">District</a>
+    <a href="https://data.rcsd.info">Data</a>
+  </div>
+  <div class="bi" lang="es">
+    Pagina no encontrada. <a href="/">Volver al inicio</a>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <p><a href="mailto:team@rcsd.info">team@rcsd.info</a></p>
+</footer>
+
+</body>
+</html>

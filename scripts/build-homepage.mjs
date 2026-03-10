@@ -141,6 +141,12 @@ const html = `<!DOCTYPE html>
 <meta name="twitter:image" content="https://rcsd.info/og-1200.jpg">
 <meta name="twitter:title" content="RCSD Open Data — Redwood City School District">
 <meta name="twitter:description" content="Open data portal for RCSD: board meetings, school directory, district overview, and key documents.">
+<meta name="theme-color" content="#1a3a2a">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
 <link rel="canonical" href="https://rcsd.info/">
 <link rel="alternate" hreflang="x-default" href="https://rcsd.info/">
 <link rel="alternate" hreflang="en" href="https://rcsd.info/">
@@ -926,8 +932,7 @@ console.log('Wrote docs/humans.txt');
 // ---- sitemap.xml ----
 const sitemapDate = new Date().toISOString().slice(0, 10);
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://rcsd.info/</loc>
     <lastmod>${sitemapDate}</lastmod>
@@ -939,32 +944,24 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
     <lastmod>${sitemapDate}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rcsd.info/meetings/" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://rcsd.info/reuniones/" />
   </url>
   <url>
     <loc>https://rcsd.info/reuniones/</loc>
     <lastmod>${sitemapDate}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://rcsd.info/reuniones/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://rcsd.info/meetings/" />
   </url>
   <url>
     <loc>https://rcsd.info/district/</loc>
     <lastmod>${sitemapDate}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rcsd.info/district/" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://rcsd.info/distrito/" />
   </url>
   <url>
     <loc>https://rcsd.info/distrito/</loc>
     <lastmod>${sitemapDate}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://rcsd.info/distrito/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://rcsd.info/district/" />
   </url>
 </urlset>
 `;
