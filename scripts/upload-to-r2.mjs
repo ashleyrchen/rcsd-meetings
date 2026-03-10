@@ -62,9 +62,29 @@ const dataArgs = [
 ];
 if (dryRun) dataArgs.push('--dry-run');
 
-console.log(`\nSyncing data JSON to R2: ${DATA_DIR} → ${BUCKET}/data`);
+console.log(`\nSyncing data JSON to R2: ${DATA_DIR} → ${BUCKET}/json`);
 try {
   execFileSync('rclone', dataArgs, { stdio: 'inherit', timeout: 120_000 });
+} catch (err) {
+  process.exit(err.status || 1);
+}
+
+// Sync data/sarc/ JSON files
+const SARC_DIR = resolve(ROOT, 'data/sarc');
+const sarcArgs = [
+  'copy',
+  SARC_DIR,
+  `${BUCKET}/json/sarc`,
+  '--include', '*.json',
+  '--progress',
+  '--stats-one-line',
+  '-v',
+];
+if (dryRun) sarcArgs.push('--dry-run');
+
+console.log(`\nSyncing SARC JSON to R2: ${SARC_DIR} → ${BUCKET}/json/sarc`);
+try {
+  execFileSync('rclone', sarcArgs, { stdio: 'inherit', timeout: 120_000 });
 } catch (err) {
   process.exit(err.status || 1);
 }
