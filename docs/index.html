@@ -10,7 +10,18 @@
 <meta property="og:description" content="Open data portal for RCSD: board meetings, school directory, district overview, and key documents.">
 <meta property="og:url" content="https://rcsd.info/">
 <meta property="og:type" content="website">
+<meta property="og:image" content="https://rcsd.info/og-1200.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="es_US">
+<meta property="og:site_name" content="RCSD Open Data">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://rcsd.info/og-1200.jpg">
+<meta name="twitter:title" content="RCSD Open Data — Redwood City School District">
+<meta name="twitter:description" content="Open data portal for RCSD: board meetings, school directory, district overview, and key documents.">
 <link rel="canonical" href="https://rcsd.info/">
+<link rel="alternate" hreflang="x-default" href="https://rcsd.info/">
 <link rel="alternate" hreflang="en" href="https://rcsd.info/">
 <link rel="alternate" hreflang="es" href="https://rcsd.info/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -580,6 +591,15 @@
     color: var(--text);
     white-space: pre-wrap;
     word-break: break-word;
+  }
+  .ai-section pre a {
+    color: var(--green-mid);
+    text-decoration: underline;
+    text-decoration-color: var(--rule);
+  }
+  .ai-section pre a:hover {
+    color: var(--green-deep);
+    text-decoration-color: var(--green-mid);
   }
   .ai-section code {
     background: rgba(0,0,0,0.04);
@@ -1254,18 +1274,18 @@
     <pre>
 RCSD Open Data — structured data for the Redwood City School District
 
-GitHub:  <code>https://github.com/dweekly/rcsd-meetings</code>
-Website: <code>https://rcsd.info</code>
-CDN:     <code>https://data.rcsd.info</code>
+GitHub:  <code><a href="https://github.com/dweekly/rcsd-meetings">https://github.com/dweekly/rcsd-meetings</a></code>
+Website: <code><a href="https://rcsd.info">https://rcsd.info</a></code>
+CDN:     <code><a href="https://data.rcsd.info">https://data.rcsd.info</a></code>
 
-DATA FILES (in repo /data/ directory):
-  meetings-data.json       All meetings with agendas, items, attachments, timestamps
-  meeting-summaries.json   Curated English summaries per meeting
-  meeting-summaries-es.json  Curated Spanish summaries
-  schools.json             School directory (12 schools, addresses, principals, bell schedules)
-  district-calendar.json   Key dates for the school year
-  youtube-index.json       YouTube video metadata
-  agenda-attachments.json  Attachment metadata with R2 URLs
+DATA FILES (<a href="https://data.rcsd.info/json/">data.rcsd.info/json/</a>):
+  <a href="https://data.rcsd.info/json/meetings-data.json">meetings-data.json</a>       All meetings with agendas, items, attachments, timestamps
+  <a href="https://data.rcsd.info/json/meeting-summaries.json">meeting-summaries.json</a>   Curated English summaries per meeting
+  <a href="https://data.rcsd.info/json/meeting-summaries-es.json">meeting-summaries-es.json</a>  Curated Spanish summaries
+  <a href="https://data.rcsd.info/json/schools.json">schools.json</a>             School directory (12 schools, addresses, principals, bell schedules)
+  <a href="https://data.rcsd.info/json/district-calendar.json">district-calendar.json</a>   Key dates for the school year
+  <a href="https://data.rcsd.info/json/youtube-index.json">youtube-index.json</a>       YouTube video metadata
+  <a href="https://data.rcsd.info/json/agenda-attachments.json">agenda-attachments.json</a>  Attachment metadata with R2 URLs
 
 R2 CDN DOCUMENT URLS:
   https://data.rcsd.info/agendas/{YYYY-MM-DD}-agenda.pdf

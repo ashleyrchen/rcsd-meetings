@@ -144,6 +144,11 @@ scanDocuments();
 const LOCALES = {
   en: {
     lang: 'en',
+    ogLocale: 'en_US',
+    metaDescription: 'Searchable archive of Redwood City School District board meetings with agendas, video, minutes, and transcripts.',
+    canonicalUrl: 'https://rcsd.info/meetings/',
+    hreflangAlt: 'https://rcsd.info/reuniones/',
+    hreflangAltLang: 'es',
     monthNames: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
     monthFull: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
     title: 'RCSD Board Meeting Index',
@@ -227,6 +232,11 @@ const LOCALES = {
   },
   es: {
     lang: 'es',
+    ogLocale: 'es_US',
+    metaDescription: 'Archivo de reuniones de la Junta del Distrito Escolar de Redwood City con agendas, video, actas y transcripciones.',
+    canonicalUrl: 'https://rcsd.info/reuniones/',
+    hreflangAlt: 'https://rcsd.info/meetings/',
+    hreflangAltLang: 'en',
     monthNames: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
     monthFull: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
     title: '\u00cdndice de Reuniones de la Junta de RCSD',
@@ -915,6 +925,23 @@ const html = `<!DOCTYPE html>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="index, follow">
 <title>${L.title}</title>
+<meta name="description" content="${L.metaDescription}">
+<link rel="canonical" href="${L.canonicalUrl}">
+<link rel="alternate" hreflang="${L.lang}" href="${L.canonicalUrl}">
+<link rel="alternate" hreflang="${L.hreflangAltLang}" href="${L.hreflangAlt}">
+<meta property="og:title" content="${L.title}">
+<meta property="og:description" content="${L.metaDescription}">
+<meta property="og:url" content="${L.canonicalUrl}">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://rcsd.info/og-1200.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="${L.ogLocale}">
+<meta property="og:site_name" content="RCSD Open Data">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://rcsd.info/og-1200.jpg">
+<meta name="twitter:title" content="${L.title}">
+<meta name="twitter:description" content="${L.metaDescription}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">

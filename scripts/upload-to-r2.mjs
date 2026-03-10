@@ -47,3 +47,24 @@ try {
 } catch (err) {
   process.exit(err.status || 1);
 }
+
+// Also sync data/*.json files to data/ prefix
+const DATA_DIR = resolve(ROOT, 'data');
+const dataArgs = [
+  'copy',
+  DATA_DIR,
+  `${BUCKET}/json`,
+  '--include', '*.json',
+  '--max-depth', '1',
+  '--progress',
+  '--stats-one-line',
+  '-v',
+];
+if (dryRun) dataArgs.push('--dry-run');
+
+console.log(`\nSyncing data JSON to R2: ${DATA_DIR} → ${BUCKET}/data`);
+try {
+  execFileSync('rclone', dataArgs, { stdio: 'inherit', timeout: 120_000 });
+} catch (err) {
+  process.exit(err.status || 1);
+}
