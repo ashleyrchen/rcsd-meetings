@@ -142,7 +142,7 @@ const SCHOOL_DATA = {
     spsaUrl: 'https://www.cde.ca.gov/re/lc/spsalcapplansummary.asp',
   },
   'mckinley-mit': {
-    description: 'McKinley MIT is a 6-8 technology-focused middle school of choice and a Community School. It is ATSI-identified (Additional Targeted Support and Improvement) and receives the largest single district investment ($610K) for intervention programs. It has the lowest CAASPP proficiency and highest suspension rate in the district.',
+    description: 'McKinley MIT is a 6-8 technology-focused middle school of choice and a Community School. It is ATSI-identified (Additional Targeted Support and Improvement) and receives the largest single district investment ($610K) for intervention programs. It has the lowest state test proficiency and highest suspension rate in the district.',
     descriptionEs: 'McKinley MIT es una escuela secundaria de elección enfocada en tecnología de 6-8 grados y una Escuela Comunitaria. Está identificada como ATSI (Apoyo y Mejora Adicional Dirigido) y recibe la mayor inversión distrital individual ($610K) para programas de intervención.',
     caaspp: { ela: 10, math: 7 },
     growth: { ela: 21.8, math: 20.0, elaTeachers: 22, mathTeachers: null },
@@ -845,11 +845,14 @@ const LABELS = {
     communitySchool: 'Community School',
     program: 'Special program',
     studentGrowth: 'Student Growth',
-    growthNote: 'Student growth measures the percentage of students achieving 105%+ of expected growth on CAASPP. It indicates how much students are learning each year, regardless of their starting point. Proficiency measures how many students are at or above grade level.',
-    elaGrowth: 'ELA Growth',
+    growthNote: 'Growth measures how much students are learning each year, regardless of their starting point. A school with low proficiency but high growth is accelerating learning. Proficiency measures how many students are at or above grade level right now.',
+    growthFinePrint: 'Growth = % of students achieving 105%+ of expected growth on the CAASPP (California Assessment of Student Performance and Progress), the annual state standardized test for grades 3\u20138. Proficiency = % meeting or exceeding grade-level standards.',
+    elaGrowth: 'English Growth',
     mathGrowth: 'Math Growth',
-    caasppProficiency: 'CAASPP Proficiency (2023-24)',
-    elaProficiency: 'ELA Proficiency',
+    districtAvgElaGrowth: 'District avg: 20.7%',
+    districtAvgMathGrowth: 'District avg: 13.8%',
+    caasppProficiency: 'CA State Testing (2023-24)',
+    elaProficiency: 'English Proficiency',
     mathProficiency: 'Math Proficiency',
     districtAvgEla: 'District avg: 42%',
     districtAvgMath: 'District avg: 35%',
@@ -908,7 +911,7 @@ const LABELS = {
     backToDistrict: 'All schools',
     disclaimer: '<strong>Draft document.</strong> Personally prepared by David Weekly; this is not a representation of the district or the Board of Trustees and may contain material factual errors. For official information, visit <a href="https://www.rcsdk8.net" style="color:#664d03; text-decoration:underline">rcsdk8.net</a>.',
     langSwitch: 'Leer en espa&ntilde;ol',
-    sourceNote: 'Sources: 2024-25 SARCs, 2025-26 SPSAs, 2025-26 LCAP, HR data briefing (Feb 2026). CAASPP proficiency from 2023-24 testing. Student growth from 2024-25 evaluations.',
+    sourceNote: 'Sources: 2024-25 SARCs, 2025-26 SPSAs, 2025-26 LCAP, HR data briefing (Feb 2026). Proficiency from 2023-24 CA state testing. Student growth from 2024-25 evaluations.',
     chronicAbsentNote: 'reported as 0% -- likely a data error',
     address: 'Address',
     phone: 'Phone',
@@ -933,11 +936,14 @@ const LABELS = {
     communitySchool: 'Escuela Comunitaria',
     program: 'Programa especial',
     studentGrowth: 'Crecimiento Estudiantil',
-    growthNote: 'El crecimiento estudiantil mide el porcentaje de estudiantes que logran más del 105% del crecimiento esperado en CAASPP. Indica cuánto aprenden los estudiantes cada año, independientemente de su punto de partida. La competencia mide cuántos estudiantes están al nivel de grado o por encima.',
-    elaGrowth: 'Crecimiento en ELA',
+    growthNote: 'El crecimiento mide cuánto aprenden los estudiantes cada año, sin importar su punto de partida. Una escuela con baja competencia pero alto crecimiento está acelerando el aprendizaje. La competencia mide cuántos estudiantes están al nivel de grado o por encima en este momento.',
+    growthFinePrint: 'Crecimiento = % de estudiantes que logran más del 105% del crecimiento esperado en el CAASPP (Evaluación del Rendimiento y Progreso Estudiantil de California), el examen estatal anual estandarizado para grados 3\u20138. Competencia = % que cumplen o superan los estándares de su grado.',
+    elaGrowth: 'Crecimiento en Inglés',
     mathGrowth: 'Crecimiento en Matemáticas',
-    caasppProficiency: 'Competencia CAASPP (2023-24)',
-    elaProficiency: 'Competencia en ELA',
+    districtAvgElaGrowth: 'Promedio del distrito: 20.7%',
+    districtAvgMathGrowth: 'Promedio del distrito: 13.8%',
+    caasppProficiency: 'Examen Estatal de CA (2023-24)',
+    elaProficiency: 'Competencia en Inglés',
     mathProficiency: 'Competencia en Matemáticas',
     districtAvgEla: 'Promedio del distrito: 42%',
     districtAvgMath: 'Promedio del distrito: 35%',
@@ -996,7 +1002,7 @@ const LABELS = {
     backToDistrict: 'Todas las escuelas',
     disclaimer: '<strong>Documento borrador.</strong> Preparado personalmente por David Weekly; esto no es una representación del distrito o de la Mesa Directiva y puede contener errores materiales. Para información oficial, visite <a href="https://www.rcsdk8.net" style="color:#664d03; text-decoration:underline">rcsdk8.net</a>.',
     langSwitch: 'Read in English',
-    sourceNote: 'Fuentes: SARCs 2024-25, SPSAs 2025-26, LCAP 2025-26, informes de recursos humanos (feb. 2026). Competencia CAASPP de las pruebas 2023-24. Crecimiento estudiantil de evaluaciones 2024-25.',
+    sourceNote: 'Fuentes: SARCs 2024-25, SPSAs 2025-26, LCAP 2025-26, informes de recursos humanos (feb. 2026). Competencia del examen estatal de CA 2023-24. Crecimiento estudiantil de evaluaciones 2024-25.',
     chronicAbsentNote: 'reportado como 0% -- probablemente un error de datos',
     address: 'Dirección',
     phone: 'Teléfono',
@@ -1191,12 +1197,12 @@ ${siteNav({ activePage: 'schools', lang, altLangHref })}
       <div class="stat-card">
         <div class="stat-card-label">${L.elaGrowth}</div>
         <div class="stat-card-value">${fmtPct(data.growth.ela)}</div>
-        <div class="stat-card-note">${isEs ? 'de estudiantes lograron 105%+ del crecimiento esperado' : 'of students achieved 105%+ expected growth'}${growthTeacherNote}</div>
+        <div class="stat-card-note">${L.districtAvgElaGrowth}</div>
       </div>
       <div class="stat-card">
         <div class="stat-card-label">${L.mathGrowth}</div>
         <div class="stat-card-value">${fmtPct(data.growth.math)}</div>
-        <div class="stat-card-note">${isEs ? 'de estudiantes lograron 105%+ del crecimiento esperado' : 'of students achieved 105%+ expected growth'}</div>
+        <div class="stat-card-note">${L.districtAvgMathGrowth}</div>
       </div>
     </div>
 
@@ -1219,6 +1225,7 @@ ${siteNav({ activePage: 'schools', lang, altLangHref })}
       <p>${L.growthNote}</p>
     </div>
 
+    <p class="source">${L.growthFinePrint}</p>
     <p class="source">${L.sourceNote}</p>
   </section>
 
@@ -1450,16 +1457,16 @@ function buildSchoolsIndex(lang) {
     heading: 'Escuelas del distrito',
     subtitle: 'Seleccione una escuela para ver datos detallados sobre rendimiento acad\u00e9mico, demograf\u00eda, financiamiento y recursos.',
     thSchool: 'Escuela', thGrades: 'Grados', thEnroll: 'Inscripci\u00f3n', thHighNeed: '% alta necesidad',
-    thGrowthEla: 'Crecimiento ELA', thGrowthMath: 'Crecimiento Mat',
-    growthExplainer: '<strong>% alta necesidad</strong> = porcentaje de estudiantes socioecon\u00f3micamente desfavorecidos o aprendices de ingl\u00e9s. <strong>Crecimiento</strong> = porcentaje de estudiantes que superaron el crecimiento esperado en CAASPP (evaluaci\u00f3n estatal). Mide cu\u00e1nto aprenden los estudiantes cada a\u00f1o, sin importar su punto de partida \u2014 una escuela con baja competencia pero alto crecimiento est\u00e1 acelerando el aprendizaje.',
+    thGrowthEla: 'Crec. Inglés', thGrowthMath: 'Crec. Mat',
+    growthExplainer: '<strong>% alta necesidad</strong> = porcentaje de estudiantes socioeconómicamente desfavorecidos o aprendices de inglés. <strong>Crecimiento</strong> = porcentaje de estudiantes que superaron el crecimiento esperado en el examen estatal de CA (CAASPP). Mide cuánto aprenden los estudiantes cada año, sin importar su punto de partida — una escuela con baja competencia pero alto crecimiento está acelerando el aprendizaje.',
     viewDetails: 'Ver detalles',
     pathPrefix: '/escuelas/',
   } : {
     heading: 'District schools',
     subtitle: 'Select a school to see detailed data on academic performance, demographics, funding, and resources.',
     thSchool: 'School', thGrades: 'Grades', thEnroll: 'Enrollment', thHighNeed: '% high-need',
-    thGrowthEla: 'ELA growth', thGrowthMath: 'Math growth',
-    growthExplainer: '<strong>% high-need</strong> = share of students who are socioeconomically disadvantaged or English learners. <strong>Growth</strong> = percentage of students who exceeded expected growth on the CAASPP state assessment. It measures how much students are learning each year regardless of starting point\u2014a school with low proficiency but high growth is accelerating learning.',
+    thGrowthEla: 'English growth', thGrowthMath: 'Math growth',
+    growthExplainer: '<strong>% high-need</strong> = share of students who are socioeconomically disadvantaged or English learners. <strong>Growth</strong> = percentage of students who exceeded expected growth on the CA state test (CAASPP). It measures how much students are learning each year regardless of starting point\u2014a school with low proficiency but high growth is accelerating learning.',
     viewDetails: 'View details',
     pathPrefix: '/schools/',
   };
