@@ -29,6 +29,12 @@ for (const school of schoolsData.schools) {
   }
 }
 
+// ---- Compute district average per-pupil expenditure from SARC data ----
+const sarcSlugs = Object.keys(SARC_DATA);
+const DISTRICT_AVG_PER_PUPIL = sarcSlugs.length > 0
+  ? Math.round(sarcSlugs.reduce((s, k) => s + (SARC_DATA[k].expenditures?.schoolSite?.totalPerPupil || 0), 0) / sarcSlugs.length)
+  : 0;
+
 // ---- Per-school enrichment data (from analysis docs) ----
 // All numbers sourced from district-analysis-2025-26.md and hr-data-briefing-2026-03.md
 
@@ -869,7 +875,9 @@ const LABELS = {
     sarcEstSchoolCost: 'Est. School Cost',
     sarcAvgTeacherSalary: 'Avg Teacher Salary',
     sarcDistrictLabel: 'District',
-    sarcExpenditureNote: 'Expenditure data from the 2022-23 SARC. Restricted funds include Title I, special ed, and EL programs. Unrestricted funds are general operating.',
+    sarcPtoPerPupil: 'PTO/PTA Per Pupil',
+    sarcNoPto: 'No PTO/PTA funding reported',
+    sarcExpenditureNote: 'Expenditure data from the 2022-23 SARC. Restricted funds include Title I, special ed, and EL programs. Unrestricted funds are general operating. PTO/PTA amounts are from the 2025-26 SPSA.',
     spsaBudget: 'Supplemental (SPSA)',
     perPupil: 'SPSA Per Pupil',
     fundingBreakdown: 'SPSA Source Breakdown',
@@ -960,7 +968,9 @@ const LABELS = {
     sarcEstSchoolCost: 'Costo Est. Escolar',
     sarcAvgTeacherSalary: 'Salario Prom. Maestro',
     sarcDistrictLabel: 'Distrito',
-    sarcExpenditureNote: 'Datos de gastos del SARC 2022-23. Los fondos restringidos incluyen Título I, educación especial y programas para estudiantes de inglés. Los fondos no restringidos son operación general.',
+    sarcPtoPerPupil: 'PTO/PTA Por Alumno',
+    sarcNoPto: 'Sin financiamiento PTO/PTA reportado',
+    sarcExpenditureNote: 'Datos de gastos del SARC 2022-23. Los fondos restringidos incluyen Título I, educación especial y programas para estudiantes de inglés. Los fondos no restringidos son operación general. Los montos de PTO/PTA son del SPSA 2025-26.',
     spsaBudget: 'Suplementario (SPSA)',
     perPupil: 'SPSA Por Alumno',
     fundingBreakdown: 'Desglose de Fuentes SPSA',
@@ -1054,6 +1064,8 @@ function buildSchoolPage(school, data, lang) {
   const sarcExp = sarc?.expenditures?.schoolSite;
   const sarcEnrollment = sarc?.enrollment?.total;
   const estSchoolCost = sarcExp && sarcEnrollment ? sarcExp.totalPerPupil * sarcEnrollment : null;
+  const ptoTotal = data.funding.ptoPta || 0;
+  const ptoPerPupil = school.enrollment > 0 ? Math.round(ptoTotal / school.enrollment) : 0;
 
   // Teacher demo highlights
   const demoItems = [];
@@ -1268,17 +1280,22 @@ ${siteNav({ activePage: 'schools', lang, altLangHref })}
       <div class="stat-card">
         <div class="stat-card-label">${L.sarcTotalPerPupil}</div>
         <div class="stat-card-value">$${fmt(sarcExp.totalPerPupil)}</div>
-        <div class="stat-card-note">${L.sarcRestricted}: $${fmt(sarcExp.restrictedPerPupil)} · ${L.sarcUnrestricted}: $${fmt(sarcExp.unrestrictedPerPupil)}</div>
+        <div class="stat-card-note">${L.sarcDistrictLabel} ${isEs ? 'prom' : 'avg'}: $${fmt(DISTRICT_AVG_PER_PUPIL)}</div>
       </div>
       <div class="stat-card">
         <div class="stat-card-label">${L.sarcEstSchoolCost}</div>
         <div class="stat-card-value">${fmtDollar(estSchoolCost)}</div>
-        <div class="stat-card-note">${fmt(sarcEnrollment)} ${isEs ? 'alumnos' : 'students'} &times; $${fmt(sarcExp.totalPerPupil)}/${isEs ? 'alumno' : 'student'}</div>
+        <div class="stat-card-note">${L.sarcRestricted}: $${fmt(sarcExp.restrictedPerPupil)} · ${L.sarcUnrestricted}: $${fmt(sarcExp.unrestrictedPerPupil)}</div>
       </div>
       <div class="stat-card">
         <div class="stat-card-label">${L.sarcAvgTeacherSalary}</div>
         <div class="stat-card-value">$${fmt(sarcExp.avgTeacherSalary)}</div>
         <div class="stat-card-note">${L.sarcDistrictLabel}: $${fmt(sarc.expenditures.district.avgTeacherSalary)}</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-label">${L.sarcPtoPerPupil}</div>
+        <div class="stat-card-value">${ptoPerPupil > 0 ? '$' + fmt(ptoPerPupil) : '\u2014'}</div>
+        <div class="stat-card-note">${ptoTotal > 0 ? fmtDollar(ptoTotal) + ' / ' + fmt(school.enrollment) + ' ' + (isEs ? 'alumnos' : 'students') : L.sarcNoPto}</div>
       </div>
     </div>
 
