@@ -97,16 +97,16 @@
   .site-nav-tabs { display: flex; gap: 0; }
   .site-nav-tab {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.65rem;
+    font-size: 0.8rem;
     letter-spacing: 0.05em;
     text-transform: uppercase;
     text-decoration: none;
-    color: rgba(255,255,255,0.45);
-    padding: 0.7rem 1rem;
+    color: rgba(255,255,255,0.7);
+    padding: 0.75rem 1rem;
     border-bottom: 2px solid transparent;
     transition: color 0.2s, border-color 0.2s;
   }
-  .site-nav-tab:hover { color: rgba(255,255,255,0.8); }
+  .site-nav-tab:hover { color: #fff; }
   .site-nav-tab.active { color: #fff; border-bottom-color: var(--green-light); }
 
   .site-nav-right {
@@ -116,18 +116,18 @@
   }
   .site-nav-lang {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.6rem;
+    font-size: 0.75rem;
     letter-spacing: 0.04em;
-    color: rgba(255,255,255,0.45);
+    color: rgba(255,255,255,0.7);
     text-decoration: none;
     padding: 0.35rem 0.65rem;
-    border: 1px solid rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.35);
     border-radius: 3px;
     transition: color 0.2s, border-color 0.2s;
   }
   .site-nav-lang:hover {
-    color: rgba(255,255,255,0.8);
-    border-color: rgba(255,255,255,0.4);
+    color: #fff;
+    border-color: rgba(255,255,255,0.6);
   }
 
   /* ---- FOOTER ---- */
@@ -159,7 +159,7 @@
 
   /* ---- RESPONSIVE (nav + footer) ---- */
   @media (max-width: 640px) {
-    .site-nav-tab { padding: 0.6rem 0.7rem; font-size: 0.6rem; }
+    .site-nav-tab { padding: 0.6rem 0.7rem; font-size: 0.7rem; }
     .site-nav-inner { padding: 0 1.2rem; }
   }
 
