@@ -209,16 +209,7 @@
       "lunchUrl": "https://menus.healthepro.com/organizations/1184/sites/9281/menus/103771",
       "communitySchool": true,
       "cdsCode": "41690056044556",
-      "pto": {
-        "name": "McKinley PTM",
-        "url": "https://mckinleyptm.org/",
-        "ein": null,
-        "ctNumber": null,
-        "rctStatus": "not-registered",
-        "revenue": null,
-        "revenueFY": null,
-        "sourceUrl": null
-      }
+      "pto": null
     },
     {
       "slug": "north-star",
@@ -286,6 +277,14 @@
         "revenue": 499572,
         "revenueFY": "2024-25",
         "sourceUrl": "https://projects.propublica.org/nonprofits/organizations/943179780"
+      },
+      "miBooster": {
+        "name": "Redwood City Mandarin Immersion Scholars (RCMIS)",
+        "url": "https://sites.google.com/rcmis.org/rcmis/",
+        "ein": "82-3449819",
+        "revenue": 398468,
+        "revenueFY": "2024-25",
+        "sourceUrl": "https://projects.propublica.org/nonprofits/organizations/823449819"
       }
     },
     {

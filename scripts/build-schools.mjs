@@ -1087,9 +1087,13 @@ function buildSchoolPage(school, data, lang) {
   const sarc = SARC_DATA[slug];
   const sarcExp = sarc?.expenditures?.schoolSite;
   const sarcEnrollment = sarc?.enrollment?.total;
-  const estSchoolCost = sarcExp && sarcEnrollment ? sarcExp.totalPerPupil * sarcEnrollment : null;
   const ptoRevenue = school.pto?.revenue || 0;
   const ptoPerPupil = ptoRevenue > 0 && school.enrollment > 0 ? Math.round(ptoRevenue / school.enrollment) : 0;
+  const miBoosterRevenue = school.miBooster?.revenue || 0;
+  const miBoosterPerPupil = miBoosterRevenue > 0 && school.enrollment > 0 ? Math.round(miBoosterRevenue / school.enrollment) : 0;
+  const communityPerPupil = ptoPerPupil + miBoosterPerPupil;
+  const totalPerPupil = sarcExp ? sarcExp.totalPerPupil + communityPerPupil : 0;
+  const estSchoolCost = totalPerPupil > 0 && school.enrollment > 0 ? totalPerPupil * school.enrollment : null;
 
   // Teacher demo highlights
   const demoItems = [];
@@ -1201,12 +1205,13 @@ ${siteNav({ activePage: 'schools', lang, altLangHref })}
         <div class="stat-card-label">${L.highNeed}</div>
         <div class="stat-card-value">${fmtPct(school.highNeedPct)}</div>
       </div>
-      <div class="stat-card">
-        <div class="stat-card-label">${L.principal}</div>
-        <div class="stat-card-value" style="font-size:1.1rem; display:flex; align-items:center; gap:0.5rem; justify-content:center">
-          ${existsSync(resolve(ROOT, 'docs/img/principals', slug + '.jpg')) ? `<img src="/img/principals/${slug}.jpg" alt="${school.principal}" style="width:40px; height:40px; border-radius:50%; object-fit:cover">` : ''}
-          <a href="${school.website}/our-school/meet-our-school-leadership" style="color:var(--green-mid); text-decoration:underline; text-decoration-color:var(--rule); text-underline-offset:2px">${school.principal}</a>
-        </div>
+    </div>
+
+    <div style="display:flex; align-items:center; gap:1.2rem; margin:1.5rem 0; padding:1rem 1.2rem; background:var(--green-wash); border-radius:8px">
+      ${existsSync(resolve(ROOT, 'docs/img/principals', slug + '.jpg')) ? `<img src="/img/principals/${slug}.jpg" alt="${school.principal}" style="width:100px; border-radius:8px; flex-shrink:0">` : ''}
+      <div>
+        <div style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--text-muted); font-family:'IBM Plex Mono',monospace">${L.principal}</div>
+        <div style="font-size:1.3rem; font-weight:500; margin-top:0.15rem"><a href="${school.website}/our-school/meet-our-school-leadership" style="color:var(--green-mid); text-decoration:underline; text-decoration-color:var(--rule); text-underline-offset:2px">${school.principal}</a></div>
       </div>
     </div>
 
@@ -1306,8 +1311,8 @@ ${siteNav({ activePage: 'schools', lang, altLangHref })}
     <div class="stat-grid">
       <div class="stat-card">
         <div class="stat-card-label">${L.sarcTotalPerPupil}</div>
-        <div class="stat-card-value">$${fmt(sarcExp.totalPerPupil)}</div>
-        <div class="stat-card-note">${L.sarcDistrictLabel} ${isEs ? 'prom' : 'avg'}: $${fmt(DISTRICT_AVG_PER_PUPIL)}</div>
+        <div class="stat-card-value">$${fmt(totalPerPupil)}</div>
+        <div class="stat-card-note">${isEs ? 'Distrito' : 'District'}: $${fmt(sarcExp.totalPerPupil)}${communityPerPupil > 0 ? ` + ${isEs ? 'comunidad' : 'community'}: $${fmt(communityPerPupil)}` : ''}</div>
       </div>
       <div class="stat-card">
         <div class="stat-card-label">${L.sarcEstSchoolCost}</div>
@@ -1321,8 +1326,8 @@ ${siteNav({ activePage: 'schools', lang, altLangHref })}
       </div>
       <div class="stat-card">
         <div class="stat-card-label">${L.sarcPtoPerPupil}</div>
-        <div class="stat-card-value">${ptoPerPupil > 0 ? '$' + fmt(ptoPerPupil) : '\u2014'}</div>
-        <div class="stat-card-note">${school.pto?.revenue ? '<a href="' + school.pto.sourceUrl + '" target="_blank">' + fmtDollar(ptoRevenue) + ' ' + (isEs ? 'ingresos anuales' : 'annual revenue') + ' (IRS 990) &#8599;</a>' : L.sarcNoPto}</div>
+        <div class="stat-card-value">${communityPerPupil > 0 ? '$' + fmt(communityPerPupil) : '\u2014'}</div>
+        <div class="stat-card-note">${school.pto?.revenue ? '<a href="' + school.pto.sourceUrl + '" target="_blank">' + fmtDollar(ptoRevenue) + ' ' + (isEs ? 'ingresos anuales' : 'annual revenue') + ' (IRS 990) &#8599;</a>' : L.sarcNoPto}${school.miBooster?.revenue ? '<br><a href="' + school.miBooster.sourceUrl + '" target="_blank">+ ' + fmtDollar(miBoosterRevenue) + ' RCMIS (IRS 990) &#8599;</a>' : ''}</div>
       </div>
     </div>
 
@@ -1459,6 +1464,7 @@ ${siteNav({ activePage: 'schools', lang, altLangHref })}
         ${school.pto?.url
           ? `<p><a href="${school.pto.url}" target="_blank">${school.pto.name || L.visitWebsite} &#8599;</a></p>${rctStatusNote(school.pto, isEs)}`
           : `<p><a href="https://www.rcef.org/" target="_blank">${isEs ? 'Fundación Educativa de Redwood City (RCEF)' : 'Redwood City Education Foundation (RCEF)'} &#8599;</a></p>`}
+        ${school.miBooster?.url ? `<p style="margin-top:0.4rem"><a href="${school.miBooster.url}" target="_blank">${school.miBooster.name} &#8599;</a></p>` : ''}
       </div>
       <div class="resource-card">
         <h4>${L.safetyPlan}</h4>
