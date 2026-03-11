@@ -44,7 +44,7 @@ function schoolCard(s) {
 
   const dashboardUrl = `https://www.caschooldashboard.org/reports/${s.cdsCode}/2024`;
   const spsaUrl = `https://data.rcsd.info/documents/spsa/2025-26/${s.slug}.pdf`;
-  const ptoLink = s.ptoUrl ? `<a href="${s.ptoUrl}" target="_blank" rel="noopener">PTO</a>` : '';
+  const ptoLink = s.pto?.url ? `<a href="${s.pto.url}" target="_blank" rel="noopener">PTO</a>` : '';
 
   return `
     <div class="school-card">

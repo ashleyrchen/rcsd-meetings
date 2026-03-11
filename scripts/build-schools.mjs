@@ -35,22 +35,6 @@ const DISTRICT_AVG_PER_PUPIL = sarcSlugs.length > 0
   ? Math.round(sarcSlugs.reduce((s, k) => s + (SARC_DATA[k].expenditures?.schoolSite?.totalPerPupil || 0), 0) / sarcSlugs.length)
   : 0;
 
-// ---- PTO/PTA annual budgets from IRS Form 990/990-EZ filings ----
-// Revenue figures from most recent filing (FY ending 2024 or 2025)
-const PTO_BUDGET = {
-  'adelante-selby': { revenue: 251126, fy: '2024-25', org: 'Unidos Y Adelante', ein: '48-1266142' },
-  'clifford':       { revenue: 178910, fy: '2023-24', org: 'Clifford School PTO', ein: '94-2975493' },
-  'garfield':       null,
-  'henry-ford':     { revenue: 72588,  fy: '2023-24', org: 'Henry Ford Elementary PTA', ein: '68-0487106' },
-  'hoover':         null,
-  'kennedy':        { revenue: 285984, fy: '2024-25', org: 'Kennedy Cougars PTO', ein: '47-1431115' },
-  'mckinley-mit':   null,
-  'north-star':     { revenue: 626085, fy: '2024-25', org: 'North Star Academy Parents Club', ein: '94-3310787' },
-  'orion':          { revenue: 499572, fy: '2024-25', org: 'Starship Orion', ein: '94-3179780' },
-  'roosevelt':      { revenue: 77334,  fy: '2024-25', org: 'Roosevelt Elementary PTA', ein: '94-6173875' },
-  'roy-cloud':      { revenue: 526519, fy: '2024-25', org: 'Roy Cloud School Parents Club', ein: '26-4393209' },
-  'taft':           null,
-};
 
 // ---- Per-school enrichment data (from analysis docs) ----
 // All numbers sourced from district-analysis-2025-26.md and hr-data-briefing-2026-03.md
@@ -893,7 +877,7 @@ const LABELS = {
     sarcAvgTeacherSalary: 'Avg Teacher Salary',
     sarcDistrictLabel: 'District',
     sarcPtoPerPupil: 'PTO/PTA Per Pupil',
-    sarcNoPto: 'No PTO/PTA funding reported',
+    sarcNoPto: 'Supported by <a href="https://www.rcef.org/" target="_blank">RCEF</a>',
     sarcExpenditureNote: 'Per-pupil expenditure data from the 2022-23 SARC. Restricted funds include Title I, special ed, and EL programs. Unrestricted funds are general operating. PTO/PTA revenue from IRS Form 990 filings.',
     spsaBudget: 'Supplemental (SPSA)',
     perPupil: 'SPSA Per Pupil',
@@ -986,7 +970,7 @@ const LABELS = {
     sarcAvgTeacherSalary: 'Salario Prom. Maestro',
     sarcDistrictLabel: 'Distrito',
     sarcPtoPerPupil: 'PTO/PTA Por Alumno',
-    sarcNoPto: 'Sin financiamiento PTO/PTA reportado',
+    sarcNoPto: 'Apoyado por <a href="https://www.rcef.org/" target="_blank">RCEF</a>',
     sarcExpenditureNote: 'Datos de gastos por alumno del SARC 2022-23. Los fondos restringidos incluyen Título I, educación especial y programas para estudiantes de inglés. Los fondos no restringidos son operación general. Ingresos de PTO/PTA de declaraciones IRS Form 990.',
     spsaBudget: 'Suplementario (SPSA)',
     perPupil: 'SPSA Por Alumno',
@@ -1081,8 +1065,7 @@ function buildSchoolPage(school, data, lang) {
   const sarcExp = sarc?.expenditures?.schoolSite;
   const sarcEnrollment = sarc?.enrollment?.total;
   const estSchoolCost = sarcExp && sarcEnrollment ? sarcExp.totalPerPupil * sarcEnrollment : null;
-  const ptoBudget = PTO_BUDGET[slug];
-  const ptoRevenue = ptoBudget?.revenue || 0;
+  const ptoRevenue = school.pto?.revenue || 0;
   const ptoPerPupil = ptoRevenue > 0 && school.enrollment > 0 ? Math.round(ptoRevenue / school.enrollment) : 0;
 
   // Teacher demo highlights
@@ -1197,7 +1180,10 @@ ${siteNav({ activePage: 'schools', lang, altLangHref })}
       </div>
       <div class="stat-card">
         <div class="stat-card-label">${L.principal}</div>
-        <div class="stat-card-value" style="font-size:1.1rem"><a href="${school.website}/our-school/meet-our-school-leadership" style="color:var(--green-mid); text-decoration:underline; text-decoration-color:var(--rule); text-underline-offset:2px">${school.principal}</a></div>
+        <div class="stat-card-value" style="font-size:1.1rem; display:flex; align-items:center; gap:0.5rem; justify-content:center">
+          ${existsSync(resolve(ROOT, 'docs/img/principals', slug + '.jpg')) ? `<img src="/img/principals/${slug}.jpg" alt="${school.principal}" style="width:40px; height:40px; border-radius:50%; object-fit:cover">` : ''}
+          <a href="${school.website}/our-school/meet-our-school-leadership" style="color:var(--green-mid); text-decoration:underline; text-decoration-color:var(--rule); text-underline-offset:2px">${school.principal}</a>
+        </div>
       </div>
     </div>
 
@@ -1313,7 +1299,7 @@ ${siteNav({ activePage: 'schools', lang, altLangHref })}
       <div class="stat-card">
         <div class="stat-card-label">${L.sarcPtoPerPupil}</div>
         <div class="stat-card-value">${ptoPerPupil > 0 ? '$' + fmt(ptoPerPupil) : '\u2014'}</div>
-        <div class="stat-card-note">${ptoBudget ? fmtDollar(ptoRevenue) + ' ' + (isEs ? 'ingresos anuales' : 'annual revenue') + ' (IRS 990)' : L.sarcNoPto}</div>
+        <div class="stat-card-note">${school.pto?.revenue ? '<a href="' + school.pto.sourceUrl + '" target="_blank">' + fmtDollar(ptoRevenue) + ' ' + (isEs ? 'ingresos anuales' : 'annual revenue') + ' (IRS 990) &#8599;</a>' : L.sarcNoPto}</div>
       </div>
     </div>
 
@@ -1447,9 +1433,9 @@ ${siteNav({ activePage: 'schools', lang, altLangHref })}
       </div>
       <div class="resource-card">
         <h4>${L.ptoPtaOrg}</h4>
-        ${school.ptoUrl
-          ? `<p><a href="${school.ptoUrl}" target="_blank">${L.visitWebsite} &#8599;</a></p>`
-          : `<p class="coming-soon">${L.comingSoon}</p>`}
+        ${school.pto?.url
+          ? `<p><a href="${school.pto.url}" target="_blank">${school.pto.name || L.visitWebsite} &#8599;</a></p>`
+          : `<p><a href="https://www.rcef.org/" target="_blank">${isEs ? 'Fundación Educativa de Redwood City (RCEF)' : 'Redwood City Education Foundation (RCEF)'} &#8599;</a></p>`}
       </div>
       <div class="resource-card">
         <h4>${L.safetyPlan}</h4>

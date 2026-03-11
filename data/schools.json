@@ -23,7 +23,15 @@
       "lunchUrl": "https://menus.healthepro.com/organizations/1184/sites/9274/menus/103750",
       "communitySchool": true,
       "cdsCode": "41690056044580",
-      "ptoUrl": "https://unidospto.org/"
+      "pto": {
+        "name": "Unidos Y Adelante",
+        "url": "https://unidospto.org/",
+        "ein": "48-1266142",
+        "ctNumber": "119817",
+        "revenue": 251126,
+        "revenueFY": "2024-25",
+        "sourceUrl": "https://projects.propublica.org/nonprofits/organizations/481266142"
+      }
     },
     {
       "slug": "clifford",
@@ -48,7 +56,15 @@
       "lunchUrl": "https://menus.healthepro.com/organizations/1184/sites/9275/menus/103731",
       "communitySchool": false,
       "cdsCode": "41690056044424",
-      "ptoUrl": "https://cliffordschoolpto.org/"
+      "pto": {
+        "name": "Clifford School Parents Club",
+        "url": "https://cliffordschoolpto.org/",
+        "ein": "94-2975493",
+        "ctNumber": "067286",
+        "revenue": 178910,
+        "revenueFY": "2023-24",
+        "sourceUrl": "https://projects.propublica.org/nonprofits/organizations/942975493"
+      }
     },
     {
       "slug": "garfield",
@@ -73,7 +89,7 @@
       "lunchUrl": "https://menus.healthepro.com/organizations/1184/sites/9277/menus/103763",
       "communitySchool": true,
       "cdsCode": "41690056044473",
-      "ptoUrl": null
+      "pto": null
     },
     {
       "slug": "henry-ford",
@@ -98,7 +114,15 @@
       "lunchUrl": "https://menus.healthepro.com/organizations/1184/sites/9278/menus/103766",
       "communitySchool": true,
       "cdsCode": "41690056044499",
-      "ptoUrl": "https://henryford.rcsdk8.net/our-community/our-school-pta"
+      "pto": {
+        "name": "Henry Ford Elementary PTA",
+        "url": "https://henryford.rcsdk8.net/our-community/our-school-pta",
+        "ein": "68-0487106",
+        "ctNumber": "CT0190659",
+        "revenue": 72588,
+        "revenueFY": "2023-24",
+        "sourceUrl": "https://projects.propublica.org/nonprofits/organizations/680487106"
+      }
     },
     {
       "slug": "hoover",
@@ -123,7 +147,7 @@
       "lunchUrl": "https://menus.healthepro.com/organizations/1184/sites/9279/menus/103767",
       "communitySchool": true,
       "cdsCode": "41690056044507",
-      "ptoUrl": null
+      "pto": null
     },
     {
       "slug": "kennedy",
@@ -148,7 +172,15 @@
       "lunchUrl": "https://menus.healthepro.com/organizations/1184/sites/9280/menus/103754",
       "communitySchool": true,
       "cdsCode": "41690056044531",
-      "ptoUrl": "https://kennedycougarspto.org/"
+      "pto": {
+        "name": "Kennedy Cougars PTO",
+        "url": "https://kennedycougarspto.org/",
+        "ein": "47-1431115",
+        "ctNumber": "CT0223912",
+        "revenue": 285984,
+        "revenueFY": "2024-25",
+        "sourceUrl": "https://projects.propublica.org/nonprofits/organizations/471431115"
+      }
     },
     {
       "slug": "mckinley-mit",
@@ -173,7 +205,14 @@
       "lunchUrl": "https://menus.healthepro.com/organizations/1184/sites/9281/menus/103771",
       "communitySchool": true,
       "cdsCode": "41690056044556",
-      "ptoUrl": "https://mckinleyptm.org/"
+      "pto": {
+        "name": "McKinley PTM",
+        "url": "https://mckinleyptm.org/",
+        "ein": null,
+        "revenue": null,
+        "revenueFY": null,
+        "sourceUrl": null
+      }
     },
     {
       "slug": "north-star",
@@ -198,7 +237,15 @@
       "lunchUrl": "https://menus.healthepro.com/organizations/1184/sites/9366/menus/103771",
       "communitySchool": false,
       "cdsCode": "41690056115026",
-      "ptoUrl": "https://www.nsaparents.com/"
+      "pto": {
+        "name": "North Star Academy Parents Club",
+        "url": "https://www.nsaparents.com/",
+        "ein": "94-3310787",
+        "ctNumber": "129094",
+        "revenue": 626085,
+        "revenueFY": "2024-25",
+        "sourceUrl": "https://projects.propublica.org/nonprofits/organizations/943310787"
+      }
     },
     {
       "slug": "orion",
@@ -223,7 +270,15 @@
       "lunchUrl": "https://menus.healthepro.com/organizations/1184/sites/9282/menus/103774",
       "communitySchool": false,
       "cdsCode": "41690056102941",
-      "ptoUrl": "https://www.starshiporion.org/"
+      "pto": {
+        "name": "Starship Orion",
+        "url": "https://www.starshiporion.org/",
+        "ein": "94-3179780",
+        "ctNumber": "132514",
+        "revenue": 499572,
+        "revenueFY": "2024-25",
+        "sourceUrl": "https://projects.propublica.org/nonprofits/organizations/943179780"
+      }
     },
     {
       "slug": "roosevelt",
@@ -248,7 +303,15 @@
       "lunchUrl": "https://menus.healthepro.com/organizations/1184/sites/9284/menus/103755",
       "communitySchool": true,
       "cdsCode": "41690056044572",
-      "ptoUrl": "http://roosevelt-pta.com/"
+      "pto": {
+        "name": "Roosevelt Elementary PTA",
+        "url": "http://roosevelt-pta.com/",
+        "ein": "94-6173875",
+        "ctNumber": "CT0192014",
+        "revenue": 77334,
+        "revenueFY": "2024-25",
+        "sourceUrl": "https://projects.propublica.org/nonprofits/organizations/946173875"
+      }
     },
     {
       "slug": "roy-cloud",
@@ -273,7 +336,15 @@
       "lunchUrl": "https://menus.healthepro.com/organizations/1184/sites/9283/menus/103751",
       "communitySchool": false,
       "cdsCode": "41690056044432",
-      "ptoUrl": "https://roycloudpto.com/"
+      "pto": {
+        "name": "Roy Cloud School Parents Club",
+        "url": "https://roycloudpto.com/",
+        "ein": "26-4393209",
+        "ctNumber": "CT0192113",
+        "revenue": 526519,
+        "revenueFY": "2024-25",
+        "sourceUrl": "https://projects.propublica.org/nonprofits/organizations/264393209"
+      }
     },
     {
       "slug": "taft",
@@ -298,8 +369,18 @@
       "lunchUrl": "https://menus.healthepro.com/organizations/1184/sites/9285/menus/103756",
       "communitySchool": true,
       "cdsCode": "41690056044598",
-      "ptoUrl": null
+      "pto": null
     }
   ],
-  "lastUpdated": "2026-03-09"
+  "rcef": {
+    "name": "Redwood City Education Foundation",
+    "nameEs": "Fundación Educativa de Redwood City",
+    "url": "https://www.rcef.org/",
+    "ein": "94-2903141",
+    "ctNumber": "051972",
+    "description": "RCEF provides supplementary funding for all RCSD schools, with a focus on equity for schools without active PTOs.",
+    "descriptionEs": "RCEF proporciona financiamiento suplementario para todas las escuelas de RCSD, con un enfoque en equidad para escuelas sin PTO activas.",
+    "sourceUrl": "https://projects.propublica.org/nonprofits/organizations/942903141"
+  },
+  "lastUpdated": "2026-03-10"
 }
