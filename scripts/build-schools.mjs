@@ -1451,6 +1451,7 @@ function buildSchoolsIndex(lang) {
     subtitle: 'Seleccione una escuela para ver datos detallados sobre rendimiento acad\u00e9mico, demograf\u00eda, financiamiento y recursos.',
     thSchool: 'Escuela', thGrades: 'Grados', thEnroll: 'Inscripci\u00f3n', thHighNeed: '% alta necesidad',
     thGrowthEla: 'Crecimiento ELA', thGrowthMath: 'Crecimiento Mat',
+    growthExplainer: '<strong>% alta necesidad</strong> = porcentaje de estudiantes socioecon\u00f3micamente desfavorecidos o aprendices de ingl\u00e9s. <strong>Crecimiento</strong> = porcentaje de estudiantes que superaron el crecimiento esperado en CAASPP (evaluaci\u00f3n estatal). Mide cu\u00e1nto aprenden los estudiantes cada a\u00f1o, sin importar su punto de partida \u2014 una escuela con baja competencia pero alto crecimiento est\u00e1 acelerando el aprendizaje.',
     viewDetails: 'Ver detalles',
     pathPrefix: '/escuelas/',
   } : {
@@ -1458,6 +1459,7 @@ function buildSchoolsIndex(lang) {
     subtitle: 'Select a school to see detailed data on academic performance, demographics, funding, and resources.',
     thSchool: 'School', thGrades: 'Grades', thEnroll: 'Enrollment', thHighNeed: '% high-need',
     thGrowthEla: 'ELA growth', thGrowthMath: 'Math growth',
+    growthExplainer: '<strong>% high-need</strong> = share of students who are socioeconomically disadvantaged or English learners. <strong>Growth</strong> = percentage of students who exceeded expected growth on the CAASPP state assessment. It measures how much students are learning each year regardless of starting point\u2014a school with low proficiency but high growth is accelerating learning.',
     viewDetails: 'View details',
     pathPrefix: '/schools/',
   };
@@ -1566,6 +1568,8 @@ ${rows}
       </tbody>
     </table>
   </div>
+
+  <p style="font-size:0.82rem; color:var(--text-muted); margin-top:1.2rem; line-height:1.5">${L.growthExplainer}</p>
 </div>
 
 ${siteFooter({ lang })}
