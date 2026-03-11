@@ -218,6 +218,17 @@
     color: #fff;
   }
 
+  .header-logo {
+    height: 120px;
+    width: auto;
+    max-width: 480px;
+    margin-bottom: 1.2rem;
+    object-fit: contain;
+    background: #fff;
+    padding: 14px 24px;
+    border-radius: 12px;
+  }
+
   .header-title {
     font-family: 'Fraunces', Georgia, serif;
     font-size: clamp(1.8rem, 4.5vw, 2.8rem);
@@ -577,6 +588,14 @@
     margin-top: 0.3rem;
     line-height: 1.4;
   }
+  .info-bubble { position:relative; display:inline-flex; align-items:center; margin-left:0.25rem; vertical-align:middle; }
+  .info-bubble-icon { font-family:'IBM Plex Mono',monospace; font-size:0.55rem; color:var(--text-muted); cursor:pointer; width:14px; height:14px; display:inline-flex; align-items:center; justify-content:center; border:1px solid var(--rule); border-radius:50%; line-height:1; transition:border-color 0.2s,color 0.2s; }
+  .info-bubble-icon:hover { border-color:var(--green-mid); color:var(--green-mid); }
+  .info-bubble-tip { display:none; position:absolute; bottom:calc(100% + 6px); left:50%; transform:translateX(-50%); background:var(--green-deep); color:rgba(255,255,255,0.9); padding:0.4rem 0.7rem; border-radius:4px; font-family:'IBM Plex Mono',monospace; font-size:0.6rem; white-space:nowrap; z-index:100; pointer-events:auto; box-shadow:0 2px 8px rgba(0,0,0,0.15); }
+  .info-bubble-tip::after { content:''; position:absolute; top:100%; left:50%; transform:translateX(-50%); border:5px solid transparent; border-top-color:var(--green-deep); }
+  .info-bubble-tip a { color:#fff; text-decoration:underline; }
+  .info-bubble-tip a:hover { color:var(--green-pale); }
+  .info-bubble:hover .info-bubble-tip, .info-bubble:focus-within .info-bubble-tip { display:block; }
 
   /* ---- RESOURCE CARDS ---- */
   .resource-grid {
@@ -682,6 +701,14 @@
   }
 
   /* ---- RESPONSIVE ---- */
+  /* ---- PRINCIPAL + TABLE LAYOUT ---- */
+  .principal-row {
+    display: flex;
+    gap: 2rem;
+    margin: 2rem 0 1.5rem;
+    align-items: flex-start;
+  }
+
   @media (max-width: 640px) {
     html { font-size: 15px; }
     .header-inner { padding: 2.5rem 1.2rem 2rem; }
@@ -690,6 +717,7 @@
     .stat-grid { grid-template-columns: 1fr 1fr; }
     .resource-grid { grid-template-columns: 1fr; }
     .toc a { padding: 0.8rem 0.6rem; font-size: 0.6rem; }
+    .principal-row { flex-direction: column; align-items: center; gap: 1rem; }
   }
 
   /* page-specific footer overrides */
@@ -719,28 +747,11 @@
 <header class="site-header">
   <div class="header-inner">
     <div class="header-district"><a href="/distrito/">Distrito Escolar de Redwood City</a></div>
+    <img src="https://data.rcsd.info/logos/orion.jpg" alt="Escuela Alternativa Orion" class="header-logo">
     <h1 class="header-title">Escuela Alternativa Orion</h1>
     <p class="header-subtitle">Orion es una escuela alternativa de elección TK-5 que ofrece inmersión bilingüe en mandarín con un modelo de participación de padres (cooperativa). Es la escuela más diversa étnicamente del distrito.</p>
     <div style="margin-top:0.8rem">
-      <span class="school-badge choice">Escuela de Elección</span>
-    </div>
-    <div class="header-meta">
-      <div class="header-stat">
-        <span class="header-stat-value">TK-5</span>
-        <span class="header-stat-label">Grados</span>
-      </div>
-      <div class="header-stat">
-        <span class="header-stat-value">549</span>
-        <span class="header-stat-label">Inscripción</span>
-      </div>
-      <div class="header-stat">
-        <span class="header-stat-value">32%</span>
-        <span class="header-stat-label">Alta necesidad</span>
-      </div>
-      <div class="header-stat">
-        <a href="https://orion.rcsdk8.net/our-school/meet-our-school-leadership" style="color:#fff; text-decoration:underline; text-decoration-color:rgba(255,255,255,0.3); text-underline-offset:2px"><span class="header-stat-value">Winnie Chen</span></a>
-        <span class="header-stat-label">Director/a</span>
-      </div>
+      <span class="school-badge choice">Escuela de Elección <span class="info-bubble" tabindex="0"><span class="info-bubble-icon" style="border-color:rgba(255,255,255,0.2);color:rgba(255,255,255,0.4)">i</span><span class="info-bubble-tip">Las familias de cualquier parte del distrito pueden solicitar asistir a una Escuela de Elección a través del proceso de inscripción abierta.</span></span></span>
     </div>
   </div>
 </header>
@@ -761,6 +772,7 @@
     <a href="#funding">Financiamiento</a>
     <a href="#staffing">Personal</a>
     <a href="#resources">Documentos y Recursos</a>
+    <a href="#board">Reuniones de la Mesa Directiva</a>
   </div>
 </nav>
 
@@ -779,32 +791,33 @@
       </div>
       <div class="stat-card">
         <div class="stat-card-label">Inscripción</div>
-        <div class="stat-card-value">549</div>
+        <div class="stat-card-value">549 <span class="info-bubble" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://data.rcsd.info/documents/sarc/2024-25/english/orion.pdf" target="_blank">SARC 2024-25</a></span></span></div>
       </div>
       <div class="stat-card">
         <div class="stat-card-label">Alta necesidad</div>
-        <div class="stat-card-value">32%</div>
+        <div class="stat-card-value">32% <span class="info-bubble" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://data.rcsd.info/documents/sarc/2024-25/english/orion.pdf" target="_blank">SARC 2024-25</a></span></span></div>
       </div>
     </div>
 
-    <div style="display:flex; align-items:center; gap:1.2rem; margin:1.5rem 0; padding:1rem 1.2rem; background:var(--green-wash); border-radius:8px">
-      <img src="/img/principals/orion.jpg" alt="Winnie Chen" style="width:100px; border-radius:8px; flex-shrink:0">
-      <div>
-        <div style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--text-muted); font-family:'IBM Plex Mono',monospace">Director/a</div>
-        <div style="font-size:1.3rem; font-weight:500; margin-top:0.15rem"><a href="https://orion.rcsdk8.net/our-school/meet-our-school-leadership" style="color:var(--green-mid); text-decoration:underline; text-decoration-color:var(--rule); text-underline-offset:2px">Winnie Chen</a></div>
+    <div class="principal-row">
+      <div style="flex-shrink:0">
+        <a href="https://orion.rcsdk8.net/our-school/meet-our-school-leadership"><img src="/img/principals/orion.jpg" alt="Winnie Chen" style="width:160px; border-radius:10px; display:block"></a>
+        <div style="text-align:center; margin-top:0.6rem">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--text-muted)">Director/a</div>
+          <div style="font-size:1.05rem; font-weight:500; margin-top:0.15rem"><a href="https://orion.rcsdk8.net/our-school/meet-our-school-leadership" style="color:var(--green-mid); text-decoration:none">Winnie Chen</a></div>
+        </div>
       </div>
-    </div>
-
-    <div class="table-wrap">
-      <table>
-        <tbody>
-          <tr><td class="label-cell">Tipo de escuela</td><td>Escuela de Elección</td></tr>
-          <tr><td class="label-cell">Programa especial</td><td>Inmersión en Mandarín · Participación de Padres</td></tr>
-          <tr><td class="label-cell">Dirección</td><td>555 Avenue del Ora, Redwood City, CA 94062</td></tr>
-          <tr><td class="label-cell">Teléfono</td><td>(650) 482-2412</td></tr>
-          <tr><td class="label-cell">Sitio web de la escuela</td><td><a href="https://orion.rcsdk8.net">orion.rcsdk8.net</a></td></tr>
-        </tbody>
-      </table>
+      <div class="table-wrap" style="flex:1; margin:0">
+        <table>
+          <tbody>
+            <tr><td class="label-cell">Tipo de escuela</td><td>Escuela de Elección</td></tr>
+            <tr><td class="label-cell">Programa especial</td><td>Inmersión en Mandarín · Participación de Padres</td></tr>
+            <tr><td class="label-cell">Dirección</td><td>555 Avenue del Ora, Redwood City, CA 94062</td></tr>
+            <tr><td class="label-cell">Teléfono</td><td>(650) 482-2412</td></tr>
+            <tr><td class="label-cell">Sitio web de la escuela</td><td><a href="https://orion.rcsdk8.net">orion.rcsdk8.net</a></td></tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </section>
 
@@ -819,12 +832,12 @@
     <div class="stat-grid">
       <div class="stat-card">
         <div class="stat-card-label">Crecimiento en Inglés</div>
-        <div class="stat-card-value">11.4%</div>
+        <div class="stat-card-value">11.4% <span class="info-bubble" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://www.caschooldashboard.org/reports/41690056102941/2024" target="_blank">CA Dashboard</a></span></span></div>
         <div class="stat-card-note">Promedio del distrito: 20.7%</div>
       </div>
       <div class="stat-card">
         <div class="stat-card-label">Crecimiento en Matemáticas</div>
-        <div class="stat-card-value">11.3%</div>
+        <div class="stat-card-value">11.3% <span class="info-bubble" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://www.caschooldashboard.org/reports/41690056102941/2024" target="_blank">CA Dashboard</a></span></span></div>
         <div class="stat-card-note">Promedio del distrito: 13.8%</div>
       </div>
     </div>
@@ -834,12 +847,12 @@
     <div class="stat-grid">
       <div class="stat-card">
         <div class="stat-card-label">Competencia en Inglés</div>
-        <div class="stat-card-value">53%</div>
+        <div class="stat-card-value">53% <span class="info-bubble" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://data.rcsd.info/documents/sarc/2024-25/english/orion.pdf" target="_blank">SARC 2024-25</a></span></span></div>
         <div class="stat-card-note"><span class="bar bar-green" style="width:32px"></span>Promedio del distrito: 42%</div>
       </div>
       <div class="stat-card">
         <div class="stat-card-label">Competencia en Matemáticas</div>
-        <div class="stat-card-value">51%</div>
+        <div class="stat-card-value">51% <span class="info-bubble" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://data.rcsd.info/documents/sarc/2024-25/english/orion.pdf" target="_blank">SARC 2024-25</a></span></span></div>
         <div class="stat-card-note"><span class="bar bar-green" style="width:31px"></span>Promedio del distrito: 35%</div>
       </div>
     </div>
@@ -861,20 +874,20 @@
     <div class="stat-grid">
       <div class="stat-card">
         <div class="stat-card-label">Desventaja Socioeconómica</div>
-        <div class="stat-card-value">31.8%</div>
+        <div class="stat-card-value">31.8% <span class="info-bubble" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://data.rcsd.info/documents/sarc/2024-25/english/orion.pdf" target="_blank">SARC 2024-25</a></span></span></div>
       </div>
       <div class="stat-card">
         <div class="stat-card-label">Estudiantes de Inglés</div>
-        <div class="stat-card-value">22.8%</div>
+        <div class="stat-card-value">22.8% <span class="info-bubble" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://data.rcsd.info/documents/sarc/2024-25/english/orion.pdf" target="_blank">SARC 2024-25</a></span></span></div>
       </div>
       <div class="stat-card">
         <div class="stat-card-label">Absentismo Crónico</div>
-        <div class="stat-card-value">12.6%</div>
+        <div class="stat-card-value">12.6% <span class="info-bubble" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://www.caschooldashboard.org/reports/41690056102941/2024" target="_blank">CA Dashboard</a></span></span></div>
         <div class="stat-card-note">Promedio del distrito: 18.3%</div>
       </div>
       <div class="stat-card">
         <div class="stat-card-label">Tasa de Suspensión</div>
-        <div class="stat-card-value">0.21%</div>
+        <div class="stat-card-value">0.21% <span class="info-bubble" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://www.caschooldashboard.org/reports/41690056102941/2024" target="_blank">CA Dashboard</a></span></span></div>
         <div class="stat-card-note">Promedio del distrito: 2.2%</div>
       </div>
     </div>
@@ -890,17 +903,17 @@
     <div class="stat-grid">
       <div class="stat-card">
         <div class="stat-card-label">Total Por Alumno</div>
-        <div class="stat-card-value">$22,888</div>
+        <div class="stat-card-value">$22,888 <span class="info-bubble" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://data.rcsd.info/documents/sarc/2024-25/english/orion.pdf" target="_blank">SARC 2024-25</a></span></span></div>
         <div class="stat-card-note">Distrito: $21,252 + comunidad: $1,636</div>
       </div>
       <div class="stat-card">
         <div class="stat-card-label">Costo Est. Escolar</div>
-        <div class="stat-card-value">$12.6M</div>
+        <div class="stat-card-value">$12.6M <span class="info-bubble" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://data.rcsd.info/documents/sarc/2024-25/english/orion.pdf" target="_blank">SARC 2024-25</a></span></span></div>
         <div class="stat-card-note">Restringido: $8,663 · No Restringido: $12,589</div>
       </div>
       <div class="stat-card">
         <div class="stat-card-label">Salario Prom. Maestro</div>
-        <div class="stat-card-value">$94,142</div>
+        <div class="stat-card-value">$94,142 <span class="info-bubble" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://data.rcsd.info/documents/sarc/2024-25/english/orion.pdf" target="_blank">SARC 2024-25</a></span></span></div>
         <div class="stat-card-note">Distrito: $95,778</div>
       </div>
       <div class="stat-card">
@@ -920,11 +933,11 @@
     <div class="stat-grid">
       <div class="stat-card">
         <div class="stat-card-label">Suplementario (SPSA)</div>
-        <div class="stat-card-value">$235K</div>
+        <div class="stat-card-value">$235K <span class="info-bubble" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://data.rcsd.info/documents/spsa/2025-26/orion.pdf" target="_blank">SPSA 2025-26</a></span></span></div>
       </div>
       <div class="stat-card">
         <div class="stat-card-label">SPSA Por Alumno</div>
-        <div class="stat-card-value">$456</div>
+        <div class="stat-card-value">$456 <span class="info-bubble" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://data.rcsd.info/documents/spsa/2025-26/orion.pdf" target="_blank">SPSA 2025-26</a></span></span></div>
       </div>
     </div>
 
@@ -989,16 +1002,16 @@
     <div class="stat-grid">
       <div class="stat-card">
         <div class="stat-card-label">Con Credencial Completa</div>
-        <div class="stat-card-value">68.4%</div>
+        <div class="stat-card-value">68.4% <span class="info-bubble" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://data.rcsd.info/documents/sarc/2024-25/english/orion.pdf" target="_blank">SARC 2024-25</a></span></span></div>
         <div class="stat-card-note"><span class="bar bar-green" style="width:41px"></span>Promedio del distrito: 75%</div>
       </div>
       <div class="stat-card">
         <div class="stat-card-label">Asignación Incorrecta</div>
-        <div class="stat-card-value">14.6%</div>
+        <div class="stat-card-value">14.6% <span class="info-bubble" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://data.rcsd.info/documents/sarc/2024-25/english/orion.pdf" target="_blank">SARC 2024-25</a></span></span></div>
       </div>
       <div class="stat-card">
         <div class="stat-card-label">Asignación Incorrecta EL</div>
-        <div class="stat-card-value">14.6%</div>
+        <div class="stat-card-value">14.6% <span class="info-bubble" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://data.rcsd.info/documents/sarc/2024-25/english/orion.pdf" target="_blank">SARC 2024-25</a></span></span></div>
       </div>
     </div>
 
@@ -1022,12 +1035,12 @@
       <div class="resource-card">
         <h4>Informe de Responsabilidad Escolar (SARC)</h4>
         <p>Informe anual estatal sobre las condiciones escolares y los resultados estudiantiles.</p>
-        <p style="margin-top:0.5rem"><a href="https://www.sarconline.org/SarcPdfs/16/41690056102941" target="_blank">Ver en SARC Online &#8599;</a></p>
+        <p style="margin-top:0.5rem"><a href="https://data.rcsd.info/documents/sarc/2024-25/english/orion.pdf" target="_blank">Descargar SARC (PDF) (inglés) &#8599;</a></p>
       </div>
       <div class="resource-card">
         <h4>Plan Escolar para el Logro Estudiantil (SPSA)</h4>
         <p>Plan a nivel de sitio sobre cómo se gastan los fondos suplementarios.</p>
-        <p style="margin-top:0.5rem"><a href="https://www.cde.ca.gov/re/lc/spsalcapplansummary.asp" target="_blank">Ver en CDE &#8599;</a></p>
+        <p style="margin-top:0.5rem"><a href="https://data.rcsd.info/documents/spsa/2025-26/orion.pdf" target="_blank">Descargar SPSA (PDF) (inglés) &#8599;</a></p>
       </div>
       <div class="resource-card">
         <h4>Horario Escolar</h4>
@@ -1056,7 +1069,134 @@
       </div>
     </div>
 
-    <p style="margin-top:2rem"><a href="https://orion.rcsdk8.net" target="_blank">Sitio web de la escuela: orion.rcsdk8.net &#8599;</a></p>
+  </section>
+
+  <!-- ======== 7. BOARD MEETINGS ======== -->
+  <section class="section" id="board">
+    <div class="section-rule"></div>
+    <div class="section-num">07</div>
+    <h2>Reuniones de la Mesa Directiva</h2>
+    <p class="source" style="margin-bottom:1.5rem">Reuniones de la Mesa Directiva con temas de agenda que mencionan esta escuela.</p>
+
+    <div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">4 de febrero de 2026</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Regular</span>
+            <a href="/meetings/#2026-02-04" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Contrato de Fase 2 de HVAC; construcción programada para verano 2026</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=Nw7_DtNMPVk&t=936" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2026-02-04/Presentation-Revision-1-RCSD-Measure-S-Implementation-Plan-02042026.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Presentation - Revision #1 - RCSD Measure S Implementation Plan 02042026 &#8599;</a><a href="https://data.rcsd.info/board-packets/2026-02-04/Res-16-Supporting-LLB-Award-HVAC-Upgrades-PH-2-Blach_-rev-01.27.2026-4533797.1.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Res 16 Supporting LLB Award (HVAC Upgrades PH 2 - Blach_ rev 01.27.2026) (4533797.1) &#8599;</a><a href="https://data.rcsd.info/board-packets/2026-02-04/RCSD-POs-20k-and-Under-Tracking-List-FY-25-26-February-4-2026.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">RCSD POs $20k and Under Tracking List FY 25-26 - February 4, 2026 &#8599;</a><a href="https://data.rcsd.info/board-packets/2026-02-04/2026.01.13-Minutes-DRAFT-Study-Session.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">2026.01.13 Minutes DRAFT - Study Session &#8599;</a><a href="https://data.rcsd.info/board-packets/2026-02-04/2026.01.14-Minutes-DRAFT.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">2026.01.14 Minutes DRAFT &#8599;</a><a href="https://data.rcsd.info/board-packets/2026-02-04/2026.01.21-Minutes-DRAFT.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">2026.01.21 Minutes DRAFT &#8599;</a><a href="https://data.rcsd.info/board-packets/2026-02-04/2025_Comprehensive_School_Safety_Plan__Pt._1_-Public-_John_F._Kennedy_Middle_Sch.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">2025_Comprehensive_School_Safety_Plan__Pt._1_(Public)_John_F._Kennedy_Middle_School _20260127 &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Plan de seguridad anual</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=Nw7_DtNMPVk&t=1291" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">8 de octubre de 2025</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Regular</span>
+            <a href="/meetings/#2025-10-08" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Excursión de 4.° grado sobre la Fiebre del Oro a la Escuela al Aire Libre de Sierra</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=WYi7kzyEnuw&t=86" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2025-10-08/Orion-4th-Grade-Gold-Rush-Overnight-Field-Trip.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Orion 4th Grade Gold Rush Overnight Field Trip &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Acuerdo de capacitación del personal en PBIS Niveles 1/2</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=WYi7kzyEnuw&t=86" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2025-10-08/SCCOE-_-PBIS-25.26-MOU-Board-10.8.25.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">SCCOE _ PBIS 25.26 MOU Board 10.8.25 &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">10 de septiembre de 2025</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Regular</span>
+            <a href="/meetings/#2025-09-10" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Contrato de diseño de HVAC Fase 2 (Medida S)</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=KWsBnYENz7o" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2025-09-10/RCSD-Phase-2-HVAC-Upgrades-Precon-v2.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">RCSD Phase 2 HVAC Upgrades Precon v2 &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">19 de agosto de 2025</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Regular</span>
+            <a href="/meetings/#2025-08-19" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Programa de aprendizaje extendido después de clases financiado para 828 estudiantes</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=B8blJsqUL_4" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">25 de junio de 2025</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Regular</span>
+            <a href="/meetings/#2025-06-25" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Proyecto de reemplazo de HVAC Fase 2 ($21.25M, Medida S)</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=nsizIuPIt5E" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">14 de mayo de 2025</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2025-05-14" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Plan de crecimiento y mejora escolar a largo plazo</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=6qHkEM3tahc&t=1599" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">16 de abril de 2025</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2025-04-16" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Plan Escolar para el Logro Estudiantil (SPSA)</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=RKaYeTaZ6qI&t=2215" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DFE49Q0A7FE1/$file/Orion%202025-26_SPSA_(Spring)__20250403.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Orion 2025-26_SPSA_(Spring)__20250403.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DFE49S0A81A0/$file/Taft%202025-26_SPSA%20(Sprin)_20250403.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Taft 2025-26_SPSA (Sprin)_20250403.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DFSL3A54881C/$file/25-26%20Garfield%20_SPSA_(Spring)%2020250416%20(Updated%204.16.25).pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">25-26 Garfield _SPSA_(Spring) 20250416 (Updated 4.16.25).pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DFSL3C548A5D/$file/25-26%20Henry%20Ford%20_SPSA_(Spring)%2020250416%20(Updated%204.16.25).pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">25-26 Henry Ford _SPSA_(Spring) 20250416 (Updated 4.16.25).pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DFSL3S549F75/$file/SPSA%20Updates.HF.Garfield.Orion.Taft%2020250416.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">SPSA Updates.HF.Garfield.Orion.Taft 20250416.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">26 de febrero de 2025</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2025-02-26" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Adenda de financiamiento de la Medida U</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=pydG3eHdP0M" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DDTTGU775863/$file/2024-25%20Orion%20Measure%20U%20Addendum%20%5BPending%20Board%20Approval%5D.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">2024-25 Orion Measure U Addendum [Pending Board Approval].pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">15 de enero de 2025</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2025-01-15" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">La escuela presentó su informe del año escolar 2024-25 a la junta.</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=oYXptXv6Y5I&t=189" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DCQPN4655D42/$file/Orion%2024-25%20Data%20for%20Board%20presentation.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Orion 24-25 Data for Board presentation.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">8 de mayo de 2024</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2024-05-08" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">La junta aprobó la segunda actualización del plan de gastos de Measure U.</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=xSE2S51UgBg" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/D4PMLM5B70E7/$file/23-24%20Orion%20Measure%20U%20Addendum%20No.%202.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">23-24 Orion Measure U Addendum No. 2.pdf &#8599;</a></div>
+            </div>
+        </div>
   </section>
 
 </main>

@@ -371,6 +371,76 @@ const THREAD_DESCRIPTIONS = {
   'charter': 'Connect, KIPP, and Rocketship oversight and financial reviews'
 };
 
+// ---- School and topic tagging ----
+const SCHOOL_NAME_PATTERNS = [
+  { slug: 'adelante-selby', patterns: ['Adelante Selby', 'Adelante'] },
+  { slug: 'clifford', patterns: ['Clifford'] },
+  { slug: 'garfield', patterns: ['Garfield'] },
+  { slug: 'henry-ford', patterns: ['Henry Ford'] },
+  { slug: 'hoover', patterns: ['Hoover'] },
+  { slug: 'kennedy', patterns: ['Kennedy'] },
+  { slug: 'mckinley-mit', patterns: ['McKinley'] },
+  { slug: 'north-star', patterns: ['North Star'] },
+  { slug: 'orion', patterns: ['Orion'] },
+  { slug: 'roosevelt', patterns: ['Roosevelt'] },
+  { slug: 'roy-cloud', patterns: ['Roy Cloud'] },
+  { slug: 'taft', patterns: ['Taft'] },
+];
+
+const TOPIC_PATTERNS = [
+  { id: 'solar', label: 'Solar', labelEs: 'Solar', patterns: ['Solar'] },
+  { id: 'hvac', label: 'HVAC / Air Conditioning', labelEs: 'HVAC / Aire Acondicionado', patterns: ['HVAC', 'Air Conditioning', 'air conditioning'] },
+  { id: 'sped', label: 'Special Education', labelEs: 'Educación Especial', patterns: ['SPED', 'SpEd', 'Special Education', 'special education'] },
+  { id: 'el', label: 'English Learners', labelEs: 'Estudiantes de Inglés', patterns: ['English Learner', 'ELD '] },
+];
+
+function matchSchoolSlugs(text) {
+  const normalized = text.replace(/Roosevelt\s+Ave(nue)?/gi, '___');
+  const matches = new Set();
+  for (const { slug, patterns } of SCHOOL_NAME_PATTERNS) {
+    for (const p of patterns) {
+      if (normalized.includes(p)) { matches.add(slug); break; }
+    }
+  }
+  return [...matches];
+}
+
+function matchTopics(text) {
+  const matches = new Set();
+  for (const { id, patterns } of TOPIC_PATTERNS) {
+    for (const p of patterns) {
+      if (text.includes(p)) { matches.add(id); break; }
+    }
+  }
+  return [...matches];
+}
+
+// Tag each meeting with schools and topics mentioned in its items
+const meetingSchools = {};  // date → Set of slugs
+const meetingTopics = {};   // date → Set of topic ids
+const schoolCounts = {};
+const topicCounts = {};
+
+for (const m of data.meetings) {
+  const schools = new Set();
+  const topics = new Set();
+  const allText = (m.items || []).map(i => i.title || '').join(' ');
+  // Also check summary/topics
+  const summaryText = (m.topics || []).join(' ');
+  const combined = allText + ' ' + summaryText;
+
+  for (const slug of matchSchoolSlugs(combined)) schools.add(slug);
+  for (const topic of matchTopics(combined)) topics.add(topic);
+
+  meetingSchools[m.date] = schools;
+  meetingTopics[m.date] = topics;
+
+  for (const s of schools) schoolCounts[s] = (schoolCounts[s] || 0) + 1;
+  for (const t of topics) topicCounts[t] = (topicCounts[t] || 0) + 1;
+}
+
+console.log(`Tagged meetings: ${Object.keys(schoolCounts).length} schools, ${Object.keys(topicCounts).length} topics`);
+
 // Count threads
 const threadCounts = {};
 data.meetings.forEach(m => m.threads.forEach(t => {
@@ -569,6 +639,10 @@ function renderMeeting(m) {
   const { month, day, year } = formatDateBadge(m.date);
   const isSparse = m.source === 'boarddocs' && (!m.items || m.items.length === 0);
   const threadAttrs = m.threads.length ? ` data-threads="${m.threads.join(' ')}"` : '';
+  const mSchools = meetingSchools[m.date] || new Set();
+  const mTopics = meetingTopics[m.date] || new Set();
+  const schoolAttrs = mSchools.size ? ` data-schools="${[...mSchools].join(' ')}"` : '';
+  const topicAttrs = mTopics.size ? ` data-topics="${[...mTopics].join(' ')}"` : '';
   const sparseClass = isSparse ? ' meeting-row--sparse' : '';
   const typeClass = meetingTypeClass(m.type);
   const typeModifier = typeClass ? ` meeting-row--${typeClass}` : '';
@@ -640,7 +714,7 @@ function renderMeeting(m) {
     ? `<details class="meeting-details"><summary class="meeting-details-toggle">${L.agendaItemsLabel(itemCount)}</summary>${agendaSection}</details>`
     : '';
 
-  return `    <div class="meeting-row${sparseClass}${typeModifier}"${threadAttrs}>
+  return `    <div class="meeting-row${sparseClass}${typeModifier}"${threadAttrs}${schoolAttrs}${topicAttrs}>
       <div class="meeting-date">
         <span class="meeting-date-month">${month}</span>
         <span class="meeting-date-day">${day}</span>
@@ -709,17 +783,43 @@ ${meetingRows.join('\n')}
   return html;
 }
 
-// Thread filter section
+// Thread filter section — now includes schools and topics
 function renderThreadFilters() {
   const threads = ['superintendent-search', 'budget', 'parcel-tax', 'facilities-bond', 'policy'];
+
+  // School buttons sorted by count (descending)
+  const schoolList = SCHOOL_NAME_PATTERNS
+    .filter(s => schoolCounts[s.slug] > 0)
+    .sort((a, b) => (schoolCounts[b.slug] || 0) - (schoolCounts[a.slug] || 0));
+
+  // Topic buttons
+  const topicList = TOPIC_PATTERNS.filter(t => topicCounts[t.id] > 0);
+
+  const schoolFilterLabel = L.lang === 'es' ? 'Escuelas' : 'Schools';
+  const topicFilterLabel = L.lang === 'es' ? 'Temas' : 'Topics';
+
   return `<section class="section" id="threads">
   <div class="section-rule"></div>
   <h2>${L.threadSectionTitle}</h2>
   <p>${L.threadSectionSubtitle}</p>
   <div class="thread-filters">
-${threads.map(t => `    <button class="thread-btn" data-filter="${t}">
+${threads.map(t => `    <button class="thread-btn" data-filter="${t}" data-filter-type="thread">
       <span class="thread-btn-label">${L.threadLabels[t]}</span>
       <span class="thread-btn-count">${threadCounts[t] || 0}</span>
+    </button>`).join('\n')}
+  </div>
+  <h3 style="margin-top:1.5rem; font-family:'IBM Plex Mono',monospace; font-size:0.7rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--text-muted)">${schoolFilterLabel}</h3>
+  <div class="thread-filters" style="margin-top:0.5rem">
+${schoolList.map(s => `    <button class="thread-btn" data-filter="${s.slug}" data-filter-type="school">
+      <span class="thread-btn-label">${prettySchool(s.slug)}</span>
+      <span class="thread-btn-count">${schoolCounts[s.slug] || 0}</span>
+    </button>`).join('\n')}
+  </div>
+  <h3 style="margin-top:1.5rem; font-family:'IBM Plex Mono',monospace; font-size:0.7rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--text-muted)">${topicFilterLabel}</h3>
+  <div class="thread-filters" style="margin-top:0.5rem">
+${topicList.map(t => `    <button class="thread-btn" data-filter="${t.id}" data-filter-type="topic">
+      <span class="thread-btn-label">${L.lang === 'es' ? t.labelEs : t.label}</span>
+      <span class="thread-btn-count">${topicCounts[t.id] || 0}</span>
     </button>`).join('\n')}
   </div>
 </section>`;
@@ -1850,23 +1950,37 @@ ${siteFooter({ lang: L.lang })}
 
 <script>
 (function() {
-  var active = null;
+  var activeFilter = null;
+  var activeType = null;
   var btns = document.querySelectorAll('.thread-btn');
   var allRows = document.querySelectorAll('.meeting-row');
 
   btns.forEach(function(btn) {
     btn.addEventListener('click', function() {
       var filter = btn.dataset.filter;
-      if (active === filter) {
-        active = null;
+      var type = btn.dataset.filterType;
+      if (activeFilter === filter && activeType === type) {
+        activeFilter = null;
+        activeType = null;
         btns.forEach(function(b) { b.classList.remove('active'); });
         allRows.forEach(function(r) { r.classList.remove('hidden'); });
       } else {
-        active = filter;
-        btns.forEach(function(b) { b.classList.toggle('active', b.dataset.filter === filter); });
+        activeFilter = filter;
+        activeType = type;
+        btns.forEach(function(b) { b.classList.toggle('active', b.dataset.filter === filter && b.dataset.filterType === type); });
         allRows.forEach(function(r) {
-          var threads = r.dataset.threads;
-          r.classList.toggle('hidden', !threads || threads.indexOf(filter) === -1);
+          var match = false;
+          if (type === 'thread') {
+            var threads = r.dataset.threads || '';
+            match = threads.indexOf(filter) !== -1;
+          } else if (type === 'school') {
+            var schools = r.dataset.schools || '';
+            match = schools.indexOf(filter) !== -1;
+          } else if (type === 'topic') {
+            var topics = r.dataset.topics || '';
+            match = topics.indexOf(filter) !== -1;
+          }
+          r.classList.toggle('hidden', !match);
         });
       }
     });

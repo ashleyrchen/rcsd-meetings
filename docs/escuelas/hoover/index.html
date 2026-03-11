@@ -218,6 +218,17 @@
     color: #fff;
   }
 
+  .header-logo {
+    height: 120px;
+    width: auto;
+    max-width: 480px;
+    margin-bottom: 1.2rem;
+    object-fit: contain;
+    background: #fff;
+    padding: 14px 24px;
+    border-radius: 12px;
+  }
+
   .header-title {
     font-family: 'Fraunces', Georgia, serif;
     font-size: clamp(1.8rem, 4.5vw, 2.8rem);
@@ -577,6 +588,14 @@
     margin-top: 0.3rem;
     line-height: 1.4;
   }
+  .info-bubble { position:relative; display:inline-flex; align-items:center; margin-left:0.25rem; vertical-align:middle; }
+  .info-bubble-icon { font-family:'IBM Plex Mono',monospace; font-size:0.55rem; color:var(--text-muted); cursor:pointer; width:14px; height:14px; display:inline-flex; align-items:center; justify-content:center; border:1px solid var(--rule); border-radius:50%; line-height:1; transition:border-color 0.2s,color 0.2s; }
+  .info-bubble-icon:hover { border-color:var(--green-mid); color:var(--green-mid); }
+  .info-bubble-tip { display:none; position:absolute; bottom:calc(100% + 6px); left:50%; transform:translateX(-50%); background:var(--green-deep); color:rgba(255,255,255,0.9); padding:0.4rem 0.7rem; border-radius:4px; font-family:'IBM Plex Mono',monospace; font-size:0.6rem; white-space:nowrap; z-index:100; pointer-events:auto; box-shadow:0 2px 8px rgba(0,0,0,0.15); }
+  .info-bubble-tip::after { content:''; position:absolute; top:100%; left:50%; transform:translateX(-50%); border:5px solid transparent; border-top-color:var(--green-deep); }
+  .info-bubble-tip a { color:#fff; text-decoration:underline; }
+  .info-bubble-tip a:hover { color:var(--green-pale); }
+  .info-bubble:hover .info-bubble-tip, .info-bubble:focus-within .info-bubble-tip { display:block; }
 
   /* ---- RESOURCE CARDS ---- */
   .resource-grid {
@@ -682,6 +701,14 @@
   }
 
   /* ---- RESPONSIVE ---- */
+  /* ---- PRINCIPAL + TABLE LAYOUT ---- */
+  .principal-row {
+    display: flex;
+    gap: 2rem;
+    margin: 2rem 0 1.5rem;
+    align-items: flex-start;
+  }
+
   @media (max-width: 640px) {
     html { font-size: 15px; }
     .header-inner { padding: 2.5rem 1.2rem 2rem; }
@@ -690,6 +717,7 @@
     .stat-grid { grid-template-columns: 1fr 1fr; }
     .resource-grid { grid-template-columns: 1fr; }
     .toc a { padding: 0.8rem 0.6rem; font-size: 0.6rem; }
+    .principal-row { flex-direction: column; align-items: center; gap: 1rem; }
   }
 
   /* page-specific footer overrides */
@@ -719,28 +747,11 @@
 <header class="site-header">
   <div class="header-inner">
     <div class="header-district"><a href="/distrito/">Distrito Escolar de Redwood City</a></div>
+    <img src="https://data.rcsd.info/logos/hoover.jpg" alt="Escuela Comunitaria Hoover" class="header-logo">
     <h1 class="header-title">Escuela Comunitaria Hoover</h1>
     <p class="header-subtitle">Hoover es una Escuela Comunitaria de vecindario TK-8 y una de las escuelas con mayores necesidades del distrito. A pesar de tener la tasa más baja de credencialización docente, el personal joven de Hoover produce el segundo mayor crecimiento estudiantil en ELA y Matemáticas. Ofrece un programa de música K-8 completo e instrucción STEAM.</p>
     <div style="margin-top:0.8rem">
-      <span class="school-badge neighborhood">Vecindario</span><span class="school-badge community">Escuela Comunitaria</span>
-    </div>
-    <div class="header-meta">
-      <div class="header-stat">
-        <span class="header-stat-value">TK-8</span>
-        <span class="header-stat-label">Grados</span>
-      </div>
-      <div class="header-stat">
-        <span class="header-stat-value">659</span>
-        <span class="header-stat-label">Inscripción</span>
-      </div>
-      <div class="header-stat">
-        <span class="header-stat-value">97%</span>
-        <span class="header-stat-label">Alta necesidad</span>
-      </div>
-      <div class="header-stat">
-        <a href="https://hoover.rcsdk8.net/our-school/meet-our-school-leadership" style="color:#fff; text-decoration:underline; text-decoration-color:rgba(255,255,255,0.3); text-underline-offset:2px"><span class="header-stat-value">Lupe Guzmán</span></a>
-        <span class="header-stat-label">Director/a</span>
-      </div>
+      <span class="school-badge neighborhood">Vecindario <span class="info-bubble" tabindex="0"><span class="info-bubble-icon" style="border-color:rgba(255,255,255,0.2);color:rgba(255,255,255,0.4)">i</span><span class="info-bubble-tip">Una escuela de vecindario inscribe a estudiantes que viven dentro de los límites de su área de asistencia. Las familias también pueden solicitar a través de inscripción abierta.</span></span></span><span class="school-badge community">Escuela Comunitaria</span>
     </div>
   </div>
 </header>
@@ -761,6 +772,7 @@
     <a href="#funding">Financiamiento</a>
     <a href="#staffing">Personal</a>
     <a href="#resources">Documentos y Recursos</a>
+    <a href="#board">Reuniones de la Mesa Directiva</a>
   </div>
 </nav>
 
@@ -779,32 +791,33 @@
       </div>
       <div class="stat-card">
         <div class="stat-card-label">Inscripción</div>
-        <div class="stat-card-value">659</div>
+        <div class="stat-card-value">659 <span class="info-bubble" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://data.rcsd.info/documents/sarc/2024-25/english/hoover.pdf" target="_blank">SARC 2024-25</a></span></span></div>
       </div>
       <div class="stat-card">
         <div class="stat-card-label">Alta necesidad</div>
-        <div class="stat-card-value">97%</div>
+        <div class="stat-card-value">97% <span class="info-bubble" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://data.rcsd.info/documents/sarc/2024-25/english/hoover.pdf" target="_blank">SARC 2024-25</a></span></span></div>
       </div>
     </div>
 
-    <div style="display:flex; align-items:center; gap:1.2rem; margin:1.5rem 0; padding:1rem 1.2rem; background:var(--green-wash); border-radius:8px">
-      <img src="/img/principals/hoover.jpg" alt="Lupe Guzmán" style="width:100px; border-radius:8px; flex-shrink:0">
-      <div>
-        <div style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--text-muted); font-family:'IBM Plex Mono',monospace">Director/a</div>
-        <div style="font-size:1.3rem; font-weight:500; margin-top:0.15rem"><a href="https://hoover.rcsdk8.net/our-school/meet-our-school-leadership" style="color:var(--green-mid); text-decoration:underline; text-decoration-color:var(--rule); text-underline-offset:2px">Lupe Guzmán</a></div>
+    <div class="principal-row">
+      <div style="flex-shrink:0">
+        <a href="https://hoover.rcsdk8.net/our-school/meet-our-school-leadership"><img src="/img/principals/hoover.jpg" alt="Lupe Guzmán" style="width:160px; border-radius:10px; display:block"></a>
+        <div style="text-align:center; margin-top:0.6rem">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--text-muted)">Director/a</div>
+          <div style="font-size:1.05rem; font-weight:500; margin-top:0.15rem"><a href="https://hoover.rcsdk8.net/our-school/meet-our-school-leadership" style="color:var(--green-mid); text-decoration:none">Lupe Guzmán</a></div>
+        </div>
       </div>
-    </div>
-
-    <div class="table-wrap">
-      <table>
-        <tbody>
-          <tr><td class="label-cell">Tipo de escuela</td><td>Vecindario</td></tr>
-          <tr><td class="label-cell">Escuela Comunitaria</td><td>Sí</td></tr>
-          <tr><td class="label-cell">Dirección</td><td>701 Charter Street, Redwood City, CA 94063</td></tr>
-          <tr><td class="label-cell">Teléfono</td><td>(650) 482-2408</td></tr>
-          <tr><td class="label-cell">Sitio web de la escuela</td><td><a href="https://hoover.rcsdk8.net">hoover.rcsdk8.net</a></td></tr>
-        </tbody>
-      </table>
+      <div class="table-wrap" style="flex:1; margin:0">
+        <table>
+          <tbody>
+            <tr><td class="label-cell">Tipo de escuela</td><td>Vecindario</td></tr>
+            <tr><td class="label-cell">Escuela Comunitaria</td><td>Sí</td></tr>
+            <tr><td class="label-cell">Dirección</td><td>701 Charter Street, Redwood City, CA 94063</td></tr>
+            <tr><td class="label-cell">Teléfono</td><td>(650) 482-2408</td></tr>
+            <tr><td class="label-cell">Sitio web de la escuela</td><td><a href="https://hoover.rcsdk8.net">hoover.rcsdk8.net</a></td></tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </section>
 
@@ -819,12 +832,12 @@
     <div class="stat-grid">
       <div class="stat-card">
         <div class="stat-card-label">Crecimiento en Inglés</div>
-        <div class="stat-card-value">36%</div>
+        <div class="stat-card-value">36% <span class="info-bubble" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://www.caschooldashboard.org/reports/41690056044507/2024" target="_blank">CA Dashboard</a></span></span></div>
         <div class="stat-card-note">Promedio del distrito: 20.7%</div>
       </div>
       <div class="stat-card">
         <div class="stat-card-label">Crecimiento en Matemáticas</div>
-        <div class="stat-card-value">25.6%</div>
+        <div class="stat-card-value">25.6% <span class="info-bubble" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://www.caschooldashboard.org/reports/41690056044507/2024" target="_blank">CA Dashboard</a></span></span></div>
         <div class="stat-card-note">Promedio del distrito: 13.8%</div>
       </div>
     </div>
@@ -834,12 +847,12 @@
     <div class="stat-grid">
       <div class="stat-card">
         <div class="stat-card-label">Competencia en Inglés</div>
-        <div class="stat-card-value">17%</div>
+        <div class="stat-card-value">17% <span class="info-bubble" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://data.rcsd.info/documents/sarc/2024-25/english/hoover.pdf" target="_blank">SARC 2024-25</a></span></span></div>
         <div class="stat-card-note"><span class="bar bar-coral" style="width:10px"></span>Promedio del distrito: 42%</div>
       </div>
       <div class="stat-card">
         <div class="stat-card-label">Competencia en Matemáticas</div>
-        <div class="stat-card-value">13%</div>
+        <div class="stat-card-value">13% <span class="info-bubble" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://data.rcsd.info/documents/sarc/2024-25/english/hoover.pdf" target="_blank">SARC 2024-25</a></span></span></div>
         <div class="stat-card-note"><span class="bar bar-coral" style="width:8px"></span>Promedio del distrito: 35%</div>
       </div>
     </div>
@@ -861,20 +874,20 @@
     <div class="stat-grid">
       <div class="stat-card">
         <div class="stat-card-label">Desventaja Socioeconómica</div>
-        <div class="stat-card-value">96.6%</div>
+        <div class="stat-card-value">96.6% <span class="info-bubble" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://data.rcsd.info/documents/sarc/2024-25/english/hoover.pdf" target="_blank">SARC 2024-25</a></span></span></div>
       </div>
       <div class="stat-card">
         <div class="stat-card-label">Estudiantes de Inglés</div>
-        <div class="stat-card-value">66.9%</div>
+        <div class="stat-card-value">66.9% <span class="info-bubble" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://data.rcsd.info/documents/sarc/2024-25/english/hoover.pdf" target="_blank">SARC 2024-25</a></span></span></div>
       </div>
       <div class="stat-card">
         <div class="stat-card-label">Absentismo Crónico</div>
-        <div class="stat-card-value">28.5%</div>
+        <div class="stat-card-value">28.5% <span class="info-bubble" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://www.caschooldashboard.org/reports/41690056044507/2024" target="_blank">CA Dashboard</a></span></span></div>
         <div class="stat-card-note">Promedio del distrito: 18.3%</div>
       </div>
       <div class="stat-card">
         <div class="stat-card-label">Tasa de Suspensión</div>
-        <div class="stat-card-value">4.79%</div>
+        <div class="stat-card-value">4.79% <span class="info-bubble" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://www.caschooldashboard.org/reports/41690056044507/2024" target="_blank">CA Dashboard</a></span></span></div>
         <div class="stat-card-note">Promedio del distrito: 2.2%</div>
       </div>
     </div>
@@ -890,17 +903,17 @@
     <div class="stat-grid">
       <div class="stat-card">
         <div class="stat-card-label">Total Por Alumno</div>
-        <div class="stat-card-value">$19,530</div>
+        <div class="stat-card-value">$19,530 <span class="info-bubble" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://data.rcsd.info/documents/sarc/2024-25/english/hoover.pdf" target="_blank">SARC 2024-25</a></span></span></div>
         <div class="stat-card-note">Distrito: $19,530</div>
       </div>
       <div class="stat-card">
         <div class="stat-card-label">Costo Est. Escolar</div>
-        <div class="stat-card-value">$12.9M</div>
+        <div class="stat-card-value">$12.9M <span class="info-bubble" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://data.rcsd.info/documents/sarc/2024-25/english/hoover.pdf" target="_blank">SARC 2024-25</a></span></span></div>
         <div class="stat-card-note">Restringido: $8,790 · No Restringido: $10,740</div>
       </div>
       <div class="stat-card">
         <div class="stat-card-label">Salario Prom. Maestro</div>
-        <div class="stat-card-value">$97,762</div>
+        <div class="stat-card-value">$97,762 <span class="info-bubble" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://data.rcsd.info/documents/sarc/2024-25/english/hoover.pdf" target="_blank">SARC 2024-25</a></span></span></div>
         <div class="stat-card-note">Distrito: $95,778</div>
       </div>
       <div class="stat-card">
@@ -920,11 +933,11 @@
     <div class="stat-grid">
       <div class="stat-card">
         <div class="stat-card-label">Suplementario (SPSA)</div>
-        <div class="stat-card-value">$734K</div>
+        <div class="stat-card-value">$734K <span class="info-bubble" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://data.rcsd.info/documents/spsa/2025-26/hoover.pdf" target="_blank">SPSA 2025-26</a></span></span></div>
       </div>
       <div class="stat-card">
         <div class="stat-card-label">SPSA Por Alumno</div>
-        <div class="stat-card-value">$1,073</div>
+        <div class="stat-card-value">$1,073 <span class="info-bubble" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://data.rcsd.info/documents/spsa/2025-26/hoover.pdf" target="_blank">SPSA 2025-26</a></span></span></div>
       </div>
     </div>
 
@@ -989,16 +1002,16 @@
     <div class="stat-grid">
       <div class="stat-card">
         <div class="stat-card-label">Con Credencial Completa</div>
-        <div class="stat-card-value">52%</div>
+        <div class="stat-card-value">52% <span class="info-bubble" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://data.rcsd.info/documents/sarc/2024-25/english/hoover.pdf" target="_blank">SARC 2024-25</a></span></span></div>
         <div class="stat-card-note"><span class="bar bar-green" style="width:31px"></span>Promedio del distrito: 75%</div>
       </div>
       <div class="stat-card">
         <div class="stat-card-label">Asignación Incorrecta</div>
-        <div class="stat-card-value">36.7%</div>
+        <div class="stat-card-value">36.7% <span class="info-bubble" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://data.rcsd.info/documents/sarc/2024-25/english/hoover.pdf" target="_blank">SARC 2024-25</a></span></span></div>
       </div>
       <div class="stat-card">
         <div class="stat-card-label">Asignación Incorrecta EL</div>
-        <div class="stat-card-value">35.2%</div>
+        <div class="stat-card-value">35.2% <span class="info-bubble" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://data.rcsd.info/documents/sarc/2024-25/english/hoover.pdf" target="_blank">SARC 2024-25</a></span></span></div>
       </div>
     </div>
 
@@ -1031,12 +1044,12 @@
       <div class="resource-card">
         <h4>Informe de Responsabilidad Escolar (SARC)</h4>
         <p>Informe anual estatal sobre las condiciones escolares y los resultados estudiantiles.</p>
-        <p style="margin-top:0.5rem"><a href="https://www.sarconline.org/SarcPdfs/16/41690056044507" target="_blank">Ver en SARC Online &#8599;</a></p>
+        <p style="margin-top:0.5rem"><a href="https://data.rcsd.info/documents/sarc/2024-25/english/hoover.pdf" target="_blank">Descargar SARC (PDF) (inglés) &#8599;</a></p>
       </div>
       <div class="resource-card">
         <h4>Plan Escolar para el Logro Estudiantil (SPSA)</h4>
         <p>Plan a nivel de sitio sobre cómo se gastan los fondos suplementarios.</p>
-        <p style="margin-top:0.5rem"><a href="https://www.cde.ca.gov/re/lc/spsalcapplansummary.asp" target="_blank">Ver en CDE &#8599;</a></p>
+        <p style="margin-top:0.5rem"><a href="https://data.rcsd.info/documents/spsa/2025-26/hoover.pdf" target="_blank">Descargar SPSA (PDF) (inglés) &#8599;</a></p>
       </div>
       <div class="resource-card">
         <h4>Horario Escolar</h4>
@@ -1065,7 +1078,135 @@
       </div>
     </div>
 
-    <p style="margin-top:2rem"><a href="https://hoover.rcsdk8.net" target="_blank">Sitio web de la escuela: hoover.rcsdk8.net &#8599;</a></p>
+  </section>
+
+  <!-- ======== 7. BOARD MEETINGS ======== -->
+  <section class="section" id="board">
+    <div class="section-rule"></div>
+    <div class="section-num">07</div>
+    <h2>Reuniones de la Mesa Directiva</h2>
+    <p class="source" style="margin-bottom:1.5rem">Reuniones de la Mesa Directiva con temas de agenda que mencionan esta escuela.</p>
+
+    <div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">11 de marzo de 2026</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Regular</span>
+            <a href="/meetings/#2026-03-11" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Presentación escolar anual ante la Mesa Directiva; SPSA</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2026-03-11/Hoover_-SPSA-2026.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Hoover_ SPSA 2026 &#8599;</a><a href="https://data.rcsd.info/board-packets/2026-03-11/Hoover-25-26-Data-for-Board-presentation.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Hoover 25-26 Data for Board presentation &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Addenda de Medida U para el año escolar 2025-26</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"></div>
+              
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">4 de febrero de 2026</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Regular</span>
+            <a href="/meetings/#2026-02-04" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Fase 1 de HVAC completada; $2.3M devueltos al fondo de bonos de Medida S</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=Nw7_DtNMPVk&t=1291" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2026-02-04/25-115-RCSD-HVAC-Deductive-Change-Order-001-Return-Unspent-Funds-to-District-1-2.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">25-115 RCSD HVAC Deductive Change Order 001- Return Unspent Funds to District 1- 26-26 &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Aviso de finalización de Fase 1 de HVAC presentado</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=Nw7_DtNMPVk&t=1291" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2026-02-04/Notice-of-Completion-Blach-Temp-Cooling.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">g g  Notice of Completion - Blach - Temp Cooling &#8599;</a><a href="https://data.rcsd.info/board-packets/2026-02-04/Notice-of-Completion-Blach-Taft.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">g  Notice of Completion - Blach - Taft &#8599;</a><a href="https://data.rcsd.info/board-packets/2026-02-04/Notice-of-Completion-Blach-Roosevelt.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Notice of Completion - Blach - Roosevelt &#8599;</a><a href="https://data.rcsd.info/board-packets/2026-02-04/Notice-of-Completion-Blach-Hoover.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">p  Notice of Completion - Blach - Hoover &#8599;</a><a href="https://data.rcsd.info/board-packets/2026-02-04/Notice-of-Completion-Blach-Adelante-Selby.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Notice of Completion - Blach - Adelante Selby &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Plan de seguridad anual</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=Nw7_DtNMPVk&t=1291" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">8 de octubre de 2025</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Regular</span>
+            <a href="/meetings/#2025-10-08" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Orden de cambio de Fase II solar ($61,835 por modificación de distribución de paneles)</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=WYi7kzyEnuw" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">11 de junio de 2025</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Regular</span>
+            <a href="/meetings/#2025-06-11" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Actualización del sistema de gestión de HVAC (Medida S)</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=CdvAkolAYk4&t=720" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2025-06-11/7.2-RCSD-Mech-Replacements-Proposal-Siemens.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">7.2 RCSD Mech Replacements Proposal Siemens &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Contrato de construcción de reemplazo de HVAC Fase 1 (Medida S)</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=CdvAkolAYk4" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2025-06-11/7.3-Blach-Original-Agreement_Facilities-Lease-24.25.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">7.3 Blach Original Agreement_Facilities Lease 24.25 &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">28 de mayo de 2025</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2025-05-28" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Plan Escolar para el Logro Estudiantil (SPSA)</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=KCn4WYhU0wo" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DGUT7W760B8C/$file/Hoover%20SPSA%202025-26_Spring)__20250518.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Hoover SPSA 2025-26_Spring)__20250518.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DGUT9D760E17/$file/Kennedy%20SPSA%202025-26_(Spring)__20250519.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Kennedy SPSA 2025-26_(Spring)__20250519.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DGUT82760FEE/$file/MCKinley%20Middle%20School%20SPSA%20(%20SPRING%202025.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">MCKinley Middle School SPSA &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DGUT85761179/$file/North%20Star%20Academy%202025-26_SPSA(Spring)__20250514.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">North Star Academy 2025-26_SPSA(Spring)__20250514.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DGUT9F761296/$file/Roy%20Cloud%20SPSA%202025-26_20250514.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Roy Cloud SPSA 2025-26_20250514.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">14 de mayo de 2025</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2025-05-14" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Acuerdo de construcción de arrendamiento para proyecto de HVAC</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=6qHkEM3tahc&t=557" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DGGPJB64D1D2/$file/Resolution%2024%20LLB%20Award(4283830.1).pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Resolution 24 LLB Award(4283830.1).pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DGM2WN043061/$file/UPDATED%201.2%20-%20Site%20Lease%20-RCSD%20-%20HVAC%20Upgrades%20Projects%20(DWK%20clean%205.12.2025)(4400783.1).pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">UPDATED 1.2 - Site Lease -RCSD - HVAC Upgrades Projects (DWK clean 5.12.2025)(4400783.1).pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DGM2XG044F15/$file/UPDATED%201.3%20-%20Facilities%20Lease%20-%20RCSD%20HVAC%20Upgrades%20Projects%20(DWK%20clean%2005.12.2025)(4400785.1).pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">UPDATED 1.3 - Facilities Lease - RCSD HVAC Upgrades Projects (DWK clean 05.12.2025)(4400785.1).pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DGGRGN6DF3F1/$file/1.4%20-%20Facilities%20Lease%20Ex%20C%20-%20RCSD%20HVAC%20Upgrades%20Projects%20(DWK%20rev%2005.06.2025)(4397961.1).pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">1.4 - Facilities Lease Ex C - RCSD HVAC Upgrades Projects (DWK rev 05.06.2025)(4397961.1).pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DGGRGQ6DF666/$file/1.5%20-%20Facilites%20Lease%20Ex%20D%20-%20RCSD%20HVAC%20Upgrades%20Projects%20(DWK%20rev%2005.06.2025)(4397930.1).pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">1.5 - Facilites Lease Ex D - RCSD HVAC Upgrades Projects (DWK rev 05.06.2025)(4397930.1).pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DGM2WZ043E34/$file/UPDATED%201.6%20-%20Facilities%20Lease%20Ex%20D-1%20-%20RCSD%20HVAC%20Upgrades%20Projects%20(DWK%20clean%2005.12.2025)(4400781.1).pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">UPDATED 1.6 - Facilities Lease Ex D-1 - RCSD HVAC Upgrades Projects (DWK clean 05.12.2025)(4400781.1).pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DGGRJC6E02F8/$file/1.7%20-%20LLB%20Contract%20Documents%20-%20RCSD%20HVAC%20Upgrades%20Projects%20(DWK%20rev%2005.06.2025)(4397886.1).pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">1.7 - LLB Contract Documents - RCSD HVAC Upgrades Projects (DWK rev 05.06.2025)(4397886.1).pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">5 de febrero de 2025</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2025-02-05" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">La escuela presentó su informe del año escolar 2024-25 a la junta.</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=yoUvmhll1uk&t=5666" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DDD33E04E29D/$file/Hoover%2024-25%20Data%20for%20Board%20presentation.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Hoover 24-25 Data for Board presentation.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DDD33H04E6B6/$file/Roy%20cloud%2024-25%20Data%20for%20Board%20presentation.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Roy cloud 24-25 Data for Board presentation.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">La junta aprobó el plan de gastos actualizado de Measure U.</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=yoUvmhll1uk&t=8715" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DCWN4X5E043C/$file/2024-25%20Hoover%20Measure%20U%20ADDENDUM.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">2024-25 Hoover Measure U ADDENDUM.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">6 de noviembre de 2024</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2024-11-06" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">La junta aprobó el contrato de diseño para mejoras de HVAC.</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=bH2yII-W07A&t=3426" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DAJPQ663F3C3/$file/Architect%20Agreement%20Taft%20HVAC.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Architect Agreement Taft HVAC.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DAJPQ863F46B/$file/Architect%20Agreement%20Roosevelt%20HVAC.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Architect Agreement Roosevelt HVAC.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DAJPQC63F534/$file/Architect%20Agreement%20Hoover%20HVAC.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Architect Agreement Hoover HVAC.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DAJPQA63F50D/$file/Architect%20Agreement%20Adelante%20Selby%20HVAC.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Architect Agreement Adelante Selby HVAC.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DAXTRF789C9A/$file/7.3%20Overview.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">7.3 Overview.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">7 de agosto de 2024</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2024-08-07" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">La junta aprobó la liberación de fondos de Measure U para 2024-25.</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=P-BTYiP5WF4&t=50" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/D6KUFJ7BDA1A/$file/2024-25%20Hoover%20Measure%20U%20Application.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">2024-25 Hoover Measure U Application.pdf &#8599;</a></div>
+            </div>
+        </div>
   </section>
 
 </main>

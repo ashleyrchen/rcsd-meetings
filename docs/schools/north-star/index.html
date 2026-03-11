@@ -218,6 +218,17 @@
     color: #fff;
   }
 
+  .header-logo {
+    height: 120px;
+    width: auto;
+    max-width: 480px;
+    margin-bottom: 1.2rem;
+    object-fit: contain;
+    background: #fff;
+    padding: 14px 24px;
+    border-radius: 12px;
+  }
+
   .header-title {
     font-family: 'Fraunces', Georgia, serif;
     font-size: clamp(1.8rem, 4.5vw, 2.8rem);
@@ -577,6 +588,14 @@
     margin-top: 0.3rem;
     line-height: 1.4;
   }
+  .info-bubble { position:relative; display:inline-flex; align-items:center; margin-left:0.25rem; vertical-align:middle; }
+  .info-bubble-icon { font-family:'IBM Plex Mono',monospace; font-size:0.55rem; color:var(--text-muted); cursor:pointer; width:14px; height:14px; display:inline-flex; align-items:center; justify-content:center; border:1px solid var(--rule); border-radius:50%; line-height:1; transition:border-color 0.2s,color 0.2s; }
+  .info-bubble-icon:hover { border-color:var(--green-mid); color:var(--green-mid); }
+  .info-bubble-tip { display:none; position:absolute; bottom:calc(100% + 6px); left:50%; transform:translateX(-50%); background:var(--green-deep); color:rgba(255,255,255,0.9); padding:0.4rem 0.7rem; border-radius:4px; font-family:'IBM Plex Mono',monospace; font-size:0.6rem; white-space:nowrap; z-index:100; pointer-events:auto; box-shadow:0 2px 8px rgba(0,0,0,0.15); }
+  .info-bubble-tip::after { content:''; position:absolute; top:100%; left:50%; transform:translateX(-50%); border:5px solid transparent; border-top-color:var(--green-deep); }
+  .info-bubble-tip a { color:#fff; text-decoration:underline; }
+  .info-bubble-tip a:hover { color:var(--green-pale); }
+  .info-bubble:hover .info-bubble-tip, .info-bubble:focus-within .info-bubble-tip { display:block; }
 
   /* ---- RESOURCE CARDS ---- */
   .resource-grid {
@@ -682,6 +701,14 @@
   }
 
   /* ---- RESPONSIVE ---- */
+  /* ---- PRINCIPAL + TABLE LAYOUT ---- */
+  .principal-row {
+    display: flex;
+    gap: 2rem;
+    margin: 2rem 0 1.5rem;
+    align-items: flex-start;
+  }
+
   @media (max-width: 640px) {
     html { font-size: 15px; }
     .header-inner { padding: 2.5rem 1.2rem 2rem; }
@@ -690,6 +717,7 @@
     .stat-grid { grid-template-columns: 1fr 1fr; }
     .resource-grid { grid-template-columns: 1fr; }
     .toc a { padding: 0.8rem 0.6rem; font-size: 0.6rem; }
+    .principal-row { flex-direction: column; align-items: center; gap: 1rem; }
   }
 
   /* page-specific footer overrides */
@@ -719,28 +747,11 @@
 <header class="site-header">
   <div class="header-inner">
     <div class="header-district"><a href="/district/">Redwood City School District</a></div>
+    <img src="https://data.rcsd.info/logos/north-star.jpg" alt="North Star Academy" class="header-logo">
     <h1 class="header-title">North Star Academy</h1>
     <p class="header-subtitle">North Star Academy is a 3-8 school of choice with the highest state test proficiency in the district but the lowest student growth rates. It receives no Title I or federal funds and has the lowest per-pupil public funding. Its PTA ($326K) covers 58% of the SPSA budget, filling the gap that categorical programs cover at other schools.</p>
     <div style="margin-top:0.8rem">
-      <span class="school-badge choice">School of Choice</span>
-    </div>
-    <div class="header-meta">
-      <div class="header-stat">
-        <span class="header-stat-value">3-8</span>
-        <span class="header-stat-label">Grades</span>
-      </div>
-      <div class="header-stat">
-        <span class="header-stat-value">553</span>
-        <span class="header-stat-label">Enrollment</span>
-      </div>
-      <div class="header-stat">
-        <span class="header-stat-value">1%</span>
-        <span class="header-stat-label">High-need</span>
-      </div>
-      <div class="header-stat">
-        <a href="https://northstar.rcsdk8.net/our-school/meet-our-school-leadership" style="color:#fff; text-decoration:underline; text-decoration-color:rgba(255,255,255,0.3); text-underline-offset:2px"><span class="header-stat-value">Erin Kekos</span></a>
-        <span class="header-stat-label">Principal</span>
-      </div>
+      <span class="school-badge choice">School of Choice <span class="info-bubble" tabindex="0"><span class="info-bubble-icon" style="border-color:rgba(255,255,255,0.2);color:rgba(255,255,255,0.4)">i</span><span class="info-bubble-tip">Families from anywhere in the district can apply to attend a School of Choice through the open enrollment process.</span></span></span>
     </div>
   </div>
 </header>
@@ -761,6 +772,7 @@
     <a href="#funding">Funding</a>
     <a href="#staffing">Staffing</a>
     <a href="#resources">Documents & Resources</a>
+    <a href="#board">Board Meetings</a>
   </div>
 </nav>
 
@@ -779,31 +791,32 @@
       </div>
       <div class="stat-card">
         <div class="stat-card-label">Enrollment</div>
-        <div class="stat-card-value">553</div>
+        <div class="stat-card-value">553 <span class="info-bubble" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://data.rcsd.info/documents/sarc/2024-25/english/north-star.pdf" target="_blank">SARC 2024-25</a></span></span></div>
       </div>
       <div class="stat-card">
         <div class="stat-card-label">High-need</div>
-        <div class="stat-card-value">1%</div>
+        <div class="stat-card-value">1% <span class="info-bubble" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://data.rcsd.info/documents/sarc/2024-25/english/north-star.pdf" target="_blank">SARC 2024-25</a></span></span></div>
       </div>
     </div>
 
-    <div style="display:flex; align-items:center; gap:1.2rem; margin:1.5rem 0; padding:1rem 1.2rem; background:var(--green-wash); border-radius:8px">
-      <img src="/img/principals/north-star.jpg" alt="Erin Kekos" style="width:100px; border-radius:8px; flex-shrink:0">
-      <div>
-        <div style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--text-muted); font-family:'IBM Plex Mono',monospace">Principal</div>
-        <div style="font-size:1.3rem; font-weight:500; margin-top:0.15rem"><a href="https://northstar.rcsdk8.net/our-school/meet-our-school-leadership" style="color:var(--green-mid); text-decoration:underline; text-decoration-color:var(--rule); text-underline-offset:2px">Erin Kekos</a></div>
+    <div class="principal-row">
+      <div style="flex-shrink:0">
+        <a href="https://northstar.rcsdk8.net/our-school/meet-our-school-leadership"><img src="/img/principals/north-star.jpg" alt="Erin Kekos" style="width:160px; border-radius:10px; display:block"></a>
+        <div style="text-align:center; margin-top:0.6rem">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--text-muted)">Principal</div>
+          <div style="font-size:1.05rem; font-weight:500; margin-top:0.15rem"><a href="https://northstar.rcsdk8.net/our-school/meet-our-school-leadership" style="color:var(--green-mid); text-decoration:none">Erin Kekos</a></div>
+        </div>
       </div>
-    </div>
-
-    <div class="table-wrap">
-      <table>
-        <tbody>
-          <tr><td class="label-cell">School type</td><td>School of Choice</td></tr>
-          <tr><td class="label-cell">Address</td><td>400 Duane Street, Redwood City, CA 94062</td></tr>
-          <tr><td class="label-cell">Phone</td><td>(650) 482-2411</td></tr>
-          <tr><td class="label-cell">School website</td><td><a href="https://northstar.rcsdk8.net">northstar.rcsdk8.net</a></td></tr>
-        </tbody>
-      </table>
+      <div class="table-wrap" style="flex:1; margin:0">
+        <table>
+          <tbody>
+            <tr><td class="label-cell">School type</td><td>School of Choice</td></tr>
+            <tr><td class="label-cell">Address</td><td>400 Duane Street, Redwood City, CA 94062</td></tr>
+            <tr><td class="label-cell">Phone</td><td>(650) 482-2411</td></tr>
+            <tr><td class="label-cell">School website</td><td><a href="https://northstar.rcsdk8.net">northstar.rcsdk8.net</a></td></tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </section>
 
@@ -818,12 +831,12 @@
     <div class="stat-grid">
       <div class="stat-card">
         <div class="stat-card-label">English Growth</div>
-        <div class="stat-card-value">9.6%</div>
+        <div class="stat-card-value">9.6% <span class="info-bubble" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://www.caschooldashboard.org/reports/41690056115026/2024" target="_blank">CA Dashboard</a></span></span></div>
         <div class="stat-card-note">District avg: 20.7%</div>
       </div>
       <div class="stat-card">
         <div class="stat-card-label">Math Growth</div>
-        <div class="stat-card-value">10.6%</div>
+        <div class="stat-card-value">10.6% <span class="info-bubble" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://www.caschooldashboard.org/reports/41690056115026/2024" target="_blank">CA Dashboard</a></span></span></div>
         <div class="stat-card-note">District avg: 13.8%</div>
       </div>
     </div>
@@ -833,12 +846,12 @@
     <div class="stat-grid">
       <div class="stat-card">
         <div class="stat-card-label">English Proficiency</div>
-        <div class="stat-card-value">96%</div>
+        <div class="stat-card-value">96% <span class="info-bubble" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://data.rcsd.info/documents/sarc/2024-25/english/north-star.pdf" target="_blank">SARC 2024-25</a></span></span></div>
         <div class="stat-card-note"><span class="bar bar-green" style="width:58px"></span>District avg: 42%</div>
       </div>
       <div class="stat-card">
         <div class="stat-card-label">Math Proficiency</div>
-        <div class="stat-card-value">96%</div>
+        <div class="stat-card-value">96% <span class="info-bubble" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://data.rcsd.info/documents/sarc/2024-25/english/north-star.pdf" target="_blank">SARC 2024-25</a></span></span></div>
         <div class="stat-card-note"><span class="bar bar-green" style="width:58px"></span>District avg: 35%</div>
       </div>
     </div>
@@ -860,20 +873,20 @@
     <div class="stat-grid">
       <div class="stat-card">
         <div class="stat-card-label">Socioeconomically Disadvantaged</div>
-        <div class="stat-card-value">8.9%</div>
+        <div class="stat-card-value">8.9% <span class="info-bubble" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://data.rcsd.info/documents/sarc/2024-25/english/north-star.pdf" target="_blank">SARC 2024-25</a></span></span></div>
       </div>
       <div class="stat-card">
         <div class="stat-card-label">English Learners</div>
-        <div class="stat-card-value">2.5%</div>
+        <div class="stat-card-value">2.5% <span class="info-bubble" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://data.rcsd.info/documents/sarc/2024-25/english/north-star.pdf" target="_blank">SARC 2024-25</a></span></span></div>
       </div>
       <div class="stat-card">
         <div class="stat-card-label">Chronic Absenteeism</div>
-        <div class="stat-card-value">3.2%</div>
+        <div class="stat-card-value">3.2% <span class="info-bubble" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://www.caschooldashboard.org/reports/41690056115026/2024" target="_blank">CA Dashboard</a></span></span></div>
         <div class="stat-card-note">District avg: 18.3%</div>
       </div>
       <div class="stat-card">
         <div class="stat-card-label">Suspension Rate</div>
-        <div class="stat-card-value">0.19%</div>
+        <div class="stat-card-value">0.19% <span class="info-bubble" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://www.caschooldashboard.org/reports/41690056115026/2024" target="_blank">CA Dashboard</a></span></span></div>
         <div class="stat-card-note">District avg: 2.2%</div>
       </div>
     </div>
@@ -889,17 +902,17 @@
     <div class="stat-grid">
       <div class="stat-card">
         <div class="stat-card-label">Total Per Pupil</div>
-        <div class="stat-card-value">$19,861</div>
+        <div class="stat-card-value">$19,861 <span class="info-bubble" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://data.rcsd.info/documents/sarc/2024-25/english/north-star.pdf" target="_blank">SARC 2024-25</a></span></span></div>
         <div class="stat-card-note">District: $18,729 + community: $1,132</div>
       </div>
       <div class="stat-card">
         <div class="stat-card-label">Est. School Cost</div>
-        <div class="stat-card-value">$11.0M</div>
+        <div class="stat-card-value">$11.0M <span class="info-bubble" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://data.rcsd.info/documents/sarc/2024-25/english/north-star.pdf" target="_blank">SARC 2024-25</a></span></span></div>
         <div class="stat-card-note">Restricted: $8,321 · Unrestricted: $10,408</div>
       </div>
       <div class="stat-card">
         <div class="stat-card-label">Avg Teacher Salary</div>
-        <div class="stat-card-value">$101,998</div>
+        <div class="stat-card-value">$101,998 <span class="info-bubble" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://data.rcsd.info/documents/sarc/2024-25/english/north-star.pdf" target="_blank">SARC 2024-25</a></span></span></div>
         <div class="stat-card-note">District: $95,778</div>
       </div>
       <div class="stat-card">
@@ -919,11 +932,11 @@
     <div class="stat-grid">
       <div class="stat-card">
         <div class="stat-card-label">Supplemental (SPSA)</div>
-        <div class="stat-card-value">$564K</div>
+        <div class="stat-card-value">$564K <span class="info-bubble" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://data.rcsd.info/documents/spsa/2025-26/north-star.pdf" target="_blank">SPSA 2025-26</a></span></span></div>
       </div>
       <div class="stat-card">
         <div class="stat-card-label">SPSA Per Pupil</div>
-        <div class="stat-card-value">$1,066</div>
+        <div class="stat-card-value">$1,066 <span class="info-bubble" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://data.rcsd.info/documents/spsa/2025-26/north-star.pdf" target="_blank">SPSA 2025-26</a></span></span></div>
       </div>
     </div>
 
@@ -994,16 +1007,16 @@
     <div class="stat-grid">
       <div class="stat-card">
         <div class="stat-card-label">Fully Credentialed</div>
-        <div class="stat-card-value">79.7%</div>
+        <div class="stat-card-value">79.7% <span class="info-bubble" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://data.rcsd.info/documents/sarc/2024-25/english/north-star.pdf" target="_blank">SARC 2024-25</a></span></span></div>
         <div class="stat-card-note"><span class="bar bar-green" style="width:48px"></span>District avg: 75%</div>
       </div>
       <div class="stat-card">
         <div class="stat-card-label">Misassigned</div>
-        <div class="stat-card-value">0%</div>
+        <div class="stat-card-value">0% <span class="info-bubble" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://data.rcsd.info/documents/sarc/2024-25/english/north-star.pdf" target="_blank">SARC 2024-25</a></span></span></div>
       </div>
       <div class="stat-card">
         <div class="stat-card-label">EL Misassigned</div>
-        <div class="stat-card-value">0%</div>
+        <div class="stat-card-value">0% <span class="info-bubble" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://data.rcsd.info/documents/sarc/2024-25/english/north-star.pdf" target="_blank">SARC 2024-25</a></span></span></div>
       </div>
     </div>
 
@@ -1036,12 +1049,12 @@
       <div class="resource-card">
         <h4>School Accountability Report Card (SARC)</h4>
         <p>Annual state-mandated report on school conditions and student outcomes.</p>
-        <p style="margin-top:0.5rem"><a href="https://www.sarconline.org/SarcPdfs/16/41690056115026" target="_blank">View on SARC Online &#8599;</a></p>
+        <p style="margin-top:0.5rem"><a href="https://data.rcsd.info/documents/sarc/2024-25/english/north-star.pdf" target="_blank">Download SARC (PDF) &#8599;</a></p>
       </div>
       <div class="resource-card">
         <h4>School Plan for Student Achievement (SPSA)</h4>
         <p>Site-level plan for how supplemental funds are spent.</p>
-        <p style="margin-top:0.5rem"><a href="https://www.cde.ca.gov/re/lc/spsalcapplansummary.asp" target="_blank">View on CDE &#8599;</a></p>
+        <p style="margin-top:0.5rem"><a href="https://data.rcsd.info/documents/spsa/2025-26/north-star.pdf" target="_blank">Download SPSA (PDF) &#8599;</a></p>
       </div>
       <div class="resource-card">
         <h4>Bell Schedule</h4>
@@ -1070,7 +1083,137 @@
       </div>
     </div>
 
-    <p style="margin-top:2rem"><a href="https://northstar.rcsdk8.net" target="_blank">School website: northstar.rcsdk8.net &#8599;</a></p>
+  </section>
+
+  <!-- ======== 7. BOARD MEETINGS ======== -->
+  <section class="section" id="board">
+    <div class="section-rule"></div>
+    <div class="section-num">07</div>
+    <h2>Board Meetings</h2>
+    <p class="source" style="margin-bottom:1.5rem">Board of Trustees meetings with agenda items mentioning this school.</p>
+
+    <div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">March 11, 2026</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Regular</span>
+            <a href="/meetings/#2026-03-11" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Field trip to Pinnacles National Park</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2026-03-11/25-26-NSA.Pinnacles-Natl-Park.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">25-26 NSA.Pinnacles Natl Park &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">February 11, 2026</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Regular</span>
+            <a href="/meetings/#2026-02-11" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">New crossing guard position (~$13K/yr)</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=6VgYicePQto" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">February 4, 2026</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Regular</span>
+            <a href="/meetings/#2026-02-04" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Annual safety plan</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=Nw7_DtNMPVk&t=1291" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">October 22, 2025</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Regular</span>
+            <a href="/meetings/#2025-10-22" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">5th-grade field trip to Pier 40 in San Francisco</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=RAoGh9R-GDM" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">September 18, 2025</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Regular</span>
+            <a href="/meetings/#2025-09-18" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Field trip to Marin Headlands</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=1-KJszTHygc&t=502" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2025-09-18/25-26-NSA.-Marine-Headlands.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">25-26 NSA. Marine Headlands &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">August 19, 2025</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Regular</span>
+            <a href="/meetings/#2025-08-19" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Afterschool program expanded to 140 students</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=B8blJsqUL_4" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">June 25, 2025</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Regular</span>
+            <a href="/meetings/#2025-06-25" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Afterschool services contract</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=nsizIuPIt5E" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">May 28, 2025</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2025-05-28" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">School Plan for Student Achievement (SPSA review)</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=KCn4WYhU0wo" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DGUT7W760B8C/$file/Hoover%20SPSA%202025-26_Spring)__20250518.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Hoover SPSA 2025-26_Spring)__20250518.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DGUT9D760E17/$file/Kennedy%20SPSA%202025-26_(Spring)__20250519.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Kennedy SPSA 2025-26_(Spring)__20250519.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DGUT82760FEE/$file/MCKinley%20Middle%20School%20SPSA%20(%20SPRING%202025.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">MCKinley Middle School SPSA &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DGUT85761179/$file/North%20Star%20Academy%202025-26_SPSA(Spring)__20250514.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">North Star Academy 2025-26_SPSA(Spring)__20250514.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DGUT9F761296/$file/Roy%20Cloud%20SPSA%202025-26_20250514.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Roy Cloud SPSA 2025-26_20250514.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">February 26, 2025</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2025-02-26" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Board updated Measure U spending plan.</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=pydG3eHdP0M" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DDUPZM671020/$file/2024-25%20North%20Star%20Measure%20U%20Addendum%20%5BPending%20Board%20Approval%5D.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">2024-25 North Star Measure U Addendum [Pending Board Approval].pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">November 20, 2024</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2024-11-20" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">School presented its 2024-25 academic year report to the board.</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=VUIwMGNG5Qk&t=4896" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DB6Q9Y684907/$file/North%20Star%2024-25%20Data%20for%20Board%20presentation.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">North Star 24-25 Data for Board presentation.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">May 8, 2024</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2024-05-08" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Board updated Measure U spending plan.</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=xSE2S51UgBg&t=2510" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/D4PNDR5EE5D8/$file/23-24%20North%20Star%20Measure%20U%20Addendum.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">23-24 North Star Measure U Addendum.pdf &#8599;</a></div>
+            </div>
+        </div>
   </section>
 
 </main>

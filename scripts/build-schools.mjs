@@ -9,7 +9,7 @@
  *   - hr-data-briefing-2026-03.md (student growth, teacher demographics)
  */
 
-import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'fs';
+import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { headMeta, siteNav, siteFooter } from './html-parts.mjs';
@@ -35,6 +35,117 @@ const DISTRICT_AVG_PER_PUPIL = sarcSlugs.length > 0
   ? Math.round(sarcSlugs.reduce((s, k) => s + (SARC_DATA[k].expenditures?.schoolSite?.totalPerPupil || 0), 0) / sarcSlugs.length)
   : 0;
 
+// ---- Load board meeting summaries (concise per-school EN/ES) ----
+const BOARD_SUMMARIES = (() => { try { return JSON.parse(readFileSync(resolve(ROOT, 'data/school-board-summaries.json'), 'utf-8')); } catch { return {}; } })();
+
+// ---- Load board meeting items and match to schools ----
+const R2_BASE = 'https://data.rcsd.info';
+const meetingsData = JSON.parse(readFileSync(resolve(ROOT, 'data/meetings-data.json'), 'utf-8'));
+const timestampMap = (() => { try { return JSON.parse(readFileSync(resolve(ROOT, 'data/timestamp-map.json'), 'utf-8')); } catch { return {}; } })();
+const agendaAttachments = (() => { try { return JSON.parse(readFileSync(resolve(ROOT, 'data/agenda-attachments.json'), 'utf-8')); } catch { return {}; } })();
+
+// Build AID → R2 path lookup from board-memo JSON files
+const aidToR2Path = {};
+const memoDir = resolve(ROOT, 'data/board-memos');
+try {
+  for (const f of readdirSync(memoDir)) {
+    if (!f.endsWith('.json')) continue;
+    const memo = JSON.parse(readFileSync(resolve(memoDir, f), 'utf-8'));
+    for (const item of memo.items) {
+      for (const att of item.attachments) {
+        if (att.aid && att.filename) {
+          aidToR2Path[att.aid] = `board-packets/${memo.date}/${att.filename}`;
+        }
+      }
+    }
+  }
+} catch {}
+
+// Build AID → Simbli URL lookup from agenda-attachments.json
+const aidToSimbliUrl = {};
+for (const [, entry] of Object.entries(agendaAttachments)) {
+  const atts = entry.attachments || entry;
+  if (Array.isArray(atts)) {
+    for (const att of atts) {
+      if (att.aid && att.url) aidToSimbliUrl[att.aid] = att.url;
+    }
+  }
+}
+
+function attachmentUrl(aid) {
+  if (aidToR2Path[aid]) return `${R2_BASE}/${aidToR2Path[aid]}`;
+  if (aidToSimbliUrl[aid]) return aidToSimbliUrl[aid];
+  return `https://simbli.eboardsolutions.com//Meetings/Attachment.aspx?S=36030397&AID=${aid}`;
+}
+
+// School name patterns for matching agenda item titles
+const SCHOOL_NAME_PATTERNS = [
+  { slug: 'adelante-selby', patterns: ['Adelante Selby', 'Adelante'] },
+  { slug: 'clifford', patterns: ['Clifford'] },
+  { slug: 'garfield', patterns: ['Garfield'] },
+  { slug: 'henry-ford', patterns: ['Henry Ford'] },
+  { slug: 'hoover', patterns: ['Hoover'] },
+  { slug: 'kennedy', patterns: ['Kennedy'] },
+  { slug: 'mckinley-mit', patterns: ['McKinley'] },
+  { slug: 'north-star', patterns: ['North Star'] },
+  { slug: 'orion', patterns: ['Orion'] },
+  { slug: 'roosevelt', patterns: ['Roosevelt'] },
+  { slug: 'roy-cloud', patterns: ['Roy Cloud'] },
+  { slug: 'taft', patterns: ['Taft'] },
+];
+
+function matchSchoolSlugs(title) {
+  // Exclude false positive: "Roosevelt Avenue"
+  const normalized = title.replace(/Roosevelt\s+Ave(nue)?/gi, '___');
+  const matches = new Set();
+  for (const { slug, patterns } of SCHOOL_NAME_PATTERNS) {
+    for (const p of patterns) {
+      if (normalized.includes(p)) { matches.add(slug); break; }
+    }
+  }
+  return [...matches];
+}
+
+// Build per-school board items: slug → [{date, type, title, attachments, videoId, timestampSeconds, meetingSlug}]
+const SCHOOL_BOARD_ITEMS = {};
+for (const s of schoolsData.schools) SCHOOL_BOARD_ITEMS[s.slug] = [];
+
+for (const meeting of meetingsData.meetings) {
+  const tsData = timestampMap[meeting.date];
+  const videoId = tsData?.videoId || meeting.youtube;
+  const meetingSlug = meeting.slug;
+
+  for (let i = 0; i < (meeting.items || []).length; i++) {
+    const item = meeting.items[i];
+    const slugs = matchSchoolSlugs(item.title);
+    if (slugs.length === 0) continue;
+
+    const ts = tsData?.items?.[i];
+    const entry = {
+      date: meeting.date,
+      type: meeting.type,
+      title: item.title,
+      attachments: (item.attachments || []).filter(a => a.aid || a.href).map(a => ({
+        title: a.title,
+        url: a.href || attachmentUrl(a.aid),
+      })),
+      videoId: videoId || null,
+      timestampSeconds: ts?.timestampSeconds || null,
+      meetingSlug,
+    };
+
+    for (const slug of slugs) {
+      SCHOOL_BOARD_ITEMS[slug].push(entry);
+    }
+  }
+}
+
+// Sort each school's items newest-first
+for (const slug of Object.keys(SCHOOL_BOARD_ITEMS)) {
+  SCHOOL_BOARD_ITEMS[slug].sort((a, b) => b.date.localeCompare(a.date));
+}
+
+console.log(`Tagged ${Object.values(SCHOOL_BOARD_ITEMS).reduce((s, arr) => s + arr.length, 0)} board items across ${Object.keys(SCHOOL_BOARD_ITEMS).length} schools`);
 
 // ---- Per-school enrichment data (from analysis docs) ----
 // All numbers sourced from district-analysis-2025-26.md and hr-data-briefing-2026-03.md
@@ -55,8 +166,6 @@ const SCHOOL_DATA = {
     teacherDemo: { hispanicStaff: 66.7, whiteStaff: null, over55: 33.3, under35: null },
     notes: 'Zero suspensions. Best teacher staffing in the district (91% credentialed, 0% misassignment). SEAL bilingual model. PTO ($150K) plus Unidos PTO ($15K).',
     notesEs: 'Cero suspensiones. El mejor personal docente del distrito (91% con credencial, 0% asignación incorrecta). Modelo bilingüe SEAL.',
-    sarcUrl: 'https://www.sarconline.org/SarcPdfs/16/41690056044580',
-    spsaUrl: 'https://www.cde.ca.gov/re/lc/spsalcapplansummary.asp',
   },
   'clifford': {
     description: 'Clifford is a TK-8 neighborhood school and one of the larger schools in the district. It serves a socioeconomically mixed population with a notable long-term English Learner challenge.',
@@ -73,8 +182,6 @@ const SCHOOL_DATA = {
     teacherDemo: { hispanicStaff: null, whiteStaff: 75.0, over55: null, under35: null },
     notes: 'Largest PTO contribution ($196K) after North Star. LTEL crisis: 0% of long-term English Learners at grade level. White staff representation trending upward (75%, +8.3% over 4 years).',
     notesEs: 'La mayor contribución de PTO ($196K) después de North Star. Crisis de LTEL: 0% de estudiantes de inglés a largo plazo al nivel de grado.',
-    sarcUrl: 'https://www.sarconline.org/SarcPdfs/16/41690056044424',
-    spsaUrl: 'https://www.cde.ca.gov/re/lc/spsalcapplansummary.asp',
   },
   'garfield': {
     description: 'Garfield is a K-5 neighborhood Community School using a 50:50 bilingual model. It is among the highest-need schools in the district and has experienced significant enrollment decline. Despite low proficiency scores, Garfield teachers produce the highest ELA student growth in the district.',
@@ -91,8 +198,6 @@ const SCHOOL_DATA = {
     teacherDemo: { hispanicStaff: 52.6, whiteStaff: null, over55: null, under35: null },
     notes: '#1 ELA student growth in the district (49%). Exited CSI status in 2024. Enrollment declined from 515 to 279. No PTO funding. Hispanic staff improved from 35% to 52.6% over 4 years.',
     notesEs: 'N.º 1 en crecimiento estudiantil en ELA del distrito (49%). Salió del estatus CSI en 2024. La inscripción disminuyó de 515 a 279. Sin financiamiento de PTO.',
-    sarcUrl: 'https://www.sarconline.org/SarcPdfs/16/41690056044473',
-    spsaUrl: 'https://www.cde.ca.gov/re/lc/spsalcapplansummary.asp',
   },
   'henry-ford': {
     description: 'Henry Ford is a TK-5 neighborhood Community School serving a moderately high-need population. It has strong teacher credentialing but the most significant staff-student demographic mismatch in the district.',
@@ -109,8 +214,6 @@ const SCHOOL_DATA = {
     teacherDemo: { hispanicStaff: 7.7, whiteStaff: 76.9, over55: null, under35: null },
     notes: 'Most extreme staff-student demographic mismatch: 77% White staff serving 67% Hispanic students. 20% special education population. Zero regrettable teacher attrition over 3 years.',
     notesEs: 'La mayor disparidad demográfica entre personal y estudiantes: 77% personal blanco sirviendo a 67% estudiantes hispanos. 20% población de educación especial.',
-    sarcUrl: 'https://www.sarconline.org/SarcPdfs/16/41690056044499',
-    spsaUrl: 'https://www.cde.ca.gov/re/lc/spsalcapplansummary.asp',
   },
   'hoover': {
     description: 'Hoover is a TK-8 neighborhood Community School and one of the highest-need schools in the district. Despite having the lowest teacher credentialing rate, Hoover\'s young staff produces the second-highest student growth in both ELA and Math. It offers a full K-8 music program and STEAM instruction.',
@@ -127,8 +230,6 @@ const SCHOOL_DATA = {
     teacherDemo: { hispanicStaff: 37.5, whiteStaff: null, over55: null, under35: 47.5 },
     notes: 'Youngest staff in the district (47.5% under 35). Worst credentialing (52%) but #2 in student growth for both subjects. 10% of students experiencing homelessness. Zero resignations in 2024-25.',
     notesEs: 'El personal más joven del distrito (47.5% menor de 35 años). La menor credencialización (52%) pero N.º 2 en crecimiento estudiantil en ambas materias. 10% de estudiantes sin hogar.',
-    sarcUrl: 'https://www.sarconline.org/SarcPdfs/16/41690056044507',
-    spsaUrl: 'https://www.cde.ca.gov/re/lc/spsalcapplansummary.asp',
   },
   'kennedy': {
     description: 'Kennedy is the largest school in the district, a 6-8 neighborhood Community School and middle school. It has large within-school achievement gaps, with White students scoring significantly higher than Hispanic students. Recent principal leadership changes have led to significant staff turnover.',
@@ -145,8 +246,6 @@ const SCHOOL_DATA = {
     teacherDemo: { hispanicStaff: null, whiteStaff: null, over55: null, under35: null },
     notes: 'Stark within-school gap: White students 81% ELA vs. Hispanic 38%, EL 4%. Highest 3-year staff turnover (20 departures). Largest staff (30 evaluated teachers).',
     notesEs: 'Brecha marcada dentro de la escuela: estudiantes blancos 81% ELA vs. hispanos 38%, EL 4%. Mayor rotación de personal en 3 años (20 salidas).',
-    sarcUrl: 'https://www.sarconline.org/SarcPdfs/16/41690056044531',
-    spsaUrl: 'https://www.cde.ca.gov/re/lc/spsalcapplansummary.asp',
   },
   'mckinley-mit': {
     description: 'McKinley MIT is a 6-8 technology-focused middle school of choice and a Community School. It is ATSI-identified (Additional Targeted Support and Improvement) and receives the largest single district investment ($610K) for intervention programs. It has the lowest state test proficiency and highest suspension rate in the district.',
@@ -163,8 +262,6 @@ const SCHOOL_DATA = {
     teacherDemo: { hispanicStaff: 16.7, whiteStaff: null, over55: null, under35: null },
     notes: 'ATSI-identified. District\'s largest single public investment ($610K ATSI intervention). Lowest CAASPP proficiency. Highest suspension rate (10.78%). 78-point Hispanic staff-student gap (94.4% students / 16.7% staff). Chronic absenteeism reported as 0% -- likely a data error.',
     notesEs: 'Identificado como ATSI. La mayor inversión pública individual del distrito ($610K intervención ATSI). La competencia CAASPP más baja. La tasa de suspensión más alta (10.78%). Los datos de ausencia crónica (0%) probablemente contienen un error.',
-    sarcUrl: 'https://www.sarconline.org/SarcPdfs/16/41690056044556',
-    spsaUrl: 'https://www.cde.ca.gov/re/lc/spsalcapplansummary.asp',
   },
   'north-star': {
     description: 'North Star Academy is a 3-8 school of choice with the highest state test proficiency in the district but the lowest student growth rates. It receives no Title I or federal funds and has the lowest per-pupil public funding. Its PTA ($326K) covers 58% of the SPSA budget, filling the gap that categorical programs cover at other schools.',
@@ -181,8 +278,6 @@ const SCHOOL_DATA = {
     teacherDemo: { hispanicStaff: 19.0, whiteStaff: null, over55: 42.9, under35: null },
     notes: 'Highest retirement risk: 42.9% of staff over 55. Lowest ELA student growth (9.6%) despite highest proficiency. Every subgroup performs well (Hispanic 81%, SWD 72%). PTA provides $326K -- 58% of site budget.',
     notesEs: 'Mayor riesgo de jubilación: 42.9% del personal mayor de 55 años. El menor crecimiento estudiantil en ELA (9.6%) a pesar de la mayor competencia. Todos los subgrupos rinden bien.',
-    sarcUrl: 'https://www.sarconline.org/SarcPdfs/16/41690056115026',
-    spsaUrl: 'https://www.cde.ca.gov/re/lc/spsalcapplansummary.asp',
   },
   'orion': {
     description: 'Orion is a TK-5 alternative school of choice offering Mandarin dual-language immersion with a parent participation (co-op) model. It is the most ethnically diverse school in the district. Achievement gaps exist within the school between White and Hispanic students.',
@@ -199,8 +294,6 @@ const SCHOOL_DATA = {
     teacherDemo: { hispanicStaff: null, whiteStaff: null, over55: null, under35: null },
     notes: 'Most ethnically diverse school (35% Hispanic, 23% multiracial, 21% White, 18% Asian). Achievement gap: White 77% vs Hispanic 29% ELA. 33% Chinese staff (Mandarin immersion). Parent co-op model with high engagement.',
     notesEs: 'La escuela más diversa étnicamente (35% hispanos, 23% multirraciales, 21% blancos, 18% asiáticos). Brecha de logro: blancos 77% vs hispanos 29% ELA. Modelo cooperativo de padres.',
-    sarcUrl: 'https://www.sarconline.org/SarcPdfs/16/41690056102941',
-    spsaUrl: 'https://www.cde.ca.gov/re/lc/spsalcapplansummary.asp',
   },
   'roosevelt': {
     description: 'Roosevelt is a TK-5 neighborhood Community School that has experienced the steepest enrollment decline in the district, transitioning from K-8 to K-5. It has significant teacher qualification challenges, particularly with EL misassignment.',
@@ -217,8 +310,6 @@ const SCHOOL_DATA = {
     teacherDemo: { hispanicStaff: null, whiteStaff: null, over55: null, under35: null },
     notes: 'Steepest enrollment decline (529 to 344). Transitioned from K-8 to K-5. Science proficiency just 6.8%. 3 regrettable teacher attritions over 3 years (tied for most with McKinley).',
     notesEs: 'Mayor disminución de inscripción (529 a 344). Transicionó de K-8 a K-5. Competencia en ciencias solo 6.8%.',
-    sarcUrl: 'https://www.sarconline.org/SarcPdfs/16/41690056044572',
-    spsaUrl: 'https://www.cde.ca.gov/re/lc/spsalcapplansummary.asp',
   },
   'roy-cloud': {
     description: 'Roy Cloud is a TK-8 neighborhood school serving a relatively low-need population. It is one of the higher-performing schools in the district. Despite strong overall performance, its EL and LTEL subgroups are rated RED on the California Dashboard.',
@@ -235,8 +326,6 @@ const SCHOOL_DATA = {
     teacherDemo: { hispanicStaff: 13.5, whiteStaff: 70.3, over55: 29.7, under35: null },
     notes: 'EL/LTEL subgroups rated RED on California Dashboard despite strong overall scores. DEI Literature Lift initiative ($33K). Rainbow Cloud GSA. Hispanic staff improved from 9% to 13.5% over 4 years.',
     notesEs: 'Subgrupos EL/LTEL calificados en ROJO en el Panel de California a pesar de puntajes generales fuertes. Iniciativa DEI Literature Lift ($33K).',
-    sarcUrl: 'https://www.sarconline.org/SarcPdfs/16/41690056044432',
-    spsaUrl: 'https://www.cde.ca.gov/re/lc/spsalcapplansummary.asp',
   },
   'taft': {
     description: 'Taft is a TK-5 neighborhood Community School using a 50:50 bilingual model for K-3. It has one of the smallest budgets despite being among the highest-need schools. Taft\'s young teaching staff produces the highest Math student growth in the district.',
@@ -253,8 +342,6 @@ const SCHOOL_DATA = {
     teacherDemo: { hispanicStaff: 29.2, whiteStaff: null, over55: null, under35: 41.7 },
     notes: '#1 Math student growth (27.6%), #3 ELA growth. Youngest staff in district alongside Hoover (41.7% under 35). Smallest SPSA budget ($190K). Exited ATSI in 2024-25. 7% of students experiencing homelessness.',
     notesEs: 'N.º 1 en crecimiento estudiantil en matemáticas (27.6%), N.º 3 en crecimiento en ELA. Personal más joven del distrito junto con Hoover (41.7% menor de 35). El presupuesto SPSA más pequeño ($190K).',
-    sarcUrl: 'https://www.sarconline.org/SarcPdfs/16/41690056044598',
-    spsaUrl: 'https://www.cde.ca.gov/re/lc/spsalcapplansummary.asp',
   },
 };
 
@@ -313,6 +400,17 @@ const schoolCSS = `
   }
   .header-district a:hover {
     color: #fff;
+  }
+
+  .header-logo {
+    height: 120px;
+    width: auto;
+    max-width: 480px;
+    margin-bottom: 1.2rem;
+    object-fit: contain;
+    background: #fff;
+    padding: 14px 24px;
+    border-radius: 12px;
   }
 
   .header-title {
@@ -674,6 +772,14 @@ const schoolCSS = `
     margin-top: 0.3rem;
     line-height: 1.4;
   }
+  .info-bubble { position:relative; display:inline-flex; align-items:center; margin-left:0.25rem; vertical-align:middle; }
+  .info-bubble-icon { font-family:'IBM Plex Mono',monospace; font-size:0.55rem; color:var(--text-muted); cursor:pointer; width:14px; height:14px; display:inline-flex; align-items:center; justify-content:center; border:1px solid var(--rule); border-radius:50%; line-height:1; transition:border-color 0.2s,color 0.2s; }
+  .info-bubble-icon:hover { border-color:var(--green-mid); color:var(--green-mid); }
+  .info-bubble-tip { display:none; position:absolute; bottom:calc(100% + 6px); left:50%; transform:translateX(-50%); background:var(--green-deep); color:rgba(255,255,255,0.9); padding:0.4rem 0.7rem; border-radius:4px; font-family:'IBM Plex Mono',monospace; font-size:0.6rem; white-space:nowrap; z-index:100; pointer-events:auto; box-shadow:0 2px 8px rgba(0,0,0,0.15); }
+  .info-bubble-tip::after { content:''; position:absolute; top:100%; left:50%; transform:translateX(-50%); border:5px solid transparent; border-top-color:var(--green-deep); }
+  .info-bubble-tip a { color:#fff; text-decoration:underline; }
+  .info-bubble-tip a:hover { color:var(--green-pale); }
+  .info-bubble:hover .info-bubble-tip, .info-bubble:focus-within .info-bubble-tip { display:block; }
 
   /* ---- RESOURCE CARDS ---- */
   .resource-grid {
@@ -779,6 +885,14 @@ const schoolCSS = `
   }
 
   /* ---- RESPONSIVE ---- */
+  /* ---- PRINCIPAL + TABLE LAYOUT ---- */
+  .principal-row {
+    display: flex;
+    gap: 2rem;
+    margin: 2rem 0 1.5rem;
+    align-items: flex-start;
+  }
+
   @media (max-width: 640px) {
     html { font-size: 15px; }
     .header-inner { padding: 2.5rem 1.2rem 2rem; }
@@ -787,6 +901,7 @@ const schoolCSS = `
     .stat-grid { grid-template-columns: 1fr 1fr; }
     .resource-grid { grid-template-columns: 1fr; }
     .toc a { padding: 0.8rem 0.6rem; font-size: 0.6rem; }
+    .principal-row { flex-direction: column; align-items: center; gap: 1rem; }
   }
 
   /* page-specific footer overrides */
@@ -872,6 +987,8 @@ const LABELS = {
     schoolType: 'School type',
     neighborhood: 'Neighborhood',
     choice: 'School of Choice',
+    choiceTip: 'Families from anywhere in the district can apply to attend a School of Choice through the open enrollment process.',
+    neighborhoodTip: 'A neighborhood school enrolls students who live within its attendance area boundaries. Families can also apply through open enrollment.',
     communitySchool: 'Community School',
     program: 'Special program',
     studentGrowth: 'Student Growth',
@@ -928,8 +1045,8 @@ const LABELS = {
     sarcDesc: 'Annual state-mandated report on school conditions and student outcomes.',
     spsa: 'School Plan for Student Achievement (SPSA)',
     spsaDesc: 'Site-level plan for how supplemental funds are spent.',
-    viewSarc: 'View on SARC Online',
-    viewSpsa: 'View on CDE',
+    viewSarc: 'Download SARC (PDF)',
+    viewSpsa: 'Download SPSA (PDF)',
     safetyPlan: 'Comprehensive Safety Plan',
     bellSchedule: 'Bell Schedule',
     lunchMenu: 'Lunch Menu',
@@ -950,6 +1067,12 @@ const LABELS = {
     start: 'Start',
     end: 'End',
     earlyRelease: 'Early release',
+    boardMeetings: 'Board Meetings',
+    boardMeetingsDesc: 'Board of Trustees meetings with agenda items mentioning this school.',
+    watchVideo: 'Watch',
+    viewAttachments: 'Attachments',
+    viewFullMeeting: 'Full meeting',
+    noBoardItems: 'No board meeting items found for this school.',
   },
   es: {
     overview: 'Resumen',
@@ -965,6 +1088,8 @@ const LABELS = {
     schoolType: 'Tipo de escuela',
     neighborhood: 'Vecindario',
     choice: 'Escuela de Elección',
+    choiceTip: 'Las familias de cualquier parte del distrito pueden solicitar asistir a una Escuela de Elección a través del proceso de inscripción abierta.',
+    neighborhoodTip: 'Una escuela de vecindario inscribe a estudiantes que viven dentro de los límites de su área de asistencia. Las familias también pueden solicitar a través de inscripción abierta.',
     communitySchool: 'Escuela Comunitaria',
     program: 'Programa especial',
     studentGrowth: 'Crecimiento Estudiantil',
@@ -1021,8 +1146,8 @@ const LABELS = {
     sarcDesc: 'Informe anual estatal sobre las condiciones escolares y los resultados estudiantiles.',
     spsa: 'Plan Escolar para el Logro Estudiantil (SPSA)',
     spsaDesc: 'Plan a nivel de sitio sobre cómo se gastan los fondos suplementarios.',
-    viewSarc: 'Ver en SARC Online',
-    viewSpsa: 'Ver en CDE',
+    viewSarc: 'Descargar SARC (PDF)',
+    viewSpsa: 'Descargar SPSA (PDF)',
     safetyPlan: 'Plan Integral de Seguridad',
     bellSchedule: 'Horario Escolar',
     lunchMenu: 'Menú de Almuerzo',
@@ -1043,6 +1168,12 @@ const LABELS = {
     start: 'Inicio',
     end: 'Fin',
     earlyRelease: 'Salida temprana',
+    boardMeetings: 'Reuniones de la Mesa Directiva',
+    boardMeetingsDesc: 'Reuniones de la Mesa Directiva con temas de agenda que mencionan esta escuela.',
+    watchVideo: 'Ver video',
+    viewAttachments: 'Documentos',
+    viewFullMeeting: 'Reunión completa',
+    noBoardItems: 'No se encontraron temas de reuniones de la mesa directiva para esta escuela.',
   },
 };
 
@@ -1115,6 +1246,17 @@ function buildSchoolPage(school, data, lang) {
     ? ` (${data.growth.elaTeachers} ${L.teachersEvaluated})`
     : '';
 
+
+  // School logo
+  const logoExt = slug === 'clifford' ? 'png' : 'jpg';
+  const logoUrl = `https://data.rcsd.info/logos/${slug}.${logoExt}`;
+
+  // Info bubble helper for source attribution
+  const sarcPdfUrl = `https://data.rcsd.info/documents/sarc/2024-25/english/${slug}.pdf`;
+  const spsaPdfUrl = `https://data.rcsd.info/documents/spsa/2025-26/${slug}.pdf`;
+  const dashboardUrl = `https://www.caschooldashboard.org/reports/${school.cdsCode}/2024`;
+  const infoBubble = (text, url) => `<span class="info-bubble" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="${url}" target="_blank">${text}</a></span></span>`;
+
   return `<!DOCTYPE html>
 <html lang="${lang}">
 <head>
@@ -1139,28 +1281,11 @@ ${siteNav({ activePage: 'schools', lang, altLangHref })}
 <header class="site-header">
   <div class="header-inner">
     <div class="header-district"><a href="${isEs ? '/distrito/' : '/district/'}">${isEs ? 'Distrito Escolar de Redwood City' : 'Redwood City School District'}</a></div>
+    <img src="${logoUrl}" alt="${displayName}" class="header-logo">
     <h1 class="header-title">${displayName}</h1>
     <p class="header-subtitle">${description}</p>
     <div style="margin-top:0.8rem">
-      <span class="school-badge ${school.type}">${schoolTypeLabel}</span>${school.communitySchool ? `<span class="school-badge community">${L.communitySchool}</span>` : ''}
-    </div>
-    <div class="header-meta">
-      <div class="header-stat">
-        <span class="header-stat-value">${school.grades}</span>
-        <span class="header-stat-label">${L.grades}</span>
-      </div>
-      <div class="header-stat">
-        <span class="header-stat-value">${fmt(school.enrollment)}</span>
-        <span class="header-stat-label">${L.enrollment}</span>
-      </div>
-      <div class="header-stat">
-        <span class="header-stat-value">${fmtPct(school.highNeedPct)}</span>
-        <span class="header-stat-label">${L.highNeed}</span>
-      </div>
-      <div class="header-stat">
-        <a href="${school.website}/our-school/meet-our-school-leadership" style="color:#fff; text-decoration:underline; text-decoration-color:rgba(255,255,255,0.3); text-underline-offset:2px"><span class="header-stat-value">${school.principal}</span></a>
-        <span class="header-stat-label">${L.principal}</span>
-      </div>
+      <span class="school-badge ${school.type}">${schoolTypeLabel} <span class="info-bubble" tabindex="0"><span class="info-bubble-icon" style="border-color:rgba(255,255,255,0.2);color:rgba(255,255,255,0.4)">i</span><span class="info-bubble-tip">${school.type === 'choice' ? L.choiceTip : L.neighborhoodTip}</span></span></span>${school.communitySchool ? `<span class="school-badge community">${L.communitySchool}</span>` : ''}
     </div>
   </div>
 </header>
@@ -1181,6 +1306,7 @@ ${siteNav({ activePage: 'schools', lang, altLangHref })}
     <a href="#funding">${L.funding}</a>
     <a href="#staffing">${L.staffing}</a>
     <a href="#resources">${L.resources}</a>
+    <a href="#board">${L.boardMeetings}</a>
   </div>
 </nav>
 
@@ -1199,33 +1325,34 @@ ${siteNav({ activePage: 'schools', lang, altLangHref })}
       </div>
       <div class="stat-card">
         <div class="stat-card-label">${L.enrollment}</div>
-        <div class="stat-card-value">${fmt(school.enrollment)}</div>
+        <div class="stat-card-value">${fmt(school.enrollment)} ${infoBubble('SARC 2024-25', sarcPdfUrl)}</div>
       </div>
       <div class="stat-card">
         <div class="stat-card-label">${L.highNeed}</div>
-        <div class="stat-card-value">${fmtPct(school.highNeedPct)}</div>
+        <div class="stat-card-value">${fmtPct(school.highNeedPct)} ${infoBubble('SARC 2024-25', sarcPdfUrl)}</div>
       </div>
     </div>
 
-    <div style="display:flex; align-items:center; gap:1.2rem; margin:1.5rem 0; padding:1rem 1.2rem; background:var(--green-wash); border-radius:8px">
-      ${existsSync(resolve(ROOT, 'docs/img/principals', slug + '.jpg')) ? `<img src="/img/principals/${slug}.jpg" alt="${school.principal}" style="width:100px; border-radius:8px; flex-shrink:0">` : ''}
-      <div>
-        <div style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--text-muted); font-family:'IBM Plex Mono',monospace">${L.principal}</div>
-        <div style="font-size:1.3rem; font-weight:500; margin-top:0.15rem"><a href="${school.website}/our-school/meet-our-school-leadership" style="color:var(--green-mid); text-decoration:underline; text-decoration-color:var(--rule); text-underline-offset:2px">${school.principal}</a></div>
+    <div class="principal-row">
+      ${existsSync(resolve(ROOT, 'docs/img/principals', slug + '.jpg')) ? `<div style="flex-shrink:0">
+        <a href="${school.website}/our-school/meet-our-school-leadership"><img src="/img/principals/${slug}.jpg" alt="${school.principal}" style="width:160px; border-radius:10px; display:block"></a>
+        <div style="text-align:center; margin-top:0.6rem">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--text-muted)">${L.principal}</div>
+          <div style="font-size:1.05rem; font-weight:500; margin-top:0.15rem"><a href="${school.website}/our-school/meet-our-school-leadership" style="color:var(--green-mid); text-decoration:none">${school.principal}</a></div>
+        </div>
+      </div>` : ''}
+      <div class="table-wrap" style="flex:1; margin:0">
+        <table>
+          <tbody>
+            <tr><td class="label-cell">${L.schoolType}</td><td>${schoolTypeLabel}</td></tr>${programLabel ? `
+            <tr><td class="label-cell">${L.program}</td><td>${programLabel}</td></tr>` : ''}${school.communitySchool ? `
+            <tr><td class="label-cell">${L.communitySchool}</td><td>${isEs ? 'Sí' : 'Yes'}</td></tr>` : ''}
+            <tr><td class="label-cell">${L.address}</td><td>${school.address}</td></tr>
+            <tr><td class="label-cell">${L.phone}</td><td>${school.phone}</td></tr>
+            <tr><td class="label-cell">${L.schoolWebsite}</td><td><a href="${school.website}">${school.website.replace('https://', '')}</a></td></tr>
+          </tbody>
+        </table>
       </div>
-    </div>
-
-    <div class="table-wrap">
-      <table>
-        <tbody>
-          <tr><td class="label-cell">${L.schoolType}</td><td>${schoolTypeLabel}</td></tr>${programLabel ? `
-          <tr><td class="label-cell">${L.program}</td><td>${programLabel}</td></tr>` : ''}${school.communitySchool ? `
-          <tr><td class="label-cell">${L.communitySchool}</td><td>${isEs ? 'Sí' : 'Yes'}</td></tr>` : ''}
-          <tr><td class="label-cell">${L.address}</td><td>${school.address}</td></tr>
-          <tr><td class="label-cell">${L.phone}</td><td>${school.phone}</td></tr>
-          <tr><td class="label-cell">${L.schoolWebsite}</td><td><a href="${school.website}">${school.website.replace('https://', '')}</a></td></tr>
-        </tbody>
-      </table>
     </div>
   </section>
 
@@ -1240,12 +1367,12 @@ ${siteNav({ activePage: 'schools', lang, altLangHref })}
     <div class="stat-grid">
       <div class="stat-card">
         <div class="stat-card-label">${L.elaGrowth}</div>
-        <div class="stat-card-value">${fmtPct(data.growth.ela)}</div>
+        <div class="stat-card-value">${fmtPct(data.growth.ela)} ${infoBubble('CA Dashboard', dashboardUrl)}</div>
         <div class="stat-card-note">${L.districtAvgElaGrowth}</div>
       </div>
       <div class="stat-card">
         <div class="stat-card-label">${L.mathGrowth}</div>
-        <div class="stat-card-value">${fmtPct(data.growth.math)}</div>
+        <div class="stat-card-value">${fmtPct(data.growth.math)} ${infoBubble('CA Dashboard', dashboardUrl)}</div>
         <div class="stat-card-note">${L.districtAvgMathGrowth}</div>
       </div>
     </div>
@@ -1255,12 +1382,12 @@ ${siteNav({ activePage: 'schools', lang, altLangHref })}
     <div class="stat-grid">
       <div class="stat-card">
         <div class="stat-card-label">${L.elaProficiency}</div>
-        <div class="stat-card-value">${fmtPct(data.caaspp.ela)}</div>
+        <div class="stat-card-value">${fmtPct(data.caaspp.ela)} ${infoBubble('SARC 2024-25', sarcPdfUrl)}</div>
         <div class="stat-card-note"><span class="bar ${barClass(data.caaspp.ela)}" style="width:${barWidth(data.caaspp.ela)}px"></span>${L.districtAvgEla}</div>
       </div>
       <div class="stat-card">
         <div class="stat-card-label">${L.mathProficiency}</div>
-        <div class="stat-card-value">${fmtPct(data.caaspp.math)}</div>
+        <div class="stat-card-value">${fmtPct(data.caaspp.math)} ${infoBubble('SARC 2024-25', sarcPdfUrl)}</div>
         <div class="stat-card-note"><span class="bar ${barClass(data.caaspp.math)}" style="width:${barWidth(data.caaspp.math)}px"></span>${L.districtAvgMath}</div>
       </div>
     </div>
@@ -1282,20 +1409,20 @@ ${siteNav({ activePage: 'schools', lang, altLangHref })}
     <div class="stat-grid">
       <div class="stat-card">
         <div class="stat-card-label">${L.sed}</div>
-        <div class="stat-card-value">${fmtPct(data.demographics.sed)}</div>
+        <div class="stat-card-value">${fmtPct(data.demographics.sed)} ${infoBubble('SARC 2024-25', sarcPdfUrl)}</div>
       </div>
       <div class="stat-card">
         <div class="stat-card-label">${L.el}</div>
-        <div class="stat-card-value">${fmtPct(data.demographics.el)}</div>
+        <div class="stat-card-value">${fmtPct(data.demographics.el)} ${infoBubble('SARC 2024-25', sarcPdfUrl)}</div>
       </div>
       <div class="stat-card">
         <div class="stat-card-label">${L.chronicAbsent}</div>
-        <div class="stat-card-value">${chronicAbsentDisplay}</div>
+        <div class="stat-card-value">${chronicAbsentDisplay} ${infoBubble('CA Dashboard', dashboardUrl)}</div>
         <div class="stat-card-note">${L.districtAvgAbsent}${chronicAbsentNote}</div>
       </div>
       <div class="stat-card">
         <div class="stat-card-label">${L.suspension}</div>
-        <div class="stat-card-value">${fmtPct(data.demographics.suspension)}</div>
+        <div class="stat-card-value">${fmtPct(data.demographics.suspension)} ${infoBubble('CA Dashboard', dashboardUrl)}</div>
         <div class="stat-card-note">${L.districtAvgSuspension}</div>
       </div>
     </div>
@@ -1311,17 +1438,17 @@ ${siteNav({ activePage: 'schools', lang, altLangHref })}
     <div class="stat-grid">
       <div class="stat-card">
         <div class="stat-card-label">${L.sarcTotalPerPupil}</div>
-        <div class="stat-card-value">$${fmt(totalPerPupil)}</div>
+        <div class="stat-card-value">$${fmt(totalPerPupil)} ${infoBubble('SARC 2024-25', sarcPdfUrl)}</div>
         <div class="stat-card-note">${isEs ? 'Distrito' : 'District'}: $${fmt(sarcExp.totalPerPupil)}${communityPerPupil > 0 ? ` + ${isEs ? 'comunidad' : 'community'}: $${fmt(communityPerPupil)}` : ''}</div>
       </div>
       <div class="stat-card">
         <div class="stat-card-label">${L.sarcEstSchoolCost}</div>
-        <div class="stat-card-value">${fmtDollar(estSchoolCost)}</div>
+        <div class="stat-card-value">${fmtDollar(estSchoolCost)} ${infoBubble('SARC 2024-25', sarcPdfUrl)}</div>
         <div class="stat-card-note">${L.sarcRestricted}: $${fmt(sarcExp.restrictedPerPupil)} · ${L.sarcUnrestricted}: $${fmt(sarcExp.unrestrictedPerPupil)}</div>
       </div>
       <div class="stat-card">
         <div class="stat-card-label">${L.sarcAvgTeacherSalary}</div>
-        <div class="stat-card-value">$${fmt(sarcExp.avgTeacherSalary)}</div>
+        <div class="stat-card-value">$${fmt(sarcExp.avgTeacherSalary)} ${infoBubble('SARC 2024-25', sarcPdfUrl)}</div>
         <div class="stat-card-note">${L.sarcDistrictLabel}: $${fmt(sarc.expenditures.district.avgTeacherSalary)}</div>
       </div>
       <div class="stat-card">
@@ -1341,11 +1468,11 @@ ${siteNav({ activePage: 'schools', lang, altLangHref })}
     <div class="stat-grid">
       <div class="stat-card">
         <div class="stat-card-label">${L.spsaBudget}</div>
-        <div class="stat-card-value">${fmtDollar(data.funding.spsaTotal)}</div>
+        <div class="stat-card-value">${fmtDollar(data.funding.spsaTotal)} ${infoBubble('SPSA 2025-26', spsaPdfUrl)}</div>
       </div>
       <div class="stat-card">
         <div class="stat-card-label">${L.perPupil}</div>
-        <div class="stat-card-value">$${fmt(data.funding.perPupil)}</div>
+        <div class="stat-card-value">$${fmt(data.funding.perPupil)} ${infoBubble('SPSA 2025-26', spsaPdfUrl)}</div>
       </div>
     </div>
 
@@ -1398,16 +1525,16 @@ ${siteNav({ activePage: 'schools', lang, altLangHref })}
     <div class="stat-grid">
       <div class="stat-card">
         <div class="stat-card-label">${L.fullyCredentialed}</div>
-        <div class="stat-card-value">${fmtPct(data.staffing.credentialed)}</div>
+        <div class="stat-card-value">${fmtPct(data.staffing.credentialed)} ${infoBubble('SARC 2024-25', sarcPdfUrl)}</div>
         <div class="stat-card-note"><span class="bar ${barClass(data.staffing.credentialed)}" style="width:${barWidth(data.staffing.credentialed)}px"></span>${L.districtAvgCredentialed}</div>
       </div>
       <div class="stat-card">
         <div class="stat-card-label">${L.misassigned}</div>
-        <div class="stat-card-value">${fmtPct(data.staffing.misassigned)}</div>
+        <div class="stat-card-value">${fmtPct(data.staffing.misassigned)} ${infoBubble('SARC 2024-25', sarcPdfUrl)}</div>
       </div>
       ${data.staffing.elMisassigned !== null ? `<div class="stat-card">
         <div class="stat-card-label">${L.elMisassigned}</div>
-        <div class="stat-card-value">${fmtPct(data.staffing.elMisassigned)}</div>
+        <div class="stat-card-value">${fmtPct(data.staffing.elMisassigned)} ${infoBubble('SARC 2024-25', sarcPdfUrl)}</div>
       </div>` : ''}
     </div>
 
@@ -1442,12 +1569,12 @@ ${siteNav({ activePage: 'schools', lang, altLangHref })}
       <div class="resource-card">
         <h4>${L.sarc}</h4>
         <p>${L.sarcDesc}</p>
-        <p style="margin-top:0.5rem"><a href="${data.sarcUrl}" target="_blank">${L.viewSarc} &#8599;</a></p>
+        <p style="margin-top:0.5rem"><a href="https://data.rcsd.info/documents/sarc/2024-25/english/${slug}.pdf" target="_blank">${L.viewSarc}${isEs ? ' (inglés)' : ''} &#8599;</a></p>
       </div>
       <div class="resource-card">
         <h4>${L.spsa}</h4>
         <p>${L.spsaDesc}</p>
-        <p style="margin-top:0.5rem"><a href="${data.spsaUrl}" target="_blank">${L.viewSpsa} &#8599;</a></p>
+        <p style="margin-top:0.5rem"><a href="https://data.rcsd.info/documents/spsa/2025-26/${slug}.pdf" target="_blank">${L.viewSpsa}${isEs ? ' (inglés)' : ''} &#8599;</a></p>
       </div>
       <div class="resource-card">
         <h4>${L.bellSchedule}</h4>
@@ -1480,7 +1607,65 @@ ${siteNav({ activePage: 'schools', lang, altLangHref })}
       </div>
     </div>
 
-    <p style="margin-top:2rem"><a href="${school.website}" target="_blank">${L.schoolWebsite}: ${school.website.replace('https://', '')} &#8599;</a></p>
+  </section>
+
+  <!-- ======== 7. BOARD MEETINGS ======== -->
+  <section class="section" id="board">
+    <div class="section-rule"></div>
+    <div class="section-num">07</div>
+    <h2>${L.boardMeetings}</h2>
+    <p class="source" style="margin-bottom:1.5rem">${L.boardMeetingsDesc}</p>
+
+    ${(() => {
+      const items = SCHOOL_BOARD_ITEMS[slug] || [];
+      if (items.length === 0) return `<p>${L.noBoardItems}</p>`;
+
+      // Group by date
+      const byDate = new Map();
+      for (const item of items) {
+        if (!byDate.has(item.date)) byDate.set(item.date, []);
+        byDate.get(item.date).push(item);
+      }
+
+      return [...byDate.entries()].map(([date, dateItems]) => {
+        const d = new Date(date + 'T12:00:00');
+        const dateStr = d.toLocaleDateString(isEs ? 'es-US' : 'en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+        const meetingType = dateItems[0].type;
+        const meetingSlug = dateItems[0].meetingSlug;
+
+        const itemsHtml = dateItems.map(item => {
+          // Use concise per-school summary if available, otherwise fall back to raw title
+          const summaryKey = item.date + '|' + item.title.replace(/&#039;/g, "'");
+          const summaryObj = BOARD_SUMMARIES[summaryKey]?.[slug];
+          const displayText = (summaryObj ? (isEs ? summaryObj.es : summaryObj.en) : null) || item.title;
+
+          const attsHtml = item.attachments.length > 0
+            ? `<div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem">${item.attachments.map(a =>
+                `<a href="${a.url}" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">${a.title} &#8599;</a>`
+              ).join('')}</div>`
+            : '';
+
+          const videoLink = item.videoId
+            ? `<a href="https://www.youtube.com/watch?v=${item.videoId}${item.timestampSeconds ? '&t=' + item.timestampSeconds : ''}" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; ${L.watchVideo}</a>`
+            : '';
+
+          return `<div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">${displayText}</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap">${videoLink}</div>
+              ${attsHtml}
+            </div>`;
+        }).join('');
+
+        return `<div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">${dateStr}</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">${meetingType}</span>
+            <a href="/meetings/#${date}" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">${L.viewFullMeeting} &rarr;</a>
+          </div>
+          ${itemsHtml}
+        </div>`;
+      }).join('');
+    })()}
   </section>
 
 </main>
