@@ -35,6 +35,23 @@ const DISTRICT_AVG_PER_PUPIL = sarcSlugs.length > 0
   ? Math.round(sarcSlugs.reduce((s, k) => s + (SARC_DATA[k].expenditures?.schoolSite?.totalPerPupil || 0), 0) / sarcSlugs.length)
   : 0;
 
+// ---- PTO/PTA annual budgets from IRS Form 990/990-EZ filings ----
+// Revenue figures from most recent filing (FY ending 2024 or 2025)
+const PTO_BUDGET = {
+  'adelante-selby': { revenue: 251126, fy: '2024-25', org: 'Unidos Y Adelante', ein: '48-1266142' },
+  'clifford':       { revenue: 178910, fy: '2023-24', org: 'Clifford School PTO', ein: '94-2975493' },
+  'garfield':       null,
+  'henry-ford':     { revenue: 72588,  fy: '2023-24', org: 'Henry Ford Elementary PTA', ein: '68-0487106' },
+  'hoover':         null,
+  'kennedy':        { revenue: 285984, fy: '2024-25', org: 'Kennedy Cougars PTO', ein: '47-1431115' },
+  'mckinley-mit':   null,
+  'north-star':     { revenue: 626085, fy: '2024-25', org: 'North Star Academy Parents Club', ein: '94-3310787' },
+  'orion':          { revenue: 499572, fy: '2024-25', org: 'Starship Orion', ein: '94-3179780' },
+  'roosevelt':      { revenue: 77334,  fy: '2024-25', org: 'Roosevelt Elementary PTA', ein: '94-6173875' },
+  'roy-cloud':      { revenue: 526519, fy: '2024-25', org: 'Roy Cloud School Parents Club', ein: '26-4393209' },
+  'taft':           null,
+};
+
 // ---- Per-school enrichment data (from analysis docs) ----
 // All numbers sourced from district-analysis-2025-26.md and hr-data-briefing-2026-03.md
 
@@ -166,8 +183,8 @@ const SCHOOL_DATA = {
     spsaUrl: 'https://www.cde.ca.gov/re/lc/spsalcapplansummary.asp',
   },
   'north-star': {
-    description: 'North Star Academy is a 3-8 school of choice and the highest-performing school in the district by a wide margin. It receives no Title I or federal funds and has the lowest per-pupil public funding. Its PTA ($326K) covers 58% of the SPSA budget, filling the gap that categorical programs cover at other schools.',
-    descriptionEs: 'North Star Academy es una escuela de elección de 3-8 grados y la escuela de mayor rendimiento del distrito por un amplio margen. No recibe fondos del Título I ni federales y tiene el financiamiento público per cápita más bajo. Su PTA ($326K) cubre el 58% del presupuesto SPSA.',
+    description: 'North Star Academy is a 3-8 school of choice with the highest state test proficiency in the district but the lowest student growth rates. It receives no Title I or federal funds and has the lowest per-pupil public funding. Its PTA ($326K) covers 58% of the SPSA budget, filling the gap that categorical programs cover at other schools.',
+    descriptionEs: 'North Star Academy es una escuela de elección de 3-8 grados con la mayor competencia en exámenes estatales del distrito pero las tasas más bajas de crecimiento estudiantil. No recibe fondos del Título I ni federales y tiene el financiamiento público per cápita más bajo. Su PTA ($326K) cubre el 58% del presupuesto SPSA.',
     caaspp: { ela: 96, math: 96 },
     growth: { ela: 9.6, math: 10.6, elaTeachers: 16, mathTeachers: null },
     demographics: { sed: 8.9, el: 2.5, chronicAbsent: 3.2, suspension: 0.19 },
@@ -877,7 +894,7 @@ const LABELS = {
     sarcDistrictLabel: 'District',
     sarcPtoPerPupil: 'PTO/PTA Per Pupil',
     sarcNoPto: 'No PTO/PTA funding reported',
-    sarcExpenditureNote: 'Expenditure data from the 2022-23 SARC. Restricted funds include Title I, special ed, and EL programs. Unrestricted funds are general operating. PTO/PTA amounts are from the 2025-26 SPSA.',
+    sarcExpenditureNote: 'Per-pupil expenditure data from the 2022-23 SARC. Restricted funds include Title I, special ed, and EL programs. Unrestricted funds are general operating. PTO/PTA revenue from IRS Form 990 filings.',
     spsaBudget: 'Supplemental (SPSA)',
     perPupil: 'SPSA Per Pupil',
     fundingBreakdown: 'SPSA Source Breakdown',
@@ -970,7 +987,7 @@ const LABELS = {
     sarcDistrictLabel: 'Distrito',
     sarcPtoPerPupil: 'PTO/PTA Por Alumno',
     sarcNoPto: 'Sin financiamiento PTO/PTA reportado',
-    sarcExpenditureNote: 'Datos de gastos del SARC 2022-23. Los fondos restringidos incluyen Título I, educación especial y programas para estudiantes de inglés. Los fondos no restringidos son operación general. Los montos de PTO/PTA son del SPSA 2025-26.',
+    sarcExpenditureNote: 'Datos de gastos por alumno del SARC 2022-23. Los fondos restringidos incluyen Título I, educación especial y programas para estudiantes de inglés. Los fondos no restringidos son operación general. Ingresos de PTO/PTA de declaraciones IRS Form 990.',
     spsaBudget: 'Suplementario (SPSA)',
     perPupil: 'SPSA Por Alumno',
     fundingBreakdown: 'Desglose de Fuentes SPSA',
@@ -1064,8 +1081,9 @@ function buildSchoolPage(school, data, lang) {
   const sarcExp = sarc?.expenditures?.schoolSite;
   const sarcEnrollment = sarc?.enrollment?.total;
   const estSchoolCost = sarcExp && sarcEnrollment ? sarcExp.totalPerPupil * sarcEnrollment : null;
-  const ptoTotal = data.funding.ptoPta || 0;
-  const ptoPerPupil = school.enrollment > 0 ? Math.round(ptoTotal / school.enrollment) : 0;
+  const ptoBudget = PTO_BUDGET[slug];
+  const ptoRevenue = ptoBudget?.revenue || 0;
+  const ptoPerPupil = ptoRevenue > 0 && school.enrollment > 0 ? Math.round(ptoRevenue / school.enrollment) : 0;
 
   // Teacher demo highlights
   const demoItems = [];
@@ -1295,7 +1313,7 @@ ${siteNav({ activePage: 'schools', lang, altLangHref })}
       <div class="stat-card">
         <div class="stat-card-label">${L.sarcPtoPerPupil}</div>
         <div class="stat-card-value">${ptoPerPupil > 0 ? '$' + fmt(ptoPerPupil) : '\u2014'}</div>
-        <div class="stat-card-note">${ptoTotal > 0 ? fmtDollar(ptoTotal) + ' / ' + fmt(school.enrollment) + ' ' + (isEs ? 'alumnos' : 'students') : L.sarcNoPto}</div>
+        <div class="stat-card-note">${ptoBudget ? fmtDollar(ptoRevenue) + ' ' + (isEs ? 'ingresos anuales' : 'annual revenue') + ' (IRS 990)' : L.sarcNoPto}</div>
       </div>
     </div>
 
