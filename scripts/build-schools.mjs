@@ -824,6 +824,29 @@ function barWidth(pct, max = 60) {
   return Math.max(1, Math.round((pct / 100) * max));
 }
 
+function rctStatusNote(pto, isEs) {
+  if (!pto?.rctStatus || pto.rctStatus === 'current') return '';
+  const labels = {
+    'not-registered': isEs
+      ? 'No registrado en el Registro de Fideicomisos Caritativos de CA'
+      : 'Not registered with CA Registry of Charitable Trusts',
+    'delinquency-notice': isEs
+      ? 'Aviso de morosidad en el Registro de CA'
+      : 'Delinquency notice on file with CA Registry',
+    'missing-documents': isEs
+      ? 'Documentos faltantes en el Registro de CA'
+      : 'Missing documents on file with CA Registry',
+    'current-in-process': isEs
+      ? 'Registro de CA en proceso de revisión'
+      : 'CA Registry filing under review',
+  };
+  const text = labels[pto.rctStatus];
+  if (!text) return '';
+  const isWarning = ['not-registered', 'delinquency-notice', 'missing-documents'].includes(pto.rctStatus);
+  const color = isWarning ? 'var(--coral)' : 'var(--text-muted)';
+  return `<p style="font-size:0.75rem; color:${color}; margin-top:0.3rem">${text}</p>`;
+}
+
 // ---- Funding bar colors ----
 const FUNDING_COLORS = {
   titleI: '#4a8c6a',     // green-light
@@ -1434,7 +1457,7 @@ ${siteNav({ activePage: 'schools', lang, altLangHref })}
       <div class="resource-card">
         <h4>${L.ptoPtaOrg}</h4>
         ${school.pto?.url
-          ? `<p><a href="${school.pto.url}" target="_blank">${school.pto.name || L.visitWebsite} &#8599;</a></p>`
+          ? `<p><a href="${school.pto.url}" target="_blank">${school.pto.name || L.visitWebsite} &#8599;</a></p>${rctStatusNote(school.pto, isEs)}`
           : `<p><a href="https://www.rcef.org/" target="_blank">${isEs ? 'Fundación Educativa de Redwood City (RCEF)' : 'Redwood City Education Foundation (RCEF)'} &#8599;</a></p>`}
       </div>
       <div class="resource-card">

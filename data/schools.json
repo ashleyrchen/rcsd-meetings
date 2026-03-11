@@ -28,6 +28,7 @@
         "url": "https://unidospto.org/",
         "ein": "48-1266142",
         "ctNumber": "119817",
+        "rctStatus": "current",
         "revenue": 251126,
         "revenueFY": "2024-25",
         "sourceUrl": "https://projects.propublica.org/nonprofits/organizations/481266142"
@@ -61,6 +62,7 @@
         "url": "https://cliffordschoolpto.org/",
         "ein": "94-2975493",
         "ctNumber": "067286",
+        "rctStatus": "delinquency-notice",
         "revenue": 178910,
         "revenueFY": "2023-24",
         "sourceUrl": "https://projects.propublica.org/nonprofits/organizations/942975493"
@@ -119,6 +121,7 @@
         "url": "https://henryford.rcsdk8.net/our-community/our-school-pta",
         "ein": "68-0487106",
         "ctNumber": "CT0190659",
+        "rctStatus": "missing-documents",
         "revenue": 72588,
         "revenueFY": "2023-24",
         "sourceUrl": "https://projects.propublica.org/nonprofits/organizations/680487106"
@@ -177,6 +180,7 @@
         "url": "https://kennedycougarspto.org/",
         "ein": "47-1431115",
         "ctNumber": "CT0223912",
+        "rctStatus": "current",
         "revenue": 285984,
         "revenueFY": "2024-25",
         "sourceUrl": "https://projects.propublica.org/nonprofits/organizations/471431115"
@@ -209,6 +213,8 @@
         "name": "McKinley PTM",
         "url": "https://mckinleyptm.org/",
         "ein": null,
+        "ctNumber": null,
+        "rctStatus": "not-registered",
         "revenue": null,
         "revenueFY": null,
         "sourceUrl": null
@@ -242,6 +248,7 @@
         "url": "https://www.nsaparents.com/",
         "ein": "94-3310787",
         "ctNumber": "129094",
+        "rctStatus": "current",
         "revenue": 626085,
         "revenueFY": "2024-25",
         "sourceUrl": "https://projects.propublica.org/nonprofits/organizations/943310787"
@@ -275,6 +282,7 @@
         "url": "https://www.starshiporion.org/",
         "ein": "94-3179780",
         "ctNumber": "132514",
+        "rctStatus": "current",
         "revenue": 499572,
         "revenueFY": "2024-25",
         "sourceUrl": "https://projects.propublica.org/nonprofits/organizations/943179780"
@@ -308,6 +316,7 @@
         "url": "http://roosevelt-pta.com/",
         "ein": "94-6173875",
         "ctNumber": "CT0192014",
+        "rctStatus": "current-in-process",
         "revenue": 77334,
         "revenueFY": "2024-25",
         "sourceUrl": "https://projects.propublica.org/nonprofits/organizations/946173875"
@@ -341,6 +350,7 @@
         "url": "https://roycloudpto.com/",
         "ein": "26-4393209",
         "ctNumber": "CT0192113",
+        "rctStatus": "current",
         "revenue": 526519,
         "revenueFY": "2024-25",
         "sourceUrl": "https://projects.propublica.org/nonprofits/organizations/264393209"
