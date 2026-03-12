@@ -6,9 +6,15 @@
 - [ ] iCal (.ics) subscription feeds for district and per-school calendars
 
 ## School Pages — Community & Parent Links
-- [ ] Parent communication platform links per school (Konstella, ParentSquare, etc. — varies by site)
+- [ ] Konstella links per school (parent communication platform)
+  - Roy Cloud: https://www.konstella.com/cd/TS3MPT (via roycloudpto.com/konstella/)
+  - [ ] Find Konstella request links for other school sites
+  - Note: not every school uses Konstella — some use ParentSquare or other platforms
 - [ ] WhatsApp parent group links per school
 - [ ] SchoolMessenger absence reporting links per school
+  - iOS: https://apps.apple.com/us/app/schoolmessenger/id978894818
+  - Android: http://play.google.com/store/apps/details?id=com.schoolmessenger.recipient
+  - Note: district-wide app, but may need per-school setup links
 - [ ] After-school program info affiliated by school site
 
 ## School Pages — Advisory & Special Programs
@@ -20,7 +26,7 @@
 ## School Pages — Documents
 - [ ] Pull Spanish-language SARCs for 2024-25 and upload to data.rcsd.info/documents/sarc/2024-25/spanish/
 - [ ] Link Spanish SARCs from /escuelas/ pages (currently links to English with "(inglés)" note)
-- [ ] Source and add SpEd / IEP / 504 percentages per school (not currently in dataset)
+- [ ] Source and add SpEd / IEP / 504 percentages per school (IEP data now in sped-enrollment.json; 504 only available from OCR CRDC, lagging ~5 years)
 
 ## School Pages — Safety
 - [ ] Pull in and link the Comprehensive Safety Plan (CSP) for each school site
@@ -29,6 +35,57 @@
 - [ ] Prominently link school site presentations on school pages (e.g. presentation decks, SPSA documents)
 - [ ] Link to YouTube meeting video at the correct timestamp offset for the school's presentation
 - [ ] Example: Roosevelt presentation from 2026-03-11 board meeting — deck, SPSA, and video offset
+
+## CDE Data Pulls
+
+### Tier 1 — High value, per-school, current
+- [x] CDE Census Day Enrollment — SpEd/IEP per-grade counts (done: data/sped-enrollment.json)
+- [x] CDE SPED Enrollment by Program Setting — disability categories, LRE placement (done: data/sped-categories.json)
+- [ ] ELPAC Results — EL proficiency levels (1-4) per school (2023-24)
+  - Source: https://caaspp-elpac.cde.ca.gov/caaspp/ (Research File List, ELPAC test type)
+- [ ] ELAS/LTEL Data — Long-term English Learner counts + reclassification per school/grade (2024-25)
+  - Source: https://www.cde.ca.gov/ds/ad/filesltel.asp
+  - Critical for equity: shows students stuck as EL for 6+ years
+- [ ] Staff Race/Ethnicity — Official CDE teacher diversity per school (2024-25)
+  - Source: https://www.cde.ca.gov/ds/ad/filesstre.asp
+  - More authoritative than local HR briefings, enables multi-year trending
+- [ ] Staff Experience — New vs veteran teacher distribution per school (2024-25)
+  - Source: https://www.cde.ca.gov/ds/ad/filesstex.asp
+- [ ] Student/Staff Ratios — Class sizes, counselor ratios per school (2024-25)
+  - Source: https://www.cde.ca.gov/ds/ad/filesstrat.asp
+- [ ] Chronic Absenteeism (disaggregated) — Demographic breakdown beyond Dashboard headline (2024-25)
+  - Source: https://www.cde.ca.gov/ds/ad/filesabd.asp
+  - Reveals equity gaps (e.g. 15% overall but 25% among SED students)
+
+### Tier 2 — Valuable supplemental
+- [ ] Suspension Data (disaggregated) — Demographic breakdown of discipline (2024-25)
+  - Source: https://www.cde.ca.gov/ds/ad/filessd.asp
+- [ ] Stability Rate — Student mobility/retention rates per school (2024-25)
+  - Source: https://www.cde.ca.gov/ds/ad/filessr.asp
+- [ ] FRPM Data — Multi-year poverty trend analysis, 14 years of history (2024-25)
+  - Source: https://www.cde.ca.gov/ds/ad/filessp.asp (XLSX format)
+- [ ] Census Day Enrollment (full disaggregation) — Grade × race enrollment detail (2024-25)
+  - Source: https://www.cde.ca.gov/ds/ad/filesenrcensus.asp
+- [ ] Staff Education Level — % of teachers with advanced degrees per school (2024-25)
+  - Source: https://www.cde.ca.gov/ds/ad/filessted.asp
+- [ ] EL by Grade and Language — EL enrollment by home language per school (2024-25)
+  - Source: https://www.cde.ca.gov/ds/ad/fileselsch.asp
+
+### Tier 3 — Lower priority or limited availability
+- [ ] Physical Fitness Test (PFT/FITNESSGRAM) — 5th/7th grade fitness results per school
+  - Source: https://dq.cde.ca.gov/dataquest/PhysFit/ (query tool only, no bulk download post-2019)
+- [ ] CA Healthy Kids Survey (CHKS) — School climate, safety, connectedness
+  - Source: https://calschls.org/reports-data/query-chks/
+  - Likely district-level only for public access; per-school may require district auth
+- [ ] Historical Enrollment (1981-2022) — Long-term enrollment trends
+  - Source: https://www.cde.ca.gov/ds/ad/fileshistenr8122.asp
+- [ ] Homeless Student Enrollment — Per-school by dwelling type (heavily suppressed)
+  - Source: https://www.cde.ca.gov/ds/ad/fileshse.asp
+- [ ] OCR Civil Rights Data Collection (CRDC) — Only source for per-school 504 plan counts
+  - Source: https://ocrdata.ed.gov/ (most recent: 2020-21, lags ~5 years)
+- [ ] Board SpEd Study Report — Detailed per-school SpEd analysis from external consultant
+  - April 2024: https://go.boarddocs.com/ca/redwood/Board.nsf/files/D422AX010F7C/$file/Redwood%20City%20SD%20Special%20Education%20Study%20Report.pdf
+  - May 2025 update: https://go.boarddocs.com/ca/redwood/Board.nsf/files/DGVSN2736D8B/$file/05_25%20Special%20Education%20Study%20Implementation%20Update%20-%20Board%20Presentation.pdf
 
 ## Board Meetings — Lifecycle States
 
