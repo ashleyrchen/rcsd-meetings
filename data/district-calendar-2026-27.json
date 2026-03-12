@@ -1,0 +1,23 @@
+{
+  "schoolYear": "2026-27",
+  "calendarUrl": "https://resources.finalsite.net/images/v1768516513/rcsdk8net/t7o8c7pigujqr9kbrmzl/2026-2027TK-8InstructionalCalendar.pdf",
+  "events": [
+    { "date": "2026-08-12", "type": "milestone", "en": "First Day of School", "es": "Primer Día de Clases" },
+    { "date": "2026-09-07", "type": "no-school", "en": "Labor Day", "es": "Día del Trabajo" },
+    { "date": "2026-09-28", "type": "no-school", "en": "Planning/Development Day — No School", "es": "Día de Planificación — No Hay Clases" },
+    { "date": "2026-09-29", "dateEnd": "2026-10-02", "type": "early-release", "en": "Parent Teacher Conference Week", "es": "Semana de Conferencias con Padres" },
+    { "date": "2026-10-12", "type": "no-school", "en": "Indigenous Peoples' Day", "es": "Día de los Pueblos Indígenas" },
+    { "date": "2026-11-11", "type": "no-school", "en": "Veterans Day", "es": "Día de los Veteranos" },
+    { "date": "2026-11-25", "dateEnd": "2026-11-27", "type": "no-school", "en": "Thanksgiving Break", "es": "Vacaciones de Acción de Gracias" },
+    { "date": "2026-12-18", "dateEnd": "2027-01-01", "type": "no-school", "en": "Winter Break", "es": "Vacaciones de Invierno" },
+    { "date": "2027-01-04", "type": "no-school", "en": "Planning/Development Day — No School", "es": "Día de Planificación — No Hay Clases" },
+    { "date": "2027-01-18", "type": "no-school", "en": "Martin Luther King Jr. Day", "es": "Día de Martin Luther King Jr." },
+    { "date": "2027-02-15", "dateEnd": "2027-02-19", "type": "no-school", "en": "February Break", "es": "Vacaciones de Febrero" },
+    { "date": "2027-03-01", "type": "no-school", "en": "Planning/Development Day — No School", "es": "Día de Planificación — No Hay Clases" },
+    { "date": "2027-03-15", "dateEnd": "2027-03-19", "type": "early-release", "en": "Parent Teacher Conference Week", "es": "Semana de Conferencias con Padres" },
+    { "date": "2027-03-22", "type": "no-school", "en": "Lincoln's Day (Observed) — No School", "es": "Día de Lincoln (Observado) — No Hay Clases" },
+    { "date": "2027-04-12", "dateEnd": "2027-04-16", "type": "no-school", "en": "Spring Break", "es": "Vacaciones de Primavera" },
+    { "date": "2027-05-31", "type": "no-school", "en": "Memorial Day", "es": "Día de los Caídos" },
+    { "date": "2027-06-04", "type": "milestone", "en": "Last Day of School", "es": "Último Día de Clases" }
+  ]
+}

@@ -15,7 +15,9 @@ const ROOT = resolve(__dirname, '..');
 
 // ---- Load data ----
 const schools = JSON.parse(readFileSync(resolve(ROOT, 'data/schools.json'), 'utf-8'));
-const calendar = JSON.parse(readFileSync(resolve(ROOT, 'data/district-calendar.json'), 'utf-8'));
+const calendar2526 = JSON.parse(readFileSync(resolve(ROOT, 'data/district-calendar-2025-26.json'), 'utf-8'));
+const calendar2627 = JSON.parse(readFileSync(resolve(ROOT, 'data/district-calendar-2026-27.json'), 'utf-8'));
+const boardCalendarUrl = 'https://www.rcsdk8.net/our-district/our-board-of-trustees/calendar';
 
 let meetingStats = { total: 0, totalAttachments: 0 };
 const meetingsPath = resolve(ROOT, 'data/meetings-data.json');
@@ -27,9 +29,11 @@ if (existsSync(meetingsPath)) {
 const totalEnrollment = schools.schools.reduce((sum, s) => sum + s.enrollment, 0);
 const numSchools = schools.schools.length;
 
-// ---- Upcoming events (from today forward) ----
+// ---- Upcoming events (merge both school years, from today forward) ----
 const today = new Date().toISOString().slice(0, 10);
-const upcoming = calendar.events
+const allEvents = [...calendar2526.events, ...calendar2627.events]
+  .sort((a, b) => a.date.localeCompare(b.date));
+const upcoming = allEvents
   .filter(e => e.date >= today)
   .slice(0, 12);
 
@@ -651,8 +655,8 @@ ${sortedSchools.map(s => schoolCard(s)).join('\n')}
 
   <!-- KEY DATES -->
   <div class="section-head bi-row">
-    <div class="bi-en"><h2>Upcoming Key Dates</h2><p>${calendar.schoolYear} · <a href="${calendar.calendarUrl}" target="_blank" rel="noopener">Official Calendar &#8599;</a></p></div>
-    <div class="bi-es" lang="es"><h2>Fechas Importantes</h2><p>${calendar.schoolYear} · <a href="${calendar.calendarUrl}" target="_blank" rel="noopener">Calendario Oficial &#8599;</a></p></div>
+    <div class="bi-en"><h2>Upcoming Key Dates</h2><p><a href="${calendar2526.calendarUrl}" target="_blank" rel="noopener">${calendar2526.schoolYear} Calendar &#8599;</a> · <a href="${calendar2627.calendarUrl}" target="_blank" rel="noopener">${calendar2627.schoolYear} Calendar &#8599;</a> · <a href="${boardCalendarUrl}" target="_blank" rel="noopener">Board Meetings &#8599;</a></p></div>
+    <div class="bi-es" lang="es"><h2>Fechas Importantes</h2><p><a href="${calendar2526.calendarUrl}" target="_blank" rel="noopener">Calendario ${calendar2526.schoolYear} &#8599;</a> · <a href="${calendar2627.calendarUrl}" target="_blank" rel="noopener">Calendario ${calendar2627.schoolYear} &#8599;</a> · <a href="${boardCalendarUrl}" target="_blank" rel="noopener">Reuniones de la Junta &#8599;</a></p></div>
   </div>
   <div class="section-rule"></div>
 ${upcoming.length > 0 ? `  <div class="bi-row events-section">
@@ -732,7 +736,8 @@ DATA FILES (<a href="https://data.rcsd.info/json/">data.rcsd.info/json/</a>):
   <a href="https://data.rcsd.info/json/meeting-summaries.json">meeting-summaries.json</a>   Curated English summaries per meeting
   <a href="https://data.rcsd.info/json/meeting-summaries-es.json">meeting-summaries-es.json</a>  Curated Spanish summaries
   <a href="https://data.rcsd.info/json/schools.json">schools.json</a>             School directory (12 schools, addresses, principals, bell schedules)
-  <a href="https://data.rcsd.info/json/district-calendar.json">district-calendar.json</a>   Key dates for the school year
+  <a href="https://data.rcsd.info/json/district-calendar.json">district-calendar.json</a>   Key dates for 2025-26
+  <a href="https://data.rcsd.info/json/district-calendar-2026-27.json">district-calendar-2026-27.json</a>  Key dates for 2026-27
   <a href="https://data.rcsd.info/json/youtube-index.json">youtube-index.json</a>       YouTube video metadata
   <a href="https://data.rcsd.info/json/agenda-attachments.json">agenda-attachments.json</a>  Attachment metadata with R2 URLs
 

@@ -358,17 +358,6 @@
     position: relative;
   }
   .hero .bi-es { border-left-color: rgba(255,255,255,0.1); }
-  .hero-logo {
-    display: block;
-    height: 140px;
-    width: auto;
-    max-width: 520px;
-    margin: 0 auto 1.5rem;
-    object-fit: contain;
-    background: #fff;
-    padding: 16px 28px;
-    border-radius: 12px;
-  }
   .hero h1 {
     font-family: 'Fraunces', Georgia, serif;
     font-size: clamp(1.5rem, 3.5vw, 2.2rem);
@@ -500,7 +489,6 @@
     border: 1px solid var(--rule-light);
     padding: 0.8rem 1rem;
     transition: border-color 0.2s;
-    overflow: visible;
   }
   .school-card:hover { border-color: var(--green-light); }
   .school-card-header {
@@ -572,108 +560,47 @@
   .school-links a { color: var(--green-mid); text-decoration: none; }
   .school-links a:hover { text-decoration: underline; }
 
-  /* ---- EVENTS (centered date, EN left / ES right) ---- */
-  .dates-list { max-width: 700px; margin: 0 auto; padding-top: 0.5rem; }
-  .date-row {
-    display: grid;
-    grid-template-columns: 1fr 48px 1fr;
+  /* ---- EVENTS (mirrored bilingual) ---- */
+  .events-section { padding-top: 1rem; }
+  .events-col { display: flex; flex-direction: column; }
+  .events-col.bi-en .event-row {
+    flex-direction: row-reverse;
+    text-align: right;
+  }
+  .event-row {
+    display: flex;
     align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 0;
+    gap: 0.7rem;
+    padding: 0.45rem 0;
     border-bottom: 1px solid var(--rule-light);
   }
-  .date-en { text-align: right; font-size: 0.78rem; color: var(--text); }
-  .date-es { text-align: left; font-size: 0.78rem; color: var(--text); }
-  .date-en a, .date-es a { color: var(--green-mid); text-decoration: none; }
-  .date-en a:hover, .date-es a:hover { text-decoration: underline; }
-  .date-pip {
+  .event-date {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-width: 48px;
+    min-width: 32px;
+    flex-shrink: 0;
   }
-  .date-month {
+  .event-month {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 0.48rem;
     letter-spacing: 0.08em;
     color: var(--text-muted);
   }
-  .date-day {
+  .event-day {
     font-family: 'Fraunces', serif;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 600;
     line-height: 1;
     color: var(--text);
   }
-  .date--no-school .date-day { color: var(--coral); }
-  .date--early-release .date-day { color: var(--amber); }
-  .date--board-meeting .date-day { color: var(--green-light); }
-  .date--milestone .date-day { color: var(--green-deep); }
-
-  /* ---- INFO BUBBLES (source attribution) ---- */
-  .info-bubble {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    margin-left: 0.2rem;
-    vertical-align: middle;
-  }
-  .info-bubble-icon {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.55rem;
-    color: var(--text-muted);
-    cursor: pointer;
-    width: 14px; height: 14px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid var(--rule);
-    border-radius: 50%;
-    line-height: 1;
-    transition: border-color 0.2s, color 0.2s;
-  }
-  .info-bubble-icon:hover { border-color: var(--green-mid); color: var(--green-mid); }
-  .info-bubble-tip {
-    display: none;
-    position: absolute;
-    bottom: calc(100% + 6px);
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--green-deep);
-    color: rgba(255,255,255,0.9);
-    padding: 0.4rem 0.7rem;
-    border-radius: 4px;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.6rem;
-    white-space: nowrap;
-    z-index: 100;
-    pointer-events: auto;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-  }
-  .info-bubble-tip::after {
-    content: '';
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    border: 5px solid transparent;
-    border-top-color: var(--green-deep);
-  }
-  .info-bubble-tip a { color: #fff; text-decoration: underline; }
-  .info-bubble-tip a:hover { color: var(--green-pale); }
-  .info-bubble:hover .info-bubble-tip,
-  .info-bubble:focus-within .info-bubble-tip { display: block; }
-  /* Right-edge bubbles: shift tooltip left, show below */
-  .info-bubble--right .info-bubble-tip {
-    left: auto; right: 0; transform: none;
-    bottom: auto; top: calc(100% + 6px);
-  }
-  .info-bubble--right .info-bubble-tip::after {
-    left: auto; right: 4px; transform: none;
-    top: auto; bottom: 100%;
-    border-top-color: transparent;
-    border-bottom-color: var(--green-deep);
-  }
+  .event-text { font-size: 0.78rem; color: var(--text); flex: 1; }
+  .event--no-school .event-date { color: var(--coral); }
+  .event--no-school .event-day { color: var(--coral); }
+  .event--early-release .event-date { color: var(--amber); }
+  .event--early-release .event-day { color: var(--amber); }
+  .event--board-meeting .event-day { color: var(--green-light); }
+  .event--milestone .event-day { color: var(--green-deep); }
 
   /* ---- RESOURCE LINKS (mirrored bilingual) ---- */
   .resource-item {
@@ -756,10 +683,7 @@
     .school-section { padding: 1rem 1.2rem 0; }
     .school-grid { grid-template-columns: 1fr; }
     .ai-section { margin: 2rem 1.2rem 0; }
-    .dates-list { padding: 0.5rem 1.2rem 0; }
-    .date-row { grid-template-columns: 1fr 44px 1fr; gap: 0.3rem; }
-    .date-en, .date-es { font-size: 0.7rem; }
-    .info-bubble-tip { white-space: normal; min-width: 160px; max-width: 220px; }
+    .events-col.bi-en .event-row { flex-direction: row; text-align: left; }
   }
 </style>
 </head>
@@ -780,7 +704,6 @@
 
 <header class="hero">
   <div class="hero-inner">
-    <img src="https://data.rcsd.info/logos/district.jpg" alt="Redwood City School District" class="hero-logo">
     <div class="bi-row">
       <div class="bi-en">
         <h1>Open Data for Redwood City School District</h1>
@@ -794,19 +717,19 @@
     <div class="hero-stats">
       <div class="hero-stat">
         <span class="hero-stat-value">12</span>
-        <span class="hero-stat-label">Schools · Escuelas <span class="info-bubble" tabindex="0"><span class="info-bubble-icon" style="border-color:rgba(255,255,255,0.2);color:rgba(255,255,255,0.4)">i</span><span class="info-bubble-tip"><a href="/schools/">School directory</a></span></span></span>
+        <span class="hero-stat-label">Schools · Escuelas</span>
       </div>
       <div class="hero-stat">
         <span class="hero-stat-value">6,299</span>
-        <span class="hero-stat-label">Students · Estudiantes <span class="info-bubble" tabindex="0"><span class="info-bubble-icon" style="border-color:rgba(255,255,255,0.2);color:rgba(255,255,255,0.4)">i</span><span class="info-bubble-tip"><a href="https://dq.cde.ca.gov/dataquest/">CDE DataQuest 2023-24</a></span></span></span>
+        <span class="hero-stat-label">Students · Estudiantes</span>
       </div>
       <div class="hero-stat">
         <span class="hero-stat-value">58</span>
-        <span class="hero-stat-label">Meetings · Reuniones <span class="info-bubble" tabindex="0"><span class="info-bubble-icon" style="border-color:rgba(255,255,255,0.2);color:rgba(255,255,255,0.4)">i</span><span class="info-bubble-tip"><a href="/meetings/">Meeting archive</a></span></span></span>
+        <span class="hero-stat-label">Meetings · Reuniones</span>
       </div>
       <div class="hero-stat">
         <span class="hero-stat-value">1,724</span>
-        <span class="hero-stat-label">Attachments · Anexos <span class="info-bubble" tabindex="0"><span class="info-bubble-icon" style="border-color:rgba(255,255,255,0.2);color:rgba(255,255,255,0.4)">i</span><span class="info-bubble-tip"><a href="/meetings/#documents">Board meeting documents</a></span></span></span>
+        <span class="hero-stat-label">Attachments · Anexos</span>
       </div>
     </div>
   </div>
@@ -877,280 +800,485 @@
 
     <div class="school-card">
       <div class="school-card-header">
-        <a href="/schools/adelante-selby/" class="school-name-link">Adelante Selby</a>
+        <a href="https://adelanteselby.rcsdk8.net" target="_blank" rel="noopener" class="school-name-link">Adelante Selby</a>
         <span class="school-grades">TK-5</span>
       </div>
-      <div class="school-badges"><span class="school-badge school-badge--choice">Choice</span></div>
+      <div class="school-badges"><span class="school-badge school-badge--choice">Choice · Elección</span><span class="school-badge school-badge--community">CS</span></div>
       <div class="school-program">Spanish Immersion · Inmersión en Español</div>
       <div class="school-details">
         <div class="school-detail"><span class="school-label">Principal</span> Patricia Alcocer</div>
-        <div class="school-detail">630 students · 65% high-need <span class="info-bubble info-bubble--right" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://data.rcsd.info/documents/sarc/2024-25/english/adelante-selby.pdf">SARC 2024-25</a></span></span></div>
+        <div class="school-detail">170 Selby Lane, Atherton, CA 94027</div>
+        <div class="school-detail"><a href="tel:6504822415">(650) 482-2415</a></div>
+        <div class="school-detail">8:15 AM – 2:50 PM (early: 1:05 PM)</div>
+        <div class="school-detail">630 students · 65% high-need</div>
       </div>
       <div class="school-links">
         <a href="https://adelanteselby.rcsdk8.net" target="_blank" rel="noopener">Web</a>
+        <a href="https://menus.healthepro.com/organizations/1184/sites/9274/menus/103750" target="_blank" rel="noopener">Lunch</a>
         <a href="https://www.caschooldashboard.org/reports/41690056044580/2024" target="_blank" rel="noopener">Dashboard</a>
-        <a href="/schools/adelante-selby/">Profile</a>
+        <a href="https://data.rcsd.info/documents/spsa/2025-26/adelante-selby.pdf" target="_blank" rel="noopener">SPSA</a>
+        <a href="https://unidospto.org/" target="_blank" rel="noopener">PTO</a>
       </div>
     </div>
 
     <div class="school-card">
       <div class="school-card-header">
-        <a href="/schools/clifford/" class="school-name-link">Clifford</a>
+        <a href="https://clifford.rcsdk8.net" target="_blank" rel="noopener" class="school-name-link">Clifford</a>
         <span class="school-grades">TK-8</span>
       </div>
-      <div class="school-badges"><span class="school-badge school-badge--neighborhood">Neighborhood</span></div>
+      <div class="school-badges"><span class="school-badge school-badge--neighborhood">Neighborhood · Vecindario</span></div>
+      
       <div class="school-details">
         <div class="school-detail"><span class="school-label">Principal</span> Kristy Jackson</div>
-        <div class="school-detail">664 students · 52% high-need <span class="info-bubble info-bubble--right" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://data.rcsd.info/documents/sarc/2024-25/english/clifford.pdf">SARC 2024-25</a></span></span></div>
+        <div class="school-detail">225 Clifford Avenue, Redwood City, CA 94062</div>
+        <div class="school-detail"><a href="tel:6504822402">(650) 482-2402</a></div>
+        <div class="school-detail">8:30 AM – 3:05 PM (early: 1:20 PM)</div>
+        <div class="school-detail">664 students · 52% high-need</div>
       </div>
       <div class="school-links">
         <a href="https://clifford.rcsdk8.net" target="_blank" rel="noopener">Web</a>
+        <a href="https://menus.healthepro.com/organizations/1184/sites/9275/menus/103731" target="_blank" rel="noopener">Lunch</a>
         <a href="https://www.caschooldashboard.org/reports/41690056044424/2024" target="_blank" rel="noopener">Dashboard</a>
-        <a href="/schools/clifford/">Profile</a>
+        <a href="https://data.rcsd.info/documents/spsa/2025-26/clifford.pdf" target="_blank" rel="noopener">SPSA</a>
+        <a href="https://cliffordschoolpto.org/" target="_blank" rel="noopener">PTO</a>
       </div>
     </div>
 
     <div class="school-card">
       <div class="school-card-header">
-        <a href="/schools/garfield/" class="school-name-link">Garfield</a>
+        <a href="https://garfield.rcsdk8.net" target="_blank" rel="noopener" class="school-name-link">Garfield</a>
         <span class="school-grades">K-5</span>
       </div>
-      <div class="school-badges"><span class="school-badge school-badge--neighborhood">Neighborhood</span></div>
+      <div class="school-badges"><span class="school-badge school-badge--neighborhood">Neighborhood · Vecindario</span><span class="school-badge school-badge--community">CS</span></div>
+      
       <div class="school-details">
         <div class="school-detail"><span class="school-label">Principal</span> Jennifer Knopf</div>
-        <div class="school-detail">260 students · 97% high-need <span class="info-bubble info-bubble--right" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://data.rcsd.info/documents/sarc/2024-25/english/garfield.pdf">SARC 2024-25</a></span></span></div>
+        <div class="school-detail">3600 Middlefield Road, Menlo Park, CA 94025</div>
+        <div class="school-detail"><a href="tel:6504822405">(650) 482-2405</a></div>
+        <div class="school-detail">8:15 AM – 2:50 PM (early: 1:05 PM)</div>
+        <div class="school-detail">260 students · 97% high-need</div>
       </div>
       <div class="school-links">
         <a href="https://garfield.rcsdk8.net" target="_blank" rel="noopener">Web</a>
+        <a href="https://menus.healthepro.com/organizations/1184/sites/9277/menus/103763" target="_blank" rel="noopener">Lunch</a>
         <a href="https://www.caschooldashboard.org/reports/41690056044473/2024" target="_blank" rel="noopener">Dashboard</a>
-        <a href="/schools/garfield/">Profile</a>
+        <a href="https://data.rcsd.info/documents/spsa/2025-26/garfield.pdf" target="_blank" rel="noopener">SPSA</a>
+        
       </div>
     </div>
 
     <div class="school-card">
       <div class="school-card-header">
-        <a href="/schools/henry-ford/" class="school-name-link">Henry Ford</a>
+        <a href="https://henryford.rcsdk8.net" target="_blank" rel="noopener" class="school-name-link">Henry Ford</a>
         <span class="school-grades">TK-5</span>
       </div>
-      <div class="school-badges"><span class="school-badge school-badge--neighborhood">Neighborhood</span></div>
+      <div class="school-badges"><span class="school-badge school-badge--neighborhood">Neighborhood · Vecindario</span><span class="school-badge school-badge--community">CS</span></div>
+      
       <div class="school-details">
         <div class="school-detail"><span class="school-label">Principal</span> Jennifer Sanchez</div>
-        <div class="school-detail">461 students · 70% high-need <span class="info-bubble info-bubble--right" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://data.rcsd.info/documents/sarc/2024-25/english/henry-ford.pdf">SARC 2024-25</a></span></span></div>
+        <div class="school-detail">2498 Massachusetts Avenue, Redwood City, CA 94061</div>
+        <div class="school-detail"><a href="tel:6504822404">(650) 482-2404</a></div>
+        <div class="school-detail">8:15 AM – 2:50 PM (early: 1:05 PM)</div>
+        <div class="school-detail">461 students · 70% high-need</div>
       </div>
       <div class="school-links">
         <a href="https://henryford.rcsdk8.net" target="_blank" rel="noopener">Web</a>
+        <a href="https://menus.healthepro.com/organizations/1184/sites/9278/menus/103766" target="_blank" rel="noopener">Lunch</a>
         <a href="https://www.caschooldashboard.org/reports/41690056044499/2024" target="_blank" rel="noopener">Dashboard</a>
-        <a href="/schools/henry-ford/">Profile</a>
+        <a href="https://data.rcsd.info/documents/spsa/2025-26/henry-ford.pdf" target="_blank" rel="noopener">SPSA</a>
+        <a href="https://henryford.rcsdk8.net/our-community/our-school-pta" target="_blank" rel="noopener">PTO</a>
       </div>
     </div>
 
     <div class="school-card">
       <div class="school-card-header">
-        <a href="/schools/hoover/" class="school-name-link">Hoover</a>
+        <a href="https://hoover.rcsdk8.net" target="_blank" rel="noopener" class="school-name-link">Hoover</a>
         <span class="school-grades">TK-8</span>
       </div>
-      <div class="school-badges"><span class="school-badge school-badge--neighborhood">Neighborhood</span></div>
+      <div class="school-badges"><span class="school-badge school-badge--neighborhood">Neighborhood · Vecindario</span><span class="school-badge school-badge--community">CS</span></div>
+      
       <div class="school-details">
         <div class="school-detail"><span class="school-label">Principal</span> Lupe Guzmán</div>
-        <div class="school-detail">659 students · 97% high-need <span class="info-bubble info-bubble--right" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://data.rcsd.info/documents/sarc/2024-25/english/hoover.pdf">SARC 2024-25</a></span></span></div>
+        <div class="school-detail">701 Charter Street, Redwood City, CA 94063</div>
+        <div class="school-detail"><a href="tel:6504822408">(650) 482-2408</a></div>
+        <div class="school-detail">8:15 AM – 2:50 PM (early: 1:05 PM)</div>
+        <div class="school-detail">659 students · 97% high-need</div>
       </div>
       <div class="school-links">
         <a href="https://hoover.rcsdk8.net" target="_blank" rel="noopener">Web</a>
+        <a href="https://menus.healthepro.com/organizations/1184/sites/9279/menus/103767" target="_blank" rel="noopener">Lunch</a>
         <a href="https://www.caschooldashboard.org/reports/41690056044507/2024" target="_blank" rel="noopener">Dashboard</a>
-        <a href="/schools/hoover/">Profile</a>
+        <a href="https://data.rcsd.info/documents/spsa/2025-26/hoover.pdf" target="_blank" rel="noopener">SPSA</a>
+        
       </div>
     </div>
 
     <div class="school-card">
       <div class="school-card-header">
-        <a href="/schools/kennedy/" class="school-name-link">Kennedy</a>
+        <a href="https://kennedy.rcsdk8.net" target="_blank" rel="noopener" class="school-name-link">Kennedy</a>
         <span class="school-grades">6-8</span>
       </div>
-      <div class="school-badges"><span class="school-badge school-badge--neighborhood">Neighborhood</span></div>
+      <div class="school-badges"><span class="school-badge school-badge--neighborhood">Neighborhood · Vecindario</span><span class="school-badge school-badge--community">CS</span></div>
+      
       <div class="school-details">
         <div class="school-detail"><span class="school-label">Principal</span> Chandra Leonardo</div>
-        <div class="school-detail">788 students · 69% high-need <span class="info-bubble info-bubble--right" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://data.rcsd.info/documents/sarc/2024-25/english/kennedy.pdf">SARC 2024-25</a></span></span></div>
+        <div class="school-detail">2521 Goodwin Avenue, Redwood City, CA 94061</div>
+        <div class="school-detail"><a href="tel:6504822409">(650) 482-2409</a></div>
+        <div class="school-detail">8:30 AM – 3:25 PM (early: 1:20 PM)</div>
+        <div class="school-detail">788 students · 69% high-need</div>
       </div>
       <div class="school-links">
         <a href="https://kennedy.rcsdk8.net" target="_blank" rel="noopener">Web</a>
+        <a href="https://menus.healthepro.com/organizations/1184/sites/9280/menus/103754" target="_blank" rel="noopener">Lunch</a>
         <a href="https://www.caschooldashboard.org/reports/41690056044531/2024" target="_blank" rel="noopener">Dashboard</a>
-        <a href="/schools/kennedy/">Profile</a>
+        <a href="https://data.rcsd.info/documents/spsa/2025-26/kennedy.pdf" target="_blank" rel="noopener">SPSA</a>
+        <a href="https://kennedycougarspto.org/" target="_blank" rel="noopener">PTO</a>
       </div>
     </div>
 
     <div class="school-card">
       <div class="school-card-header">
-        <a href="/schools/mckinley-mit/" class="school-name-link">McKinley</a>
+        <a href="https://mit.rcsdk8.net" target="_blank" rel="noopener" class="school-name-link">McKinley</a>
         <span class="school-grades">6-8</span>
       </div>
-      <div class="school-badges"><span class="school-badge school-badge--choice">Choice</span></div>
+      <div class="school-badges"><span class="school-badge school-badge--choice">Choice · Elección</span><span class="school-badge school-badge--community">CS</span></div>
+      
       <div class="school-details">
         <div class="school-detail"><span class="school-label">Principal</span> Dr. Luis Arreola</div>
-        <div class="school-detail">401 students · 93% high-need <span class="info-bubble info-bubble--right" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://data.rcsd.info/documents/sarc/2024-25/english/mckinley-mit.pdf">SARC 2024-25</a></span></span></div>
+        <div class="school-detail">400 Duane Street, Redwood City, CA 94062</div>
+        <div class="school-detail"><a href="tel:6504822410">(650) 482-2410</a></div>
+        <div class="school-detail">8:30 AM – 3:25 PM (early: 1:20 PM)</div>
+        <div class="school-detail">401 students · 93% high-need</div>
       </div>
       <div class="school-links">
         <a href="https://mit.rcsdk8.net" target="_blank" rel="noopener">Web</a>
+        <a href="https://menus.healthepro.com/organizations/1184/sites/9281/menus/103771" target="_blank" rel="noopener">Lunch</a>
         <a href="https://www.caschooldashboard.org/reports/41690056044556/2024" target="_blank" rel="noopener">Dashboard</a>
-        <a href="/schools/mckinley-mit/">Profile</a>
+        <a href="https://data.rcsd.info/documents/spsa/2025-26/mckinley-mit.pdf" target="_blank" rel="noopener">SPSA</a>
+        
       </div>
     </div>
 
     <div class="school-card">
       <div class="school-card-header">
-        <a href="/schools/north-star/" class="school-name-link">North Star</a>
+        <a href="https://northstar.rcsdk8.net" target="_blank" rel="noopener" class="school-name-link">North Star</a>
         <span class="school-grades">3-8</span>
       </div>
-      <div class="school-badges"><span class="school-badge school-badge--choice">Choice</span></div>
+      <div class="school-badges"><span class="school-badge school-badge--choice">Choice · Elección</span></div>
+      
       <div class="school-details">
         <div class="school-detail"><span class="school-label">Principal</span> Erin Kekos</div>
-        <div class="school-detail">553 students · 1% high-need <span class="info-bubble info-bubble--right" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://data.rcsd.info/documents/sarc/2024-25/english/north-star.pdf">SARC 2024-25</a></span></span></div>
+        <div class="school-detail">400 Duane Street, Redwood City, CA 94062</div>
+        <div class="school-detail"><a href="tel:6504822411">(650) 482-2411</a></div>
+        <div class="school-detail">8:30 AM – 3:05 PM (early: 1:20 PM)</div>
+        <div class="school-detail">553 students · 1% high-need</div>
       </div>
       <div class="school-links">
         <a href="https://northstar.rcsdk8.net" target="_blank" rel="noopener">Web</a>
+        <a href="https://menus.healthepro.com/organizations/1184/sites/9366/menus/103771" target="_blank" rel="noopener">Lunch</a>
         <a href="https://www.caschooldashboard.org/reports/41690056115026/2024" target="_blank" rel="noopener">Dashboard</a>
-        <a href="/schools/north-star/">Profile</a>
+        <a href="https://data.rcsd.info/documents/spsa/2025-26/north-star.pdf" target="_blank" rel="noopener">SPSA</a>
+        <a href="https://www.nsaparents.com/" target="_blank" rel="noopener">PTO</a>
       </div>
     </div>
 
     <div class="school-card">
       <div class="school-card-header">
-        <a href="/schools/orion/" class="school-name-link">Orion</a>
+        <a href="https://orion.rcsdk8.net" target="_blank" rel="noopener" class="school-name-link">Orion</a>
         <span class="school-grades">TK-5</span>
       </div>
-      <div class="school-badges"><span class="school-badge school-badge--choice">Choice</span></div>
-      <div class="school-program">Mandarin Immersion · Inmersión en Mandarín</div>
+      <div class="school-badges"><span class="school-badge school-badge--choice">Choice · Elección</span></div>
+      <div class="school-program">Mandarin Immersion · Parent Participation · Inmersión en Mandarín · Participación de Padres</div>
       <div class="school-details">
         <div class="school-detail"><span class="school-label">Principal</span> Winnie Chen</div>
-        <div class="school-detail">549 students · 32% high-need <span class="info-bubble info-bubble--right" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://data.rcsd.info/documents/sarc/2024-25/english/orion.pdf">SARC 2024-25</a></span></span></div>
+        <div class="school-detail">555 Avenue del Ora, Redwood City, CA 94062</div>
+        <div class="school-detail"><a href="tel:6504822412">(650) 482-2412</a></div>
+        <div class="school-detail">8:15 AM – 2:50 PM (early: 1:05 PM)</div>
+        <div class="school-detail">549 students · 32% high-need</div>
       </div>
       <div class="school-links">
         <a href="https://orion.rcsdk8.net" target="_blank" rel="noopener">Web</a>
+        <a href="https://menus.healthepro.com/organizations/1184/sites/9282/menus/103774" target="_blank" rel="noopener">Lunch</a>
         <a href="https://www.caschooldashboard.org/reports/41690056102941/2024" target="_blank" rel="noopener">Dashboard</a>
-        <a href="/schools/orion/">Profile</a>
+        <a href="https://data.rcsd.info/documents/spsa/2025-26/orion.pdf" target="_blank" rel="noopener">SPSA</a>
+        <a href="https://www.starshiporion.org/" target="_blank" rel="noopener">PTO</a>
       </div>
     </div>
 
     <div class="school-card">
       <div class="school-card-header">
-        <a href="/schools/roosevelt/" class="school-name-link">Roosevelt</a>
+        <a href="https://roosevelt.rcsdk8.net" target="_blank" rel="noopener" class="school-name-link">Roosevelt</a>
         <span class="school-grades">TK-5</span>
       </div>
-      <div class="school-badges"><span class="school-badge school-badge--neighborhood">Neighborhood</span></div>
+      <div class="school-badges"><span class="school-badge school-badge--neighborhood">Neighborhood · Vecindario</span><span class="school-badge school-badge--community">CS</span></div>
+      
       <div class="school-details">
         <div class="school-detail"><span class="school-label">Principal</span> Tina Mercer</div>
-        <div class="school-detail">344 students · 73% high-need <span class="info-bubble info-bubble--right" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://data.rcsd.info/documents/sarc/2024-25/english/roosevelt.pdf">SARC 2024-25</a></span></span></div>
+        <div class="school-detail">2223 Vera Avenue, Redwood City, CA 94061</div>
+        <div class="school-detail"><a href="tel:6504822413">(650) 482-2413</a></div>
+        <div class="school-detail">8:15 AM – 2:50 PM (early: 1:05 PM)</div>
+        <div class="school-detail">344 students · 73% high-need</div>
       </div>
       <div class="school-links">
         <a href="https://roosevelt.rcsdk8.net" target="_blank" rel="noopener">Web</a>
+        <a href="https://menus.healthepro.com/organizations/1184/sites/9284/menus/103755" target="_blank" rel="noopener">Lunch</a>
         <a href="https://www.caschooldashboard.org/reports/41690056044572/2024" target="_blank" rel="noopener">Dashboard</a>
-        <a href="/schools/roosevelt/">Profile</a>
+        <a href="https://data.rcsd.info/documents/spsa/2025-26/roosevelt.pdf" target="_blank" rel="noopener">SPSA</a>
+        <a href="http://roosevelt-pta.com/" target="_blank" rel="noopener">PTO</a>
       </div>
     </div>
 
     <div class="school-card">
       <div class="school-card-header">
-        <a href="/schools/roy-cloud/" class="school-name-link">Roy Cloud</a>
+        <a href="https://roycloud.rcsdk8.net" target="_blank" rel="noopener" class="school-name-link">Roy Cloud</a>
         <span class="school-grades">TK-8</span>
       </div>
-      <div class="school-badges"><span class="school-badge school-badge--neighborhood">Neighborhood</span></div>
+      <div class="school-badges"><span class="school-badge school-badge--neighborhood">Neighborhood · Vecindario</span></div>
+      
       <div class="school-details">
         <div class="school-detail"><span class="school-label">Principal</span> Melissa Bowdoin</div>
-        <div class="school-detail">665 students · 16% high-need <span class="info-bubble info-bubble--right" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://data.rcsd.info/documents/sarc/2024-25/english/roy-cloud.pdf">SARC 2024-25</a></span></span></div>
+        <div class="school-detail">3790 Red Oak Way, Redwood City, CA 94061</div>
+        <div class="school-detail"><a href="tel:6504822414">(650) 482-2414</a></div>
+        <div class="school-detail">8:30 AM – 3:05 PM (early: 1:20 PM)</div>
+        <div class="school-detail">665 students · 16% high-need</div>
       </div>
       <div class="school-links">
         <a href="https://roycloud.rcsdk8.net" target="_blank" rel="noopener">Web</a>
+        <a href="https://menus.healthepro.com/organizations/1184/sites/9283/menus/103751" target="_blank" rel="noopener">Lunch</a>
         <a href="https://www.caschooldashboard.org/reports/41690056044432/2024" target="_blank" rel="noopener">Dashboard</a>
-        <a href="/schools/roy-cloud/">Profile</a>
+        <a href="https://data.rcsd.info/documents/spsa/2025-26/roy-cloud.pdf" target="_blank" rel="noopener">SPSA</a>
+        <a href="https://roycloudpto.com/" target="_blank" rel="noopener">PTO</a>
       </div>
     </div>
 
     <div class="school-card">
       <div class="school-card-header">
-        <a href="/schools/taft/" class="school-name-link">Taft</a>
+        <a href="https://taft.rcsdk8.net" target="_blank" rel="noopener" class="school-name-link">Taft</a>
         <span class="school-grades">TK-5</span>
       </div>
-      <div class="school-badges"><span class="school-badge school-badge--neighborhood">Neighborhood</span></div>
+      <div class="school-badges"><span class="school-badge school-badge--neighborhood">Neighborhood · Vecindario</span><span class="school-badge school-badge--community">CS</span></div>
+      
       <div class="school-details">
         <div class="school-detail"><span class="school-label">Principal</span> David Camarena</div>
-        <div class="school-detail">325 students · 97% high-need <span class="info-bubble info-bubble--right" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://data.rcsd.info/documents/sarc/2024-25/english/taft.pdf">SARC 2024-25</a></span></span></div>
+        <div class="school-detail">903 10th Avenue, Redwood City, CA 94063</div>
+        <div class="school-detail"><a href="tel:6504822416">(650) 482-2416</a></div>
+        <div class="school-detail">8:15 AM – 2:50 PM (early: 1:05 PM)</div>
+        <div class="school-detail">325 students · 97% high-need</div>
       </div>
       <div class="school-links">
         <a href="https://taft.rcsdk8.net" target="_blank" rel="noopener">Web</a>
+        <a href="https://menus.healthepro.com/organizations/1184/sites/9285/menus/103756" target="_blank" rel="noopener">Lunch</a>
         <a href="https://www.caschooldashboard.org/reports/41690056044598/2024" target="_blank" rel="noopener">Dashboard</a>
-        <a href="/schools/taft/">Profile</a>
+        <a href="https://data.rcsd.info/documents/spsa/2025-26/taft.pdf" target="_blank" rel="noopener">SPSA</a>
+        
       </div>
     </div>
     </div>
   </div>
 
-  <!-- KEY DATES (centered date, EN left / ES right) -->
+  <!-- KEY DATES -->
   <div class="section-head bi-row">
-    <div class="bi-en"><h2>Upcoming Key Dates</h2><p>2025-26 · <a href="https://www.rcsdk8.net/our-upcoming-events" target="_blank" rel="noopener">Official Calendar &#8599;</a></p></div>
-    <div class="bi-es" lang="es"><h2>Fechas Importantes</h2><p>2025-26 · <a href="https://www.rcsdk8.net/our-upcoming-events" target="_blank" rel="noopener">Calendario Oficial &#8599;</a></p></div>
+    <div class="bi-en"><h2>Upcoming Key Dates</h2><p><a href="https://resources.finalsite.net/images/v1734631714/rcsdk8net/chfsfkxeg73jj06flauy/2025-26TK-8InstructionalCalendarBoardapproved12112024.pdf" target="_blank" rel="noopener">2025-26 Calendar &#8599;</a> · <a href="https://resources.finalsite.net/images/v1768516513/rcsdk8net/t7o8c7pigujqr9kbrmzl/2026-2027TK-8InstructionalCalendar.pdf" target="_blank" rel="noopener">2026-27 Calendar &#8599;</a> · <a href="https://www.rcsdk8.net/our-district/our-board-of-trustees/calendar" target="_blank" rel="noopener">Board Meetings &#8599;</a></p></div>
+    <div class="bi-es" lang="es"><h2>Fechas Importantes</h2><p><a href="https://resources.finalsite.net/images/v1734631714/rcsdk8net/chfsfkxeg73jj06flauy/2025-26TK-8InstructionalCalendarBoardapproved12112024.pdf" target="_blank" rel="noopener">Calendario 2025-26 &#8599;</a> · <a href="https://resources.finalsite.net/images/v1768516513/rcsdk8net/t7o8c7pigujqr9kbrmzl/2026-2027TK-8InstructionalCalendar.pdf" target="_blank" rel="noopener">Calendario 2026-27 &#8599;</a> · <a href="https://www.rcsdk8.net/our-district/our-board-of-trustees/calendar" target="_blank" rel="noopener">Reuniones de la Junta &#8599;</a></p></div>
   </div>
   <div class="section-rule"></div>
-  <div class="dates-list">
+  <div class="bi-row events-section">
+    <div class="bi-en events-col">
 
-    <div class="date-row date--board-meeting">
-      <div class="date-en"><a href="/meetings/#2026-03-11">Board Meeting</a></div>
-      <div class="date-pip"><span class="date-month">MAR</span><span class="date-day">11</span></div>
-      <div class="date-es" lang="es"><a href="/reuniones/#2026-03-11">Reunión de la Junta</a></div>
+        <div class="event-row event--no-school">
+          <span class="event-text">Lincoln's Day (Observed) — No School</span>
+          <div class="event-date">
+            <span class="event-month">MAR</span>
+            <span class="event-day">13</span>
+          </div>
+        </div>
+
+        <div class="event-row event--no-school">
+          <span class="event-text">Planning/Development Day — No School</span>
+          <div class="event-date">
+            <span class="event-month">MAR</span>
+            <span class="event-day">16</span>
+          </div>
+        </div>
+
+        <div class="event-row event--early-release">
+          <span class="event-text">Parent Teacher Conference Week – Mar 20</span>
+          <div class="event-date">
+            <span class="event-month">MAR</span>
+            <span class="event-day">16</span>
+          </div>
+        </div>
+
+        <div class="event-row event--board-meeting">
+          <span class="event-text">Board Meeting</span>
+          <div class="event-date">
+            <span class="event-month">MAR</span>
+            <span class="event-day">25</span>
+          </div>
+        </div>
+
+        <div class="event-row event--board-meeting">
+          <span class="event-text">Board Meeting</span>
+          <div class="event-date">
+            <span class="event-month">APR</span>
+            <span class="event-day">1</span>
+          </div>
+        </div>
+
+        <div class="event-row event--no-school">
+          <span class="event-text">Spring Break – Apr 10</span>
+          <div class="event-date">
+            <span class="event-month">APR</span>
+            <span class="event-day">6</span>
+          </div>
+        </div>
+
+        <div class="event-row event--board-meeting">
+          <span class="event-text">Board Meeting</span>
+          <div class="event-date">
+            <span class="event-month">APR</span>
+            <span class="event-day">22</span>
+          </div>
+        </div>
+
+        <div class="event-row event--board-meeting">
+          <span class="event-text">Board Meeting</span>
+          <div class="event-date">
+            <span class="event-month">MAY</span>
+            <span class="event-day">13</span>
+          </div>
+        </div>
+
+        <div class="event-row event--no-school">
+          <span class="event-text">Memorial Day</span>
+          <div class="event-date">
+            <span class="event-month">MAY</span>
+            <span class="event-day">25</span>
+          </div>
+        </div>
+
+        <div class="event-row event--board-meeting">
+          <span class="event-text">Board Meeting</span>
+          <div class="event-date">
+            <span class="event-month">MAY</span>
+            <span class="event-day">27</span>
+          </div>
+        </div>
+
+        <div class="event-row event--milestone">
+          <span class="event-text">Last Day of School</span>
+          <div class="event-date">
+            <span class="event-month">JUN</span>
+            <span class="event-day">5</span>
+          </div>
+        </div>
+
+        <div class="event-row event--milestone">
+          <span class="event-text">First Day of School</span>
+          <div class="event-date">
+            <span class="event-month">AUG</span>
+            <span class="event-day">12</span>
+          </div>
+        </div>
     </div>
+    <div class="bi-es events-col" lang="es">
 
-    <div class="date-row date--early-release">
-      <div class="date-en">Early Release Day</div>
-      <div class="date-pip"><span class="date-month">MAR</span><span class="date-day">14</span></div>
-      <div class="date-es" lang="es">Día de Salida Temprana</div>
+        <div class="event-row event--no-school">
+          <div class="event-date">
+            <span class="event-month">MAR</span>
+            <span class="event-day">13</span>
+          </div>
+          <span class="event-text">Día de Lincoln (Observado) — No Hay Clases</span>
+        </div>
+
+        <div class="event-row event--no-school">
+          <div class="event-date">
+            <span class="event-month">MAR</span>
+            <span class="event-day">16</span>
+          </div>
+          <span class="event-text">Día de Planificación — No Hay Clases</span>
+        </div>
+
+        <div class="event-row event--early-release">
+          <div class="event-date">
+            <span class="event-month">MAR</span>
+            <span class="event-day">16</span>
+          </div>
+          <span class="event-text">Semana de Conferencias con Padres – 20 mar</span>
+        </div>
+
+        <div class="event-row event--board-meeting">
+          <div class="event-date">
+            <span class="event-month">MAR</span>
+            <span class="event-day">25</span>
+          </div>
+          <span class="event-text">Reunión de la Junta</span>
+        </div>
+
+        <div class="event-row event--board-meeting">
+          <div class="event-date">
+            <span class="event-month">ABR</span>
+            <span class="event-day">1</span>
+          </div>
+          <span class="event-text">Reunión de la Junta</span>
+        </div>
+
+        <div class="event-row event--no-school">
+          <div class="event-date">
+            <span class="event-month">ABR</span>
+            <span class="event-day">6</span>
+          </div>
+          <span class="event-text">Vacaciones de Primavera – 10 abr</span>
+        </div>
+
+        <div class="event-row event--board-meeting">
+          <div class="event-date">
+            <span class="event-month">ABR</span>
+            <span class="event-day">22</span>
+          </div>
+          <span class="event-text">Reunión de la Junta</span>
+        </div>
+
+        <div class="event-row event--board-meeting">
+          <div class="event-date">
+            <span class="event-month">MAY</span>
+            <span class="event-day">13</span>
+          </div>
+          <span class="event-text">Reunión de la Junta</span>
+        </div>
+
+        <div class="event-row event--no-school">
+          <div class="event-date">
+            <span class="event-month">MAY</span>
+            <span class="event-day">25</span>
+          </div>
+          <span class="event-text">Día de los Caídos</span>
+        </div>
+
+        <div class="event-row event--board-meeting">
+          <div class="event-date">
+            <span class="event-month">MAY</span>
+            <span class="event-day">27</span>
+          </div>
+          <span class="event-text">Reunión de la Junta</span>
+        </div>
+
+        <div class="event-row event--milestone">
+          <div class="event-date">
+            <span class="event-month">JUN</span>
+            <span class="event-day">5</span>
+          </div>
+          <span class="event-text">Último Día de Clases</span>
+        </div>
+
+        <div class="event-row event--milestone">
+          <div class="event-date">
+            <span class="event-month">AGO</span>
+            <span class="event-day">12</span>
+          </div>
+          <span class="event-text">Primer Día de Clases</span>
+        </div>
     </div>
-
-    <div class="date-row date--board-meeting">
-      <div class="date-en"><a href="/meetings/#2026-03-25">Board Meeting</a></div>
-      <div class="date-pip"><span class="date-month">MAR</span><span class="date-day">25</span></div>
-      <div class="date-es" lang="es"><a href="/reuniones/#2026-03-25">Reunión de la Junta</a></div>
-    </div>
-
-    <div class="date-row date--no-school">
-      <div class="date-en">Spring Break (thru Apr 3)</div>
-      <div class="date-pip"><span class="date-month">MAR</span><span class="date-day">30</span></div>
-      <div class="date-es" lang="es">Vacaciones de Primavera (hasta 3 abr)</div>
-    </div>
-
-    <div class="date-row date--board-meeting">
-      <div class="date-en"><a href="/meetings/#2026-04-08">Board Meeting</a></div>
-      <div class="date-pip"><span class="date-month">APR</span><span class="date-day">8</span></div>
-      <div class="date-es" lang="es"><a href="/reuniones/#2026-04-08">Reunión de la Junta</a></div>
-    </div>
-
-    <div class="date-row date--board-meeting">
-      <div class="date-en"><a href="/meetings/#2026-04-22">Board Meeting</a></div>
-      <div class="date-pip"><span class="date-month">APR</span><span class="date-day">22</span></div>
-      <div class="date-es" lang="es"><a href="/reuniones/#2026-04-22">Reunión de la Junta</a></div>
-    </div>
-
-    <div class="date-row date--board-meeting">
-      <div class="date-en"><a href="/meetings/#2026-05-13">Board Meeting</a></div>
-      <div class="date-pip"><span class="date-month">MAY</span><span class="date-day">13</span></div>
-      <div class="date-es" lang="es"><a href="/reuniones/#2026-05-13">Reunión de la Junta</a></div>
-    </div>
-
-    <div class="date-row date--no-school">
-      <div class="date-en">Memorial Day</div>
-      <div class="date-pip"><span class="date-month">MAY</span><span class="date-day">25</span></div>
-      <div class="date-es" lang="es">Día de los Caídos</div>
-    </div>
-
-    <div class="date-row date--board-meeting">
-      <div class="date-en"><a href="/meetings/#2026-05-27">Board Meeting</a></div>
-      <div class="date-pip"><span class="date-month">MAY</span><span class="date-day">27</span></div>
-      <div class="date-es" lang="es"><a href="/reuniones/#2026-05-27">Reunión de la Junta</a></div>
-    </div>
-
-    <div class="date-row date--milestone">
-      <div class="date-en">Last Day of School</div>
-      <div class="date-pip"><span class="date-month">MAY</span><span class="date-day">28</span></div>
-      <div class="date-es" lang="es">Último Día de Clases</div>
-    </div>
-
   </div>
 
   <!-- OFFICIAL SOURCES -->
@@ -1221,7 +1349,8 @@ DATA FILES (<a href="https://data.rcsd.info/json/">data.rcsd.info/json/</a>):
   <a href="https://data.rcsd.info/json/meeting-summaries.json">meeting-summaries.json</a>   Curated English summaries per meeting
   <a href="https://data.rcsd.info/json/meeting-summaries-es.json">meeting-summaries-es.json</a>  Curated Spanish summaries
   <a href="https://data.rcsd.info/json/schools.json">schools.json</a>             School directory (12 schools, addresses, principals, bell schedules)
-  <a href="https://data.rcsd.info/json/district-calendar.json">district-calendar.json</a>   Key dates for the school year
+  <a href="https://data.rcsd.info/json/district-calendar.json">district-calendar.json</a>   Key dates for 2025-26
+  <a href="https://data.rcsd.info/json/district-calendar-2026-27.json">district-calendar-2026-27.json</a>  Key dates for 2026-27
   <a href="https://data.rcsd.info/json/youtube-index.json">youtube-index.json</a>       YouTube video metadata
   <a href="https://data.rcsd.info/json/agenda-attachments.json">agenda-attachments.json</a>  Attachment metadata with R2 URLs
 

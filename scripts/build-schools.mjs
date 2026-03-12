@@ -1254,6 +1254,7 @@ function buildSchoolPage(school, data, lang) {
   // Info bubble helper for source attribution
   const sarcPdfUrl = `https://data.rcsd.info/documents/sarc/2024-25/english/${slug}.pdf`;
   const spsaPdfUrl = `https://data.rcsd.info/documents/spsa/2025-26/${slug}.pdf`;
+  const growthUrl = 'https://www.cde.ca.gov/ta/ac/acctgrowthmod.asp';
   const dashboardUrl = `https://www.caschooldashboard.org/reports/${school.cdsCode}/2024`;
   const infoBubble = (text, url) => `<span class="info-bubble" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="${url}" target="_blank">${text}</a></span></span>`;
 
@@ -1367,12 +1368,12 @@ ${siteNav({ activePage: 'schools', lang, altLangHref })}
     <div class="stat-grid">
       <div class="stat-card">
         <div class="stat-card-label">${L.elaGrowth}</div>
-        <div class="stat-card-value">${fmtPct(data.growth.ela)} ${infoBubble('CA Dashboard', dashboardUrl)}</div>
+        <div class="stat-card-value">${fmtPct(data.growth.ela)} ${infoBubble('CDE Growth Model', growthUrl)}</div>
         <div class="stat-card-note">${L.districtAvgElaGrowth}</div>
       </div>
       <div class="stat-card">
         <div class="stat-card-label">${L.mathGrowth}</div>
-        <div class="stat-card-value">${fmtPct(data.growth.math)} ${infoBubble('CA Dashboard', dashboardUrl)}</div>
+        <div class="stat-card-value">${fmtPct(data.growth.math)} ${infoBubble('CDE Growth Model', growthUrl)}</div>
         <div class="stat-card-note">${L.districtAvgMathGrowth}</div>
       </div>
     </div>
