@@ -25,6 +25,19 @@
 - [ ] Link to YouTube meeting video at the correct timestamp offset for the school's presentation
 - [ ] Example: Roosevelt presentation from 2026-03-11 board meeting — deck, SPSA, and video offset
 
+## Board Meetings — Lifecycle States
+
+A meeting progresses through distinct states, each with different data confidence:
+
+1. **Scheduled** (weeks/months out): On governance calendar. We know the date and can provisionally describe planned topics at a high level. Calendar widget shows: date, "Board Meeting", high-level preview if available.
+2. **Agendized** (Friday before Wed meeting): Public agenda posts. Now concrete what will formally be discussed. Show: agenda link, one-sentence summary of key items, any attachments.
+3. **Live** (during the ~2hr meeting): Prominently display Zoom join link. This should be the most visible state — a parent checking the site during a meeting should immediately see how to join.
+4. **Awaiting Recording** (0-3 days after): Meeting happened but no video yet. We know what was agendized but not what actually transpired. Show: agenda-based summary with language like "Scheduled to discuss..." rather than "Discussed...". Any attendee notes or live observations could supplement.
+5. **Recorded** (2-3 days after): YouTube video posts. From detailed ASR analysis we can understand what transpired, but this is unofficial. Show: video link, AI-generated summary with caveat.
+6. **Minutes Approved** (~1 month later): Formal minutes approved at a subsequent meeting. High confidence about what officially transpired. Show: approved minutes link, authoritative summary.
+
+The calendar widget and meeting pages should reflect which state each meeting is in, and be clear about the confidence level of any summary shown.
+
 ## Board Meetings — School Relevance
 - [ ] Better summarize school-relevant meetings: "What was discussed/approved in this board meeting (per the minutes) that could impact $SCHOOL?"
 - [ ] For meetings without minutes: "What was on the agenda that could impact $SCHOOL?"

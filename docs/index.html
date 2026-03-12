@@ -563,44 +563,55 @@
   /* ---- EVENTS (mirrored bilingual) ---- */
   .events-section { padding-top: 1rem; }
   .events-col { display: flex; flex-direction: column; }
-  .events-col.bi-en .event-row {
-    flex-direction: row-reverse;
-    text-align: right;
-  }
   .event-row {
-    display: flex;
-    align-items: center;
-    gap: 0.7rem;
-    padding: 0.45rem 0;
+    padding: 0.5rem 0;
     border-bottom: 1px solid var(--rule-light);
   }
-  .event-date {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-width: 32px;
-    flex-shrink: 0;
-  }
-  .event-month {
+  .event-date-inline {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.48rem;
-    letter-spacing: 0.08em;
-    color: var(--text-muted);
+    font-size: 0.62rem;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 0.15rem;
   }
-  .event-day {
-    font-family: 'Fraunces', serif;
-    font-size: 1rem;
-    font-weight: 600;
-    line-height: 1;
+  .event-text {
+    font-size: 0.82rem;
     color: var(--text);
+    display: block;
+    line-height: 1.4;
   }
-  .event-text { font-size: 0.78rem; color: var(--text); flex: 1; }
-  .event--no-school .event-date { color: var(--coral); }
-  .event--no-school .event-day { color: var(--coral); }
-  .event--early-release .event-date { color: var(--amber); }
-  .event--early-release .event-day { color: var(--amber); }
-  .event--board-meeting .event-day { color: var(--green-light); }
-  .event--milestone .event-day { color: var(--green-deep); }
+  .event-label-link {
+    text-decoration: none;
+    color: inherit;
+  }
+  .event-label-link:hover { text-decoration: underline; }
+  .event-summary {
+    display: block;
+    font-size: 0.72rem;
+    color: var(--text-secondary);
+    margin-top: 0.15rem;
+    line-height: 1.35;
+  }
+  .event--multi {
+    background: var(--cream-dark, #f5f0e8);
+    border-radius: 4px;
+    padding: 0.5rem 0.65rem;
+    margin: 0.15rem -0.65rem;
+    border-bottom: none;
+  }
+  /* No school — red */
+  .event--no-school .event-date-inline { color: #c0392b; }
+  .event--no-school .event-text { color: #c0392b; font-weight: 500; }
+  /* Early release — yellow/amber */
+  .event--early-release .event-date-inline { color: #b8860b; }
+  /* Board meeting — blue */
+  .event--board-meeting .event-date-inline { color: #2563a0; }
+  .event--board-meeting .event-label-link { color: #2563a0; font-weight: 500; }
+  .event--board-meeting .event-label-link:hover { color: #1a4570; }
+  /* Milestone — green */
+  .event--milestone .event-date-inline { color: var(--green-deep); }
+  .event--milestone .event-text { color: var(--green-deep); font-weight: 600; }
 
   /* ---- RESOURCE LINKS (mirrored bilingual) ---- */
   .resource-item {
@@ -683,7 +694,7 @@
     .school-section { padding: 1rem 1.2rem 0; }
     .school-grid { grid-template-columns: 1fr; }
     .ai-section { margin: 2rem 1.2rem 0; }
-    .events-col.bi-en .event-row { flex-direction: row; text-align: left; }
+    .events-col .event-row { text-align: left; }
   }
 </style>
 </head>
@@ -1079,203 +1090,131 @@
   <!-- KEY DATES -->
   <div class="section-head bi-row">
     <div class="bi-en"><h2>Upcoming Key Dates</h2><p><a href="https://resources.finalsite.net/images/v1734631714/rcsdk8net/chfsfkxeg73jj06flauy/2025-26TK-8InstructionalCalendarBoardapproved12112024.pdf" target="_blank" rel="noopener">2025-26 Calendar &#8599;</a> · <a href="https://resources.finalsite.net/images/v1768516513/rcsdk8net/t7o8c7pigujqr9kbrmzl/2026-2027TK-8InstructionalCalendar.pdf" target="_blank" rel="noopener">2026-27 Calendar &#8599;</a> · <a href="https://www.rcsdk8.net/our-district/our-board-of-trustees/calendar" target="_blank" rel="noopener">Board Meetings &#8599;</a></p></div>
-    <div class="bi-es" lang="es"><h2>Fechas Importantes</h2><p><a href="https://resources.finalsite.net/images/v1734631714/rcsdk8net/chfsfkxeg73jj06flauy/2025-26TK-8InstructionalCalendarBoardapproved12112024.pdf" target="_blank" rel="noopener">Calendario 2025-26 &#8599;</a> · <a href="https://resources.finalsite.net/images/v1768516513/rcsdk8net/t7o8c7pigujqr9kbrmzl/2026-2027TK-8InstructionalCalendar.pdf" target="_blank" rel="noopener">Calendario 2026-27 &#8599;</a> · <a href="https://www.rcsdk8.net/our-district/our-board-of-trustees/calendar" target="_blank" rel="noopener">Reuniones de la Junta &#8599;</a></p></div>
+    <div class="bi-es" lang="es"><h2>Fechas Importantes</h2><p><a href="https://resources.finalsite.net/images/v1734631714/rcsdk8net/chfsfkxeg73jj06flauy/2025-26TK-8InstructionalCalendarBoardapproved12112024.pdf" target="_blank" rel="noopener">Calendario 2025-26 &#8599;</a> · <a href="https://resources.finalsite.net/images/v1768516513/rcsdk8net/t7o8c7pigujqr9kbrmzl/2026-2027TK-8InstructionalCalendar.pdf" target="_blank" rel="noopener">Calendario 2026-27 &#8599;</a> · <a href="https://www.rcsdk8.net/our-district/our-board-of-trustees/calendar" target="_blank" rel="noopener">Junta &#8599;</a></p></div>
   </div>
   <div class="section-rule"></div>
   <div class="bi-row events-section">
     <div class="bi-en events-col">
 
         <div class="event-row event--no-school">
+          <span class="event-date-inline">Fri, MAR 13</span>
           <span class="event-text">Lincoln's Day (Observed) — No School</span>
-          <div class="event-date">
-            <span class="event-month">MAR</span>
-            <span class="event-day">13</span>
-          </div>
         </div>
 
         <div class="event-row event--no-school">
+          <span class="event-date-inline">Mon, MAR 16</span>
           <span class="event-text">Planning/Development Day — No School</span>
-          <div class="event-date">
-            <span class="event-month">MAR</span>
-            <span class="event-day">16</span>
-          </div>
         </div>
 
-        <div class="event-row event--early-release">
-          <span class="event-text">Parent Teacher Conference Week – Mar 20</span>
-          <div class="event-date">
-            <span class="event-month">MAR</span>
-            <span class="event-day">16</span>
-          </div>
+        <div class="event-row event--early-release event--multi">
+          <span class="event-date-inline">Mon–Fri, MAR 16–20</span>
+          <span class="event-text">Parent Teacher Conference Week</span>
         </div>
 
         <div class="event-row event--board-meeting">
-          <span class="event-text">Board Meeting</span>
-          <div class="event-date">
-            <span class="event-month">MAR</span>
-            <span class="event-day">25</span>
-          </div>
+          <span class="event-date-inline">Wed, MAR 25</span>
+          <span class="event-text"><a href="/meetings/#sy2526" class="event-label-link">Board Meeting</a></span>
         </div>
 
         <div class="event-row event--board-meeting">
-          <span class="event-text">Board Meeting</span>
-          <div class="event-date">
-            <span class="event-month">APR</span>
-            <span class="event-day">1</span>
-          </div>
+          <span class="event-date-inline">Wed, APR 1</span>
+          <span class="event-text"><a href="/meetings/#sy2526" class="event-label-link">Board Meeting</a></span>
+        </div>
+
+        <div class="event-row event--no-school event--multi">
+          <span class="event-date-inline">Mon–Fri, APR 6–10</span>
+          <span class="event-text">Spring Break</span>
+        </div>
+
+        <div class="event-row event--board-meeting">
+          <span class="event-date-inline">Wed, APR 22</span>
+          <span class="event-text"><a href="/meetings/#sy2526" class="event-label-link">Board Meeting</a></span>
+        </div>
+
+        <div class="event-row event--board-meeting">
+          <span class="event-date-inline">Wed, MAY 13</span>
+          <span class="event-text"><a href="/meetings/#sy2526" class="event-label-link">Board Meeting</a></span>
         </div>
 
         <div class="event-row event--no-school">
-          <span class="event-text">Spring Break – Apr 10</span>
-          <div class="event-date">
-            <span class="event-month">APR</span>
-            <span class="event-day">6</span>
-          </div>
-        </div>
-
-        <div class="event-row event--board-meeting">
-          <span class="event-text">Board Meeting</span>
-          <div class="event-date">
-            <span class="event-month">APR</span>
-            <span class="event-day">22</span>
-          </div>
-        </div>
-
-        <div class="event-row event--board-meeting">
-          <span class="event-text">Board Meeting</span>
-          <div class="event-date">
-            <span class="event-month">MAY</span>
-            <span class="event-day">13</span>
-          </div>
-        </div>
-
-        <div class="event-row event--no-school">
+          <span class="event-date-inline">Mon, MAY 25</span>
           <span class="event-text">Memorial Day</span>
-          <div class="event-date">
-            <span class="event-month">MAY</span>
-            <span class="event-day">25</span>
-          </div>
         </div>
 
         <div class="event-row event--board-meeting">
-          <span class="event-text">Board Meeting</span>
-          <div class="event-date">
-            <span class="event-month">MAY</span>
-            <span class="event-day">27</span>
-          </div>
+          <span class="event-date-inline">Wed, MAY 27</span>
+          <span class="event-text"><a href="/meetings/#sy2526" class="event-label-link">Board Meeting</a></span>
         </div>
 
         <div class="event-row event--milestone">
+          <span class="event-date-inline">Fri, JUN 5</span>
           <span class="event-text">Last Day of School</span>
-          <div class="event-date">
-            <span class="event-month">JUN</span>
-            <span class="event-day">5</span>
-          </div>
         </div>
 
         <div class="event-row event--milestone">
+          <span class="event-date-inline">Wed, AUG 12</span>
           <span class="event-text">First Day of School</span>
-          <div class="event-date">
-            <span class="event-month">AUG</span>
-            <span class="event-day">12</span>
-          </div>
         </div>
     </div>
     <div class="bi-es events-col" lang="es">
 
         <div class="event-row event--no-school">
-          <div class="event-date">
-            <span class="event-month">MAR</span>
-            <span class="event-day">13</span>
-          </div>
+          <span class="event-date-inline">vie, MAR 13</span>
           <span class="event-text">Día de Lincoln (Observado) — No Hay Clases</span>
         </div>
 
         <div class="event-row event--no-school">
-          <div class="event-date">
-            <span class="event-month">MAR</span>
-            <span class="event-day">16</span>
-          </div>
+          <span class="event-date-inline">lun, MAR 16</span>
           <span class="event-text">Día de Planificación — No Hay Clases</span>
         </div>
 
-        <div class="event-row event--early-release">
-          <div class="event-date">
-            <span class="event-month">MAR</span>
-            <span class="event-day">16</span>
-          </div>
-          <span class="event-text">Semana de Conferencias con Padres – 20 mar</span>
+        <div class="event-row event--early-release event--multi">
+          <span class="event-date-inline">lun–vie, MAR 16–20</span>
+          <span class="event-text">Semana de Conferencias con Padres</span>
         </div>
 
         <div class="event-row event--board-meeting">
-          <div class="event-date">
-            <span class="event-month">MAR</span>
-            <span class="event-day">25</span>
-          </div>
-          <span class="event-text">Reunión de la Junta</span>
+          <span class="event-date-inline">mié, MAR 25</span>
+          <span class="event-text"><a href="/reuniones/#sy2526" class="event-label-link">Reunión de la Junta</a></span>
         </div>
 
         <div class="event-row event--board-meeting">
-          <div class="event-date">
-            <span class="event-month">ABR</span>
-            <span class="event-day">1</span>
-          </div>
-          <span class="event-text">Reunión de la Junta</span>
+          <span class="event-date-inline">mié, ABR 1</span>
+          <span class="event-text"><a href="/reuniones/#sy2526" class="event-label-link">Reunión de la Junta</a></span>
+        </div>
+
+        <div class="event-row event--no-school event--multi">
+          <span class="event-date-inline">lun–vie, ABR 6–10</span>
+          <span class="event-text">Vacaciones de Primavera</span>
+        </div>
+
+        <div class="event-row event--board-meeting">
+          <span class="event-date-inline">mié, ABR 22</span>
+          <span class="event-text"><a href="/reuniones/#sy2526" class="event-label-link">Reunión de la Junta</a></span>
+        </div>
+
+        <div class="event-row event--board-meeting">
+          <span class="event-date-inline">mié, MAY 13</span>
+          <span class="event-text"><a href="/reuniones/#sy2526" class="event-label-link">Reunión de la Junta</a></span>
         </div>
 
         <div class="event-row event--no-school">
-          <div class="event-date">
-            <span class="event-month">ABR</span>
-            <span class="event-day">6</span>
-          </div>
-          <span class="event-text">Vacaciones de Primavera – 10 abr</span>
-        </div>
-
-        <div class="event-row event--board-meeting">
-          <div class="event-date">
-            <span class="event-month">ABR</span>
-            <span class="event-day">22</span>
-          </div>
-          <span class="event-text">Reunión de la Junta</span>
-        </div>
-
-        <div class="event-row event--board-meeting">
-          <div class="event-date">
-            <span class="event-month">MAY</span>
-            <span class="event-day">13</span>
-          </div>
-          <span class="event-text">Reunión de la Junta</span>
-        </div>
-
-        <div class="event-row event--no-school">
-          <div class="event-date">
-            <span class="event-month">MAY</span>
-            <span class="event-day">25</span>
-          </div>
+          <span class="event-date-inline">lun, MAY 25</span>
           <span class="event-text">Día de los Caídos</span>
         </div>
 
         <div class="event-row event--board-meeting">
-          <div class="event-date">
-            <span class="event-month">MAY</span>
-            <span class="event-day">27</span>
-          </div>
-          <span class="event-text">Reunión de la Junta</span>
+          <span class="event-date-inline">mié, MAY 27</span>
+          <span class="event-text"><a href="/reuniones/#sy2526" class="event-label-link">Reunión de la Junta</a></span>
         </div>
 
         <div class="event-row event--milestone">
-          <div class="event-date">
-            <span class="event-month">JUN</span>
-            <span class="event-day">5</span>
-          </div>
+          <span class="event-date-inline">vie, JUN 5</span>
           <span class="event-text">Último Día de Clases</span>
         </div>
 
         <div class="event-row event--milestone">
-          <div class="event-date">
-            <span class="event-month">AGO</span>
-            <span class="event-day">12</span>
-          </div>
+          <span class="event-date-inline">mié, AGO 12</span>
           <span class="event-text">Primer Día de Clases</span>
         </div>
     </div>

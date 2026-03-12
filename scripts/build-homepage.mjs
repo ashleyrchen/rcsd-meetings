@@ -76,51 +76,64 @@ function schoolCard(s) {
 }
 
 
-function eventRowEn(e) {
-  const d = new Date(e.date + 'T12:00:00');
-  const month = d.toLocaleDateString('en', { month: 'short' }).toUpperCase();
+function dateBadge(dateStr, lang) {
+  const d = new Date(dateStr + 'T12:00:00');
+  const month = d.toLocaleDateString(lang, { month: 'short' }).toUpperCase();
+  const dow = d.toLocaleDateString(lang, { weekday: 'short' });
   const day = d.getDate();
-  let dateRange = '';
-  if (e.dateEnd) {
-    const d2 = new Date(e.dateEnd + 'T12:00:00');
-    dateRange = ` – ${d2.toLocaleDateString('en', { month: 'short', day: 'numeric' })}`;
-  }
-  const typeClass = e.type === 'no-school' ? 'event--no-school'
-    : e.type === 'early-release' ? 'event--early-release'
-    : e.type === 'board-meeting' ? 'event--board-meeting'
-    : 'event--milestone';
-  // EN: date on right, text on left (right-aligned row)
-  return `
-        <div class="event-row ${typeClass}">
-          <span class="event-text">${e.en}${dateRange}</span>
-          <div class="event-date">
-            <span class="event-month">${month}</span>
-            <span class="event-day">${day}</span>
-          </div>
-        </div>`;
+  return { month, dow, day };
 }
 
-function eventRowEs(e) {
-  const d = new Date(e.date + 'T12:00:00');
-  const month = d.toLocaleDateString('es', { month: 'short' }).toUpperCase();
-  const day = d.getDate();
-  let dateRange = '';
-  if (e.dateEnd) {
-    const d2 = new Date(e.dateEnd + 'T12:00:00');
-    dateRange = ` – ${d2.toLocaleDateString('es', { month: 'short', day: 'numeric' })}`;
-  }
+// Load meeting summaries for board meeting annotations
+const summariesEn = JSON.parse(readFileSync(resolve(ROOT, 'data/meeting-summaries.json'), 'utf-8'));
+const summariesEs = (() => {
+  try { return JSON.parse(readFileSync(resolve(ROOT, 'data/meeting-summaries-es.json'), 'utf-8')); }
+  catch { return {}; }
+})();
+
+function eventRow(e, lang) {
+  const start = dateBadge(e.date, lang);
+  const isMulti = !!e.dateEnd;
+  const isEn = lang === 'en';
+
   const typeClass = e.type === 'no-school' ? 'event--no-school'
     : e.type === 'early-release' ? 'event--early-release'
     : e.type === 'board-meeting' ? 'event--board-meeting'
     : 'event--milestone';
-  // ES: date on left, text on right (left-aligned row)
+  const multiClass = isMulti ? ' event--multi' : '';
+
+  // Date label: "Fri Mar 13" or "Mon–Fri Mar 16–20"
+  let dateLabel;
+  if (isMulti) {
+    const end = dateBadge(e.dateEnd, lang);
+    const sameMonth = start.month === end.month;
+    dateLabel = sameMonth
+      ? `${start.dow}–${end.dow}, ${start.month} ${start.day}–${end.day}`
+      : `${start.dow} ${start.month} ${start.day} – ${end.dow} ${end.month} ${end.day}`;
+  } else {
+    dateLabel = `${start.dow}, ${start.month} ${start.day}`;
+  }
+
+  // Board meeting: link + summary
+  let summaryHtml = '';
+  if (e.type === 'board-meeting') {
+    const summaries = isEn ? summariesEn : summariesEs;
+    const summary = summaries[e.date];
+    const meetingLink = isEn ? '/meetings/#sy2526' : '/reuniones/#sy2526';
+    if (summary) {
+      summaryHtml = `<span class="event-summary">${summary}</span>`;
+    }
+  }
+
+  const label = isEn ? e.en : e.es;
+  const meetingLinkWrap = e.type === 'board-meeting'
+    ? `<a href="${isEn ? '/meetings/#sy2526' : '/reuniones/#sy2526'}" class="event-label-link">${label}</a>`
+    : label;
+
   return `
-        <div class="event-row ${typeClass}">
-          <div class="event-date">
-            <span class="event-month">${month}</span>
-            <span class="event-day">${day}</span>
-          </div>
-          <span class="event-text">${e.es}${dateRange}</span>
+        <div class="event-row ${typeClass}${multiClass}">
+          <span class="event-date-inline">${dateLabel}</span>
+          <span class="event-text">${meetingLinkWrap}${summaryHtml}</span>
         </div>`;
 }
 
@@ -370,44 +383,55 @@ const homepageCSS = `
   /* ---- EVENTS (mirrored bilingual) ---- */
   .events-section { padding-top: 1rem; }
   .events-col { display: flex; flex-direction: column; }
-  .events-col.bi-en .event-row {
-    flex-direction: row-reverse;
-    text-align: right;
-  }
   .event-row {
-    display: flex;
-    align-items: center;
-    gap: 0.7rem;
-    padding: 0.45rem 0;
+    padding: 0.5rem 0;
     border-bottom: 1px solid var(--rule-light);
   }
-  .event-date {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-width: 32px;
-    flex-shrink: 0;
-  }
-  .event-month {
+  .event-date-inline {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.48rem;
-    letter-spacing: 0.08em;
-    color: var(--text-muted);
+    font-size: 0.62rem;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 0.15rem;
   }
-  .event-day {
-    font-family: 'Fraunces', serif;
-    font-size: 1rem;
-    font-weight: 600;
-    line-height: 1;
+  .event-text {
+    font-size: 0.82rem;
     color: var(--text);
+    display: block;
+    line-height: 1.4;
   }
-  .event-text { font-size: 0.78rem; color: var(--text); flex: 1; }
-  .event--no-school .event-date { color: var(--coral); }
-  .event--no-school .event-day { color: var(--coral); }
-  .event--early-release .event-date { color: var(--amber); }
-  .event--early-release .event-day { color: var(--amber); }
-  .event--board-meeting .event-day { color: var(--green-light); }
-  .event--milestone .event-day { color: var(--green-deep); }
+  .event-label-link {
+    text-decoration: none;
+    color: inherit;
+  }
+  .event-label-link:hover { text-decoration: underline; }
+  .event-summary {
+    display: block;
+    font-size: 0.72rem;
+    color: var(--text-secondary);
+    margin-top: 0.15rem;
+    line-height: 1.35;
+  }
+  .event--multi {
+    background: var(--cream-dark, #f5f0e8);
+    border-radius: 4px;
+    padding: 0.5rem 0.65rem;
+    margin: 0.15rem -0.65rem;
+    border-bottom: none;
+  }
+  /* No school — red */
+  .event--no-school .event-date-inline { color: #c0392b; }
+  .event--no-school .event-text { color: #c0392b; font-weight: 500; }
+  /* Early release — yellow/amber */
+  .event--early-release .event-date-inline { color: #b8860b; }
+  /* Board meeting — blue */
+  .event--board-meeting .event-date-inline { color: #2563a0; }
+  .event--board-meeting .event-label-link { color: #2563a0; font-weight: 500; }
+  .event--board-meeting .event-label-link:hover { color: #1a4570; }
+  /* Milestone — green */
+  .event--milestone .event-date-inline { color: var(--green-deep); }
+  .event--milestone .event-text { color: var(--green-deep); font-weight: 600; }
 
   /* ---- RESOURCE LINKS (mirrored bilingual) ---- */
   .resource-item {
@@ -490,7 +514,7 @@ const homepageCSS = `
     .school-section { padding: 1rem 1.2rem 0; }
     .school-grid { grid-template-columns: 1fr; }
     .ai-section { margin: 2rem 1.2rem 0; }
-    .events-col.bi-en .event-row { flex-direction: row; text-align: left; }
+    .events-col .event-row { text-align: left; }
   }`;
 
 // ---- JSON-LD ----
@@ -656,15 +680,15 @@ ${sortedSchools.map(s => schoolCard(s)).join('\n')}
   <!-- KEY DATES -->
   <div class="section-head bi-row">
     <div class="bi-en"><h2>Upcoming Key Dates</h2><p><a href="${calendar2526.calendarUrl}" target="_blank" rel="noopener">${calendar2526.schoolYear} Calendar &#8599;</a> · <a href="${calendar2627.calendarUrl}" target="_blank" rel="noopener">${calendar2627.schoolYear} Calendar &#8599;</a> · <a href="${boardCalendarUrl}" target="_blank" rel="noopener">Board Meetings &#8599;</a></p></div>
-    <div class="bi-es" lang="es"><h2>Fechas Importantes</h2><p><a href="${calendar2526.calendarUrl}" target="_blank" rel="noopener">Calendario ${calendar2526.schoolYear} &#8599;</a> · <a href="${calendar2627.calendarUrl}" target="_blank" rel="noopener">Calendario ${calendar2627.schoolYear} &#8599;</a> · <a href="${boardCalendarUrl}" target="_blank" rel="noopener">Reuniones de la Junta &#8599;</a></p></div>
+    <div class="bi-es" lang="es"><h2>Fechas Importantes</h2><p><a href="${calendar2526.calendarUrl}" target="_blank" rel="noopener">Calendario ${calendar2526.schoolYear} &#8599;</a> · <a href="${calendar2627.calendarUrl}" target="_blank" rel="noopener">Calendario ${calendar2627.schoolYear} &#8599;</a> · <a href="${boardCalendarUrl}" target="_blank" rel="noopener">Junta &#8599;</a></p></div>
   </div>
   <div class="section-rule"></div>
 ${upcoming.length > 0 ? `  <div class="bi-row events-section">
     <div class="bi-en events-col">
-${upcoming.map(e => eventRowEn(e)).join('\n')}
+${upcoming.map(e => eventRow(e, 'en')).join('\n')}
     </div>
     <div class="bi-es events-col" lang="es">
-${upcoming.map(e => eventRowEs(e)).join('\n')}
+${upcoming.map(e => eventRow(e, 'es')).join('\n')}
     </div>
   </div>` : ''}
 
