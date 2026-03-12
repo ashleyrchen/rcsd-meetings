@@ -17,6 +17,11 @@
 - [ ] Special Education / SEPTAR info and links
 - [ ] After-school programs by school site
 
+## School Pages — Documents
+- [ ] Pull Spanish-language SARCs for 2024-25 and upload to data.rcsd.info/documents/sarc/2024-25/spanish/
+- [ ] Link Spanish SARCs from /escuelas/ pages (currently links to English with "(inglés)" note)
+- [ ] Source and add SpEd / IEP / 504 percentages per school (not currently in dataset)
+
 ## School Pages — Safety
 - [ ] Pull in and link the Comprehensive Safety Plan (CSP) for each school site
 

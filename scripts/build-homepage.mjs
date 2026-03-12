@@ -37,6 +37,22 @@ const upcoming = allEvents
   .filter(e => e.date >= today)
   .slice(0, 12);
 
+// ---- School demographics (from SARC 2024-25) ----
+const DEMO = {
+  'adelante-selby': { el: 42.4, sed: 62.6 },
+  'clifford':       { el: 23.5, sed: 44.2 },
+  'garfield':       { el: 68.2, sed: 95.0 },
+  'henry-ford':     { el: 36.2, sed: 63.1 },
+  'hoover':         { el: 66.9, sed: 96.6 },
+  'kennedy':        { el: 25.8, sed: 65.8 },
+  'mckinley-mit':   { el: 45.5, sed: 92.6 },
+  'north-star':     { el: 2.5,  sed: 8.9 },
+  'orion':          { el: 22.8, sed: 31.8 },
+  'roosevelt':      { el: 42.6, sed: 69.5 },
+  'roy-cloud':      { el: 3.4,  sed: 11.4 },
+  'taft':           { el: 65.7, sed: 90.0 },
+};
+
 // ---- School cards (sorted alphabetically) ----
 const sortedSchools = [...schools.schools].sort((a, b) => a.name.localeCompare(b.name));
 
@@ -46,31 +62,27 @@ function schoolCard(s) {
   const typeCls = s.type === 'choice' ? 'school-badge--choice' : 'school-badge--neighborhood';
   const communityBadge = s.communitySchool ? '<span class="school-badge school-badge--community">CS</span>' : '';
 
+  const detailUrl = `/schools/${s.slug}/`;
   const dashboardUrl = `https://www.caschooldashboard.org/reports/${s.cdsCode}/2024`;
   const spsaUrl = `https://data.rcsd.info/documents/spsa/2025-26/${s.slug}.pdf`;
-  const ptoLink = s.pto?.url ? `<a href="${s.pto.url}" target="_blank" rel="noopener">PTO</a>` : '';
 
   return `
-    <div class="school-card">
+    <div class="school-card" onclick="window.location='${detailUrl}'">
       <div class="school-card-header">
-        <a href="${s.website}" target="_blank" rel="noopener" class="school-name-link">${s.nameShort}</a>
+        <a href="${detailUrl}" class="school-name-link">${s.nameShort} →</a>
         <span class="school-grades">${s.grades}</span>
       </div>
       <div class="school-badges"><span class="school-badge ${typeCls}">${typeBadgeEn} · ${typeBadgeEs}</span>${communityBadge}</div>
-      ${s.program ? `<div class="school-program">${s.program} · ${s.programEs}</div>` : ''}
+      ${s.program ? `<div class="school-program">${s.program}</div>` : ''}
       <div class="school-details">
-        <div class="school-detail"><span class="school-label">Principal</span> ${s.principal}</div>
-        <div class="school-detail">${s.address}</div>
-        <div class="school-detail"><a href="tel:${s.phone.replace(/[^+\d]/g, '')}">${s.phone}</a></div>
-        <div class="school-detail">${s.bellSchedule.start} – ${s.bellSchedule.end} (early: ${s.bellSchedule.earlyRelease})</div>
-        <div class="school-detail">${s.enrollment.toLocaleString()} students · ${s.highNeedPct}% high-need</div>
+        <div class="school-detail">${s.enrollment.toLocaleString()} students · ${Math.round(DEMO[s.slug]?.el || 0)}% EL · ${Math.round(DEMO[s.slug]?.sed || 0)}% FRL</div>
       </div>
-      <div class="school-links">
-        <a href="${s.website}" target="_blank" rel="noopener">Web</a>
-        <a href="${s.lunchUrl}" target="_blank" rel="noopener">Lunch</a>
-        <a href="${dashboardUrl}" target="_blank" rel="noopener">Dashboard</a>
-        <a href="${spsaUrl}" target="_blank" rel="noopener">SPSA</a>
-        ${ptoLink}
+      <div class="school-links" onclick="event.stopPropagation()">
+        <a href="${s.website}" target="_blank" rel="noopener" title="School website">🌐 Web</a>
+        <a href="${s.lunchUrl}" target="_blank" rel="noopener" title="Lunch menu">🍽️ Lunch</a>
+        <a href="${dashboardUrl}" target="_blank" rel="noopener" title="CA School Dashboard">📊 Dash</a>
+        <a href="${spsaUrl}" target="_blank" rel="noopener" title="School Plan for Student Achievement">📋 SPSA</a>
+        ${s.pto?.url ? `<a href="${s.pto.url}" target="_blank" rel="noopener" title="${s.pto.name || 'PTO/PTA'}">🤝 PTO</a>` : ''}
       </div>
     </div>`;
 }
@@ -183,6 +195,15 @@ const homepageCSS = `
     position: relative;
   }
   .hero .bi-es { border-left-color: rgba(255,255,255,0.1); }
+  .hero-logo {
+    display: block;
+    height: 140px;
+    width: auto;
+    max-width: 520px;
+    margin: 0 auto 1.5rem;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.25));
+  }
   .hero h1 {
     font-family: 'Fraunces', Georgia, serif;
     font-size: clamp(1.5rem, 3.5vw, 2.2rem);
@@ -310,12 +331,20 @@ const homepageCSS = `
     gap: 0.8rem;
   }
   .school-card {
+    display: block;
     background: #fff;
     border: 1px solid var(--rule-light);
     padding: 0.8rem 1rem;
-    transition: border-color 0.2s;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
   }
-  .school-card:hover { border-color: var(--green-light); }
+  .school-card:hover {
+    border-color: var(--green-light);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  .school-card:hover .school-name-link { color: var(--green-mid); }
   .school-card-header {
     display: flex;
     justify-content: space-between;
@@ -327,9 +356,8 @@ const homepageCSS = `
     font-size: 0.9rem;
     font-weight: 600;
     color: var(--green-deep);
-    text-decoration: none;
+    transition: color 0.2s;
   }
-  .school-name-link:hover { color: var(--green-mid); text-decoration: underline; }
   .school-grades {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 0.6rem;
@@ -375,14 +403,15 @@ const homepageCSS = `
   }
   .school-links {
     display: flex;
-    gap: 0.8rem;
+    gap: 0.5rem;
+    flex-wrap: wrap;
     margin-top: 0.5rem;
     padding-top: 0.4rem;
     border-top: 1px solid var(--rule-light);
     font-family: 'IBM Plex Mono', monospace;
     font-size: 0.6rem;
   }
-  .school-links a { color: var(--green-mid); text-decoration: none; }
+  .school-links a { color: var(--green-mid); text-decoration: none; white-space: nowrap; }
   .school-links a:hover { text-decoration: underline; }
 
   /* ---- EVENTS (mirrored bilingual) ---- */
@@ -600,6 +629,7 @@ ${siteNav({ activePage: 'home', lang: 'en' })}
 
 <header class="hero">
   <div class="hero-inner">
+    <img src="https://data.rcsd.info/logos/district.jpg" alt="Redwood City School District" class="hero-logo">
     <div class="bi-row">
       <div class="bi-en">
         <h1>Open Data for Redwood City School District</h1>
