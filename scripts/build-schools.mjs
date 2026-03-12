@@ -1053,6 +1053,10 @@ const LABELS = {
     schoolSiteCouncil: 'School Site Council',
     ptoPtaOrg: 'PTO / PTA',
     afterSchool: 'After-School Programs',
+    parentComm: 'Parent Communication',
+    absenceReporting: 'Report an Absence',
+    joinKonstella: 'Join on Konstella',
+    joinPlatform: 'Join',
     comingSoon: 'Coming soon',
     viewMenu: 'View menu',
     visitWebsite: 'Visit PTO/PTA website',
@@ -1154,6 +1158,10 @@ const LABELS = {
     schoolSiteCouncil: 'Consejo del Sitio Escolar',
     ptoPtaOrg: 'PTO / PTA',
     afterSchool: 'Programas Extracurriculares',
+    parentComm: 'Comunicación con Padres',
+    absenceReporting: 'Reportar una Ausencia',
+    joinKonstella: 'Unirse en Konstella',
+    joinPlatform: 'Unirse',
     comingSoon: 'Próximamente',
     viewMenu: 'Ver menú',
     visitWebsite: 'Visitar sitio web de PTO/PTA',
@@ -1593,6 +1601,22 @@ ${siteNav({ activePage: 'schools', lang, altLangHref })}
           ? `<p><a href="${school.pto.url}" target="_blank">${school.pto.name || L.visitWebsite} &#8599;</a></p>${rctStatusNote(school.pto, isEs)}`
           : `<p><a href="https://www.rcef.org/" target="_blank">${isEs ? 'Fundación Educativa de Redwood City (RCEF)' : 'Redwood City Education Foundation (RCEF)'} &#8599;</a></p>`}
         ${school.miBooster?.url ? `<p style="margin-top:0.4rem"><a href="${school.miBooster.url}" target="_blank">${school.miBooster.name} &#8599;</a></p>` : ''}
+      </div>
+      <div class="resource-card">
+        <h4>${L.parentComm}</h4>
+        <p><a href="${schoolsData.districtLinks.parentSquare}" target="_blank">ParentSquare ${isEs ? '(oficial del distrito)' : '(district-wide)'} &#8599;</a></p>
+        ${school.parentLinks?.konstella
+          ? `<p><a href="${school.parentLinks.konstella}" target="_blank">${L.joinKonstella} &#8599;</a></p>`
+          : school.parentLinks?.platform === 'Konstella'
+            ? `<p>Konstella — ${school.parentLinks.konstellaNote || (isEs ? 'contacte al PTO' : 'contact PTO for link')}</p>`
+            : school.parentLinks?.platform === 'Membership Toolkit' && school.parentLinks.joinUrl
+              ? `<p><a href="${school.parentLinks.joinUrl}" target="_blank">${L.joinPlatform} PTA &#8599;</a></p>`
+              : ''}
+      </div>
+      <div class="resource-card">
+        <h4>${L.absenceReporting}</h4>
+        <p>SchoolMessenger</p>
+        <p><a href="${schoolsData.districtLinks.absenceReporting.ios}" target="_blank">iOS &#8599;</a> · <a href="${schoolsData.districtLinks.absenceReporting.android}" target="_blank">Android &#8599;</a></p>
       </div>
       <div class="resource-card">
         <h4>${L.safetyPlan}</h4>

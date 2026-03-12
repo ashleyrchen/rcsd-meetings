@@ -23,6 +23,10 @@
       "lunchUrl": "https://menus.healthepro.com/organizations/1184/sites/9274/menus/103750",
       "communitySchool": true,
       "cdsCode": "41690056044580",
+      "parentLinks": {
+        "platform": "ParentSquare",
+        "konstella": null
+      },
       "pto": {
         "name": "Unidos Y Adelante",
         "url": "https://unidospto.org/",
@@ -57,6 +61,11 @@
       "lunchUrl": "https://menus.healthepro.com/organizations/1184/sites/9275/menus/103731",
       "communitySchool": false,
       "cdsCode": "41690056044424",
+      "parentLinks": {
+        "platform": "Konstella",
+        "konstella": null,
+        "konstellaNote": "Likely uses Konstella — check cliffordschoolpto.org/helpful-links to confirm"
+      },
       "pto": {
         "name": "Clifford School Parents Club",
         "url": "https://cliffordschoolpto.org/",
@@ -89,6 +98,10 @@
         "earlyRelease": "1:05 PM"
       },
       "lunchUrl": "https://menus.healthepro.com/organizations/1184/sites/9277/menus/103763",
+      "parentLinks": {
+        "platform": "ParentSquare",
+        "konstella": null
+      },
       "communitySchool": true,
       "cdsCode": "41690056044473",
       "pto": null
@@ -116,6 +129,12 @@
       "lunchUrl": "https://menus.healthepro.com/organizations/1184/sites/9278/menus/103766",
       "communitySchool": true,
       "cdsCode": "41690056044499",
+      "parentLinks": {
+        "platform": "Membership Toolkit",
+        "konstella": null,
+        "ptaPortal": "https://henryfordpta.membershiptoolkit.com/",
+        "joinUrl": "https://jointotem.com/ca/redwood-city/henry-ford-elementary-pta/join"
+      },
       "pto": {
         "name": "Henry Ford Elementary PTA",
         "url": "https://henryford.rcsdk8.net/our-community/our-school-pta",
@@ -148,6 +167,10 @@
         "earlyRelease": "1:05 PM"
       },
       "lunchUrl": "https://menus.healthepro.com/organizations/1184/sites/9279/menus/103767",
+      "parentLinks": {
+        "platform": "ParentSquare",
+        "konstella": null
+      },
       "communitySchool": true,
       "cdsCode": "41690056044507",
       "pto": null
@@ -175,6 +198,12 @@
       "lunchUrl": "https://menus.healthepro.com/organizations/1184/sites/9280/menus/103754",
       "communitySchool": true,
       "cdsCode": "41690056044531",
+      "parentLinks": {
+        "platform": "Email/Social",
+        "konstella": null,
+        "instagram": "https://www.instagram.com/kennedycougarspto/",
+        "email": "info@kennedycougarspto.org"
+      },
       "pto": {
         "name": "Kennedy Cougars PTO",
         "url": "https://kennedycougarspto.org/",
@@ -207,6 +236,10 @@
         "earlyRelease": "1:20 PM"
       },
       "lunchUrl": "https://menus.healthepro.com/organizations/1184/sites/9281/menus/103771",
+      "parentLinks": {
+        "platform": "ParentSquare",
+        "konstella": null
+      },
       "communitySchool": true,
       "cdsCode": "41690056044556",
       "pto": null
@@ -234,6 +267,11 @@
       "lunchUrl": "https://menus.healthepro.com/organizations/1184/sites/9366/menus/103771",
       "communitySchool": false,
       "cdsCode": "41690056115026",
+      "parentLinks": {
+        "platform": "Konstella",
+        "konstella": null,
+        "konstellaNote": "Contact PTA Konstella lead Michelle Guiney for access"
+      },
       "pto": {
         "name": "North Star Academy Parents Club",
         "url": "https://www.nsaparents.com/",
@@ -268,6 +306,11 @@
       "lunchUrl": "https://menus.healthepro.com/organizations/1184/sites/9282/menus/103774",
       "communitySchool": false,
       "cdsCode": "41690056102941",
+      "parentLinks": {
+        "platform": "Konstella",
+        "konstella": "https://www.konstella.com/cd/KU7S9V",
+        "konstellaPage": "https://www.starshiporion.org/konstella"
+      },
       "pto": {
         "name": "Starship Orion",
         "url": "https://www.starshiporion.org/",
@@ -310,6 +353,10 @@
       "lunchUrl": "https://menus.healthepro.com/organizations/1184/sites/9284/menus/103755",
       "communitySchool": true,
       "cdsCode": "41690056044572",
+      "parentLinks": {
+        "platform": "ParentSquare",
+        "konstella": null
+      },
       "pto": {
         "name": "Roosevelt Elementary PTA",
         "url": "http://roosevelt-pta.com/",
@@ -344,6 +391,11 @@
       "lunchUrl": "https://menus.healthepro.com/organizations/1184/sites/9283/menus/103751",
       "communitySchool": false,
       "cdsCode": "41690056044432",
+      "parentLinks": {
+        "platform": "Konstella",
+        "konstella": "https://www.konstella.com/cd/TS3MPT",
+        "konstellaPage": "https://roycloudpto.com/konstella/"
+      },
       "pto": {
         "name": "Roy Cloud School Parents Club",
         "url": "https://roycloudpto.com/",
@@ -376,11 +428,26 @@
         "earlyRelease": "1:05 PM"
       },
       "lunchUrl": "https://menus.healthepro.com/organizations/1184/sites/9285/menus/103756",
+      "parentLinks": {
+        "platform": "ParentSquare",
+        "konstella": null
+      },
       "communitySchool": true,
       "cdsCode": "41690056044598",
       "pto": null
     }
   ],
+  "districtLinks": {
+    "parentSquare": "https://www.parentsquare.com/signin",
+    "parentSquareNote": "District-wide official parent communication platform used by all schools",
+    "absenceReporting": {
+      "app": "SchoolMessenger",
+      "ios": "https://apps.apple.com/us/app/schoolmessenger/id978894818",
+      "android": "http://play.google.com/store/apps/details?id=com.schoolmessenger.recipient"
+    },
+    "lunchMenuProvider": "HealthePro",
+    "lunchMenuBase": "https://menus.healthepro.com/organizations/1184"
+  },
   "rcef": {
     "name": "Redwood City Education Foundation",
     "nameEs": "Fundación Educativa de Redwood City",

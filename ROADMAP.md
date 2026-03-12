@@ -6,16 +6,18 @@
 - [ ] iCal (.ics) subscription feeds for district and per-school calendars
 
 ## School Pages — Community & Parent Links
-- [ ] Konstella links per school (parent communication platform)
-  - Roy Cloud: https://www.konstella.com/cd/TS3MPT (via roycloudpto.com/konstella/)
-  - [ ] Find Konstella request links for other school sites
-  - Note: not every school uses Konstella — some use ParentSquare or other platforms
+- [x] Parent communication platform identified per school (added to schools.json parentLinks)
+  - Konstella: Roy Cloud (confirmed link), Orion (confirmed link), North Star (contact PTA), Clifford (likely, needs verification)
+  - Membership Toolkit / Totem: Henry Ford
+  - Email/Social: Kennedy
+  - ParentSquare only: Adelante, Garfield, Hoover, McKinley, Roosevelt, Taft
+- [x] SchoolMessenger absence reporting app links added to schools.json districtLinks
+- [x] ParentSquare district-wide link added to schools.json districtLinks
+- [ ] Surface parentLinks on school detail pages and homepage cards
 - [ ] WhatsApp parent group links per school
-- [ ] SchoolMessenger absence reporting links per school
-  - iOS: https://apps.apple.com/us/app/schoolmessenger/id978894818
-  - Android: http://play.google.com/store/apps/details?id=com.schoolmessenger.recipient
-  - Note: district-wide app, but may need per-school setup links
 - [ ] After-school program info affiliated by school site
+- [ ] Verify Clifford Konstella link (check cliffordschoolpto.org/helpful-links)
+- [ ] Get North Star Konstella signup link from PTA
 
 ## School Pages — Advisory & Special Programs
 - [ ] ELAC (English Learner Advisory Committee) info per school
