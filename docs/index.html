@@ -603,6 +603,21 @@
   /* No school — red */
   .event--no-school .event-date-inline { color: #c0392b; }
   .event--no-school .event-text { color: #c0392b; font-weight: 500; }
+  .no-school-icon {
+    position: relative;
+    font-style: normal;
+    margin-left: 0.25rem;
+  }
+  .no-school-icon::after {
+    content: '';
+    position: absolute;
+    left: -2px;
+    right: -2px;
+    top: 45%;
+    height: 2px;
+    background: #c0392b;
+    transform: rotate(-45deg);
+  }
   /* Early release — yellow/amber */
   .event--early-release .event-date-inline { color: #b8860b; }
   /* Board meeting — blue */
@@ -1098,12 +1113,12 @@
 
         <div class="event-row event--no-school">
           <span class="event-date-inline">Fri, MAR 13</span>
-          <span class="event-text">Lincoln's Day (Observed) — No School</span>
+          <span class="event-text">Lincoln's Day (Observed) <span class="no-school-icon" aria-label="No School">🏫</span></span>
         </div>
 
         <div class="event-row event--no-school">
           <span class="event-date-inline">Mon, MAR 16</span>
-          <span class="event-text">Planning/Development Day — No School</span>
+          <span class="event-text">Planning/Development Day <span class="no-school-icon" aria-label="No School">🏫</span></span>
         </div>
 
         <div class="event-row event--early-release event--multi">
@@ -1123,7 +1138,7 @@
 
         <div class="event-row event--no-school event--multi">
           <span class="event-date-inline">Mon–Fri, APR 6–10</span>
-          <span class="event-text">Spring Break</span>
+          <span class="event-text">Spring Break <span class="no-school-icon" aria-label="No School">🏫</span></span>
         </div>
 
         <div class="event-row event--board-meeting">
@@ -1138,7 +1153,7 @@
 
         <div class="event-row event--no-school">
           <span class="event-date-inline">Mon, MAY 25</span>
-          <span class="event-text">Memorial Day</span>
+          <span class="event-text">Memorial Day <span class="no-school-icon" aria-label="No School">🏫</span></span>
         </div>
 
         <div class="event-row event--board-meeting">
@@ -1160,12 +1175,12 @@
 
         <div class="event-row event--no-school">
           <span class="event-date-inline">vie, MAR 13</span>
-          <span class="event-text">Día de Lincoln (Observado) — No Hay Clases</span>
+          <span class="event-text">Día de Lincoln (Observado) <span class="no-school-icon" aria-label="No School">🏫</span></span>
         </div>
 
         <div class="event-row event--no-school">
           <span class="event-date-inline">lun, MAR 16</span>
-          <span class="event-text">Día de Planificación — No Hay Clases</span>
+          <span class="event-text">Día de Planificación <span class="no-school-icon" aria-label="No School">🏫</span></span>
         </div>
 
         <div class="event-row event--early-release event--multi">
@@ -1185,7 +1200,7 @@
 
         <div class="event-row event--no-school event--multi">
           <span class="event-date-inline">lun–vie, ABR 6–10</span>
-          <span class="event-text">Vacaciones de Primavera</span>
+          <span class="event-text">Vacaciones de Primavera <span class="no-school-icon" aria-label="No School">🏫</span></span>
         </div>
 
         <div class="event-row event--board-meeting">
@@ -1200,7 +1215,7 @@
 
         <div class="event-row event--no-school">
           <span class="event-date-inline">lun, MAY 25</span>
-          <span class="event-text">Día de los Caídos</span>
+          <span class="event-text">Día de los Caídos <span class="no-school-icon" aria-label="No School">🏫</span></span>
         </div>
 
         <div class="event-row event--board-meeting">

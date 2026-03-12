@@ -125,7 +125,12 @@ function eventRow(e, lang) {
     }
   }
 
-  const label = isEn ? e.en : e.es;
+  let label = isEn ? e.en : e.es;
+  // Strip redundant "— No School" / "— No Hay Clases" text; the red color + emoji convey this
+  if (e.type === 'no-school') {
+    label = label.replace(/\s*[—–-]\s*No School/i, '').replace(/\s*[—–-]\s*No Hay Clases/i, '');
+    label += ' <span class="no-school-icon" aria-label="No School">🏫</span>';
+  }
   const meetingLinkWrap = e.type === 'board-meeting'
     ? `<a href="${isEn ? '/meetings/#sy2526' : '/reuniones/#sy2526'}" class="event-label-link">${label}</a>`
     : label;
@@ -423,6 +428,21 @@ const homepageCSS = `
   /* No school — red */
   .event--no-school .event-date-inline { color: #c0392b; }
   .event--no-school .event-text { color: #c0392b; font-weight: 500; }
+  .no-school-icon {
+    position: relative;
+    font-style: normal;
+    margin-left: 0.25rem;
+  }
+  .no-school-icon::after {
+    content: '';
+    position: absolute;
+    left: -2px;
+    right: -2px;
+    top: 45%;
+    height: 2px;
+    background: #c0392b;
+    transform: rotate(-45deg);
+  }
   /* Early release — yellow/amber */
   .event--early-release .event-date-inline { color: #b8860b; }
   /* Board meeting — blue */
