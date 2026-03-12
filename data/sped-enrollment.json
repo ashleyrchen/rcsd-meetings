@@ -1,0 +1,232 @@
+{
+  "_source": {
+    "dataset": "CDE Census Day Enrollment",
+    "year": "2024-25",
+    "url": "https://www.cde.ca.gov/ds/ad/filesenrcensus.asp",
+    "downloadUrl": "https://www3.cde.ca.gov/demo-downloads/census/cdenroll2425.txt",
+    "reportingCategory": "SG_DS (Students with Disabilities)",
+    "note": "Students with IEPs under IDEA. Does not include 504 plan students. Values of null indicate cell suppression (≤10 students).",
+    "retrievedDate": "2026-03-12"
+  },
+  "district": {
+    "total": 1121,
+    "grades": {
+      "1": 106,
+      "2": 107,
+      "3": 109,
+      "4": 133,
+      "5": 148,
+      "6": 135,
+      "7": 125,
+      "8": 128,
+      "TK": 31,
+      "K": 99
+    }
+  },
+  "schools": {
+    "clifford": {
+      "total": 138,
+      "grades": {
+        "1": 14,
+        "2": null,
+        "3": 15,
+        "4": 13,
+        "5": 12,
+        "6": 22,
+        "7": 12,
+        "8": 24,
+        "TK": null,
+        "K": 15
+      },
+      "totalEnrollment": 698,
+      "pct": 19.8
+    },
+    "roy-cloud": {
+      "total": 110,
+      "grades": {
+        "1": 12,
+        "2": null,
+        "3": null,
+        "4": 17,
+        "5": 15,
+        "6": 13,
+        "7": 11,
+        "8": null,
+        "TK": null,
+        "K": 15
+      },
+      "totalEnrollment": 636,
+      "pct": 17.3
+    },
+    "garfield": {
+      "total": 55,
+      "grades": {
+        "1": 16,
+        "2": null,
+        "3": null,
+        "4": 11,
+        "5": null,
+        "6": null,
+        "7": null,
+        "8": null,
+        "TK": null,
+        "K": null
+      },
+      "totalEnrollment": 280,
+      "pct": 19.6
+    },
+    "henry-ford": {
+      "total": 86,
+      "grades": {
+        "1": 17,
+        "2": null,
+        "3": 12,
+        "4": 18,
+        "5": 11,
+        "6": null,
+        "7": null,
+        "8": null,
+        "TK": null,
+        "K": null
+      },
+      "totalEnrollment": 445,
+      "pct": 19.3
+    },
+    "hoover": {
+      "total": 119,
+      "grades": {
+        "1": 11,
+        "2": 19,
+        "3": 17,
+        "4": 12,
+        "5": 16,
+        "6": 11,
+        "7": 13,
+        "8": null,
+        "TK": null,
+        "K": null
+      },
+      "totalEnrollment": 675,
+      "pct": 17.6
+    },
+    "kennedy": {
+      "total": 160,
+      "grades": {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": null,
+        "5": null,
+        "6": 56,
+        "7": 52,
+        "8": 52,
+        "TK": null,
+        "K": null
+      },
+      "totalEnrollment": 808,
+      "pct": 19.8
+    },
+    "mckinley-mit": {
+      "total": 88,
+      "grades": {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": null,
+        "5": null,
+        "6": 28,
+        "7": 31,
+        "8": 29,
+        "TK": null,
+        "K": null
+      },
+      "totalEnrollment": 476,
+      "pct": 18.5
+    },
+    "roosevelt": {
+      "total": 86,
+      "grades": {
+        "1": null,
+        "2": 17,
+        "3": 14,
+        "4": 12,
+        "5": 20,
+        "6": null,
+        "7": null,
+        "8": null,
+        "TK": null,
+        "K": 14
+      },
+      "totalEnrollment": 382,
+      "pct": 22.5
+    },
+    "adelante-selby": {
+      "total": 74,
+      "grades": {
+        "1": null,
+        "2": 15,
+        "3": null,
+        "4": 15,
+        "5": 12,
+        "6": null,
+        "7": null,
+        "8": null,
+        "TK": null,
+        "K": null
+      },
+      "totalEnrollment": 582,
+      "pct": 12.7
+    },
+    "taft": {
+      "total": 91,
+      "grades": {
+        "1": 12,
+        "2": 12,
+        "3": null,
+        "4": 17,
+        "5": 23,
+        "6": null,
+        "7": null,
+        "8": null,
+        "TK": null,
+        "K": 13
+      },
+      "totalEnrollment": 357,
+      "pct": 25.5
+    },
+    "orion": {
+      "total": 55,
+      "grades": {
+        "1": null,
+        "2": 12,
+        "3": null,
+        "4": null,
+        "5": 11,
+        "6": null,
+        "7": null,
+        "8": null,
+        "TK": null,
+        "K": null
+      },
+      "totalEnrollment": 512,
+      "pct": 10.7
+    },
+    "north-star": {
+      "total": 43,
+      "grades": {
+        "1": null,
+        "2": null,
+        "3": 11,
+        "4": null,
+        "5": null,
+        "6": null,
+        "7": null,
+        "8": null,
+        "TK": null,
+        "K": null
+      },
+      "totalEnrollment": 527,
+      "pct": 8.2
+    }
+  }
+}
