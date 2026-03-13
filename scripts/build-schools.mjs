@@ -832,6 +832,102 @@ const schoolCSS = `
     color: var(--text-muted);
   }
 
+  /* ---- BELL SCHEDULE ---- */
+  .resource-card.bell-card {
+    grid-column: 1 / -1;
+    background: var(--green-wash);
+    border-color: var(--green-pale);
+  }
+  .resource-card.bell-card:hover {
+    border-color: var(--green-light);
+  }
+
+  .bell-supervision {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-bottom: 0.6rem;
+    letter-spacing: 0.02em;
+  }
+
+  .bell-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+
+  .bell-table thead th {
+    text-align: left;
+    padding: 0.35rem 0.6rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--green-mid);
+    border-bottom: 2px solid var(--green-pale);
+    vertical-align: bottom;
+  }
+
+  .bell-col-label {
+    display: block;
+  }
+
+  .bell-col-sub {
+    display: block;
+    font-family: 'Newsreader', Georgia, serif;
+    font-size: 0.72rem;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0;
+    color: var(--text-muted);
+    margin-top: 0.1rem;
+  }
+
+  .bell-table tbody td {
+    padding: 0.4rem 0.6rem;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    color: var(--text);
+    white-space: nowrap;
+  }
+
+  .bell-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  .bell-table tbody tr:hover td {
+    background: rgba(45,90,63,0.06);
+  }
+
+  .bell-grade {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 500;
+    font-size: 0.8rem;
+    color: var(--green-deep);
+    min-width: 3.5em;
+  }
+
+  .bell-time-range {
+    letter-spacing: 0.01em;
+  }
+
+  .bell-dash {
+    color: var(--text-muted);
+    padding: 0 0.1em;
+  }
+
+  .bell-card-inner {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  @media (max-width: 600px) {
+    .bell-table { font-size: 0.8rem; }
+    .bell-table thead th { font-size: 0.62rem; padding: 0.3rem 0.4rem; }
+    .bell-table tbody td { padding: 0.35rem 0.4rem; }
+  }
+
   /* ---- BACK LINK ---- */
   .back-link {
     font-family: 'IBM Plex Mono', monospace;
@@ -1049,9 +1145,10 @@ const LABELS = {
     viewSpsa: 'Download SPSA (PDF)',
     safetyPlan: 'Comprehensive Safety Plan',
     bellSchedule: 'Bell Schedule',
-    regularDays: 'Regular days (Mon/Tue/Wed/Fri)',
-    thursdayEarlyRelease: 'Thursday early release',
-    superMinDays: 'Super-minimum days (no lunch served)',
+    regularDays: 'Regular',
+    regularDaysSub: 'Mon · Tue · Wed · Fri',
+    thursdayEarlyRelease: 'Thursday',
+    superMinDays: 'Super-min',
     supervisionStarts: 'Supervision starts',
     grade: 'Grade',
     dismissal: 'Dismissal',
@@ -1160,9 +1257,10 @@ const LABELS = {
     viewSpsa: 'Descargar SPSA (PDF)',
     safetyPlan: 'Plan Integral de Seguridad',
     bellSchedule: 'Horario Escolar',
-    regularDays: 'Días regulares (lun/mar/mié/vie)',
-    thursdayEarlyRelease: 'Jueves salida temprana',
-    superMinDays: 'Días súper mínimos (sin almuerzo)',
+    regularDays: 'Regular',
+    regularDaysSub: 'lun · mar · mié · vie',
+    thursdayEarlyRelease: 'Jueves',
+    superMinDays: 'Súper-mín',
     supervisionStarts: 'Supervisión comienza',
     grade: 'Grado',
     dismissal: 'Salida',
@@ -1199,48 +1297,83 @@ const LABELS = {
 
 // ---- Bell schedule HTML helper ----
 
+function expandGrades(rangeStr) {
+  // Expand "TK-5" → ["TK","K","1","2","3","4","5"], "6-8" → ["6","7","8"], "TK" → ["TK"]
+  const ALL = ['TK','K','1','2','3','4','5','6','7','8'];
+  const s = rangeStr.trim();
+  if (!s.includes('-')) return [s];
+  const [lo, hi] = s.split('-');
+  const loIdx = ALL.indexOf(lo);
+  const hiIdx = ALL.indexOf(hi);
+  if (loIdx === -1 || hiIdx === -1) return [s];
+  return ALL.slice(loIdx, hiIdx + 1);
+}
+
 function renderBellScheduleHTML(bs, L) {
   if (!bs.regular) {
-    // Old flat format fallback
     return `<p>${L.start}: ${bs.start}<br>${L.end}: ${bs.end}<br>${L.earlyRelease}: ${bs.earlyRelease}</p>`;
   }
 
-  const tableStyle = 'width:100%; border-collapse:collapse; font-size:0.92rem; margin:0.4rem 0';
-  const thStyle = 'text-align:left; padding:2px 6px; border-bottom:1px solid #ddd; font-weight:600';
-  const tdStyle = 'padding:2px 6px; border-bottom:1px solid #eee';
+  // Build a unified lookup: grade → { start, end, earlyEnd, superMinEnd }
+  const gradeOrder = [];
+  const gradeMap = {};
+  for (const r of bs.regular) {
+    gradeOrder.push(r.grades);
+    gradeMap[r.grades] = { start: r.start, end: r.end, earlyEnd: null, superMinEnd: null };
+  }
+
+  // Match early release times to regular grade rows using grade set overlap
+  for (const r of bs.earlyRelease) {
+    const earlySet = new Set(expandGrades(r.grades));
+    for (const g of gradeOrder) {
+      if (gradeMap[g].earlyEnd) continue; // already matched
+      const regSet = expandGrades(g);
+      if (regSet.some(grade => earlySet.has(grade))) {
+        gradeMap[g].earlyEnd = r.end;
+      }
+    }
+  }
+
+  // Match super-minimum times the same way
+  if (bs.superMinimum) {
+    for (const r of bs.superMinimum) {
+      const smSet = new Set(expandGrades(r.grades));
+      for (const g of gradeOrder) {
+        if (gradeMap[g].superMinEnd) continue;
+        const regSet = expandGrades(g);
+        if (regSet.some(grade => smSet.has(grade))) {
+          gradeMap[g].superMinEnd = r.end;
+        }
+      }
+    }
+  }
+
+  const hasSuperMin = bs.superMinimum && bs.superMinimum.length > 0;
 
   let html = '';
-
   if (bs.supervision) {
-    html += `<p style="margin:0.3rem 0; font-size:0.92rem">${L.supervisionStarts}: <strong>${bs.supervision}</strong></p>`;
+    html += `<p class="bell-supervision">${L.supervisionStarts}: ${bs.supervision}</p>`;
   }
 
-  // Regular days
-  html += `<p style="margin:0.5rem 0 0.2rem; font-weight:600; font-size:0.92rem">${L.regularDays}</p>`;
-  html += `<table style="${tableStyle}"><tr><th style="${thStyle}">${L.grade}</th><th style="${thStyle}">${L.start}</th><th style="${thStyle}">${L.end}</th></tr>`;
-  for (const r of bs.regular) {
-    html += `<tr><td style="${tdStyle}">${r.grades}</td><td style="${tdStyle}">${r.start}</td><td style="${tdStyle}">${r.end}</td></tr>`;
-  }
-  html += '</table>';
+  html += '<div class="bell-card-inner"><table class="bell-table">';
+  html += `<thead><tr>
+    <th></th>
+    <th><span class="bell-col-label">${L.regularDays}</span><span class="bell-col-sub">${L.regularDaysSub}</span></th>
+    <th><span class="bell-col-label">${L.thursdayEarlyRelease}</span></th>
+    ${hasSuperMin ? `<th><span class="bell-col-label">${L.superMinDays}</span></th>` : ''}
+  </tr></thead><tbody>`;
 
-  // Thursday early release
-  html += `<p style="margin:0.5rem 0 0.2rem; font-weight:600; font-size:0.92rem">${L.thursdayEarlyRelease}</p>`;
-  html += `<table style="${tableStyle}"><tr><th style="${thStyle}">${L.grade}</th><th style="${thStyle}">${L.dismissal}</th></tr>`;
-  for (const r of bs.earlyRelease) {
-    html += `<tr><td style="${tdStyle}">${r.grades}</td><td style="${tdStyle}">${r.end}</td></tr>`;
-  }
-  html += '</table>';
-
-  // Super-minimum days
-  if (bs.superMinimum) {
-    html += `<p style="margin:0.5rem 0 0.2rem; font-weight:600; font-size:0.92rem">${L.superMinDays}</p>`;
-    html += `<table style="${tableStyle}"><tr><th style="${thStyle}">${L.grade}</th><th style="${thStyle}">${L.dismissal}</th></tr>`;
-    for (const r of bs.superMinimum) {
-      html += `<tr><td style="${tdStyle}">${r.grades}</td><td style="${tdStyle}">${r.end}</td></tr>`;
-    }
-    html += '</table>';
+  for (const g of gradeOrder) {
+    const d = gradeMap[g];
+    html += `<tr>
+      <td class="bell-grade">${g}</td>
+      <td><span class="bell-time-range">${d.start}<span class="bell-dash"> – </span>${d.end}</span></td>
+      <td>${d.earlyEnd || '—'}</td>
+      ${hasSuperMin ? `<td>${d.superMinEnd || '—'}</td>` : ''}
+    </tr>`;
   }
 
+  html += '</tbody></table></div>';
   return html;
 }
 
@@ -1644,7 +1777,7 @@ ${siteNav({ activePage: 'schools', lang, altLangHref })}
         <p>${L.spsaDesc}</p>
         <p style="margin-top:0.5rem"><a href="https://data.rcsd.info/documents/spsa/2025-26/${slug}.pdf" target="_blank">${L.viewSpsa}${isEs ? ' (inglés)' : ''} &#8599;</a></p>
       </div>
-      <div class="resource-card">
+      <div class="resource-card bell-card">
         <h4>${L.bellSchedule}</h4>
         ${renderBellScheduleHTML(school.bellSchedule, L)}
       </div>
