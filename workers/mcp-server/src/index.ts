@@ -90,6 +90,13 @@ function createServer(): McpServer {
   const server = new McpServer({
     name: "RCSD Open Data",
     version: "1.0.0",
+    description: "Public data for the Redwood City School District — schools, calendars, lunch menus, board meetings, demographics, and special education",
+    icons: [
+      {
+        src: "https://data.rcsd.info/logos/district.jpg",
+        mimeType: "image/jpeg",
+      },
+    ],
   });
 
   // ---- list-schools ----
@@ -387,9 +394,13 @@ function createServer(): McpServer {
       if (!school) {
         // District-wide
         const d = sped.district;
+        const schoolsData = await fetchJSON("schools.json");
+        const totalEnrollment = schoolsData.schools.reduce((sum: number, s: any) => sum + s.enrollment, 0);
+        const districtPct = ((d.total / totalEnrollment) * 100).toFixed(1);
         const lines = [
           `RCSD District Special Education (${sped._source.year})`,
-          `  Total IEP students: ${d.total}`,
+          `  Total enrollment: ${totalEnrollment.toLocaleString()}`,
+          `  Total IEP students: ${d.total} (${districtPct}% district average)`,
           `  By grade: ${Object.entries(d.grades)
             .map(([g, n]) => `${g}: ${n}`)
             .join(", ")}`,
@@ -397,7 +408,7 @@ function createServer(): McpServer {
           "Per school:",
         ];
         for (const [slug, data] of Object.entries(sped.schools) as [string, any][]) {
-          lines.push(`  ${slug}: ${data.total} IEP students (${data.pct}%)`);
+          lines.push(`  ${slug}: ${data.total} / ${data.totalEnrollment} students (${data.pct}%)`);
         }
         return { content: [{ type: "text", text: lines.join("\n") }] };
       }
