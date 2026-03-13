@@ -196,8 +196,9 @@ function createServer(): McpServer {
           const end = evt.dateEnd || evt.date;
           if (date >= start && date <= end) {
             const range = evt.dateEnd ? ` (${start} to ${end})` : "";
+            const year = cal.schoolYear ? ` [${cal.schoolYear}]` : "";
             return {
-              content: [{ type: "text", text: `${date}: ${evt.en} (${evt.type})${range}` }],
+              content: [{ type: "text", text: `${date}: ${evt.en} (${evt.type})${range}${year}` }],
             };
           }
         }

@@ -498,10 +498,402 @@ await question(
   }
 );
 
+// ---- Batch 2: Deep-dive questions (21-40) ----
+
+console.log("\nBatch 2 — Schema deep-dives:\n");
+
+// 21. Per-grade bell schedule: specific pickup time
+await question(
+  21,
+  "What time do I pick up my kindergartner at Orion on a Thursday?",
+  {
+    school: ["query-school", { school: "orion" }],
+  },
+  ({ school }) => {
+    const problems = [];
+    if (!school.includes("Thursday early release")) problems.push("Missing Thursday early release section");
+    // K Thursday dismissal at Orion is 1:00 PM
+    if (!school.includes("K:") || !school.match(/K:.*1:00 PM/)) problems.push("Missing K Thursday dismissal (should be 1:00 PM)");
+    return problems;
+  }
+);
+
+// 22. Bell schedule comparison across schools for same grade
+await question(
+  22,
+  "My TK kid could go to Taft or Henry Ford. Which has the later regular dismissal?",
+  {
+    taft: ["query-school", { school: "taft" }],
+    hf: ["query-school", { school: "henry-ford" }],
+  },
+  ({ taft, hf }) => {
+    const problems = [];
+    // Both should have TK regular schedule
+    const taftTk = taft.match(/TK:.*?(\d+:\d+ [AP]M)\s+[–-]\s+(\d+:\d+ [AP]M)/);
+    const hfTk = hf.match(/TK:.*?(\d+:\d+ [AP]M)\s+[–-]\s+(\d+:\d+ [AP]M)/);
+    if (!taftTk) problems.push("Taft missing TK regular schedule");
+    if (!hfTk) problems.push("Henry Ford missing TK regular schedule");
+    // Both should be 1:30 PM for TK
+    if (taftTk && !taftTk[2].includes("1:30")) problems.push(`Taft TK end should be 1:30 PM, got ${taftTk[2]}`);
+    if (hfTk && !hfTk[2].includes("1:30")) problems.push(`Henry Ford TK end should be 1:30 PM, got ${hfTk[2]}`);
+    return problems;
+  }
+);
+
+// 23. Super-minimum day awareness
+await question(
+  23,
+  "Does Clifford have super-minimum days? What time does a 6th grader get out?",
+  {
+    school: ["query-school", { school: "clifford" }],
+  },
+  ({ school }) => {
+    const problems = [];
+    if (!school.includes("Super-minimum")) problems.push("Missing super-minimum section");
+    if (!school.includes("no lunch served")) problems.push("Should note no lunch on super-min days");
+    // Clifford super-min is 11:45 AM for all grades
+    if (!school.match(/TK-8.*11:45 AM/)) problems.push("Clifford super-min should be 11:45 AM for TK-8");
+    return problems;
+  }
+);
+
+// 24. Schools without super-minimum data
+await question(
+  24,
+  "Does Garfield publish super-minimum day times?",
+  {
+    school: ["query-school", { school: "garfield" }],
+  },
+  ({ school }) => {
+    const problems = [];
+    // Garfield has no super-minimum data — should NOT have a super-minimum section
+    if (school.includes("Super-minimum")) problems.push("Garfield should not have super-minimum data (not published)");
+    // But should still have regular and early release
+    if (!school.includes("Regular days")) problems.push("Missing regular days schedule");
+    if (!school.includes("Thursday early release")) problems.push("Missing early release schedule");
+    return problems;
+  }
+);
+
+// 25. Staggered start times
+await question(
+  25,
+  "At Adelante Selby, do all grades start at the same time?",
+  {
+    school: ["query-school", { school: "adelante-selby" }],
+  },
+  ({ school }) => {
+    const problems = [];
+    // Adelante has staggered starts: TK 8:28, K 8:18, 1st 8:13, 2-3 8:08, 4-5 8:03
+    const starts = school.match(/\d+:\d+ AM/g);
+    if (!starts) problems.push("Can't find start times");
+    const uniqueStarts = new Set(starts);
+    if (uniqueStarts.size < 3) problems.push("Should show multiple different start times (staggered schedule)");
+    if (!school.includes("8:03 AM")) problems.push("Missing 4-5 grade start of 8:03 AM");
+    if (!school.includes("8:28 AM")) problems.push("Missing TK start of 8:28 AM");
+    return problems;
+  }
+);
+
+// 26. Community school + high-need correlation
+await question(
+  26,
+  "Are all community schools also high-need? Which community schools have the lowest high-need percentage?",
+  {
+    adelante: ["query-school", { school: "adelante-selby" }],
+    garfield: ["query-school", { school: "garfield" }],
+    henry: ["query-school", { school: "henry-ford" }],
+    hoover: ["query-school", { school: "hoover" }],
+    kennedy: ["query-school", { school: "kennedy" }],
+    mckinley: ["query-school", { school: "mckinley-mit" }],
+    roosevelt: ["query-school", { school: "roosevelt" }],
+    taft: ["query-school", { school: "taft" }],
+  },
+  (r) => {
+    const problems = [];
+    // All 8 should show Community School: Yes
+    for (const [name, data] of Object.entries(r)) {
+      if (!data.includes("Community School: Yes")) problems.push(`${name} should be community school`);
+      if (!data.includes("High-Need:")) problems.push(`${name} missing High-Need`);
+    }
+    // Clifford is NOT a community school — verify it's not in our set
+    // Adelante has lowest high-need at 65% among community schools
+    const adelantePct = parseInt(r.adelante.match(/High-Need:\s+(\d+)%/)?.[1] || "0");
+    if (adelantePct !== 65) problems.push(`Adelante high-need should be 65%, got ${adelantePct}%`);
+    return problems;
+  }
+);
+
+// 27. PTO compliance status comparison
+await question(
+  27,
+  "Which RCSD PTOs have compliance issues with the CA Registry of Charitable Trusts?",
+  {
+    clifford: ["query-school", { school: "clifford" }],
+    henry: ["query-school", { school: "henry-ford" }],
+    orion: ["query-school", { school: "orion" }],
+    kennedy: ["query-school", { school: "kennedy" }],
+  },
+  ({ clifford, henry, orion, kennedy }) => {
+    const problems = [];
+    // Clifford PTO has delinquency-notice, Henry Ford has missing-documents
+    // But MCP output only shows revenue, not RCT status — so this tests whether
+    // PTO data is rich enough for compliance questions
+    if (!clifford.includes("PTO:")) problems.push("Clifford missing PTO info");
+    if (!henry.includes("PTO:")) problems.push("Henry Ford missing PTO info");
+    if (!orion.includes("PTO:")) problems.push("Orion missing PTO info");
+    if (!kennedy.includes("PTO:")) problems.push("Kennedy missing PTO info");
+    return problems;
+  }
+);
+
+// 28. SpEd disability category breakdown (district only)
+await question(
+  28,
+  "What are the most common disability categories in RCSD special education?",
+  {
+    district: ["get-sped-data", {}],
+  },
+  ({ district }) => {
+    const problems = [];
+    // District SpEd data should include aggregate numbers
+    if (!district.includes("Total IEP students")) problems.push("Missing total IEP count");
+    if (!district.includes("district average")) problems.push("Missing district average percentage");
+    // Per-school should be listed
+    if (!district.includes("Per school")) problems.push("Missing per-school breakdown");
+    return problems;
+  }
+);
+
+// 29. SpEd LRE placement comparison
+await question(
+  29,
+  "What percentage of Orion's IEP students spend >80% of their day in regular classrooms vs Kennedy?",
+  {
+    orion: ["get-sped-data", { school: "orion" }],
+    kennedy: ["get-sped-data", { school: "kennedy" }],
+  },
+  ({ orion, kennedy }) => {
+    const problems = [];
+    if (!orion.includes("LRE Placement")) problems.push("Orion missing LRE placement");
+    if (!kennedy.includes("LRE Placement")) problems.push("Kennedy missing LRE placement");
+    const orionPct = orion.match(/Regular class >80%:\s+\d+\s+\((\d+)%\)/);
+    const kennedyPct = kennedy.match(/Regular class >80%:\s+\d+\s+\((\d+)%\)/);
+    if (!orionPct) problems.push("Can't parse Orion >80% percentage");
+    if (!kennedyPct) problems.push("Can't parse Kennedy >80% percentage");
+    return problems;
+  }
+);
+
+// 30. Separate school placement count
+await question(
+  30,
+  "How many RCSD students with IEPs are placed in separate schools rather than regular classrooms?",
+  {
+    orion: ["get-sped-data", { school: "orion" }],
+    hoover: ["get-sped-data", { school: "hoover" }],
+  },
+  ({ orion, hoover }) => {
+    const problems = [];
+    // Should show separate school placement count
+    if (!orion.includes("Separate school:")) problems.push("Orion missing separate school placement");
+    if (!hoover.includes("Separate school:")) problems.push("Hoover missing separate school placement");
+    return problems;
+  }
+);
+
+// 31. Calendar: early-release week details
+await question(
+  31,
+  "When is parent-teacher conference week in 2025-26? Is it the whole week or just a few days?",
+  {
+    start: ["check-calendar", { date: "2025-09-15" }],
+    end: ["check-calendar", { date: "2025-09-19" }],
+    before: ["check-calendar", { date: "2025-09-12" }],
+  },
+  ({ start, end, before }) => {
+    const problems = [];
+    if (!start.includes("Parent Teacher Conference")) problems.push("Sep 15 should be PT conference week");
+    if (!end.includes("Parent Teacher Conference")) problems.push("Sep 19 should be PT conference week");
+    if (!start.includes("early-release")) problems.push("Conference week should be early-release type");
+    // Should show date range
+    if (!start.includes("2025-09-15") || !start.includes("2025-09-19")) problems.push("Should show full date range");
+    // Day before should be regular
+    if (!before.includes("Regular")) problems.push("Sep 12 should be regular day");
+    return problems;
+  }
+);
+
+// 32. Calendar: 2026-27 school year start
+await question(
+  32,
+  "When does the 2026-27 school year start?",
+  {
+    firstDay: ["check-calendar", { date: "2026-08-12" }],
+    dayBefore: ["check-calendar", { date: "2026-08-11" }],
+  },
+  ({ firstDay, dayBefore }) => {
+    const problems = [];
+    if (!firstDay.includes("First Day")) problems.push("Aug 12, 2026 should be first day of 2026-27");
+    if (!firstDay.includes("2026-27")) problems.push("Should reference 2026-27 school year");
+    // Day before should be outside school year
+    if (dayBefore.includes("Regular") || dayBefore.includes("First Day"))
+      problems.push("Aug 11 should NOT be a school day");
+    return problems;
+  }
+);
+
+// 33. Summer date: lunch tool should say no school
+await question(
+  33,
+  "What's for lunch at Roy Cloud on July 15, 2026?",
+  {
+    lunch: ["get-lunch-menu", { school: "roy-cloud", date: "2026-07-15" }],
+  },
+  ({ lunch }) => {
+    const problems = [];
+    if (!lunch.includes("not in session")) problems.push("Should say school is not in session during summer");
+    return problems;
+  }
+);
+
+// 34. Lunch on a no-school teacher training day (not a holiday)
+await question(
+  34,
+  "Can my kid get lunch at Taft on the September 29, 2025 planning day?",
+  {
+    cal: ["check-calendar", { date: "2025-09-29" }],
+    lunch: ["get-lunch-menu", { school: "taft", date: "2025-09-29" }],
+  },
+  ({ cal, lunch }) => {
+    const problems = [];
+    if (!cal.includes("Planning")) problems.push("Sep 29 should be planning day");
+    if (!cal.includes("no-school")) problems.push("Planning day should be no-school type");
+    if (!lunch.includes("closed") && !lunch.includes("No school lunch"))
+      problems.push("Should say no lunch — school is closed on planning day");
+    return problems;
+  }
+);
+
+// 35. School with Mandarin program and booster org
+await question(
+  35,
+  "Does Orion have any fundraising organizations beyond its PTO?",
+  {
+    school: ["query-school", { school: "orion" }],
+  },
+  ({ school }) => {
+    const problems = [];
+    if (!school.includes("Starship Orion")) problems.push("Missing PTO name (Starship Orion)");
+    // The MCP server currently doesn't expose miBooster — this tests a data gap
+    // It's OK if it only shows PTO; the data exists but may not be formatted
+    if (!school.includes("PTO:")) problems.push("Missing PTO section");
+    return problems;
+  }
+);
+
+// 36. TK-8 school: middle school vs elementary schedule difference
+await question(
+  36,
+  "At Roy Cloud, do middle schoolers and elementary students have different dismissal times?",
+  {
+    school: ["query-school", { school: "roy-cloud" }],
+  },
+  ({ school }) => {
+    const problems = [];
+    // Roy Cloud: TK 1:30, K 1:45, 1-2 2:25, 3 2:25, 4-5 2:50, 6-8 2:50
+    // So 4-5 and 6-8 have same time, but K and lower are earlier
+    if (!school.match(/TK:.*1:30 PM/)) problems.push("Missing TK dismissal (1:30 PM)");
+    if (!school.match(/6-8:.*2:50 PM/)) problems.push("Missing 6-8 dismissal (2:50 PM)");
+    // Thursday: all grades at 12:50 PM (uniform)
+    if (!school.match(/TK-8:.*12:50 PM/)) problems.push("Thursday should be uniform 12:50 PM for all grades");
+    return problems;
+  }
+);
+
+// 37. Supervision/drop-off time
+await question(
+  37,
+  "What's the earliest I can drop off my kid at Roy Cloud?",
+  {
+    school: ["query-school", { school: "roy-cloud" }],
+  },
+  ({ school }) => {
+    const problems = [];
+    if (!school.includes("Supervision starts: 8:00 AM"))
+      problems.push("Should show supervision starts at 8:00 AM");
+    return problems;
+  }
+);
+
+// 38. Board items across multiple schools in same agenda item
+await question(
+  38,
+  "Has the board approved safety plans for all schools at once, or individually?",
+  {
+    orion: ["get-school-board-items", { school: "orion", limit: 20 }],
+    taft: ["get-school-board-items", { school: "taft", limit: 20 }],
+  },
+  ({ orion, taft }) => {
+    const problems = [];
+    // The CSSP item from 2026-02-04 should appear for both schools
+    const orionHasSafety = orion.toLowerCase().includes("safety");
+    const taftHasSafety = taft.toLowerCase().includes("safety");
+    if (!orionHasSafety) problems.push("Orion should have safety plan board item");
+    if (!taftHasSafety) problems.push("Taft should have safety plan board item");
+    // Both should show the same date
+    if (orionHasSafety && taftHasSafety) {
+      const orionDate = orion.match(/(\d{4}-\d{2}-\d{2}):.*?[Ss]afety/)?.[1];
+      const taftDate = taft.match(/(\d{4}-\d{2}-\d{2}):.*?[Ss]afety/)?.[1];
+      if (orionDate && taftDate && orionDate !== taftDate)
+        problems.push(`Safety plans approved on different dates: Orion ${orionDate}, Taft ${taftDate}`);
+    }
+    return problems;
+  }
+);
+
+// 39. SpEd per-grade: are there IEP students in every grade?
+await question(
+  39,
+  "Does the district have IEP students in every grade level from TK through 8th?",
+  {
+    district: ["get-sped-data", {}],
+  },
+  ({ district }) => {
+    const problems = [];
+    if (!district.includes("By grade:")) problems.push("Missing grade breakdown");
+    // Check that TK through 8 are all present
+    for (const grade of ["TK:", "K:", "1:", "2:", "3:", "4:", "5:", "6:", "7:", "8:"]) {
+      if (!district.includes(grade)) problems.push(`Missing grade ${grade} in district data`);
+    }
+    return problems;
+  }
+);
+
+// 40. Multiple meeting summaries with date filtering
+await question(
+  40,
+  "What was discussed at the February 2026 board meetings? Were there any special meetings?",
+  {
+    feb4: ["get-meeting-summary", { date: "2026-02-04" }],
+    feb26: ["get-meeting-summary", { date: "2026-02-26" }],
+  },
+  ({ feb4, feb26 }) => {
+    const problems = [];
+    if (!feb4.includes("2026-02-04")) problems.push("Missing Feb 4 meeting");
+    if (!feb26.includes("2026-02-26")) problems.push("Missing Feb 26 meeting");
+    // Both should have substantive content
+    if (feb4.length < 50) problems.push("Feb 4 summary too short");
+    if (feb26.length < 50) problems.push("Feb 26 summary too short");
+    return problems;
+  }
+);
+
 // ---- Summary ----
 
+const total = passed + failed;
 console.log(`\n${"─".repeat(60)}`);
-console.log(`${passed} passed, ${failed} failed out of 20 questions\n`);
+console.log(`${passed} passed, ${failed} failed out of ${total} questions\n`);
 
 if (issues.length > 0) {
   console.log("Issues found:\n");
