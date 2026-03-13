@@ -1433,6 +1433,21 @@ function expandGrades(rangeStr) {
   return ALL.slice(loIdx, hiIdx + 1);
 }
 
+function compactGradeLabel(grades) {
+  const ALL = ['TK','K','1','2','3','4','5','6','7','8'];
+  // Map grades to indices, sort, then find contiguous runs
+  const indices = [...new Set(grades.map(g => ALL.indexOf(g)))].filter(i => i >= 0).sort((a,b) => a - b);
+  if (indices.length === 0) return grades.join(', ');
+  if (indices.length === 1) return ALL[indices[0]];
+  // Check if contiguous
+  const isContiguous = indices.every((v, i) => i === 0 || v === indices[i-1] + 1);
+  if (isContiguous) {
+    return `${ALL[indices[0]]}-${ALL[indices[indices.length - 1]]}`;
+  }
+  // Non-contiguous: return comma-separated
+  return indices.map(i => ALL[i]).join(', ');
+}
+
 function renderBellScheduleHTML(bs, L) {
   if (!bs.regular) {
     return `<p>${L.start}: ${bs.start}<br>${L.end}: ${bs.end}<br>${L.earlyRelease}: ${bs.earlyRelease}</p>`;
@@ -1474,6 +1489,24 @@ function renderBellScheduleHTML(bs, L) {
 
   const hasSuperMin = bs.superMinimum && bs.superMinimum.length > 0;
 
+  // Merge consecutive rows with identical times to keep the table simple
+  const mergedRows = [];
+  for (const g of gradeOrder) {
+    const d = gradeMap[g];
+    const key = `${d.start}|${d.end}|${d.earlyEnd || ''}|${d.superMinEnd || ''}`;
+    const prev = mergedRows.length > 0 ? mergedRows[mergedRows.length - 1] : null;
+    if (prev && prev._key === key) {
+      // Merge grade labels: expand both into individual grades and combine
+      const prevGrades = expandGrades(prev.label);
+      const curGrades = expandGrades(g);
+      const allGrades = [...prevGrades, ...curGrades];
+      // Build a compact label from the combined range
+      prev.label = compactGradeLabel(allGrades);
+    } else {
+      mergedRows.push({ label: g, ...d, _key: key });
+    }
+  }
+
   let html = '';
   if (bs.supervision) {
     html += `<p class="bell-supervision">${L.supervisionStarts}: ${bs.supervision}</p>`;
@@ -1487,13 +1520,12 @@ function renderBellScheduleHTML(bs, L) {
     ${hasSuperMin ? `<th><span class="bell-col-label">${L.superMinDays}</span></th>` : ''}
   </tr></thead><tbody>`;
 
-  for (const g of gradeOrder) {
-    const d = gradeMap[g];
+  for (const row of mergedRows) {
     html += `<tr>
-      <td class="bell-grade">${g}</td>
-      <td><span class="bell-time-range">${d.start}<span class="bell-dash"> – </span>${d.end}</span></td>
-      <td>${d.earlyEnd || '—'}</td>
-      ${hasSuperMin ? `<td>${d.superMinEnd || '—'}</td>` : ''}
+      <td class="bell-grade">${row.label}</td>
+      <td><span class="bell-time-range">${row.start}<span class="bell-dash"> – </span>${row.end}</span></td>
+      <td>${row.earlyEnd || '—'}</td>
+      ${hasSuperMin ? `<td>${row.superMinEnd || '—'}</td>` : ''}
     </tr>`;
   }
 
