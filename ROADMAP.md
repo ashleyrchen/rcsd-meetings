@@ -114,10 +114,13 @@ The calendar widget and meeting pages should reflect which state each meeting is
 - [ ] Diarized speaker identification in transcripts
 
 ## Agent / API Layer
-- [ ] Publish a Claude Code plugin/skill and/or MCP server that lets parent-facing agents query rcsd.info structured data (e.g. "What's Jill having for lunch tomorrow?" → agent knows Jill is 2nd grade at Orion → queries lunch menu API)
-- [ ] Structured lunch menu data per school site, queryable by date
+- [x] Claude Code plugin with RCSD data skill (plugin/ directory) — family config, school lookup, calendar queries
+- [x] Structured lunch menu data per school site, queryable by date (HealthePro public API, scripts/lunch-menu.mjs)
+- [ ] Per-child teacher/homeroom config in family settings — enables teacher-aware queries (field trips, homework, class-specific events)
+- [ ] Per-school teacher roster data — enables "Who teaches 3rd grade MI at Orion?" queries
 - [ ] Subscribable lunch calendar (iCal .ics) for overlay onto Apple Calendar / Outlook / Google Calendar
 - [ ] OpenAPI / JSON API endpoints on data.rcsd.info for school info, calendars, menus, meetings
+- [ ] Publish plugin to npm / Claude Code plugin registry for easy installation
 
 ## Data Attribution (in progress)
 - [ ] Growth data (ELA/Math growth %) — find and link to the actual source document (currently attributed to "CDE Growth Model" but original data came from an untracked `hr-data-briefing-2026-03.md`)
