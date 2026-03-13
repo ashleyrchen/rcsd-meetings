@@ -1080,6 +1080,18 @@ console.log('Wrote docs/llms.txt');
 
 // ---- sitemap.xml ----
 const sitemapDate = new Date().toISOString().slice(0, 10);
+const schoolUrls = schools.schools.map(s => `  <url>
+    <loc>https://rcsd.info/schools/${s.slug}/</loc>
+    <lastmod>${sitemapDate}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rcsd.info/escuelas/${s.slug}/</loc>
+    <lastmod>${sitemapDate}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>`).join('\n');
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
@@ -1088,6 +1100,19 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+  <url>
+    <loc>https://rcsd.info/schools/</loc>
+    <lastmod>${sitemapDate}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://rcsd.info/escuelas/</loc>
+    <lastmod>${sitemapDate}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+${schoolUrls}
   <url>
     <loc>https://rcsd.info/meetings/</loc>
     <lastmod>${sitemapDate}</lastmod>
@@ -1101,12 +1126,6 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://rcsd.info/llms.txt</loc>
-    <lastmod>${sitemapDate}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://rcsd.info/district/</loc>
     <lastmod>${sitemapDate}</lastmod>
     <changefreq>monthly</changefreq>
@@ -1117,6 +1136,12 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
     <lastmod>${sitemapDate}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rcsd.info/llms.txt</loc>
+    <lastmod>${sitemapDate}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
 </urlset>
 `;
