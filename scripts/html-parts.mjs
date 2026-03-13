@@ -227,7 +227,7 @@ const NAV_TABS = {
     { id: 'schools',  label: 'Schools',  href: '/schools/' },
     { id: 'district', label: 'District', href: '/district/' },
     { id: 'budget',   label: 'Budget',   href: '/budget/' },
-    { id: 'code',     label: 'Code',     href: 'https://github.com/dweekly/rcsd-meetings' },
+    { id: 'blog',     label: 'Blog',     href: '/blog/' },
   ],
   es: [
     { id: 'home',     label: 'Inicio',       href: '/' },
@@ -235,7 +235,7 @@ const NAV_TABS = {
     { id: 'schools',  label: 'Escuelas',     href: '/escuelas/' },
     { id: 'district', label: 'Distrito',     href: '/distrito/' },
     { id: 'budget',   label: 'Presupuesto',  href: '/presupuesto/' },
-    { id: 'code',     label: 'C\u00f3digo',  href: 'https://github.com/dweekly/rcsd-meetings' },
+    { id: 'blog',     label: 'Blog',     href: '/blog/es/' },
   ],
 };
 
@@ -270,7 +270,7 @@ const FOOTER_TEXT = {
 export function siteFooter({ lang = 'en' } = {}) {
   const tabs = NAV_TABS[lang] || NAV_TABS.en;
   const navLinks = tabs
-    .filter(t => t.id !== 'code')
+    .filter(t => t.id !== 'blog')
     .map(t => `    <a href="${t.href}">${t.label}</a>`)
     .concat([
       `    <a href="https://github.com/dweekly/rcsd-meetings">${lang === 'en' ? 'Source Code' : 'Código Fuente'} &#8599;</a>`,

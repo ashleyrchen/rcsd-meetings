@@ -132,6 +132,18 @@ The calendar widget and meeting pages should reflect which state each meeting is
 - [ ] Generate "chapters" linking agenda items to meeting timestamps: "Agenda item 8.2 begins discussion at 18:42 and the discussion is summarized thusly..."
 - [ ] Diarized speaker identification in transcripts
 
+## Board Meetings — Detailed summaries from transcripts
+Once we have full quality transcripts, build a pipeline for rich per-meeting summaries:
+- Inputs: full transcript + formal minutes (when available) + agenda
+- Ordered by actual discussion sequence (not agenda order); note agenda changes proposed/approved at the top
+- Timestamp annotation for when each agenda item discussion began
+- Each public comment: who spoke + summary of remarks. Some comments are in Spanish; the interpreter's English translation follows. Capture both.
+- Discussion summary per agenda item
+- EN and ES output, written at sixth-grade reading level (Californian colloquial Spanish for ES)
+- District-specific terms (LCAP, CAASPP, unduplicated pupil, SARC, etc.) get hover-over/clickable inline glossary definitions
+- AI-generated content clearly labeled
+- Open questions: glossary via `<abbr title>` vs popover component? Define terms once per page or per first-use per section?
+
 ## Agent / API Layer
 - [x] Claude Code plugin with RCSD data skill (plugin/ directory) — family config, school lookup, calendar queries
 - [x] Structured lunch menu data per school site, queryable by date (HealthePro public API, scripts/lunch-menu.mjs)

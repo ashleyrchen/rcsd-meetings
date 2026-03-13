@@ -1,0 +1,100 @@
+<header class="post-header">
+  <div class="post-header-inner">
+    <div class="post-meta">
+      <span class="post-date">13 de marzo de 2026</span>
+      <span class="post-author">por <a href="https://david.weekly.org">David Weekly</a></span>
+    </div>
+    <h1>Datos abiertos para un distrito escolar: por qué y cómo</h1>
+    <p class="post-subtitle">Por qué hice rcsd.info y cómo lo puedes usar para tu distrito.</p>
+  </div>
+</header>
+
+<main class="post-content">
+  <div class="post-body">
+
+    <section>
+      <h2>El problema de la transparencia</h2>
+      <p>Los distritos escolares producen muchísimos datos públicos. Presupuestos, reuniones de la junta, números de inscripción, resultados de exámenes, planes de mejora escolar. Casi nada de eso es fácil de encontrar, y menos de entender.</p>
+      <p>Yo soy miembro de la mesa directiva del <a href="https://www.rcsdk8.net" target="_blank">Distrito Escolar de Redwood City</a>. He visto a papás y mamás tratar de navegar los portales de BoardDocs, leer documentos de presupuesto en PDF, y rendirse tratando de saber cuándo es la próxima reunión de la junta. Y eso que son familias que sí quieren participar. Si ellos no lo pueden encontrar, ¿quién?</p>
+      <p>No debería ser tan difícil. La información ya es pública. Solo falta organizarla y hacerla fácil de buscar.</p>
+      <p>Por eso hice <strong>rcsd.info</strong>, un portal de datos independiente y de código abierto que junta registros públicos de unas doce fuentes y los pone en un solo lugar, en inglés y español.</p>
+    </section>
+
+    <section>
+      <h2>Qué hay en el sitio</h2>
+      <p>Hasta hoy, rcsd.info cubre:</p>
+      <ul>
+        <li>58 reuniones de la junta con agendas, actas, 1,724 documentos adjuntos y links al video con marcas de tiempo</li>
+        <li>49 transcripciones completas de las reuniones, hechas del audio de YouTube con AssemblyAI</li>
+        <li>12 perfiles de escuelas con inscripción, demografía, horarios, datos SARC y links a recursos para familias</li>
+        <li>Calendarios del distrito para 2025-26 y 2026-27</li>
+        <li>Datos de presupuesto y rendimiento del LCAP, informes intermedios y el Dashboard Escolar de California</li>
+        <li>Datos de educación especial por escuela y grado</li>
+      </ul>
+      <p>Todo es bilingüe y funciona en el teléfono.</p>
+    </section>
+
+    <section>
+      <h2>Cómo funciona el pipeline</h2>
+      <p>La arquitectura es simple a propósito. Sin frameworks, sin base de datos, sin CMS. Son scripts de Node.js que:</p>
+      <ol>
+        <li>Extraen agendas de reuniones de BoardDocs y Simbli (el distrito ha usado dos portales diferentes)</li>
+        <li>Descargan los videos y audio de YouTube de las reuniones de la junta</li>
+        <li>Transcriben el audio con <a href="https://www.assemblyai.com/" target="_blank">Universal 3 Pro de AssemblyAI</a>, que maneja bien la mezcla de inglés y español</li>
+        <li>Conectan los puntos de la agenda con los momentos del video usando Claude Haiku</li>
+        <li>Generan páginas HTML de archivos JSON</li>
+        <li>Publican en Cloudflare Pages, con los datos en R2</li>
+      </ol>
+      <p>Cada script es idempotente: no repite trabajo que ya hizo. Puedes borrar todo el output y correrlo de nuevo desde cero. Sin pasos manuales, sin credenciales especiales aparte de las API keys para la transcripción.</p>
+      <p>También hay un <a href="https://mcp.rcsd.info/mcp" target="_blank">servidor MCP</a> (Model Context Protocol) para que asistentes de IA como Claude puedan consultar los datos directamente. Le puedes preguntar sobre horarios, agendas, menús de almuerzo, lo que sea.</p>
+    </section>
+
+    <section>
+      <h2>De dónde vienen los datos</h2>
+      <p>Si vas a publicar datos sobre un distrito escolar, tienes que poder rastrear cada número hasta su fuente. Eso aquí no es negociable:</p>
+      <ul>
+        <li>Cada pipeline tiene un documento de metodología que explica de dónde vienen los datos y qué transformaciones se les hacen</li>
+        <li>Lo que genera la IA (resúmenes de reuniones, mapeo de timestamps) está marcado como tal</li>
+        <li>Los documentos fuente tienen links a los originales en los sitios del distrito</li>
+        <li>Todo el código es <a href="https://github.com/dweekly/rcsd-meetings" target="_blank">público en GitHub</a></li>
+      </ul>
+      <p>Las familias, periodistas y otros miembros de la junta necesitan poder confiar en estos datos. Si algo se ve mal, cualquiera puede rastrearlo hasta la fuente y reportar el problema.</p>
+    </section>
+
+    <section>
+      <h2>Qué me gustaría hacer después</h2>
+      <p>El sitio funciona hoy, pero hay una lista larga de cosas que todavía no he hecho:</p>
+      <ul>
+        <li>Tendencias de resultados CAASPP por escuela, grado y grupo demográfico</li>
+        <li>Mejor cobertura de comités (DLAC, comité de LCAP, seguridad) que no siempre publican actas</li>
+        <li>Transcripción en vivo y seguimiento de la agenda durante las reuniones de la junta</li>
+        <li>Perfiles de escuelas más completos: retención de maestros, tamaño de clases, resultados de encuestas de familias</li>
+        <li>Comparaciones con distritos vecinos</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Úsalo para tu distrito</h2>
+      <p>La razón por la que esto es código abierto es para que alguien más lo pueda usar. Si tu distrito usa BoardDocs o Simbli (la mayoría en California sí), los scripts deberían funcionar con pocos cambios:</p>
+      <ol>
+        <li>Haz fork del <a href="https://github.com/dweekly/rcsd-meetings" target="_blank">repo en GitHub</a></li>
+        <li>Actualiza <code>data/schools.json</code> con las escuelas de tu distrito</li>
+        <li>Apunta el scraper a la instancia de BoardDocs o Simbli de tu distrito</li>
+        <li>Agrega el canal de YouTube de tu distrito</li>
+        <li>Corre el pipeline</li>
+      </ol>
+      <p>La parte más difícil son los datos extras: calendarios, demografía, documentos de presupuesto. Eso varía mucho entre distritos y casi siempre requiere algo de trabajo manual.</p>
+    </section>
+
+    <section>
+      <h2>Participa</h2>
+      <p>Este es un proyecto voluntario de una sola persona. Soy ingeniero de software y también estoy en la mesa directiva de RCSD. Si quieres ayudar o tienes alguna pregunta:</p>
+      <ul>
+        <li>Código y issues: <a href="https://github.com/dweekly/rcsd-meetings" target="_blank">dweekly/rcsd-meetings</a> en GitHub</li>
+        <li>Email: <a href="mailto:team@rcsd.info">team@rcsd.info</a></li>
+        <li>Si hay datos públicos de RCSD que te gustaría que fueran más fáciles de encontrar, dime</li>
+      </ul>
+    </section>
+
+  </div>
+</main>

@@ -1,0 +1,25 @@
+[
+  {
+    "slug": "open-data-for-rcsd",
+    "slugEs": "datos-abiertos-para-rcsd",
+    "date": "2026-03-13",
+    "author": "David Weekly",
+    "authorUrl": "https://david.weekly.org",
+    "template": {
+      "en": "2026-03-intro-en.html",
+      "es": "2026-03-intro-es.html"
+    },
+    "title": {
+      "en": "Open data for a school district: why and how",
+      "es": "Datos abiertos para un distrito escolar: por qué y cómo"
+    },
+    "description": {
+      "en": "Why I built rcsd.info, an open data portal for the Redwood City School District, and how you can adapt it for your own district.",
+      "es": "Por qué hice rcsd.info, un portal de datos abiertos para el Distrito Escolar de Redwood City, y cómo lo puedes usar para tu distrito."
+    },
+    "excerpt": {
+      "en": "Public school districts produce a staggering amount of public data, but almost none of it is easy to find or understand. I built rcsd.info to change that.",
+      "es": "Los distritos escolares producen muchísimos datos públicos, pero casi nada de eso es fácil de encontrar o entender. Hice rcsd.info para cambiar eso."
+    }
+  }
+]

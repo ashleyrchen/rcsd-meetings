@@ -1,0 +1,100 @@
+<header class="post-header">
+  <div class="post-header-inner">
+    <div class="post-meta">
+      <span class="post-date">March 13, 2026</span>
+      <span class="post-author">by <a href="https://david.weekly.org">David Weekly</a></span>
+    </div>
+    <h1>Open data for a school district: why and how</h1>
+    <p class="post-subtitle">Why I built rcsd.info and how you can adapt it for your district.</p>
+  </div>
+</header>
+
+<main class="post-content">
+  <div class="post-body">
+
+    <section>
+      <h2>The transparency gap</h2>
+      <p>Public school districts produce a staggering amount of public data. Budgets, board meetings, enrollment numbers, test scores, school improvement plans. Almost none of it is easy to find, and even less of it is easy to understand.</p>
+      <p>I sit on the board of the <a href="https://www.rcsdk8.net" target="_blank">Redwood City School District</a>. I've watched parents try to navigate BoardDocs portals, squint at PDF budget documents, and give up trying to figure out when the next board meeting is. These are engaged parents. If they can't find it, who can?</p>
+      <p>It shouldn't be this hard. The information is already public. It just needs to be organized and made searchable.</p>
+      <p>So I built <strong>rcsd.info</strong>, an independent open-source data portal that pulls together public records from about a dozen sources and presents them in one place, in English and Spanish.</p>
+    </section>
+
+    <section>
+      <h2>What's on the site</h2>
+      <p>As of today, rcsd.info covers:</p>
+      <ul>
+        <li>58 board meetings with agendas, minutes, 1,724 attachments, and timestamped video links</li>
+        <li>49 full meeting transcripts, generated from YouTube audio using AssemblyAI</li>
+        <li>12 school profiles with enrollment, demographics, bell schedules, SARC data, and parent resource links</li>
+        <li>District calendars for 2025-26 and 2026-27</li>
+        <li>Budget and performance data from the district's LCAP, interim reports, and the CA School Dashboard</li>
+        <li>Special education enrollment by school and grade</li>
+      </ul>
+      <p>Everything is bilingual and works on a phone.</p>
+    </section>
+
+    <section>
+      <h2>How the pipeline works</h2>
+      <p>The stack is simple on purpose. No frameworks, no database, no CMS. Just Node.js scripts that:</p>
+      <ol>
+        <li>Scrape meeting agendas from BoardDocs and Simbli (the district has used two different portals over the years)</li>
+        <li>Download YouTube video metadata and audio for board meetings</li>
+        <li>Transcribe meeting audio with <a href="https://www.assemblyai.com/" target="_blank">AssemblyAI's Universal 3 Pro</a>, which handles the English/Spanish mix well</li>
+        <li>Map agenda items to video timestamps using Claude Haiku</li>
+        <li>Generate static HTML from JSON data files</li>
+        <li>Deploy to Cloudflare Pages, with data assets on R2</li>
+      </ol>
+      <p>Every script is idempotent. It skips work that's already been done. You can blow away the output and re-run from scratch. No manual steps, no special credentials beyond API keys for transcription.</p>
+      <p>There's also an <a href="https://mcp.rcsd.info/mcp" target="_blank">MCP server</a> (Model Context Protocol) so AI assistants like Claude can query the data directly. Ask it about school schedules, meeting agendas, lunch menus, whatever.</p>
+    </section>
+
+    <section>
+      <h2>Data provenance</h2>
+      <p>If you're going to publish data about a school district, you'd better be able to trace every number back to its source. That's non-negotiable here:</p>
+      <ul>
+        <li>Every pipeline has a methodology doc explaining where the data comes from and what transformations are applied</li>
+        <li>AI-generated content (meeting summaries, timestamp mappings) is labeled as such</li>
+        <li>Source documents link to the originals on the district's own sites</li>
+        <li>All the code is <a href="https://github.com/dweekly/rcsd-meetings" target="_blank">public on GitHub</a></li>
+      </ul>
+      <p>Parents, journalists, and board members need to trust this data. If something looks wrong, anyone can trace it to the source and file an issue.</p>
+    </section>
+
+    <section>
+      <h2>What I'd like to build next</h2>
+      <p>The site works today, but there's a long list of things I haven't gotten to:</p>
+      <ul>
+        <li>CAASPP test score trends by school, grade, and demographic group</li>
+        <li>Better coverage of committees (DLAC, LCAP advisory, safety) that don't always post public minutes</li>
+        <li>Live transcription and agenda tracking during board meetings</li>
+        <li>Richer school profiles: teacher retention, class sizes, parent survey results</li>
+        <li>Cross-district comparisons with neighboring districts</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Adapt it for your district</h2>
+      <p>The whole reason this is open source is so someone else can use it. If your district runs BoardDocs or Simbli (most California districts do), the scraping scripts should work with minor changes:</p>
+      <ol>
+        <li>Fork the <a href="https://github.com/dweekly/rcsd-meetings" target="_blank">GitHub repo</a></li>
+        <li>Update <code>data/schools.json</code> with your schools</li>
+        <li>Point the scraper at your district's BoardDocs or Simbli instance</li>
+        <li>Add your district's YouTube channel</li>
+        <li>Run the pipeline</li>
+      </ol>
+      <p>The harder part is the supplementary data: calendars, demographics, budget documents. That stuff varies a lot between districts and usually requires some manual wrangling.</p>
+    </section>
+
+    <section>
+      <h2>Get involved</h2>
+      <p>This is a one-person volunteer project. I'm a software engineer who happens to sit on a school board. If you want to help or have a data request:</p>
+      <ul>
+        <li>Code and issues: <a href="https://github.com/dweekly/rcsd-meetings" target="_blank">dweekly/rcsd-meetings</a> on GitHub</li>
+        <li>Email: <a href="mailto:team@rcsd.info">team@rcsd.info</a></li>
+        <li>If there's public RCSD data you wish were easier to find, tell me about it</li>
+      </ul>
+    </section>
+
+  </div>
+</main>

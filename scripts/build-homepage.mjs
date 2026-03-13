@@ -1079,6 +1079,7 @@ writeFileSync(resolve(ROOT, 'docs/llms.txt'), renderTemplate('llms.txt', templat
 console.log('Wrote docs/llms.txt');
 
 // ---- sitemap.xml ----
+const blogPosts = JSON.parse(readFileSync(resolve(ROOT, 'data/blog-posts.json'), 'utf-8'));
 const sitemapDate = new Date().toISOString().slice(0, 10);
 const schoolUrls = schools.schools.map(s => `  <url>
     <loc>https://rcsd.info/schools/${s.slug}/</loc>
@@ -1137,6 +1138,30 @@ ${schoolUrls}
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://rcsd.info/blog/</loc>
+    <lastmod>${sitemapDate}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rcsd.info/blog/es/</loc>
+    <lastmod>${sitemapDate}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+${blogPosts.map(p => `  <url>
+    <loc>https://rcsd.info/blog/${p.slug}/</loc>
+    <lastmod>${p.date}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rcsd.info/blog/${p.slugEs}/</loc>
+    <lastmod>${p.date}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>`).join('\n')}
   <url>
     <loc>https://rcsd.info/llms.txt</loc>
     <lastmod>${sitemapDate}</lastmod>

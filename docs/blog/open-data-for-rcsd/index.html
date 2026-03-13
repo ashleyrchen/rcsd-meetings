@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<title>Open data for a school district: why and how — RCSD Open Data</title>
+<meta name="description" content="Why I built rcsd.info, an open data portal for the Redwood City School District, and how you can adapt it for your own district.">
+<meta name="theme-color" content="#1a3a2a">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="canonical" href="https://rcsd.info/blog/open-data-for-rcsd/">
+<link rel="alternate" hreflang="en" href="https://rcsd.info/blog/open-data-for-rcsd/">
+<link rel="alternate" hreflang="es" href="https://rcsd.info/blog/datos-abiertos-para-rcsd/">
+<meta property="og:title" content="Open data for a school district: why and how — RCSD Open Data">
+<meta property="og:description" content="Why I built rcsd.info, an open data portal for the Redwood City School District, and how you can adapt it for your own district.">
+<meta property="og:url" content="https://rcsd.info/blog/open-data-for-rcsd/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://rcsd.info/og-1200.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="RCSD Open Data">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://rcsd.info/og-1200.jpg">
+<meta name="twitter:title" content="Open data for a school district: why and how — RCSD Open Data">
+<meta name="twitter:description" content="Why I built rcsd.info, an open data portal for the Redwood City School District, and how you can adapt it for your own district.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Open data for a school district: why and how",
+  "description": "Why I built rcsd.info, an open data portal for the Redwood City School District, and how you can adapt it for your own district.",
+  "datePublished": "2026-03-13",
+  "author": {
+    "@type": "Person",
+    "name": "David Weekly",
+    "url": "https://david.weekly.org"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "RCSD Open Data",
+    "url": "https://rcsd.info"
+  },
+  "url": "https://rcsd.info/blog/open-data-for-rcsd/",
+  "inLanguage": "en",
+  "mainEntityOfPage": "https://rcsd.info/blog/open-data-for-rcsd/"
+}
+</script>
+
+<style>
+
+  :root {
+    --green-deep: #1a3a2a;
+    --green-mid: #2d5a3f;
+    --green-light: #4a8c6a;
+    --green-pale: #dcebd5;
+    --green-wash: #f0f6ed;
+    --cream: #faf8f4;
+    --cream-dark: #f2efe8;
+    --amber: #c4842d;
+    --amber-light: #f0d9a8;
+    --coral: #c45d4a;
+    --coral-light: #f5ddd8;
+    --text: #2a2a28;
+    --text-secondary: #5a5a56;
+    --text-muted: #8a8a84;
+    --rule: #d4d0c8;
+    --rule-light: #e8e4dc;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html {
+    font-size: 17px;
+    scroll-behavior: smooth;
+    background: var(--cream);
+  }
+
+  body {
+    font-family: 'Newsreader', Georgia, serif;
+    color: var(--text);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    background: var(--cream);
+  }
+
+  a {
+    color: var(--green-mid);
+    text-decoration-color: var(--rule);
+    text-underline-offset: 2px;
+    transition: color 0.15s, text-decoration-color 0.15s;
+  }
+  a:hover {
+    color: var(--green-deep);
+    text-decoration-color: var(--green-mid);
+  }
+
+  /* ---- SITE NAV ---- */
+  .site-nav {
+    background: #1a2e1a;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .site-nav-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .site-nav-tabs { display: flex; gap: 0; }
+  .site-nav-tab {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: rgba(255,255,255,0.7);
+    padding: 0.75rem 1rem;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .site-nav-tab:hover { color: #fff; }
+  .site-nav-tab.active { color: #fff; border-bottom-color: var(--green-light); }
+
+  .site-nav-right {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .site-nav-lang {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    padding: 0.35rem 0.65rem;
+    border: 1px solid rgba(255,255,255,0.35);
+    border-radius: 3px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .site-nav-lang:hover {
+    color: #fff;
+    border-color: rgba(255,255,255,0.6);
+  }
+
+  /* ---- FOOTER ---- */
+  .site-footer {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2rem 2rem 4rem;
+    border-top: 1px solid var(--rule);
+    text-align: center;
+  }
+  .site-footer p {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    font-style: italic;
+  }
+  .site-footer a { color: var(--green-mid); }
+  .footer-nav {
+    margin-top: 0.8rem;
+    font-style: normal;
+  }
+  .footer-nav a {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--green-mid);
+    text-decoration: none;
+    margin: 0 0.75rem;
+  }
+  .footer-nav a:hover { text-decoration: underline; }
+
+  /* ---- RESPONSIVE (nav + footer) ---- */
+  @media (max-width: 640px) {
+    .site-nav-tab { padding: 0.6rem 0.7rem; font-size: 0.7rem; }
+    .site-nav-inner { padding: 0 1.2rem; }
+  }
+
+  /* ---- POST HEADER ---- */
+  .post-header {
+    background: var(--green-deep);
+    color: var(--cream);
+    position: relative;
+    overflow: hidden;
+  }
+  .post-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 20% 80%, rgba(74,140,106,0.3) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 20%, rgba(196,132,45,0.15) 0%, transparent 50%);
+    pointer-events: none;
+  }
+  .post-header-inner {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 4rem 2rem 3rem;
+    position: relative;
+  }
+  .post-meta {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 1rem;
+    display: flex;
+    gap: 1rem;
+  }
+  .post-meta a {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+  }
+  .post-meta a:hover { color: #fff; }
+  .post-header h1 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 300;
+    line-height: 1.15;
+    color: #fff;
+    font-optical-sizing: auto;
+  }
+  .post-subtitle {
+    margin-top: 1.2rem;
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.6;
+    font-style: italic;
+    max-width: 560px;
+  }
+
+  /* ---- POST BODY ---- */
+  .post-content {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 2rem 4rem;
+  }
+  .post-body {
+    padding-top: 2rem;
+  }
+  .post-body section {
+    margin-bottom: 2.5rem;
+  }
+  .post-body h2 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: clamp(1.3rem, 2.5vw, 1.7rem);
+    font-weight: 400;
+    color: var(--green-deep);
+    margin-bottom: 1rem;
+    line-height: 1.25;
+    font-optical-sizing: auto;
+  }
+  .post-body p {
+    margin-bottom: 1rem;
+    max-width: none;
+    line-height: 1.7;
+  }
+  .post-body ul, .post-body ol {
+    margin: 0.8rem 0 1.2rem 1.5rem;
+    line-height: 1.65;
+  }
+  .post-body li {
+    margin-bottom: 0.4rem;
+  }
+  .post-body code {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.88em;
+    background: var(--cream-dark);
+    padding: 0.1rem 0.35rem;
+    border-radius: 3px;
+  }
+  .post-body a {
+    color: var(--green-mid);
+    text-decoration-color: var(--rule);
+    text-underline-offset: 2px;
+  }
+  .post-body a:hover {
+    color: var(--green-deep);
+    text-decoration-color: var(--green-mid);
+  }
+
+  /* ---- BLOG INDEX ---- */
+  .blog-header {
+    background: var(--green-deep);
+    color: var(--cream);
+    position: relative;
+    overflow: hidden;
+  }
+  .blog-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 20% 80%, rgba(74,140,106,0.3) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 20%, rgba(196,132,45,0.15) 0%, transparent 50%);
+    pointer-events: none;
+  }
+  .blog-header-inner {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 3.5rem 2rem 2.5rem;
+    position: relative;
+  }
+  .blog-header h1 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 300;
+    color: #fff;
+    line-height: 1.2;
+    font-optical-sizing: auto;
+  }
+  .blog-header p {
+    margin-top: 0.8rem;
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.55);
+    font-style: italic;
+    line-height: 1.6;
+  }
+  .blog-list {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2rem 2rem 4rem;
+  }
+  .blog-post-card {
+    display: block;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--rule-light);
+    text-decoration: none;
+    color: inherit;
+    transition: background 0.15s;
+  }
+  .blog-post-card:first-child {
+    border-top: 1px solid var(--rule-light);
+  }
+  .blog-post-card:hover {
+    background: var(--green-wash);
+    margin: 0 -1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .blog-card-date {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+  }
+  .blog-card-title {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--green-deep);
+    margin-top: 0.3rem;
+    line-height: 1.3;
+  }
+  .blog-card-excerpt {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    margin-top: 0.5rem;
+    line-height: 1.55;
+  }
+
+  /* ---- RESPONSIVE ---- */
+  @media (max-width: 640px) {
+    html { font-size: 15px; }
+    .post-header-inner { padding: 3rem 1.2rem 2rem; }
+    .post-content { padding: 0 1.2rem 3rem; }
+    .blog-header-inner { padding: 2.5rem 1.2rem 2rem; }
+    .blog-list { padding: 1.5rem 1.2rem 3rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="site-nav-inner">
+    <div class="site-nav-tabs">
+      <a href="/" class="site-nav-tab">Home</a>
+      <a href="/meetings/" class="site-nav-tab">Meetings</a>
+      <a href="/schools/" class="site-nav-tab">Schools</a>
+      <a href="/district/" class="site-nav-tab">District</a>
+      <a href="/budget/" class="site-nav-tab">Budget</a>
+      <a href="/blog/" class="site-nav-tab active">Blog</a>
+    </div>
+    <div class="site-nav-right">
+      <a href="/blog/datos-abiertos-para-rcsd/" class="site-nav-lang">ES</a>
+    </div>
+  </div>
+</nav>
+
+<header class="post-header">
+  <div class="post-header-inner">
+    <div class="post-meta">
+      <span class="post-date">March 13, 2026</span>
+      <span class="post-author">by <a href="https://david.weekly.org">David Weekly</a></span>
+    </div>
+    <h1>Open data for a school district: why and how</h1>
+    <p class="post-subtitle">Why I built rcsd.info and how you can adapt it for your district.</p>
+  </div>
+</header>
+
+<main class="post-content">
+  <div class="post-body">
+
+    <section>
+      <h2>The transparency gap</h2>
+      <p>Public school districts produce a staggering amount of public data. Budgets, board meetings, enrollment numbers, test scores, school improvement plans. Almost none of it is easy to find, and even less of it is easy to understand.</p>
+      <p>I sit on the board of the <a href="https://www.rcsdk8.net" target="_blank">Redwood City School District</a>. I've watched parents try to navigate BoardDocs portals, squint at PDF budget documents, and give up trying to figure out when the next board meeting is. These are engaged parents. If they can't find it, who can?</p>
+      <p>It shouldn't be this hard. The information is already public. It just needs to be organized and made searchable.</p>
+      <p>So I built <strong>rcsd.info</strong>, an independent open-source data portal that pulls together public records from about a dozen sources and presents them in one place, in English and Spanish.</p>
+    </section>
+
+    <section>
+      <h2>What's on the site</h2>
+      <p>As of today, rcsd.info covers:</p>
+      <ul>
+        <li>58 board meetings with agendas, minutes, 1,724 attachments, and timestamped video links</li>
+        <li>49 full meeting transcripts, generated from YouTube audio using AssemblyAI</li>
+        <li>12 school profiles with enrollment, demographics, bell schedules, SARC data, and parent resource links</li>
+        <li>District calendars for 2025-26 and 2026-27</li>
+        <li>Budget and performance data from the district's LCAP, interim reports, and the CA School Dashboard</li>
+        <li>Special education enrollment by school and grade</li>
+      </ul>
+      <p>Everything is bilingual and works on a phone.</p>
+    </section>
+
+    <section>
+      <h2>How the pipeline works</h2>
+      <p>The stack is simple on purpose. No frameworks, no database, no CMS. Just Node.js scripts that:</p>
+      <ol>
+        <li>Scrape meeting agendas from BoardDocs and Simbli (the district has used two different portals over the years)</li>
+        <li>Download YouTube video metadata and audio for board meetings</li>
+        <li>Transcribe meeting audio with <a href="https://www.assemblyai.com/" target="_blank">AssemblyAI's Universal 3 Pro</a>, which handles the English/Spanish mix well</li>
+        <li>Map agenda items to video timestamps using Claude Haiku</li>
+        <li>Generate static HTML from JSON data files</li>
+        <li>Deploy to Cloudflare Pages, with data assets on R2</li>
+      </ol>
+      <p>Every script is idempotent. It skips work that's already been done. You can blow away the output and re-run from scratch. No manual steps, no special credentials beyond API keys for transcription.</p>
+      <p>There's also an <a href="https://mcp.rcsd.info/mcp" target="_blank">MCP server</a> (Model Context Protocol) so AI assistants like Claude can query the data directly. Ask it about school schedules, meeting agendas, lunch menus, whatever.</p>
+    </section>
+
+    <section>
+      <h2>Data provenance</h2>
+      <p>If you're going to publish data about a school district, you'd better be able to trace every number back to its source. That's non-negotiable here:</p>
+      <ul>
+        <li>Every pipeline has a methodology doc explaining where the data comes from and what transformations are applied</li>
+        <li>AI-generated content (meeting summaries, timestamp mappings) is labeled as such</li>
+        <li>Source documents link to the originals on the district's own sites</li>
+        <li>All the code is <a href="https://github.com/dweekly/rcsd-meetings" target="_blank">public on GitHub</a></li>
+      </ul>
+      <p>Parents, journalists, and board members need to trust this data. If something looks wrong, anyone can trace it to the source and file an issue.</p>
+    </section>
+
+    <section>
+      <h2>What I'd like to build next</h2>
+      <p>The site works today, but there's a long list of things I haven't gotten to:</p>
+      <ul>
+        <li>CAASPP test score trends by school, grade, and demographic group</li>
+        <li>Better coverage of committees (DLAC, LCAP advisory, safety) that don't always post public minutes</li>
+        <li>Live transcription and agenda tracking during board meetings</li>
+        <li>Richer school profiles: teacher retention, class sizes, parent survey results</li>
+        <li>Cross-district comparisons with neighboring districts</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Adapt it for your district</h2>
+      <p>The whole reason this is open source is so someone else can use it. If your district runs BoardDocs or Simbli (most California districts do), the scraping scripts should work with minor changes:</p>
+      <ol>
+        <li>Fork the <a href="https://github.com/dweekly/rcsd-meetings" target="_blank">GitHub repo</a></li>
+        <li>Update <code>data/schools.json</code> with your schools</li>
+        <li>Point the scraper at your district's BoardDocs or Simbli instance</li>
+        <li>Add your district's YouTube channel</li>
+        <li>Run the pipeline</li>
+      </ol>
+      <p>The harder part is the supplementary data: calendars, demographics, budget documents. That stuff varies a lot between districts and usually requires some manual wrangling.</p>
+    </section>
+
+    <section>
+      <h2>Get involved</h2>
+      <p>This is a one-person volunteer project. I'm a software engineer who happens to sit on a school board. If you want to help or have a data request:</p>
+      <ul>
+        <li>Code and issues: <a href="https://github.com/dweekly/rcsd-meetings" target="_blank">dweekly/rcsd-meetings</a> on GitHub</li>
+        <li>Email: <a href="mailto:team@rcsd.info">team@rcsd.info</a></li>
+        <li>If there's public RCSD data you wish were easier to find, tell me about it</li>
+      </ul>
+    </section>
+
+  </div>
+</main>
+
+
+<footer class="site-footer">
+  <p>Independently compiled from publicly available RCSD documents. Source documents at <a href="https://www.rcsdk8.net">rcsdk8.net</a> and the <a href="https://simbli.eboardsolutions.com/SB_Meetings/SB_MeetingListing.aspx?S=36030397">GAMUT board portal</a>.</p>
+  <div class="footer-nav">
+    <a href="/">Home</a>
+    <a href="/meetings/">Meetings</a>
+    <a href="/schools/">Schools</a>
+    <a href="/district/">District</a>
+    <a href="/budget/">Budget</a>
+    <a href="https://github.com/dweekly/rcsd-meetings">Source Code &#8599;</a>
+    <a href="mailto:team@rcsd.info">team@rcsd.info</a>
+  </div>
+</footer>
+
+</body>
+</html>
