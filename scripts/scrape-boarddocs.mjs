@@ -11,14 +11,14 @@
  * Usage: node scripts/scrape-boarddocs.mjs
  */
 
-import { writeFileSync } from 'fs';
+import { readFileSync, writeFileSync, existsSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const BASE_URL = 'https://go.boarddocs.com/ca/redwood/Board.nsf';
 const COMMITTEE_ID = 'A4EP6J588C05';
-const CUTOFF_DATE = '20230701'; // Back to start of 2023-24 school year
+const CUTOFF_DATE = '20200401'; // Back to first YouTube board meeting (April 2020)
 
 // Rate limiting: delay between requests
 const DELAY_MS = 300;
@@ -133,6 +133,15 @@ function classifyMeetingType(name) {
 }
 
 async function main() {
+  // Load existing scraped data to skip already-scraped meetings
+  const outPath = resolve(__dirname, '../data/boarddocs-scraped.json');
+  let existing = [];
+  if (existsSync(outPath)) {
+    existing = JSON.parse(readFileSync(outPath, 'utf-8'));
+    console.log(`Loaded ${existing.length} previously scraped meetings`);
+  }
+  const existingKeys = new Set(existing.map(m => m.unique || `${m.date}|${m.name}`));
+
   console.log('Fetching meetings list...');
   const allMeetings = await fetchMeetingsList();
   console.log(`Total meetings in BoardDocs: ${allMeetings.length}`);
@@ -142,16 +151,19 @@ async function main() {
     .sort((a, b) => b.numberdate.localeCompare(a.numberdate));
   console.log(`Meetings since ${CUTOFF_DATE}: ${meetings.length}`);
 
-  const results = [];
+  const toScrape = meetings.filter(m => !existingKeys.has(m.unique));
+  console.log(`Already scraped: ${meetings.length - toScrape.length}, to scrape: ${toScrape.length}`);
+
+  const results = [...existing];
   let totalItems = 0;
   let totalAttachments = 0;
   let attachmentFetches = 0;
 
-  for (let i = 0; i < meetings.length; i++) {
-    const mtg = meetings[i];
+  for (let i = 0; i < toScrape.length; i++) {
+    const mtg = toScrape[i];
     const date = parseBdDate(mtg.numberdate);
     const type = classifyMeetingType(mtg.name);
-    console.log(`\n[${i + 1}/${meetings.length}] ${date} — ${mtg.name.slice(0, 60)}`);
+    console.log(`\n[${i + 1}/${toScrape.length}] ${date} — ${mtg.name.slice(0, 60)}`);
 
     await sleep(DELAY_MS);
     const agendaHtml = await bdPost('BD-GetAgenda', `id=${mtg.unique}&current_committee_id=${COMMITTEE_ID}`);
@@ -191,7 +203,8 @@ async function main() {
     });
   }
 
-  const outPath = resolve(__dirname, '../data/boarddocs-scraped.json');
+  // Sort by date descending and write
+  results.sort((a, b) => b.date.localeCompare(a.date));
   writeFileSync(outPath, JSON.stringify(results, null, 2));
   console.log(`\nDone! Wrote ${outPath}`);
   console.log(`  ${results.length} meetings, ${totalItems} agenda items, ${totalAttachments} attachments`);

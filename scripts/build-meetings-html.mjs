@@ -155,7 +155,7 @@ const LOCALES = {
     title: 'RCSD Board Meeting Index',
     headerDistrict: 'Redwood City School District',
     headerTitle: 'Board Meeting Index',
-    headerSubtitle: 'Three years of board meetings with agendas, video recordings, and key topics. Data compiled from',
+    headerSubtitle: null, // set dynamically
     headerSubtitleAnd: 'and',
     statMeetings: 'Meetings',
     statAgendaItems: 'Agenda items',
@@ -180,12 +180,11 @@ const LOCALES = {
     navSourceCode: 'Source Code',
     threadSectionTitle: 'Key Topics This Year',
     threadSectionSubtitle: 'Click a topic to filter meetings. Click again to show all.',
-    sy2526Title: '2025\u201326 School Year',
-    sy2526Subtitle: (n) => `${n} meetings from June 2025 to present. Full agendas and video available.`,
-    sy2425Title: '2024\u201325 School Year',
-    sy2425Subtitle: (n) => `${n} meetings from the BoardDocs archive with full agendas and attachments.`,
-    sy2324Title: '2023\u201324 School Year',
-    sy2324Subtitle: (n) => `${n} meetings from the BoardDocs archive (August 2023 onward).`,
+    schoolYearTitle: (sy) => `${sy.slice(0,4)}\u2013${sy.slice(4)} School Year`,
+    schoolYearSubtitle: (sy, n) => {
+      if (sy === '202526') return `${n} meetings from June 2025 to present. Full agendas and video available.`;
+      return `${n} meetings from the BoardDocs archive.`;
+    },
     agendaItemsLabel: (n) => `${n} agenda item${n === 1 ? '' : 's'}`,
     otherAttachments: 'Other Attachments',
     video: 'Video',
@@ -245,7 +244,7 @@ const LOCALES = {
     title: '\u00cdndice de Reuniones de la Junta de RCSD',
     headerDistrict: 'Distrito Escolar de Redwood City',
     headerTitle: '\u00cdndice de Reuniones de la Junta',
-    headerSubtitle: 'Tres a\u00f1os de reuniones de la junta con agendas, grabaciones de video y temas clave. Datos recopilados de',
+    headerSubtitle: null, // set dynamically
     headerSubtitleAnd: 'y',
     statMeetings: 'Reuniones',
     statAgendaItems: 'Puntos de agenda',
@@ -270,12 +269,11 @@ const LOCALES = {
     navSourceCode: 'C\u00f3digo Fuente',
     threadSectionTitle: 'Temas Clave de Este A\u00f1o',
     threadSectionSubtitle: 'Haga clic en un tema para filtrar las reuniones. Haga clic de nuevo para mostrar todas.',
-    sy2526Title: 'A\u00f1o Escolar 2025\u201326',
-    sy2526Subtitle: (n) => `${n} reuniones desde junio de 2025 hasta el presente. Agendas completas y video disponibles.`,
-    sy2425Title: 'A\u00f1o Escolar 2024\u201325',
-    sy2425Subtitle: (n) => `${n} reuniones del archivo de BoardDocs con agendas completas y anexos.`,
-    sy2324Title: 'A\u00f1o Escolar 2023\u201324',
-    sy2324Subtitle: (n) => `${n} reuniones del archivo de BoardDocs (desde agosto 2023).`,
+    schoolYearTitle: (sy) => `A\u00f1o Escolar ${sy.slice(0,4)}\u2013${sy.slice(4)}`,
+    schoolYearSubtitle: (sy, n) => {
+      if (sy === '202526') return `${n} reuniones desde junio de 2025 hasta el presente. Agendas completas y video disponibles.`;
+      return `${n} reuniones del archivo de BoardDocs.`;
+    },
     agendaItemsLabel: (n) => `${n} punto${n === 1 ? '' : 's'} de agenda`,
     otherAttachments: 'Otros Anexos',
     video: 'Video',
@@ -451,10 +449,37 @@ data.meetings.forEach(m => m.threads.forEach(t => {
   threadCounts[t] = (threadCounts[t] || 0) + 1;
 }));
 
-// Split into school years
-const sy2526 = data.meetings.filter(m => m.date >= '2025-06-11');
-const sy2425 = data.meetings.filter(m => m.date >= '2024-06-11' && m.date < '2025-06-11');
-const sy2324 = data.meetings.filter(m => m.date < '2024-06-11');
+// Split into school years dynamically.
+// School year N starts June 11 of year N-1 (i.e. 2025-26 starts 2025-06-11).
+function getSchoolYear(dateStr) {
+  const y = parseInt(dateStr.slice(0, 4));
+  const m = parseInt(dateStr.slice(5, 7));
+  const d = parseInt(dateStr.slice(8, 10));
+  // Jun 11+ belongs to the next school year
+  if (m > 6 || (m === 6 && d >= 11)) return `${y}${(y + 1).toString().slice(2)}`;
+  return `${y - 1}${y.toString().slice(2)}`;
+}
+
+const schoolYearMap = new Map(); // e.g. '2526' -> [meetings]
+for (const m of data.meetings) {
+  const sy = getSchoolYear(m.date);
+  if (!schoolYearMap.has(sy)) schoolYearMap.set(sy, []);
+  schoolYearMap.get(sy).push(m);
+}
+// Sort school years descending
+const schoolYears = [...schoolYearMap.entries()].sort((a, b) => b[0].localeCompare(a[0]));
+
+// Dynamic header subtitle based on actual date range
+function headerSubtitleText(lang) {
+  const years = schoolYears.length;
+  const oldest = schoolYears[schoolYears.length - 1][0]; // e.g. '201920'
+  const newest = schoolYears[0][0]; // e.g. '202526'
+  const range = `${oldest.slice(0,4)}\u2013${newest.slice(4)}`;
+  if (lang === 'es') {
+    return `${data.meetings.length} reuniones de la junta (${range}) con agendas, grabaciones de video y temas clave. Datos recopilados de`;
+  }
+  return `${data.meetings.length} board meetings (${range}) with agendas, video recordings, and key topics. Data compiled from`;
+}
 
 // Group by month
 function groupByMonth(meetings) {
@@ -1885,7 +1910,7 @@ ${siteNav({ activePage: 'meetings', lang: L.lang, altLangHref: L.altLangHref })}
   <div class="header-inner">
     <div class="header-district">${L.headerDistrict}</div>
     <h1 class="header-title">${L.headerTitle}</h1>
-    <p class="header-subtitle">${L.headerSubtitle} <a href="https://simbli.eboardsolutions.com/SB_Meetings/SB_MeetingListing.aspx?S=36030397" style="color:rgba(255,255,255,0.75)">GAMUT/Simbli</a> ${L.headerSubtitleAnd} <a href="https://go.boarddocs.com/ca/redwood/Board.nsf/goto?open&id=CVLPDX62089F" style="color:rgba(255,255,255,0.75)">BoardDocs</a>.</p>
+    <p class="header-subtitle">${headerSubtitleText(L.lang)} <a href="https://simbli.eboardsolutions.com/SB_Meetings/SB_MeetingListing.aspx?S=36030397" style="color:rgba(255,255,255,0.75)">GAMUT/Simbli</a> ${L.headerSubtitleAnd} <a href="https://go.boarddocs.com/ca/redwood/Board.nsf/goto?open&id=CVLPDX62089F" style="color:rgba(255,255,255,0.75)">BoardDocs</a>.</p>
     <div class="header-meta">
       <div class="header-stat">
         <span class="header-stat-value">${data.stats.total}</span>
@@ -1932,9 +1957,7 @@ ${siteNav({ activePage: 'meetings', lang: L.lang, altLangHref: L.altLangHref })}
 <nav class="toc">
   <div class="toc-inner">
     <a href="#threads">${L.navTopics}</a>
-    <a href="#sy2526">2025-26</a>
-    <a href="#sy2425">2024-25</a>
-    <a href="#sy2324">2023-24</a>
+    ${schoolYears.map(([sy]) => `<a href="#sy${sy}">${sy.slice(0,4)}-${sy.slice(4)}</a>`).join('\n    ')}
     <a href="#documents">${L.navDocuments}</a>
     <a href="#resources">${L.navResources}</a>
   </div>
@@ -1943,11 +1966,7 @@ ${siteNav({ activePage: 'meetings', lang: L.lang, altLangHref: L.altLangHref })}
 <main class="content">
 ${renderThreadFilters()}
 
-${renderSchoolYear('sy2526', L.sy2526Title, sy2526, L.sy2526Subtitle(sy2526.length))}
-
-${renderSchoolYear('sy2425', L.sy2425Title, sy2425, L.sy2425Subtitle(sy2425.length))}
-
-${renderSchoolYear('sy2324', L.sy2324Title, sy2324, L.sy2324Subtitle(sy2324.length))}
+${schoolYears.map(([sy, meetings]) => renderSchoolYear(`sy${sy}`, L.schoolYearTitle(sy), meetings, L.schoolYearSubtitle(sy, meetings.length))).join('\n\n')}
 
 ${renderDocuments()}
 

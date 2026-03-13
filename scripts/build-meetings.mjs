@@ -201,7 +201,7 @@ const simbliDates = new Set(simbliMeetings.map(m => m.date));
 const boarddocsParsed = boarddocsRaw
   .filter(m => m.date != null)
   .map(m => ({ ...m, isoDate: parseBoarddocsDate(m.date) }))
-  .filter(m => m.isoDate >= '2023-08-01' && m.isoDate <= '2025-06-10')
+  .filter(m => m.isoDate >= '2020-04-01' && m.isoDate <= '2025-06-10')
   .filter(m => !simbliDates.has(m.isoDate));
 
 // Deduplicate raw entries per date (BoardDocs API sometimes returns multiple entries for

@@ -71,8 +71,8 @@ for (const line of lines) {
     continue;
   }
 
-  // Only include videos from Mar 2024 onward (matching our meeting data window)
-  if (meetingDate < '2024-03-01') continue;
+  // Only include videos from Apr 2020 onward (first board meeting on the channel)
+  if (meetingDate < '2020-04-01') continue;
 
   boardMeetings.push({ id, title: title.trim(), date: meetingDate, uploadDate });
 }
