@@ -67,6 +67,82 @@ const CSSP_URLS = {
   'taft': 'https://data.rcsd.info/board-packets/2026-02-04/2025_Comprehensive_School_Safety_Plan__Pt._1_-Public-_Taft_Elementary_School_202.pdf',
 };
 
+// ---- Most recent school board presentation per school ----
+const SCHOOL_PRESENTATIONS = {
+  'adelante-selby': {
+    date: '2025-01-08',
+    year: '2024-25',
+    pdfUrl: 'https://go.boarddocs.com/ca/redwood/Board.nsf/files/DC4MFP5B0F01/$file/Adelante%20Selby%2024-25%20Data%20for%20Board%20presentation%20(1).pdf',
+    videoUrl: 'https://www.youtube.com/watch?v=5WLS-u2miac&t=2312',
+  },
+  'clifford': {
+    date: '2025-03-26',
+    year: '2024-25',
+    pdfUrl: 'https://go.boarddocs.com/ca/redwood/Board.nsf/files/DF4SDZ723F29/$file/Clifford%2024-25%20Data%20for%20Board%20presentation%20%5BUpdated%202025.03.25%5D.pdf',
+    videoUrl: 'https://www.youtube.com/watch?v=JNqq_NcFXuc&t=96',
+  },
+  'garfield': {
+    date: '2023-11-08',
+    year: '2023-24',
+    pdfUrl: null, // Pre-dates our BoardDocs data
+    videoUrl: null,
+  },
+  'henry-ford': {
+    date: '2025-03-12',
+    year: '2024-25',
+    pdfUrl: 'https://go.boarddocs.com/ca/redwood/Board.nsf/files/DEGT9C7640F7/$file/Henry%20Ford%2024-25%20Data%20for%20Board%20presentation%20-%20(1).pdf',
+    videoUrl: 'https://www.youtube.com/watch?v=DpgsK2XZAmk',
+  },
+  'hoover': {
+    date: '2026-03-11',
+    year: '2025-26',
+    pdfUrl: 'https://data.rcsd.info/board-packets/2026-03-11/Hoover-25-26-Data-for-Board-presentation.pdf',
+    videoUrl: null, // Video not yet available
+  },
+  'kennedy': {
+    date: '2023-11-15',
+    year: '2023-24',
+    pdfUrl: 'https://go.boarddocs.com/ca/redwood/Board.nsf/files/CY22T703AEAA/$file/Kennedy%20Board%20Report%202023.pdf',
+    videoUrl: null,
+  },
+  'mckinley-mit': {
+    date: '2026-03-11',
+    year: '2025-26',
+    pdfUrl: 'https://data.rcsd.info/board-packets/2026-03-11/MIT-25-26-Data-for-Board-presentation.pdf',
+    videoUrl: null, // Video not yet available
+  },
+  'north-star': {
+    date: '2024-11-20',
+    year: '2024-25',
+    pdfUrl: 'https://go.boarddocs.com/ca/redwood/Board.nsf/files/DB6Q9Y684907/$file/North%20Star%2024-25%20Data%20for%20Board%20presentation.pdf',
+    videoUrl: 'https://www.youtube.com/watch?v=VUIwMGNG5Qk&t=4896',
+  },
+  'orion': {
+    date: '2025-01-15',
+    year: '2024-25',
+    pdfUrl: 'https://go.boarddocs.com/ca/redwood/Board.nsf/files/DCQPN4655D42/$file/Orion%2024-25%20Data%20for%20Board%20presentation.pdf',
+    videoUrl: 'https://www.youtube.com/watch?v=oYXptXv6Y5I&t=189',
+  },
+  'roosevelt': {
+    date: '2026-03-11',
+    year: '2025-26',
+    pdfUrl: 'https://data.rcsd.info/board-packets/2026-03-11/Roosevelt-25-26-Board-presentation.pdf',
+    videoUrl: null, // Video not yet available
+  },
+  'roy-cloud': {
+    date: '2025-02-05',
+    year: '2024-25',
+    pdfUrl: 'https://go.boarddocs.com/ca/redwood/Board.nsf/files/DDD33H04E6B6/$file/Roy%20cloud%2024-25%20Data%20for%20Board%20presentation.pdf',
+    videoUrl: 'https://www.youtube.com/watch?v=yoUvmhll1uk&t=5666',
+  },
+  'taft': {
+    date: '2025-01-08',
+    year: '2024-25',
+    pdfUrl: 'https://go.boarddocs.com/ca/redwood/Board.nsf/files/DC3SXY74E1D8/$file/Taft%2024-25%20Data%20for%20Board%20presentation.pdf',
+    videoUrl: 'https://www.youtube.com/watch?v=5WLS-u2miac&t=2312',
+  },
+};
+
 // ---- Load board meeting summaries (concise per-school EN/ES) ----
 const BOARD_SUMMARIES = (() => { try { return JSON.parse(readFileSync(resolve(ROOT, 'data/school-board-summaries.json'), 'utf-8')); } catch { return {}; } })();
 
@@ -1179,6 +1255,9 @@ const LABELS = {
     viewSarc: 'Download SARC (PDF)',
     viewSpsa: 'Download SPSA (PDF)',
     safetyPlan: 'Comprehensive Safety Plan',
+    boardPresentation: 'Board Presentation',
+    viewPresentation: 'View presentation (PDF)',
+    watchPresentation: 'Watch',
     viewCssp: 'Download CSSP (PDF)',
     csspDesc: '2025-26 plan, board-approved Feb 4, 2026.',
     bellSchedule: 'Bell Schedule',
@@ -1296,6 +1375,9 @@ const LABELS = {
     viewSarc: 'Descargar SARC (PDF)',
     viewSpsa: 'Descargar SPSA (PDF)',
     safetyPlan: 'Plan Integral de Seguridad',
+    boardPresentation: 'Presentación a la Junta',
+    viewPresentation: 'Ver presentación (PDF)',
+    watchPresentation: 'Ver video',
     viewCssp: 'Descargar CSSP (PDF)',
     csspDesc: 'Plan 2025-26, aprobado por la junta el 4 de feb de 2026.',
     bellSchedule: 'Horario Escolar',
@@ -1837,6 +1919,20 @@ ${siteNav({ activePage: 'schools', lang, altLangHref })}
         <p>${L.spsaDesc}</p>
         <p style="margin-top:0.5rem"><a href="https://data.rcsd.info/documents/spsa/2025-26/${slug}.pdf" target="_blank">${L.viewSpsa}${isEs ? ' (inglés)' : ''} &#8599;</a></p>
       </div>
+      ${(() => {
+        const pres = SCHOOL_PRESENTATIONS[slug];
+        if (!pres) return '';
+        const dateObj = new Date(pres.date + 'T12:00:00');
+        const dateStr = dateObj.toLocaleDateString(lang === 'es' ? 'es-US' : 'en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+        const links = [];
+        if (pres.pdfUrl) links.push(`<a href="${pres.pdfUrl}" target="_blank">${L.viewPresentation} &#8599;</a>`);
+        if (pres.videoUrl) links.push(`<a href="${pres.videoUrl}" target="_blank">&#9654; ${L.watchPresentation}</a>`);
+        return `<div class="resource-card">
+        <h4>${L.boardPresentation}</h4>
+        <p>${pres.year} · ${dateStr}</p>
+        ${links.length ? `<p style="margin-top:0.5rem">${links.join(' · ')}</p>` : ''}
+      </div>`;
+      })()}
       <div class="resource-card bell-card">
         <h4>${L.bellSchedule}</h4>
         ${renderBellScheduleHTML(school.bellSchedule, L)}
