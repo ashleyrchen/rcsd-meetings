@@ -35,6 +35,22 @@ const DISTRICT_AVG_PER_PUPIL = sarcSlugs.length > 0
   ? Math.round(sarcSlugs.reduce((s, k) => s + (SARC_DATA[k].expenditures?.schoolSite?.totalPerPupil || 0), 0) / sarcSlugs.length)
   : 0;
 
+// ---- Load SpEd data ----
+const SPED_ENROLLMENT = (() => { try { return JSON.parse(readFileSync(resolve(ROOT, 'data/sped-enrollment.json'), 'utf-8')); } catch { return {}; } })();
+const SPED_CATEGORIES = (() => { try { return JSON.parse(readFileSync(resolve(ROOT, 'data/sped-categories.json'), 'utf-8')); } catch { return {}; } })();
+
+// Compute district-wide SpEd averages
+const districtSpedPct = SPED_ENROLLMENT.district
+  ? (() => {
+      const totalEnroll = Object.values(SPED_ENROLLMENT.schools || {}).reduce((s, sc) => s + (sc.totalEnrollment || 0), 0);
+      const totalIep = SPED_ENROLLMENT.district.total || 0;
+      return totalEnroll > 0 ? Math.round(totalIep / totalEnroll * 1000) / 10 : 0;
+    })()
+  : 0;
+const districtInclusionPct = SPED_CATEGORIES.district?.placement
+  ? Math.round(SPED_CATEGORIES.district.placement.regularGt80 / SPED_CATEGORIES.district.placement.total * 1000) / 10
+  : 0;
+
 // ---- Load board meeting summaries (concise per-school EN/ES) ----
 const BOARD_SUMMARIES = (() => { try { return JSON.parse(readFileSync(resolve(ROOT, 'data/school-board-summaries.json'), 'utf-8')); } catch { return {}; } })();
 
@@ -1104,6 +1120,9 @@ const LABELS = {
     el: 'English Learners',
     chronicAbsent: 'Chronic Absenteeism',
     suspension: 'Suspension Rate',
+    iepRate: 'Students with IEPs',
+    inclusionRate: 'Inclusive Placement',
+    inclusionTip: '% of IEP students in regular classroom 80%+ of the day',
     districtAvgAbsent: 'District avg: 18.3%',
     districtAvgSuspension: 'District avg: 2.2%',
     sarcTotalPerPupil: 'Total Per Pupil',
@@ -1216,6 +1235,9 @@ const LABELS = {
     el: 'Estudiantes de Inglés',
     chronicAbsent: 'Absentismo Crónico',
     suspension: 'Tasa de Suspensión',
+    iepRate: 'Estudiantes con IEP',
+    inclusionRate: 'Colocación Inclusiva',
+    inclusionTip: '% de estudiantes con IEP en aula regular 80%+ del día',
     districtAvgAbsent: 'Promedio del distrito: 18.3%',
     districtAvgSuspension: 'Promedio del distrito: 2.2%',
     sarcTotalPerPupil: 'Total Por Alumno',
@@ -1441,6 +1463,14 @@ function buildSchoolPage(school, data, lang) {
     ? `<br><span class="source">* ${L.chronicAbsentNote}</span>`
     : '';
 
+  // SpEd data for this school
+  const spedEnroll = SPED_ENROLLMENT.schools?.[slug];
+  const spedCat = SPED_CATEGORIES.schools?.[slug];
+  const spedIepPct = spedEnroll?.pct ?? null;
+  const spedInclusionPct = spedCat?.placement
+    ? Math.round(spedCat.placement.regularGt80 / spedCat.placement.total * 1000) / 10
+    : null;
+
   // Growth stat card note
   const growthTeacherNote = data.growth.elaTeachers
     ? ` (${data.growth.elaTeachers} ${L.teachersEvaluated})`
@@ -1626,6 +1656,16 @@ ${siteNav({ activePage: 'schools', lang, altLangHref })}
         <div class="stat-card-value">${fmtPct(data.demographics.suspension)} ${infoBubble('CA Dashboard', dashboardUrl)}</div>
         <div class="stat-card-note">${L.districtAvgSuspension}</div>
       </div>
+      ${spedIepPct !== null ? `<div class="stat-card">
+        <div class="stat-card-label">${L.iepRate}</div>
+        <div class="stat-card-value">${fmtPct(spedIepPct)} ${infoBubble('CDE Census 2024-25', 'https://www.cde.ca.gov/ds/ad/filesenrcensus.asp')}</div>
+        <div class="stat-card-note">${isEs ? 'Promedio del distrito' : 'District avg'}: ${fmtPct(districtSpedPct)}</div>
+      </div>` : ''}
+      ${spedInclusionPct !== null ? `<div class="stat-card">
+        <div class="stat-card-label">${L.inclusionRate} ${infoBubble(L.inclusionTip, 'https://www.cde.ca.gov/ds/ad/filesspedps.asp')}</div>
+        <div class="stat-card-value">${fmtPct(spedInclusionPct)}</div>
+        <div class="stat-card-note">${isEs ? 'Promedio del distrito' : 'District avg'}: ${fmtPct(districtInclusionPct)}</div>
+      </div>` : ''}
     </div>
   </section>
 
