@@ -153,11 +153,14 @@ const boarddocsRaw = JSON.parse(readFileSync(
   resolve(ROOT, 'sources/boarddocs-meetings.json'), 'utf-8'
 ));
 
-// Load scraped agenda data if available
+// Load scraped agenda data if available (multiple meetings per date possible)
 let scrapedByDate = {};
 try {
   const scraped = JSON.parse(readFileSync(resolve(ROOT, 'data/boarddocs-scraped.json'), 'utf-8'));
-  scrapedByDate = Object.fromEntries(scraped.map(m => [m.date, m]));
+  for (const m of scraped) {
+    if (!scrapedByDate[m.date]) scrapedByDate[m.date] = [];
+    scrapedByDate[m.date].push(m);
+  }
   console.log(`Loaded scraped data for ${scraped.length} meetings`);
 } catch {
   console.log('No scraped BoardDocs data found (run scrape-boarddocs.mjs first)');
@@ -190,27 +193,36 @@ function extractTopics(items) {
     .slice(0, 6); // Cap at 6 for display
 }
 
-// Filter to Mar 2024 - Jun 2025 (before Simbli overlap)
+// Filter BoardDocs meetings: Aug 2023 onward, up to Simbli overlap
 const simbliDates = new Set(simbliMeetings.map(m => m.date));
 
-const boarddocsMeetings = boarddocsRaw
+// Build one output meeting per scraped entry (handles multiple meetings per date).
+// For raw BoardDocs entries with no scraped match, emit one meeting per unique date.
+const boarddocsParsed = boarddocsRaw
   .filter(m => m.date != null)
-  .map(m => ({
-    ...m,
-    isoDate: parseBoarddocsDate(m.date)
-  }))
-  .filter(m => m.isoDate >= '2024-03-01' && m.isoDate <= '2025-06-10')
-  .filter(m => !simbliDates.has(m.isoDate))
-  .map(m => {
-    const scraped = scrapedByDate[m.isoDate];
+  .map(m => ({ ...m, isoDate: parseBoarddocsDate(m.date) }))
+  .filter(m => m.isoDate >= '2023-08-01' && m.isoDate <= '2025-06-10')
+  .filter(m => !simbliDates.has(m.isoDate));
+
+// Deduplicate raw entries per date (BoardDocs API sometimes returns multiple entries for
+// the same date when there are separate sessions; we use scraped data as source of truth)
+const seenBdDates = new Set();
+const boarddocsMeetings = [];
+for (const m of boarddocsParsed) {
+  if (seenBdDates.has(m.isoDate)) continue;
+  seenBdDates.add(m.isoDate);
+
+  const scrapedList = scrapedByDate[m.isoDate] || [null];
+  for (const scraped of scrapedList) {
     const name = (scraped?.name || '').toLowerCase();
     const type = name.includes('retreat') ? 'Retreat (Offsite)'
+      : name.includes('closed') ? 'Closed Session'
       : scraped ? scraped.type : 'Board Meeting';
     const items = scraped ? scraped.items : [];
     const topics = scraped ? extractTopics(items) : [];
     const slug = `${m.isoDate}-${type.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+$/, '')}`;
 
-    return {
+    boarddocsMeetings.push({
       date: m.isoDate,
       type,
       source: 'boarddocs',
@@ -232,8 +244,9 @@ const boarddocsMeetings = boarddocsRaw
           size: a.size,
         })),
       })),
-    };
-  });
+    });
+  }
+}
 
 // ---- Merge YouTube video IDs from youtube-index.json ----
 

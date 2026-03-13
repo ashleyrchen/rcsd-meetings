@@ -155,7 +155,7 @@ const LOCALES = {
     title: 'RCSD Board Meeting Index',
     headerDistrict: 'Redwood City School District',
     headerTitle: 'Board Meeting Index',
-    headerSubtitle: 'Two years of board meetings with agendas, video recordings, and key topics. Data compiled from',
+    headerSubtitle: 'Three years of board meetings with agendas, video recordings, and key topics. Data compiled from',
     headerSubtitleAnd: 'and',
     statMeetings: 'Meetings',
     statAgendaItems: 'Agenda items',
@@ -184,6 +184,8 @@ const LOCALES = {
     sy2526Subtitle: (n) => `${n} meetings from June 2025 to present. Full agendas and video available.`,
     sy2425Title: '2024\u201325 School Year',
     sy2425Subtitle: (n) => `${n} meetings from the BoardDocs archive with full agendas and attachments.`,
+    sy2324Title: '2023\u201324 School Year',
+    sy2324Subtitle: (n) => `${n} meetings from the BoardDocs archive (August 2023 onward).`,
     agendaItemsLabel: (n) => `${n} agenda item${n === 1 ? '' : 's'}`,
     otherAttachments: 'Other Attachments',
     video: 'Video',
@@ -243,7 +245,7 @@ const LOCALES = {
     title: '\u00cdndice de Reuniones de la Junta de RCSD',
     headerDistrict: 'Distrito Escolar de Redwood City',
     headerTitle: '\u00cdndice de Reuniones de la Junta',
-    headerSubtitle: 'Dos a\u00f1os de reuniones de la junta con agendas, grabaciones de video y temas clave. Datos recopilados de',
+    headerSubtitle: 'Tres a\u00f1os de reuniones de la junta con agendas, grabaciones de video y temas clave. Datos recopilados de',
     headerSubtitleAnd: 'y',
     statMeetings: 'Reuniones',
     statAgendaItems: 'Puntos de agenda',
@@ -272,6 +274,8 @@ const LOCALES = {
     sy2526Subtitle: (n) => `${n} reuniones desde junio de 2025 hasta el presente. Agendas completas y video disponibles.`,
     sy2425Title: 'A\u00f1o Escolar 2024\u201325',
     sy2425Subtitle: (n) => `${n} reuniones del archivo de BoardDocs con agendas completas y anexos.`,
+    sy2324Title: 'A\u00f1o Escolar 2023\u201324',
+    sy2324Subtitle: (n) => `${n} reuniones del archivo de BoardDocs (desde agosto 2023).`,
     agendaItemsLabel: (n) => `${n} punto${n === 1 ? '' : 's'} de agenda`,
     otherAttachments: 'Otros Anexos',
     video: 'Video',
@@ -449,7 +453,8 @@ data.meetings.forEach(m => m.threads.forEach(t => {
 
 // Split into school years
 const sy2526 = data.meetings.filter(m => m.date >= '2025-06-11');
-const sy2425 = data.meetings.filter(m => m.date < '2025-06-11');
+const sy2425 = data.meetings.filter(m => m.date >= '2024-06-11' && m.date < '2025-06-11');
+const sy2324 = data.meetings.filter(m => m.date < '2024-06-11');
 
 // Group by month
 function groupByMonth(meetings) {
@@ -1929,6 +1934,7 @@ ${siteNav({ activePage: 'meetings', lang: L.lang, altLangHref: L.altLangHref })}
     <a href="#threads">${L.navTopics}</a>
     <a href="#sy2526">2025-26</a>
     <a href="#sy2425">2024-25</a>
+    <a href="#sy2324">2023-24</a>
     <a href="#documents">${L.navDocuments}</a>
     <a href="#resources">${L.navResources}</a>
   </div>
@@ -1940,6 +1946,8 @@ ${renderThreadFilters()}
 ${renderSchoolYear('sy2526', L.sy2526Title, sy2526, L.sy2526Subtitle(sy2526.length))}
 
 ${renderSchoolYear('sy2425', L.sy2425Title, sy2425, L.sy2425Subtitle(sy2425.length))}
+
+${renderSchoolYear('sy2324', L.sy2324Title, sy2324, L.sy2324Subtitle(sy2324.length))}
 
 ${renderDocuments()}
 
