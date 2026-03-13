@@ -5,7 +5,9 @@
   "private": true,
   "scripts": {
     "dev": "wrangler dev",
-    "deploy": "wrangler deploy"
+    "deploy": "wrangler deploy",
+    "test": "node test.mjs",
+    "test:local": "node test.mjs http://localhost:8787"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.27.1",
