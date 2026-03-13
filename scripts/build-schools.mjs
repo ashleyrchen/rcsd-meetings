@@ -51,6 +51,22 @@ const districtInclusionPct = SPED_CATEGORIES.district?.placement
   ? Math.round(SPED_CATEGORIES.district.placement.regularGt80 / SPED_CATEGORIES.district.placement.total * 1000) / 10
   : 0;
 
+// ---- CSSP (Comprehensive School Safety Plan) links from rcsdk8.net (2024-25) ----
+const CSSP_URLS = {
+  'adelante-selby': 'https://www.rcsdk8.net/fs/resource-manager/view/08232b88-5d54-4f71-8c9c-c17f5c9d2705',
+  'clifford': 'https://www.rcsdk8.net/fs/resource-manager/view/5dcd21cc-b8a8-4351-85e9-7290b7d4c035',
+  'garfield': 'https://www.rcsdk8.net/fs/resource-manager/view/80949477-adbf-4f63-957a-557403790dca',
+  'henry-ford': 'https://www.rcsdk8.net/fs/resource-manager/view/4327c96a-a398-43b3-b373-d1518eb39f58',
+  'hoover': 'https://www.rcsdk8.net/fs/resource-manager/view/e10b6e82-ec78-42c7-a958-4d68912cd2af',
+  'kennedy': 'https://www.rcsdk8.net/fs/resource-manager/view/d4db41cf-2c9e-4cf6-a839-2acfa18a3812',
+  'mckinley-mit': 'https://www.rcsdk8.net/fs/resource-manager/view/0f2d86d5-91ad-457a-b2b8-73a45fee3695',
+  'north-star': 'https://www.rcsdk8.net/fs/resource-manager/view/a2ed25c2-34ca-472b-81e2-2d149c25f9ca',
+  'orion': 'https://www.rcsdk8.net/fs/resource-manager/view/40e9ec98-f9cc-4572-a644-59fc1726accf',
+  'roosevelt': 'https://www.rcsdk8.net/fs/resource-manager/view/e5bfe01d-332e-4cbf-82d9-dc85780957a8',
+  'roy-cloud': 'https://www.rcsdk8.net/fs/resource-manager/view/33721001-1bae-4981-a311-679e74e03dce',
+  'taft': 'https://www.rcsdk8.net/fs/resource-manager/view/857993d4-e2fa-46f9-91c6-ae14956f8666',
+};
+
 // ---- Load board meeting summaries (concise per-school EN/ES) ----
 const BOARD_SUMMARIES = (() => { try { return JSON.parse(readFileSync(resolve(ROOT, 'data/school-board-summaries.json'), 'utf-8')); } catch { return {}; } })();
 
@@ -1163,6 +1179,8 @@ const LABELS = {
     viewSarc: 'Download SARC (PDF)',
     viewSpsa: 'Download SPSA (PDF)',
     safetyPlan: 'Comprehensive Safety Plan',
+    viewCssp: 'View CSSP (2024-25)',
+    csspDesc: 'Annual school safety plan required by CA Education Code.',
     bellSchedule: 'Bell Schedule',
     regularDays: 'Regular',
     regularDaysSub: 'Mon · Tue · Wed · Fri',
@@ -1278,6 +1296,8 @@ const LABELS = {
     viewSarc: 'Descargar SARC (PDF)',
     viewSpsa: 'Descargar SPSA (PDF)',
     safetyPlan: 'Plan Integral de Seguridad',
+    viewCssp: 'Ver CSSP (2024-25)',
+    csspDesc: 'Plan anual de seguridad escolar requerido por el Código de Educación de CA.',
     bellSchedule: 'Horario Escolar',
     regularDays: 'Regular',
     regularDaysSub: 'lun · mar · mié · vie',
@@ -1852,7 +1872,9 @@ ${siteNav({ activePage: 'schools', lang, altLangHref })}
       </div>
       <div class="resource-card">
         <h4>${L.safetyPlan}</h4>
-        <p class="coming-soon">${L.comingSoon}</p>
+        ${CSSP_URLS[slug]
+          ? `<p>${L.csspDesc}</p><p><a href="${CSSP_URLS[slug]}" target="_blank">${L.viewCssp} &#8599;</a></p>`
+          : `<p class="coming-soon">${L.comingSoon}</p>`}
       </div>
       <div class="resource-card">
         <h4>${L.schoolSiteCouncil}</h4>
