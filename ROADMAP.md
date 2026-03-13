@@ -28,15 +28,28 @@
 ## School Pages — Documents
 - [ ] Pull Spanish-language SARCs for 2024-25 and upload to data.rcsd.info/documents/sarc/2024-25/spanish/
 - [ ] Link Spanish SARCs from /escuelas/ pages (currently links to English with "(inglés)" note)
-- [ ] Source and add SpEd / IEP / 504 percentages per school (IEP data now in sped-enrollment.json; 504 only available from OCR CRDC, lagging ~5 years)
+- [x] Source and add SpEd / IEP / 504 percentages per school (IEP + inclusion rate added to demographics)
 
 ## School Pages — Safety
-- [ ] Pull in and link the Comprehensive Safety Plan (CSP) for each school site
+- [x] Pull in and link the Comprehensive Safety Plan (CSSP) for each school site (2025-26, board-approved Feb 4 2026)
 
 ## School Pages — Board Presentations
-- [ ] Prominently link school site presentations on school pages (e.g. presentation decks, SPSA documents)
-- [ ] Link to YouTube meeting video at the correct timestamp offset for the school's presentation
-- [ ] Example: Roosevelt presentation from 2026-03-11 board meeting — deck, SPSA, and video offset
+- [x] Prominently link school site presentations on school pages (PDF + video timestamp)
+- [ ] Kennedy and Garfield have not presented since 2023-24 — flag or investigate
+- [ ] Scrape BoardDocs back to ~March 2023 to capture the missing Garfield and Kennedy presentations
+
+## District & School Committees
+- [ ] Citizens' Bond Oversight Committee (CBOC) — membership, meeting dates, agendas, minutes
+  - Measure S bond committee; Alan Hansen approved as taxpayer rep Dec 2025
+  - Should have its own page or section on district page
+- [ ] School Site Councils (SSCs) — membership rosters, meeting schedules per school
+  - Currently "Coming soon" on school pages
+  - SSCs approve CSSPs and SPSAs; membership is public record
+- [ ] DELAC (District English Learner Advisory Committee) — membership, meeting dates, agendas
+- [ ] ELAC (English Learner Advisory Committee) — per-school membership and meeting info
+- [ ] District Advisory Committee (DAC) — LCAP advisory body
+- [ ] Special Education Community Advisory Committee (CAC/SEPTAR)
+- [ ] PTO/PTA board members and meeting schedules per school
 
 ## CDE Data Pulls
 
@@ -88,6 +101,12 @@
 - [ ] Board SpEd Study Report — Detailed per-school SpEd analysis from external consultant
   - April 2024: https://go.boarddocs.com/ca/redwood/Board.nsf/files/D422AX010F7C/$file/Redwood%20City%20SD%20Special%20Education%20Study%20Report.pdf
   - May 2025 update: https://go.boarddocs.com/ca/redwood/Board.nsf/files/DGVSN2736D8B/$file/05_25%20Special%20Education%20Study%20Implementation%20Update%20-%20Board%20Presentation.pdf
+
+## Board Meetings — Historical Data
+- [ ] Scrape BoardDocs back to ~March 2023 (currently starts March 2024)
+  - Would capture: Garfield Nov 2023 presentation, Kennedy Nov 2023 presentation, full 2023-24 school year
+  - BoardDocs is client-side Angular; need to hit API endpoints or use headful browser
+  - Enables multi-year trending of board actions per school
 
 ## Board Meetings — Lifecycle States
 
