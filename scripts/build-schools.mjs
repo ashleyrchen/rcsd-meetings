@@ -84,7 +84,7 @@ const SCHOOL_PRESENTATIONS = {
   'garfield': {
     date: '2023-11-08',
     year: '2023-24',
-    pdfUrl: null, // Pre-dates our BoardDocs data
+    pdfUrl: 'https://go.boarddocs.com/ca/redwood/Board.nsf/files/CX5UVX7DF620/$file/Garfield%20Board%20Report%202023-2024.pdf',
     videoUrl: null,
   },
   'henry-ford': {
@@ -100,7 +100,7 @@ const SCHOOL_PRESENTATIONS = {
     videoUrl: null, // Video not yet available
   },
   'kennedy': {
-    date: '2023-11-15',
+    date: '2023-12-06',
     year: '2023-24',
     pdfUrl: 'https://go.boarddocs.com/ca/redwood/Board.nsf/files/CY22T703AEAA/$file/Kennedy%20Board%20Report%202023.pdf',
     videoUrl: null,

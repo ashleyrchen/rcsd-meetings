@@ -18,7 +18,7 @@ import { fileURLToPath } from 'url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const BASE_URL = 'https://go.boarddocs.com/ca/redwood/Board.nsf';
 const COMMITTEE_ID = 'A4EP6J588C05';
-const CUTOFF_DATE = '20240301'; // 2 years back from Mar 2026
+const CUTOFF_DATE = '20230701'; // Back to start of 2023-24 school year
 
 // Rate limiting: delay between requests
 const DELAY_MS = 300;
