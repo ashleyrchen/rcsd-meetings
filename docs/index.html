@@ -188,7 +188,84 @@
   ]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "RCSD Open Data",
+  "description": "Structured open data for the Redwood City School District (RCSD) — a TK-8 public school district in Redwood City, California serving 6,299 students across 12 schools. Includes school directory, board meeting archives with transcripts, district calendars, special education enrollment, SARC reports, demographics, and live lunch menus.",
+  "url": "https://rcsd.info/",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "creator": {
+    "@type": "Person",
+    "name": "David Weekly",
+    "url": "https://david.weekly.org"
+  },
+  "about": {
+    "@type": "GovernmentOrganization",
+    "name": "Redwood City School District",
+    "url": "https://www.rcsdk8.net",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Redwood City",
+      "addressRegion": "CA",
+      "addressCountry": "US"
+    }
+  },
+  "spatialCoverage": {
+    "@type": "Place",
+    "name": "Redwood City, California"
+  },
+  "temporalCoverage": "2018/..",
+  "distribution": [
+    {
+      "@type": "DataDownload",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://data.rcsd.info/json/schools.json",
+      "name": "School Directory",
+      "description": "All 12 schools with addresses, principals, bell schedules, enrollment, and parent resources"
+    },
+    {
+      "@type": "DataDownload",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://data.rcsd.info/json/meetings-data.json",
+      "name": "Board Meeting Archive",
+      "description": "Board meetings with agendas, agenda items, attachments, timestamps, and transcripts"
+    },
+    {
+      "@type": "DataDownload",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://data.rcsd.info/json/district-calendar-2025-26.json",
+      "name": "District Calendar 2025-26",
+      "description": "School year calendar with holidays, early release days, and board meetings"
+    },
+    {
+      "@type": "DataDownload",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://data.rcsd.info/json/district-calendar-2026-27.json",
+      "name": "District Calendar 2026-27",
+      "description": "School year calendar with holidays, early release days, and board meetings"
+    },
+    {
+      "@type": "DataDownload",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://data.rcsd.info/json/sped-enrollment.json",
+      "name": "Special Education Enrollment",
+      "description": "IEP student counts per school per grade (CDE 2024-25)"
+    },
+    {
+      "@type": "DataDownload",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://data.rcsd.info/json/sarc/sarc-summary.json",
+      "name": "SARC Summary",
+      "description": "School Accountability Report Card data: demographics, test scores, expenditures per school"
+    }
+  ],
+  "keywords": ["education", "school district", "open data", "Redwood City", "California", "TK-8", "board meetings", "school demographics", "CAASPP", "special education"]
+}
+</script>
 <meta property="og:locale:alternate" content="es_US">
+<link rel="describedby" href="/llms.txt" type="text/markdown">
 <style>
 
   :root {
@@ -1264,6 +1341,7 @@
     <pre>
 RCSD Open Data — structured data for the Redwood City School District
 
+MCP:     <code><a href="https://mcp.rcsd.info/mcp">https://mcp.rcsd.info/mcp</a></code>  (Model Context Protocol — works with Claude, VS Code, Cursor)
 GitHub:  <code><a href="https://github.com/dweekly/rcsd-meetings">https://github.com/dweekly/rcsd-meetings</a></code>
 Website: <code><a href="https://rcsd.info">https://rcsd.info</a></code>
 CDN:     <code><a href="https://data.rcsd.info">https://data.rcsd.info</a></code>
@@ -1273,7 +1351,7 @@ DATA FILES (<a href="https://data.rcsd.info/json/">data.rcsd.info/json/</a>):
   <a href="https://data.rcsd.info/json/meeting-summaries.json">meeting-summaries.json</a>   Curated English summaries per meeting
   <a href="https://data.rcsd.info/json/meeting-summaries-es.json">meeting-summaries-es.json</a>  Curated Spanish summaries
   <a href="https://data.rcsd.info/json/schools.json">schools.json</a>             School directory (12 schools, addresses, principals, bell schedules)
-  <a href="https://data.rcsd.info/json/district-calendar.json">district-calendar.json</a>   Key dates for 2025-26
+  <a href="https://data.rcsd.info/json/district-calendar-2025-26.json">district-calendar-2025-26.json</a>  Key dates for 2025-26
   <a href="https://data.rcsd.info/json/district-calendar-2026-27.json">district-calendar-2026-27.json</a>  Key dates for 2026-27
   <a href="https://data.rcsd.info/json/youtube-index.json">youtube-index.json</a>       YouTube video metadata
   <a href="https://data.rcsd.info/json/agenda-attachments.json">agenda-attachments.json</a>  Attachment metadata with R2 URLs
@@ -1293,6 +1371,30 @@ STRUCTURED PAGES:
   /distrito/        District overview (ES)
 
 Contact: team@rcsd.info</pre>
+  </div>
+
+  <!-- CLAUDE CODE PLUGIN -->
+  <div class="ai-section" style="margin-top:1rem">
+    <h2>Claude Code Plugin</h2>
+    <pre>
+Install the rcsd-info plugin for <a href="https://claude.com/claude-code">Claude Code</a> to query RCSD data
+from your terminal — school info, live lunch menus, calendars,
+board meetings, demographics, and special education stats.
+
+  <code>/plugin marketplace add dweekly/rcsd-meetings</code>
+  <code>/plugin install rcsd-info@rcsd-info</code>
+
+Optional: create <code>~/.claude/rcsd-info.local.md</code> to personalize queries:
+
+  <code>---</code>
+  <code>children:</code>
+  <code>  - name: Jill</code>
+  <code>    grade: 2</code>
+  <code>    school: orion</code>
+  <code>    program: Mandarin Immersion</code>
+  <code>---</code>
+
+Then ask: "What's Jill having for lunch tomorrow?"</pre>
   </div>
 
 </main>

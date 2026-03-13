@@ -1,0 +1,8 @@
+name = "rcsd-mcp"
+main = "src/index.ts"
+compatibility_date = "2025-03-10"
+compatibility_flags = ["nodejs_compat"]
+
+routes = [
+  { pattern = "mcp.rcsd.info/*", zone_name = "rcsd.info" }
+]

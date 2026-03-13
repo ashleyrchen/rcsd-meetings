@@ -601,6 +601,82 @@ ${sortedSchools.map((s, i) => `    {
     }`).join(',\n')}
   ]
 }
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "RCSD Open Data",
+  "description": "Structured open data for the Redwood City School District (RCSD) — a TK-8 public school district in Redwood City, California serving ${totalEnrollment.toLocaleString()} students across ${numSchools} schools. Includes school directory, board meeting archives with transcripts, district calendars, special education enrollment, SARC reports, demographics, and live lunch menus.",
+  "url": "https://rcsd.info/",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "creator": {
+    "@type": "Person",
+    "name": "David Weekly",
+    "url": "https://david.weekly.org"
+  },
+  "about": {
+    "@type": "GovernmentOrganization",
+    "name": "Redwood City School District",
+    "url": "https://www.rcsdk8.net",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Redwood City",
+      "addressRegion": "CA",
+      "addressCountry": "US"
+    }
+  },
+  "spatialCoverage": {
+    "@type": "Place",
+    "name": "Redwood City, California"
+  },
+  "temporalCoverage": "2018/..",
+  "distribution": [
+    {
+      "@type": "DataDownload",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://data.rcsd.info/json/schools.json",
+      "name": "School Directory",
+      "description": "All ${numSchools} schools with addresses, principals, bell schedules, enrollment, and parent resources"
+    },
+    {
+      "@type": "DataDownload",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://data.rcsd.info/json/meetings-data.json",
+      "name": "Board Meeting Archive",
+      "description": "Board meetings with agendas, agenda items, attachments, timestamps, and transcripts"
+    },
+    {
+      "@type": "DataDownload",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://data.rcsd.info/json/district-calendar-2025-26.json",
+      "name": "District Calendar 2025-26",
+      "description": "School year calendar with holidays, early release days, and board meetings"
+    },
+    {
+      "@type": "DataDownload",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://data.rcsd.info/json/district-calendar-2026-27.json",
+      "name": "District Calendar 2026-27",
+      "description": "School year calendar with holidays, early release days, and board meetings"
+    },
+    {
+      "@type": "DataDownload",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://data.rcsd.info/json/sped-enrollment.json",
+      "name": "Special Education Enrollment",
+      "description": "IEP student counts per school per grade (CDE 2024-25)"
+    },
+    {
+      "@type": "DataDownload",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://data.rcsd.info/json/sarc/sarc-summary.json",
+      "name": "SARC Summary",
+      "description": "School Accountability Report Card data: demographics, test scores, expenditures per school"
+    }
+  ],
+  "keywords": ["education", "school district", "open data", "Redwood City", "California", "TK-8", "board meetings", "school demographics", "CAASPP", "special education"]
+}
 </script>`;
 
 // ---- Generate homepage HTML ----
@@ -619,7 +695,7 @@ ${headMeta({
     { lang: 'es', href: 'https://rcsd.info/' },
   ],
   jsonLd: jsonLdBlocks,
-  extraHead: '<meta property="og:locale:alternate" content="es_US">',
+  extraHead: '<meta property="og:locale:alternate" content="es_US">\n<link rel="describedby" href="/llms.txt" type="text/markdown">',
   pageCSS: homepageCSS,
 })}
 </head>
@@ -801,6 +877,7 @@ ${upcoming.map(e => eventRow(e, 'es')).join('\n')}
     <pre>
 RCSD Open Data — structured data for the Redwood City School District
 
+MCP:     <code><a href="https://mcp.rcsd.info/mcp">https://mcp.rcsd.info/mcp</a></code>  (Model Context Protocol — works with Claude, VS Code, Cursor)
 GitHub:  <code><a href="https://github.com/dweekly/rcsd-meetings">https://github.com/dweekly/rcsd-meetings</a></code>
 Website: <code><a href="https://rcsd.info">https://rcsd.info</a></code>
 CDN:     <code><a href="https://data.rcsd.info">https://data.rcsd.info</a></code>
@@ -810,7 +887,7 @@ DATA FILES (<a href="https://data.rcsd.info/json/">data.rcsd.info/json/</a>):
   <a href="https://data.rcsd.info/json/meeting-summaries.json">meeting-summaries.json</a>   Curated English summaries per meeting
   <a href="https://data.rcsd.info/json/meeting-summaries-es.json">meeting-summaries-es.json</a>  Curated Spanish summaries
   <a href="https://data.rcsd.info/json/schools.json">schools.json</a>             School directory (12 schools, addresses, principals, bell schedules)
-  <a href="https://data.rcsd.info/json/district-calendar.json">district-calendar.json</a>   Key dates for 2025-26
+  <a href="https://data.rcsd.info/json/district-calendar-2025-26.json">district-calendar-2025-26.json</a>  Key dates for 2025-26
   <a href="https://data.rcsd.info/json/district-calendar-2026-27.json">district-calendar-2026-27.json</a>  Key dates for 2026-27
   <a href="https://data.rcsd.info/json/youtube-index.json">youtube-index.json</a>       YouTube video metadata
   <a href="https://data.rcsd.info/json/agenda-attachments.json">agenda-attachments.json</a>  Attachment metadata with R2 URLs
@@ -830,6 +907,30 @@ STRUCTURED PAGES:
   /distrito/        District overview (ES)
 
 Contact: team@rcsd.info</pre>
+  </div>
+
+  <!-- CLAUDE CODE PLUGIN -->
+  <div class="ai-section" style="margin-top:1rem">
+    <h2>Claude Code Plugin</h2>
+    <pre>
+Install the rcsd-info plugin for <a href="https://claude.com/claude-code">Claude Code</a> to query RCSD data
+from your terminal — school info, live lunch menus, calendars,
+board meetings, demographics, and special education stats.
+
+  <code>/plugin marketplace add dweekly/rcsd-meetings</code>
+  <code>/plugin install rcsd-info@rcsd-info</code>
+
+Optional: create <code>~/.claude/rcsd-info.local.md</code> to personalize queries:
+
+  <code>---</code>
+  <code>children:</code>
+  <code>  - name: Jill</code>
+  <code>    grade: 2</code>
+  <code>    school: orion</code>
+  <code>    program: Mandarin Immersion</code>
+  <code>---</code>
+
+Then ask: "What's Jill having for lunch tomorrow?"</pre>
   </div>
 
 </main>
@@ -947,37 +1048,35 @@ ${siteNav({ lang: 'en' })}
 writeFileSync(resolve(ROOT, 'docs/404.html'), fourOhFour);
 console.log('Wrote docs/404.html');
 
+// ---- Template helper ----
+function renderTemplate(name, vars = {}) {
+  let tmpl = readFileSync(resolve(ROOT, 'templates', name), 'utf-8');
+  for (const [key, val] of Object.entries(vars)) {
+    tmpl = tmpl.replaceAll(`{{${key}}}`, val);
+  }
+  return tmpl;
+}
+
+const templateVars = {
+  date: new Date().toISOString().slice(0, 10),
+  totalEnrollment: totalEnrollment.toLocaleString(),
+  numSchools: String(numSchools),
+  schoolSlugs: sortedSchools.map(s =>
+    `- \`${s.slug}\` — ${s.name} (${s.grades}, ${s.type === 'choice' ? 'Choice' : 'Neighborhood'})`
+  ).join('\n'),
+};
+
 // ---- robots.txt ----
-const robots = `User-agent: *
-Allow: /
-
-Sitemap: https://rcsd.info/sitemap.xml
-
-# RCSD Open Data — independently compiled public records
-# for the Redwood City School District
-# Source: https://github.com/dweekly/rcsd-meetings
-# Contact: team@rcsd.info
-`;
-writeFileSync(resolve(ROOT, 'docs/robots.txt'), robots);
+writeFileSync(resolve(ROOT, 'docs/robots.txt'), renderTemplate('robots.txt', templateVars));
 console.log('Wrote docs/robots.txt');
 
 // ---- humans.txt ----
-const humans = `/* TEAM */
-  Maintainer: David Weekly
-  Site: https://david.weekly.org
-  Location: Redwood City, CA
-  Contact: team@rcsd.info
-
-/* SITE */
-  Standards: HTML5, CSS3, ES6
-  Software: Node.js, Vanilla HTML/CSS
-  Hosting: Cloudflare Pages
-  Data CDN: Cloudflare R2 (data.rcsd.info)
-  Source: https://github.com/dweekly/rcsd-meetings
-  Last updated: ${new Date().toISOString().slice(0, 10)}
-`;
-writeFileSync(resolve(ROOT, 'docs/humans.txt'), humans);
+writeFileSync(resolve(ROOT, 'docs/humans.txt'), renderTemplate('humans.txt', templateVars));
 console.log('Wrote docs/humans.txt');
+
+// ---- llms.txt ----
+writeFileSync(resolve(ROOT, 'docs/llms.txt'), renderTemplate('llms.txt', templateVars));
+console.log('Wrote docs/llms.txt');
 
 // ---- sitemap.xml ----
 const sitemapDate = new Date().toISOString().slice(0, 10);
@@ -1000,6 +1099,12 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
     <lastmod>${sitemapDate}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://rcsd.info/llms.txt</loc>
+    <lastmod>${sitemapDate}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://rcsd.info/district/</loc>
