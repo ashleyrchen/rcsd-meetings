@@ -18,12 +18,13 @@
  * {type: "category"|"recipe", name: string, weight: number} items.
  */
 
-import { readFileSync } from 'fs';
+import { readFileSync, existsSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const dataDir = join(__dirname, '..', '..', '..', '..', 'data');
+const localDataDir = join(__dirname, '..', '..', '..', '..', 'data');
+const remoteBase = 'https://data.rcsd.info/json';
 
 // Menu IDs per school site ID (from HealthePro API)
 // Pattern: /api/organizations/1184/sites/{siteId}/menus/ returns available menus
@@ -82,8 +83,17 @@ const dateStr = resolveDate(args[1]);
 const [year, monthStr] = dateStr.split('-');
 const month = parseInt(monthStr);
 
-// Load school data to get menu ID
-const schools = JSON.parse(readFileSync(join(dataDir, 'schools.json'), 'utf-8'));
+// Load school data to get menu ID (local fallback to remote)
+const localPath = join(localDataDir, 'schools.json');
+let schoolsData;
+if (existsSync(localPath)) {
+  schoolsData = JSON.parse(readFileSync(localPath, 'utf-8'));
+} else {
+  const res = await fetch(`${remoteBase}/schools.json`);
+  if (!res.ok) { console.error('Failed to fetch schools.json'); process.exit(1); }
+  schoolsData = await res.json();
+}
+const schools = schoolsData;
 const school = schools.schools.find(s => s.slug === slug || s.nameShort.toLowerCase() === slug.toLowerCase());
 if (!school) {
   console.error(`School not found: "${slug}"`);

@@ -35,7 +35,7 @@ When a user mentions a child by name, look up their school and grade from this c
 
 ## Data Corpus
 
-All structured data lives in the `data/` directory. Read JSON files directly to answer questions.
+All structured data is published at `https://data.rcsd.info/json/` and also available locally in the `data/` directory if the repo is cloned. When the local files aren't available, fetch from the remote URL. The scripts handle this fallback automatically.
 
 ### Core Data Files
 

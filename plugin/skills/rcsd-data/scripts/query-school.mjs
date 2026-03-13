@@ -9,21 +9,30 @@
  *   node query-school.mjs "Roy Cloud" --sped
  *   node query-school.mjs kennedy --meetings
  *   node query-school.mjs --calendar 2026-03-13
+ *
+ * Data is fetched from data.rcsd.info with local file fallback.
  */
 
-import { readFileSync } from 'fs';
+import { readFileSync, existsSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const dataDir = join(__dirname, '..', '..', '..', '..', 'data');
+const localDataDir = join(__dirname, '..', '..', '..', '..', 'data');
+const remoteBase = 'https://data.rcsd.info/json';
 
-function loadJSON(path) {
-  return JSON.parse(readFileSync(join(dataDir, path), 'utf-8'));
+async function loadJSON(path) {
+  const localPath = join(localDataDir, path);
+  if (existsSync(localPath)) {
+    return JSON.parse(readFileSync(localPath, 'utf-8'));
+  }
+  const res = await fetch(`${remoteBase}/${path}`);
+  if (!res.ok) throw new Error(`Failed to fetch ${path}: ${res.status}`);
+  return res.json();
 }
 
-function findSchool(query) {
-  const schools = loadJSON('schools.json');
+async function findSchool(query) {
+  const schools = await loadJSON('schools.json');
   const q = query.toLowerCase().replace(/[^a-z0-9]/g, '');
   return schools.schools.find(s =>
     s.slug.replace(/-/g, '') === q ||
@@ -61,10 +70,10 @@ function formatSchool(school) {
   return lines.join('\n');
 }
 
-function formatSped(slug) {
+async function formatSped(slug) {
   try {
-    const sped = loadJSON('sped-enrollment.json');
-    const cats = loadJSON('sped-categories.json');
+    const sped = await loadJSON('sped-enrollment.json');
+    const cats = await loadJSON('sped-categories.json');
     const schoolSped = sped.schools[slug];
     const schoolCats = cats.schools[slug];
 
@@ -90,9 +99,9 @@ function formatSped(slug) {
   }
 }
 
-function checkCalendar(dateStr) {
-  const cal2526 = loadJSON('district-calendar-2025-26.json');
-  const cal2627 = loadJSON('district-calendar-2026-27.json');
+async function checkCalendar(dateStr) {
+  const cal2526 = await loadJSON('district-calendar-2025-26.json');
+  const cal2627 = await loadJSON('district-calendar-2026-27.json');
   const calendars = [cal2526, cal2627];
 
   for (const cal of calendars) {
@@ -105,7 +114,6 @@ function checkCalendar(dateStr) {
     }
   }
 
-  // Check if date is within a school year
   for (const cal of calendars) {
     const first = cal.events.find(e => e.en.includes('First Day'));
     const last = cal.events.find(e => e.en.includes('Last Day'));
@@ -117,9 +125,9 @@ function checkCalendar(dateStr) {
   return 'Not within a school year calendar range';
 }
 
-function getRecentMeetings(slug, count = 20) {
+async function getRecentMeetings(slug, count = 20) {
   try {
-    const summaries = loadJSON('school-board-summaries.json');
+    const summaries = await loadJSON('school-board-summaries.json');
     const entries = [];
     for (const [key, schools] of Object.entries(summaries)) {
       if (schools[slug]) {
@@ -145,7 +153,7 @@ if (args.length === 0) {
 }
 
 if (args[0] === '--list') {
-  const schools = loadJSON('schools.json');
+  const schools = await loadJSON('schools.json');
   for (const s of schools.schools) {
     console.log(`  ${s.slug.padEnd(16)} ${s.nameShort.padEnd(16)} ${s.grades.padEnd(6)} ${s.type}`);
   }
@@ -158,12 +166,12 @@ if (args[0] === '--calendar') {
     console.error('Provide a date in YYYY-MM-DD format');
     process.exit(1);
   }
-  console.log(checkCalendar(date));
+  console.log(await checkCalendar(date));
   process.exit(0);
 }
 
 const query = args.filter(a => !a.startsWith('--')).join(' ');
-const school = findSchool(query);
+const school = await findSchool(query);
 
 if (!school) {
   console.error(`School not found: "${query}"`);
@@ -175,12 +183,12 @@ console.log(formatSchool(school));
 
 if (args.includes('--sped')) {
   console.log('\nSpecial Education:');
-  console.log(formatSped(school.slug));
+  console.log(await formatSped(school.slug));
 }
 
 if (args.includes('--meetings')) {
   console.log('\nRecent Board Items:');
-  const meetings = getRecentMeetings(school.slug);
+  const meetings = await getRecentMeetings(school.slug);
   if (meetings.length === 0) {
     console.log('  No school-specific board items found');
   } else {
