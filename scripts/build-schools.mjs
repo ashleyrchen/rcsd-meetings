@@ -51,20 +51,20 @@ const districtInclusionPct = SPED_CATEGORIES.district?.placement
   ? Math.round(SPED_CATEGORIES.district.placement.regularGt80 / SPED_CATEGORIES.district.placement.total * 1000) / 10
   : 0;
 
-// ---- CSSP (Comprehensive School Safety Plan) links from rcsdk8.net (2024-25) ----
+// ---- CSSP (Comprehensive School Safety Plan) 2025-26 — board-approved Feb 4, 2026 ----
 const CSSP_URLS = {
-  'adelante-selby': 'https://www.rcsdk8.net/fs/resource-manager/view/08232b88-5d54-4f71-8c9c-c17f5c9d2705',
-  'clifford': 'https://www.rcsdk8.net/fs/resource-manager/view/5dcd21cc-b8a8-4351-85e9-7290b7d4c035',
-  'garfield': 'https://www.rcsdk8.net/fs/resource-manager/view/80949477-adbf-4f63-957a-557403790dca',
-  'henry-ford': 'https://www.rcsdk8.net/fs/resource-manager/view/4327c96a-a398-43b3-b373-d1518eb39f58',
-  'hoover': 'https://www.rcsdk8.net/fs/resource-manager/view/e10b6e82-ec78-42c7-a958-4d68912cd2af',
-  'kennedy': 'https://www.rcsdk8.net/fs/resource-manager/view/d4db41cf-2c9e-4cf6-a839-2acfa18a3812',
-  'mckinley-mit': 'https://www.rcsdk8.net/fs/resource-manager/view/0f2d86d5-91ad-457a-b2b8-73a45fee3695',
-  'north-star': 'https://www.rcsdk8.net/fs/resource-manager/view/a2ed25c2-34ca-472b-81e2-2d149c25f9ca',
-  'orion': 'https://www.rcsdk8.net/fs/resource-manager/view/40e9ec98-f9cc-4572-a644-59fc1726accf',
-  'roosevelt': 'https://www.rcsdk8.net/fs/resource-manager/view/e5bfe01d-332e-4cbf-82d9-dc85780957a8',
-  'roy-cloud': 'https://www.rcsdk8.net/fs/resource-manager/view/33721001-1bae-4981-a311-679e74e03dce',
-  'taft': 'https://www.rcsdk8.net/fs/resource-manager/view/857993d4-e2fa-46f9-91c6-ae14956f8666',
+  'adelante-selby': 'https://data.rcsd.info/board-packets/2026-02-04/2025_Comprehensive_School_Safety_Plan-_Pt._1_-Public-_Adelante_Selby_Spanish_Imm.pdf',
+  'clifford': 'https://data.rcsd.info/board-packets/2026-02-04/2025_Comprehensive_School_Safety_Plan-_Pt._1_-Public-_Clifford_Elementary_School.pdf',
+  'garfield': 'https://data.rcsd.info/board-packets/2026-02-04/2025_Comprehensive_School_Safety_Plan__Pt._1_-Public-_Garfield_Elementary_School.pdf',
+  'henry-ford': 'https://data.rcsd.info/board-packets/2026-02-04/2025_Comprehensive_School_Safety_Plan-_Pt._1_-Public-_Henry_Ford_Elementary_Scho.pdf',
+  'hoover': 'https://data.rcsd.info/board-packets/2026-02-04/2025_Comprehensive_School_Safety_Plan-_Pt._1_-Public-_Hoover_Community_School_20.pdf',
+  'kennedy': 'https://data.rcsd.info/board-packets/2026-02-04/2025_Comprehensive_School_Safety_Plan__Pt._1_-Public-_John_F._Kennedy_Middle_Sch.pdf',
+  'mckinley-mit': 'https://data.rcsd.info/board-packets/2026-02-04/2025_Comprehensive_School_Safety_Plan-_Pt._1_-Public-_McKinley_Institute_of_Tech.pdf',
+  'north-star': 'https://data.rcsd.info/board-packets/2026-02-04/2025_Comprehensive_School_Safety_Plan-_Pt._1_-Public-_North_Star_Academy_2026012.pdf',
+  'orion': 'https://data.rcsd.info/board-packets/2026-02-04/2025_Comprehensive_School_Safety_Plan__Pt._1_-Public-_Orion_Alternative_School_2.pdf',
+  'roosevelt': 'https://data.rcsd.info/board-packets/2026-02-04/2025_Comprehensive_School_Safety_Plan-_Pt._1_-Public-_Roosevelt_Elementary_Schoo.pdf',
+  'roy-cloud': 'https://data.rcsd.info/board-packets/2026-02-04/2025_Comprehensive_School_Safety_Plan__Pt._1_-Public-_Roy_Cloud_Elementary_Schoo.pdf',
+  'taft': 'https://data.rcsd.info/board-packets/2026-02-04/2025_Comprehensive_School_Safety_Plan__Pt._1_-Public-_Taft_Elementary_School_202.pdf',
 };
 
 // ---- Load board meeting summaries (concise per-school EN/ES) ----
@@ -1179,8 +1179,8 @@ const LABELS = {
     viewSarc: 'Download SARC (PDF)',
     viewSpsa: 'Download SPSA (PDF)',
     safetyPlan: 'Comprehensive Safety Plan',
-    viewCssp: 'View CSSP (2024-25)',
-    csspDesc: 'Annual school safety plan required by CA Education Code.',
+    viewCssp: 'Download CSSP (PDF)',
+    csspDesc: '2025-26 plan, board-approved Feb 4, 2026.',
     bellSchedule: 'Bell Schedule',
     regularDays: 'Regular',
     regularDaysSub: 'Mon · Tue · Wed · Fri',
@@ -1296,8 +1296,8 @@ const LABELS = {
     viewSarc: 'Descargar SARC (PDF)',
     viewSpsa: 'Descargar SPSA (PDF)',
     safetyPlan: 'Plan Integral de Seguridad',
-    viewCssp: 'Ver CSSP (2024-25)',
-    csspDesc: 'Plan anual de seguridad escolar requerido por el Código de Educación de CA.',
+    viewCssp: 'Descargar CSSP (PDF)',
+    csspDesc: 'Plan 2025-26, aprobado por la junta el 4 de feb de 2026.',
     bellSchedule: 'Horario Escolar',
     regularDays: 'Regular',
     regularDaysSub: 'lun · mar · mié · vie',
