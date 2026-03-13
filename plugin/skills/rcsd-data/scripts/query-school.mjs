@@ -117,7 +117,7 @@ function checkCalendar(dateStr) {
   return 'Not within a school year calendar range';
 }
 
-function getRecentMeetings(slug, count = 5) {
+function getRecentMeetings(slug, count = 20) {
   try {
     const summaries = loadJSON('school-board-summaries.json');
     const entries = [];
