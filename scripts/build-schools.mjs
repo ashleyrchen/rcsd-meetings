@@ -1049,6 +1049,12 @@ const LABELS = {
     viewSpsa: 'Download SPSA (PDF)',
     safetyPlan: 'Comprehensive Safety Plan',
     bellSchedule: 'Bell Schedule',
+    regularDays: 'Regular days (Mon/Tue/Wed/Fri)',
+    thursdayEarlyRelease: 'Thursday early release',
+    superMinDays: 'Super-minimum days (no lunch served)',
+    supervisionStarts: 'Supervision starts',
+    grade: 'Grade',
+    dismissal: 'Dismissal',
     lunchMenu: 'Lunch Menu',
     schoolSiteCouncil: 'School Site Council',
     ptoPtaOrg: 'PTO / PTA',
@@ -1154,6 +1160,12 @@ const LABELS = {
     viewSpsa: 'Descargar SPSA (PDF)',
     safetyPlan: 'Plan Integral de Seguridad',
     bellSchedule: 'Horario Escolar',
+    regularDays: 'Días regulares (lun/mar/mié/vie)',
+    thursdayEarlyRelease: 'Jueves salida temprana',
+    superMinDays: 'Días súper mínimos (sin almuerzo)',
+    supervisionStarts: 'Supervisión comienza',
+    grade: 'Grado',
+    dismissal: 'Salida',
     lunchMenu: 'Menú de Almuerzo',
     schoolSiteCouncil: 'Consejo del Sitio Escolar',
     ptoPtaOrg: 'PTO / PTA',
@@ -1184,6 +1196,53 @@ const LABELS = {
     noBoardItems: 'No se encontraron temas de reuniones de la mesa directiva para esta escuela.',
   },
 };
+
+// ---- Bell schedule HTML helper ----
+
+function renderBellScheduleHTML(bs, L) {
+  if (!bs.regular) {
+    // Old flat format fallback
+    return `<p>${L.start}: ${bs.start}<br>${L.end}: ${bs.end}<br>${L.earlyRelease}: ${bs.earlyRelease}</p>`;
+  }
+
+  const tableStyle = 'width:100%; border-collapse:collapse; font-size:0.92rem; margin:0.4rem 0';
+  const thStyle = 'text-align:left; padding:2px 6px; border-bottom:1px solid #ddd; font-weight:600';
+  const tdStyle = 'padding:2px 6px; border-bottom:1px solid #eee';
+
+  let html = '';
+
+  if (bs.supervision) {
+    html += `<p style="margin:0.3rem 0; font-size:0.92rem">${L.supervisionStarts}: <strong>${bs.supervision}</strong></p>`;
+  }
+
+  // Regular days
+  html += `<p style="margin:0.5rem 0 0.2rem; font-weight:600; font-size:0.92rem">${L.regularDays}</p>`;
+  html += `<table style="${tableStyle}"><tr><th style="${thStyle}">${L.grade}</th><th style="${thStyle}">${L.start}</th><th style="${thStyle}">${L.end}</th></tr>`;
+  for (const r of bs.regular) {
+    html += `<tr><td style="${tdStyle}">${r.grades}</td><td style="${tdStyle}">${r.start}</td><td style="${tdStyle}">${r.end}</td></tr>`;
+  }
+  html += '</table>';
+
+  // Thursday early release
+  html += `<p style="margin:0.5rem 0 0.2rem; font-weight:600; font-size:0.92rem">${L.thursdayEarlyRelease}</p>`;
+  html += `<table style="${tableStyle}"><tr><th style="${thStyle}">${L.grade}</th><th style="${thStyle}">${L.dismissal}</th></tr>`;
+  for (const r of bs.earlyRelease) {
+    html += `<tr><td style="${tdStyle}">${r.grades}</td><td style="${tdStyle}">${r.end}</td></tr>`;
+  }
+  html += '</table>';
+
+  // Super-minimum days
+  if (bs.superMinimum) {
+    html += `<p style="margin:0.5rem 0 0.2rem; font-weight:600; font-size:0.92rem">${L.superMinDays}</p>`;
+    html += `<table style="${tableStyle}"><tr><th style="${thStyle}">${L.grade}</th><th style="${thStyle}">${L.dismissal}</th></tr>`;
+    for (const r of bs.superMinimum) {
+      html += `<tr><td style="${tdStyle}">${r.grades}</td><td style="${tdStyle}">${r.end}</td></tr>`;
+    }
+    html += '</table>';
+  }
+
+  return html;
+}
 
 // ---- HTML generation ----
 
@@ -1587,7 +1646,7 @@ ${siteNav({ activePage: 'schools', lang, altLangHref })}
       </div>
       <div class="resource-card">
         <h4>${L.bellSchedule}</h4>
-        <p>${L.start}: ${school.bellSchedule.start}<br>${L.end}: ${school.bellSchedule.end}<br>${L.earlyRelease}: ${school.bellSchedule.earlyRelease}</p>
+        ${renderBellScheduleHTML(school.bellSchedule, L)}
       </div>
       <div class="resource-card">
         <h4>${L.lunchMenu}</h4>
