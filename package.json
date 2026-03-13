@@ -21,10 +21,12 @@
     "map:timestamps:llm": "node scripts/map-timestamps-llm.mjs",
     "upload": "node scripts/upload-to-r2.mjs",
     "scrape:packets": "node scripts/scrape-board-packets.mjs",
-    "extract:sarc": "node scripts/extract-sarc.mjs"
+    "extract:sarc": "node scripts/extract-sarc.mjs",
+    "transcribe": "node scripts/transcribe-assemblyai.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.78.0",
+    "assemblyai": "^4.27.0",
     "dotenv": "^16.6.1",
     "playwright": "^1.58.2"
   }
