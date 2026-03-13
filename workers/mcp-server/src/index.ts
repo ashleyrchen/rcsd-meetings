@@ -51,6 +51,33 @@ function findSchool(schools: any[], query: string) {
 
 // ---- Helper: format school info ----
 
+function formatBellSchedule(bs: any): string {
+  const lines: string[] = [];
+  const day = bs.earlyReleaseDay || "Thursday";
+  if (bs.supervision) {
+    lines.push(`  Supervision starts: ${bs.supervision}`);
+  }
+  // Regular schedule
+  lines.push(`  Regular days (Mon/Tue/Wed/Fri):`);
+  for (const r of bs.regular) {
+    lines.push(`    ${r.grades}: ${r.start} – ${r.end}`);
+  }
+  // Early release
+  lines.push(`  ${day} early release:`);
+  for (const r of bs.earlyRelease) {
+    lines.push(`    ${r.grades}: dismissal ${r.end}`);
+  }
+  // Super minimum
+  if (bs.superMinimum) {
+    lines.push("  Super-minimum days (no lunch served):");
+    for (const r of bs.superMinimum) {
+      const start = r.start ? `${r.start} – ` : "";
+      lines.push(`    ${r.grades}: ${start}dismissal ${r.end}`);
+    }
+  }
+  return lines.join("\n");
+}
+
 function formatSchool(s: any): string {
   const lines = [
     s.name,
@@ -61,11 +88,17 @@ function formatSchool(s: any): string {
     `  Address: ${s.address}`,
     `  Phone: ${s.phone}`,
     `  Website: ${s.website}`,
-    `  Bell Schedule: ${s.bellSchedule.start} – ${s.bellSchedule.end} (early release: ${s.bellSchedule.earlyRelease})`,
-    `  Lunch Menu: ${s.lunchUrl}`,
-    `  Community School: ${s.communitySchool ? "Yes" : "No"}`,
-    `  CDS Code: ${s.cdsCode}`,
   ];
+  // Bell schedule — support both old flat and new detailed format
+  if (s.bellSchedule.regular) {
+    lines.push("  Bell Schedule:");
+    lines.push(formatBellSchedule(s.bellSchedule));
+  } else {
+    lines.push(`  Bell Schedule: ${s.bellSchedule.start} – ${s.bellSchedule.end} (early release: ${s.bellSchedule.earlyRelease})`);
+  }
+  lines.push(`  Lunch Menu: ${s.lunchUrl}`);
+  lines.push(`  Community School: ${s.communitySchool ? "Yes" : "No"}`);
+  lines.push(`  CDS Code: ${s.cdsCode}`);
   if (s.parentLinks) {
     lines.push(`  Parent Platform: ${s.parentLinks.platform}`);
   }

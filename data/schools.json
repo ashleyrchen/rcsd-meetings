@@ -16,9 +16,22 @@
       "website": "https://adelanteselby.rcsdk8.net",
       "principal": "Patricia Alcocer",
       "bellSchedule": {
-        "start": "8:15 AM",
-        "end": "2:50 PM",
-        "earlyRelease": "1:05 PM"
+        "earlyReleaseDay": "Thursday",
+        "supervision": null,
+        "regular": [
+          { "grades": "TK", "start": "8:28 AM", "end": "1:40 PM" },
+          { "grades": "K", "start": "8:18 AM", "end": "2:00 PM" },
+          { "grades": "1", "start": "8:13 AM", "end": "2:20 PM" },
+          { "grades": "2-3", "start": "8:08 AM", "end": "2:25 PM" },
+          { "grades": "4-5", "start": "8:03 AM", "end": "2:25 PM" }
+        ],
+        "earlyRelease": [
+          { "grades": "TK", "end": "12:45 PM" },
+          { "grades": "K", "end": "1:15 PM" },
+          { "grades": "1", "end": "1:20 PM" },
+          { "grades": "2-5", "end": "1:25 PM" }
+        ],
+        "superMinimum": null
       },
       "lunchUrl": "https://menus.healthepro.com/organizations/1184/sites/9274/menus/103750",
       "communitySchool": true,
@@ -54,9 +67,24 @@
       "website": "https://clifford.rcsdk8.net",
       "principal": "Kristy Jackson",
       "bellSchedule": {
-        "start": "8:30 AM",
-        "end": "3:05 PM",
-        "earlyRelease": "1:20 PM"
+        "earlyReleaseDay": "Thursday",
+        "supervision": null,
+        "regular": [
+          { "grades": "TK", "start": "8:20 AM", "end": "1:20 PM" },
+          { "grades": "K", "start": "8:15 AM", "end": "2:05 PM" },
+          { "grades": "1-3", "start": "8:15 AM", "end": "2:30 PM" },
+          { "grades": "4-5", "start": "8:15 AM", "end": "2:40 PM" },
+          { "grades": "6-8", "start": "8:15 AM", "end": "2:40 PM" }
+        ],
+        "earlyRelease": [
+          { "grades": "TK", "end": "12:35 PM" },
+          { "grades": "K", "end": "1:15 PM" },
+          { "grades": "1-3", "end": "1:30 PM" },
+          { "grades": "4-8", "end": "1:35 PM" }
+        ],
+        "superMinimum": [
+          { "grades": "TK-8", "end": "11:45 AM" }
+        ]
       },
       "lunchUrl": "https://menus.healthepro.com/organizations/1184/sites/9275/menus/103731",
       "communitySchool": false,
@@ -93,9 +121,17 @@
       "website": "https://garfield.rcsdk8.net",
       "principal": "Jennifer Knopf",
       "bellSchedule": {
-        "start": "8:15 AM",
-        "end": "2:50 PM",
-        "earlyRelease": "1:05 PM"
+        "earlyReleaseDay": "Thursday",
+        "supervision": null,
+        "regular": [
+          { "grades": "K", "start": "8:10 AM", "end": "2:30 PM" },
+          { "grades": "1-2", "start": "8:10 AM", "end": "2:50 PM" },
+          { "grades": "3-5", "start": "8:10 AM", "end": "2:50 PM" }
+        ],
+        "earlyRelease": [
+          { "grades": "K-5", "end": "1:05 PM" }
+        ],
+        "superMinimum": null
       },
       "lunchUrl": "https://menus.healthepro.com/organizations/1184/sites/9277/menus/103763",
       "parentLinks": {
@@ -122,9 +158,25 @@
       "website": "https://henryford.rcsdk8.net",
       "principal": "Jennifer Sanchez",
       "bellSchedule": {
-        "start": "8:15 AM",
-        "end": "2:50 PM",
-        "earlyRelease": "1:05 PM"
+        "earlyReleaseDay": "Thursday",
+        "supervision": null,
+        "regular": [
+          { "grades": "TK", "start": "8:15 AM", "end": "1:30 PM" },
+          { "grades": "K", "start": "8:15 AM", "end": "1:45 PM" },
+          { "grades": "1-3", "start": "8:15 AM", "end": "2:30 PM" },
+          { "grades": "4-5", "start": "8:15 AM", "end": "2:45 PM" }
+        ],
+        "earlyRelease": [
+          { "grades": "TK", "end": "12:45 PM" },
+          { "grades": "K", "end": "1:00 PM" },
+          { "grades": "1-5", "end": "1:30 PM" }
+        ],
+        "superMinimum": [
+          { "grades": "TK", "end": "11:00 AM" },
+          { "grades": "K", "end": "11:15 AM" },
+          { "grades": "1-3", "end": "11:30 AM" },
+          { "grades": "4-5", "end": "11:45 AM" }
+        ]
       },
       "lunchUrl": "https://menus.healthepro.com/organizations/1184/sites/9278/menus/103766",
       "communitySchool": true,
@@ -162,9 +214,28 @@
       "website": "https://hoover.rcsdk8.net",
       "principal": "Lupe Guzmán",
       "bellSchedule": {
-        "start": "8:15 AM",
-        "end": "2:50 PM",
-        "earlyRelease": "1:05 PM"
+        "earlyReleaseDay": "Thursday",
+        "supervision": null,
+        "regular": [
+          { "grades": "TK", "start": "8:15 AM", "end": "1:50 PM" },
+          { "grades": "K", "start": "8:15 AM", "end": "2:00 PM" },
+          { "grades": "1", "start": "8:15 AM", "end": "2:25 PM" },
+          { "grades": "2-3", "start": "8:15 AM", "end": "2:25 PM" },
+          { "grades": "4-5", "start": "8:15 AM", "end": "2:45 PM" },
+          { "grades": "6-8", "start": "8:15 AM", "end": "2:48 PM" }
+        ],
+        "earlyRelease": [
+          { "grades": "TK-K", "end": "1:05 PM" },
+          { "grades": "1", "end": "1:20 PM" },
+          { "grades": "2-3", "end": "1:25 PM" },
+          { "grades": "4-5", "end": "1:30 PM" },
+          { "grades": "6-8", "end": "1:32 PM" }
+        ],
+        "superMinimum": [
+          { "grades": "TK-K", "end": "11:25 AM" },
+          { "grades": "1-3", "end": "11:35 AM" },
+          { "grades": "4-8", "end": "11:45 AM" }
+        ]
       },
       "lunchUrl": "https://menus.healthepro.com/organizations/1184/sites/9279/menus/103767",
       "parentLinks": {
@@ -191,9 +262,15 @@
       "website": "https://kennedy.rcsdk8.net",
       "principal": "Chandra Leonardo",
       "bellSchedule": {
-        "start": "8:30 AM",
-        "end": "3:25 PM",
-        "earlyRelease": "1:20 PM"
+        "earlyReleaseDay": "Thursday",
+        "supervision": null,
+        "regular": [
+          { "grades": "6-8", "start": "8:30 AM", "end": "3:15 PM" }
+        ],
+        "earlyRelease": [
+          { "grades": "6-8", "end": "1:50 PM" }
+        ],
+        "superMinimum": null
       },
       "lunchUrl": "https://menus.healthepro.com/organizations/1184/sites/9280/menus/103754",
       "communitySchool": true,
@@ -231,9 +308,17 @@
       "website": "https://mit.rcsdk8.net",
       "principal": "Dr. Luis Arreola",
       "bellSchedule": {
-        "start": "8:30 AM",
-        "end": "3:25 PM",
-        "earlyRelease": "1:20 PM"
+        "earlyReleaseDay": "Thursday",
+        "supervision": null,
+        "regular": [
+          { "grades": "6-8", "start": "8:25 AM", "end": "3:10 PM" }
+        ],
+        "earlyRelease": [
+          { "grades": "6-8", "end": "2:10 PM" }
+        ],
+        "superMinimum": [
+          { "grades": "6-8", "end": "11:30 AM" }
+        ]
       },
       "lunchUrl": "https://menus.healthepro.com/organizations/1184/sites/9281/menus/103771",
       "parentLinks": {
@@ -260,9 +345,18 @@
       "website": "https://northstar.rcsdk8.net",
       "principal": "Erin Kekos",
       "bellSchedule": {
-        "start": "8:30 AM",
-        "end": "3:05 PM",
-        "earlyRelease": "1:20 PM"
+        "earlyReleaseDay": "Thursday",
+        "supervision": null,
+        "regular": [
+          { "grades": "3-8", "start": "8:35 AM", "end": "3:00 PM" }
+        ],
+        "earlyRelease": [
+          { "grades": "3-8", "end": "1:55 PM" }
+        ],
+        "superMinimum": [
+          { "grades": "3", "start": "8:55 AM", "end": "11:40 AM" },
+          { "grades": "4-8", "end": "11:40 AM" }
+        ]
       },
       "lunchUrl": "https://menus.healthepro.com/organizations/1184/sites/9366/menus/103771",
       "communitySchool": false,
@@ -299,9 +393,23 @@
       "website": "https://orion.rcsdk8.net",
       "principal": "Winnie Chen",
       "bellSchedule": {
-        "start": "8:15 AM",
-        "end": "2:50 PM",
-        "earlyRelease": "1:05 PM"
+        "earlyReleaseDay": "Thursday",
+        "supervision": "8:00 AM",
+        "regular": [
+          { "grades": "TK", "start": "8:25 AM", "end": "1:30 PM" },
+          { "grades": "K", "start": "8:25 AM", "end": "2:00 PM" },
+          { "grades": "1-2", "start": "8:15 AM", "end": "2:30 PM" },
+          { "grades": "3-5", "start": "8:15 AM", "end": "2:40 PM" }
+        ],
+        "earlyRelease": [
+          { "grades": "TK", "end": "12:30 PM" },
+          { "grades": "K", "end": "1:00 PM" },
+          { "grades": "1-2", "end": "1:30 PM" },
+          { "grades": "3-5", "end": "1:40 PM" }
+        ],
+        "superMinimum": [
+          { "grades": "TK-5", "end": "11:45 AM" }
+        ]
       },
       "lunchUrl": "https://menus.healthepro.com/organizations/1184/sites/9282/menus/103774",
       "communitySchool": false,
@@ -346,9 +454,21 @@
       "website": "https://roosevelt.rcsdk8.net",
       "principal": "Tina Mercer",
       "bellSchedule": {
-        "start": "8:15 AM",
-        "end": "2:50 PM",
-        "earlyRelease": "1:05 PM"
+        "earlyReleaseDay": "Thursday",
+        "supervision": null,
+        "regular": [
+          { "grades": "TK", "start": "8:30 AM", "end": "1:30 PM" },
+          { "grades": "K", "start": "8:15 AM", "end": "2:05 PM" },
+          { "grades": "1-3", "start": "8:15 AM", "end": "2:30 PM" },
+          { "grades": "4-5", "start": "8:15 AM", "end": "2:40 PM" }
+        ],
+        "earlyRelease": [
+          { "grades": "TK", "end": "12:30 PM" },
+          { "grades": "K", "end": "1:05 PM" },
+          { "grades": "1-3", "end": "1:30 PM" },
+          { "grades": "4-5", "end": "1:40 PM" }
+        ],
+        "superMinimum": null
       },
       "lunchUrl": "https://menus.healthepro.com/organizations/1184/sites/9284/menus/103755",
       "communitySchool": true,
@@ -384,9 +504,22 @@
       "website": "https://roycloud.rcsdk8.net",
       "principal": "Melissa Bowdoin",
       "bellSchedule": {
-        "start": "8:30 AM",
-        "end": "3:05 PM",
-        "earlyRelease": "1:20 PM"
+        "earlyReleaseDay": "Thursday",
+        "supervision": "8:00 AM",
+        "regular": [
+          { "grades": "TK", "start": "8:15 AM", "end": "1:30 PM" },
+          { "grades": "K", "start": "8:15 AM", "end": "1:45 PM" },
+          { "grades": "1-2", "start": "8:15 AM", "end": "2:25 PM" },
+          { "grades": "3", "start": "8:15 AM", "end": "2:25 PM" },
+          { "grades": "4-5", "start": "8:15 AM", "end": "2:50 PM" },
+          { "grades": "6-8", "start": "8:15 AM", "end": "2:50 PM" }
+        ],
+        "earlyRelease": [
+          { "grades": "TK-8", "end": "12:50 PM" }
+        ],
+        "superMinimum": [
+          { "grades": "TK-8", "end": "11:45 AM" }
+        ]
       },
       "lunchUrl": "https://menus.healthepro.com/organizations/1184/sites/9283/menus/103751",
       "communitySchool": false,
@@ -423,9 +556,23 @@
       "website": "https://taft.rcsdk8.net",
       "principal": "David Camarena",
       "bellSchedule": {
-        "start": "8:15 AM",
-        "end": "2:50 PM",
-        "earlyRelease": "1:05 PM"
+        "earlyReleaseDay": "Thursday",
+        "supervision": null,
+        "regular": [
+          { "grades": "TK", "start": "8:30 AM", "end": "1:30 PM" },
+          { "grades": "K", "start": "8:20 AM", "end": "2:00 PM" },
+          { "grades": "1", "start": "8:20 AM", "end": "2:25 PM" },
+          { "grades": "2", "start": "8:20 AM", "end": "2:30 PM" },
+          { "grades": "3-5", "start": "8:15 AM", "end": "2:45 PM" }
+        ],
+        "earlyRelease": [
+          { "grades": "TK", "end": "1:00 PM" },
+          { "grades": "K", "end": "1:10 PM" },
+          { "grades": "1", "end": "1:20 PM" },
+          { "grades": "2", "end": "1:25 PM" },
+          { "grades": "3-5", "end": "1:35 PM" }
+        ],
+        "superMinimum": null
       },
       "lunchUrl": "https://menus.healthepro.com/organizations/1184/sites/9285/menus/103756",
       "parentLinks": {
@@ -458,5 +605,5 @@
     "descriptionEs": "RCEF proporciona financiamiento suplementario para todas las escuelas de RCSD, con un enfoque en equidad para escuelas sin PTO activas.",
     "sourceUrl": "https://projects.propublica.org/nonprofits/organizations/942903141"
   },
-  "lastUpdated": "2026-03-10"
+  "lastUpdated": "2026-03-12"
 }

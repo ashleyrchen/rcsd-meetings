@@ -221,10 +221,15 @@ await question(
   ({ school }) => {
     const problems = [];
     if (!school.includes("Bell Schedule:")) problems.push("Missing bell schedule");
-    if (!school.includes("early release:")) problems.push("Missing early release time");
-    // Should show both regular end time and early release time
-    const match = school.match(/Bell Schedule:.*?(\d+:\d+ [AP]M)\s+[–-]\s+(\d+:\d+ [AP]M).*?early release:\s+(\d+:\d+ [AP]M)/);
-    if (!match) problems.push("Can't parse start, end, and early release times");
+    if (!school.includes("early release")) problems.push("Missing early release info");
+    // Should show both regular and early release schedules with grade breakdowns
+    if (!school.includes("Regular days")) problems.push("Missing regular days schedule");
+    if (!school.includes("Thursday early release")) problems.push("Missing Thursday early release schedule");
+    // Should have parseable times
+    const hasRegularTime = school.match(/\d+:\d+ [AP]M\s+[–-]\s+\d+:\d+ [AP]M/);
+    if (!hasRegularTime) problems.push("Can't parse regular schedule times");
+    const hasDismissal = school.match(/dismissal\s+\d+:\d+ [AP]M/);
+    if (!hasDismissal) problems.push("Can't parse early release dismissal times");
     return problems;
   }
 );
