@@ -73,6 +73,8 @@ function formatSchool(s: any): string {
     lines.push(
       `  PTO: ${s.pto.name} — $${s.pto.revenue?.toLocaleString() || "?"} revenue (${s.pto.revenueFY})`
     );
+  } else {
+    lines.push("  PTO: None — school is supported by RCEF (Redwood City Education Foundation)");
   }
   return lines.join("\n");
 }
@@ -198,6 +200,59 @@ function createServer(): McpServer {
     async ({ school, date }) => {
       if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) {
         return { isError: true, content: [{ type: "text", text: "Date must be YYYY-MM-DD format" }] };
+      }
+
+      // Check if this is a no-school day before fetching menu
+      const dayOfWeek = new Date(date + "T12:00:00").getDay();
+      if (dayOfWeek === 0 || dayOfWeek === 6) {
+        return { content: [{ type: "text", text: `${date} is a weekend — no school lunch.` }] };
+      }
+      try {
+        const calendars = await Promise.all([
+          fetchJSON("district-calendar-2025-26.json"),
+          fetchJSON("district-calendar-2026-27.json"),
+        ]);
+        // Check no-school days (holidays, teacher training, planning days, breaks)
+        for (const cal of calendars) {
+          for (const evt of cal.events) {
+            if (evt.type === "no-school") {
+              const start = evt.date;
+              const end = evt.dateEnd || evt.date;
+              if (date >= start && date <= end) {
+                return {
+                  content: [{ type: "text", text: `No school lunch on ${date} — ${evt.en}. School is closed.` }],
+                };
+              }
+            }
+            // Super-minimum / minimum days: students dismissed before lunch
+            if (evt.type === "minimum-day" || evt.type === "super-minimum") {
+              const start = evt.date;
+              const end = evt.dateEnd || evt.date;
+              if (date >= start && date <= end) {
+                return {
+                  content: [{ type: "text", text: `No school lunch on ${date} — ${evt.en}. Students are dismissed before lunch on super-minimum days.` }],
+                };
+              }
+            }
+          }
+        }
+        // Check if date falls outside school year (summer, pre-session)
+        let withinSchoolYear = false;
+        for (const cal of calendars) {
+          const first = cal.events.find((e: any) => e.en.includes("First Day"));
+          const last = cal.events.find((e: any) => e.en.includes("Last Day"));
+          if (first && last && date >= first.date && date <= last.date) {
+            withinSchoolYear = true;
+            break;
+          }
+        }
+        if (!withinSchoolYear) {
+          return {
+            content: [{ type: "text", text: `No school lunch on ${date} — school is not in session.` }],
+          };
+        }
+      } catch {
+        // Calendar check failed — proceed with menu fetch anyway
       }
 
       const data = await fetchJSON("schools.json");
