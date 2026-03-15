@@ -1,0 +1,70 @@
+{
+  "2026-02-26": {
+    "videoId": "8NOEEW_cpyU",
+    "speakers": {
+      "A": {
+        "name": "David Weekly",
+        "role": "Board President"
+      },
+      "B": {
+        "name": "Mike Wells",
+        "role": "Trustee (remote)"
+      },
+      "C": {
+        "name": "Evelyn Sanchez",
+        "role": "Executive Assistant to Superintendent / Board Secretary"
+      },
+      "D": {
+        "name": "David Li",
+        "role": "Trustee"
+      },
+      "E": {
+        "name": "Jennifer Ng Kwing King",
+        "role": "Clerk"
+      },
+      "F": {
+        "name": "Cecilia I. Márquez",
+        "role": "Vice President"
+      },
+      "G": {
+        "name": "Jessica",
+        "role": "Public commenter (parent)"
+      },
+      "H": {
+        "name": "Nell Colar",
+        "role": "Public commenter (remote)"
+      }
+    },
+    "agendaChanges": "Public comment was taken as a general period before the posted agenda items were formally opened. The president introduced item 0 (public hearing) at 284s and item 1 (resolution adoption) immediately after at 314s, consistent with posted order.",
+    "items": [
+      {
+        "agendaIndex": 0,
+        "phases": {
+          "opened": 284,
+          "presentation": null,
+          "publicComment": 116,
+          "discussion": null,
+          "vote": null
+        },
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "agendaIndex": 1,
+        "phases": {
+          "opened": 314,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 339,
+          "vote": {
+            "seconds": 766,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  }
+}

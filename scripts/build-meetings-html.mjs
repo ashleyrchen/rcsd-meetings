@@ -355,6 +355,13 @@ function escapeHtml(s) {
   return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 
+function formatTS(seconds) {
+  const h = Math.floor(seconds / 3600);
+  const m = Math.floor((seconds % 3600) / 60);
+  const s = seconds % 60;
+  return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+}
+
 const THREAD_LABELS = {
   'superintendent-search': 'Superintendent Search',
   'budget': 'Budget & Resource Alignment',
@@ -611,10 +618,39 @@ function renderAgendaItems(m) {
     const typeLabel = item.actionType && item.actionType !== 'Information' ?
       `<span class="agenda-item-type">${escapeHtml(item.actionType)}</span>` : '';
 
-    // Timestamp link if available
-    const tsLink = (item.timestampSeconds != null && m.youtube)
-      ? `<a class="agenda-timestamp" href="https://www.youtube.com/watch?v=${m.youtube}&t=${item.timestampSeconds}" target="_blank" rel="noopener">${escapeHtml(item.timestamp)}</a>`
-      : '';
+    // Timestamp / chapter phase links
+    let tsLink = '';
+    const ytBase = m.youtube ? `https://www.youtube.com/watch?v=${m.youtube}` : '';
+    if (item.phases && ytBase) {
+      // Rich chapter markers: show phase links
+      const phases = item.phases;
+      const phaseLinks = [];
+      if (phases.opened != null) {
+        phaseLinks.push(`<a class="agenda-phase agenda-phase-start" href="${ytBase}&t=${phases.opened}" target="_blank" rel="noopener">${formatTS(phases.opened)}</a>`);
+      }
+      if (phases.presentation != null) {
+        phaseLinks.push(`<a class="agenda-phase" href="${ytBase}&t=${phases.presentation}" target="_blank" rel="noopener">${L.lang === 'es' ? 'Presentación' : 'Presentation'}</a>`);
+      }
+      if (phases.discussion != null) {
+        phaseLinks.push(`<a class="agenda-phase" href="${ytBase}&t=${phases.discussion}" target="_blank" rel="noopener">${L.lang === 'es' ? 'Discusión' : 'Discussion'}</a>`);
+      }
+      if (phases.publicComment != null) {
+        phaseLinks.push(`<a class="agenda-phase" href="${ytBase}&t=${phases.publicComment}" target="_blank" rel="noopener">${L.lang === 'es' ? 'Comentario público' : 'Public Comment'}</a>`);
+      }
+      if (phases.vote != null) {
+        const voteSec = typeof phases.vote === 'object' ? phases.vote.seconds : phases.vote;
+        const voteResult = typeof phases.vote === 'object' && phases.vote.result ? ` (${phases.vote.result})` : '';
+        if (voteSec != null) {
+          phaseLinks.push(`<a class="agenda-phase agenda-phase-vote" href="${ytBase}&t=${voteSec}" target="_blank" rel="noopener">${L.lang === 'es' ? 'Voto' : 'Vote'}${voteResult}</a>`);
+        }
+      }
+      if (phaseLinks.length > 0) {
+        tsLink = `<span class="agenda-phases">${phaseLinks.join(' ')}</span>`;
+      }
+    } else if (item.timestampSeconds != null && ytBase) {
+      // Legacy single timestamp
+      tsLink = `<a class="agenda-timestamp" href="${ytBase}&t=${item.timestampSeconds}" target="_blank" rel="noopener">${escapeHtml(item.timestamp)}</a>`;
+    }
 
     itemsHtml += `<div class="agenda-item">${order}${tsLink}${escapeHtml(title)}${typeLabel}</div>`;
 
@@ -1524,6 +1560,38 @@ const pageCSS = `
     text-decoration: underline;
   }
 
+  .agenda-phases {
+    display: inline-flex;
+    gap: 0.25rem;
+    margin-right: 0.4rem;
+    flex-shrink: 0;
+  }
+
+  .agenda-phase {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.55rem;
+    color: var(--coral);
+    text-decoration: none;
+    padding: 0.05rem 0.25rem;
+    border: 1px solid var(--green-pale);
+    border-radius: 3px;
+    white-space: nowrap;
+  }
+
+  .agenda-phase:hover {
+    color: var(--green-deep);
+    border-color: var(--green-deep);
+    text-decoration: none;
+  }
+
+  .agenda-phase-start {
+    font-weight: 600;
+  }
+
+  .agenda-phase-vote {
+    color: var(--green-deep);
+    font-weight: 600;
+  }
 
   .meeting-date {
     flex-shrink: 0;

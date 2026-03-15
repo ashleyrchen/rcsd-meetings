@@ -267,6 +267,15 @@ if (existsSync(timestampMapPath)) {
   console.log(`Loaded timestamp map for ${Object.keys(timestampMap).length} meetings`);
 }
 
+// ---- Load chapter markers (supersedes timestamp-map where available) ----
+
+const chapterMarkersPath = resolve(ROOT, 'data/chapter-markers.json');
+let chapterMarkers = {};
+if (existsSync(chapterMarkersPath)) {
+  chapterMarkers = JSON.parse(readFileSync(chapterMarkersPath, 'utf-8'));
+  console.log(`Loaded chapter markers for ${Object.keys(chapterMarkers).length} meetings`);
+}
+
 // ---- Check which videos have transcripts + extract duration ----
 
 // Manual duration overrides for meetings without transcripts/captions
@@ -463,13 +472,41 @@ for (const m of allMeetings) {
     m.durationSeconds = dur.seconds;
   }
 
-  // Merge timestamps into items
-  const tsData = timestampMap[m.date];
-  if (tsData && m.items) {
-    for (let i = 0; i < m.items.length; i++) {
-      if (tsData.items[i]) {
-        m.items[i].timestamp = tsData.items[i].timestamp;
-        m.items[i].timestampSeconds = tsData.items[i].timestampSeconds;
+  // Merge chapter markers (preferred) or timestamp map into items
+  const cm = chapterMarkers[m.date];
+  if (cm && m.items) {
+    // Store meeting-level chapter data
+    m.speakers = cm.speakers;
+    m.agendaChanges = cm.agendaChanges;
+
+    for (const cmItem of cm.items) {
+      const idx = cmItem.agendaIndex;
+      if (idx >= 0 && idx < m.items.length) {
+        const item = m.items[idx];
+        // Set opened timestamp as the primary timestamp
+        if (cmItem.phases?.opened != null) {
+          const sec = cmItem.phases.opened;
+          const h = Math.floor(sec / 3600);
+          const min = Math.floor((sec % 3600) / 60);
+          const s = sec % 60;
+          item.timestamp = `${String(h).padStart(2, '0')}:${String(min).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+          item.timestampSeconds = sec;
+        }
+        // Store full chapter phases
+        item.phases = cmItem.phases;
+        item.consent = cmItem.consent || false;
+        item.pulled = cmItem.pulled || false;
+      }
+    }
+  } else {
+    // Fall back to legacy timestamp map
+    const tsData = timestampMap[m.date];
+    if (tsData && m.items) {
+      for (let i = 0; i < m.items.length; i++) {
+        if (tsData.items[i]) {
+          m.items[i].timestamp = tsData.items[i].timestamp;
+          m.items[i].timestampSeconds = tsData.items[i].timestampSeconds;
+        }
       }
     }
   }
