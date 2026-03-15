@@ -802,7 +802,9 @@ function renderMeeting(m) {
       }
     }
   }
-  if (hasR2Transcript) {
+  if (m.hasTranscript) {
+    links += `<a href="${R2_BASE}/transcripts/${m.date}.json" class="meeting-link meeting-link--transcript" target="_blank" rel="noopener">&#128221; ${L.transcript}</a>`;
+  } else if (hasR2Transcript) {
     links += `<a href="${R2_BASE}/transcripts/${transcriptFile}" class="meeting-link meeting-link--transcript" target="_blank" rel="noopener">&#128221; ${L.transcript}</a>`;
   }
   if (m.boarddocs) {
