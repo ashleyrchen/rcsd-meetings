@@ -1,0 +1,350 @@
+{
+  "date": "2020-04-01",
+  "itemCount": 33,
+  "llmResponse": {
+    "speakers": {
+      "A": {
+        "name": "Multiple speakers / unclear",
+        "role": "Various board members and staff (ASR label shared)"
+      },
+      "B": {
+        "name": "Eliana (district staff)",
+        "role": "District Secretary/Clerk calling roll"
+      },
+      "C": {
+        "name": "Janet Lawson",
+        "role": "Vice President"
+      },
+      "D": {
+        "name": "John Baker",
+        "role": "Superintendent"
+      },
+      "E": {
+        "name": "Kyle (Technology Director)",
+        "role": "Director of Technology Services"
+      },
+      "F": {
+        "name": "Multiple speakers / unclear",
+        "role": "Various board members and staff (ASR label shared)"
+      },
+      "G": {
+        "name": "Dennis McBride",
+        "role": "President"
+      },
+      "H": {
+        "name": "Alisa MacAvoy",
+        "role": "Clerk (calling in by phone)"
+      },
+      "I": {
+        "name": "Multiple speakers / unclear",
+        "role": "Various speakers (ASR label shared)"
+      },
+      "J": {
+        "name": "Pati Ortiz",
+        "role": "Community Schools Coordinator"
+      }
+    },
+    "agendaChanges": "Dennis McBride requested addition of a Staff Recognition item after Item 5 (Oral Communication). The item was inserted between Item 5 and Item 6. No items were pulled from any consent calendar. The meeting also proceeded without an explicit 'Oral Communication' segment (no speakers had cards for Item 5); the Staff Recognition was inserted there instead.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order / Roll Call",
+        "phases": {
+          "opened": 0,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Welcome by the School Board President / Pledge of Allegiance",
+        "phases": {
+          "opened": 13,
+          "presentation": 200,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 227,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 246,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 259,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 283,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 299,
+          "presentation": null,
+          "publicComment": 299,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Staff Recognition (added item, inserted after Item 5)",
+        "phases": {
+          "opened": 317,
+          "presentation": 321,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6.1",
+        "title": "Emergency Meeting of the Governing Board / Resolution 22 – Designating District Public Works Projects As Essential Governmental Functions",
+        "phases": {
+          "opened": 359,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 379,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 7476,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 7486,
+            "type": "voice",
+            "result": "unanimous"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "result": {
+    "videoId": "0cWwZ9lGR0U",
+    "speakers": {
+      "A": {
+        "name": "Multiple speakers / unclear",
+        "role": "Various board members and staff (ASR label shared)"
+      },
+      "B": {
+        "name": "Eliana (district staff)",
+        "role": "District Secretary/Clerk calling roll"
+      },
+      "C": {
+        "name": "Janet Lawson",
+        "role": "Vice President"
+      },
+      "D": {
+        "name": "John Baker",
+        "role": "Superintendent"
+      },
+      "E": {
+        "name": "Kyle (Technology Director)",
+        "role": "Director of Technology Services"
+      },
+      "F": {
+        "name": "Multiple speakers / unclear",
+        "role": "Various board members and staff (ASR label shared)"
+      },
+      "G": {
+        "name": "Dennis McBride",
+        "role": "President"
+      },
+      "H": {
+        "name": "Alisa MacAvoy",
+        "role": "Clerk (calling in by phone)"
+      },
+      "I": {
+        "name": "Multiple speakers / unclear",
+        "role": "Various speakers (ASR label shared)"
+      },
+      "J": {
+        "name": "Pati Ortiz",
+        "role": "Community Schools Coordinator"
+      }
+    },
+    "agendaChanges": "Dennis McBride requested addition of a Staff Recognition item after Item 5 (Oral Communication). The item was inserted between Item 5 and Item 6. No items were pulled from any consent calendar. The meeting also proceeded without an explicit 'Oral Communication' segment (no speakers had cards for Item 5); the Staff Recognition was inserted there instead.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order / Roll Call",
+        "phases": {
+          "opened": 0,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Welcome by the School Board President / Pledge of Allegiance",
+        "phases": {
+          "opened": 13,
+          "presentation": 200,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 227,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 246,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 259,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 283,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 299,
+          "presentation": null,
+          "publicComment": 299,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Staff Recognition (added item, inserted after Item 5)",
+        "phases": {
+          "opened": 317,
+          "presentation": 321,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6.1",
+        "title": "Emergency Meeting of the Governing Board / Resolution 22 – Designating District Public Works Projects As Essential Governmental Functions",
+        "phases": {
+          "opened": 359,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 379,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 7476,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 7486,
+            "type": "voice",
+            "result": "unanimous"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "cachedAt": "2026-03-15T18:52:38.899Z",
+  "inputTokens": 28960,
+  "outputTokens": 1227
+}

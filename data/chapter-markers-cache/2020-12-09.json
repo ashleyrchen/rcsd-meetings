@@ -1,0 +1,954 @@
+{
+  "date": "2020-12-09",
+  "itemCount": 62,
+  "llmResponse": {
+    "speakers": {
+      "A": {
+        "name": "Janet Lawson",
+        "role": "Board President"
+      },
+      "B": {
+        "name": "Eliana (board secretary)",
+        "role": "Board Secretary/Clerk (roll call and procedural)"
+      },
+      "C": {
+        "name": "Dennis McBride",
+        "role": "Board Trustee (outgoing)"
+      },
+      "D": {
+        "name": "María Díaz-Slocum",
+        "role": "Board Trustee"
+      },
+      "E": {
+        "name": "Alisa MacAvoy",
+        "role": "Board Vice President"
+      },
+      "F": {
+        "name": "Cecilia I. Márquez",
+        "role": "Board Trustee"
+      },
+      "G": {
+        "name": "Dr. John Baker",
+        "role": "Superintendent"
+      }
+    },
+    "agendaChanges": "The meeting opened mid-stream after a closed session and retirement celebration for Dennis McBride. Section 1 (Call to Order), Section 2 (Oral Communication on Closed Session), and Section 3 (Closed Session) had already occurred before the recording begins or at the very start. Section 4 (Reconvene/Roll Call/Report Out on Closed Session) occurs at 0s. Sections 5 (Welcome) and 6 (Changes to Agenda) and 7 (Approval of Agenda) are handled together around 19s-133s. Section 9 (Community/Staff Recognition) was addressed before Section 10. No items were pulled from consent calendars. Bond Program Action Items (Section 12) had no items and was skipped. Sections 17 (Information), 18 (Correspondence) were noted as empty.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order / Roll Call",
+        "phases": {
+          "opened": 0,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Oral Communication on Closed Session Items Only",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Closed Session",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Reconvene to Regular Session / Roll Call / Report Out on Closed Session",
+        "phases": {
+          "opened": 0,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Welcome by the School Board President",
+        "phases": {
+          "opened": 19,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 99,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 99,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 110,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 133,
+          "presentation": null,
+          "publicComment": 133,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9",
+        "title": "Recognition of School Board Members",
+        "phases": {
+          "opened": 133,
+          "presentation": 151,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "Citizens' Measure U Oversight Committee Year Three Report for 2019-2020",
+        "phases": {
+          "opened": 2724,
+          "presentation": 2758,
+          "publicComment": null,
+          "discussion": 2873,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "Bond Program Consent Items",
+        "phases": {
+          "opened": 3075,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3092,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12",
+        "title": "Bond Program Action Items",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "Discussion on COVID-19",
+        "phases": {
+          "opened": 3113,
+          "presentation": 3124,
+          "publicComment": 5730,
+          "discussion": 4843,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Catherine Stewart",
+            "startSeconds": 5763,
+            "endSeconds": 5924,
+            "summary": "Suggested using the return to campus as an opportunity to reset playground behavior patterns and reduce bullying by actively supervising key problem areas."
+          },
+          {
+            "name": "Sonia Persodo",
+            "startSeconds": 5937,
+            "endSeconds": 5998,
+            "summary": "Expressed confusion and disappointment that first-through-fifth-grade teachers at Roy Cloud chose not to return in person, questioning how that choice is permissible when the county deemed schools essential and the district received CARES funding for safety protocols."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "First Reading and Discussion of Board Policy 5131.8 - Mobile Communications Devices",
+        "phases": {
+          "opened": 6446,
+          "presentation": 6458,
+          "publicComment": null,
+          "discussion": 6587,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14",
+        "title": "Consent Items",
+        "phases": {
+          "opened": 6821,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6858,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Approval of Response to Grand Jury Request – Ransomware",
+        "phases": {
+          "opened": 6908,
+          "presentation": 6961,
+          "publicComment": null,
+          "discussion": 7215,
+          "vote": {
+            "seconds": 7442,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "LCFF Budget Overview for Parents",
+        "phases": {
+          "opened": 7468,
+          "presentation": 7474,
+          "publicComment": null,
+          "discussion": 7810,
+          "vote": {
+            "seconds": 7854,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Approval of the 2020-21 First Interim Budget Report for RCSD",
+        "phases": {
+          "opened": 7865,
+          "presentation": 7878,
+          "publicComment": null,
+          "discussion": 9990,
+          "vote": {
+            "seconds": 10539,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Acceptance of California School Employees Association Chapter V Sunshine Proposal for 2020-21 and Demand to Bargain - 2020-21 Calendar",
+        "phases": {
+          "opened": 10551,
+          "presentation": 10564,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 10612,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Governing Board's Initial Proposal for Negotiations with the California School Employees Association, Chapter V for 2020-21",
+        "phases": {
+          "opened": 10637,
+          "presentation": 10637,
+          "publicComment": 10664,
+          "discussion": null,
+          "vote": {
+            "seconds": 10853,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [
+          {
+            "name": "Maria Stockton",
+            "startSeconds": 10702,
+            "endSeconds": 10819,
+            "summary": "As outgoing CSEA chapter president, explained that CSEA had hoped for a simple rollover agreement matching the teachers' 4% raise but was forced to submit a full proposal when the district requested contract language changes; emphasized that fair and equitable treatment for classified staff should not be measured purely by percentage."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Discussion and Approval of Board Policy 6158 - Independent Study",
+        "phases": {
+          "opened": 10875,
+          "presentation": 10876,
+          "publicComment": null,
+          "discussion": 11006,
+          "vote": {
+            "seconds": 11038,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16",
+        "title": "Report from Board Members and Superintendent",
+        "phases": {
+          "opened": 11052,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 11068,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "17",
+        "title": "Information",
+        "phases": {
+          "opened": 11399,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "18",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 11399,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "19",
+        "title": "Other Business/Suggested Items for Future Agenda",
+        "phases": {
+          "opened": 11399,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "20",
+        "title": "Changes to the Board Agenda Schedule",
+        "phases": {
+          "opened": 11433,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "21",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 11613,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 11617,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "result": {
+    "videoId": "C6EkF9qWMJ4",
+    "speakers": {
+      "A": {
+        "name": "Janet Lawson",
+        "role": "Board President"
+      },
+      "B": {
+        "name": "Eliana (board secretary)",
+        "role": "Board Secretary/Clerk (roll call and procedural)"
+      },
+      "C": {
+        "name": "Dennis McBride",
+        "role": "Board Trustee (outgoing)"
+      },
+      "D": {
+        "name": "María Díaz-Slocum",
+        "role": "Board Trustee"
+      },
+      "E": {
+        "name": "Alisa MacAvoy",
+        "role": "Board Vice President"
+      },
+      "F": {
+        "name": "Cecilia I. Márquez",
+        "role": "Board Trustee"
+      },
+      "G": {
+        "name": "Dr. John Baker",
+        "role": "Superintendent"
+      }
+    },
+    "agendaChanges": "The meeting opened mid-stream after a closed session and retirement celebration for Dennis McBride. Section 1 (Call to Order), Section 2 (Oral Communication on Closed Session), and Section 3 (Closed Session) had already occurred before the recording begins or at the very start. Section 4 (Reconvene/Roll Call/Report Out on Closed Session) occurs at 0s. Sections 5 (Welcome) and 6 (Changes to Agenda) and 7 (Approval of Agenda) are handled together around 19s-133s. Section 9 (Community/Staff Recognition) was addressed before Section 10. No items were pulled from consent calendars. Bond Program Action Items (Section 12) had no items and was skipped. Sections 17 (Information), 18 (Correspondence) were noted as empty.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order / Roll Call",
+        "phases": {
+          "opened": 0,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Oral Communication on Closed Session Items Only",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Closed Session",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Reconvene to Regular Session / Roll Call / Report Out on Closed Session",
+        "phases": {
+          "opened": 0,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Welcome by the School Board President",
+        "phases": {
+          "opened": 19,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 99,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 99,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 110,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 133,
+          "presentation": null,
+          "publicComment": 133,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9",
+        "title": "Recognition of School Board Members",
+        "phases": {
+          "opened": 133,
+          "presentation": 151,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "Citizens' Measure U Oversight Committee Year Three Report for 2019-2020",
+        "phases": {
+          "opened": 2724,
+          "presentation": 2758,
+          "publicComment": null,
+          "discussion": 2873,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "Bond Program Consent Items",
+        "phases": {
+          "opened": 3075,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3092,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12",
+        "title": "Bond Program Action Items",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "Discussion on COVID-19",
+        "phases": {
+          "opened": 3113,
+          "presentation": 3124,
+          "publicComment": 5730,
+          "discussion": 4843,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Catherine Stewart",
+            "startSeconds": 5763,
+            "endSeconds": 5924,
+            "summary": "Suggested using the return to campus as an opportunity to reset playground behavior patterns and reduce bullying by actively supervising key problem areas."
+          },
+          {
+            "name": "Sonia Persodo",
+            "startSeconds": 5937,
+            "endSeconds": 5998,
+            "summary": "Expressed confusion and disappointment that first-through-fifth-grade teachers at Roy Cloud chose not to return in person, questioning how that choice is permissible when the county deemed schools essential and the district received CARES funding for safety protocols."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "First Reading and Discussion of Board Policy 5131.8 - Mobile Communications Devices",
+        "phases": {
+          "opened": 6446,
+          "presentation": 6458,
+          "publicComment": null,
+          "discussion": 6587,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14",
+        "title": "Consent Items",
+        "phases": {
+          "opened": 6821,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6858,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Approval of Response to Grand Jury Request – Ransomware",
+        "phases": {
+          "opened": 6908,
+          "presentation": 6961,
+          "publicComment": null,
+          "discussion": 7215,
+          "vote": {
+            "seconds": 7442,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "LCFF Budget Overview for Parents",
+        "phases": {
+          "opened": 7468,
+          "presentation": 7474,
+          "publicComment": null,
+          "discussion": 7810,
+          "vote": {
+            "seconds": 7854,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Approval of the 2020-21 First Interim Budget Report for RCSD",
+        "phases": {
+          "opened": 7865,
+          "presentation": 7878,
+          "publicComment": null,
+          "discussion": 9990,
+          "vote": {
+            "seconds": 10539,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Acceptance of California School Employees Association Chapter V Sunshine Proposal for 2020-21 and Demand to Bargain - 2020-21 Calendar",
+        "phases": {
+          "opened": 10551,
+          "presentation": 10564,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 10612,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Governing Board's Initial Proposal for Negotiations with the California School Employees Association, Chapter V for 2020-21",
+        "phases": {
+          "opened": 10637,
+          "presentation": 10637,
+          "publicComment": 10664,
+          "discussion": null,
+          "vote": {
+            "seconds": 10853,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [
+          {
+            "name": "Maria Stockton",
+            "startSeconds": 10702,
+            "endSeconds": 10819,
+            "summary": "As outgoing CSEA chapter president, explained that CSEA had hoped for a simple rollover agreement matching the teachers' 4% raise but was forced to submit a full proposal when the district requested contract language changes; emphasized that fair and equitable treatment for classified staff should not be measured purely by percentage."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Discussion and Approval of Board Policy 6158 - Independent Study",
+        "phases": {
+          "opened": 10875,
+          "presentation": 10876,
+          "publicComment": null,
+          "discussion": 11006,
+          "vote": {
+            "seconds": 11038,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16",
+        "title": "Report from Board Members and Superintendent",
+        "phases": {
+          "opened": 11052,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 11068,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "17",
+        "title": "Information",
+        "phases": {
+          "opened": 11399,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "18",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 11399,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "19",
+        "title": "Other Business/Suggested Items for Future Agenda",
+        "phases": {
+          "opened": 11399,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "20",
+        "title": "Changes to the Board Agenda Schedule",
+        "phases": {
+          "opened": 11433,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "21",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 11613,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 11617,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "cachedAt": "2026-03-15T18:33:20.930Z",
+  "inputTokens": 45610,
+  "outputTokens": 3880
+}

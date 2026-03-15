@@ -1,6 +1,6 @@
 {
   "date": "2026-02-26",
-  "itemCount": 2,
+  "itemCount": 11,
   "llmResponse": {
     "speakers": {
       "A": {
@@ -29,10 +29,10 @@
       },
       "G": {
         "name": "Jessica",
-        "role": "Public speaker (parent)"
+        "role": "Public speaker / parent"
       },
       "H": {
-        "name": "Nell Colar",
+        "name": "Elle Kolekar",
         "role": "Public speaker (remote)"
       }
     },
@@ -48,6 +48,7 @@
           "discussion": null,
           "vote": null
         },
+        "publicComments": [],
         "consent": false,
         "pulled": false
       },
@@ -61,19 +62,21 @@
           "discussion": null,
           "vote": null
         },
+        "publicComments": [],
         "consent": false,
         "pulled": false
       },
       {
-        "itemLabel": "2",
+        "itemLabel": "1",
         "title": "Roll Call",
         "phases": {
-          "opened": 33,
+          "opened": 38,
           "presentation": null,
           "publicComment": null,
           "discussion": null,
           "vote": null
         },
+        "publicComments": [],
         "consent": false,
         "pulled": false
       },
@@ -87,6 +90,7 @@
           "discussion": null,
           "vote": null
         },
+        "publicComments": [],
         "consent": false,
         "pulled": false
       },
@@ -100,6 +104,7 @@
           "discussion": null,
           "vote": null
         },
+        "publicComments": [],
         "consent": false,
         "pulled": false
       },
@@ -117,6 +122,7 @@
             "result": "5-0"
           }
         },
+        "publicComments": [],
         "consent": false,
         "pulled": false
       },
@@ -130,6 +136,20 @@
           "discussion": null,
           "vote": null
         },
+        "publicComments": [
+          {
+            "name": "Jessica",
+            "startSeconds": 118,
+            "endSeconds": 220,
+            "summary": "Expressed support for the proposed parcel tax, noting that RCSD is underfunded compared to surrounding districts and praising the district's responsiveness to community input in drafting the measure."
+          },
+          {
+            "name": "Elle Kolekar",
+            "startSeconds": 248,
+            "endSeconds": 274,
+            "summary": "Echoed support for placing the parcel tax on the June ballot, stating it would greatly benefit Redwood City schools and the families the district serves."
+          }
+        ],
         "consent": false,
         "pulled": false
       },
@@ -143,12 +163,13 @@
           "discussion": null,
           "vote": null
         },
+        "publicComments": [],
         "consent": false,
         "pulled": false
       },
       {
-        "itemLabel": "7.1",
-        "title": "Adoption of Resolution No. 21 Calling An Election, Establishing Specifications Of The Election Order, And Requesting Consolidation With Other Elections Occurring On June 2, 2026",
+        "itemLabel": "7",
+        "title": "Action Items — Adoption of Resolution No. 21 Calling An Election, Establishing Specifications Of The Election Order, And Requesting Consolidation With Other Elections Occurring On June 2, 2026",
         "phases": {
           "opened": 314,
           "presentation": null,
@@ -160,6 +181,7 @@
             "result": "5-0"
           }
         },
+        "publicComments": [],
         "consent": false,
         "pulled": false
       },
@@ -167,7 +189,7 @@
         "itemLabel": "8",
         "title": "Adjournment",
         "phases": {
-          "opened": 774,
+          "opened": 784,
           "presentation": null,
           "publicComment": null,
           "discussion": null,
@@ -177,6 +199,7 @@
             "result": "4-0"
           }
         },
+        "publicComments": [],
         "consent": false,
         "pulled": false
       }
@@ -211,10 +234,10 @@
       },
       "G": {
         "name": "Jessica",
-        "role": "Public speaker (parent)"
+        "role": "Public speaker / parent"
       },
       "H": {
-        "name": "Nell Colar",
+        "name": "Elle Kolekar",
         "role": "Public speaker (remote)"
       }
     },
@@ -230,6 +253,7 @@
           "discussion": null,
           "vote": null
         },
+        "publicComments": [],
         "consent": false,
         "pulled": false
       },
@@ -243,19 +267,21 @@
           "discussion": null,
           "vote": null
         },
+        "publicComments": [],
         "consent": false,
         "pulled": false
       },
       {
-        "itemLabel": "2",
+        "itemLabel": "1",
         "title": "Roll Call",
         "phases": {
-          "opened": 33,
+          "opened": 38,
           "presentation": null,
           "publicComment": null,
           "discussion": null,
           "vote": null
         },
+        "publicComments": [],
         "consent": false,
         "pulled": false
       },
@@ -269,6 +295,7 @@
           "discussion": null,
           "vote": null
         },
+        "publicComments": [],
         "consent": false,
         "pulled": false
       },
@@ -282,6 +309,7 @@
           "discussion": null,
           "vote": null
         },
+        "publicComments": [],
         "consent": false,
         "pulled": false
       },
@@ -299,6 +327,7 @@
             "result": "5-0"
           }
         },
+        "publicComments": [],
         "consent": false,
         "pulled": false
       },
@@ -312,6 +341,20 @@
           "discussion": null,
           "vote": null
         },
+        "publicComments": [
+          {
+            "name": "Jessica",
+            "startSeconds": 118,
+            "endSeconds": 220,
+            "summary": "Expressed support for the proposed parcel tax, noting that RCSD is underfunded compared to surrounding districts and praising the district's responsiveness to community input in drafting the measure."
+          },
+          {
+            "name": "Elle Kolekar",
+            "startSeconds": 248,
+            "endSeconds": 274,
+            "summary": "Echoed support for placing the parcel tax on the June ballot, stating it would greatly benefit Redwood City schools and the families the district serves."
+          }
+        ],
         "consent": false,
         "pulled": false
       },
@@ -325,12 +368,13 @@
           "discussion": null,
           "vote": null
         },
+        "publicComments": [],
         "consent": false,
         "pulled": false
       },
       {
-        "itemLabel": "7.1",
-        "title": "Adoption of Resolution No. 21 Calling An Election, Establishing Specifications Of The Election Order, And Requesting Consolidation With Other Elections Occurring On June 2, 2026",
+        "itemLabel": "7",
+        "title": "Action Items — Adoption of Resolution No. 21 Calling An Election, Establishing Specifications Of The Election Order, And Requesting Consolidation With Other Elections Occurring On June 2, 2026",
         "phases": {
           "opened": 314,
           "presentation": null,
@@ -342,6 +386,7 @@
             "result": "5-0"
           }
         },
+        "publicComments": [],
         "consent": false,
         "pulled": false
       },
@@ -349,7 +394,7 @@
         "itemLabel": "8",
         "title": "Adjournment",
         "phases": {
-          "opened": 774,
+          "opened": 784,
           "presentation": null,
           "publicComment": null,
           "discussion": null,
@@ -359,12 +404,13 @@
             "result": "4-0"
           }
         },
+        "publicComments": [],
         "consent": false,
         "pulled": false
       }
     ]
   },
-  "cachedAt": "2026-03-15T15:27:21.747Z",
-  "inputTokens": 4379,
-  "outputTokens": 1220
+  "cachedAt": "2026-03-15T16:58:07.908Z",
+  "inputTokens": 4898,
+  "outputTokens": 1456
 }

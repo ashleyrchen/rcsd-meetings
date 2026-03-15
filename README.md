@@ -111,6 +111,50 @@ node scripts/transcribe-dashboard.mjs       # live progress dashboard at localho
 - `artifacts/transcripts-aai/{videoId}.json` — full diarized transcript with word-level timestamps
 - Published to `data.rcsd.info/audio/` and `data.rcsd.info/transcripts-aai/`
 
+## Document Ontology
+
+All meeting attachments are classified into a document index (`data/document-index.json`) using the following taxonomy. Each document is tagged with type, subtype, school(s), school year, and meeting provenance.
+
+| Type | Subtypes | Description |
+|------|----------|-------------|
+| **budget** | adopted-budget, first-interim, second-interim, unaudited-actuals, gann-limit, presentation, budget-reduction, multi-year-projection, developer-fee | District financial documents and reports |
+| **lcap** | annual, mid-year, federal-addendum, amendment | Local Control and Accountability Plan |
+| **spsa** | plan | School Plan for Student Achievement (per-school, per-year) |
+| **sarc** | report | School Accountability Report Card (per-school, per-year) |
+| **school-report** | presentation | Annual school board presentations with data and SPSA updates |
+| **resolution** | resolution | Numbered board resolutions |
+| **policy** | policy | Board policies, administrative regulations, bylaws |
+| **tax** | parcel, bond | Parcel tax measures (E/U — revenue) and facilities bonds (S/T — construction) |
+| **sped** | contract, report | Special education NPS/NPA contracts and study reports |
+| **english-learners** | elac, delac, data | English Learner Advisory Committees and reclassification data |
+| **early-ed** | preschool, tk | California State Preschool Program (CSPP), Head Start, Transitional Kindergarten |
+| **labor** | rcta, csea, other | Union agreements — RCTA (certificated teachers), CSEA (classified staff), RCAA (administrators) |
+| **compliance** | williams-ucp | Quarterly Williams/Uniform Complaint Procedure reports |
+| **safety** | safety-plan | Comprehensive School Safety Plans (CSSPs) |
+
+### Bargaining Units
+
+The district has three employee bargaining units:
+- **RCTA** — Redwood City Teachers Association (certificated/teaching staff)
+- **CSEA** — California School Employees Association (classified/support staff)
+- **RCAA** — Redwood City Administrators Association (management/admin)
+
+### Meeting Item Schema
+
+Each meeting's `items` array uses a formal agenda structure:
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `itemLabel` | string | Hierarchical agenda number ("1", "7.1", "11.3") |
+| `title` | string | Clean title (no numeric prefix, no duration suffix) |
+| `isSection` | boolean | True for section headers |
+| `plannedMinutes` | number/null | Planned duration from agenda (sections only) |
+| `actionType` | string/null | "Procedural", "Action", "Action (Consent)", "Discussion", "Information" |
+| `speaker` | string/null | From board memo Speaker field |
+| `attachments` | array | `{ title, aid, href, filename, size }` |
+| `publicComments` | array/null | Individual speakers: `{ name, startSeconds, endSeconds, summary }` |
+| `phases` | object/null | Chapter marker timestamps: `{ opened, presentation, publicComment, discussion, vote }` |
+
 ## Artifacts & Storage
 
 | Location | Contents | Storage |

@@ -1,0 +1,638 @@
+{
+  "date": "2023-09-13",
+  "itemCount": 54,
+  "llmResponse": {
+    "speakers": {
+      "A": {
+        "name": "John Baker",
+        "role": "Superintendent (Dr. Baker)"
+      },
+      "B": {
+        "name": "Cecilia I. Márquez",
+        "role": "Board President (Vice President per roster, presiding as President per agenda Section 5)"
+      },
+      "C": {
+        "name": "Jesse (Enrollment/Communications Director)",
+        "role": "District staff presenter for enrollment report"
+      },
+      "D": {
+        "name": "Alisa MacAvoy",
+        "role": "Trustee"
+      }
+    },
+    "agendaChanges": "The meeting appears to be the Regular Session portion only (closed session is not captured in detail). The agenda was resequenced: Section 11 (Student Enrollment Update) was taken up early, before Section 12 (Discussion Items / Board Assignments), and Section 13 (Consent Items) was taken up after Section 12. Sections 1-4 (Closed Session through Reconvene) and the early procedural items (Roll Call, Report Out) are handled at the very start. Section 9 (Bond Program Consent Items) does not appear separately discussed and was likely bundled. Section 10 and Section 14 (Action Items) appear to have had no items. The meeting proceeded roughly: procedural opening, agenda approval, then enrollment presentation (Sec 11), then board assignments discussion (Sec 12), then consent items (Sec 13), then board/superintendent reports (Sec 15), then information items (Sec 16), then correspondence (Sec 17), then other business (Sec 18), then board calendar (Sec 19), then adjournment (Sec 20).",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order / Roll Call",
+        "phases": {
+          "opened": 5,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Oral Communication on Closed Session Items Only",
+        "phases": {
+          "opened": 17,
+          "presentation": null,
+          "publicComment": 17,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Closed Session — Conference with Real Property Negotiators (750 Bradford St)",
+        "phases": {
+          "opened": 17,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Reconvene to Regular Session / Roll Call / Report Out on Closed Session",
+        "phases": {
+          "opened": 33,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Welcome by the School Board President",
+        "phases": {
+          "opened": 33,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 59,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 71,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 74,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 90,
+          "presentation": null,
+          "publicComment": 90,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9",
+        "title": "Bond Program Consent Items",
+        "phases": {
+          "opened": 856,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 856,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "Bond Program Action Items",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "2023-24 Student Enrollment Update",
+        "phases": {
+          "opened": 139,
+          "presentation": 374,
+          "publicComment": null,
+          "discussion": 2815,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12",
+        "title": "Discussion of School Assignments and Committee Assignments for Board Members for the 2023-24 School Year",
+        "phases": {
+          "opened": 3506,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 3506,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "Approval of Consent Items",
+        "phases": {
+          "opened": 3856,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3869,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14",
+        "title": "Action Items",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Board and Superintendent Reports",
+        "phases": {
+          "opened": 3872,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 3872,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16",
+        "title": "Information — Charter School Budgets, LCAP, and San Mateo County Investment Fund",
+        "phases": {
+          "opened": 4474,
+          "presentation": 4488,
+          "publicComment": null,
+          "discussion": 4549,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "17",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 4586,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 4586,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "18",
+        "title": "Other Business / Suggested Items for Future Agenda",
+        "phases": {
+          "opened": 4630,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 4630,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "19",
+        "title": "Board Meetings Calendar",
+        "phases": {
+          "opened": 4911,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 4917,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "20",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 5039,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "result": {
+    "videoId": "js_hLV8TCv8",
+    "speakers": {
+      "A": {
+        "name": "John Baker",
+        "role": "Superintendent (Dr. Baker)"
+      },
+      "B": {
+        "name": "Cecilia I. Márquez",
+        "role": "Board President (Vice President per roster, presiding as President per agenda Section 5)"
+      },
+      "C": {
+        "name": "Jesse (Enrollment/Communications Director)",
+        "role": "District staff presenter for enrollment report"
+      },
+      "D": {
+        "name": "Alisa MacAvoy",
+        "role": "Trustee"
+      }
+    },
+    "agendaChanges": "The meeting appears to be the Regular Session portion only (closed session is not captured in detail). The agenda was resequenced: Section 11 (Student Enrollment Update) was taken up early, before Section 12 (Discussion Items / Board Assignments), and Section 13 (Consent Items) was taken up after Section 12. Sections 1-4 (Closed Session through Reconvene) and the early procedural items (Roll Call, Report Out) are handled at the very start. Section 9 (Bond Program Consent Items) does not appear separately discussed and was likely bundled. Section 10 and Section 14 (Action Items) appear to have had no items. The meeting proceeded roughly: procedural opening, agenda approval, then enrollment presentation (Sec 11), then board assignments discussion (Sec 12), then consent items (Sec 13), then board/superintendent reports (Sec 15), then information items (Sec 16), then correspondence (Sec 17), then other business (Sec 18), then board calendar (Sec 19), then adjournment (Sec 20).",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order / Roll Call",
+        "phases": {
+          "opened": 5,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Oral Communication on Closed Session Items Only",
+        "phases": {
+          "opened": 17,
+          "presentation": null,
+          "publicComment": 17,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Closed Session — Conference with Real Property Negotiators (750 Bradford St)",
+        "phases": {
+          "opened": 17,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Reconvene to Regular Session / Roll Call / Report Out on Closed Session",
+        "phases": {
+          "opened": 33,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Welcome by the School Board President",
+        "phases": {
+          "opened": 33,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 59,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 71,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 74,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 90,
+          "presentation": null,
+          "publicComment": 90,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9",
+        "title": "Bond Program Consent Items",
+        "phases": {
+          "opened": 856,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 856,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "Bond Program Action Items",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "2023-24 Student Enrollment Update",
+        "phases": {
+          "opened": 139,
+          "presentation": 374,
+          "publicComment": null,
+          "discussion": 2815,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12",
+        "title": "Discussion of School Assignments and Committee Assignments for Board Members for the 2023-24 School Year",
+        "phases": {
+          "opened": 3506,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 3506,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "Approval of Consent Items",
+        "phases": {
+          "opened": 3856,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3869,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14",
+        "title": "Action Items",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Board and Superintendent Reports",
+        "phases": {
+          "opened": 3872,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 3872,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16",
+        "title": "Information — Charter School Budgets, LCAP, and San Mateo County Investment Fund",
+        "phases": {
+          "opened": 4474,
+          "presentation": 4488,
+          "publicComment": null,
+          "discussion": 4549,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "17",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 4586,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 4586,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "18",
+        "title": "Other Business / Suggested Items for Future Agenda",
+        "phases": {
+          "opened": 4630,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 4630,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "19",
+        "title": "Board Meetings Calendar",
+        "phases": {
+          "opened": 4911,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 4917,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "20",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 5039,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "cachedAt": "2026-03-15T17:45:08.503Z",
+  "inputTokens": 18631,
+  "outputTokens": 2783
+}

@@ -1,0 +1,866 @@
+{
+  "date": "2023-04-26",
+  "itemCount": 17,
+  "llmResponse": {
+    "speakers": {
+      "A": {
+        "name": "Cecilia I. Márquez",
+        "role": "Board President (acting as President for this meeting)"
+      },
+      "B": {
+        "name": "Unknown Staff/Presenter",
+        "role": "Various staff presenters"
+      }
+    },
+    "agendaChanges": "Item 13.1 (Recognition of Classified Employees) was moved to before Oral Communication (Section 5). An additional staff recognition (Wendy Kelly) was added under 13.1. All Bond Program Consent Items (Section 6) were moved to Action Items due to public comment. Items are therefore taken in this order: 1 (Call to Order/Roll Call), 1.2 (Report Out on Closed Session), 2 (Welcome), 3 (Changes to Agenda), 4 (Approval of Agenda), 13.1 (Recognition - moved up), 5 (Oral Communication), 6.1/6.2/6.3 (Bond Consent items taken as action), 7.1, 7.2, 8.1, 8.2 (Mental Health Report), 9.1, 10 (Consent Items), 11.1, 11.2, 12, 13.2, 13.3, 13.4, 14, 15, 16, 17.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order / Roll Call",
+        "phases": {
+          "opened": 5,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "1.2",
+        "title": "Report Out on Closed Session from April 26, 2023",
+        "phases": {
+          "opened": 18,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Welcome by the School Board President",
+        "phases": {
+          "opened": 36,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 82,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 82,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 130,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 133,
+            "type": "voice",
+            "result": "unanimous ayes"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13.1",
+        "title": "Recognition of Classified Employees (moved up)",
+        "phases": {
+          "opened": 137,
+          "presentation": 150,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 379,
+          "presentation": null,
+          "publicComment": 388,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Chris Roble",
+            "startSeconds": 388,
+            "endSeconds": 460,
+            "summary": "Asked who verifies Measure T expenditures for Prop 39 compliance, questioned whether deferred maintenance and repairs qualify as Prop 39 expenses, and argued the Citizens Bond Oversight Committee needs independent counsel rather than county counsel."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6.1",
+        "title": "Approval of Bond Program Consent Items (pulled to Action)",
+        "phases": {
+          "opened": 462,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 462,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": true
+      },
+      {
+        "itemLabel": "6.2",
+        "title": "Approval of Measure T Bond Program Tracking List of Items Under $20k (moved to Action)",
+        "phases": {
+          "opened": 488,
+          "presentation": null,
+          "publicComment": 496,
+          "discussion": 545,
+          "vote": {
+            "seconds": 570,
+            "type": "voice",
+            "result": "unanimous ayes"
+          }
+        },
+        "publicComments": [
+          {
+            "name": "Chris Roble",
+            "startSeconds": 496,
+            "endSeconds": 540,
+            "summary": "Argued that a $2,800 laptop for an accountant is an operating expense and should be pulled from the Measure T bond program, and reiterated that the Citizens Bond Oversight Committee needs independent counsel from an organization like KBACH."
+          }
+        ],
+        "consent": false,
+        "pulled": true
+      },
+      {
+        "itemLabel": "6.3",
+        "title": "Approval of Proposal for the Furnishing and Installation of a Water Pump with Scapes, Inc. for Orion Alternative School (moved to Action)",
+        "phases": {
+          "opened": 575,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 585,
+            "type": "voice",
+            "result": "unanimous ayes"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": true
+      },
+      {
+        "itemLabel": "7.1",
+        "title": "Approval of Measure T Final Projects List",
+        "phases": {
+          "opened": 590,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 592,
+          "vote": {
+            "seconds": 618,
+            "type": "voice",
+            "result": "unanimous ayes"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7.2",
+        "title": "Approval of Amendment #2 to the Program Management Services Agreement with RGMK",
+        "phases": {
+          "opened": 626,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 628,
+          "vote": {
+            "seconds": 695,
+            "type": "voice",
+            "result": "unanimous ayes"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.1",
+        "title": "School Plan for Student Achievement: Reports from Garfield Community School and Henry Ford",
+        "phases": {
+          "opened": 707,
+          "presentation": 720,
+          "publicComment": null,
+          "discussion": 2180,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.2",
+        "title": "Mental Health Report",
+        "phases": {
+          "opened": 3680,
+          "presentation": 3700,
+          "publicComment": null,
+          "discussion": 4350,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.1",
+        "title": "Board of Trustees Graduation/Promotions Assignments for 2022-23 SY",
+        "phases": {
+          "opened": 4740,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 4742,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "Approval of Consent Items",
+        "phases": {
+          "opened": 4920,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4925,
+            "type": "voice",
+            "result": "unanimous ayes"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11.1",
+        "title": "Approval of Recruitment Incentive Stipend for hard to fill middle school, special education, and bilingual teacher positions",
+        "phases": {
+          "opened": 4932,
+          "presentation": 4935,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4965,
+            "type": "voice",
+            "result": "unanimous ayes"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11.2",
+        "title": "Adoption of Resolution #32 - Authorizing the Establishment of a Bank Clearing Account",
+        "phases": {
+          "opened": 4970,
+          "presentation": 4975,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 5005,
+            "type": "voice",
+            "result": "unanimous ayes"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12",
+        "title": "Report from Board Members and Superintendent",
+        "phases": {
+          "opened": 5010,
+          "presentation": 5012,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13.2",
+        "title": "Contract Update Information and Credit Card Summary",
+        "phases": {
+          "opened": 5350,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13.3",
+        "title": "Information on San Mateo County Investment Fund - February, 2023",
+        "phases": {
+          "opened": 5360,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13.4",
+        "title": "Information on San Mateo County Investment Fund - March, 2023",
+        "phases": {
+          "opened": 5368,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 5378,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Possible Other Business/Suggested Items for Future Agenda",
+        "phases": {
+          "opened": 5385,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 5388,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16",
+        "title": "Changes to the Board Meetings Calendar",
+        "phases": {
+          "opened": 5520,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "17",
+        "title": "Adjourn the Meeting",
+        "phases": {
+          "opened": 5530,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 5535,
+            "type": "voice",
+            "result": "unanimous ayes"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "result": {
+    "videoId": "inuwqFycW2Q",
+    "speakers": {
+      "A": {
+        "name": "Cecilia I. Márquez",
+        "role": "Board President (acting as President for this meeting)"
+      },
+      "B": {
+        "name": "Unknown Staff/Presenter",
+        "role": "Various staff presenters"
+      }
+    },
+    "agendaChanges": "Item 13.1 (Recognition of Classified Employees) was moved to before Oral Communication (Section 5). An additional staff recognition (Wendy Kelly) was added under 13.1. All Bond Program Consent Items (Section 6) were moved to Action Items due to public comment. Items are therefore taken in this order: 1 (Call to Order/Roll Call), 1.2 (Report Out on Closed Session), 2 (Welcome), 3 (Changes to Agenda), 4 (Approval of Agenda), 13.1 (Recognition - moved up), 5 (Oral Communication), 6.1/6.2/6.3 (Bond Consent items taken as action), 7.1, 7.2, 8.1, 8.2 (Mental Health Report), 9.1, 10 (Consent Items), 11.1, 11.2, 12, 13.2, 13.3, 13.4, 14, 15, 16, 17.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order / Roll Call",
+        "phases": {
+          "opened": 5,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "1.2",
+        "title": "Report Out on Closed Session from April 26, 2023",
+        "phases": {
+          "opened": 18,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Welcome by the School Board President",
+        "phases": {
+          "opened": 36,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 82,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 82,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 130,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 133,
+            "type": "voice",
+            "result": "unanimous ayes"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13.1",
+        "title": "Recognition of Classified Employees (moved up)",
+        "phases": {
+          "opened": 137,
+          "presentation": 150,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 379,
+          "presentation": null,
+          "publicComment": 388,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Chris Roble",
+            "startSeconds": 388,
+            "endSeconds": 460,
+            "summary": "Asked who verifies Measure T expenditures for Prop 39 compliance, questioned whether deferred maintenance and repairs qualify as Prop 39 expenses, and argued the Citizens Bond Oversight Committee needs independent counsel rather than county counsel."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6.1",
+        "title": "Approval of Bond Program Consent Items (pulled to Action)",
+        "phases": {
+          "opened": 462,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 462,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": true
+      },
+      {
+        "itemLabel": "6.2",
+        "title": "Approval of Measure T Bond Program Tracking List of Items Under $20k (moved to Action)",
+        "phases": {
+          "opened": 488,
+          "presentation": null,
+          "publicComment": 496,
+          "discussion": 545,
+          "vote": {
+            "seconds": 570,
+            "type": "voice",
+            "result": "unanimous ayes"
+          }
+        },
+        "publicComments": [
+          {
+            "name": "Chris Roble",
+            "startSeconds": 496,
+            "endSeconds": 540,
+            "summary": "Argued that a $2,800 laptop for an accountant is an operating expense and should be pulled from the Measure T bond program, and reiterated that the Citizens Bond Oversight Committee needs independent counsel from an organization like KBACH."
+          }
+        ],
+        "consent": false,
+        "pulled": true
+      },
+      {
+        "itemLabel": "6.3",
+        "title": "Approval of Proposal for the Furnishing and Installation of a Water Pump with Scapes, Inc. for Orion Alternative School (moved to Action)",
+        "phases": {
+          "opened": 575,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 585,
+            "type": "voice",
+            "result": "unanimous ayes"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": true
+      },
+      {
+        "itemLabel": "7.1",
+        "title": "Approval of Measure T Final Projects List",
+        "phases": {
+          "opened": 590,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 592,
+          "vote": {
+            "seconds": 618,
+            "type": "voice",
+            "result": "unanimous ayes"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7.2",
+        "title": "Approval of Amendment #2 to the Program Management Services Agreement with RGMK",
+        "phases": {
+          "opened": 626,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 628,
+          "vote": {
+            "seconds": 695,
+            "type": "voice",
+            "result": "unanimous ayes"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.1",
+        "title": "School Plan for Student Achievement: Reports from Garfield Community School and Henry Ford",
+        "phases": {
+          "opened": 707,
+          "presentation": 720,
+          "publicComment": null,
+          "discussion": 2180,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.2",
+        "title": "Mental Health Report",
+        "phases": {
+          "opened": 3680,
+          "presentation": 3700,
+          "publicComment": null,
+          "discussion": 4350,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.1",
+        "title": "Board of Trustees Graduation/Promotions Assignments for 2022-23 SY",
+        "phases": {
+          "opened": 4740,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 4742,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "Approval of Consent Items",
+        "phases": {
+          "opened": 4920,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4925,
+            "type": "voice",
+            "result": "unanimous ayes"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11.1",
+        "title": "Approval of Recruitment Incentive Stipend for hard to fill middle school, special education, and bilingual teacher positions",
+        "phases": {
+          "opened": 4932,
+          "presentation": 4935,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4965,
+            "type": "voice",
+            "result": "unanimous ayes"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11.2",
+        "title": "Adoption of Resolution #32 - Authorizing the Establishment of a Bank Clearing Account",
+        "phases": {
+          "opened": 4970,
+          "presentation": 4975,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 5005,
+            "type": "voice",
+            "result": "unanimous ayes"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12",
+        "title": "Report from Board Members and Superintendent",
+        "phases": {
+          "opened": 5010,
+          "presentation": 5012,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13.2",
+        "title": "Contract Update Information and Credit Card Summary",
+        "phases": {
+          "opened": 5350,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13.3",
+        "title": "Information on San Mateo County Investment Fund - February, 2023",
+        "phases": {
+          "opened": 5360,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13.4",
+        "title": "Information on San Mateo County Investment Fund - March, 2023",
+        "phases": {
+          "opened": 5368,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 5378,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Possible Other Business/Suggested Items for Future Agenda",
+        "phases": {
+          "opened": 5385,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 5388,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16",
+        "title": "Changes to the Board Meetings Calendar",
+        "phases": {
+          "opened": 5520,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "17",
+        "title": "Adjourn the Meeting",
+        "phases": {
+          "opened": 5530,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 5535,
+            "type": "voice",
+            "result": "unanimous ayes"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "cachedAt": "2026-03-15T17:51:58.869Z",
+  "inputTokens": 46179,
+  "outputTokens": 3383
+}

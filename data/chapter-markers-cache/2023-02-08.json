@@ -1,0 +1,1064 @@
+{
+  "date": "2023-02-08",
+  "itemCount": 49,
+  "llmResponse": {
+    "speakers": {
+      "A": {
+        "name": "Cecilia I. Márquez",
+        "role": "Board President"
+      },
+      "B": {
+        "name": "Unknown/Multiple",
+        "role": "Various public speakers and board members (context-dependent)"
+      },
+      "C": {
+        "name": "Evelyn (staff)",
+        "role": "Board Secretary/Clerk support staff"
+      },
+      "D": {
+        "name": "Alisa MacAvoy",
+        "role": "Trustee"
+      },
+      "E": {
+        "name": "Dr. Baker (Superintendent)",
+        "role": "Superintendent"
+      },
+      "F": {
+        "name": "Jose Luna",
+        "role": "Community School Coordinator, Adelante Selby"
+      },
+      "G": {
+        "name": "Mike Weekley",
+        "role": "Trustee"
+      },
+      "H": {
+        "name": "Mike Wells",
+        "role": "Trustee"
+      },
+      "I": {
+        "name": "Warren Cedar",
+        "role": "Principal, Adelante Selby"
+      }
+    },
+    "agendaChanges": "Item 9.2 (First Reading and Discussion of Board Policy 4154/4254/4354 - Health and Welfare Benefits) was pulled from the agenda before approval due to needed changes from the board policy committee. Item 9.1 was modified: the Orion SPSA presentation was pulled (presenter unavailable due to family emergency), leaving only the Adelante Selby SPSA. The meeting was resequenced slightly in that oral communication (Section 5) was taken up before the formal approval of bond consent items (Section 6) and discussion items (Section 9), consistent with normal order. The Closed Session report (Section 1, item 1.2) was briefly addressed after the agenda was approved rather than before, but this was a minor resequencing.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order / Roll Call",
+        "phases": {
+          "opened": 6,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "1",
+        "title": "Report out on Closed Session from January 20, 2023",
+        "phases": {
+          "opened": 245,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Welcome by the Board President",
+        "phases": {
+          "opened": 28,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 152,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 152,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 213,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 225,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 265,
+          "presentation": null,
+          "publicComment": 280,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Peter Cohen",
+            "startSeconds": 378,
+            "endSeconds": 460,
+            "summary": "Thanked district staff for correcting enrollment issues with school-of-choice programs, and advocated for expanding Mandarin Immersion TK programs to align with California's 2030 bilingual goal and upcoming Universal TK expansion."
+          },
+          {
+            "name": "Alexis Betts",
+            "startSeconds": 504,
+            "endSeconds": 542,
+            "summary": "Advocated for expanding MI enrollment to accommodate all interested families, noting the current interest level represents an opportunity for a sustainable, healthy program through 8th grade."
+          },
+          {
+            "name": "Megan O'Reilly",
+            "startSeconds": 555,
+            "endSeconds": 621,
+            "summary": "Advocated for underserved families in the MI program who need more support, requested a different structural approach to serve both program goals, and urged the district to apply for the TCLP program."
+          },
+          {
+            "name": "William Dennis",
+            "startSeconds": 690,
+            "endSeconds": 723,
+            "summary": "Expressed strong support for sibling priority in MI enrollment so his younger daughter can attend the same school as his son."
+          },
+          {
+            "name": "Deepika Germany (spouse speaking)",
+            "startSeconds": 769,
+            "endSeconds": 811,
+            "summary": "Advocated for an additional Mandarin Immersion TK class, stating their daughter is currently on the waitlist and an extra year in the program would be very beneficial."
+          },
+          {
+            "name": "Tina Chung",
+            "startSeconds": 815,
+            "endSeconds": 851,
+            "summary": "Advocated for additional Mandarin Immersion TK classes to benefit more students in the community, including her son who has some Mandarin background."
+          },
+          {
+            "name": "Ronnie Le",
+            "startSeconds": 862,
+            "endSeconds": 932,
+            "summary": "Advocated for expanding the Mandarin Immersion program, citing its academic rigor comparable to private immersion schools and the cognitive benefits of bilingual education for her incoming kindergartener."
+          },
+          {
+            "name": "Jackie Chen",
+            "startSeconds": 953,
+            "endSeconds": 1043,
+            "summary": "Shared the emotional difficulty of the MI waitlist experience and urged the board to create two TK MI classes and three kindergarten MI classes."
+          },
+          {
+            "name": "Julia Selesnick",
+            "startSeconds": 1072,
+            "endSeconds": 1155,
+            "summary": "Praised the MI program's academic rigor and advocated for expanding both the kindergarten and TK programs to make this high-quality public school option accessible to more children."
+          },
+          {
+            "name": "Alex (last name not given)",
+            "startSeconds": 1197,
+            "endSeconds": 1260,
+            "summary": "Advocated for expanding the Mandarin Immersion program at Orion, drawing on personal experience growing up bilingual and emphasizing the broad human and community benefits of early language immersion."
+          },
+          {
+            "name": "Angela Kang",
+            "startSeconds": 1262,
+            "endSeconds": 1287,
+            "summary": "Advocated for additional MI TK classes so that all families who want Mandarin Immersion education for their children, including herself with a waitlisted child, can have the opportunity."
+          },
+          {
+            "name": "Sam Christensen",
+            "startSeconds": 1332,
+            "endSeconds": 1356,
+            "summary": "Stated that the MI program is the only program his family is interested in, otherwise they will consider private school, and expressed support for expanding TK Mandarin Immersion."
+          },
+          {
+            "name": "Chris Terry",
+            "startSeconds": 1359,
+            "endSeconds": 1443,
+            "summary": "Raised concerns about fairness in the MI lottery, particularly the Odyssey Preschool preference (costing $1,700/month) and the TK preference potentially crowding out other kindergarten applicants, and asked for lottery reform or more classes."
+          },
+          {
+            "name": "Jasper Chen",
+            "startSeconds": 1443,
+            "endSeconds": 1495,
+            "summary": "Expressed gratitude for the community's transformation and urged the board to invest boldly in expanding the MI program, leveraging the new campus to build a larger, thriving community."
+          },
+          {
+            "name": "Anna Lee Moraz",
+            "startSeconds": 1507,
+            "endSeconds": 1606,
+            "summary": "Spoke in Spanish to advocate for more support and accessibility for low-income Latino families in the Mandarin Immersion program, including concerns about the cost of after-school programs."
+          },
+          {
+            "name": "Keith Simmons",
+            "startSeconds": 1637,
+            "endSeconds": 1701,
+            "summary": "Asked the board to extend sibling priority to TK, expand MI to two TK classes and three kindergarten classes, and consider expanding Adelante as well given the importance of early language acquisition."
+          },
+          {
+            "name": "Heather Stamper",
+            "startSeconds": 1707,
+            "endSeconds": 1763,
+            "summary": "Supported expanding TK and K MI classrooms, noting the program shrank from two kindergarten classes during COVID and expressing concern about the snowball effect of attrition on the program's long-term viability."
+          },
+          {
+            "name": "Mele Rosallo",
+            "startSeconds": 1773,
+            "endSeconds": 1839,
+            "summary": "Advocated for more funding and support for MI students with learning disabilities, including a Mandarin resource teacher and aides for math, and an additional TK class."
+          },
+          {
+            "name": "Richard Pont",
+            "startSeconds": 1853,
+            "endSeconds": 1896,
+            "summary": "Shared his family's positive experience with the MI program and urged expansion so more families, including those with IEP students, can join and thrive."
+          },
+          {
+            "name": "Micah Bonara",
+            "startSeconds": 1934,
+            "endSeconds": 1976,
+            "summary": "Reported his twin boys got off the waitlist and into kindergarten, and called for expansion of both TK and K MI to spare other families the emotional stress of the waitlist process."
+          },
+          {
+            "name": "Sarah Rutherford",
+            "startSeconds": 1976,
+            "endSeconds": 2013,
+            "summary": "Asked for consistency in the sibling priority policy between kindergarten and TK, especially given the upcoming rollout of Universal TK."
+          },
+          {
+            "name": "Tiffany Chao Bev",
+            "startSeconds": 2022,
+            "endSeconds": 2088,
+            "summary": "Shared that her family moved to Redwood City specifically for the MI program and urged the board to expand kindergarten, TK, and the elementary program, as they would consider relocating if their son cannot get in."
+          },
+          {
+            "name": "Xiang Yen",
+            "startSeconds": 2107,
+            "endSeconds": 2146,
+            "summary": "Asked what parents and the community can do to help advance expansion of the MI program, and requested guidance from the board on next steps."
+          },
+          {
+            "name": "Julia Feng",
+            "startSeconds": 2205,
+            "endSeconds": 2277,
+            "summary": "Questioned whether it makes sense to artificially cap demand for MI in a district with declining enrollment, and emphasized that TK/Kinder are the only entry windows for immersion programs."
+          },
+          {
+            "name": "Doshi (last name not given)",
+            "startSeconds": 2291,
+            "endSeconds": 2355,
+            "summary": "Advocated for an additional MI class, noting that the preschool and sibling preferences effectively eliminated her single-child family's chances despite being a district resident and public school advocate."
+          },
+          {
+            "name": "Philip Guy",
+            "startSeconds": 2365,
+            "endSeconds": 2461,
+            "summary": "Urged the board to expand the MI program in every way possible and asked the community to be told how they can help make that happen."
+          },
+          {
+            "name": "Olanes Villanueva (interpreted)",
+            "startSeconds": 2522,
+            "endSeconds": 2604,
+            "summary": "Advocated on behalf of Latino families in the MI program for more support, including in-school tutoring services, so that their children are not invisible and can reach grade level and succeed in the program."
+          },
+          {
+            "name": "Iliana Harrison",
+            "startSeconds": 2628,
+            "endSeconds": 2665,
+            "summary": "Thanked Dr. Baker for supporting the MI program at the Lunar New Year fair and asked the board for two TK classes and three kindergarten classes, offering parent community support to make it happen."
+          },
+          {
+            "name": "Kyle Zipes",
+            "startSeconds": 2716,
+            "endSeconds": 2769,
+            "summary": "Argued that deciding a child's education by lottery is unacceptable and urged the board to accommodate all families who want to attend MI, including investigating a dedicated campus if needed."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Approval of Bond Program Consent Items",
+        "phases": {
+          "opened": 2769,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 2790,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Bond Program Action Items",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8",
+        "title": "School/Community Reports",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.1",
+        "title": "School Plan for Student Achievement: Adelante Selby and Orion (Orion portion pulled)",
+        "phases": {
+          "opened": 2798,
+          "presentation": 2896,
+          "publicComment": null,
+          "discussion": 5081,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.2",
+        "title": "First Reading and Discussion of Board Policy 4154/4254/4354 - Health and Welfare Benefits",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": true
+      },
+      {
+        "itemLabel": "9.3",
+        "title": "First Reading and Discussion of Board Policy 5113 - Absences and Excuses",
+        "phases": {
+          "opened": 6636,
+          "presentation": 6655,
+          "publicComment": null,
+          "discussion": 6747,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.4",
+        "title": "First Reading and Discussion of Board Policy 6164.2 – Guidance/Counseling Services",
+        "phases": {
+          "opened": 6793,
+          "presentation": 6823,
+          "publicComment": null,
+          "discussion": 6933,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "Approval of Consent Items",
+        "phases": {
+          "opened": 7124,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 7141,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "Action Items",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12",
+        "title": "Report from Board Members and Superintendent",
+        "phases": {
+          "opened": 7151,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "Information on San Mateo County Investment Fund - December 2022",
+        "phases": {
+          "opened": 8407,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 8421,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Possible Other Business/Suggested Items for Future Agenda",
+        "phases": {
+          "opened": 8453,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 8459,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16",
+        "title": "Changes to the Board Meetings Calendar",
+        "phases": {
+          "opened": 8743,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 8751,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "17",
+        "title": "Adjourn the Meeting",
+        "phases": {
+          "opened": 8950,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 8966,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "result": {
+    "videoId": "Ptx7Oy4E3zE",
+    "speakers": {
+      "A": {
+        "name": "Cecilia I. Márquez",
+        "role": "Board President"
+      },
+      "B": {
+        "name": "Unknown/Multiple",
+        "role": "Various public speakers and board members (context-dependent)"
+      },
+      "C": {
+        "name": "Evelyn (staff)",
+        "role": "Board Secretary/Clerk support staff"
+      },
+      "D": {
+        "name": "Alisa MacAvoy",
+        "role": "Trustee"
+      },
+      "E": {
+        "name": "Dr. Baker (Superintendent)",
+        "role": "Superintendent"
+      },
+      "F": {
+        "name": "Jose Luna",
+        "role": "Community School Coordinator, Adelante Selby"
+      },
+      "G": {
+        "name": "Mike Weekley",
+        "role": "Trustee"
+      },
+      "H": {
+        "name": "Mike Wells",
+        "role": "Trustee"
+      },
+      "I": {
+        "name": "Warren Cedar",
+        "role": "Principal, Adelante Selby"
+      }
+    },
+    "agendaChanges": "Item 9.2 (First Reading and Discussion of Board Policy 4154/4254/4354 - Health and Welfare Benefits) was pulled from the agenda before approval due to needed changes from the board policy committee. Item 9.1 was modified: the Orion SPSA presentation was pulled (presenter unavailable due to family emergency), leaving only the Adelante Selby SPSA. The meeting was resequenced slightly in that oral communication (Section 5) was taken up before the formal approval of bond consent items (Section 6) and discussion items (Section 9), consistent with normal order. The Closed Session report (Section 1, item 1.2) was briefly addressed after the agenda was approved rather than before, but this was a minor resequencing.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order / Roll Call",
+        "phases": {
+          "opened": 6,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "1",
+        "title": "Report out on Closed Session from January 20, 2023",
+        "phases": {
+          "opened": 245,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Welcome by the Board President",
+        "phases": {
+          "opened": 28,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 152,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 152,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 213,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 225,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 265,
+          "presentation": null,
+          "publicComment": 280,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Peter Cohen",
+            "startSeconds": 378,
+            "endSeconds": 460,
+            "summary": "Thanked district staff for correcting enrollment issues with school-of-choice programs, and advocated for expanding Mandarin Immersion TK programs to align with California's 2030 bilingual goal and upcoming Universal TK expansion."
+          },
+          {
+            "name": "Alexis Betts",
+            "startSeconds": 504,
+            "endSeconds": 542,
+            "summary": "Advocated for expanding MI enrollment to accommodate all interested families, noting the current interest level represents an opportunity for a sustainable, healthy program through 8th grade."
+          },
+          {
+            "name": "Megan O'Reilly",
+            "startSeconds": 555,
+            "endSeconds": 621,
+            "summary": "Advocated for underserved families in the MI program who need more support, requested a different structural approach to serve both program goals, and urged the district to apply for the TCLP program."
+          },
+          {
+            "name": "William Dennis",
+            "startSeconds": 690,
+            "endSeconds": 723,
+            "summary": "Expressed strong support for sibling priority in MI enrollment so his younger daughter can attend the same school as his son."
+          },
+          {
+            "name": "Deepika Germany (spouse speaking)",
+            "startSeconds": 769,
+            "endSeconds": 811,
+            "summary": "Advocated for an additional Mandarin Immersion TK class, stating their daughter is currently on the waitlist and an extra year in the program would be very beneficial."
+          },
+          {
+            "name": "Tina Chung",
+            "startSeconds": 815,
+            "endSeconds": 851,
+            "summary": "Advocated for additional Mandarin Immersion TK classes to benefit more students in the community, including her son who has some Mandarin background."
+          },
+          {
+            "name": "Ronnie Le",
+            "startSeconds": 862,
+            "endSeconds": 932,
+            "summary": "Advocated for expanding the Mandarin Immersion program, citing its academic rigor comparable to private immersion schools and the cognitive benefits of bilingual education for her incoming kindergartener."
+          },
+          {
+            "name": "Jackie Chen",
+            "startSeconds": 953,
+            "endSeconds": 1043,
+            "summary": "Shared the emotional difficulty of the MI waitlist experience and urged the board to create two TK MI classes and three kindergarten MI classes."
+          },
+          {
+            "name": "Julia Selesnick",
+            "startSeconds": 1072,
+            "endSeconds": 1155,
+            "summary": "Praised the MI program's academic rigor and advocated for expanding both the kindergarten and TK programs to make this high-quality public school option accessible to more children."
+          },
+          {
+            "name": "Alex (last name not given)",
+            "startSeconds": 1197,
+            "endSeconds": 1260,
+            "summary": "Advocated for expanding the Mandarin Immersion program at Orion, drawing on personal experience growing up bilingual and emphasizing the broad human and community benefits of early language immersion."
+          },
+          {
+            "name": "Angela Kang",
+            "startSeconds": 1262,
+            "endSeconds": 1287,
+            "summary": "Advocated for additional MI TK classes so that all families who want Mandarin Immersion education for their children, including herself with a waitlisted child, can have the opportunity."
+          },
+          {
+            "name": "Sam Christensen",
+            "startSeconds": 1332,
+            "endSeconds": 1356,
+            "summary": "Stated that the MI program is the only program his family is interested in, otherwise they will consider private school, and expressed support for expanding TK Mandarin Immersion."
+          },
+          {
+            "name": "Chris Terry",
+            "startSeconds": 1359,
+            "endSeconds": 1443,
+            "summary": "Raised concerns about fairness in the MI lottery, particularly the Odyssey Preschool preference (costing $1,700/month) and the TK preference potentially crowding out other kindergarten applicants, and asked for lottery reform or more classes."
+          },
+          {
+            "name": "Jasper Chen",
+            "startSeconds": 1443,
+            "endSeconds": 1495,
+            "summary": "Expressed gratitude for the community's transformation and urged the board to invest boldly in expanding the MI program, leveraging the new campus to build a larger, thriving community."
+          },
+          {
+            "name": "Anna Lee Moraz",
+            "startSeconds": 1507,
+            "endSeconds": 1606,
+            "summary": "Spoke in Spanish to advocate for more support and accessibility for low-income Latino families in the Mandarin Immersion program, including concerns about the cost of after-school programs."
+          },
+          {
+            "name": "Keith Simmons",
+            "startSeconds": 1637,
+            "endSeconds": 1701,
+            "summary": "Asked the board to extend sibling priority to TK, expand MI to two TK classes and three kindergarten classes, and consider expanding Adelante as well given the importance of early language acquisition."
+          },
+          {
+            "name": "Heather Stamper",
+            "startSeconds": 1707,
+            "endSeconds": 1763,
+            "summary": "Supported expanding TK and K MI classrooms, noting the program shrank from two kindergarten classes during COVID and expressing concern about the snowball effect of attrition on the program's long-term viability."
+          },
+          {
+            "name": "Mele Rosallo",
+            "startSeconds": 1773,
+            "endSeconds": 1839,
+            "summary": "Advocated for more funding and support for MI students with learning disabilities, including a Mandarin resource teacher and aides for math, and an additional TK class."
+          },
+          {
+            "name": "Richard Pont",
+            "startSeconds": 1853,
+            "endSeconds": 1896,
+            "summary": "Shared his family's positive experience with the MI program and urged expansion so more families, including those with IEP students, can join and thrive."
+          },
+          {
+            "name": "Micah Bonara",
+            "startSeconds": 1934,
+            "endSeconds": 1976,
+            "summary": "Reported his twin boys got off the waitlist and into kindergarten, and called for expansion of both TK and K MI to spare other families the emotional stress of the waitlist process."
+          },
+          {
+            "name": "Sarah Rutherford",
+            "startSeconds": 1976,
+            "endSeconds": 2013,
+            "summary": "Asked for consistency in the sibling priority policy between kindergarten and TK, especially given the upcoming rollout of Universal TK."
+          },
+          {
+            "name": "Tiffany Chao Bev",
+            "startSeconds": 2022,
+            "endSeconds": 2088,
+            "summary": "Shared that her family moved to Redwood City specifically for the MI program and urged the board to expand kindergarten, TK, and the elementary program, as they would consider relocating if their son cannot get in."
+          },
+          {
+            "name": "Xiang Yen",
+            "startSeconds": 2107,
+            "endSeconds": 2146,
+            "summary": "Asked what parents and the community can do to help advance expansion of the MI program, and requested guidance from the board on next steps."
+          },
+          {
+            "name": "Julia Feng",
+            "startSeconds": 2205,
+            "endSeconds": 2277,
+            "summary": "Questioned whether it makes sense to artificially cap demand for MI in a district with declining enrollment, and emphasized that TK/Kinder are the only entry windows for immersion programs."
+          },
+          {
+            "name": "Doshi (last name not given)",
+            "startSeconds": 2291,
+            "endSeconds": 2355,
+            "summary": "Advocated for an additional MI class, noting that the preschool and sibling preferences effectively eliminated her single-child family's chances despite being a district resident and public school advocate."
+          },
+          {
+            "name": "Philip Guy",
+            "startSeconds": 2365,
+            "endSeconds": 2461,
+            "summary": "Urged the board to expand the MI program in every way possible and asked the community to be told how they can help make that happen."
+          },
+          {
+            "name": "Olanes Villanueva (interpreted)",
+            "startSeconds": 2522,
+            "endSeconds": 2604,
+            "summary": "Advocated on behalf of Latino families in the MI program for more support, including in-school tutoring services, so that their children are not invisible and can reach grade level and succeed in the program."
+          },
+          {
+            "name": "Iliana Harrison",
+            "startSeconds": 2628,
+            "endSeconds": 2665,
+            "summary": "Thanked Dr. Baker for supporting the MI program at the Lunar New Year fair and asked the board for two TK classes and three kindergarten classes, offering parent community support to make it happen."
+          },
+          {
+            "name": "Kyle Zipes",
+            "startSeconds": 2716,
+            "endSeconds": 2769,
+            "summary": "Argued that deciding a child's education by lottery is unacceptable and urged the board to accommodate all families who want to attend MI, including investigating a dedicated campus if needed."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Approval of Bond Program Consent Items",
+        "phases": {
+          "opened": 2769,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 2790,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Bond Program Action Items",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8",
+        "title": "School/Community Reports",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.1",
+        "title": "School Plan for Student Achievement: Adelante Selby and Orion (Orion portion pulled)",
+        "phases": {
+          "opened": 2798,
+          "presentation": 2896,
+          "publicComment": null,
+          "discussion": 5081,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.2",
+        "title": "First Reading and Discussion of Board Policy 4154/4254/4354 - Health and Welfare Benefits",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": true
+      },
+      {
+        "itemLabel": "9.3",
+        "title": "First Reading and Discussion of Board Policy 5113 - Absences and Excuses",
+        "phases": {
+          "opened": 6636,
+          "presentation": 6655,
+          "publicComment": null,
+          "discussion": 6747,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.4",
+        "title": "First Reading and Discussion of Board Policy 6164.2 – Guidance/Counseling Services",
+        "phases": {
+          "opened": 6793,
+          "presentation": 6823,
+          "publicComment": null,
+          "discussion": 6933,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "Approval of Consent Items",
+        "phases": {
+          "opened": 7124,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 7141,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "Action Items",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12",
+        "title": "Report from Board Members and Superintendent",
+        "phases": {
+          "opened": 7151,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "Information on San Mateo County Investment Fund - December 2022",
+        "phases": {
+          "opened": 8407,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 8421,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Possible Other Business/Suggested Items for Future Agenda",
+        "phases": {
+          "opened": 8453,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 8459,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16",
+        "title": "Changes to the Board Meetings Calendar",
+        "phases": {
+          "opened": 8743,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 8751,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "17",
+        "title": "Adjourn the Meeting",
+        "phases": {
+          "opened": 8950,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 8966,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "cachedAt": "2026-03-15T17:56:19.204Z",
+  "inputTokens": 37035,
+  "outputTokens": 4973
+}

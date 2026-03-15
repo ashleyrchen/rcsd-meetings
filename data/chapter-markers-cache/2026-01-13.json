@@ -1,0 +1,504 @@
+{
+  "date": "2026-01-13",
+  "itemCount": 10,
+  "llmResponse": {
+    "speakers": {
+      "A": {
+        "name": "David Weekly",
+        "role": "Board President"
+      },
+      "B": {
+        "name": "Mike Wells",
+        "role": "Trustee"
+      },
+      "C": {
+        "name": "John Baker",
+        "role": "Superintendent"
+      },
+      "D": {
+        "name": "Rick Edson",
+        "role": "Chief Business Official"
+      },
+      "E": {
+        "name": "Jennifer Ng Kwing King",
+        "role": "Clerk/Trustee"
+      },
+      "F": {
+        "name": "Patricia Renderos (interpreter)",
+        "role": "Interpreter / Community Member"
+      },
+      "G": {
+        "name": "David Li",
+        "role": "Trustee"
+      }
+    },
+    "agendaChanges": "Public Comment (Item 5) was postponed until after the Strategic Resource Alignment Update presentation (Item 6.1), per board discussion at approximately 126s. The Pledge of Allegiance was skipped.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order",
+        "phases": {
+          "opened": 5,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "1",
+        "title": "Roll Call",
+        "phases": {
+          "opened": 33,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Welcome",
+        "phases": {
+          "opened": 40,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Pledge of Allegiance",
+        "phases": {
+          "opened": 100,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 100,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Approval of the Agenda",
+        "phases": {
+          "opened": 100,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 113,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Public Comment",
+        "phases": {
+          "opened": 2159,
+          "presentation": null,
+          "publicComment": 2159,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Steve (Orion PTO/MI Co-Op)",
+            "startSeconds": 2207,
+            "endSeconds": 2310,
+            "summary": "Spoke on behalf of Orion PTO and Mandarin Immersion Co-Op, requesting equitable consideration before cutting Orion's bilingual guest teacher given the school's unique dual-program needs and significant prior cuts."
+          },
+          {
+            "name": "Patricia Renderos",
+            "startSeconds": 2497,
+            "endSeconds": 2612,
+            "summary": "Advocated (in Spanish, interpreted) for retaining TK and kinder programs at Hoover, emphasizing the importance of teacher stability and requesting coaching support for new teachers."
+          },
+          {
+            "name": "Agustin Espino",
+            "startSeconds": 2637,
+            "endSeconds": 2813,
+            "summary": "Asked the board to protect mental health and TK programs and to ensure that any budget cuts are made equitably, particularly for the Latino community, given the disparity in outcomes between schools like Hoover and Orion."
+          },
+          {
+            "name": "Lizbeth Estrada",
+            "startSeconds": 2879,
+            "endSeconds": 3007,
+            "summary": "Spoke (in Spanish, interpreted) as a Hoover parent expressing deep concern about cuts to teacher retention and MTSS intervention specialists, arguing that reducing reading and math specialists creates long-term educational debt."
+          },
+          {
+            "name": "Cristian Vasquez",
+            "startSeconds": 3270,
+            "endSeconds": 3550,
+            "summary": "Shared (in Spanish, interpreted) a personal testimony about the difference in resources between his older and younger children's educations at Clifford, advocating for preserving staff and specialist positions."
+          },
+          {
+            "name": "Tina Yim",
+            "startSeconds": 3573,
+            "endSeconds": 3725,
+            "summary": "Spoke as an Orion parent and RCMIS representative highlighting the increasing fundraising burden on MI families and advocating for the retention of Orion's bilingual guest teacher and continued district investment in the MI program."
+          },
+          {
+            "name": "Araceli Flores",
+            "startSeconds": 3737,
+            "endSeconds": 3873,
+            "summary": "As a Hoover alumna and RLC teacher, advocated for more resources, staffing, and support for special education students, stating that current staffing is insufficient for individualized guidance."
+          },
+          {
+            "name": "Lisa Onofre",
+            "startSeconds": 4001,
+            "endSeconds": 4051,
+            "summary": "Spoke (in Spanish, interpreted) advocating against cuts to cafeteria staff and meals, for stronger math education investment particularly for the Hispanic community, and against selling district property to private interests."
+          },
+          {
+            "name": "Tina Mercer",
+            "startSeconds": 4316,
+            "endSeconds": 4426,
+            "summary": "As Roosevelt principal, advocated specifically for retaining admin IEP sub coverage at TK-5 schools, citing approximately 150 IEP meetings per year at her site alone and the significant time burden on principals without that support."
+          },
+          {
+            "name": "Laura Ramirez",
+            "startSeconds": 4442,
+            "endSeconds": 4587,
+            "summary": "Spoke (in Spanish, interpreted) as an Adelante Selby parent supporting budget decisions while requesting protection of programs that directly impact student learning, safety, and wellness, including enrichment classes and family engagement resources."
+          },
+          {
+            "name": "Lilia Amalia Valdez",
+            "startSeconds": 4783,
+            "endSeconds": 4854,
+            "summary": "As a Hoover parent, advocated for preserving counselors and mental health resources, sharing her son's experience of overcoming anxiety with the help of a school counselor after the pandemic."
+          },
+          {
+            "name": "Rita Melton",
+            "startSeconds": 4866,
+            "endSeconds": 4971,
+            "summary": "As a fourth grade teacher at Adelante Selby, advocated for retaining mental health professionals, MTSS TOSAs, and guest teachers, arguing each plays a critical role in supporting students and reducing pressure on teachers and principals."
+          },
+          {
+            "name": "Dora Ramirez",
+            "startSeconds": 4997,
+            "endSeconds": 5112,
+            "summary": "As a Hoover parent of a student with special education needs, asked the board not to cut music or STEAM, requested more special ed classrooms at the middle school level, and expressed general concern about budget cuts."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "School/Community Reports — Strategic Resource Alignment Update",
+        "phases": {
+          "opened": 144,
+          "presentation": 144,
+          "publicComment": 2159,
+          "discussion": 5247,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 7360,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 7367,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "result": {
+    "videoId": "PdjSjhxgrP8",
+    "speakers": {
+      "A": {
+        "name": "David Weekly",
+        "role": "Board President"
+      },
+      "B": {
+        "name": "Mike Wells",
+        "role": "Trustee"
+      },
+      "C": {
+        "name": "John Baker",
+        "role": "Superintendent"
+      },
+      "D": {
+        "name": "Rick Edson",
+        "role": "Chief Business Official"
+      },
+      "E": {
+        "name": "Jennifer Ng Kwing King",
+        "role": "Clerk/Trustee"
+      },
+      "F": {
+        "name": "Patricia Renderos (interpreter)",
+        "role": "Interpreter / Community Member"
+      },
+      "G": {
+        "name": "David Li",
+        "role": "Trustee"
+      }
+    },
+    "agendaChanges": "Public Comment (Item 5) was postponed until after the Strategic Resource Alignment Update presentation (Item 6.1), per board discussion at approximately 126s. The Pledge of Allegiance was skipped.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order",
+        "phases": {
+          "opened": 5,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "1",
+        "title": "Roll Call",
+        "phases": {
+          "opened": 33,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Welcome",
+        "phases": {
+          "opened": 40,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Pledge of Allegiance",
+        "phases": {
+          "opened": 100,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 100,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Approval of the Agenda",
+        "phases": {
+          "opened": 100,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 113,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Public Comment",
+        "phases": {
+          "opened": 2159,
+          "presentation": null,
+          "publicComment": 2159,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Steve (Orion PTO/MI Co-Op)",
+            "startSeconds": 2207,
+            "endSeconds": 2310,
+            "summary": "Spoke on behalf of Orion PTO and Mandarin Immersion Co-Op, requesting equitable consideration before cutting Orion's bilingual guest teacher given the school's unique dual-program needs and significant prior cuts."
+          },
+          {
+            "name": "Patricia Renderos",
+            "startSeconds": 2497,
+            "endSeconds": 2612,
+            "summary": "Advocated (in Spanish, interpreted) for retaining TK and kinder programs at Hoover, emphasizing the importance of teacher stability and requesting coaching support for new teachers."
+          },
+          {
+            "name": "Agustin Espino",
+            "startSeconds": 2637,
+            "endSeconds": 2813,
+            "summary": "Asked the board to protect mental health and TK programs and to ensure that any budget cuts are made equitably, particularly for the Latino community, given the disparity in outcomes between schools like Hoover and Orion."
+          },
+          {
+            "name": "Lizbeth Estrada",
+            "startSeconds": 2879,
+            "endSeconds": 3007,
+            "summary": "Spoke (in Spanish, interpreted) as a Hoover parent expressing deep concern about cuts to teacher retention and MTSS intervention specialists, arguing that reducing reading and math specialists creates long-term educational debt."
+          },
+          {
+            "name": "Cristian Vasquez",
+            "startSeconds": 3270,
+            "endSeconds": 3550,
+            "summary": "Shared (in Spanish, interpreted) a personal testimony about the difference in resources between his older and younger children's educations at Clifford, advocating for preserving staff and specialist positions."
+          },
+          {
+            "name": "Tina Yim",
+            "startSeconds": 3573,
+            "endSeconds": 3725,
+            "summary": "Spoke as an Orion parent and RCMIS representative highlighting the increasing fundraising burden on MI families and advocating for the retention of Orion's bilingual guest teacher and continued district investment in the MI program."
+          },
+          {
+            "name": "Araceli Flores",
+            "startSeconds": 3737,
+            "endSeconds": 3873,
+            "summary": "As a Hoover alumna and RLC teacher, advocated for more resources, staffing, and support for special education students, stating that current staffing is insufficient for individualized guidance."
+          },
+          {
+            "name": "Lisa Onofre",
+            "startSeconds": 4001,
+            "endSeconds": 4051,
+            "summary": "Spoke (in Spanish, interpreted) advocating against cuts to cafeteria staff and meals, for stronger math education investment particularly for the Hispanic community, and against selling district property to private interests."
+          },
+          {
+            "name": "Tina Mercer",
+            "startSeconds": 4316,
+            "endSeconds": 4426,
+            "summary": "As Roosevelt principal, advocated specifically for retaining admin IEP sub coverage at TK-5 schools, citing approximately 150 IEP meetings per year at her site alone and the significant time burden on principals without that support."
+          },
+          {
+            "name": "Laura Ramirez",
+            "startSeconds": 4442,
+            "endSeconds": 4587,
+            "summary": "Spoke (in Spanish, interpreted) as an Adelante Selby parent supporting budget decisions while requesting protection of programs that directly impact student learning, safety, and wellness, including enrichment classes and family engagement resources."
+          },
+          {
+            "name": "Lilia Amalia Valdez",
+            "startSeconds": 4783,
+            "endSeconds": 4854,
+            "summary": "As a Hoover parent, advocated for preserving counselors and mental health resources, sharing her son's experience of overcoming anxiety with the help of a school counselor after the pandemic."
+          },
+          {
+            "name": "Rita Melton",
+            "startSeconds": 4866,
+            "endSeconds": 4971,
+            "summary": "As a fourth grade teacher at Adelante Selby, advocated for retaining mental health professionals, MTSS TOSAs, and guest teachers, arguing each plays a critical role in supporting students and reducing pressure on teachers and principals."
+          },
+          {
+            "name": "Dora Ramirez",
+            "startSeconds": 4997,
+            "endSeconds": 5112,
+            "summary": "As a Hoover parent of a student with special education needs, asked the board not to cut music or STEAM, requested more special ed classrooms at the middle school level, and expressed general concern about budget cuts."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "School/Community Reports — Strategic Resource Alignment Update",
+        "phases": {
+          "opened": 144,
+          "presentation": 144,
+          "publicComment": 2159,
+          "discussion": 5247,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 7360,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 7367,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "cachedAt": "2026-03-15T17:02:18.866Z",
+  "inputTokens": 23612,
+  "outputTokens": 2303
+}

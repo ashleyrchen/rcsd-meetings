@@ -1,0 +1,922 @@
+{
+  "date": "2022-04-13",
+  "itemCount": 43,
+  "llmResponse": {
+    "speakers": {
+      "A": {
+        "name": "María Díaz-Slocum",
+        "role": "Vice President (acting as presiding officer)"
+      },
+      "B": {
+        "name": "Alisa MacAvoy",
+        "role": "President (trustee)"
+      },
+      "C": {
+        "name": "Eliana (staff)",
+        "role": "Staff/Clerk support (roll call reader)"
+      },
+      "D": {
+        "name": "Mike Wells",
+        "role": "Trustee"
+      },
+      "E": {
+        "name": "John Baker",
+        "role": "Superintendent"
+      },
+      "F": {
+        "name": "Sue Jorgensen",
+        "role": "Public speaker"
+      },
+      "G": {
+        "name": "Janet Lawson",
+        "role": "Trustee"
+      },
+      "H": {
+        "name": "Cecilia I. Márquez",
+        "role": "Clerk"
+      },
+      "I": {
+        "name": "Liz (staff)",
+        "role": "District staff"
+      }
+    },
+    "agendaChanges": "Item 9.2 (Sodexo extension) was pulled from consent and moved to action for individual discussion. Items 10.1 (Mandarin Immersion Materials) and 10.2 (Addendum to Measure U Application for Roy Cloud) were moved from action to consent. As a result, the consent bundle (Section 9) includes original 9.1, 10.1, and 10.2; item 9.2 was heard as a standalone action item after the consent vote. Items were otherwise heard in agenda order.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order / Roll Call",
+        "phases": {
+          "opened": 315,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Welcome by the School Board President",
+        "phases": {
+          "opened": 333,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 333,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 405,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 424,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 424,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 442,
+          "presentation": null,
+          "publicComment": 442,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Sue Jorgensen",
+            "startSeconds": 474,
+            "endSeconds": 669,
+            "summary": "Expressed concern about the lack of communication following the board's vote to close the district librarian position, recounted the history of library administration changes over 15 years, and urged the board to provide continuity by establishing a district librarian position."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Bond Program Consent Items",
+        "phases": {
+          "opened": 669,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 694,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Bond Program Action Items",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.1",
+        "title": "First Reading and Discussion of Board Policy 3516 - Emergencies and Disaster Preparedness Plan",
+        "phases": {
+          "opened": 694,
+          "presentation": 717,
+          "publicComment": null,
+          "discussion": 771,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.2",
+        "title": "First Reading and Discussion of Board Policy 4030 - Nondiscrimination in Employment",
+        "phases": {
+          "opened": 771,
+          "presentation": 797,
+          "publicComment": null,
+          "discussion": 804,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.3",
+        "title": "First Reading and Discussion of Board Policy 4118 - Dismissal/Suspension/Disciplinary Action - Certificated Employees",
+        "phases": {
+          "opened": 827,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.4",
+        "title": "First Reading and Discussion of Board Policy 4218 - Dismissal/Suspension/Disciplinary Action - Classified Employees",
+        "phases": {
+          "opened": 850,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.5",
+        "title": "First Reading and Discussion of Board Policy 4119.11/4219.11/4319.11 - Sexual Harassment",
+        "phases": {
+          "opened": 894,
+          "presentation": 912,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.6",
+        "title": "First Reading and Discussion of Board Policy 5145.7 - Sexual Harassment",
+        "phases": {
+          "opened": 944,
+          "presentation": 954,
+          "publicComment": null,
+          "discussion": 1002,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.7",
+        "title": "First Reading and Discussion of Board Bylaw 9320 - Meetings and Notices",
+        "phases": {
+          "opened": 1029,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 1039,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9",
+        "title": "Consent Items (including 9.1, 10.1, and 10.2 as moved)",
+        "phases": {
+          "opened": 1169,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 1181,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.2",
+        "title": "Approval of Extension of the Agreement for Food Service Management between Sodexo America, LLC and Redwood City School District for Fiscal Year 2022-23",
+        "phases": {
+          "opened": 1181,
+          "presentation": 1206,
+          "publicComment": 1206,
+          "discussion": 1824,
+          "vote": {
+            "seconds": 3488,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [
+          {
+            "name": "Jessica Shade",
+            "startSeconds": 1230,
+            "endSeconds": 1437,
+            "summary": "Urged the board to update the Sodexo contract to reflect district wellness policy priorities including local foods, fresh fruit, student surveys, and to reinstate transparency around existing contract obligations such as parent/student advisory boards and input processes."
+          }
+        ],
+        "consent": false,
+        "pulled": true
+      },
+      {
+        "itemLabel": "10.1",
+        "title": "Approval of Adoption of Mandarin Immersion Language Arts Materials",
+        "phases": {
+          "opened": 1169,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 1181,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.2",
+        "title": "Approval of Addendum to Measure U Application for 2021-22 School Year for Roy Cloud School",
+        "phases": {
+          "opened": 1169,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 1181,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.3",
+        "title": "Approval of Personnel Changes for 2021-22",
+        "phases": {
+          "opened": 3498,
+          "presentation": 3508,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3557,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.4",
+        "title": "Adoption of Resolution 31, Authorizing Electronic Meetings of the Board of Trustees During a State of Emergency Pursuant to Government Code Section 54953(e)",
+        "phases": {
+          "opened": 3568,
+          "presentation": 3589,
+          "publicComment": null,
+          "discussion": 3633,
+          "vote": {
+            "seconds": 3658,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "Report from Board Members and Superintendent",
+        "phases": {
+          "opened": 3663,
+          "presentation": 3685,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12",
+        "title": "Information",
+        "phases": {
+          "opened": 4811,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 4811,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 4844,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14",
+        "title": "Possible Other Business/Suggested Items for Future Agenda",
+        "phases": {
+          "opened": 4855,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 4861,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Changes to the Board Agenda Schedule",
+        "phases": {
+          "opened": 4885,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 4890,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 4982,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4999,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "result": {
+    "videoId": "Ya0CfvXo1kI",
+    "speakers": {
+      "A": {
+        "name": "María Díaz-Slocum",
+        "role": "Vice President (acting as presiding officer)"
+      },
+      "B": {
+        "name": "Alisa MacAvoy",
+        "role": "President (trustee)"
+      },
+      "C": {
+        "name": "Eliana (staff)",
+        "role": "Staff/Clerk support (roll call reader)"
+      },
+      "D": {
+        "name": "Mike Wells",
+        "role": "Trustee"
+      },
+      "E": {
+        "name": "John Baker",
+        "role": "Superintendent"
+      },
+      "F": {
+        "name": "Sue Jorgensen",
+        "role": "Public speaker"
+      },
+      "G": {
+        "name": "Janet Lawson",
+        "role": "Trustee"
+      },
+      "H": {
+        "name": "Cecilia I. Márquez",
+        "role": "Clerk"
+      },
+      "I": {
+        "name": "Liz (staff)",
+        "role": "District staff"
+      }
+    },
+    "agendaChanges": "Item 9.2 (Sodexo extension) was pulled from consent and moved to action for individual discussion. Items 10.1 (Mandarin Immersion Materials) and 10.2 (Addendum to Measure U Application for Roy Cloud) were moved from action to consent. As a result, the consent bundle (Section 9) includes original 9.1, 10.1, and 10.2; item 9.2 was heard as a standalone action item after the consent vote. Items were otherwise heard in agenda order.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order / Roll Call",
+        "phases": {
+          "opened": 315,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Welcome by the School Board President",
+        "phases": {
+          "opened": 333,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 333,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 405,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 424,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 424,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 442,
+          "presentation": null,
+          "publicComment": 442,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Sue Jorgensen",
+            "startSeconds": 474,
+            "endSeconds": 669,
+            "summary": "Expressed concern about the lack of communication following the board's vote to close the district librarian position, recounted the history of library administration changes over 15 years, and urged the board to provide continuity by establishing a district librarian position."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Bond Program Consent Items",
+        "phases": {
+          "opened": 669,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 694,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Bond Program Action Items",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.1",
+        "title": "First Reading and Discussion of Board Policy 3516 - Emergencies and Disaster Preparedness Plan",
+        "phases": {
+          "opened": 694,
+          "presentation": 717,
+          "publicComment": null,
+          "discussion": 771,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.2",
+        "title": "First Reading and Discussion of Board Policy 4030 - Nondiscrimination in Employment",
+        "phases": {
+          "opened": 771,
+          "presentation": 797,
+          "publicComment": null,
+          "discussion": 804,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.3",
+        "title": "First Reading and Discussion of Board Policy 4118 - Dismissal/Suspension/Disciplinary Action - Certificated Employees",
+        "phases": {
+          "opened": 827,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.4",
+        "title": "First Reading and Discussion of Board Policy 4218 - Dismissal/Suspension/Disciplinary Action - Classified Employees",
+        "phases": {
+          "opened": 850,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.5",
+        "title": "First Reading and Discussion of Board Policy 4119.11/4219.11/4319.11 - Sexual Harassment",
+        "phases": {
+          "opened": 894,
+          "presentation": 912,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.6",
+        "title": "First Reading and Discussion of Board Policy 5145.7 - Sexual Harassment",
+        "phases": {
+          "opened": 944,
+          "presentation": 954,
+          "publicComment": null,
+          "discussion": 1002,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.7",
+        "title": "First Reading and Discussion of Board Bylaw 9320 - Meetings and Notices",
+        "phases": {
+          "opened": 1029,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 1039,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9",
+        "title": "Consent Items (including 9.1, 10.1, and 10.2 as moved)",
+        "phases": {
+          "opened": 1169,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 1181,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.2",
+        "title": "Approval of Extension of the Agreement for Food Service Management between Sodexo America, LLC and Redwood City School District for Fiscal Year 2022-23",
+        "phases": {
+          "opened": 1181,
+          "presentation": 1206,
+          "publicComment": 1206,
+          "discussion": 1824,
+          "vote": {
+            "seconds": 3488,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [
+          {
+            "name": "Jessica Shade",
+            "startSeconds": 1230,
+            "endSeconds": 1437,
+            "summary": "Urged the board to update the Sodexo contract to reflect district wellness policy priorities including local foods, fresh fruit, student surveys, and to reinstate transparency around existing contract obligations such as parent/student advisory boards and input processes."
+          }
+        ],
+        "consent": false,
+        "pulled": true
+      },
+      {
+        "itemLabel": "10.1",
+        "title": "Approval of Adoption of Mandarin Immersion Language Arts Materials",
+        "phases": {
+          "opened": 1169,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 1181,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.2",
+        "title": "Approval of Addendum to Measure U Application for 2021-22 School Year for Roy Cloud School",
+        "phases": {
+          "opened": 1169,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 1181,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.3",
+        "title": "Approval of Personnel Changes for 2021-22",
+        "phases": {
+          "opened": 3498,
+          "presentation": 3508,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3557,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.4",
+        "title": "Adoption of Resolution 31, Authorizing Electronic Meetings of the Board of Trustees During a State of Emergency Pursuant to Government Code Section 54953(e)",
+        "phases": {
+          "opened": 3568,
+          "presentation": 3589,
+          "publicComment": null,
+          "discussion": 3633,
+          "vote": {
+            "seconds": 3658,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "Report from Board Members and Superintendent",
+        "phases": {
+          "opened": 3663,
+          "presentation": 3685,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12",
+        "title": "Information",
+        "phases": {
+          "opened": 4811,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 4811,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 4844,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14",
+        "title": "Possible Other Business/Suggested Items for Future Agenda",
+        "phases": {
+          "opened": 4855,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 4861,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Changes to the Board Agenda Schedule",
+        "phases": {
+          "opened": 4885,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 4890,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 4982,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4999,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "cachedAt": "2026-03-15T18:12:31.028Z",
+  "inputTokens": 18362,
+  "outputTokens": 3508
+}

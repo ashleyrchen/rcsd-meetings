@@ -1,0 +1,1226 @@
+{
+  "date": "2022-06-29",
+  "itemCount": 78,
+  "llmResponse": {
+    "speakers": {
+      "A": {
+        "name": "María Díaz-Slocum",
+        "role": "Board President"
+      },
+      "B": {
+        "name": "Cecilia I. Márquez",
+        "role": "Board Clerk"
+      },
+      "C": {
+        "name": "Mike Wells",
+        "role": "Trustee"
+      },
+      "D": {
+        "name": "Alisa MacAvoy",
+        "role": "Board President / Trustee (note: ASR label confusion; context suggests this is a staff/trustee voice)"
+      },
+      "E": {
+        "name": "Janet Lawson",
+        "role": "Trustee"
+      }
+    },
+    "agendaChanges": "Item 12.10 (Approval of Employment Contract for Deputy Superintendent) was pulled from the agenda and deferred to the August 10 meeting. Items 12.11 through 12.14 (Declaration of Obsolete Textbooks, Adoption of History/Social Studies Curriculum for Grades 6-8, Approval of Proposed Expenditures from Measure U for 2022-23, and Approval of Employment Contract for Deputy Superintendent) were moved to consent. A staff recognition item (6.0) was added before Section 6 bond program items. Items otherwise followed the posted agenda order.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order / Roll Call",
+        "phases": {
+          "opened": 6,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Welcome by the School Board President",
+        "phases": {
+          "opened": 30,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 85,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 85,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 207,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 217,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 239,
+          "presentation": null,
+          "publicComment": 239,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "School/Community Reports — Staff Recognition (added item 6.0) and Measure T Bond Program Progress Update",
+        "phases": {
+          "opened": 244,
+          "presentation": 2096,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Bond Program Consent Items — Approval of Consent Items",
+        "phases": {
+          "opened": 2904,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 2918,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8",
+        "title": "Public Hearing — Authorizing Conveyance of a Public Utility Easement to Pacific Gas & Electric Company",
+        "phases": {
+          "opened": 2934,
+          "presentation": null,
+          "publicComment": 2934,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9",
+        "title": "Bond Program Action Items",
+        "phases": {
+          "opened": 2973,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.1",
+        "title": "Adoption of Resolution 41 — Authorizing Conveyance of a Public Utility Easement to Pacific Gas & Electric Company",
+        "phases": {
+          "opened": 2973,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3010,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.2",
+        "title": "Approval of New Buildings, Modernization and Sitework Project Bid Package B Change Order #5 for Garfield Community School with MK Pipelines and Adoption of Resolution 42",
+        "phases": {
+          "opened": 3022,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3051,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.3",
+        "title": "Approval of New Buildings, Modernization and Sitework Project Change Order #8 for Garfield School with Rodan Builders and Adoption of Resolution 43",
+        "phases": {
+          "opened": 3062,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3093,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "Discussion Items",
+        "phases": {
+          "opened": 3101,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.1",
+        "title": "Discussion of the Local Control Accountability Plan (LCAP) Federal Addendum for 2022-23",
+        "phases": {
+          "opened": 3101,
+          "presentation": 3148,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.2",
+        "title": "Discussion of Draft Resolution Ordering a School Bond Election on November 8, 2022",
+        "phases": {
+          "opened": 3424,
+          "presentation": 3528,
+          "publicComment": null,
+          "discussion": 3676,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "Consent Items — Approval of Consent Items",
+        "phases": {
+          "opened": 4176,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4191,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12",
+        "title": "Action Items",
+        "phases": {
+          "opened": 4200,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.1",
+        "title": "Approval of the Local Control Accountability Plan (LCAP) for 2022-23",
+        "phases": {
+          "opened": 4200,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4235,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.2",
+        "title": "Approval of Local Control Funding Formula (LCFF) Budget Overview for Parents",
+        "phases": {
+          "opened": 4243,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 4257,
+          "vote": {
+            "seconds": 4284,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.3",
+        "title": "Approval of 2022-23 Proposed Budget for Redwood City School District",
+        "phases": {
+          "opened": 4298,
+          "presentation": 4298,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4371,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.4",
+        "title": "Adoption of 2022-23 Statement of Reasons for Reserves in Excess of the Minimum State-Recommended Level",
+        "phases": {
+          "opened": 4378,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4408,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.5",
+        "title": "Adoption of Resolution 44 — San Mateo County Office of Education Authorized Signatures",
+        "phases": {
+          "opened": 4416,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4434,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.6",
+        "title": "Adoption of Resolution 45 — Bank Signatures / Sequoia Federal Credit Union",
+        "phases": {
+          "opened": 4449,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4461,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.7",
+        "title": "Adoption of Resolution 46 — Bank Signatures / Tri Counties Bank",
+        "phases": {
+          "opened": 4471,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4488,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.8",
+        "title": "Adoption of Resolution 47 — Bank Signatures / Wells Fargo Bank",
+        "phases": {
+          "opened": 4498,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4516,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.9",
+        "title": "Adoption of Resolution 48 — Resolution Calling for an Election on November 8, 2022 for the Election of Two Members of the Governing Board",
+        "phases": {
+          "opened": 4523,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4551,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.10",
+        "title": "Approval of Employment Contract for Deputy Superintendent",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": true
+      },
+      {
+        "itemLabel": "13",
+        "title": "Board and Superintendent Reports",
+        "phases": {
+          "opened": 4562,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 4562,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13.1",
+        "title": "Report from Board Members and Superintendent",
+        "phases": {
+          "opened": 4562,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 4562,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14",
+        "title": "Information",
+        "phases": {
+          "opened": 4591,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.1",
+        "title": "Contract Update Information and Credit Card Summary",
+        "phases": {
+          "opened": 4591,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.2",
+        "title": "Universal Prekindergarten Planning Template",
+        "phases": {
+          "opened": 4600,
+          "presentation": 4636,
+          "publicComment": null,
+          "discussion": 5287,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.3",
+        "title": "Local Indicators for the California School Dashboard",
+        "phases": {
+          "opened": 5372,
+          "presentation": 5403,
+          "publicComment": null,
+          "discussion": 6138,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 6318,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16",
+        "title": "Other Business / Suggested Items for Future Agenda",
+        "phases": {
+          "opened": 6322,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "17",
+        "title": "Board Agenda Calendar — Changes to the Board Agenda Schedule",
+        "phases": {
+          "opened": 6325,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "18",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 6378,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6440,
+            "type": "motion",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "result": {
+    "videoId": "ehyzHnix3lo",
+    "speakers": {
+      "A": {
+        "name": "María Díaz-Slocum",
+        "role": "Board President"
+      },
+      "B": {
+        "name": "Cecilia I. Márquez",
+        "role": "Board Clerk"
+      },
+      "C": {
+        "name": "Mike Wells",
+        "role": "Trustee"
+      },
+      "D": {
+        "name": "Alisa MacAvoy",
+        "role": "Board President / Trustee (note: ASR label confusion; context suggests this is a staff/trustee voice)"
+      },
+      "E": {
+        "name": "Janet Lawson",
+        "role": "Trustee"
+      }
+    },
+    "agendaChanges": "Item 12.10 (Approval of Employment Contract for Deputy Superintendent) was pulled from the agenda and deferred to the August 10 meeting. Items 12.11 through 12.14 (Declaration of Obsolete Textbooks, Adoption of History/Social Studies Curriculum for Grades 6-8, Approval of Proposed Expenditures from Measure U for 2022-23, and Approval of Employment Contract for Deputy Superintendent) were moved to consent. A staff recognition item (6.0) was added before Section 6 bond program items. Items otherwise followed the posted agenda order.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order / Roll Call",
+        "phases": {
+          "opened": 6,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Welcome by the School Board President",
+        "phases": {
+          "opened": 30,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 85,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 85,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 207,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 217,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 239,
+          "presentation": null,
+          "publicComment": 239,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "School/Community Reports — Staff Recognition (added item 6.0) and Measure T Bond Program Progress Update",
+        "phases": {
+          "opened": 244,
+          "presentation": 2096,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Bond Program Consent Items — Approval of Consent Items",
+        "phases": {
+          "opened": 2904,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 2918,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8",
+        "title": "Public Hearing — Authorizing Conveyance of a Public Utility Easement to Pacific Gas & Electric Company",
+        "phases": {
+          "opened": 2934,
+          "presentation": null,
+          "publicComment": 2934,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9",
+        "title": "Bond Program Action Items",
+        "phases": {
+          "opened": 2973,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.1",
+        "title": "Adoption of Resolution 41 — Authorizing Conveyance of a Public Utility Easement to Pacific Gas & Electric Company",
+        "phases": {
+          "opened": 2973,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3010,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.2",
+        "title": "Approval of New Buildings, Modernization and Sitework Project Bid Package B Change Order #5 for Garfield Community School with MK Pipelines and Adoption of Resolution 42",
+        "phases": {
+          "opened": 3022,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3051,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.3",
+        "title": "Approval of New Buildings, Modernization and Sitework Project Change Order #8 for Garfield School with Rodan Builders and Adoption of Resolution 43",
+        "phases": {
+          "opened": 3062,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3093,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "Discussion Items",
+        "phases": {
+          "opened": 3101,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.1",
+        "title": "Discussion of the Local Control Accountability Plan (LCAP) Federal Addendum for 2022-23",
+        "phases": {
+          "opened": 3101,
+          "presentation": 3148,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.2",
+        "title": "Discussion of Draft Resolution Ordering a School Bond Election on November 8, 2022",
+        "phases": {
+          "opened": 3424,
+          "presentation": 3528,
+          "publicComment": null,
+          "discussion": 3676,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "Consent Items — Approval of Consent Items",
+        "phases": {
+          "opened": 4176,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4191,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12",
+        "title": "Action Items",
+        "phases": {
+          "opened": 4200,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.1",
+        "title": "Approval of the Local Control Accountability Plan (LCAP) for 2022-23",
+        "phases": {
+          "opened": 4200,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4235,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.2",
+        "title": "Approval of Local Control Funding Formula (LCFF) Budget Overview for Parents",
+        "phases": {
+          "opened": 4243,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 4257,
+          "vote": {
+            "seconds": 4284,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.3",
+        "title": "Approval of 2022-23 Proposed Budget for Redwood City School District",
+        "phases": {
+          "opened": 4298,
+          "presentation": 4298,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4371,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.4",
+        "title": "Adoption of 2022-23 Statement of Reasons for Reserves in Excess of the Minimum State-Recommended Level",
+        "phases": {
+          "opened": 4378,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4408,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.5",
+        "title": "Adoption of Resolution 44 — San Mateo County Office of Education Authorized Signatures",
+        "phases": {
+          "opened": 4416,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4434,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.6",
+        "title": "Adoption of Resolution 45 — Bank Signatures / Sequoia Federal Credit Union",
+        "phases": {
+          "opened": 4449,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4461,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.7",
+        "title": "Adoption of Resolution 46 — Bank Signatures / Tri Counties Bank",
+        "phases": {
+          "opened": 4471,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4488,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.8",
+        "title": "Adoption of Resolution 47 — Bank Signatures / Wells Fargo Bank",
+        "phases": {
+          "opened": 4498,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4516,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.9",
+        "title": "Adoption of Resolution 48 — Resolution Calling for an Election on November 8, 2022 for the Election of Two Members of the Governing Board",
+        "phases": {
+          "opened": 4523,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4551,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.10",
+        "title": "Approval of Employment Contract for Deputy Superintendent",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": true
+      },
+      {
+        "itemLabel": "13",
+        "title": "Board and Superintendent Reports",
+        "phases": {
+          "opened": 4562,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 4562,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13.1",
+        "title": "Report from Board Members and Superintendent",
+        "phases": {
+          "opened": 4562,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 4562,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14",
+        "title": "Information",
+        "phases": {
+          "opened": 4591,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.1",
+        "title": "Contract Update Information and Credit Card Summary",
+        "phases": {
+          "opened": 4591,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.2",
+        "title": "Universal Prekindergarten Planning Template",
+        "phases": {
+          "opened": 4600,
+          "presentation": 4636,
+          "publicComment": null,
+          "discussion": 5287,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.3",
+        "title": "Local Indicators for the California School Dashboard",
+        "phases": {
+          "opened": 5372,
+          "presentation": 5403,
+          "publicComment": null,
+          "discussion": 6138,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 6318,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16",
+        "title": "Other Business / Suggested Items for Future Agenda",
+        "phases": {
+          "opened": 6322,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "17",
+        "title": "Board Agenda Calendar — Changes to the Board Agenda Schedule",
+        "phases": {
+          "opened": 6325,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "18",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 6378,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6440,
+            "type": "motion",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "cachedAt": "2026-03-15T18:06:21.062Z",
+  "inputTokens": 26947,
+  "outputTokens": 4568
+}

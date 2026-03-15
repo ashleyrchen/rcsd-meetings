@@ -1,0 +1,700 @@
+{
+  "date": "2024-02-07",
+  "itemCount": 56,
+  "llmResponse": {
+    "speakers": {
+      "A": {
+        "name": "Janet Lawson",
+        "role": "Board President"
+      },
+      "B": {
+        "name": "Mike Wells",
+        "role": "Board Clerk / Vice President (per transcript context)"
+      },
+      "C": {
+        "name": "David Weekly",
+        "role": "Trustee (also Jorge Quintana and others share C label in portions)"
+      }
+    },
+    "agendaChanges": "Items 13.2 (Acceptance of CSEA Chapter V Sunshine Proposal) and 13.3 (Receipt of Governing Board's initial proposal for negotiations with CSEA) were moved from Action Items to Consent Items. The closed session and reconvene items (Sections 1-4) were handled at the very start of the recording before the regular session formally opened. Section 5 Welcome was delivered by President Lawson (not Janet Lawson as listed on agenda — Janet Lawson IS the president; the agenda incorrectly lists 'Welcome by the School Board President, Janet Lawson'). Sections 1-4 of the closed session agenda are not captured in detail in the transcript as the recording appears to begin at the reconvene/regular session point.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order / Roll Call (Closed Session)",
+        "phases": {
+          "opened": 6,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Oral Communication on Closed Session Items Only",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Closed Session – 5:00 p.m.",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Reconvene to Regular Session / Roll Call / Report Out on Closed Session",
+        "phases": {
+          "opened": 6,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Welcome by the School Board President",
+        "phases": {
+          "opened": 31,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 155,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 155,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 191,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 196,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 214,
+          "presentation": null,
+          "publicComment": 214,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Brian Cagle",
+            "startSeconds": 236,
+            "endSeconds": 285,
+            "summary": "As RCTA Negotiations Chair, formally submitted the CTA sunshine proposal opening Articles 4 (working hours), 6 (compensation), and 8 (class size) for negotiations with the district."
+          },
+          {
+            "name": "Aaron Washburn",
+            "startSeconds": 253,
+            "endSeconds": 309,
+            "summary": "As RCTA President, explained the rationale for opening those articles, emphasizing the need to protect early elementary students from overcrowded classrooms and attract quality educators."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9",
+        "title": "Bond Program Consent Items – Approval of Measure T Bond Program Tracking List of Items Under $20k",
+        "phases": {
+          "opened": 310,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 335,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "Bond Program Action Items",
+        "phases": {
+          "opened": 340,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "School/Community Reports – Information on Financial Audit Report for RCSD for 2022-23 School Year",
+        "phases": {
+          "opened": 341,
+          "presentation": 363,
+          "publicComment": null,
+          "discussion": 518,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "School/Community Reports – Communications Update: RCSD Logo Redesign Project",
+        "phases": {
+          "opened": 552,
+          "presentation": 624,
+          "publicComment": null,
+          "discussion": 2295,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "School/Community Reports – Report on the RCSD THRIVE Manual (HIP Grant)",
+        "phases": {
+          "opened": 2628,
+          "presentation": 2686,
+          "publicComment": null,
+          "discussion": 4402,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12",
+        "title": "Consent Items (bundle including 13.2 and 13.3 as moved)",
+        "phases": {
+          "opened": 5166,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 5198,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "Action Item – Adoption of Resolution No. 6, Determination of Order of Employment for Certificated Employees",
+        "phases": {
+          "opened": 5207,
+          "presentation": 5207,
+          "publicComment": null,
+          "discussion": 5260,
+          "vote": {
+            "seconds": 5268,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14",
+        "title": "Board and Superintendent Reports",
+        "phases": {
+          "opened": 5287,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 5287,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Information – San Mateo County Investment Fund, December 2023",
+        "phases": {
+          "opened": 5671,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 5676,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 5676,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "17",
+        "title": "Other Business / Suggested Items for Future Agenda",
+        "phases": {
+          "opened": 5757,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 5757,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "18",
+        "title": "Board Meetings Calendar",
+        "phases": {
+          "opened": 5855,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 5855,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "19",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 5943,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 5947,
+            "type": "voice",
+            "result": "unanimous"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "result": {
+    "videoId": "HhZe4qcyt94",
+    "speakers": {
+      "A": {
+        "name": "Janet Lawson",
+        "role": "Board President"
+      },
+      "B": {
+        "name": "Mike Wells",
+        "role": "Board Clerk / Vice President (per transcript context)"
+      },
+      "C": {
+        "name": "David Weekly",
+        "role": "Trustee (also Jorge Quintana and others share C label in portions)"
+      }
+    },
+    "agendaChanges": "Items 13.2 (Acceptance of CSEA Chapter V Sunshine Proposal) and 13.3 (Receipt of Governing Board's initial proposal for negotiations with CSEA) were moved from Action Items to Consent Items. The closed session and reconvene items (Sections 1-4) were handled at the very start of the recording before the regular session formally opened. Section 5 Welcome was delivered by President Lawson (not Janet Lawson as listed on agenda — Janet Lawson IS the president; the agenda incorrectly lists 'Welcome by the School Board President, Janet Lawson'). Sections 1-4 of the closed session agenda are not captured in detail in the transcript as the recording appears to begin at the reconvene/regular session point.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order / Roll Call (Closed Session)",
+        "phases": {
+          "opened": 6,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Oral Communication on Closed Session Items Only",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Closed Session – 5:00 p.m.",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Reconvene to Regular Session / Roll Call / Report Out on Closed Session",
+        "phases": {
+          "opened": 6,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Welcome by the School Board President",
+        "phases": {
+          "opened": 31,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 155,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 155,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 191,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 196,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 214,
+          "presentation": null,
+          "publicComment": 214,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Brian Cagle",
+            "startSeconds": 236,
+            "endSeconds": 285,
+            "summary": "As RCTA Negotiations Chair, formally submitted the CTA sunshine proposal opening Articles 4 (working hours), 6 (compensation), and 8 (class size) for negotiations with the district."
+          },
+          {
+            "name": "Aaron Washburn",
+            "startSeconds": 253,
+            "endSeconds": 309,
+            "summary": "As RCTA President, explained the rationale for opening those articles, emphasizing the need to protect early elementary students from overcrowded classrooms and attract quality educators."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9",
+        "title": "Bond Program Consent Items – Approval of Measure T Bond Program Tracking List of Items Under $20k",
+        "phases": {
+          "opened": 310,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 335,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "Bond Program Action Items",
+        "phases": {
+          "opened": 340,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "School/Community Reports – Information on Financial Audit Report for RCSD for 2022-23 School Year",
+        "phases": {
+          "opened": 341,
+          "presentation": 363,
+          "publicComment": null,
+          "discussion": 518,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "School/Community Reports – Communications Update: RCSD Logo Redesign Project",
+        "phases": {
+          "opened": 552,
+          "presentation": 624,
+          "publicComment": null,
+          "discussion": 2295,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "School/Community Reports – Report on the RCSD THRIVE Manual (HIP Grant)",
+        "phases": {
+          "opened": 2628,
+          "presentation": 2686,
+          "publicComment": null,
+          "discussion": 4402,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12",
+        "title": "Consent Items (bundle including 13.2 and 13.3 as moved)",
+        "phases": {
+          "opened": 5166,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 5198,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "Action Item – Adoption of Resolution No. 6, Determination of Order of Employment for Certificated Employees",
+        "phases": {
+          "opened": 5207,
+          "presentation": 5207,
+          "publicComment": null,
+          "discussion": 5260,
+          "vote": {
+            "seconds": 5268,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14",
+        "title": "Board and Superintendent Reports",
+        "phases": {
+          "opened": 5287,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 5287,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Information – San Mateo County Investment Fund, December 2023",
+        "phases": {
+          "opened": 5671,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 5676,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 5676,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "17",
+        "title": "Other Business / Suggested Items for Future Agenda",
+        "phases": {
+          "opened": 5757,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 5757,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "18",
+        "title": "Board Meetings Calendar",
+        "phases": {
+          "opened": 5855,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 5855,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "19",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 5943,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 5947,
+            "type": "voice",
+            "result": "unanimous"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "cachedAt": "2026-03-15T17:38:53.693Z",
+  "inputTokens": 22590,
+  "outputTokens": 2689
+}

@@ -1,0 +1,840 @@
+{
+  "date": "2020-11-18",
+  "itemCount": 65,
+  "llmResponse": {
+    "speakers": {
+      "A": {
+        "name": "Janet Lawson",
+        "role": "President / Board President"
+      },
+      "B": {
+        "name": "Alisa MacAvoy",
+        "role": "Vice President / Clerk (also performs roll call)"
+      },
+      "C": {
+        "name": "Will (Bond Program staff)",
+        "role": "Bond Program staff presenter"
+      },
+      "D": {
+        "name": "Cecilia I. Márquez",
+        "role": "Trustee"
+      },
+      "E": {
+        "name": "John Baker",
+        "role": "Superintendent (Dr. Baker)"
+      },
+      "F": {
+        "name": "Dennis McBride",
+        "role": "Trustee (outgoing President)"
+      },
+      "G": {
+        "name": "Alisa MacAvoy",
+        "role": "Vice President / Clerk (secondary label used in later transcript)"
+      },
+      "H": {
+        "name": "Unknown/Various",
+        "role": "Various secondary voices / Bond staff"
+      },
+      "I": {
+        "name": "Lucy Wicks",
+        "role": "Stanford University, Office of External Relations"
+      }
+    },
+    "agendaChanges": "The meeting opened with Section 4 (Reconvene/Roll Call/Report Out on Closed Session) as the first item on the recording, meaning Sections 1-3 (Call to Order, Roll Call, Oral Communication on Closed Session, Closed Session) had already occurred before the recording began. Section 5 (Welcome) was delivered inline with the Section 4 report-out. Section 11 (Bond Program Action Items) had no items and was skipped. Otherwise the agenda was followed in order.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order / Roll Call",
+        "phases": {
+          "opened": 10,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Oral Communication on Closed Session Items Only",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Closed Session",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Reconvene to Regular Session / Roll Call / Report Out on Closed Session",
+        "phases": {
+          "opened": 10,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Welcome by the School Board President",
+        "phases": {
+          "opened": 28,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 95,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 113,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 136,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 155,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 180,
+          "presentation": null,
+          "publicComment": 180,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9",
+        "title": "Bond Program Update",
+        "phases": {
+          "opened": 180,
+          "presentation": 199,
+          "publicComment": null,
+          "discussion": 436,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "Bond Program Consent Items",
+        "phases": {
+          "opened": 1054,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 1065,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "Bond Program Action Items",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12",
+        "title": "Discussion Items",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.1",
+        "title": "Discussion on COVID-19",
+        "phases": {
+          "opened": 1082,
+          "presentation": 1100,
+          "publicComment": 3972,
+          "discussion": 3452,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Maria Stockton",
+            "startSeconds": 4064,
+            "endSeconds": 4254,
+            "summary": "Advocated on behalf of classified staff (CSEA members), expressing that their contributions and health risks during the pandemic have been overlooked and asked the board to negotiate fairly with them."
+          },
+          {
+            "name": "Katherine Stewart",
+            "startSeconds": 4280,
+            "endSeconds": 4322,
+            "summary": "Thanked the board for their patience over many months and stated her family would remain in full distance learning until a vaccine is available while offering to support those returning in person."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.2",
+        "title": "Presentation from Stanford University on Research and Mental Health Support",
+        "phases": {
+          "opened": 4368,
+          "presentation": 4464,
+          "publicComment": null,
+          "discussion": 5533,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.3",
+        "title": "Discussion of Board Policy 4116 - Probationary/Permanent Status",
+        "phases": {
+          "opened": 6450,
+          "presentation": 6458,
+          "publicComment": null,
+          "discussion": 6590,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "Consent Items",
+        "phases": {
+          "opened": 6708,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6720,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.1",
+        "title": "Annual Developer Fee Report - Fiscal Year 2019-20",
+        "phases": {
+          "opened": 6735,
+          "presentation": 6744,
+          "publicComment": null,
+          "discussion": 6822,
+          "vote": {
+            "seconds": 6839,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.2",
+        "title": "Second Reading and Approval of Board Policy 0415 - Equity",
+        "phases": {
+          "opened": 6857,
+          "presentation": 6864,
+          "publicComment": null,
+          "discussion": 7030,
+          "vote": {
+            "seconds": 7299,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Report from Board Members and Superintendent",
+        "phases": {
+          "opened": 7314,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 7325,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16",
+        "title": "Information on San Mateo County Investment Fund - October, 2020",
+        "phases": {
+          "opened": 8229,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "17",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 8240,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "18",
+        "title": "Other Business/Suggested Items for Future Agenda",
+        "phases": {
+          "opened": 8242,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "19",
+        "title": "Board Agenda Calendar / Changes to the Board Agenda Schedule",
+        "phases": {
+          "opened": 8244,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 8279,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "20",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 8406,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 8415,
+            "type": "voice",
+            "result": "unanimous"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "result": {
+    "videoId": "WuVzcQVlzOI",
+    "speakers": {
+      "A": {
+        "name": "Janet Lawson",
+        "role": "President / Board President"
+      },
+      "B": {
+        "name": "Alisa MacAvoy",
+        "role": "Vice President / Clerk (also performs roll call)"
+      },
+      "C": {
+        "name": "Will (Bond Program staff)",
+        "role": "Bond Program staff presenter"
+      },
+      "D": {
+        "name": "Cecilia I. Márquez",
+        "role": "Trustee"
+      },
+      "E": {
+        "name": "John Baker",
+        "role": "Superintendent (Dr. Baker)"
+      },
+      "F": {
+        "name": "Dennis McBride",
+        "role": "Trustee (outgoing President)"
+      },
+      "G": {
+        "name": "Alisa MacAvoy",
+        "role": "Vice President / Clerk (secondary label used in later transcript)"
+      },
+      "H": {
+        "name": "Unknown/Various",
+        "role": "Various secondary voices / Bond staff"
+      },
+      "I": {
+        "name": "Lucy Wicks",
+        "role": "Stanford University, Office of External Relations"
+      }
+    },
+    "agendaChanges": "The meeting opened with Section 4 (Reconvene/Roll Call/Report Out on Closed Session) as the first item on the recording, meaning Sections 1-3 (Call to Order, Roll Call, Oral Communication on Closed Session, Closed Session) had already occurred before the recording began. Section 5 (Welcome) was delivered inline with the Section 4 report-out. Section 11 (Bond Program Action Items) had no items and was skipped. Otherwise the agenda was followed in order.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order / Roll Call",
+        "phases": {
+          "opened": 10,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Oral Communication on Closed Session Items Only",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Closed Session",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Reconvene to Regular Session / Roll Call / Report Out on Closed Session",
+        "phases": {
+          "opened": 10,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Welcome by the School Board President",
+        "phases": {
+          "opened": 28,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 95,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 113,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 136,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 155,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 180,
+          "presentation": null,
+          "publicComment": 180,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9",
+        "title": "Bond Program Update",
+        "phases": {
+          "opened": 180,
+          "presentation": 199,
+          "publicComment": null,
+          "discussion": 436,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "Bond Program Consent Items",
+        "phases": {
+          "opened": 1054,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 1065,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "Bond Program Action Items",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12",
+        "title": "Discussion Items",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.1",
+        "title": "Discussion on COVID-19",
+        "phases": {
+          "opened": 1082,
+          "presentation": 1100,
+          "publicComment": 3972,
+          "discussion": 3452,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Maria Stockton",
+            "startSeconds": 4064,
+            "endSeconds": 4254,
+            "summary": "Advocated on behalf of classified staff (CSEA members), expressing that their contributions and health risks during the pandemic have been overlooked and asked the board to negotiate fairly with them."
+          },
+          {
+            "name": "Katherine Stewart",
+            "startSeconds": 4280,
+            "endSeconds": 4322,
+            "summary": "Thanked the board for their patience over many months and stated her family would remain in full distance learning until a vaccine is available while offering to support those returning in person."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.2",
+        "title": "Presentation from Stanford University on Research and Mental Health Support",
+        "phases": {
+          "opened": 4368,
+          "presentation": 4464,
+          "publicComment": null,
+          "discussion": 5533,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.3",
+        "title": "Discussion of Board Policy 4116 - Probationary/Permanent Status",
+        "phases": {
+          "opened": 6450,
+          "presentation": 6458,
+          "publicComment": null,
+          "discussion": 6590,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "Consent Items",
+        "phases": {
+          "opened": 6708,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6720,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.1",
+        "title": "Annual Developer Fee Report - Fiscal Year 2019-20",
+        "phases": {
+          "opened": 6735,
+          "presentation": 6744,
+          "publicComment": null,
+          "discussion": 6822,
+          "vote": {
+            "seconds": 6839,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.2",
+        "title": "Second Reading and Approval of Board Policy 0415 - Equity",
+        "phases": {
+          "opened": 6857,
+          "presentation": 6864,
+          "publicComment": null,
+          "discussion": 7030,
+          "vote": {
+            "seconds": 7299,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Report from Board Members and Superintendent",
+        "phases": {
+          "opened": 7314,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 7325,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16",
+        "title": "Information on San Mateo County Investment Fund - October, 2020",
+        "phases": {
+          "opened": 8229,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "17",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 8240,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "18",
+        "title": "Other Business/Suggested Items for Future Agenda",
+        "phases": {
+          "opened": 8242,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "19",
+        "title": "Board Agenda Calendar / Changes to the Board Agenda Schedule",
+        "phases": {
+          "opened": 8244,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 8279,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "20",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 8406,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 8415,
+            "type": "voice",
+            "result": "unanimous"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "cachedAt": "2026-03-15T18:33:57.980Z",
+  "inputTokens": 31878,
+  "outputTokens": 3044
+}

@@ -1,0 +1,914 @@
+{
+  "date": "2022-02-09",
+  "itemCount": 56,
+  "llmResponse": {
+    "speakers": {
+      "A": {
+        "name": "Janet Lawson",
+        "role": "Trustee"
+      },
+      "B": {
+        "name": "María Díaz-Slocum",
+        "role": "President"
+      },
+      "C": {
+        "name": "Cecilia I. Márquez",
+        "role": "Clerk"
+      },
+      "D": {
+        "name": "Mike Wells",
+        "role": "Trustee"
+      },
+      "E": {
+        "name": "Alisa MacAvoy",
+        "role": "Vice President"
+      },
+      "F": {
+        "name": "Janet Lawson",
+        "role": "Trustee"
+      },
+      "G": {
+        "name": "Cecilia I. Márquez",
+        "role": "Clerk"
+      }
+    },
+    "agendaChanges": "Items 10.2 through 10.5 (Second Reading and Approval of BP 0460, BP 1240, BP 3555, BP 5141.31) were moved from Action Items to the Consent calendar. Item 10.6 (Approval of Addendum to Measure U Application for Adelante Selby Spanish Immersion School) was also moved to Consent. These items were approved as part of the Consent bundle at the time consent items were called. Section 7 (Bond Program Action Items) had no items and was skipped.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order / Roll Call",
+        "phases": {
+          "opened": 130,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Welcome by the School Board President",
+        "phases": {
+          "opened": 155,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 263,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 263,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 288,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 307,
+            "type": "voice",
+            "result": "unanimous"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 315,
+          "presentation": null,
+          "publicComment": 315,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Bond Program Consent Items – Approval of Consent Items",
+        "phases": {
+          "opened": 322,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 337,
+            "type": "voice",
+            "result": "unanimous"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Bond Program Action Items",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.1",
+        "title": "First Reading and Discussion of Board Policy 3311 - Bids",
+        "phases": {
+          "opened": 337,
+          "presentation": 365,
+          "publicComment": null,
+          "discussion": 401,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.2",
+        "title": "First Reading and Discussion of Board Policy 5117 - Interdistrict Attendance",
+        "phases": {
+          "opened": 407,
+          "presentation": 424,
+          "publicComment": null,
+          "discussion": 523,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.3",
+        "title": "First Reading and Discussion of Board Policy 5116.1 - Intradistrict Open Enrollment",
+        "phases": {
+          "opened": 692,
+          "presentation": 722,
+          "publicComment": null,
+          "discussion": 986,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9",
+        "title": "Consent Items – Approval of Consent Items (including moved Action Items 10.2–10.6)",
+        "phases": {
+          "opened": 2414,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 2433,
+            "type": "voice",
+            "result": "unanimous"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.1",
+        "title": "Adoption of Resolution 25, Authorizing Electronic Meetings of the Board of Trustees During a State of Emergency",
+        "phases": {
+          "opened": 2433,
+          "presentation": 2459,
+          "publicComment": null,
+          "discussion": 2489,
+          "vote": {
+            "seconds": 2527,
+            "type": "voice",
+            "result": "unanimous"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.2",
+        "title": "Second Reading and Approval of Board Policy 0460 – Local Control and Accountability Plan",
+        "phases": {
+          "opened": 2414,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 2433,
+            "type": "voice",
+            "result": "unanimous"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.3",
+        "title": "Second Reading and Approval of Board Policy 1240 – Volunteer Assistance",
+        "phases": {
+          "opened": 2414,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 2433,
+            "type": "voice",
+            "result": "unanimous"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.4",
+        "title": "Second Reading and Approval of Board Policy 3555 - Nutrition Program Compliance",
+        "phases": {
+          "opened": 2414,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 2433,
+            "type": "voice",
+            "result": "unanimous"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.5",
+        "title": "Second Reading and Approval of Board Policy 5141.31 - Immunizations",
+        "phases": {
+          "opened": 2414,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 2433,
+            "type": "voice",
+            "result": "unanimous"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.6",
+        "title": "Approval of Addendum to Measure U Application for 2021-22 for Adelante Selby Spanish Immersion School",
+        "phases": {
+          "opened": 2414,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 2433,
+            "type": "voice",
+            "result": "unanimous"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "Report from Board Members and Superintendent",
+        "phases": {
+          "opened": 2538,
+          "presentation": 2554,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12",
+        "title": "Information – Charter School First Interim Financial Reports and County Investment Fund",
+        "phases": {
+          "opened": 3230,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 3261,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.1",
+        "title": "RCSD Review of Connect Community Charter School's First Interim Financial Report for FY2021-22",
+        "phases": {
+          "opened": 3230,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 3261,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.2",
+        "title": "RCSD Review of KIPP Excelencia Community Prep's First Interim Financial Report for FY2021-22",
+        "phases": {
+          "opened": 3423,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.3",
+        "title": "RCSD Review of Rocketship Redwood City Charter School's First Interim Financial Report for FY2021-22",
+        "phases": {
+          "opened": 3423,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 3456,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.4",
+        "title": "Information on San Mateo County Investment Fund - December, 2021",
+        "phases": {
+          "opened": 3579,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 3615,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 3615,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14",
+        "title": "Possible Other Business/Suggested Items for Future Agenda",
+        "phases": {
+          "opened": 3736,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Changes to the Board Agenda Schedule",
+        "phases": {
+          "opened": 3743,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 3749,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3765,
+            "type": "voice",
+            "result": "unanimous"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "result": {
+    "videoId": "IFbtMC08QVs",
+    "speakers": {
+      "A": {
+        "name": "Janet Lawson",
+        "role": "Trustee"
+      },
+      "B": {
+        "name": "María Díaz-Slocum",
+        "role": "President"
+      },
+      "C": {
+        "name": "Cecilia I. Márquez",
+        "role": "Clerk"
+      },
+      "D": {
+        "name": "Mike Wells",
+        "role": "Trustee"
+      },
+      "E": {
+        "name": "Alisa MacAvoy",
+        "role": "Vice President"
+      },
+      "F": {
+        "name": "Janet Lawson",
+        "role": "Trustee"
+      },
+      "G": {
+        "name": "Cecilia I. Márquez",
+        "role": "Clerk"
+      }
+    },
+    "agendaChanges": "Items 10.2 through 10.5 (Second Reading and Approval of BP 0460, BP 1240, BP 3555, BP 5141.31) were moved from Action Items to the Consent calendar. Item 10.6 (Approval of Addendum to Measure U Application for Adelante Selby Spanish Immersion School) was also moved to Consent. These items were approved as part of the Consent bundle at the time consent items were called. Section 7 (Bond Program Action Items) had no items and was skipped.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order / Roll Call",
+        "phases": {
+          "opened": 130,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Welcome by the School Board President",
+        "phases": {
+          "opened": 155,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 263,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 263,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 288,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 307,
+            "type": "voice",
+            "result": "unanimous"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 315,
+          "presentation": null,
+          "publicComment": 315,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Bond Program Consent Items – Approval of Consent Items",
+        "phases": {
+          "opened": 322,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 337,
+            "type": "voice",
+            "result": "unanimous"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Bond Program Action Items",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.1",
+        "title": "First Reading and Discussion of Board Policy 3311 - Bids",
+        "phases": {
+          "opened": 337,
+          "presentation": 365,
+          "publicComment": null,
+          "discussion": 401,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.2",
+        "title": "First Reading and Discussion of Board Policy 5117 - Interdistrict Attendance",
+        "phases": {
+          "opened": 407,
+          "presentation": 424,
+          "publicComment": null,
+          "discussion": 523,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.3",
+        "title": "First Reading and Discussion of Board Policy 5116.1 - Intradistrict Open Enrollment",
+        "phases": {
+          "opened": 692,
+          "presentation": 722,
+          "publicComment": null,
+          "discussion": 986,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9",
+        "title": "Consent Items – Approval of Consent Items (including moved Action Items 10.2–10.6)",
+        "phases": {
+          "opened": 2414,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 2433,
+            "type": "voice",
+            "result": "unanimous"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.1",
+        "title": "Adoption of Resolution 25, Authorizing Electronic Meetings of the Board of Trustees During a State of Emergency",
+        "phases": {
+          "opened": 2433,
+          "presentation": 2459,
+          "publicComment": null,
+          "discussion": 2489,
+          "vote": {
+            "seconds": 2527,
+            "type": "voice",
+            "result": "unanimous"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.2",
+        "title": "Second Reading and Approval of Board Policy 0460 – Local Control and Accountability Plan",
+        "phases": {
+          "opened": 2414,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 2433,
+            "type": "voice",
+            "result": "unanimous"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.3",
+        "title": "Second Reading and Approval of Board Policy 1240 – Volunteer Assistance",
+        "phases": {
+          "opened": 2414,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 2433,
+            "type": "voice",
+            "result": "unanimous"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.4",
+        "title": "Second Reading and Approval of Board Policy 3555 - Nutrition Program Compliance",
+        "phases": {
+          "opened": 2414,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 2433,
+            "type": "voice",
+            "result": "unanimous"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.5",
+        "title": "Second Reading and Approval of Board Policy 5141.31 - Immunizations",
+        "phases": {
+          "opened": 2414,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 2433,
+            "type": "voice",
+            "result": "unanimous"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.6",
+        "title": "Approval of Addendum to Measure U Application for 2021-22 for Adelante Selby Spanish Immersion School",
+        "phases": {
+          "opened": 2414,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 2433,
+            "type": "voice",
+            "result": "unanimous"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "Report from Board Members and Superintendent",
+        "phases": {
+          "opened": 2538,
+          "presentation": 2554,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12",
+        "title": "Information – Charter School First Interim Financial Reports and County Investment Fund",
+        "phases": {
+          "opened": 3230,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 3261,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.1",
+        "title": "RCSD Review of Connect Community Charter School's First Interim Financial Report for FY2021-22",
+        "phases": {
+          "opened": 3230,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 3261,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.2",
+        "title": "RCSD Review of KIPP Excelencia Community Prep's First Interim Financial Report for FY2021-22",
+        "phases": {
+          "opened": 3423,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.3",
+        "title": "RCSD Review of Rocketship Redwood City Charter School's First Interim Financial Report for FY2021-22",
+        "phases": {
+          "opened": 3423,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 3456,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.4",
+        "title": "Information on San Mateo County Investment Fund - December, 2021",
+        "phases": {
+          "opened": 3579,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 3615,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 3615,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14",
+        "title": "Possible Other Business/Suggested Items for Future Agenda",
+        "phases": {
+          "opened": 3736,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Changes to the Board Agenda Schedule",
+        "phases": {
+          "opened": 3743,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 3749,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3765,
+            "type": "voice",
+            "result": "unanimous"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "cachedAt": "2026-03-15T18:16:06.916Z",
+  "inputTokens": 16354,
+  "outputTokens": 3365
+}

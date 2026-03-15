@@ -20,6 +20,7 @@ import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { execFileSync } from 'child_process';
+import { parseSimbliAgenda, parseBoarddocsAgenda } from './parse-formal-agenda.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
@@ -51,8 +52,8 @@ function formatUtterances(utterances) {
 function extractMinutesText(date) {
   const pdfPath = resolve(MINUTES_DIR, `${date}-minutes.pdf`);
   if (!existsSync(pdfPath)) return null;
-  const venvPython = resolve(ROOT, '.venv/bin/python3');
-  if (!existsSync(venvPython)) return null;
+  // Use system python3 (pymupdf must be installed: pip3 install pymupdf)
+  const venvPython = 'python3';
   try {
     const pyScript = `import fitz,sys; doc=fitz.open(sys.argv[1]); print('\\n'.join(p.get_text() for p in doc))`;
     const text = execFileSync(venvPython, ['-c', pyScript, pdfPath], {
@@ -84,27 +85,25 @@ function loadFormalAgenda(date) {
   const memoPath = resolve(MEMOS_DIR, `${date}.json`);
   if (existsSync(memoPath)) {
     const memo = JSON.parse(readFileSync(memoPath, 'utf-8'));
-    return memo.items.map(it => {
-      // Extract formal item number from title prefix (e.g., "6. Public Hearing..." or "1. Call to Order - 1 min")
-      const titleClean = it.title.replace(/\s*-\s*\d+\s*(min|hr|hour)s?\s*$/i, '').trim();
-      return {
-        order: it.order,
-        title: titleClean,
-        speaker: it.memo?.Speaker || null,
-        attachments: (it.attachments || []).map(a => a.name).filter(Boolean),
-      };
-    });
+    const items = parseSimbliAgenda(memo.items);
+    return items.map(it => ({
+      order: it.itemLabel,
+      title: it.isSection ? `[Section ${it.itemLabel}] ${it.title}` : it.title,
+      speaker: it.speaker,
+      attachments: (it.attachments || []).map(a => a.title).filter(Boolean),
+    }));
   }
 
   // Fall back to BoardDocs scraped data
   const scraped = getBoarddocsScraped();
   const meeting = scraped.find(m => m.date === date);
   if (meeting) {
-    return meeting.items.map(it => ({
-      order: it.order || null,
-      title: it.title,
-      speaker: null,
-      attachments: (it.attachments || []).map(a => a.name).filter(Boolean),
+    const items = parseBoarddocsAgenda(meeting);
+    return items.map(it => ({
+      order: it.itemLabel,
+      title: it.isSection ? `[Section ${it.itemLabel}] ${it.title}` : it.title,
+      speaker: it.speaker,
+      attachments: (it.attachments || []).map(a => a.title || a.name).filter(Boolean),
     }));
   }
 
@@ -251,6 +250,15 @@ ITEM PHASES — identify whichever phases apply to each item:
 - "discussion": When board members begin deliberating/asking questions
 - "vote": When the vote is called — also identify the vote type and result
 
+PUBLIC COMMENT SPEAKERS — for EVERY item that has public comment (both standalone "Public Comment" / "Oral Communication" agenda items AND item-specific public comment phases), extract each individual speaker:
+- "publicComments": array of individual speakers, in the order they spoke
+- Each entry: { "name": "speaker name", "startSeconds": N, "endSeconds": N, "summary": "1-sentence summary of what they said" }
+- For the speaker name: APPROVED MINUTES are the authoritative source for speaker names — if minutes are provided, use the exact spelling from the minutes (e.g., minutes may list "Elle Kolekar" where ASR heard "L. Colar"). If no minutes are available, use whatever name the speaker gives or the president announces. If the name is unclear from both sources, use "Unidentified speaker".
+- startSeconds: when the speaker begins talking (not when the president introduces them)
+- endSeconds: when the speaker finishes (before the next speaker or the president's transition)
+- summary: a concise, neutral 1-sentence summary of the speaker's comment
+- If no public comment speakers spoke, use an empty array []
+
 RULES:
 1. All timestamps must be integers (seconds from start of recording)
 2. Timestamps must be monotonically increasing within an item's phases (exception: publicComment may precede opened if public comment was taken early)
@@ -279,6 +287,24 @@ RESPOND WITH ONLY VALID JSON (no markdown fences):
         "discussion": null,
         "vote": null
       },
+      "publicComments": [],
+      "consent": false,
+      "pulled": false
+    },
+    {
+      "itemLabel": "5",
+      "title": "Public Comment",
+      "phases": {
+        "opened": 93,
+        "presentation": null,
+        "publicComment": 93,
+        "discussion": null,
+        "vote": null
+      },
+      "publicComments": [
+        { "name": "Jessica", "startSeconds": 118, "endSeconds": 219, "summary": "Encouraged the board to place the parcel tax on the June ballot." },
+        { "name": "Elle Kolekar", "startSeconds": 248, "endSeconds": 275, "summary": "Echoed support for the parcel tax renewal." }
+      ],
       "consent": false,
       "pulled": false
     },
@@ -288,10 +314,13 @@ RESPOND WITH ONLY VALID JSON (no markdown fences):
       "phases": {
         "opened": 123,
         "presentation": 200,
-        "publicComment": null,
-        "discussion": 400,
+        "publicComment": 400,
+        "discussion": 450,
         "vote": { "seconds": 500, "type": "roll-call", "result": "5-0" }
       },
+      "publicComments": [
+        { "name": "Maria Lopez", "startSeconds": 405, "endSeconds": 430, "summary": "Asked about the exemption process for seniors." }
+      ],
       "consent": false,
       "pulled": false
     }
@@ -340,7 +369,7 @@ function validateResult(result, meeting) {
     // Check monotonicity within item
     for (let i = 1; i < timestamps.length; i++) {
       if (timestamps[i][1] < timestamps[i - 1][1]) {
-        errors.push(`Item ${idx}: ${timestamps[i][0]} (${timestamps[i][1]}s) before ${timestamps[i - 1][0]} (${timestamps[i - 1][1]}s)`);
+        errors.push(`Item ${label}: ${timestamps[i][0]} (${timestamps[i][1]}s) before ${timestamps[i - 1][0]} (${timestamps[i - 1][1]}s)`);
       }
     }
   }
@@ -411,7 +440,7 @@ async function main() {
     try {
       const response = await client.messages.create({
         model: 'claude-sonnet-4-6',
-        max_tokens: 8192,
+        max_tokens: 16384,
         messages: [{ role: 'user', content: prompt }],
       });
 
@@ -425,7 +454,30 @@ async function main() {
         continue;
       }
 
-      const llmResult = JSON.parse(jsonMatch[0]);
+      let llmResult;
+      try {
+        llmResult = JSON.parse(jsonMatch[0]);
+      } catch (parseErr) {
+        // Try to repair truncated JSON by closing open arrays/objects
+        let repaired = jsonMatch[0];
+        // Remove trailing incomplete entry (after last comma in items array)
+        repaired = repaired.replace(/,\s*\{[^}]*$/, '');
+        // Close any unclosed brackets
+        const opens = (repaired.match(/\[/g) || []).length;
+        const closes = (repaired.match(/\]/g) || []).length;
+        for (let i = 0; i < opens - closes; i++) repaired += ']';
+        const openBraces = (repaired.match(/\{/g) || []).length;
+        const closeBraces = (repaired.match(/\}/g) || []).length;
+        for (let i = 0; i < openBraces - closeBraces; i++) repaired += '}';
+        try {
+          llmResult = JSON.parse(repaired);
+          console.warn(`  REPAIRED truncated JSON (${response.usage.output_tokens} output tokens hit limit)`);
+        } catch {
+          console.error(`  FAIL: malformed JSON: ${parseErr.message}`);
+          errors++;
+          continue;
+        }
+      }
 
       // Validate
       const validationErrors = validateResult(llmResult, meeting);

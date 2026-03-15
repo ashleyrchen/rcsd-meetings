@@ -1,0 +1,774 @@
+{
+  "date": "2026-02-04",
+  "itemCount": 59,
+  "llmResponse": {
+    "speakers": {
+      "A": {
+        "name": "David Weekly",
+        "role": "Board President"
+      },
+      "B": {
+        "name": "John Baker",
+        "role": "Superintendent"
+      },
+      "C": {
+        "name": "Evelyn Sanchez",
+        "role": "Executive Assistant to Superintendent / Board Secretary"
+      },
+      "D": {
+        "name": "Mike Wells",
+        "role": "Trustee (also presents bond items with staff)"
+      },
+      "E": {
+        "name": "Jennifer Ng Kwing King",
+        "role": "Board Clerk"
+      }
+    },
+    "agendaChanges": "Item 10.1 (Approval of Revised Measure S Implementation Plan) was pulled from the agenda by Trustee Wells before the meeting proceeded, to allow additional time for review. The agenda was then approved without that item. Section 14 (Discussion Items) had no items taken up. Section 16 (Board and Superintendent Reports) was taken up after Section 15 consent items, consistent with agenda order. Section 17 (ProTech Consulting agreement) does not appear to have been separately called out in the transcript and was subsumed into or skipped during the meeting.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order",
+        "phases": {
+          "opened": 7,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "Roll Call (Open Session)",
+        "title": "Roll Call",
+        "phases": {
+          "opened": 9,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Reconvene to Open Session / Roll Call / Report Out on Closed Session",
+        "phases": {
+          "opened": 63,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Welcome / Pledge of Allegiance",
+        "phases": {
+          "opened": 17,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 218,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 218,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8",
+        "title": "Approval of the Agenda",
+        "phases": {
+          "opened": 271,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 285,
+            "type": "voice",
+            "result": "unanimous"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9",
+        "title": "Public Comment / Labor Association Comments",
+        "phases": {
+          "opened": 285,
+          "presentation": null,
+          "publicComment": 285,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Emily Dunn",
+            "startSeconds": 311,
+            "endSeconds": 510,
+            "summary": "Speaking on behalf of Orion co-op families, she asked the district to consider adding a third TK co-op class to address the large waitlist, noting that waitlisted families are not choosing neighborhood schools as alternatives and that bolstering lower grades at Orion is critical to keeping upper grades at healthy sizes."
+          },
+          {
+            "name": "Rosalba Rodriguez",
+            "startSeconds": 554,
+            "endSeconds": 793,
+            "summary": "Asked the board to retain McKinley's student services coordinator Mr. Nelson for the next school year, praising his dedication, support for students, and the love and respect he has earned from students and parents."
+          },
+          {
+            "name": "Maria",
+            "startSeconds": 814,
+            "endSeconds": 944,
+            "summary": "As a labor union representative, she urged the board and district to prioritize in-person meetings over virtual meetings for difficult issues such as legal matters, arguing that face-to-face interaction builds stronger bonds and allows for better communication."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.1",
+        "title": "Approval of Revised Measure S Implementation Plan (Partial Implementation)",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": true
+      },
+      {
+        "itemLabel": "10.2",
+        "title": "Adoption of Resolution No. 16, Lease-Leaseback Agreement with Blach Construction for HVAC Projects, Phase 2",
+        "phases": {
+          "opened": 944,
+          "presentation": 970,
+          "publicComment": null,
+          "discussion": 1164,
+          "vote": {
+            "seconds": 1315,
+            "type": "voice",
+            "result": "unanimous"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "Approval of the Bond Program Consent Items",
+        "phases": {
+          "opened": 1319,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 1339,
+            "type": "voice",
+            "result": "unanimous"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.1",
+        "title": "Report on Teacher Professional Development for English Language Art Teachers in Grades 6-8: Expository Reading and Writing Course (ERWC)",
+        "phases": {
+          "opened": 1339,
+          "presentation": 1352,
+          "publicComment": null,
+          "discussion": 2109,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13.1",
+        "title": "Strategic Resource Alignment: Final Recommendations",
+        "phases": {
+          "opened": 2565,
+          "presentation": 2577,
+          "publicComment": 3721,
+          "discussion": 4259,
+          "vote": {
+            "seconds": 5408,
+            "type": "voice",
+            "result": "unanimous"
+          }
+        },
+        "publicComments": [
+          {
+            "name": "Leanne Thompson",
+            "startSeconds": 3738,
+            "endSeconds": 3925,
+            "summary": "As Clifford PTO president, she expressed concern about the educational impact of split-grade classes on teachers and students, and argued that IEP administrative support must be maintained to allow principals to remain effective instructional leaders."
+          },
+          {
+            "name": "Steve Yake",
+            "startSeconds": 3936,
+            "endSeconds": 4113,
+            "summary": "As Orion School Site Council chair, he argued that cutting the guest teacher directly affects the classroom especially given Orion's Mandarin program needs, asked whether all district-level cuts had truly been exhausted, and called for a clear roadmap for sustainable expansion given Orion's growing enrollment."
+          },
+          {
+            "name": "Tina Mercer",
+            "startSeconds": 4119,
+            "endSeconds": 4257,
+            "summary": "As Roosevelt Elementary principal and committee member, she thanked Dr. Baker for keeping the heaviest cuts at the district level and expressed appreciation for retaining half-time guest teachers and continuing IEP administrative support for elementary principals."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14",
+        "title": "Discussion Items",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Approval of Consent Items",
+        "phases": {
+          "opened": 5449,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 5480,
+            "type": "voice",
+            "result": "unanimous"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "17",
+        "title": "Board and Superintendent Reports / Approval of Agreement with ProTech Consulting & Engineering for Three-Year Asbestos Reinspection Services",
+        "phases": {
+          "opened": 5487,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 5487,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "Information",
+        "title": "RCSD Review of Charter School First Interim Financial Reports and Audit Reports",
+        "phases": {
+          "opened": 5612,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 5658,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "18",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 5687,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "19",
+        "title": "Other Business / Suggested Items for Future Agenda",
+        "phases": {
+          "opened": 5701,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 5708,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "20",
+        "title": "Board of Trustees Meeting Reflection",
+        "phases": {
+          "opened": 5822,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 5822,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "21",
+        "title": "Board of Trustees Meeting Calendar",
+        "phases": {
+          "opened": 5903,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 5903,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "22",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 6013,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6021,
+            "type": "voice",
+            "result": "unanimous"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "result": {
+    "videoId": "Nw7_DtNMPVk",
+    "speakers": {
+      "A": {
+        "name": "David Weekly",
+        "role": "Board President"
+      },
+      "B": {
+        "name": "John Baker",
+        "role": "Superintendent"
+      },
+      "C": {
+        "name": "Evelyn Sanchez",
+        "role": "Executive Assistant to Superintendent / Board Secretary"
+      },
+      "D": {
+        "name": "Mike Wells",
+        "role": "Trustee (also presents bond items with staff)"
+      },
+      "E": {
+        "name": "Jennifer Ng Kwing King",
+        "role": "Board Clerk"
+      }
+    },
+    "agendaChanges": "Item 10.1 (Approval of Revised Measure S Implementation Plan) was pulled from the agenda by Trustee Wells before the meeting proceeded, to allow additional time for review. The agenda was then approved without that item. Section 14 (Discussion Items) had no items taken up. Section 16 (Board and Superintendent Reports) was taken up after Section 15 consent items, consistent with agenda order. Section 17 (ProTech Consulting agreement) does not appear to have been separately called out in the transcript and was subsumed into or skipped during the meeting.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order",
+        "phases": {
+          "opened": 7,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "Roll Call (Open Session)",
+        "title": "Roll Call",
+        "phases": {
+          "opened": 9,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Reconvene to Open Session / Roll Call / Report Out on Closed Session",
+        "phases": {
+          "opened": 63,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Welcome / Pledge of Allegiance",
+        "phases": {
+          "opened": 17,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 218,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 218,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8",
+        "title": "Approval of the Agenda",
+        "phases": {
+          "opened": 271,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 285,
+            "type": "voice",
+            "result": "unanimous"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9",
+        "title": "Public Comment / Labor Association Comments",
+        "phases": {
+          "opened": 285,
+          "presentation": null,
+          "publicComment": 285,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Emily Dunn",
+            "startSeconds": 311,
+            "endSeconds": 510,
+            "summary": "Speaking on behalf of Orion co-op families, she asked the district to consider adding a third TK co-op class to address the large waitlist, noting that waitlisted families are not choosing neighborhood schools as alternatives and that bolstering lower grades at Orion is critical to keeping upper grades at healthy sizes."
+          },
+          {
+            "name": "Rosalba Rodriguez",
+            "startSeconds": 554,
+            "endSeconds": 793,
+            "summary": "Asked the board to retain McKinley's student services coordinator Mr. Nelson for the next school year, praising his dedication, support for students, and the love and respect he has earned from students and parents."
+          },
+          {
+            "name": "Maria",
+            "startSeconds": 814,
+            "endSeconds": 944,
+            "summary": "As a labor union representative, she urged the board and district to prioritize in-person meetings over virtual meetings for difficult issues such as legal matters, arguing that face-to-face interaction builds stronger bonds and allows for better communication."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.1",
+        "title": "Approval of Revised Measure S Implementation Plan (Partial Implementation)",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": true
+      },
+      {
+        "itemLabel": "10.2",
+        "title": "Adoption of Resolution No. 16, Lease-Leaseback Agreement with Blach Construction for HVAC Projects, Phase 2",
+        "phases": {
+          "opened": 944,
+          "presentation": 970,
+          "publicComment": null,
+          "discussion": 1164,
+          "vote": {
+            "seconds": 1315,
+            "type": "voice",
+            "result": "unanimous"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "Approval of the Bond Program Consent Items",
+        "phases": {
+          "opened": 1319,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 1339,
+            "type": "voice",
+            "result": "unanimous"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.1",
+        "title": "Report on Teacher Professional Development for English Language Art Teachers in Grades 6-8: Expository Reading and Writing Course (ERWC)",
+        "phases": {
+          "opened": 1339,
+          "presentation": 1352,
+          "publicComment": null,
+          "discussion": 2109,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13.1",
+        "title": "Strategic Resource Alignment: Final Recommendations",
+        "phases": {
+          "opened": 2565,
+          "presentation": 2577,
+          "publicComment": 3721,
+          "discussion": 4259,
+          "vote": {
+            "seconds": 5408,
+            "type": "voice",
+            "result": "unanimous"
+          }
+        },
+        "publicComments": [
+          {
+            "name": "Leanne Thompson",
+            "startSeconds": 3738,
+            "endSeconds": 3925,
+            "summary": "As Clifford PTO president, she expressed concern about the educational impact of split-grade classes on teachers and students, and argued that IEP administrative support must be maintained to allow principals to remain effective instructional leaders."
+          },
+          {
+            "name": "Steve Yake",
+            "startSeconds": 3936,
+            "endSeconds": 4113,
+            "summary": "As Orion School Site Council chair, he argued that cutting the guest teacher directly affects the classroom especially given Orion's Mandarin program needs, asked whether all district-level cuts had truly been exhausted, and called for a clear roadmap for sustainable expansion given Orion's growing enrollment."
+          },
+          {
+            "name": "Tina Mercer",
+            "startSeconds": 4119,
+            "endSeconds": 4257,
+            "summary": "As Roosevelt Elementary principal and committee member, she thanked Dr. Baker for keeping the heaviest cuts at the district level and expressed appreciation for retaining half-time guest teachers and continuing IEP administrative support for elementary principals."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14",
+        "title": "Discussion Items",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Approval of Consent Items",
+        "phases": {
+          "opened": 5449,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 5480,
+            "type": "voice",
+            "result": "unanimous"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "17",
+        "title": "Board and Superintendent Reports / Approval of Agreement with ProTech Consulting & Engineering for Three-Year Asbestos Reinspection Services",
+        "phases": {
+          "opened": 5487,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 5487,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "Information",
+        "title": "RCSD Review of Charter School First Interim Financial Reports and Audit Reports",
+        "phases": {
+          "opened": 5612,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 5658,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "18",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 5687,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "19",
+        "title": "Other Business / Suggested Items for Future Agenda",
+        "phases": {
+          "opened": 5701,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 5708,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "20",
+        "title": "Board of Trustees Meeting Reflection",
+        "phases": {
+          "opened": 5822,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 5822,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "21",
+        "title": "Board of Trustees Meeting Calendar",
+        "phases": {
+          "opened": 5903,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 5903,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "22",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 6013,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6021,
+            "type": "voice",
+            "result": "unanimous"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "cachedAt": "2026-03-15T16:59:42.266Z",
+  "inputTokens": 25778,
+  "outputTokens": 3101
+}

@@ -1,0 +1,942 @@
+{
+  "date": "2021-03-10",
+  "itemCount": 59,
+  "llmResponse": {
+    "speakers": {
+      "A": {
+        "name": "Alisa MacAvoy",
+        "role": "Vice President (acting as President/presiding officer)"
+      },
+      "B": {
+        "name": "Multiple speakers",
+        "role": "Various — staff, trustees, and public speakers (see per-item detail)"
+      },
+      "C": {
+        "name": "Multiple speakers",
+        "role": "Various — staff and trustees (see per-item detail)"
+      }
+    },
+    "agendaChanges": "Under Section 6 (Changes to the Agenda), items 14.2 (Second Reading Board Policy 1340), 14.3 (Second Reading Board Policy 3280), and 14.8 (Third Amendment to NUA Agreement) were moved from Action Items to Consent Items. Items 14.2, 14.3, and 14.8 are therefore treated as part of the Section 13 consent bundle. Section 11 (Bond Program Action Items) had no items. Section 16 (Information), Section 17 (Correspondence), and Section 18 (Other Business) were briefly addressed without formal action.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order / Roll Call",
+        "phases": {
+          "opened": 0,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Oral Communication on Closed Session Items Only",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Closed Session — Employee Discipline/Dismissal/Release/Retention (2 Cases)",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Reconvene to Regular Session / Roll Call / Report Out on Closed Session",
+        "phases": {
+          "opened": 0,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Welcome by the School Board President",
+        "phases": {
+          "opened": 15,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 212,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 212,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 246,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 263,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 287,
+          "presentation": null,
+          "publicComment": 287,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Anna Salario",
+            "startSeconds": 325,
+            "endSeconds": 527,
+            "summary": "Speaking on behalf of classified members, she asked the board for compensation comparable to the stipends teachers are receiving, arguing classified employees' responsibilities have increased significantly during the pandemic."
+          },
+          {
+            "name": "Sue Jorgensen",
+            "startSeconds": 614,
+            "endSeconds": 760,
+            "summary": "Echoed the classified compensation concern from an equity standpoint, noting that classified staff and teachers working side-by-side are receiving very different financial recognition for the same in-person risks."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9",
+        "title": "School/Community Reports",
+        "phases": {
+          "opened": 938,
+          "presentation": 962,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "Bond Program Consent Items — Bundle (10.1–10.8)",
+        "phases": {
+          "opened": 2410,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 2458,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "Bond Program Action Items",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12",
+        "title": "COVID-19 and Reopening Update",
+        "phases": {
+          "opened": 2470,
+          "presentation": 2492,
+          "publicComment": 5738,
+          "discussion": 7140,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Pam Barash",
+            "startSeconds": 5757,
+            "endSeconds": 5925,
+            "summary": "A kindergarten teacher expressed concern that staff who travel over spring break may be required to quarantine upon return despite being vaccinated, and asked whether the same quarantine requirement would apply to students and families, given that schools were reopening only three days after spring break."
+          },
+          {
+            "name": "Indra Hernandez",
+            "startSeconds": 5977,
+            "endSeconds": 6178,
+            "summary": "A CDC/preschool staff member raised concerns about inconsistent COVID protocols across sites, the wellness survey being misunderstood, uneven enforcement of Wednesday off-campus rules, the timing of second vaccine doses relative to the return date, and requested COVID testing for students before they enter preschool classrooms."
+          },
+          {
+            "name": "Stephanie Chen",
+            "startSeconds": 6248,
+            "endSeconds": 6407,
+            "summary": "A parent asked whether the district could establish more uniform return-to-school formats across all schools for equity reasons, rather than having disparate plans at each site."
+          },
+          {
+            "name": "Shawna Hackworth",
+            "startSeconds": 6592,
+            "endSeconds": 6656,
+            "summary": "A parent asked whether students currently placed at a school of choice would lose their placement for the following year if they chose to enroll in the proposed virtual academy for 2021-22."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "Consent Items Bundle (13.1–13.7, plus moved items 14.2, 14.3, 14.8)",
+        "phases": {
+          "opened": 7819,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.1",
+        "title": "Approval of the 2020-21 Second Interim Budget Report for RCSD",
+        "phases": {
+          "opened": 7819,
+          "presentation": 7830,
+          "publicComment": null,
+          "discussion": 11104,
+          "vote": {
+            "seconds": 11784,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.2",
+        "title": "Second Reading and Approval of Board Policy 1340 - Access to District Records",
+        "phases": {
+          "opened": 212,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.3",
+        "title": "Second Reading and Approval of Board Policy 3280 - Sale, Lease, Rental of District-Owned Real Property",
+        "phases": {
+          "opened": 212,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.4",
+        "title": "Approval of CBEST Waiver for Substitute Teachers for 2021-22",
+        "phases": {
+          "opened": 11826,
+          "presentation": 11839,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 11875,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.5",
+        "title": "Approval of Release and Reassignment of Certificated Administrative Personnel",
+        "phases": {
+          "opened": 11902,
+          "presentation": 11915,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 11927,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.6",
+        "title": "Adoption of Resolution 16, Determination of Order of Employment for Certificated Employees for Elimination of or Reductions in Particular Kinds of Services for Fiscal Year 2021-22 and Approval of the 2020-21 Certificated Seniority Report",
+        "phases": {
+          "opened": 11948,
+          "presentation": 11967,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 12041,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.7",
+        "title": "Adoption of Resolutions 17 and 18, Reduction or Elimination of Certificated Services for Fiscal Year 2020-21",
+        "phases": {
+          "opened": 12065,
+          "presentation": 12077,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 12218,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.8",
+        "title": "Approval of Third Amendment to Agreement between Redwood City School District and the National Urban Alliance",
+        "phases": {
+          "opened": 238,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Board and Superintendent Reports",
+        "phases": {
+          "opened": 12242,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 12242,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16",
+        "title": "Information",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "17",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 12527,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 12527,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "18",
+        "title": "Other Business / Suggested Items for Future Agenda",
+        "phases": {
+          "opened": 12540,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 12540,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "19",
+        "title": "Board Agenda Calendar / Changes to the Board Agenda Schedule",
+        "phases": {
+          "opened": 12569,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 12569,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "20",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 12744,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 12744,
+            "type": "unanimous-thumbs-up",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "result": {
+    "videoId": "08x22IQb514",
+    "speakers": {
+      "A": {
+        "name": "Alisa MacAvoy",
+        "role": "Vice President (acting as President/presiding officer)"
+      },
+      "B": {
+        "name": "Multiple speakers",
+        "role": "Various — staff, trustees, and public speakers (see per-item detail)"
+      },
+      "C": {
+        "name": "Multiple speakers",
+        "role": "Various — staff and trustees (see per-item detail)"
+      }
+    },
+    "agendaChanges": "Under Section 6 (Changes to the Agenda), items 14.2 (Second Reading Board Policy 1340), 14.3 (Second Reading Board Policy 3280), and 14.8 (Third Amendment to NUA Agreement) were moved from Action Items to Consent Items. Items 14.2, 14.3, and 14.8 are therefore treated as part of the Section 13 consent bundle. Section 11 (Bond Program Action Items) had no items. Section 16 (Information), Section 17 (Correspondence), and Section 18 (Other Business) were briefly addressed without formal action.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order / Roll Call",
+        "phases": {
+          "opened": 0,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Oral Communication on Closed Session Items Only",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Closed Session — Employee Discipline/Dismissal/Release/Retention (2 Cases)",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Reconvene to Regular Session / Roll Call / Report Out on Closed Session",
+        "phases": {
+          "opened": 0,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Welcome by the School Board President",
+        "phases": {
+          "opened": 15,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 212,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 212,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 246,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 263,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 287,
+          "presentation": null,
+          "publicComment": 287,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Anna Salario",
+            "startSeconds": 325,
+            "endSeconds": 527,
+            "summary": "Speaking on behalf of classified members, she asked the board for compensation comparable to the stipends teachers are receiving, arguing classified employees' responsibilities have increased significantly during the pandemic."
+          },
+          {
+            "name": "Sue Jorgensen",
+            "startSeconds": 614,
+            "endSeconds": 760,
+            "summary": "Echoed the classified compensation concern from an equity standpoint, noting that classified staff and teachers working side-by-side are receiving very different financial recognition for the same in-person risks."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9",
+        "title": "School/Community Reports",
+        "phases": {
+          "opened": 938,
+          "presentation": 962,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "Bond Program Consent Items — Bundle (10.1–10.8)",
+        "phases": {
+          "opened": 2410,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 2458,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "Bond Program Action Items",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12",
+        "title": "COVID-19 and Reopening Update",
+        "phases": {
+          "opened": 2470,
+          "presentation": 2492,
+          "publicComment": 5738,
+          "discussion": 7140,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Pam Barash",
+            "startSeconds": 5757,
+            "endSeconds": 5925,
+            "summary": "A kindergarten teacher expressed concern that staff who travel over spring break may be required to quarantine upon return despite being vaccinated, and asked whether the same quarantine requirement would apply to students and families, given that schools were reopening only three days after spring break."
+          },
+          {
+            "name": "Indra Hernandez",
+            "startSeconds": 5977,
+            "endSeconds": 6178,
+            "summary": "A CDC/preschool staff member raised concerns about inconsistent COVID protocols across sites, the wellness survey being misunderstood, uneven enforcement of Wednesday off-campus rules, the timing of second vaccine doses relative to the return date, and requested COVID testing for students before they enter preschool classrooms."
+          },
+          {
+            "name": "Stephanie Chen",
+            "startSeconds": 6248,
+            "endSeconds": 6407,
+            "summary": "A parent asked whether the district could establish more uniform return-to-school formats across all schools for equity reasons, rather than having disparate plans at each site."
+          },
+          {
+            "name": "Shawna Hackworth",
+            "startSeconds": 6592,
+            "endSeconds": 6656,
+            "summary": "A parent asked whether students currently placed at a school of choice would lose their placement for the following year if they chose to enroll in the proposed virtual academy for 2021-22."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "Consent Items Bundle (13.1–13.7, plus moved items 14.2, 14.3, 14.8)",
+        "phases": {
+          "opened": 7819,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.1",
+        "title": "Approval of the 2020-21 Second Interim Budget Report for RCSD",
+        "phases": {
+          "opened": 7819,
+          "presentation": 7830,
+          "publicComment": null,
+          "discussion": 11104,
+          "vote": {
+            "seconds": 11784,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.2",
+        "title": "Second Reading and Approval of Board Policy 1340 - Access to District Records",
+        "phases": {
+          "opened": 212,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.3",
+        "title": "Second Reading and Approval of Board Policy 3280 - Sale, Lease, Rental of District-Owned Real Property",
+        "phases": {
+          "opened": 212,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.4",
+        "title": "Approval of CBEST Waiver for Substitute Teachers for 2021-22",
+        "phases": {
+          "opened": 11826,
+          "presentation": 11839,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 11875,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.5",
+        "title": "Approval of Release and Reassignment of Certificated Administrative Personnel",
+        "phases": {
+          "opened": 11902,
+          "presentation": 11915,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 11927,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.6",
+        "title": "Adoption of Resolution 16, Determination of Order of Employment for Certificated Employees for Elimination of or Reductions in Particular Kinds of Services for Fiscal Year 2021-22 and Approval of the 2020-21 Certificated Seniority Report",
+        "phases": {
+          "opened": 11948,
+          "presentation": 11967,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 12041,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.7",
+        "title": "Adoption of Resolutions 17 and 18, Reduction or Elimination of Certificated Services for Fiscal Year 2020-21",
+        "phases": {
+          "opened": 12065,
+          "presentation": 12077,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 12218,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.8",
+        "title": "Approval of Third Amendment to Agreement between Redwood City School District and the National Urban Alliance",
+        "phases": {
+          "opened": 238,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Board and Superintendent Reports",
+        "phases": {
+          "opened": 12242,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 12242,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16",
+        "title": "Information",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "17",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 12527,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 12527,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "18",
+        "title": "Other Business / Suggested Items for Future Agenda",
+        "phases": {
+          "opened": 12540,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 12540,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "19",
+        "title": "Board Agenda Calendar / Changes to the Board Agenda Schedule",
+        "phases": {
+          "opened": 12569,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 12569,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "20",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 12744,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 12744,
+            "type": "unanimous-thumbs-up",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "cachedAt": "2026-03-15T18:29:19.482Z",
+  "inputTokens": 37643,
+  "outputTokens": 3807
+}

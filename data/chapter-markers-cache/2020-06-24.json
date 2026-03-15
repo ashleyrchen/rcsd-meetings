@@ -1,0 +1,1214 @@
+{
+  "date": "2020-06-24",
+  "itemCount": 67,
+  "llmResponse": {
+    "speakers": {
+      "A": {
+        "name": "María Díaz-Slocum",
+        "role": "Trustee"
+      },
+      "B": {
+        "name": "Janet Lawson",
+        "role": "President"
+      },
+      "C": {
+        "name": "Dennis McBride",
+        "role": "Vice President (per roll call context; listed as President on agenda — likely board president acting as presiding officer)"
+      },
+      "D": {
+        "name": "Cecilia I. Márquez",
+        "role": "Trustee / Roll Call reader"
+      },
+      "E": {
+        "name": "John Baker",
+        "role": "Superintendent"
+      },
+      "F": {
+        "name": "Alisa MacAvoy",
+        "role": "Clerk / Vice President"
+      }
+    },
+    "agendaChanges": "Several action items were moved to consent at the start of the meeting: 14.4 (Approval of Disbursement of Measure U Funds for 2020-21), 14.5 (Approval of Addendum Disbursement of Measure U Funds for 2019-20, Rocketship), 14.8 (Approval of RCAA Compensation Proposal), 14.9 (Approval of Personnel Report), and 14.10 (Approval of Employment Contracts for Superintendent and Deputy Superintendent). Item 14.6 (Approval of School Plan for Student Achievement) was recommended for consent but kept as an action item due to anticipated public comment cards (which ultimately did not materialize for that item specifically). Section 11 (Bond Program Action Items) had no items. Section 17 (Correspondence) was addressed briefly. The meeting proceeded largely in agenda order after the consent restructuring.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order",
+        "phases": {
+          "opened": 10,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "1",
+        "title": "Roll Call",
+        "phases": {
+          "opened": 12,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Oral Communication on Closed Session Items Only",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Closed Session",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Reconvene to Regular Session / Roll Call",
+        "phases": {
+          "opened": 12,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Report Out on Closed Session from 6.24.20",
+        "phases": {
+          "opened": 30,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Welcome by the School Board President",
+        "phases": {
+          "opened": 30,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 127,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 127,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 289,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 294,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 313,
+          "presentation": null,
+          "publicComment": 313,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9",
+        "title": "Bond Program Update",
+        "phases": {
+          "opened": 332,
+          "presentation": 332,
+          "publicComment": null,
+          "discussion": 1079,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "Bond Program Consent Items (Action Required)",
+        "phases": {
+          "opened": 1275,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 1292,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "Bond Program Action Items",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12",
+        "title": "Discussion on COVID-19",
+        "phases": {
+          "opened": 1314,
+          "presentation": 1326,
+          "publicComment": 2461,
+          "discussion": 1748,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Kathryn Stewart",
+            "startSeconds": 2482,
+            "endSeconds": 2576,
+            "summary": "Asked about the number of interactive teaching hours for Mandarin immersion students online, requested a diagram showing how 12 students would be physically distanced in a classroom, and questioned when parents would need to commit to distance-only learning so classroom numbers could be planned."
+          },
+          {
+            "name": "Linda Elkins",
+            "startSeconds": 2823,
+            "endSeconds": 2857,
+            "summary": "Shared that Contra Costa County's June 22 guidance allowed 4 feet between students (rather than 6) and masks strongly encouraged but not required for ages 3–11, suggesting the board look into whether San Mateo County could adopt similar guidelines."
+          },
+          {
+            "name": "Maria Stockton",
+            "startSeconds": 3486,
+            "endSeconds": 3645,
+            "summary": "Speaking as a CSEA representative, thanked Wendy Kelly for a productive meeting, urged the district not to lay off classified staff given temporary funding uncertainties, and described creative ideas to redeploy classified employees to support both online and on-site needs."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "Consent Items (including items moved from Section 14: 14.4, 14.5, 14.8, 14.9, 14.10)",
+        "phases": {
+          "opened": 3718,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3744,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.1",
+        "title": "Approval of the COVID-19 Executive Order Operations Written Report",
+        "phases": {
+          "opened": 3758,
+          "presentation": 3761,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3807,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.2",
+        "title": "Approval of 2020-21 Proposed Budget for Redwood City School District",
+        "phases": {
+          "opened": 3831,
+          "presentation": 3839,
+          "publicComment": 4729,
+          "discussion": 4613,
+          "vote": {
+            "seconds": 5736,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [
+          {
+            "name": "Katie Goetz",
+            "startSeconds": 4771,
+            "endSeconds": 4896,
+            "summary": "Clarified that PTO funds raised for Mandarin immersion teacher coaches and classroom aides must run through the district as employee costs, and that the budget line items do not fully reflect total spending and donations benefiting both Orion and Mandarin immersion programs."
+          },
+          {
+            "name": "Sarah Rutherford",
+            "startSeconds": 4909,
+            "endSeconds": 5036,
+            "summary": "As Orion Mandarin Immersion site council member, explained that PTO fundraising is intentionally structured to avoid Title 1 dependency for personnel, noted the high cost of language immersion programs, and described why classroom aides are critical given the non-participation norm for non-Mandarin-speaking parents."
+          },
+          {
+            "name": "Megan O'Reilly Green",
+            "startSeconds": 5048,
+            "endSeconds": 5239,
+            "summary": "As interim co-president of Starship PTO, pushed back on social media accusations of inequitable funding between Orion and Mandarin immersion, explained that raised funds benefit the whole campus community, and asked the district to help address the optics issue."
+          },
+          {
+            "name": "Amy Wang",
+            "startSeconds": 5250,
+            "endSeconds": 5371,
+            "summary": "As a Mandarin immersion parent, cautioned the community against drawing conclusions from a few budget line items without understanding the full picture of funding sources, and urged people to avoid divisive, inaccurate statements online."
+          },
+          {
+            "name": "Sue Jorgensen",
+            "startSeconds": 5463,
+            "endSeconds": 5718,
+            "summary": "Identified herself as the author of the Facebook post in question, defended her comments as professional and factual, expressed genuine concern about funding equity across programs and schools including Taft and Northstar, and shared positive news about librarians partnering with the Redwood City Public Library for community reads."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.3",
+        "title": "Adoption of Resolution 33, Funding for Preschool Programs for 2020-21",
+        "phases": {
+          "opened": 5758,
+          "presentation": 5767,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 5805,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.4",
+        "title": "Approval of Disbursement of Measure U Funds for 2020-21 School Year",
+        "phases": {
+          "opened": 3718,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3744,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.5",
+        "title": "Approval of Addendum Disbursement of Measure U Funds for 2019-20, Rocketship Redwood City Prep",
+        "phases": {
+          "opened": 3718,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3744,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.6",
+        "title": "Approval of School Plan for Student Achievement",
+        "phases": {
+          "opened": 5827,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 5848,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.7",
+        "title": "Reading and Approval of New Board Policy 4113.5/4213.5/4313.5 - Working Remotely",
+        "phases": {
+          "opened": 5873,
+          "presentation": 5881,
+          "publicComment": null,
+          "discussion": 5977,
+          "vote": {
+            "seconds": 6054,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.8",
+        "title": "Approval of RCAA Compensation Proposal",
+        "phases": {
+          "opened": 3718,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3744,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.9",
+        "title": "Approval of Personnel Report",
+        "phases": {
+          "opened": 3718,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3744,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.10",
+        "title": "Approval of Employment Contracts for Superintendent and Deputy Superintendent",
+        "phases": {
+          "opened": 3718,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3744,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.11",
+        "title": "Adoption of Resolution 34, 403(b) Plan Document Amendment and Restatement",
+        "phases": {
+          "opened": 6082,
+          "presentation": 6091,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6113,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Report from Board Members and Superintendent",
+        "phases": {
+          "opened": 6143,
+          "presentation": 6156,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16",
+        "title": "Information on San Mateo County Investment Fund - May 2020",
+        "phases": {
+          "opened": 6556,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16",
+        "title": "Contract Update Information and Credit Card Summary",
+        "phases": {
+          "opened": 6575,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "17",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 6580,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 6587,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "18",
+        "title": "Other Business/Suggested Items for Future Agenda",
+        "phases": {
+          "opened": 6680,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 6680,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "19",
+        "title": "Changes to the Board Agenda Schedule",
+        "phases": {
+          "opened": 6882,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 6882,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "20",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 7181,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 7186,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "result": {
+    "videoId": "LXTYptrXhUM",
+    "speakers": {
+      "A": {
+        "name": "María Díaz-Slocum",
+        "role": "Trustee"
+      },
+      "B": {
+        "name": "Janet Lawson",
+        "role": "President"
+      },
+      "C": {
+        "name": "Dennis McBride",
+        "role": "Vice President (per roll call context; listed as President on agenda — likely board president acting as presiding officer)"
+      },
+      "D": {
+        "name": "Cecilia I. Márquez",
+        "role": "Trustee / Roll Call reader"
+      },
+      "E": {
+        "name": "John Baker",
+        "role": "Superintendent"
+      },
+      "F": {
+        "name": "Alisa MacAvoy",
+        "role": "Clerk / Vice President"
+      }
+    },
+    "agendaChanges": "Several action items were moved to consent at the start of the meeting: 14.4 (Approval of Disbursement of Measure U Funds for 2020-21), 14.5 (Approval of Addendum Disbursement of Measure U Funds for 2019-20, Rocketship), 14.8 (Approval of RCAA Compensation Proposal), 14.9 (Approval of Personnel Report), and 14.10 (Approval of Employment Contracts for Superintendent and Deputy Superintendent). Item 14.6 (Approval of School Plan for Student Achievement) was recommended for consent but kept as an action item due to anticipated public comment cards (which ultimately did not materialize for that item specifically). Section 11 (Bond Program Action Items) had no items. Section 17 (Correspondence) was addressed briefly. The meeting proceeded largely in agenda order after the consent restructuring.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order",
+        "phases": {
+          "opened": 10,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "1",
+        "title": "Roll Call",
+        "phases": {
+          "opened": 12,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Oral Communication on Closed Session Items Only",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Closed Session",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Reconvene to Regular Session / Roll Call",
+        "phases": {
+          "opened": 12,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Report Out on Closed Session from 6.24.20",
+        "phases": {
+          "opened": 30,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Welcome by the School Board President",
+        "phases": {
+          "opened": 30,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 127,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 127,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 289,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 294,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 313,
+          "presentation": null,
+          "publicComment": 313,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9",
+        "title": "Bond Program Update",
+        "phases": {
+          "opened": 332,
+          "presentation": 332,
+          "publicComment": null,
+          "discussion": 1079,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "Bond Program Consent Items (Action Required)",
+        "phases": {
+          "opened": 1275,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 1292,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "Bond Program Action Items",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12",
+        "title": "Discussion on COVID-19",
+        "phases": {
+          "opened": 1314,
+          "presentation": 1326,
+          "publicComment": 2461,
+          "discussion": 1748,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Kathryn Stewart",
+            "startSeconds": 2482,
+            "endSeconds": 2576,
+            "summary": "Asked about the number of interactive teaching hours for Mandarin immersion students online, requested a diagram showing how 12 students would be physically distanced in a classroom, and questioned when parents would need to commit to distance-only learning so classroom numbers could be planned."
+          },
+          {
+            "name": "Linda Elkins",
+            "startSeconds": 2823,
+            "endSeconds": 2857,
+            "summary": "Shared that Contra Costa County's June 22 guidance allowed 4 feet between students (rather than 6) and masks strongly encouraged but not required for ages 3–11, suggesting the board look into whether San Mateo County could adopt similar guidelines."
+          },
+          {
+            "name": "Maria Stockton",
+            "startSeconds": 3486,
+            "endSeconds": 3645,
+            "summary": "Speaking as a CSEA representative, thanked Wendy Kelly for a productive meeting, urged the district not to lay off classified staff given temporary funding uncertainties, and described creative ideas to redeploy classified employees to support both online and on-site needs."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "Consent Items (including items moved from Section 14: 14.4, 14.5, 14.8, 14.9, 14.10)",
+        "phases": {
+          "opened": 3718,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3744,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.1",
+        "title": "Approval of the COVID-19 Executive Order Operations Written Report",
+        "phases": {
+          "opened": 3758,
+          "presentation": 3761,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3807,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.2",
+        "title": "Approval of 2020-21 Proposed Budget for Redwood City School District",
+        "phases": {
+          "opened": 3831,
+          "presentation": 3839,
+          "publicComment": 4729,
+          "discussion": 4613,
+          "vote": {
+            "seconds": 5736,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [
+          {
+            "name": "Katie Goetz",
+            "startSeconds": 4771,
+            "endSeconds": 4896,
+            "summary": "Clarified that PTO funds raised for Mandarin immersion teacher coaches and classroom aides must run through the district as employee costs, and that the budget line items do not fully reflect total spending and donations benefiting both Orion and Mandarin immersion programs."
+          },
+          {
+            "name": "Sarah Rutherford",
+            "startSeconds": 4909,
+            "endSeconds": 5036,
+            "summary": "As Orion Mandarin Immersion site council member, explained that PTO fundraising is intentionally structured to avoid Title 1 dependency for personnel, noted the high cost of language immersion programs, and described why classroom aides are critical given the non-participation norm for non-Mandarin-speaking parents."
+          },
+          {
+            "name": "Megan O'Reilly Green",
+            "startSeconds": 5048,
+            "endSeconds": 5239,
+            "summary": "As interim co-president of Starship PTO, pushed back on social media accusations of inequitable funding between Orion and Mandarin immersion, explained that raised funds benefit the whole campus community, and asked the district to help address the optics issue."
+          },
+          {
+            "name": "Amy Wang",
+            "startSeconds": 5250,
+            "endSeconds": 5371,
+            "summary": "As a Mandarin immersion parent, cautioned the community against drawing conclusions from a few budget line items without understanding the full picture of funding sources, and urged people to avoid divisive, inaccurate statements online."
+          },
+          {
+            "name": "Sue Jorgensen",
+            "startSeconds": 5463,
+            "endSeconds": 5718,
+            "summary": "Identified herself as the author of the Facebook post in question, defended her comments as professional and factual, expressed genuine concern about funding equity across programs and schools including Taft and Northstar, and shared positive news about librarians partnering with the Redwood City Public Library for community reads."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.3",
+        "title": "Adoption of Resolution 33, Funding for Preschool Programs for 2020-21",
+        "phases": {
+          "opened": 5758,
+          "presentation": 5767,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 5805,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.4",
+        "title": "Approval of Disbursement of Measure U Funds for 2020-21 School Year",
+        "phases": {
+          "opened": 3718,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3744,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.5",
+        "title": "Approval of Addendum Disbursement of Measure U Funds for 2019-20, Rocketship Redwood City Prep",
+        "phases": {
+          "opened": 3718,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3744,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.6",
+        "title": "Approval of School Plan for Student Achievement",
+        "phases": {
+          "opened": 5827,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 5848,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.7",
+        "title": "Reading and Approval of New Board Policy 4113.5/4213.5/4313.5 - Working Remotely",
+        "phases": {
+          "opened": 5873,
+          "presentation": 5881,
+          "publicComment": null,
+          "discussion": 5977,
+          "vote": {
+            "seconds": 6054,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.8",
+        "title": "Approval of RCAA Compensation Proposal",
+        "phases": {
+          "opened": 3718,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3744,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.9",
+        "title": "Approval of Personnel Report",
+        "phases": {
+          "opened": 3718,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3744,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.10",
+        "title": "Approval of Employment Contracts for Superintendent and Deputy Superintendent",
+        "phases": {
+          "opened": 3718,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3744,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.11",
+        "title": "Adoption of Resolution 34, 403(b) Plan Document Amendment and Restatement",
+        "phases": {
+          "opened": 6082,
+          "presentation": 6091,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6113,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Report from Board Members and Superintendent",
+        "phases": {
+          "opened": 6143,
+          "presentation": 6156,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16",
+        "title": "Information on San Mateo County Investment Fund - May 2020",
+        "phases": {
+          "opened": 6556,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16",
+        "title": "Contract Update Information and Credit Card Summary",
+        "phases": {
+          "opened": 6575,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "17",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 6580,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 6587,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "18",
+        "title": "Other Business/Suggested Items for Future Agenda",
+        "phases": {
+          "opened": 6680,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 6680,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "19",
+        "title": "Changes to the Board Agenda Schedule",
+        "phases": {
+          "opened": 6882,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 6882,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "20",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 7181,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 7186,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "cachedAt": "2026-03-15T18:46:03.746Z",
+  "inputTokens": 29013,
+  "outputTokens": 4927
+}

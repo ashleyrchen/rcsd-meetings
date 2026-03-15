@@ -1,0 +1,1672 @@
+{
+  "date": "2025-12-10",
+  "itemCount": 52,
+  "llmResponse": {
+    "speakers": {
+      "A": {
+        "name": "Mike Wells",
+        "role": "Board President"
+      },
+      "B": {
+        "name": "Anna Herrera",
+        "role": "Assistant Superintendent, Ed. Services"
+      },
+      "C": {
+        "name": "David Weekly",
+        "role": "Vice President"
+      },
+      "D": {
+        "name": "Ann Berljafa",
+        "role": "RCSD TK Program Facilitator"
+      },
+      "E": {
+        "name": "John Baker",
+        "role": "Superintendent"
+      },
+      "F": {
+        "name": "David Li",
+        "role": "Trustee"
+      }
+    },
+    "agendaChanges": "Item 8.3 (Approval of the Addendum to the Measure U Application for Taft Community School) was pulled from the consent calendar by Trustee Márquez and not acted upon at this meeting. The agenda was approved as amended.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order",
+        "phases": {
+          "opened": 7,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "Roll Call",
+        "title": "Roll Call",
+        "phases": {
+          "opened": 7,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Welcome",
+        "phases": {
+          "opened": 19,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 96,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 101,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Approval of the Agenda",
+        "phases": {
+          "opened": 113,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 126,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Public Comment",
+        "phases": {
+          "opened": 128,
+          "presentation": null,
+          "publicComment": 128,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6.1",
+        "title": "Presentation on the Redwood City Transitional Kinder (TK) Program",
+        "phases": {
+          "opened": 128,
+          "presentation": 167,
+          "publicComment": 1223,
+          "discussion": 1426,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Agustin Espino",
+            "startSeconds": 1254,
+            "endSeconds": 1425,
+            "summary": "Encouraged the district to expand outreach about the TK program to the Latino community through local clinics, libraries, bus stops, and other community venues to help families understand the benefits of early education."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6.2",
+        "title": "Review the CA Dashboard Board Report for RCSD",
+        "phases": {
+          "opened": 2776,
+          "presentation": 2790,
+          "publicComment": null,
+          "discussion": 3793,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7.1",
+        "title": "First Reading and Discussion of Board Policy and Administrative Regulation 0510: School Accountability Report Card",
+        "phases": {
+          "opened": 5582,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7.2",
+        "title": "First Reading and Discussion of Board Policy 1100: Communication with the Public",
+        "phases": {
+          "opened": 5630,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 5641,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7.3",
+        "title": "First Reading and Discussion of Board Policy and Administrative Regulation 1340: Access to District Records",
+        "phases": {
+          "opened": 5866,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7.4",
+        "title": "First Reading and Discussion of Board Policy 1112: Media Relations",
+        "phases": {
+          "opened": 5914,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 5930,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7.5",
+        "title": "First Reading and Discussion of Board Policy 4235: Soliciting and Selling",
+        "phases": {
+          "opened": 6043,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 6067,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7.6",
+        "title": "First Reading and Discussion of Board Policy 4335: Soliciting and Selling",
+        "phases": {
+          "opened": 6043,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 6067,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7.7",
+        "title": "First Reading and Discussion of Board Policy and Administrative Regulation 5113.12: District School Attendance Review Board",
+        "phases": {
+          "opened": 6143,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 6155,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7.8",
+        "title": "First Reading and Discussion of Board Policy and Administrative Regulation 5125: Student Records",
+        "phases": {
+          "opened": 6196,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 6212,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8",
+        "title": "Approval of Consent Items (excluding item 8.3)",
+        "phases": {
+          "opened": 6458,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6480,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.1",
+        "title": "Approval of the November 12, 2025, Board Meeting Minutes",
+        "phases": {
+          "opened": 6458,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6480,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.2",
+        "title": "Approval of the November 19, 2025, Board Meeting Minutes",
+        "phases": {
+          "opened": 6458,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6480,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.3",
+        "title": "Approval of the Addendum to the Measure U Application for Taft Community School for the 2025-2026 School Year",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": true
+      },
+      {
+        "itemLabel": "8.4",
+        "title": "Approval of KIPP Excelencia Community Prep Measure U Application for the 2025-26 School Year",
+        "phases": {
+          "opened": 6458,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6480,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.5",
+        "title": "Ratification of Warrant Registers, November 1, 2025 - November 30, 2025",
+        "phases": {
+          "opened": 6458,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6480,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.6",
+        "title": "Approval to Discard Obsolete and Damaged Library Books",
+        "phases": {
+          "opened": 6458,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6480,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.7",
+        "title": "Approval of the Retirement Notification Incentive",
+        "phases": {
+          "opened": 6458,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6480,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.8",
+        "title": "Acceptance of Donation",
+        "phases": {
+          "opened": 6458,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6480,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.9",
+        "title": "Second Reading and Approval of Board Bylaw 9250: Remuneration, Reimbursement, and Other Benefits",
+        "phases": {
+          "opened": 6458,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6480,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.10",
+        "title": "Second Reading and Approval of Board Policy and Administrative Regulation 4119.42: Exposure Control Plan for Bloodborne Pathogens",
+        "phases": {
+          "opened": 6458,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6480,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "Second Reading and Approval of Board Policy and Administrative Regulation 4219.42: Exposure Control Plan for Bloodborne Pathogens",
+        "phases": {
+          "opened": 6458,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6480,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.12",
+        "title": "Second Reading and Approval of Board Policy and Administrative Regulation 4319.42: Exposure Control Plan for Bloodborne Pathogens",
+        "phases": {
+          "opened": 6458,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6480,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.13",
+        "title": "Second Reading and Approval of Board Policy and Administrative Regulation 4119.43: Universal Precautions",
+        "phases": {
+          "opened": 6458,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6480,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.14",
+        "title": "Second Reading and Approval of Board Policy and Administrative Regulation 4219.43: Universal Precautions",
+        "phases": {
+          "opened": 6458,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6480,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.15",
+        "title": "Second Reading and Approval of Board Policy and Administrative Regulation 4319.43: Universal Precautions",
+        "phases": {
+          "opened": 6458,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6480,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.16",
+        "title": "Second Reading and Approval of Board Policy 4151: Employee Compensation",
+        "phases": {
+          "opened": 6458,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6480,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "17",
+        "title": "Second Reading and Approval of Board Policy 4251: Employee Compensation",
+        "phases": {
+          "opened": 6458,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6480,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "18",
+        "title": "Second Reading and Approval of Board Policy 4351: Employee Compensation",
+        "phases": {
+          "opened": 6458,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6480,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "19",
+        "title": "Second Reading and Approval of Board Policy and Administrative Regulation 5141: Health Care and Emergencies",
+        "phases": {
+          "opened": 6458,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6480,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "20",
+        "title": "Second Reading and Approval of Board Policy and Administrative Regulation 5141.21: Administering Medication and Monitoring Health Conditions",
+        "phases": {
+          "opened": 6458,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6480,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "21",
+        "title": "Second Reading and Approval of Board Policy 5141.5: Mental Health",
+        "phases": {
+          "opened": 6458,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6480,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "22",
+        "title": "Second Reading and Approval of Board Policy and Administrative Regulation 6142.7: Physical Education",
+        "phases": {
+          "opened": 6458,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6480,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "23",
+        "title": "Second Reading and Approval of Board Policy and Administrative Regulations 6142.8: Comprehensive Health Education",
+        "phases": {
+          "opened": 6458,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6480,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.1",
+        "title": "Adoption of Annual Organizational Meeting Date Set for December 17, 2025, at 7:00 PM",
+        "phases": {
+          "opened": 6487,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6521,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.2",
+        "title": "Discuss and Select a Taxpayer Organization Representative for the Citizens' Bond Oversight Committee (CBOC)",
+        "phases": {
+          "opened": 6524,
+          "presentation": 6532,
+          "publicComment": null,
+          "discussion": 6629,
+          "vote": {
+            "seconds": 7050,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "Board and Superintendent Reports",
+        "title": "Board and Superintendent Reports",
+        "phases": {
+          "opened": 7077,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 7106,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "Information",
+        "title": "Information",
+        "phases": {
+          "opened": 8519,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "Correspondence",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 8519,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "Other Business/Suggested Items for Future Agenda",
+        "title": "Other Business/Suggested Items for Future Agenda",
+        "phases": {
+          "opened": 8519,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 8578,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "Board of Trustees Meeting Reflection",
+        "title": "Board of Trustees Meeting Reflection",
+        "phases": {
+          "opened": 8642,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 8674,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "Board of Trustees Meeting Calendar",
+        "title": "Board of Trustees Meeting Calendar",
+        "phases": {
+          "opened": 8856,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "Adjournment",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 8898,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 8914,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "result": {
+    "videoId": "TD3ovpP2tfo",
+    "speakers": {
+      "A": {
+        "name": "Mike Wells",
+        "role": "Board President"
+      },
+      "B": {
+        "name": "Anna Herrera",
+        "role": "Assistant Superintendent, Ed. Services"
+      },
+      "C": {
+        "name": "David Weekly",
+        "role": "Vice President"
+      },
+      "D": {
+        "name": "Ann Berljafa",
+        "role": "RCSD TK Program Facilitator"
+      },
+      "E": {
+        "name": "John Baker",
+        "role": "Superintendent"
+      },
+      "F": {
+        "name": "David Li",
+        "role": "Trustee"
+      }
+    },
+    "agendaChanges": "Item 8.3 (Approval of the Addendum to the Measure U Application for Taft Community School) was pulled from the consent calendar by Trustee Márquez and not acted upon at this meeting. The agenda was approved as amended.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order",
+        "phases": {
+          "opened": 7,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "Roll Call",
+        "title": "Roll Call",
+        "phases": {
+          "opened": 7,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Welcome",
+        "phases": {
+          "opened": 19,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 96,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 101,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Approval of the Agenda",
+        "phases": {
+          "opened": 113,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 126,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Public Comment",
+        "phases": {
+          "opened": 128,
+          "presentation": null,
+          "publicComment": 128,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6.1",
+        "title": "Presentation on the Redwood City Transitional Kinder (TK) Program",
+        "phases": {
+          "opened": 128,
+          "presentation": 167,
+          "publicComment": 1223,
+          "discussion": 1426,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Agustin Espino",
+            "startSeconds": 1254,
+            "endSeconds": 1425,
+            "summary": "Encouraged the district to expand outreach about the TK program to the Latino community through local clinics, libraries, bus stops, and other community venues to help families understand the benefits of early education."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6.2",
+        "title": "Review the CA Dashboard Board Report for RCSD",
+        "phases": {
+          "opened": 2776,
+          "presentation": 2790,
+          "publicComment": null,
+          "discussion": 3793,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7.1",
+        "title": "First Reading and Discussion of Board Policy and Administrative Regulation 0510: School Accountability Report Card",
+        "phases": {
+          "opened": 5582,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7.2",
+        "title": "First Reading and Discussion of Board Policy 1100: Communication with the Public",
+        "phases": {
+          "opened": 5630,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 5641,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7.3",
+        "title": "First Reading and Discussion of Board Policy and Administrative Regulation 1340: Access to District Records",
+        "phases": {
+          "opened": 5866,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7.4",
+        "title": "First Reading and Discussion of Board Policy 1112: Media Relations",
+        "phases": {
+          "opened": 5914,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 5930,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7.5",
+        "title": "First Reading and Discussion of Board Policy 4235: Soliciting and Selling",
+        "phases": {
+          "opened": 6043,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 6067,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7.6",
+        "title": "First Reading and Discussion of Board Policy 4335: Soliciting and Selling",
+        "phases": {
+          "opened": 6043,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 6067,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7.7",
+        "title": "First Reading and Discussion of Board Policy and Administrative Regulation 5113.12: District School Attendance Review Board",
+        "phases": {
+          "opened": 6143,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 6155,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7.8",
+        "title": "First Reading and Discussion of Board Policy and Administrative Regulation 5125: Student Records",
+        "phases": {
+          "opened": 6196,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 6212,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8",
+        "title": "Approval of Consent Items (excluding item 8.3)",
+        "phases": {
+          "opened": 6458,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6480,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.1",
+        "title": "Approval of the November 12, 2025, Board Meeting Minutes",
+        "phases": {
+          "opened": 6458,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6480,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.2",
+        "title": "Approval of the November 19, 2025, Board Meeting Minutes",
+        "phases": {
+          "opened": 6458,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6480,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.3",
+        "title": "Approval of the Addendum to the Measure U Application for Taft Community School for the 2025-2026 School Year",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": true
+      },
+      {
+        "itemLabel": "8.4",
+        "title": "Approval of KIPP Excelencia Community Prep Measure U Application for the 2025-26 School Year",
+        "phases": {
+          "opened": 6458,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6480,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.5",
+        "title": "Ratification of Warrant Registers, November 1, 2025 - November 30, 2025",
+        "phases": {
+          "opened": 6458,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6480,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.6",
+        "title": "Approval to Discard Obsolete and Damaged Library Books",
+        "phases": {
+          "opened": 6458,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6480,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.7",
+        "title": "Approval of the Retirement Notification Incentive",
+        "phases": {
+          "opened": 6458,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6480,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.8",
+        "title": "Acceptance of Donation",
+        "phases": {
+          "opened": 6458,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6480,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.9",
+        "title": "Second Reading and Approval of Board Bylaw 9250: Remuneration, Reimbursement, and Other Benefits",
+        "phases": {
+          "opened": 6458,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6480,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.10",
+        "title": "Second Reading and Approval of Board Policy and Administrative Regulation 4119.42: Exposure Control Plan for Bloodborne Pathogens",
+        "phases": {
+          "opened": 6458,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6480,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "Second Reading and Approval of Board Policy and Administrative Regulation 4219.42: Exposure Control Plan for Bloodborne Pathogens",
+        "phases": {
+          "opened": 6458,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6480,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.12",
+        "title": "Second Reading and Approval of Board Policy and Administrative Regulation 4319.42: Exposure Control Plan for Bloodborne Pathogens",
+        "phases": {
+          "opened": 6458,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6480,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.13",
+        "title": "Second Reading and Approval of Board Policy and Administrative Regulation 4119.43: Universal Precautions",
+        "phases": {
+          "opened": 6458,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6480,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.14",
+        "title": "Second Reading and Approval of Board Policy and Administrative Regulation 4219.43: Universal Precautions",
+        "phases": {
+          "opened": 6458,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6480,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.15",
+        "title": "Second Reading and Approval of Board Policy and Administrative Regulation 4319.43: Universal Precautions",
+        "phases": {
+          "opened": 6458,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6480,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.16",
+        "title": "Second Reading and Approval of Board Policy 4151: Employee Compensation",
+        "phases": {
+          "opened": 6458,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6480,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "17",
+        "title": "Second Reading and Approval of Board Policy 4251: Employee Compensation",
+        "phases": {
+          "opened": 6458,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6480,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "18",
+        "title": "Second Reading and Approval of Board Policy 4351: Employee Compensation",
+        "phases": {
+          "opened": 6458,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6480,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "19",
+        "title": "Second Reading and Approval of Board Policy and Administrative Regulation 5141: Health Care and Emergencies",
+        "phases": {
+          "opened": 6458,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6480,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "20",
+        "title": "Second Reading and Approval of Board Policy and Administrative Regulation 5141.21: Administering Medication and Monitoring Health Conditions",
+        "phases": {
+          "opened": 6458,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6480,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "21",
+        "title": "Second Reading and Approval of Board Policy 5141.5: Mental Health",
+        "phases": {
+          "opened": 6458,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6480,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "22",
+        "title": "Second Reading and Approval of Board Policy and Administrative Regulation 6142.7: Physical Education",
+        "phases": {
+          "opened": 6458,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6480,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "23",
+        "title": "Second Reading and Approval of Board Policy and Administrative Regulations 6142.8: Comprehensive Health Education",
+        "phases": {
+          "opened": 6458,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6480,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.1",
+        "title": "Adoption of Annual Organizational Meeting Date Set for December 17, 2025, at 7:00 PM",
+        "phases": {
+          "opened": 6487,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6521,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.2",
+        "title": "Discuss and Select a Taxpayer Organization Representative for the Citizens' Bond Oversight Committee (CBOC)",
+        "phases": {
+          "opened": 6524,
+          "presentation": 6532,
+          "publicComment": null,
+          "discussion": 6629,
+          "vote": {
+            "seconds": 7050,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "Board and Superintendent Reports",
+        "title": "Board and Superintendent Reports",
+        "phases": {
+          "opened": 7077,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 7106,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "Information",
+        "title": "Information",
+        "phases": {
+          "opened": 8519,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "Correspondence",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 8519,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "Other Business/Suggested Items for Future Agenda",
+        "title": "Other Business/Suggested Items for Future Agenda",
+        "phases": {
+          "opened": 8519,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 8578,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "Board of Trustees Meeting Reflection",
+        "title": "Board of Trustees Meeting Reflection",
+        "phases": {
+          "opened": 8642,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 8674,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "Board of Trustees Meeting Calendar",
+        "title": "Board of Trustees Meeting Calendar",
+        "phases": {
+          "opened": 8856,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "Adjournment",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 8898,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 8914,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "cachedAt": "2026-03-15T17:03:59.245Z",
+  "inputTokens": 43156,
+  "outputTokens": 6156
+}

@@ -355,11 +355,23 @@ function escapeHtml(s) {
   return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 
+function fmtNum(n) {
+  return (n || 0).toLocaleString('en-US');
+}
+
 function formatTS(seconds) {
   const h = Math.floor(seconds / 3600);
   const m = Math.floor((seconds % 3600) / 60);
   const s = seconds % 60;
   return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+}
+
+function formatDuration(seconds) {
+  if (seconds < 0) seconds = 0;
+  const m = Math.floor(seconds / 60);
+  const s = seconds % 60;
+  if (m > 0) return `${m}m ${s}s`;
+  return `${s}s`;
 }
 
 const THREAD_LABELS = {
@@ -512,7 +524,7 @@ function generateSummary(m) {
 
   // Fallback: generate from substantive items
   if (!m.items || m.items.length === 0) return null;
-  const sub = m.source === 'boarddocs' ? m.items.filter(isSubstantiveItem) : m.items;
+  const sub = m.items.filter(isSubstantiveItem);
   if (sub.length === 0) return null;
   return sub.slice(0, 5).map(it => it.title).join('; ');
 }
@@ -544,14 +556,31 @@ function highlightSummary(text) {
 // ---- Agenda item rendering ----
 // Render expandable agenda items
 // Filter to substantive items only (skip procedural boilerplate and routine consent items)
+// Works with both old schema (order/category/actionType) and new formal schema (itemLabel/isSection)
 function isSubstantiveItem(item) {
   const title = (item.title || '').toLowerCase();
   const cat = (item.category || '').toLowerCase();
   const actionType = item.actionType || '';
 
-  // Always skip procedural and consent-calendar items
+  // Always show items that have public comment speaker data
+  if (item.publicComments && item.publicComments.length > 0) return true;
+
+  // New schema: skip section headers (they're structural, not items)
+  if (item.isSection) return false;
+
+  // Always skip procedural items
   if (actionType === 'Procedural') return false;
-  if (actionType === 'Action (Consent)') return false;
+
+  // Skip routine consent items, but keep high-signal ones (policies, resolutions, measures, compensation)
+  if (actionType === 'Action (Consent)') {
+    const isSignificantConsent =
+      title.includes('policy') || title.includes('bylaw') || title.includes('regulation') ||
+      title.includes('resolution') || title.includes('measure') || title.includes('bond') ||
+      title.includes('compensation') || title.includes('tentative agreement') ||
+      title.includes('charter') || title.includes('budget') || title.includes('lcap') ||
+      title.includes('spsa') || title.includes('school plan');
+    if (!isSignificantConsent) return false;
+  }
 
   // Skip boilerplate by title
   const skipTitles = [
@@ -564,14 +593,16 @@ function isSubstantiveItem(item) {
     'ratification of warrant', 'information on san mateo county investment',
     'approval of personnel changes', 'changes to the board meetings calendar',
     'rejection of claim', 'quarterly williams report',
+    'notification of remote participation', 'welcome',
   ];
   if (skipTitles.some(s => title.includes(s))) return false;
 
   // Skip boilerplate categories
+  // Note: 'consent' is NOT here — the actionType check above already filters routine
+  // consent items while keeping significant ones (policies, resolutions, etc.)
   const skipCats = [
     'call to order', 'oral communication', 'reconvene', 'welcome',
     'pledge of allegiance', 'adjournment', 'closed session', 'report out',
-    'consent', 'approval of consent',
   ];
   if (skipCats.some(s => cat.includes(s))) return false;
 
@@ -603,10 +634,8 @@ function isSubstantiveItem(item) {
 function renderAgendaItems(m) {
   if (!m.items || m.items.length === 0) return '';
 
-  // For BoardDocs meetings, filter to substantive items only
-  const items = m.source === 'boarddocs'
-    ? m.items.filter(isSubstantiveItem)
-    : m.items;
+  // Filter to substantive items for both sources
+  const items = m.items.filter(isSubstantiveItem);
 
   if (items.length === 0) return '';
 
@@ -614,7 +643,9 @@ function renderAgendaItems(m) {
   for (const item of items) {
     const title = item.title || '';
 
-    const order = item.order ? `<span class="agenda-item-order">${escapeHtml(item.order)}</span>` : '';
+    // Use itemLabel (new schema) or order (legacy) for display
+    const label = item.itemLabel || item.order || '';
+    const order = label ? `<span class="agenda-item-order">${escapeHtml(String(label))}</span>` : '';
     const typeLabel = item.actionType && item.actionType !== 'Information' ?
       `<span class="agenda-item-type">${escapeHtml(item.actionType)}</span>` : '';
 
@@ -657,6 +688,26 @@ function renderAgendaItems(m) {
     // Bilingual subtitle on Spanish page
     if (L.lang === 'es' && agendaTitlesEs[title]) {
       itemsHtml += `<div class="agenda-item-es">${escapeHtml(agendaTitlesEs[title])}</div>`;
+    }
+
+    // Render public comment speakers
+    if (item.publicComments && item.publicComments.length > 0) {
+      itemsHtml += '<div class="agenda-public-comments">';
+      const commentLabel = L.lang === 'es' ? 'Comentarios públicos' : 'Public comments';
+      itemsHtml += `<div class="agenda-public-comments-label">${commentLabel} (${item.publicComments.length}):</div>`;
+      for (const pc of item.publicComments) {
+        const name = escapeHtml(pc.name || (L.lang === 'es' ? 'Hablante no identificado' : 'Unidentified speaker'));
+        const duration = pc.endSeconds && pc.startSeconds
+          ? ` (${formatDuration(pc.endSeconds - pc.startSeconds)})`
+          : '';
+        let speakerLink = name;
+        if (pc.startSeconds != null && ytBase) {
+          speakerLink = `<a class="agenda-phase" href="${ytBase}&t=${pc.startSeconds}" target="_blank" rel="noopener">${name}</a>`;
+        }
+        const summary = pc.summary ? ` — ${escapeHtml(pc.summary)}` : '';
+        itemsHtml += `<div class="agenda-public-comment">${speakerLink}${duration}${summary}</div>`;
+      }
+      itemsHtml += '</div>';
     }
 
     // Render attachments
@@ -773,9 +824,7 @@ function renderMeeting(m) {
 
   // Agenda items in accordion
   const agendaSection = renderAgendaItems(m);
-  const itemCount = m.source === 'boarddocs'
-    ? (m.items || []).filter(isSubstantiveItem).length
-    : (m.items || []).length;
+  const itemCount = (m.items || []).filter(isSubstantiveItem).length;
   const accordionHtml = agendaSection
     ? `<details class="meeting-details"><summary class="meeting-details-toggle">${L.agendaItemsLabel(itemCount)}</summary>${agendaSection}</details>`
     : '';
@@ -1522,6 +1571,40 @@ const pageCSS = `
     vertical-align: middle;
   }
 
+  .agenda-public-comments {
+    padding-left: 1.8rem;
+    margin: 0.15rem 0 0.3rem;
+  }
+
+  .agenda-public-comments-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    margin-bottom: 0.1rem;
+  }
+
+  .agenda-public-comment {
+    font-family: 'Newsreader', serif;
+    font-size: 0.7rem;
+    line-height: 1.5;
+    color: var(--text-secondary);
+    padding-left: 0.5rem;
+    border-left: 2px solid var(--cream-dark);
+    margin-bottom: 0.2rem;
+  }
+
+  .agenda-public-comment a {
+    font-weight: 600;
+    color: var(--green-mid);
+    text-decoration: none;
+  }
+
+  .agenda-public-comment a:hover {
+    color: var(--green-deep);
+    text-decoration: underline;
+  }
+
   .agenda-attachments {
     padding-left: 1.8rem;
     margin: 0.15rem 0 0.3rem;
@@ -2050,23 +2133,23 @@ ${siteNav({ activePage: 'meetings', lang: L.lang, altLangHref: L.altLangHref })}
     <p class="header-subtitle">${headerSubtitleText(L.lang)} <a href="https://simbli.eboardsolutions.com/SB_Meetings/SB_MeetingListing.aspx?S=36030397" style="color:rgba(255,255,255,0.75)">GAMUT/Simbli</a> ${L.headerSubtitleAnd} <a href="https://go.boarddocs.com/ca/redwood/Board.nsf/goto?open&id=CVLPDX62089F" style="color:rgba(255,255,255,0.75)">BoardDocs</a>.</p>
     <div class="header-meta">
       <div class="header-stat">
-        <span class="header-stat-value">${data.stats.total}</span>
+        <span class="header-stat-value">${fmtNum(data.stats.total)}</span>
         <span class="header-stat-label">${L.statMeetings}</span>
       </div>
       <div class="header-stat">
-        <span class="header-stat-value">${data.stats.totalItems || 0}</span>
+        <span class="header-stat-value">${fmtNum(data.stats.totalItems)}</span>
         <span class="header-stat-label">${L.statAgendaItems}</span>
       </div>
       <div class="header-stat">
-        <span class="header-stat-value">${data.stats.totalAttachments || 0}</span>
+        <span class="header-stat-value">${fmtNum(data.stats.totalAttachments)}</span>
         <span class="header-stat-label">${L.statAttachments}</span>
       </div>
       <div class="header-stat">
-        <span class="header-stat-value">${data.stats.withVideo}</span>
+        <span class="header-stat-value">${fmtNum(data.stats.withVideo)}</span>
         <span class="header-stat-label">${L.statWithVideo}</span>
       </div>
       <div class="header-stat">
-        <span class="header-stat-value">${data.stats.withTranscript || 0}</span>
+        <span class="header-stat-value">${fmtNum(data.stats.withTranscript)}</span>
         <span class="header-stat-label">${L.statWithTranscript}</span>
       </div>
       <div class="header-stat">

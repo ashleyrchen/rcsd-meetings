@@ -1,0 +1,1146 @@
+{
+  "date": "2026-01-21",
+  "itemCount": 44,
+  "llmResponse": {
+    "speakers": {
+      "A": {
+        "name": "David Weekly",
+        "role": "Board President"
+      },
+      "B": {
+        "name": "John Baker",
+        "role": "Superintendent"
+      },
+      "C": {
+        "name": "Jennifer Ng Kwing King",
+        "role": "Clerk / Trustee"
+      },
+      "D": {
+        "name": "Evelyn Sanchez",
+        "role": "Executive Assistant to Superintendent / Board Secretary"
+      },
+      "E": {
+        "name": "Student",
+        "role": "Student (Pledge of Allegiance leader)"
+      },
+      "F": {
+        "name": "Mike Wells",
+        "role": "Trustee"
+      },
+      "G": {
+        "name": "David Li",
+        "role": "Trustee"
+      },
+      "H": {
+        "name": "Cecilia I. Márquez",
+        "role": "Vice President"
+      },
+      "I": {
+        "name": "Christian Rubalcaba",
+        "role": "Incoming Superintendent (Dr. Christian Rubalcaba)"
+      }
+    },
+    "agendaChanges": "Items 12.1 (Adoption of Resolution No. 16 and Resolution No. 17 re EV Charger/PowerFlex) and 12.2 (Approval of Atlas Pellizzari Electric agreement) were pulled from the agenda by President Weekly for further review and will be presented at a future meeting. Trustee Wells moved to advance item 12.3 (Ratification of Employment Agreement with Dr. Christian Rubalcaba) to immediately follow Section 9 Public Comment and before Section 10 Discussion Items. The amended agenda was approved unanimously.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order",
+        "phases": {
+          "opened": 6,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "1",
+        "title": "Roll Call (Open Session)",
+        "phases": {
+          "opened": 6,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Public Comment on Closed Session Items Only",
+        "phases": {
+          "opened": 58,
+          "presentation": null,
+          "publicComment": 58,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Announcement of Closed Session Purpose",
+        "phases": {
+          "opened": 58,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Closed Session – 5:45 PM",
+        "phases": {
+          "opened": 58,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Reconvene to Open Session / Roll Call / Report Out on Closed Session",
+        "phases": {
+          "opened": 6,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Welcome / Pledge of Allegiance",
+        "phases": {
+          "opened": 18,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 212,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 212,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8",
+        "title": "Approval of the Agenda (Action Required)",
+        "phases": {
+          "opened": 248,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 259,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9",
+        "title": "Public Comment",
+        "phases": {
+          "opened": 259,
+          "presentation": null,
+          "publicComment": 259,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Maria Stockton",
+            "startSeconds": 308,
+            "endSeconds": 405,
+            "summary": "As President of CSEA Chapter V, she presented board members with the classified staff seniority list by name and challenged each trustee to visit a school site and personally meet and get to know a classified employee."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.3",
+        "title": "Ratification of Employment Agreement with Dr. Christian Rubalcaba for the position of Superintendent (moved earlier in agenda)",
+        "phases": {
+          "opened": 405,
+          "presentation": 564,
+          "publicComment": 887,
+          "discussion": 1225,
+          "vote": {
+            "seconds": 1407,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [
+          {
+            "name": "Jennifer Blanco",
+            "startSeconds": 913,
+            "endSeconds": 1188,
+            "summary": "As a former trustee and county commissioner, she praised Dr. Baker's service and their shared work on the Latino Leaders Coalition, and enthusiastically endorsed Dr. Rubalcaba based on their collaboration on the Juvenile Justice and Delinquency Prevention Commission."
+          },
+          {
+            "name": "Johanna Rasmussen",
+            "startSeconds": 1189,
+            "endSeconds": 1225,
+            "summary": "As a 35-year Redwood City resident with children in the district, she thanked Dr. Baker for always listening and expressed great excitement about Dr. Rubalcaba joining the district."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "Discussion Items (First Readings — overview/introduction)",
+        "phases": {
+          "opened": 1877,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "First Reading and Discussion of Board Bylaw 9324: Minutes and Recordings",
+        "phases": {
+          "opened": 2060,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 2073,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "First Reading and Discussion of Board Policy and Administrative Regulation 1330: Use of School Facilities",
+        "phases": {
+          "opened": 2120,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 2120,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "First Reading and Discussion of Board Policy 3510: Green School Operations",
+        "phases": {
+          "opened": 2143,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 2143,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "First Reading and Discussion of Board Policy and Administrative Regulation 3511: Energy and Water Management",
+        "phases": {
+          "opened": 2172,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 2215,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "First Reading and Discussion of Board Policy and Administrative Regulation 3511.1: Integrated Waste Management",
+        "phases": {
+          "opened": 2472,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 2472,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "First Reading and Discussion of Board Policy and Administrative Regulation 3514: Environmental Safety",
+        "phases": {
+          "opened": 2514,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 2526,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "First Reading and Discussion of Board Policy and Administrative Regulation 3515: Campus Security",
+        "phases": {
+          "opened": 2558,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 2558,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "First Reading and Discussion of Board Policy 3515.21: Unmanned Aircraft Systems (Drones)",
+        "phases": {
+          "opened": 2735,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 2767,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "First Reading and Discussion of Board Policy 3515.7: Firearms On School Grounds",
+        "phases": {
+          "opened": 3353,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 3353,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "First Reading and Discussion of Board Policy and Administrative Regulation 3523: Electronic Signatures",
+        "phases": {
+          "opened": 3362,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 3362,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "First Reading and Discussion of Board Policy and Administrative Regulation 3580: District Records",
+        "phases": {
+          "opened": 3369,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 3390,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "First Reading and Discussion of Board Policy and Administrative Regulation 7150: Site Selection and Development",
+        "phases": {
+          "opened": 3915,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 3915,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "First Reading and Discussion of Board Policy 7210: Facilities Financing",
+        "phases": {
+          "opened": 3924,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 3924,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "Approval of Consent Items (Action Required)",
+        "phases": {
+          "opened": 3934,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3959,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.1",
+        "title": "Adoption of Resolution No. 16 Making Public Contract Code §20118.2 Findings and Resolution No. 17 Approving an EV Charger Technology Purchase Agreement with PowerFlex",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": true
+      },
+      {
+        "itemLabel": "12.2",
+        "title": "Approval of the Agreement for Atlas Pellizzari Electric for the amount of $70,520 to Install the PowerFlex Electric Vehicle Chargers at Adelante Selby, Clifford, and Kennedy Schools",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": true
+      },
+      {
+        "itemLabel": "13",
+        "title": "Board and Superintendent Reports",
+        "phases": {
+          "opened": 4004,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 4004,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14",
+        "title": "Information on San Mateo County Investment Fund – December 2025",
+        "phases": {
+          "opened": 4737,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 4737,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 4768,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 4768,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16",
+        "title": "Other Business / Suggested Items for Future Agenda",
+        "phases": {
+          "opened": 4836,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 4836,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "17",
+        "title": "Board of Trustees Meeting Reflection",
+        "phases": {
+          "opened": 4849,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 4849,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "18",
+        "title": "Board of Trustees Meeting Calendar",
+        "phases": {
+          "opened": 4972,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 4972,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "19",
+        "title": "Adjournment (Action Required)",
+        "phases": {
+          "opened": 4978,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4989,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "result": {
+    "videoId": "-nOpGerpRGA",
+    "speakers": {
+      "A": {
+        "name": "David Weekly",
+        "role": "Board President"
+      },
+      "B": {
+        "name": "John Baker",
+        "role": "Superintendent"
+      },
+      "C": {
+        "name": "Jennifer Ng Kwing King",
+        "role": "Clerk / Trustee"
+      },
+      "D": {
+        "name": "Evelyn Sanchez",
+        "role": "Executive Assistant to Superintendent / Board Secretary"
+      },
+      "E": {
+        "name": "Student",
+        "role": "Student (Pledge of Allegiance leader)"
+      },
+      "F": {
+        "name": "Mike Wells",
+        "role": "Trustee"
+      },
+      "G": {
+        "name": "David Li",
+        "role": "Trustee"
+      },
+      "H": {
+        "name": "Cecilia I. Márquez",
+        "role": "Vice President"
+      },
+      "I": {
+        "name": "Christian Rubalcaba",
+        "role": "Incoming Superintendent (Dr. Christian Rubalcaba)"
+      }
+    },
+    "agendaChanges": "Items 12.1 (Adoption of Resolution No. 16 and Resolution No. 17 re EV Charger/PowerFlex) and 12.2 (Approval of Atlas Pellizzari Electric agreement) were pulled from the agenda by President Weekly for further review and will be presented at a future meeting. Trustee Wells moved to advance item 12.3 (Ratification of Employment Agreement with Dr. Christian Rubalcaba) to immediately follow Section 9 Public Comment and before Section 10 Discussion Items. The amended agenda was approved unanimously.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order",
+        "phases": {
+          "opened": 6,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "1",
+        "title": "Roll Call (Open Session)",
+        "phases": {
+          "opened": 6,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Public Comment on Closed Session Items Only",
+        "phases": {
+          "opened": 58,
+          "presentation": null,
+          "publicComment": 58,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Announcement of Closed Session Purpose",
+        "phases": {
+          "opened": 58,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Closed Session – 5:45 PM",
+        "phases": {
+          "opened": 58,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Reconvene to Open Session / Roll Call / Report Out on Closed Session",
+        "phases": {
+          "opened": 6,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Welcome / Pledge of Allegiance",
+        "phases": {
+          "opened": 18,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 212,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 212,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8",
+        "title": "Approval of the Agenda (Action Required)",
+        "phases": {
+          "opened": 248,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 259,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9",
+        "title": "Public Comment",
+        "phases": {
+          "opened": 259,
+          "presentation": null,
+          "publicComment": 259,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Maria Stockton",
+            "startSeconds": 308,
+            "endSeconds": 405,
+            "summary": "As President of CSEA Chapter V, she presented board members with the classified staff seniority list by name and challenged each trustee to visit a school site and personally meet and get to know a classified employee."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.3",
+        "title": "Ratification of Employment Agreement with Dr. Christian Rubalcaba for the position of Superintendent (moved earlier in agenda)",
+        "phases": {
+          "opened": 405,
+          "presentation": 564,
+          "publicComment": 887,
+          "discussion": 1225,
+          "vote": {
+            "seconds": 1407,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [
+          {
+            "name": "Jennifer Blanco",
+            "startSeconds": 913,
+            "endSeconds": 1188,
+            "summary": "As a former trustee and county commissioner, she praised Dr. Baker's service and their shared work on the Latino Leaders Coalition, and enthusiastically endorsed Dr. Rubalcaba based on their collaboration on the Juvenile Justice and Delinquency Prevention Commission."
+          },
+          {
+            "name": "Johanna Rasmussen",
+            "startSeconds": 1189,
+            "endSeconds": 1225,
+            "summary": "As a 35-year Redwood City resident with children in the district, she thanked Dr. Baker for always listening and expressed great excitement about Dr. Rubalcaba joining the district."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "Discussion Items (First Readings — overview/introduction)",
+        "phases": {
+          "opened": 1877,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "First Reading and Discussion of Board Bylaw 9324: Minutes and Recordings",
+        "phases": {
+          "opened": 2060,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 2073,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "First Reading and Discussion of Board Policy and Administrative Regulation 1330: Use of School Facilities",
+        "phases": {
+          "opened": 2120,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 2120,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "First Reading and Discussion of Board Policy 3510: Green School Operations",
+        "phases": {
+          "opened": 2143,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 2143,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "First Reading and Discussion of Board Policy and Administrative Regulation 3511: Energy and Water Management",
+        "phases": {
+          "opened": 2172,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 2215,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "First Reading and Discussion of Board Policy and Administrative Regulation 3511.1: Integrated Waste Management",
+        "phases": {
+          "opened": 2472,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 2472,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "First Reading and Discussion of Board Policy and Administrative Regulation 3514: Environmental Safety",
+        "phases": {
+          "opened": 2514,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 2526,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "First Reading and Discussion of Board Policy and Administrative Regulation 3515: Campus Security",
+        "phases": {
+          "opened": 2558,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 2558,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "First Reading and Discussion of Board Policy 3515.21: Unmanned Aircraft Systems (Drones)",
+        "phases": {
+          "opened": 2735,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 2767,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "First Reading and Discussion of Board Policy 3515.7: Firearms On School Grounds",
+        "phases": {
+          "opened": 3353,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 3353,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "First Reading and Discussion of Board Policy and Administrative Regulation 3523: Electronic Signatures",
+        "phases": {
+          "opened": 3362,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 3362,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "First Reading and Discussion of Board Policy and Administrative Regulation 3580: District Records",
+        "phases": {
+          "opened": 3369,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 3390,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "First Reading and Discussion of Board Policy and Administrative Regulation 7150: Site Selection and Development",
+        "phases": {
+          "opened": 3915,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 3915,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "First Reading and Discussion of Board Policy 7210: Facilities Financing",
+        "phases": {
+          "opened": 3924,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 3924,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "Approval of Consent Items (Action Required)",
+        "phases": {
+          "opened": 3934,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3959,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.1",
+        "title": "Adoption of Resolution No. 16 Making Public Contract Code §20118.2 Findings and Resolution No. 17 Approving an EV Charger Technology Purchase Agreement with PowerFlex",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": true
+      },
+      {
+        "itemLabel": "12.2",
+        "title": "Approval of the Agreement for Atlas Pellizzari Electric for the amount of $70,520 to Install the PowerFlex Electric Vehicle Chargers at Adelante Selby, Clifford, and Kennedy Schools",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": true
+      },
+      {
+        "itemLabel": "13",
+        "title": "Board and Superintendent Reports",
+        "phases": {
+          "opened": 4004,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 4004,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14",
+        "title": "Information on San Mateo County Investment Fund – December 2025",
+        "phases": {
+          "opened": 4737,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 4737,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 4768,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 4768,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16",
+        "title": "Other Business / Suggested Items for Future Agenda",
+        "phases": {
+          "opened": 4836,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 4836,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "17",
+        "title": "Board of Trustees Meeting Reflection",
+        "phases": {
+          "opened": 4849,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 4849,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "18",
+        "title": "Board of Trustees Meeting Calendar",
+        "phases": {
+          "opened": 4972,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 4972,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "19",
+        "title": "Adjournment (Action Required)",
+        "phases": {
+          "opened": 4978,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4989,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "cachedAt": "2026-03-15T17:00:32.075Z",
+  "inputTokens": 24941,
+  "outputTokens": 4416
+}

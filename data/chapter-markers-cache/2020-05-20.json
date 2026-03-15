@@ -1,0 +1,1388 @@
+{
+  "date": "2020-05-20",
+  "itemCount": 51,
+  "llmResponse": {
+    "speakers": {
+      "A": {
+        "name": "Janet Lawson",
+        "role": "Board President"
+      },
+      "B": {
+        "name": "Dennis McBride",
+        "role": "Board Member (later identified as Vice President in error by ASR; actually Trustee/Member)"
+      },
+      "C": {
+        "name": "Alisa MacAvoy",
+        "role": "Board Clerk / Roll Call Reader"
+      },
+      "D": {
+        "name": "John Baker",
+        "role": "Superintendent"
+      },
+      "E": {
+        "name": "Cecilia I. Márquez / various presenters",
+        "role": "Trustee and various staff/presenters (context-dependent)"
+      }
+    },
+    "agendaChanges": "Item 15.2 (Cisco/AMS.NET Licensing Contract) was moved to the Consent Calendar (Section 14). A proclamation reading was added before item 9.1 by Dennis McBride. Items were otherwise taken in order. Sections 1-3 (Call to Order, Oral Communication on Closed Session, Closed Session) are not captured in the transcript recording; the recording begins at the Reconvene to Regular Session (Section 4).",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Oral Communication on Closed Session Items Only",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Closed Session",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Reconvene to Regular Session",
+        "phases": {
+          "opened": 0,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Roll Call",
+        "phases": {
+          "opened": 0,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Report Out on Closed Session from 5.6.20",
+        "phases": {
+          "opened": 19,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Report Out on Closed Session from 5.20.20",
+        "phases": {
+          "opened": 19,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Welcome by the School Board President",
+        "phases": {
+          "opened": 19,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Pledge of Allegiance",
+        "phases": {
+          "opened": 129,
+          "presentation": 151,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 178,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 190,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 248,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 262,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 280,
+          "presentation": null,
+          "publicComment": 280,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Christina Lee",
+            "startSeconds": 324,
+            "endSeconds": 349,
+            "summary": "Began to comment on redistricting for the Selby Lane area but was redirected to agenda item 13.1."
+          },
+          {
+            "name": "Keith",
+            "startSeconds": 363,
+            "endSeconds": 366,
+            "summary": "Also noted his comment was about redistricting and was redirected to agenda item 13.1."
+          },
+          {
+            "name": "Kathryn Stewart",
+            "startSeconds": 411,
+            "endSeconds": 533,
+            "summary": "Asked the board to reconsider allowing out-of-district transfers into the Mandarin immersion program, especially given the shift to distance learning, and requested larger/clearer boundary maps for future presentations."
+          },
+          {
+            "name": "Juana Martinez Gonzalez",
+            "startSeconds": 966,
+            "endSeconds": 1147,
+            "summary": "Thanked the district for its COVID-19 support, shared her experience as a working parent navigating distance learning, expressed concern about communication barriers for non-English-speaking parents, and requested a meeting with board trustees similar to the one held with the county Office of Education."
+          },
+          {
+            "name": "Maria Stockton",
+            "startSeconds": 733,
+            "endSeconds": 916,
+            "summary": "Congratulated classified employees during Classified Employees Week, thanked Alisa MacAvoy for help obtaining a city proclamation recognizing teachers and staff, and expressed appreciation to Wendy for the collaborative CSEA contract negotiations."
+          },
+          {
+            "name": "Raquel Gonzalez",
+            "startSeconds": 1176,
+            "endSeconds": 1236,
+            "summary": "Expressed disappointment that the community's overwhelming input on the name for Adelante Selby was not accepted, and asked why the recommended name was not chosen."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9",
+        "title": "Recognition of 2019-20 Induction Program Participants (including added Proclamation reading)",
+        "phases": {
+          "opened": 1323,
+          "presentation": 1338,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "Bond Program Update",
+        "phases": {
+          "opened": 2171,
+          "presentation": 2216,
+          "publicComment": null,
+          "discussion": 2425,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "Bond Program Consent Items (Action Required)",
+        "phases": {
+          "opened": 2488,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 2524,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12",
+        "title": "Approval of Construction Agreement with CalState for Roosevelt School",
+        "phases": {
+          "opened": 2535,
+          "presentation": 2553,
+          "publicComment": null,
+          "discussion": 2569,
+          "vote": {
+            "seconds": 2639,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "Discussion of School Attendance Boundary Change for Neighborhood Schools",
+        "phases": {
+          "opened": 2663,
+          "presentation": 2807,
+          "publicComment": 5421,
+          "discussion": 4832,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Christina Lee",
+            "startSeconds": 5442,
+            "endSeconds": 5640,
+            "summary": "A Kentfield Commons resident explained that her neighborhood only has access via Woodside Road, making Garfield School very difficult to reach, and urged the board to assign Kentfield Commons to the closer Henry Ford School."
+          },
+          {
+            "name": "Keith Simmons",
+            "startSeconds": 5670,
+            "endSeconds": 5742,
+            "summary": "As a Kentfield Commons resident, echoed support for assigning the neighborhood to Henry Ford rather than Garfield, citing proximity and the ability to safely walk or bike."
+          },
+          {
+            "name": "Kathryn Stewart",
+            "startSeconds": 5757,
+            "endSeconds": 5928,
+            "summary": "Asked for current enrollment figures for Orion/John Gill/Mandarin immersion, questioned whether the 2026 decline projections account for potential COVID baby boom, and noted that projections don't yet include anticipated birth rate changes."
+          },
+          {
+            "name": "Michelle Smith",
+            "startSeconds": 5990,
+            "endSeconds": 6110,
+            "summary": "Urged the board to prioritize equity in boundary changes, cautioned against overloading lower-resourced schools like Garfield, and expressed preference for Scenario 2 which better distributes students to underutilized schools like Clifford and Roy Cloud."
+          },
+          {
+            "name": "Lisa Gianangeli",
+            "startSeconds": 6131,
+            "endSeconds": 6201,
+            "summary": "Thanked the board for raising capacity and grandfathering questions, sought clarification on whether students in the former John Gill area assigned to Clifford could remain at Clifford through 8th grade rather than transitioning to Kennedy."
+          },
+          {
+            "name": "Jacqueline Rodriguez",
+            "startSeconds": 6304,
+            "endSeconds": 6491,
+            "summary": "A Hoover parent and Innovate Public Schools parent leader thanked the district for its COVID support, raised concerns about ELD access for English learner students during distance learning, and requested a meeting with board trustees."
+          },
+          {
+            "name": "Elizabeth Flegel",
+            "startSeconds": 6802,
+            "endSeconds": 7005,
+            "summary": "Asked that her small neighborhood near Sulzbach Park (adjacent to the Henry Ford boundary) be considered together with the Henry Ford area in any redistricting, and noted the large enrollment discrepancy between Adelante Selby and other K-5 schools in the presentation."
+          },
+          {
+            "name": "Jenny Overby",
+            "startSeconds": 7029,
+            "endSeconds": 7167,
+            "summary": "Requested that Clifford's current school-of-choice enrollment be considered in projections, and asked the board to review actual classroom capacity accounting for special day classes, resource rooms, child care rooms, and technology/science rooms."
+          },
+          {
+            "name": "Ann Heinichek",
+            "startSeconds": 7205,
+            "endSeconds": 7295,
+            "summary": "Urged the board to prioritize socioeconomic diversity in boundary decisions, calling this an opportunity to create less segregated schools, and asked for demographic and economic data to be included in future presentations."
+          },
+          {
+            "name": "Devin Mullane",
+            "startSeconds": 7342,
+            "endSeconds": 7456,
+            "summary": "Echoed the call for diversity, raised concerns about the feasibility of the Peet's Harbor area being assigned to Clifford, and questioned why Hoover is maintained near 80% capacity while other schools run at 50%."
+          },
+          {
+            "name": "Bill Brown",
+            "startSeconds": 7582,
+            "endSeconds": 7713,
+            "summary": "Stressed the need for a comprehensive, verified classroom-by-classroom capacity inventory before the redistricting exercise can be completed accurately, and offered to help compile such an inventory."
+          },
+          {
+            "name": "Vanessa De la Pascua",
+            "startSeconds": 7736,
+            "endSeconds": 7871,
+            "summary": "Speaking for the Atherwood neighborhood including Kentfield Commons, explained that residents only have access via Woodside Road and urged the board to recognize that walking to Garfield requires crossing Woodside Road and El Camino, making Henry Ford a far safer and more accessible option."
+          },
+          {
+            "name": "Thomas",
+            "startSeconds": 7936,
+            "endSeconds": 8091,
+            "summary": "A Roosevelt parent praised the school's leadership but argued that Roosevelt has been disproportionately burdened with additional students while underenrolled schools like Roy Cloud and Clifford are underutilized, and expressed frustration that wealthier neighborhoods had more influence over prior school closure decisions."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "Discussion on COVID-19",
+        "phases": {
+          "opened": 9269,
+          "presentation": 9279,
+          "publicComment": 11560,
+          "discussion": 10556,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Pam Barish",
+            "startSeconds": 11585,
+            "endSeconds": 11739,
+            "summary": "A 29-year kindergarten teacher reminded the board to consider teacher health, family obligations, and well-being when planning school reopening, urging that what is best for teachers be weighed alongside what is best for students."
+          },
+          {
+            "name": "Mohamed Tabrizi",
+            "startSeconds": 11824,
+            "endSeconds": 11934,
+            "summary": "A Roy Cloud parent urged the district to prioritize more effective technology platforms such as Zoom and Seesaw over Google Hangouts for distance learning, citing frustrating experiences with the mandated Google platform."
+          },
+          {
+            "name": "Michelle Buetler",
+            "startSeconds": 11958,
+            "endSeconds": 12119,
+            "summary": "A teacher encouraged the district to inform parents not to spend money on technology devices, highlighted the value of Spanish-language social media communications, and urged mindfulness of the disparities between English- and Spanish-speaking families."
+          },
+          {
+            "name": "Michelle Ortez",
+            "startSeconds": 12156,
+            "endSeconds": 12258,
+            "summary": "A teacher and parent expressed concern about proposed changes to social distancing ratios, stating that distance learning is the safest model and urging the board to prioritize the health of teachers and students over a return to campus."
+          },
+          {
+            "name": "Michelle Torrido",
+            "startSeconds": 12338,
+            "endSeconds": 12547,
+            "summary": "A middle school teacher shared her positive experience mastering online platforms and achieving 90% student participation, and expressed her personal preference for continuing distance learning rather than policing social distancing rules in a classroom."
+          },
+          {
+            "name": "Kathryn Stewart",
+            "startSeconds": 12563,
+            "endSeconds": 12770,
+            "summary": "Stated she plans to keep her child home until a vaccine is available, argued that no loss of life is acceptable, and suggested the district begin sign-ups now for families who want to remain fully remote so classroom space can be better allocated."
+          },
+          {
+            "name": "Devin Mullane",
+            "startSeconds": 12798,
+            "endSeconds": 13024,
+            "summary": "Raised concerns about teacher workload for mirroring in-person and online lessons simultaneously, suggested alternative scheduling options like extended days or Saturday sessions, and asked whether the district has realized any cost savings from campus closures."
+          },
+          {
+            "name": "Michelle Smith",
+            "startSeconds": 13169,
+            "endSeconds": 13353,
+            "summary": "Expressed gratitude for district efforts, raised concerns about the impact of distance learning on dual immersion programs for both Spanish-speaking and non-Spanish-speaking families who lack support at home."
+          },
+          {
+            "name": "Maria Stockton",
+            "startSeconds": 13404,
+            "endSeconds": 13538,
+            "summary": "Asked whether instructional assistants would receive the same professional development training as teachers, raised questions about equipment access for aides, first aid and PPE training costs, temperature screening equipment, and whether the school day could be extended to compensate for lost learning time."
+          },
+          {
+            "name": "Robin Estrada",
+            "startSeconds": 13617,
+            "endSeconds": 13857,
+            "summary": "Highlighted recurring problems with broken or locked bathrooms and non-functioning soap dispensers at Roosevelt School, urging the district to ensure functional hand-washing facilities as part of any campus reopening plan."
+          },
+          {
+            "name": "Shawna Hackworth",
+            "startSeconds": 13900,
+            "endSeconds": 14053,
+            "summary": "Requested the district implement parental content controls or a tool like Bark for Schools on district Chromebooks, and asked for basic technology training for young students who are being asked to use Google Slides and Docs for the first time."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "Update on the Development of the 2020-21 Local Control Accountability Plan (LCAP)",
+        "phases": {
+          "opened": 14476,
+          "presentation": 14486,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "Updates on the Outcomes to the Federal Program Monitoring Review",
+        "phases": {
+          "opened": 14597,
+          "presentation": 14603,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "Update on Immunizations",
+        "phases": {
+          "opened": 14802,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14",
+        "title": "Consent Items (Action Required) — including moved item 15.2",
+        "phases": {
+          "opened": 14818,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 14843,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Approval of the Memorandum of Understanding between CSEA Chapter V and RCSD",
+        "phases": {
+          "opened": 14858,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 14911,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Approval of Cisco/AMS.NET - Cisco Telecommunications Flex Licensing Contract",
+        "phases": {
+          "opened": 210,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Review and Approval of Board Policy 5141.52 - Suicide Prevention",
+        "phases": {
+          "opened": 14924,
+          "presentation": 14939,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 14978,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Adoption of Resolution 28, Grading During Emergency School Closures",
+        "phases": {
+          "opened": 14994,
+          "presentation": 15007,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 15041,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16",
+        "title": "Report from Board Members and Superintendent",
+        "phases": {
+          "opened": 15055,
+          "presentation": 15063,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "17",
+        "title": "Information on San Mateo County Investment Fund - April 2020",
+        "phases": {
+          "opened": 15740,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "18",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 15750,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "19",
+        "title": "Other Business/Suggested Items for Future Agenda",
+        "phases": {
+          "opened": 15758,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "20",
+        "title": "Changes to the Board Agenda Schedule",
+        "phases": {
+          "opened": 15762,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 15786,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "21",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 15821,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 15830,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "result": {
+    "videoId": "lTrmXqjt76k",
+    "speakers": {
+      "A": {
+        "name": "Janet Lawson",
+        "role": "Board President"
+      },
+      "B": {
+        "name": "Dennis McBride",
+        "role": "Board Member (later identified as Vice President in error by ASR; actually Trustee/Member)"
+      },
+      "C": {
+        "name": "Alisa MacAvoy",
+        "role": "Board Clerk / Roll Call Reader"
+      },
+      "D": {
+        "name": "John Baker",
+        "role": "Superintendent"
+      },
+      "E": {
+        "name": "Cecilia I. Márquez / various presenters",
+        "role": "Trustee and various staff/presenters (context-dependent)"
+      }
+    },
+    "agendaChanges": "Item 15.2 (Cisco/AMS.NET Licensing Contract) was moved to the Consent Calendar (Section 14). A proclamation reading was added before item 9.1 by Dennis McBride. Items were otherwise taken in order. Sections 1-3 (Call to Order, Oral Communication on Closed Session, Closed Session) are not captured in the transcript recording; the recording begins at the Reconvene to Regular Session (Section 4).",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Oral Communication on Closed Session Items Only",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Closed Session",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Reconvene to Regular Session",
+        "phases": {
+          "opened": 0,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Roll Call",
+        "phases": {
+          "opened": 0,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Report Out on Closed Session from 5.6.20",
+        "phases": {
+          "opened": 19,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Report Out on Closed Session from 5.20.20",
+        "phases": {
+          "opened": 19,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Welcome by the School Board President",
+        "phases": {
+          "opened": 19,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Pledge of Allegiance",
+        "phases": {
+          "opened": 129,
+          "presentation": 151,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 178,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 190,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 248,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 262,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 280,
+          "presentation": null,
+          "publicComment": 280,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Christina Lee",
+            "startSeconds": 324,
+            "endSeconds": 349,
+            "summary": "Began to comment on redistricting for the Selby Lane area but was redirected to agenda item 13.1."
+          },
+          {
+            "name": "Keith",
+            "startSeconds": 363,
+            "endSeconds": 366,
+            "summary": "Also noted his comment was about redistricting and was redirected to agenda item 13.1."
+          },
+          {
+            "name": "Kathryn Stewart",
+            "startSeconds": 411,
+            "endSeconds": 533,
+            "summary": "Asked the board to reconsider allowing out-of-district transfers into the Mandarin immersion program, especially given the shift to distance learning, and requested larger/clearer boundary maps for future presentations."
+          },
+          {
+            "name": "Juana Martinez Gonzalez",
+            "startSeconds": 966,
+            "endSeconds": 1147,
+            "summary": "Thanked the district for its COVID-19 support, shared her experience as a working parent navigating distance learning, expressed concern about communication barriers for non-English-speaking parents, and requested a meeting with board trustees similar to the one held with the county Office of Education."
+          },
+          {
+            "name": "Maria Stockton",
+            "startSeconds": 733,
+            "endSeconds": 916,
+            "summary": "Congratulated classified employees during Classified Employees Week, thanked Alisa MacAvoy for help obtaining a city proclamation recognizing teachers and staff, and expressed appreciation to Wendy for the collaborative CSEA contract negotiations."
+          },
+          {
+            "name": "Raquel Gonzalez",
+            "startSeconds": 1176,
+            "endSeconds": 1236,
+            "summary": "Expressed disappointment that the community's overwhelming input on the name for Adelante Selby was not accepted, and asked why the recommended name was not chosen."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9",
+        "title": "Recognition of 2019-20 Induction Program Participants (including added Proclamation reading)",
+        "phases": {
+          "opened": 1323,
+          "presentation": 1338,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "Bond Program Update",
+        "phases": {
+          "opened": 2171,
+          "presentation": 2216,
+          "publicComment": null,
+          "discussion": 2425,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "Bond Program Consent Items (Action Required)",
+        "phases": {
+          "opened": 2488,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 2524,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12",
+        "title": "Approval of Construction Agreement with CalState for Roosevelt School",
+        "phases": {
+          "opened": 2535,
+          "presentation": 2553,
+          "publicComment": null,
+          "discussion": 2569,
+          "vote": {
+            "seconds": 2639,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "Discussion of School Attendance Boundary Change for Neighborhood Schools",
+        "phases": {
+          "opened": 2663,
+          "presentation": 2807,
+          "publicComment": 5421,
+          "discussion": 4832,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Christina Lee",
+            "startSeconds": 5442,
+            "endSeconds": 5640,
+            "summary": "A Kentfield Commons resident explained that her neighborhood only has access via Woodside Road, making Garfield School very difficult to reach, and urged the board to assign Kentfield Commons to the closer Henry Ford School."
+          },
+          {
+            "name": "Keith Simmons",
+            "startSeconds": 5670,
+            "endSeconds": 5742,
+            "summary": "As a Kentfield Commons resident, echoed support for assigning the neighborhood to Henry Ford rather than Garfield, citing proximity and the ability to safely walk or bike."
+          },
+          {
+            "name": "Kathryn Stewart",
+            "startSeconds": 5757,
+            "endSeconds": 5928,
+            "summary": "Asked for current enrollment figures for Orion/John Gill/Mandarin immersion, questioned whether the 2026 decline projections account for potential COVID baby boom, and noted that projections don't yet include anticipated birth rate changes."
+          },
+          {
+            "name": "Michelle Smith",
+            "startSeconds": 5990,
+            "endSeconds": 6110,
+            "summary": "Urged the board to prioritize equity in boundary changes, cautioned against overloading lower-resourced schools like Garfield, and expressed preference for Scenario 2 which better distributes students to underutilized schools like Clifford and Roy Cloud."
+          },
+          {
+            "name": "Lisa Gianangeli",
+            "startSeconds": 6131,
+            "endSeconds": 6201,
+            "summary": "Thanked the board for raising capacity and grandfathering questions, sought clarification on whether students in the former John Gill area assigned to Clifford could remain at Clifford through 8th grade rather than transitioning to Kennedy."
+          },
+          {
+            "name": "Jacqueline Rodriguez",
+            "startSeconds": 6304,
+            "endSeconds": 6491,
+            "summary": "A Hoover parent and Innovate Public Schools parent leader thanked the district for its COVID support, raised concerns about ELD access for English learner students during distance learning, and requested a meeting with board trustees."
+          },
+          {
+            "name": "Elizabeth Flegel",
+            "startSeconds": 6802,
+            "endSeconds": 7005,
+            "summary": "Asked that her small neighborhood near Sulzbach Park (adjacent to the Henry Ford boundary) be considered together with the Henry Ford area in any redistricting, and noted the large enrollment discrepancy between Adelante Selby and other K-5 schools in the presentation."
+          },
+          {
+            "name": "Jenny Overby",
+            "startSeconds": 7029,
+            "endSeconds": 7167,
+            "summary": "Requested that Clifford's current school-of-choice enrollment be considered in projections, and asked the board to review actual classroom capacity accounting for special day classes, resource rooms, child care rooms, and technology/science rooms."
+          },
+          {
+            "name": "Ann Heinichek",
+            "startSeconds": 7205,
+            "endSeconds": 7295,
+            "summary": "Urged the board to prioritize socioeconomic diversity in boundary decisions, calling this an opportunity to create less segregated schools, and asked for demographic and economic data to be included in future presentations."
+          },
+          {
+            "name": "Devin Mullane",
+            "startSeconds": 7342,
+            "endSeconds": 7456,
+            "summary": "Echoed the call for diversity, raised concerns about the feasibility of the Peet's Harbor area being assigned to Clifford, and questioned why Hoover is maintained near 80% capacity while other schools run at 50%."
+          },
+          {
+            "name": "Bill Brown",
+            "startSeconds": 7582,
+            "endSeconds": 7713,
+            "summary": "Stressed the need for a comprehensive, verified classroom-by-classroom capacity inventory before the redistricting exercise can be completed accurately, and offered to help compile such an inventory."
+          },
+          {
+            "name": "Vanessa De la Pascua",
+            "startSeconds": 7736,
+            "endSeconds": 7871,
+            "summary": "Speaking for the Atherwood neighborhood including Kentfield Commons, explained that residents only have access via Woodside Road and urged the board to recognize that walking to Garfield requires crossing Woodside Road and El Camino, making Henry Ford a far safer and more accessible option."
+          },
+          {
+            "name": "Thomas",
+            "startSeconds": 7936,
+            "endSeconds": 8091,
+            "summary": "A Roosevelt parent praised the school's leadership but argued that Roosevelt has been disproportionately burdened with additional students while underenrolled schools like Roy Cloud and Clifford are underutilized, and expressed frustration that wealthier neighborhoods had more influence over prior school closure decisions."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "Discussion on COVID-19",
+        "phases": {
+          "opened": 9269,
+          "presentation": 9279,
+          "publicComment": 11560,
+          "discussion": 10556,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Pam Barish",
+            "startSeconds": 11585,
+            "endSeconds": 11739,
+            "summary": "A 29-year kindergarten teacher reminded the board to consider teacher health, family obligations, and well-being when planning school reopening, urging that what is best for teachers be weighed alongside what is best for students."
+          },
+          {
+            "name": "Mohamed Tabrizi",
+            "startSeconds": 11824,
+            "endSeconds": 11934,
+            "summary": "A Roy Cloud parent urged the district to prioritize more effective technology platforms such as Zoom and Seesaw over Google Hangouts for distance learning, citing frustrating experiences with the mandated Google platform."
+          },
+          {
+            "name": "Michelle Buetler",
+            "startSeconds": 11958,
+            "endSeconds": 12119,
+            "summary": "A teacher encouraged the district to inform parents not to spend money on technology devices, highlighted the value of Spanish-language social media communications, and urged mindfulness of the disparities between English- and Spanish-speaking families."
+          },
+          {
+            "name": "Michelle Ortez",
+            "startSeconds": 12156,
+            "endSeconds": 12258,
+            "summary": "A teacher and parent expressed concern about proposed changes to social distancing ratios, stating that distance learning is the safest model and urging the board to prioritize the health of teachers and students over a return to campus."
+          },
+          {
+            "name": "Michelle Torrido",
+            "startSeconds": 12338,
+            "endSeconds": 12547,
+            "summary": "A middle school teacher shared her positive experience mastering online platforms and achieving 90% student participation, and expressed her personal preference for continuing distance learning rather than policing social distancing rules in a classroom."
+          },
+          {
+            "name": "Kathryn Stewart",
+            "startSeconds": 12563,
+            "endSeconds": 12770,
+            "summary": "Stated she plans to keep her child home until a vaccine is available, argued that no loss of life is acceptable, and suggested the district begin sign-ups now for families who want to remain fully remote so classroom space can be better allocated."
+          },
+          {
+            "name": "Devin Mullane",
+            "startSeconds": 12798,
+            "endSeconds": 13024,
+            "summary": "Raised concerns about teacher workload for mirroring in-person and online lessons simultaneously, suggested alternative scheduling options like extended days or Saturday sessions, and asked whether the district has realized any cost savings from campus closures."
+          },
+          {
+            "name": "Michelle Smith",
+            "startSeconds": 13169,
+            "endSeconds": 13353,
+            "summary": "Expressed gratitude for district efforts, raised concerns about the impact of distance learning on dual immersion programs for both Spanish-speaking and non-Spanish-speaking families who lack support at home."
+          },
+          {
+            "name": "Maria Stockton",
+            "startSeconds": 13404,
+            "endSeconds": 13538,
+            "summary": "Asked whether instructional assistants would receive the same professional development training as teachers, raised questions about equipment access for aides, first aid and PPE training costs, temperature screening equipment, and whether the school day could be extended to compensate for lost learning time."
+          },
+          {
+            "name": "Robin Estrada",
+            "startSeconds": 13617,
+            "endSeconds": 13857,
+            "summary": "Highlighted recurring problems with broken or locked bathrooms and non-functioning soap dispensers at Roosevelt School, urging the district to ensure functional hand-washing facilities as part of any campus reopening plan."
+          },
+          {
+            "name": "Shawna Hackworth",
+            "startSeconds": 13900,
+            "endSeconds": 14053,
+            "summary": "Requested the district implement parental content controls or a tool like Bark for Schools on district Chromebooks, and asked for basic technology training for young students who are being asked to use Google Slides and Docs for the first time."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "Update on the Development of the 2020-21 Local Control Accountability Plan (LCAP)",
+        "phases": {
+          "opened": 14476,
+          "presentation": 14486,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "Updates on the Outcomes to the Federal Program Monitoring Review",
+        "phases": {
+          "opened": 14597,
+          "presentation": 14603,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "Update on Immunizations",
+        "phases": {
+          "opened": 14802,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14",
+        "title": "Consent Items (Action Required) — including moved item 15.2",
+        "phases": {
+          "opened": 14818,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 14843,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Approval of the Memorandum of Understanding between CSEA Chapter V and RCSD",
+        "phases": {
+          "opened": 14858,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 14911,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Approval of Cisco/AMS.NET - Cisco Telecommunications Flex Licensing Contract",
+        "phases": {
+          "opened": 210,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Review and Approval of Board Policy 5141.52 - Suicide Prevention",
+        "phases": {
+          "opened": 14924,
+          "presentation": 14939,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 14978,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Adoption of Resolution 28, Grading During Emergency School Closures",
+        "phases": {
+          "opened": 14994,
+          "presentation": 15007,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 15041,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16",
+        "title": "Report from Board Members and Superintendent",
+        "phases": {
+          "opened": 15055,
+          "presentation": 15063,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "17",
+        "title": "Information on San Mateo County Investment Fund - April 2020",
+        "phases": {
+          "opened": 15740,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "18",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 15750,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "19",
+        "title": "Other Business/Suggested Items for Future Agenda",
+        "phases": {
+          "opened": 15758,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "20",
+        "title": "Changes to the Board Agenda Schedule",
+        "phases": {
+          "opened": 15762,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 15786,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "21",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 15821,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 15830,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "cachedAt": "2026-03-15T18:50:43.356Z",
+  "inputTokens": 57101,
+  "outputTokens": 6335
+}

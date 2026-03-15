@@ -1,0 +1,1096 @@
+{
+  "date": "2021-05-19",
+  "itemCount": 60,
+  "llmResponse": {
+    "speakers": {
+      "A": {
+        "name": "Alisa MacAvoy",
+        "role": "President (Vice President per agenda, but acting as President in transcript)"
+      },
+      "B": {
+        "name": "Eliana Garcia",
+        "role": "Board Secretary / Staff (conducting roll call)"
+      },
+      "C": {
+        "name": "Janet Lawson",
+        "role": "Trustee (President per agenda)"
+      },
+      "D": {
+        "name": "Kyle Baker",
+        "role": "Superintendent"
+      },
+      "E": {
+        "name": "María Díaz-Slocum",
+        "role": "Vice President (Clerk per agenda)"
+      },
+      "F": {
+        "name": "Mike Wells",
+        "role": "Trustee"
+      },
+      "G": {
+        "name": "Maria Stockton",
+        "role": "Public speaker / CSEA leader"
+      },
+      "H": {
+        "name": "Michelle Griffith",
+        "role": "Director of Induction (presenter)"
+      },
+      "I": {
+        "name": "Cecilia I. Márquez",
+        "role": "Trustee"
+      }
+    },
+    "agendaChanges": "Item 15.1 (Adoption of Resolution 21, Lease with Wagner Schoolhouse LLC) was moved to immediately after item 10.1 (Orion Multicultural Presentation), heard before the Bond Program items. All other items followed in original agenda order.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order / Roll Call",
+        "phases": {
+          "opened": 0,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Oral Communication on Closed Session Items Only",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Closed Session",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Reconvene to Regular Session / Roll Call / Report Out on Closed Session",
+        "phases": {
+          "opened": 0,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Welcome by the School Board President",
+        "phases": {
+          "opened": 16,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 174,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 174,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Approval of Agenda (Action Required)",
+        "phases": {
+          "opened": 199,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 226,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 244,
+          "presentation": null,
+          "publicComment": 244,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Maria Abundiz",
+            "startSeconds": 291,
+            "endSeconds": 443,
+            "summary": "Congratulated the 350+ classified employees of the district during Classified Employee Appreciation Week and thanked them for their dedication to students and the community."
+          },
+          {
+            "name": "Maria Stockton",
+            "startSeconds": 494,
+            "endSeconds": 644,
+            "summary": "Praised classified employees during California School Employees Week and challenged each board member to visit every school site and personally meet classified staff when returning to in-person operations."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9",
+        "title": "Community/Staff Recognition",
+        "phases": {
+          "opened": 644,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9_1",
+        "title": "Recognition of 2020-21 Induction Program Participants",
+        "phases": {
+          "opened": 644,
+          "presentation": 695,
+          "publicComment": null,
+          "discussion": 1975,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9_2",
+        "title": "Recognition of Retiree Staff",
+        "phases": {
+          "opened": 2196,
+          "presentation": 2249,
+          "publicComment": 2560,
+          "discussion": 2669,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Kevin Sugar",
+            "startSeconds": 2579,
+            "endSeconds": 2634,
+            "summary": "Congratulated both the induction program participants and the retirees, and offered a special personal tribute to his wife Lisa Sugar on her retirement."
+          },
+          {
+            "name": "Carrie Schmidt",
+            "startSeconds": 3120,
+            "endSeconds": 3171,
+            "summary": "Wished all retirees well and offered special thanks to Lisa Sugar, Jeanette Serrano, Peter Bartok, and Aura Bartok for their impact as colleagues."
+          },
+          {
+            "name": "Michelle Buetler",
+            "startSeconds": 3188,
+            "endSeconds": 3263,
+            "summary": "Honored the retiring Hoover staff, especially Lisa Sugar whose mentorship shaped the entire Hoover special education team, and celebrated the legacy of all retiring classified and certificated staff."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "School/Community Reports",
+        "phases": {
+          "opened": 3384,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10_1",
+        "title": "Orion Alternative School's Multicultural Presentation",
+        "phases": {
+          "opened": 3384,
+          "presentation": 3406,
+          "publicComment": null,
+          "discussion": 4271,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15_1",
+        "title": "Adoption of Resolution 21, Approval of Lease between the Redwood City School District and Wagner Schoolhouse LLC for 3150 Granger Way (moved earlier in agenda)",
+        "phases": {
+          "opened": 4426,
+          "presentation": 4439,
+          "publicComment": null,
+          "discussion": 4805,
+          "vote": {
+            "seconds": 5603,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "Bond Program Consent Items (Action Required)",
+        "phases": {
+          "opened": 5653,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 5680,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12_1",
+        "title": "Adoption of Resolution 22, Approval of Child Day Care (CDC) Ornamental Fencing Project Resolution and Construction Agreement for Hoover School with AAA Fence",
+        "phases": {
+          "opened": 5697,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 5736,
+          "vote": {
+            "seconds": 5783,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13_1",
+        "title": "Discussion on Reopening Plan for the 2021-22 School Year",
+        "phases": {
+          "opened": 5807,
+          "presentation": 5825,
+          "publicComment": null,
+          "discussion": 6670,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13_2",
+        "title": "First Reading and Discussion of Board Policy 0520.1 - Comprehensive and Targeted School Improvement",
+        "phases": {
+          "opened": 8030,
+          "presentation": 8030,
+          "publicComment": null,
+          "discussion": 8172,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13_3",
+        "title": "First Reading and Discussion of Board Policy 3110 - Transfer of Funds",
+        "phases": {
+          "opened": 8281,
+          "presentation": 8316,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13_4",
+        "title": "First Reading and Discussion of Board Policy 3452 - Student Activity Funds",
+        "phases": {
+          "opened": 8363,
+          "presentation": 8370,
+          "publicComment": null,
+          "discussion": 8429,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13_5",
+        "title": "First Reading and Discussion of Board Policy 3471 - Parcel Taxes",
+        "phases": {
+          "opened": 8829,
+          "presentation": 8838,
+          "publicComment": null,
+          "discussion": 8949,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13_6",
+        "title": "First Reading and Discussion of Board Policy 5145.3 - Nondiscrimination/Harassment",
+        "phases": {
+          "opened": 8974,
+          "presentation": 8985,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13_7",
+        "title": "First Reading and Discussion of Board Policy 6142.8 - Comprehensive Health Education",
+        "phases": {
+          "opened": 9040,
+          "presentation": 9047,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14",
+        "title": "Consent Items - Adoption of District Mission, Vision, and Values",
+        "phases": {
+          "opened": 9117,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 9145,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15_2",
+        "title": "Approval of Expanded Learning Opportunities Grant Plan for 2021-22",
+        "phases": {
+          "opened": 9216,
+          "presentation": 9225,
+          "publicComment": 10436,
+          "discussion": 10661,
+          "vote": {
+            "seconds": 11204,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [
+          {
+            "name": "Maria Stockton",
+            "startSeconds": 10457,
+            "endSeconds": 10661,
+            "summary": "Raised concerns that CSEA was not meaningfully consulted on how the instructional assistant funding would be spent, and proposed instead using existing trained paras for extended hours before and after school to provide tutoring rather than hiring new six-hour employees without full benefits."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16",
+        "title": "Board and Superintendent Reports",
+        "phases": {
+          "opened": 11258,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 11258,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "17",
+        "title": "Information",
+        "phases": {
+          "opened": 11576,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "18",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 11576,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "19",
+        "title": "Other Business/Suggested Items For Future Agenda",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "20",
+        "title": "Board Agenda Calendar - Changes to the Board Agenda Schedule",
+        "phases": {
+          "opened": 11739,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 11739,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "21",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 11955,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 11984,
+            "type": "voice",
+            "result": "unanimous"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "result": {
+    "videoId": "z8PdGgT5GxU",
+    "speakers": {
+      "A": {
+        "name": "Alisa MacAvoy",
+        "role": "President (Vice President per agenda, but acting as President in transcript)"
+      },
+      "B": {
+        "name": "Eliana Garcia",
+        "role": "Board Secretary / Staff (conducting roll call)"
+      },
+      "C": {
+        "name": "Janet Lawson",
+        "role": "Trustee (President per agenda)"
+      },
+      "D": {
+        "name": "Kyle Baker",
+        "role": "Superintendent"
+      },
+      "E": {
+        "name": "María Díaz-Slocum",
+        "role": "Vice President (Clerk per agenda)"
+      },
+      "F": {
+        "name": "Mike Wells",
+        "role": "Trustee"
+      },
+      "G": {
+        "name": "Maria Stockton",
+        "role": "Public speaker / CSEA leader"
+      },
+      "H": {
+        "name": "Michelle Griffith",
+        "role": "Director of Induction (presenter)"
+      },
+      "I": {
+        "name": "Cecilia I. Márquez",
+        "role": "Trustee"
+      }
+    },
+    "agendaChanges": "Item 15.1 (Adoption of Resolution 21, Lease with Wagner Schoolhouse LLC) was moved to immediately after item 10.1 (Orion Multicultural Presentation), heard before the Bond Program items. All other items followed in original agenda order.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order / Roll Call",
+        "phases": {
+          "opened": 0,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Oral Communication on Closed Session Items Only",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Closed Session",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Reconvene to Regular Session / Roll Call / Report Out on Closed Session",
+        "phases": {
+          "opened": 0,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Welcome by the School Board President",
+        "phases": {
+          "opened": 16,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 174,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 174,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Approval of Agenda (Action Required)",
+        "phases": {
+          "opened": 199,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 226,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 244,
+          "presentation": null,
+          "publicComment": 244,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Maria Abundiz",
+            "startSeconds": 291,
+            "endSeconds": 443,
+            "summary": "Congratulated the 350+ classified employees of the district during Classified Employee Appreciation Week and thanked them for their dedication to students and the community."
+          },
+          {
+            "name": "Maria Stockton",
+            "startSeconds": 494,
+            "endSeconds": 644,
+            "summary": "Praised classified employees during California School Employees Week and challenged each board member to visit every school site and personally meet classified staff when returning to in-person operations."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9",
+        "title": "Community/Staff Recognition",
+        "phases": {
+          "opened": 644,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9_1",
+        "title": "Recognition of 2020-21 Induction Program Participants",
+        "phases": {
+          "opened": 644,
+          "presentation": 695,
+          "publicComment": null,
+          "discussion": 1975,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9_2",
+        "title": "Recognition of Retiree Staff",
+        "phases": {
+          "opened": 2196,
+          "presentation": 2249,
+          "publicComment": 2560,
+          "discussion": 2669,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Kevin Sugar",
+            "startSeconds": 2579,
+            "endSeconds": 2634,
+            "summary": "Congratulated both the induction program participants and the retirees, and offered a special personal tribute to his wife Lisa Sugar on her retirement."
+          },
+          {
+            "name": "Carrie Schmidt",
+            "startSeconds": 3120,
+            "endSeconds": 3171,
+            "summary": "Wished all retirees well and offered special thanks to Lisa Sugar, Jeanette Serrano, Peter Bartok, and Aura Bartok for their impact as colleagues."
+          },
+          {
+            "name": "Michelle Buetler",
+            "startSeconds": 3188,
+            "endSeconds": 3263,
+            "summary": "Honored the retiring Hoover staff, especially Lisa Sugar whose mentorship shaped the entire Hoover special education team, and celebrated the legacy of all retiring classified and certificated staff."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "School/Community Reports",
+        "phases": {
+          "opened": 3384,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10_1",
+        "title": "Orion Alternative School's Multicultural Presentation",
+        "phases": {
+          "opened": 3384,
+          "presentation": 3406,
+          "publicComment": null,
+          "discussion": 4271,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15_1",
+        "title": "Adoption of Resolution 21, Approval of Lease between the Redwood City School District and Wagner Schoolhouse LLC for 3150 Granger Way (moved earlier in agenda)",
+        "phases": {
+          "opened": 4426,
+          "presentation": 4439,
+          "publicComment": null,
+          "discussion": 4805,
+          "vote": {
+            "seconds": 5603,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "Bond Program Consent Items (Action Required)",
+        "phases": {
+          "opened": 5653,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 5680,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12_1",
+        "title": "Adoption of Resolution 22, Approval of Child Day Care (CDC) Ornamental Fencing Project Resolution and Construction Agreement for Hoover School with AAA Fence",
+        "phases": {
+          "opened": 5697,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 5736,
+          "vote": {
+            "seconds": 5783,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13_1",
+        "title": "Discussion on Reopening Plan for the 2021-22 School Year",
+        "phases": {
+          "opened": 5807,
+          "presentation": 5825,
+          "publicComment": null,
+          "discussion": 6670,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13_2",
+        "title": "First Reading and Discussion of Board Policy 0520.1 - Comprehensive and Targeted School Improvement",
+        "phases": {
+          "opened": 8030,
+          "presentation": 8030,
+          "publicComment": null,
+          "discussion": 8172,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13_3",
+        "title": "First Reading and Discussion of Board Policy 3110 - Transfer of Funds",
+        "phases": {
+          "opened": 8281,
+          "presentation": 8316,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13_4",
+        "title": "First Reading and Discussion of Board Policy 3452 - Student Activity Funds",
+        "phases": {
+          "opened": 8363,
+          "presentation": 8370,
+          "publicComment": null,
+          "discussion": 8429,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13_5",
+        "title": "First Reading and Discussion of Board Policy 3471 - Parcel Taxes",
+        "phases": {
+          "opened": 8829,
+          "presentation": 8838,
+          "publicComment": null,
+          "discussion": 8949,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13_6",
+        "title": "First Reading and Discussion of Board Policy 5145.3 - Nondiscrimination/Harassment",
+        "phases": {
+          "opened": 8974,
+          "presentation": 8985,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13_7",
+        "title": "First Reading and Discussion of Board Policy 6142.8 - Comprehensive Health Education",
+        "phases": {
+          "opened": 9040,
+          "presentation": 9047,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14",
+        "title": "Consent Items - Adoption of District Mission, Vision, and Values",
+        "phases": {
+          "opened": 9117,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 9145,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15_2",
+        "title": "Approval of Expanded Learning Opportunities Grant Plan for 2021-22",
+        "phases": {
+          "opened": 9216,
+          "presentation": 9225,
+          "publicComment": 10436,
+          "discussion": 10661,
+          "vote": {
+            "seconds": 11204,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [
+          {
+            "name": "Maria Stockton",
+            "startSeconds": 10457,
+            "endSeconds": 10661,
+            "summary": "Raised concerns that CSEA was not meaningfully consulted on how the instructional assistant funding would be spent, and proposed instead using existing trained paras for extended hours before and after school to provide tutoring rather than hiring new six-hour employees without full benefits."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16",
+        "title": "Board and Superintendent Reports",
+        "phases": {
+          "opened": 11258,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 11258,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "17",
+        "title": "Information",
+        "phases": {
+          "opened": 11576,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "18",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 11576,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "19",
+        "title": "Other Business/Suggested Items For Future Agenda",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "20",
+        "title": "Board Agenda Calendar - Changes to the Board Agenda Schedule",
+        "phases": {
+          "opened": 11739,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 11739,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "21",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 11955,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 11984,
+            "type": "voice",
+            "result": "unanimous"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "cachedAt": "2026-03-15T18:25:37.793Z",
+  "inputTokens": 42090,
+  "outputTokens": 4204
+}

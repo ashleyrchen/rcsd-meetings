@@ -1,0 +1,858 @@
+{
+  "date": "2021-02-10",
+  "itemCount": 60,
+  "llmResponse": {
+    "speakers": {
+      "A": {
+        "name": "Cecilia I. Márquez",
+        "role": "Trustee / Roll Call conductor"
+      },
+      "B": {
+        "name": "Mike Wells",
+        "role": "Trustee"
+      },
+      "C": {
+        "name": "Janet Lawson",
+        "role": "President (per agenda; note ASR confusion with name assignments)"
+      },
+      "D": {
+        "name": "Alisa MacAvoy",
+        "role": "Vice President (acting as meeting chair)"
+      },
+      "E": {
+        "name": "Various speakers (Kyle IT staff, Gonzalo interpreter, Michael Hofer, Warren Seder, Abby Wilkerson, Maestro Alfredo)",
+        "role": "Staff/Public"
+      },
+      "F": {
+        "name": "Ramiro Carranza / Sabrina Adler / Carolina Villa",
+        "role": "Principal/Staff/Parent"
+      }
+    },
+    "agendaChanges": "Items 14.3 (Approval of Personnel Report) and 14.4 (Approval of 2020-21 Certificated Seniority Report) were moved to the Consent Items bundle (Section 13) at the start of the meeting under Changes to the Agenda. Section 11 (Bond Program Action Items) had no items and was skipped. The meeting opened directly into the Regular Session (post-closed session) without a separate closed session portion being recorded.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order / Roll Call (Closed Session)",
+        "phases": {
+          "opened": 20,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Oral Communication on Closed Session Items Only",
+        "phases": {
+          "opened": 34,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Closed Session",
+        "phases": {
+          "opened": 34,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Reconvene to Regular Session / Roll Call / Report Out on Closed Session",
+        "phases": {
+          "opened": 20,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 34,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Welcome by the School Board President",
+        "phases": {
+          "opened": 34,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 383,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 398,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Approval of Agenda (Action Required)",
+        "phases": {
+          "opened": 434,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 457,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 473,
+          "presentation": null,
+          "publicComment": 473,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Sue Jorgensen",
+            "startSeconds": 570,
+            "endSeconds": 781,
+            "summary": "A school librarian urged the board to establish a dedicated budget line item for school libraries, noting that current funding has been inconsistent, insufficient, and in some cases zero, leaving libraries unable to replace lost books or purchase basic supplies."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9",
+        "title": "School/Community Reports – Virtual Winter Concert (Clifford School, McKinley Institute of Technology and North Star Academy)",
+        "phases": {
+          "opened": 826,
+          "presentation": 858,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "Bond Program Consent Items (Action Required)",
+        "phases": {
+          "opened": 1331,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 1357,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "Bond Program Action Items (Action Required)",
+        "phases": {
+          "opened": 1384,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12",
+        "title": "Discussion on COVID-19",
+        "phases": {
+          "opened": 1388,
+          "presentation": 1395,
+          "publicComment": 7934,
+          "discussion": 3266,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Marisol Mendoza",
+            "startSeconds": 7963,
+            "endSeconds": 8076,
+            "summary": "An instructional assistant at Henry Ford expressed disappointment that the district rejected CSEA's request for extra compensation for classified staff working on-site during the pandemic, arguing that their workload and health risks have increased just as teachers' have."
+          },
+          {
+            "name": "Michael Hofer",
+            "startSeconds": 8135,
+            "endSeconds": 8190,
+            "summary": "A Roy Cloud parent asked what the plan B would be if the current vaccine-dependent reopening plan does not materialize, and when parents would know whether children would return in person by April or by August."
+          },
+          {
+            "name": "Maria Stockton",
+            "startSeconds": 8576,
+            "endSeconds": 8769,
+            "summary": "A classified staff representative challenged the board to visit school sites and witness the increased workloads of bus drivers, office staff, food service, tech, and instructional assistants, and requested that classified employees be given an opportunity to present to the board about how their jobs have changed during the pandemic."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12",
+        "title": "Information and Discussion on 3150 Granger Way",
+        "phases": {
+          "opened": 9597,
+          "presentation": 9601,
+          "publicComment": null,
+          "discussion": 9719,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "Consent Items (including 14.3 and 14.4 moved from Action Items)",
+        "phases": {
+          "opened": 9743,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 9756,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14",
+        "title": "Approval of the Tentative Agreement between CSEA Chapter V and Redwood City School District",
+        "phases": {
+          "opened": 9768,
+          "presentation": 9788,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 9838,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14",
+        "title": "Declaration of Need for 2021-2022",
+        "phases": {
+          "opened": 9855,
+          "presentation": 9863,
+          "publicComment": null,
+          "discussion": 9916,
+          "vote": {
+            "seconds": 9936,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14",
+        "title": "Approval of Personnel Report (moved to Consent)",
+        "phases": {
+          "opened": 9768,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 9756,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14",
+        "title": "Approval of 2020-21 Certificated Seniority Report (moved to Consent)",
+        "phases": {
+          "opened": 9768,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 9756,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Report from Board Members and Superintendent",
+        "phases": {
+          "opened": 9951,
+          "presentation": 9977,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16",
+        "title": "Information Items (Contract Update; Connect, KIPP, Rocketship Charter School Reviews)",
+        "phases": {
+          "opened": 10475,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 10475,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "17",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 10571,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "18",
+        "title": "Other Business/Suggested Items For Future Agenda",
+        "phases": {
+          "opened": 10580,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "19",
+        "title": "Changes to the Board Agenda Schedule",
+        "phases": {
+          "opened": 10586,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "20",
+        "title": "Adjourn the Meeting",
+        "phases": {
+          "opened": 10618,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 10644,
+            "type": "motion",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "result": {
+    "videoId": "2t3bBlJiP6Q",
+    "speakers": {
+      "A": {
+        "name": "Cecilia I. Márquez",
+        "role": "Trustee / Roll Call conductor"
+      },
+      "B": {
+        "name": "Mike Wells",
+        "role": "Trustee"
+      },
+      "C": {
+        "name": "Janet Lawson",
+        "role": "President (per agenda; note ASR confusion with name assignments)"
+      },
+      "D": {
+        "name": "Alisa MacAvoy",
+        "role": "Vice President (acting as meeting chair)"
+      },
+      "E": {
+        "name": "Various speakers (Kyle IT staff, Gonzalo interpreter, Michael Hofer, Warren Seder, Abby Wilkerson, Maestro Alfredo)",
+        "role": "Staff/Public"
+      },
+      "F": {
+        "name": "Ramiro Carranza / Sabrina Adler / Carolina Villa",
+        "role": "Principal/Staff/Parent"
+      }
+    },
+    "agendaChanges": "Items 14.3 (Approval of Personnel Report) and 14.4 (Approval of 2020-21 Certificated Seniority Report) were moved to the Consent Items bundle (Section 13) at the start of the meeting under Changes to the Agenda. Section 11 (Bond Program Action Items) had no items and was skipped. The meeting opened directly into the Regular Session (post-closed session) without a separate closed session portion being recorded.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order / Roll Call (Closed Session)",
+        "phases": {
+          "opened": 20,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Oral Communication on Closed Session Items Only",
+        "phases": {
+          "opened": 34,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Closed Session",
+        "phases": {
+          "opened": 34,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Reconvene to Regular Session / Roll Call / Report Out on Closed Session",
+        "phases": {
+          "opened": 20,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 34,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Welcome by the School Board President",
+        "phases": {
+          "opened": 34,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 383,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 398,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Approval of Agenda (Action Required)",
+        "phases": {
+          "opened": 434,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 457,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 473,
+          "presentation": null,
+          "publicComment": 473,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Sue Jorgensen",
+            "startSeconds": 570,
+            "endSeconds": 781,
+            "summary": "A school librarian urged the board to establish a dedicated budget line item for school libraries, noting that current funding has been inconsistent, insufficient, and in some cases zero, leaving libraries unable to replace lost books or purchase basic supplies."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9",
+        "title": "School/Community Reports – Virtual Winter Concert (Clifford School, McKinley Institute of Technology and North Star Academy)",
+        "phases": {
+          "opened": 826,
+          "presentation": 858,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "Bond Program Consent Items (Action Required)",
+        "phases": {
+          "opened": 1331,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 1357,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "Bond Program Action Items (Action Required)",
+        "phases": {
+          "opened": 1384,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12",
+        "title": "Discussion on COVID-19",
+        "phases": {
+          "opened": 1388,
+          "presentation": 1395,
+          "publicComment": 7934,
+          "discussion": 3266,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Marisol Mendoza",
+            "startSeconds": 7963,
+            "endSeconds": 8076,
+            "summary": "An instructional assistant at Henry Ford expressed disappointment that the district rejected CSEA's request for extra compensation for classified staff working on-site during the pandemic, arguing that their workload and health risks have increased just as teachers' have."
+          },
+          {
+            "name": "Michael Hofer",
+            "startSeconds": 8135,
+            "endSeconds": 8190,
+            "summary": "A Roy Cloud parent asked what the plan B would be if the current vaccine-dependent reopening plan does not materialize, and when parents would know whether children would return in person by April or by August."
+          },
+          {
+            "name": "Maria Stockton",
+            "startSeconds": 8576,
+            "endSeconds": 8769,
+            "summary": "A classified staff representative challenged the board to visit school sites and witness the increased workloads of bus drivers, office staff, food service, tech, and instructional assistants, and requested that classified employees be given an opportunity to present to the board about how their jobs have changed during the pandemic."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12",
+        "title": "Information and Discussion on 3150 Granger Way",
+        "phases": {
+          "opened": 9597,
+          "presentation": 9601,
+          "publicComment": null,
+          "discussion": 9719,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "Consent Items (including 14.3 and 14.4 moved from Action Items)",
+        "phases": {
+          "opened": 9743,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 9756,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14",
+        "title": "Approval of the Tentative Agreement between CSEA Chapter V and Redwood City School District",
+        "phases": {
+          "opened": 9768,
+          "presentation": 9788,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 9838,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14",
+        "title": "Declaration of Need for 2021-2022",
+        "phases": {
+          "opened": 9855,
+          "presentation": 9863,
+          "publicComment": null,
+          "discussion": 9916,
+          "vote": {
+            "seconds": 9936,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14",
+        "title": "Approval of Personnel Report (moved to Consent)",
+        "phases": {
+          "opened": 9768,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 9756,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14",
+        "title": "Approval of 2020-21 Certificated Seniority Report (moved to Consent)",
+        "phases": {
+          "opened": 9768,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 9756,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Report from Board Members and Superintendent",
+        "phases": {
+          "opened": 9951,
+          "presentation": 9977,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16",
+        "title": "Information Items (Contract Update; Connect, KIPP, Rocketship Charter School Reviews)",
+        "phases": {
+          "opened": 10475,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 10475,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "17",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 10571,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "18",
+        "title": "Other Business/Suggested Items For Future Agenda",
+        "phases": {
+          "opened": 10580,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "19",
+        "title": "Changes to the Board Agenda Schedule",
+        "phases": {
+          "opened": 10586,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "20",
+        "title": "Adjourn the Meeting",
+        "phases": {
+          "opened": 10618,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 10644,
+            "type": "motion",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "cachedAt": "2026-03-15T18:31:12.496Z",
+  "inputTokens": 39373,
+  "outputTokens": 3321
+}

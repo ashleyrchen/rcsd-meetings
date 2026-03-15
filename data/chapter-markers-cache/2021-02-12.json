@@ -1,0 +1,358 @@
+{
+  "date": "2021-02-12",
+  "itemCount": 24,
+  "llmResponse": {
+    "speakers": {
+      "A": {
+        "name": "Linda (presenter/staff)",
+        "role": "District staff / NUA equity committee lead presenter; also reads roll call"
+      },
+      "B": {
+        "name": "Alisa MacAvoy",
+        "role": "Vice President (acting as presiding officer)"
+      },
+      "C": {
+        "name": "Cecilia I. Márquez",
+        "role": "Trustee"
+      },
+      "D": {
+        "name": "María Díaz-Slocum",
+        "role": "Clerk"
+      },
+      "E": {
+        "name": "Mike Wells / Robert Price",
+        "role": "Trustee Wells (roll call responses) / Robert Price NUA mentor (later in meeting)"
+      },
+      "F": {
+        "name": "John Baker",
+        "role": "Superintendent"
+      }
+    },
+    "agendaChanges": "The meeting recording begins mid-presentation of the Equity Work Update (Section 9, Discussion Items) before the formal open session was called to order. The presiding officer interrupted at ~238s to conduct the administrative opening (Roll Call, Oral Communication on Closed Session, Welcome, Changes to Agenda, Approval of Agenda, Oral Communication) before returning to the Equity Work Update presentation. The closed session items (Section 3) were reported as already completed. The agenda was otherwise followed in order.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order / Roll Call",
+        "phases": {
+          "opened": 238,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Oral Communication on Closed Session Items Only",
+        "phases": {
+          "opened": 285,
+          "presentation": null,
+          "publicComment": 285,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Closed Session — Budget Negotiations Update / Workforce Housing Update",
+        "phases": {
+          "opened": 285,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Reconvene to Regular Session — Roll Call / Report Out on Closed Session",
+        "phases": {
+          "opened": 238,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Welcome by the School Board President",
+        "phases": {
+          "opened": 285,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 314,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 314,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 349,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 360,
+          "presentation": null,
+          "publicComment": 360,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9",
+        "title": "Discussion Items — Equity Work Update / Review Mission, Goals and Beliefs / Next Steps",
+        "phases": {
+          "opened": 391,
+          "presentation": 418,
+          "publicComment": null,
+          "discussion": 2170,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 6288,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "result": {
+    "videoId": "6AuZGY-4NGU",
+    "speakers": {
+      "A": {
+        "name": "Linda (presenter/staff)",
+        "role": "District staff / NUA equity committee lead presenter; also reads roll call"
+      },
+      "B": {
+        "name": "Alisa MacAvoy",
+        "role": "Vice President (acting as presiding officer)"
+      },
+      "C": {
+        "name": "Cecilia I. Márquez",
+        "role": "Trustee"
+      },
+      "D": {
+        "name": "María Díaz-Slocum",
+        "role": "Clerk"
+      },
+      "E": {
+        "name": "Mike Wells / Robert Price",
+        "role": "Trustee Wells (roll call responses) / Robert Price NUA mentor (later in meeting)"
+      },
+      "F": {
+        "name": "John Baker",
+        "role": "Superintendent"
+      }
+    },
+    "agendaChanges": "The meeting recording begins mid-presentation of the Equity Work Update (Section 9, Discussion Items) before the formal open session was called to order. The presiding officer interrupted at ~238s to conduct the administrative opening (Roll Call, Oral Communication on Closed Session, Welcome, Changes to Agenda, Approval of Agenda, Oral Communication) before returning to the Equity Work Update presentation. The closed session items (Section 3) were reported as already completed. The agenda was otherwise followed in order.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order / Roll Call",
+        "phases": {
+          "opened": 238,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Oral Communication on Closed Session Items Only",
+        "phases": {
+          "opened": 285,
+          "presentation": null,
+          "publicComment": 285,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Closed Session — Budget Negotiations Update / Workforce Housing Update",
+        "phases": {
+          "opened": 285,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Reconvene to Regular Session — Roll Call / Report Out on Closed Session",
+        "phases": {
+          "opened": 238,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Welcome by the School Board President",
+        "phases": {
+          "opened": 285,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 314,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 314,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 349,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 360,
+          "presentation": null,
+          "publicComment": 360,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9",
+        "title": "Discussion Items — Equity Work Update / Review Mission, Goals and Beliefs / Next Steps",
+        "phases": {
+          "opened": 391,
+          "presentation": 418,
+          "publicComment": null,
+          "discussion": 2170,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 6288,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "cachedAt": "2026-03-15T18:30:29.813Z",
+  "inputTokens": 24424,
+  "outputTokens": 1334
+}

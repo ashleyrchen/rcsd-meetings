@@ -1,0 +1,696 @@
+{
+  "date": "2022-09-21",
+  "itemCount": 43,
+  "llmResponse": {
+    "speakers": {
+      "A": {
+        "name": "María Díaz-Slocum",
+        "role": "Board President"
+      },
+      "B": {
+        "name": "Evelyn (staff)",
+        "role": "Board Secretary/Clerk (conducting roll call)"
+      },
+      "C": {
+        "name": "John (Dr. Baker)",
+        "role": "Superintendent"
+      },
+      "D": {
+        "name": "Cecilia I. Márquez",
+        "role": "Board Clerk"
+      },
+      "E": {
+        "name": "Chris Robel",
+        "role": "Public speaker / community member"
+      },
+      "F": {
+        "name": "Rick (CFO/Finance staff)",
+        "role": "Chief Financial Officer or Finance Director"
+      },
+      "G": {
+        "name": "Barbara Arena (new teacher) / Ms. Kelly",
+        "role": "Public speaker / District staff"
+      },
+      "H": {
+        "name": "Alisa MacAvoy",
+        "role": "Board Trustee (President label per agenda, but acting as Trustee here)"
+      },
+      "I": {
+        "name": "Petrina",
+        "role": "Director of Health and Wellness"
+      }
+    },
+    "agendaChanges": "Item 8.4 (Approval of Personnel Changes for 2022-2023) was moved from Action Items to the regular Consent Calendar (Section 7) and voted on with that bundle. The agenda was otherwise heard in listed order, except 8.5 (Classified Fact Finding MOU) was taken up after 8.3 (skipping the now-moved 8.4). Janet Lawson appears to speak as speaker B in some roll calls based on context.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order / Roll Call",
+        "phases": {
+          "opened": 6,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Welcome by the School Board President",
+        "phases": {
+          "opened": 131,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 131,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 144,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 154,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 168,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 181,
+          "presentation": null,
+          "publicComment": 188,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Chris Robel",
+            "startSeconds": 200,
+            "endSeconds": 376,
+            "summary": "Raised concerns about the district using public assets (website banner and superintendent newsletter) to share information about Measure S bond measure, arguing it may violate California Education Code sections 7054 and 7058, and requested the board direct Dr. Baker to remove bond-related content from district communications."
+          },
+          {
+            "name": "Barbara Arena",
+            "startSeconds": 437,
+            "endSeconds": 480,
+            "summary": "Introduced herself as a new third-grade teacher at Hoover School, expressed excitement about joining the district, and shared her philosophy of teaching with love."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Bond Program Consent Items — Approval of Consent Items",
+        "phases": {
+          "opened": 492,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 512,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Consent Items — Approval of Consent Items (including moved item 8.4)",
+        "phases": {
+          "opened": 525,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 547,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.1",
+        "title": "Adoption of Resolution 13, Authorizing Electronic Meetings of the Board of Trustees During a State of Emergency",
+        "phases": {
+          "opened": 557,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 591,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.2",
+        "title": "Adoption of Resolution 14, Resolution to Adopt the Gann Limit",
+        "phases": {
+          "opened": 599,
+          "presentation": 611,
+          "publicComment": null,
+          "discussion": 656,
+          "vote": {
+            "seconds": 671,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.3",
+        "title": "Approval of 2021-22 Unaudited Actuals Financial Statement",
+        "phases": {
+          "opened": 683,
+          "presentation": 705,
+          "publicComment": null,
+          "discussion": 1479,
+          "vote": {
+            "seconds": 1584,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.4",
+        "title": "Approval of Personnel Changes for 2022-2023",
+        "phases": {
+          "opened": 525,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 547,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.5",
+        "title": "Approval of Classified Fact Finding MOU",
+        "phases": {
+          "opened": 1603,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 1617,
+          "vote": {
+            "seconds": 1639,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9",
+        "title": "Report from Board Members and Superintendent",
+        "phases": {
+          "opened": 1664,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 1677,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "Review the Health and Wellness Department's Vision and Plans for 2022-23",
+        "phases": {
+          "opened": 1994,
+          "presentation": 2017,
+          "publicComment": null,
+          "discussion": 2668,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 3289,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 3311,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12",
+        "title": "Possible Other Business/Suggested Items for Future Agenda",
+        "phases": {
+          "opened": 3319,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "Changes to the Board Agenda Schedule of Items",
+        "phases": {
+          "opened": 3323,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 3327,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3358,
+            "type": "voice",
+            "result": "unanimous"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "result": {
+    "videoId": "3-iyZ3om4SE",
+    "speakers": {
+      "A": {
+        "name": "María Díaz-Slocum",
+        "role": "Board President"
+      },
+      "B": {
+        "name": "Evelyn (staff)",
+        "role": "Board Secretary/Clerk (conducting roll call)"
+      },
+      "C": {
+        "name": "John (Dr. Baker)",
+        "role": "Superintendent"
+      },
+      "D": {
+        "name": "Cecilia I. Márquez",
+        "role": "Board Clerk"
+      },
+      "E": {
+        "name": "Chris Robel",
+        "role": "Public speaker / community member"
+      },
+      "F": {
+        "name": "Rick (CFO/Finance staff)",
+        "role": "Chief Financial Officer or Finance Director"
+      },
+      "G": {
+        "name": "Barbara Arena (new teacher) / Ms. Kelly",
+        "role": "Public speaker / District staff"
+      },
+      "H": {
+        "name": "Alisa MacAvoy",
+        "role": "Board Trustee (President label per agenda, but acting as Trustee here)"
+      },
+      "I": {
+        "name": "Petrina",
+        "role": "Director of Health and Wellness"
+      }
+    },
+    "agendaChanges": "Item 8.4 (Approval of Personnel Changes for 2022-2023) was moved from Action Items to the regular Consent Calendar (Section 7) and voted on with that bundle. The agenda was otherwise heard in listed order, except 8.5 (Classified Fact Finding MOU) was taken up after 8.3 (skipping the now-moved 8.4). Janet Lawson appears to speak as speaker B in some roll calls based on context.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order / Roll Call",
+        "phases": {
+          "opened": 6,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Welcome by the School Board President",
+        "phases": {
+          "opened": 131,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 131,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 144,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 154,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 168,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 181,
+          "presentation": null,
+          "publicComment": 188,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Chris Robel",
+            "startSeconds": 200,
+            "endSeconds": 376,
+            "summary": "Raised concerns about the district using public assets (website banner and superintendent newsletter) to share information about Measure S bond measure, arguing it may violate California Education Code sections 7054 and 7058, and requested the board direct Dr. Baker to remove bond-related content from district communications."
+          },
+          {
+            "name": "Barbara Arena",
+            "startSeconds": 437,
+            "endSeconds": 480,
+            "summary": "Introduced herself as a new third-grade teacher at Hoover School, expressed excitement about joining the district, and shared her philosophy of teaching with love."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Bond Program Consent Items — Approval of Consent Items",
+        "phases": {
+          "opened": 492,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 512,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Consent Items — Approval of Consent Items (including moved item 8.4)",
+        "phases": {
+          "opened": 525,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 547,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.1",
+        "title": "Adoption of Resolution 13, Authorizing Electronic Meetings of the Board of Trustees During a State of Emergency",
+        "phases": {
+          "opened": 557,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 591,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.2",
+        "title": "Adoption of Resolution 14, Resolution to Adopt the Gann Limit",
+        "phases": {
+          "opened": 599,
+          "presentation": 611,
+          "publicComment": null,
+          "discussion": 656,
+          "vote": {
+            "seconds": 671,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.3",
+        "title": "Approval of 2021-22 Unaudited Actuals Financial Statement",
+        "phases": {
+          "opened": 683,
+          "presentation": 705,
+          "publicComment": null,
+          "discussion": 1479,
+          "vote": {
+            "seconds": 1584,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.4",
+        "title": "Approval of Personnel Changes for 2022-2023",
+        "phases": {
+          "opened": 525,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 547,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.5",
+        "title": "Approval of Classified Fact Finding MOU",
+        "phases": {
+          "opened": 1603,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 1617,
+          "vote": {
+            "seconds": 1639,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9",
+        "title": "Report from Board Members and Superintendent",
+        "phases": {
+          "opened": 1664,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 1677,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "Review the Health and Wellness Department's Vision and Plans for 2022-23",
+        "phases": {
+          "opened": 1994,
+          "presentation": 2017,
+          "publicComment": null,
+          "discussion": 2668,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 3289,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 3311,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12",
+        "title": "Possible Other Business/Suggested Items for Future Agenda",
+        "phases": {
+          "opened": 3319,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "Changes to the Board Agenda Schedule of Items",
+        "phases": {
+          "opened": 3323,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 3327,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3358,
+            "type": "voice",
+            "result": "unanimous"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "cachedAt": "2026-03-15T18:02:57.827Z",
+  "inputTokens": 13065,
+  "outputTokens": 2598
+}

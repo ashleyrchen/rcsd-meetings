@@ -1,0 +1,692 @@
+{
+  "date": "2022-03-23",
+  "itemCount": 40,
+  "llmResponse": {
+    "speakers": {
+      "A": {
+        "name": "Alisa MacAvoy",
+        "role": "Trustee (President)"
+      },
+      "B": {
+        "name": "María Díaz-Slocum",
+        "role": "President (chairing meeting)"
+      },
+      "C": {
+        "name": "Mike Wells",
+        "role": "Trustee"
+      },
+      "D": {
+        "name": "Janet Lawson",
+        "role": "Trustee"
+      },
+      "E": {
+        "name": "Wendy Baker",
+        "role": "Superintendent"
+      }
+    },
+    "agendaChanges": "Section 2 (Welcome by Board President) was delivered by María Díaz-Slocum who was chairing as President; the agenda listed María Díaz-Slocum as presenter which is consistent. No items were pulled from consent calendars. Section 8 (Bond Program Action Items) had no action items and was skipped. Order otherwise followed the posted agenda.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order / Roll Call",
+        "phases": {
+          "opened": 283,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Welcome by the School Board President, María Díaz-Slocum",
+        "phases": {
+          "opened": 312,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 356,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 362,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 394,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 406,
+          "presentation": null,
+          "publicComment": 416,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Sue Jorgensen",
+            "startSeconds": 433,
+            "endSeconds": 548,
+            "summary": "Expressed deep concern and disappointment over the elimination of a district library supervisor position, the lack of communication to librarians about plans going forward, and the inadequate support from the current district librarian, urging the board to provide follow-up on the state of the library program."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "School/Community Reports",
+        "phases": {
+          "opened": 564,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6.1",
+        "title": "2022 Bond Measure Feasibility Survey Results",
+        "phases": {
+          "opened": 564,
+          "presentation": 624,
+          "publicComment": null,
+          "discussion": 1427,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6.2",
+        "title": "Bond Program Update",
+        "phases": {
+          "opened": 2822,
+          "presentation": 2835,
+          "publicComment": null,
+          "discussion": 3093,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Bond Program Consent Items — Approval of Consent Items (bundle)",
+        "phases": {
+          "opened": 3136,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3155,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8",
+        "title": "Bond Program Action Items",
+        "phases": {
+          "opened": 3166,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9",
+        "title": "Consent Items — Approval of Consent Items (bundle)",
+        "phases": {
+          "opened": 3170,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3183,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.1",
+        "title": "Information Regarding the Teacher Residency Program for Special Education Teachers with San Mateo County Office of Education and Alder Graduate School of Education",
+        "phases": {
+          "opened": 3202,
+          "presentation": 3226,
+          "publicComment": null,
+          "discussion": 3315,
+          "vote": {
+            "seconds": 3595,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.2",
+        "title": "Approval of Personnel Report",
+        "phases": {
+          "opened": 3619,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3650,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.3",
+        "title": "Approval of the 2021-22 Second Interim Budget Report for RCSD",
+        "phases": {
+          "opened": 3666,
+          "presentation": 3690,
+          "publicComment": null,
+          "discussion": 5324,
+          "vote": {
+            "seconds": 5875,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "Report from Board Members and Superintendent",
+        "phases": {
+          "opened": 5900,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 5904,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12",
+        "title": "Information on San Mateo County Investment Fund - February, 2022",
+        "phases": {
+          "opened": 6238,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 6253,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14",
+        "title": "Possible Other Business/Suggested Items for Future Agenda",
+        "phases": {
+          "opened": 6261,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 6278,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Changes to the Board Agenda Schedule",
+        "phases": {
+          "opened": 6421,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16",
+        "title": "Adjourn the Meeting",
+        "phases": {
+          "opened": 6426,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6458,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "result": {
+    "videoId": "Epb9euKROWk",
+    "speakers": {
+      "A": {
+        "name": "Alisa MacAvoy",
+        "role": "Trustee (President)"
+      },
+      "B": {
+        "name": "María Díaz-Slocum",
+        "role": "President (chairing meeting)"
+      },
+      "C": {
+        "name": "Mike Wells",
+        "role": "Trustee"
+      },
+      "D": {
+        "name": "Janet Lawson",
+        "role": "Trustee"
+      },
+      "E": {
+        "name": "Wendy Baker",
+        "role": "Superintendent"
+      }
+    },
+    "agendaChanges": "Section 2 (Welcome by Board President) was delivered by María Díaz-Slocum who was chairing as President; the agenda listed María Díaz-Slocum as presenter which is consistent. No items were pulled from consent calendars. Section 8 (Bond Program Action Items) had no action items and was skipped. Order otherwise followed the posted agenda.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order / Roll Call",
+        "phases": {
+          "opened": 283,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Welcome by the School Board President, María Díaz-Slocum",
+        "phases": {
+          "opened": 312,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 356,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 362,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 394,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 406,
+          "presentation": null,
+          "publicComment": 416,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Sue Jorgensen",
+            "startSeconds": 433,
+            "endSeconds": 548,
+            "summary": "Expressed deep concern and disappointment over the elimination of a district library supervisor position, the lack of communication to librarians about plans going forward, and the inadequate support from the current district librarian, urging the board to provide follow-up on the state of the library program."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "School/Community Reports",
+        "phases": {
+          "opened": 564,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6.1",
+        "title": "2022 Bond Measure Feasibility Survey Results",
+        "phases": {
+          "opened": 564,
+          "presentation": 624,
+          "publicComment": null,
+          "discussion": 1427,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6.2",
+        "title": "Bond Program Update",
+        "phases": {
+          "opened": 2822,
+          "presentation": 2835,
+          "publicComment": null,
+          "discussion": 3093,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Bond Program Consent Items — Approval of Consent Items (bundle)",
+        "phases": {
+          "opened": 3136,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3155,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8",
+        "title": "Bond Program Action Items",
+        "phases": {
+          "opened": 3166,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9",
+        "title": "Consent Items — Approval of Consent Items (bundle)",
+        "phases": {
+          "opened": 3170,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3183,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.1",
+        "title": "Information Regarding the Teacher Residency Program for Special Education Teachers with San Mateo County Office of Education and Alder Graduate School of Education",
+        "phases": {
+          "opened": 3202,
+          "presentation": 3226,
+          "publicComment": null,
+          "discussion": 3315,
+          "vote": {
+            "seconds": 3595,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.2",
+        "title": "Approval of Personnel Report",
+        "phases": {
+          "opened": 3619,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3650,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.3",
+        "title": "Approval of the 2021-22 Second Interim Budget Report for RCSD",
+        "phases": {
+          "opened": 3666,
+          "presentation": 3690,
+          "publicComment": null,
+          "discussion": 5324,
+          "vote": {
+            "seconds": 5875,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "Report from Board Members and Superintendent",
+        "phases": {
+          "opened": 5900,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 5904,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12",
+        "title": "Information on San Mateo County Investment Fund - February, 2022",
+        "phases": {
+          "opened": 6238,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 6253,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14",
+        "title": "Possible Other Business/Suggested Items for Future Agenda",
+        "phases": {
+          "opened": 6261,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 6278,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Changes to the Board Agenda Schedule",
+        "phases": {
+          "opened": 6421,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16",
+        "title": "Adjourn the Meeting",
+        "phases": {
+          "opened": 6426,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6458,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "cachedAt": "2026-03-15T18:13:17.152Z",
+  "inputTokens": 21466,
+  "outputTokens": 2507
+}

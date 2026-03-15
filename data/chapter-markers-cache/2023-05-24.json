@@ -1,0 +1,766 @@
+{
+  "date": "2023-05-24",
+  "itemCount": 60,
+  "llmResponse": {
+    "speakers": {
+      "A": {
+        "name": "Cecilia I. Márquez",
+        "role": "Board President (acting as chair)"
+      },
+      "B": {
+        "name": "Evelyn Campos",
+        "role": "Administrative Assistant to the Superintendent / staff (also presents as community schools team member)"
+      },
+      "C": {
+        "name": "Mike Wells",
+        "role": "Trustee"
+      },
+      "D": {
+        "name": "Janet Lawson",
+        "role": "Clerk"
+      },
+      "E": {
+        "name": "Wendy Kelly",
+        "role": "Deputy Superintendent"
+      },
+      "F": {
+        "name": "Alisa MacAvoy",
+        "role": "Trustee"
+      },
+      "G": {
+        "name": "John Baker",
+        "role": "Superintendent"
+      },
+      "H": {
+        "name": "Enrique Calderon",
+        "role": "District Extended Learning Coordinator"
+      },
+      "I": {
+        "name": "Michelle Ramon",
+        "role": "District Community Liaison"
+      }
+    },
+    "agendaChanges": "Item 14 (Recognition of RCSD Employees) was moved before Section 8 (Oral Communication), so it was heard after agenda approval but before oral communication. Sections 1-3 (Call to Order, Closed Session, Roll Call for closed session) appear to have occurred before the recording begins or are not captured; the recording opens at the Reconvene to Regular Session phase. The formal agenda lists a Welcome by 'Cecilia Márquez' under Section 5, but the acting president throughout is Cecilia I. Márquez. Section 10 (Bond Program Action Items) had no items and was skipped.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order / Roll Call",
+        "phases": {
+          "opened": 5,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Oral Communication on Closed Session Items Only",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Closed Session - Conference with Legal Counsel – Anticipated Litigation",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Reconvene to Regular Session / Roll Call / Report Out on Closed Session",
+        "phases": {
+          "opened": 5,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Welcome by the Board President",
+        "phases": {
+          "opened": 18,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 142,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 142,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 154,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 174,
+            "type": "voice",
+            "result": "approved unanimously"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14",
+        "title": "Recognition of RCSD Employees (moved before Oral Communication)",
+        "phases": {
+          "opened": 176,
+          "presentation": 202,
+          "publicComment": null,
+          "discussion": 520,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 827,
+          "presentation": null,
+          "publicComment": 827,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9",
+        "title": "Bond Program Consent Items",
+        "phases": {
+          "opened": 829,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 844,
+            "type": "voice",
+            "result": "approved unanimously"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "Bond Program Action Items",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "School/Community Reports – Community Schools and Expanded Learning Program Board Report",
+        "phases": {
+          "opened": 847,
+          "presentation": 876,
+          "publicComment": null,
+          "discussion": 3396,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12",
+        "title": "Approval of Consent Items",
+        "phases": {
+          "opened": 4433,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4440,
+            "type": "voice",
+            "result": "approved unanimously"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "Action Items",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13.1",
+        "title": "Approval of CBEST Waiver for Substitute Teachers for 2023-2024",
+        "phases": {
+          "opened": 4444,
+          "presentation": 4456,
+          "publicComment": null,
+          "discussion": 4473,
+          "vote": {
+            "seconds": 4480,
+            "type": "voice",
+            "result": "approved unanimously"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13.2",
+        "title": "Approval of Prop 28 Expenditure Plan for 2023-24 School Year",
+        "phases": {
+          "opened": 4485,
+          "presentation": 4502,
+          "publicComment": null,
+          "discussion": 4629,
+          "vote": {
+            "seconds": 4680,
+            "type": "voice",
+            "result": "approved unanimously"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13.3",
+        "title": "Approval of Local Interagency Agreement(s) to Provide Education and Training to Credential Candidates",
+        "phases": {
+          "opened": 4689,
+          "presentation": 4700,
+          "publicComment": null,
+          "discussion": 4822,
+          "vote": {
+            "seconds": 5068,
+            "type": "voice",
+            "result": "approved unanimously"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Board and Superintendent Reports",
+        "phases": {
+          "opened": 5075,
+          "presentation": 5086,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 5741,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "17",
+        "title": "Other Business / Suggested Items for Future Agenda",
+        "phases": {
+          "opened": 5777,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 5810,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "18",
+        "title": "Changes to the Board Meetings Calendar",
+        "phases": {
+          "opened": 5823,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 5823,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "19",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 5841,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 5854,
+            "type": "voice",
+            "result": "approved unanimously"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "result": {
+    "videoId": "VKX0ACAEDh0",
+    "speakers": {
+      "A": {
+        "name": "Cecilia I. Márquez",
+        "role": "Board President (acting as chair)"
+      },
+      "B": {
+        "name": "Evelyn Campos",
+        "role": "Administrative Assistant to the Superintendent / staff (also presents as community schools team member)"
+      },
+      "C": {
+        "name": "Mike Wells",
+        "role": "Trustee"
+      },
+      "D": {
+        "name": "Janet Lawson",
+        "role": "Clerk"
+      },
+      "E": {
+        "name": "Wendy Kelly",
+        "role": "Deputy Superintendent"
+      },
+      "F": {
+        "name": "Alisa MacAvoy",
+        "role": "Trustee"
+      },
+      "G": {
+        "name": "John Baker",
+        "role": "Superintendent"
+      },
+      "H": {
+        "name": "Enrique Calderon",
+        "role": "District Extended Learning Coordinator"
+      },
+      "I": {
+        "name": "Michelle Ramon",
+        "role": "District Community Liaison"
+      }
+    },
+    "agendaChanges": "Item 14 (Recognition of RCSD Employees) was moved before Section 8 (Oral Communication), so it was heard after agenda approval but before oral communication. Sections 1-3 (Call to Order, Closed Session, Roll Call for closed session) appear to have occurred before the recording begins or are not captured; the recording opens at the Reconvene to Regular Session phase. The formal agenda lists a Welcome by 'Cecilia Márquez' under Section 5, but the acting president throughout is Cecilia I. Márquez. Section 10 (Bond Program Action Items) had no items and was skipped.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order / Roll Call",
+        "phases": {
+          "opened": 5,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Oral Communication on Closed Session Items Only",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Closed Session - Conference with Legal Counsel – Anticipated Litigation",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Reconvene to Regular Session / Roll Call / Report Out on Closed Session",
+        "phases": {
+          "opened": 5,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Welcome by the Board President",
+        "phases": {
+          "opened": 18,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 142,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 142,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 154,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 174,
+            "type": "voice",
+            "result": "approved unanimously"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14",
+        "title": "Recognition of RCSD Employees (moved before Oral Communication)",
+        "phases": {
+          "opened": 176,
+          "presentation": 202,
+          "publicComment": null,
+          "discussion": 520,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 827,
+          "presentation": null,
+          "publicComment": 827,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9",
+        "title": "Bond Program Consent Items",
+        "phases": {
+          "opened": 829,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 844,
+            "type": "voice",
+            "result": "approved unanimously"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "Bond Program Action Items",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "School/Community Reports – Community Schools and Expanded Learning Program Board Report",
+        "phases": {
+          "opened": 847,
+          "presentation": 876,
+          "publicComment": null,
+          "discussion": 3396,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12",
+        "title": "Approval of Consent Items",
+        "phases": {
+          "opened": 4433,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4440,
+            "type": "voice",
+            "result": "approved unanimously"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "Action Items",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13.1",
+        "title": "Approval of CBEST Waiver for Substitute Teachers for 2023-2024",
+        "phases": {
+          "opened": 4444,
+          "presentation": 4456,
+          "publicComment": null,
+          "discussion": 4473,
+          "vote": {
+            "seconds": 4480,
+            "type": "voice",
+            "result": "approved unanimously"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13.2",
+        "title": "Approval of Prop 28 Expenditure Plan for 2023-24 School Year",
+        "phases": {
+          "opened": 4485,
+          "presentation": 4502,
+          "publicComment": null,
+          "discussion": 4629,
+          "vote": {
+            "seconds": 4680,
+            "type": "voice",
+            "result": "approved unanimously"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13.3",
+        "title": "Approval of Local Interagency Agreement(s) to Provide Education and Training to Credential Candidates",
+        "phases": {
+          "opened": 4689,
+          "presentation": 4700,
+          "publicComment": null,
+          "discussion": 4822,
+          "vote": {
+            "seconds": 5068,
+            "type": "voice",
+            "result": "approved unanimously"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Board and Superintendent Reports",
+        "phases": {
+          "opened": 5075,
+          "presentation": 5086,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 5741,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "17",
+        "title": "Other Business / Suggested Items for Future Agenda",
+        "phases": {
+          "opened": 5777,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 5810,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "18",
+        "title": "Changes to the Board Meetings Calendar",
+        "phases": {
+          "opened": 5823,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 5823,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "19",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 5841,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 5854,
+            "type": "voice",
+            "result": "approved unanimously"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "cachedAt": "2026-03-15T17:48:58.930Z",
+  "inputTokens": 21311,
+  "outputTokens": 2739
+}

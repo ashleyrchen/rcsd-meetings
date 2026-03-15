@@ -1,0 +1,364 @@
+{
+  "date": "2025-10-16",
+  "itemCount": 9,
+  "llmResponse": {
+    "speakers": {
+      "A": {
+        "name": "Mike Wells",
+        "role": "Board President"
+      },
+      "B": {
+        "name": "Jennifer Ng Kwing King",
+        "role": "Trustee (remote)"
+      },
+      "C": {
+        "name": "Evelyn Sanchez",
+        "role": "Executive Assistant to Superintendent / Board Secretary"
+      },
+      "D": {
+        "name": "Eric Van Pelt",
+        "role": "Executive VP, VPCS (Bond Program Manager)"
+      },
+      "E": {
+        "name": "David Weekly",
+        "role": "Vice President"
+      },
+      "F": {
+        "name": "David Li",
+        "role": "Trustee"
+      },
+      "G": {
+        "name": "Nick Olsen",
+        "role": "Bond Program Manager, VPCS"
+      },
+      "H": {
+        "name": "Rick Edson",
+        "role": "Chief Business Official"
+      },
+      "I": {
+        "name": "John Baker",
+        "role": "Superintendent (Dr. Baker)"
+      },
+      "J": {
+        "name": "Carl Anders",
+        "role": "Community Member / Public Speaker"
+      }
+    },
+    "agendaChanges": "No formal changes to the agenda were announced. Public comment (Section 5) was technically opened early but the president deferred any speakers until after part of the Section 6 presentation, with one public speaker (Carl Anders) heard mid-presentation. The AB 2449 remote participation approval for Trustee King was handled as a preliminary procedural action before roll call, which is not a separately numbered agenda item but is noted here under Call to Order / Roll Call.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order / AB 2449 Remote Participation Approval for Trustee King",
+        "phases": {
+          "opened": 8,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 75,
+            "type": "voice",
+            "result": "approved (ayes heard, no objections)"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "1",
+        "title": "Roll Call",
+        "phases": {
+          "opened": 79,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Welcome",
+        "phases": {
+          "opened": 95,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 153,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Approval of the Agenda (Action Required)",
+        "phases": {
+          "opened": 157,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 166,
+            "type": "roll-call",
+            "result": "5-0 (all ayes)"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Public Comment",
+        "phases": {
+          "opened": 181,
+          "presentation": null,
+          "publicComment": 181,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Study Session: Implementation Plan for the Facilities Master Plan (FMP)",
+        "phases": {
+          "opened": 220,
+          "presentation": 324,
+          "publicComment": 4480,
+          "discussion": 1281,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Carl Anders",
+            "startSeconds": 4507,
+            "endSeconds": 4707,
+            "summary": "Encouraged greater community involvement in prioritizing bond expenditures, urged the board to 'think big' and concentrate funds on impactful visible projects aligned with the ballot measure language rather than routine deferred maintenance items like elevators and pipes."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Adjournment (Action Required)",
+        "phases": {
+          "opened": 6919,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6944,
+            "type": "voice",
+            "result": "approved (ayes heard, no objections)"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "result": {
+    "videoId": "zOYpECyitAM",
+    "speakers": {
+      "A": {
+        "name": "Mike Wells",
+        "role": "Board President"
+      },
+      "B": {
+        "name": "Jennifer Ng Kwing King",
+        "role": "Trustee (remote)"
+      },
+      "C": {
+        "name": "Evelyn Sanchez",
+        "role": "Executive Assistant to Superintendent / Board Secretary"
+      },
+      "D": {
+        "name": "Eric Van Pelt",
+        "role": "Executive VP, VPCS (Bond Program Manager)"
+      },
+      "E": {
+        "name": "David Weekly",
+        "role": "Vice President"
+      },
+      "F": {
+        "name": "David Li",
+        "role": "Trustee"
+      },
+      "G": {
+        "name": "Nick Olsen",
+        "role": "Bond Program Manager, VPCS"
+      },
+      "H": {
+        "name": "Rick Edson",
+        "role": "Chief Business Official"
+      },
+      "I": {
+        "name": "John Baker",
+        "role": "Superintendent (Dr. Baker)"
+      },
+      "J": {
+        "name": "Carl Anders",
+        "role": "Community Member / Public Speaker"
+      }
+    },
+    "agendaChanges": "No formal changes to the agenda were announced. Public comment (Section 5) was technically opened early but the president deferred any speakers until after part of the Section 6 presentation, with one public speaker (Carl Anders) heard mid-presentation. The AB 2449 remote participation approval for Trustee King was handled as a preliminary procedural action before roll call, which is not a separately numbered agenda item but is noted here under Call to Order / Roll Call.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order / AB 2449 Remote Participation Approval for Trustee King",
+        "phases": {
+          "opened": 8,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 75,
+            "type": "voice",
+            "result": "approved (ayes heard, no objections)"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "1",
+        "title": "Roll Call",
+        "phases": {
+          "opened": 79,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Welcome",
+        "phases": {
+          "opened": 95,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 153,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Approval of the Agenda (Action Required)",
+        "phases": {
+          "opened": 157,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 166,
+            "type": "roll-call",
+            "result": "5-0 (all ayes)"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Public Comment",
+        "phases": {
+          "opened": 181,
+          "presentation": null,
+          "publicComment": 181,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Study Session: Implementation Plan for the Facilities Master Plan (FMP)",
+        "phases": {
+          "opened": 220,
+          "presentation": 324,
+          "publicComment": 4480,
+          "discussion": 1281,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Carl Anders",
+            "startSeconds": 4507,
+            "endSeconds": 4707,
+            "summary": "Encouraged greater community involvement in prioritizing bond expenditures, urged the board to 'think big' and concentrate funds on impactful visible projects aligned with the ballot measure language rather than routine deferred maintenance items like elevators and pipes."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Adjournment (Action Required)",
+        "phases": {
+          "opened": 6919,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6944,
+            "type": "voice",
+            "result": "approved (ayes heard, no objections)"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "cachedAt": "2026-03-15T17:07:12.316Z",
+  "inputTokens": 27520,
+  "outputTokens": 1340
+}

@@ -1,0 +1,1184 @@
+{
+  "date": "2022-02-16",
+  "itemCount": 57,
+  "llmResponse": {
+    "speakers": {
+      "A": {
+        "name": "Wendy Kelly",
+        "role": "Superintendent"
+      },
+      "B": {
+        "name": "María Díaz-Slocum",
+        "role": "President"
+      },
+      "C": {
+        "name": "Alisa MacAvoy",
+        "role": "Trustee (later identified as Vice President in some calls; listed as Clerk on agenda but called Trustee McAvoy)"
+      }
+    },
+    "agendaChanges": "Item 11.5 (Classified General Leave Request) was pulled from Section 11 Consent Items entirely, as it was already listed under Section 12 Action Items (12.2). Sections 1-3 (Call to Order, Oral Communication on Closed Session, Closed Session) occurred before the recording begins; the recording opens at reconvene to Regular Session (~256s). Section 5 Welcome is delivered by María Díaz-Slocum (not the agenda's listed presenter). Items otherwise followed agenda order.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Oral Communication on Closed Session Items Only",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Closed Session",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Reconvene to Regular Session / Roll Call / Report Out on Closed Session",
+        "phases": {
+          "opened": 256,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Welcome by the School Board President",
+        "phases": {
+          "opened": 325,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 390,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 417,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 427,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 440,
+          "presentation": null,
+          "publicComment": 440,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9",
+        "title": "Bond Program Consent Items",
+        "phases": {
+          "opened": 440,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 478,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "Bond Program Action Items",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "Consent Items (11.1–11.4)",
+        "phases": {
+          "opened": 523,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 553,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11.5",
+        "title": "Approval of Classified General Leave Request(s) [pulled from consent]",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": true
+      },
+      {
+        "itemLabel": "12",
+        "title": "Action Items",
+        "phases": {
+          "opened": 562,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.1",
+        "title": "Approval of Second Amendment to Agreement with One Life Counseling Services for 2021-2022",
+        "phases": {
+          "opened": 562,
+          "presentation": 587,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 661,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.2",
+        "title": "Classified General Leave Request(s)",
+        "phases": {
+          "opened": 668,
+          "presentation": 668,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 732,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.3",
+        "title": "Approval of Instructional Calendars for the 2022-2023 School Year",
+        "phases": {
+          "opened": 799,
+          "presentation": 800,
+          "publicComment": null,
+          "discussion": 844,
+          "vote": {
+            "seconds": 871,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.4",
+        "title": "Adoption of Resolution 26, Determination of Order of Employment for Certificated Employees for Elimination of or Reductions in Particular Kinds of Services for Fiscal Year 2021-2022",
+        "phases": {
+          "opened": 892,
+          "presentation": 936,
+          "publicComment": null,
+          "discussion": 980,
+          "vote": {
+            "seconds": 1185,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.5",
+        "title": "Second Reading and Approval of Board Policy 5116.1 - Intradistrict Open Enrollment",
+        "phases": {
+          "opened": 1194,
+          "presentation": 1226,
+          "publicComment": 1602,
+          "discussion": 4445,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "David Weekley",
+            "startSeconds": 1632,
+            "endSeconds": 1957,
+            "summary": "Opposed the policy, arguing that restricting intradistrict transfers hurts students and the district by limiting parental choice, and that the way to protect programs like Mandarin Immersion is to invest in their quality rather than lock families in."
+          },
+          {
+            "name": "Eric Liu",
+            "startSeconds": 1976,
+            "endSeconds": 2026,
+            "summary": "Opposed the policy as an Asian American parent of a Mandarin Immersion student, stating that barring choice program students from applying to North Star felt discriminatory and contrary to Redwood City's values of diversity and equality."
+          },
+          {
+            "name": "Connie Kwan",
+            "startSeconds": 2026,
+            "endSeconds": 2128,
+            "summary": "Opposed the policy, describing the unfair dilemma it creates for parents who must choose between staying in a choice program or leaving early to preserve eligibility for North Star, and asked the committee to consider alternative solutions to attrition."
+          },
+          {
+            "name": "Peter Cowan",
+            "startSeconds": 2128,
+            "endSeconds": 2310,
+            "summary": "Opposed the policy, noting the difficult bind it creates for families with children in different programs, criticized the timing during enrollment season, argued the policy is a band-aid on a third-grade attrition cliff, and called for transparency instead of 'unspoken rules.'"
+          },
+          {
+            "name": "Dennis Lee",
+            "startSeconds": 2364,
+            "endSeconds": 2493,
+            "summary": "Opposed the policy as a parent of a rising kindergartner accepted to Mandarin Immersion, arguing it raises the stakes of choosing a school by requiring parents to predict their child's needs years in advance and that it unfairly limits future choices while potentially benefiting private school families."
+          },
+          {
+            "name": "Michelle Hsu",
+            "startSeconds": 2550,
+            "endSeconds": 2630,
+            "summary": "Opposed the policy, arguing that North Star and Mandarin Immersion are not competing on fair ground given North Star's third-grade entry and testing-based admissions, and urged the committee to address equity issues in North Star's admissions process instead."
+          },
+          {
+            "name": "Jennifer Barnett",
+            "startSeconds": 2691,
+            "endSeconds": 2795,
+            "summary": "Opposed the policy as a Mandarin Immersion kindergarten parent, calling it shortsighted and inequitable, arguing it will not fix the exodus to North Star and instead should prompt examination of North Star's own problematic policies."
+          },
+          {
+            "name": "Diana Chang",
+            "startSeconds": 2811,
+            "endSeconds": 2898,
+            "summary": "Submitted a written comment opposing the restriction on transferring between non-boundary schools, calling it unnecessarily limiting for families who discover a choice school is not the right fit, and questioning whether there are better ways to distribute opportunities equitably."
+          },
+          {
+            "name": "Alvin Cheon",
+            "startSeconds": 2898,
+            "endSeconds": 3053,
+            "summary": "As an Orion Parent Participation parent, expressed concern that removing intradistrict transfer incentives would push families away from public school, and suggested alternatives such as embedding advanced coursework at the classroom level within each school rather than concentrating it at North Star."
+          },
+          {
+            "name": "Eric Garcia",
+            "startSeconds": 3053,
+            "endSeconds": 3126,
+            "summary": "Submitted a written comment opposing the policy, arguing it removes parents' ability to choose what is best for their children's evolving educational needs and that schools losing students to transfers should instead be empowered to improve their programs."
+          },
+          {
+            "name": "Christina Jade Lee Simmons",
+            "startSeconds": 3147,
+            "endSeconds": 3334,
+            "summary": "Opposed the policy and called for deeper structural reform, arguing that North Star perpetuates inequality as the least economically integrated school in the district, and encouraged the board to consider starting North Star in sixth grade and investing in enrichment at every elementary school."
+          },
+          {
+            "name": "Kyle Zeibes",
+            "startSeconds": 3369,
+            "endSeconds": 3527,
+            "summary": "Opposed the policy as a Mandarin Immersion kindergarten parent and budget committee member, arguing it will harm equity by trapping low-income families and push higher-income families to private school, and suggested delaying North Star until sixth grade as a preferable alternative."
+          },
+          {
+            "name": "Brian Hicks",
+            "startSeconds": 3535,
+            "endSeconds": 3726,
+            "summary": "Opposed the policy, challenging the administration's framing of it as formalizing an 'unwritten rule' since the actual long-standing practice has been that families can move between choice programs, and requested that any future policy not be applied retroactively to families already enrolled."
+          },
+          {
+            "name": "Elle Kolekar",
+            "startSeconds": 3789,
+            "endSeconds": 3922,
+            "summary": "Opposed the policy as an Orion Parent Participation parent, warning it will cause families interested in North Star to attend private school for K–2 and could devastate Orion's Parent Participation program, and instead urged the district to invest in making neighborhood schools more attractive."
+          },
+          {
+            "name": "Keith Simmons",
+            "startSeconds": 3922,
+            "endSeconds": 4015,
+            "summary": "Opposed the policy as a Mandarin Immersion parent, echoing others' concerns and specifically warning that the superintendent exception process would create racial inequities because immigrant families face language and cultural barriers to requesting special exceptions."
+          },
+          {
+            "name": "Ting Cheng Wang",
+            "startSeconds": 4026,
+            "endSeconds": 4100,
+            "summary": "Opposed the policy, noting that it effectively forces parents to choose their child's middle school at age five, which is an unfair burden given that only non-choice school families retain access to both Kennedy and North Star."
+          },
+          {
+            "name": "Megan O'Reilly Green",
+            "startSeconds": 4105,
+            "endSeconds": 4220,
+            "summary": "Expressed nuanced support for pausing the policy and argued that the fundamental problem is North Star's structure and the perception that it is the 'best' school, stating she does not believe the proposed policy would harm Mandarin Immersion recruitment and that the district's real challenge is North Star's incompatibility with its equity mission."
+          },
+          {
+            "name": "Elizabeth Flavel",
+            "startSeconds": 4287,
+            "endSeconds": 4418,
+            "summary": "As an active Adelante community member, shared her personal experience that the flexibility to try kindergarten with the option to transfer gave her family the confidence to enroll in Spanish Immersion, and cautioned the board about potential unintended consequences of the policy on incoming family decisions."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.6",
+        "title": "Second Reading and Approval of Board Policy 5117 - Interdistrict Attendance",
+        "phases": {
+          "opened": 5035,
+          "presentation": 5038,
+          "publicComment": null,
+          "discussion": 5068,
+          "vote": {
+            "seconds": 5134,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.7",
+        "title": "Creative Learning Centers, NPS, Inc. - Acknowledgement of Conversion and Consent to Change of Ownership",
+        "phases": {
+          "opened": 5142,
+          "presentation": 5163,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 5248,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "Board and Superintendent Reports",
+        "phases": {
+          "opened": 5264,
+          "presentation": 5272,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14",
+        "title": "Information Items",
+        "phases": {
+          "opened": 5386,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.1",
+        "title": "2022 Supplement to the Annual Update of the 2021-22 Local Control Accountability Plan (LCAP) and Budget Overview for Parents",
+        "phases": {
+          "opened": 5386,
+          "presentation": 5407,
+          "publicComment": null,
+          "discussion": 6180,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.2",
+        "title": "RCSD Review of Connect Community Charter School's Audit Report for FY2020-21",
+        "phases": {
+          "opened": 6766,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.3",
+        "title": "RCSD Review of KIPP Excelencia Community Prep's Audit Report for FY2020-21",
+        "phases": {
+          "opened": 6780,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.4",
+        "title": "RCSD Review of Rocketship Redwood City Prep's Audit Report for FY2020-21",
+        "phases": {
+          "opened": 6793,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 6809,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16",
+        "title": "Other Business / Suggested Items for Future Agenda",
+        "phases": {
+          "opened": 6827,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "17",
+        "title": "Board Agenda Calendar",
+        "phases": {
+          "opened": 6907,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 6925,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "18",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 6994,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 7000,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "result": {
+    "videoId": "4E5Qh0Z8I50",
+    "speakers": {
+      "A": {
+        "name": "Wendy Kelly",
+        "role": "Superintendent"
+      },
+      "B": {
+        "name": "María Díaz-Slocum",
+        "role": "President"
+      },
+      "C": {
+        "name": "Alisa MacAvoy",
+        "role": "Trustee (later identified as Vice President in some calls; listed as Clerk on agenda but called Trustee McAvoy)"
+      }
+    },
+    "agendaChanges": "Item 11.5 (Classified General Leave Request) was pulled from Section 11 Consent Items entirely, as it was already listed under Section 12 Action Items (12.2). Sections 1-3 (Call to Order, Oral Communication on Closed Session, Closed Session) occurred before the recording begins; the recording opens at reconvene to Regular Session (~256s). Section 5 Welcome is delivered by María Díaz-Slocum (not the agenda's listed presenter). Items otherwise followed agenda order.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Oral Communication on Closed Session Items Only",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Closed Session",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Reconvene to Regular Session / Roll Call / Report Out on Closed Session",
+        "phases": {
+          "opened": 256,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Welcome by the School Board President",
+        "phases": {
+          "opened": 325,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 390,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 417,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 427,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 440,
+          "presentation": null,
+          "publicComment": 440,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9",
+        "title": "Bond Program Consent Items",
+        "phases": {
+          "opened": 440,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 478,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "Bond Program Action Items",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "Consent Items (11.1–11.4)",
+        "phases": {
+          "opened": 523,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 553,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11.5",
+        "title": "Approval of Classified General Leave Request(s) [pulled from consent]",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": true
+      },
+      {
+        "itemLabel": "12",
+        "title": "Action Items",
+        "phases": {
+          "opened": 562,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.1",
+        "title": "Approval of Second Amendment to Agreement with One Life Counseling Services for 2021-2022",
+        "phases": {
+          "opened": 562,
+          "presentation": 587,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 661,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.2",
+        "title": "Classified General Leave Request(s)",
+        "phases": {
+          "opened": 668,
+          "presentation": 668,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 732,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.3",
+        "title": "Approval of Instructional Calendars for the 2022-2023 School Year",
+        "phases": {
+          "opened": 799,
+          "presentation": 800,
+          "publicComment": null,
+          "discussion": 844,
+          "vote": {
+            "seconds": 871,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.4",
+        "title": "Adoption of Resolution 26, Determination of Order of Employment for Certificated Employees for Elimination of or Reductions in Particular Kinds of Services for Fiscal Year 2021-2022",
+        "phases": {
+          "opened": 892,
+          "presentation": 936,
+          "publicComment": null,
+          "discussion": 980,
+          "vote": {
+            "seconds": 1185,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.5",
+        "title": "Second Reading and Approval of Board Policy 5116.1 - Intradistrict Open Enrollment",
+        "phases": {
+          "opened": 1194,
+          "presentation": 1226,
+          "publicComment": 1602,
+          "discussion": 4445,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "David Weekley",
+            "startSeconds": 1632,
+            "endSeconds": 1957,
+            "summary": "Opposed the policy, arguing that restricting intradistrict transfers hurts students and the district by limiting parental choice, and that the way to protect programs like Mandarin Immersion is to invest in their quality rather than lock families in."
+          },
+          {
+            "name": "Eric Liu",
+            "startSeconds": 1976,
+            "endSeconds": 2026,
+            "summary": "Opposed the policy as an Asian American parent of a Mandarin Immersion student, stating that barring choice program students from applying to North Star felt discriminatory and contrary to Redwood City's values of diversity and equality."
+          },
+          {
+            "name": "Connie Kwan",
+            "startSeconds": 2026,
+            "endSeconds": 2128,
+            "summary": "Opposed the policy, describing the unfair dilemma it creates for parents who must choose between staying in a choice program or leaving early to preserve eligibility for North Star, and asked the committee to consider alternative solutions to attrition."
+          },
+          {
+            "name": "Peter Cowan",
+            "startSeconds": 2128,
+            "endSeconds": 2310,
+            "summary": "Opposed the policy, noting the difficult bind it creates for families with children in different programs, criticized the timing during enrollment season, argued the policy is a band-aid on a third-grade attrition cliff, and called for transparency instead of 'unspoken rules.'"
+          },
+          {
+            "name": "Dennis Lee",
+            "startSeconds": 2364,
+            "endSeconds": 2493,
+            "summary": "Opposed the policy as a parent of a rising kindergartner accepted to Mandarin Immersion, arguing it raises the stakes of choosing a school by requiring parents to predict their child's needs years in advance and that it unfairly limits future choices while potentially benefiting private school families."
+          },
+          {
+            "name": "Michelle Hsu",
+            "startSeconds": 2550,
+            "endSeconds": 2630,
+            "summary": "Opposed the policy, arguing that North Star and Mandarin Immersion are not competing on fair ground given North Star's third-grade entry and testing-based admissions, and urged the committee to address equity issues in North Star's admissions process instead."
+          },
+          {
+            "name": "Jennifer Barnett",
+            "startSeconds": 2691,
+            "endSeconds": 2795,
+            "summary": "Opposed the policy as a Mandarin Immersion kindergarten parent, calling it shortsighted and inequitable, arguing it will not fix the exodus to North Star and instead should prompt examination of North Star's own problematic policies."
+          },
+          {
+            "name": "Diana Chang",
+            "startSeconds": 2811,
+            "endSeconds": 2898,
+            "summary": "Submitted a written comment opposing the restriction on transferring between non-boundary schools, calling it unnecessarily limiting for families who discover a choice school is not the right fit, and questioning whether there are better ways to distribute opportunities equitably."
+          },
+          {
+            "name": "Alvin Cheon",
+            "startSeconds": 2898,
+            "endSeconds": 3053,
+            "summary": "As an Orion Parent Participation parent, expressed concern that removing intradistrict transfer incentives would push families away from public school, and suggested alternatives such as embedding advanced coursework at the classroom level within each school rather than concentrating it at North Star."
+          },
+          {
+            "name": "Eric Garcia",
+            "startSeconds": 3053,
+            "endSeconds": 3126,
+            "summary": "Submitted a written comment opposing the policy, arguing it removes parents' ability to choose what is best for their children's evolving educational needs and that schools losing students to transfers should instead be empowered to improve their programs."
+          },
+          {
+            "name": "Christina Jade Lee Simmons",
+            "startSeconds": 3147,
+            "endSeconds": 3334,
+            "summary": "Opposed the policy and called for deeper structural reform, arguing that North Star perpetuates inequality as the least economically integrated school in the district, and encouraged the board to consider starting North Star in sixth grade and investing in enrichment at every elementary school."
+          },
+          {
+            "name": "Kyle Zeibes",
+            "startSeconds": 3369,
+            "endSeconds": 3527,
+            "summary": "Opposed the policy as a Mandarin Immersion kindergarten parent and budget committee member, arguing it will harm equity by trapping low-income families and push higher-income families to private school, and suggested delaying North Star until sixth grade as a preferable alternative."
+          },
+          {
+            "name": "Brian Hicks",
+            "startSeconds": 3535,
+            "endSeconds": 3726,
+            "summary": "Opposed the policy, challenging the administration's framing of it as formalizing an 'unwritten rule' since the actual long-standing practice has been that families can move between choice programs, and requested that any future policy not be applied retroactively to families already enrolled."
+          },
+          {
+            "name": "Elle Kolekar",
+            "startSeconds": 3789,
+            "endSeconds": 3922,
+            "summary": "Opposed the policy as an Orion Parent Participation parent, warning it will cause families interested in North Star to attend private school for K–2 and could devastate Orion's Parent Participation program, and instead urged the district to invest in making neighborhood schools more attractive."
+          },
+          {
+            "name": "Keith Simmons",
+            "startSeconds": 3922,
+            "endSeconds": 4015,
+            "summary": "Opposed the policy as a Mandarin Immersion parent, echoing others' concerns and specifically warning that the superintendent exception process would create racial inequities because immigrant families face language and cultural barriers to requesting special exceptions."
+          },
+          {
+            "name": "Ting Cheng Wang",
+            "startSeconds": 4026,
+            "endSeconds": 4100,
+            "summary": "Opposed the policy, noting that it effectively forces parents to choose their child's middle school at age five, which is an unfair burden given that only non-choice school families retain access to both Kennedy and North Star."
+          },
+          {
+            "name": "Megan O'Reilly Green",
+            "startSeconds": 4105,
+            "endSeconds": 4220,
+            "summary": "Expressed nuanced support for pausing the policy and argued that the fundamental problem is North Star's structure and the perception that it is the 'best' school, stating she does not believe the proposed policy would harm Mandarin Immersion recruitment and that the district's real challenge is North Star's incompatibility with its equity mission."
+          },
+          {
+            "name": "Elizabeth Flavel",
+            "startSeconds": 4287,
+            "endSeconds": 4418,
+            "summary": "As an active Adelante community member, shared her personal experience that the flexibility to try kindergarten with the option to transfer gave her family the confidence to enroll in Spanish Immersion, and cautioned the board about potential unintended consequences of the policy on incoming family decisions."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.6",
+        "title": "Second Reading and Approval of Board Policy 5117 - Interdistrict Attendance",
+        "phases": {
+          "opened": 5035,
+          "presentation": 5038,
+          "publicComment": null,
+          "discussion": 5068,
+          "vote": {
+            "seconds": 5134,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.7",
+        "title": "Creative Learning Centers, NPS, Inc. - Acknowledgement of Conversion and Consent to Change of Ownership",
+        "phases": {
+          "opened": 5142,
+          "presentation": 5163,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 5248,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "Board and Superintendent Reports",
+        "phases": {
+          "opened": 5264,
+          "presentation": 5272,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14",
+        "title": "Information Items",
+        "phases": {
+          "opened": 5386,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.1",
+        "title": "2022 Supplement to the Annual Update of the 2021-22 Local Control Accountability Plan (LCAP) and Budget Overview for Parents",
+        "phases": {
+          "opened": 5386,
+          "presentation": 5407,
+          "publicComment": null,
+          "discussion": 6180,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.2",
+        "title": "RCSD Review of Connect Community Charter School's Audit Report for FY2020-21",
+        "phases": {
+          "opened": 6766,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.3",
+        "title": "RCSD Review of KIPP Excelencia Community Prep's Audit Report for FY2020-21",
+        "phases": {
+          "opened": 6780,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.4",
+        "title": "RCSD Review of Rocketship Redwood City Prep's Audit Report for FY2020-21",
+        "phases": {
+          "opened": 6793,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 6809,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16",
+        "title": "Other Business / Suggested Items for Future Agenda",
+        "phases": {
+          "opened": 6827,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "17",
+        "title": "Board Agenda Calendar",
+        "phases": {
+          "opened": 6907,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 6925,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "18",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 6994,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 7000,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "cachedAt": "2026-03-15T18:15:30.734Z",
+  "inputTokens": 26629,
+  "outputTokens": 5319
+}

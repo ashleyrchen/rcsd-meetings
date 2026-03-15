@@ -1,0 +1,816 @@
+{
+  "date": "2022-09-07",
+  "itemCount": 45,
+  "llmResponse": {
+    "speakers": {
+      "A": {
+        "name": "Alisa MacAvoy",
+        "role": "Board President (acting as chair)"
+      },
+      "B": {
+        "name": "Board Secretary/Clerk (unidentified staff)",
+        "role": "Roll call and clerk duties"
+      },
+      "C": {
+        "name": "John Baker",
+        "role": "Superintendent"
+      },
+      "D": {
+        "name": "Janet Lawson",
+        "role": "Trustee"
+      },
+      "E": {
+        "name": "María Díaz-Slocum",
+        "role": "Vice President"
+      },
+      "F": {
+        "name": "Cecilia I. Márquez",
+        "role": "Clerk/Trustee"
+      },
+      "G": {
+        "name": "Mike Wells",
+        "role": "Trustee"
+      },
+      "H": {
+        "name": "Unidentified board member",
+        "role": "Trustee (likely second trustee present in-person)"
+      },
+      "I": {
+        "name": "Unidentified speaker",
+        "role": "Public commenter / attendee"
+      },
+      "J": {
+        "name": "Unidentified staff",
+        "role": "District business/finance staff"
+      }
+    },
+    "agendaChanges": "Items 8.2 (Approval of Local Interagency Agreement), 8.4 (Approval of Increase of TK-8th Grade Teacher Substitute Rate), and 8.5 (Approval of Personnel Changes) were moved from Action Items to Consent Items by motion and roll-call vote. Item 8.3 (Modifications to Educator Effectiveness Block Grant) remained on Action Items. Section 10 (Information) was taken up before Section 11 (Correspondence), consistent with the posted agenda order; the president briefly transitioned to Correspondence before Section 10 was complete, then corrected and returned to Information before proceeding to Correspondence. Sections 12 and 13 were taken up after Section 11.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order / Roll Call",
+        "phases": {
+          "opened": 6,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Welcome by the School Board President",
+        "phases": {
+          "opened": 30,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 55,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 73,
+          "vote": {
+            "seconds": 142,
+            "type": "roll-call",
+            "result": "4-0 (President not yet on call)"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 160,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 160,
+          "presentation": null,
+          "publicComment": 168,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Shagupta Mansoor",
+            "startSeconds": 191,
+            "endSeconds": 261,
+            "summary": "Expressed concern about extreme heat in her special-needs son's classroom at Roosevelt School and requested a portable air conditioner for his medical safety."
+          },
+          {
+            "name": "Katie Goetz",
+            "startSeconds": 361,
+            "endSeconds": 457,
+            "summary": "On behalf of herself and her daughter Evelyn, expressed frustration about the mid-year teacher reassignment at Orion Alternative School and urged the district to minimize classroom disruptions in the future."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Bond Program Consent Items — Approval of Consent Items",
+        "phases": {
+          "opened": 643,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 659,
+            "type": "roll-call",
+            "result": "4-0 (President dropped from call)"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Consent Items — Approval of Consent Items (including 8.2, 8.4, 8.5 moved from Action)",
+        "phases": {
+          "opened": 712,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 726,
+            "type": "roll-call",
+            "result": "4-0 (President not on call)"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.1",
+        "title": "Adoption of Resolution 12, Authorizing Electronic Meetings of the Board of Trustees During a State of Emergency",
+        "phases": {
+          "opened": 734,
+          "presentation": 755,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 790,
+            "type": "roll-call",
+            "result": "4-0 (President not on call at time of vote)"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.2",
+        "title": "Approval of Local Interagency Agreement to Provide Education and Training to Credential Candidates",
+        "phases": {
+          "opened": 121,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 726,
+            "type": "roll-call",
+            "result": "passed as part of consent bundle"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.3",
+        "title": "Modifications to Educator Effectiveness Block Grant of 2021",
+        "phases": {
+          "opened": 823,
+          "presentation": 832,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 882,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.4",
+        "title": "Approval of Increase of the TK-8th Grade Teacher Substitute Rate",
+        "phases": {
+          "opened": 121,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 726,
+            "type": "roll-call",
+            "result": "passed as part of consent bundle"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.5",
+        "title": "Approval of Personnel Changes for 2022-2023",
+        "phases": {
+          "opened": 121,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 726,
+            "type": "roll-call",
+            "result": "passed as part of consent bundle"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9",
+        "title": "Board and Superintendent Reports",
+        "phases": {
+          "opened": 908,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 913,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "Information",
+        "phases": {
+          "opened": 1231,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.1",
+        "title": "2022-23 Adopted Budget & LCAP for KIPP Excelencia Charter School and RCSD's Fiscal Oversight Review Letter",
+        "phases": {
+          "opened": 1231,
+          "presentation": 1248,
+          "publicComment": null,
+          "discussion": 1304,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.2",
+        "title": "2022-23 Adopted Budget & LCAP for Connect Community Charter School and RCSD's Fiscal Oversight Review Letter",
+        "phases": {
+          "opened": 1248,
+          "presentation": 1248,
+          "publicComment": null,
+          "discussion": 1304,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.3",
+        "title": "2022-23 Adopted Budget & LCAP for Rocketship Redwood City and RCSD's Fiscal Oversight Review Letter",
+        "phases": {
+          "opened": 1248,
+          "presentation": 1248,
+          "publicComment": null,
+          "discussion": 1304,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.4",
+        "title": "Review the Human Resource Department's Vision and Plans for 2022-2023",
+        "phases": {
+          "opened": 1389,
+          "presentation": 1453,
+          "publicComment": null,
+          "discussion": 3096,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 1034,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 1034,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12",
+        "title": "Other Business / Suggested Items for Future Agenda",
+        "phases": {
+          "opened": 3681,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "Board Agenda Calendar",
+        "phases": {
+          "opened": 3691,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 3698,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 3787,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3797,
+            "type": "motion",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "result": {
+    "videoId": "PfxY0tBfY9g",
+    "speakers": {
+      "A": {
+        "name": "Alisa MacAvoy",
+        "role": "Board President (acting as chair)"
+      },
+      "B": {
+        "name": "Board Secretary/Clerk (unidentified staff)",
+        "role": "Roll call and clerk duties"
+      },
+      "C": {
+        "name": "John Baker",
+        "role": "Superintendent"
+      },
+      "D": {
+        "name": "Janet Lawson",
+        "role": "Trustee"
+      },
+      "E": {
+        "name": "María Díaz-Slocum",
+        "role": "Vice President"
+      },
+      "F": {
+        "name": "Cecilia I. Márquez",
+        "role": "Clerk/Trustee"
+      },
+      "G": {
+        "name": "Mike Wells",
+        "role": "Trustee"
+      },
+      "H": {
+        "name": "Unidentified board member",
+        "role": "Trustee (likely second trustee present in-person)"
+      },
+      "I": {
+        "name": "Unidentified speaker",
+        "role": "Public commenter / attendee"
+      },
+      "J": {
+        "name": "Unidentified staff",
+        "role": "District business/finance staff"
+      }
+    },
+    "agendaChanges": "Items 8.2 (Approval of Local Interagency Agreement), 8.4 (Approval of Increase of TK-8th Grade Teacher Substitute Rate), and 8.5 (Approval of Personnel Changes) were moved from Action Items to Consent Items by motion and roll-call vote. Item 8.3 (Modifications to Educator Effectiveness Block Grant) remained on Action Items. Section 10 (Information) was taken up before Section 11 (Correspondence), consistent with the posted agenda order; the president briefly transitioned to Correspondence before Section 10 was complete, then corrected and returned to Information before proceeding to Correspondence. Sections 12 and 13 were taken up after Section 11.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order / Roll Call",
+        "phases": {
+          "opened": 6,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Welcome by the School Board President",
+        "phases": {
+          "opened": 30,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 55,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 73,
+          "vote": {
+            "seconds": 142,
+            "type": "roll-call",
+            "result": "4-0 (President not yet on call)"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 160,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 160,
+          "presentation": null,
+          "publicComment": 168,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Shagupta Mansoor",
+            "startSeconds": 191,
+            "endSeconds": 261,
+            "summary": "Expressed concern about extreme heat in her special-needs son's classroom at Roosevelt School and requested a portable air conditioner for his medical safety."
+          },
+          {
+            "name": "Katie Goetz",
+            "startSeconds": 361,
+            "endSeconds": 457,
+            "summary": "On behalf of herself and her daughter Evelyn, expressed frustration about the mid-year teacher reassignment at Orion Alternative School and urged the district to minimize classroom disruptions in the future."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Bond Program Consent Items — Approval of Consent Items",
+        "phases": {
+          "opened": 643,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 659,
+            "type": "roll-call",
+            "result": "4-0 (President dropped from call)"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Consent Items — Approval of Consent Items (including 8.2, 8.4, 8.5 moved from Action)",
+        "phases": {
+          "opened": 712,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 726,
+            "type": "roll-call",
+            "result": "4-0 (President not on call)"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.1",
+        "title": "Adoption of Resolution 12, Authorizing Electronic Meetings of the Board of Trustees During a State of Emergency",
+        "phases": {
+          "opened": 734,
+          "presentation": 755,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 790,
+            "type": "roll-call",
+            "result": "4-0 (President not on call at time of vote)"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.2",
+        "title": "Approval of Local Interagency Agreement to Provide Education and Training to Credential Candidates",
+        "phases": {
+          "opened": 121,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 726,
+            "type": "roll-call",
+            "result": "passed as part of consent bundle"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.3",
+        "title": "Modifications to Educator Effectiveness Block Grant of 2021",
+        "phases": {
+          "opened": 823,
+          "presentation": 832,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 882,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.4",
+        "title": "Approval of Increase of the TK-8th Grade Teacher Substitute Rate",
+        "phases": {
+          "opened": 121,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 726,
+            "type": "roll-call",
+            "result": "passed as part of consent bundle"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.5",
+        "title": "Approval of Personnel Changes for 2022-2023",
+        "phases": {
+          "opened": 121,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 726,
+            "type": "roll-call",
+            "result": "passed as part of consent bundle"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9",
+        "title": "Board and Superintendent Reports",
+        "phases": {
+          "opened": 908,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 913,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "Information",
+        "phases": {
+          "opened": 1231,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.1",
+        "title": "2022-23 Adopted Budget & LCAP for KIPP Excelencia Charter School and RCSD's Fiscal Oversight Review Letter",
+        "phases": {
+          "opened": 1231,
+          "presentation": 1248,
+          "publicComment": null,
+          "discussion": 1304,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.2",
+        "title": "2022-23 Adopted Budget & LCAP for Connect Community Charter School and RCSD's Fiscal Oversight Review Letter",
+        "phases": {
+          "opened": 1248,
+          "presentation": 1248,
+          "publicComment": null,
+          "discussion": 1304,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.3",
+        "title": "2022-23 Adopted Budget & LCAP for Rocketship Redwood City and RCSD's Fiscal Oversight Review Letter",
+        "phases": {
+          "opened": 1248,
+          "presentation": 1248,
+          "publicComment": null,
+          "discussion": 1304,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.4",
+        "title": "Review the Human Resource Department's Vision and Plans for 2022-2023",
+        "phases": {
+          "opened": 1389,
+          "presentation": 1453,
+          "publicComment": null,
+          "discussion": 3096,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 1034,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 1034,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12",
+        "title": "Other Business / Suggested Items for Future Agenda",
+        "phases": {
+          "opened": 3681,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "Board Agenda Calendar",
+        "phases": {
+          "opened": 3691,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 3698,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 3787,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3797,
+            "type": "motion",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "cachedAt": "2026-03-15T18:03:50.058Z",
+  "inputTokens": 15670,
+  "outputTokens": 3157
+}

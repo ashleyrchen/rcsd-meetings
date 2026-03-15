@@ -1,0 +1,1024 @@
+{
+  "date": "2024-03-20",
+  "itemCount": 42,
+  "llmResponse": {
+    "speakers": {
+      "A": {
+        "name": "Mike Wells",
+        "role": "Vice President, presiding"
+      },
+      "B": {
+        "name": "Evelyn Sanchez",
+        "role": "Executive Assistant to Superintendent / Board Secretary"
+      }
+    },
+    "agendaChanges": "Consent items 10.5 (E-Rate Bid Process for WAN Service) and 10.6 (E-Rate Bid for Bundled Internet Access) were pulled from the consent calendar and moved to action items, to be heard after Action Item 11.1. They were taken up in the order: 11.1, then 10.5, then 10.6.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order",
+        "phases": {
+          "opened": 6,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "1.1",
+        "title": "Roll Call",
+        "phases": {
+          "opened": 6,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Oral Communication on Closed Session Items Only",
+        "phases": {
+          "opened": 23,
+          "presentation": null,
+          "publicComment": 23,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Closed Session – 6:30 p.m.",
+        "phases": {
+          "opened": 23,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3.1",
+        "title": "RCTA Negotiations Update",
+        "phases": {
+          "opened": 23,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Reconvene to Regular Session at Approximately 7:00 p.m.",
+        "phases": {
+          "opened": 6,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4.1",
+        "title": "Roll Call",
+        "phases": {
+          "opened": 6,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4.2",
+        "title": "Report Out on Closed Session from March 20, 2024",
+        "phases": {
+          "opened": 23,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Welcome",
+        "phases": {
+          "opened": 23,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 255,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 289,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 324,
+            "type": "voice",
+            "result": "4-0 (Lawson absent)"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 326,
+          "presentation": null,
+          "publicComment": 337,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Chris Robell",
+            "startSeconds": 353,
+            "endSeconds": 497,
+            "summary": "Urged the board not to repeat past mistakes with bond money, specifically criticizing the early floating of $90 million in Measure S bonds at 4.2% interest with funds sitting unused for nine months, and requesting that future bonds use an auction process rather than a negotiated sale."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9",
+        "title": "School/Community Reports",
+        "phases": {
+          "opened": 497,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.1",
+        "title": "Community Schools and Expanded Learning Program Board Report",
+        "phases": {
+          "opened": 497,
+          "presentation": 567,
+          "publicComment": null,
+          "discussion": 3737,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "Approval of Consent Items",
+        "phases": {
+          "opened": 4922,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4946,
+            "type": "voice",
+            "result": "4-0 (Lawson absent)"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.2",
+        "title": "Approval of the February 28 Board Meeting Minutes",
+        "phases": {
+          "opened": 4922,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4946,
+            "type": "voice",
+            "result": "4-0 (Lawson absent)"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.3",
+        "title": "Approval of the March 6 Board Meeting Minutes",
+        "phases": {
+          "opened": 4922,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4946,
+            "type": "voice",
+            "result": "4-0 (Lawson absent)"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.4",
+        "title": "Approval of the Agreement between Redwood City School District and Aequor Healthcare Services for a SPED Teacher for the 2023-2024 School Year",
+        "phases": {
+          "opened": 4922,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4946,
+            "type": "voice",
+            "result": "4-0 (Lawson absent)"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.5",
+        "title": "Approval of E-Rate Bid Process for Redwood City School District WAN Service",
+        "phases": {
+          "opened": 6617,
+          "presentation": 6717,
+          "publicComment": null,
+          "discussion": 6660,
+          "vote": {
+            "seconds": 6904,
+            "type": "voice",
+            "result": "4-0 (Lawson absent)"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": true
+      },
+      {
+        "itemLabel": "10.6",
+        "title": "Approval of E-Rate Bid for Redwood City School District Bundled Internet Access",
+        "phases": {
+          "opened": 6617,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 6617,
+          "vote": {
+            "seconds": 6915,
+            "type": "voice",
+            "result": "4-0 (Lawson absent)"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": true
+      },
+      {
+        "itemLabel": "10.7",
+        "title": "Approval of the Redwood City School District Transportation Services Plan",
+        "phases": {
+          "opened": 4922,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4946,
+            "type": "voice",
+            "result": "4-0 (Lawson absent)"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.8",
+        "title": "Approval of the Agreement between Redwood City School District and PowerSchool Analytics",
+        "phases": {
+          "opened": 4922,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4946,
+            "type": "voice",
+            "result": "4-0 (Lawson absent)"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.9",
+        "title": "Approval of Amendment to the Interagency Agreement for Dietetics Programs",
+        "phases": {
+          "opened": 4922,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4946,
+            "type": "voice",
+            "result": "4-0 (Lawson absent)"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.10",
+        "title": "Approval of Amendment No. 3 for the agreement between the Redwood City School District and One Life Counseling for the 2023-2024 School Year",
+        "phases": {
+          "opened": 4922,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4946,
+            "type": "voice",
+            "result": "4-0 (Lawson absent)"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "Action Items",
+        "phases": {
+          "opened": 4951,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11.1",
+        "title": "Approval of the 2023-24 Second Interim Budget Report for RCSD",
+        "phases": {
+          "opened": 4951,
+          "presentation": 4971,
+          "publicComment": null,
+          "discussion": 6084,
+          "vote": {
+            "seconds": 6613,
+            "type": "voice",
+            "result": "4-0 (Lawson absent)"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12",
+        "title": "Board and Superintendent Reports",
+        "phases": {
+          "opened": 6937,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 6951,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 7118,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 7118,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14",
+        "title": "Other Business/Suggested Items For Future Agenda",
+        "phases": {
+          "opened": 7145,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 7145,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Board Meetings Calendar",
+        "phases": {
+          "opened": 7462,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 7462,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 7499,
+            "type": "voice",
+            "result": "4-0 (Lawson absent)"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "result": {
+    "videoId": "x3MWRn6GWFY",
+    "speakers": {
+      "A": {
+        "name": "Mike Wells",
+        "role": "Vice President, presiding"
+      },
+      "B": {
+        "name": "Evelyn Sanchez",
+        "role": "Executive Assistant to Superintendent / Board Secretary"
+      }
+    },
+    "agendaChanges": "Consent items 10.5 (E-Rate Bid Process for WAN Service) and 10.6 (E-Rate Bid for Bundled Internet Access) were pulled from the consent calendar and moved to action items, to be heard after Action Item 11.1. They were taken up in the order: 11.1, then 10.5, then 10.6.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order",
+        "phases": {
+          "opened": 6,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "1.1",
+        "title": "Roll Call",
+        "phases": {
+          "opened": 6,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Oral Communication on Closed Session Items Only",
+        "phases": {
+          "opened": 23,
+          "presentation": null,
+          "publicComment": 23,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Closed Session – 6:30 p.m.",
+        "phases": {
+          "opened": 23,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3.1",
+        "title": "RCTA Negotiations Update",
+        "phases": {
+          "opened": 23,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Reconvene to Regular Session at Approximately 7:00 p.m.",
+        "phases": {
+          "opened": 6,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4.1",
+        "title": "Roll Call",
+        "phases": {
+          "opened": 6,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4.2",
+        "title": "Report Out on Closed Session from March 20, 2024",
+        "phases": {
+          "opened": 23,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Welcome",
+        "phases": {
+          "opened": 23,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 255,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 289,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 324,
+            "type": "voice",
+            "result": "4-0 (Lawson absent)"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 326,
+          "presentation": null,
+          "publicComment": 337,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Chris Robell",
+            "startSeconds": 353,
+            "endSeconds": 497,
+            "summary": "Urged the board not to repeat past mistakes with bond money, specifically criticizing the early floating of $90 million in Measure S bonds at 4.2% interest with funds sitting unused for nine months, and requesting that future bonds use an auction process rather than a negotiated sale."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9",
+        "title": "School/Community Reports",
+        "phases": {
+          "opened": 497,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.1",
+        "title": "Community Schools and Expanded Learning Program Board Report",
+        "phases": {
+          "opened": 497,
+          "presentation": 567,
+          "publicComment": null,
+          "discussion": 3737,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "Approval of Consent Items",
+        "phases": {
+          "opened": 4922,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4946,
+            "type": "voice",
+            "result": "4-0 (Lawson absent)"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.2",
+        "title": "Approval of the February 28 Board Meeting Minutes",
+        "phases": {
+          "opened": 4922,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4946,
+            "type": "voice",
+            "result": "4-0 (Lawson absent)"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.3",
+        "title": "Approval of the March 6 Board Meeting Minutes",
+        "phases": {
+          "opened": 4922,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4946,
+            "type": "voice",
+            "result": "4-0 (Lawson absent)"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.4",
+        "title": "Approval of the Agreement between Redwood City School District and Aequor Healthcare Services for a SPED Teacher for the 2023-2024 School Year",
+        "phases": {
+          "opened": 4922,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4946,
+            "type": "voice",
+            "result": "4-0 (Lawson absent)"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.5",
+        "title": "Approval of E-Rate Bid Process for Redwood City School District WAN Service",
+        "phases": {
+          "opened": 6617,
+          "presentation": 6717,
+          "publicComment": null,
+          "discussion": 6660,
+          "vote": {
+            "seconds": 6904,
+            "type": "voice",
+            "result": "4-0 (Lawson absent)"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": true
+      },
+      {
+        "itemLabel": "10.6",
+        "title": "Approval of E-Rate Bid for Redwood City School District Bundled Internet Access",
+        "phases": {
+          "opened": 6617,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 6617,
+          "vote": {
+            "seconds": 6915,
+            "type": "voice",
+            "result": "4-0 (Lawson absent)"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": true
+      },
+      {
+        "itemLabel": "10.7",
+        "title": "Approval of the Redwood City School District Transportation Services Plan",
+        "phases": {
+          "opened": 4922,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4946,
+            "type": "voice",
+            "result": "4-0 (Lawson absent)"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.8",
+        "title": "Approval of the Agreement between Redwood City School District and PowerSchool Analytics",
+        "phases": {
+          "opened": 4922,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4946,
+            "type": "voice",
+            "result": "4-0 (Lawson absent)"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.9",
+        "title": "Approval of Amendment to the Interagency Agreement for Dietetics Programs",
+        "phases": {
+          "opened": 4922,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4946,
+            "type": "voice",
+            "result": "4-0 (Lawson absent)"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.10",
+        "title": "Approval of Amendment No. 3 for the agreement between the Redwood City School District and One Life Counseling for the 2023-2024 School Year",
+        "phases": {
+          "opened": 4922,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4946,
+            "type": "voice",
+            "result": "4-0 (Lawson absent)"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "Action Items",
+        "phases": {
+          "opened": 4951,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11.1",
+        "title": "Approval of the 2023-24 Second Interim Budget Report for RCSD",
+        "phases": {
+          "opened": 4951,
+          "presentation": 4971,
+          "publicComment": null,
+          "discussion": 6084,
+          "vote": {
+            "seconds": 6613,
+            "type": "voice",
+            "result": "4-0 (Lawson absent)"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12",
+        "title": "Board and Superintendent Reports",
+        "phases": {
+          "opened": 6937,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 6951,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 7118,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 7118,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14",
+        "title": "Other Business/Suggested Items For Future Agenda",
+        "phases": {
+          "opened": 7145,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 7145,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Board Meetings Calendar",
+        "phases": {
+          "opened": 7462,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 7462,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 7499,
+            "type": "voice",
+            "result": "4-0 (Lawson absent)"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "cachedAt": "2026-03-15T17:36:32.392Z",
+  "inputTokens": 30564,
+  "outputTokens": 3769
+}

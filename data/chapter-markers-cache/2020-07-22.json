@@ -1,0 +1,884 @@
+{
+  "date": "2020-07-22",
+  "itemCount": 28,
+  "llmResponse": {
+    "speakers": {
+      "A": {
+        "name": "Janet Lawson",
+        "role": "Board President"
+      },
+      "B": {
+        "name": "Dennis McBride",
+        "role": "Board Trustee (later identified as Vice President in agenda, but serves as trustee here)"
+      },
+      "C": {
+        "name": "Cecilia I. Márquez",
+        "role": "Board Trustee / Roll Call Reader"
+      },
+      "D": {
+        "name": "María Díaz-Slocum",
+        "role": "Board Trustee"
+      },
+      "E": {
+        "name": "Alisa MacAvoy",
+        "role": "Board Clerk / Vice President"
+      },
+      "F": {
+        "name": "Zach Worthen",
+        "role": "Consultant, Decision Insight"
+      },
+      "G": {
+        "name": "John Langbein",
+        "role": "Public speaker / community member"
+      },
+      "H": {
+        "name": "Dr. Baker",
+        "role": "Superintendent"
+      },
+      "I": {
+        "name": "Liz Wolf",
+        "role": "District Staff / Instructional Leader"
+      }
+    },
+    "agendaChanges": "Item 10.1 (Approval of Measure U Application for 2020-21, Connect Community Charter School) was pulled from the consent calendar by President Lawson and not acted upon at this meeting. The agenda was otherwise approved as amended. Sections 1-4 (Call to Order, Roll Call, Closed Session, Reconvene) occurred at the start of the recording without separate introduction; the recording appears to begin at or after reconvening to regular session. Items proceeded in agenda order after the changes were noted.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order / Roll Call",
+        "phases": {
+          "opened": 13,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Oral Communication on Closed Session Items Only",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Closed Session",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Reconvene to Regular Session / Roll Call / Report Out on Closed Session",
+        "phases": {
+          "opened": 13,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Welcome by the School Board President / Pledge of Allegiance",
+        "phases": {
+          "opened": 29,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 29,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Approval of Agenda (Action Required)",
+        "phases": {
+          "opened": 129,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 141,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 164,
+          "presentation": null,
+          "publicComment": 164,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "John Langbein",
+            "startSeconds": 244,
+            "endSeconds": 431,
+            "summary": "Requested the district allow bicycle and pedestrian access through Selby Lane School grounds, which had been blocked by chain-link fencing since the shelter-in-place order, arguing the route is a vital and safe passage for the neighborhood."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9",
+        "title": "Second Public Hearing: Neighborhood Schools Attendance Boundary Change Study",
+        "phases": {
+          "opened": 443,
+          "presentation": 531,
+          "publicComment": 1804,
+          "discussion": 1389,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Matt Collier",
+            "startSeconds": 1818,
+            "endSeconds": 1883,
+            "summary": "Requested that the board restore the Roy Cloud boundary to include both sides of Alameda de las Pulgas on a two-block section near Jefferson, as Scenario 3 moved his home to the Clifford zone, splitting siblings."
+          },
+          {
+            "name": "William Paxton",
+            "startSeconds": 1966,
+            "endSeconds": 2035,
+            "summary": "Expressed support for Scenario 3 and thanked the board and consultants, noting that the Kentwood/Atherwood neighborhood lacks a pedestrian-friendly path to Garfield and is better served by Henry Ford."
+          },
+          {
+            "name": "Anna Fonseca Janoff",
+            "startSeconds": 2056,
+            "endSeconds": 2126,
+            "summary": "Asked whether the goal of redistricting is to move away from neighborhood schools toward larger comprehensive campuses and whether any scenario would bring back families currently attending charter or private schools, also questioning how Roy Cloud's low socioeconomic diversity would be addressed through school of choice."
+          },
+          {
+            "name": "Michael Bergeron",
+            "startSeconds": 2188,
+            "endSeconds": 2306,
+            "summary": "Advocated for assigning Woodside Hills to Roy Cloud, arguing it would encourage private school families to return to public school and that community feedback supporting this change was not reflected in Scenario 3."
+          },
+          {
+            "name": "Brian Varese",
+            "startSeconds": 2321,
+            "endSeconds": 2426,
+            "summary": "Expressed preference for Scenario 2, questioned whether the school of choice lottery promotes diversity intentionally, and asked the board to address schools approaching 80% capacity in Scenarios 1 and 3."
+          },
+          {
+            "name": "Selena Holder",
+            "startSeconds": 2449,
+            "endSeconds": 2519,
+            "summary": "Supported Scenario 2, arguing that leaving Roy Cloud unchanged wastes its capacity and reputation, and that rezoning the Selby Lane neighborhood to Roy Cloud would bring private school families back to public school and improve diversity."
+          },
+          {
+            "name": "Keely Vega",
+            "startSeconds": 2542,
+            "endSeconds": 2663,
+            "summary": "Strongly supported Scenario 2, arguing that relying on a school of choice lottery to achieve diversity is superficial, that walkability should not be a guiding criterion, and that the board should explain how it plans to weigh the community survey results showing 88% support for Scenario 2."
+          },
+          {
+            "name": "Patricia Boers",
+            "startSeconds": 2685,
+            "endSeconds": 2811,
+            "summary": "Supported Scenario 2 or a tweak to Scenario 3 to include Woodside Hills in Roy Cloud, noting her family's isolation in the neighborhood, a desire for a K-8 community school, and that Woodside Hills has ethnic diversity that would benefit Roy Cloud."
+          },
+          {
+            "name": "Colleen Voss",
+            "startSeconds": 2843,
+            "endSeconds": 2892,
+            "summary": "Co-signed the Selby Lane community letter supporting Scenario 2 and questioned why Scenario 3, described as the community input scenario, largely followed Scenario 1 and left Roy Cloud unchanged despite 88% survey support for Scenario 2."
+          },
+          {
+            "name": "Frank Hannig",
+            "startSeconds": 2903,
+            "endSeconds": 3001,
+            "summary": "Supported Scenario 2 or a minor tweak to Scenario 3 to include Woodside Hills in Roy Cloud, arguing that geographic barriers make Henry Ford less accessible and that the change would encourage families to move from private to public school."
+          },
+          {
+            "name": "David Eichler",
+            "startSeconds": 3021,
+            "endSeconds": 3108,
+            "summary": "Supported Scenario 2, arguing it provides the most balance for the district and that a K-8 school like Roy Cloud would foster a stronger sense of community in Woodside Hills, encouraging families to leave private schools."
+          },
+          {
+            "name": "Lindsay Temple",
+            "startSeconds": 3125,
+            "endSeconds": 3194,
+            "summary": "Supported Scenario 2 or a tweak to Scenario 3 assigning Woodside Hills to Roy Cloud, stating it would help build a sub-community and that the strong survey support for Scenario 2 should be honored."
+          },
+          {
+            "name": "Abraham Fraley",
+            "startSeconds": 3290,
+            "endSeconds": 3407,
+            "summary": "Supported Scenario 2, citing safety concerns about crossing a state highway to reach Henry Ford, the need for demographic continuity with the Roy Cloud census area, and expressing frustration that school of choice is being prioritized over rezoned neighborhoods."
+          },
+          {
+            "name": "Lisa Carr",
+            "startSeconds": 3430,
+            "endSeconds": 3506,
+            "summary": "Supported Scenario 2 or a Scenario 3 tweak including Woodside Hills in Roy Cloud, noting the neighborhood's approximately 30 children do not attend public school and that the community financially supports Redwood City schools."
+          },
+          {
+            "name": "Katha Hall",
+            "startSeconds": 3535,
+            "endSeconds": 3599,
+            "summary": "Supported Scenario 2 as it would create community for Woodside Hills children, noted the neighborhood has ethnic diversity, and argued the board should respect the 88% survey support for Scenario 2."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "Consent Items (Action Required) — as amended (10.1 pulled)",
+        "phases": {
+          "opened": 4930,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4951,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.1",
+        "title": "Approval of Measure U Application for 2020-21, Connect Community Charter School (PULLED)",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": true
+      },
+      {
+        "itemLabel": "11",
+        "title": "Action Items — 11.1: Adoption of Roadmap to Reopening / My School Plan",
+        "phases": {
+          "opened": 4965,
+          "presentation": 4973,
+          "publicComment": 6506,
+          "discussion": 7731,
+          "vote": {
+            "seconds": 9129,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [
+          {
+            "name": "Kathryn Stewart",
+            "startSeconds": 6585,
+            "endSeconds": 6678,
+            "summary": "Asked for specific details on how many hours per day Mandarin immersion instruction would occur live in Mandarin, and cautioned against informal play dates as a substitute for school given ongoing transmission risks."
+          },
+          {
+            "name": "Brian Cagle",
+            "startSeconds": 6700,
+            "endSeconds": 6765,
+            "summary": "Advocated for continuing PE instruction during distance learning, noting students' need for physical activity, and cautioned that outdoor learning would face significant challenges from heat, cold, and wet conditions."
+          },
+          {
+            "name": "Christy Herrera",
+            "startSeconds": 6783,
+            "endSeconds": 6899,
+            "summary": "Called for testing and contact tracing before campus return, asked that teachers have the option to teach from home or classroom, and recommended waiting at least 14 days after holiday gatherings before any return to campus."
+          },
+          {
+            "name": "Michelle Torito",
+            "startSeconds": 6909,
+            "endSeconds": 6999,
+            "summary": "Supported the distance learning decision as the safest choice and asked the board to consider postponing any school reopening until at least January 19, at least 14 days after winter break, to avoid holiday gathering-related spikes."
+          },
+          {
+            "name": "Sandy Hoover",
+            "startSeconds": 7010,
+            "endSeconds": 7091,
+            "summary": "Emphasized that testing, tracking, and tracing protocols must be in place before any return to campus, and expressed hope to meet her TK students in person at some point during the year."
+          },
+          {
+            "name": "Jamie Guiana",
+            "startSeconds": 7103,
+            "endSeconds": 7146,
+            "summary": "Echoed support for including PE in the distance learning curriculum, arguing that physical activity is essential for students' cardiovascular, social, and mental health during a sedentary distance learning period."
+          },
+          {
+            "name": "Julia Feng",
+            "startSeconds": 7156,
+            "endSeconds": 7288,
+            "summary": "Thanked the board and staff for considering special needs students in planning, and asked what tools and strategies would be available to help parents support the youngest learners who may struggle to engage with distance learning on screens."
+          },
+          {
+            "name": "Kayla Kamley",
+            "startSeconds": 7300,
+            "endSeconds": 7406,
+            "summary": "As a first grade teacher, urged the district to distribute technology and hotspots to families early, provide physical books for younger grades, supply basic school materials, and communicate class assignments and daily schedules to families ahead of the school start."
+          },
+          {
+            "name": "Sarah La Torre",
+            "startSeconds": 7410,
+            "endSeconds": 7454,
+            "summary": "Proposed that the district adopt a model similar to the public library's art program — providing take-home supply kits — to support GATE enrichment during distance learning and maintain a sense of normalcy for students."
+          },
+          {
+            "name": "Michelle Smith",
+            "startSeconds": 7479,
+            "endSeconds": 7598,
+            "summary": "Asked when child care options would be made available to families, requested that highest-need students be prioritized in child care placements, advocated for providing home supply kits and early technology distribution to avoid loss of instructional time."
+          },
+          {
+            "name": "Teresita Carlos",
+            "startSeconds": 7613,
+            "endSeconds": 7730,
+            "summary": "Thanked the board and staff, shared her personal decision to keep her child home through the winter break to limit exposure, and praised Henry Ford teachers for their excellent and multifaceted distance learning during the spring."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "Action Items — 11.2: Recommendation for Review and Approval of the 2020 Uniform Complaint Procedures Meeting Federal Requirements",
+        "phases": {
+          "opened": 9152,
+          "presentation": 9176,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 9194,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12",
+        "title": "Information — 12.1: Quarterly Williams Report, 4th Quarter, April 1, 2020 through June 30, 2020",
+        "phases": {
+          "opened": 9209,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 9209,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 9232,
+            "type": "voice",
+            "result": "unanimous"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "result": {
+    "videoId": "Vys9u89usRk",
+    "speakers": {
+      "A": {
+        "name": "Janet Lawson",
+        "role": "Board President"
+      },
+      "B": {
+        "name": "Dennis McBride",
+        "role": "Board Trustee (later identified as Vice President in agenda, but serves as trustee here)"
+      },
+      "C": {
+        "name": "Cecilia I. Márquez",
+        "role": "Board Trustee / Roll Call Reader"
+      },
+      "D": {
+        "name": "María Díaz-Slocum",
+        "role": "Board Trustee"
+      },
+      "E": {
+        "name": "Alisa MacAvoy",
+        "role": "Board Clerk / Vice President"
+      },
+      "F": {
+        "name": "Zach Worthen",
+        "role": "Consultant, Decision Insight"
+      },
+      "G": {
+        "name": "John Langbein",
+        "role": "Public speaker / community member"
+      },
+      "H": {
+        "name": "Dr. Baker",
+        "role": "Superintendent"
+      },
+      "I": {
+        "name": "Liz Wolf",
+        "role": "District Staff / Instructional Leader"
+      }
+    },
+    "agendaChanges": "Item 10.1 (Approval of Measure U Application for 2020-21, Connect Community Charter School) was pulled from the consent calendar by President Lawson and not acted upon at this meeting. The agenda was otherwise approved as amended. Sections 1-4 (Call to Order, Roll Call, Closed Session, Reconvene) occurred at the start of the recording without separate introduction; the recording appears to begin at or after reconvening to regular session. Items proceeded in agenda order after the changes were noted.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order / Roll Call",
+        "phases": {
+          "opened": 13,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Oral Communication on Closed Session Items Only",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Closed Session",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Reconvene to Regular Session / Roll Call / Report Out on Closed Session",
+        "phases": {
+          "opened": 13,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Welcome by the School Board President / Pledge of Allegiance",
+        "phases": {
+          "opened": 29,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 29,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Approval of Agenda (Action Required)",
+        "phases": {
+          "opened": 129,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 141,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 164,
+          "presentation": null,
+          "publicComment": 164,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "John Langbein",
+            "startSeconds": 244,
+            "endSeconds": 431,
+            "summary": "Requested the district allow bicycle and pedestrian access through Selby Lane School grounds, which had been blocked by chain-link fencing since the shelter-in-place order, arguing the route is a vital and safe passage for the neighborhood."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9",
+        "title": "Second Public Hearing: Neighborhood Schools Attendance Boundary Change Study",
+        "phases": {
+          "opened": 443,
+          "presentation": 531,
+          "publicComment": 1804,
+          "discussion": 1389,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Matt Collier",
+            "startSeconds": 1818,
+            "endSeconds": 1883,
+            "summary": "Requested that the board restore the Roy Cloud boundary to include both sides of Alameda de las Pulgas on a two-block section near Jefferson, as Scenario 3 moved his home to the Clifford zone, splitting siblings."
+          },
+          {
+            "name": "William Paxton",
+            "startSeconds": 1966,
+            "endSeconds": 2035,
+            "summary": "Expressed support for Scenario 3 and thanked the board and consultants, noting that the Kentwood/Atherwood neighborhood lacks a pedestrian-friendly path to Garfield and is better served by Henry Ford."
+          },
+          {
+            "name": "Anna Fonseca Janoff",
+            "startSeconds": 2056,
+            "endSeconds": 2126,
+            "summary": "Asked whether the goal of redistricting is to move away from neighborhood schools toward larger comprehensive campuses and whether any scenario would bring back families currently attending charter or private schools, also questioning how Roy Cloud's low socioeconomic diversity would be addressed through school of choice."
+          },
+          {
+            "name": "Michael Bergeron",
+            "startSeconds": 2188,
+            "endSeconds": 2306,
+            "summary": "Advocated for assigning Woodside Hills to Roy Cloud, arguing it would encourage private school families to return to public school and that community feedback supporting this change was not reflected in Scenario 3."
+          },
+          {
+            "name": "Brian Varese",
+            "startSeconds": 2321,
+            "endSeconds": 2426,
+            "summary": "Expressed preference for Scenario 2, questioned whether the school of choice lottery promotes diversity intentionally, and asked the board to address schools approaching 80% capacity in Scenarios 1 and 3."
+          },
+          {
+            "name": "Selena Holder",
+            "startSeconds": 2449,
+            "endSeconds": 2519,
+            "summary": "Supported Scenario 2, arguing that leaving Roy Cloud unchanged wastes its capacity and reputation, and that rezoning the Selby Lane neighborhood to Roy Cloud would bring private school families back to public school and improve diversity."
+          },
+          {
+            "name": "Keely Vega",
+            "startSeconds": 2542,
+            "endSeconds": 2663,
+            "summary": "Strongly supported Scenario 2, arguing that relying on a school of choice lottery to achieve diversity is superficial, that walkability should not be a guiding criterion, and that the board should explain how it plans to weigh the community survey results showing 88% support for Scenario 2."
+          },
+          {
+            "name": "Patricia Boers",
+            "startSeconds": 2685,
+            "endSeconds": 2811,
+            "summary": "Supported Scenario 2 or a tweak to Scenario 3 to include Woodside Hills in Roy Cloud, noting her family's isolation in the neighborhood, a desire for a K-8 community school, and that Woodside Hills has ethnic diversity that would benefit Roy Cloud."
+          },
+          {
+            "name": "Colleen Voss",
+            "startSeconds": 2843,
+            "endSeconds": 2892,
+            "summary": "Co-signed the Selby Lane community letter supporting Scenario 2 and questioned why Scenario 3, described as the community input scenario, largely followed Scenario 1 and left Roy Cloud unchanged despite 88% survey support for Scenario 2."
+          },
+          {
+            "name": "Frank Hannig",
+            "startSeconds": 2903,
+            "endSeconds": 3001,
+            "summary": "Supported Scenario 2 or a minor tweak to Scenario 3 to include Woodside Hills in Roy Cloud, arguing that geographic barriers make Henry Ford less accessible and that the change would encourage families to move from private to public school."
+          },
+          {
+            "name": "David Eichler",
+            "startSeconds": 3021,
+            "endSeconds": 3108,
+            "summary": "Supported Scenario 2, arguing it provides the most balance for the district and that a K-8 school like Roy Cloud would foster a stronger sense of community in Woodside Hills, encouraging families to leave private schools."
+          },
+          {
+            "name": "Lindsay Temple",
+            "startSeconds": 3125,
+            "endSeconds": 3194,
+            "summary": "Supported Scenario 2 or a tweak to Scenario 3 assigning Woodside Hills to Roy Cloud, stating it would help build a sub-community and that the strong survey support for Scenario 2 should be honored."
+          },
+          {
+            "name": "Abraham Fraley",
+            "startSeconds": 3290,
+            "endSeconds": 3407,
+            "summary": "Supported Scenario 2, citing safety concerns about crossing a state highway to reach Henry Ford, the need for demographic continuity with the Roy Cloud census area, and expressing frustration that school of choice is being prioritized over rezoned neighborhoods."
+          },
+          {
+            "name": "Lisa Carr",
+            "startSeconds": 3430,
+            "endSeconds": 3506,
+            "summary": "Supported Scenario 2 or a Scenario 3 tweak including Woodside Hills in Roy Cloud, noting the neighborhood's approximately 30 children do not attend public school and that the community financially supports Redwood City schools."
+          },
+          {
+            "name": "Katha Hall",
+            "startSeconds": 3535,
+            "endSeconds": 3599,
+            "summary": "Supported Scenario 2 as it would create community for Woodside Hills children, noted the neighborhood has ethnic diversity, and argued the board should respect the 88% survey support for Scenario 2."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "Consent Items (Action Required) — as amended (10.1 pulled)",
+        "phases": {
+          "opened": 4930,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4951,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.1",
+        "title": "Approval of Measure U Application for 2020-21, Connect Community Charter School (PULLED)",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": true
+      },
+      {
+        "itemLabel": "11",
+        "title": "Action Items — 11.1: Adoption of Roadmap to Reopening / My School Plan",
+        "phases": {
+          "opened": 4965,
+          "presentation": 4973,
+          "publicComment": 6506,
+          "discussion": 7731,
+          "vote": {
+            "seconds": 9129,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [
+          {
+            "name": "Kathryn Stewart",
+            "startSeconds": 6585,
+            "endSeconds": 6678,
+            "summary": "Asked for specific details on how many hours per day Mandarin immersion instruction would occur live in Mandarin, and cautioned against informal play dates as a substitute for school given ongoing transmission risks."
+          },
+          {
+            "name": "Brian Cagle",
+            "startSeconds": 6700,
+            "endSeconds": 6765,
+            "summary": "Advocated for continuing PE instruction during distance learning, noting students' need for physical activity, and cautioned that outdoor learning would face significant challenges from heat, cold, and wet conditions."
+          },
+          {
+            "name": "Christy Herrera",
+            "startSeconds": 6783,
+            "endSeconds": 6899,
+            "summary": "Called for testing and contact tracing before campus return, asked that teachers have the option to teach from home or classroom, and recommended waiting at least 14 days after holiday gatherings before any return to campus."
+          },
+          {
+            "name": "Michelle Torito",
+            "startSeconds": 6909,
+            "endSeconds": 6999,
+            "summary": "Supported the distance learning decision as the safest choice and asked the board to consider postponing any school reopening until at least January 19, at least 14 days after winter break, to avoid holiday gathering-related spikes."
+          },
+          {
+            "name": "Sandy Hoover",
+            "startSeconds": 7010,
+            "endSeconds": 7091,
+            "summary": "Emphasized that testing, tracking, and tracing protocols must be in place before any return to campus, and expressed hope to meet her TK students in person at some point during the year."
+          },
+          {
+            "name": "Jamie Guiana",
+            "startSeconds": 7103,
+            "endSeconds": 7146,
+            "summary": "Echoed support for including PE in the distance learning curriculum, arguing that physical activity is essential for students' cardiovascular, social, and mental health during a sedentary distance learning period."
+          },
+          {
+            "name": "Julia Feng",
+            "startSeconds": 7156,
+            "endSeconds": 7288,
+            "summary": "Thanked the board and staff for considering special needs students in planning, and asked what tools and strategies would be available to help parents support the youngest learners who may struggle to engage with distance learning on screens."
+          },
+          {
+            "name": "Kayla Kamley",
+            "startSeconds": 7300,
+            "endSeconds": 7406,
+            "summary": "As a first grade teacher, urged the district to distribute technology and hotspots to families early, provide physical books for younger grades, supply basic school materials, and communicate class assignments and daily schedules to families ahead of the school start."
+          },
+          {
+            "name": "Sarah La Torre",
+            "startSeconds": 7410,
+            "endSeconds": 7454,
+            "summary": "Proposed that the district adopt a model similar to the public library's art program — providing take-home supply kits — to support GATE enrichment during distance learning and maintain a sense of normalcy for students."
+          },
+          {
+            "name": "Michelle Smith",
+            "startSeconds": 7479,
+            "endSeconds": 7598,
+            "summary": "Asked when child care options would be made available to families, requested that highest-need students be prioritized in child care placements, advocated for providing home supply kits and early technology distribution to avoid loss of instructional time."
+          },
+          {
+            "name": "Teresita Carlos",
+            "startSeconds": 7613,
+            "endSeconds": 7730,
+            "summary": "Thanked the board and staff, shared her personal decision to keep her child home through the winter break to limit exposure, and praised Henry Ford teachers for their excellent and multifaceted distance learning during the spring."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "Action Items — 11.2: Recommendation for Review and Approval of the 2020 Uniform Complaint Procedures Meeting Federal Requirements",
+        "phases": {
+          "opened": 9152,
+          "presentation": 9176,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 9194,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12",
+        "title": "Information — 12.1: Quarterly Williams Report, 4th Quarter, April 1, 2020 through June 30, 2020",
+        "phases": {
+          "opened": 9209,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 9209,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 9232,
+            "type": "voice",
+            "result": "unanimous"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "cachedAt": "2026-03-15T18:42:21.525Z",
+  "inputTokens": 36784,
+  "outputTokens": 4536
+}

@@ -1,0 +1,310 @@
+{
+  "date": "2021-05-07",
+  "itemCount": 15,
+  "llmResponse": {
+    "speakers": {
+      "A": {
+        "name": "Linda Montez",
+        "role": "Facilitator/Staff (Dr. Montez)"
+      },
+      "B": {
+        "name": "Alisa MacAvoy",
+        "role": "Board President (listed as Vice President on agenda)"
+      },
+      "C": {
+        "name": "María Díaz-Slocum",
+        "role": "Clerk"
+      },
+      "D": {
+        "name": "Janet Lawson",
+        "role": "Trustee (listed as President on agenda)"
+      },
+      "E": {
+        "name": "Cecilia I. Márquez",
+        "role": "Trustee"
+      },
+      "F": {
+        "name": "Mike Wells",
+        "role": "Trustee"
+      },
+      "G": {
+        "name": "Dr. Baker",
+        "role": "Superintendent"
+      }
+    },
+    "agendaChanges": null,
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order / Roll Call",
+        "phases": {
+          "opened": 1,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Welcome by the School Board President",
+        "phases": {
+          "opened": 17,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 17,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 17,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 48,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 58,
+          "presentation": null,
+          "publicComment": 58,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Review of RCSD's Beliefs/Values, Mission, and Vision",
+        "phases": {
+          "opened": 74,
+          "presentation": 100,
+          "publicComment": null,
+          "discussion": 342,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Superintendent's Evaluation (Closed to the Public)",
+        "phases": {
+          "opened": 5131,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8",
+        "title": "Adjourn the Meeting",
+        "phases": {
+          "opened": 5131,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "result": {
+    "videoId": "g9pnDfzRjuc",
+    "speakers": {
+      "A": {
+        "name": "Linda Montez",
+        "role": "Facilitator/Staff (Dr. Montez)"
+      },
+      "B": {
+        "name": "Alisa MacAvoy",
+        "role": "Board President (listed as Vice President on agenda)"
+      },
+      "C": {
+        "name": "María Díaz-Slocum",
+        "role": "Clerk"
+      },
+      "D": {
+        "name": "Janet Lawson",
+        "role": "Trustee (listed as President on agenda)"
+      },
+      "E": {
+        "name": "Cecilia I. Márquez",
+        "role": "Trustee"
+      },
+      "F": {
+        "name": "Mike Wells",
+        "role": "Trustee"
+      },
+      "G": {
+        "name": "Dr. Baker",
+        "role": "Superintendent"
+      }
+    },
+    "agendaChanges": null,
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order / Roll Call",
+        "phases": {
+          "opened": 1,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Welcome by the School Board President",
+        "phases": {
+          "opened": 17,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 17,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 17,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 48,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 58,
+          "presentation": null,
+          "publicComment": 58,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Review of RCSD's Beliefs/Values, Mission, and Vision",
+        "phases": {
+          "opened": 74,
+          "presentation": 100,
+          "publicComment": null,
+          "discussion": 342,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Superintendent's Evaluation (Closed to the Public)",
+        "phases": {
+          "opened": 5131,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8",
+        "title": "Adjourn the Meeting",
+        "phases": {
+          "opened": 5131,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "cachedAt": "2026-03-15T18:26:03.526Z",
+  "inputTokens": 19371,
+  "outputTokens": 1586
+}

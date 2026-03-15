@@ -1,0 +1,1070 @@
+{
+  "date": "2023-08-09",
+  "itemCount": 71,
+  "llmResponse": {
+    "speakers": {
+      "A": {
+        "name": "Staff/Clerk",
+        "role": "conducting roll call"
+      },
+      "B": {
+        "name": "Mike Wells",
+        "role": "Trustee"
+      },
+      "C": {
+        "name": "Alisa MacAvoy",
+        "role": "Trustee"
+      },
+      "D": {
+        "name": "Janet Lawson",
+        "role": "Clerk"
+      },
+      "E": {
+        "name": "Cecilia I. Márquez",
+        "role": "Vice President (acting as President per agenda)"
+      },
+      "F": {
+        "name": "John Baker",
+        "role": "Superintendent"
+      },
+      "G": {
+        "name": "David Weekley",
+        "role": "Trustee (ASR: 'Trustee Weekley')"
+      },
+      "H": {
+        "name": "Elena Livina",
+        "role": "SEPTAR President"
+      },
+      "I": {
+        "name": "Wendy Kelly",
+        "role": "Assistant Superintendent, Human Resources"
+      },
+      "J": {
+        "name": "Michelle Gillardi",
+        "role": "SEPTAR Secretary"
+      }
+    },
+    "agendaChanges": "Item 9.3 (Approval of Proposal for Server Upgrade and Database Migration Services for New Energy Management System with Siemens) was pulled from the Bond Program Consent Items and deferred to a future meeting. Item 11.1 (Recognize Staff Longevity) was briefly considered for resequencing to earlier in the meeting but ultimately left in its original position. Item 12 (Discussion of School Assignments and Committee Assignments) was tabled until Trustee MacAvoy (absent) could be present.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order",
+        "phases": {
+          "opened": 7,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "1",
+        "title": "Roll Call (Closed Session)",
+        "phases": {
+          "opened": 7,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Oral Communication on Closed Session Items Only",
+        "phases": {
+          "opened": 7,
+          "presentation": null,
+          "publicComment": 7,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Closed Session — Conference with Legal Counsel: Robell v. Church",
+        "phases": {
+          "opened": 7,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Reconvene to Regular Session — Roll Call and Report Out on Closed Session",
+        "phases": {
+          "opened": 7,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Welcome by the School Board President",
+        "phases": {
+          "opened": 15,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 120,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 122,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 167,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 167,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 167,
+          "presentation": null,
+          "publicComment": 167,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9",
+        "title": "Bond Program Consent Items — Approval of Measure T Bond Program Tracking List and Siemens EMS Proposal (9.3 pulled)",
+        "phases": {
+          "opened": 167,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 198,
+            "type": "voice",
+            "result": "approved (9.3 pulled/deferred)"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "Bond Program Action Items",
+        "phases": {
+          "opened": 203,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.1",
+        "title": "Approval of Final Plan Review Invoice with DSA for Garfield Community School",
+        "phases": {
+          "opened": 203,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 218,
+          "vote": {
+            "seconds": 228,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.2",
+        "title": "Approval of Measure T and Measure S Bond Program Legal Services Agreement with DWK",
+        "phases": {
+          "opened": 231,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 243,
+          "vote": {
+            "seconds": 259,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "School/Community Reports",
+        "phases": {
+          "opened": 263,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11.1",
+        "title": "Recognize Staff Who Have Reached a Longevity Milestone with the District",
+        "phases": {
+          "opened": 263,
+          "presentation": 278,
+          "publicComment": null,
+          "discussion": 345,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11.2",
+        "title": "Measure T Bond Program Update",
+        "phases": {
+          "opened": 420,
+          "presentation": 464,
+          "publicComment": null,
+          "discussion": 749,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11.3",
+        "title": "Post Issuance Presentation, 2023 General Obligation Bonds, Election of 2022 (Measure S), Series A — KNN Public Finance",
+        "phases": {
+          "opened": 785,
+          "presentation": 883,
+          "publicComment": null,
+          "discussion": 1380,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11.4",
+        "title": "SEPTAR and Special Education Joint Presentation to the Board",
+        "phases": {
+          "opened": 1478,
+          "presentation": 1501,
+          "publicComment": null,
+          "discussion": 2361,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12",
+        "title": "Discussion of School Assignments and Committee Assignments for Board Members for the 2023-24 School Year",
+        "phases": {
+          "opened": 4404,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 4417,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "Consent Items",
+        "phases": {
+          "opened": 4472,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4487,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14",
+        "title": "Action Items",
+        "phases": {
+          "opened": 4487,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.1",
+        "title": "Adoption of Resolution No. 1 — Approval of Education Code Options for Teaching Assignments",
+        "phases": {
+          "opened": 4487,
+          "presentation": 4503,
+          "publicComment": null,
+          "discussion": 4553,
+          "vote": {
+            "seconds": 4578,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.2",
+        "title": "Adoption of Resolution No. 2 — Approval of Teachers Gaining Tenured Status",
+        "phases": {
+          "opened": 4582,
+          "presentation": 4595,
+          "publicComment": null,
+          "discussion": 4671,
+          "vote": {
+            "seconds": 4705,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.3",
+        "title": "Adoption of Resolution No. 3 — Sufficiency of Instructional Materials",
+        "phases": {
+          "opened": 4705,
+          "presentation": 4714,
+          "publicComment": null,
+          "discussion": 4748,
+          "vote": {
+            "seconds": 4757,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Board and Superintendent Reports",
+        "phases": {
+          "opened": 4757,
+          "presentation": 4775,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16",
+        "title": "Information",
+        "phases": {
+          "opened": 4941,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16.1",
+        "title": "Quarterly Williams Report, 4th Quarter, April 2023 through June 2023",
+        "phases": {
+          "opened": 4941,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 4953,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16.2",
+        "title": "Information on San Mateo County Investment Fund — June 2023",
+        "phases": {
+          "opened": 4966,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "17",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 4982,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 4989,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "18",
+        "title": "Other Business / Suggested Items for Future Agenda",
+        "phases": {
+          "opened": 5025,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "19",
+        "title": "Board Meetings Calendar",
+        "phases": {
+          "opened": 5025,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "20",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 5030,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 5040,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "result": {
+    "videoId": "x1cww9mf14Q",
+    "speakers": {
+      "A": {
+        "name": "Staff/Clerk",
+        "role": "conducting roll call"
+      },
+      "B": {
+        "name": "Mike Wells",
+        "role": "Trustee"
+      },
+      "C": {
+        "name": "Alisa MacAvoy",
+        "role": "Trustee"
+      },
+      "D": {
+        "name": "Janet Lawson",
+        "role": "Clerk"
+      },
+      "E": {
+        "name": "Cecilia I. Márquez",
+        "role": "Vice President (acting as President per agenda)"
+      },
+      "F": {
+        "name": "John Baker",
+        "role": "Superintendent"
+      },
+      "G": {
+        "name": "David Weekley",
+        "role": "Trustee (ASR: 'Trustee Weekley')"
+      },
+      "H": {
+        "name": "Elena Livina",
+        "role": "SEPTAR President"
+      },
+      "I": {
+        "name": "Wendy Kelly",
+        "role": "Assistant Superintendent, Human Resources"
+      },
+      "J": {
+        "name": "Michelle Gillardi",
+        "role": "SEPTAR Secretary"
+      }
+    },
+    "agendaChanges": "Item 9.3 (Approval of Proposal for Server Upgrade and Database Migration Services for New Energy Management System with Siemens) was pulled from the Bond Program Consent Items and deferred to a future meeting. Item 11.1 (Recognize Staff Longevity) was briefly considered for resequencing to earlier in the meeting but ultimately left in its original position. Item 12 (Discussion of School Assignments and Committee Assignments) was tabled until Trustee MacAvoy (absent) could be present.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order",
+        "phases": {
+          "opened": 7,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "1",
+        "title": "Roll Call (Closed Session)",
+        "phases": {
+          "opened": 7,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Oral Communication on Closed Session Items Only",
+        "phases": {
+          "opened": 7,
+          "presentation": null,
+          "publicComment": 7,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Closed Session — Conference with Legal Counsel: Robell v. Church",
+        "phases": {
+          "opened": 7,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Reconvene to Regular Session — Roll Call and Report Out on Closed Session",
+        "phases": {
+          "opened": 7,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Welcome by the School Board President",
+        "phases": {
+          "opened": 15,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 120,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 122,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 167,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 167,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 167,
+          "presentation": null,
+          "publicComment": 167,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9",
+        "title": "Bond Program Consent Items — Approval of Measure T Bond Program Tracking List and Siemens EMS Proposal (9.3 pulled)",
+        "phases": {
+          "opened": 167,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 198,
+            "type": "voice",
+            "result": "approved (9.3 pulled/deferred)"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "Bond Program Action Items",
+        "phases": {
+          "opened": 203,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.1",
+        "title": "Approval of Final Plan Review Invoice with DSA for Garfield Community School",
+        "phases": {
+          "opened": 203,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 218,
+          "vote": {
+            "seconds": 228,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.2",
+        "title": "Approval of Measure T and Measure S Bond Program Legal Services Agreement with DWK",
+        "phases": {
+          "opened": 231,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 243,
+          "vote": {
+            "seconds": 259,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "School/Community Reports",
+        "phases": {
+          "opened": 263,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11.1",
+        "title": "Recognize Staff Who Have Reached a Longevity Milestone with the District",
+        "phases": {
+          "opened": 263,
+          "presentation": 278,
+          "publicComment": null,
+          "discussion": 345,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11.2",
+        "title": "Measure T Bond Program Update",
+        "phases": {
+          "opened": 420,
+          "presentation": 464,
+          "publicComment": null,
+          "discussion": 749,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11.3",
+        "title": "Post Issuance Presentation, 2023 General Obligation Bonds, Election of 2022 (Measure S), Series A — KNN Public Finance",
+        "phases": {
+          "opened": 785,
+          "presentation": 883,
+          "publicComment": null,
+          "discussion": 1380,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11.4",
+        "title": "SEPTAR and Special Education Joint Presentation to the Board",
+        "phases": {
+          "opened": 1478,
+          "presentation": 1501,
+          "publicComment": null,
+          "discussion": 2361,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12",
+        "title": "Discussion of School Assignments and Committee Assignments for Board Members for the 2023-24 School Year",
+        "phases": {
+          "opened": 4404,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 4417,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "Consent Items",
+        "phases": {
+          "opened": 4472,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4487,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14",
+        "title": "Action Items",
+        "phases": {
+          "opened": 4487,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.1",
+        "title": "Adoption of Resolution No. 1 — Approval of Education Code Options for Teaching Assignments",
+        "phases": {
+          "opened": 4487,
+          "presentation": 4503,
+          "publicComment": null,
+          "discussion": 4553,
+          "vote": {
+            "seconds": 4578,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.2",
+        "title": "Adoption of Resolution No. 2 — Approval of Teachers Gaining Tenured Status",
+        "phases": {
+          "opened": 4582,
+          "presentation": 4595,
+          "publicComment": null,
+          "discussion": 4671,
+          "vote": {
+            "seconds": 4705,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.3",
+        "title": "Adoption of Resolution No. 3 — Sufficiency of Instructional Materials",
+        "phases": {
+          "opened": 4705,
+          "presentation": 4714,
+          "publicComment": null,
+          "discussion": 4748,
+          "vote": {
+            "seconds": 4757,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Board and Superintendent Reports",
+        "phases": {
+          "opened": 4757,
+          "presentation": 4775,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16",
+        "title": "Information",
+        "phases": {
+          "opened": 4941,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16.1",
+        "title": "Quarterly Williams Report, 4th Quarter, April 2023 through June 2023",
+        "phases": {
+          "opened": 4941,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 4953,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16.2",
+        "title": "Information on San Mateo County Investment Fund — June 2023",
+        "phases": {
+          "opened": 4966,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "17",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 4982,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 4989,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "18",
+        "title": "Other Business / Suggested Items for Future Agenda",
+        "phases": {
+          "opened": 5025,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "19",
+        "title": "Board Meetings Calendar",
+        "phases": {
+          "opened": 5025,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "20",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 5030,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 5040,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "cachedAt": "2026-03-15T17:46:18.494Z",
+  "inputTokens": 19600,
+  "outputTokens": 3852
+}

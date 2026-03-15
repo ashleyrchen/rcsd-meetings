@@ -1,0 +1,820 @@
+{
+  "date": "2021-11-17",
+  "itemCount": 14,
+  "llmResponse": {
+    "speakers": {
+      "A": {
+        "name": "Alisa MacAvoy",
+        "role": "Vice President (acting as President for this meeting)"
+      },
+      "B": {
+        "name": "María Díaz-Slocum",
+        "role": "Clerk"
+      },
+      "C": {
+        "name": "Mike Wells",
+        "role": "Trustee"
+      },
+      "D": {
+        "name": "María Díaz-Slocum",
+        "role": "Clerk (roll call voice)"
+      },
+      "E": {
+        "name": "Dr. John Baker",
+        "role": "Superintendent"
+      },
+      "F": {
+        "name": "Sarah Shackle",
+        "role": "Principal, North Star Academy"
+      },
+      "G": {
+        "name": "Mike Wells",
+        "role": "Trustee"
+      },
+      "H": {
+        "name": "Cecilia I. Márquez",
+        "role": "Trustee"
+      },
+      "I": {
+        "name": "Janet Lawson",
+        "role": "President"
+      },
+      "J": {
+        "name": "Matthew Schwal",
+        "role": "Community member / public commenter"
+      }
+    },
+    "agendaChanges": "Items 7.1, 7.2, and 7.3 were moved from Bond Program Action Items (Section 7) to Bond Program Consent Items (Section 6) and approved as part of the consent bundle. Item 10.1 (Grand Jury Response) was moved from Action Items (Section 10) to Consent Items (Section 9) and approved as part of that consent bundle. A continuation of the study session discussion on Child Nutrition Services was inserted as an informal item after 8.2 (discussed as '8.2A'). Item 7.4 remained as the sole Bond Program Action Item. The meeting proceeded: Roll Call, Welcome, Changes to Agenda, Approval of Agenda, Oral Communication, Bond Consent (6 + moved 7.1/7.2/7.3), Bond Action (7.4), Discussion Items (8.1, 8.2, Child Nutrition continuation), Board Policies (8.3–8.7), Consent Items (9 + moved 10.1), Action Item (10.2), Board/Superintendent Reports, Correspondence, Other Business, Agenda Calendar, Adjournment.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order / Roll Call",
+        "phases": {
+          "opened": 105,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Welcome by the School Board President",
+        "phases": {
+          "opened": 152,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 258,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 258,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 347,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 355,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 369,
+          "presentation": null,
+          "publicComment": 369,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Bond Program Consent Items (including moved items 7.1, 7.2, 7.3)",
+        "phases": {
+          "opened": 374,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 408,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7.4",
+        "title": "Adoption of Resolution 16, Approval of New Buildings, Modernization and Sitework Project Change Order #3 for Garfield Community School with MK Pipelines",
+        "phases": {
+          "opened": 421,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 428,
+          "vote": {
+            "seconds": 461,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.1",
+        "title": "Discussion of Reconvening North Star Forward Committee",
+        "phases": {
+          "opened": 478,
+          "presentation": 488,
+          "publicComment": 3049,
+          "discussion": 2012,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Allison Olford",
+            "startSeconds": 3071,
+            "endSeconds": 3176,
+            "summary": "Thanked the board and staff for addressing parent concerns about North Star, asked that the committee not be just about optics and urged the district to take concrete action, and recommended including a paid expert in gifted education on the committee."
+          },
+          {
+            "name": "Matthew Schwal",
+            "startSeconds": 3177,
+            "endSeconds": 3295,
+            "summary": "Recommended using the Form 8 Cogat as a universal screener and then having qualifying students take the Form 9 as a confirmation assessment, citing the test maker's guidance, and expressed confidence that Principal Shackle could develop a rubric to equitably admit ESL students."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.2",
+        "title": "Presentation Regarding Potential Trustee Area Revisions",
+        "phases": {
+          "opened": 3655,
+          "presentation": 3669,
+          "publicComment": null,
+          "discussion": 4412,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.2A",
+        "title": "Continuation of Study Session — Child Nutrition Services Discussion (inserted item)",
+        "phases": {
+          "opened": 5871,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 5910,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.3",
+        "title": "First Reading and Discussion of Board Policy 1312.3 - Uniform Complaint Procedures",
+        "phases": {
+          "opened": 7281,
+          "presentation": 7290,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.4",
+        "title": "First Reading and Discussion of Board Policy 4131 - Staff Development",
+        "phases": {
+          "opened": 7457,
+          "presentation": 7457,
+          "publicComment": null,
+          "discussion": 7503,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.5",
+        "title": "First Reading and Discussion of Board Policy 5144.1 - Suspension and Expulsion/Due Process",
+        "phases": {
+          "opened": 7534,
+          "presentation": 7540,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.6",
+        "title": "First Reading and Discussion of Board Policy 6164.4 - Identification and Evaluation of Individuals for Special Education",
+        "phases": {
+          "opened": 7639,
+          "presentation": 7642,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.7",
+        "title": "First Reading and Discussion of Board Policy 6164.41 - Children with Disabilities Enrolled by their Parents in Private School",
+        "phases": {
+          "opened": 7690,
+          "presentation": 7693,
+          "publicComment": null,
+          "discussion": 7729,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9",
+        "title": "Consent Items (including moved item 10.1)",
+        "phases": {
+          "opened": 7872,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 7890,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.2",
+        "title": "Adoption of Resolution 17, Authorizing Electronic Meetings of the Board of Trustees During a State of Emergency Pursuant to Government Code Section 54953(e)",
+        "phases": {
+          "opened": 7906,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 7929,
+          "vote": {
+            "seconds": 7986,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "Board and Superintendent Reports",
+        "phases": {
+          "opened": 7998,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 8005,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12",
+        "title": "Information",
+        "phases": {
+          "opened": 8241,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 8241,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14",
+        "title": "Other Business/Suggested Items For Future Agenda",
+        "phases": {
+          "opened": 8263,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Board Agenda Calendar",
+        "phases": {
+          "opened": 8263,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 8283,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 8344,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 8344,
+            "type": "voice",
+            "result": "unanimous"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "result": {
+    "videoId": "kcTl2zJsh2A",
+    "speakers": {
+      "A": {
+        "name": "Alisa MacAvoy",
+        "role": "Vice President (acting as President for this meeting)"
+      },
+      "B": {
+        "name": "María Díaz-Slocum",
+        "role": "Clerk"
+      },
+      "C": {
+        "name": "Mike Wells",
+        "role": "Trustee"
+      },
+      "D": {
+        "name": "María Díaz-Slocum",
+        "role": "Clerk (roll call voice)"
+      },
+      "E": {
+        "name": "Dr. John Baker",
+        "role": "Superintendent"
+      },
+      "F": {
+        "name": "Sarah Shackle",
+        "role": "Principal, North Star Academy"
+      },
+      "G": {
+        "name": "Mike Wells",
+        "role": "Trustee"
+      },
+      "H": {
+        "name": "Cecilia I. Márquez",
+        "role": "Trustee"
+      },
+      "I": {
+        "name": "Janet Lawson",
+        "role": "President"
+      },
+      "J": {
+        "name": "Matthew Schwal",
+        "role": "Community member / public commenter"
+      }
+    },
+    "agendaChanges": "Items 7.1, 7.2, and 7.3 were moved from Bond Program Action Items (Section 7) to Bond Program Consent Items (Section 6) and approved as part of the consent bundle. Item 10.1 (Grand Jury Response) was moved from Action Items (Section 10) to Consent Items (Section 9) and approved as part of that consent bundle. A continuation of the study session discussion on Child Nutrition Services was inserted as an informal item after 8.2 (discussed as '8.2A'). Item 7.4 remained as the sole Bond Program Action Item. The meeting proceeded: Roll Call, Welcome, Changes to Agenda, Approval of Agenda, Oral Communication, Bond Consent (6 + moved 7.1/7.2/7.3), Bond Action (7.4), Discussion Items (8.1, 8.2, Child Nutrition continuation), Board Policies (8.3–8.7), Consent Items (9 + moved 10.1), Action Item (10.2), Board/Superintendent Reports, Correspondence, Other Business, Agenda Calendar, Adjournment.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order / Roll Call",
+        "phases": {
+          "opened": 105,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Welcome by the School Board President",
+        "phases": {
+          "opened": 152,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 258,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 258,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 347,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 355,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 369,
+          "presentation": null,
+          "publicComment": 369,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Bond Program Consent Items (including moved items 7.1, 7.2, 7.3)",
+        "phases": {
+          "opened": 374,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 408,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7.4",
+        "title": "Adoption of Resolution 16, Approval of New Buildings, Modernization and Sitework Project Change Order #3 for Garfield Community School with MK Pipelines",
+        "phases": {
+          "opened": 421,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 428,
+          "vote": {
+            "seconds": 461,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.1",
+        "title": "Discussion of Reconvening North Star Forward Committee",
+        "phases": {
+          "opened": 478,
+          "presentation": 488,
+          "publicComment": 3049,
+          "discussion": 2012,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Allison Olford",
+            "startSeconds": 3071,
+            "endSeconds": 3176,
+            "summary": "Thanked the board and staff for addressing parent concerns about North Star, asked that the committee not be just about optics and urged the district to take concrete action, and recommended including a paid expert in gifted education on the committee."
+          },
+          {
+            "name": "Matthew Schwal",
+            "startSeconds": 3177,
+            "endSeconds": 3295,
+            "summary": "Recommended using the Form 8 Cogat as a universal screener and then having qualifying students take the Form 9 as a confirmation assessment, citing the test maker's guidance, and expressed confidence that Principal Shackle could develop a rubric to equitably admit ESL students."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.2",
+        "title": "Presentation Regarding Potential Trustee Area Revisions",
+        "phases": {
+          "opened": 3655,
+          "presentation": 3669,
+          "publicComment": null,
+          "discussion": 4412,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.2A",
+        "title": "Continuation of Study Session — Child Nutrition Services Discussion (inserted item)",
+        "phases": {
+          "opened": 5871,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 5910,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.3",
+        "title": "First Reading and Discussion of Board Policy 1312.3 - Uniform Complaint Procedures",
+        "phases": {
+          "opened": 7281,
+          "presentation": 7290,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.4",
+        "title": "First Reading and Discussion of Board Policy 4131 - Staff Development",
+        "phases": {
+          "opened": 7457,
+          "presentation": 7457,
+          "publicComment": null,
+          "discussion": 7503,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.5",
+        "title": "First Reading and Discussion of Board Policy 5144.1 - Suspension and Expulsion/Due Process",
+        "phases": {
+          "opened": 7534,
+          "presentation": 7540,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.6",
+        "title": "First Reading and Discussion of Board Policy 6164.4 - Identification and Evaluation of Individuals for Special Education",
+        "phases": {
+          "opened": 7639,
+          "presentation": 7642,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.7",
+        "title": "First Reading and Discussion of Board Policy 6164.41 - Children with Disabilities Enrolled by their Parents in Private School",
+        "phases": {
+          "opened": 7690,
+          "presentation": 7693,
+          "publicComment": null,
+          "discussion": 7729,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9",
+        "title": "Consent Items (including moved item 10.1)",
+        "phases": {
+          "opened": 7872,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 7890,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.2",
+        "title": "Adoption of Resolution 17, Authorizing Electronic Meetings of the Board of Trustees During a State of Emergency Pursuant to Government Code Section 54953(e)",
+        "phases": {
+          "opened": 7906,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 7929,
+          "vote": {
+            "seconds": 7986,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "Board and Superintendent Reports",
+        "phases": {
+          "opened": 7998,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 8005,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12",
+        "title": "Information",
+        "phases": {
+          "opened": 8241,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 8241,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14",
+        "title": "Other Business/Suggested Items For Future Agenda",
+        "phases": {
+          "opened": 8263,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Board Agenda Calendar",
+        "phases": {
+          "opened": 8263,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 8283,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 8344,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 8344,
+            "type": "voice",
+            "result": "unanimous"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "cachedAt": "2026-03-15T18:21:12.345Z",
+  "inputTokens": 30115,
+  "outputTokens": 3276
+}

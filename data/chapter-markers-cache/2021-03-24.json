@@ -1,0 +1,298 @@
+{
+  "date": "2021-03-24",
+  "itemCount": 45,
+  "llmResponse": {
+    "speakers": {
+      "A": {
+        "name": "Kyle (IT/Staff)",
+        "role": "District IT staff / meeting technician"
+      },
+      "B": {
+        "name": "María Díaz-Slocum",
+        "role": "Clerk / Board Member"
+      },
+      "C": {
+        "name": "Janet Lawson",
+        "role": "Trustee (later identified as making roll call responses)"
+      },
+      "D": {
+        "name": "Eliana (staff)",
+        "role": "District staff / roll call caller"
+      },
+      "E": {
+        "name": "Mike Wells",
+        "role": "Trustee"
+      },
+      "F": {
+        "name": "Alisa MacAvoy",
+        "role": "Vice President (acting as presiding officer)"
+      },
+      "G": {
+        "name": "Janet Lawson",
+        "role": "Trustee"
+      },
+      "H": {
+        "name": "Mike Wells",
+        "role": "Trustee"
+      }
+    },
+    "agendaChanges": "At the start of the meeting, the following changes were made to the agenda: (1) A carryover vision/mission discussion from the 6pm study session was added as item 9.1B, to be taken up after 9.1; (2) Items 11.1 and 11.2 were moved from Action to the Consent calendar. Items were then taken up in the following order: Roll Call, Welcome, Changes to the Agenda, Approval of Agenda, Oral Communication, School/Community Report (Northstar GSA presentation, not a formal agenda section but taken up here), Bond Program Consent Items (Section 10 consent), Bond Program Action Item (8.1), Discussion Item 9.1 (Spring Expansion/Reopening), Discussion Item 9.1B (Vision and Mission carryover), Discussion Item 9.2 (BP Special Education), Discussion Item 9.3 (Food Service), Discussion Item 9.4 (Safety), Consent Calendar (including 11.1 and 11.2), Board/Superintendent Reports, Future Agenda Items, Adjournment.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order / Roll Call",
+        "phases": {
+          "opened": 1,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Welcome by the School Board President",
+        "phases": {
+          "opened": 23,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 164,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 164,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 318,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 321,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 336,
+          "presentation": null,
+          "publicComment": 336,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Study Session – Update on the Equity Consciousness Committee (carried over as 9.1B)",
+        "phases": {
+          "opened": 5469,
+          "presentation": 5532,
+          "publicComment": null,
+          "discussion": 5920,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Adjourn the Meeting",
+        "phases": {
+          "opened": 8857,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 8879,
+            "type": "voice",
+            "result": "unanimous"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "result": {
+    "videoId": "sJQNqQu1Jfs",
+    "speakers": {
+      "A": {
+        "name": "Kyle (IT/Staff)",
+        "role": "District IT staff / meeting technician"
+      },
+      "B": {
+        "name": "María Díaz-Slocum",
+        "role": "Clerk / Board Member"
+      },
+      "C": {
+        "name": "Janet Lawson",
+        "role": "Trustee (later identified as making roll call responses)"
+      },
+      "D": {
+        "name": "Eliana (staff)",
+        "role": "District staff / roll call caller"
+      },
+      "E": {
+        "name": "Mike Wells",
+        "role": "Trustee"
+      },
+      "F": {
+        "name": "Alisa MacAvoy",
+        "role": "Vice President (acting as presiding officer)"
+      },
+      "G": {
+        "name": "Janet Lawson",
+        "role": "Trustee"
+      },
+      "H": {
+        "name": "Mike Wells",
+        "role": "Trustee"
+      }
+    },
+    "agendaChanges": "At the start of the meeting, the following changes were made to the agenda: (1) A carryover vision/mission discussion from the 6pm study session was added as item 9.1B, to be taken up after 9.1; (2) Items 11.1 and 11.2 were moved from Action to the Consent calendar. Items were then taken up in the following order: Roll Call, Welcome, Changes to the Agenda, Approval of Agenda, Oral Communication, School/Community Report (Northstar GSA presentation, not a formal agenda section but taken up here), Bond Program Consent Items (Section 10 consent), Bond Program Action Item (8.1), Discussion Item 9.1 (Spring Expansion/Reopening), Discussion Item 9.1B (Vision and Mission carryover), Discussion Item 9.2 (BP Special Education), Discussion Item 9.3 (Food Service), Discussion Item 9.4 (Safety), Consent Calendar (including 11.1 and 11.2), Board/Superintendent Reports, Future Agenda Items, Adjournment.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order / Roll Call",
+        "phases": {
+          "opened": 1,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Welcome by the School Board President",
+        "phases": {
+          "opened": 23,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 164,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 164,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 318,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 321,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 336,
+          "presentation": null,
+          "publicComment": 336,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Study Session – Update on the Equity Consciousness Committee (carried over as 9.1B)",
+        "phases": {
+          "opened": 5469,
+          "presentation": 5532,
+          "publicComment": null,
+          "discussion": 5920,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Adjourn the Meeting",
+        "phases": {
+          "opened": 8857,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 8879,
+            "type": "voice",
+            "result": "unanimous"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "cachedAt": "2026-03-15T18:28:27.205Z",
+  "inputTokens": 33347,
+  "outputTokens": 1224
+}

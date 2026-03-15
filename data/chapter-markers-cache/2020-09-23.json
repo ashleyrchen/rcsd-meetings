@@ -1,0 +1,952 @@
+{
+  "date": "2020-09-23",
+  "itemCount": 51,
+  "llmResponse": {
+    "speakers": {
+      "A": {
+        "name": "Janet Lawson",
+        "role": "Board President"
+      },
+      "B": {
+        "name": "John Baker",
+        "role": "Superintendent"
+      }
+    },
+    "agendaChanges": "The agenda was resequenced as follows: (1) Item 12.1 (Longevity Recognition) was moved up to before the public hearings (Section 9); (2) Action items 16.1, 16.2, and 16.3 were moved to the consent calendar; (3) Item 16.4 (Board Policy 6157) was kept as an action item for discussion. Sections 1-3 (Call to Order, Closed Session) occurred before the recording begins. The meeting transcript begins at the Reconvene/Roll Call (Section 4). Items were taken in order: Roll Call/Report Out (4), Welcome (5), Changes to Agenda (6), Approval of Agenda (7), Oral Communication (8), then 12.1 (moved up), then 9.1, 9.2, then 10 (bond consent), 11.1, 13.1, 14.1, then consent bundle (15.1, 15.2, 15.3, 16.1, 16.2, 16.3), then 16.4, 17, 18, 19, 20, 21, 22.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Oral Communication on Closed Session Items Only",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Closed Session",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Reconvene to Regular Session / Roll Call / Report Out on Closed Session",
+        "phases": {
+          "opened": 1,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Welcome by the School Board President",
+        "phases": {
+          "opened": 1,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 1,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 1,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 196,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 196,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 235,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12",
+        "title": "Recognition of Staff Who Have Reached a Longevity Milestone with the Redwood City School District",
+        "phases": {
+          "opened": 237,
+          "presentation": 343,
+          "publicComment": 1614,
+          "discussion": 1648,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Maria Stockton",
+            "startSeconds": 1628,
+            "endSeconds": 1648,
+            "summary": "As CSEA president, she congratulated and thanked all honored employees for their dedication and service to the district during difficult times."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9",
+        "title": "Public Hearing on Learning Continuity and Attendance for 2020-21",
+        "phases": {
+          "opened": 1758,
+          "presentation": 1758,
+          "publicComment": 3335,
+          "discussion": 3202,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Ben Packer",
+            "startSeconds": 3398,
+            "endSeconds": 3420,
+            "summary": "A Roy Cloud parent expressing strong support for the Learning Continuity Plan, particularly praising that schools and students with higher needs were being prioritized."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9",
+        "title": "Public Hearing Pursuant to Public Contract Code Section 4110 Regarding Sausal Corporation's Use of Unlisted Subcontractor",
+        "phases": {
+          "opened": 3448,
+          "presentation": 3456,
+          "publicComment": null,
+          "discussion": 4601,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "Bond Program Consent Items (Action Required)",
+        "phases": {
+          "opened": 4640,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4640,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "Consideration of Canceling Contract with Sausal Corporation or Assessing a Penalty against Sausal Corporation",
+        "phases": {
+          "opened": 4651,
+          "presentation": 4651,
+          "publicComment": null,
+          "discussion": 4673,
+          "vote": {
+            "seconds": 5238,
+            "type": "roll-call",
+            "result": "4-1 (McBride dissenting)"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "6-8 Science Curriculum Pilot Process",
+        "phases": {
+          "opened": 5298,
+          "presentation": 5315,
+          "publicComment": null,
+          "discussion": 5390,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14",
+        "title": "Discussion on COVID-19",
+        "phases": {
+          "opened": 5444,
+          "presentation": 5858,
+          "publicComment": 9245,
+          "discussion": 7923,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Whitney Glockner Black",
+            "startSeconds": 9280,
+            "endSeconds": 9440,
+            "summary": "A Roosevelt parent raised concerns about students accessing inappropriate and addictive content on school-issued devices via YouTube, and urged the district to implement stronger content restrictions promptly."
+          },
+          {
+            "name": "Katherine Stewart",
+            "startSeconds": 9546,
+            "endSeconds": 9600,
+            "summary": "A parent stated she does not want her child to return to school until a vaccine is available, preferring the inconvenience of distance learning over the risk of death or serious illness."
+          },
+          {
+            "name": "Michelle Gagliardi",
+            "startSeconds": 9660,
+            "endSeconds": 9740,
+            "summary": "A parent of a kindergartner in an SDC class argued that children with disabilities often cannot wear masks or social distance, making in-person return unsafe and not worth the risk."
+          },
+          {
+            "name": "Mercedes Kwiatkowski",
+            "startSeconds": 9790,
+            "endSeconds": 9860,
+            "summary": "A community psychiatrist expressed support for a cautious, phased return to school, noting children are struggling mentally and emotionally, while emphasizing teacher involvement and safety in any reopening plan."
+          },
+          {
+            "name": "Christy Herrera",
+            "startSeconds": 9905,
+            "endSeconds": 10060,
+            "summary": "A district teacher expressed feeling blindsided by the reopening discussion, warned about health risks of returning during flu season and with community spread, and urged the board to reconsider any return to campus."
+          },
+          {
+            "name": "Sandy Hoover",
+            "startSeconds": 10120,
+            "endSeconds": 10240,
+            "summary": "A TK teacher in a high-risk health category described the physical realities of working with young children and bodily fluids, expressed fear of contracting COVID and transmitting it to her newborn grandson, and criticized the inadequacy of PPE provided."
+          },
+          {
+            "name": "Keri Yen",
+            "startSeconds": 10314,
+            "endSeconds": 10440,
+            "summary": "A parent of three, including a kindergartner with an IEP for speech, expressed strong support for returning younger students to in-person learning as soon as possible, noting that distance learning is driving inequity and some families have already left the district."
+          },
+          {
+            "name": "Cameron Hoffman",
+            "startSeconds": 10517,
+            "endSeconds": 10706,
+            "summary": "A parent of two district students supported in-person learning for the neediest children, urged the district to learn from neighboring schools already reopening, and emphasized that the risks of staying home outweigh the risks of returning for the most vulnerable students."
+          },
+          {
+            "name": "Allison Oldford",
+            "startSeconds": 10730,
+            "endSeconds": 10820,
+            "summary": "A parent of a fourth grader and two first graders stated that supporting teacher safety and returning students to in-person learning are not mutually exclusive, and shared that her children have been safely attending childcare in-person since June."
+          },
+          {
+            "name": "Brian Crawford",
+            "startSeconds": 10865,
+            "endSeconds": 10940,
+            "summary": "A father of three described his son's emotional deterioration under distance learning, including a disturbing comment about wishing to be dead, and urged the board not to wait to return students to campus."
+          },
+          {
+            "name": "Janelle Allen",
+            "startSeconds": 10975,
+            "endSeconds": 11040,
+            "summary": "An immunocompromised parent of a Roy Cloud kindergartner strongly opposed returning to school in October, urging the board to wait until after flu season and warning that young children cannot reliably wear masks or social distance."
+          },
+          {
+            "name": "Jennifer Wenzel",
+            "startSeconds": 11100,
+            "endSeconds": 11190,
+            "summary": "A district teacher of 13 years expressed deep concern about returning to school given Redwood City's high COVID infection rate, citing data on children's higher viral loads and the risk of transmission to families and staff."
+          },
+          {
+            "name": "Jeanette Serrano",
+            "startSeconds": 11230,
+            "endSeconds": 11360,
+            "summary": "A 34-year kindergarten teacher expressed alarm at the proposal to return TK–1 students, noting that young children cannot reliably wear masks, that teachers in these grades face high exposure risk, and that Redwood City schools have particularly vulnerable populations."
+          },
+          {
+            "name": "Sarah Latora",
+            "startSeconds": 11410,
+            "endSeconds": 11530,
+            "summary": "A parent expressed preference for the AM/PM cohort option over the two-day-a-week model, raised concerns about funding for cleaning between sessions, and requested a clear trigger plan for switching back to distance learning if cases surge."
+          },
+          {
+            "name": "Susan Forker",
+            "startSeconds": 11610,
+            "endSeconds": 11700,
+            "summary": "An Adelante Selby parent strongly opposed removing students from dual language immersion programs as part of any reopening plan, and urged the district to survey immersion families separately with full information about potential program disruption."
+          },
+          {
+            "name": "Eric Sutton",
+            "startSeconds": 11748,
+            "endSeconds": 11928,
+            "summary": "A first-grade parent expressed that while he was not opposing reopening outright, disrupting students' current distance learning classrooms and teacher relationships mid-semester would be harmful and deeply unfair to children who are thriving in their current setting."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Consent Items (Action Required) — including 15.1, 15.2, 15.3, 16.1, 16.2, 16.3 (moved from Action Items)",
+        "phases": {
+          "opened": 12036,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 12036,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16",
+        "title": "Discussion and Approval of Board Policy 6157 - Distance Teaching and Learning",
+        "phases": {
+          "opened": 12055,
+          "presentation": 12055,
+          "publicComment": null,
+          "discussion": 12130,
+          "vote": {
+            "seconds": 12265,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": true
+      },
+      {
+        "itemLabel": "17",
+        "title": "Report from Board Members and Superintendent",
+        "phases": {
+          "opened": 12290,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 12290,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "18",
+        "title": "Information on San Mateo County Investment Fund - August, 2020",
+        "phases": {
+          "opened": 12680,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "19",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 12697,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "20",
+        "title": "Other Business/Suggested Items for Future Agenda",
+        "phases": {
+          "opened": 12710,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 12710,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "21",
+        "title": "Changes to the Board Agenda Schedule",
+        "phases": {
+          "opened": 12795,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 12795,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "22",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 12860,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 12860,
+            "type": "voice",
+            "result": "unanimous"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "result": {
+    "videoId": "4nO0pTNJcyc",
+    "speakers": {
+      "A": {
+        "name": "Janet Lawson",
+        "role": "Board President"
+      },
+      "B": {
+        "name": "John Baker",
+        "role": "Superintendent"
+      }
+    },
+    "agendaChanges": "The agenda was resequenced as follows: (1) Item 12.1 (Longevity Recognition) was moved up to before the public hearings (Section 9); (2) Action items 16.1, 16.2, and 16.3 were moved to the consent calendar; (3) Item 16.4 (Board Policy 6157) was kept as an action item for discussion. Sections 1-3 (Call to Order, Closed Session) occurred before the recording begins. The meeting transcript begins at the Reconvene/Roll Call (Section 4). Items were taken in order: Roll Call/Report Out (4), Welcome (5), Changes to Agenda (6), Approval of Agenda (7), Oral Communication (8), then 12.1 (moved up), then 9.1, 9.2, then 10 (bond consent), 11.1, 13.1, 14.1, then consent bundle (15.1, 15.2, 15.3, 16.1, 16.2, 16.3), then 16.4, 17, 18, 19, 20, 21, 22.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Oral Communication on Closed Session Items Only",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Closed Session",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Reconvene to Regular Session / Roll Call / Report Out on Closed Session",
+        "phases": {
+          "opened": 1,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Welcome by the School Board President",
+        "phases": {
+          "opened": 1,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 1,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 1,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 196,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 196,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 235,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12",
+        "title": "Recognition of Staff Who Have Reached a Longevity Milestone with the Redwood City School District",
+        "phases": {
+          "opened": 237,
+          "presentation": 343,
+          "publicComment": 1614,
+          "discussion": 1648,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Maria Stockton",
+            "startSeconds": 1628,
+            "endSeconds": 1648,
+            "summary": "As CSEA president, she congratulated and thanked all honored employees for their dedication and service to the district during difficult times."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9",
+        "title": "Public Hearing on Learning Continuity and Attendance for 2020-21",
+        "phases": {
+          "opened": 1758,
+          "presentation": 1758,
+          "publicComment": 3335,
+          "discussion": 3202,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Ben Packer",
+            "startSeconds": 3398,
+            "endSeconds": 3420,
+            "summary": "A Roy Cloud parent expressing strong support for the Learning Continuity Plan, particularly praising that schools and students with higher needs were being prioritized."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9",
+        "title": "Public Hearing Pursuant to Public Contract Code Section 4110 Regarding Sausal Corporation's Use of Unlisted Subcontractor",
+        "phases": {
+          "opened": 3448,
+          "presentation": 3456,
+          "publicComment": null,
+          "discussion": 4601,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "Bond Program Consent Items (Action Required)",
+        "phases": {
+          "opened": 4640,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4640,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "Consideration of Canceling Contract with Sausal Corporation or Assessing a Penalty against Sausal Corporation",
+        "phases": {
+          "opened": 4651,
+          "presentation": 4651,
+          "publicComment": null,
+          "discussion": 4673,
+          "vote": {
+            "seconds": 5238,
+            "type": "roll-call",
+            "result": "4-1 (McBride dissenting)"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "6-8 Science Curriculum Pilot Process",
+        "phases": {
+          "opened": 5298,
+          "presentation": 5315,
+          "publicComment": null,
+          "discussion": 5390,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14",
+        "title": "Discussion on COVID-19",
+        "phases": {
+          "opened": 5444,
+          "presentation": 5858,
+          "publicComment": 9245,
+          "discussion": 7923,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Whitney Glockner Black",
+            "startSeconds": 9280,
+            "endSeconds": 9440,
+            "summary": "A Roosevelt parent raised concerns about students accessing inappropriate and addictive content on school-issued devices via YouTube, and urged the district to implement stronger content restrictions promptly."
+          },
+          {
+            "name": "Katherine Stewart",
+            "startSeconds": 9546,
+            "endSeconds": 9600,
+            "summary": "A parent stated she does not want her child to return to school until a vaccine is available, preferring the inconvenience of distance learning over the risk of death or serious illness."
+          },
+          {
+            "name": "Michelle Gagliardi",
+            "startSeconds": 9660,
+            "endSeconds": 9740,
+            "summary": "A parent of a kindergartner in an SDC class argued that children with disabilities often cannot wear masks or social distance, making in-person return unsafe and not worth the risk."
+          },
+          {
+            "name": "Mercedes Kwiatkowski",
+            "startSeconds": 9790,
+            "endSeconds": 9860,
+            "summary": "A community psychiatrist expressed support for a cautious, phased return to school, noting children are struggling mentally and emotionally, while emphasizing teacher involvement and safety in any reopening plan."
+          },
+          {
+            "name": "Christy Herrera",
+            "startSeconds": 9905,
+            "endSeconds": 10060,
+            "summary": "A district teacher expressed feeling blindsided by the reopening discussion, warned about health risks of returning during flu season and with community spread, and urged the board to reconsider any return to campus."
+          },
+          {
+            "name": "Sandy Hoover",
+            "startSeconds": 10120,
+            "endSeconds": 10240,
+            "summary": "A TK teacher in a high-risk health category described the physical realities of working with young children and bodily fluids, expressed fear of contracting COVID and transmitting it to her newborn grandson, and criticized the inadequacy of PPE provided."
+          },
+          {
+            "name": "Keri Yen",
+            "startSeconds": 10314,
+            "endSeconds": 10440,
+            "summary": "A parent of three, including a kindergartner with an IEP for speech, expressed strong support for returning younger students to in-person learning as soon as possible, noting that distance learning is driving inequity and some families have already left the district."
+          },
+          {
+            "name": "Cameron Hoffman",
+            "startSeconds": 10517,
+            "endSeconds": 10706,
+            "summary": "A parent of two district students supported in-person learning for the neediest children, urged the district to learn from neighboring schools already reopening, and emphasized that the risks of staying home outweigh the risks of returning for the most vulnerable students."
+          },
+          {
+            "name": "Allison Oldford",
+            "startSeconds": 10730,
+            "endSeconds": 10820,
+            "summary": "A parent of a fourth grader and two first graders stated that supporting teacher safety and returning students to in-person learning are not mutually exclusive, and shared that her children have been safely attending childcare in-person since June."
+          },
+          {
+            "name": "Brian Crawford",
+            "startSeconds": 10865,
+            "endSeconds": 10940,
+            "summary": "A father of three described his son's emotional deterioration under distance learning, including a disturbing comment about wishing to be dead, and urged the board not to wait to return students to campus."
+          },
+          {
+            "name": "Janelle Allen",
+            "startSeconds": 10975,
+            "endSeconds": 11040,
+            "summary": "An immunocompromised parent of a Roy Cloud kindergartner strongly opposed returning to school in October, urging the board to wait until after flu season and warning that young children cannot reliably wear masks or social distance."
+          },
+          {
+            "name": "Jennifer Wenzel",
+            "startSeconds": 11100,
+            "endSeconds": 11190,
+            "summary": "A district teacher of 13 years expressed deep concern about returning to school given Redwood City's high COVID infection rate, citing data on children's higher viral loads and the risk of transmission to families and staff."
+          },
+          {
+            "name": "Jeanette Serrano",
+            "startSeconds": 11230,
+            "endSeconds": 11360,
+            "summary": "A 34-year kindergarten teacher expressed alarm at the proposal to return TK–1 students, noting that young children cannot reliably wear masks, that teachers in these grades face high exposure risk, and that Redwood City schools have particularly vulnerable populations."
+          },
+          {
+            "name": "Sarah Latora",
+            "startSeconds": 11410,
+            "endSeconds": 11530,
+            "summary": "A parent expressed preference for the AM/PM cohort option over the two-day-a-week model, raised concerns about funding for cleaning between sessions, and requested a clear trigger plan for switching back to distance learning if cases surge."
+          },
+          {
+            "name": "Susan Forker",
+            "startSeconds": 11610,
+            "endSeconds": 11700,
+            "summary": "An Adelante Selby parent strongly opposed removing students from dual language immersion programs as part of any reopening plan, and urged the district to survey immersion families separately with full information about potential program disruption."
+          },
+          {
+            "name": "Eric Sutton",
+            "startSeconds": 11748,
+            "endSeconds": 11928,
+            "summary": "A first-grade parent expressed that while he was not opposing reopening outright, disrupting students' current distance learning classrooms and teacher relationships mid-semester would be harmful and deeply unfair to children who are thriving in their current setting."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Consent Items (Action Required) — including 15.1, 15.2, 15.3, 16.1, 16.2, 16.3 (moved from Action Items)",
+        "phases": {
+          "opened": 12036,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 12036,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16",
+        "title": "Discussion and Approval of Board Policy 6157 - Distance Teaching and Learning",
+        "phases": {
+          "opened": 12055,
+          "presentation": 12055,
+          "publicComment": null,
+          "discussion": 12130,
+          "vote": {
+            "seconds": 12265,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": true
+      },
+      {
+        "itemLabel": "17",
+        "title": "Report from Board Members and Superintendent",
+        "phases": {
+          "opened": 12290,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 12290,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "18",
+        "title": "Information on San Mateo County Investment Fund - August, 2020",
+        "phases": {
+          "opened": 12680,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "19",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 12697,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "20",
+        "title": "Other Business/Suggested Items for Future Agenda",
+        "phases": {
+          "opened": 12710,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 12710,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "21",
+        "title": "Changes to the Board Agenda Schedule",
+        "phases": {
+          "opened": 12795,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 12795,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "22",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 12860,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 12860,
+            "type": "voice",
+            "result": "unanimous"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "cachedAt": "2026-03-15T18:37:13.833Z",
+  "inputTokens": 41811,
+  "outputTokens": 4414
+}

@@ -1,0 +1,992 @@
+{
+  "date": "2022-11-09",
+  "itemCount": 42,
+  "llmResponse": {
+    "speakers": {
+      "A": {
+        "name": "Alisa MacAvoy",
+        "role": "Board President (per roll call response and context)"
+      },
+      "B": {
+        "name": "María Díaz-Slocum",
+        "role": "Board Vice President (running the meeting as President per roll call 'President Diaz')"
+      },
+      "C": {
+        "name": "John Baker",
+        "role": "Superintendent (per context of superintendent reports and staff role)"
+      }
+    },
+    "agendaChanges": "Section 8 Action Items 8.1, 8.2, 8.3, and 8.4 were moved to the consent calendar (Section 7). Item 7.6 (Amendment to Agreement with Maxim Healthcare Staffing) was pulled from consent and deferred to a future meeting. Item 6.6 was also removed from Bond Program Consent Items and deferred. Oral Communication (Section 5) was revisited after Section 6 to accommodate a late online speaker (Bri Hanney), then again near the end of the meeting for Elizabeth Estrada. Board and Superintendent Reports (Section 9) were taken up immediately after Section 7 consent items, before Information items.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order / Roll Call",
+        "phases": {
+          "opened": 288,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Welcome by the School Board President",
+        "phases": {
+          "opened": 312,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 390,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 390,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 430,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 440,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 440,
+          "presentation": null,
+          "publicComment": 440,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Bri Hanney",
+            "startSeconds": 678,
+            "endSeconds": 883,
+            "summary": "Expressed concern about a gender identity book ('True You, A Gender Journey') being read aloud to third graders by middle school students, calling it presenting contested theory as fact, and asked the board about school values, transparency, and parental notification regarding controversial curriculum."
+          },
+          {
+            "name": "Elizabeth Estrada",
+            "startSeconds": 5383,
+            "endSeconds": 5648,
+            "summary": "A Hoover School parent (interpreted by Michelle Ramon) requested a safety guard and additional safety measures for the preschool area near the park and Boys and Girls Club at Hoover, citing recent incidents and concern for student and staff safety."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Bond Program Consent Items – Approval of Consent Items",
+        "phases": {
+          "opened": 486,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 535,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6.1",
+        "title": "Approval of Measure T Bond Program Tracking List of Items Under $20k",
+        "phases": {
+          "opened": 486,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 535,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6.2",
+        "title": "Approval of Rear Parking Lot Project, Change Order #3 to Agreement with Galeb Paving, Inc., for Garfield Community School",
+        "phases": {
+          "opened": 486,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 535,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6.3",
+        "title": "Approval of New Buildings, Modernization and Sitework, Bid Package G, Change Order #11 to Agreement with Rodan Builders for Garfield Community School",
+        "phases": {
+          "opened": 486,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 535,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6.4",
+        "title": "Approval of New Buildings, Modernization and Sitework, Bid Package G, Change Order #27 to Agreement with Beals Martin for Taft Community School",
+        "phases": {
+          "opened": 486,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 535,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6.5",
+        "title": "Approval of Proposal for Additional Services to Turnkey Security Upgrade Agreement with Siemens Industry, Inc. for Roosevelt and Henry Ford Schools",
+        "phases": {
+          "opened": 486,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 535,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Consent Items – Approval of Consent Items",
+        "phases": {
+          "opened": 901,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 917,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7.1",
+        "title": "Approval of October 21st Board Minutes",
+        "phases": {
+          "opened": 901,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 917,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7.2",
+        "title": "Approval of October 26th Board Minutes",
+        "phases": {
+          "opened": 901,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 917,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7.3",
+        "title": "Approval of Amendment to the August 24th Board Minutes",
+        "phases": {
+          "opened": 901,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 917,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7.4",
+        "title": "Ratification of Warrant Registers, October 1, 2022 - October 31, 2022",
+        "phases": {
+          "opened": 901,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 917,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7.5",
+        "title": "Approval of the First Amendment to the Agreement between Redwood City School District and Maxim Healthcare Staffing, Inc.",
+        "phases": {
+          "opened": 417,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": true
+      },
+      {
+        "itemLabel": "8.1",
+        "title": "Second Reading and Approval of Board Policy 3320 - Claims and Actions Against the District",
+        "phases": {
+          "opened": 390,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 917,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.2",
+        "title": "Second Reading and Approval of Board Policy 3516.5 - Emergency Schedules",
+        "phases": {
+          "opened": 390,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 917,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.3",
+        "title": "Second Reading and Approval of Board Policy 5141 - Health Care and Emergencies",
+        "phases": {
+          "opened": 390,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 917,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.4",
+        "title": "Approval of Addendum to 2022-23 Measure U Application for Clifford School",
+        "phases": {
+          "opened": 390,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 917,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9",
+        "title": "Report from Board Members and Superintendent",
+        "phases": {
+          "opened": 930,
+          "presentation": 940,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.1",
+        "title": "San Mateo County Office of Education Review of 2021-22 Unaudited Actuals for Redwood City School District and Connect, KIPP, and Rocketship Charter Schools",
+        "phases": {
+          "opened": 1800,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 1819,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.2",
+        "title": "Empowered Math and Reading Teachers Presentation",
+        "phases": {
+          "opened": 1918,
+          "presentation": 1938,
+          "publicComment": null,
+          "discussion": 4150,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 5648,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12",
+        "title": "Possible Other Business/Suggested Items for Future Agenda",
+        "phases": {
+          "opened": 5694,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "Changes to the Board Meetings Calendar",
+        "phases": {
+          "opened": 5710,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 5710,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14",
+        "title": "Adjourn the Meeting",
+        "phases": {
+          "opened": 5810,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 5847,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "result": {
+    "videoId": "18bH59uzfNA",
+    "speakers": {
+      "A": {
+        "name": "Alisa MacAvoy",
+        "role": "Board President (per roll call response and context)"
+      },
+      "B": {
+        "name": "María Díaz-Slocum",
+        "role": "Board Vice President (running the meeting as President per roll call 'President Diaz')"
+      },
+      "C": {
+        "name": "John Baker",
+        "role": "Superintendent (per context of superintendent reports and staff role)"
+      }
+    },
+    "agendaChanges": "Section 8 Action Items 8.1, 8.2, 8.3, and 8.4 were moved to the consent calendar (Section 7). Item 7.6 (Amendment to Agreement with Maxim Healthcare Staffing) was pulled from consent and deferred to a future meeting. Item 6.6 was also removed from Bond Program Consent Items and deferred. Oral Communication (Section 5) was revisited after Section 6 to accommodate a late online speaker (Bri Hanney), then again near the end of the meeting for Elizabeth Estrada. Board and Superintendent Reports (Section 9) were taken up immediately after Section 7 consent items, before Information items.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order / Roll Call",
+        "phases": {
+          "opened": 288,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Welcome by the School Board President",
+        "phases": {
+          "opened": 312,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 390,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 390,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 430,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 440,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 440,
+          "presentation": null,
+          "publicComment": 440,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Bri Hanney",
+            "startSeconds": 678,
+            "endSeconds": 883,
+            "summary": "Expressed concern about a gender identity book ('True You, A Gender Journey') being read aloud to third graders by middle school students, calling it presenting contested theory as fact, and asked the board about school values, transparency, and parental notification regarding controversial curriculum."
+          },
+          {
+            "name": "Elizabeth Estrada",
+            "startSeconds": 5383,
+            "endSeconds": 5648,
+            "summary": "A Hoover School parent (interpreted by Michelle Ramon) requested a safety guard and additional safety measures for the preschool area near the park and Boys and Girls Club at Hoover, citing recent incidents and concern for student and staff safety."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Bond Program Consent Items – Approval of Consent Items",
+        "phases": {
+          "opened": 486,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 535,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6.1",
+        "title": "Approval of Measure T Bond Program Tracking List of Items Under $20k",
+        "phases": {
+          "opened": 486,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 535,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6.2",
+        "title": "Approval of Rear Parking Lot Project, Change Order #3 to Agreement with Galeb Paving, Inc., for Garfield Community School",
+        "phases": {
+          "opened": 486,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 535,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6.3",
+        "title": "Approval of New Buildings, Modernization and Sitework, Bid Package G, Change Order #11 to Agreement with Rodan Builders for Garfield Community School",
+        "phases": {
+          "opened": 486,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 535,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6.4",
+        "title": "Approval of New Buildings, Modernization and Sitework, Bid Package G, Change Order #27 to Agreement with Beals Martin for Taft Community School",
+        "phases": {
+          "opened": 486,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 535,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6.5",
+        "title": "Approval of Proposal for Additional Services to Turnkey Security Upgrade Agreement with Siemens Industry, Inc. for Roosevelt and Henry Ford Schools",
+        "phases": {
+          "opened": 486,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 535,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Consent Items – Approval of Consent Items",
+        "phases": {
+          "opened": 901,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 917,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7.1",
+        "title": "Approval of October 21st Board Minutes",
+        "phases": {
+          "opened": 901,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 917,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7.2",
+        "title": "Approval of October 26th Board Minutes",
+        "phases": {
+          "opened": 901,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 917,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7.3",
+        "title": "Approval of Amendment to the August 24th Board Minutes",
+        "phases": {
+          "opened": 901,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 917,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7.4",
+        "title": "Ratification of Warrant Registers, October 1, 2022 - October 31, 2022",
+        "phases": {
+          "opened": 901,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 917,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7.5",
+        "title": "Approval of the First Amendment to the Agreement between Redwood City School District and Maxim Healthcare Staffing, Inc.",
+        "phases": {
+          "opened": 417,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": true
+      },
+      {
+        "itemLabel": "8.1",
+        "title": "Second Reading and Approval of Board Policy 3320 - Claims and Actions Against the District",
+        "phases": {
+          "opened": 390,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 917,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.2",
+        "title": "Second Reading and Approval of Board Policy 3516.5 - Emergency Schedules",
+        "phases": {
+          "opened": 390,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 917,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.3",
+        "title": "Second Reading and Approval of Board Policy 5141 - Health Care and Emergencies",
+        "phases": {
+          "opened": 390,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 917,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.4",
+        "title": "Approval of Addendum to 2022-23 Measure U Application for Clifford School",
+        "phases": {
+          "opened": 390,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 917,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9",
+        "title": "Report from Board Members and Superintendent",
+        "phases": {
+          "opened": 930,
+          "presentation": 940,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.1",
+        "title": "San Mateo County Office of Education Review of 2021-22 Unaudited Actuals for Redwood City School District and Connect, KIPP, and Rocketship Charter Schools",
+        "phases": {
+          "opened": 1800,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 1819,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.2",
+        "title": "Empowered Math and Reading Teachers Presentation",
+        "phases": {
+          "opened": 1918,
+          "presentation": 1938,
+          "publicComment": null,
+          "discussion": 4150,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 5648,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12",
+        "title": "Possible Other Business/Suggested Items for Future Agenda",
+        "phases": {
+          "opened": 5694,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "Changes to the Board Meetings Calendar",
+        "phases": {
+          "opened": 5710,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 5710,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14",
+        "title": "Adjourn the Meeting",
+        "phases": {
+          "opened": 5810,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 5847,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "cachedAt": "2026-03-15T18:01:19.578Z",
+  "inputTokens": 19500,
+  "outputTokens": 3820
+}

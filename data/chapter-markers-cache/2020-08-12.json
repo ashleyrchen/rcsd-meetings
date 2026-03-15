@@ -1,0 +1,1526 @@
+{
+  "date": "2020-08-12",
+  "itemCount": 55,
+  "llmResponse": {
+    "speakers": {
+      "A": {
+        "name": "Staff/Clerk (unidentified)",
+        "role": "District staff, likely clerk or secretary running roll call and procedural items"
+      },
+      "B": {
+        "name": "Kyle (unidentified last name)",
+        "role": "District staff, likely clerk/secretary conducting roll call votes; also various public speakers share this label"
+      },
+      "C": {
+        "name": "Dennis McBride",
+        "role": "Board President (per agenda context; note: Janet Lawson is listed as President but McBride appears to be acting in president role at times — however Lawson introduces herself as President and McBride as Trustee)"
+      },
+      "D": {
+        "name": "Alisa MacAvoy",
+        "role": "Vice President / Clerk"
+      },
+      "E": {
+        "name": "Janet Lawson",
+        "role": "Board President"
+      },
+      "F": {
+        "name": "Jason Galasatis (Jason Galas per transcript)",
+        "role": "Interim Executive Director, Redwood City Education Foundation; also Wendy Kelly shares this label"
+      },
+      "G": {
+        "name": "María Díaz-Slocum",
+        "role": "Trustee"
+      },
+      "H": {
+        "name": "Dennis McBride",
+        "role": "Trustee"
+      },
+      "I": {
+        "name": "Will (unidentified last name)",
+        "role": "Bond Program staff presenter; also Priscilla (Finance) shares this label"
+      }
+    },
+    "agendaChanges": "Items 10.4 through 10.7 were pulled from the Consent Items to be brought back at the next regular meeting. Items 11.6 (Approval of Updated RCTA Contract Language and RCTA/RCSD Tentative Agreements) and 11.7 (Approval of Professional Development with National Urban Alliance) were moved from Action Items to the Consent Calendar. A special bond program meeting was scheduled for September 16. Section 8 (Bond Program Action Items) had no items to consider.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order / Roll Call",
+        "phases": {
+          "opened": 0,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Welcome by the School Board President",
+        "phases": {
+          "opened": 15,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 75,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 83,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 189,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 213,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 229,
+          "presentation": null,
+          "publicComment": 229,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Pam Barish",
+            "startSeconds": 282,
+            "endSeconds": 374,
+            "summary": "A kindergarten teacher at Henry Ford expressed stress about last-minute school-of-choice student transfers disrupting teacher planning just before the school year starts, and asked the board and superintendent to ensure all such movement is completed by Friday."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "School/Community Reports",
+        "phases": {
+          "opened": 405,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6.1",
+        "title": "Bond Program Progress Tracking Matrix and Construction Progress Photo Update",
+        "phases": {
+          "opened": 405,
+          "presentation": 414,
+          "publicComment": null,
+          "discussion": 530,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6.2",
+        "title": "Report from Redwood City Education Foundation (RCEF)",
+        "phases": {
+          "opened": 910,
+          "presentation": 929,
+          "publicComment": null,
+          "discussion": 2802,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Bond Program Consent Items (Action Required) — Bundle",
+        "phases": {
+          "opened": 3667,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3684,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7.1",
+        "title": "Approval of Security Guard Proposal with Metro",
+        "phases": {
+          "opened": 3667,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7.2",
+        "title": "Approval of Additional Covid-19 Safety Compliance Officer Proposal (SCO) for Adelante Selby, Hoover Community School, and Taft Community School with Cal Inc.",
+        "phases": {
+          "opened": 3667,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7.3",
+        "title": "Approval of Soil Mitigation Plan (SMP) Project Authorization Form (PAF) for Orion Alternative School with Ninyo and Moore",
+        "phases": {
+          "opened": 3667,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7.4",
+        "title": "Approval of Special Testing and Inspection Project Authorization Form (PAF) for Clifford School with Ninyo and Moore",
+        "phases": {
+          "opened": 3667,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7.5",
+        "title": "Approval of Classroom Moving Services Proposal for Roosevelt School with Chipman",
+        "phases": {
+          "opened": 3667,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7.6",
+        "title": "Approval of Security Camera and Intrusion Conduit and Wiring Rough-in Proposals for Adelante Selby School with ETA",
+        "phases": {
+          "opened": 3667,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7.7",
+        "title": "Approval of Measure T Bond Program $20K and Under Items Tracking List",
+        "phases": {
+          "opened": 3667,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7.8",
+        "title": "Approval of Architect Additional Service Proposals for Hoover School with CSDA",
+        "phases": {
+          "opened": 3667,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8",
+        "title": "Bond Program Action Items (Action Required)",
+        "phases": {
+          "opened": 3705,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.1",
+        "title": "Discussion on COVID-19",
+        "phases": {
+          "opened": 3705,
+          "presentation": 3713,
+          "publicComment": 8447,
+          "discussion": 5497,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Katherine Stewart",
+            "startSeconds": 8476,
+            "endSeconds": 8535,
+            "summary": "Expressed concern about in-person childcare mixing cohorts and strongly urged the district to send out student schedules to parents as soon as possible, even if not fully finalized."
+          },
+          {
+            "name": "Alli Gilmore",
+            "startSeconds": 8567,
+            "endSeconds": 8597,
+            "summary": "Thanked the district for its childcare efforts, noting it is critical for working parents who have limited options."
+          },
+          {
+            "name": "Becky Fouch",
+            "startSeconds": 8619,
+            "endSeconds": 8741,
+            "summary": "Asked the board to clarify whether Zoom would be allowed alongside Google Meet given Google's delayed fixes, and raised concerns that teachers may not have received necessary technology equipment despite CARES Act funds being available."
+          },
+          {
+            "name": "Michelle Smith",
+            "startSeconds": 8924,
+            "endSeconds": 9080,
+            "summary": "Thanked the district for all its work, raised concerns about the very short synchronous meeting blocks for young students based on summer school experience, expressed gratitude for the childcare space provision, and supported allowing Zoom for breakout room functionality."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.2",
+        "title": "Discussion on Board Meeting Calendar, School Assignments and School Committee Assignments for Board Members for the 2020-21 School Year",
+        "phases": {
+          "opened": 9552,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 9568,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "Consent Items (Action Required) — Bundle (as amended: 10.4–10.7 pulled; 11.6 and 11.7 added)",
+        "phases": {
+          "opened": 10292,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 10323,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.1",
+        "title": "Approval of Local Interagency Agreement(s) to Provide Education and Training to Credential Candidates",
+        "phases": {
+          "opened": 10292,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.2",
+        "title": "Approval of Agreement between the Redwood City School District and One Life Counseling for Fiscal Year 2020-21",
+        "phases": {
+          "opened": 10292,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.3",
+        "title": "Approval of Non-Public School (NPS)/Non-Public Agency (NPA) Master Contracts",
+        "phases": {
+          "opened": 10292,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.4",
+        "title": "Approval of Agreement between the Redwood City School District and Adrian Amandi for Visual Impairment and Assistive Technology Services",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": true
+      },
+      {
+        "itemLabel": "10.5",
+        "title": "Approval of Agreement between the Redwood City School District and Dr. Rebekah Will to Provide Audiology Services",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": true
+      },
+      {
+        "itemLabel": "10.6",
+        "title": "Approval of Agreement between the Redwood City School District and EvalGroup for Special Education Providers",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": true
+      },
+      {
+        "itemLabel": "10.7",
+        "title": "Approval of Agreement between the Redwood City School District and Ivonne Watson to Provide Psychological Evaluations",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": true
+      },
+      {
+        "itemLabel": "11.1",
+        "title": "Adoption of Resolution 3, Approval of Education Code Options for Teaching Assignments",
+        "phases": {
+          "opened": 10360,
+          "presentation": 10367,
+          "publicComment": null,
+          "discussion": 10453,
+          "vote": {
+            "seconds": 10489,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11.2",
+        "title": "Adoption of Resolution 4, Reduction of Certain Classified Services for Fiscal Year 2020-21",
+        "phases": {
+          "opened": 10517,
+          "presentation": 10526,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 10638,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11.3",
+        "title": "Approval of Local Assignment Options in Areas of Special Skill and Preparation Outside of Credential Authorization",
+        "phases": {
+          "opened": 10659,
+          "presentation": 10670,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 10807,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11.4",
+        "title": "Approval of Provisional Internship Permit",
+        "phases": {
+          "opened": 10822,
+          "presentation": 10828,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 10921,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11.5",
+        "title": "Approval of Variable Term Waiver Request",
+        "phases": {
+          "opened": 10938,
+          "presentation": 10942,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 11006,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11.6",
+        "title": "Approval of Updated RCTA Contract Language and RCTA/RCSD Tentative Agreements (moved to Consent)",
+        "phases": {
+          "opened": 10292,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11.7",
+        "title": "Approval of Professional Development with National Urban Alliance (moved to Consent)",
+        "phases": {
+          "opened": 10292,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11.8",
+        "title": "Adoption of Resolution 5, Sequoia Federal Credit Union Credit Card Signature",
+        "phases": {
+          "opened": 11032,
+          "presentation": 11045,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 11114,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12",
+        "title": "Report from Board Members and Superintendent",
+        "phases": {
+          "opened": 11137,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 11147,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13.1",
+        "title": "2020-21 Adopted Budget and 2020-21 COVID-19 Operations Report for Connect Community Charter School",
+        "phases": {
+          "opened": 12009,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 12034,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13.2",
+        "title": "2020-21 Adopted Budget and 2020-21 COVID-19 Operations Report for KIPP",
+        "phases": {
+          "opened": 12108,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13.3",
+        "title": "2020-21 Adopted Budget and 2020-21 COVID-19 Operations Report for Rocketship",
+        "phases": {
+          "opened": 12126,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13.4",
+        "title": "Information on San Mateo County Investment Fund - June, 2020",
+        "phases": {
+          "opened": 12134,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 12143,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13.5",
+        "title": "45-day Revision of 2020-21 RCSD's Adopted Budget",
+        "phases": {
+          "opened": 12170,
+          "presentation": 12183,
+          "publicComment": null,
+          "discussion": 12248,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 12303,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Other Business/Suggested Items for Future Agenda",
+        "phases": {
+          "opened": 12317,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 12317,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16",
+        "title": "Changes to the Board Agenda Schedule",
+        "phases": {
+          "opened": 12552,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 12552,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "17",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 12597,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 12604,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "result": {
+    "videoId": "I78B15ybGP0",
+    "speakers": {
+      "A": {
+        "name": "Staff/Clerk (unidentified)",
+        "role": "District staff, likely clerk or secretary running roll call and procedural items"
+      },
+      "B": {
+        "name": "Kyle (unidentified last name)",
+        "role": "District staff, likely clerk/secretary conducting roll call votes; also various public speakers share this label"
+      },
+      "C": {
+        "name": "Dennis McBride",
+        "role": "Board President (per agenda context; note: Janet Lawson is listed as President but McBride appears to be acting in president role at times — however Lawson introduces herself as President and McBride as Trustee)"
+      },
+      "D": {
+        "name": "Alisa MacAvoy",
+        "role": "Vice President / Clerk"
+      },
+      "E": {
+        "name": "Janet Lawson",
+        "role": "Board President"
+      },
+      "F": {
+        "name": "Jason Galasatis (Jason Galas per transcript)",
+        "role": "Interim Executive Director, Redwood City Education Foundation; also Wendy Kelly shares this label"
+      },
+      "G": {
+        "name": "María Díaz-Slocum",
+        "role": "Trustee"
+      },
+      "H": {
+        "name": "Dennis McBride",
+        "role": "Trustee"
+      },
+      "I": {
+        "name": "Will (unidentified last name)",
+        "role": "Bond Program staff presenter; also Priscilla (Finance) shares this label"
+      }
+    },
+    "agendaChanges": "Items 10.4 through 10.7 were pulled from the Consent Items to be brought back at the next regular meeting. Items 11.6 (Approval of Updated RCTA Contract Language and RCTA/RCSD Tentative Agreements) and 11.7 (Approval of Professional Development with National Urban Alliance) were moved from Action Items to the Consent Calendar. A special bond program meeting was scheduled for September 16. Section 8 (Bond Program Action Items) had no items to consider.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order / Roll Call",
+        "phases": {
+          "opened": 0,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Welcome by the School Board President",
+        "phases": {
+          "opened": 15,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 75,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 83,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 189,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 213,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 229,
+          "presentation": null,
+          "publicComment": 229,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Pam Barish",
+            "startSeconds": 282,
+            "endSeconds": 374,
+            "summary": "A kindergarten teacher at Henry Ford expressed stress about last-minute school-of-choice student transfers disrupting teacher planning just before the school year starts, and asked the board and superintendent to ensure all such movement is completed by Friday."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "School/Community Reports",
+        "phases": {
+          "opened": 405,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6.1",
+        "title": "Bond Program Progress Tracking Matrix and Construction Progress Photo Update",
+        "phases": {
+          "opened": 405,
+          "presentation": 414,
+          "publicComment": null,
+          "discussion": 530,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6.2",
+        "title": "Report from Redwood City Education Foundation (RCEF)",
+        "phases": {
+          "opened": 910,
+          "presentation": 929,
+          "publicComment": null,
+          "discussion": 2802,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Bond Program Consent Items (Action Required) — Bundle",
+        "phases": {
+          "opened": 3667,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3684,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7.1",
+        "title": "Approval of Security Guard Proposal with Metro",
+        "phases": {
+          "opened": 3667,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7.2",
+        "title": "Approval of Additional Covid-19 Safety Compliance Officer Proposal (SCO) for Adelante Selby, Hoover Community School, and Taft Community School with Cal Inc.",
+        "phases": {
+          "opened": 3667,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7.3",
+        "title": "Approval of Soil Mitigation Plan (SMP) Project Authorization Form (PAF) for Orion Alternative School with Ninyo and Moore",
+        "phases": {
+          "opened": 3667,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7.4",
+        "title": "Approval of Special Testing and Inspection Project Authorization Form (PAF) for Clifford School with Ninyo and Moore",
+        "phases": {
+          "opened": 3667,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7.5",
+        "title": "Approval of Classroom Moving Services Proposal for Roosevelt School with Chipman",
+        "phases": {
+          "opened": 3667,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7.6",
+        "title": "Approval of Security Camera and Intrusion Conduit and Wiring Rough-in Proposals for Adelante Selby School with ETA",
+        "phases": {
+          "opened": 3667,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7.7",
+        "title": "Approval of Measure T Bond Program $20K and Under Items Tracking List",
+        "phases": {
+          "opened": 3667,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7.8",
+        "title": "Approval of Architect Additional Service Proposals for Hoover School with CSDA",
+        "phases": {
+          "opened": 3667,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8",
+        "title": "Bond Program Action Items (Action Required)",
+        "phases": {
+          "opened": 3705,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.1",
+        "title": "Discussion on COVID-19",
+        "phases": {
+          "opened": 3705,
+          "presentation": 3713,
+          "publicComment": 8447,
+          "discussion": 5497,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Katherine Stewart",
+            "startSeconds": 8476,
+            "endSeconds": 8535,
+            "summary": "Expressed concern about in-person childcare mixing cohorts and strongly urged the district to send out student schedules to parents as soon as possible, even if not fully finalized."
+          },
+          {
+            "name": "Alli Gilmore",
+            "startSeconds": 8567,
+            "endSeconds": 8597,
+            "summary": "Thanked the district for its childcare efforts, noting it is critical for working parents who have limited options."
+          },
+          {
+            "name": "Becky Fouch",
+            "startSeconds": 8619,
+            "endSeconds": 8741,
+            "summary": "Asked the board to clarify whether Zoom would be allowed alongside Google Meet given Google's delayed fixes, and raised concerns that teachers may not have received necessary technology equipment despite CARES Act funds being available."
+          },
+          {
+            "name": "Michelle Smith",
+            "startSeconds": 8924,
+            "endSeconds": 9080,
+            "summary": "Thanked the district for all its work, raised concerns about the very short synchronous meeting blocks for young students based on summer school experience, expressed gratitude for the childcare space provision, and supported allowing Zoom for breakout room functionality."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.2",
+        "title": "Discussion on Board Meeting Calendar, School Assignments and School Committee Assignments for Board Members for the 2020-21 School Year",
+        "phases": {
+          "opened": 9552,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 9568,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "Consent Items (Action Required) — Bundle (as amended: 10.4–10.7 pulled; 11.6 and 11.7 added)",
+        "phases": {
+          "opened": 10292,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 10323,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.1",
+        "title": "Approval of Local Interagency Agreement(s) to Provide Education and Training to Credential Candidates",
+        "phases": {
+          "opened": 10292,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.2",
+        "title": "Approval of Agreement between the Redwood City School District and One Life Counseling for Fiscal Year 2020-21",
+        "phases": {
+          "opened": 10292,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.3",
+        "title": "Approval of Non-Public School (NPS)/Non-Public Agency (NPA) Master Contracts",
+        "phases": {
+          "opened": 10292,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.4",
+        "title": "Approval of Agreement between the Redwood City School District and Adrian Amandi for Visual Impairment and Assistive Technology Services",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": true
+      },
+      {
+        "itemLabel": "10.5",
+        "title": "Approval of Agreement between the Redwood City School District and Dr. Rebekah Will to Provide Audiology Services",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": true
+      },
+      {
+        "itemLabel": "10.6",
+        "title": "Approval of Agreement between the Redwood City School District and EvalGroup for Special Education Providers",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": true
+      },
+      {
+        "itemLabel": "10.7",
+        "title": "Approval of Agreement between the Redwood City School District and Ivonne Watson to Provide Psychological Evaluations",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": true
+      },
+      {
+        "itemLabel": "11.1",
+        "title": "Adoption of Resolution 3, Approval of Education Code Options for Teaching Assignments",
+        "phases": {
+          "opened": 10360,
+          "presentation": 10367,
+          "publicComment": null,
+          "discussion": 10453,
+          "vote": {
+            "seconds": 10489,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11.2",
+        "title": "Adoption of Resolution 4, Reduction of Certain Classified Services for Fiscal Year 2020-21",
+        "phases": {
+          "opened": 10517,
+          "presentation": 10526,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 10638,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11.3",
+        "title": "Approval of Local Assignment Options in Areas of Special Skill and Preparation Outside of Credential Authorization",
+        "phases": {
+          "opened": 10659,
+          "presentation": 10670,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 10807,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11.4",
+        "title": "Approval of Provisional Internship Permit",
+        "phases": {
+          "opened": 10822,
+          "presentation": 10828,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 10921,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11.5",
+        "title": "Approval of Variable Term Waiver Request",
+        "phases": {
+          "opened": 10938,
+          "presentation": 10942,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 11006,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11.6",
+        "title": "Approval of Updated RCTA Contract Language and RCTA/RCSD Tentative Agreements (moved to Consent)",
+        "phases": {
+          "opened": 10292,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11.7",
+        "title": "Approval of Professional Development with National Urban Alliance (moved to Consent)",
+        "phases": {
+          "opened": 10292,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11.8",
+        "title": "Adoption of Resolution 5, Sequoia Federal Credit Union Credit Card Signature",
+        "phases": {
+          "opened": 11032,
+          "presentation": 11045,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 11114,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12",
+        "title": "Report from Board Members and Superintendent",
+        "phases": {
+          "opened": 11137,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 11147,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13.1",
+        "title": "2020-21 Adopted Budget and 2020-21 COVID-19 Operations Report for Connect Community Charter School",
+        "phases": {
+          "opened": 12009,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 12034,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13.2",
+        "title": "2020-21 Adopted Budget and 2020-21 COVID-19 Operations Report for KIPP",
+        "phases": {
+          "opened": 12108,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13.3",
+        "title": "2020-21 Adopted Budget and 2020-21 COVID-19 Operations Report for Rocketship",
+        "phases": {
+          "opened": 12126,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13.4",
+        "title": "Information on San Mateo County Investment Fund - June, 2020",
+        "phases": {
+          "opened": 12134,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 12143,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13.5",
+        "title": "45-day Revision of 2020-21 RCSD's Adopted Budget",
+        "phases": {
+          "opened": 12170,
+          "presentation": 12183,
+          "publicComment": null,
+          "discussion": 12248,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 12303,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Other Business/Suggested Items for Future Agenda",
+        "phases": {
+          "opened": 12317,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 12317,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16",
+        "title": "Changes to the Board Agenda Schedule",
+        "phases": {
+          "opened": 12552,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 12552,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "17",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 12597,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 12604,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "cachedAt": "2026-03-15T18:40:24.974Z",
+  "inputTokens": 46869,
+  "outputTokens": 6124
+}

@@ -1,0 +1,332 @@
+{
+  "date": "2020-10-07",
+  "itemCount": 12,
+  "llmResponse": {
+    "speakers": {
+      "A": {
+        "name": "Dennis McBride",
+        "role": "Trustee (later identified as board member asking questions)"
+      },
+      "B": {
+        "name": "Alisa MacAvoy",
+        "role": "Clerk / meeting facilitator for roll call and public comment management"
+      },
+      "C": {
+        "name": "María Díaz-Slocum",
+        "role": "Trustee"
+      },
+      "D": {
+        "name": "Alisa MacAvoy",
+        "role": "Vice President / Clerk"
+      },
+      "E": {
+        "name": "Janet Lawson",
+        "role": "Board President"
+      },
+      "F": {
+        "name": "Dr. Baker (Superintendent)",
+        "role": "Superintendent"
+      }
+    },
+    "agendaChanges": "Sections 2 (Welcome), 3 (Changes to the Agenda), and 4 (Approval of Agenda) were handled together in a single continuous sequence by the Board President starting at 18s, with no separate delineation between them. The Oral Communication item (Section 5) was noted as having no speakers and was passed over briefly. The agenda otherwise followed the posted order.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order / Roll Call",
+        "phases": {
+          "opened": 1,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Welcome by the School Board President",
+        "phases": {
+          "opened": 18,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 18,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 114,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 120,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 134,
+          "presentation": null,
+          "publicComment": 134,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Study Session on Distance Learning/In Person Learning",
+        "phases": {
+          "opened": 165,
+          "presentation": 165,
+          "publicComment": 5363,
+          "discussion": 3560,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Jackie Moore",
+            "startSeconds": 5536,
+            "endSeconds": 5677,
+            "summary": "A single mother with chronic health conditions expressed fear about being required to return to in-person teaching, detailing the risks to herself and her infant twins if she contracted COVID-19."
+          },
+          {
+            "name": "Indra Hernandez",
+            "startSeconds": 5697,
+            "endSeconds": 5865,
+            "summary": "Thanked the board and staff for their work, asked whether preschool would be included in the pilot reopening and noted that her classroom had not been receiving thorough cleaning."
+          },
+          {
+            "name": "Michelle Smith",
+            "startSeconds": 6015,
+            "endSeconds": 6137,
+            "summary": "Expressed appreciation for the planning and protocols presented, raised concerns about hot classrooms in spring and ensuring lower-resource school sites receive adequate support."
+          },
+          {
+            "name": "Karla Salami",
+            "startSeconds": 6145,
+            "endSeconds": 6222,
+            "summary": "Thanked the board and staff, expressed relief about the January return date, and emphasized the importance of students' social-emotional stability during the transition back to in-person learning."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 7769,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 7776,
+            "type": "voice",
+            "result": "unanimous"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "result": {
+    "videoId": "JcNZt38Y1yo",
+    "speakers": {
+      "A": {
+        "name": "Dennis McBride",
+        "role": "Trustee (later identified as board member asking questions)"
+      },
+      "B": {
+        "name": "Alisa MacAvoy",
+        "role": "Clerk / meeting facilitator for roll call and public comment management"
+      },
+      "C": {
+        "name": "María Díaz-Slocum",
+        "role": "Trustee"
+      },
+      "D": {
+        "name": "Alisa MacAvoy",
+        "role": "Vice President / Clerk"
+      },
+      "E": {
+        "name": "Janet Lawson",
+        "role": "Board President"
+      },
+      "F": {
+        "name": "Dr. Baker (Superintendent)",
+        "role": "Superintendent"
+      }
+    },
+    "agendaChanges": "Sections 2 (Welcome), 3 (Changes to the Agenda), and 4 (Approval of Agenda) were handled together in a single continuous sequence by the Board President starting at 18s, with no separate delineation between them. The Oral Communication item (Section 5) was noted as having no speakers and was passed over briefly. The agenda otherwise followed the posted order.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order / Roll Call",
+        "phases": {
+          "opened": 1,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Welcome by the School Board President",
+        "phases": {
+          "opened": 18,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 18,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 114,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 120,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 134,
+          "presentation": null,
+          "publicComment": 134,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Study Session on Distance Learning/In Person Learning",
+        "phases": {
+          "opened": 165,
+          "presentation": 165,
+          "publicComment": 5363,
+          "discussion": 3560,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Jackie Moore",
+            "startSeconds": 5536,
+            "endSeconds": 5677,
+            "summary": "A single mother with chronic health conditions expressed fear about being required to return to in-person teaching, detailing the risks to herself and her infant twins if she contracted COVID-19."
+          },
+          {
+            "name": "Indra Hernandez",
+            "startSeconds": 5697,
+            "endSeconds": 5865,
+            "summary": "Thanked the board and staff for their work, asked whether preschool would be included in the pilot reopening and noted that her classroom had not been receiving thorough cleaning."
+          },
+          {
+            "name": "Michelle Smith",
+            "startSeconds": 6015,
+            "endSeconds": 6137,
+            "summary": "Expressed appreciation for the planning and protocols presented, raised concerns about hot classrooms in spring and ensuring lower-resource school sites receive adequate support."
+          },
+          {
+            "name": "Karla Salami",
+            "startSeconds": 6145,
+            "endSeconds": 6222,
+            "summary": "Thanked the board and staff, expressed relief about the January return date, and emphasized the importance of students' social-emotional stability during the transition back to in-person learning."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 7769,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 7776,
+            "type": "voice",
+            "result": "unanimous"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "cachedAt": "2026-03-15T18:34:53.513Z",
+  "inputTokens": 27145,
+  "outputTokens": 1317
+}

@@ -1,0 +1,1566 @@
+{
+  "date": "2024-12-11",
+  "itemCount": 53,
+  "llmResponse": {
+    "speakers": {
+      "A": {
+        "name": "Janet Lawson",
+        "role": "Board President"
+      },
+      "B": {
+        "name": "Evelyn Sanchez",
+        "role": "Executive Assistant / Board Secretary"
+      },
+      "C": {
+        "name": "Cecilia I. Márquez",
+        "role": "Trustee"
+      },
+      "D": {
+        "name": "Tina Mercer",
+        "role": "Roosevelt Elementary School Principal"
+      },
+      "E": {
+        "name": "Alisa MacAvoy",
+        "role": "Trustee"
+      },
+      "F": {
+        "name": "John Baker",
+        "role": "Superintendent"
+      },
+      "G": {
+        "name": "Mike Wells",
+        "role": "Vice President / Clerk"
+      },
+      "H": {
+        "name": "Rick Edson",
+        "role": "CBO / Chief Business Officer"
+      },
+      "I": {
+        "name": "Aaron Jobson",
+        "role": "QKA Principal / Architect"
+      },
+      "J": {
+        "name": "Unidentified speaker",
+        "role": "Various (public speakers and others)"
+      }
+    },
+    "agendaChanges": "No changes to the agenda were made. Items were taken up in the posted order. Section 2 (Welcome) was handled at the top of the meeting as part of opening remarks by the President rather than as a distinct separate item. The Spanish interpretation announcement was made by President Lawson during Call to Order.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order",
+        "phases": {
+          "opened": 3,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "1.1",
+        "title": "Roll Call",
+        "phases": {
+          "opened": 11,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Welcome by the School Board President",
+        "phases": {
+          "opened": 25,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 37,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 100,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 106,
+            "type": "voice",
+            "result": "4-0 (Márquez-Aye, Weekly-Abstain, MacAvoy-Aye, Wells-Aye, Lawson-Aye)"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 106,
+          "presentation": null,
+          "publicComment": 106,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Maria Abundis De Oue",
+            "startSeconds": 131,
+            "endSeconds": 240,
+            "summary": "Requested the school board consider allowing CSEA union members to participate in the state-funded Classified School Employee Summer Assistance Program, noting a January 1, 2025 response deadline."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Bond Program Discussion Item(s)",
+        "phases": {
+          "opened": 240,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6.1",
+        "title": "Update on the Facilities Master Planning Process",
+        "phases": {
+          "opened": 240,
+          "presentation": 324,
+          "publicComment": null,
+          "discussion": 2429,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "School/Community Reports",
+        "phases": {
+          "opened": 3367,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7.1",
+        "title": "Roosevelt Elementary School Presentation for the 2024-2025 School Year",
+        "phases": {
+          "opened": 3367,
+          "presentation": 3383,
+          "publicComment": null,
+          "discussion": 5034,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8",
+        "title": "Approval of Consent Items",
+        "phases": {
+          "opened": 6723,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6730,
+            "type": "voice",
+            "result": "4-0 (Márquez-Aye, Weekly-Abstain, MacAvoy-Aye, Wells-Aye, Lawson-Aye)"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.1",
+        "title": "Approval of Consent Items",
+        "phases": {
+          "opened": 6723,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6730,
+            "type": "voice",
+            "result": "4-0 (bundle vote)"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.2",
+        "title": "Approval of the November 20 Board Meeting Minutes",
+        "phases": {
+          "opened": 6723,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6730,
+            "type": "voice",
+            "result": "4-0 (bundle vote)"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.3",
+        "title": "Approval of Addendum to the 2024-25 Measure U Application for Henry Ford School",
+        "phases": {
+          "opened": 6723,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6730,
+            "type": "voice",
+            "result": "4-0 (bundle vote)"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.4",
+        "title": "Approval of Amendment No. 2 to the Agreement between Redwood City School District and One Life Counseling for the 2024-2025 School Year",
+        "phases": {
+          "opened": 6723,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6730,
+            "type": "voice",
+            "result": "4-0 (bundle vote)"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.5",
+        "title": "Approval of 2024-2025 Certificated Seniority Report",
+        "phases": {
+          "opened": 6723,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6730,
+            "type": "voice",
+            "result": "4-0 (bundle vote)"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.6",
+        "title": "Approval of 2024-2025 Classified Seniority Reports",
+        "phases": {
+          "opened": 6723,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6730,
+            "type": "voice",
+            "result": "4-0 (bundle vote)"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.7",
+        "title": "Approval of the Student Instructional Calendar for the 2025-2026 School Year",
+        "phases": {
+          "opened": 6723,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6730,
+            "type": "voice",
+            "result": "4-0 (bundle vote)"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.8",
+        "title": "Award of Bid to Supply Par Baked Pizza Products",
+        "phases": {
+          "opened": 6723,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6730,
+            "type": "voice",
+            "result": "4-0 (bundle vote)"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.9",
+        "title": "Second Reading and Approval of Board Policy and Administrative Regulation 6153: School-Sponsored Trips",
+        "phases": {
+          "opened": 6723,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6730,
+            "type": "voice",
+            "result": "4-0 (bundle vote)"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.10",
+        "title": "Second Reading and Approval of Board Policy 4157: Employee Safety",
+        "phases": {
+          "opened": 6723,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6730,
+            "type": "voice",
+            "result": "4-0 (bundle vote)"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.11",
+        "title": "Second Reading and Approval of Board Policy 4161: Leaves",
+        "phases": {
+          "opened": 6723,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6730,
+            "type": "voice",
+            "result": "4-0 (bundle vote)"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.12",
+        "title": "Second Reading and Approval of Board Policy 4261: Leaves",
+        "phases": {
+          "opened": 6723,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6730,
+            "type": "voice",
+            "result": "4-0 (bundle vote)"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.13",
+        "title": "Second Reading and Approval of Board Policy 4113.4: Temporary Modified/Light Duty Assignment",
+        "phases": {
+          "opened": 6723,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6730,
+            "type": "voice",
+            "result": "4-0 (bundle vote)"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.14",
+        "title": "Second Reading and Approval of Board Policy 4213.4: Temporary Modified/Light-Duty Assignment",
+        "phases": {
+          "opened": 6723,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6730,
+            "type": "voice",
+            "result": "4-0 (bundle vote)"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.15",
+        "title": "Second Reading and Approval of Board Policy 4040: Employee Use of Technology",
+        "phases": {
+          "opened": 6723,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6730,
+            "type": "voice",
+            "result": "4-0 (bundle vote)"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.16",
+        "title": "Second Reading and Approval of Board Policy 4113: Assignment",
+        "phases": {
+          "opened": 6723,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6730,
+            "type": "voice",
+            "result": "4-0 (bundle vote)"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.17",
+        "title": "Ratification of Warrant Registers, November 1, 2024 - November 30, 2024",
+        "phases": {
+          "opened": 6723,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6730,
+            "type": "voice",
+            "result": "4-0 (bundle vote)"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.18",
+        "title": "Approval of Membership to the Citizen's Oversight Committee for Measure U",
+        "phases": {
+          "opened": 6723,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6730,
+            "type": "voice",
+            "result": "4-0 (bundle vote)"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9",
+        "title": "Action Items",
+        "phases": {
+          "opened": 6744,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.1",
+        "title": "Approval of Budget Renewal Initiative, Superintendent Recommendations",
+        "phases": {
+          "opened": 6748,
+          "presentation": 6753,
+          "publicComment": 9317,
+          "discussion": 9939,
+          "vote": {
+            "seconds": 11577,
+            "type": "voice",
+            "result": "4-0 (Márquez-Aye, Weekly-Abstain, MacAvoy-Aye, Wells-Aye, Lawson-Aye)"
+          }
+        },
+        "publicComments": [
+          {
+            "name": "Maryann Nakhla",
+            "startSeconds": 9358,
+            "endSeconds": 9506,
+            "summary": "Advocated for retaining the in-house district mental health counseling team, emphasizing the critical support counselors provide and the relationships they have built with students over time."
+          },
+          {
+            "name": "Maria Stockton",
+            "startSeconds": 9520,
+            "endSeconds": 9718,
+            "summary": "As CSEA representative, criticized the timing and process of the cuts, urged board members to visit school sites to understand affected staff roles, and objected to positions being fully eliminated rather than simply reduced."
+          },
+          {
+            "name": "Jessica Shade",
+            "startSeconds": 9833,
+            "endSeconds": 9925,
+            "summary": "Announced a citizens initiative effort to place a parcel tax on the ballot to counteract budget cuts and directed community members to www.strongschools4rwc.org to get involved."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.2",
+        "title": "Adoption of Resolution No. 11, Reduction of Certain Classified Services for Fiscal Year 2024-2025",
+        "phases": {
+          "opened": 11579,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 11602,
+          "vote": {
+            "seconds": 11695,
+            "type": "voice",
+            "result": "4-0 (Márquez-Aye, Weekly-Abstain, MacAvoy-Aye, Wells-Aye, Lawson-Aye)"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.3",
+        "title": "Adoption of Resolution No. 12, Reduction or Elimination of Certificated Services for Fiscal Year 2024-2025",
+        "phases": {
+          "opened": 11697,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 11707,
+          "vote": {
+            "seconds": 11765,
+            "type": "voice",
+            "result": "4-0 (Márquez-Aye, Weekly-Abstain, MacAvoy-Aye, Wells-Aye, Lawson-Aye)"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.4",
+        "title": "Adoption of Resolution No. 13, Release and Reassignment of Certificated Administrator(s)",
+        "phases": {
+          "opened": 11769,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 11777,
+          "vote": {
+            "seconds": 11856,
+            "type": "voice",
+            "result": "4-0 (Márquez-Aye, Weekly-Abstain, MacAvoy-Aye, Wells-Aye, Lawson-Aye)"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.5",
+        "title": "Adoption of Resolution No. 14, Determination of Order of Employment for Certificated Employees for Elimination of or Reductions in Particular Kinds of Services for Fiscal Year 2025-2026",
+        "phases": {
+          "opened": 11855,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 11875,
+          "vote": {
+            "seconds": 11951,
+            "type": "voice",
+            "result": "4-0 (Márquez-Aye, Weekly-Abstain, MacAvoy-Aye, Wells-Aye, Lawson-Aye)"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "Discussion Item(s)",
+        "phases": {
+          "opened": 11954,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.1",
+        "title": "Debrief on the 2024 California School Boards Association (CSBA) Annual Education Conference (AEC) and Trade Show",
+        "phases": {
+          "opened": 11954,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 11987,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "Board and Superintendent Reports",
+        "phases": {
+          "opened": 12482,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 12482,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12",
+        "title": "Information on San Mateo County Investment Fund - October 2024",
+        "phases": {
+          "opened": 12639,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 12648,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14",
+        "title": "Possible Other Business/Suggested Items for Future Agenda",
+        "phases": {
+          "opened": 12660,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 12660,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Changes to the Board Meetings Calendar",
+        "phases": {
+          "opened": 12713,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 12738,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 12745,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "result": {
+    "videoId": "bnBXN0Jg6a0",
+    "speakers": {
+      "A": {
+        "name": "Janet Lawson",
+        "role": "Board President"
+      },
+      "B": {
+        "name": "Evelyn Sanchez",
+        "role": "Executive Assistant / Board Secretary"
+      },
+      "C": {
+        "name": "Cecilia I. Márquez",
+        "role": "Trustee"
+      },
+      "D": {
+        "name": "Tina Mercer",
+        "role": "Roosevelt Elementary School Principal"
+      },
+      "E": {
+        "name": "Alisa MacAvoy",
+        "role": "Trustee"
+      },
+      "F": {
+        "name": "John Baker",
+        "role": "Superintendent"
+      },
+      "G": {
+        "name": "Mike Wells",
+        "role": "Vice President / Clerk"
+      },
+      "H": {
+        "name": "Rick Edson",
+        "role": "CBO / Chief Business Officer"
+      },
+      "I": {
+        "name": "Aaron Jobson",
+        "role": "QKA Principal / Architect"
+      },
+      "J": {
+        "name": "Unidentified speaker",
+        "role": "Various (public speakers and others)"
+      }
+    },
+    "agendaChanges": "No changes to the agenda were made. Items were taken up in the posted order. Section 2 (Welcome) was handled at the top of the meeting as part of opening remarks by the President rather than as a distinct separate item. The Spanish interpretation announcement was made by President Lawson during Call to Order.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order",
+        "phases": {
+          "opened": 3,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "1.1",
+        "title": "Roll Call",
+        "phases": {
+          "opened": 11,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Welcome by the School Board President",
+        "phases": {
+          "opened": 25,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 37,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 100,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 106,
+            "type": "voice",
+            "result": "4-0 (Márquez-Aye, Weekly-Abstain, MacAvoy-Aye, Wells-Aye, Lawson-Aye)"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 106,
+          "presentation": null,
+          "publicComment": 106,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Maria Abundis De Oue",
+            "startSeconds": 131,
+            "endSeconds": 240,
+            "summary": "Requested the school board consider allowing CSEA union members to participate in the state-funded Classified School Employee Summer Assistance Program, noting a January 1, 2025 response deadline."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Bond Program Discussion Item(s)",
+        "phases": {
+          "opened": 240,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6.1",
+        "title": "Update on the Facilities Master Planning Process",
+        "phases": {
+          "opened": 240,
+          "presentation": 324,
+          "publicComment": null,
+          "discussion": 2429,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "School/Community Reports",
+        "phases": {
+          "opened": 3367,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7.1",
+        "title": "Roosevelt Elementary School Presentation for the 2024-2025 School Year",
+        "phases": {
+          "opened": 3367,
+          "presentation": 3383,
+          "publicComment": null,
+          "discussion": 5034,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8",
+        "title": "Approval of Consent Items",
+        "phases": {
+          "opened": 6723,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6730,
+            "type": "voice",
+            "result": "4-0 (Márquez-Aye, Weekly-Abstain, MacAvoy-Aye, Wells-Aye, Lawson-Aye)"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.1",
+        "title": "Approval of Consent Items",
+        "phases": {
+          "opened": 6723,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6730,
+            "type": "voice",
+            "result": "4-0 (bundle vote)"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.2",
+        "title": "Approval of the November 20 Board Meeting Minutes",
+        "phases": {
+          "opened": 6723,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6730,
+            "type": "voice",
+            "result": "4-0 (bundle vote)"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.3",
+        "title": "Approval of Addendum to the 2024-25 Measure U Application for Henry Ford School",
+        "phases": {
+          "opened": 6723,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6730,
+            "type": "voice",
+            "result": "4-0 (bundle vote)"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.4",
+        "title": "Approval of Amendment No. 2 to the Agreement between Redwood City School District and One Life Counseling for the 2024-2025 School Year",
+        "phases": {
+          "opened": 6723,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6730,
+            "type": "voice",
+            "result": "4-0 (bundle vote)"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.5",
+        "title": "Approval of 2024-2025 Certificated Seniority Report",
+        "phases": {
+          "opened": 6723,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6730,
+            "type": "voice",
+            "result": "4-0 (bundle vote)"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.6",
+        "title": "Approval of 2024-2025 Classified Seniority Reports",
+        "phases": {
+          "opened": 6723,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6730,
+            "type": "voice",
+            "result": "4-0 (bundle vote)"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.7",
+        "title": "Approval of the Student Instructional Calendar for the 2025-2026 School Year",
+        "phases": {
+          "opened": 6723,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6730,
+            "type": "voice",
+            "result": "4-0 (bundle vote)"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.8",
+        "title": "Award of Bid to Supply Par Baked Pizza Products",
+        "phases": {
+          "opened": 6723,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6730,
+            "type": "voice",
+            "result": "4-0 (bundle vote)"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.9",
+        "title": "Second Reading and Approval of Board Policy and Administrative Regulation 6153: School-Sponsored Trips",
+        "phases": {
+          "opened": 6723,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6730,
+            "type": "voice",
+            "result": "4-0 (bundle vote)"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.10",
+        "title": "Second Reading and Approval of Board Policy 4157: Employee Safety",
+        "phases": {
+          "opened": 6723,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6730,
+            "type": "voice",
+            "result": "4-0 (bundle vote)"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.11",
+        "title": "Second Reading and Approval of Board Policy 4161: Leaves",
+        "phases": {
+          "opened": 6723,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6730,
+            "type": "voice",
+            "result": "4-0 (bundle vote)"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.12",
+        "title": "Second Reading and Approval of Board Policy 4261: Leaves",
+        "phases": {
+          "opened": 6723,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6730,
+            "type": "voice",
+            "result": "4-0 (bundle vote)"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.13",
+        "title": "Second Reading and Approval of Board Policy 4113.4: Temporary Modified/Light Duty Assignment",
+        "phases": {
+          "opened": 6723,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6730,
+            "type": "voice",
+            "result": "4-0 (bundle vote)"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.14",
+        "title": "Second Reading and Approval of Board Policy 4213.4: Temporary Modified/Light-Duty Assignment",
+        "phases": {
+          "opened": 6723,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6730,
+            "type": "voice",
+            "result": "4-0 (bundle vote)"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.15",
+        "title": "Second Reading and Approval of Board Policy 4040: Employee Use of Technology",
+        "phases": {
+          "opened": 6723,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6730,
+            "type": "voice",
+            "result": "4-0 (bundle vote)"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.16",
+        "title": "Second Reading and Approval of Board Policy 4113: Assignment",
+        "phases": {
+          "opened": 6723,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6730,
+            "type": "voice",
+            "result": "4-0 (bundle vote)"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.17",
+        "title": "Ratification of Warrant Registers, November 1, 2024 - November 30, 2024",
+        "phases": {
+          "opened": 6723,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6730,
+            "type": "voice",
+            "result": "4-0 (bundle vote)"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.18",
+        "title": "Approval of Membership to the Citizen's Oversight Committee for Measure U",
+        "phases": {
+          "opened": 6723,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6730,
+            "type": "voice",
+            "result": "4-0 (bundle vote)"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9",
+        "title": "Action Items",
+        "phases": {
+          "opened": 6744,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.1",
+        "title": "Approval of Budget Renewal Initiative, Superintendent Recommendations",
+        "phases": {
+          "opened": 6748,
+          "presentation": 6753,
+          "publicComment": 9317,
+          "discussion": 9939,
+          "vote": {
+            "seconds": 11577,
+            "type": "voice",
+            "result": "4-0 (Márquez-Aye, Weekly-Abstain, MacAvoy-Aye, Wells-Aye, Lawson-Aye)"
+          }
+        },
+        "publicComments": [
+          {
+            "name": "Maryann Nakhla",
+            "startSeconds": 9358,
+            "endSeconds": 9506,
+            "summary": "Advocated for retaining the in-house district mental health counseling team, emphasizing the critical support counselors provide and the relationships they have built with students over time."
+          },
+          {
+            "name": "Maria Stockton",
+            "startSeconds": 9520,
+            "endSeconds": 9718,
+            "summary": "As CSEA representative, criticized the timing and process of the cuts, urged board members to visit school sites to understand affected staff roles, and objected to positions being fully eliminated rather than simply reduced."
+          },
+          {
+            "name": "Jessica Shade",
+            "startSeconds": 9833,
+            "endSeconds": 9925,
+            "summary": "Announced a citizens initiative effort to place a parcel tax on the ballot to counteract budget cuts and directed community members to www.strongschools4rwc.org to get involved."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.2",
+        "title": "Adoption of Resolution No. 11, Reduction of Certain Classified Services for Fiscal Year 2024-2025",
+        "phases": {
+          "opened": 11579,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 11602,
+          "vote": {
+            "seconds": 11695,
+            "type": "voice",
+            "result": "4-0 (Márquez-Aye, Weekly-Abstain, MacAvoy-Aye, Wells-Aye, Lawson-Aye)"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.3",
+        "title": "Adoption of Resolution No. 12, Reduction or Elimination of Certificated Services for Fiscal Year 2024-2025",
+        "phases": {
+          "opened": 11697,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 11707,
+          "vote": {
+            "seconds": 11765,
+            "type": "voice",
+            "result": "4-0 (Márquez-Aye, Weekly-Abstain, MacAvoy-Aye, Wells-Aye, Lawson-Aye)"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.4",
+        "title": "Adoption of Resolution No. 13, Release and Reassignment of Certificated Administrator(s)",
+        "phases": {
+          "opened": 11769,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 11777,
+          "vote": {
+            "seconds": 11856,
+            "type": "voice",
+            "result": "4-0 (Márquez-Aye, Weekly-Abstain, MacAvoy-Aye, Wells-Aye, Lawson-Aye)"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.5",
+        "title": "Adoption of Resolution No. 14, Determination of Order of Employment for Certificated Employees for Elimination of or Reductions in Particular Kinds of Services for Fiscal Year 2025-2026",
+        "phases": {
+          "opened": 11855,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 11875,
+          "vote": {
+            "seconds": 11951,
+            "type": "voice",
+            "result": "4-0 (Márquez-Aye, Weekly-Abstain, MacAvoy-Aye, Wells-Aye, Lawson-Aye)"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "Discussion Item(s)",
+        "phases": {
+          "opened": 11954,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.1",
+        "title": "Debrief on the 2024 California School Boards Association (CSBA) Annual Education Conference (AEC) and Trade Show",
+        "phases": {
+          "opened": 11954,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 11987,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "Board and Superintendent Reports",
+        "phases": {
+          "opened": 12482,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 12482,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12",
+        "title": "Information on San Mateo County Investment Fund - October 2024",
+        "phases": {
+          "opened": 12639,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 12648,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14",
+        "title": "Possible Other Business/Suggested Items for Future Agenda",
+        "phases": {
+          "opened": 12660,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 12660,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Changes to the Board Meetings Calendar",
+        "phases": {
+          "opened": 12713,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 12738,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 12745,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "cachedAt": "2026-03-15T17:25:33.500Z",
+  "inputTokens": 52469,
+  "outputTokens": 6105
+}

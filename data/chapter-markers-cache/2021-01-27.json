@@ -1,0 +1,886 @@
+{
+  "date": "2021-01-27",
+  "itemCount": 56,
+  "llmResponse": {
+    "speakers": {
+      "A": {
+        "name": "Alisa MacAvoy",
+        "role": "Board President"
+      },
+      "B": {
+        "name": "Eliana (staff)",
+        "role": "Board Secretary / Clerk (meeting facilitator)"
+      },
+      "C": {
+        "name": "Mike Wells",
+        "role": "Trustee"
+      },
+      "D": {
+        "name": "Janet Lawson",
+        "role": "Trustee"
+      },
+      "E": {
+        "name": "Unknown",
+        "role": "Unknown staff/participant"
+      },
+      "F": {
+        "name": "John R. Baker",
+        "role": "Superintendent"
+      },
+      "G": {
+        "name": "Cecilia I. Márquez",
+        "role": "Trustee"
+      },
+      "H": {
+        "name": "María Díaz-Slocum",
+        "role": "Vice President"
+      },
+      "I": {
+        "name": "Tina Mercer",
+        "role": "Principal, Roosevelt School"
+      },
+      "J": {
+        "name": "Cameron Hoffman",
+        "role": "Public speaker"
+      }
+    },
+    "agendaChanges": "Section 4 (Reconvene/Roll Call/Report Out on Closed Session) and Section 5 (Welcome) were handled together at the start of the recording, with the president giving the closed session report and then the welcome. Section 6 (Changes to the Agenda) had no changes announced. Sections 1-3 (Closed Session) are not captured in this recording. The meeting proceeded largely in agenda order. Section 9 (School/Community Reports) featured Warren Sater (Adelante Selby principal) speaking briefly before the video. The COVID-19 discussion (12.1) included presentations from Garfield, Roosevelt, and Taft principals (Lupe Torres, Tina Mercer, Anna Herrera) as well as Dr. Baker on the Governor's proposal. Items 12.2, 12.3, and 12.4 (board policy first readings) were presented together by Wendy Kelly. Public comment for item 12.1 was taken mid-discussion. Sections 16, 17, 18, 19, and 20 were handled rapidly at the end.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order / Roll Call",
+        "phases": {
+          "opened": 0,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Oral Communication on Closed Session Items Only",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Closed Session",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Reconvene to Regular Session / Roll Call / Report Out on Closed Session",
+        "phases": {
+          "opened": 0,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Welcome by the School Board President",
+        "phases": {
+          "opened": 21,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 313,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 313,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 324,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 336,
+          "presentation": null,
+          "publicComment": 336,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9",
+        "title": "School/Community Reports – Adelante Selby Spanish Immersion School Musical",
+        "phases": {
+          "opened": 359,
+          "presentation": 466,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "Bond Program Consent Items",
+        "phases": {
+          "opened": 770,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 805,
+            "type": "roll-call",
+            "result": "4-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "Bond Program Action Items – Resolution 15, Hoover Community School New Gymnasium and Modernization Project Package D with Atlas Pellizzari, Inc., Change Order #3",
+        "phases": {
+          "opened": 814,
+          "presentation": 828,
+          "publicComment": null,
+          "discussion": 874,
+          "vote": {
+            "seconds": 914,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12",
+        "title": "Discussion Items",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.1",
+        "title": "Discussion on COVID-19",
+        "phases": {
+          "opened": 935,
+          "presentation": 958,
+          "publicComment": 5306,
+          "discussion": 1826,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Cameron Hoffman",
+            "startSeconds": 5342,
+            "endSeconds": 5527,
+            "summary": "Thanked principals for their work, requested real data on distance learning impacts, urged accurate district communications distinguishing in-person instruction from facilitated distance learning hubs/pods, and called for more strategic incentives to encourage voluntary teacher return."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.2",
+        "title": "First Reading of Board ByLaw 9100 – Organization",
+        "phases": {
+          "opened": 5725,
+          "presentation": 5738,
+          "publicComment": null,
+          "discussion": 5795,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.3",
+        "title": "First Reading of Board Policy 3530 – Risk Management/Insurance",
+        "phases": {
+          "opened": 6007,
+          "presentation": 6023,
+          "publicComment": null,
+          "discussion": 6129,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.4",
+        "title": "First Reading of Board Policy 4040 – Employee Use of Technology",
+        "phases": {
+          "opened": 6138,
+          "presentation": 6138,
+          "publicComment": null,
+          "discussion": 6251,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "Consent Items",
+        "phases": {
+          "opened": 6269,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6287,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.1",
+        "title": "Acceptance of Redwood City Teachers Association Sunshine Proposal",
+        "phases": {
+          "opened": 6301,
+          "presentation": 6313,
+          "publicComment": 6586,
+          "discussion": 6598,
+          "vote": {
+            "seconds": 6723,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [
+          {
+            "name": "Brian Cagle",
+            "startSeconds": 6609,
+            "endSeconds": 6693,
+            "summary": "Introduced himself as RCTA negotiations chair, noted Wendy Kelly had already described the sunshine proposal accurately, and expressed looking forward to collaborative bargaining beginning February 5th."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.2",
+        "title": "Governing Board's Initial Proposal for Negotiations with Redwood City Teachers Association for 2021-22",
+        "phases": {
+          "opened": 6741,
+          "presentation": 6749,
+          "publicComment": null,
+          "discussion": 6801,
+          "vote": {
+            "seconds": 6823,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Board and Superintendent Reports",
+        "phases": {
+          "opened": 6836,
+          "presentation": 6857,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16",
+        "title": "Information – San Mateo County Investment Fund / Quarterly Williams Report",
+        "phases": {
+          "opened": 7633,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "17",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 7643,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "18",
+        "title": "Other Business / Suggested Items For Future Agenda",
+        "phases": {
+          "opened": 7648,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "19",
+        "title": "Board Agenda Calendar – Changes to the Board Agenda Schedule",
+        "phases": {
+          "opened": 7679,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 7711,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "20",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 7785,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 7785,
+            "type": "unanimous-consent",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "result": {
+    "videoId": "lRB-pyUKq6E",
+    "speakers": {
+      "A": {
+        "name": "Alisa MacAvoy",
+        "role": "Board President"
+      },
+      "B": {
+        "name": "Eliana (staff)",
+        "role": "Board Secretary / Clerk (meeting facilitator)"
+      },
+      "C": {
+        "name": "Mike Wells",
+        "role": "Trustee"
+      },
+      "D": {
+        "name": "Janet Lawson",
+        "role": "Trustee"
+      },
+      "E": {
+        "name": "Unknown",
+        "role": "Unknown staff/participant"
+      },
+      "F": {
+        "name": "John R. Baker",
+        "role": "Superintendent"
+      },
+      "G": {
+        "name": "Cecilia I. Márquez",
+        "role": "Trustee"
+      },
+      "H": {
+        "name": "María Díaz-Slocum",
+        "role": "Vice President"
+      },
+      "I": {
+        "name": "Tina Mercer",
+        "role": "Principal, Roosevelt School"
+      },
+      "J": {
+        "name": "Cameron Hoffman",
+        "role": "Public speaker"
+      }
+    },
+    "agendaChanges": "Section 4 (Reconvene/Roll Call/Report Out on Closed Session) and Section 5 (Welcome) were handled together at the start of the recording, with the president giving the closed session report and then the welcome. Section 6 (Changes to the Agenda) had no changes announced. Sections 1-3 (Closed Session) are not captured in this recording. The meeting proceeded largely in agenda order. Section 9 (School/Community Reports) featured Warren Sater (Adelante Selby principal) speaking briefly before the video. The COVID-19 discussion (12.1) included presentations from Garfield, Roosevelt, and Taft principals (Lupe Torres, Tina Mercer, Anna Herrera) as well as Dr. Baker on the Governor's proposal. Items 12.2, 12.3, and 12.4 (board policy first readings) were presented together by Wendy Kelly. Public comment for item 12.1 was taken mid-discussion. Sections 16, 17, 18, 19, and 20 were handled rapidly at the end.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order / Roll Call",
+        "phases": {
+          "opened": 0,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Oral Communication on Closed Session Items Only",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Closed Session",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Reconvene to Regular Session / Roll Call / Report Out on Closed Session",
+        "phases": {
+          "opened": 0,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Welcome by the School Board President",
+        "phases": {
+          "opened": 21,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 313,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 313,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 324,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 336,
+          "presentation": null,
+          "publicComment": 336,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9",
+        "title": "School/Community Reports – Adelante Selby Spanish Immersion School Musical",
+        "phases": {
+          "opened": 359,
+          "presentation": 466,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "Bond Program Consent Items",
+        "phases": {
+          "opened": 770,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 805,
+            "type": "roll-call",
+            "result": "4-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "Bond Program Action Items – Resolution 15, Hoover Community School New Gymnasium and Modernization Project Package D with Atlas Pellizzari, Inc., Change Order #3",
+        "phases": {
+          "opened": 814,
+          "presentation": 828,
+          "publicComment": null,
+          "discussion": 874,
+          "vote": {
+            "seconds": 914,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12",
+        "title": "Discussion Items",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.1",
+        "title": "Discussion on COVID-19",
+        "phases": {
+          "opened": 935,
+          "presentation": 958,
+          "publicComment": 5306,
+          "discussion": 1826,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Cameron Hoffman",
+            "startSeconds": 5342,
+            "endSeconds": 5527,
+            "summary": "Thanked principals for their work, requested real data on distance learning impacts, urged accurate district communications distinguishing in-person instruction from facilitated distance learning hubs/pods, and called for more strategic incentives to encourage voluntary teacher return."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.2",
+        "title": "First Reading of Board ByLaw 9100 – Organization",
+        "phases": {
+          "opened": 5725,
+          "presentation": 5738,
+          "publicComment": null,
+          "discussion": 5795,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.3",
+        "title": "First Reading of Board Policy 3530 – Risk Management/Insurance",
+        "phases": {
+          "opened": 6007,
+          "presentation": 6023,
+          "publicComment": null,
+          "discussion": 6129,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.4",
+        "title": "First Reading of Board Policy 4040 – Employee Use of Technology",
+        "phases": {
+          "opened": 6138,
+          "presentation": 6138,
+          "publicComment": null,
+          "discussion": 6251,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "Consent Items",
+        "phases": {
+          "opened": 6269,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6287,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.1",
+        "title": "Acceptance of Redwood City Teachers Association Sunshine Proposal",
+        "phases": {
+          "opened": 6301,
+          "presentation": 6313,
+          "publicComment": 6586,
+          "discussion": 6598,
+          "vote": {
+            "seconds": 6723,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [
+          {
+            "name": "Brian Cagle",
+            "startSeconds": 6609,
+            "endSeconds": 6693,
+            "summary": "Introduced himself as RCTA negotiations chair, noted Wendy Kelly had already described the sunshine proposal accurately, and expressed looking forward to collaborative bargaining beginning February 5th."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.2",
+        "title": "Governing Board's Initial Proposal for Negotiations with Redwood City Teachers Association for 2021-22",
+        "phases": {
+          "opened": 6741,
+          "presentation": 6749,
+          "publicComment": null,
+          "discussion": 6801,
+          "vote": {
+            "seconds": 6823,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Board and Superintendent Reports",
+        "phases": {
+          "opened": 6836,
+          "presentation": 6857,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16",
+        "title": "Information – San Mateo County Investment Fund / Quarterly Williams Report",
+        "phases": {
+          "opened": 7633,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "17",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 7643,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "18",
+        "title": "Other Business / Suggested Items For Future Agenda",
+        "phases": {
+          "opened": 7648,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "19",
+        "title": "Board Agenda Calendar – Changes to the Board Agenda Schedule",
+        "phases": {
+          "opened": 7679,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 7711,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "20",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 7785,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 7785,
+            "type": "unanimous-consent",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "cachedAt": "2026-03-15T18:31:55.890Z",
+  "inputTokens": 30224,
+  "outputTokens": 3386
+}

@@ -1,0 +1,1026 @@
+{
+  "date": "2022-06-22",
+  "itemCount": 50,
+  "llmResponse": {
+    "speakers": {
+      "A": {
+        "name": "María Díaz-Slocum",
+        "role": "Board President"
+      },
+      "B": {
+        "name": "Ellie (staff)",
+        "role": "Recording Secretary / Staff (ASR unclear, likely district clerk/secretary)"
+      },
+      "C": {
+        "name": "Cecilia I. Márquez",
+        "role": "Board Clerk / Superintendent"
+      },
+      "D": {
+        "name": "Janet Lawson",
+        "role": "Trustee (also Priscilla, CFO, in finance sections)"
+      },
+      "E": {
+        "name": "Alisa MacAvoy",
+        "role": "Board Trustee (President per roster, Vice President per roll call confusion)"
+      },
+      "F": {
+        "name": "Mike Wells",
+        "role": "Trustee"
+      }
+    },
+    "agendaChanges": "Sections 1-3 (Call to Order, Oral Communication on Closed Session, Closed Session) occurred before the recording begins. The recording opens at the Reconvene to Regular Session (Section 4). Sections 10 and 11 (Bond Program Consent and Action Items) were not taken up in the recorded session. Section 9 school/community reports were taken before Sections 5-8 procedural items, though the president did handle roll call and welcome briefly at the top. The board calendar discussion (Section 12) was taken after Section 9 and before Section 13 consent items. Sections 18, 19, and 20 were handled together near the end.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order",
+        "phases": {
+          "opened": 5,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Roll Call (Opening)",
+        "phases": {
+          "opened": 5,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Closed Session",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Reconvene to Regular Session / Roll Call",
+        "phases": {
+          "opened": 5,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Report Out on Closed Session from June 22, 2022",
+        "phases": {
+          "opened": 40,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Welcome by the Board President",
+        "phases": {
+          "opened": 53,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 53,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 53,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 108,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 130,
+          "presentation": null,
+          "publicComment": 130,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9",
+        "title": "School/Community Reports",
+        "phases": {
+          "opened": 142,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.1",
+        "title": "Information Regarding Recent Panorama Climate Survey: Spring Administration Results and Comparison to Fall Administration Results",
+        "phases": {
+          "opened": 142,
+          "presentation": 185,
+          "publicComment": null,
+          "discussion": 1195,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.2",
+        "title": "Information Regarding Recent iReady Diagnostic Exam Results and Comparison to Fall Results",
+        "phases": {
+          "opened": 1800,
+          "presentation": 1828,
+          "publicComment": null,
+          "discussion": 2427,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "Bond Program Consent Items",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "Bond Program Action Items",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12",
+        "title": "Discussion Items",
+        "phases": {
+          "opened": 2546,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.1",
+        "title": "Discussion of the Board Meeting Calendar for the 2022-23 School Year",
+        "phases": {
+          "opened": 2546,
+          "presentation": 2555,
+          "publicComment": null,
+          "discussion": 2671,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "Approval of Consent Items",
+        "phases": {
+          "opened": 2776,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 2791,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14",
+        "title": "Public Hearing",
+        "phases": {
+          "opened": 2812,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.1",
+        "title": "Public Hearing and Discussion of the Local Control Accountability Plan (LCAP) for 2022-23",
+        "phases": {
+          "opened": 2812,
+          "presentation": 2877,
+          "publicComment": 2812,
+          "discussion": 4163,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.2",
+        "title": "Local Control Funding Formula (LCFF) Budget Overview for Parents",
+        "phases": {
+          "opened": 4812,
+          "presentation": 4831,
+          "publicComment": 4812,
+          "discussion": 5258,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.3",
+        "title": "Proposed Preliminary Budget for 2022-23 Fiscal Year",
+        "phases": {
+          "opened": 5454,
+          "presentation": 5468,
+          "publicComment": 5454,
+          "discussion": 7779,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.4",
+        "title": "2022-23 Statement of Reasons for Reserves in Excess of the Minimum State-Recommended Level",
+        "phases": {
+          "opened": 8328,
+          "presentation": 8349,
+          "publicComment": 8328,
+          "discussion": 8506,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Action Items",
+        "phases": {
+          "opened": 8514,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15.1",
+        "title": "Adoption of Resolution 40, The Education Protection Account for Fiscal Year 2022-23",
+        "phases": {
+          "opened": 8514,
+          "presentation": 8526,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 8566,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16",
+        "title": "Board and Superintendent Reports",
+        "phases": {
+          "opened": 8581,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16.1",
+        "title": "Report from Board Members and Superintendent",
+        "phases": {
+          "opened": 8581,
+          "presentation": 8594,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "17",
+        "title": "Information",
+        "phases": {
+          "opened": 8704,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "17.1",
+        "title": "Information on San Mateo County Investment Fund - May 2022",
+        "phases": {
+          "opened": 8704,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "18",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 8715,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 8726,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "19",
+        "title": "Other Business/Suggested Items For Future Agenda",
+        "phases": {
+          "opened": 8737,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "20",
+        "title": "Board Agenda Calendar",
+        "phases": {
+          "opened": 8737,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "20.1",
+        "title": "Changes to the Board Agenda Schedule",
+        "phases": {
+          "opened": 8737,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 8758,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "21",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 8770,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 8807,
+            "type": "voice",
+            "result": "unanimous"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "result": {
+    "videoId": "ghnyaPY6Tvk",
+    "speakers": {
+      "A": {
+        "name": "María Díaz-Slocum",
+        "role": "Board President"
+      },
+      "B": {
+        "name": "Ellie (staff)",
+        "role": "Recording Secretary / Staff (ASR unclear, likely district clerk/secretary)"
+      },
+      "C": {
+        "name": "Cecilia I. Márquez",
+        "role": "Board Clerk / Superintendent"
+      },
+      "D": {
+        "name": "Janet Lawson",
+        "role": "Trustee (also Priscilla, CFO, in finance sections)"
+      },
+      "E": {
+        "name": "Alisa MacAvoy",
+        "role": "Board Trustee (President per roster, Vice President per roll call confusion)"
+      },
+      "F": {
+        "name": "Mike Wells",
+        "role": "Trustee"
+      }
+    },
+    "agendaChanges": "Sections 1-3 (Call to Order, Oral Communication on Closed Session, Closed Session) occurred before the recording begins. The recording opens at the Reconvene to Regular Session (Section 4). Sections 10 and 11 (Bond Program Consent and Action Items) were not taken up in the recorded session. Section 9 school/community reports were taken before Sections 5-8 procedural items, though the president did handle roll call and welcome briefly at the top. The board calendar discussion (Section 12) was taken after Section 9 and before Section 13 consent items. Sections 18, 19, and 20 were handled together near the end.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order",
+        "phases": {
+          "opened": 5,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Roll Call (Opening)",
+        "phases": {
+          "opened": 5,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Closed Session",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Reconvene to Regular Session / Roll Call",
+        "phases": {
+          "opened": 5,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Report Out on Closed Session from June 22, 2022",
+        "phases": {
+          "opened": 40,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Welcome by the Board President",
+        "phases": {
+          "opened": 53,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 53,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 53,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 108,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 130,
+          "presentation": null,
+          "publicComment": 130,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9",
+        "title": "School/Community Reports",
+        "phases": {
+          "opened": 142,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.1",
+        "title": "Information Regarding Recent Panorama Climate Survey: Spring Administration Results and Comparison to Fall Administration Results",
+        "phases": {
+          "opened": 142,
+          "presentation": 185,
+          "publicComment": null,
+          "discussion": 1195,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.2",
+        "title": "Information Regarding Recent iReady Diagnostic Exam Results and Comparison to Fall Results",
+        "phases": {
+          "opened": 1800,
+          "presentation": 1828,
+          "publicComment": null,
+          "discussion": 2427,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "Bond Program Consent Items",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "Bond Program Action Items",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12",
+        "title": "Discussion Items",
+        "phases": {
+          "opened": 2546,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.1",
+        "title": "Discussion of the Board Meeting Calendar for the 2022-23 School Year",
+        "phases": {
+          "opened": 2546,
+          "presentation": 2555,
+          "publicComment": null,
+          "discussion": 2671,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "Approval of Consent Items",
+        "phases": {
+          "opened": 2776,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 2791,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14",
+        "title": "Public Hearing",
+        "phases": {
+          "opened": 2812,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.1",
+        "title": "Public Hearing and Discussion of the Local Control Accountability Plan (LCAP) for 2022-23",
+        "phases": {
+          "opened": 2812,
+          "presentation": 2877,
+          "publicComment": 2812,
+          "discussion": 4163,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.2",
+        "title": "Local Control Funding Formula (LCFF) Budget Overview for Parents",
+        "phases": {
+          "opened": 4812,
+          "presentation": 4831,
+          "publicComment": 4812,
+          "discussion": 5258,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.3",
+        "title": "Proposed Preliminary Budget for 2022-23 Fiscal Year",
+        "phases": {
+          "opened": 5454,
+          "presentation": 5468,
+          "publicComment": 5454,
+          "discussion": 7779,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.4",
+        "title": "2022-23 Statement of Reasons for Reserves in Excess of the Minimum State-Recommended Level",
+        "phases": {
+          "opened": 8328,
+          "presentation": 8349,
+          "publicComment": 8328,
+          "discussion": 8506,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Action Items",
+        "phases": {
+          "opened": 8514,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15.1",
+        "title": "Adoption of Resolution 40, The Education Protection Account for Fiscal Year 2022-23",
+        "phases": {
+          "opened": 8514,
+          "presentation": 8526,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 8566,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16",
+        "title": "Board and Superintendent Reports",
+        "phases": {
+          "opened": 8581,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16.1",
+        "title": "Report from Board Members and Superintendent",
+        "phases": {
+          "opened": 8581,
+          "presentation": 8594,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "17",
+        "title": "Information",
+        "phases": {
+          "opened": 8704,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "17.1",
+        "title": "Information on San Mateo County Investment Fund - May 2022",
+        "phases": {
+          "opened": 8704,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "18",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 8715,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 8726,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "19",
+        "title": "Other Business/Suggested Items For Future Agenda",
+        "phases": {
+          "opened": 8737,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "20",
+        "title": "Board Agenda Calendar",
+        "phases": {
+          "opened": 8737,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "20.1",
+        "title": "Changes to the Board Agenda Schedule",
+        "phases": {
+          "opened": 8737,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 8758,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "21",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 8770,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 8807,
+            "type": "voice",
+            "result": "unanimous"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "cachedAt": "2026-03-15T18:07:07.238Z",
+  "inputTokens": 30326,
+  "outputTokens": 3745
+}

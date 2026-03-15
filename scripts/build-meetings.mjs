@@ -11,6 +11,7 @@
 import { readFileSync, writeFileSync, existsSync, readdirSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
+import { parseSimbliAgenda, parseBoarddocsAgenda } from './parse-formal-agenda.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
@@ -115,6 +116,18 @@ function classifyThreads(topics, type, date) {
   return [...new Set(threads)];
 }
 
+// ---- Load board memo formal agendas for Simbli meetings ----
+
+const memoDir = resolve(ROOT, 'data/board-memos');
+function loadSimbliItems(date) {
+  const memoPath = resolve(memoDir, `${date}.json`);
+  if (existsSync(memoPath)) {
+    const memo = JSON.parse(readFileSync(memoPath, 'utf-8'));
+    return parseSimbliAgenda(memo.items);
+  }
+  return null;
+}
+
 // Build Simbli meetings
 const simbliMeetings = tableRows.map(row => {
   // | 02/26/2026 | Special | 56022 | [Video](...) | Parcel tax... |
@@ -131,6 +144,18 @@ const simbliMeetings = tableRows.map(row => {
   const simbliUrl = detail?.simbliUrl ||
     `https://simbli.eboardsolutions.com/SB_Meetings/ViewMeeting.aspx?S=36030397&MID=${mid}`;
 
+  // Use formal agenda from board memo if available, else fall back to markdown-parsed items
+  const formalItems = loadSimbliItems(date);
+  const items = formalItems || (detail?.items || []).map((it, i) => ({
+    itemLabel: String(i + 1),
+    title: it.title,
+    isSection: false,
+    plannedMinutes: null,
+    actionType: null,
+    speaker: null,
+    attachments: it.attachments || [],
+  }));
+
   return {
     date,
     type,
@@ -143,7 +168,7 @@ const simbliMeetings = tableRows.map(row => {
     zoom: detail?.zoom || null,
     topics: topics ? [topics] : [],
     threads: classifyThreads(topics, type, date),
-    items: detail?.items || []
+    items,
   };
 }).filter(Boolean);
 
@@ -170,22 +195,23 @@ function parseBoarddocsDate(s) {
   return `${s.slice(0, 4)}-${s.slice(4, 6)}-${s.slice(6, 8)}`;
 }
 
-// Generate topic summary from substantive agenda items
+// Generate topic summary from substantive agenda items (works with new formal schema)
 function extractTopics(items) {
-  const skipCategories = [
+  const skipPatterns = [
     'call to order', 'oral communication', 'reconvene', 'welcome',
     'changes to the agenda', 'pledge of allegiance', 'approval of agenda',
     'adjournment', 'closed session', 'report out', 'board member reports',
-    'superintendent report', 'approval of consent',
+    'superintendent report', 'approval of consent', 'roll call', 'public comment',
+    'correspondence', 'other business', 'suggested items', 'board meetings calendar',
   ];
   return items
     .filter(it => {
-      const cat = (it.category || '').toLowerCase();
-      const title = (it.title || '').toLowerCase();
-      // Skip procedural items and boilerplate
+      // Skip section headers and procedural items
+      if (it.isSection) return false;
       if (it.actionType === 'Procedural') return false;
-      if (skipCategories.some(s => cat.includes(s) || title.includes(s))) return false;
-      if (title.includes('roll call') || title.includes('public comment')) return false;
+      const title = (it.title || '').toLowerCase();
+      const cat = (it.category || '').toLowerCase();
+      if (skipPatterns.some(s => title.includes(s) || cat.includes(s))) return false;
       // Keep action and information items with substantive titles
       return it.title.length > 10;
     })
@@ -218,9 +244,11 @@ for (const m of boarddocsParsed) {
     const type = name.includes('retreat') ? 'Retreat (Offsite)'
       : name.includes('closed') ? 'Closed Session'
       : scraped ? scraped.type : 'Board Meeting';
-    const items = scraped ? scraped.items : [];
-    const topics = scraped ? extractTopics(items) : [];
     const slug = `${m.isoDate}-${type.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+$/, '')}`;
+
+    // Build formal agenda items from BoardDocs scraped data
+    const formalItems = scraped ? parseBoarddocsAgenda(scraped) : [];
+    const topics = scraped ? extractTopics(formalItems) : [];
 
     boarddocsMeetings.push({
       date: m.isoDate,
@@ -233,17 +261,7 @@ for (const m of boarddocsParsed) {
       boarddocs: scraped?.url || `https://go.boarddocs.com/ca/redwood/Board.nsf/goto?open&id=${m.unid}`,
       topics,
       threads: classifyThreads(topics.join(' '), type, m.isoDate),
-      items: items.map(it => ({
-        title: it.title,
-        order: it.order || undefined,
-        actionType: it.actionType || undefined,
-        category: it.category || undefined,
-        attachments: (it.attachments || []).map(a => ({
-          title: a.name,
-          href: a.href,
-          size: a.size,
-        })),
-      })),
+      items: formalItems,
     });
   }
 }
@@ -328,6 +346,9 @@ function getDurationFromTranscript(videoId) {
 }
 
 // ---- Replace Simbli attachments with authoritative agenda PDF data ----
+// For meetings that have board memos, attachments are already inline from parseSimbliAgenda.
+// For meetings with agenda-attachments.json data (extracted from PDF annotation layers),
+// overlay those onto items via keyword matching.
 
 const agendaAttPath = resolve(ROOT, 'data/agenda-attachments.json');
 if (existsSync(agendaAttPath)) {
@@ -337,6 +358,10 @@ if (existsSync(agendaAttPath)) {
     const pdfData = agendaAtt[m.date];
     if (!pdfData) continue;
 
+    // Check if this meeting already has board-memo attachments
+    const hasInlineAtts = m.items.some(it => it.attachments && it.attachments.length > 0);
+    if (hasInlineAtts) continue; // board memo attachments are more authoritative
+
     // Build the real attachment list from agenda PDF links
     const pdfLinks = pdfData.attachments.map(a => ({
       title: a.title,
@@ -345,11 +370,6 @@ if (existsSync(agendaAttPath)) {
       page: a.page,
     }));
 
-    // Clear fabricated attachments from all items
-    for (const item of m.items) {
-      item.attachments = [];
-    }
-
     // Assign PDF attachments to items via keyword matching
     for (const link of pdfLinks) {
       const linkText = link.title.toLowerCase();
@@ -357,14 +377,13 @@ if (existsSync(agendaAttPath)) {
       let bestScore = 0;
 
       for (const item of m.items) {
+        if (item.isSection) continue; // don't attach to section headers
         const itemTitle = item.title.toLowerCase();
-        // Score: count matching significant words
         const itemWords = itemTitle.split(/\s+/).filter(w => w.length > 3);
         let score = 0;
         for (const w of itemWords) {
           if (linkText.includes(w)) score++;
         }
-        // Boost for number matches (e.g., "3510", "9324", "16")
         const itemNums = itemTitle.match(/\d{3,}/g) || [];
         for (const n of itemNums) {
           if (linkText.includes(n)) score += 3;
@@ -376,9 +395,9 @@ if (existsSync(agendaAttPath)) {
       }
 
       if (bestItem && bestScore >= 2) {
+        if (!bestItem.attachments) bestItem.attachments = [];
         bestItem.attachments.push({ title: link.title, aid: link.aid });
       } else {
-        // Unmatched -- add to a meeting-level bucket
         if (!m.extraAttachments) m.extraAttachments = [];
         m.extraAttachments.push({ title: link.title, aid: link.aid });
       }
@@ -388,68 +407,6 @@ if (existsSync(agendaAttPath)) {
   console.log(`Replaced attachments for ${replaced} Simbli meetings from agenda PDFs (${Object.keys(agendaAtt).length} available)`);
 } else {
   console.log('No agenda-attachments.json found (run extract-agenda-links.py first)');
-}
-
-// ---- Merge board-memo attachments for meetings without agenda-attachments ----
-
-const memoDir = resolve(ROOT, 'data/board-memos');
-if (existsSync(memoDir)) {
-  const agendaAtt = existsSync(agendaAttPath)
-    ? JSON.parse(readFileSync(agendaAttPath, 'utf-8'))
-    : {};
-  let memoMerged = 0;
-
-  for (const f of readdirSync(memoDir).filter(f => f.endsWith('.json'))) {
-    const date = f.replace('.json', '');
-    if (agendaAtt[date]) continue; // already handled by agenda-attachments
-
-    const memo = JSON.parse(readFileSync(resolve(memoDir, f), 'utf-8'));
-    const meeting = simbliMeetings.find(m => m.date === date);
-    if (!meeting) continue;
-
-    // Match board-memo items to meeting items by title similarity
-    for (const memoItem of memo.items) {
-      if (!memoItem.attachments || memoItem.attachments.length === 0) continue;
-
-      // Clean memo title: strip leading "N. " prefix and trailing " - X min/hr" timing
-      const cleanTitle = memoItem.title
-        .replace(/^\d+\.\s*/, '')
-        .replace(/\s*-\s*\d+\s*(min|hr|hour)s?\s*$/i, '')
-        .toLowerCase();
-
-      // Find best matching meeting item
-      let bestItem = null;
-      let bestScore = 0;
-      for (const item of meeting.items) {
-        const itemTitle = item.title.toLowerCase();
-        // Check for substring containment (either direction)
-        if (itemTitle.includes(cleanTitle) || cleanTitle.includes(itemTitle)) {
-          const score = Math.max(cleanTitle.length, itemTitle.length);
-          if (score > bestScore) {
-            bestScore = score;
-            bestItem = item;
-          }
-        }
-      }
-
-      if (bestItem) {
-        if (!bestItem.attachments) bestItem.attachments = [];
-        for (const att of memoItem.attachments) {
-          bestItem.attachments.push({ title: att.name, aid: att.aid });
-        }
-      } else {
-        // Unmatched — add to meeting-level extras
-        if (!meeting.extraAttachments) meeting.extraAttachments = [];
-        for (const att of memoItem.attachments) {
-          meeting.extraAttachments.push({ title: att.name, aid: att.aid });
-        }
-      }
-    }
-    memoMerged++;
-  }
-  if (memoMerged > 0) {
-    console.log(`Merged board-memo attachments for ${memoMerged} meetings without agenda-attachments`);
-  }
 }
 
 // ---- Merge and sort ----
@@ -478,39 +435,51 @@ for (const m of allMeetings) {
     // Store full chapter markers on the meeting for HTML rendering
     m.chapterMarkers = cm;
 
-    // Match chapter marker items to meetings-data items by title similarity
-    // Chapter markers use formal agenda labels; meetings-data has only substantive items
+    // Build lookup of items by itemLabel for direct matching
+    const itemsByLabel = new Map();
+    for (const item of m.items) {
+      if (item.itemLabel) itemsByLabel.set(item.itemLabel, item);
+    }
+
     for (const cmItem of cm.items) {
       if (!cmItem.phases?.opened) continue;
-      const cmTitle = (cmItem.title || '').toLowerCase();
 
-      // Find best matching item by word overlap
-      let bestItem = null;
-      let bestScore = 0;
-      for (const item of m.items) {
-        const itemTitle = (item.title || '').toLowerCase();
-        const itemWords = itemTitle.split(/\s+/).filter(w => w.length > 3);
-        let score = 0;
-        for (const w of itemWords) {
-          if (cmTitle.includes(w)) score++;
+      // Try direct match by itemLabel first
+      let matchedItem = cmItem.itemLabel ? itemsByLabel.get(cmItem.itemLabel) : null;
+
+      // Fall back to fuzzy title matching if no label match
+      if (!matchedItem) {
+        const cmTitle = (cmItem.title || '').toLowerCase();
+        let bestItem = null;
+        let bestScore = 0;
+        for (const item of m.items) {
+          const itemTitle = (item.title || '').toLowerCase();
+          const itemWords = itemTitle.split(/\s+/).filter(w => w.length > 3);
+          let score = 0;
+          for (const w of itemWords) {
+            if (cmTitle.includes(w)) score++;
+          }
+          if (score > bestScore) {
+            bestScore = score;
+            bestItem = item;
+          }
         }
-        if (score > bestScore) {
-          bestScore = score;
-          bestItem = item;
-        }
+        if (bestItem && bestScore >= 2) matchedItem = bestItem;
       }
 
-      if (bestItem && bestScore >= 2) {
+      if (matchedItem) {
         const sec = cmItem.phases.opened;
         const h = Math.floor(sec / 3600);
         const min = Math.floor((sec % 3600) / 60);
         const s = sec % 60;
-        bestItem.timestamp = `${String(h).padStart(2, '0')}:${String(min).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
-        bestItem.timestampSeconds = sec;
-        bestItem.phases = cmItem.phases;
-        bestItem.itemLabel = cmItem.itemLabel;
-        bestItem.consent = cmItem.consent || false;
-        bestItem.pulled = cmItem.pulled || false;
+        matchedItem.timestamp = `${String(h).padStart(2, '0')}:${String(min).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+        matchedItem.timestampSeconds = sec;
+        matchedItem.phases = cmItem.phases;
+        matchedItem.consent = cmItem.consent || false;
+        matchedItem.pulled = cmItem.pulled || false;
+        if (cmItem.publicComments && cmItem.publicComments.length > 0) {
+          matchedItem.publicComments = cmItem.publicComments;
+        }
       }
     }
   } else {

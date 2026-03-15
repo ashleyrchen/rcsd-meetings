@@ -1,0 +1,984 @@
+{
+  "date": "2023-11-15",
+  "itemCount": 14,
+  "llmResponse": {
+    "speakers": {
+      "A": {
+        "name": "Janet Lawson",
+        "role": "Clerk / Trustee (conducting roll call in study session)"
+      },
+      "B": {
+        "name": "Mike Wells",
+        "role": "Trustee"
+      },
+      "C": {
+        "name": "Cecilia I. Márquez",
+        "role": "Vice President (acting as President in study session; also Clerk responses)"
+      },
+      "D": {
+        "name": "María Díaz-Slocum",
+        "role": "President (chairing regular session)"
+      },
+      "E": {
+        "name": "John Baker",
+        "role": "Superintendent (Dr. Baker)"
+      },
+      "F": {
+        "name": "Various / Unidentified presenters",
+        "role": "Multiple staff/community members"
+      },
+      "G": {
+        "name": "Alma Rosas / Jennifer Knopf",
+        "role": "Community School Coordinator (Hoover) / Principal (Henry Ford) — shared label"
+      },
+      "H": {
+        "name": "Alisa MacAvoy",
+        "role": "Trustee"
+      },
+      "I": {
+        "name": "Janet Lawson",
+        "role": "Clerk / Trustee (regular session)"
+      }
+    },
+    "agendaChanges": "Item 10.1 (Discussion of Districtwide Solar Phase 2 Financial Study) was pulled from the agenda and deferred to a future meeting. Item 9.3 (Approval of Proposal for Intercom Buzzers at Hawes School with Atlas Pellizzari) was moved from Bond Program Consent Items to a standalone action item for individual discussion and vote. The closed session and report out were handled before the formal regular session agenda. The study session preceded the regular session as posted.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order / Roll Call (Study Session)",
+        "phases": {
+          "opened": 7,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Oral Communication on Study Session Items Only",
+        "phases": {
+          "opened": 83,
+          "presentation": null,
+          "publicComment": 83,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Study Session: Discussion on Dyslexia",
+        "phases": {
+          "opened": 92,
+          "presentation": 103,
+          "publicComment": 1764,
+          "discussion": 3022,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Ors Neighbor",
+            "startSeconds": 1778,
+            "endSeconds": 1987,
+            "summary": "A father described his son Leor's experience being diagnosed with dyslexia privately at significant expense after the school determined he did not qualify for special education services despite low reading scores, and urged the district to support all students regardless of financial means."
+          },
+          {
+            "name": "Giselle Hale",
+            "startSeconds": 2022,
+            "endSeconds": 2221,
+            "summary": "A parent of two dyslexic students and community advocate urged the board to treat dyslexia as a general education issue, highlighted districts succeeding through Orton-Gillingham training for all teachers, and stressed that implementation fidelity matters more than curriculum choice alone."
+          },
+          {
+            "name": "Fallon Scoggins",
+            "startSeconds": 2229,
+            "endSeconds": 2590,
+            "summary": "A mother of a son with severe dyslexia and dysgraphia described the emotional and academic toll on her family, the inaccessibility of after-school interventions for many families, and urgently called for structured literacy instruction to be available throughout the school day for all students."
+          },
+          {
+            "name": "Jennifer Salma",
+            "startSeconds": 2607,
+            "endSeconds": 3022,
+            "summary": "A regional leader with Decoding Dyslexia California thanked the district for engaging with the California Dyslexia Guidelines, emphasized dyslexia as a neurological difference with associated strengths rather than a disability, and urged fidelity in program implementation and robust principal and teacher support."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Reconvene to Regular Session / Roll Call / Report Out on Closed Session",
+        "phases": {
+          "opened": 3823,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Welcome by the School Board President",
+        "phases": {
+          "opened": 4121,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 4225,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Approval of the Agenda",
+        "phases": {
+          "opened": 4272,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4295,
+            "type": "voice",
+            "result": "unanimous"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 4296,
+          "presentation": null,
+          "publicComment": 4296,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9",
+        "title": "Bond Program Consent Items (excluding pulled item 9.3)",
+        "phases": {
+          "opened": 4305,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4320,
+            "type": "voice",
+            "result": "unanimous"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.3",
+        "title": "Approval of Proposal for the Infrastructure of Two (2) Video/Intercom Buzzers with Atlas Pellizzari for Hawes School (pulled to action)",
+        "phases": {
+          "opened": 4324,
+          "presentation": 4346,
+          "publicComment": null,
+          "discussion": 4350,
+          "vote": {
+            "seconds": 4439,
+            "type": "voice",
+            "result": "unanimous"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": true
+      },
+      {
+        "itemLabel": "11",
+        "title": "School/Community Reports: Hoover and Henry Ford School Presentations",
+        "phases": {
+          "opened": 4442,
+          "presentation": 4452,
+          "publicComment": null,
+          "discussion": 5762,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "Bond Program Action Items: Discussion of Districtwide Solar Phase 2 (pulled/deferred)",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": true
+      },
+      {
+        "itemLabel": "12",
+        "title": "Discussion Items (Board Policies – First Readings)",
+        "phases": {
+          "opened": 9518,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.1",
+        "title": "First Reading: BP/AR 6173 – Education for Homeless Children",
+        "phases": {
+          "opened": 9518,
+          "presentation": 9542,
+          "publicComment": null,
+          "discussion": 9836,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.2",
+        "title": "First Reading: BP/AR 6173.1 – Education for Foster Youth",
+        "phases": {
+          "opened": 10436,
+          "presentation": 10455,
+          "publicComment": null,
+          "discussion": 10473,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.3",
+        "title": "First Reading: BP/AR 6020 – Parent Involvement",
+        "phases": {
+          "opened": 10543,
+          "presentation": 10573,
+          "publicComment": null,
+          "discussion": 10654,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.4",
+        "title": "First Reading: BP/AR 6171 – Title I Programs",
+        "phases": {
+          "opened": 10664,
+          "presentation": 10676,
+          "publicComment": null,
+          "discussion": 10748,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.5",
+        "title": "First Reading: BP 6163.4 – Student Use of Technology",
+        "phases": {
+          "opened": 10767,
+          "presentation": 10775,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.6",
+        "title": "First Reading: BP/AR 5144.1 – Suspension and Expulsion/Due Process",
+        "phases": {
+          "opened": 10804,
+          "presentation": 10819,
+          "publicComment": null,
+          "discussion": 10845,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "Consent Items",
+        "phases": {
+          "opened": 11026,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 11050,
+            "type": "voice",
+            "result": "unanimous"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.1",
+        "title": "Adoption of Resolution No. 5 – Continued Funding Application 2024/25 for District State Preschool Programs",
+        "phases": {
+          "opened": 11052,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 11076,
+          "vote": {
+            "seconds": 11102,
+            "type": "voice",
+            "result": "unanimous"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.2",
+        "title": "Adoption of Annual Organizational Meeting Date – December 6, 2023",
+        "phases": {
+          "opened": 11104,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 11126,
+            "type": "voice",
+            "result": "unanimous"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Board and Superintendent Reports",
+        "phases": {
+          "opened": 11133,
+          "presentation": 11146,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16",
+        "title": "Information: San Mateo County Investment Fund – September 2023",
+        "phases": {
+          "opened": 11583,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "17",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 11600,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 11600,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "18",
+        "title": "Other Business / Suggested Items for Future Agenda",
+        "phases": {
+          "opened": 11722,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "19",
+        "title": "Board Meetings Calendar",
+        "phases": {
+          "opened": 11722,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "20",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 11746,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 11751,
+            "type": "voice",
+            "result": "unanimous"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "result": {
+    "videoId": "LPmyvuhgudA",
+    "speakers": {
+      "A": {
+        "name": "Janet Lawson",
+        "role": "Clerk / Trustee (conducting roll call in study session)"
+      },
+      "B": {
+        "name": "Mike Wells",
+        "role": "Trustee"
+      },
+      "C": {
+        "name": "Cecilia I. Márquez",
+        "role": "Vice President (acting as President in study session; also Clerk responses)"
+      },
+      "D": {
+        "name": "María Díaz-Slocum",
+        "role": "President (chairing regular session)"
+      },
+      "E": {
+        "name": "John Baker",
+        "role": "Superintendent (Dr. Baker)"
+      },
+      "F": {
+        "name": "Various / Unidentified presenters",
+        "role": "Multiple staff/community members"
+      },
+      "G": {
+        "name": "Alma Rosas / Jennifer Knopf",
+        "role": "Community School Coordinator (Hoover) / Principal (Henry Ford) — shared label"
+      },
+      "H": {
+        "name": "Alisa MacAvoy",
+        "role": "Trustee"
+      },
+      "I": {
+        "name": "Janet Lawson",
+        "role": "Clerk / Trustee (regular session)"
+      }
+    },
+    "agendaChanges": "Item 10.1 (Discussion of Districtwide Solar Phase 2 Financial Study) was pulled from the agenda and deferred to a future meeting. Item 9.3 (Approval of Proposal for Intercom Buzzers at Hawes School with Atlas Pellizzari) was moved from Bond Program Consent Items to a standalone action item for individual discussion and vote. The closed session and report out were handled before the formal regular session agenda. The study session preceded the regular session as posted.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order / Roll Call (Study Session)",
+        "phases": {
+          "opened": 7,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Oral Communication on Study Session Items Only",
+        "phases": {
+          "opened": 83,
+          "presentation": null,
+          "publicComment": 83,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Study Session: Discussion on Dyslexia",
+        "phases": {
+          "opened": 92,
+          "presentation": 103,
+          "publicComment": 1764,
+          "discussion": 3022,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Ors Neighbor",
+            "startSeconds": 1778,
+            "endSeconds": 1987,
+            "summary": "A father described his son Leor's experience being diagnosed with dyslexia privately at significant expense after the school determined he did not qualify for special education services despite low reading scores, and urged the district to support all students regardless of financial means."
+          },
+          {
+            "name": "Giselle Hale",
+            "startSeconds": 2022,
+            "endSeconds": 2221,
+            "summary": "A parent of two dyslexic students and community advocate urged the board to treat dyslexia as a general education issue, highlighted districts succeeding through Orton-Gillingham training for all teachers, and stressed that implementation fidelity matters more than curriculum choice alone."
+          },
+          {
+            "name": "Fallon Scoggins",
+            "startSeconds": 2229,
+            "endSeconds": 2590,
+            "summary": "A mother of a son with severe dyslexia and dysgraphia described the emotional and academic toll on her family, the inaccessibility of after-school interventions for many families, and urgently called for structured literacy instruction to be available throughout the school day for all students."
+          },
+          {
+            "name": "Jennifer Salma",
+            "startSeconds": 2607,
+            "endSeconds": 3022,
+            "summary": "A regional leader with Decoding Dyslexia California thanked the district for engaging with the California Dyslexia Guidelines, emphasized dyslexia as a neurological difference with associated strengths rather than a disability, and urged fidelity in program implementation and robust principal and teacher support."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Reconvene to Regular Session / Roll Call / Report Out on Closed Session",
+        "phases": {
+          "opened": 3823,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Welcome by the School Board President",
+        "phases": {
+          "opened": 4121,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 4225,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Approval of the Agenda",
+        "phases": {
+          "opened": 4272,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4295,
+            "type": "voice",
+            "result": "unanimous"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 4296,
+          "presentation": null,
+          "publicComment": 4296,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9",
+        "title": "Bond Program Consent Items (excluding pulled item 9.3)",
+        "phases": {
+          "opened": 4305,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4320,
+            "type": "voice",
+            "result": "unanimous"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.3",
+        "title": "Approval of Proposal for the Infrastructure of Two (2) Video/Intercom Buzzers with Atlas Pellizzari for Hawes School (pulled to action)",
+        "phases": {
+          "opened": 4324,
+          "presentation": 4346,
+          "publicComment": null,
+          "discussion": 4350,
+          "vote": {
+            "seconds": 4439,
+            "type": "voice",
+            "result": "unanimous"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": true
+      },
+      {
+        "itemLabel": "11",
+        "title": "School/Community Reports: Hoover and Henry Ford School Presentations",
+        "phases": {
+          "opened": 4442,
+          "presentation": 4452,
+          "publicComment": null,
+          "discussion": 5762,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "Bond Program Action Items: Discussion of Districtwide Solar Phase 2 (pulled/deferred)",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": true
+      },
+      {
+        "itemLabel": "12",
+        "title": "Discussion Items (Board Policies – First Readings)",
+        "phases": {
+          "opened": 9518,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.1",
+        "title": "First Reading: BP/AR 6173 – Education for Homeless Children",
+        "phases": {
+          "opened": 9518,
+          "presentation": 9542,
+          "publicComment": null,
+          "discussion": 9836,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.2",
+        "title": "First Reading: BP/AR 6173.1 – Education for Foster Youth",
+        "phases": {
+          "opened": 10436,
+          "presentation": 10455,
+          "publicComment": null,
+          "discussion": 10473,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.3",
+        "title": "First Reading: BP/AR 6020 – Parent Involvement",
+        "phases": {
+          "opened": 10543,
+          "presentation": 10573,
+          "publicComment": null,
+          "discussion": 10654,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.4",
+        "title": "First Reading: BP/AR 6171 – Title I Programs",
+        "phases": {
+          "opened": 10664,
+          "presentation": 10676,
+          "publicComment": null,
+          "discussion": 10748,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.5",
+        "title": "First Reading: BP 6163.4 – Student Use of Technology",
+        "phases": {
+          "opened": 10767,
+          "presentation": 10775,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.6",
+        "title": "First Reading: BP/AR 5144.1 – Suspension and Expulsion/Due Process",
+        "phases": {
+          "opened": 10804,
+          "presentation": 10819,
+          "publicComment": null,
+          "discussion": 10845,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "Consent Items",
+        "phases": {
+          "opened": 11026,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 11050,
+            "type": "voice",
+            "result": "unanimous"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.1",
+        "title": "Adoption of Resolution No. 5 – Continued Funding Application 2024/25 for District State Preschool Programs",
+        "phases": {
+          "opened": 11052,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 11076,
+          "vote": {
+            "seconds": 11102,
+            "type": "voice",
+            "result": "unanimous"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.2",
+        "title": "Adoption of Annual Organizational Meeting Date – December 6, 2023",
+        "phases": {
+          "opened": 11104,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 11126,
+            "type": "voice",
+            "result": "unanimous"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Board and Superintendent Reports",
+        "phases": {
+          "opened": 11133,
+          "presentation": 11146,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16",
+        "title": "Information: San Mateo County Investment Fund – September 2023",
+        "phases": {
+          "opened": 11583,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "17",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 11600,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 11600,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "18",
+        "title": "Other Business / Suggested Items for Future Agenda",
+        "phases": {
+          "opened": 11722,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "19",
+        "title": "Board Meetings Calendar",
+        "phases": {
+          "opened": 11722,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "20",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 11746,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 11751,
+            "type": "voice",
+            "result": "unanimous"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "cachedAt": "2026-03-15T17:42:15.398Z",
+  "inputTokens": 44847,
+  "outputTokens": 3934
+}

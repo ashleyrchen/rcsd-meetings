@@ -6,13 +6,6 @@
 - [ ] iCal (.ics) subscription feeds for district and per-school calendars
 
 ## School Pages — Community & Parent Links
-- [x] Parent communication platform identified per school (added to schools.json parentLinks)
-  - Konstella: Roy Cloud (confirmed link), Orion (confirmed link), North Star (contact PTA), Clifford (likely, needs verification)
-  - Membership Toolkit / Totem: Henry Ford
-  - Email/Social: Kennedy
-  - ParentSquare only: Adelante, Garfield, Hoover, McKinley, Roosevelt, Taft
-- [x] SchoolMessenger absence reporting app links added to schools.json districtLinks
-- [x] ParentSquare district-wide link added to schools.json districtLinks
 - [ ] Surface parentLinks on school detail pages and homepage cards
 - [ ] WhatsApp parent group links per school
 - [ ] After-school program info affiliated by school site
@@ -28,13 +21,8 @@
 ## School Pages — Documents
 - [ ] Pull Spanish-language SARCs for 2024-25 and upload to data.rcsd.info/documents/sarc/2024-25/spanish/
 - [ ] Link Spanish SARCs from /escuelas/ pages (currently links to English with "(inglés)" note)
-- [x] Source and add SpEd / IEP / 504 percentages per school (IEP + inclusion rate added to demographics)
-
-## School Pages — Safety
-- [x] Pull in and link the Comprehensive Safety Plan (CSSP) for each school site (2025-26, board-approved Feb 4 2026)
 
 ## School Pages — Board Presentations
-- [x] Prominently link school site presentations on school pages (PDF + video timestamp)
 - [ ] Kennedy and Garfield have not presented since 2023-24 — flag or investigate
 - [ ] Scrape BoardDocs back to ~March 2023 to capture the missing Garfield and Kennedy presentations
 
@@ -54,8 +42,6 @@
 ## CDE Data Pulls
 
 ### Tier 1 — High value, per-school, current
-- [x] CDE Census Day Enrollment — SpEd/IEP per-grade counts (done: data/sped-enrollment.json)
-- [x] CDE SPED Enrollment by Program Setting — disability categories, LRE placement (done: data/sped-categories.json)
 - [ ] ELPAC Results — EL proficiency levels (1-4) per school (2023-24)
   - Source: https://caaspp-elpac.cde.ca.gov/caaspp/ (Research File List, ELPAC test type)
 - [ ] ELAS/LTEL Data — Long-term English Learner counts + reclassification per school/grade (2024-25)
@@ -102,6 +88,12 @@
   - April 2024: https://go.boarddocs.com/ca/redwood/Board.nsf/files/D422AX010F7C/$file/Redwood%20City%20SD%20Special%20Education%20Study%20Report.pdf
   - May 2025 update: https://go.boarddocs.com/ca/redwood/Board.nsf/files/DGVSN2736D8B/$file/05_25%20Special%20Education%20Study%20Implementation%20Update%20-%20Board%20Presentation.pdf
 
+## Board Meetings — Public Engagement Tip Boxes
+- [ ] **"So you'd like to speak at a board meeting?"** — tip box explaining how to submit a speaker card (online form links for EN/ES, in-person process, time limits, what to expect, Zoom raise-hand for remote)
+- [ ] **"So you'd like a topic discussed at a future board meeting?"** — tip box explaining how to request agenda items (contact board members/superintendent, submit written communications, attend public comment to raise the topic, "Other Business/Suggested Items for Future Agenda" section)
+- Should appear on the meetings page as collapsible cards near the top
+- Bilingual (English + Spanish)
+
 ## Board Meetings — Historical Data
 - [ ] Scrape BoardDocs back to ~March 2023 (currently starts March 2024)
   - Would capture: Garfield Nov 2023 presentation, Kennedy Nov 2023 presentation, full 2023-24 school year
@@ -127,31 +119,51 @@ The calendar widget and meeting pages should reflect which state each meeting is
 - [ ] Surface these per-school summaries on school pages
 
 ## Board Meetings — Transcription & Chapters
-- [ ] Replace YouTube auto-captions with proper ASR (AssemblyAI Universal 3 Pro)
-- [ ] Fix timestamp offset alignment (currently really bad)
-- [ ] Generate "chapters" linking agenda items to meeting timestamps: "Agenda item 8.2 begins discussion at 18:42 and the discussion is summarized thusly..."
-- [ ] Diarized speaker identification in transcripts
+- [x] Replace YouTube auto-captions with proper ASR (AssemblyAI Universal 3 Pro) — 144 meetings transcribed
+- [x] Generate chapter markers linking formal agenda items to meeting timestamps with phase data (opened, presentation, publicComment, discussion, vote)
+- [x] Diarized speaker identification in transcripts (AAI speaker diarization + LLM speaker-to-name mapping)
+- [x] Individual public comment speaker extraction with names, timestamps, and summaries
+- [x] Formal agenda structure with hierarchical item labels (e.g., 7.1, 11.3) from board memos and BoardDocs
+- [ ] Web transcript viewer — scrollable diarized transcript alongside embedded YouTube player, synced to playback position
+- [ ] Downloadable transcript JSON per meeting
+- [ ] Spanish translation of transcripts
 
 ## Board Meetings — Detailed summaries from transcripts
-Once we have full quality transcripts, build a pipeline for rich per-meeting summaries:
-- Inputs: full transcript + formal minutes (when available) + agenda
-- Ordered by actual discussion sequence (not agenda order); note agenda changes proposed/approved at the top
-- Timestamp annotation for when each agenda item discussion began
-- Each public comment: who spoke + summary of remarks. Some comments are in Spanish; the interpreter's English translation follows. Capture both.
-- Discussion summary per agenda item
-- EN and ES output, written at sixth-grade reading level (Californian colloquial Spanish for ES)
-- District-specific terms (LCAP, CAASPP, unduplicated pupil, SARC, etc.) get hover-over/clickable inline glossary definitions
-- AI-generated content clearly labeled
+Build a pipeline for rich per-meeting summaries (inputs already in place: AAI transcripts + formal agenda + minutes + chapter markers):
+- [ ] Per-agenda-item discussion summary (what was said, by whom, key points raised)
+- [ ] Ordered by actual discussion sequence (not agenda order); note agenda changes proposed/approved at the top
+- [x] Each public comment: who spoke + summary of remarks (done via chapter markers extraction)
+- [ ] Spanish-language public comments: capture interpreter's English translation alongside original
+- [ ] EN and ES output, written at sixth-grade reading level (Californian colloquial Spanish for ES)
+- [ ] District-specific terms (LCAP, CAASPP, unduplicated pupil, SARC, etc.) get hover-over/clickable inline glossary definitions
+- [ ] AI-generated content clearly labeled
 - Open questions: glossary via `<abbr title>` vs popover component? Define terms once per page or per first-use per section?
 
 ## Agent / API Layer
-- [x] Claude Code plugin with RCSD data skill (plugin/ directory) — family config, school lookup, calendar queries
-- [x] Structured lunch menu data per school site, queryable by date (HealthePro public API, scripts/lunch-menu.mjs)
 - [ ] Per-child teacher/homeroom config in family settings — enables teacher-aware queries (field trips, homework, class-specific events)
 - [ ] Per-school teacher roster data — enables "Who teaches 3rd grade MI at Orion?" queries
 - [ ] Subscribable lunch calendar (iCal .ics) for overlay onto Apple Calendar / Outlook / Google Calendar
 - [ ] OpenAPI / JSON API endpoints on data.rcsd.info for school info, calendars, menus, meetings
 - [ ] Publish plugin to npm / Claude Code plugin registry for easy installation
+
+## Key Parties Roster
+- [ ] Build a "who's who" page: district cabinet/staff, board members (historical), vendors, unions (RCTA, CSEA, RCAA), consultants
+- [ ] Neutral, judgement-free descriptions of roles and tenures (date ranges)
+- [ ] Link each party to relevant documents (e.g., contract approvals for vendors, tentative agreements for unions)
+- [ ] Cross-reference from meeting items to party roster entries
+
+## Warrant Register Analysis
+- [ ] Scrape all warrant registers (ratification of warrants) from board meeting attachments
+- [ ] Parse payee names, amounts, dates, fund sources
+- [ ] Aggregate: which entities have been paid how much over what time period
+- [ ] Surface per-vendor spending trends and per-fund breakdowns
+
+## Document Index
+- [x] Unified document index from all meeting attachments (data/document-index.json) — 1,000+ docs classified
+- [x] Ontology: budget, lcap, spsa, sarc, school-report, resolution, policy, tax (parcel/bond), sped, english-learners (elac/delac/data), early-ed (preschool/tk), labor (rcta/csea), compliance, safety
+- [x] Multi-school tagging per document
+- [ ] Surface document index on meetings page and school pages
+- [ ] Document timeline/history view per type (e.g., all adopted budgets chronologically)
 
 ## Data Attribution (in progress)
 - [ ] Growth data (ELA/Math growth %) — find and link to the actual source document (currently attributed to "CDE Growth Model" but original data came from an untracked `hr-data-briefing-2026-03.md`)

@@ -1,0 +1,934 @@
+{
+  "date": "2024-09-11",
+  "itemCount": 41,
+  "llmResponse": {
+    "speakers": {
+      "A": {
+        "name": "Janet Lawson",
+        "role": "Board President"
+      },
+      "B": {
+        "name": "Cecilia I. Márquez",
+        "role": "Trustee"
+      },
+      "C": {
+        "name": "David Weekly",
+        "role": "Trustee"
+      },
+      "D": {
+        "name": "Alisa MacAvoy",
+        "role": "Trustee"
+      },
+      "E": {
+        "name": "Mike Wells",
+        "role": "Vice President"
+      },
+      "F": {
+        "name": "Mike Wells",
+        "role": "Vice President (note: transcript label E and F both appear to be Wells; F is Wells based on context)"
+      },
+      "G": {
+        "name": "Rick Edson",
+        "role": "CBO (Chief Business Officer)"
+      },
+      "H": {
+        "name": "Eric Van Pelt",
+        "role": "Bond Program Manager, VPCS (presenting via Zoom)"
+      },
+      "I": {
+        "name": "Anna Herrera",
+        "role": "Assistant Superintendent"
+      }
+    },
+    "agendaChanges": "Section 3 (Changes to the Agenda) confirmed no changes. The agenda proceeded in order as posted. Note: speaker labels E and F in the transcript both map to Mike Wells (Vice President) based on context and minutes; E appears during procedural exchanges and F during substantive discussion, but both are Wells.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order",
+        "phases": {
+          "opened": 4,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "1.1",
+        "title": "Roll Call",
+        "phases": {
+          "opened": 4,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Welcome by the School Board President",
+        "phases": {
+          "opened": 20,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 33,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 33,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 47,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 49,
+          "presentation": null,
+          "publicComment": 49,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Measure S Bond Program Priorities: HVAC Discussion",
+        "phases": {
+          "opened": 49,
+          "presentation": 101,
+          "publicComment": null,
+          "discussion": 1258,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7.1",
+        "title": "Discussion on Budget Renewal Initiative",
+        "phases": {
+          "opened": 2279,
+          "presentation": 2283,
+          "publicComment": null,
+          "discussion": 3100,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8",
+        "title": "Approval of Consent Items",
+        "phases": {
+          "opened": 3749,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3759,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.1",
+        "title": "Approval of Consent Items (bundle)",
+        "phases": {
+          "opened": 3749,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3759,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.2",
+        "title": "Approval of the August 28 Board Meeting Minutes",
+        "phases": {
+          "opened": 3749,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3759,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.3",
+        "title": "Approval of School Assignments and Committee Assignments for Board Members for the 2024-2025 School Year",
+        "phases": {
+          "opened": 3749,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3759,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.4",
+        "title": "Approval of the Agreement between the Redwood City School District and Illustrative Math for the 2024-2025 School Year",
+        "phases": {
+          "opened": 3749,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3759,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.5",
+        "title": "Approval of Local Interagency Agreement(s) to Provide Education and Training to Credential and License Candidates",
+        "phases": {
+          "opened": 3749,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3759,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.6",
+        "title": "Approval of Agreement between the Redwood City School District and JTG2023 for the 2024-2025 School Year",
+        "phases": {
+          "opened": 3749,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3759,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.7",
+        "title": "Ratification of Warrant Register, August 1, 2024 - August 31, 2024",
+        "phases": {
+          "opened": 3749,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3759,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.1",
+        "title": "Adoption of Resolution No. 4, Approval of Education Code and Title V Options for Teaching Assignments 2024-2025 School Year",
+        "phases": {
+          "opened": 3761,
+          "presentation": 3773,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3804,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.2",
+        "title": "Adoption of Resolution No. 5, Resolution in favor of California Proposition 2, Public School Facilities Bond Measure",
+        "phases": {
+          "opened": 3809,
+          "presentation": 3819,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3850,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.3",
+        "title": "Second Reading and Approval of Board Bylaw 9223 - Filling Vacancies",
+        "phases": {
+          "opened": 3852,
+          "presentation": 3862,
+          "publicComment": null,
+          "discussion": 3913,
+          "vote": {
+            "seconds": 3931,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.4",
+        "title": "Approval of Response to the 2023-2024 Grand Jury Report",
+        "phases": {
+          "opened": 3940,
+          "presentation": 3951,
+          "publicComment": null,
+          "discussion": 4085,
+          "vote": {
+            "seconds": 4297,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "Report from Board Members and Superintendent",
+        "phases": {
+          "opened": 4305,
+          "presentation": 4315,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "2024-25 Adopted Budget & LCAP for Connect Community Charter School, Rocketship Redwood City, and KIPP Excelencia Community Prep Charter School (Information Items)",
+        "phases": {
+          "opened": 5091,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 5108,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 5180,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "Possible Other Business/Suggested Items for Future Agenda",
+        "phases": {
+          "opened": 5191,
+          "presentation": 5203,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14",
+        "title": "Changes to the Board Meetings Calendar",
+        "phases": {
+          "opened": 5224,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 5224,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 5241,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 5258,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "result": {
+    "videoId": "NUJvcYPgWGw",
+    "speakers": {
+      "A": {
+        "name": "Janet Lawson",
+        "role": "Board President"
+      },
+      "B": {
+        "name": "Cecilia I. Márquez",
+        "role": "Trustee"
+      },
+      "C": {
+        "name": "David Weekly",
+        "role": "Trustee"
+      },
+      "D": {
+        "name": "Alisa MacAvoy",
+        "role": "Trustee"
+      },
+      "E": {
+        "name": "Mike Wells",
+        "role": "Vice President"
+      },
+      "F": {
+        "name": "Mike Wells",
+        "role": "Vice President (note: transcript label E and F both appear to be Wells; F is Wells based on context)"
+      },
+      "G": {
+        "name": "Rick Edson",
+        "role": "CBO (Chief Business Officer)"
+      },
+      "H": {
+        "name": "Eric Van Pelt",
+        "role": "Bond Program Manager, VPCS (presenting via Zoom)"
+      },
+      "I": {
+        "name": "Anna Herrera",
+        "role": "Assistant Superintendent"
+      }
+    },
+    "agendaChanges": "Section 3 (Changes to the Agenda) confirmed no changes. The agenda proceeded in order as posted. Note: speaker labels E and F in the transcript both map to Mike Wells (Vice President) based on context and minutes; E appears during procedural exchanges and F during substantive discussion, but both are Wells.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order",
+        "phases": {
+          "opened": 4,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "1.1",
+        "title": "Roll Call",
+        "phases": {
+          "opened": 4,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Welcome by the School Board President",
+        "phases": {
+          "opened": 20,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 33,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 33,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 47,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 49,
+          "presentation": null,
+          "publicComment": 49,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Measure S Bond Program Priorities: HVAC Discussion",
+        "phases": {
+          "opened": 49,
+          "presentation": 101,
+          "publicComment": null,
+          "discussion": 1258,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7.1",
+        "title": "Discussion on Budget Renewal Initiative",
+        "phases": {
+          "opened": 2279,
+          "presentation": 2283,
+          "publicComment": null,
+          "discussion": 3100,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8",
+        "title": "Approval of Consent Items",
+        "phases": {
+          "opened": 3749,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3759,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.1",
+        "title": "Approval of Consent Items (bundle)",
+        "phases": {
+          "opened": 3749,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3759,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.2",
+        "title": "Approval of the August 28 Board Meeting Minutes",
+        "phases": {
+          "opened": 3749,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3759,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.3",
+        "title": "Approval of School Assignments and Committee Assignments for Board Members for the 2024-2025 School Year",
+        "phases": {
+          "opened": 3749,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3759,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.4",
+        "title": "Approval of the Agreement between the Redwood City School District and Illustrative Math for the 2024-2025 School Year",
+        "phases": {
+          "opened": 3749,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3759,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.5",
+        "title": "Approval of Local Interagency Agreement(s) to Provide Education and Training to Credential and License Candidates",
+        "phases": {
+          "opened": 3749,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3759,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.6",
+        "title": "Approval of Agreement between the Redwood City School District and JTG2023 for the 2024-2025 School Year",
+        "phases": {
+          "opened": 3749,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3759,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.7",
+        "title": "Ratification of Warrant Register, August 1, 2024 - August 31, 2024",
+        "phases": {
+          "opened": 3749,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3759,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.1",
+        "title": "Adoption of Resolution No. 4, Approval of Education Code and Title V Options for Teaching Assignments 2024-2025 School Year",
+        "phases": {
+          "opened": 3761,
+          "presentation": 3773,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3804,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.2",
+        "title": "Adoption of Resolution No. 5, Resolution in favor of California Proposition 2, Public School Facilities Bond Measure",
+        "phases": {
+          "opened": 3809,
+          "presentation": 3819,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3850,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.3",
+        "title": "Second Reading and Approval of Board Bylaw 9223 - Filling Vacancies",
+        "phases": {
+          "opened": 3852,
+          "presentation": 3862,
+          "publicComment": null,
+          "discussion": 3913,
+          "vote": {
+            "seconds": 3931,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.4",
+        "title": "Approval of Response to the 2023-2024 Grand Jury Report",
+        "phases": {
+          "opened": 3940,
+          "presentation": 3951,
+          "publicComment": null,
+          "discussion": 4085,
+          "vote": {
+            "seconds": 4297,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "Report from Board Members and Superintendent",
+        "phases": {
+          "opened": 4305,
+          "presentation": 4315,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "2024-25 Adopted Budget & LCAP for Connect Community Charter School, Rocketship Redwood City, and KIPP Excelencia Community Prep Charter School (Information Items)",
+        "phases": {
+          "opened": 5091,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 5108,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 5180,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "Possible Other Business/Suggested Items for Future Agenda",
+        "phases": {
+          "opened": 5191,
+          "presentation": 5203,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14",
+        "title": "Changes to the Board Meetings Calendar",
+        "phases": {
+          "opened": 5224,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 5224,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 5241,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 5258,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "cachedAt": "2026-03-15T17:29:38.303Z",
+  "inputTokens": 24253,
+  "outputTokens": 3387
+}

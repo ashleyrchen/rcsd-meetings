@@ -1,0 +1,692 @@
+{
+  "date": "2024-09-25",
+  "itemCount": 40,
+  "llmResponse": {
+    "speakers": {
+      "A": {
+        "name": "Janet Lawson",
+        "role": "Board President"
+      },
+      "B": {
+        "name": "John Baker",
+        "role": "Superintendent"
+      },
+      "C": {
+        "name": "Mike Wells",
+        "role": "Vice President / Clerk"
+      },
+      "D": {
+        "name": "Cecilia I. Márquez",
+        "role": "Trustee"
+      },
+      "E": {
+        "name": "Evelyn Sanchez",
+        "role": "Executive Assistant to Superintendent / Board Secretary"
+      },
+      "F": {
+        "name": "Alisa MacAvoy",
+        "role": "Trustee"
+      },
+      "G": {
+        "name": "Rick Edson",
+        "role": "Chief Business Officer"
+      }
+    },
+    "agendaChanges": null,
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order",
+        "phases": {
+          "opened": 6,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "1.1",
+        "title": "Roll Call",
+        "phases": {
+          "opened": 6,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Welcome by the School Board President",
+        "phases": {
+          "opened": 17,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 69,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 75,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 87,
+            "type": "voice",
+            "result": "4-0 (Weekly absent)"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 91,
+          "presentation": null,
+          "publicComment": 91,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Cynthia Meek",
+            "startSeconds": 127,
+            "endSeconds": 331,
+            "summary": "A Kennedy Middle School teacher representing staff, she urged the board to prioritize Kennedy and Hoover for air conditioning improvements, arguing that high classroom temperatures (up to 89°F) impede student learning and that these Title 1 schools with large enrollments should be at the top of the Measure S priority list."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "School/Community Reports",
+        "phases": {
+          "opened": 469,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6.1",
+        "title": "Mental Health Report",
+        "phases": {
+          "opened": 469,
+          "presentation": 494,
+          "publicComment": null,
+          "discussion": 3786,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7.1",
+        "title": "Discussion of Year End Assessment Results for the 2023-2024 School Year",
+        "phases": {
+          "opened": 5023,
+          "presentation": 5036,
+          "publicComment": null,
+          "discussion": 5629,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7.2",
+        "title": "Update on the Process for Appointing a New Trustee for Area III",
+        "phases": {
+          "opened": 7218,
+          "presentation": 7240,
+          "publicComment": null,
+          "discussion": 7437,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8",
+        "title": "Approval of Consent Items",
+        "phases": {
+          "opened": 9587,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 9591,
+            "type": "voice",
+            "result": "passed"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.1",
+        "title": "Adoption of Resolution No. 6, Approval of Education Code and Title V Options for Teaching Assignments for the 2024-2025 School Year",
+        "phases": {
+          "opened": 9596,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 9607,
+            "type": "voice",
+            "result": "passed"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.2",
+        "title": "Approval of 2023-24 Unaudited Actuals Financial Statement",
+        "phases": {
+          "opened": 9614,
+          "presentation": 9627,
+          "publicComment": null,
+          "discussion": 10335,
+          "vote": {
+            "seconds": 10359,
+            "type": "voice",
+            "result": "passed"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.3",
+        "title": "Adoption of Resolution No. 7, Resolution to Adopt the Gann Limit",
+        "phases": {
+          "opened": 10372,
+          "presentation": 10388,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 10459,
+            "type": "voice",
+            "result": "passed"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "Report from Board Members and Superintendent",
+        "phases": {
+          "opened": 10472,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 10477,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "Information on San Mateo County Investment Fund - August 2024",
+        "phases": {
+          "opened": 10757,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 10762,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "Possible Other Business/Suggested Items for Future Agenda",
+        "phases": {
+          "opened": 10768,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14",
+        "title": "Changes to the Board Meetings Calendar",
+        "phases": {
+          "opened": 10778,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Adjourn the Meeting",
+        "phases": {
+          "opened": 10791,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "result": {
+    "videoId": "EyuG8omEgw0",
+    "speakers": {
+      "A": {
+        "name": "Janet Lawson",
+        "role": "Board President"
+      },
+      "B": {
+        "name": "John Baker",
+        "role": "Superintendent"
+      },
+      "C": {
+        "name": "Mike Wells",
+        "role": "Vice President / Clerk"
+      },
+      "D": {
+        "name": "Cecilia I. Márquez",
+        "role": "Trustee"
+      },
+      "E": {
+        "name": "Evelyn Sanchez",
+        "role": "Executive Assistant to Superintendent / Board Secretary"
+      },
+      "F": {
+        "name": "Alisa MacAvoy",
+        "role": "Trustee"
+      },
+      "G": {
+        "name": "Rick Edson",
+        "role": "Chief Business Officer"
+      }
+    },
+    "agendaChanges": null,
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order",
+        "phases": {
+          "opened": 6,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "1.1",
+        "title": "Roll Call",
+        "phases": {
+          "opened": 6,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Welcome by the School Board President",
+        "phases": {
+          "opened": 17,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 69,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 75,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 87,
+            "type": "voice",
+            "result": "4-0 (Weekly absent)"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 91,
+          "presentation": null,
+          "publicComment": 91,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Cynthia Meek",
+            "startSeconds": 127,
+            "endSeconds": 331,
+            "summary": "A Kennedy Middle School teacher representing staff, she urged the board to prioritize Kennedy and Hoover for air conditioning improvements, arguing that high classroom temperatures (up to 89°F) impede student learning and that these Title 1 schools with large enrollments should be at the top of the Measure S priority list."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "School/Community Reports",
+        "phases": {
+          "opened": 469,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6.1",
+        "title": "Mental Health Report",
+        "phases": {
+          "opened": 469,
+          "presentation": 494,
+          "publicComment": null,
+          "discussion": 3786,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7.1",
+        "title": "Discussion of Year End Assessment Results for the 2023-2024 School Year",
+        "phases": {
+          "opened": 5023,
+          "presentation": 5036,
+          "publicComment": null,
+          "discussion": 5629,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7.2",
+        "title": "Update on the Process for Appointing a New Trustee for Area III",
+        "phases": {
+          "opened": 7218,
+          "presentation": 7240,
+          "publicComment": null,
+          "discussion": 7437,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8",
+        "title": "Approval of Consent Items",
+        "phases": {
+          "opened": 9587,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 9591,
+            "type": "voice",
+            "result": "passed"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.1",
+        "title": "Adoption of Resolution No. 6, Approval of Education Code and Title V Options for Teaching Assignments for the 2024-2025 School Year",
+        "phases": {
+          "opened": 9596,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 9607,
+            "type": "voice",
+            "result": "passed"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.2",
+        "title": "Approval of 2023-24 Unaudited Actuals Financial Statement",
+        "phases": {
+          "opened": 9614,
+          "presentation": 9627,
+          "publicComment": null,
+          "discussion": 10335,
+          "vote": {
+            "seconds": 10359,
+            "type": "voice",
+            "result": "passed"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.3",
+        "title": "Adoption of Resolution No. 7, Resolution to Adopt the Gann Limit",
+        "phases": {
+          "opened": 10372,
+          "presentation": 10388,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 10459,
+            "type": "voice",
+            "result": "passed"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "Report from Board Members and Superintendent",
+        "phases": {
+          "opened": 10472,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 10477,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "Information on San Mateo County Investment Fund - August 2024",
+        "phases": {
+          "opened": 10757,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 10762,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "Possible Other Business/Suggested Items for Future Agenda",
+        "phases": {
+          "opened": 10768,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14",
+        "title": "Changes to the Board Meetings Calendar",
+        "phases": {
+          "opened": 10778,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Adjourn the Meeting",
+        "phases": {
+          "opened": 10791,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "cachedAt": "2026-03-15T17:28:59.721Z",
+  "inputTokens": 44614,
+  "outputTokens": 2429
+}

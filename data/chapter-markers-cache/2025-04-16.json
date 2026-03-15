@@ -1,0 +1,924 @@
+{
+  "date": "2025-04-16",
+  "itemCount": 37,
+  "llmResponse": {
+    "speakers": {
+      "A": {
+        "name": "Evelyn Sanchez",
+        "role": "Executive Assistant to Superintendent / Board Secretary"
+      },
+      "B": {
+        "name": "David Li",
+        "role": "Trustee"
+      },
+      "C": {
+        "name": "Mike Wells",
+        "role": "Board President"
+      },
+      "D": {
+        "name": "Cecilia I. Márquez",
+        "role": "Clerk / Trustee"
+      },
+      "E": {
+        "name": "David Weekly",
+        "role": "Vice President"
+      },
+      "F": {
+        "name": "John Baker",
+        "role": "Superintendent"
+      },
+      "G": {
+        "name": "John Baker",
+        "role": "Superintendent (also Rick Edson / Anna Herrera in some passages — see note)"
+      },
+      "H": {
+        "name": "Megan O'Reilly Green",
+        "role": "Public speaker"
+      },
+      "I": {
+        "name": "Pam Barish",
+        "role": "Public speaker / kindergarten teacher, Henry Ford"
+      },
+      "J": {
+        "name": "May (last name not given)",
+        "role": "Public speaker"
+      }
+    },
+    "agendaChanges": "Speaker labels G is used by multiple individuals in the transcript ASR output (Rick Edson for the AC response, Superintendent Baker for several passages, and an unidentified voice for brief interjections). No formal agenda resequencing was reported; the board proceeded through items in order. The closed session items (Sections 1–3) occurred before the recording's main content; the transcript opens mid-roll-call at the reconvening roll call. Sections 1–3 are reconstructed from the minutes and the brief report-out at the start of the transcript.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order",
+        "phases": {
+          "opened": 6,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "1.1",
+        "title": "Roll Call (Closed Session)",
+        "phases": {
+          "opened": 6,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Oral Communication on Closed Session Items Only",
+        "phases": {
+          "opened": 20,
+          "presentation": null,
+          "publicComment": 20,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Closed Session – Public Employee Performance Evaluation: Superintendent",
+        "phases": {
+          "opened": 20,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Reconvene to Regular Session",
+        "phases": {
+          "opened": 20,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4.1",
+        "title": "Roll Call (Regular Session)",
+        "phases": {
+          "opened": 6,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4.2",
+        "title": "Report Out on Closed Session from April 16, 2025",
+        "phases": {
+          "opened": 20,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Welcome by the School Board President, Mike Wells",
+        "phases": {
+          "opened": 28,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 129,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 130,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 137,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 140,
+          "presentation": null,
+          "publicComment": 140,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Finbar Rafferty",
+            "startSeconds": 209,
+            "endSeconds": 372,
+            "summary": "A third-grade Orion student described his love of advanced learning (referencing a college-level paleoanthropology course he completed), his ADHD challenges in a non-differentiated classroom, and advocated for more advanced classes in school."
+          },
+          {
+            "name": "Megan O'Reilly Green",
+            "startSeconds": 383,
+            "endSeconds": 567,
+            "summary": "Advocated for changes to board policy 5123 to explicitly support acceleration for high-ability students, citing research supporting acceleration and warning that without advanced options families will leave public schools."
+          },
+          {
+            "name": "Saoirse (Usha)",
+            "startSeconds": 582,
+            "endSeconds": 765,
+            "summary": "An Orion student heading to Kennedy next year argued from personal experience that advanced coursework is essential for continued growth and that high-performing students cannot be assumed to thrive without appropriately challenging curriculum."
+          },
+          {
+            "name": "Elmer Molina",
+            "startSeconds": 838,
+            "endSeconds": 895,
+            "summary": "A KIPP Excelencia parent requested that air conditioning be made a top priority for KIPP students, describing children appearing heat-stressed at pickup."
+          },
+          {
+            "name": "Jose Talavera",
+            "startSeconds": 930,
+            "endSeconds": 1032,
+            "summary": "KIPP Excelencia's associate director of advocacy urged the board to include facility upgrades for KIPP's campus in the facility master plan discussion at the upcoming study session, and invited board members to a campus tree-planting event."
+          },
+          {
+            "name": "Carmen Flores",
+            "startSeconds": 1075,
+            "endSeconds": 1181,
+            "summary": "A KIPP Excelencia parent asked the board to include KIPP in the facility master plan budget, citing concerns about heat and water quality affecting her two daughters."
+          },
+          {
+            "name": "Juan Bale",
+            "startSeconds": 1220,
+            "endSeconds": 1310,
+            "summary": "A KIPP Excelencia parent congratulated Hoover on improvements and asked the board to similarly consider KIPP Excelencia for facility upgrades, including playground improvements."
+          },
+          {
+            "name": "Chris Terry",
+            "startSeconds": 1318,
+            "endSeconds": 1502,
+            "summary": "An Orion parent praised the district's equity efforts but argued that Kennedy Middle School should offer advanced classes so that students who don't attend Northstar have equitable access to accelerated coursework without relying on costly private tutoring."
+          },
+          {
+            "name": "Pam Barish",
+            "startSeconds": 1527,
+            "endSeconds": 1712,
+            "summary": "A 34-year kindergarten teacher at Henry Ford raised two concerns: (1) the newly installed temporary AC units are disruptive and unsuitable for classrooms, and (2) kindergarten teachers are losing their traditional minimum-day assessment period at the start of the school year."
+          },
+          {
+            "name": "May",
+            "startSeconds": 1858,
+            "endSeconds": 1981,
+            "summary": "A mathematician and Orion parent advocated for policy changes to increase access to advanced middle school curriculum, framing it as an equity issue that prevents financially disadvantaged high-ability students from reaching their potential."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9",
+        "title": "Discussion Items – Board of Trustees Graduation/Promotions Assignments for the 2024-25 School Year",
+        "phases": {
+          "opened": 1981,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 1981,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "Consent Items",
+        "phases": {
+          "opened": 2244,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 2256,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.1",
+        "title": "Approval of Consent Items",
+        "phases": {
+          "opened": 2244,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 2256,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.2",
+        "title": "Approval of the March 26 Board Meeting Minutes",
+        "phases": {
+          "opened": 2244,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 2256,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.3",
+        "title": "Ratification of Warrant Registers, March 1, 2025 - March 31, 2025",
+        "phases": {
+          "opened": 2244,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 2256,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "Action Items – Approval of the School Plans for Student Achievement (SPSA) for Orion Alternative, Henry Ford, Taft, and Garfield Elementary Schools",
+        "phases": {
+          "opened": 2260,
+          "presentation": 2279,
+          "publicComment": null,
+          "discussion": 2326,
+          "vote": {
+            "seconds": 2982,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12",
+        "title": "Board and Superintendent Reports",
+        "phases": {
+          "opened": 2983,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 2983,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "Information – Quarterly Williams Report, 3rd Quarter, January 2025 through March 2025",
+        "phases": {
+          "opened": 3292,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 3300,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 3300,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Other Business/Suggested Items for Future Agenda",
+        "phases": {
+          "opened": 3354,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 3354,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16",
+        "title": "Board Meetings Calendar – Changes to the Board Meetings Calendar",
+        "phases": {
+          "opened": 3526,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "17",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 3527,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3536,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "result": {
+    "videoId": "RKaYeTaZ6qI",
+    "speakers": {
+      "A": {
+        "name": "Evelyn Sanchez",
+        "role": "Executive Assistant to Superintendent / Board Secretary"
+      },
+      "B": {
+        "name": "David Li",
+        "role": "Trustee"
+      },
+      "C": {
+        "name": "Mike Wells",
+        "role": "Board President"
+      },
+      "D": {
+        "name": "Cecilia I. Márquez",
+        "role": "Clerk / Trustee"
+      },
+      "E": {
+        "name": "David Weekly",
+        "role": "Vice President"
+      },
+      "F": {
+        "name": "John Baker",
+        "role": "Superintendent"
+      },
+      "G": {
+        "name": "John Baker",
+        "role": "Superintendent (also Rick Edson / Anna Herrera in some passages — see note)"
+      },
+      "H": {
+        "name": "Megan O'Reilly Green",
+        "role": "Public speaker"
+      },
+      "I": {
+        "name": "Pam Barish",
+        "role": "Public speaker / kindergarten teacher, Henry Ford"
+      },
+      "J": {
+        "name": "May (last name not given)",
+        "role": "Public speaker"
+      }
+    },
+    "agendaChanges": "Speaker labels G is used by multiple individuals in the transcript ASR output (Rick Edson for the AC response, Superintendent Baker for several passages, and an unidentified voice for brief interjections). No formal agenda resequencing was reported; the board proceeded through items in order. The closed session items (Sections 1–3) occurred before the recording's main content; the transcript opens mid-roll-call at the reconvening roll call. Sections 1–3 are reconstructed from the minutes and the brief report-out at the start of the transcript.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order",
+        "phases": {
+          "opened": 6,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "1.1",
+        "title": "Roll Call (Closed Session)",
+        "phases": {
+          "opened": 6,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Oral Communication on Closed Session Items Only",
+        "phases": {
+          "opened": 20,
+          "presentation": null,
+          "publicComment": 20,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Closed Session – Public Employee Performance Evaluation: Superintendent",
+        "phases": {
+          "opened": 20,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Reconvene to Regular Session",
+        "phases": {
+          "opened": 20,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4.1",
+        "title": "Roll Call (Regular Session)",
+        "phases": {
+          "opened": 6,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4.2",
+        "title": "Report Out on Closed Session from April 16, 2025",
+        "phases": {
+          "opened": 20,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Welcome by the School Board President, Mike Wells",
+        "phases": {
+          "opened": 28,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 129,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 130,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 137,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 140,
+          "presentation": null,
+          "publicComment": 140,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Finbar Rafferty",
+            "startSeconds": 209,
+            "endSeconds": 372,
+            "summary": "A third-grade Orion student described his love of advanced learning (referencing a college-level paleoanthropology course he completed), his ADHD challenges in a non-differentiated classroom, and advocated for more advanced classes in school."
+          },
+          {
+            "name": "Megan O'Reilly Green",
+            "startSeconds": 383,
+            "endSeconds": 567,
+            "summary": "Advocated for changes to board policy 5123 to explicitly support acceleration for high-ability students, citing research supporting acceleration and warning that without advanced options families will leave public schools."
+          },
+          {
+            "name": "Saoirse (Usha)",
+            "startSeconds": 582,
+            "endSeconds": 765,
+            "summary": "An Orion student heading to Kennedy next year argued from personal experience that advanced coursework is essential for continued growth and that high-performing students cannot be assumed to thrive without appropriately challenging curriculum."
+          },
+          {
+            "name": "Elmer Molina",
+            "startSeconds": 838,
+            "endSeconds": 895,
+            "summary": "A KIPP Excelencia parent requested that air conditioning be made a top priority for KIPP students, describing children appearing heat-stressed at pickup."
+          },
+          {
+            "name": "Jose Talavera",
+            "startSeconds": 930,
+            "endSeconds": 1032,
+            "summary": "KIPP Excelencia's associate director of advocacy urged the board to include facility upgrades for KIPP's campus in the facility master plan discussion at the upcoming study session, and invited board members to a campus tree-planting event."
+          },
+          {
+            "name": "Carmen Flores",
+            "startSeconds": 1075,
+            "endSeconds": 1181,
+            "summary": "A KIPP Excelencia parent asked the board to include KIPP in the facility master plan budget, citing concerns about heat and water quality affecting her two daughters."
+          },
+          {
+            "name": "Juan Bale",
+            "startSeconds": 1220,
+            "endSeconds": 1310,
+            "summary": "A KIPP Excelencia parent congratulated Hoover on improvements and asked the board to similarly consider KIPP Excelencia for facility upgrades, including playground improvements."
+          },
+          {
+            "name": "Chris Terry",
+            "startSeconds": 1318,
+            "endSeconds": 1502,
+            "summary": "An Orion parent praised the district's equity efforts but argued that Kennedy Middle School should offer advanced classes so that students who don't attend Northstar have equitable access to accelerated coursework without relying on costly private tutoring."
+          },
+          {
+            "name": "Pam Barish",
+            "startSeconds": 1527,
+            "endSeconds": 1712,
+            "summary": "A 34-year kindergarten teacher at Henry Ford raised two concerns: (1) the newly installed temporary AC units are disruptive and unsuitable for classrooms, and (2) kindergarten teachers are losing their traditional minimum-day assessment period at the start of the school year."
+          },
+          {
+            "name": "May",
+            "startSeconds": 1858,
+            "endSeconds": 1981,
+            "summary": "A mathematician and Orion parent advocated for policy changes to increase access to advanced middle school curriculum, framing it as an equity issue that prevents financially disadvantaged high-ability students from reaching their potential."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9",
+        "title": "Discussion Items – Board of Trustees Graduation/Promotions Assignments for the 2024-25 School Year",
+        "phases": {
+          "opened": 1981,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 1981,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "Consent Items",
+        "phases": {
+          "opened": 2244,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 2256,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.1",
+        "title": "Approval of Consent Items",
+        "phases": {
+          "opened": 2244,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 2256,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.2",
+        "title": "Approval of the March 26 Board Meeting Minutes",
+        "phases": {
+          "opened": 2244,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 2256,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.3",
+        "title": "Ratification of Warrant Registers, March 1, 2025 - March 31, 2025",
+        "phases": {
+          "opened": 2244,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 2256,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "Action Items – Approval of the School Plans for Student Achievement (SPSA) for Orion Alternative, Henry Ford, Taft, and Garfield Elementary Schools",
+        "phases": {
+          "opened": 2260,
+          "presentation": 2279,
+          "publicComment": null,
+          "discussion": 2326,
+          "vote": {
+            "seconds": 2982,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12",
+        "title": "Board and Superintendent Reports",
+        "phases": {
+          "opened": 2983,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 2983,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "Information – Quarterly Williams Report, 3rd Quarter, January 2025 through March 2025",
+        "phases": {
+          "opened": 3292,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 3300,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 3300,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Other Business/Suggested Items for Future Agenda",
+        "phases": {
+          "opened": 3354,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 3354,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16",
+        "title": "Board Meetings Calendar – Changes to the Board Meetings Calendar",
+        "phases": {
+          "opened": 3526,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "17",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 3527,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3536,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "cachedAt": "2026-03-15T17:17:23.968Z",
+  "inputTokens": 17100,
+  "outputTokens": 3816
+}

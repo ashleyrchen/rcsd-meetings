@@ -1,0 +1,716 @@
+{
+  "date": "2023-04-19",
+  "itemCount": 59,
+  "llmResponse": {
+    "speakers": {
+      "A": {
+        "name": "Cecilia I. Márquez",
+        "role": "Board President"
+      }
+    },
+    "agendaChanges": "Board resequenced agenda: Section 9 (School/Community Reports) was moved to be heard after Section 7 (Approval of Agenda) and before Section 8 (Oral Communication). Consent item 10.19 (Approval of Student Instructional Calendars) was pulled from consent and moved to action items under Section 11. Section 8 Oral Communication was therefore heard after Section 9. The closed session report-out (Section 4) was briefly mentioned inline before proceeding with the resequenced agenda.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order / Roll Call",
+        "phases": {
+          "opened": 6,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Oral Communication on Closed Session Items Only",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Closed Session – Conference with Real Property Negotiators (750 Bradford St)",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Reconvene to Regular Session / Roll Call / Report Out on Closed Session",
+        "phases": {
+          "opened": 6,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Welcome by the School Board President",
+        "phases": {
+          "opened": 6,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 6,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 6,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 88,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.1",
+        "title": "Information on Financial Audit Report for RCSD for 2021-2022 School Year",
+        "phases": {
+          "opened": 193,
+          "presentation": 206,
+          "publicComment": null,
+          "discussion": 624,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Chris Robel",
+            "startSeconds": 804,
+            "endSeconds": 862,
+            "summary": "Argued that charging administrator salaries to Prop 39 bond funds is a violation of the California Constitution, which explicitly prohibits using bond money for school operating expenses including salaries."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.2",
+        "title": "Report on School Plans for Student Achievement: Roosevelt and Clifford Schools",
+        "phases": {
+          "opened": 866,
+          "presentation": 895,
+          "publicComment": null,
+          "discussion": 2649,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8",
+        "title": "Oral Communication – Citizen Presentation on RCSD Bond Program",
+        "phases": {
+          "opened": 5614,
+          "presentation": null,
+          "publicComment": 5614,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Chris Robel",
+            "startSeconds": 5665,
+            "endSeconds": 6485,
+            "summary": "Presented concerns about lack of transparency in bond spending decisions made by a superintendent subcommittee, Prop 39 compliance issues including administrator salaries charged to bond funds, and vacancies on the Citizens Bond Oversight Committee required by law; called for open subcommittee meetings, clarification of who ensures Prop 39 compliance, and development of formal CBOC appointment procedures."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "Approval of Consent Items (excluding 10.19)",
+        "phases": {
+          "opened": 6962,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6975,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.19",
+        "title": "Approval of Student Instructional Calendars for 2023-2024 and the RCTA MOU Changes in Work Days",
+        "phases": {
+          "opened": 6983,
+          "presentation": 7100,
+          "publicComment": 6983,
+          "discussion": 7100,
+          "vote": {
+            "seconds": 7290,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [
+          {
+            "name": "Lillian Rocio Connor",
+            "startSeconds": 6998,
+            "endSeconds": 7095,
+            "summary": "Expressed concern that the proposed calendar does not provide teachers with two full conference days in the fall, arguing this would give teachers insufficient time to meet with all families, create inequity across school sites due to differing early-release schedules, and negatively impact attendance; also objected to two additional PD days being added in August."
+          }
+        ],
+        "consent": false,
+        "pulled": true
+      },
+      {
+        "itemLabel": "11.1",
+        "title": "Approval of Declaration of Need for 2023-2024",
+        "phases": {
+          "opened": 7300,
+          "presentation": 7305,
+          "publicComment": null,
+          "discussion": 7340,
+          "vote": {
+            "seconds": 7360,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11.2",
+        "title": "Recommendation for Adoption of Mathematics Curriculum Materials, Grades K-8",
+        "phases": {
+          "opened": 7370,
+          "presentation": 7375,
+          "publicComment": null,
+          "discussion": 7390,
+          "vote": {
+            "seconds": 7450,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11.3",
+        "title": "Approval of the Redwood City School District Transportation Services Plan",
+        "phases": {
+          "opened": 7470,
+          "presentation": 7480,
+          "publicComment": null,
+          "discussion": 7620,
+          "vote": {
+            "seconds": 7950,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12",
+        "title": "Board and Superintendent Reports",
+        "phases": {
+          "opened": 8010,
+          "presentation": 8015,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "Quarterly Williams Report, 3rd Quarter, January 2023 through March 2023",
+        "phases": {
+          "opened": 8310,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 8325,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Other Business / Suggested Items for Future Agenda",
+        "phases": {
+          "opened": 8430,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 8430,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16",
+        "title": "Board Meetings Calendar",
+        "phases": {
+          "opened": 8530,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "17",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 8545,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 8550,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "result": {
+    "videoId": "-kyZ0HP3eKE",
+    "speakers": {
+      "A": {
+        "name": "Cecilia I. Márquez",
+        "role": "Board President"
+      }
+    },
+    "agendaChanges": "Board resequenced agenda: Section 9 (School/Community Reports) was moved to be heard after Section 7 (Approval of Agenda) and before Section 8 (Oral Communication). Consent item 10.19 (Approval of Student Instructional Calendars) was pulled from consent and moved to action items under Section 11. Section 8 Oral Communication was therefore heard after Section 9. The closed session report-out (Section 4) was briefly mentioned inline before proceeding with the resequenced agenda.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order / Roll Call",
+        "phases": {
+          "opened": 6,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Oral Communication on Closed Session Items Only",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Closed Session – Conference with Real Property Negotiators (750 Bradford St)",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Reconvene to Regular Session / Roll Call / Report Out on Closed Session",
+        "phases": {
+          "opened": 6,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Welcome by the School Board President",
+        "phases": {
+          "opened": 6,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 6,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 6,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 88,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.1",
+        "title": "Information on Financial Audit Report for RCSD for 2021-2022 School Year",
+        "phases": {
+          "opened": 193,
+          "presentation": 206,
+          "publicComment": null,
+          "discussion": 624,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Chris Robel",
+            "startSeconds": 804,
+            "endSeconds": 862,
+            "summary": "Argued that charging administrator salaries to Prop 39 bond funds is a violation of the California Constitution, which explicitly prohibits using bond money for school operating expenses including salaries."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.2",
+        "title": "Report on School Plans for Student Achievement: Roosevelt and Clifford Schools",
+        "phases": {
+          "opened": 866,
+          "presentation": 895,
+          "publicComment": null,
+          "discussion": 2649,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8",
+        "title": "Oral Communication – Citizen Presentation on RCSD Bond Program",
+        "phases": {
+          "opened": 5614,
+          "presentation": null,
+          "publicComment": 5614,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Chris Robel",
+            "startSeconds": 5665,
+            "endSeconds": 6485,
+            "summary": "Presented concerns about lack of transparency in bond spending decisions made by a superintendent subcommittee, Prop 39 compliance issues including administrator salaries charged to bond funds, and vacancies on the Citizens Bond Oversight Committee required by law; called for open subcommittee meetings, clarification of who ensures Prop 39 compliance, and development of formal CBOC appointment procedures."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "Approval of Consent Items (excluding 10.19)",
+        "phases": {
+          "opened": 6962,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6975,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.19",
+        "title": "Approval of Student Instructional Calendars for 2023-2024 and the RCTA MOU Changes in Work Days",
+        "phases": {
+          "opened": 6983,
+          "presentation": 7100,
+          "publicComment": 6983,
+          "discussion": 7100,
+          "vote": {
+            "seconds": 7290,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [
+          {
+            "name": "Lillian Rocio Connor",
+            "startSeconds": 6998,
+            "endSeconds": 7095,
+            "summary": "Expressed concern that the proposed calendar does not provide teachers with two full conference days in the fall, arguing this would give teachers insufficient time to meet with all families, create inequity across school sites due to differing early-release schedules, and negatively impact attendance; also objected to two additional PD days being added in August."
+          }
+        ],
+        "consent": false,
+        "pulled": true
+      },
+      {
+        "itemLabel": "11.1",
+        "title": "Approval of Declaration of Need for 2023-2024",
+        "phases": {
+          "opened": 7300,
+          "presentation": 7305,
+          "publicComment": null,
+          "discussion": 7340,
+          "vote": {
+            "seconds": 7360,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11.2",
+        "title": "Recommendation for Adoption of Mathematics Curriculum Materials, Grades K-8",
+        "phases": {
+          "opened": 7370,
+          "presentation": 7375,
+          "publicComment": null,
+          "discussion": 7390,
+          "vote": {
+            "seconds": 7450,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11.3",
+        "title": "Approval of the Redwood City School District Transportation Services Plan",
+        "phases": {
+          "opened": 7470,
+          "presentation": 7480,
+          "publicComment": null,
+          "discussion": 7620,
+          "vote": {
+            "seconds": 7950,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12",
+        "title": "Board and Superintendent Reports",
+        "phases": {
+          "opened": 8010,
+          "presentation": 8015,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "Quarterly Williams Report, 3rd Quarter, January 2023 through March 2023",
+        "phases": {
+          "opened": 8310,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 8325,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Other Business / Suggested Items for Future Agenda",
+        "phases": {
+          "opened": 8430,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 8430,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16",
+        "title": "Board Meetings Calendar",
+        "phases": {
+          "opened": 8530,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "17",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 8545,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 8550,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "cachedAt": "2026-03-15T17:52:38.309Z",
+  "inputTokens": 44498,
+  "outputTokens": 2789
+}

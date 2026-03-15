@@ -1,0 +1,534 @@
+{
+  "date": "2020-04-15",
+  "itemCount": 21,
+  "llmResponse": {
+    "speakers": {
+      "A": {
+        "name": "Janet Lawson",
+        "role": "Vice President / meeting chair"
+      },
+      "B": {
+        "name": "Eliana (staff)",
+        "role": "Board secretary / clerk staff conducting roll call"
+      },
+      "C": {
+        "name": "Dennis McBride",
+        "role": "President"
+      },
+      "D": {
+        "name": "María Díaz-Slocum",
+        "role": "Trustee"
+      },
+      "E": {
+        "name": "Alisa MacAvoy",
+        "role": "Clerk / Trustee"
+      },
+      "F": {
+        "name": "Cecilia I. Márquez",
+        "role": "Trustee"
+      },
+      "G": {
+        "name": "Dawn (bond program leader)",
+        "role": "Bond Program Manager / presenter"
+      },
+      "H": {
+        "name": "Dennis McBride",
+        "role": "President (also speaking as board member)"
+      },
+      "I": {
+        "name": "Sarah Garrett",
+        "role": "Bond Program Advisor / presenter"
+      }
+    },
+    "agendaChanges": "No changes to the agenda were announced. Section 9 (Consent Items) had no items listed and was skipped. All sections were taken up in the posted order. Speaker H appears to be Dennis McBride who was already labeled C; the ASR assigned two labels to the same speaker in different parts of the meeting.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order",
+        "phases": {
+          "opened": 2,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "1",
+        "title": "Roll Call",
+        "phases": {
+          "opened": 10,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Welcome by the School Board President",
+        "phases": {
+          "opened": 23,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Pledge of Allegiance",
+        "phases": {
+          "opened": 108,
+          "presentation": 170,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 209,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 223,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 253,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 275,
+          "presentation": null,
+          "publicComment": 275,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Bond Program Consent Items — Approval of Construction Agreement with Fremont Millworks for Roosevelt School's Building E Casework",
+        "phases": {
+          "opened": 298,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 384,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7.1",
+        "title": "Measure T Bond Program Budget Study, Update, and Adoption",
+        "phases": {
+          "opened": 397,
+          "presentation": 413,
+          "publicComment": null,
+          "discussion": 1276,
+          "vote": {
+            "seconds": 1777,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7.2",
+        "title": "Approval of Construction Agreements with FE Controls for 2950 Fair Oaks Avenue Site",
+        "phases": {
+          "opened": 1803,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 1849,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.1",
+        "title": "Discussion of Temporary Rule: Paid Leave Under the Families First Coronavirus Response Act (FFCRA)",
+        "phases": {
+          "opened": 1873,
+          "presentation": 1881,
+          "publicComment": null,
+          "discussion": 2066,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9",
+        "title": "Consent Items",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "Approval of Connect Community Charter School Preliminary Space Offer (Resolution 23)",
+        "phases": {
+          "opened": 2333,
+          "presentation": 2349,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 2602,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 2636,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 2647,
+            "type": "voice",
+            "result": "unanimous"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "result": {
+    "videoId": "VDe9qhUq-zI",
+    "speakers": {
+      "A": {
+        "name": "Janet Lawson",
+        "role": "Vice President / meeting chair"
+      },
+      "B": {
+        "name": "Eliana (staff)",
+        "role": "Board secretary / clerk staff conducting roll call"
+      },
+      "C": {
+        "name": "Dennis McBride",
+        "role": "President"
+      },
+      "D": {
+        "name": "María Díaz-Slocum",
+        "role": "Trustee"
+      },
+      "E": {
+        "name": "Alisa MacAvoy",
+        "role": "Clerk / Trustee"
+      },
+      "F": {
+        "name": "Cecilia I. Márquez",
+        "role": "Trustee"
+      },
+      "G": {
+        "name": "Dawn (bond program leader)",
+        "role": "Bond Program Manager / presenter"
+      },
+      "H": {
+        "name": "Dennis McBride",
+        "role": "President (also speaking as board member)"
+      },
+      "I": {
+        "name": "Sarah Garrett",
+        "role": "Bond Program Advisor / presenter"
+      }
+    },
+    "agendaChanges": "No changes to the agenda were announced. Section 9 (Consent Items) had no items listed and was skipped. All sections were taken up in the posted order. Speaker H appears to be Dennis McBride who was already labeled C; the ASR assigned two labels to the same speaker in different parts of the meeting.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order",
+        "phases": {
+          "opened": 2,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "1",
+        "title": "Roll Call",
+        "phases": {
+          "opened": 10,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Welcome by the School Board President",
+        "phases": {
+          "opened": 23,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Pledge of Allegiance",
+        "phases": {
+          "opened": 108,
+          "presentation": 170,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 209,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 223,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 253,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 275,
+          "presentation": null,
+          "publicComment": 275,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Bond Program Consent Items — Approval of Construction Agreement with Fremont Millworks for Roosevelt School's Building E Casework",
+        "phases": {
+          "opened": 298,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 384,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7.1",
+        "title": "Measure T Bond Program Budget Study, Update, and Adoption",
+        "phases": {
+          "opened": 397,
+          "presentation": 413,
+          "publicComment": null,
+          "discussion": 1276,
+          "vote": {
+            "seconds": 1777,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7.2",
+        "title": "Approval of Construction Agreements with FE Controls for 2950 Fair Oaks Avenue Site",
+        "phases": {
+          "opened": 1803,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 1849,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.1",
+        "title": "Discussion of Temporary Rule: Paid Leave Under the Families First Coronavirus Response Act (FFCRA)",
+        "phases": {
+          "opened": 1873,
+          "presentation": 1881,
+          "publicComment": null,
+          "discussion": 2066,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9",
+        "title": "Consent Items",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "Approval of Connect Community Charter School Preliminary Space Offer (Resolution 23)",
+        "phases": {
+          "opened": 2333,
+          "presentation": 2349,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 2602,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 2636,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 2647,
+            "type": "voice",
+            "result": "unanimous"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "cachedAt": "2026-03-15T18:52:04.795Z",
+  "inputTokens": 10998,
+  "outputTokens": 1879
+}

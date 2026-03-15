@@ -1,0 +1,1034 @@
+{
+  "date": "2024-11-06",
+  "itemCount": 44,
+  "llmResponse": {
+    "speakers": {
+      "A": {
+        "name": "Janet Lawson",
+        "role": "Board President"
+      },
+      "B": {
+        "name": "Evelyn Sanchez",
+        "role": "Executive Assistant to Superintendent / Board Secretary"
+      },
+      "C": {
+        "name": "Cecilia I. Márquez",
+        "role": "Trustee"
+      },
+      "D": {
+        "name": "Rick Edson",
+        "role": "CBO (Chief Business Officer)"
+      },
+      "E": {
+        "name": "Mike Wells",
+        "role": "Vice President / Clerk"
+      },
+      "F": {
+        "name": "David Weekly",
+        "role": "Trustee"
+      },
+      "G": {
+        "name": "Jennifer Gibb",
+        "role": "Program Manager, Van Pelt Construction Services"
+      },
+      "H": {
+        "name": "Alisa MacAvoy",
+        "role": "Trustee"
+      },
+      "I": {
+        "name": "John Baker",
+        "role": "Superintendent"
+      },
+      "J": {
+        "name": "Will Robertson",
+        "role": "Bond Program Manager"
+      }
+    },
+    "agendaChanges": "Item 7.2 was moved from a Bond Program Action Item to a discussion item and placed immediately after item 6.1 (Public Hearing). All other items proceeded in original order after the resequenced 7.2.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order",
+        "phases": {
+          "opened": 8,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "1.1",
+        "title": "Roll Call",
+        "phases": {
+          "opened": 8,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Welcome by the School Board President",
+        "phases": {
+          "opened": 27,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 27,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 56,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 59,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 61,
+          "presentation": null,
+          "publicComment": 61,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Public Hearing Regarding the Design-Build Agreements for Solar Photovoltaic Systems",
+        "phases": {
+          "opened": 65,
+          "presentation": null,
+          "publicComment": 84,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7.2",
+        "title": "Adoption of Resolution No. 9 and Approval of Energy Services Agreement Between Redwood City School District and Southland Industries (Lighting Retrofit) — Discussion Only",
+        "phases": {
+          "opened": 100,
+          "presentation": 168,
+          "publicComment": null,
+          "discussion": 331,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7.1",
+        "title": "Adoption of Resolution No. 8 and Approval of the Design-Build Agreements for Solar Photovoltaic Systems at 9 Sites",
+        "phases": {
+          "opened": 2480,
+          "presentation": 2497,
+          "publicComment": null,
+          "discussion": 2644,
+          "vote": {
+            "seconds": 3434,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7.3",
+        "title": "Approval of Contracts with QKA Architects for Design Services for Adelante Selby, Hoover School, Roosevelt School, and Taft School HVAC Upgrades Projects",
+        "phases": {
+          "opened": 3447,
+          "presentation": 3478,
+          "publicComment": null,
+          "discussion": 3598,
+          "vote": {
+            "seconds": 4786,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8",
+        "title": "Approval of Consent Items",
+        "phases": {
+          "opened": 4792,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4805,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.1",
+        "title": "Approval of Consent Items",
+        "phases": {
+          "opened": 4792,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.2",
+        "title": "Approval of the October 23 Board Meeting Minutes",
+        "phases": {
+          "opened": 4792,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.3",
+        "title": "Approval of the Agreement between Redwood City School District and Mountain Valley Child and Family Services, Inc.",
+        "phases": {
+          "opened": 4792,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.4",
+        "title": "Approval of Local Interagency Agreement to Provide Education and Training to Credential Candidates",
+        "phases": {
+          "opened": 4792,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.5",
+        "title": "Approval of Amendment No. 2 to the Agreement between William Gomez and the Redwood City School District",
+        "phases": {
+          "opened": 4792,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.6",
+        "title": "Second Reading and Approval of Board Policy 5145.6: Parent/Guardian Notifications",
+        "phases": {
+          "opened": 4792,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.7",
+        "title": "Second Reading and Approval of Board Policy 1113: District and School Websites",
+        "phases": {
+          "opened": 4792,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.8",
+        "title": "Second Reading and Approval of Board Policy 5113: Absences and Excuses",
+        "phases": {
+          "opened": 4792,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.9",
+        "title": "Second Reading and Approval of Board Policy 4033: Lactation Accommodation",
+        "phases": {
+          "opened": 4792,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.10",
+        "title": "Second Reading and Approval of Board Policy 6000: Concepts and Roles",
+        "phases": {
+          "opened": 4792,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.11",
+        "title": "Ratification of Warrant Registers, October 1, 2024 - October 31, 2024",
+        "phases": {
+          "opened": 4792,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.1",
+        "title": "Approval of Retirement Notification Incentive",
+        "phases": {
+          "opened": 4805,
+          "presentation": 4816,
+          "publicComment": null,
+          "discussion": 4854,
+          "vote": {
+            "seconds": 4934,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.2",
+        "title": "Approval of Reclassification of Classified Employees",
+        "phases": {
+          "opened": 4942,
+          "presentation": 4947,
+          "publicComment": null,
+          "discussion": 5013,
+          "vote": {
+            "seconds": 5021,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.3",
+        "title": "Adoption of Transitional Kindergarten Curriculum",
+        "phases": {
+          "opened": 5027,
+          "presentation": 5032,
+          "publicComment": null,
+          "discussion": 5187,
+          "vote": {
+            "seconds": 5645,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "Report from Board Members and Superintendent",
+        "phases": {
+          "opened": 5653,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 5653,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "Contract Update Information and Credit Card Summary",
+        "phases": {
+          "opened": 6078,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 6078,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "Possible Other Business/Suggested Items for Future Agenda",
+        "phases": {
+          "opened": 6078,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 6078,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14",
+        "title": "Changes to the Board Meetings Calendar",
+        "phases": {
+          "opened": 6121,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Adjourn the Meeting",
+        "phases": {
+          "opened": 6125,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6131,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "result": {
+    "videoId": "bH2yII-W07A",
+    "speakers": {
+      "A": {
+        "name": "Janet Lawson",
+        "role": "Board President"
+      },
+      "B": {
+        "name": "Evelyn Sanchez",
+        "role": "Executive Assistant to Superintendent / Board Secretary"
+      },
+      "C": {
+        "name": "Cecilia I. Márquez",
+        "role": "Trustee"
+      },
+      "D": {
+        "name": "Rick Edson",
+        "role": "CBO (Chief Business Officer)"
+      },
+      "E": {
+        "name": "Mike Wells",
+        "role": "Vice President / Clerk"
+      },
+      "F": {
+        "name": "David Weekly",
+        "role": "Trustee"
+      },
+      "G": {
+        "name": "Jennifer Gibb",
+        "role": "Program Manager, Van Pelt Construction Services"
+      },
+      "H": {
+        "name": "Alisa MacAvoy",
+        "role": "Trustee"
+      },
+      "I": {
+        "name": "John Baker",
+        "role": "Superintendent"
+      },
+      "J": {
+        "name": "Will Robertson",
+        "role": "Bond Program Manager"
+      }
+    },
+    "agendaChanges": "Item 7.2 was moved from a Bond Program Action Item to a discussion item and placed immediately after item 6.1 (Public Hearing). All other items proceeded in original order after the resequenced 7.2.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order",
+        "phases": {
+          "opened": 8,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "1.1",
+        "title": "Roll Call",
+        "phases": {
+          "opened": 8,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Welcome by the School Board President",
+        "phases": {
+          "opened": 27,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 27,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 56,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 59,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 61,
+          "presentation": null,
+          "publicComment": 61,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Public Hearing Regarding the Design-Build Agreements for Solar Photovoltaic Systems",
+        "phases": {
+          "opened": 65,
+          "presentation": null,
+          "publicComment": 84,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7.2",
+        "title": "Adoption of Resolution No. 9 and Approval of Energy Services Agreement Between Redwood City School District and Southland Industries (Lighting Retrofit) — Discussion Only",
+        "phases": {
+          "opened": 100,
+          "presentation": 168,
+          "publicComment": null,
+          "discussion": 331,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7.1",
+        "title": "Adoption of Resolution No. 8 and Approval of the Design-Build Agreements for Solar Photovoltaic Systems at 9 Sites",
+        "phases": {
+          "opened": 2480,
+          "presentation": 2497,
+          "publicComment": null,
+          "discussion": 2644,
+          "vote": {
+            "seconds": 3434,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7.3",
+        "title": "Approval of Contracts with QKA Architects for Design Services for Adelante Selby, Hoover School, Roosevelt School, and Taft School HVAC Upgrades Projects",
+        "phases": {
+          "opened": 3447,
+          "presentation": 3478,
+          "publicComment": null,
+          "discussion": 3598,
+          "vote": {
+            "seconds": 4786,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8",
+        "title": "Approval of Consent Items",
+        "phases": {
+          "opened": 4792,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4805,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.1",
+        "title": "Approval of Consent Items",
+        "phases": {
+          "opened": 4792,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.2",
+        "title": "Approval of the October 23 Board Meeting Minutes",
+        "phases": {
+          "opened": 4792,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.3",
+        "title": "Approval of the Agreement between Redwood City School District and Mountain Valley Child and Family Services, Inc.",
+        "phases": {
+          "opened": 4792,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.4",
+        "title": "Approval of Local Interagency Agreement to Provide Education and Training to Credential Candidates",
+        "phases": {
+          "opened": 4792,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.5",
+        "title": "Approval of Amendment No. 2 to the Agreement between William Gomez and the Redwood City School District",
+        "phases": {
+          "opened": 4792,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.6",
+        "title": "Second Reading and Approval of Board Policy 5145.6: Parent/Guardian Notifications",
+        "phases": {
+          "opened": 4792,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.7",
+        "title": "Second Reading and Approval of Board Policy 1113: District and School Websites",
+        "phases": {
+          "opened": 4792,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.8",
+        "title": "Second Reading and Approval of Board Policy 5113: Absences and Excuses",
+        "phases": {
+          "opened": 4792,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.9",
+        "title": "Second Reading and Approval of Board Policy 4033: Lactation Accommodation",
+        "phases": {
+          "opened": 4792,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.10",
+        "title": "Second Reading and Approval of Board Policy 6000: Concepts and Roles",
+        "phases": {
+          "opened": 4792,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.11",
+        "title": "Ratification of Warrant Registers, October 1, 2024 - October 31, 2024",
+        "phases": {
+          "opened": 4792,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.1",
+        "title": "Approval of Retirement Notification Incentive",
+        "phases": {
+          "opened": 4805,
+          "presentation": 4816,
+          "publicComment": null,
+          "discussion": 4854,
+          "vote": {
+            "seconds": 4934,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.2",
+        "title": "Approval of Reclassification of Classified Employees",
+        "phases": {
+          "opened": 4942,
+          "presentation": 4947,
+          "publicComment": null,
+          "discussion": 5013,
+          "vote": {
+            "seconds": 5021,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.3",
+        "title": "Adoption of Transitional Kindergarten Curriculum",
+        "phases": {
+          "opened": 5027,
+          "presentation": 5032,
+          "publicComment": null,
+          "discussion": 5187,
+          "vote": {
+            "seconds": 5645,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "Report from Board Members and Superintendent",
+        "phases": {
+          "opened": 5653,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 5653,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "Contract Update Information and Credit Card Summary",
+        "phases": {
+          "opened": 6078,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 6078,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "Possible Other Business/Suggested Items for Future Agenda",
+        "phases": {
+          "opened": 6078,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 6078,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14",
+        "title": "Changes to the Board Meetings Calendar",
+        "phases": {
+          "opened": 6121,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Adjourn the Meeting",
+        "phases": {
+          "opened": 6125,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6131,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "cachedAt": "2026-03-15T17:27:11.446Z",
+  "inputTokens": 30350,
+  "outputTokens": 3772
+}
