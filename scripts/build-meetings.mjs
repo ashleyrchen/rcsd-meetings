@@ -275,14 +275,30 @@ const manualDurations = {
 };
 
 const transcriptDir = resolve(ROOT, 'artifacts/transcripts');
+const transcriptAaiDir = resolve(ROOT, 'artifacts/transcripts-aai');
 function hasTranscript(videoId) {
   if (!videoId) return false;
-  return existsSync(resolve(transcriptDir, `${videoId}.en.srt`)) ||
-         existsSync(resolve(transcriptDir, `${videoId}.en.vtt`));
+  // Only use AssemblyAI transcripts (YouTube auto-captions are too poor)
+  return existsSync(resolve(transcriptAaiDir, `${videoId}.json`));
 }
 
 function getDurationFromTranscript(videoId) {
   if (!videoId) return null;
+  // Try AssemblyAI transcript first (has audio_duration field)
+  const aaiPath = resolve(transcriptAaiDir, `${videoId}.json`);
+  if (existsSync(aaiPath)) {
+    try {
+      const aai = JSON.parse(readFileSync(aaiPath, 'utf-8'));
+      const totalSeconds = Math.round(aai.audio_duration || 0);
+      if (totalSeconds > 0) {
+        const hours = Math.floor(totalSeconds / 3600);
+        const minutes = Math.floor((totalSeconds % 3600) / 60);
+        if (hours > 0) return { seconds: totalSeconds, display: `${hours}h ${minutes}m` };
+        return { seconds: totalSeconds, display: `${minutes}m` };
+      }
+    } catch {}
+  }
+  // Fall back to SRT timestamp parsing
   const srtPath = resolve(transcriptDir, `${videoId}.en.srt`);
   if (!existsSync(srtPath)) return null;
   const content = readFileSync(srtPath, 'utf-8');

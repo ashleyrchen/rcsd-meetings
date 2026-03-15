@@ -1,9 +1,9 @@
 {
-  "generated": "2026-03-13",
+  "generated": "2026-03-15",
   "stats": {
     "total": 188,
     "withVideo": 153,
-    "withTranscript": 48,
+    "withTranscript": 153,
     "withMinutes": 71,
     "totalItems": 4677,
     "totalAttachments": 4461,
@@ -313,7 +313,7 @@
       ],
       "hasTranscript": true,
       "duration": "13m",
-      "durationSeconds": 800,
+      "durationSeconds": 807,
       "minutes": {
         "approvedAt": "2026-03-11",
         "documents": [
@@ -513,9 +513,9 @@
           "aid": "1401590"
         }
       ],
-      "hasTranscript": false,
+      "hasTranscript": true,
       "duration": "1h 42m",
-      "durationSeconds": 6120
+      "durationSeconds": 6149
     },
     {
       "date": "2026-02-04",
@@ -907,7 +907,7 @@
       ],
       "hasTranscript": true,
       "duration": "1h 40m",
-      "durationSeconds": 6025,
+      "durationSeconds": 6035,
       "minutes": {
         "approvedAt": "2026-03-11",
         "documents": [
@@ -1179,7 +1179,7 @@
       ],
       "hasTranscript": true,
       "duration": "1h 23m",
-      "durationSeconds": 4990,
+      "durationSeconds": 5001,
       "minutes": {
         "approvedAt": "2026-02-04",
         "documents": [
@@ -1470,7 +1470,7 @@
       ],
       "hasTranscript": true,
       "duration": "2h 17m",
-      "durationSeconds": 8269,
+      "durationSeconds": 8278,
       "minutes": {
         "approvedAt": "2026-02-04",
         "documents": [
@@ -1516,7 +1516,7 @@
       ],
       "hasTranscript": true,
       "duration": "2h 2m",
-      "durationSeconds": 7369,
+      "durationSeconds": 7377,
       "minutes": {
         "approvedAt": "2026-02-04",
         "documents": [
@@ -1922,8 +1922,8 @@
         }
       ],
       "hasTranscript": true,
-      "duration": "1h 9m",
-      "durationSeconds": 4193,
+      "duration": "1h 10m",
+      "durationSeconds": 4201,
       "minutes": {
         "approvedAt": "2026-01-21",
         "documents": [
@@ -2168,7 +2168,7 @@
       ],
       "hasTranscript": true,
       "duration": "2h 28m",
-      "durationSeconds": 8914,
+      "durationSeconds": 8928,
       "minutes": {
         "approvedAt": "2026-01-21",
         "documents": [
@@ -2494,7 +2494,7 @@
       ],
       "hasTranscript": true,
       "duration": "2h 21m",
-      "durationSeconds": 8460,
+      "durationSeconds": 8477,
       "minutes": {
         "approvedAt": "2025-12-17",
         "documents": [
@@ -3029,7 +3029,7 @@
       ],
       "hasTranscript": true,
       "duration": "4h 5m",
-      "durationSeconds": 14732,
+      "durationSeconds": 14745,
       "minutes": {
         "approvedAt": "2025-12-17",
         "documents": [
@@ -3476,7 +3476,7 @@
       ],
       "hasTranscript": true,
       "duration": "1h 1m",
-      "durationSeconds": 3675,
+      "durationSeconds": 3677,
       "minutes": {
         "approvedAt": "2025-12-10",
         "documents": []
@@ -3512,8 +3512,8 @@
         }
       ],
       "hasTranscript": true,
-      "duration": "1h 55m",
-      "durationSeconds": 6952
+      "duration": "1h 56m",
+      "durationSeconds": 6963
     },
     {
       "date": "2025-10-08",
@@ -3773,7 +3773,7 @@
       ],
       "hasTranscript": true,
       "duration": "2h 19m",
-      "durationSeconds": 8343
+      "durationSeconds": 8357
     },
     {
       "date": "2025-09-18",
@@ -4043,7 +4043,7 @@
       ],
       "hasTranscript": true,
       "duration": "1h 22m",
-      "durationSeconds": 4942,
+      "durationSeconds": 4953,
       "minutes": {
         "approvedAt": "2025-12-17",
         "documents": [
@@ -4346,7 +4346,7 @@
       ],
       "hasTranscript": true,
       "duration": "2h 38m",
-      "durationSeconds": 9496,
+      "durationSeconds": 9510,
       "minutes": {
         "approvedAt": "2025-10-08",
         "documents": [
@@ -4577,7 +4577,7 @@
       ],
       "hasTranscript": true,
       "duration": "57m",
-      "durationSeconds": 3434,
+      "durationSeconds": 3450,
       "minutes": {
         "approvedAt": "2025-09-18",
         "documents": [
@@ -5064,8 +5064,8 @@
         }
       ],
       "hasTranscript": true,
-      "duration": "1h 24m",
-      "durationSeconds": 5096,
+      "duration": "1h 25m",
+      "durationSeconds": 5108,
       "minutes": {
         "approvedAt": "2025-09-10",
         "documents": [
@@ -5363,8 +5363,8 @@
         }
       ],
       "hasTranscript": true,
-      "duration": "48m",
-      "durationSeconds": 2933,
+      "duration": "49m",
+      "durationSeconds": 2947,
       "minutes": {
         "approvedAt": "2025-08-19",
         "documents": [
@@ -5513,7 +5513,7 @@
       ],
       "hasTranscript": true,
       "duration": "1h 54m",
-      "durationSeconds": 6860,
+      "durationSeconds": 6875,
       "minutes": {
         "approvedAt": "2025-08-19",
         "documents": [
@@ -5837,8 +5837,8 @@
         }
       ],
       "hasTranscript": true,
-      "duration": "1h 59m",
-      "durationSeconds": 7190,
+      "duration": "2h 0m",
+      "durationSeconds": 7202,
       "minutes": {
         "approvedAt": "2025-08-19",
         "documents": [
@@ -6308,8 +6308,8 @@
         }
       ],
       "hasTranscript": true,
-      "duration": "2h 48m",
-      "durationSeconds": 10139,
+      "duration": "2h 49m",
+      "durationSeconds": 10151,
       "minutes": {
         "approvedAt": "2025-06-11",
         "documents": [
@@ -6940,7 +6940,7 @@
       ],
       "hasTranscript": true,
       "duration": "1h 17m",
-      "durationSeconds": 4640,
+      "durationSeconds": 4650,
       "minutes": {
         "approvedAt": "2025-06-11",
         "documents": [
@@ -7069,7 +7069,7 @@
       ],
       "hasTranscript": true,
       "duration": "10m",
-      "durationSeconds": 640,
+      "durationSeconds": 655,
       "minutes": {
         "approvedAt": "2025-06-11",
         "documents": [
@@ -7412,7 +7412,7 @@
       ],
       "hasTranscript": true,
       "duration": "59m",
-      "durationSeconds": 3544,
+      "durationSeconds": 3553,
       "minutes": {
         "approvedAt": "2025-05-14",
         "documents": [
@@ -7751,7 +7751,7 @@
       ],
       "hasTranscript": true,
       "duration": "1h 43m",
-      "durationSeconds": 6220,
+      "durationSeconds": 6234,
       "minutes": {
         "approvedAt": "2025-05-28",
         "documents": [
@@ -8253,7 +8253,7 @@
       ],
       "hasTranscript": true,
       "duration": "2h 6m",
-      "durationSeconds": 7605,
+      "durationSeconds": 7616,
       "minutes": {
         "approvedAt": "2025-04-16",
         "documents": [
@@ -8716,7 +8716,7 @@
       ],
       "hasTranscript": true,
       "duration": "1h 51m",
-      "durationSeconds": 6669,
+      "durationSeconds": 6683,
       "minutes": {
         "approvedAt": "2025-03-26",
         "documents": [
@@ -9292,7 +9292,7 @@
       ],
       "hasTranscript": true,
       "duration": "1h 54m",
-      "durationSeconds": 6854,
+      "durationSeconds": 6869,
       "minutes": {
         "approvedAt": "2025-03-12",
         "documents": [
@@ -9860,7 +9860,7 @@
       ],
       "hasTranscript": true,
       "duration": "2h 36m",
-      "durationSeconds": 9379,
+      "durationSeconds": 9394,
       "minutes": {
         "approvedAt": "2025-02-26",
         "documents": [
@@ -10236,7 +10236,7 @@
       ],
       "hasTranscript": true,
       "duration": "2h 34m",
-      "durationSeconds": 9263,
+      "durationSeconds": 9278,
       "minutes": {
         "approvedAt": "2025-02-05",
         "documents": [
@@ -10650,7 +10650,7 @@
       ],
       "hasTranscript": true,
       "duration": "2h 42m",
-      "durationSeconds": 9733,
+      "durationSeconds": 9750,
       "minutes": {
         "approvedAt": "2025-02-05",
         "documents": [
@@ -10938,7 +10938,7 @@
       ],
       "hasTranscript": true,
       "duration": "2h 41m",
-      "durationSeconds": 9672,
+      "durationSeconds": 9690,
       "minutes": {
         "approvedAt": "2025-01-15",
         "documents": [
@@ -11469,7 +11469,7 @@
       ],
       "hasTranscript": true,
       "duration": "3h 32m",
-      "durationSeconds": 12750,
+      "durationSeconds": 12767,
       "minutes": {
         "approvedAt": "2025-01-15",
         "documents": [
@@ -11957,7 +11957,7 @@
       ],
       "hasTranscript": true,
       "duration": "2h 16m",
-      "durationSeconds": 8179,
+      "durationSeconds": 8192,
       "minutes": {
         "approvedAt": "2024-12-11",
         "documents": [
@@ -12449,7 +12449,7 @@
       ],
       "hasTranscript": true,
       "duration": "1h 42m",
-      "durationSeconds": 6136,
+      "durationSeconds": 6152,
       "minutes": {
         "approvedAt": "2024-11-20",
         "documents": [
@@ -12979,8 +12979,8 @@
         }
       ],
       "hasTranscript": true,
-      "duration": "1h 26m",
-      "durationSeconds": 5213,
+      "duration": "1h 27m",
+      "durationSeconds": 5224,
       "minutes": {
         "approvedAt": "2024-11-06",
         "documents": [
@@ -13206,8 +13206,8 @@
         }
       ],
       "hasTranscript": true,
-      "duration": "1h 42m",
-      "durationSeconds": 6173,
+      "duration": "1h 43m",
+      "durationSeconds": 6191,
       "minutes": {
         "approvedAt": "2024-10-23",
         "documents": [
@@ -13578,7 +13578,7 @@
       ],
       "hasTranscript": true,
       "duration": "3h 0m",
-      "durationSeconds": 10802,
+      "durationSeconds": 10815,
       "minutes": {
         "approvedAt": "2024-10-09",
         "documents": [
@@ -13981,7 +13981,7 @@
       ],
       "hasTranscript": true,
       "duration": "1h 27m",
-      "durationSeconds": 5257,
+      "durationSeconds": 5276,
       "minutes": {
         "approvedAt": "2024-09-25",
         "documents": [
@@ -14543,7 +14543,7 @@
       ],
       "hasTranscript": true,
       "duration": "1h 58m",
-      "durationSeconds": 7118,
+      "durationSeconds": 7135,
       "minutes": {
         "approvedAt": "2024-09-11",
         "documents": [
@@ -15311,8 +15311,8 @@
         }
       ],
       "hasTranscript": true,
-      "duration": "45m",
-      "durationSeconds": 2755,
+      "duration": "46m",
+      "durationSeconds": 2764,
       "minutes": {
         "approvedAt": "2024-08-28",
         "documents": [
@@ -15865,7 +15865,7 @@
       ],
       "hasTranscript": true,
       "duration": "36m",
-      "durationSeconds": 2205,
+      "durationSeconds": 2218,
       "minutes": {
         "approvedAt": "2024-08-07",
         "documents": [
@@ -16175,8 +16175,8 @@
         }
       ],
       "hasTranscript": true,
-      "duration": "1h 58m",
-      "durationSeconds": 7135,
+      "duration": "1h 59m",
+      "durationSeconds": 7153,
       "minutes": {
         "approvedAt": "2024-08-07",
         "documents": [
@@ -16590,7 +16590,7 @@
       ],
       "hasTranscript": true,
       "duration": "1h 28m",
-      "durationSeconds": 5335,
+      "durationSeconds": 5337,
       "minutes": {
         "approvedAt": "2024-06-20",
         "documents": [
@@ -17350,7 +17350,7 @@
       ],
       "hasTranscript": true,
       "duration": "44m",
-      "durationSeconds": 2671,
+      "durationSeconds": 2687,
       "minutes": {
         "approvedAt": "2024-05-22",
         "documents": [
@@ -17744,8 +17744,8 @@
         }
       ],
       "hasTranscript": true,
-      "duration": "2h 18m",
-      "durationSeconds": 8329,
+      "duration": "2h 19m",
+      "durationSeconds": 8340,
       "minutes": {
         "approvedAt": "2024-05-08",
         "documents": [
@@ -18099,8 +18099,8 @@
         }
       ],
       "hasTranscript": true,
-      "duration": "36m",
-      "durationSeconds": 2209,
+      "duration": "37m",
+      "durationSeconds": 2220,
       "minutes": {
         "approvedAt": "2024-04-17",
         "documents": [
@@ -18503,7 +18503,7 @@
       ],
       "hasTranscript": true,
       "duration": "2h 5m",
-      "durationSeconds": 7512,
+      "durationSeconds": 7514,
       "minutes": {
         "approvedAt": "2024-04-03",
         "documents": [
@@ -18798,7 +18798,7 @@
       ],
       "hasTranscript": true,
       "duration": "2h 54m",
-      "durationSeconds": 10456,
+      "durationSeconds": 10465,
       "minutes": {
         "approvedAt": "2024-03-20",
         "documents": [
@@ -19229,7 +19229,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false,
+      "hasTranscript": true,
+      "duration": "2h 35m",
+      "durationSeconds": 9356,
       "minutes": {
         "approvedAt": "2024-03-20",
         "documents": [
@@ -19764,7 +19766,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false,
+      "hasTranscript": true,
+      "duration": "1h 39m",
+      "durationSeconds": 5969,
       "minutes": {
         "approvedAt": "2024-02-28",
         "documents": [
@@ -20324,7 +20328,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false,
+      "hasTranscript": true,
+      "duration": "3h 0m",
+      "durationSeconds": 10846,
       "minutes": {
         "approvedAt": "2024-02-07",
         "documents": [
@@ -20585,7 +20591,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false,
+      "hasTranscript": true,
+      "duration": "46m",
+      "durationSeconds": 2762,
       "minutes": {
         "approvedAt": "2024-01-10",
         "documents": [
@@ -21009,7 +21017,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false,
+      "hasTranscript": true,
+      "duration": "2h 31m",
+      "durationSeconds": 9111,
       "minutes": {
         "approvedAt": "2023-12-19",
         "documents": [
@@ -21455,7 +21465,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false,
+      "hasTranscript": true,
+      "duration": "3h 16m",
+      "durationSeconds": 11772,
       "minutes": {
         "approvedAt": "2023-12-06",
         "documents": [
@@ -21536,7 +21548,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false,
+      "hasTranscript": true,
+      "duration": "3h 16m",
+      "durationSeconds": 11772,
       "minutes": {
         "approvedAt": "2023-12-06",
         "documents": [
@@ -22004,7 +22018,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false,
+      "hasTranscript": true,
+      "duration": "1h 58m",
+      "durationSeconds": 7105,
       "minutes": {
         "approvedAt": "2023-11-15",
         "documents": [
@@ -22352,7 +22368,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false,
+      "hasTranscript": true,
+      "duration": "2h 3m",
+      "durationSeconds": 7431,
       "minutes": {
         "approvedAt": "2023-11-08",
         "documents": [
@@ -22778,7 +22796,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false,
+      "hasTranscript": true,
+      "duration": "2h 46m",
+      "durationSeconds": 9969,
       "minutes": {
         "approvedAt": "2023-10-25",
         "documents": [
@@ -23123,7 +23143,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false,
+      "hasTranscript": true,
+      "duration": "2h 5m",
+      "durationSeconds": 7529,
       "minutes": {
         "approvedAt": "2023-10-11",
         "documents": [
@@ -23547,7 +23569,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false,
+      "hasTranscript": true,
+      "duration": "1h 24m",
+      "durationSeconds": 5064,
       "minutes": {
         "approvedAt": "2023-09-27",
         "documents": [
@@ -23823,7 +23847,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false,
+      "hasTranscript": true,
+      "duration": "33m",
+      "durationSeconds": 2000,
       "minutes": {
         "approvedAt": "2023-09-13",
         "documents": [
@@ -24482,7 +24508,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false,
+      "hasTranscript": true,
+      "duration": "1h 24m",
+      "durationSeconds": 5068,
       "minutes": {
         "approvedAt": "2023-08-23",
         "documents": [
@@ -24970,7 +24998,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "37m",
+      "durationSeconds": 2249
     },
     {
       "date": "2023-06-23",
@@ -25353,7 +25383,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "2h 15m",
+      "durationSeconds": 8132
     },
     {
       "date": "2023-06-14",
@@ -25789,7 +25821,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "1h 19m",
+      "durationSeconds": 4765
     },
     {
       "date": "2023-05-24",
@@ -26252,7 +26286,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "1h 37m",
+      "durationSeconds": 5867
     },
     {
       "date": "2023-05-10",
@@ -26784,7 +26820,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "39m",
+      "durationSeconds": 2347
     },
     {
       "date": "2023-04-26",
@@ -27243,7 +27281,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "3h 30m",
+      "durationSeconds": 12645
     },
     {
       "date": "2023-04-26",
@@ -27317,7 +27357,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "3h 30m",
+      "durationSeconds": 12645
     },
     {
       "date": "2023-04-26",
@@ -27402,7 +27444,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "3h 30m",
+      "durationSeconds": 12645
     },
     {
       "date": "2023-04-19",
@@ -28010,7 +28054,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "3h 23m",
+      "durationSeconds": 12197
     },
     {
       "date": "2023-03-22",
@@ -28377,7 +28423,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "2h 19m",
+      "durationSeconds": 8350
     },
     {
       "date": "2023-03-22",
@@ -28462,7 +28510,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "2h 19m",
+      "durationSeconds": 8350
     },
     {
       "date": "2023-03-08",
@@ -29033,7 +29083,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "2h 31m",
+      "durationSeconds": 9104
     },
     {
       "date": "2023-02-15",
@@ -29420,7 +29472,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "3h 19m",
+      "durationSeconds": 11983
     },
     {
       "date": "2023-02-08",
@@ -29811,7 +29865,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "2h 29m",
+      "durationSeconds": 8990
     },
     {
       "date": "2023-01-24",
@@ -29883,7 +29939,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "2m",
+      "durationSeconds": 131
     },
     {
       "date": "2023-01-20",
@@ -30323,7 +30381,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "1h 38m",
+      "durationSeconds": 5936
     },
     {
       "date": "2023-01-11",
@@ -30658,7 +30718,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "2h 41m",
+      "durationSeconds": 9716
     },
     {
       "date": "2022-12-15",
@@ -31110,7 +31172,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "2h 21m",
+      "durationSeconds": 8483
     },
     {
       "date": "2022-12-07",
@@ -31546,7 +31610,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "32m",
+      "durationSeconds": 1961
     },
     {
       "date": "2022-11-16",
@@ -32010,7 +32076,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "1h 14m",
+      "durationSeconds": 4478
     },
     {
       "date": "2022-11-09",
@@ -32336,7 +32404,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "1h 37m",
+      "durationSeconds": 5855
     },
     {
       "date": "2022-10-26",
@@ -32705,7 +32775,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "1h 8m",
+      "durationSeconds": 4092
     },
     {
       "date": "2022-10-21",
@@ -33244,7 +33316,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "38m",
+      "durationSeconds": 2302
     },
     {
       "date": "2022-09-21",
@@ -33582,7 +33656,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "56m",
+      "durationSeconds": 3379
     },
     {
       "date": "2022-09-14",
@@ -33651,7 +33727,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "37m",
+      "durationSeconds": 2239
     },
     {
       "date": "2022-09-07",
@@ -34038,7 +34116,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "1h 3m",
+      "durationSeconds": 3813
     },
     {
       "date": "2022-08-24",
@@ -34678,7 +34758,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "1h 12m",
+      "durationSeconds": 4340
     },
     {
       "date": "2022-08-10",
@@ -35321,7 +35403,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "1h 30m",
+      "durationSeconds": 5405
     },
     {
       "date": "2022-06-29",
@@ -36068,7 +36152,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "1h 47m",
+      "durationSeconds": 6456
     },
     {
       "date": "2022-06-22",
@@ -36403,7 +36489,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "2h 27m",
+      "durationSeconds": 8829
     },
     {
       "date": "2022-06-15",
@@ -36853,7 +36941,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "3h 29m",
+      "durationSeconds": 12594
     },
     {
       "date": "2022-06-13",
@@ -37122,7 +37212,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "1h 3m",
+      "durationSeconds": 3826
     },
     {
       "date": "2022-05-25",
@@ -37582,7 +37674,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "1h 40m",
+      "durationSeconds": 6035
     },
     {
       "date": "2022-05-11",
@@ -37865,7 +37959,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "49m",
+      "durationSeconds": 2982
     },
     {
       "date": "2022-04-27",
@@ -38417,7 +38513,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "1h 20m",
+      "durationSeconds": 4836
     },
     {
       "date": "2022-04-20",
@@ -38554,7 +38652,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "2h 15m",
+      "durationSeconds": 8156
     },
     {
       "date": "2022-04-13",
@@ -38866,7 +38966,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "1h 23m",
+      "durationSeconds": 5036
     },
     {
       "date": "2022-04-06",
@@ -38935,7 +39037,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "37m",
+      "durationSeconds": 2260
     },
     {
       "date": "2022-03-23",
@@ -39202,7 +39306,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "1h 48m",
+      "durationSeconds": 6480
     },
     {
       "date": "2022-03-09",
@@ -39683,7 +39789,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "1h 39m",
+      "durationSeconds": 5954
     },
     {
       "date": "2022-02-16",
@@ -40174,7 +40282,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "1h 57m",
+      "durationSeconds": 7036
     },
     {
       "date": "2022-02-09",
@@ -40654,7 +40764,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "1h 3m",
+      "durationSeconds": 3789
     },
     {
       "date": "2022-01-19",
@@ -41096,7 +41208,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "2h 19m",
+      "durationSeconds": 8374
     },
     {
       "date": "2022-01-12",
@@ -41446,7 +41560,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "1h 38m",
+      "durationSeconds": 5921
     },
     {
       "date": "2022-01-12",
@@ -41506,7 +41622,9 @@
           ]
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "1h 38m",
+      "durationSeconds": 5921
     },
     {
       "date": "2021-12-15",
@@ -41884,7 +42002,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "1h 36m",
+      "durationSeconds": 5774
     },
     {
       "date": "2021-12-08",
@@ -42291,7 +42411,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "2h 9m",
+      "durationSeconds": 7759
     },
     {
       "date": "2021-11-17",
@@ -42707,7 +42829,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "2h 20m",
+      "durationSeconds": 8407
     },
     {
       "date": "2021-11-17",
@@ -42779,7 +42903,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "2h 20m",
+      "durationSeconds": 8407
     },
     {
       "date": "2021-11-10",
@@ -43260,7 +43386,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "56m",
+      "durationSeconds": 3376
     },
     {
       "date": "2021-10-20",
@@ -44272,7 +44400,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "1h 32m",
+      "durationSeconds": 5546
     },
     {
       "date": "2021-09-27",
@@ -44802,7 +44932,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "2h 20m",
+      "durationSeconds": 8435
     },
     {
       "date": "2021-09-03",
@@ -45241,7 +45373,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "1h 44m",
+      "durationSeconds": 6243
     },
     {
       "date": "2021-08-27",
@@ -45351,7 +45485,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "3h 4m",
+      "durationSeconds": 11041
     },
     {
       "date": "2021-08-25",
@@ -46724,7 +46860,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "2h 54m",
+      "durationSeconds": 10498
     },
     {
       "date": "2021-06-30",
@@ -49150,7 +49288,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "3h 19m",
+      "durationSeconds": 11999
     },
     {
       "date": "2021-05-07",
@@ -49222,7 +49362,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "1h 25m",
+      "durationSeconds": 5158
     },
     {
       "date": "2021-05-05",
@@ -49630,7 +49772,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "1h 26m",
+      "durationSeconds": 5179
     },
     {
       "date": "2021-04-28",
@@ -49872,7 +50016,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "1h 34m",
+      "durationSeconds": 5650
     },
     {
       "date": "2021-04-14",
@@ -49944,7 +50090,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "2h 18m",
+      "durationSeconds": 8339
     },
     {
       "date": "2021-04-14",
@@ -50553,7 +50701,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "2h 18m",
+      "durationSeconds": 8339
     },
     {
       "date": "2021-03-26",
@@ -50704,7 +50854,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "2h 28m",
+      "durationSeconds": 8902
     },
     {
       "date": "2021-03-24",
@@ -51061,7 +51213,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "2h 28m",
+      "durationSeconds": 8902
     },
     {
       "date": "2021-03-10",
@@ -51540,7 +51694,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "3h 33m",
+      "durationSeconds": 12786
     },
     {
       "date": "2021-02-24",
@@ -51951,7 +52107,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "3h 5m",
+      "durationSeconds": 11136
     },
     {
       "date": "2021-02-12",
@@ -52067,7 +52225,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "1h 44m",
+      "durationSeconds": 6295
     },
     {
       "date": "2021-02-10",
@@ -52569,7 +52729,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "2h 58m",
+      "durationSeconds": 10680
     },
     {
       "date": "2021-01-27",
@@ -52958,7 +53120,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "2h 10m",
+      "durationSeconds": 7822
     },
     {
       "date": "2021-01-13",
@@ -53467,7 +53631,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "2h 24m",
+      "durationSeconds": 8695
     },
     {
       "date": "2020-12-11",
@@ -54126,7 +54292,9 @@
           ]
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "3h 31m",
+      "durationSeconds": 12699
     },
     {
       "date": "2020-11-18",
@@ -54666,7 +54834,9 @@
           ]
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "2h 20m",
+      "durationSeconds": 8425
     },
     {
       "date": "2020-11-04",
@@ -55151,7 +55321,9 @@
           ]
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "2h 27m",
+      "durationSeconds": 8842
     },
     {
       "date": "2020-10-21",
@@ -55881,7 +56053,9 @@
           ]
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "2h 9m",
+      "durationSeconds": 7785
     },
     {
       "date": "2020-10-02",
@@ -56070,7 +56244,9 @@
           ]
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "3h 49m",
+      "durationSeconds": 13751
     },
     {
       "date": "2020-09-23",
@@ -56407,7 +56583,9 @@
           ]
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "3h 34m",
+      "durationSeconds": 12897
     },
     {
       "date": "2020-09-16",
@@ -56816,7 +56994,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "2h 49m",
+      "durationSeconds": 10189
     },
     {
       "date": "2020-08-26",
@@ -57361,7 +57541,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "2h 11m",
+      "durationSeconds": 7874
     },
     {
       "date": "2020-08-12",
@@ -57899,7 +58081,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "3h 30m",
+      "durationSeconds": 12625
     },
     {
       "date": "2020-07-29",
@@ -58336,7 +58520,9 @@
           ]
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "1h 34m",
+      "durationSeconds": 5647
     },
     {
       "date": "2020-07-22",
@@ -58511,7 +58697,9 @@
           ]
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "2h 35m",
+      "durationSeconds": 9323
     },
     {
       "date": "2020-07-15",
@@ -58752,7 +58940,9 @@
           ]
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "4h 52m",
+      "durationSeconds": 17565
     },
     {
       "date": "2020-06-24",
@@ -59393,7 +59583,9 @@
           ]
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "2h 0m",
+      "durationSeconds": 7238
     },
     {
       "date": "2020-06-17",
@@ -59560,7 +59752,9 @@
           "attachments": []
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "2h 58m",
+      "durationSeconds": 10681
     },
     {
       "date": "2020-06-10",
@@ -60135,7 +60329,9 @@
           ]
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "3h 50m",
+      "durationSeconds": 13853
     },
     {
       "date": "2020-06-03",
@@ -60224,7 +60420,9 @@
           ]
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "2h 56m",
+      "durationSeconds": 10598
     },
     {
       "date": "2020-05-20",
@@ -60593,7 +60791,9 @@
           ]
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "4h 24m",
+      "durationSeconds": 15898
     },
     {
       "date": "2020-05-06",
@@ -61631,7 +61831,9 @@
           ]
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "2h 21m",
+      "durationSeconds": 8516
     },
     {
       "date": "2020-04-15",
@@ -61765,7 +61967,9 @@
           ]
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "44m",
+      "durationSeconds": 2661
     },
     {
       "date": "2020-04-01",
@@ -61838,7 +62042,9 @@
           ]
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "2h 5m",
+      "durationSeconds": 7549
     },
     {
       "date": "2020-04-01",
@@ -62086,7 +62292,9 @@
           ]
         }
       ],
-      "hasTranscript": false
+      "hasTranscript": true,
+      "duration": "2h 5m",
+      "durationSeconds": 7549
     }
   ]
 }
