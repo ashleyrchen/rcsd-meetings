@@ -36,7 +36,12 @@
         "role": "Public commenter (remote)"
       }
     },
-    "agendaChanges": "Public comment was taken as a general period before the posted agenda items were formally opened. The president introduced item 0 (public hearing) at 284s and item 1 (resolution adoption) immediately after at 314s, consistent with posted order.",
+    "agendaChanges": "Public comment was taken as a general period before the posted agenda items were opened, rather than per-item. The president referenced items as '6' (public hearing) and '7.1' (resolution adoption), suggesting the posted agenda had higher item numbers internally, but the two substantive items correspond to agendaIndex 0 and 1 respectively. No items were pulled or resequenced relative to the posted order.",
+    "callToOrder": 5,
+    "rollCall": 38,
+    "pledgeOfAllegiance": null,
+    "approvalOfAgenda": 74,
+    "adjournment": 799,
     "items": [
       {
         "agendaIndex": 0,
@@ -104,7 +109,12 @@
         "role": "Public commenter (remote)"
       }
     },
-    "agendaChanges": "Public comment was taken as a general period before the posted agenda items were formally opened. The president introduced item 0 (public hearing) at 284s and item 1 (resolution adoption) immediately after at 314s, consistent with posted order.",
+    "agendaChanges": "Public comment was taken as a general period before the posted agenda items were opened, rather than per-item. The president referenced items as '6' (public hearing) and '7.1' (resolution adoption), suggesting the posted agenda had higher item numbers internally, but the two substantive items correspond to agendaIndex 0 and 1 respectively. No items were pulled or resequenced relative to the posted order.",
+    "callToOrder": 5,
+    "rollCall": 38,
+    "pledgeOfAllegiance": null,
+    "approvalOfAgenda": 74,
+    "adjournment": 799,
     "items": [
       {
         "agendaIndex": 0,
@@ -136,7 +146,7 @@
       }
     ]
   },
-  "cachedAt": "2026-03-15T14:54:31.362Z",
-  "inputTokens": 4048,
-  "outputTokens": 468
+  "cachedAt": "2026-03-15T15:17:12.826Z",
+  "inputTokens": 4280,
+  "outputTokens": 557
 }

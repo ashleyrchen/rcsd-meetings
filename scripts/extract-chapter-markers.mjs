@@ -180,9 +180,18 @@ ${minutesSection}
 TRANSCRIPT (format: [Ns] Speaker: text — N is seconds from start, Speaker is a letter label):
 ${compactTranscript}
 
-TASK: For each agenda item, identify the timestamp (in seconds) of each phase that occurred.
+TASK:
+1. Identify meeting-level procedural timestamps (call to order, roll call, adjournment)
+2. For each agenda item, identify the timestamp (in seconds) of each phase that occurred
 
-PHASES:
+MEETING-LEVEL TIMESTAMPS (all are integers in seconds, or null if not found):
+- "callToOrder": When the president calls the meeting to order (e.g., "it's 6 o'clock", "I call this meeting to order")
+- "rollCall": When roll call begins (the clerk/secretary starts calling names)
+- "pledgeOfAllegiance": When the pledge of allegiance is led (null if not done, e.g., special meetings)
+- "approvalOfAgenda": When the motion to approve the agenda is called
+- "adjournment": When the motion to adjourn carries or the president declares the meeting adjourned
+
+ITEM PHASES:
 - "opened": When the board president introduces/calls this item (e.g., "next we have item...", "moving on to...")
 - "presentation": When a presenter begins their substantive presentation (not the president's intro)
 - "publicComment": When public comment is opened for this item (may come before OR after the presentation; also note there is typically a general public comment period early in the meeting as its own agenda item)
@@ -205,6 +214,11 @@ RESPOND WITH ONLY VALID JSON (no markdown fences):
     "A": { "name": "Name or null", "role": "role description" }
   },
   "agendaChanges": "description of any resequencing or pulls, or null",
+  "callToOrder": 5,
+  "rollCall": 10,
+  "pledgeOfAllegiance": 45,
+  "approvalOfAgenda": 60,
+  "adjournment": 3600,
   "items": [
     {
       "agendaIndex": 0,
@@ -367,6 +381,11 @@ async function main() {
         videoId: meeting.youtube,
         speakers: llmResult.speakers || {},
         agendaChanges: llmResult.agendaChanges || null,
+        callToOrder: llmResult.callToOrder ?? null,
+        rollCall: llmResult.rollCall ?? null,
+        pledgeOfAllegiance: llmResult.pledgeOfAllegiance ?? null,
+        approvalOfAgenda: llmResult.approvalOfAgenda ?? null,
+        adjournment: llmResult.adjournment ?? null,
         items: llmResult.items || [],
       };
 
