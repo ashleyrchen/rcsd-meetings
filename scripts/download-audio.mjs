@@ -1,0 +1,54 @@
+#!/usr/bin/env node
+/**
+ * Batch download audio from YouTube for board meeting videos.
+ * Downloads bestaudio via yt-dlp for each video in youtube-index.json
+ * that doesn't already have a cached audio file.
+ *
+ * Usage: node scripts/download-audio.mjs
+ */
+
+import { execFileSync } from 'child_process';
+import { readFileSync, existsSync, mkdirSync } from 'fs';
+import { resolve, dirname } from 'path';
+import { fileURLToPath } from 'url';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const ROOT = resolve(__dirname, '..');
+const AUDIO_DIR = resolve(ROOT, 'artifacts/audio');
+
+mkdirSync(AUDIO_DIR, { recursive: true });
+
+const videos = JSON.parse(readFileSync(resolve(ROOT, 'data/youtube-index.json'), 'utf-8'));
+
+function hasAudio(videoId) {
+  for (const ext of ['webm', 'm4a', 'opus', 'ogg', 'mp3']) {
+    if (existsSync(resolve(AUDIO_DIR, `${videoId}.${ext}`))) return true;
+  }
+  return false;
+}
+
+const needed = videos.filter(v => !hasAudio(v.id));
+console.log(`Total videos: ${videos.length}, already have audio: ${videos.length - needed.length}, to download: ${needed.length}`);
+
+let downloaded = 0;
+let failed = 0;
+
+for (const v of needed) {
+  const i = downloaded + failed + 1;
+  console.log(`[${i}/${needed.length}] ${v.date} — ${v.title.slice(0, 60)}...`);
+  const outTemplate = resolve(AUDIO_DIR, `${v.id}.%(ext)s`);
+  try {
+    execFileSync('yt-dlp', [
+      '-f', 'bestaudio',
+      '--no-warnings',
+      '-o', outTemplate,
+      `https://www.youtube.com/watch?v=${v.id}`,
+    ], { encoding: 'utf-8', timeout: 600_000, stdio: 'pipe' });
+    downloaded++;
+  } catch (err) {
+    console.error(`  FAILED: ${err.message.slice(0, 100)}`);
+    failed++;
+  }
+}
+
+console.log(`\nDone! Downloaded: ${downloaded}, failed: ${failed}`);

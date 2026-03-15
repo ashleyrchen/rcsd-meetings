@@ -766,12 +766,34 @@ function renderMeeting(m) {
 const OFFICER_ROTATIONS = [
   {
     afterDate: '2025-12-17',
-    previous: { president: 'Mike Wells', vp: 'David Weekly', clerk: 'Cecilia I. M\u00e1rquez' },
+    previous: { president: 'Mike Wells', vp: 'David Weekly', clerk: 'Cecilia I. Márquez' },
   },
   {
     afterDate: '2024-12-17',
-    previous: { president: 'Janet Lawson', vp: 'Mike Wells' },
+    previous: { president: 'Janet Lawson', vp: 'Mike Wells', clerk: 'Alisa MacAvoy' },
     note: 'Trustees Lawson (9 yrs) and MacAvoy (17 yrs) departed; Li and Ng Kwing King sworn in',
+  },
+  {
+    afterDate: '2023-12-06',
+    previous: { president: 'Cecilia I. Márquez', vp: 'Janet Lawson', clerk: 'Mike Wells' },
+  },
+  {
+    afterDate: '2022-12-14',
+    previous: { president: 'María Díaz-Slocum', vp: 'Cecilia I. Márquez', clerk: 'Janet Lawson' },
+    note: 'Trustee Díaz-Slocum departed; Weekly and Márquez sworn in',
+  },
+  {
+    afterDate: '2021-12-15',
+    previous: { president: 'Alisa MacAvoy', vp: 'María Díaz-Slocum', clerk: 'Cecilia I. Márquez' },
+  },
+  {
+    afterDate: '2020-12-11',
+    previous: { president: 'Janet Lawson', vp: 'Alisa MacAvoy', clerk: 'María Díaz-Slocum' },
+    note: 'Trustee McBride departed; Wells, MacAvoy, and Lawson sworn in',
+  },
+  {
+    afterDate: '2019-12-11',
+    previous: { president: 'Dennis McBride', vp: 'Janet Lawson', clerk: 'Alisa MacAvoy' },
   },
 ];
 
@@ -790,7 +812,7 @@ function renderRotationDivider(rotation) {
 }
 
 // Render a school year section
-function renderSchoolYear(id, title, meetings, subtitle) {
+function renderSchoolYear(id, title, meetings, subtitle, collapsed = false) {
   const meetingRows = [];
   for (const m of meetings) {
     meetingRows.push(renderMeeting(m));
@@ -802,7 +824,18 @@ function renderSchoolYear(id, title, meetings, subtitle) {
     }
   }
 
-  let html = `<section class="section" id="${id}">
+  if (collapsed) {
+    return `<details class="section section-collapsible" id="${id}">
+  <div class="section-rule"></div>
+  <summary><h2>${title}</h2></summary>
+  ${subtitle ? `<p class="section-subtitle">${subtitle}</p>` : ''}
+  <div class="meeting-list">
+${meetingRows.join('\n')}
+  </div>
+</details>`;
+  }
+
+  return `<section class="section" id="${id}">
   <div class="section-rule"></div>
   <h2>${title}</h2>
   ${subtitle ? `<p class="section-subtitle">${subtitle}</p>` : ''}
@@ -810,7 +843,6 @@ function renderSchoolYear(id, title, meetings, subtitle) {
 ${meetingRows.join('\n')}
   </div>
 </section>`;
-  return html;
 }
 
 // Thread filter section — now includes schools and topics
@@ -1224,6 +1256,43 @@ const pageCSS = `
     color: var(--green-deep);
     margin-bottom: 1.5rem;
     font-optical-sizing: auto;
+  }
+
+  /* Collapsible school year sections */
+  .section-collapsible {
+    border: none;
+  }
+  .section-collapsible summary {
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .section-collapsible summary::-webkit-details-marker { display: none; }
+  .section-collapsible summary::before {
+    content: '\u25B6';
+    font-size: 0.7em;
+    color: var(--green-deep);
+    transition: transform 0.2s ease;
+    flex-shrink: 0;
+  }
+  .section-collapsible[open] > summary::before {
+    transform: rotate(90deg);
+  }
+  .section-collapsible summary h2 {
+    margin-bottom: 0;
+    display: inline;
+  }
+  .section-collapsible summary:hover h2 {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .section-collapsible > .section-subtitle {
+    margin-top: 0.5rem;
+  }
+  .section-collapsible > .meeting-list {
+    margin-top: 1rem;
   }
 
   p {
@@ -1966,7 +2035,10 @@ ${siteNav({ activePage: 'meetings', lang: L.lang, altLangHref: L.altLangHref })}
 <main class="content">
 ${renderThreadFilters()}
 
-${schoolYears.map(([sy, meetings]) => renderSchoolYear(`sy${sy}`, L.schoolYearTitle(sy), meetings, L.schoolYearSubtitle(sy, meetings.length))).join('\n\n')}
+${schoolYears.map(([sy, meetings]) => {
+  const expanded = sy === '202526' || sy === '202425';
+  return renderSchoolYear(`sy${sy}`, L.schoolYearTitle(sy), meetings, L.schoolYearSubtitle(sy, meetings.length), !expanded);
+}).join('\n\n')}
 
 ${renderDocuments()}
 
@@ -2037,6 +2109,24 @@ ${siteFooter({ lang: L.lang })}
       docPanels.forEach(function(p) { p.classList.toggle('active', p.dataset.docPanel === target); });
     });
   });
+
+  // Auto-expand collapsed sections when TOC links are clicked
+  document.querySelectorAll('.toc a[href^="#sy"]').forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      var target = document.querySelector(link.getAttribute('href'));
+      if (target && target.tagName === 'DETAILS' && !target.open) {
+        target.open = true;
+      }
+    });
+  });
+
+  // Also handle direct URL hash on page load
+  if (window.location.hash && window.location.hash.startsWith('#sy')) {
+    var target = document.querySelector(window.location.hash);
+    if (target && target.tagName === 'DETAILS' && !target.open) {
+      target.open = true;
+    }
+  }
 
 })();
 </script>
