@@ -28,26 +28,22 @@
       },
       "G": {
         "name": "Jessica",
-        "role": "Public commenter (parent)"
+        "role": "Public speaker (parent)"
       },
       "H": {
         "name": "Nell Colar",
-        "role": "Public commenter (remote)"
+        "role": "Public speaker (remote)"
       }
     },
-    "agendaChanges": "Public comment was taken as a general period before the posted agenda items were opened, rather than per-item. The president referenced items as '6' (public hearing) and '7.1' (resolution adoption), suggesting the posted agenda had higher item numbers internally, but the two substantive items correspond to agendaIndex 0 and 1 respectively. No items were pulled or resequenced relative to the posted order.",
-    "callToOrder": 5,
-    "rollCall": 38,
-    "pledgeOfAllegiance": null,
-    "approvalOfAgenda": 74,
-    "adjournment": 799,
+    "agendaChanges": null,
     "items": [
       {
-        "agendaIndex": 0,
+        "itemLabel": "1",
+        "title": "Call to Order",
         "phases": {
-          "opened": 284,
+          "opened": 5,
           "presentation": null,
-          "publicComment": 116,
+          "publicComment": null,
           "discussion": null,
           "vote": null
         },
@@ -55,7 +51,103 @@
         "pulled": false
       },
       {
-        "agendaIndex": 1,
+        "itemLabel": "1",
+        "title": "Notification of Remote Participation (AB 2449 / Gov. Code § 54953)",
+        "phases": {
+          "opened": 5,
+          "presentation": 15,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Roll Call",
+        "phases": {
+          "opened": 33,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Welcome",
+        "phases": {
+          "opened": 47,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 47,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Approval of the Agenda",
+        "phases": {
+          "opened": 47,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 86,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Public Comment",
+        "phases": {
+          "opened": 93,
+          "presentation": null,
+          "publicComment": 93,
+          "discussion": null,
+          "vote": null
+        },
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Public Hearing Regarding Proposed Education Parcel Tax on June 2, 2026 Election",
+        "phases": {
+          "opened": 284,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7.1",
+        "title": "Adoption of Resolution No. 21 Calling An Election, Establishing Specifications Of The Election Order, And Requesting Consolidation With Other Elections Occurring On June 2, 2026",
         "phases": {
           "opened": 314,
           "presentation": null,
@@ -65,6 +157,23 @@
             "seconds": 766,
             "type": "roll-call",
             "result": "5-0"
+          }
+        },
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 774,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 792,
+            "type": "roll-call",
+            "result": "4-0"
           }
         },
         "consent": false,

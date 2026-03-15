@@ -475,27 +475,42 @@ for (const m of allMeetings) {
   // Merge chapter markers (preferred) or timestamp map into items
   const cm = chapterMarkers[m.date];
   if (cm && m.items) {
-    // Store meeting-level chapter data
-    m.speakers = cm.speakers;
-    m.agendaChanges = cm.agendaChanges;
+    // Store full chapter markers on the meeting for HTML rendering
+    m.chapterMarkers = cm;
 
+    // Match chapter marker items to meetings-data items by title similarity
+    // Chapter markers use formal agenda labels; meetings-data has only substantive items
     for (const cmItem of cm.items) {
-      const idx = cmItem.agendaIndex;
-      if (idx >= 0 && idx < m.items.length) {
-        const item = m.items[idx];
-        // Set opened timestamp as the primary timestamp
-        if (cmItem.phases?.opened != null) {
-          const sec = cmItem.phases.opened;
-          const h = Math.floor(sec / 3600);
-          const min = Math.floor((sec % 3600) / 60);
-          const s = sec % 60;
-          item.timestamp = `${String(h).padStart(2, '0')}:${String(min).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
-          item.timestampSeconds = sec;
+      if (!cmItem.phases?.opened) continue;
+      const cmTitle = (cmItem.title || '').toLowerCase();
+
+      // Find best matching item by word overlap
+      let bestItem = null;
+      let bestScore = 0;
+      for (const item of m.items) {
+        const itemTitle = (item.title || '').toLowerCase();
+        const itemWords = itemTitle.split(/\s+/).filter(w => w.length > 3);
+        let score = 0;
+        for (const w of itemWords) {
+          if (cmTitle.includes(w)) score++;
         }
-        // Store full chapter phases
-        item.phases = cmItem.phases;
-        item.consent = cmItem.consent || false;
-        item.pulled = cmItem.pulled || false;
+        if (score > bestScore) {
+          bestScore = score;
+          bestItem = item;
+        }
+      }
+
+      if (bestItem && bestScore >= 2) {
+        const sec = cmItem.phases.opened;
+        const h = Math.floor(sec / 3600);
+        const min = Math.floor((sec % 3600) / 60);
+        const s = sec % 60;
+        bestItem.timestamp = `${String(h).padStart(2, '0')}:${String(min).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+        bestItem.timestampSeconds = sec;
+        bestItem.phases = cmItem.phases;
+        bestItem.itemLabel = cmItem.itemLabel;
+        bestItem.consent = cmItem.consent || false;
+        bestItem.pulled = cmItem.pulled || false;
       }
     }
   } else {

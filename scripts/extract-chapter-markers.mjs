@@ -26,6 +26,8 @@ const ROOT = resolve(__dirname, '..');
 const CACHE_DIR = resolve(ROOT, 'data/chapter-markers-cache');
 const TRANSCRIPT_AAI_DIR = resolve(ROOT, 'artifacts/transcripts-aai');
 const MINUTES_DIR = resolve(ROOT, 'artifacts/minutes');
+const MEMOS_DIR = resolve(ROOT, 'data/board-memos');
+const BOARDDOCS_SCRAPED_PATH = resolve(ROOT, 'data/boarddocs-scraped.json');
 const DATA_PATH = resolve(ROOT, 'data/meetings-data.json');
 const OUTPUT_PATH = resolve(ROOT, 'data/chapter-markers.json');
 
@@ -61,6 +63,52 @@ function extractMinutesText(date) {
   } catch {
     return null;
   }
+}
+
+// ---- Load full formal agenda (board memos or BoardDocs scraped) ----
+
+let boarddocsScraped = null;
+function getBoarddocsScraped() {
+  if (boarddocsScraped === null) {
+    try {
+      boarddocsScraped = JSON.parse(readFileSync(BOARDDOCS_SCRAPED_PATH, 'utf-8'));
+    } catch {
+      boarddocsScraped = [];
+    }
+  }
+  return boarddocsScraped;
+}
+
+function loadFormalAgenda(date) {
+  // Prefer board memo (Simbli meetings, more recent)
+  const memoPath = resolve(MEMOS_DIR, `${date}.json`);
+  if (existsSync(memoPath)) {
+    const memo = JSON.parse(readFileSync(memoPath, 'utf-8'));
+    return memo.items.map(it => {
+      // Extract formal item number from title prefix (e.g., "6. Public Hearing..." or "1. Call to Order - 1 min")
+      const titleClean = it.title.replace(/\s*-\s*\d+\s*(min|hr|hour)s?\s*$/i, '').trim();
+      return {
+        order: it.order,
+        title: titleClean,
+        speaker: it.memo?.Speaker || null,
+        attachments: (it.attachments || []).map(a => a.name).filter(Boolean),
+      };
+    });
+  }
+
+  // Fall back to BoardDocs scraped data
+  const scraped = getBoarddocsScraped();
+  const meeting = scraped.find(m => m.date === date);
+  if (meeting) {
+    return meeting.items.map(it => ({
+      order: it.order || null,
+      title: it.title,
+      speaker: null,
+      attachments: (it.attachments || []).map(a => a.name).filter(Boolean),
+    }));
+  }
+
+  return null;
 }
 
 // ---- Build prompt ----
@@ -141,18 +189,32 @@ function getBoardRoster(date) {
   return roster;
 }
 
-function buildPrompt(meeting, compactTranscript, minutesText) {
-  // Build agenda list with full details including attachment names (which often name presenters)
-  const agendaList = meeting.items.map((item, i) => {
-    let line = `${i}. ${item.title}`;
-    if (item.attachments && item.attachments.length > 0) {
-      const attNames = item.attachments.map(a => a.title || a.name).filter(Boolean);
-      if (attNames.length > 0) {
-        line += `\n   Attachments: ${attNames.join('; ')}`;
+function buildPrompt(meeting, compactTranscript, minutesText, formalAgenda) {
+  // Build agenda list from formal agenda (complete with procedural items and real numbering)
+  // or fall back to meetings-data items
+  let agendaList;
+  if (formalAgenda) {
+    agendaList = formalAgenda.map(item => {
+      let line = item.title;
+      if (item.speaker) line += `\n   Speaker: ${item.speaker}`;
+      if (item.attachments && item.attachments.length > 0) {
+        line += `\n   Attachments: ${item.attachments.join('; ')}`;
       }
-    }
-    return line;
-  }).join('\n');
+      return line;
+    }).join('\n');
+  } else {
+    // Fall back to meetings-data items (no formal item numbers available)
+    agendaList = meeting.items.map((item, i) => {
+      let line = `[item ${i}] ${item.title}`;
+      if (item.attachments && item.attachments.length > 0) {
+        const attNames = item.attachments.map(a => a.title || a.name).filter(Boolean);
+        if (attNames.length > 0) {
+          line += `\n   Attachments: ${attNames.join('; ')}`;
+        }
+      }
+      return line;
+    }).join('\n');
+  }
 
   // Get board roster for this specific meeting date
   const activeMembers = getBoardRoster(meeting.date).join('\n');
@@ -174,39 +236,31 @@ Duration: ${meeting.durationSeconds ? Math.round(meeting.durationSeconds) + 's' 
 BOARD MEMBERS AND STAFF (correct spellings — ASR often misspells these names):
 ${activeMembers}
 
-POSTED AGENDA (0-indexed, with attachments that may name presenters):
+FORMAL AGENDA (with item numbers as they appear on the posted agenda):
 ${agendaList}
 ${minutesSection}
 TRANSCRIPT (format: [Ns] Speaker: text — N is seconds from start, Speaker is a letter label):
 ${compactTranscript}
 
-TASK:
-1. Identify meeting-level procedural timestamps (call to order, roll call, adjournment)
-2. For each agenda item, identify the timestamp (in seconds) of each phase that occurred
+TASK: For EVERY agenda item listed above, identify the timestamp (in seconds) when it occurs in the transcript. This includes procedural items (call to order, roll call, approval of agenda, adjournment, etc.) — not just the substantive items.
 
-MEETING-LEVEL TIMESTAMPS (all are integers in seconds, or null if not found):
-- "callToOrder": When the president calls the meeting to order (e.g., "it's 6 o'clock", "I call this meeting to order")
-- "rollCall": When roll call begins (the clerk/secretary starts calling names)
-- "pledgeOfAllegiance": When the pledge of allegiance is led (null if not done, e.g., special meetings)
-- "approvalOfAgenda": When the motion to approve the agenda is called
-- "adjournment": When the motion to adjourn carries or the president declares the meeting adjourned
-
-ITEM PHASES:
-- "opened": When the board president introduces/calls this item (e.g., "next we have item...", "moving on to...")
+ITEM PHASES — identify whichever phases apply to each item:
+- "opened": When the item begins (president introduces it, or the procedural action starts)
 - "presentation": When a presenter begins their substantive presentation (not the president's intro)
-- "publicComment": When public comment is opened for this item (may come before OR after the presentation; also note there is typically a general public comment period early in the meeting as its own agenda item)
+- "publicComment": When public comment is opened for this item
 - "discussion": When board members begin deliberating/asking questions
 - "vote": When the vote is called — also identify the vote type and result
 
 RULES:
 1. All timestamps must be integers (seconds from start of recording)
 2. Timestamps must be monotonically increasing within an item's phases (exception: publicComment may precede opened if public comment was taken early)
-3. "opened" is required for every item that was actually discussed
+3. "opened" is required for every item that was actually taken up
 4. Other phases are null if they didn't happen for that item
 5. For consent calendar items approved as a bundle, mark consent:true and give a single "opened" timestamp for the bundle introduction, plus a "vote" for the bundle vote
 6. If an item was pulled from the consent calendar for individual discussion, mark pulled:true and give it full individual phases
 7. If the agenda was resequenced, note it in agendaChanges and list items in the order they actually appeared
 8. For speaker identification: use the BOARD MEMBERS AND STAFF list above for correct name spellings (ASR frequently garbles these). Agenda item titles often name expected presenters (e.g., "Speakers: Jane Doe, Director"). Minutes list attendees with roles. Use all of these sources to map speaker labels (A, B, C...) to full names and roles. For staff presenters not in the roster, use the name as given in the agenda/minutes.
+9. Use the EXACT item label/number from the formal agenda (e.g., "1", "6", "7.1", "8.1") as the "itemLabel" — do NOT use 0-indexed numbers.
 
 RESPOND WITH ONLY VALID JSON (no markdown fences):
 {
@@ -214,14 +268,23 @@ RESPOND WITH ONLY VALID JSON (no markdown fences):
     "A": { "name": "Name or null", "role": "role description" }
   },
   "agendaChanges": "description of any resequencing or pulls, or null",
-  "callToOrder": 5,
-  "rollCall": 10,
-  "pledgeOfAllegiance": 45,
-  "approvalOfAgenda": 60,
-  "adjournment": 3600,
   "items": [
     {
-      "agendaIndex": 0,
+      "itemLabel": "1",
+      "title": "Call to Order",
+      "phases": {
+        "opened": 5,
+        "presentation": null,
+        "publicComment": null,
+        "discussion": null,
+        "vote": null
+      },
+      "consent": false,
+      "pulled": false
+    },
+    {
+      "itemLabel": "7.1",
+      "title": "Resolution No. 21",
       "phases": {
         "opened": 123,
         "presentation": 200,
@@ -248,15 +311,11 @@ function validateResult(result, meeting) {
   }
 
   for (const item of result.items) {
-    const idx = item.agendaIndex;
-    if (idx == null || idx < 0 || idx >= meeting.items.length) {
-      errors.push(`Invalid agendaIndex: ${idx}`);
-      continue;
-    }
+    const label = item.itemLabel || '??';
 
     const p = item.phases;
     if (!p) {
-      errors.push(`Item ${idx}: missing phases`);
+      errors.push(`Item ${label}: missing phases`);
       continue;
     }
 
@@ -274,7 +333,7 @@ function validateResult(result, meeting) {
     // Check within duration
     for (const [phase, sec] of timestamps) {
       if (sec < 0 || sec > duration + 60) {
-        errors.push(`Item ${idx}.${phase}: ${sec}s outside duration ${duration}s`);
+        errors.push(`Item ${label}.${phase}: ${sec}s outside duration ${duration}s`);
       }
     }
 
@@ -289,10 +348,10 @@ function validateResult(result, meeting) {
   // Check opened timestamps are monotonic across items (in listed order)
   const openedTimes = result.items
     .filter(it => it.phases?.opened != null)
-    .map(it => ({ idx: it.agendaIndex, opened: it.phases.opened }));
+    .map(it => ({ label: it.itemLabel, opened: it.phases.opened }));
   for (let i = 1; i < openedTimes.length; i++) {
     if (openedTimes[i].opened < openedTimes[i - 1].opened) {
-      errors.push(`Cross-item: item ${openedTimes[i].idx} opened (${openedTimes[i].opened}s) before item ${openedTimes[i - 1].idx} (${openedTimes[i - 1].opened}s)`);
+      errors.push(`Cross-item: item ${openedTimes[i].label} opened (${openedTimes[i].opened}s) before item ${openedTimes[i - 1].label} (${openedTimes[i - 1].opened}s)`);
     }
   }
 
@@ -342,9 +401,12 @@ async function main() {
     const compactTranscript = formatUtterances(aai.utterances);
     const minutesText = extractMinutesText(meeting.date);
 
-    console.log(`${meeting.date} (${meeting.items.length} items, ${aai.utterances.length} utterances, ${Math.round(compactTranscript.length / 1000)}K chars${minutesText ? ', +minutes' : ''})...`);
+    // Load full formal agenda
+    const formalAgenda = loadFormalAgenda(meeting.date);
 
-    const prompt = buildPrompt(meeting, compactTranscript, minutesText);
+    console.log(`${meeting.date} (${formalAgenda ? formalAgenda.length : meeting.items.length} agenda items, ${aai.utterances.length} utterances, ${Math.round(compactTranscript.length / 1000)}K chars${minutesText ? ', +minutes' : ''}${formalAgenda ? ', formal agenda' : ''})...`);
+
+    const prompt = buildPrompt(meeting, compactTranscript, minutesText, formalAgenda);
 
     try {
       const response = await client.messages.create({
@@ -381,11 +443,6 @@ async function main() {
         videoId: meeting.youtube,
         speakers: llmResult.speakers || {},
         agendaChanges: llmResult.agendaChanges || null,
-        callToOrder: llmResult.callToOrder ?? null,
-        rollCall: llmResult.rollCall ?? null,
-        pledgeOfAllegiance: llmResult.pledgeOfAllegiance ?? null,
-        approvalOfAgenda: llmResult.approvalOfAgenda ?? null,
-        adjournment: llmResult.adjournment ?? null,
         items: llmResult.items || [],
       };
 
