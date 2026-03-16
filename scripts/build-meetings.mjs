@@ -242,7 +242,7 @@ for (const m of boarddocsParsed) {
   for (const scraped of scrapedList) {
     const name = (scraped?.name || '').toLowerCase();
     const type = name.includes('retreat') ? 'Retreat (Offsite)'
-      : name.includes('closed') ? 'Closed Session'
+      : (name.includes('closed') && !name.includes('regular') && !name.includes('board of trustees')) ? 'Closed Session'
       : scraped ? scraped.type : 'Board Meeting';
     const slug = `${m.isoDate}-${type.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+$/, '')}`;
 

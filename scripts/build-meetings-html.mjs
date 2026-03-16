@@ -197,6 +197,18 @@ const LOCALES = {
     govCalTitle: 'Governance Calendar',
     govCalDesc: (dateStr) => `Planned board agenda items for the school year. From the ${dateStr} agenda.`,
     govCalLink: 'View Schedule (PDF)',
+    tipSpeakTitle: 'Want to speak at a board meeting?',
+    tipSpeakBody: `Anyone can address the Board during the Public Comment period at the start of each meeting. You get <strong>3 minutes</strong> to speak on any topic within the Board's jurisdiction.<br><br>
+<strong>In person:</strong> Pick up a speaker card at the entrance and hand it to the Board Secretary before the meeting starts.<br>
+<strong>On Zoom:</strong> Submit a digital speaker card using the links in the agenda, or use the "Raise Hand" feature. Speaker card links are posted with each meeting's agenda.<br><br>
+Comments in Spanish are welcome — an interpreter is available at every meeting.`,
+    tipTopicTitle: 'Want a topic discussed at a future meeting?',
+    tipTopicBody: `There are several ways to get an item on a future Board agenda:<br><br>
+<strong>Submit a proposed agenda item:</strong> The most direct way. At least 10 days before a meeting, email your proposed item to the Board President and Superintendent. They set the agenda collaboratively.<br>
+<strong>Public Comment:</strong> Raise the topic during Public Comment at any meeting — Board members often follow up on community concerns.<br>
+<strong>Contact a Board Member:</strong> Email any Trustee directly. Contact info is on <a href="https://www.rcsdk8.net/domain/12" target="_blank" rel="noopener">the district website</a>.<br>
+<strong>"Other Business" section:</strong> Near the end of each meeting, the Board discusses suggested items for future agendas.<br>
+<strong>Written communication:</strong> Send a letter or email to the Board Secretary at the District Office (750 Bradford St, Redwood City, CA 94063).`,
     resourcesTitle: 'Resources',
     resBoardPortalTitle: 'Board Meeting Portal',
     resBoardPortalDesc: 'Current agendas and attachments on GAMUT/Simbli.',
@@ -286,6 +298,18 @@ const LOCALES = {
     govCalTitle: 'Calendario de Gobernanza',
     govCalDesc: (dateStr) => `Puntos de agenda planificados para el a\u00f1o escolar. De la agenda del ${dateStr}.`,
     govCalLink: 'Ver Calendario (PDF)',
+    tipSpeakTitle: '\u00bfQuieres hablar en una reuni\u00f3n de la junta?',
+    tipSpeakBody: `Cualquier persona puede dirigirse a la Junta durante el periodo de Comentario P\u00fablico al inicio de cada reuni\u00f3n. Tienes <strong>3 minutos</strong> para hablar sobre cualquier tema dentro de la jurisdicci\u00f3n de la Junta.<br><br>
+<strong>En persona:</strong> Recoge una tarjeta de orador en la entrada y entr\u00e9gala a la Secretaria de la Junta antes de que comience la reuni\u00f3n.<br>
+<strong>Por Zoom:</strong> Env\u00eda una tarjeta digital usando los enlaces en la agenda, o usa la funci\u00f3n "Levantar la mano". Los enlaces se publican con la agenda de cada reuni\u00f3n.<br><br>
+Los comentarios en espa\u00f1ol son bienvenidos \u2014 hay un int\u00e9rprete disponible en cada reuni\u00f3n.`,
+    tipTopicTitle: '\u00bfQuieres que se discuta un tema en una reuni\u00f3n futura?',
+    tipTopicBody: `Hay varias formas de poner un tema en la agenda de una reuni\u00f3n futura:<br><br>
+<strong>Proponer un tema para la agenda:</strong> La forma m\u00e1s directa. Al menos 10 d\u00edas antes de una reuni\u00f3n, env\u00eda tu propuesta por email al Presidente de la Junta y al Superintendente. Ellos establecen la agenda juntos.<br>
+<strong>Comentario P\u00fablico:</strong> Menciona el tema durante el Comentario P\u00fablico en cualquier reuni\u00f3n \u2014 los miembros de la Junta frecuentemente dan seguimiento a las preocupaciones de la comunidad.<br>
+<strong>Contacta a un miembro de la Junta:</strong> Env\u00eda un email directamente a cualquier miembro. La informaci\u00f3n de contacto est\u00e1 en <a href="https://www.rcsdk8.net/domain/12" target="_blank" rel="noopener">el sitio web del distrito</a>.<br>
+<strong>Secci\u00f3n "Otros asuntos":</strong> Cerca del final de cada reuni\u00f3n, la Junta discute temas sugeridos para futuras agendas.<br>
+<strong>Comunicaci\u00f3n escrita:</strong> Env\u00eda una carta o email a la Secretaria de la Junta en la Oficina del Distrito (750 Bradford St, Redwood City, CA 94063).`,
     resourcesTitle: 'Recursos',
     resBoardPortalTitle: 'Portal de Reuniones',
     resBoardPortalDesc: 'Agendas actuales y anexos en GAMUT/Simbli.',
@@ -1328,6 +1352,63 @@ const pageCSS = `
     padding-top: 3.5rem;
   }
 
+  .tip-boxes {
+    display: flex;
+    gap: 1rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  .tip-box {
+    flex: 1;
+    min-width: 280px;
+    background: #fefbf0;
+    border: 1px solid #e8dfc0;
+    border-radius: 8px;
+    padding: 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+
+  .tip-box-title {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--green-deep);
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .tip-box-title::-webkit-details-marker { display: none; }
+
+  .tip-box-title::before {
+    content: '+ ';
+    font-weight: 400;
+    color: #c0a030;
+  }
+
+  .tip-box[open] .tip-box-title::before {
+    content: '\\2212  ';
+  }
+
+  .tip-box[open] {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+  }
+
+  .tip-box-body {
+    font-family: 'Newsreader', serif;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    padding: 0 1rem 1rem;
+    border-top: 1px solid #e8dfc0;
+  }
+
+  .tip-box-body a {
+    color: var(--green-mid);
+  }
+
   .section-rule {
     width: 100%;
     height: 1px;
@@ -2187,6 +2268,17 @@ ${siteNav({ activePage: 'meetings', lang: L.lang, altLangHref: L.altLangHref })}
 
 <main class="content">
 ${renderThreadFilters()}
+
+<div class="tip-boxes">
+  <details class="tip-box">
+    <summary class="tip-box-title">${L.tipSpeakTitle}</summary>
+    <div class="tip-box-body">${L.tipSpeakBody}</div>
+  </details>
+  <details class="tip-box">
+    <summary class="tip-box-title">${L.tipTopicTitle}</summary>
+    <div class="tip-box-body">${L.tipTopicBody}</div>
+  </details>
+</div>
 
 ${schoolYears.map(([sy, meetings]) => {
   const expanded = sy === '202526' || sy === '202425';
