@@ -1162,6 +1162,27 @@ ${blogPosts.map(p => `  <url>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>`).join('\n')}
+${(() => {
+  // Add per-meeting viewer pages
+  try {
+    const meetings = JSON.parse(readFileSync(resolve(ROOT, 'data/meetings-data.json'), 'utf-8'));
+    const byDate = {};
+    for (const m of meetings.meetings) {
+      if (!byDate[m.date]) byDate[m.date] = [];
+      byDate[m.date].push(m);
+    }
+    return meetings.meetings.map(m => {
+      const isMulti = byDate[m.date].length > 1;
+      const path = isMulti ? m.slug : m.date;
+      return `  <url>
+    <loc>https://rcsd.info/meetings/${path}/</loc>
+    <lastmod>${m.date}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>`;
+    }).join('\n');
+  } catch { return ''; }
+})()}
   <url>
     <loc>https://rcsd.info/llms.txt</loc>
     <lastmod>${sitemapDate}</lastmod>
