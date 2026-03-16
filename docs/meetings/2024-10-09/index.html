@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="index, follow">
 <title>Board Meeting — October 9, 2024 — RCSD Board Meeting</title>
-<meta name="description" content="Full diarized transcript, agenda, and minutes for the RCSD Board Meeting on October 9, 2024.">
+<meta name="description" content="Agenda, transcript, and minutes for the RCSD Board Meeting on October 9, 2024.">
 <meta name="theme-color" content="#1a3a2a">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
@@ -15,7 +15,7 @@
 <link rel="canonical" href="https://rcsd.info/meetings/2024-10-09/">
 
 <meta property="og:title" content="Board Meeting — October 9, 2024 — RCSD Board Meeting">
-<meta property="og:description" content="Full diarized transcript, agenda, and minutes for the RCSD Board Meeting on October 9, 2024.">
+<meta property="og:description" content="Agenda, transcript, and minutes for the RCSD Board Meeting on October 9, 2024.">
 <meta property="og:url" content="https://rcsd.info/meetings/2024-10-09/">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://rcsd.info/og-1200.jpg">
@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://rcsd.info/og-1200.jpg">
 <meta name="twitter:title" content="Board Meeting — October 9, 2024 — RCSD Board Meeting">
-<meta name="twitter:description" content="Full diarized transcript, agenda, and minutes for the RCSD Board Meeting on October 9, 2024.">
+<meta name="twitter:description" content="Agenda, transcript, and minutes for the RCSD Board Meeting on October 9, 2024.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -537,9 +537,7 @@
 
   <div class="tv-main">
     <div class="tv-video-col">
-      <div class="tv-video-wrap">
-        <div id="yt-player"></div>
-      </div>
+      <div class="tv-video-wrap"><div id="yt-player"></div></div>
       <div class="tv-tabs">
         <button class="tv-tab active" data-tab="transcript">Transcript</button>
         <button class="tv-tab" data-tab="agenda">Agenda</button>
@@ -564,9 +562,7 @@
     </div>
   </div>
 
-  <div class="tv-download">
-    <a href="https://data.rcsd.info/transcripts/2024-10-09.json" target="_blank" rel="noopener" download>Download transcript (JSON)</a>
-  </div>
+  <div class="tv-download"><a href="https://data.rcsd.info/transcripts/2024-10-09.json" target="_blank" rel="noopener" download>Download transcript (JSON)</a></div>
 </div>
 
 <footer class="site-footer">
@@ -592,19 +588,21 @@
   var speakerMap = {};
   var autoScroll = true;
   var activeIdx = -1;
-  var activeTab = 'transcript';
+  var activeTab = "transcript";
 
-  // Load YT IFrame API
-  var tag = document.createElement('script');
-  tag.src = 'https://www.youtube.com/iframe_api';
-  document.head.appendChild(tag);
+  // Load YT IFrame API (only if we have video)
+  if (videoId) {
+    var tag = document.createElement('script');
+    tag.src = 'https://www.youtube.com/iframe_api';
+    document.head.appendChild(tag);
 
-  window.onYouTubeIframeAPIReady = function() {
-    player = new YT.Player('yt-player', {
-      videoId: videoId,
-      playerVars: { rel: 0, modestbranding: 1 },
-    });
-  };
+    window.onYouTubeIframeAPIReady = function() {
+      player = new YT.Player('yt-player', {
+        videoId: videoId,
+        playerVars: { rel: 0, modestbranding: 1 },
+      });
+    };
+  }
 
   // ---- Tab switching ----
   var tabs = document.querySelectorAll('.tv-tab');
@@ -694,22 +692,27 @@
     });
   }
 
-  fetch(transcriptUrl)
-    .then(function(r) { return r.json(); })
-    .then(function(data) {
-      utterances = data.utterances;
-      speakerMap = data.speakers || {};
-      renderTranscript();
-      setInterval(syncHighlight, 250);
-    })
-    .catch(function() {
-      var c = document.getElementById('panel-transcript');
-      c.textContent = '';
-      var msg = document.createElement('div');
-      msg.className = 'tv-empty';
-      msg.textContent = 'Failed to load transcript.';
-      c.appendChild(msg);
-    });
+  if (transcriptUrl) {
+    fetch(transcriptUrl)
+      .then(function(r) { return r.json(); })
+      .then(function(data) {
+        utterances = data.utterances;
+        speakerMap = data.speakers || {};
+        renderTranscript();
+        setInterval(syncHighlight, 250);
+      })
+      .catch(function() {
+        var c = document.getElementById('panel-transcript');
+        c.textContent = '';
+        var msg = document.createElement('div');
+        msg.className = 'tv-empty';
+        msg.textContent = 'Failed to load transcript.';
+        c.appendChild(msg);
+      });
+  } else {
+    // No transcript — just start agenda sync if we have video
+    if (videoId) setInterval(syncHighlight, 250);
+  }
 
   // ---- Sync highlight (transcript + agenda) ----
   var activeAgendaEl = null;
@@ -767,14 +770,18 @@
   }
 
   // Auto-scroll toggle
-  document.getElementById('btn-autoscroll').addEventListener('click', function() {
-    autoScroll = !autoScroll;
-    this.classList.toggle('active', autoScroll);
-  });
+  var autoScrollBtn = document.getElementById('btn-autoscroll');
+  if (autoScrollBtn) {
+    autoScrollBtn.addEventListener('click', function() {
+      autoScroll = !autoScroll;
+      this.classList.toggle('active', autoScroll);
+    });
+  }
 
   // Search
   var searchInput = document.getElementById('search-input');
   var searchTimeout = null;
+  if (!searchInput) return; // no search on agenda-only pages
   searchInput.addEventListener('input', function() {
     clearTimeout(searchTimeout);
     searchTimeout = setTimeout(doSearch, 200);

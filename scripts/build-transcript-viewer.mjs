@@ -518,19 +518,26 @@ const pageCSS = `
 let generated = 0;
 
 for (const m of data.meetings) {
-  if (!m.youtube || !m.hasTranscript) continue;
+  // Generate viewer pages for all meetings (not just those with transcripts)
+  // Meetings without video/transcript still get agenda + minutes tabs
+  const hasVideo = !!m.youtube;
+  const hasTranscript = m.hasTranscript && hasVideo;
 
   const outDir = resolve(ROOT, `docs/meetings/${m.date}`);
   mkdirSync(outDir, { recursive: true });
 
-  const transcriptUrl = `${R2_BASE}/transcripts/${m.date}.json`;
+  const transcriptUrl = hasTranscript ? `${R2_BASE}/transcripts/${m.date}.json` : null;
   const dateFormatted = formatDate(m.date);
   const title = `${m.type} — ${dateFormatted} — RCSD Board Meeting`;
-  const description = `Full diarized transcript, agenda, and minutes for the RCSD ${m.type} on ${dateFormatted}.`;
+  const description = `Agenda, transcript, and minutes for the RCSD ${m.type} on ${dateFormatted}.`;
 
   const hasMinutes = !!(m.minutes && (m.minutes.documents?.length > 0 || existsSync(resolve(ROOT, 'artifacts/minutes', `${m.date}-minutes.pdf`))));
+  const hasAgenda = m.items && m.items.length > 0;
   const agendaHtml = buildAgendaHtml(m);
   const minutesHtml = buildMinutesHtml(m);
+
+  // Default tab: agenda if no transcript, otherwise transcript
+  const defaultTab = hasTranscript ? 'transcript' : 'agenda';
 
   const html = `<!DOCTYPE html>
 <html lang="en">
@@ -551,33 +558,31 @@ ${siteNav({ activePage: 'meetings', lang: 'en' })}
     <h1 class="tv-title">${escapeHtml(m.type)} &mdash; ${dateFormatted}</h1>
     <div class="tv-meta">
       ${m.duration ? `${m.duration} &middot; ` : ''}
-      <a href="https://www.youtube.com/watch?v=${m.youtube}" target="_blank" rel="noopener">YouTube</a>
-      ${m.simbli ? ` &middot; <a href="${escapeHtml(m.simbli)}" target="_blank" rel="noopener">Simbli</a>` : ''}
-      ${m.boarddocs ? ` &middot; <a href="${escapeHtml(m.boarddocs)}" target="_blank" rel="noopener">BoardDocs</a>` : ''}
+      ${hasVideo ? `<a href="https://www.youtube.com/watch?v=${m.youtube}" target="_blank" rel="noopener">YouTube</a>` : ''}
+      ${m.simbli ? `${hasVideo ? ' &middot; ' : ''}<a href="${escapeHtml(m.simbli)}" target="_blank" rel="noopener">Simbli</a>` : ''}
+      ${m.boarddocs ? `${hasVideo || m.simbli ? ' &middot; ' : ''}<a href="${escapeHtml(m.boarddocs)}" target="_blank" rel="noopener">BoardDocs</a>` : ''}
     </div>
   </div>
 
   <div class="tv-main">
     <div class="tv-video-col">
-      <div class="tv-video-wrap">
-        <div id="yt-player"></div>
-      </div>
+      ${hasVideo ? `<div class="tv-video-wrap"><div id="yt-player"></div></div>` : ''}
       <div class="tv-tabs">
-        <button class="tv-tab active" data-tab="transcript">Transcript</button>
-        <button class="tv-tab" data-tab="agenda">Agenda</button>
+        <button class="tv-tab${defaultTab === 'transcript' ? ' active' : ''}" data-tab="transcript"${hasTranscript ? '' : ' disabled'}>Transcript</button>
+        <button class="tv-tab${defaultTab === 'agenda' ? ' active' : ''}" data-tab="agenda"${hasAgenda ? '' : ' disabled'}>Agenda</button>
         <button class="tv-tab" data-tab="minutes"${hasMinutes ? '' : ' disabled'}>Minutes</button>
       </div>
-      <div class="tv-controls" id="transcript-controls">
+      ${hasTranscript ? `<div class="tv-controls" id="transcript-controls"${defaultTab !== 'transcript' ? ' style="display:none"' : ''}>
         <button class="tv-btn active" id="btn-autoscroll">Auto-scroll</button>
         <input class="tv-search" type="text" id="search-input" placeholder="Search transcript...">
-      </div>
+      </div>` : ''}
     </div>
 
-    <div class="tv-panel tv-transcript-panel active" id="panel-transcript">
-      <div style="padding:1rem;color:var(--text-muted);font-style:italic">Loading transcript...</div>
+    <div class="tv-panel tv-transcript-panel${defaultTab === 'transcript' ? ' active' : ''}" id="panel-transcript">
+      ${hasTranscript ? '<div style="padding:1rem;color:var(--text-muted);font-style:italic">Loading transcript...</div>' : '<div class="tv-empty">No transcript available for this meeting.</div>'}
     </div>
 
-    <div class="tv-panel tv-agenda-panel" id="panel-agenda">
+    <div class="tv-panel tv-agenda-panel${defaultTab === 'agenda' ? ' active' : ''}" id="panel-agenda">
       ${agendaHtml}
     </div>
 
@@ -586,16 +591,14 @@ ${siteNav({ activePage: 'meetings', lang: 'en' })}
     </div>
   </div>
 
-  <div class="tv-download">
-    <a href="${transcriptUrl}" target="_blank" rel="noopener" download>Download transcript (JSON)</a>
-  </div>
+  ${transcriptUrl ? `<div class="tv-download"><a href="${transcriptUrl}" target="_blank" rel="noopener" download>Download transcript (JSON)</a></div>` : ''}
 </div>
 
 ${siteFooter({ lang: 'en' })}
 
 <script>
 (function() {
-  var videoId = ${JSON.stringify(m.youtube)};
+  var videoId = ${JSON.stringify(m.youtube || null)};
   var transcriptUrl = ${JSON.stringify(transcriptUrl)};
   var speakerColors = ${JSON.stringify(SPEAKER_COLORS)};
   var player = null;
@@ -603,19 +606,21 @@ ${siteFooter({ lang: 'en' })}
   var speakerMap = {};
   var autoScroll = true;
   var activeIdx = -1;
-  var activeTab = 'transcript';
+  var activeTab = ${JSON.stringify(defaultTab)};
 
-  // Load YT IFrame API
-  var tag = document.createElement('script');
-  tag.src = 'https://www.youtube.com/iframe_api';
-  document.head.appendChild(tag);
+  // Load YT IFrame API (only if we have video)
+  if (videoId) {
+    var tag = document.createElement('script');
+    tag.src = 'https://www.youtube.com/iframe_api';
+    document.head.appendChild(tag);
 
-  window.onYouTubeIframeAPIReady = function() {
-    player = new YT.Player('yt-player', {
-      videoId: videoId,
-      playerVars: { rel: 0, modestbranding: 1 },
-    });
-  };
+    window.onYouTubeIframeAPIReady = function() {
+      player = new YT.Player('yt-player', {
+        videoId: videoId,
+        playerVars: { rel: 0, modestbranding: 1 },
+      });
+    };
+  }
 
   // ---- Tab switching ----
   var tabs = document.querySelectorAll('.tv-tab');
@@ -705,22 +710,27 @@ ${siteFooter({ lang: 'en' })}
     });
   }
 
-  fetch(transcriptUrl)
-    .then(function(r) { return r.json(); })
-    .then(function(data) {
-      utterances = data.utterances;
-      speakerMap = data.speakers || {};
-      renderTranscript();
-      setInterval(syncHighlight, 250);
-    })
-    .catch(function() {
-      var c = document.getElementById('panel-transcript');
-      c.textContent = '';
-      var msg = document.createElement('div');
-      msg.className = 'tv-empty';
-      msg.textContent = 'Failed to load transcript.';
-      c.appendChild(msg);
-    });
+  if (transcriptUrl) {
+    fetch(transcriptUrl)
+      .then(function(r) { return r.json(); })
+      .then(function(data) {
+        utterances = data.utterances;
+        speakerMap = data.speakers || {};
+        renderTranscript();
+        setInterval(syncHighlight, 250);
+      })
+      .catch(function() {
+        var c = document.getElementById('panel-transcript');
+        c.textContent = '';
+        var msg = document.createElement('div');
+        msg.className = 'tv-empty';
+        msg.textContent = 'Failed to load transcript.';
+        c.appendChild(msg);
+      });
+  } else {
+    // No transcript — just start agenda sync if we have video
+    if (videoId) setInterval(syncHighlight, 250);
+  }
 
   // ---- Sync highlight (transcript + agenda) ----
   var activeAgendaEl = null;
@@ -778,14 +788,18 @@ ${siteFooter({ lang: 'en' })}
   }
 
   // Auto-scroll toggle
-  document.getElementById('btn-autoscroll').addEventListener('click', function() {
-    autoScroll = !autoScroll;
-    this.classList.toggle('active', autoScroll);
-  });
+  var autoScrollBtn = document.getElementById('btn-autoscroll');
+  if (autoScrollBtn) {
+    autoScrollBtn.addEventListener('click', function() {
+      autoScroll = !autoScroll;
+      this.classList.toggle('active', autoScroll);
+    });
+  }
 
   // Search
   var searchInput = document.getElementById('search-input');
   var searchTimeout = null;
+  if (!searchInput) return; // no search on agenda-only pages
   searchInput.addEventListener('input', function() {
     clearTimeout(searchTimeout);
     searchTimeout = setTimeout(doSearch, 200);

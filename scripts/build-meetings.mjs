@@ -544,12 +544,36 @@ for (const m of allMeetings) {
     // Skip policy items that mention "Minutes" in their name
     if (title.includes('bb 9324') || title.includes('policy') || title.includes('first reading')) continue;
 
-    // BoardDocs: parse date from PDF filename
+    // Parse date from PDF filename — multiple formats:
+    //   "2025.09.10 Minutes DRAFT"              (Simbli: YYYY.MM.DD)
+    //   "Board Minutes 5.24.23 DRAFT"           (BoardDocs: M.DD.YY)
+    //   "Board Minutes 04.19.23 DRAFT.Regular"  (BoardDocs: MM.DD.YY)
+    //   "Board Minutes 12.07.22 DRAFT"           (BoardDocs: MM.DD.YY)
+    //   "Board Minutes 04.26.2023 DRAFT"         (BoardDocs: MM.DD.YYYY)
     for (const att of (item.attachments || [])) {
       const name = att.title || att.name || '';
-      const dateMatch = name.match(/^(\d{4})\.(\d{2})\.(\d{2})\s+Minutes/i);
-      if (dateMatch) {
-        const minutesForDate = `${dateMatch[1]}-${dateMatch[2]}-${dateMatch[3]}`;
+
+      let minutesForDate = null;
+
+      // Format 1: YYYY.MM.DD at start
+      const fmt1 = name.match(/^(\d{4})\.(\d{2})\.(\d{2})\s+Minutes/i);
+      if (fmt1) {
+        minutesForDate = `${fmt1[1]}-${fmt1[2]}-${fmt1[3]}`;
+      }
+
+      // Format 2: "Board Minutes M.DD.YY" or "Board Minutes MM.DD.YY" or "Board Minutes MM.DD.YYYY"
+      if (!minutesForDate) {
+        const fmt2 = name.match(/Minutes\s+(\d{1,2})\.(\d{1,2})\.(\d{2,4})/i);
+        if (fmt2) {
+          const mm = fmt2[1].padStart(2, '0');
+          const dd = fmt2[2].padStart(2, '0');
+          const yy = fmt2[3];
+          const yyyy = yy.length === 4 ? yy : (parseInt(yy) >= 50 ? '19' + yy : '20' + yy);
+          minutesForDate = `${yyyy}-${mm}-${dd}`;
+        }
+      }
+
+      if (minutesForDate) {
         if (!minutesIndex[minutesForDate]) {
           minutesIndex[minutesForDate] = { approvedAt: m.date, documents: [] };
         }
@@ -562,13 +586,11 @@ for (const m of allMeetings) {
       }
     }
 
-    // Simbli: parse dates from item title text (no PDFs)
-    if (m.source === 'simbli') {
-      const parsed = parseSimbliMinutesDates(item.title, m.date);
-      for (const d of parsed) {
-        if (!minutesIndex[d]) {
-          minutesIndex[d] = { approvedAt: m.date, documents: [] };
-        }
+    // Parse dates from item title text (both Simbli and BoardDocs)
+    const parsed = parseSimbliMinutesDates(item.title, m.date);
+    for (const d of parsed) {
+      if (!minutesIndex[d]) {
+        minutesIndex[d] = { approvedAt: m.date, documents: [] };
       }
     }
   }
