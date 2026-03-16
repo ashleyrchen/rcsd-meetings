@@ -587,6 +587,7 @@ ${siteNav({ activePage: 'meetings', lang: 'en' })}
       </div>
       ${hasTranscript ? `<div class="tv-controls" id="transcript-controls"${defaultTab !== 'transcript' ? ' style="display:none"' : ''}>
         <button class="tv-btn active" id="btn-autoscroll">Auto-scroll</button>
+        <button class="tv-btn" id="btn-lang" title="Toggle Spanish translation">ES</button>
         <input class="tv-search" type="text" id="search-input" placeholder="Search transcript...">
       </div>` : ''}
     </div>
@@ -612,14 +613,19 @@ ${siteFooter({ lang: 'en' })}
 <script>
 (function() {
   var videoId = ${JSON.stringify(m.youtube || null)};
-  var transcriptUrl = ${JSON.stringify(transcriptUrl)};
+  var transcriptUrlEn = ${JSON.stringify(transcriptUrl)};
+  var transcriptUrlEs = ${JSON.stringify(transcriptUrl ? transcriptUrl.replace('.json', '-es.json') : null)};
+  var transcriptUrl = transcriptUrlEn;
   var speakerColors = ${JSON.stringify(SPEAKER_COLORS)};
   var player = null;
   var utterances = [];
+  var utterancesEn = null;
+  var utterancesEs = null;
   var speakerMap = {};
   var autoScroll = true;
   var activeIdx = -1;
   var activeTab = ${JSON.stringify(defaultTab)};
+  var currentLang = 'en';
 
   // Load YT IFrame API (only if we have video)
   if (videoId) {
@@ -723,11 +729,12 @@ ${siteFooter({ lang: 'en' })}
     });
   }
 
-  if (transcriptUrl) {
-    fetch(transcriptUrl)
+  if (transcriptUrlEn) {
+    fetch(transcriptUrlEn)
       .then(function(r) { return r.json(); })
       .then(function(data) {
-        utterances = data.utterances;
+        utterancesEn = data.utterances;
+        utterances = utterancesEn;
         speakerMap = data.speakers || {};
         renderTranscript();
         setInterval(syncHighlight, 250);
@@ -740,8 +747,24 @@ ${siteFooter({ lang: 'en' })}
         msg.textContent = 'Failed to load transcript.';
         c.appendChild(msg);
       });
+
+    // Pre-fetch Spanish translation
+    if (transcriptUrlEs) {
+      fetch(transcriptUrlEs)
+        .then(function(r) { if (!r.ok) throw new Error(); return r.json(); })
+        .then(function(data) {
+          utterancesEs = data.utterances;
+          // Enable the ES button
+          var btn = document.getElementById('btn-lang');
+          if (btn) btn.style.opacity = '1';
+        })
+        .catch(function() {
+          // No Spanish translation available — disable button
+          var btn = document.getElementById('btn-lang');
+          if (btn) { btn.disabled = true; btn.title = 'Spanish translation not yet available'; }
+        });
+    }
   } else {
-    // No transcript — just start agenda sync if we have video
     if (videoId) setInterval(syncHighlight, 250);
   }
 
@@ -806,6 +829,28 @@ ${siteFooter({ lang: 'en' })}
     autoScrollBtn.addEventListener('click', function() {
       autoScroll = !autoScroll;
       this.classList.toggle('active', autoScroll);
+    });
+  }
+
+  // Language toggle
+  var langBtn = document.getElementById('btn-lang');
+  if (langBtn) {
+    langBtn.addEventListener('click', function() {
+      if (currentLang === 'en' && utterancesEs) {
+        currentLang = 'es';
+        utterances = utterancesEs;
+        langBtn.textContent = 'EN';
+        langBtn.classList.add('active');
+        langBtn.title = 'Switch to English';
+      } else {
+        currentLang = 'en';
+        utterances = utterancesEn;
+        langBtn.textContent = 'ES';
+        langBtn.classList.remove('active');
+        langBtn.title = 'Toggle Spanish translation';
+      }
+      activeIdx = -1;
+      renderTranscript();
     });
   }
 

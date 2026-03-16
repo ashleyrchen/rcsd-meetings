@@ -545,6 +545,7 @@
       </div>
       <div class="tv-controls" id="transcript-controls">
         <button class="tv-btn active" id="btn-autoscroll">Auto-scroll</button>
+        <button class="tv-btn" id="btn-lang" title="Toggle Spanish translation">ES</button>
         <input class="tv-search" type="text" id="search-input" placeholder="Search transcript...">
       </div>
     </div>
@@ -581,14 +582,19 @@
 <script>
 (function() {
   var videoId = "08x22IQb514";
-  var transcriptUrl = "https://data.rcsd.info/transcripts/2021-03-10.json";
+  var transcriptUrlEn = "https://data.rcsd.info/transcripts/2021-03-10.json";
+  var transcriptUrlEs = "https://data.rcsd.info/transcripts/2021-03-10-es.json";
+  var transcriptUrl = transcriptUrlEn;
   var speakerColors = ["#1a5276","#7d3c98","#1e8449","#b9770e","#922b21","#117a65","#6c3483","#1f618d","#b7950b","#943126","#148f77","#7d6608","#2e4053","#884ea0","#239b56"];
   var player = null;
   var utterances = [];
+  var utterancesEn = null;
+  var utterancesEs = null;
   var speakerMap = {};
   var autoScroll = true;
   var activeIdx = -1;
   var activeTab = "transcript";
+  var currentLang = 'en';
 
   // Load YT IFrame API (only if we have video)
   if (videoId) {
@@ -692,11 +698,12 @@
     });
   }
 
-  if (transcriptUrl) {
-    fetch(transcriptUrl)
+  if (transcriptUrlEn) {
+    fetch(transcriptUrlEn)
       .then(function(r) { return r.json(); })
       .then(function(data) {
-        utterances = data.utterances;
+        utterancesEn = data.utterances;
+        utterances = utterancesEn;
         speakerMap = data.speakers || {};
         renderTranscript();
         setInterval(syncHighlight, 250);
@@ -709,8 +716,24 @@
         msg.textContent = 'Failed to load transcript.';
         c.appendChild(msg);
       });
+
+    // Pre-fetch Spanish translation
+    if (transcriptUrlEs) {
+      fetch(transcriptUrlEs)
+        .then(function(r) { if (!r.ok) throw new Error(); return r.json(); })
+        .then(function(data) {
+          utterancesEs = data.utterances;
+          // Enable the ES button
+          var btn = document.getElementById('btn-lang');
+          if (btn) btn.style.opacity = '1';
+        })
+        .catch(function() {
+          // No Spanish translation available — disable button
+          var btn = document.getElementById('btn-lang');
+          if (btn) { btn.disabled = true; btn.title = 'Spanish translation not yet available'; }
+        });
+    }
   } else {
-    // No transcript — just start agenda sync if we have video
     if (videoId) setInterval(syncHighlight, 250);
   }
 
@@ -775,6 +798,28 @@
     autoScrollBtn.addEventListener('click', function() {
       autoScroll = !autoScroll;
       this.classList.toggle('active', autoScroll);
+    });
+  }
+
+  // Language toggle
+  var langBtn = document.getElementById('btn-lang');
+  if (langBtn) {
+    langBtn.addEventListener('click', function() {
+      if (currentLang === 'en' && utterancesEs) {
+        currentLang = 'es';
+        utterances = utterancesEs;
+        langBtn.textContent = 'EN';
+        langBtn.classList.add('active');
+        langBtn.title = 'Switch to English';
+      } else {
+        currentLang = 'en';
+        utterances = utterancesEn;
+        langBtn.textContent = 'ES';
+        langBtn.classList.remove('active');
+        langBtn.title = 'Toggle Spanish translation';
+      }
+      activeIdx = -1;
+      renderTranscript();
     });
   }
 
