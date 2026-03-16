@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="index, follow">
-<title>Study Session — November 17, 2021 — RCSD Board Meeting</title>
-<meta name="description" content="Agenda, transcript, and minutes for the RCSD Study Session on November 17, 2021.">
+<title>Meetings — November 17, 2021</title>
+<meta name="description" content="Multiple board meetings on November 17, 2021.">
 <meta name="theme-color" content="#1a3a2a">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
@@ -14,8 +14,8 @@
 <link rel="manifest" href="/site.webmanifest">
 <link rel="canonical" href="https://rcsd.info/meetings/2021-11-17/">
 
-<meta property="og:title" content="Study Session — November 17, 2021 — RCSD Board Meeting">
-<meta property="og:description" content="Agenda, transcript, and minutes for the RCSD Study Session on November 17, 2021.">
+<meta property="og:title" content="Meetings — November 17, 2021">
+<meta property="og:description" content="Multiple board meetings on November 17, 2021.">
 <meta property="og:url" content="https://rcsd.info/meetings/2021-11-17/">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://rcsd.info/og-1200.jpg">
@@ -25,8 +25,8 @@
 <meta property="og:site_name" content="RCSD Open Data">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://rcsd.info/og-1200.jpg">
-<meta name="twitter:title" content="Study Session — November 17, 2021 — RCSD Board Meeting">
-<meta name="twitter:description" content="Agenda, transcript, and minutes for the RCSD Study Session on November 17, 2021.">
+<meta name="twitter:title" content="Meetings — November 17, 2021">
+<meta name="twitter:description" content="Multiple board meetings on November 17, 2021.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -162,351 +162,18 @@
     .site-nav-inner { padding: 0 1.2rem; }
   }
 
-  .tv-layout {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 1rem 2rem 2rem;
-  }
-
-  .tv-header { margin-bottom: 1rem; }
-
-  .tv-back {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.75rem;
-    color: var(--text-muted);
-    text-decoration: none;
-    display: inline-block;
-    margin-bottom: 0.5rem;
-  }
-  .tv-back:hover { color: var(--green-mid); }
-
-  .tv-title {
-    font-family: 'Fraunces', Georgia, serif;
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: var(--green-deep);
-    margin-bottom: 0.25rem;
-  }
-
-  .tv-meta {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.75rem;
-    color: var(--text-muted);
-  }
-  .tv-meta a { color: var(--green-mid); text-decoration: none; }
-  .tv-meta a:hover { text-decoration: underline; }
-
-  .tv-main {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-  }
-
-  .tv-video-col {
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    background: var(--cream);
-    padding-bottom: 0.5rem;
-  }
-
-  .tv-video-wrap {
-    position: relative;
-    padding-bottom: 56.25%;
-    height: 0;
-    border-radius: 6px;
-    overflow: hidden;
-    background: #000;
-  }
-
-  .tv-video-wrap iframe {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    border: none;
-  }
-
-  /* ---- Tab bar ---- */
-  .tv-tabs {
-    display: flex;
-    gap: 0;
-    border-bottom: 2px solid var(--rule);
-    margin-top: 0.5rem;
-  }
-
-  .tv-tab {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.75rem;
-    letter-spacing: 0.03em;
-    text-transform: uppercase;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    border: none;
-    background: none;
-    color: var(--text-muted);
-    border-bottom: 2px solid transparent;
-    margin-bottom: -2px;
-    transition: color 0.15s, border-color 0.15s;
-  }
-  .tv-tab:hover { color: var(--text); }
-  .tv-tab.active { color: var(--green-deep); border-bottom-color: var(--green-mid); }
-  .tv-tab:disabled { opacity: 0.4; cursor: default; }
-
-  .tv-controls {
-    display: flex;
-    gap: 0.5rem;
-    margin-top: 0.5rem;
-    align-items: center;
-  }
-
-  .tv-btn {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.7rem;
-    padding: 0.3rem 0.6rem;
-    border: 1px solid var(--rule);
-    border-radius: 4px;
-    background: var(--cream);
-    color: var(--text-secondary);
-    cursor: pointer;
-  }
-  .tv-btn:hover { background: var(--cream-dark); }
-  .tv-btn.active { background: var(--green-pale); border-color: var(--green-mid); color: var(--green-deep); }
-
-  .tv-search {
-    flex: 1;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.7rem;
-    padding: 0.3rem 0.6rem;
-    border: 1px solid var(--rule);
-    border-radius: 4px;
-    background: #fff;
-    color: var(--text);
-    outline: none;
-  }
-  .tv-search:focus { border-color: var(--green-mid); }
-
-  /* ---- Tab panels ---- */
-  .tv-panel { display: none; }
-  .tv-panel.active { display: block; }
-
-  .tv-transcript-panel {
-    border: 1px solid var(--rule-light);
-    border-radius: 0 0 6px 6px;
-    background: #fff;
-    border-top: none;
-  }
-
-  .tv-utterance {
-    padding: 0.5rem 0.75rem;
-    border-bottom: 1px solid var(--rule-light);
-    cursor: pointer;
-    transition: background 0.15s;
-    display: flex;
-    gap: 0.5rem;
-  }
-  .tv-utterance:last-child { border-bottom: none; }
-  .tv-utterance:hover { background: var(--green-wash); }
-  .tv-utterance.active { background: #eef6eb; }
-  .tv-utterance.search-match { background: #fef9e7; }
-
-  .tv-ts {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.65rem;
-    color: var(--text-muted);
-    flex: 0 0 3.5rem;
-    padding-top: 0.15rem;
-    text-align: right;
-  }
-
-  .tv-speaker {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.65rem;
-    font-weight: 500;
-    flex: 0 0 auto;
-    max-width: 8rem;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    padding-top: 0.15rem;
-  }
-
-  .tv-text {
-    font-family: 'Newsreader', serif;
-    font-size: 0.85rem;
-    line-height: 1.5;
-    color: var(--text);
-    flex: 1;
-    min-width: 0;
-  }
-
-  .tv-text mark {
-    background: #fde68a;
-    padding: 0 2px;
-    border-radius: 2px;
-  }
-
-  /* ---- Agenda panel ---- */
-  .tv-agenda-panel {
-    border: 1px solid var(--rule-light);
-    border-radius: 0 0 6px 6px;
-    background: #fff;
-    border-top: none;
-    padding: 0.25rem 0;
-  }
-
-  .tv-clickable { cursor: pointer; }
-  .tv-clickable:hover { background: var(--green-wash); }
-
-  .tv-agenda-section {
-    padding: 0.6rem 0.75rem 0.3rem;
-    font-family: 'Fraunces', Georgia, serif;
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: var(--green-deep);
-    display: flex;
-    gap: 0.5rem;
-    align-items: baseline;
-    border-top: 1px solid var(--rule-light);
-  }
-  .tv-agenda-section:first-child { border-top: none; }
-  .tv-agenda-section.active { background: #eef6eb; }
-
-  .tv-agenda-item {
-    padding: 0.35rem 0.75rem 0.35rem 1.5rem;
-    font-family: 'Newsreader', serif;
-    font-size: 0.85rem;
-    line-height: 1.4;
-    display: flex;
-    gap: 0.5rem;
-    align-items: baseline;
-    transition: background 0.15s;
-  }
-  .tv-agenda-item.active { background: #eef6eb; }
-
-  .tv-agenda-label {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.65rem;
-    color: var(--green-mid);
-    font-weight: 500;
-    flex: 0 0 2.5rem;
-  }
-
-  .tv-agenda-title { flex: 1; min-width: 0; }
-
-  .tv-agenda-type {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.55rem;
-    color: var(--text-muted);
-    background: var(--cream-dark);
-    padding: 0.05rem 0.3rem;
-    border-radius: 2px;
-    white-space: nowrap;
-  }
-
-  .tv-agenda-duration {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.6rem;
-    color: var(--text-muted);
-  }
-
-  .tv-agenda-atts {
-    padding: 0.1rem 0.75rem 0.3rem 3rem;
-  }
-
-  .tv-agenda-att {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.6rem;
-    color: var(--green-mid);
-    text-decoration: none;
-    display: block;
-    line-height: 1.6;
-  }
-  .tv-agenda-att:hover { text-decoration: underline; color: var(--green-deep); }
-
-  .tv-agenda-pc {
-    padding: 0.1rem 0.75rem 0.3rem 3rem;
-    border-left: 2px solid var(--cream-dark);
-    margin-left: 1.5rem;
-  }
-
-  .tv-agenda-pc-speaker {
-    font-size: 0.8rem;
-    line-height: 1.5;
-    padding: 0.15rem 0;
-  }
-
-  .tv-agenda-pc-name {
-    font-weight: 600;
-    color: var(--green-mid);
-  }
-
-  .tv-agenda-pc-summary {
-    color: var(--text-secondary);
-    font-size: 0.78rem;
-  }
-
-  /* ---- Minutes panel ---- */
-  .tv-minutes-panel {
-    border: 1px solid var(--rule-light);
-    border-radius: 0 0 6px 6px;
-    background: #fff;
-    border-top: none;
-    padding: 1rem;
-  }
-
-  .tv-minutes-info p {
-    font-size: 0.85rem;
-    color: var(--text-secondary);
-    margin-bottom: 0.75rem;
-  }
-
-  .tv-minutes-link {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.75rem;
-    color: var(--green-mid);
-    text-decoration: none;
-    display: block;
-    margin-bottom: 0.5rem;
-  }
-  .tv-minutes-link:hover { text-decoration: underline; }
-  .tv-minutes-link::before { content: '\1F4C4 '; }
-
-  .tv-minutes-embed {
-    width: 100%;
-    height: 70vh;
-    border: 1px solid var(--rule-light);
-    border-radius: 4px;
-    margin-top: 0.5rem;
-  }
-
-  .tv-empty {
-    padding: 2rem;
-    text-align: center;
-    color: var(--text-muted);
-    font-style: italic;
-  }
-
-  .tv-download {
-    text-align: center;
-    padding: 0.75rem;
-  }
-  .tv-download a {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.7rem;
-    color: var(--green-mid);
-    text-decoration: none;
-  }
-  .tv-download a:hover { text-decoration: underline; }
-
-  @media (max-width: 640px) {
-    .tv-layout { padding: 0.75rem 1rem; }
-    .tv-utterance { gap: 0.3rem; }
-    .tv-ts { flex: 0 0 2.8rem; font-size: 0.6rem; }
-    .tv-speaker { max-width: 5rem; font-size: 0.6rem; }
-    .tv-agenda-item { padding-left: 0.75rem; }
-    .tv-tab { padding: 0.4rem 0.6rem; font-size: 0.65rem; }
-  }
-
+    .tv-disambig { max-width: 600px; margin: 2rem auto; padding: 2rem; }
+    .tv-disambig h1 { font-family: 'Fraunces', Georgia, serif; font-size: 1.5rem; color: var(--green-deep); margin-bottom: 1rem; }
+    .tv-disambig p { color: var(--text-secondary); margin-bottom: 1.5rem; }
+    .tv-disambig-link {
+      display: block; padding: 1rem; margin-bottom: 0.75rem;
+      border: 1px solid var(--rule); border-radius: 6px;
+      text-decoration: none; transition: border-color 0.15s, background 0.15s;
+    }
+    .tv-disambig-link:hover { border-color: var(--green-mid); background: var(--green-wash); }
+    .tv-disambig-type { font-family: 'Fraunces', serif; font-size: 1.1rem; font-weight: 600; color: var(--text); display: block; }
+    .tv-disambig-items { font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; color: var(--text-muted); }
+  
 </style>
 </head>
 <body>
@@ -522,49 +189,19 @@
     </div>
   </div>
 </nav>
-
-<div class="tv-layout">
-  <div class="tv-header">
-    <a href="/meetings/" class="tv-back">&larr; All Meetings</a>
-    <h1 class="tv-title">Study Session &mdash; November 17, 2021</h1>
-    <div class="tv-meta">
-      2h 20m &middot; 
-      <a href="https://www.youtube.com/watch?v=kcTl2zJsh2A" target="_blank" rel="noopener">YouTube</a>
-      
-       &middot; <a href="https://go.boarddocs.com/ca/redwood/Board.nsf/goto?open&amp;id=C8MQ92681B5B" target="_blank" rel="noopener">BoardDocs</a>
-    </div>
-  </div>
-
-  <div class="tv-main">
-    <div class="tv-video-col">
-      <div class="tv-video-wrap"><div id="yt-player"></div></div>
-      <div class="tv-tabs">
-        <button class="tv-tab active" data-tab="transcript">Transcript</button>
-        <button class="tv-tab" data-tab="agenda">Agenda</button>
-        <button class="tv-tab" data-tab="minutes">Minutes</button>
-      </div>
-      <div class="tv-controls" id="transcript-controls">
-        <button class="tv-btn active" id="btn-autoscroll">Auto-scroll</button>
-        <input class="tv-search" type="text" id="search-input" placeholder="Search transcript...">
-      </div>
-    </div>
-
-    <div class="tv-panel tv-transcript-panel active" id="panel-transcript">
-      <div style="padding:1rem;color:var(--text-muted);font-style:italic">Loading transcript...</div>
-    </div>
-
-    <div class="tv-panel tv-agenda-panel" id="panel-agenda">
-      <div class="tv-agenda-section tv-clickable" data-start="105000"><span class="tv-agenda-label">1</span><span class="tv-ts">1:45</span><span class="tv-agenda-title">Call to Order</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">1.1</span><span class="tv-agenda-title">Roll Call</span><span class="tv-agenda-type">Procedural</span></div><div class="tv-agenda-section tv-clickable" data-start="152000"><span class="tv-agenda-label">2</span><span class="tv-ts">2:32</span><span class="tv-agenda-title">Welcome</span></div><div class="tv-agenda-item tv-clickable" data-start="7690000"><span class="tv-agenda-label">2.1</span><span class="tv-ts">2:08:10</span><span class="tv-agenda-title">Welcome by the School Board President, Alisa MacAvoy</span><span class="tv-agenda-type">Procedural</span></div><div class="tv-agenda-section tv-clickable" data-start="258000"><span class="tv-agenda-label">3</span><span class="tv-ts">4:18</span><span class="tv-agenda-title">Changes to the Agenda</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">3.1</span><span class="tv-agenda-title">Additions, Deletions or Modifications to the agenda.</span><span class="tv-agenda-type">Discussion</span></div><div class="tv-agenda-section tv-clickable" data-start="347000"><span class="tv-agenda-label">4</span><span class="tv-ts">5:47</span><span class="tv-agenda-title">Approval of Agenda</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">4.1</span><span class="tv-agenda-title">Approval of Agenda</span><span class="tv-agenda-type">Action</span></div><div class="tv-agenda-section tv-clickable" data-start="369000"><span class="tv-agenda-label">5</span><span class="tv-ts">6:09</span><span class="tv-agenda-title">Oral Communication</span></div><div class="tv-agenda-item tv-clickable" data-start="8263000"><span class="tv-agenda-label">5.1</span><span class="tv-ts">2:17:43</span><span class="tv-agenda-title">If you have public comment related to a Regular Board Meeting item, please post it on: (https://docs.google.com/forms/d/e/1FAIpQLSd3rKbPfVCTpOsK5ILqjnU2u-h- NuNx-vUq4OZxYNVR8lc4aQ/viewform?usp=sf_link) prior to the Regular Board Meeting or immediately upon the meeting opening.</span><span class="tv-agenda-type">Information</span></div><div class="tv-agenda-section tv-clickable" data-start="374000"><span class="tv-agenda-label">6</span><span class="tv-ts">6:14</span><span class="tv-agenda-title">Discussion Items</span></div><div class="tv-agenda-item tv-clickable" data-start="5871000"><span class="tv-agenda-label">6.1</span><span class="tv-ts">1:37:51</span><span class="tv-agenda-title">Child Nutrition Services Update</span><span class="tv-agenda-type">Action</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/C8MQN669C221/$file/Final%20Redwood%20City%20Child%20Nutrition%20Update%20to%20the%20Board%2011-17-21.pdf" target="_blank" rel="noopener">Final Redwood City Child Nutrition Update to the Board 11-17-21.pdf</a></div><div class="tv-agenda-section"><span class="tv-agenda-label">7</span><span class="tv-agenda-title">Adjournment</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">7.1</span><span class="tv-agenda-title">Adjourn the Meeting</span><span class="tv-agenda-type">Action</span></div>
-    </div>
-
-    <div class="tv-panel tv-minutes-panel" id="panel-minutes">
-      <div class="tv-minutes-info"><p>Minutes approved at the December 15, 2021 meeting.</p><a class="tv-minutes-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/C9KMLM5AF3EE/$file/Board%20Minutes%2011.17.21%20-%20SPECIAL.pdf" target="_blank" rel="noopener">Board Minutes 11.17.21 - SPECIAL.pdf</a><a class="tv-minutes-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/C9PNS5608B53/$file/Board%20Minutes%2011.17.21%20-%20REGULAR.doc%20-%20done.doc" target="_blank" rel="noopener">Board Minutes 11.17.21 - REGULAR.doc - done.doc</a></div>
-    </div>
-  </div>
-
-  <div class="tv-download"><a href="https://data.rcsd.info/transcripts/2021-11-17.json" target="_blank" rel="noopener" download>Download transcript (JSON)</a></div>
+<div class="tv-disambig">
+  <a href="/meetings/" style="font-family:'IBM Plex Mono',monospace;font-size:0.75rem;color:var(--text-muted);text-decoration:none">&larr; All Meetings</a>
+  <h1>November 17, 2021</h1>
+  <p>Multiple meetings were held on this date. Select one:</p>
+  <a href="/meetings/2021-11-17-board-meeting/" class="tv-disambig-link">
+      <span class="tv-disambig-type">Board Meeting</span>
+      <span class="tv-disambig-items">49 agenda items</span>
+    </a>
+<a href="/meetings/2021-11-17-study-session/" class="tv-disambig-link">
+      <span class="tv-disambig-type">Study Session</span>
+      <span class="tv-disambig-items">14 agenda items</span>
+    </a>
 </div>
-
 <footer class="site-footer">
   <p>Independently compiled from publicly available RCSD documents. Source documents at <a href="https://www.rcsdk8.net">rcsdk8.net</a> and the <a href="https://simbli.eboardsolutions.com/SB_Meetings/SB_MeetingListing.aspx?S=36030397">GAMUT board portal</a>.</p>
   <div class="footer-nav">
@@ -577,247 +214,5 @@
     <a href="mailto:team@rcsd.info">team@rcsd.info</a>
   </div>
 </footer>
-
-<script>
-(function() {
-  var videoId = "kcTl2zJsh2A";
-  var transcriptUrl = "https://data.rcsd.info/transcripts/2021-11-17.json";
-  var speakerColors = ["#1a5276","#7d3c98","#1e8449","#b9770e","#922b21","#117a65","#6c3483","#1f618d","#b7950b","#943126","#148f77","#7d6608","#2e4053","#884ea0","#239b56"];
-  var player = null;
-  var utterances = [];
-  var speakerMap = {};
-  var autoScroll = true;
-  var activeIdx = -1;
-  var activeTab = "transcript";
-
-  // Load YT IFrame API (only if we have video)
-  if (videoId) {
-    var tag = document.createElement('script');
-    tag.src = 'https://www.youtube.com/iframe_api';
-    document.head.appendChild(tag);
-
-    window.onYouTubeIframeAPIReady = function() {
-      player = new YT.Player('yt-player', {
-        videoId: videoId,
-        playerVars: { rel: 0, modestbranding: 1 },
-      });
-    };
-  }
-
-  // ---- Tab switching ----
-  var tabs = document.querySelectorAll('.tv-tab');
-  var panels = document.querySelectorAll('.tv-panel');
-  var transcriptControls = document.getElementById('transcript-controls');
-
-  tabs.forEach(function(tab) {
-    tab.addEventListener('click', function() {
-      if (tab.disabled) return;
-      activeTab = tab.dataset.tab;
-      tabs.forEach(function(t) { t.classList.toggle('active', t.dataset.tab === activeTab); });
-      panels.forEach(function(p) { p.classList.toggle('active', p.id === 'panel-' + activeTab); });
-      transcriptControls.style.display = activeTab === 'transcript' ? '' : 'none';
-    });
-  });
-
-  // ---- Seek helper ----
-  function seekTo(ms) {
-    if (player && player.seekTo) {
-      player.seekTo(ms / 1000, true);
-      player.playVideo();
-    }
-  }
-
-  // ---- Agenda click-to-seek ----
-  document.getElementById('panel-agenda').addEventListener('click', function(e) {
-    var el = e.target.closest('.tv-clickable');
-    if (!el || !el.dataset.start) return;
-    seekTo(parseInt(el.dataset.start));
-  });
-
-  // ---- Transcript ----
-  function formatTime(ms) {
-    var totalSec = Math.floor(ms / 1000);
-    var h = Math.floor(totalSec / 3600);
-    var m = Math.floor((totalSec % 3600) / 60);
-    var s = totalSec % 60;
-    var pad = function(n) { return n < 10 ? '0' + n : '' + n; };
-    if (h > 0) return h + ':' + pad(m) + ':' + pad(s);
-    return m + ':' + pad(s);
-  }
-
-  function speakerName(label) {
-    var sp = speakerMap[label];
-    return (sp && sp.name) ? sp.name : 'Speaker ' + label;
-  }
-
-  function speakerColor(label) {
-    return speakerColors[label.charCodeAt(0) % speakerColors.length];
-  }
-
-  function renderTranscript() {
-    var container = document.getElementById('panel-transcript');
-    container.textContent = '';
-
-    utterances.forEach(function(u, i) {
-      var row = document.createElement('div');
-      row.className = 'tv-utterance';
-      row.dataset.idx = i;
-      row.dataset.start = u.start;
-
-      var ts = document.createElement('span');
-      ts.className = 'tv-ts';
-      ts.textContent = formatTime(u.start);
-      row.appendChild(ts);
-
-      var sp = document.createElement('span');
-      sp.className = 'tv-speaker';
-      sp.style.color = speakerColor(u.speaker);
-      var name = speakerName(u.speaker);
-      sp.textContent = name;
-      sp.title = name;
-      row.appendChild(sp);
-
-      var text = document.createElement('span');
-      text.className = 'tv-text';
-      text.textContent = u.text;
-      row.appendChild(text);
-
-      container.appendChild(row);
-    });
-
-    container.addEventListener('click', function(e) {
-      var row = e.target.closest('.tv-utterance');
-      if (!row) return;
-      seekTo(parseInt(row.dataset.start));
-    });
-  }
-
-  if (transcriptUrl) {
-    fetch(transcriptUrl)
-      .then(function(r) { return r.json(); })
-      .then(function(data) {
-        utterances = data.utterances;
-        speakerMap = data.speakers || {};
-        renderTranscript();
-        setInterval(syncHighlight, 250);
-      })
-      .catch(function() {
-        var c = document.getElementById('panel-transcript');
-        c.textContent = '';
-        var msg = document.createElement('div');
-        msg.className = 'tv-empty';
-        msg.textContent = 'Failed to load transcript.';
-        c.appendChild(msg);
-      });
-  } else {
-    // No transcript — just start agenda sync if we have video
-    if (videoId) setInterval(syncHighlight, 250);
-  }
-
-  // ---- Sync highlight (transcript + agenda) ----
-  var activeAgendaEl = null;
-
-  function syncHighlight() {
-    if (!player || !player.getCurrentTime) return;
-    var currentMs = player.getCurrentTime() * 1000;
-
-    // Transcript sync
-    if (activeTab === 'transcript') {
-      var newIdx = -1;
-      for (var i = utterances.length - 1; i >= 0; i--) {
-        if (utterances[i].start <= currentMs) { newIdx = i; break; }
-      }
-      if (newIdx !== activeIdx) {
-        activeIdx = newIdx;
-        var rows = document.querySelectorAll('.tv-utterance');
-        rows.forEach(function(r, i) { r.classList.toggle('active', i === activeIdx); });
-
-        if (autoScroll && activeIdx >= 0 && rows[activeIdx]) {
-          var rect = rows[activeIdx].getBoundingClientRect();
-          var videoCol = document.querySelector('.tv-video-col');
-          var stickyHeight = videoCol ? videoCol.offsetHeight : 0;
-          if (rect.top < stickyHeight + 20 || rect.bottom > window.innerHeight - 40) {
-            window.scrollTo({ top: rows[activeIdx].offsetTop - stickyHeight - 20, behavior: 'smooth' });
-          }
-        }
-      }
-    }
-
-    // Agenda sync — highlight current agenda item
-    if (activeTab === 'agenda') {
-      var agendaItems = document.querySelectorAll('#panel-agenda [data-start]');
-      var bestEl = null;
-      agendaItems.forEach(function(el) {
-        var start = parseInt(el.dataset.start);
-        if (start <= currentMs) bestEl = el;
-      });
-      if (bestEl !== activeAgendaEl) {
-        if (activeAgendaEl) activeAgendaEl.classList.remove('active');
-        activeAgendaEl = bestEl;
-        if (activeAgendaEl) {
-          activeAgendaEl.classList.add('active');
-          if (autoScroll) {
-            var rect = activeAgendaEl.getBoundingClientRect();
-            var videoCol = document.querySelector('.tv-video-col');
-            var stickyHeight = videoCol ? videoCol.offsetHeight : 0;
-            if (rect.top < stickyHeight + 20 || rect.bottom > window.innerHeight - 40) {
-              window.scrollTo({ top: activeAgendaEl.offsetTop - stickyHeight - 20, behavior: 'smooth' });
-            }
-          }
-        }
-      }
-    }
-  }
-
-  // Auto-scroll toggle
-  var autoScrollBtn = document.getElementById('btn-autoscroll');
-  if (autoScrollBtn) {
-    autoScrollBtn.addEventListener('click', function() {
-      autoScroll = !autoScroll;
-      this.classList.toggle('active', autoScroll);
-    });
-  }
-
-  // Search
-  var searchInput = document.getElementById('search-input');
-  var searchTimeout = null;
-  if (!searchInput) return; // no search on agenda-only pages
-  searchInput.addEventListener('input', function() {
-    clearTimeout(searchTimeout);
-    searchTimeout = setTimeout(doSearch, 200);
-  });
-
-  function doSearch() {
-    var term = searchInput.value.trim().toLowerCase();
-    var rows = document.querySelectorAll('.tv-utterance');
-    rows.forEach(function(row, i) {
-      var textEl = row.querySelector('.tv-text');
-      var original = utterances[i].text;
-      if (term && original.toLowerCase().indexOf(term) >= 0) {
-        row.classList.add('search-match');
-        row.style.display = '';
-        textEl.textContent = '';
-        var remaining = original;
-        var lc = remaining.toLowerCase();
-        var pos = lc.indexOf(term);
-        while (pos >= 0) {
-          if (pos > 0) textEl.appendChild(document.createTextNode(remaining.slice(0, pos)));
-          var mark = document.createElement('mark');
-          mark.textContent = remaining.slice(pos, pos + term.length);
-          textEl.appendChild(mark);
-          remaining = remaining.slice(pos + term.length);
-          lc = remaining.toLowerCase();
-          pos = lc.indexOf(term);
-        }
-        if (remaining) textEl.appendChild(document.createTextNode(remaining));
-      } else {
-        row.classList.remove('search-match');
-        textEl.textContent = original;
-        row.style.display = term ? 'none' : '';
-      }
-    });
-  }
-})();
-</script>
 </body>
 </html>

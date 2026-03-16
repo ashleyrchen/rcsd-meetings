@@ -855,7 +855,9 @@ function renderMeeting(m) {
     ? `<details class="meeting-details"><summary class="meeting-details-toggle">${L.agendaItemsLabel(itemCount)}</summary>${agendaSection}</details>`
     : '';
 
-  const viewerHref = `/meetings/${m.date}/`;
+  // For multi-meeting dates, link to slug-based path; for single, use date
+  const sameDateCount = data.meetings.filter(x => x.date === m.date).length;
+  const viewerHref = sameDateCount > 1 ? `/meetings/${m.slug}/` : `/meetings/${m.date}/`;
 
   return `    <div class="meeting-row${sparseClass}${typeModifier}"${threadAttrs}${schoolAttrs}${topicAttrs}>
       <a href="${viewerHref}" class="meeting-date">
