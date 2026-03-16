@@ -855,15 +855,17 @@ function renderMeeting(m) {
     ? `<details class="meeting-details"><summary class="meeting-details-toggle">${L.agendaItemsLabel(itemCount)}</summary>${agendaSection}</details>`
     : '';
 
+  const viewerHref = `/meetings/${m.date}/`;
+
   return `    <div class="meeting-row${sparseClass}${typeModifier}"${threadAttrs}${schoolAttrs}${topicAttrs}>
-      <div class="meeting-date">
+      <a href="${viewerHref}" class="meeting-date">
         <span class="meeting-date-month">${month}</span>
         <span class="meeting-date-day">${day}</span>
         <span class="meeting-date-year">${year}</span>
-      </div>
+      </a>
       <div class="meeting-body">
         <div class="meeting-header">
-          <span class="meeting-type">${escapeHtml(L.meetingTypes[m.type] || m.type)}</span>${m.duration ? `<span class="meeting-duration">${m.duration}</span>` : ''}
+          <a href="${viewerHref}" class="meeting-type">${escapeHtml(L.meetingTypes[m.type] || m.type)}</a>${m.duration ? `<span class="meeting-duration">${m.duration}</span>` : ''}
           <div class="meeting-links">${links}</div>
         </div>
         ${threadTags}
@@ -1764,6 +1766,12 @@ const pageCSS = `
     width: 3rem;
     text-align: center;
     padding-top: 0.15rem;
+    text-decoration: none;
+    display: block;
+  }
+
+  .meeting-date:hover .meeting-date-day {
+    color: var(--green-mid);
   }
 
   .meeting-date-month {
@@ -1812,6 +1820,11 @@ const pageCSS = `
     font-size: 1rem;
     font-weight: 600;
     color: var(--text);
+    text-decoration: none;
+  }
+
+  .meeting-type:hover {
+    color: var(--green-mid);
   }
 
   .meeting-duration {
