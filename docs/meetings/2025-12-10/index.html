@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="index, follow">
-<title>Transcript — Regular, December 10, 2025</title>
-<meta name="description" content="Full diarized transcript of the RCSD Regular on December 10, 2025. Speaker-identified, synced to video.">
+<title>Regular — December 10, 2025 — RCSD Board Meeting</title>
+<meta name="description" content="Full diarized transcript, agenda, and minutes for the RCSD Regular on December 10, 2025.">
 <meta name="theme-color" content="#1a3a2a">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
@@ -14,8 +14,8 @@
 <link rel="manifest" href="/site.webmanifest">
 <link rel="canonical" href="https://rcsd.info/meetings/2025-12-10/">
 
-<meta property="og:title" content="Transcript — Regular, December 10, 2025">
-<meta property="og:description" content="Full diarized transcript of the RCSD Regular on December 10, 2025. Speaker-identified, synced to video.">
+<meta property="og:title" content="Regular — December 10, 2025 — RCSD Board Meeting">
+<meta property="og:description" content="Full diarized transcript, agenda, and minutes for the RCSD Regular on December 10, 2025.">
 <meta property="og:url" content="https://rcsd.info/meetings/2025-12-10/">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://rcsd.info/og-1200.jpg">
@@ -25,8 +25,8 @@
 <meta property="og:site_name" content="RCSD Open Data">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://rcsd.info/og-1200.jpg">
-<meta name="twitter:title" content="Transcript — Regular, December 10, 2025">
-<meta name="twitter:description" content="Full diarized transcript of the RCSD Regular on December 10, 2025. Speaker-identified, synced to video.">
+<meta name="twitter:title" content="Regular — December 10, 2025 — RCSD Board Meeting">
+<meta name="twitter:description" content="Full diarized transcript, agenda, and minutes for the RCSD Regular on December 10, 2025.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -199,7 +199,7 @@
   .tv-main {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0;
   }
 
   .tv-video-col {
@@ -225,6 +225,32 @@
     width: 100%; height: 100%;
     border: none;
   }
+
+  /* ---- Tab bar ---- */
+  .tv-tabs {
+    display: flex;
+    gap: 0;
+    border-bottom: 2px solid var(--rule);
+    margin-top: 0.5rem;
+  }
+
+  .tv-tab {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border: none;
+    background: none;
+    color: var(--text-muted);
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .tv-tab:hover { color: var(--text); }
+  .tv-tab.active { color: var(--green-deep); border-bottom-color: var(--green-mid); }
+  .tv-tab:disabled { opacity: 0.4; cursor: default; }
 
   .tv-controls {
     display: flex;
@@ -259,10 +285,15 @@
   }
   .tv-search:focus { border-color: var(--green-mid); }
 
-  .tv-transcript-col {
+  /* ---- Tab panels ---- */
+  .tv-panel { display: none; }
+  .tv-panel.active { display: block; }
+
+  .tv-transcript-panel {
     border: 1px solid var(--rule-light);
-    border-radius: 6px;
+    border-radius: 0 0 6px 6px;
     background: #fff;
+    border-top: none;
   }
 
   .tv-utterance {
@@ -314,6 +345,147 @@
     border-radius: 2px;
   }
 
+  /* ---- Agenda panel ---- */
+  .tv-agenda-panel {
+    border: 1px solid var(--rule-light);
+    border-radius: 0 0 6px 6px;
+    background: #fff;
+    border-top: none;
+    padding: 0.25rem 0;
+  }
+
+  .tv-clickable { cursor: pointer; }
+  .tv-clickable:hover { background: var(--green-wash); }
+
+  .tv-agenda-section {
+    padding: 0.6rem 0.75rem 0.3rem;
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--green-deep);
+    display: flex;
+    gap: 0.5rem;
+    align-items: baseline;
+    border-top: 1px solid var(--rule-light);
+  }
+  .tv-agenda-section:first-child { border-top: none; }
+  .tv-agenda-section.active { background: #eef6eb; }
+
+  .tv-agenda-item {
+    padding: 0.35rem 0.75rem 0.35rem 1.5rem;
+    font-family: 'Newsreader', serif;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    display: flex;
+    gap: 0.5rem;
+    align-items: baseline;
+    transition: background 0.15s;
+  }
+  .tv-agenda-item.active { background: #eef6eb; }
+
+  .tv-agenda-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--green-mid);
+    font-weight: 500;
+    flex: 0 0 2.5rem;
+  }
+
+  .tv-agenda-title { flex: 1; min-width: 0; }
+
+  .tv-agenda-type {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.55rem;
+    color: var(--text-muted);
+    background: var(--cream-dark);
+    padding: 0.05rem 0.3rem;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+
+  .tv-agenda-duration {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--text-muted);
+  }
+
+  .tv-agenda-atts {
+    padding: 0.1rem 0.75rem 0.3rem 3rem;
+  }
+
+  .tv-agenda-att {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--green-mid);
+    text-decoration: none;
+    display: block;
+    line-height: 1.6;
+  }
+  .tv-agenda-att:hover { text-decoration: underline; color: var(--green-deep); }
+
+  .tv-agenda-pc {
+    padding: 0.1rem 0.75rem 0.3rem 3rem;
+    border-left: 2px solid var(--cream-dark);
+    margin-left: 1.5rem;
+  }
+
+  .tv-agenda-pc-speaker {
+    font-size: 0.8rem;
+    line-height: 1.5;
+    padding: 0.15rem 0;
+  }
+
+  .tv-agenda-pc-name {
+    font-weight: 600;
+    color: var(--green-mid);
+  }
+
+  .tv-agenda-pc-summary {
+    color: var(--text-secondary);
+    font-size: 0.78rem;
+  }
+
+  /* ---- Minutes panel ---- */
+  .tv-minutes-panel {
+    border: 1px solid var(--rule-light);
+    border-radius: 0 0 6px 6px;
+    background: #fff;
+    border-top: none;
+    padding: 1rem;
+  }
+
+  .tv-minutes-info p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.75rem;
+  }
+
+  .tv-minutes-link {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--green-mid);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  .tv-minutes-link:hover { text-decoration: underline; }
+  .tv-minutes-link::before { content: '\1F4C4 '; }
+
+  .tv-minutes-embed {
+    width: 100%;
+    height: 70vh;
+    border: 1px solid var(--rule-light);
+    border-radius: 4px;
+    margin-top: 0.5rem;
+  }
+
+  .tv-empty {
+    padding: 2rem;
+    text-align: center;
+    color: var(--text-muted);
+    font-style: italic;
+  }
+
   .tv-download {
     text-align: center;
     padding: 0.75rem;
@@ -331,6 +503,8 @@
     .tv-utterance { gap: 0.3rem; }
     .tv-ts { flex: 0 0 2.8rem; font-size: 0.6rem; }
     .tv-speaker { max-width: 5rem; font-size: 0.6rem; }
+    .tv-agenda-item { padding-left: 0.75rem; }
+    .tv-tab { padding: 0.4rem 0.6rem; font-size: 0.65rem; }
   }
 
 </style>
@@ -356,7 +530,7 @@
     <div class="tv-meta">
       2h 28m &middot; 
       <a href="https://www.youtube.com/watch?v=TD3ovpP2tfo" target="_blank" rel="noopener">YouTube</a>
-       &middot; <a href="https://simbli.eboardsolutions.com/SB_Meetings/ViewMeeting.aspx?S=36030397&amp;MID=48982" target="_blank" rel="noopener">Agenda</a>
+       &middot; <a href="https://simbli.eboardsolutions.com/SB_Meetings/ViewMeeting.aspx?S=36030397&amp;MID=48982" target="_blank" rel="noopener">Simbli</a>
       
     </div>
   </div>
@@ -366,14 +540,27 @@
       <div class="tv-video-wrap">
         <div id="yt-player"></div>
       </div>
-      <div class="tv-controls">
-        <button class="tv-btn active" id="btn-autoscroll" title="Auto-scroll transcript to current position">Auto-scroll</button>
+      <div class="tv-tabs">
+        <button class="tv-tab active" data-tab="transcript">Transcript</button>
+        <button class="tv-tab" data-tab="agenda">Agenda</button>
+        <button class="tv-tab" data-tab="minutes">Minutes</button>
+      </div>
+      <div class="tv-controls" id="transcript-controls">
+        <button class="tv-btn active" id="btn-autoscroll">Auto-scroll</button>
         <input class="tv-search" type="text" id="search-input" placeholder="Search transcript...">
       </div>
     </div>
 
-    <div class="tv-transcript-col" id="transcript-container">
+    <div class="tv-panel tv-transcript-panel active" id="panel-transcript">
       <div style="padding:1rem;color:var(--text-muted);font-style:italic">Loading transcript...</div>
+    </div>
+
+    <div class="tv-panel tv-agenda-panel" id="panel-agenda">
+      <div class="tv-agenda-section tv-clickable" data-start="7000"><span class="tv-agenda-label">1</span><span class="tv-ts">0:07</span><span class="tv-agenda-title">Call to Order</span><span class="tv-agenda-duration">1min</span></div><div class="tv-agenda-item tv-clickable" data-start="7000"><span class="tv-agenda-label">1.1</span><span class="tv-ts">0:07</span><span class="tv-agenda-title">Roll Call</span><span class="tv-agenda-type">Procedural</span></div><div class="tv-agenda-section tv-clickable" data-start="19000"><span class="tv-agenda-label">2</span><span class="tv-ts">0:19</span><span class="tv-agenda-title">Welcome</span><span class="tv-agenda-duration">1min</span></div><div class="tv-agenda-section tv-clickable" data-start="96000"><span class="tv-agenda-label">3</span><span class="tv-ts">1:36</span><span class="tv-agenda-title">Changes to the Agenda</span><span class="tv-agenda-duration">1min</span></div><div class="tv-agenda-section tv-clickable" data-start="113000"><span class="tv-agenda-label">4</span><span class="tv-ts">1:53</span><span class="tv-agenda-title">Approval of the Agenda (Action Required)</span><span class="tv-agenda-duration">1min</span></div><div class="tv-agenda-section tv-clickable" data-start="128000"><span class="tv-agenda-label">5</span><span class="tv-ts">2:08</span><span class="tv-agenda-title">Public Comment</span></div><div class="tv-agenda-section"><span class="tv-agenda-label">6</span><span class="tv-agenda-title">School/Community Reports - 1 hr 30 min</span></div><div class="tv-agenda-item tv-clickable" data-start="128000"><span class="tv-agenda-label">6.1</span><span class="tv-ts">2:08</span><span class="tv-agenda-title">Presentation on  the Redwood City Transitional Kinder (TK) Program</span></div><div class="tv-agenda-pc"><div class="tv-agenda-pc-speaker tv-clickable" data-start="1254000"><span class="tv-agenda-pc-name">Agustin Espino</span> (3min)<span class="tv-agenda-pc-summary"> &mdash; Encouraged the district to expand outreach about the TK program to the Latino community through local clinics, libraries, bus stops, and other community venues to help families understand the benefits of early education.</span></div></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-12-10/RCSD-TK-Program-Board-Presentation-Dec-2025.pdf" target="_blank" rel="noopener">RCSD TK Program-Board Presentation Dec 2025</a></div><div class="tv-agenda-item tv-clickable" data-start="2776000"><span class="tv-agenda-label">6.2</span><span class="tv-ts">46:16</span><span class="tv-agenda-title">Review the CA Dashboard Board Report for RCSD</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-12-10/RCSD-24-25-School-Dashboard.pdf" target="_blank" rel="noopener">RCSD 24-25 School Dashboard</a></div><div class="tv-agenda-section"><span class="tv-agenda-label">7</span><span class="tv-agenda-title">Discussion Items</span><span class="tv-agenda-duration">20min</span></div><div class="tv-agenda-item tv-clickable" data-start="5582000"><span class="tv-agenda-label">7.1</span><span class="tv-ts">1:33:02</span><span class="tv-agenda-title">First Reading and Discussion of Board Policy and Administrative Regulation 0510: School Accountability Report Card</span><span class="tv-agenda-type">Discussion</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-12-10/BP-0510-School-Accountability-Report-Card-First-Reading-Marked.pdf" target="_blank" rel="noopener">BP 0510 - School Accountability Report Card - First Reading - Marked</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-12-10/AR-0510-School-Accountability-Report-Card-First-Reading-New-Marked.pdf" target="_blank" rel="noopener">AR 0510 - School Accountability Report Card - First Reading - New - Marked</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-12-10/BP-0510-School-Accountability-Report-Card-First-Reading-Clean.pdf" target="_blank" rel="noopener">BP 0510 - School Accountability Report Card - First Reading - Clean</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-12-10/AR-0510-School-Accountability-Report-Card-First-Reading-New-Clean.pdf" target="_blank" rel="noopener">AR 0510 - School Accountability Report Card - First Reading - New - Clean</a></div><div class="tv-agenda-item tv-clickable" data-start="5630000"><span class="tv-agenda-label">7.2</span><span class="tv-ts">1:33:50</span><span class="tv-agenda-title">First Reading and Discussion of Board Policy 1100: Communication with the Public</span><span class="tv-agenda-type">Discussion</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-12-10/BP-1100-Communication-With-the-Public-First-Reading-Marked.pdf" target="_blank" rel="noopener">BP 1100 - Communication With the Public - First Reading - Marked</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-12-10/BP-1100-Communication-With-the-Public-First-Reading-Clean.pdf" target="_blank" rel="noopener">BP 1100 - Communication With the Public - First Reading - Clean</a></div><div class="tv-agenda-item tv-clickable" data-start="5866000"><span class="tv-agenda-label">7.3</span><span class="tv-ts">1:37:46</span><span class="tv-agenda-title">First Reading and Discussion of Board Policy and Administrative Regulation 1340: Access to District Records</span><span class="tv-agenda-type">Discussion</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-12-10/BP-1340-Access-to-District-Records-First-Reading-Marked.pdf" target="_blank" rel="noopener">BP 1340 - Access to District Records - First Reading - Marked</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-12-10/AR-1340-Access-to-District-Records-First-Reading-Marked.pdf" target="_blank" rel="noopener">AR 1340 - Access to District Records - First Reading - Marked</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-12-10/BP-1340-Access-to-District-Records-First-Reading-Clean.pdf" target="_blank" rel="noopener">BP 1340 - Access to District Records - First Reading - Clean</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-12-10/AR-1340-Access-to-District-Records-First-Reading-Clean.pdf" target="_blank" rel="noopener">AR 1340 - Access to District Records - First Reading - Clean</a></div><div class="tv-agenda-item tv-clickable" data-start="5914000"><span class="tv-agenda-label">7.4</span><span class="tv-ts">1:38:34</span><span class="tv-agenda-title">First Reading and Discussion of Board Policy 1112: Media Relations</span><span class="tv-agenda-type">Discussion</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-12-10/BP-1112-Media-Relations-First-Reading-Marked.pdf" target="_blank" rel="noopener">BP 1112 - Media Relations - First Reading - Marked</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-12-10/BP-1112-Media-Relations-First-Reading-Clean.pdf" target="_blank" rel="noopener">BP 1112 - Media Relations - First Reading - Clean</a></div><div class="tv-agenda-item tv-clickable" data-start="6043000"><span class="tv-agenda-label">7.5</span><span class="tv-ts">1:40:43</span><span class="tv-agenda-title">First Reading and Discussion of Board Policy 4235: Soliciting and Selling</span><span class="tv-agenda-type">Discussion</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-12-10/BP-4235-Soliciting-and-Selling-First-Reading-New-Marked.pdf" target="_blank" rel="noopener">BP 4235 - Soliciting and Selling - First Reading - New - Marked</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-12-10/BP-4235-Soliciting-and-Selling-First-Reading-New-Clean.pdf" target="_blank" rel="noopener">BP 4235 - Soliciting and Selling - First Reading - New - Clean</a></div><div class="tv-agenda-item tv-clickable" data-start="6043000"><span class="tv-agenda-label">7.6</span><span class="tv-ts">1:40:43</span><span class="tv-agenda-title">First Reading and Discussion of Board Policy 4335: Soliciting and Selling</span><span class="tv-agenda-type">Discussion</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-12-10/BP-4335-Soliciting-and-Selling-First-Reading-New-Marked.pdf" target="_blank" rel="noopener">BP 4335 - Soliciting and Selling - First Reading - New - Marked</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-12-10/BP-4335-Soliciting-and-Selling-First-Reading-New-Clean.pdf" target="_blank" rel="noopener">BP 4335 - Soliciting and Selling - First Reading - New - Clean</a></div><div class="tv-agenda-item tv-clickable" data-start="6143000"><span class="tv-agenda-label">7.7</span><span class="tv-ts">1:42:23</span><span class="tv-agenda-title">First Reading and Discussion of Board Policy and Administrative Regulation 5113.12: District School Attendance Review Board</span><span class="tv-agenda-type">Discussion</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-12-10/BP-5113.12-District-School-Attendance-Review-Board-First-Reading-New-Marked.pdf" target="_blank" rel="noopener">BP 5113.12 - District School Attendance Review Board - First Reading - New - Marked</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-12-10/AR-5113.12-District-School-Attendance-Review-Board-First-Reading-New-Marked.pdf" target="_blank" rel="noopener">AR 5113.12 - District School Attendance Review Board - First Reading - New - Marked</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-12-10/BP-5113.12-District-School-Attendance-Review-Board-First-Reading-New-Clean.pdf" target="_blank" rel="noopener">BP 5113.12 - District School Attendance Review Board - First Reading - New - Clean</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-12-10/AR-5113.12-District-School-Attendance-Review-Board-First-Reading-New-Clean.pdf" target="_blank" rel="noopener">AR 5113.12 - District School Attendance Review Board - First Reading - New - Clean</a></div><div class="tv-agenda-item tv-clickable" data-start="6196000"><span class="tv-agenda-label">7.8</span><span class="tv-ts">1:43:16</span><span class="tv-agenda-title">First Reading and Discussion of Board Policy and Administrative Regulation 5125: Student Records</span><span class="tv-agenda-type">Discussion</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-12-10/BP-5125-Student-Records-First-Reading-Marked.pdf" target="_blank" rel="noopener">BP 5125 - Student Records - First Reading - Marked</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-12-10/AR-5125-Student-Records-First-Reading-Marked.pdf" target="_blank" rel="noopener">AR 5125 - Student Records - First Reading - Marked</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-12-10/BP-5125-Student-Records-First-Reading-Clean.pdf" target="_blank" rel="noopener">BP 5125 - Student Records - First Reading - Clean</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-12-10/AR-5125-Student-Records-First-Reading-Clean.pdf" target="_blank" rel="noopener">AR 5125 - Student Records - First Reading - Clean</a></div><div class="tv-agenda-section tv-clickable" data-start="6458000"><span class="tv-agenda-label">8</span><span class="tv-ts">1:47:38</span><span class="tv-agenda-title">Approval of Consent Items (Action Required)</span><span class="tv-agenda-duration">1min</span></div><div class="tv-agenda-item tv-clickable" data-start="6458000"><span class="tv-agenda-label">8.1</span><span class="tv-ts">1:47:38</span><span class="tv-agenda-title">Approval of the November 12, 2025, Board Meeting Minutes</span><span class="tv-agenda-type">Action</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-12-10/2025.11.12-Minutes-DRAFT-Regular.pdf" target="_blank" rel="noopener">2025.11.12 Minutes DRAFT - Regular</a></div><div class="tv-agenda-item tv-clickable" data-start="6458000"><span class="tv-agenda-label">8.2</span><span class="tv-ts">1:47:38</span><span class="tv-agenda-title">Approval of the November 19, 2025, Board Meeting Minutes</span><span class="tv-agenda-type">Action</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-12-10/2025.11.19-Minutes-DRAFT-Closed.Regular.pdf" target="_blank" rel="noopener">2025.11.19 Minutes DRAFT - Closed.Regular</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">8.3</span><span class="tv-agenda-title">Approval of the Addendum to the Measure U Application for Taft Community School for the 2025-2026 School Year</span><span class="tv-agenda-type">Action</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-12-10/2025-26-Taft-Measure-U-Addendum-Signed.pdf" target="_blank" rel="noopener">2025-26 Taft Measure U Addendum Signed</a></div><div class="tv-agenda-item tv-clickable" data-start="6458000"><span class="tv-agenda-label">8.4</span><span class="tv-ts">1:47:38</span><span class="tv-agenda-title">Approval of KIPP Excelencia Community Prep Measure U Application for the 2025-26 School Year</span><span class="tv-agenda-type">Action</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-12-10/2025-26-Measure-U-KIPP-Excelencia-Plan.pdf" target="_blank" rel="noopener">2025-26 Measure U KIPP Excelencia Plan</a></div><div class="tv-agenda-item tv-clickable" data-start="6458000"><span class="tv-agenda-label">8.5</span><span class="tv-ts">1:47:38</span><span class="tv-agenda-title">Ratification of Warrant Registers, November 1, 2025 - November 30, 2025</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-12-10/Warrant-Register-November-2025.pdf" target="_blank" rel="noopener">Warrant Register November 2025</a></div><div class="tv-agenda-item tv-clickable" data-start="6458000"><span class="tv-agenda-label">8.6</span><span class="tv-ts">1:47:38</span><span class="tv-agenda-title">Approval to Discard Obsolete and Damaged Library Books</span><span class="tv-agenda-type">Action</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-12-10/Adelante-Discard-List-Nov-2025.pdf" target="_blank" rel="noopener">Adelante Discard List Nov 2025</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-12-10/Clifford-Discards-Nov-2025.pdf" target="_blank" rel="noopener">Clifford Discards Nov 2025</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-12-10/Garfield-Discarded-Copies-Nov-2025.pdf" target="_blank" rel="noopener">Garfield Discarded Copies Nov 2025</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-12-10/Henry-Ford-Discarded-Copies-Nov-2025.pdf" target="_blank" rel="noopener">Henry Ford Discarded Copies Nov 2025</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-12-10/Hoover-Discard-List-Nov25.pdf" target="_blank" rel="noopener">Hoover Discard List Nov25</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-12-10/Kennedy-Discard-List-Nov-2025.pdf" target="_blank" rel="noopener">Kennedy Discard List Nov 2025</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-12-10/MIT_NSA-Discard-List-Nov-2025.pdf" target="_blank" rel="noopener">MIT_NSA Discard List Nov 2025</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-12-10/Orion-Discarded-Copies-Nov-2025.pdf" target="_blank" rel="noopener">Orion Discarded Copies Nov 2025</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-12-10/Roosevelt-Discards-Nov-2025.pdf" target="_blank" rel="noopener">Roosevelt Discards Nov 2025</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-12-10/Roy-Cloud-Discard-List-Nov-2025.pdf" target="_blank" rel="noopener">Roy Cloud Discard List Nov 2025</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-12-10/Taft-Discard-List-November-2025.pdf" target="_blank" rel="noopener">Taft Discard List November 2025</a></div><div class="tv-agenda-item tv-clickable" data-start="6458000"><span class="tv-agenda-label">8.7</span><span class="tv-ts">1:47:38</span><span class="tv-agenda-title">Approval of the Retirement Notification Incentive</span><span class="tv-agenda-type">Action</span></div><div class="tv-agenda-item tv-clickable" data-start="6458000"><span class="tv-agenda-label">8.8</span><span class="tv-ts">1:47:38</span><span class="tv-agenda-title">Acceptance of Donation</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-12-10/Donation-Letter_-Optimist-Club.pdf" target="_blank" rel="noopener">Donation Letter_ Optimist Club</a></div><div class="tv-agenda-item tv-clickable" data-start="6458000"><span class="tv-agenda-label">8.9</span><span class="tv-ts">1:47:38</span><span class="tv-agenda-title">Second Reading and Approval of Board Bylaw 9250: Remuneration, Reimbursement, and Other Benefits</span><span class="tv-agenda-type">Action</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-12-10/Exhibit-9250-Sample-Resolution-of-Board-Compensation-for-Missed-Meetings.pdf" target="_blank" rel="noopener">Exhibit 9250 - Sample Resolution of Board Compensation for Missed Meetings</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-12-10/Board-Bylaw-9250-Remuneration-Reimbursement-And-Other-Benefits-Second-Reading.pdf" target="_blank" rel="noopener">Board Bylaw 9250 - Remuneration, Reimbursement And Other Benefits - Second Reading</a></div><div class="tv-agenda-item tv-clickable" data-start="6458000"><span class="tv-agenda-label">8.10</span><span class="tv-ts">1:47:38</span><span class="tv-agenda-title">Second Reading and Approval of Board Policy and Administrative Regulation 4119.42: Exposure Control Plan for Bloodborne Pathogens</span><span class="tv-agenda-type">Action</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-12-10/BP-4119.42-Exposure-Control-Plan-For-Bloodborne-Pathogens-Second-Reading.pdf" target="_blank" rel="noopener">BP 4119.42 Exposure Control Plan For Bloodborne Pathogens - Second Reading</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-12-10/AR-4119.42-Exposure-Control-Plan-For-Bloodborne-Pathogens-Second-Reading.pdf" target="_blank" rel="noopener">AR 4119.42 Exposure Control Plan For Bloodborne Pathogens - Second Reading</a></div><div class="tv-agenda-section tv-clickable" data-start="6458000"><span class="tv-agenda-label">11</span><span class="tv-ts">1:47:38</span><span class="tv-agenda-title">Second Reading and Approval of Board Policy and Administrative Regulation 4219.42: Exposure Control Plan for Bloodborne Pathogens</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-12-10/BP-4219.42-Exposure-Control-Plan-For-Bloodborne-Pathogens-Second-Reading.pdf" target="_blank" rel="noopener">BP 4219.42 - Exposure Control Plan For Bloodborne Pathogens - Second Reading</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-12-10/AR-4219.42-Exposure-Control-Plan-For-Bloodborne-Pathogens-Second-Reading.pdf" target="_blank" rel="noopener">AR 4219.42 - Exposure Control Plan For Bloodborne Pathogens - Second Reading</a></div><div class="tv-agenda-item tv-clickable" data-start="6458000"><span class="tv-agenda-label">11.12</span><span class="tv-ts">1:47:38</span><span class="tv-agenda-title">Second Reading and Approval of Board Policy and Administrative Regulation 4319.42: Exposure Control Plan for Bloodborne Pathogens</span><span class="tv-agenda-type">Action</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-12-10/BP-4319.42-Exposure-Control-Plan-For-Bloodborne-Pathogens-Second-Reading.pdf" target="_blank" rel="noopener">BP 4319.42 - Exposure Control Plan For Bloodborne Pathogens - Second Reading</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-12-10/AR-4319.42-Exposure-Control-Plan-For-Bloodborne-Pathogens-Second-Reading.pdf" target="_blank" rel="noopener">AR 4319.42 - Exposure Control Plan For Bloodborne Pathogens - Second Reading</a></div><div class="tv-agenda-item tv-clickable" data-start="6458000"><span class="tv-agenda-label">11.13</span><span class="tv-ts">1:47:38</span><span class="tv-agenda-title">Second Reading and Approval of Board Policy and Administrative Regulation 4119.43: Universal Precautions</span><span class="tv-agenda-type">Action</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-12-10/BP-4119.43-Universal-Precautions-Second-Reading.pdf" target="_blank" rel="noopener">BP 4119.43 - Universal Precautions - Second Reading</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-12-10/AR-4119.43-Universal-Precautions-Second-Reading.pdf" target="_blank" rel="noopener">AR 4119.43 - Universal Precautions - Second Reading</a></div><div class="tv-agenda-item tv-clickable" data-start="6458000"><span class="tv-agenda-label">11.14</span><span class="tv-ts">1:47:38</span><span class="tv-agenda-title">Second Reading and Approval of Board Policy and Administrative Regulation 4219.43: Universal Precautions</span><span class="tv-agenda-type">Action</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-12-10/BP-4219.43-Universal-Precautions-Second-Reading.pdf" target="_blank" rel="noopener">BP 4219.43 - Universal Precautions - Second Reading</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-12-10/AR-4219.43-Universal-Precautions-Second-Reading.pdf" target="_blank" rel="noopener">AR 4219.43 - Universal Precautions - Second Reading</a></div><div class="tv-agenda-item tv-clickable" data-start="6458000"><span class="tv-agenda-label">11.15</span><span class="tv-ts">1:47:38</span><span class="tv-agenda-title">Second Reading and Approval of Board Policy and Administrative Regulation 4319.43: Universal Precautions</span><span class="tv-agenda-type">Action</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-12-10/BP-4319.43-Universal-Precautions-Second-Reading.pdf" target="_blank" rel="noopener">BP 4319.43 - Universal Precautions - Second Reading</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-12-10/AR-4319.43-Universal-Precautions-Second-Reading.pdf" target="_blank" rel="noopener">AR 4319.43 - Universal Precautions - Second Reading</a></div><div class="tv-agenda-item tv-clickable" data-start="6458000"><span class="tv-agenda-label">11.16</span><span class="tv-ts">1:47:38</span><span class="tv-agenda-title">Second Reading and Approval of Board Policy 4151: Employee Compensation</span><span class="tv-agenda-type">Action</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-12-10/BP-4151-Employee-Compensation-Second-Reading.pdf" target="_blank" rel="noopener">BP 4151 - Employee Compensation - Second Reading</a></div><div class="tv-agenda-section tv-clickable" data-start="6458000"><span class="tv-agenda-label">17</span><span class="tv-ts">1:47:38</span><span class="tv-agenda-title">Second Reading and Approval of Board Policy 4251: Employee Compensation</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-12-10/BP-4251-Employee-Compensation-Second-Reading.pdf" target="_blank" rel="noopener">BP 4251 - Employee Compensation - Second Reading</a></div><div class="tv-agenda-section tv-clickable" data-start="6458000"><span class="tv-agenda-label">18</span><span class="tv-ts">1:47:38</span><span class="tv-agenda-title">Second Reading and Approval of Board Policy 4351: Employee Compensation</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-12-10/BP-4351-Employee-Compensation-Second-Reading.pdf" target="_blank" rel="noopener">BP 4351 - Employee Compensation - Second Reading</a></div><div class="tv-agenda-section tv-clickable" data-start="6458000"><span class="tv-agenda-label">19</span><span class="tv-ts">1:47:38</span><span class="tv-agenda-title">Second Reading and Approval of Board Policy and Administrative Regulation 5141: Health Care and Emergencies</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-12-10/BP-5141-Health-Care-And-Emergencies-Second-Reading.pdf" target="_blank" rel="noopener">BP 5141 - Health Care And Emergencies - Second Reading</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-12-10/AR-5141-Health-Care-And-Emergencies-Second-Reading.pdf" target="_blank" rel="noopener">AR 5141 - Health Care And Emergencies - Second Reading</a></div><div class="tv-agenda-section tv-clickable" data-start="6458000"><span class="tv-agenda-label">20</span><span class="tv-ts">1:47:38</span><span class="tv-agenda-title">Second Reading and Approval of Board Policy and Administrative Regulation 5141.21: Administering Medication and Monitoring Health Conditions</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-12-10/BP-5141.21-Administering-Medication-And-Monitoring-Health-Conditions-Second-Read.pdf" target="_blank" rel="noopener">BP 5141.21 - Administering Medication And Monitoring Health Conditions - Second Reading</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-12-10/AR-5141.21-Administering-Medication-And-Monitoring-Health-Conditions-Second-Read.pdf" target="_blank" rel="noopener">AR 5141.21 - Administering Medication And Monitoring Health Conditions - Second Reading</a></div><div class="tv-agenda-section tv-clickable" data-start="6458000"><span class="tv-agenda-label">21</span><span class="tv-ts">1:47:38</span><span class="tv-agenda-title">Second Reading and Approval of Board Policy 5141.5: Mental Health</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-12-10/BP-5141.5-Mental-Health-Second-Reading.pdf" target="_blank" rel="noopener">BP 5141.5 - Mental Health - Second Reading</a></div><div class="tv-agenda-section tv-clickable" data-start="6458000"><span class="tv-agenda-label">22</span><span class="tv-ts">1:47:38</span><span class="tv-agenda-title">Second Reading and Approval of Board Policy and Administrative Regulation 6142.7: Physical Education</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-12-10/BP-6142.7-Physical-Education-and-Activity-Second-Reading.pdf" target="_blank" rel="noopener">BP 6142.7 - Physical Education and Activity - Second Reading</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-12-10/AR-6142.7-Physical-Education-and-Activity-Second-Reading.pdf" target="_blank" rel="noopener">AR 6142.7 - Physical Education and Activity - Second Reading</a></div><div class="tv-agenda-section tv-clickable" data-start="6458000"><span class="tv-agenda-label">23</span><span class="tv-ts">1:47:38</span><span class="tv-agenda-title">Second Reading and Approval of Board Policy and Administrative Regulations 6142.8: Comprehensive Health Education</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-12-10/BP-6142.8-Comprehensive-Health-Education-Second-Reading.pdf" target="_blank" rel="noopener">BP 6142.8 - Comprehensive Health Education - Second Reading</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-12-10/AR-6142.8-Comprehensive-Health-Education-Second-Reading.pdf" target="_blank" rel="noopener">AR 6142.8 - Comprehensive Health Education - Second Reading</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">23.9</span><span class="tv-agenda-title">Action Items (Action Required)</span><span class="tv-agenda-type">Action</span></div><div class="tv-agenda-item tv-clickable" data-start="6487000"><span class="tv-agenda-label">23.1</span><span class="tv-ts">1:48:07</span><span class="tv-agenda-title">Adoption of Annual Organizational Meeting Date Set for December 17, 2025, at 7:00 PM</span><span class="tv-agenda-type">Action</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-12-10/2025-Notice-of-Annual-Organization-Meeting-Date.pdf" target="_blank" rel="noopener">2025 Notice of Annual Organization Meeting Date</a></div><div class="tv-agenda-item tv-clickable" data-start="6524000"><span class="tv-agenda-label">23.2</span><span class="tv-ts">1:48:44</span><span class="tv-agenda-title">Discuss and Select a Taxpayer Organization Representative for the Citizens’ Bond Oversight Committee (CBOC)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-12-10/RCSD-CBOC-Applicants-Taxpayer-Organization.pdf" target="_blank" rel="noopener">RCSD CBOC Applicants - Taxpayer Organization</a></div><div class="tv-agenda-item tv-clickable" data-start="7077000"><span class="tv-agenda-label">23.10</span><span class="tv-ts">1:57:57</span><span class="tv-agenda-title">Board and Superintendent Reports</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">23.11</span><span class="tv-agenda-title">Information</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">23.12</span><span class="tv-agenda-title">Correspondence</span></div><div class="tv-agenda-item tv-clickable" data-start="8519000"><span class="tv-agenda-label">23.13</span><span class="tv-ts">2:21:59</span><span class="tv-agenda-title">Other Business/Suggested Items for Future Agenda</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-12-10/25-26-Schedule-of-Board-Agenda-Items.pdf" target="_blank" rel="noopener">25-26 Schedule of Board Agenda Items</a></div><div class="tv-agenda-item tv-clickable" data-start="8642000"><span class="tv-agenda-label">23.14</span><span class="tv-ts">2:24:02</span><span class="tv-agenda-title">Board of Trustees Meeting Reflection</span></div><div class="tv-agenda-item tv-clickable" data-start="8856000"><span class="tv-agenda-label">23.15</span><span class="tv-ts">2:27:36</span><span class="tv-agenda-title">Board of Trustees Meeting Calendar</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-12-10/25-26-RCSD-Board-Meeting-Calendar.pdf" target="_blank" rel="noopener">25-26 RCSD Board Meeting Calendar</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">23.16</span><span class="tv-agenda-title">Adjournment (Action Required)</span><span class="tv-agenda-type">Action</span></div>
+    </div>
+
+    <div class="tv-panel tv-minutes-panel" id="panel-minutes">
+      <div class="tv-minutes-info"><p>Minutes approved at the January 21, 2026 meeting.</p><a class="tv-minutes-link" href="https://simbli.eboardsolutions.com//Meetings/Attachment.aspx?S=36030397&amp;AID=1378299" target="_blank" rel="noopener">December 10, 2025 Regular Meeting Minutes (Revised)</a><iframe class="tv-minutes-embed" src="https://data.rcsd.info/minutes/2025-12-10-minutes.pdf" title="Meeting minutes PDF"></iframe></div>
     </div>
   </div>
 
@@ -405,6 +592,7 @@
   var speakerMap = {};
   var autoScroll = true;
   var activeIdx = -1;
+  var activeTab = 'transcript';
 
   // Load YT IFrame API
   var tag = document.createElement('script');
@@ -418,6 +606,37 @@
     });
   };
 
+  // ---- Tab switching ----
+  var tabs = document.querySelectorAll('.tv-tab');
+  var panels = document.querySelectorAll('.tv-panel');
+  var transcriptControls = document.getElementById('transcript-controls');
+
+  tabs.forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      if (tab.disabled) return;
+      activeTab = tab.dataset.tab;
+      tabs.forEach(function(t) { t.classList.toggle('active', t.dataset.tab === activeTab); });
+      panels.forEach(function(p) { p.classList.toggle('active', p.id === 'panel-' + activeTab); });
+      transcriptControls.style.display = activeTab === 'transcript' ? '' : 'none';
+    });
+  });
+
+  // ---- Seek helper ----
+  function seekTo(ms) {
+    if (player && player.seekTo) {
+      player.seekTo(ms / 1000, true);
+      player.playVideo();
+    }
+  }
+
+  // ---- Agenda click-to-seek ----
+  document.getElementById('panel-agenda').addEventListener('click', function(e) {
+    var el = e.target.closest('.tv-clickable');
+    if (!el || !el.dataset.start) return;
+    seekTo(parseInt(el.dataset.start));
+  });
+
+  // ---- Transcript ----
   function formatTime(ms) {
     var totalSec = Math.floor(ms / 1000);
     var h = Math.floor(totalSec / 3600);
@@ -437,17 +656,15 @@
     return speakerColors[label.charCodeAt(0) % speakerColors.length];
   }
 
-  // Build transcript rows using safe DOM methods
   function renderTranscript() {
-    var container = document.getElementById('transcript-container');
-    container.textContent = ''; // clear
+    var container = document.getElementById('panel-transcript');
+    container.textContent = '';
 
     utterances.forEach(function(u, i) {
       var row = document.createElement('div');
       row.className = 'tv-utterance';
       row.dataset.idx = i;
       row.dataset.start = u.start;
-      row.dataset.end = u.end;
 
       var ts = document.createElement('span');
       ts.className = 'tv-ts';
@@ -470,19 +687,13 @@
       container.appendChild(row);
     });
 
-    // Click to seek
     container.addEventListener('click', function(e) {
       var row = e.target.closest('.tv-utterance');
       if (!row) return;
-      var startMs = parseInt(row.dataset.start);
-      if (player && player.seekTo) {
-        player.seekTo(startMs / 1000, true);
-        player.playVideo();
-      }
+      seekTo(parseInt(row.dataset.start));
     });
   }
 
-  // Fetch transcript
   fetch(transcriptUrl)
     .then(function(r) { return r.json(); })
     .then(function(data) {
@@ -492,36 +703,65 @@
       setInterval(syncHighlight, 250);
     })
     .catch(function() {
-      var c = document.getElementById('transcript-container');
+      var c = document.getElementById('panel-transcript');
       c.textContent = '';
       var msg = document.createElement('div');
-      msg.style.cssText = 'padding:1rem;color:var(--coral)';
+      msg.className = 'tv-empty';
       msg.textContent = 'Failed to load transcript.';
       c.appendChild(msg);
     });
 
+  // ---- Sync highlight (transcript + agenda) ----
+  var activeAgendaEl = null;
+
   function syncHighlight() {
     if (!player || !player.getCurrentTime) return;
     var currentMs = player.getCurrentTime() * 1000;
-    var newIdx = -1;
-    for (var i = utterances.length - 1; i >= 0; i--) {
-      if (utterances[i].start <= currentMs) { newIdx = i; break; }
+
+    // Transcript sync
+    if (activeTab === 'transcript') {
+      var newIdx = -1;
+      for (var i = utterances.length - 1; i >= 0; i--) {
+        if (utterances[i].start <= currentMs) { newIdx = i; break; }
+      }
+      if (newIdx !== activeIdx) {
+        activeIdx = newIdx;
+        var rows = document.querySelectorAll('.tv-utterance');
+        rows.forEach(function(r, i) { r.classList.toggle('active', i === activeIdx); });
+
+        if (autoScroll && activeIdx >= 0 && rows[activeIdx]) {
+          var rect = rows[activeIdx].getBoundingClientRect();
+          var videoCol = document.querySelector('.tv-video-col');
+          var stickyHeight = videoCol ? videoCol.offsetHeight : 0;
+          if (rect.top < stickyHeight + 20 || rect.bottom > window.innerHeight - 40) {
+            window.scrollTo({ top: rows[activeIdx].offsetTop - stickyHeight - 20, behavior: 'smooth' });
+          }
+        }
+      }
     }
-    if (newIdx === activeIdx) return;
-    activeIdx = newIdx;
 
-    var rows = document.querySelectorAll('.tv-utterance');
-    rows.forEach(function(r, i) {
-      r.classList.toggle('active', i === activeIdx);
-    });
-
-    if (autoScroll && activeIdx >= 0 && rows[activeIdx]) {
-      var rect = rows[activeIdx].getBoundingClientRect();
-      var videoCol = document.querySelector('.tv-video-col');
-      var stickyHeight = videoCol ? videoCol.offsetHeight : 0;
-      // Scroll so active row is just below the sticky video
-      if (rect.top < stickyHeight + 20 || rect.bottom > window.innerHeight - 40) {
-        window.scrollTo({ top: rows[activeIdx].offsetTop - stickyHeight - 20, behavior: 'smooth' });
+    // Agenda sync — highlight current agenda item
+    if (activeTab === 'agenda') {
+      var agendaItems = document.querySelectorAll('#panel-agenda [data-start]');
+      var bestEl = null;
+      agendaItems.forEach(function(el) {
+        var start = parseInt(el.dataset.start);
+        if (start <= currentMs) bestEl = el;
+      });
+      if (bestEl !== activeAgendaEl) {
+        if (activeAgendaEl) activeAgendaEl.classList.remove('active');
+        activeAgendaEl = bestEl;
+        if (activeAgendaEl) {
+          activeAgendaEl.classList.add('active');
+          if (autoScroll) {
+            var rect = activeAgendaEl.getBoundingClientRect();
+            var videoCol = document.querySelector('.tv-video-col');
+            var stickyHeight = videoCol ? videoCol.offsetHeight : 0;
+            if (rect.top < stickyHeight + 20 || rect.bottom > window.innerHeight - 40) {
+              window.scrollTo({ top: activeAgendaEl.offsetTop - stickyHeight - 20, behavior: 'smooth' });
+            }
+          }
+        }
       }
     }
   }
@@ -532,10 +772,9 @@
     this.classList.toggle('active', autoScroll);
   });
 
-  // Search with safe DOM highlighting
+  // Search
   var searchInput = document.getElementById('search-input');
   var searchTimeout = null;
-
   searchInput.addEventListener('input', function() {
     clearTimeout(searchTimeout);
     searchTimeout = setTimeout(doSearch, 200);
@@ -544,15 +783,12 @@
   function doSearch() {
     var term = searchInput.value.trim().toLowerCase();
     var rows = document.querySelectorAll('.tv-utterance');
-
     rows.forEach(function(row, i) {
       var textEl = row.querySelector('.tv-text');
       var original = utterances[i].text;
-
       if (term && original.toLowerCase().indexOf(term) >= 0) {
         row.classList.add('search-match');
         row.style.display = '';
-        // Highlight matches using safe DOM methods
         textEl.textContent = '';
         var remaining = original;
         var lc = remaining.toLowerCase();

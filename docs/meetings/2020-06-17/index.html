@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="index, follow">
-<title>Transcript — Special Meeting, June 17, 2020</title>
-<meta name="description" content="Full diarized transcript of the RCSD Special Meeting on June 17, 2020. Speaker-identified, synced to video.">
+<title>Special Meeting — June 17, 2020 — RCSD Board Meeting</title>
+<meta name="description" content="Full diarized transcript, agenda, and minutes for the RCSD Special Meeting on June 17, 2020.">
 <meta name="theme-color" content="#1a3a2a">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
@@ -14,8 +14,8 @@
 <link rel="manifest" href="/site.webmanifest">
 <link rel="canonical" href="https://rcsd.info/meetings/2020-06-17/">
 
-<meta property="og:title" content="Transcript — Special Meeting, June 17, 2020">
-<meta property="og:description" content="Full diarized transcript of the RCSD Special Meeting on June 17, 2020. Speaker-identified, synced to video.">
+<meta property="og:title" content="Special Meeting — June 17, 2020 — RCSD Board Meeting">
+<meta property="og:description" content="Full diarized transcript, agenda, and minutes for the RCSD Special Meeting on June 17, 2020.">
 <meta property="og:url" content="https://rcsd.info/meetings/2020-06-17/">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://rcsd.info/og-1200.jpg">
@@ -25,8 +25,8 @@
 <meta property="og:site_name" content="RCSD Open Data">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://rcsd.info/og-1200.jpg">
-<meta name="twitter:title" content="Transcript — Special Meeting, June 17, 2020">
-<meta name="twitter:description" content="Full diarized transcript of the RCSD Special Meeting on June 17, 2020. Speaker-identified, synced to video.">
+<meta name="twitter:title" content="Special Meeting — June 17, 2020 — RCSD Board Meeting">
+<meta name="twitter:description" content="Full diarized transcript, agenda, and minutes for the RCSD Special Meeting on June 17, 2020.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -199,7 +199,7 @@
   .tv-main {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0;
   }
 
   .tv-video-col {
@@ -225,6 +225,32 @@
     width: 100%; height: 100%;
     border: none;
   }
+
+  /* ---- Tab bar ---- */
+  .tv-tabs {
+    display: flex;
+    gap: 0;
+    border-bottom: 2px solid var(--rule);
+    margin-top: 0.5rem;
+  }
+
+  .tv-tab {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border: none;
+    background: none;
+    color: var(--text-muted);
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .tv-tab:hover { color: var(--text); }
+  .tv-tab.active { color: var(--green-deep); border-bottom-color: var(--green-mid); }
+  .tv-tab:disabled { opacity: 0.4; cursor: default; }
 
   .tv-controls {
     display: flex;
@@ -259,10 +285,15 @@
   }
   .tv-search:focus { border-color: var(--green-mid); }
 
-  .tv-transcript-col {
+  /* ---- Tab panels ---- */
+  .tv-panel { display: none; }
+  .tv-panel.active { display: block; }
+
+  .tv-transcript-panel {
     border: 1px solid var(--rule-light);
-    border-radius: 6px;
+    border-radius: 0 0 6px 6px;
     background: #fff;
+    border-top: none;
   }
 
   .tv-utterance {
@@ -314,6 +345,147 @@
     border-radius: 2px;
   }
 
+  /* ---- Agenda panel ---- */
+  .tv-agenda-panel {
+    border: 1px solid var(--rule-light);
+    border-radius: 0 0 6px 6px;
+    background: #fff;
+    border-top: none;
+    padding: 0.25rem 0;
+  }
+
+  .tv-clickable { cursor: pointer; }
+  .tv-clickable:hover { background: var(--green-wash); }
+
+  .tv-agenda-section {
+    padding: 0.6rem 0.75rem 0.3rem;
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--green-deep);
+    display: flex;
+    gap: 0.5rem;
+    align-items: baseline;
+    border-top: 1px solid var(--rule-light);
+  }
+  .tv-agenda-section:first-child { border-top: none; }
+  .tv-agenda-section.active { background: #eef6eb; }
+
+  .tv-agenda-item {
+    padding: 0.35rem 0.75rem 0.35rem 1.5rem;
+    font-family: 'Newsreader', serif;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    display: flex;
+    gap: 0.5rem;
+    align-items: baseline;
+    transition: background 0.15s;
+  }
+  .tv-agenda-item.active { background: #eef6eb; }
+
+  .tv-agenda-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--green-mid);
+    font-weight: 500;
+    flex: 0 0 2.5rem;
+  }
+
+  .tv-agenda-title { flex: 1; min-width: 0; }
+
+  .tv-agenda-type {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.55rem;
+    color: var(--text-muted);
+    background: var(--cream-dark);
+    padding: 0.05rem 0.3rem;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+
+  .tv-agenda-duration {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--text-muted);
+  }
+
+  .tv-agenda-atts {
+    padding: 0.1rem 0.75rem 0.3rem 3rem;
+  }
+
+  .tv-agenda-att {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--green-mid);
+    text-decoration: none;
+    display: block;
+    line-height: 1.6;
+  }
+  .tv-agenda-att:hover { text-decoration: underline; color: var(--green-deep); }
+
+  .tv-agenda-pc {
+    padding: 0.1rem 0.75rem 0.3rem 3rem;
+    border-left: 2px solid var(--cream-dark);
+    margin-left: 1.5rem;
+  }
+
+  .tv-agenda-pc-speaker {
+    font-size: 0.8rem;
+    line-height: 1.5;
+    padding: 0.15rem 0;
+  }
+
+  .tv-agenda-pc-name {
+    font-weight: 600;
+    color: var(--green-mid);
+  }
+
+  .tv-agenda-pc-summary {
+    color: var(--text-secondary);
+    font-size: 0.78rem;
+  }
+
+  /* ---- Minutes panel ---- */
+  .tv-minutes-panel {
+    border: 1px solid var(--rule-light);
+    border-radius: 0 0 6px 6px;
+    background: #fff;
+    border-top: none;
+    padding: 1rem;
+  }
+
+  .tv-minutes-info p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.75rem;
+  }
+
+  .tv-minutes-link {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--green-mid);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  .tv-minutes-link:hover { text-decoration: underline; }
+  .tv-minutes-link::before { content: '\1F4C4 '; }
+
+  .tv-minutes-embed {
+    width: 100%;
+    height: 70vh;
+    border: 1px solid var(--rule-light);
+    border-radius: 4px;
+    margin-top: 0.5rem;
+  }
+
+  .tv-empty {
+    padding: 2rem;
+    text-align: center;
+    color: var(--text-muted);
+    font-style: italic;
+  }
+
   .tv-download {
     text-align: center;
     padding: 0.75rem;
@@ -331,6 +503,8 @@
     .tv-utterance { gap: 0.3rem; }
     .tv-ts { flex: 0 0 2.8rem; font-size: 0.6rem; }
     .tv-speaker { max-width: 5rem; font-size: 0.6rem; }
+    .tv-agenda-item { padding-left: 0.75rem; }
+    .tv-tab { padding: 0.4rem 0.6rem; font-size: 0.65rem; }
   }
 
 </style>
@@ -357,7 +531,7 @@
       2h 58m &middot; 
       <a href="https://www.youtube.com/watch?v=frJ7lyhm8S8" target="_blank" rel="noopener">YouTube</a>
       
-       &middot; <a href="https://go.boarddocs.com/ca/redwood/Board.nsf/goto?open&amp;id=CQN2Y404680E" target="_blank" rel="noopener">Agenda</a>
+       &middot; <a href="https://go.boarddocs.com/ca/redwood/Board.nsf/goto?open&amp;id=CQN2Y404680E" target="_blank" rel="noopener">BoardDocs</a>
     </div>
   </div>
 
@@ -366,14 +540,27 @@
       <div class="tv-video-wrap">
         <div id="yt-player"></div>
       </div>
-      <div class="tv-controls">
-        <button class="tv-btn active" id="btn-autoscroll" title="Auto-scroll transcript to current position">Auto-scroll</button>
+      <div class="tv-tabs">
+        <button class="tv-tab active" data-tab="transcript">Transcript</button>
+        <button class="tv-tab" data-tab="agenda">Agenda</button>
+        <button class="tv-tab" data-tab="minutes" disabled>Minutes</button>
+      </div>
+      <div class="tv-controls" id="transcript-controls">
+        <button class="tv-btn active" id="btn-autoscroll">Auto-scroll</button>
         <input class="tv-search" type="text" id="search-input" placeholder="Search transcript...">
       </div>
     </div>
 
-    <div class="tv-transcript-col" id="transcript-container">
+    <div class="tv-panel tv-transcript-panel active" id="panel-transcript">
       <div style="padding:1rem;color:var(--text-muted);font-style:italic">Loading transcript...</div>
+    </div>
+
+    <div class="tv-panel tv-agenda-panel" id="panel-agenda">
+      <div class="tv-agenda-section tv-clickable" data-start="538000"><span class="tv-agenda-label">1</span><span class="tv-ts">8:58</span><span class="tv-agenda-title">Call to Order</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">1.1</span><span class="tv-agenda-title">Roll Call</span><span class="tv-agenda-type">Procedural</span></div><div class="tv-agenda-section tv-clickable" data-start="562000"><span class="tv-agenda-label">2</span><span class="tv-ts">9:22</span><span class="tv-agenda-title">Welcome</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">2.1</span><span class="tv-agenda-title">Welcome by the School Board President</span><span class="tv-agenda-type">Procedural</span></div><div class="tv-agenda-section tv-clickable" data-start="612000"><span class="tv-agenda-label">3</span><span class="tv-ts">10:12</span><span class="tv-agenda-title">Changes to the Agenda</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">3.1</span><span class="tv-agenda-title">Changes to the Agenda</span><span class="tv-agenda-type">Discussion</span></div><div class="tv-agenda-section tv-clickable" data-start="640000"><span class="tv-agenda-label">4</span><span class="tv-ts">10:40</span><span class="tv-agenda-title">Approval of Agenda (Action Required)</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">4.1</span><span class="tv-agenda-title">Approval of Agenda</span><span class="tv-agenda-type">Action</span></div><div class="tv-agenda-section tv-clickable" data-start="671000"><span class="tv-agenda-label">5</span><span class="tv-ts">11:11</span><span class="tv-agenda-title">Oral Communication - If you have public comment related to a Regular Board Meeting item, please post it on: (https://docs.google.com/forms/d/e/1FAIpQLSd3rKbPfVCTpOsK5ILqjnU2u-h-NuNx-vUq4OZxYNVR8lc4aQ/viewform?usp=sf_link) prior to the Special Board Meeting or immediately upon the meeting opening.</span></div><div class="tv-agenda-section tv-clickable" data-start="680000"><span class="tv-agenda-label">6</span><span class="tv-ts">11:20</span><span class="tv-agenda-title">Public Hearing</span></div><div class="tv-agenda-pc"><div class="tv-agenda-pc-speaker tv-clickable" data-start="2059000"><span class="tv-agenda-pc-name">Kathryn Stewart</span> (1min)<span class="tv-agenda-pc-summary"> &mdash; Suggested pooling all school funding into a lottery system where families choose preferred schools and the least-chosen schools are remodeled after the top choices.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="2167000"><span class="tv-agenda-pc-name">Roberta Land</span> (2min)<span class="tv-agenda-pc-summary"> &mdash; Expressed strong opposition to reassigning her Kentfield Commons neighborhood to Garfield, arguing it is not a walkable neighborhood school and that Henry Ford is a more sensible option.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="2316000"><span class="tv-agenda-pc-name">Katherine Hagman</span> (1min)<span class="tv-agenda-pc-summary"> &mdash; Voiced strong support for Scenario 2 and keeping the Mount Carmel neighborhood together at one school, noting Clifford is safer to bike to than Roosevelt for their area.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="2433000"><span class="tv-agenda-pc-name">Megan Maxwell Bay</span> (1min)<span class="tv-agenda-pc-summary"> &mdash; Asked whether students currently attending a school of choice (Roy Cloud) would be grandfathered in and allowed to stay under any boundary change.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="2537000"><span class="tv-agenda-pc-name">Michelle Smith</span> (2min)<span class="tv-agenda-pc-summary"> &mdash; Urged the board to include demographic data in its boundary analysis to avoid de facto segregation and to ensure more equitable distribution across schools.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="2690000"><span class="tv-agenda-pc-name">Meredith Park</span> (3min)<span class="tv-agenda-pc-summary"> &mdash; Advocated for safe, walkable neighborhood schools, criticized the schools-of-choice model for fracturing community bonds, and urged the board to rethink the broader school model to build neighborhood cohesion.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="2911000"><span class="tv-agenda-pc-name">Cameron Matthews</span> (2min)<span class="tv-agenda-pc-summary"> &mdash; Asked how population trend projections were derived, requested walkability mapping resources for boundary fringe areas, and inquired whether additional scenario options beyond Scenarios 1 and 2 would be presented.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="3074000"><span class="tv-agenda-pc-name">David Knox</span> (2min)<span class="tv-agenda-pc-summary"> &mdash; Asked for clarification on whether current Roy Cloud district residents would be reassigned to another school under the proposed boundary changes.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="3260000"><span class="tv-agenda-pc-name">Eurydia Aquino</span> (3min)<span class="tv-agenda-pc-summary"> &mdash; Asked whether her children, who attend a district school on an inter-district transfer while she works for the district, would be affected by boundary changes or need to reapply each year.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="3499000"><span class="tv-agenda-pc-name">Andreas and Ann Hildebrandt</span> (1min)<span class="tv-agenda-pc-summary"> &mdash; Shared that moving their son from private school to Roy Cloud created a wonderful sense of community in Woodside Hills and voiced strong support for Scenario 2.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="3627000"><span class="tv-agenda-pc-name">Stephen Gay</span> (4min)<span class="tv-agenda-pc-summary"> &mdash; Asked about the rationale for a small boundary cutout on the Goodwin/Fernside side of Alameda in Scenario 2, citing safety concerns about crossing a high-traffic area for such a small number of students.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="3881000"><span class="tv-agenda-pc-name">Denise Hannig</span> (1min)<span class="tv-agenda-pc-summary"> &mdash; Argued that children in her neighborhood could safely walk to Roy Cloud without crossing major roads, making it a better fit than Henry Ford.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="3951000"><span class="tv-agenda-pc-name">Bill Brown</span> (2min)<span class="tv-agenda-pc-summary"> &mdash; Asked whether PTO funding impacts had been analyzed in relation to the proposed boundary changes, expressing concern about unintended equity consequences, and thanked the superintendent and trustee for their capacity work.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="4107000"><span class="tv-agenda-pc-name">Matt Scott</span> (1min)<span class="tv-agenda-pc-summary"> &mdash; Asked for clarification on which school his Nimitz Avenue address falls under in each scenario, learning he would be assigned to Garfield in Scenario 1 and Hoover in Scenario 2.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="4164000"><span class="tv-agenda-pc-name">George Lewis</span> (1min)<span class="tv-agenda-pc-summary"> &mdash; Voiced support for Scenario 2 as a Woodside Hills resident, noting it would encourage more neighbors to move their children from private schools into Redwood City public schools and build community.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="4232000"><span class="tv-agenda-pc-name">Steve (Axed)</span> (1min)<span class="tv-agenda-pc-summary"> &mdash; Voiced support for Scenario 2 as a Selby Lane neighborhood resident seeking continuity and community for his daughter after transitioning through Henry Ford.</span></div></div><div class="tv-agenda-item"><span class="tv-agenda-label">6.1</span><span class="tv-agenda-title">First of Two Public Hearings: School Attendance Boundary Change for Neighborhood Schools</span><span class="tv-agenda-type">Information</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQN352052042/$file/6_1_CapacityBySite_0.pdf" target="_blank" rel="noopener">6_1_CapacityBySite_0.pdf</a><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQN3550523C4/$file/6_1_PowerPointPresentation_0%20(1).pdf" target="_blank" rel="noopener">6_1_PowerPointPresentation_0 (1).pdf</a></div><div class="tv-agenda-section"><span class="tv-agenda-label">7</span><span class="tv-agenda-title">Discussion Items</span></div><div class="tv-agenda-item tv-clickable" data-start="5814000"><span class="tv-agenda-label">7.1</span><span class="tv-ts">1:36:54</span><span class="tv-agenda-title">Discussion on COVID-19</span><span class="tv-agenda-type">Discussion</span></div><div class="tv-agenda-pc"><div class="tv-agenda-pc-speaker tv-clickable" data-start="6828000"><span class="tv-agenda-pc-name">Sarah Yarder</span> (1min)<span class="tv-agenda-pc-summary"> &mdash; Questioned whether temperature checks are evidence-based given that many COVID-positive patients show no fever, and asked about UV-C lamp disinfection as used in hospitals.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="6993000"><span class="tv-agenda-pc-name">Lily O'Connor</span> (2min)<span class="tv-agenda-pc-summary"> &mdash; Expressed concern about lack of clear, timely communication from the district and raised specific logistical questions about coordinating siblings on different school schedules under a hybrid model.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="7164000"><span class="tv-agenda-pc-name">Michelle Ortez</span> (0min)<span class="tv-agenda-pc-summary"> &mdash; Asked whether the teacher survey results would be shared with the board and public, and if so, when.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="7200000"><span class="tv-agenda-pc-name">Michelle Smith</span> (2min)<span class="tv-agenda-pc-summary"> &mdash; Recommended keeping child care cohorts aligned with classroom cohorts to avoid cross-mingling, and offered to connect the district with her health literacy research team to improve communication.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="7374000"><span class="tv-agenda-pc-name">Michelle and Devin Mulaney</span> (3min)<span class="tv-agenda-pc-summary"> &mdash; Asked whether the district had explored contingency plans for greater openness, temporary union MoUs to allow volunteers, and a sliding scale giving younger students more in-person time to support language immersion.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="7828000"><span class="tv-agenda-pc-name">Becky Fouch</span> (1min)<span class="tv-agenda-pc-summary"> &mdash; Asked whether any closed school campuses could be used for child care or expanded student capacity.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="7928000"><span class="tv-agenda-pc-name">Linda Elkins</span> (2min)<span class="tv-agenda-pc-summary"> &mdash; Expressed surprise that a five-days-a-week option was not included in the survey, asked how quickly the district could pivot if county guidelines loosen, and noted a survey design issue that prevented selecting multiple child care options.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="8407000"><span class="tv-agenda-pc-name">Indra Hernandez</span> (4min)<span class="tv-agenda-pc-summary"> &mdash; As a CDC preschool teacher, raised concerns about social distancing with young children, cleaning burdens on staff, the impracticality of a two-day in-person model for working families, and uncertainty about changing job descriptions.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="8729000"><span class="tv-agenda-pc-name">Dina Meyers</span> (3min)<span class="tv-agenda-pc-summary"> &mdash; Asked what support was being provided to teachers developing distance-learning curriculum and questioned what meaningful social interaction could look like for students under strict social distancing requirements.</span></div></div><div class="tv-agenda-item tv-clickable" data-start="9108000"><span class="tv-agenda-label">7.2</span><span class="tv-ts">2:31:48</span><span class="tv-agenda-title">Discussion of School Plan for Student Achievement</span><span class="tv-agenda-type">Discussion</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQN3LQ076BE6/$file/7_2_SPSAAdelanteSelby_0.pdf" target="_blank" rel="noopener">7_2_SPSAAdelanteSelby_0.pdf</a><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQN3LS076E2A/$file/7_2_SPSAClifford_0.pdf" target="_blank" rel="noopener">7_2_SPSAClifford_0.pdf</a><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQN3LU0770A4/$file/7_2_SPSAGarfield_0.pdf" target="_blank" rel="noopener">7_2_SPSAGarfield_0.pdf</a><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQN3LX077416/$file/7_2_SPSAHenryFord_0.pdf" target="_blank" rel="noopener">7_2_SPSAHenryFord_0.pdf</a><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQN3LZ0776EF/$file/7_2_SPSAHoover_0.pdf" target="_blank" rel="noopener">7_2_SPSAHoover_0.pdf</a><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQN3M6077CBF/$file/7_2_SPSAKennedy_0.pdf" target="_blank" rel="noopener">7_2_SPSAKennedy_0.pdf</a><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQN3MA07809D/$file/7_2_SPSAMIT_0.pdf" target="_blank" rel="noopener">7_2_SPSAMIT_0.pdf</a><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQN3MD0784B3/$file/7_2_SPSANorthStar_0.pdf" target="_blank" rel="noopener">7_2_SPSANorthStar_0.pdf</a><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQN3MJ078AB6/$file/7_2_SPSAOrionMandarinImmersion_0.pdf" target="_blank" rel="noopener">7_2_SPSAOrionMandarinImmersion_0.pdf</a><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQN3MN078FD2/$file/7_2_SPSARoosevelt_0.pdf" target="_blank" rel="noopener">7_2_SPSARoosevelt_0.pdf</a><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQN3MT0793B4/$file/7_2_SPSARoyCloud_0.pdf" target="_blank" rel="noopener">7_2_SPSARoyCloud_0.pdf</a><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQN3MW07976B/$file/7_2_SPSATaft_0.pdf" target="_blank" rel="noopener">7_2_SPSATaft_0.pdf</a></div><div class="tv-agenda-section"><span class="tv-agenda-label">8</span><span class="tv-agenda-title">Consent Items (Action Required)</span></div><div class="tv-agenda-section"><span class="tv-agenda-label">9</span><span class="tv-agenda-title">Action Items (Action Required)</span></div><div class="tv-agenda-item tv-clickable" data-start="9529000"><span class="tv-agenda-label">9.1</span><span class="tv-ts">2:38:49</span><span class="tv-agenda-title">Adoption of Resolution 32, a Resolution of the Redwood City School District Calling for an Election to be Held on November 3, 2020 for the Election of 3 Members of the Governing Board</span><span class="tv-agenda-type">Action</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQN3P407C4FB/$file/9_1_Resolution32_0.pdf" target="_blank" rel="noopener">9_1_Resolution32_0.pdf</a><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQN3P807C746/$file/9_1_ServiceAgreementForElectionServicesREFERENCEONLY_0.pdf" target="_blank" rel="noopener">9_1_ServiceAgreementForElectionServicesREFERENCEONLY_0.pdf</a></div><div class="tv-agenda-item tv-clickable" data-start="9704000"><span class="tv-agenda-label">9.2</span><span class="tv-ts">2:41:44</span><span class="tv-agenda-title">Approval of Permanently Renaming the 170 Selby Lane in Atherton site, currently on file with the California Department of Education as Selby Lane Elementary School, as Adelante Selby Spanish Immersion School</span><span class="tv-agenda-type">Action</span></div><div class="tv-agenda-pc"><div class="tv-agenda-pc-speaker tv-clickable" data-start="9747000"><span class="tv-agenda-pc-name">Anuj Gagar</span> (2min)<span class="tv-agenda-pc-summary"> &mdash; Urged the board to approve Adelante Selby, arguing it has a clear rationale, no negative connotations, and a clear community mandate from two votes.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="9883000"><span class="tv-agenda-pc-name">Araceli Tamayo</span> (3min)<span class="tv-agenda-pc-summary"> &mdash; Urged approval of Adelante Selby, explaining that it honors both merged school communities and their combined traditions, and will help the community move forward and continue investing in the school.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="10103000"><span class="tv-agenda-pc-name">Maurice Willis</span> (1min)<span class="tv-agenda-pc-summary"> &mdash; Strongly supported the Adelante Selby name, stating that the community's unified desire for the name demonstrates healing and forward movement that should be acknowledged by the board.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="10210000"><span class="tv-agenda-pc-name">Michelle Smith</span> (3min)<span class="tv-agenda-pc-summary"> &mdash; Expressed frustration with the naming policy process and questioned whether, given the national reckoning with racial justice, the board was comfortable keeping a name referencing a wealthy white man on a Spanish immersion school, suggesting Unidos as a more representative alternative.</span></div></div><div class="tv-agenda-section tv-clickable" data-start="10569000"><span class="tv-agenda-label">10</span><span class="tv-ts">2:56:09</span><span class="tv-agenda-title">Adjournment (Action Required)</span></div>
+    </div>
+
+    <div class="tv-panel tv-minutes-panel" id="panel-minutes">
+      <div class="tv-empty">Minutes not yet approved for this meeting.</div>
     </div>
   </div>
 
@@ -405,6 +592,7 @@
   var speakerMap = {};
   var autoScroll = true;
   var activeIdx = -1;
+  var activeTab = 'transcript';
 
   // Load YT IFrame API
   var tag = document.createElement('script');
@@ -418,6 +606,37 @@
     });
   };
 
+  // ---- Tab switching ----
+  var tabs = document.querySelectorAll('.tv-tab');
+  var panels = document.querySelectorAll('.tv-panel');
+  var transcriptControls = document.getElementById('transcript-controls');
+
+  tabs.forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      if (tab.disabled) return;
+      activeTab = tab.dataset.tab;
+      tabs.forEach(function(t) { t.classList.toggle('active', t.dataset.tab === activeTab); });
+      panels.forEach(function(p) { p.classList.toggle('active', p.id === 'panel-' + activeTab); });
+      transcriptControls.style.display = activeTab === 'transcript' ? '' : 'none';
+    });
+  });
+
+  // ---- Seek helper ----
+  function seekTo(ms) {
+    if (player && player.seekTo) {
+      player.seekTo(ms / 1000, true);
+      player.playVideo();
+    }
+  }
+
+  // ---- Agenda click-to-seek ----
+  document.getElementById('panel-agenda').addEventListener('click', function(e) {
+    var el = e.target.closest('.tv-clickable');
+    if (!el || !el.dataset.start) return;
+    seekTo(parseInt(el.dataset.start));
+  });
+
+  // ---- Transcript ----
   function formatTime(ms) {
     var totalSec = Math.floor(ms / 1000);
     var h = Math.floor(totalSec / 3600);
@@ -437,17 +656,15 @@
     return speakerColors[label.charCodeAt(0) % speakerColors.length];
   }
 
-  // Build transcript rows using safe DOM methods
   function renderTranscript() {
-    var container = document.getElementById('transcript-container');
-    container.textContent = ''; // clear
+    var container = document.getElementById('panel-transcript');
+    container.textContent = '';
 
     utterances.forEach(function(u, i) {
       var row = document.createElement('div');
       row.className = 'tv-utterance';
       row.dataset.idx = i;
       row.dataset.start = u.start;
-      row.dataset.end = u.end;
 
       var ts = document.createElement('span');
       ts.className = 'tv-ts';
@@ -470,19 +687,13 @@
       container.appendChild(row);
     });
 
-    // Click to seek
     container.addEventListener('click', function(e) {
       var row = e.target.closest('.tv-utterance');
       if (!row) return;
-      var startMs = parseInt(row.dataset.start);
-      if (player && player.seekTo) {
-        player.seekTo(startMs / 1000, true);
-        player.playVideo();
-      }
+      seekTo(parseInt(row.dataset.start));
     });
   }
 
-  // Fetch transcript
   fetch(transcriptUrl)
     .then(function(r) { return r.json(); })
     .then(function(data) {
@@ -492,36 +703,65 @@
       setInterval(syncHighlight, 250);
     })
     .catch(function() {
-      var c = document.getElementById('transcript-container');
+      var c = document.getElementById('panel-transcript');
       c.textContent = '';
       var msg = document.createElement('div');
-      msg.style.cssText = 'padding:1rem;color:var(--coral)';
+      msg.className = 'tv-empty';
       msg.textContent = 'Failed to load transcript.';
       c.appendChild(msg);
     });
 
+  // ---- Sync highlight (transcript + agenda) ----
+  var activeAgendaEl = null;
+
   function syncHighlight() {
     if (!player || !player.getCurrentTime) return;
     var currentMs = player.getCurrentTime() * 1000;
-    var newIdx = -1;
-    for (var i = utterances.length - 1; i >= 0; i--) {
-      if (utterances[i].start <= currentMs) { newIdx = i; break; }
+
+    // Transcript sync
+    if (activeTab === 'transcript') {
+      var newIdx = -1;
+      for (var i = utterances.length - 1; i >= 0; i--) {
+        if (utterances[i].start <= currentMs) { newIdx = i; break; }
+      }
+      if (newIdx !== activeIdx) {
+        activeIdx = newIdx;
+        var rows = document.querySelectorAll('.tv-utterance');
+        rows.forEach(function(r, i) { r.classList.toggle('active', i === activeIdx); });
+
+        if (autoScroll && activeIdx >= 0 && rows[activeIdx]) {
+          var rect = rows[activeIdx].getBoundingClientRect();
+          var videoCol = document.querySelector('.tv-video-col');
+          var stickyHeight = videoCol ? videoCol.offsetHeight : 0;
+          if (rect.top < stickyHeight + 20 || rect.bottom > window.innerHeight - 40) {
+            window.scrollTo({ top: rows[activeIdx].offsetTop - stickyHeight - 20, behavior: 'smooth' });
+          }
+        }
+      }
     }
-    if (newIdx === activeIdx) return;
-    activeIdx = newIdx;
 
-    var rows = document.querySelectorAll('.tv-utterance');
-    rows.forEach(function(r, i) {
-      r.classList.toggle('active', i === activeIdx);
-    });
-
-    if (autoScroll && activeIdx >= 0 && rows[activeIdx]) {
-      var rect = rows[activeIdx].getBoundingClientRect();
-      var videoCol = document.querySelector('.tv-video-col');
-      var stickyHeight = videoCol ? videoCol.offsetHeight : 0;
-      // Scroll so active row is just below the sticky video
-      if (rect.top < stickyHeight + 20 || rect.bottom > window.innerHeight - 40) {
-        window.scrollTo({ top: rows[activeIdx].offsetTop - stickyHeight - 20, behavior: 'smooth' });
+    // Agenda sync — highlight current agenda item
+    if (activeTab === 'agenda') {
+      var agendaItems = document.querySelectorAll('#panel-agenda [data-start]');
+      var bestEl = null;
+      agendaItems.forEach(function(el) {
+        var start = parseInt(el.dataset.start);
+        if (start <= currentMs) bestEl = el;
+      });
+      if (bestEl !== activeAgendaEl) {
+        if (activeAgendaEl) activeAgendaEl.classList.remove('active');
+        activeAgendaEl = bestEl;
+        if (activeAgendaEl) {
+          activeAgendaEl.classList.add('active');
+          if (autoScroll) {
+            var rect = activeAgendaEl.getBoundingClientRect();
+            var videoCol = document.querySelector('.tv-video-col');
+            var stickyHeight = videoCol ? videoCol.offsetHeight : 0;
+            if (rect.top < stickyHeight + 20 || rect.bottom > window.innerHeight - 40) {
+              window.scrollTo({ top: activeAgendaEl.offsetTop - stickyHeight - 20, behavior: 'smooth' });
+            }
+          }
+        }
       }
     }
   }
@@ -532,10 +772,9 @@
     this.classList.toggle('active', autoScroll);
   });
 
-  // Search with safe DOM highlighting
+  // Search
   var searchInput = document.getElementById('search-input');
   var searchTimeout = null;
-
   searchInput.addEventListener('input', function() {
     clearTimeout(searchTimeout);
     searchTimeout = setTimeout(doSearch, 200);
@@ -544,15 +783,12 @@
   function doSearch() {
     var term = searchInput.value.trim().toLowerCase();
     var rows = document.querySelectorAll('.tv-utterance');
-
     rows.forEach(function(row, i) {
       var textEl = row.querySelector('.tv-text');
       var original = utterances[i].text;
-
       if (term && original.toLowerCase().indexOf(term) >= 0) {
         row.classList.add('search-match');
         row.style.display = '';
-        // Highlight matches using safe DOM methods
         textEl.textContent = '';
         var remaining = original;
         var lc = remaining.toLowerCase();

@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="index, follow">
-<title>Transcript — Board Meeting, February 8, 2023</title>
-<meta name="description" content="Full diarized transcript of the RCSD Board Meeting on February 8, 2023. Speaker-identified, synced to video.">
+<title>Board Meeting — February 8, 2023 — RCSD Board Meeting</title>
+<meta name="description" content="Full diarized transcript, agenda, and minutes for the RCSD Board Meeting on February 8, 2023.">
 <meta name="theme-color" content="#1a3a2a">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
@@ -14,8 +14,8 @@
 <link rel="manifest" href="/site.webmanifest">
 <link rel="canonical" href="https://rcsd.info/meetings/2023-02-08/">
 
-<meta property="og:title" content="Transcript — Board Meeting, February 8, 2023">
-<meta property="og:description" content="Full diarized transcript of the RCSD Board Meeting on February 8, 2023. Speaker-identified, synced to video.">
+<meta property="og:title" content="Board Meeting — February 8, 2023 — RCSD Board Meeting">
+<meta property="og:description" content="Full diarized transcript, agenda, and minutes for the RCSD Board Meeting on February 8, 2023.">
 <meta property="og:url" content="https://rcsd.info/meetings/2023-02-08/">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://rcsd.info/og-1200.jpg">
@@ -25,8 +25,8 @@
 <meta property="og:site_name" content="RCSD Open Data">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://rcsd.info/og-1200.jpg">
-<meta name="twitter:title" content="Transcript — Board Meeting, February 8, 2023">
-<meta name="twitter:description" content="Full diarized transcript of the RCSD Board Meeting on February 8, 2023. Speaker-identified, synced to video.">
+<meta name="twitter:title" content="Board Meeting — February 8, 2023 — RCSD Board Meeting">
+<meta name="twitter:description" content="Full diarized transcript, agenda, and minutes for the RCSD Board Meeting on February 8, 2023.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -199,7 +199,7 @@
   .tv-main {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0;
   }
 
   .tv-video-col {
@@ -225,6 +225,32 @@
     width: 100%; height: 100%;
     border: none;
   }
+
+  /* ---- Tab bar ---- */
+  .tv-tabs {
+    display: flex;
+    gap: 0;
+    border-bottom: 2px solid var(--rule);
+    margin-top: 0.5rem;
+  }
+
+  .tv-tab {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border: none;
+    background: none;
+    color: var(--text-muted);
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .tv-tab:hover { color: var(--text); }
+  .tv-tab.active { color: var(--green-deep); border-bottom-color: var(--green-mid); }
+  .tv-tab:disabled { opacity: 0.4; cursor: default; }
 
   .tv-controls {
     display: flex;
@@ -259,10 +285,15 @@
   }
   .tv-search:focus { border-color: var(--green-mid); }
 
-  .tv-transcript-col {
+  /* ---- Tab panels ---- */
+  .tv-panel { display: none; }
+  .tv-panel.active { display: block; }
+
+  .tv-transcript-panel {
     border: 1px solid var(--rule-light);
-    border-radius: 6px;
+    border-radius: 0 0 6px 6px;
     background: #fff;
+    border-top: none;
   }
 
   .tv-utterance {
@@ -314,6 +345,147 @@
     border-radius: 2px;
   }
 
+  /* ---- Agenda panel ---- */
+  .tv-agenda-panel {
+    border: 1px solid var(--rule-light);
+    border-radius: 0 0 6px 6px;
+    background: #fff;
+    border-top: none;
+    padding: 0.25rem 0;
+  }
+
+  .tv-clickable { cursor: pointer; }
+  .tv-clickable:hover { background: var(--green-wash); }
+
+  .tv-agenda-section {
+    padding: 0.6rem 0.75rem 0.3rem;
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--green-deep);
+    display: flex;
+    gap: 0.5rem;
+    align-items: baseline;
+    border-top: 1px solid var(--rule-light);
+  }
+  .tv-agenda-section:first-child { border-top: none; }
+  .tv-agenda-section.active { background: #eef6eb; }
+
+  .tv-agenda-item {
+    padding: 0.35rem 0.75rem 0.35rem 1.5rem;
+    font-family: 'Newsreader', serif;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    display: flex;
+    gap: 0.5rem;
+    align-items: baseline;
+    transition: background 0.15s;
+  }
+  .tv-agenda-item.active { background: #eef6eb; }
+
+  .tv-agenda-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--green-mid);
+    font-weight: 500;
+    flex: 0 0 2.5rem;
+  }
+
+  .tv-agenda-title { flex: 1; min-width: 0; }
+
+  .tv-agenda-type {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.55rem;
+    color: var(--text-muted);
+    background: var(--cream-dark);
+    padding: 0.05rem 0.3rem;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+
+  .tv-agenda-duration {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--text-muted);
+  }
+
+  .tv-agenda-atts {
+    padding: 0.1rem 0.75rem 0.3rem 3rem;
+  }
+
+  .tv-agenda-att {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--green-mid);
+    text-decoration: none;
+    display: block;
+    line-height: 1.6;
+  }
+  .tv-agenda-att:hover { text-decoration: underline; color: var(--green-deep); }
+
+  .tv-agenda-pc {
+    padding: 0.1rem 0.75rem 0.3rem 3rem;
+    border-left: 2px solid var(--cream-dark);
+    margin-left: 1.5rem;
+  }
+
+  .tv-agenda-pc-speaker {
+    font-size: 0.8rem;
+    line-height: 1.5;
+    padding: 0.15rem 0;
+  }
+
+  .tv-agenda-pc-name {
+    font-weight: 600;
+    color: var(--green-mid);
+  }
+
+  .tv-agenda-pc-summary {
+    color: var(--text-secondary);
+    font-size: 0.78rem;
+  }
+
+  /* ---- Minutes panel ---- */
+  .tv-minutes-panel {
+    border: 1px solid var(--rule-light);
+    border-radius: 0 0 6px 6px;
+    background: #fff;
+    border-top: none;
+    padding: 1rem;
+  }
+
+  .tv-minutes-info p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.75rem;
+  }
+
+  .tv-minutes-link {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--green-mid);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  .tv-minutes-link:hover { text-decoration: underline; }
+  .tv-minutes-link::before { content: '\1F4C4 '; }
+
+  .tv-minutes-embed {
+    width: 100%;
+    height: 70vh;
+    border: 1px solid var(--rule-light);
+    border-radius: 4px;
+    margin-top: 0.5rem;
+  }
+
+  .tv-empty {
+    padding: 2rem;
+    text-align: center;
+    color: var(--text-muted);
+    font-style: italic;
+  }
+
   .tv-download {
     text-align: center;
     padding: 0.75rem;
@@ -331,6 +503,8 @@
     .tv-utterance { gap: 0.3rem; }
     .tv-ts { flex: 0 0 2.8rem; font-size: 0.6rem; }
     .tv-speaker { max-width: 5rem; font-size: 0.6rem; }
+    .tv-agenda-item { padding-left: 0.75rem; }
+    .tv-tab { padding: 0.4rem 0.6rem; font-size: 0.65rem; }
   }
 
 </style>
@@ -357,7 +531,7 @@
       2h 29m &middot; 
       <a href="https://www.youtube.com/watch?v=Ptx7Oy4E3zE" target="_blank" rel="noopener">YouTube</a>
       
-       &middot; <a href="https://go.boarddocs.com/ca/redwood/Board.nsf/goto?open&amp;id=CMSTML77B689" target="_blank" rel="noopener">Agenda</a>
+       &middot; <a href="https://go.boarddocs.com/ca/redwood/Board.nsf/goto?open&amp;id=CMSTML77B689" target="_blank" rel="noopener">BoardDocs</a>
     </div>
   </div>
 
@@ -366,14 +540,27 @@
       <div class="tv-video-wrap">
         <div id="yt-player"></div>
       </div>
-      <div class="tv-controls">
-        <button class="tv-btn active" id="btn-autoscroll" title="Auto-scroll transcript to current position">Auto-scroll</button>
+      <div class="tv-tabs">
+        <button class="tv-tab active" data-tab="transcript">Transcript</button>
+        <button class="tv-tab" data-tab="agenda">Agenda</button>
+        <button class="tv-tab" data-tab="minutes" disabled>Minutes</button>
+      </div>
+      <div class="tv-controls" id="transcript-controls">
+        <button class="tv-btn active" id="btn-autoscroll">Auto-scroll</button>
         <input class="tv-search" type="text" id="search-input" placeholder="Search transcript...">
       </div>
     </div>
 
-    <div class="tv-transcript-col" id="transcript-container">
+    <div class="tv-panel tv-transcript-panel active" id="panel-transcript">
       <div style="padding:1rem;color:var(--text-muted);font-style:italic">Loading transcript...</div>
+    </div>
+
+    <div class="tv-panel tv-agenda-panel" id="panel-agenda">
+      <div class="tv-agenda-section tv-clickable" data-start="245000"><span class="tv-agenda-label">1</span><span class="tv-ts">4:05</span><span class="tv-agenda-title">Call to Order</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">1.1</span><span class="tv-agenda-title">Roll Call</span><span class="tv-agenda-type">Procedural</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">1.2</span><span class="tv-agenda-title">Report out on Closed Session from January 20, 2023</span></div><div class="tv-agenda-section tv-clickable" data-start="28000"><span class="tv-agenda-label">2</span><span class="tv-ts">0:28</span><span class="tv-agenda-title">Welcome</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">2.1</span><span class="tv-agenda-title">Welcome by the School Board President, Cecilia Márquez</span><span class="tv-agenda-type">Procedural</span></div><div class="tv-agenda-section tv-clickable" data-start="152000"><span class="tv-agenda-label">3</span><span class="tv-ts">2:32</span><span class="tv-agenda-title">Changes to the Agenda</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">3.1</span><span class="tv-agenda-title">Additions, Deletions, or Modifications to the Agenda</span><span class="tv-agenda-type">Discussion</span></div><div class="tv-agenda-section tv-clickable" data-start="213000"><span class="tv-agenda-label">4</span><span class="tv-ts">3:33</span><span class="tv-agenda-title">Approval of Agenda</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">4.1</span><span class="tv-agenda-title">Approval of Agenda</span><span class="tv-agenda-type">Action</span></div><div class="tv-agenda-section tv-clickable" data-start="265000"><span class="tv-agenda-label">5</span><span class="tv-ts">4:25</span><span class="tv-agenda-title">Oral Communication</span></div><div class="tv-agenda-pc"><div class="tv-agenda-pc-speaker tv-clickable" data-start="378000"><span class="tv-agenda-pc-name">Peter Cohen</span> (1min)<span class="tv-agenda-pc-summary"> &mdash; Thanked district staff for correcting enrollment issues with school-of-choice programs, and advocated for expanding Mandarin Immersion TK programs to align with California's 2030 bilingual goal and upcoming Universal TK expansion.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="504000"><span class="tv-agenda-pc-name">Alexis Betts</span> (1min)<span class="tv-agenda-pc-summary"> &mdash; Advocated for expanding MI enrollment to accommodate all interested families, noting the current interest level represents an opportunity for a sustainable, healthy program through 8th grade.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="555000"><span class="tv-agenda-pc-name">Megan O'Reilly</span> (1min)<span class="tv-agenda-pc-summary"> &mdash; Advocated for underserved families in the MI program who need more support, requested a different structural approach to serve both program goals, and urged the district to apply for the TCLP program.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="690000"><span class="tv-agenda-pc-name">William Dennis</span> (1min)<span class="tv-agenda-pc-summary"> &mdash; Expressed strong support for sibling priority in MI enrollment so his younger daughter can attend the same school as his son.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="769000"><span class="tv-agenda-pc-name">Deepika Germany (spouse speaking)</span> (1min)<span class="tv-agenda-pc-summary"> &mdash; Advocated for an additional Mandarin Immersion TK class, stating their daughter is currently on the waitlist and an extra year in the program would be very beneficial.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="815000"><span class="tv-agenda-pc-name">Tina Chung</span> (1min)<span class="tv-agenda-pc-summary"> &mdash; Advocated for additional Mandarin Immersion TK classes to benefit more students in the community, including her son who has some Mandarin background.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="862000"><span class="tv-agenda-pc-name">Ronnie Le</span> (1min)<span class="tv-agenda-pc-summary"> &mdash; Advocated for expanding the Mandarin Immersion program, citing its academic rigor comparable to private immersion schools and the cognitive benefits of bilingual education for her incoming kindergartener.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="953000"><span class="tv-agenda-pc-name">Jackie Chen</span> (2min)<span class="tv-agenda-pc-summary"> &mdash; Shared the emotional difficulty of the MI waitlist experience and urged the board to create two TK MI classes and three kindergarten MI classes.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="1072000"><span class="tv-agenda-pc-name">Julia Selesnick</span> (1min)<span class="tv-agenda-pc-summary"> &mdash; Praised the MI program's academic rigor and advocated for expanding both the kindergarten and TK programs to make this high-quality public school option accessible to more children.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="1197000"><span class="tv-agenda-pc-name">Alex (last name not given)</span> (1min)<span class="tv-agenda-pc-summary"> &mdash; Advocated for expanding the Mandarin Immersion program at Orion, drawing on personal experience growing up bilingual and emphasizing the broad human and community benefits of early language immersion.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="1262000"><span class="tv-agenda-pc-name">Angela Kang</span> (0min)<span class="tv-agenda-pc-summary"> &mdash; Advocated for additional MI TK classes so that all families who want Mandarin Immersion education for their children, including herself with a waitlisted child, can have the opportunity.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="1332000"><span class="tv-agenda-pc-name">Sam Christensen</span> (0min)<span class="tv-agenda-pc-summary"> &mdash; Stated that the MI program is the only program his family is interested in, otherwise they will consider private school, and expressed support for expanding TK Mandarin Immersion.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="1359000"><span class="tv-agenda-pc-name">Chris Terry</span> (1min)<span class="tv-agenda-pc-summary"> &mdash; Raised concerns about fairness in the MI lottery, particularly the Odyssey Preschool preference (costing $1,700/month) and the TK preference potentially crowding out other kindergarten applicants, and asked for lottery reform or more classes.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="1443000"><span class="tv-agenda-pc-name">Jasper Chen</span> (1min)<span class="tv-agenda-pc-summary"> &mdash; Expressed gratitude for the community's transformation and urged the board to invest boldly in expanding the MI program, leveraging the new campus to build a larger, thriving community.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="1507000"><span class="tv-agenda-pc-name">Anna Lee Moraz</span> (2min)<span class="tv-agenda-pc-summary"> &mdash; Spoke in Spanish to advocate for more support and accessibility for low-income Latino families in the Mandarin Immersion program, including concerns about the cost of after-school programs.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="1637000"><span class="tv-agenda-pc-name">Keith Simmons</span> (1min)<span class="tv-agenda-pc-summary"> &mdash; Asked the board to extend sibling priority to TK, expand MI to two TK classes and three kindergarten classes, and consider expanding Adelante as well given the importance of early language acquisition.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="1707000"><span class="tv-agenda-pc-name">Heather Stamper</span> (1min)<span class="tv-agenda-pc-summary"> &mdash; Supported expanding TK and K MI classrooms, noting the program shrank from two kindergarten classes during COVID and expressing concern about the snowball effect of attrition on the program's long-term viability.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="1773000"><span class="tv-agenda-pc-name">Mele Rosallo</span> (1min)<span class="tv-agenda-pc-summary"> &mdash; Advocated for more funding and support for MI students with learning disabilities, including a Mandarin resource teacher and aides for math, and an additional TK class.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="1853000"><span class="tv-agenda-pc-name">Richard Pont</span> (1min)<span class="tv-agenda-pc-summary"> &mdash; Shared his family's positive experience with the MI program and urged expansion so more families, including those with IEP students, can join and thrive.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="1934000"><span class="tv-agenda-pc-name">Micah Bonara</span> (1min)<span class="tv-agenda-pc-summary"> &mdash; Reported his twin boys got off the waitlist and into kindergarten, and called for expansion of both TK and K MI to spare other families the emotional stress of the waitlist process.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="1976000"><span class="tv-agenda-pc-name">Sarah Rutherford</span> (1min)<span class="tv-agenda-pc-summary"> &mdash; Asked for consistency in the sibling priority policy between kindergarten and TK, especially given the upcoming rollout of Universal TK.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="2022000"><span class="tv-agenda-pc-name">Tiffany Chao Bev</span> (1min)<span class="tv-agenda-pc-summary"> &mdash; Shared that her family moved to Redwood City specifically for the MI program and urged the board to expand kindergarten, TK, and the elementary program, as they would consider relocating if their son cannot get in.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="2107000"><span class="tv-agenda-pc-name">Xiang Yen</span> (1min)<span class="tv-agenda-pc-summary"> &mdash; Asked what parents and the community can do to help advance expansion of the MI program, and requested guidance from the board on next steps.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="2205000"><span class="tv-agenda-pc-name">Julia Feng</span> (1min)<span class="tv-agenda-pc-summary"> &mdash; Questioned whether it makes sense to artificially cap demand for MI in a district with declining enrollment, and emphasized that TK/Kinder are the only entry windows for immersion programs.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="2291000"><span class="tv-agenda-pc-name">Doshi (last name not given)</span> (1min)<span class="tv-agenda-pc-summary"> &mdash; Advocated for an additional MI class, noting that the preschool and sibling preferences effectively eliminated her single-child family's chances despite being a district resident and public school advocate.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="2365000"><span class="tv-agenda-pc-name">Philip Guy</span> (2min)<span class="tv-agenda-pc-summary"> &mdash; Urged the board to expand the MI program in every way possible and asked the community to be told how they can help make that happen.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="2522000"><span class="tv-agenda-pc-name">Olanes Villanueva (interpreted)</span> (1min)<span class="tv-agenda-pc-summary"> &mdash; Advocated on behalf of Latino families in the MI program for more support, including in-school tutoring services, so that their children are not invisible and can reach grade level and succeed in the program.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="2628000"><span class="tv-agenda-pc-name">Iliana Harrison</span> (1min)<span class="tv-agenda-pc-summary"> &mdash; Thanked Dr. Baker for supporting the MI program at the Lunar New Year fair and asked the board for two TK classes and three kindergarten classes, offering parent community support to make it happen.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="2716000"><span class="tv-agenda-pc-name">Kyle Zipes</span> (1min)<span class="tv-agenda-pc-summary"> &mdash; Argued that deciding a child's education by lottery is unacceptable and urged the board to accommodate all families who want to attend MI, including investigating a dedicated campus if needed.</span></div></div><div class="tv-agenda-item"><span class="tv-agenda-label">5.1</span><span class="tv-agenda-title">If you have a public comment related to a Regular Board Meeting item, please post it on the links available under Public Content prior to the Regular Board Meeting or immediately upon the meeting opening.</span><span class="tv-agenda-type">Information</span></div><div class="tv-agenda-section tv-clickable" data-start="2769000"><span class="tv-agenda-label">6</span><span class="tv-ts">46:09</span><span class="tv-agenda-title">Bond Program Consent Items</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">6.1</span><span class="tv-agenda-title">Approval of Bond Program Consent Items</span><span class="tv-agenda-type">Action</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">6.2</span><span class="tv-agenda-title">Approval of Measure T Bond Program Tracking List of Items Under $20k</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CNFV3X7ED663/$file/230208%20RCSD%20%2420k%20and%20Under%20Tracker%20FY%2022-23.pdf" target="_blank" rel="noopener">230208 RCSD $20k and Under Tracker FY 22-23.pdf</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">6.3</span><span class="tv-agenda-title">Approval of Modernization and New Building, Bid Package A, Change Order #9 to the Agreement with Duran &amp; Venables for Orion Alternative School (Formerly John Gill School)</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CNLTZU79D8BE/$file/230208%20RCSD%20JG%20Bid%20Package%20A%20CO%20No.%209%20Package.pdf" target="_blank" rel="noopener">230208 RCSD JG Bid Package A CO No. 9 Package.pdf</a></div><div class="tv-agenda-section"><span class="tv-agenda-label">7</span><span class="tv-agenda-title">Bond Program Action Items</span></div><div class="tv-agenda-section"><span class="tv-agenda-label">8</span><span class="tv-agenda-title">School/Community Reports</span></div><div class="tv-agenda-section"><span class="tv-agenda-label">9</span><span class="tv-agenda-title">Discussion Items</span></div><div class="tv-agenda-item tv-clickable" data-start="2798000"><span class="tv-agenda-label">9.1</span><span class="tv-ts">46:38</span><span class="tv-agenda-title">School Plan for Student Achievement: Adelante Selby and Orion</span><span class="tv-agenda-type">Discussion</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CNM2HR024C81/$file/Adelante%20Selby%20SPSA%20Board%20Report.pdf" target="_blank" rel="noopener">Adelante Selby SPSA Board Report.pdf</a><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CNM2JA0260FB/$file/Orion%20SPSA%20Board%20Report%20.pdf" target="_blank" rel="noopener">Orion SPSA Board Report .pdf</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">9.2</span><span class="tv-agenda-title">First Reading and Discussion of Board Policy 4154/4254/4354 - Health and Welfare Benefits</span><span class="tv-agenda-type">Discussion</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CNFUHU7C2277/$file/4154%20BP_AR%20Health%20and%20Welfare%20Benefits%20Update%20Update_NEW.pdf" target="_blank" rel="noopener">4154 BP_AR Health and Welfare Benefits Update Update_NEW.pdf</a></div><div class="tv-agenda-item tv-clickable" data-start="6636000"><span class="tv-agenda-label">9.3</span><span class="tv-ts">1:50:36</span><span class="tv-agenda-title">First Reading and Discussion of Board Policy 5113 - Absences and Excuses</span><span class="tv-agenda-type">Discussion</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CNSTKE77718E/$file/5113%20BP_AR%20Absences%20and%20Excuses.pdf" target="_blank" rel="noopener">5113 BP_AR Absences and Excuses.pdf</a><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CNSTKC777079/$file/Resolution%20-%20absence%20verification.pdf" target="_blank" rel="noopener">Resolution - absence verification.pdf</a></div><div class="tv-agenda-item tv-clickable" data-start="6793000"><span class="tv-agenda-label">9.4</span><span class="tv-ts">1:53:13</span><span class="tv-agenda-title">First Reading and Discussion of Board Policy 6164.2 – Guidance/Counseling Services</span><span class="tv-agenda-type">Discussion</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CNFVF5807A13/$file/6164.2%20BP%20GUIDANCE_COUNSELING%20SERVICES.pdf" target="_blank" rel="noopener">6164.2 BP GUIDANCE_COUNSELING SERVICES.pdf</a></div><div class="tv-agenda-section tv-clickable" data-start="7124000"><span class="tv-agenda-label">10</span><span class="tv-ts">1:58:44</span><span class="tv-agenda-title">Consent Items</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">10.1</span><span class="tv-agenda-title">Approval of Consent Items</span><span class="tv-agenda-type">Action</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">10.2</span><span class="tv-agenda-title">Approval of January 11th Board Minutes</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CNSMK3593F43/$file/Board%20Minutes%201.11.23%20DRAFT.pdf" target="_blank" rel="noopener">Board Minutes 1.11.23 DRAFT.pdf</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">10.3</span><span class="tv-agenda-title">Approval of January 18th Board Minutes</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CNSN535AA123/$file/Board%20Minutes%201.18.23%20DRAFT.pdf" target="_blank" rel="noopener">Board Minutes 1.18.23 DRAFT.pdf</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">10.4</span><span class="tv-agenda-title">Approval of January 20th Board Minutes</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CNKU3M7A1B57/$file/Board%20Minutes%201.20.23%20DRAFT.pdf" target="_blank" rel="noopener">Board Minutes 1.20.23 DRAFT.pdf</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">10.5</span><span class="tv-agenda-title">Approval of January 24th Board Minutes</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CNKU9L7AD370/$file/Board%20Minutes%201.24.23%20DRAFT.pdf" target="_blank" rel="noopener">Board Minutes 1.24.23 DRAFT.pdf</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">10.6</span><span class="tv-agenda-title">Approval of Non-Public School (NPS)/Non-Public Agency (NPA) Master Contracts</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CNCUMS77A70D/$file/Master%20Contract%202022-2023(final).pdf" target="_blank" rel="noopener">Master Contract 2022-2023(final).pdf</a><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CNCUMW77AB71/$file/Approved%20rate%20sheets%20Feb.pdf" target="_blank" rel="noopener">Approved rate sheets Feb.pdf</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">10.7</span><span class="tv-agenda-title">Approval of Amendment #1 to the Agreement between College Advising Prep (CAP) and the Redwood City School District to increase tutoring services for the remainder of the 2022-23 school year</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CNFPHG64A3F7/$file/PO%20230852%20Contract%20(1).pdf" target="_blank" rel="noopener">PO 230852 Contract (1).pdf</a><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CNNRG86D3D0B/$file/College%20Advising%20Prep%20Amendment%20%231%2022.23.pdf" target="_blank" rel="noopener">College Advising Prep Amendment #1 22.23.pdf</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">10.8</span><span class="tv-agenda-title">Approval of Amendment #2 to the Agreement between Maxim Healthcare Staffing, Inc and the Redwood City School District</span><span class="tv-agenda-type">Action</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CNNRGH6D53F4/$file/Maxim%20Second%20Amendment%2022.23.pdf" target="_blank" rel="noopener">Maxim Second Amendment 22.23.pdf</a><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CNMSRB73E8FB/$file/Maxim%20First%20Amendment%2022.23.pdf" target="_blank" rel="noopener">Maxim First Amendment 22.23.pdf</a><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CNMSRD73E9AB/$file/Maxim%20Original%20Agreement%2022.23.pdf" target="_blank" rel="noopener">Maxim Original Agreement 22.23.pdf</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">10.9</span><span class="tv-agenda-title">Second Reading and Approval of Board Policy 6158 - Independent Study</span><span class="tv-agenda-type">Action</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CNG2FT0203D0/$file/BP_AR%206158%20Independent%20Study.pdf" target="_blank" rel="noopener">BP_AR 6158 Independent Study.pdf</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">10.10</span><span class="tv-agenda-title">Ratification of Warrant Registers, January 1, 2023 - January 31, 2023</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CNMPEB643BEF/$file/Warrant%20Register%20January%202023.pdf" target="_blank" rel="noopener">Warrant Register January 2023.pdf</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">10.11</span><span class="tv-agenda-title">Approval of 2022-2023 Certificated Seniority Reports</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CNP3CT0641CD/$file/2022-2023%20Certificated%20Seniority%20Report%20by%20Date%20%202.2.23.pdf" target="_blank" rel="noopener">2022-2023 Certificated Seniority Report by Date  2.2.23.pdf</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">10.12</span><span class="tv-agenda-title">Approval of 2022-2023 Classified Seniority Reports</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CNLS7U715907/$file/CLASSIFIED%20SENIORITY%202022-2023%20by%20POSITION%201.31.23%20-%20CSEA%20List.pdf" target="_blank" rel="noopener">CLASSIFIED SENIORITY 2022-2023 by POSITION 1.31.23 - CSEA List.pdf</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">10.13</span><span class="tv-agenda-title">Denial of Classified General Leave Request(s)</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CNP6KK15511F/$file/CLASSIFIED%20GENERAL%20LEAVE%20REQUEST(S)%202-8-23.pdf" target="_blank" rel="noopener">CLASSIFIED GENERAL LEAVE REQUEST(S) 2-8-23.pdf</a></div><div class="tv-agenda-section"><span class="tv-agenda-label">11</span><span class="tv-agenda-title">Action Items</span></div><div class="tv-agenda-section tv-clickable" data-start="7151000"><span class="tv-agenda-label">12</span><span class="tv-ts">1:59:11</span><span class="tv-agenda-title">Board and Superintendent Reports</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">12.1</span><span class="tv-agenda-title">Report from Board Members and Superintendent</span><span class="tv-agenda-type">Reports</span></div><div class="tv-agenda-section tv-clickable" data-start="8407000"><span class="tv-agenda-label">13</span><span class="tv-ts">2:20:07</span><span class="tv-agenda-title">Information</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">13.1</span><span class="tv-agenda-title">Information on San Mateo County Investment Fund - December 2022</span><span class="tv-agenda-type">Information</span></div><div class="tv-agenda-section tv-clickable" data-start="8421000"><span class="tv-agenda-label">14</span><span class="tv-ts">2:20:21</span><span class="tv-agenda-title">Correspondence</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">14.1</span><span class="tv-agenda-title">Correspondence</span></div><div class="tv-agenda-section tv-clickable" data-start="8453000"><span class="tv-agenda-label">15</span><span class="tv-ts">2:20:53</span><span class="tv-agenda-title">Other Business/Suggested Items For Future Agenda</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">15.1</span><span class="tv-agenda-title">Possible Other Business/Suggested Items for Future Agenda</span><span class="tv-agenda-type">Information</span></div><div class="tv-agenda-section tv-clickable" data-start="8743000"><span class="tv-agenda-label">16</span><span class="tv-ts">2:25:43</span><span class="tv-agenda-title">Board Meetings Calendar</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">16.1</span><span class="tv-agenda-title">Changes to the Board Meetings Calendar</span><span class="tv-agenda-type">Information</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CNP5BT0F7E9F/$file/22-23%20RCSD%20Board%20Meeting%20Calendar.Updated%201.05.23.pdf" target="_blank" rel="noopener">22-23 RCSD Board Meeting Calendar.Updated 1.05.23.pdf</a></div><div class="tv-agenda-section tv-clickable" data-start="8950000"><span class="tv-agenda-label">17</span><span class="tv-ts">2:29:10</span><span class="tv-agenda-title">Adjournment</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">17.1</span><span class="tv-agenda-title">Adjourn the Meeting</span><span class="tv-agenda-type">Action</span></div>
+    </div>
+
+    <div class="tv-panel tv-minutes-panel" id="panel-minutes">
+      <div class="tv-empty">Minutes not yet approved for this meeting.</div>
     </div>
   </div>
 
@@ -405,6 +592,7 @@
   var speakerMap = {};
   var autoScroll = true;
   var activeIdx = -1;
+  var activeTab = 'transcript';
 
   // Load YT IFrame API
   var tag = document.createElement('script');
@@ -418,6 +606,37 @@
     });
   };
 
+  // ---- Tab switching ----
+  var tabs = document.querySelectorAll('.tv-tab');
+  var panels = document.querySelectorAll('.tv-panel');
+  var transcriptControls = document.getElementById('transcript-controls');
+
+  tabs.forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      if (tab.disabled) return;
+      activeTab = tab.dataset.tab;
+      tabs.forEach(function(t) { t.classList.toggle('active', t.dataset.tab === activeTab); });
+      panels.forEach(function(p) { p.classList.toggle('active', p.id === 'panel-' + activeTab); });
+      transcriptControls.style.display = activeTab === 'transcript' ? '' : 'none';
+    });
+  });
+
+  // ---- Seek helper ----
+  function seekTo(ms) {
+    if (player && player.seekTo) {
+      player.seekTo(ms / 1000, true);
+      player.playVideo();
+    }
+  }
+
+  // ---- Agenda click-to-seek ----
+  document.getElementById('panel-agenda').addEventListener('click', function(e) {
+    var el = e.target.closest('.tv-clickable');
+    if (!el || !el.dataset.start) return;
+    seekTo(parseInt(el.dataset.start));
+  });
+
+  // ---- Transcript ----
   function formatTime(ms) {
     var totalSec = Math.floor(ms / 1000);
     var h = Math.floor(totalSec / 3600);
@@ -437,17 +656,15 @@
     return speakerColors[label.charCodeAt(0) % speakerColors.length];
   }
 
-  // Build transcript rows using safe DOM methods
   function renderTranscript() {
-    var container = document.getElementById('transcript-container');
-    container.textContent = ''; // clear
+    var container = document.getElementById('panel-transcript');
+    container.textContent = '';
 
     utterances.forEach(function(u, i) {
       var row = document.createElement('div');
       row.className = 'tv-utterance';
       row.dataset.idx = i;
       row.dataset.start = u.start;
-      row.dataset.end = u.end;
 
       var ts = document.createElement('span');
       ts.className = 'tv-ts';
@@ -470,19 +687,13 @@
       container.appendChild(row);
     });
 
-    // Click to seek
     container.addEventListener('click', function(e) {
       var row = e.target.closest('.tv-utterance');
       if (!row) return;
-      var startMs = parseInt(row.dataset.start);
-      if (player && player.seekTo) {
-        player.seekTo(startMs / 1000, true);
-        player.playVideo();
-      }
+      seekTo(parseInt(row.dataset.start));
     });
   }
 
-  // Fetch transcript
   fetch(transcriptUrl)
     .then(function(r) { return r.json(); })
     .then(function(data) {
@@ -492,36 +703,65 @@
       setInterval(syncHighlight, 250);
     })
     .catch(function() {
-      var c = document.getElementById('transcript-container');
+      var c = document.getElementById('panel-transcript');
       c.textContent = '';
       var msg = document.createElement('div');
-      msg.style.cssText = 'padding:1rem;color:var(--coral)';
+      msg.className = 'tv-empty';
       msg.textContent = 'Failed to load transcript.';
       c.appendChild(msg);
     });
 
+  // ---- Sync highlight (transcript + agenda) ----
+  var activeAgendaEl = null;
+
   function syncHighlight() {
     if (!player || !player.getCurrentTime) return;
     var currentMs = player.getCurrentTime() * 1000;
-    var newIdx = -1;
-    for (var i = utterances.length - 1; i >= 0; i--) {
-      if (utterances[i].start <= currentMs) { newIdx = i; break; }
+
+    // Transcript sync
+    if (activeTab === 'transcript') {
+      var newIdx = -1;
+      for (var i = utterances.length - 1; i >= 0; i--) {
+        if (utterances[i].start <= currentMs) { newIdx = i; break; }
+      }
+      if (newIdx !== activeIdx) {
+        activeIdx = newIdx;
+        var rows = document.querySelectorAll('.tv-utterance');
+        rows.forEach(function(r, i) { r.classList.toggle('active', i === activeIdx); });
+
+        if (autoScroll && activeIdx >= 0 && rows[activeIdx]) {
+          var rect = rows[activeIdx].getBoundingClientRect();
+          var videoCol = document.querySelector('.tv-video-col');
+          var stickyHeight = videoCol ? videoCol.offsetHeight : 0;
+          if (rect.top < stickyHeight + 20 || rect.bottom > window.innerHeight - 40) {
+            window.scrollTo({ top: rows[activeIdx].offsetTop - stickyHeight - 20, behavior: 'smooth' });
+          }
+        }
+      }
     }
-    if (newIdx === activeIdx) return;
-    activeIdx = newIdx;
 
-    var rows = document.querySelectorAll('.tv-utterance');
-    rows.forEach(function(r, i) {
-      r.classList.toggle('active', i === activeIdx);
-    });
-
-    if (autoScroll && activeIdx >= 0 && rows[activeIdx]) {
-      var rect = rows[activeIdx].getBoundingClientRect();
-      var videoCol = document.querySelector('.tv-video-col');
-      var stickyHeight = videoCol ? videoCol.offsetHeight : 0;
-      // Scroll so active row is just below the sticky video
-      if (rect.top < stickyHeight + 20 || rect.bottom > window.innerHeight - 40) {
-        window.scrollTo({ top: rows[activeIdx].offsetTop - stickyHeight - 20, behavior: 'smooth' });
+    // Agenda sync — highlight current agenda item
+    if (activeTab === 'agenda') {
+      var agendaItems = document.querySelectorAll('#panel-agenda [data-start]');
+      var bestEl = null;
+      agendaItems.forEach(function(el) {
+        var start = parseInt(el.dataset.start);
+        if (start <= currentMs) bestEl = el;
+      });
+      if (bestEl !== activeAgendaEl) {
+        if (activeAgendaEl) activeAgendaEl.classList.remove('active');
+        activeAgendaEl = bestEl;
+        if (activeAgendaEl) {
+          activeAgendaEl.classList.add('active');
+          if (autoScroll) {
+            var rect = activeAgendaEl.getBoundingClientRect();
+            var videoCol = document.querySelector('.tv-video-col');
+            var stickyHeight = videoCol ? videoCol.offsetHeight : 0;
+            if (rect.top < stickyHeight + 20 || rect.bottom > window.innerHeight - 40) {
+              window.scrollTo({ top: activeAgendaEl.offsetTop - stickyHeight - 20, behavior: 'smooth' });
+            }
+          }
+        }
       }
     }
   }
@@ -532,10 +772,9 @@
     this.classList.toggle('active', autoScroll);
   });
 
-  // Search with safe DOM highlighting
+  // Search
   var searchInput = document.getElementById('search-input');
   var searchTimeout = null;
-
   searchInput.addEventListener('input', function() {
     clearTimeout(searchTimeout);
     searchTimeout = setTimeout(doSearch, 200);
@@ -544,15 +783,12 @@
   function doSearch() {
     var term = searchInput.value.trim().toLowerCase();
     var rows = document.querySelectorAll('.tv-utterance');
-
     rows.forEach(function(row, i) {
       var textEl = row.querySelector('.tv-text');
       var original = utterances[i].text;
-
       if (term && original.toLowerCase().indexOf(term) >= 0) {
         row.classList.add('search-match');
         row.style.display = '';
-        // Highlight matches using safe DOM methods
         textEl.textContent = '';
         var remaining = original;
         var lc = remaining.toLowerCase();

@@ -1,18 +1,19 @@
 #!/usr/bin/env node
 /**
- * Generate transcript viewer pages for meetings with transcripts.
+ * Generate per-meeting viewer pages with tabbed Transcript / Agenda / Minutes.
  *
- * Each page embeds a YouTube player synced to a scrollable diarized transcript.
- * Clicking an utterance seeks the video; playback auto-scrolls the transcript.
+ * All three tabs sync with the embedded YouTube player:
+ * - Transcript: auto-scrolls to current utterance, click to seek
+ * - Agenda: highlights current agenda item based on chapter markers, click to seek
+ * - Minutes: links to approved minutes PDF (static, no sync)
  *
- * Output: docs/meetings/{date}/index.html (one per meeting with transcript)
+ * Output: docs/meetings/{date}/index.html
  *
- * Security note: transcript text is rendered via textContent (not innerHTML)
- * in the client-side JS. Search highlighting uses controlled DOM manipulation
- * with createElement, not string interpolation into HTML.
+ * Security note: all user-facing text is rendered via textContent or
+ * pre-escaped at build time. No dynamic innerHTML from untrusted sources.
  */
 
-import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'fs';
+import { readFileSync, writeFileSync, existsSync, mkdirSync, readdirSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { headMeta, siteNav, siteFooter } from './html-parts.mjs';
@@ -22,6 +23,21 @@ const ROOT = resolve(__dirname, '..');
 const R2_BASE = 'https://data.rcsd.info';
 
 const data = JSON.parse(readFileSync(resolve(ROOT, 'data/meetings-data.json'), 'utf-8'));
+
+// Build AID → R2 path lookup for attachment links
+const aidToR2Path = {};
+const memoDir = resolve(ROOT, 'data/board-memos');
+try {
+  for (const f of readdirSync(memoDir)) {
+    if (!f.endsWith('.json')) continue;
+    const memo = JSON.parse(readFileSync(resolve(memoDir, f), 'utf-8'));
+    for (const item of memo.items) {
+      for (const att of item.attachments) {
+        if (att.aid && att.filename) aidToR2Path[att.aid] = `board-packets/${memo.date}/${att.filename}`;
+      }
+    }
+  }
+} catch {}
 
 function escapeHtml(s) {
   return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -34,11 +50,123 @@ function formatDate(dateStr) {
   return `${months[parseInt(m) - 1]} ${parseInt(d)}, ${y}`;
 }
 
+function formatSec(sec) {
+  const h = Math.floor(sec / 3600);
+  const m = Math.floor((sec % 3600) / 60);
+  const s = sec % 60;
+  const pad = n => n < 10 ? '0' + n : '' + n;
+  if (h > 0) return `${h}:${pad(m)}:${pad(s)}`;
+  return `${m}:${pad(s)}`;
+}
+
 const SPEAKER_COLORS = [
   '#1a5276', '#7d3c98', '#1e8449', '#b9770e', '#922b21',
   '#117a65', '#6c3483', '#1f618d', '#b7950b', '#943126',
   '#148f77', '#7d6608', '#2e4053', '#884ea0', '#239b56',
 ];
+
+// ---- Build agenda HTML for a meeting (server-side rendered) ----
+
+function buildAgendaHtml(m) {
+  if (!m.items || m.items.length === 0) return '<div class="tv-empty">No agenda data available.</div>';
+
+  let html = '';
+  for (const item of m.items) {
+    const opened = item.phases?.opened;
+    const hasTs = opened != null;
+    const tsAttr = hasTs ? ` data-start="${opened * 1000}"` : '';
+    const clickable = hasTs ? ' tv-clickable' : '';
+    const isSection = item.isSection;
+    const cls = isSection ? 'tv-agenda-section' : 'tv-agenda-item';
+
+    html += `<div class="${cls}${clickable}"${tsAttr}>`;
+
+    // Label
+    if (item.itemLabel) {
+      html += `<span class="tv-agenda-label">${escapeHtml(String(item.itemLabel))}</span>`;
+    }
+
+    // Timestamp
+    if (hasTs) {
+      html += `<span class="tv-ts">${formatSec(opened)}</span>`;
+    }
+
+    // Title
+    html += `<span class="tv-agenda-title">${escapeHtml(item.title)}</span>`;
+
+    // Action type badge
+    if (item.actionType && !isSection) {
+      html += `<span class="tv-agenda-type">${escapeHtml(item.actionType)}</span>`;
+    }
+
+    // Planned duration for sections
+    if (isSection && item.plannedMinutes) {
+      html += `<span class="tv-agenda-duration">${item.plannedMinutes >= 60 ? (item.plannedMinutes / 60) + 'hr' : item.plannedMinutes + 'min'}</span>`;
+    }
+
+    html += '</div>';
+
+    // Public comments
+    if (item.publicComments && item.publicComments.length > 0) {
+      html += '<div class="tv-agenda-pc">';
+      for (const pc of item.publicComments) {
+        const pcTs = pc.startSeconds != null ? ` data-start="${pc.startSeconds * 1000}"` : '';
+        const pcClick = pc.startSeconds != null ? ' tv-clickable' : '';
+        const dur = pc.endSeconds && pc.startSeconds ? ` (${Math.round((pc.endSeconds - pc.startSeconds) / 60)}min)` : '';
+        html += `<div class="tv-agenda-pc-speaker${pcClick}"${pcTs}>`;
+        html += `<span class="tv-agenda-pc-name">${escapeHtml(pc.name || 'Speaker')}</span>${dur}`;
+        if (pc.summary) html += `<span class="tv-agenda-pc-summary"> &mdash; ${escapeHtml(pc.summary)}</span>`;
+        html += '</div>';
+      }
+      html += '</div>';
+    }
+
+    // Attachments
+    if (item.attachments && item.attachments.length > 0) {
+      html += '<div class="tv-agenda-atts">';
+      for (const att of item.attachments) {
+        const name = att.title || att.name || 'Attachment';
+        const r2Path = att.aid && aidToR2Path[att.aid];
+        const href = att.href || (r2Path ? `${R2_BASE}/${r2Path}` : (att.aid ? `https://simbli.eboardsolutions.com/Meetings/Attachment.aspx?S=36030397&AID=${att.aid}&MID=${m.mid}` : '#'));
+        html += `<a class="tv-agenda-att" href="${escapeHtml(href)}" target="_blank" rel="noopener">${escapeHtml(name)}</a>`;
+      }
+      html += '</div>';
+    }
+  }
+  return html;
+}
+
+// ---- Build minutes HTML ----
+
+function buildMinutesHtml(m) {
+  if (!m.minutes) return '<div class="tv-empty">Minutes not yet approved for this meeting.</div>';
+
+  let html = '<div class="tv-minutes-info">';
+  html += `<p>Minutes approved at the ${formatDate(m.minutes.approvedAt)} meeting.</p>`;
+
+  if (m.minutes.documents && m.minutes.documents.length > 0) {
+    for (const doc of m.minutes.documents) {
+      const href = doc.href || '#';
+      const r2Path = doc.aid && aidToR2Path[doc.aid];
+      const finalHref = r2Path ? `${R2_BASE}/${r2Path}` : href;
+      html += `<a class="tv-minutes-link" href="${escapeHtml(finalHref)}" target="_blank" rel="noopener">${escapeHtml(doc.title || 'Minutes PDF')}</a>`;
+    }
+  }
+
+  // Embed PDF if available on R2
+  const minutesPdf = `${m.date}-minutes.pdf`;
+  const minutesR2 = `${R2_BASE}/minutes/${minutesPdf}`;
+  try {
+    if (existsSync(resolve(ROOT, 'artifacts/minutes', minutesPdf))) {
+      html += `<iframe class="tv-minutes-embed" src="${minutesR2}" title="Meeting minutes PDF"></iframe>`;
+    }
+  } catch {}
+
+  html += '</div>';
+  return html;
+}
+
+// ---- CSS ----
 
 const pageCSS = `
   .tv-layout {
@@ -78,7 +206,7 @@ const pageCSS = `
   .tv-main {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0;
   }
 
   .tv-video-col {
@@ -104,6 +232,32 @@ const pageCSS = `
     width: 100%; height: 100%;
     border: none;
   }
+
+  /* ---- Tab bar ---- */
+  .tv-tabs {
+    display: flex;
+    gap: 0;
+    border-bottom: 2px solid var(--rule);
+    margin-top: 0.5rem;
+  }
+
+  .tv-tab {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border: none;
+    background: none;
+    color: var(--text-muted);
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .tv-tab:hover { color: var(--text); }
+  .tv-tab.active { color: var(--green-deep); border-bottom-color: var(--green-mid); }
+  .tv-tab:disabled { opacity: 0.4; cursor: default; }
 
   .tv-controls {
     display: flex;
@@ -138,10 +292,15 @@ const pageCSS = `
   }
   .tv-search:focus { border-color: var(--green-mid); }
 
-  .tv-transcript-col {
+  /* ---- Tab panels ---- */
+  .tv-panel { display: none; }
+  .tv-panel.active { display: block; }
+
+  .tv-transcript-panel {
     border: 1px solid var(--rule-light);
-    border-radius: 6px;
+    border-radius: 0 0 6px 6px;
     background: #fff;
+    border-top: none;
   }
 
   .tv-utterance {
@@ -193,6 +352,147 @@ const pageCSS = `
     border-radius: 2px;
   }
 
+  /* ---- Agenda panel ---- */
+  .tv-agenda-panel {
+    border: 1px solid var(--rule-light);
+    border-radius: 0 0 6px 6px;
+    background: #fff;
+    border-top: none;
+    padding: 0.25rem 0;
+  }
+
+  .tv-clickable { cursor: pointer; }
+  .tv-clickable:hover { background: var(--green-wash); }
+
+  .tv-agenda-section {
+    padding: 0.6rem 0.75rem 0.3rem;
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--green-deep);
+    display: flex;
+    gap: 0.5rem;
+    align-items: baseline;
+    border-top: 1px solid var(--rule-light);
+  }
+  .tv-agenda-section:first-child { border-top: none; }
+  .tv-agenda-section.active { background: #eef6eb; }
+
+  .tv-agenda-item {
+    padding: 0.35rem 0.75rem 0.35rem 1.5rem;
+    font-family: 'Newsreader', serif;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    display: flex;
+    gap: 0.5rem;
+    align-items: baseline;
+    transition: background 0.15s;
+  }
+  .tv-agenda-item.active { background: #eef6eb; }
+
+  .tv-agenda-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--green-mid);
+    font-weight: 500;
+    flex: 0 0 2.5rem;
+  }
+
+  .tv-agenda-title { flex: 1; min-width: 0; }
+
+  .tv-agenda-type {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.55rem;
+    color: var(--text-muted);
+    background: var(--cream-dark);
+    padding: 0.05rem 0.3rem;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+
+  .tv-agenda-duration {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--text-muted);
+  }
+
+  .tv-agenda-atts {
+    padding: 0.1rem 0.75rem 0.3rem 3rem;
+  }
+
+  .tv-agenda-att {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--green-mid);
+    text-decoration: none;
+    display: block;
+    line-height: 1.6;
+  }
+  .tv-agenda-att:hover { text-decoration: underline; color: var(--green-deep); }
+
+  .tv-agenda-pc {
+    padding: 0.1rem 0.75rem 0.3rem 3rem;
+    border-left: 2px solid var(--cream-dark);
+    margin-left: 1.5rem;
+  }
+
+  .tv-agenda-pc-speaker {
+    font-size: 0.8rem;
+    line-height: 1.5;
+    padding: 0.15rem 0;
+  }
+
+  .tv-agenda-pc-name {
+    font-weight: 600;
+    color: var(--green-mid);
+  }
+
+  .tv-agenda-pc-summary {
+    color: var(--text-secondary);
+    font-size: 0.78rem;
+  }
+
+  /* ---- Minutes panel ---- */
+  .tv-minutes-panel {
+    border: 1px solid var(--rule-light);
+    border-radius: 0 0 6px 6px;
+    background: #fff;
+    border-top: none;
+    padding: 1rem;
+  }
+
+  .tv-minutes-info p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.75rem;
+  }
+
+  .tv-minutes-link {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--green-mid);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  .tv-minutes-link:hover { text-decoration: underline; }
+  .tv-minutes-link::before { content: '\\1F4C4 '; }
+
+  .tv-minutes-embed {
+    width: 100%;
+    height: 70vh;
+    border: 1px solid var(--rule-light);
+    border-radius: 4px;
+    margin-top: 0.5rem;
+  }
+
+  .tv-empty {
+    padding: 2rem;
+    text-align: center;
+    color: var(--text-muted);
+    font-style: italic;
+  }
+
   .tv-download {
     text-align: center;
     padding: 0.75rem;
@@ -210,6 +510,8 @@ const pageCSS = `
     .tv-utterance { gap: 0.3rem; }
     .tv-ts { flex: 0 0 2.8rem; font-size: 0.6rem; }
     .tv-speaker { max-width: 5rem; font-size: 0.6rem; }
+    .tv-agenda-item { padding-left: 0.75rem; }
+    .tv-tab { padding: 0.4rem 0.6rem; font-size: 0.65rem; }
   }
 `;
 
@@ -223,8 +525,12 @@ for (const m of data.meetings) {
 
   const transcriptUrl = `${R2_BASE}/transcripts/${m.date}.json`;
   const dateFormatted = formatDate(m.date);
-  const title = `Transcript — ${m.type}, ${dateFormatted}`;
-  const description = `Full diarized transcript of the RCSD ${m.type} on ${dateFormatted}. Speaker-identified, synced to video.`;
+  const title = `${m.type} — ${dateFormatted} — RCSD Board Meeting`;
+  const description = `Full diarized transcript, agenda, and minutes for the RCSD ${m.type} on ${dateFormatted}.`;
+
+  const hasMinutes = !!(m.minutes && (m.minutes.documents?.length > 0 || existsSync(resolve(ROOT, 'artifacts/minutes', `${m.date}-minutes.pdf`))));
+  const agendaHtml = buildAgendaHtml(m);
+  const minutesHtml = buildMinutesHtml(m);
 
   const html = `<!DOCTYPE html>
 <html lang="en">
@@ -246,8 +552,8 @@ ${siteNav({ activePage: 'meetings', lang: 'en' })}
     <div class="tv-meta">
       ${m.duration ? `${m.duration} &middot; ` : ''}
       <a href="https://www.youtube.com/watch?v=${m.youtube}" target="_blank" rel="noopener">YouTube</a>
-      ${m.simbli ? ` &middot; <a href="${escapeHtml(m.simbli)}" target="_blank" rel="noopener">Agenda</a>` : ''}
-      ${m.boarddocs ? ` &middot; <a href="${escapeHtml(m.boarddocs)}" target="_blank" rel="noopener">Agenda</a>` : ''}
+      ${m.simbli ? ` &middot; <a href="${escapeHtml(m.simbli)}" target="_blank" rel="noopener">Simbli</a>` : ''}
+      ${m.boarddocs ? ` &middot; <a href="${escapeHtml(m.boarddocs)}" target="_blank" rel="noopener">BoardDocs</a>` : ''}
     </div>
   </div>
 
@@ -256,14 +562,27 @@ ${siteNav({ activePage: 'meetings', lang: 'en' })}
       <div class="tv-video-wrap">
         <div id="yt-player"></div>
       </div>
-      <div class="tv-controls">
-        <button class="tv-btn active" id="btn-autoscroll" title="Auto-scroll transcript to current position">Auto-scroll</button>
+      <div class="tv-tabs">
+        <button class="tv-tab active" data-tab="transcript">Transcript</button>
+        <button class="tv-tab" data-tab="agenda">Agenda</button>
+        <button class="tv-tab" data-tab="minutes"${hasMinutes ? '' : ' disabled'}>Minutes</button>
+      </div>
+      <div class="tv-controls" id="transcript-controls">
+        <button class="tv-btn active" id="btn-autoscroll">Auto-scroll</button>
         <input class="tv-search" type="text" id="search-input" placeholder="Search transcript...">
       </div>
     </div>
 
-    <div class="tv-transcript-col" id="transcript-container">
+    <div class="tv-panel tv-transcript-panel active" id="panel-transcript">
       <div style="padding:1rem;color:var(--text-muted);font-style:italic">Loading transcript...</div>
+    </div>
+
+    <div class="tv-panel tv-agenda-panel" id="panel-agenda">
+      ${agendaHtml}
+    </div>
+
+    <div class="tv-panel tv-minutes-panel" id="panel-minutes">
+      ${minutesHtml}
     </div>
   </div>
 
@@ -284,6 +603,7 @@ ${siteFooter({ lang: 'en' })}
   var speakerMap = {};
   var autoScroll = true;
   var activeIdx = -1;
+  var activeTab = 'transcript';
 
   // Load YT IFrame API
   var tag = document.createElement('script');
@@ -297,6 +617,37 @@ ${siteFooter({ lang: 'en' })}
     });
   };
 
+  // ---- Tab switching ----
+  var tabs = document.querySelectorAll('.tv-tab');
+  var panels = document.querySelectorAll('.tv-panel');
+  var transcriptControls = document.getElementById('transcript-controls');
+
+  tabs.forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      if (tab.disabled) return;
+      activeTab = tab.dataset.tab;
+      tabs.forEach(function(t) { t.classList.toggle('active', t.dataset.tab === activeTab); });
+      panels.forEach(function(p) { p.classList.toggle('active', p.id === 'panel-' + activeTab); });
+      transcriptControls.style.display = activeTab === 'transcript' ? '' : 'none';
+    });
+  });
+
+  // ---- Seek helper ----
+  function seekTo(ms) {
+    if (player && player.seekTo) {
+      player.seekTo(ms / 1000, true);
+      player.playVideo();
+    }
+  }
+
+  // ---- Agenda click-to-seek ----
+  document.getElementById('panel-agenda').addEventListener('click', function(e) {
+    var el = e.target.closest('.tv-clickable');
+    if (!el || !el.dataset.start) return;
+    seekTo(parseInt(el.dataset.start));
+  });
+
+  // ---- Transcript ----
   function formatTime(ms) {
     var totalSec = Math.floor(ms / 1000);
     var h = Math.floor(totalSec / 3600);
@@ -316,17 +667,15 @@ ${siteFooter({ lang: 'en' })}
     return speakerColors[label.charCodeAt(0) % speakerColors.length];
   }
 
-  // Build transcript rows using safe DOM methods
   function renderTranscript() {
-    var container = document.getElementById('transcript-container');
-    container.textContent = ''; // clear
+    var container = document.getElementById('panel-transcript');
+    container.textContent = '';
 
     utterances.forEach(function(u, i) {
       var row = document.createElement('div');
       row.className = 'tv-utterance';
       row.dataset.idx = i;
       row.dataset.start = u.start;
-      row.dataset.end = u.end;
 
       var ts = document.createElement('span');
       ts.className = 'tv-ts';
@@ -349,19 +698,13 @@ ${siteFooter({ lang: 'en' })}
       container.appendChild(row);
     });
 
-    // Click to seek
     container.addEventListener('click', function(e) {
       var row = e.target.closest('.tv-utterance');
       if (!row) return;
-      var startMs = parseInt(row.dataset.start);
-      if (player && player.seekTo) {
-        player.seekTo(startMs / 1000, true);
-        player.playVideo();
-      }
+      seekTo(parseInt(row.dataset.start));
     });
   }
 
-  // Fetch transcript
   fetch(transcriptUrl)
     .then(function(r) { return r.json(); })
     .then(function(data) {
@@ -371,36 +714,65 @@ ${siteFooter({ lang: 'en' })}
       setInterval(syncHighlight, 250);
     })
     .catch(function() {
-      var c = document.getElementById('transcript-container');
+      var c = document.getElementById('panel-transcript');
       c.textContent = '';
       var msg = document.createElement('div');
-      msg.style.cssText = 'padding:1rem;color:var(--coral)';
+      msg.className = 'tv-empty';
       msg.textContent = 'Failed to load transcript.';
       c.appendChild(msg);
     });
 
+  // ---- Sync highlight (transcript + agenda) ----
+  var activeAgendaEl = null;
+
   function syncHighlight() {
     if (!player || !player.getCurrentTime) return;
     var currentMs = player.getCurrentTime() * 1000;
-    var newIdx = -1;
-    for (var i = utterances.length - 1; i >= 0; i--) {
-      if (utterances[i].start <= currentMs) { newIdx = i; break; }
+
+    // Transcript sync
+    if (activeTab === 'transcript') {
+      var newIdx = -1;
+      for (var i = utterances.length - 1; i >= 0; i--) {
+        if (utterances[i].start <= currentMs) { newIdx = i; break; }
+      }
+      if (newIdx !== activeIdx) {
+        activeIdx = newIdx;
+        var rows = document.querySelectorAll('.tv-utterance');
+        rows.forEach(function(r, i) { r.classList.toggle('active', i === activeIdx); });
+
+        if (autoScroll && activeIdx >= 0 && rows[activeIdx]) {
+          var rect = rows[activeIdx].getBoundingClientRect();
+          var videoCol = document.querySelector('.tv-video-col');
+          var stickyHeight = videoCol ? videoCol.offsetHeight : 0;
+          if (rect.top < stickyHeight + 20 || rect.bottom > window.innerHeight - 40) {
+            window.scrollTo({ top: rows[activeIdx].offsetTop - stickyHeight - 20, behavior: 'smooth' });
+          }
+        }
+      }
     }
-    if (newIdx === activeIdx) return;
-    activeIdx = newIdx;
 
-    var rows = document.querySelectorAll('.tv-utterance');
-    rows.forEach(function(r, i) {
-      r.classList.toggle('active', i === activeIdx);
-    });
-
-    if (autoScroll && activeIdx >= 0 && rows[activeIdx]) {
-      var rect = rows[activeIdx].getBoundingClientRect();
-      var videoCol = document.querySelector('.tv-video-col');
-      var stickyHeight = videoCol ? videoCol.offsetHeight : 0;
-      // Scroll so active row is just below the sticky video
-      if (rect.top < stickyHeight + 20 || rect.bottom > window.innerHeight - 40) {
-        window.scrollTo({ top: rows[activeIdx].offsetTop - stickyHeight - 20, behavior: 'smooth' });
+    // Agenda sync — highlight current agenda item
+    if (activeTab === 'agenda') {
+      var agendaItems = document.querySelectorAll('#panel-agenda [data-start]');
+      var bestEl = null;
+      agendaItems.forEach(function(el) {
+        var start = parseInt(el.dataset.start);
+        if (start <= currentMs) bestEl = el;
+      });
+      if (bestEl !== activeAgendaEl) {
+        if (activeAgendaEl) activeAgendaEl.classList.remove('active');
+        activeAgendaEl = bestEl;
+        if (activeAgendaEl) {
+          activeAgendaEl.classList.add('active');
+          if (autoScroll) {
+            var rect = activeAgendaEl.getBoundingClientRect();
+            var videoCol = document.querySelector('.tv-video-col');
+            var stickyHeight = videoCol ? videoCol.offsetHeight : 0;
+            if (rect.top < stickyHeight + 20 || rect.bottom > window.innerHeight - 40) {
+              window.scrollTo({ top: activeAgendaEl.offsetTop - stickyHeight - 20, behavior: 'smooth' });
+            }
+          }
+        }
       }
     }
   }
@@ -411,10 +783,9 @@ ${siteFooter({ lang: 'en' })}
     this.classList.toggle('active', autoScroll);
   });
 
-  // Search with safe DOM highlighting
+  // Search
   var searchInput = document.getElementById('search-input');
   var searchTimeout = null;
-
   searchInput.addEventListener('input', function() {
     clearTimeout(searchTimeout);
     searchTimeout = setTimeout(doSearch, 200);
@@ -423,15 +794,12 @@ ${siteFooter({ lang: 'en' })}
   function doSearch() {
     var term = searchInput.value.trim().toLowerCase();
     var rows = document.querySelectorAll('.tv-utterance');
-
     rows.forEach(function(row, i) {
       var textEl = row.querySelector('.tv-text');
       var original = utterances[i].text;
-
       if (term && original.toLowerCase().indexOf(term) >= 0) {
         row.classList.add('search-match');
         row.style.display = '';
-        // Highlight matches using safe DOM methods
         textEl.textContent = '';
         var remaining = original;
         var lc = remaining.toLowerCase();
@@ -462,4 +830,4 @@ ${siteFooter({ lang: 'en' })}
   generated++;
 }
 
-console.log(`Generated ${generated} transcript viewer pages`);
+console.log(`Generated ${generated} meeting viewer pages`);

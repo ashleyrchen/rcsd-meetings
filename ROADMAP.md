@@ -124,8 +124,9 @@ The calendar widget and meeting pages should reflect which state each meeting is
 - [x] Diarized speaker identification in transcripts (AAI speaker diarization + LLM speaker-to-name mapping)
 - [x] Individual public comment speaker extraction with names, timestamps, and summaries
 - [x] Formal agenda structure with hierarchical item labels (e.g., 7.1, 11.3) from board memos and BoardDocs
-- [ ] Web transcript viewer — scrollable diarized transcript alongside embedded YouTube player, synced to playback position
-- [ ] Downloadable transcript JSON per meeting
+- [x] Web transcript viewer — full-width sticky YouTube player with scrollable diarized transcript, bidirectional sync, search with highlighting
+- [x] Downloadable transcript JSON per meeting — slim format on R2 at transcripts/{date}.json
+- [ ] Unified meeting page with tab selector: Transcript / Agenda / Minutes — all synced to video playback (click agenda item 9.3 → scrub video to that timestamp; agenda highlights current item during playback)
 - [ ] Spanish translation of transcripts
 
 ## Board Meetings — Detailed summaries from transcripts

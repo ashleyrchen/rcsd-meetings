@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="index, follow">
-<title>Transcript — Board Meeting, June 15, 2022</title>
-<meta name="description" content="Full diarized transcript of the RCSD Board Meeting on June 15, 2022. Speaker-identified, synced to video.">
+<title>Board Meeting — June 15, 2022 — RCSD Board Meeting</title>
+<meta name="description" content="Full diarized transcript, agenda, and minutes for the RCSD Board Meeting on June 15, 2022.">
 <meta name="theme-color" content="#1a3a2a">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
@@ -14,8 +14,8 @@
 <link rel="manifest" href="/site.webmanifest">
 <link rel="canonical" href="https://rcsd.info/meetings/2022-06-15/">
 
-<meta property="og:title" content="Transcript — Board Meeting, June 15, 2022">
-<meta property="og:description" content="Full diarized transcript of the RCSD Board Meeting on June 15, 2022. Speaker-identified, synced to video.">
+<meta property="og:title" content="Board Meeting — June 15, 2022 — RCSD Board Meeting">
+<meta property="og:description" content="Full diarized transcript, agenda, and minutes for the RCSD Board Meeting on June 15, 2022.">
 <meta property="og:url" content="https://rcsd.info/meetings/2022-06-15/">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://rcsd.info/og-1200.jpg">
@@ -25,8 +25,8 @@
 <meta property="og:site_name" content="RCSD Open Data">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://rcsd.info/og-1200.jpg">
-<meta name="twitter:title" content="Transcript — Board Meeting, June 15, 2022">
-<meta name="twitter:description" content="Full diarized transcript of the RCSD Board Meeting on June 15, 2022. Speaker-identified, synced to video.">
+<meta name="twitter:title" content="Board Meeting — June 15, 2022 — RCSD Board Meeting">
+<meta name="twitter:description" content="Full diarized transcript, agenda, and minutes for the RCSD Board Meeting on June 15, 2022.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -199,7 +199,7 @@
   .tv-main {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0;
   }
 
   .tv-video-col {
@@ -225,6 +225,32 @@
     width: 100%; height: 100%;
     border: none;
   }
+
+  /* ---- Tab bar ---- */
+  .tv-tabs {
+    display: flex;
+    gap: 0;
+    border-bottom: 2px solid var(--rule);
+    margin-top: 0.5rem;
+  }
+
+  .tv-tab {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border: none;
+    background: none;
+    color: var(--text-muted);
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .tv-tab:hover { color: var(--text); }
+  .tv-tab.active { color: var(--green-deep); border-bottom-color: var(--green-mid); }
+  .tv-tab:disabled { opacity: 0.4; cursor: default; }
 
   .tv-controls {
     display: flex;
@@ -259,10 +285,15 @@
   }
   .tv-search:focus { border-color: var(--green-mid); }
 
-  .tv-transcript-col {
+  /* ---- Tab panels ---- */
+  .tv-panel { display: none; }
+  .tv-panel.active { display: block; }
+
+  .tv-transcript-panel {
     border: 1px solid var(--rule-light);
-    border-radius: 6px;
+    border-radius: 0 0 6px 6px;
     background: #fff;
+    border-top: none;
   }
 
   .tv-utterance {
@@ -314,6 +345,147 @@
     border-radius: 2px;
   }
 
+  /* ---- Agenda panel ---- */
+  .tv-agenda-panel {
+    border: 1px solid var(--rule-light);
+    border-radius: 0 0 6px 6px;
+    background: #fff;
+    border-top: none;
+    padding: 0.25rem 0;
+  }
+
+  .tv-clickable { cursor: pointer; }
+  .tv-clickable:hover { background: var(--green-wash); }
+
+  .tv-agenda-section {
+    padding: 0.6rem 0.75rem 0.3rem;
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--green-deep);
+    display: flex;
+    gap: 0.5rem;
+    align-items: baseline;
+    border-top: 1px solid var(--rule-light);
+  }
+  .tv-agenda-section:first-child { border-top: none; }
+  .tv-agenda-section.active { background: #eef6eb; }
+
+  .tv-agenda-item {
+    padding: 0.35rem 0.75rem 0.35rem 1.5rem;
+    font-family: 'Newsreader', serif;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    display: flex;
+    gap: 0.5rem;
+    align-items: baseline;
+    transition: background 0.15s;
+  }
+  .tv-agenda-item.active { background: #eef6eb; }
+
+  .tv-agenda-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--green-mid);
+    font-weight: 500;
+    flex: 0 0 2.5rem;
+  }
+
+  .tv-agenda-title { flex: 1; min-width: 0; }
+
+  .tv-agenda-type {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.55rem;
+    color: var(--text-muted);
+    background: var(--cream-dark);
+    padding: 0.05rem 0.3rem;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+
+  .tv-agenda-duration {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--text-muted);
+  }
+
+  .tv-agenda-atts {
+    padding: 0.1rem 0.75rem 0.3rem 3rem;
+  }
+
+  .tv-agenda-att {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--green-mid);
+    text-decoration: none;
+    display: block;
+    line-height: 1.6;
+  }
+  .tv-agenda-att:hover { text-decoration: underline; color: var(--green-deep); }
+
+  .tv-agenda-pc {
+    padding: 0.1rem 0.75rem 0.3rem 3rem;
+    border-left: 2px solid var(--cream-dark);
+    margin-left: 1.5rem;
+  }
+
+  .tv-agenda-pc-speaker {
+    font-size: 0.8rem;
+    line-height: 1.5;
+    padding: 0.15rem 0;
+  }
+
+  .tv-agenda-pc-name {
+    font-weight: 600;
+    color: var(--green-mid);
+  }
+
+  .tv-agenda-pc-summary {
+    color: var(--text-secondary);
+    font-size: 0.78rem;
+  }
+
+  /* ---- Minutes panel ---- */
+  .tv-minutes-panel {
+    border: 1px solid var(--rule-light);
+    border-radius: 0 0 6px 6px;
+    background: #fff;
+    border-top: none;
+    padding: 1rem;
+  }
+
+  .tv-minutes-info p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.75rem;
+  }
+
+  .tv-minutes-link {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--green-mid);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  .tv-minutes-link:hover { text-decoration: underline; }
+  .tv-minutes-link::before { content: '\1F4C4 '; }
+
+  .tv-minutes-embed {
+    width: 100%;
+    height: 70vh;
+    border: 1px solid var(--rule-light);
+    border-radius: 4px;
+    margin-top: 0.5rem;
+  }
+
+  .tv-empty {
+    padding: 2rem;
+    text-align: center;
+    color: var(--text-muted);
+    font-style: italic;
+  }
+
   .tv-download {
     text-align: center;
     padding: 0.75rem;
@@ -331,6 +503,8 @@
     .tv-utterance { gap: 0.3rem; }
     .tv-ts { flex: 0 0 2.8rem; font-size: 0.6rem; }
     .tv-speaker { max-width: 5rem; font-size: 0.6rem; }
+    .tv-agenda-item { padding-left: 0.75rem; }
+    .tv-tab { padding: 0.4rem 0.6rem; font-size: 0.65rem; }
   }
 
 </style>
@@ -357,7 +531,7 @@
       3h 29m &middot; 
       <a href="https://www.youtube.com/watch?v=voWg7JVoYU4" target="_blank" rel="noopener">YouTube</a>
       
-       &middot; <a href="https://go.boarddocs.com/ca/redwood/Board.nsf/goto?open&amp;id=CETRFZ6DD9CE" target="_blank" rel="noopener">Agenda</a>
+       &middot; <a href="https://go.boarddocs.com/ca/redwood/Board.nsf/goto?open&amp;id=CETRFZ6DD9CE" target="_blank" rel="noopener">BoardDocs</a>
     </div>
   </div>
 
@@ -366,14 +540,27 @@
       <div class="tv-video-wrap">
         <div id="yt-player"></div>
       </div>
-      <div class="tv-controls">
-        <button class="tv-btn active" id="btn-autoscroll" title="Auto-scroll transcript to current position">Auto-scroll</button>
+      <div class="tv-tabs">
+        <button class="tv-tab active" data-tab="transcript">Transcript</button>
+        <button class="tv-tab" data-tab="agenda">Agenda</button>
+        <button class="tv-tab" data-tab="minutes" disabled>Minutes</button>
+      </div>
+      <div class="tv-controls" id="transcript-controls">
+        <button class="tv-btn active" id="btn-autoscroll">Auto-scroll</button>
         <input class="tv-search" type="text" id="search-input" placeholder="Search transcript...">
       </div>
     </div>
 
-    <div class="tv-transcript-col" id="transcript-container">
+    <div class="tv-panel tv-transcript-panel active" id="panel-transcript">
       <div style="padding:1rem;color:var(--text-muted);font-style:italic">Loading transcript...</div>
+    </div>
+
+    <div class="tv-panel tv-agenda-panel" id="panel-agenda">
+      <div class="tv-agenda-section tv-clickable" data-start="79000"><span class="tv-agenda-label">1</span><span class="tv-ts">1:19</span><span class="tv-agenda-title">Call to Order</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">1.1</span><span class="tv-agenda-title">Roll Call</span><span class="tv-agenda-type">Procedural</span></div><div class="tv-agenda-section"><span class="tv-agenda-label">2</span><span class="tv-agenda-title">Oral Communication on Closed Session Items Only</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">2.1</span><span class="tv-agenda-title">If you have public comment related to a Closed Session item, please post it on: (https://docs.google.com/forms/d/e/1FAIpQLSexN3rAtNYJrhCjKT0s9AG__Eq0-_iAUFPI6ID3Mo0Jn8yeGA/viewform?usp=sf_link) prior to the Closed Session Meeting or immediately upon the meeting opening.</span></div><div class="tv-agenda-section"><span class="tv-agenda-label">3</span><span class="tv-agenda-title">Closed Session – 5:00 p.m.</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">3.1</span><span class="tv-agenda-title">Conference with Real Property Negotiators (Gov. Code, § 54956.8) Property: 750 Bradford St, Redwood City, CA 94063 Agency Negotiators: John Baker, Superintendent, Peter Ingram, Consultant and Clarissa Canady, Legal Counsel Negotiating parties: Redwood City School District and The Sobrato Organization Under Negotiation: Price and Terms of Payment of Property Exchange Agreement</span></div><div class="tv-agenda-section tv-clickable" data-start="79000"><span class="tv-agenda-label">4</span><span class="tv-ts">1:19</span><span class="tv-agenda-title">Reconvene to Regular Session at Approximately 6:00 p.m.</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">4.1</span><span class="tv-agenda-title">Roll Call</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">4.2</span><span class="tv-agenda-title">Report Out on Closed Session from June 15, 2022</span></div><div class="tv-agenda-section tv-clickable" data-start="123000"><span class="tv-agenda-label">5</span><span class="tv-ts">2:03</span><span class="tv-agenda-title">Welcome</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">5.1</span><span class="tv-agenda-title">Welcome by the School Board President, María Díaz-Slocum</span><span class="tv-agenda-type">Procedural</span></div><div class="tv-agenda-section tv-clickable" data-start="157000"><span class="tv-agenda-label">6</span><span class="tv-ts">2:37</span><span class="tv-agenda-title">Changes to the Agenda</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">6.1</span><span class="tv-agenda-title">Additions, Deletions or Modifications to the Agenda</span><span class="tv-agenda-type">Discussion</span></div><div class="tv-agenda-section tv-clickable" data-start="299000"><span class="tv-agenda-label">7</span><span class="tv-ts">4:59</span><span class="tv-agenda-title">Approval of Agenda</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">7.1</span><span class="tv-agenda-title">Approval of Agenda</span><span class="tv-agenda-type">Action</span></div><div class="tv-agenda-section tv-clickable" data-start="322000"><span class="tv-agenda-label">8</span><span class="tv-ts">5:22</span><span class="tv-agenda-title">Oral Communication</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">8.1</span><span class="tv-agenda-title">If you have public comment related to a Regular Board Meeting item, please post it on the links available under Public Content prior to the Regular Board Meeting or immediately upon the meeting opening.</span><span class="tv-agenda-type">Information</span></div><div class="tv-agenda-section tv-clickable" data-start="460000"><span class="tv-agenda-label">9</span><span class="tv-ts">7:40</span><span class="tv-agenda-title">School/Community Reports</span></div><div class="tv-agenda-item tv-clickable" data-start="473000"><span class="tv-agenda-label">9.1</span><span class="tv-ts">7:53</span><span class="tv-agenda-title">Presentation and Discussion on the General Obligation (GO) Bond Next Steps</span><span class="tv-agenda-type">Discussion</span></div><div class="tv-agenda-pc"><div class="tv-agenda-pc-speaker tv-clickable" data-start="3581000"><span class="tv-agenda-pc-name">Jessica Shade</span> (1min)<span class="tv-agenda-pc-summary"> &mdash; Voiced support for the new school bond, called for central kitchen language to be included, and praised the district's efforts.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="3647000"><span class="tv-agenda-pc-name">Katerina Schoenbach</span> (1min)<span class="tv-agenda-pc-summary"> &mdash; Speaker was called but unable to unmute and did not provide comment.</span></div></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CF8LFY5466BB/$file/RedwoodCitySD1%20Bond%20Measure%20Board%20Presentation%206-15-22%202.pdf" target="_blank" rel="noopener">RedwoodCitySD1 Bond Measure Board Presentation 6-15-22 2.pdf</a></div><div class="tv-agenda-item tv-clickable" data-start="3978000"><span class="tv-agenda-label">9.2</span><span class="tv-ts">1:06:18</span><span class="tv-agenda-title">Recommended Options to the School Board Regarding North Star Academy (NSA)</span><span class="tv-agenda-type">Discussion</span></div><div class="tv-agenda-pc"><div class="tv-agenda-pc-speaker tv-clickable" data-start="5455000"><span class="tv-agenda-pc-name">Matt Schwal</span> (2min)<span class="tv-agenda-pc-summary"> &mdash; Argued the NSA Forward Committee was negatively framed and urged the board to reframe the discussion positively, celebrating North Star's success rather than proposing changes.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="5551000"><span class="tv-agenda-pc-name">Cameron Hoffman</span> (5min)<span class="tv-agenda-pc-summary"> &mdash; Argued the proposals are being rushed and lack evidence, compared North Star favorably to U46 in Illinois, and proposed a district-wide talent development program called 'SHINE' to serve younger learners rather than restructuring North Star.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="5877000"><span class="tv-agenda-pc-name">Tony Webel</span> (2min)<span class="tv-agenda-pc-summary"> &mdash; Shared his experience as a committee member and parent of students at both Roosevelt and North Star, and argued that board bylaws require keeping student learning as the primary focus, finding no data justifying grade configuration or location changes.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="5983000"><span class="tv-agenda-pc-name">Diana Fu</span> (2min)<span class="tv-agenda-pc-summary"> &mdash; Drew on her experience helping start the MI program to argue the district should provide more choices and improve other schools rather than restricting a choice program like North Star.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="6098000"><span class="tv-agenda-pc-name">Allie Gilmore</span> (1min)<span class="tv-agenda-pc-summary"> &mdash; Speaker was called but did not respond or unmute.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="6164000"><span class="tv-agenda-pc-name">Wenjing Sheng</span> (1min)<span class="tv-agenda-pc-summary"> &mdash; Speaker was called but was unable to unmute and did not provide comment.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="6204000"><span class="tv-agenda-pc-name">Lone Hin</span> (1min)<span class="tv-agenda-pc-summary"> &mdash; Described her first-grader's unmet academic needs at their neighborhood school and argued that scaling back North Star would leave more students without appropriate challenge.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="6303000"><span class="tv-agenda-pc-name">Megan O'Neill</span> (2min)<span class="tv-agenda-pc-summary"> &mdash; Argued that options A through C would serve fewer students and contradict the stated goal of serving more students more effectively, and that neighborhood schools must first be ready to serve gifted learners before any North Star grades are cut.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="6422000"><span class="tv-agenda-pc-name">Matt Collier</span> (1min)<span class="tv-agenda-pc-summary"> &mdash; As a parent of young children and former magnet school student himself, urged the board to preserve K–8 North Star as a standalone school and to consider Ms. Hoffman's alternative proposal.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="6480000"><span class="tv-agenda-pc-name">Anthony Low</span> (1min)<span class="tv-agenda-pc-summary"> &mdash; Stated that three of the four options effectively close half of North Star, called all options deficient, and said his family would likely leave the district if a 6–8 option were chosen.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="6564000"><span class="tv-agenda-pc-name">Andrew Hoffman</span> (2min)<span class="tv-agenda-pc-summary"> &mdash; Argued the recommendations target North Star rather than addressing underperforming schools, warned the options would negatively impact North Star's mission, and urged the board not to adopt incomplete proposals.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="6668000"><span class="tv-agenda-pc-name">Heidi Wall</span> (2min)<span class="tv-agenda-pc-summary"> &mdash; Criticized the proposals as short-sighted and premature, cited district-wide problems like declining test scores and teacher retention, and called for using North Star's proven methods to improve other schools rather than dismantling it.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="6781000"><span class="tv-agenda-pc-name">Susan Bouchard</span> (2min)<span class="tv-agenda-pc-summary"> &mdash; Argued that capping the number of qualified students allowed to transfer to NSA from neighborhood schools would increase the perception of elitism and create more divisiveness, and asked the board to reject and rework all proposals.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="6955000"><span class="tv-agenda-pc-name">Costas Dimitropoulos</span> (2min)<span class="tv-agenda-pc-summary"> &mdash; Asked for empirical evidence supporting any proposed changes and questioned whether there is data proving that altering a high-achieving school like North Star would improve outcomes at lower-performing schools.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="7069000"><span class="tv-agenda-pc-name">Kelly McCarthy</span> (1min)<span class="tv-agenda-pc-summary"> &mdash; Questioned whether the community pulse had been taken since COVID, called the effort a waste of resources given widespread learning loss, and urged the board to instead use resources to improve neighborhood schools.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="7166000"><span class="tv-agenda-pc-name">Casey Wright</span> (2min)<span class="tv-agenda-pc-summary"> &mdash; Called several options 'casually cruel,' warned the board against falling for the sunk cost fallacy, and implored them to postpone a decision and demand better-researched options.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="7279000"><span class="tv-agenda-pc-name">Catherine Stewart</span> (2min)<span class="tv-agenda-pc-summary"> &mdash; Observed that virtually every prior speaker opposed changing or dismantling North Star and argued that the general sentiment—'if it ain't broke, don't fix it'—should guide the board.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="7443000"><span class="tv-agenda-pc-name">Gautam Dutta</span> (1min)<span class="tv-agenda-pc-summary"> &mdash; As a local attorney, Asian American civic leader, and North Star parent, echoed 'if it ain't broke, don't fix it,' and asked the board to reject all four options and instead improve support and resources for all schools.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="7532000"><span class="tv-agenda-pc-name">Jing Zhu</span> (1min)<span class="tv-agenda-pc-summary"> &mdash; Warned that the proposed changes would create many unhappy parents who become reliable voters against the board, and urged the board to think carefully about the disruption these options would cause to North Star families' daily lives.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="7622000"><span class="tv-agenda-pc-name">Kirsten McMullen</span> (2min)<span class="tv-agenda-pc-summary"> &mdash; Called the recommendations insufficient and lacking an evidence-based approach, noting they mainly solve the third-grade attrition issue while creating new problems, and urged deeper research and cost-benefit analysis.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="7721000"><span class="tv-agenda-pc-name">Bara Altaba</span> (1min)<span class="tv-agenda-pc-summary"> &mdash; As a parent of current NSA students who transferred from private school because of North Star, urged the board not to break a nationally recognized school and to instead bring other schools up to North Star's level.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="7806000"><span class="tv-agenda-pc-name">Michelle Fogarty</span> (2min)<span class="tv-agenda-pc-summary"> &mdash; Argued the proposals take direct aim at one successful school without solving district-wide shortcomings, criticized use of outdated data from 2018, and urged the board to conduct new research before implementing any changes.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="7897000"><span class="tv-agenda-pc-name">Katie Goetz</span> (1min)<span class="tv-agenda-pc-summary"> &mdash; As a North Star Forward Committee member, encouraged the board to consider and move forward with the proposal to make North Star a 6–8 school on the Bayside, stating it best addresses the committee's three charges.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="7957000"><span class="tv-agenda-pc-name">Christopher Bouchard</span> (2min)<span class="tv-agenda-pc-summary"> &mdash; Asked the board to reject all four proposals and pause major changes, citing a flawed and biased committee process built on four-year-old data, and called for a reset with current community input.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="8067000"><span class="tv-agenda-pc-name">David Wright</span> (1min)<span class="tv-agenda-pc-summary"> &mdash; Implored the board to defer the decision and request a revised set of options aligned to the committee's stated goals, warning against committing to a process not in students' best interests.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="8157000"><span class="tv-agenda-pc-name">Mike Beebe</span> (2min)<span class="tv-agenda-pc-summary"> &mdash; Summarized three broadly supported elements from Dr. Baker's plans (outreach, test prep access, logistics like transportation), suggested spreading entrance grades across third through fifth to reduce the third-grade attrition pinch, and emphasized district-wide learning loss as the true priority.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="8275000"><span class="tv-agenda-pc-name">Meredith Park</span> (2min)<span class="tv-agenda-pc-summary"> &mdash; Raised traffic concerns near North Star, warned against adding K–2 at the Duane location, and suggested exploring a neighborhood boundary middle school with an IB program on Duane as an alternative approach.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="8369000"><span class="tv-agenda-pc-name">Nathan Schmidt</span> (1min)<span class="tv-agenda-pc-summary"> &mdash; Using a 'ten boats' analogy, argued the board's duty is to save the underperforming schools rather than compromising the one that is succeeding.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="8426000"><span class="tv-agenda-pc-name">Mohamed Tabrizi</span> (1min)<span class="tv-agenda-pc-summary"> &mdash; Ceded time to Cameron Hoffman and added that spending district resources on this process instead of lower-income students' education is unacceptable, urging trustees to reject all options and use scientific data.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="8518000"><span class="tv-agenda-pc-name">Lily Melton</span> (1min)<span class="tv-agenda-pc-summary"> &mdash; As an Orion parent, urged the board to move forward with bold structural changes and noted that a large community of parents who want district-wide improvement supports significant change even if not loudly represented tonight.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="8600000"><span class="tv-agenda-pc-name">Beatrice Chan</span> (1min)<span class="tv-agenda-pc-summary"> &mdash; Called the options deeply flawed, asked the board to instead focus on introducing enrichment programs in community schools and helping current students meet grade-level expectations rather than dismantling North Star.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="8842000"><span class="tv-agenda-pc-name">Maribel Ng</span> (2min)<span class="tv-agenda-pc-summary"> &mdash; Shared her child's struggles before finding North Star, emphasized that students who go there have often struggled elsewhere and need an environment that understands them, and suggested spreading that philosophy across all Redwood City schools.</span></div></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CF8LRT55EE51/$file/NSA%20Forward%20Committee%20Feedback.%20Names%20Redacted.pdf" target="_blank" rel="noopener">NSA Forward Committee Feedback. Names Redacted.pdf</a><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CFF2BR016C30/$file/North%20Star%20Forward_%20Board%20Recommendation%20(1).pdf" target="_blank" rel="noopener">North Star Forward_ Board Recommendation (1).pdf</a></div><div class="tv-agenda-section tv-clickable" data-start="331000"><span class="tv-agenda-label">10</span><span class="tv-ts">5:31</span><span class="tv-agenda-title">Bond Program Consent Items</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">10.1</span><span class="tv-agenda-title">Approval of Consent Items</span><span class="tv-agenda-type">Action</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">10.2</span><span class="tv-agenda-title">Approval of Concrete Masonry Unit (CMU) Wall Adjustment Proposal for Orion Alternative School (Formerly John Gill) with Boeger</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CF6MUU5CB268/$file/220607%20John%20Gill%20CMU%20Veneer%20Fix%20Proposal%20with%20Boeger%20-%20Signed%20by%20DD.pdf" target="_blank" rel="noopener">220607 John Gill CMU Veneer Fix Proposal with Boeger - Signed by DD.pdf</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">10.3</span><span class="tv-agenda-title">Approval of Measure T Bond Program Tracking List of Items Under $20k</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CF6MHM5B4114/$file/220615%20Item's%2020k%20and%20Under%20FY%2021-22.pdf" target="_blank" rel="noopener">220615 Item's 20k and Under FY 21-22.pdf</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">10.4</span><span class="tv-agenda-title">Approval of New Buildings, Modernization and Sitework Project Bid, Package A, Change Order #7 for Garfield Community School with Duran and Venables, and Adoption of Futility Resolution 37</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CF77L71A17D1/$file/220426%20RCSD%20GA%20Bid%20Package%20A%20CO%20No.%207%20Cover%20Sheet%20-%20Frontload%20Packet%20(%2437%2C890.87).pdf" target="_blank" rel="noopener">220426 RCSD GA Bid Package A CO No. 7 Cover Sheet - Frontload Packet ($37,890.87).pdf</a><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CF77LA1A1BD9/$file/220615%20Garfield%20Change%20Order%20Futility%20Resolution%20%2337%20with%20D%26V.pdf" target="_blank" rel="noopener">220615 Garfield Change Order Futility Resolution #37 with D&amp;V.pdf</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">10.5</span><span class="tv-agenda-title">Approval of New Buildings, Modernization and Sitework Project Bid, Package J, Change Order #4 for Taft Community School with PARC Environmental</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CF8SGE6DFE30/$file/220606%20RCSD%20TA%20Bid%20Package%20J%20CO%20No.%204%20Cover%20Sheet%20-%20Frontload%20Packet.pdf" target="_blank" rel="noopener">220606 RCSD TA Bid Package J CO No. 4 Cover Sheet - Frontload Packet.pdf</a></div><div class="tv-agenda-section tv-clickable" data-start="380000"><span class="tv-agenda-label">11</span><span class="tv-ts">6:20</span><span class="tv-agenda-title">Bond Program Action Items</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">11.1</span><span class="tv-agenda-title">Adoption of Resolution 39, Resolution of Intent to Convey a Public Utility Easement to PG&amp;E and Calling a Public Hearing in Connection Therewith</span><span class="tv-agenda-type">Action</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CF8NG75DCDE8/$file/6.15.2022%20Resolution%20of%20Intent%20to%20Convey%20Easement%20Deed%20for%20Public%20Utilities.pdf" target="_blank" rel="noopener">6.15.2022 Resolution of Intent to Convey Easement Deed for Public Utilities.pdf</a></div><div class="tv-agenda-section tv-clickable" data-start="416000"><span class="tv-agenda-label">12</span><span class="tv-ts">6:56</span><span class="tv-agenda-title">Consent Items</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">12.1</span><span class="tv-agenda-title">Approval of Consent Items</span><span class="tv-agenda-type">Action</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">12.2</span><span class="tv-agenda-title">Ratification of Warrant Register, May 1, 2022 - May 31, 2022</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CF5NMP5F9386/$file/Warrant%20Register%20May%202022.pdf" target="_blank" rel="noopener">Warrant Register May 2022.pdf</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">12.3</span><span class="tv-agenda-title">Approval of Agreement between Redwood City School District and Dannis, Woliver &amp; Kelley for Fiscal Years 2022-23 and 2023-24</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CF5TJ5778825/$file/DWK%20agreement%202022-24.pdf" target="_blank" rel="noopener">DWK agreement 2022-24.pdf</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">12.4</span><span class="tv-agenda-title">Approval of Agreement to Provide Meal Services to Connect Community Charter School and KIPP Excelencia Community Prep Charter School for Fiscal Year 2022-23</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CF6SLX7343CE/$file/Agreement%20to%20Provide%20Meals%20to%20Connect%20Charter%2022-23%20SY.pdf" target="_blank" rel="noopener">Agreement to Provide Meals to Connect Charter 22-23 SY.pdf</a><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CF6SLZ73451D/$file/Agreement%20to%20Provide%20Meals%20to%20KIPP%20Charter%2022-23%20SY.pdf" target="_blank" rel="noopener">Agreement to Provide Meals to KIPP Charter 22-23 SY.pdf</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">12.5</span><span class="tv-agenda-title">Approval of Agreement between Redwood City School District and Maria Lucila Echeverria-Bustios for CDC Child, Family and Community Liaison Services for Fiscal Year 2022-23</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CFCA2D258CA3/$file/Echeverria%20Bustios%20Agreement%2022.23.pdf" target="_blank" rel="noopener">Echeverria Bustios Agreement 22.23.pdf</a><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CF7MLB5A4622/$file/Echeverria%20Bustios%20Exhibits%20A%20%26%20B.pdf" target="_blank" rel="noopener">Echeverria Bustios Exhibits A &amp; B.pdf</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">12.6</span><span class="tv-agenda-title">Approval of Agreement between Redwood City School District and Danielle Webb for CDC Education Specialist Services for Fiscal Year 2022-23</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CF7MGL592165/$file/Webb%20Agreement%202022.23.pdf" target="_blank" rel="noopener">Webb Agreement 2022.23.pdf</a><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CF7ML35A278E/$file/Webb%20agreement%20_%20Exhibits%20A%20%26%20B.pdf" target="_blank" rel="noopener">Webb agreement _ Exhibits A &amp; B.pdf</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">12.7</span><span class="tv-agenda-title">Approval of Agreement between Redwood City School District and Effective School Solutions, LLC (ESS) Program for Mental Health Services for the 2022-23 School Year</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CF6TQM787E3A/$file/ESS%20Agreement%202022.23.pdf" target="_blank" rel="noopener">ESS Agreement 2022.23.pdf</a></div><div class="tv-agenda-section"><span class="tv-agenda-label">13</span><span class="tv-agenda-title">Action items</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">13.1</span><span class="tv-agenda-title">Second Reading and Approval of Board Policy 1230 - School-Connected Organizations</span><span class="tv-agenda-type">Action</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CF5UK87C643A/$file/BP_AR%201230%20School%20Connected%20Organizations.pdf" target="_blank" rel="noopener">BP_AR 1230 School Connected Organizations.pdf</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">13.2</span><span class="tv-agenda-title">Second Reading and Approval of Board Policy 4136/4236/4336 - Non-School Employment</span><span class="tv-agenda-type">Action</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CF5UN37CCED7/$file/BP%204136_4236_4336%20Nonschool%20Employment.pdf" target="_blank" rel="noopener">BP 4136_4236_4336 Nonschool Employment.pdf</a><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CF5UN57CD0C1/$file/BP%204137%20-%20Tutoring.pdf" target="_blank" rel="noopener">BP 4137 - Tutoring.pdf</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">13.3</span><span class="tv-agenda-title">Second Reading and Approval of Board Policy 4141.6/4241.6 - Concerted Action/Work Stoppage</span><span class="tv-agenda-type">Action</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CF5UVC7DDF0C/$file/BP_AR%204141.6_4241.6%20Concerted%20Action_Work%20Stoppage.pdf" target="_blank" rel="noopener">BP_AR 4141.6_4241.6 Concerted Action_Work Stoppage.pdf</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">13.4</span><span class="tv-agenda-title">Second Reading and Approval of Board Policy 6173 - Education for Homeless Children</span><span class="tv-agenda-type">Action</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CF5UY57E47A0/$file/BP_AR_E%206173%20Education%20for%20Homeless%20Children.pdf" target="_blank" rel="noopener">BP_AR_E 6173 Education for Homeless Children.pdf</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">13.5</span><span class="tv-agenda-title">Second Reading and Approval of Board Bylaw 9322 - Agenda/Meeting Materials</span><span class="tv-agenda-type">Action</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CF5V277E950E/$file/BB%209322%20-%20Agenda%20Meeting_Materials.pdf" target="_blank" rel="noopener">BB 9322 - Agenda Meeting_Materials.pdf</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">13.6</span><span class="tv-agenda-title">Approval of Personnel Report</span><span class="tv-agenda-type">Action</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CF7MXS5CE300/$file/CERTIFICATED%20PERSONNEL%20REPORT%206-15-2022.pdf" target="_blank" rel="noopener">CERTIFICATED PERSONNEL REPORT 6-15-2022.pdf</a><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CF7MXY5CE56F/$file/CLASSIFIED%20PERSONNEL%20REPORT%206-15-2022.pdf" target="_blank" rel="noopener">CLASSIFIED PERSONNEL REPORT 6-15-2022.pdf</a></div><div class="tv-agenda-item tv-clickable" data-start="11982000"><span class="tv-agenda-label">13.7</span><span class="tv-ts">3:19:42</span><span class="tv-agenda-title">Adoption of Resolution 38, Approval of Education Code Options for Teaching Assignments</span><span class="tv-agenda-type">Action</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CF6TJ6778B3E/$file/RESOLUTION%20%2338-%20Ed%20Code%20Options%2022-23.pdf" target="_blank" rel="noopener">RESOLUTION #38- Ed Code Options 22-23.pdf</a><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CF6TJ8778EA9/$file/Resolution%20%2338-%20Exhibit%20A.pdf" target="_blank" rel="noopener">Resolution #38- Exhibit A.pdf</a></div><div class="tv-agenda-section tv-clickable" data-start="12068000"><span class="tv-agenda-label">14</span><span class="tv-ts">3:21:08</span><span class="tv-agenda-title">Board and Superintendent Reports</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">14.1</span><span class="tv-agenda-title">Report from Board Members and Superintendent</span><span class="tv-agenda-type">Reports</span></div><div class="tv-agenda-section tv-clickable" data-start="12423000"><span class="tv-agenda-label">15</span><span class="tv-ts">3:27:03</span><span class="tv-agenda-title">Information</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">15.1</span><span class="tv-agenda-title">San Mateo County Office of Education Review of RCSD Second Interim Financial Report 2021-22</span><span class="tv-agenda-type">Information</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CF5LNY575C97/$file/SMCOE%20Review%20of%20RCSD%202021-22%202nd%20Interim.pdf" target="_blank" rel="noopener">SMCOE Review of RCSD 2021-22 2nd Interim.pdf</a></div><div class="tv-agenda-section tv-clickable" data-start="12444000"><span class="tv-agenda-label">16</span><span class="tv-ts">3:27:24</span><span class="tv-agenda-title">Correspondence</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">16.1</span><span class="tv-agenda-title">Correspondence</span></div><div class="tv-agenda-section tv-clickable" data-start="12522000"><span class="tv-agenda-label">17</span><span class="tv-ts">3:28:42</span><span class="tv-agenda-title">Other Business/Suggested Items For Future Agenda</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">17.1</span><span class="tv-agenda-title">Possible Other Business/Suggested Items for Future Agenda</span><span class="tv-agenda-type">Information</span></div><div class="tv-agenda-section tv-clickable" data-start="12533000"><span class="tv-agenda-label">18</span><span class="tv-ts">3:28:53</span><span class="tv-agenda-title">Board Agenda Calendar</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">18.1</span><span class="tv-agenda-title">Changes to the Board Agenda Schedule</span><span class="tv-agenda-type">Information</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CF9S4X6E3666/$file/Draft%20Schedule%20of%20Board%20Agenda%20Items%20-%20Updated%20on%206.10.22.pdf" target="_blank" rel="noopener">Draft Schedule of Board Agenda Items - Updated on 6.10.22.pdf</a></div><div class="tv-agenda-section tv-clickable" data-start="12561000"><span class="tv-agenda-label">19</span><span class="tv-ts">3:29:21</span><span class="tv-agenda-title">Adjournment</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">19.1</span><span class="tv-agenda-title">Adjourn the Meeting</span><span class="tv-agenda-type">Action</span></div>
+    </div>
+
+    <div class="tv-panel tv-minutes-panel" id="panel-minutes">
+      <div class="tv-empty">Minutes not yet approved for this meeting.</div>
     </div>
   </div>
 
@@ -405,6 +592,7 @@
   var speakerMap = {};
   var autoScroll = true;
   var activeIdx = -1;
+  var activeTab = 'transcript';
 
   // Load YT IFrame API
   var tag = document.createElement('script');
@@ -418,6 +606,37 @@
     });
   };
 
+  // ---- Tab switching ----
+  var tabs = document.querySelectorAll('.tv-tab');
+  var panels = document.querySelectorAll('.tv-panel');
+  var transcriptControls = document.getElementById('transcript-controls');
+
+  tabs.forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      if (tab.disabled) return;
+      activeTab = tab.dataset.tab;
+      tabs.forEach(function(t) { t.classList.toggle('active', t.dataset.tab === activeTab); });
+      panels.forEach(function(p) { p.classList.toggle('active', p.id === 'panel-' + activeTab); });
+      transcriptControls.style.display = activeTab === 'transcript' ? '' : 'none';
+    });
+  });
+
+  // ---- Seek helper ----
+  function seekTo(ms) {
+    if (player && player.seekTo) {
+      player.seekTo(ms / 1000, true);
+      player.playVideo();
+    }
+  }
+
+  // ---- Agenda click-to-seek ----
+  document.getElementById('panel-agenda').addEventListener('click', function(e) {
+    var el = e.target.closest('.tv-clickable');
+    if (!el || !el.dataset.start) return;
+    seekTo(parseInt(el.dataset.start));
+  });
+
+  // ---- Transcript ----
   function formatTime(ms) {
     var totalSec = Math.floor(ms / 1000);
     var h = Math.floor(totalSec / 3600);
@@ -437,17 +656,15 @@
     return speakerColors[label.charCodeAt(0) % speakerColors.length];
   }
 
-  // Build transcript rows using safe DOM methods
   function renderTranscript() {
-    var container = document.getElementById('transcript-container');
-    container.textContent = ''; // clear
+    var container = document.getElementById('panel-transcript');
+    container.textContent = '';
 
     utterances.forEach(function(u, i) {
       var row = document.createElement('div');
       row.className = 'tv-utterance';
       row.dataset.idx = i;
       row.dataset.start = u.start;
-      row.dataset.end = u.end;
 
       var ts = document.createElement('span');
       ts.className = 'tv-ts';
@@ -470,19 +687,13 @@
       container.appendChild(row);
     });
 
-    // Click to seek
     container.addEventListener('click', function(e) {
       var row = e.target.closest('.tv-utterance');
       if (!row) return;
-      var startMs = parseInt(row.dataset.start);
-      if (player && player.seekTo) {
-        player.seekTo(startMs / 1000, true);
-        player.playVideo();
-      }
+      seekTo(parseInt(row.dataset.start));
     });
   }
 
-  // Fetch transcript
   fetch(transcriptUrl)
     .then(function(r) { return r.json(); })
     .then(function(data) {
@@ -492,36 +703,65 @@
       setInterval(syncHighlight, 250);
     })
     .catch(function() {
-      var c = document.getElementById('transcript-container');
+      var c = document.getElementById('panel-transcript');
       c.textContent = '';
       var msg = document.createElement('div');
-      msg.style.cssText = 'padding:1rem;color:var(--coral)';
+      msg.className = 'tv-empty';
       msg.textContent = 'Failed to load transcript.';
       c.appendChild(msg);
     });
 
+  // ---- Sync highlight (transcript + agenda) ----
+  var activeAgendaEl = null;
+
   function syncHighlight() {
     if (!player || !player.getCurrentTime) return;
     var currentMs = player.getCurrentTime() * 1000;
-    var newIdx = -1;
-    for (var i = utterances.length - 1; i >= 0; i--) {
-      if (utterances[i].start <= currentMs) { newIdx = i; break; }
+
+    // Transcript sync
+    if (activeTab === 'transcript') {
+      var newIdx = -1;
+      for (var i = utterances.length - 1; i >= 0; i--) {
+        if (utterances[i].start <= currentMs) { newIdx = i; break; }
+      }
+      if (newIdx !== activeIdx) {
+        activeIdx = newIdx;
+        var rows = document.querySelectorAll('.tv-utterance');
+        rows.forEach(function(r, i) { r.classList.toggle('active', i === activeIdx); });
+
+        if (autoScroll && activeIdx >= 0 && rows[activeIdx]) {
+          var rect = rows[activeIdx].getBoundingClientRect();
+          var videoCol = document.querySelector('.tv-video-col');
+          var stickyHeight = videoCol ? videoCol.offsetHeight : 0;
+          if (rect.top < stickyHeight + 20 || rect.bottom > window.innerHeight - 40) {
+            window.scrollTo({ top: rows[activeIdx].offsetTop - stickyHeight - 20, behavior: 'smooth' });
+          }
+        }
+      }
     }
-    if (newIdx === activeIdx) return;
-    activeIdx = newIdx;
 
-    var rows = document.querySelectorAll('.tv-utterance');
-    rows.forEach(function(r, i) {
-      r.classList.toggle('active', i === activeIdx);
-    });
-
-    if (autoScroll && activeIdx >= 0 && rows[activeIdx]) {
-      var rect = rows[activeIdx].getBoundingClientRect();
-      var videoCol = document.querySelector('.tv-video-col');
-      var stickyHeight = videoCol ? videoCol.offsetHeight : 0;
-      // Scroll so active row is just below the sticky video
-      if (rect.top < stickyHeight + 20 || rect.bottom > window.innerHeight - 40) {
-        window.scrollTo({ top: rows[activeIdx].offsetTop - stickyHeight - 20, behavior: 'smooth' });
+    // Agenda sync — highlight current agenda item
+    if (activeTab === 'agenda') {
+      var agendaItems = document.querySelectorAll('#panel-agenda [data-start]');
+      var bestEl = null;
+      agendaItems.forEach(function(el) {
+        var start = parseInt(el.dataset.start);
+        if (start <= currentMs) bestEl = el;
+      });
+      if (bestEl !== activeAgendaEl) {
+        if (activeAgendaEl) activeAgendaEl.classList.remove('active');
+        activeAgendaEl = bestEl;
+        if (activeAgendaEl) {
+          activeAgendaEl.classList.add('active');
+          if (autoScroll) {
+            var rect = activeAgendaEl.getBoundingClientRect();
+            var videoCol = document.querySelector('.tv-video-col');
+            var stickyHeight = videoCol ? videoCol.offsetHeight : 0;
+            if (rect.top < stickyHeight + 20 || rect.bottom > window.innerHeight - 40) {
+              window.scrollTo({ top: activeAgendaEl.offsetTop - stickyHeight - 20, behavior: 'smooth' });
+            }
+          }
+        }
       }
     }
   }
@@ -532,10 +772,9 @@
     this.classList.toggle('active', autoScroll);
   });
 
-  // Search with safe DOM highlighting
+  // Search
   var searchInput = document.getElementById('search-input');
   var searchTimeout = null;
-
   searchInput.addEventListener('input', function() {
     clearTimeout(searchTimeout);
     searchTimeout = setTimeout(doSearch, 200);
@@ -544,15 +783,12 @@
   function doSearch() {
     var term = searchInput.value.trim().toLowerCase();
     var rows = document.querySelectorAll('.tv-utterance');
-
     rows.forEach(function(row, i) {
       var textEl = row.querySelector('.tv-text');
       var original = utterances[i].text;
-
       if (term && original.toLowerCase().indexOf(term) >= 0) {
         row.classList.add('search-match');
         row.style.display = '';
-        // Highlight matches using safe DOM methods
         textEl.textContent = '';
         var remaining = original;
         var lc = remaining.toLowerCase();

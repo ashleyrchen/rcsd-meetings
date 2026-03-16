@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="index, follow">
-<title>Transcript — Special Meeting, April 20, 2022</title>
-<meta name="description" content="Full diarized transcript of the RCSD Special Meeting on April 20, 2022. Speaker-identified, synced to video.">
+<title>Special Meeting — April 20, 2022 — RCSD Board Meeting</title>
+<meta name="description" content="Full diarized transcript, agenda, and minutes for the RCSD Special Meeting on April 20, 2022.">
 <meta name="theme-color" content="#1a3a2a">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
@@ -14,8 +14,8 @@
 <link rel="manifest" href="/site.webmanifest">
 <link rel="canonical" href="https://rcsd.info/meetings/2022-04-20/">
 
-<meta property="og:title" content="Transcript — Special Meeting, April 20, 2022">
-<meta property="og:description" content="Full diarized transcript of the RCSD Special Meeting on April 20, 2022. Speaker-identified, synced to video.">
+<meta property="og:title" content="Special Meeting — April 20, 2022 — RCSD Board Meeting">
+<meta property="og:description" content="Full diarized transcript, agenda, and minutes for the RCSD Special Meeting on April 20, 2022.">
 <meta property="og:url" content="https://rcsd.info/meetings/2022-04-20/">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://rcsd.info/og-1200.jpg">
@@ -25,8 +25,8 @@
 <meta property="og:site_name" content="RCSD Open Data">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://rcsd.info/og-1200.jpg">
-<meta name="twitter:title" content="Transcript — Special Meeting, April 20, 2022">
-<meta name="twitter:description" content="Full diarized transcript of the RCSD Special Meeting on April 20, 2022. Speaker-identified, synced to video.">
+<meta name="twitter:title" content="Special Meeting — April 20, 2022 — RCSD Board Meeting">
+<meta name="twitter:description" content="Full diarized transcript, agenda, and minutes for the RCSD Special Meeting on April 20, 2022.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -199,7 +199,7 @@
   .tv-main {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0;
   }
 
   .tv-video-col {
@@ -225,6 +225,32 @@
     width: 100%; height: 100%;
     border: none;
   }
+
+  /* ---- Tab bar ---- */
+  .tv-tabs {
+    display: flex;
+    gap: 0;
+    border-bottom: 2px solid var(--rule);
+    margin-top: 0.5rem;
+  }
+
+  .tv-tab {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border: none;
+    background: none;
+    color: var(--text-muted);
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .tv-tab:hover { color: var(--text); }
+  .tv-tab.active { color: var(--green-deep); border-bottom-color: var(--green-mid); }
+  .tv-tab:disabled { opacity: 0.4; cursor: default; }
 
   .tv-controls {
     display: flex;
@@ -259,10 +285,15 @@
   }
   .tv-search:focus { border-color: var(--green-mid); }
 
-  .tv-transcript-col {
+  /* ---- Tab panels ---- */
+  .tv-panel { display: none; }
+  .tv-panel.active { display: block; }
+
+  .tv-transcript-panel {
     border: 1px solid var(--rule-light);
-    border-radius: 6px;
+    border-radius: 0 0 6px 6px;
     background: #fff;
+    border-top: none;
   }
 
   .tv-utterance {
@@ -314,6 +345,147 @@
     border-radius: 2px;
   }
 
+  /* ---- Agenda panel ---- */
+  .tv-agenda-panel {
+    border: 1px solid var(--rule-light);
+    border-radius: 0 0 6px 6px;
+    background: #fff;
+    border-top: none;
+    padding: 0.25rem 0;
+  }
+
+  .tv-clickable { cursor: pointer; }
+  .tv-clickable:hover { background: var(--green-wash); }
+
+  .tv-agenda-section {
+    padding: 0.6rem 0.75rem 0.3rem;
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--green-deep);
+    display: flex;
+    gap: 0.5rem;
+    align-items: baseline;
+    border-top: 1px solid var(--rule-light);
+  }
+  .tv-agenda-section:first-child { border-top: none; }
+  .tv-agenda-section.active { background: #eef6eb; }
+
+  .tv-agenda-item {
+    padding: 0.35rem 0.75rem 0.35rem 1.5rem;
+    font-family: 'Newsreader', serif;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    display: flex;
+    gap: 0.5rem;
+    align-items: baseline;
+    transition: background 0.15s;
+  }
+  .tv-agenda-item.active { background: #eef6eb; }
+
+  .tv-agenda-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--green-mid);
+    font-weight: 500;
+    flex: 0 0 2.5rem;
+  }
+
+  .tv-agenda-title { flex: 1; min-width: 0; }
+
+  .tv-agenda-type {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.55rem;
+    color: var(--text-muted);
+    background: var(--cream-dark);
+    padding: 0.05rem 0.3rem;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+
+  .tv-agenda-duration {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--text-muted);
+  }
+
+  .tv-agenda-atts {
+    padding: 0.1rem 0.75rem 0.3rem 3rem;
+  }
+
+  .tv-agenda-att {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--green-mid);
+    text-decoration: none;
+    display: block;
+    line-height: 1.6;
+  }
+  .tv-agenda-att:hover { text-decoration: underline; color: var(--green-deep); }
+
+  .tv-agenda-pc {
+    padding: 0.1rem 0.75rem 0.3rem 3rem;
+    border-left: 2px solid var(--cream-dark);
+    margin-left: 1.5rem;
+  }
+
+  .tv-agenda-pc-speaker {
+    font-size: 0.8rem;
+    line-height: 1.5;
+    padding: 0.15rem 0;
+  }
+
+  .tv-agenda-pc-name {
+    font-weight: 600;
+    color: var(--green-mid);
+  }
+
+  .tv-agenda-pc-summary {
+    color: var(--text-secondary);
+    font-size: 0.78rem;
+  }
+
+  /* ---- Minutes panel ---- */
+  .tv-minutes-panel {
+    border: 1px solid var(--rule-light);
+    border-radius: 0 0 6px 6px;
+    background: #fff;
+    border-top: none;
+    padding: 1rem;
+  }
+
+  .tv-minutes-info p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.75rem;
+  }
+
+  .tv-minutes-link {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--green-mid);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  .tv-minutes-link:hover { text-decoration: underline; }
+  .tv-minutes-link::before { content: '\1F4C4 '; }
+
+  .tv-minutes-embed {
+    width: 100%;
+    height: 70vh;
+    border: 1px solid var(--rule-light);
+    border-radius: 4px;
+    margin-top: 0.5rem;
+  }
+
+  .tv-empty {
+    padding: 2rem;
+    text-align: center;
+    color: var(--text-muted);
+    font-style: italic;
+  }
+
   .tv-download {
     text-align: center;
     padding: 0.75rem;
@@ -331,6 +503,8 @@
     .tv-utterance { gap: 0.3rem; }
     .tv-ts { flex: 0 0 2.8rem; font-size: 0.6rem; }
     .tv-speaker { max-width: 5rem; font-size: 0.6rem; }
+    .tv-agenda-item { padding-left: 0.75rem; }
+    .tv-tab { padding: 0.4rem 0.6rem; font-size: 0.65rem; }
   }
 
 </style>
@@ -357,7 +531,7 @@
       2h 15m &middot; 
       <a href="https://www.youtube.com/watch?v=TnMWnUVFiAk" target="_blank" rel="noopener">YouTube</a>
       
-       &middot; <a href="https://go.boarddocs.com/ca/redwood/Board.nsf/goto?open&amp;id=CDFKEW510C6E" target="_blank" rel="noopener">Agenda</a>
+       &middot; <a href="https://go.boarddocs.com/ca/redwood/Board.nsf/goto?open&amp;id=CDFKEW510C6E" target="_blank" rel="noopener">BoardDocs</a>
     </div>
   </div>
 
@@ -366,14 +540,27 @@
       <div class="tv-video-wrap">
         <div id="yt-player"></div>
       </div>
-      <div class="tv-controls">
-        <button class="tv-btn active" id="btn-autoscroll" title="Auto-scroll transcript to current position">Auto-scroll</button>
+      <div class="tv-tabs">
+        <button class="tv-tab active" data-tab="transcript">Transcript</button>
+        <button class="tv-tab" data-tab="agenda">Agenda</button>
+        <button class="tv-tab" data-tab="minutes" disabled>Minutes</button>
+      </div>
+      <div class="tv-controls" id="transcript-controls">
+        <button class="tv-btn active" id="btn-autoscroll">Auto-scroll</button>
         <input class="tv-search" type="text" id="search-input" placeholder="Search transcript...">
       </div>
     </div>
 
-    <div class="tv-transcript-col" id="transcript-container">
+    <div class="tv-panel tv-transcript-panel active" id="panel-transcript">
       <div style="padding:1rem;color:var(--text-muted);font-style:italic">Loading transcript...</div>
+    </div>
+
+    <div class="tv-panel tv-agenda-panel" id="panel-agenda">
+      <div class="tv-agenda-section tv-clickable" data-start="359000"><span class="tv-agenda-label">1</span><span class="tv-ts">5:59</span><span class="tv-agenda-title">Call to Order</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">1.1</span><span class="tv-agenda-title">Roll Call</span><span class="tv-agenda-type">Procedural</span></div><div class="tv-agenda-section tv-clickable" data-start="374000"><span class="tv-agenda-label">2</span><span class="tv-ts">6:14</span><span class="tv-agenda-title">Welcome</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">2.1</span><span class="tv-agenda-title">Welcome by the School Board President, María Díaz-Slocum</span><span class="tv-agenda-type">Procedural</span></div><div class="tv-agenda-section tv-clickable" data-start="410000"><span class="tv-agenda-label">3</span><span class="tv-ts">6:50</span><span class="tv-agenda-title">Changes to the Agenda</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">3.1</span><span class="tv-agenda-title">Additions, Deletions or Modifications to the agenda.</span><span class="tv-agenda-type">Discussion</span></div><div class="tv-agenda-section tv-clickable" data-start="410000"><span class="tv-agenda-label">4</span><span class="tv-ts">6:50</span><span class="tv-agenda-title">Approval of Agenda</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">4.1</span><span class="tv-agenda-title">Approval of Agenda</span><span class="tv-agenda-type">Action</span></div><div class="tv-agenda-section tv-clickable" data-start="450000"><span class="tv-agenda-label">5</span><span class="tv-ts">7:30</span><span class="tv-agenda-title">Oral Communication</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">5.1</span><span class="tv-agenda-title">If you have public comment related to a Regular Board Meeting item, please post it on: (https://docs.google.com/forms/d/e/1FAIpQLSd3rKbPfVCTpOsK5ILqjnU2u-h- NuNx-vUq4OZxYNVR8lc4aQ/viewform?usp=sf_link) prior to the Regular Board Meeting or immediately upon the meeting opening.</span><span class="tv-agenda-type">Information</span></div><div class="tv-agenda-section tv-clickable" data-start="461000"><span class="tv-agenda-label">6</span><span class="tv-ts">7:41</span><span class="tv-agenda-title">Discussion Items</span></div><div class="tv-agenda-pc"><div class="tv-agenda-pc-speaker tv-clickable" data-start="2181000"><span class="tv-agenda-pc-name">David Weekley</span> (1min)<span class="tv-agenda-pc-summary"> &mdash; Urged the board to center students and maximize every student's potential, changing North Star if it harms non-North Star students.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="2231000"><span class="tv-agenda-pc-name">Lily Milton</span> (2min)<span class="tv-agenda-pc-summary"> &mdash; Representing committee members, she thanked the board for the process and recommended changing grade configuration and bringing compacted/enrichment curriculum to all schools, while urging urgent action on equity and broader structural issues.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="2376000"><span class="tv-agenda-pc-name">Unidentified speaker</span> (2min)<span class="tv-agenda-pc-summary"> &mdash; Argued that Bayside access data is misleading since many Bayside families already access North Star via choice/charter, that North Star is not broken and serves its students well at no extra cost, and urged focus on the 70% of students behind academically rather than altering a well-functioning program.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="2503000"><span class="tv-agenda-pc-name">John Kinsel</span> (2min)<span class="tv-agenda-pc-summary"> &mdash; Expressed strong support for North Star as a program that keeps students challenged and engaged, and suggested the focus should be on improving other schools rather than changing North Star.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="2670000"><span class="tv-agenda-pc-name">Owen Webel</span> (1min)<span class="tv-agenda-pc-summary"> &mdash; As a North Star graduate, described how he was disengaged at his previous school and thrived at North Star where he found peers at his level and learned more effectively.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="2751000"><span class="tv-agenda-pc-name">Tony Webel</span> (2min)<span class="tv-agenda-pc-summary"> &mdash; As a parent of multiple children in the district including one at North Star and one at Roosevelt, he emphasized that the primary objective should be the best equitable learning environment for all students, and flagged concerns about the Jamboard document as potentially misleading.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="2882000"><span class="tv-agenda-pc-name">Jessica Nodi</span> (1min)<span class="tv-agenda-pc-summary"> &mdash; As a Roy Cloud parent and educator, she expressed support for starting North Star at kindergarten, bringing enrichment programming to all schools, and offering enrollment by equal percentages from each school.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="2964000"><span class="tv-agenda-pc-name">Katie Morello</span> (1min)<span class="tv-agenda-pc-summary"> &mdash; As a Henry Ford parent, she expressed concern about the emotional impact on children losing friends when classmates leave for North Star in third grade and suggested middle school might be a better entry point.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="3043000"><span class="tv-agenda-pc-name">Kaylee Vega</span> (1min)<span class="tv-agenda-pc-summary"> &mdash; As a Henry Ford parent, she said her family chose the district largely because of North Star access, expressed concern about unmet academic needs at neighborhood schools, and urged the board to improve other schools rather than dismantle a highly ranked program.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="3122000"><span class="tv-agenda-pc-name">Loan Hin</span> (2min)<span class="tv-agenda-pc-summary"> &mdash; As a Henry Ford parent and former magnet school student herself, she said her family may leave the district if North Star is not available at third grade, and argued that magnet programs like North Star provide economic mobility through education and that equity issues can be addressed without eliminating the format.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="3231000"><span class="tv-agenda-pc-name">Elle Kolekar</span> (1min)<span class="tv-agenda-pc-summary"> &mdash; As a Bayside family with children at both Hillside and North Star schools, she argued that inequity is a deeper district-wide issue that North Star alone did not create, and called on the board to invest in vibrant, diverse Bayside community schools.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="3305000"><span class="tv-agenda-pc-name">Alice Harkey</span> (2min)<span class="tv-agenda-pc-summary"> &mdash; As North Star's parent club president, she credited North Star with transforming her children's education, supported equal access to testing and more Bayside outreach, busing, and after-school support, and asked the board to preserve the curriculum and enrichment opportunities.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="3420000"><span class="tv-agenda-pc-name">Shonda Stewart</span> (2min)<span class="tv-agenda-pc-summary"> &mdash; As a parent with children at both North Star and Orion, she raised concerns about North Star's fundraising concentrating resources inequitably, the school's culture being unwelcoming to lower-income families, and the limited Bayside outreach compared to Mandarin immersion community outreach.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="3528000"><span class="tv-agenda-pc-name">Katie Goetz</span> (1min)<span class="tv-agenda-pc-summary"> &mdash; As a North Star Forward Committee member, she argued that the district has an obligation to make enriched programming available to all students, not just those identified through testing as gifted, and thanked the board for its work toward greater equity.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="3608000"><span class="tv-agenda-pc-name">Nicole Kowaki</span> (1min)<span class="tv-agenda-pc-summary"> &mdash; Speaking on behalf of 20 co-signing district parents, she cited stark demographic disparities between North Star and the broader district and called publicly funded North Star as currently structured unethical, urging the board to support the equitable solutions proposed by the committee.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="3687000"><span class="tv-agenda-pc-name">Daryl Norcott</span> (2min)<span class="tv-agenda-pc-summary"> &mdash; As a Clifford parent, he argued that North Star reinforces achievement gaps through biased standardized testing, racially segregates school communities, makes children who don't qualify feel defective, and divides communities, and urged bringing enrichment methods to students rather than concentrating them in one school.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="3787000"><span class="tv-agenda-pc-name">Heidi von Brielle</span> (2min)<span class="tv-agenda-pc-summary"> &mdash; She raised environmental concerns about car trips to North Star, argued that all Redwood City schools share the same finish line, and called for implementing options that eliminate the 'musical chairs' caused by third-grade migration.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="3893000"><span class="tv-agenda-pc-name">Mike Beebe</span> (2min)<span class="tv-agenda-pc-summary"> &mdash; As a North Star third-grade parent, he urged careful evaluation of whether the issue is admissions process design or information and logistics barriers before switching to a hard percentage admit model, and suggested expanded information and shuttle service for Bayside families.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="3993000"><span class="tv-agenda-pc-name">Ann Hinesek</span> (2min)<span class="tv-agenda-pc-summary"> &mdash; As a North Star Forward Committee member, she highlighted bringing the Renzulli method to all schools and equalizing PTO/PTA funding distribution as key equity ideas, and supported changing grade configuration, hiring Spanish-speaking staff, capping per-school admittance, and possibly moving North Star to the Bayside.</span></div></div><div class="tv-agenda-item"><span class="tv-agenda-label">6.1</span><span class="tv-agenda-title">Review of Preliminary Ideas Generated by North Star Forward Committee</span><span class="tv-agenda-type">Discussion</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CDFSBE712178/$file/North%20Star%20Forward%202.12.20.pdf" target="_blank" rel="noopener">North Star Forward 2.12.20.pdf</a><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CDFSBJ712587/$file/North%20Star%20Forward%202.25.20.pdf" target="_blank" rel="noopener">North Star Forward 2.25.20.pdf</a><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CDFSBL712830/$file/North%20Star%20Forward%203.9.20.pdf" target="_blank" rel="noopener">North Star Forward 3.9.20.pdf</a><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CDFSBN712C3C/$file/North%20Star%20Forward%20Committee%201.20.22.pdf" target="_blank" rel="noopener">North Star Forward Committee 1.20.22.pdf</a><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CDFSBQ712F51/$file/NSA%20Data%202022.pdf" target="_blank" rel="noopener">NSA Data 2022.pdf</a><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CDFSBW71336B/$file/NSA%20Forward%202.10.22.pdf" target="_blank" rel="noopener">NSA Forward 2.10.22.pdf</a><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CDFSBZ713648/$file/NSA%20Forward%203.24.22.pdf" target="_blank" rel="noopener">NSA Forward 3.24.22.pdf</a><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CDFSC371391D/$file/NSA%20Forward%204.07.2022.pdf" target="_blank" rel="noopener">NSA Forward 4.07.2022.pdf</a><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CDFSC5713E84/$file/NSA%20Forward%20Jamboard%20April%207%2C%202022.ALL.pdf" target="_blank" rel="noopener">NSA Forward Jamboard April 7, 2022.ALL.pdf</a><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CDFSC97140DE/$file/NSA%20Forward%20PPT%203.3.22.pdf" target="_blank" rel="noopener">NSA Forward PPT 3.3.22.pdf</a><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CDFSCB71445F/$file/NSA%20Forward%20Survey%203.2022%20with%20personal%20reference%20comments%20redacted.pdf" target="_blank" rel="noopener">NSA Forward Survey 3.2022 with personal reference comments redacted.pdf</a><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CDFSCD7147EA/$file/NSA%20Forward_%20Preliminary%20Ideas%20for%20Board%20Discussion.pdf" target="_blank" rel="noopener">NSA Forward_ Preliminary Ideas for Board Discussion.pdf</a><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CDFSCG714A5D/$file/Report%20on%20Interviews%20with%20Bayside%20Parents.pdf" target="_blank" rel="noopener">Report on Interviews with Bayside Parents.pdf</a><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CDP29E01138D/$file/North%20Star%20Forward_%20Board%20Study%20Session.pdf" target="_blank" rel="noopener">North Star Forward_ Board Study Session.pdf</a></div><div class="tv-agenda-section tv-clickable" data-start="8125000"><span class="tv-agenda-label">7</span><span class="tv-ts">2:15:25</span><span class="tv-agenda-title">Adjournment</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">7.1</span><span class="tv-agenda-title">Adjourn the Meeting</span><span class="tv-agenda-type">Action</span></div>
+    </div>
+
+    <div class="tv-panel tv-minutes-panel" id="panel-minutes">
+      <div class="tv-empty">Minutes not yet approved for this meeting.</div>
     </div>
   </div>
 
@@ -405,6 +592,7 @@
   var speakerMap = {};
   var autoScroll = true;
   var activeIdx = -1;
+  var activeTab = 'transcript';
 
   // Load YT IFrame API
   var tag = document.createElement('script');
@@ -418,6 +606,37 @@
     });
   };
 
+  // ---- Tab switching ----
+  var tabs = document.querySelectorAll('.tv-tab');
+  var panels = document.querySelectorAll('.tv-panel');
+  var transcriptControls = document.getElementById('transcript-controls');
+
+  tabs.forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      if (tab.disabled) return;
+      activeTab = tab.dataset.tab;
+      tabs.forEach(function(t) { t.classList.toggle('active', t.dataset.tab === activeTab); });
+      panels.forEach(function(p) { p.classList.toggle('active', p.id === 'panel-' + activeTab); });
+      transcriptControls.style.display = activeTab === 'transcript' ? '' : 'none';
+    });
+  });
+
+  // ---- Seek helper ----
+  function seekTo(ms) {
+    if (player && player.seekTo) {
+      player.seekTo(ms / 1000, true);
+      player.playVideo();
+    }
+  }
+
+  // ---- Agenda click-to-seek ----
+  document.getElementById('panel-agenda').addEventListener('click', function(e) {
+    var el = e.target.closest('.tv-clickable');
+    if (!el || !el.dataset.start) return;
+    seekTo(parseInt(el.dataset.start));
+  });
+
+  // ---- Transcript ----
   function formatTime(ms) {
     var totalSec = Math.floor(ms / 1000);
     var h = Math.floor(totalSec / 3600);
@@ -437,17 +656,15 @@
     return speakerColors[label.charCodeAt(0) % speakerColors.length];
   }
 
-  // Build transcript rows using safe DOM methods
   function renderTranscript() {
-    var container = document.getElementById('transcript-container');
-    container.textContent = ''; // clear
+    var container = document.getElementById('panel-transcript');
+    container.textContent = '';
 
     utterances.forEach(function(u, i) {
       var row = document.createElement('div');
       row.className = 'tv-utterance';
       row.dataset.idx = i;
       row.dataset.start = u.start;
-      row.dataset.end = u.end;
 
       var ts = document.createElement('span');
       ts.className = 'tv-ts';
@@ -470,19 +687,13 @@
       container.appendChild(row);
     });
 
-    // Click to seek
     container.addEventListener('click', function(e) {
       var row = e.target.closest('.tv-utterance');
       if (!row) return;
-      var startMs = parseInt(row.dataset.start);
-      if (player && player.seekTo) {
-        player.seekTo(startMs / 1000, true);
-        player.playVideo();
-      }
+      seekTo(parseInt(row.dataset.start));
     });
   }
 
-  // Fetch transcript
   fetch(transcriptUrl)
     .then(function(r) { return r.json(); })
     .then(function(data) {
@@ -492,36 +703,65 @@
       setInterval(syncHighlight, 250);
     })
     .catch(function() {
-      var c = document.getElementById('transcript-container');
+      var c = document.getElementById('panel-transcript');
       c.textContent = '';
       var msg = document.createElement('div');
-      msg.style.cssText = 'padding:1rem;color:var(--coral)';
+      msg.className = 'tv-empty';
       msg.textContent = 'Failed to load transcript.';
       c.appendChild(msg);
     });
 
+  // ---- Sync highlight (transcript + agenda) ----
+  var activeAgendaEl = null;
+
   function syncHighlight() {
     if (!player || !player.getCurrentTime) return;
     var currentMs = player.getCurrentTime() * 1000;
-    var newIdx = -1;
-    for (var i = utterances.length - 1; i >= 0; i--) {
-      if (utterances[i].start <= currentMs) { newIdx = i; break; }
+
+    // Transcript sync
+    if (activeTab === 'transcript') {
+      var newIdx = -1;
+      for (var i = utterances.length - 1; i >= 0; i--) {
+        if (utterances[i].start <= currentMs) { newIdx = i; break; }
+      }
+      if (newIdx !== activeIdx) {
+        activeIdx = newIdx;
+        var rows = document.querySelectorAll('.tv-utterance');
+        rows.forEach(function(r, i) { r.classList.toggle('active', i === activeIdx); });
+
+        if (autoScroll && activeIdx >= 0 && rows[activeIdx]) {
+          var rect = rows[activeIdx].getBoundingClientRect();
+          var videoCol = document.querySelector('.tv-video-col');
+          var stickyHeight = videoCol ? videoCol.offsetHeight : 0;
+          if (rect.top < stickyHeight + 20 || rect.bottom > window.innerHeight - 40) {
+            window.scrollTo({ top: rows[activeIdx].offsetTop - stickyHeight - 20, behavior: 'smooth' });
+          }
+        }
+      }
     }
-    if (newIdx === activeIdx) return;
-    activeIdx = newIdx;
 
-    var rows = document.querySelectorAll('.tv-utterance');
-    rows.forEach(function(r, i) {
-      r.classList.toggle('active', i === activeIdx);
-    });
-
-    if (autoScroll && activeIdx >= 0 && rows[activeIdx]) {
-      var rect = rows[activeIdx].getBoundingClientRect();
-      var videoCol = document.querySelector('.tv-video-col');
-      var stickyHeight = videoCol ? videoCol.offsetHeight : 0;
-      // Scroll so active row is just below the sticky video
-      if (rect.top < stickyHeight + 20 || rect.bottom > window.innerHeight - 40) {
-        window.scrollTo({ top: rows[activeIdx].offsetTop - stickyHeight - 20, behavior: 'smooth' });
+    // Agenda sync — highlight current agenda item
+    if (activeTab === 'agenda') {
+      var agendaItems = document.querySelectorAll('#panel-agenda [data-start]');
+      var bestEl = null;
+      agendaItems.forEach(function(el) {
+        var start = parseInt(el.dataset.start);
+        if (start <= currentMs) bestEl = el;
+      });
+      if (bestEl !== activeAgendaEl) {
+        if (activeAgendaEl) activeAgendaEl.classList.remove('active');
+        activeAgendaEl = bestEl;
+        if (activeAgendaEl) {
+          activeAgendaEl.classList.add('active');
+          if (autoScroll) {
+            var rect = activeAgendaEl.getBoundingClientRect();
+            var videoCol = document.querySelector('.tv-video-col');
+            var stickyHeight = videoCol ? videoCol.offsetHeight : 0;
+            if (rect.top < stickyHeight + 20 || rect.bottom > window.innerHeight - 40) {
+              window.scrollTo({ top: activeAgendaEl.offsetTop - stickyHeight - 20, behavior: 'smooth' });
+            }
+          }
+        }
       }
     }
   }
@@ -532,10 +772,9 @@
     this.classList.toggle('active', autoScroll);
   });
 
-  // Search with safe DOM highlighting
+  // Search
   var searchInput = document.getElementById('search-input');
   var searchTimeout = null;
-
   searchInput.addEventListener('input', function() {
     clearTimeout(searchTimeout);
     searchTimeout = setTimeout(doSearch, 200);
@@ -544,15 +783,12 @@
   function doSearch() {
     var term = searchInput.value.trim().toLowerCase();
     var rows = document.querySelectorAll('.tv-utterance');
-
     rows.forEach(function(row, i) {
       var textEl = row.querySelector('.tv-text');
       var original = utterances[i].text;
-
       if (term && original.toLowerCase().indexOf(term) >= 0) {
         row.classList.add('search-match');
         row.style.display = '';
-        // Highlight matches using safe DOM methods
         textEl.textContent = '';
         var remaining = original;
         var lc = remaining.toLowerCase();

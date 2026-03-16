@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="index, follow">
-<title>Transcript — Regular, September 18, 2025</title>
-<meta name="description" content="Full diarized transcript of the RCSD Regular on September 18, 2025. Speaker-identified, synced to video.">
+<title>Regular — September 18, 2025 — RCSD Board Meeting</title>
+<meta name="description" content="Full diarized transcript, agenda, and minutes for the RCSD Regular on September 18, 2025.">
 <meta name="theme-color" content="#1a3a2a">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
@@ -14,8 +14,8 @@
 <link rel="manifest" href="/site.webmanifest">
 <link rel="canonical" href="https://rcsd.info/meetings/2025-09-18/">
 
-<meta property="og:title" content="Transcript — Regular, September 18, 2025">
-<meta property="og:description" content="Full diarized transcript of the RCSD Regular on September 18, 2025. Speaker-identified, synced to video.">
+<meta property="og:title" content="Regular — September 18, 2025 — RCSD Board Meeting">
+<meta property="og:description" content="Full diarized transcript, agenda, and minutes for the RCSD Regular on September 18, 2025.">
 <meta property="og:url" content="https://rcsd.info/meetings/2025-09-18/">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://rcsd.info/og-1200.jpg">
@@ -25,8 +25,8 @@
 <meta property="og:site_name" content="RCSD Open Data">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://rcsd.info/og-1200.jpg">
-<meta name="twitter:title" content="Transcript — Regular, September 18, 2025">
-<meta name="twitter:description" content="Full diarized transcript of the RCSD Regular on September 18, 2025. Speaker-identified, synced to video.">
+<meta name="twitter:title" content="Regular — September 18, 2025 — RCSD Board Meeting">
+<meta name="twitter:description" content="Full diarized transcript, agenda, and minutes for the RCSD Regular on September 18, 2025.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -199,7 +199,7 @@
   .tv-main {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0;
   }
 
   .tv-video-col {
@@ -225,6 +225,32 @@
     width: 100%; height: 100%;
     border: none;
   }
+
+  /* ---- Tab bar ---- */
+  .tv-tabs {
+    display: flex;
+    gap: 0;
+    border-bottom: 2px solid var(--rule);
+    margin-top: 0.5rem;
+  }
+
+  .tv-tab {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border: none;
+    background: none;
+    color: var(--text-muted);
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .tv-tab:hover { color: var(--text); }
+  .tv-tab.active { color: var(--green-deep); border-bottom-color: var(--green-mid); }
+  .tv-tab:disabled { opacity: 0.4; cursor: default; }
 
   .tv-controls {
     display: flex;
@@ -259,10 +285,15 @@
   }
   .tv-search:focus { border-color: var(--green-mid); }
 
-  .tv-transcript-col {
+  /* ---- Tab panels ---- */
+  .tv-panel { display: none; }
+  .tv-panel.active { display: block; }
+
+  .tv-transcript-panel {
     border: 1px solid var(--rule-light);
-    border-radius: 6px;
+    border-radius: 0 0 6px 6px;
     background: #fff;
+    border-top: none;
   }
 
   .tv-utterance {
@@ -314,6 +345,147 @@
     border-radius: 2px;
   }
 
+  /* ---- Agenda panel ---- */
+  .tv-agenda-panel {
+    border: 1px solid var(--rule-light);
+    border-radius: 0 0 6px 6px;
+    background: #fff;
+    border-top: none;
+    padding: 0.25rem 0;
+  }
+
+  .tv-clickable { cursor: pointer; }
+  .tv-clickable:hover { background: var(--green-wash); }
+
+  .tv-agenda-section {
+    padding: 0.6rem 0.75rem 0.3rem;
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--green-deep);
+    display: flex;
+    gap: 0.5rem;
+    align-items: baseline;
+    border-top: 1px solid var(--rule-light);
+  }
+  .tv-agenda-section:first-child { border-top: none; }
+  .tv-agenda-section.active { background: #eef6eb; }
+
+  .tv-agenda-item {
+    padding: 0.35rem 0.75rem 0.35rem 1.5rem;
+    font-family: 'Newsreader', serif;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    display: flex;
+    gap: 0.5rem;
+    align-items: baseline;
+    transition: background 0.15s;
+  }
+  .tv-agenda-item.active { background: #eef6eb; }
+
+  .tv-agenda-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--green-mid);
+    font-weight: 500;
+    flex: 0 0 2.5rem;
+  }
+
+  .tv-agenda-title { flex: 1; min-width: 0; }
+
+  .tv-agenda-type {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.55rem;
+    color: var(--text-muted);
+    background: var(--cream-dark);
+    padding: 0.05rem 0.3rem;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+
+  .tv-agenda-duration {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--text-muted);
+  }
+
+  .tv-agenda-atts {
+    padding: 0.1rem 0.75rem 0.3rem 3rem;
+  }
+
+  .tv-agenda-att {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--green-mid);
+    text-decoration: none;
+    display: block;
+    line-height: 1.6;
+  }
+  .tv-agenda-att:hover { text-decoration: underline; color: var(--green-deep); }
+
+  .tv-agenda-pc {
+    padding: 0.1rem 0.75rem 0.3rem 3rem;
+    border-left: 2px solid var(--cream-dark);
+    margin-left: 1.5rem;
+  }
+
+  .tv-agenda-pc-speaker {
+    font-size: 0.8rem;
+    line-height: 1.5;
+    padding: 0.15rem 0;
+  }
+
+  .tv-agenda-pc-name {
+    font-weight: 600;
+    color: var(--green-mid);
+  }
+
+  .tv-agenda-pc-summary {
+    color: var(--text-secondary);
+    font-size: 0.78rem;
+  }
+
+  /* ---- Minutes panel ---- */
+  .tv-minutes-panel {
+    border: 1px solid var(--rule-light);
+    border-radius: 0 0 6px 6px;
+    background: #fff;
+    border-top: none;
+    padding: 1rem;
+  }
+
+  .tv-minutes-info p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.75rem;
+  }
+
+  .tv-minutes-link {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--green-mid);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  .tv-minutes-link:hover { text-decoration: underline; }
+  .tv-minutes-link::before { content: '\1F4C4 '; }
+
+  .tv-minutes-embed {
+    width: 100%;
+    height: 70vh;
+    border: 1px solid var(--rule-light);
+    border-radius: 4px;
+    margin-top: 0.5rem;
+  }
+
+  .tv-empty {
+    padding: 2rem;
+    text-align: center;
+    color: var(--text-muted);
+    font-style: italic;
+  }
+
   .tv-download {
     text-align: center;
     padding: 0.75rem;
@@ -331,6 +503,8 @@
     .tv-utterance { gap: 0.3rem; }
     .tv-ts { flex: 0 0 2.8rem; font-size: 0.6rem; }
     .tv-speaker { max-width: 5rem; font-size: 0.6rem; }
+    .tv-agenda-item { padding-left: 0.75rem; }
+    .tv-tab { padding: 0.4rem 0.6rem; font-size: 0.65rem; }
   }
 
 </style>
@@ -356,7 +530,7 @@
     <div class="tv-meta">
       1h 22m &middot; 
       <a href="https://www.youtube.com/watch?v=1-KJszTHygc" target="_blank" rel="noopener">YouTube</a>
-       &middot; <a href="https://simbli.eboardsolutions.com/SB_Meetings/ViewMeeting.aspx?S=36030397&amp;MID=42596" target="_blank" rel="noopener">Agenda</a>
+       &middot; <a href="https://simbli.eboardsolutions.com/SB_Meetings/ViewMeeting.aspx?S=36030397&amp;MID=42596" target="_blank" rel="noopener">Simbli</a>
       
     </div>
   </div>
@@ -366,14 +540,27 @@
       <div class="tv-video-wrap">
         <div id="yt-player"></div>
       </div>
-      <div class="tv-controls">
-        <button class="tv-btn active" id="btn-autoscroll" title="Auto-scroll transcript to current position">Auto-scroll</button>
+      <div class="tv-tabs">
+        <button class="tv-tab active" data-tab="transcript">Transcript</button>
+        <button class="tv-tab" data-tab="agenda">Agenda</button>
+        <button class="tv-tab" data-tab="minutes">Minutes</button>
+      </div>
+      <div class="tv-controls" id="transcript-controls">
+        <button class="tv-btn active" id="btn-autoscroll">Auto-scroll</button>
         <input class="tv-search" type="text" id="search-input" placeholder="Search transcript...">
       </div>
     </div>
 
-    <div class="tv-transcript-col" id="transcript-container">
+    <div class="tv-panel tv-transcript-panel active" id="panel-transcript">
       <div style="padding:1rem;color:var(--text-muted);font-style:italic">Loading transcript...</div>
+    </div>
+
+    <div class="tv-panel tv-agenda-panel" id="panel-agenda">
+      <div class="tv-agenda-section tv-clickable" data-start="6000"><span class="tv-agenda-label">1</span><span class="tv-ts">0:06</span><span class="tv-agenda-title">Call to Order</span><span class="tv-agenda-duration">1min</span></div><div class="tv-agenda-item tv-clickable" data-start="6000"><span class="tv-agenda-label">1.1</span><span class="tv-ts">0:06</span><span class="tv-agenda-title">Roll Call</span><span class="tv-agenda-type">Procedural</span></div><div class="tv-agenda-section tv-clickable" data-start="16000"><span class="tv-agenda-label">2</span><span class="tv-ts">0:16</span><span class="tv-agenda-title">Welcome</span><span class="tv-agenda-duration">1min</span></div><div class="tv-agenda-section tv-clickable" data-start="74000"><span class="tv-agenda-label">3</span><span class="tv-ts">1:14</span><span class="tv-agenda-title">Changes to the Agenda</span><span class="tv-agenda-duration">1min</span></div><div class="tv-agenda-section tv-clickable" data-start="74000"><span class="tv-agenda-label">4</span><span class="tv-ts">1:14</span><span class="tv-agenda-title">Approval of the Agenda (Action Required)</span><span class="tv-agenda-duration">1min</span></div><div class="tv-agenda-section tv-clickable" data-start="81000"><span class="tv-agenda-label">5</span><span class="tv-ts">1:21</span><span class="tv-agenda-title">Public Comment</span></div><div class="tv-agenda-pc"><div class="tv-agenda-pc-speaker tv-clickable" data-start="95000"><span class="tv-agenda-pc-name">Carl Landers</span> (2min)<span class="tv-agenda-pc-summary"> &mdash; Speaking as a member of the Citizens Bond Oversight Committee, he urged the board to reconsider its recent approval of $155,000 in bond funds for AC unit rentals, arguing this contradicted the board's own February direction to use operating funds for rentals and that bond funds should be reserved for capital projects.</span></div></div><div class="tv-agenda-section"><span class="tv-agenda-label">6</span><span class="tv-agenda-title">Discussion Items</span><span class="tv-agenda-duration">30min</span></div><div class="tv-agenda-item tv-clickable" data-start="214000"><span class="tv-agenda-label">6.1</span><span class="tv-ts">3:34</span><span class="tv-agenda-title">First Reading and Discussion of Board Policy 0520: Intervention in Underperforming Schools</span><span class="tv-agenda-type">Discussion</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-09-18/BP-0520-Intervention-in-Underperforming-Schools-First-Reading-Marked.pdf" target="_blank" rel="noopener">BP 0520 - Intervention in Underperforming Schools - First Reading - Marked</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-09-18/BP-0520-Intervention-in-Underperforming-Schools-First-Reading-Clean.pdf" target="_blank" rel="noopener">BP 0520 - Intervention in Underperforming Schools - First Reading - Clean</a></div><div class="tv-agenda-item tv-clickable" data-start="261000"><span class="tv-agenda-label">6.2</span><span class="tv-ts">4:21</span><span class="tv-agenda-title">First Reading and Discussion of Board Policy 5131: Conduct</span><span class="tv-agenda-type">Discussion</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-09-18/BP-5131-Conduct-First-Reading-Marked.pdf" target="_blank" rel="noopener">BP 5131 - Conduct - First Reading - Marked</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-09-18/BP-5131-Conduct-First-Reading-Clean.pdf" target="_blank" rel="noopener">BP 5131 - Conduct - First Reading - Clean</a></div><div class="tv-agenda-item tv-clickable" data-start="324000"><span class="tv-agenda-label">6.3</span><span class="tv-ts">5:24</span><span class="tv-agenda-title">First Reading and Discussion of Board Policy and Administrative Regulation 5141.52: Suicide Prevention</span><span class="tv-agenda-type">Discussion</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-09-18/BP-5141.52-Suicide-Prevention-First-Reading-Marked.pdf" target="_blank" rel="noopener">BP 5141.52 - Suicide Prevention - First Reading - Marked</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-09-18/BP-5141.52-Suicide-Prevention-First-Reading-Clean.pdf" target="_blank" rel="noopener">BP 5141.52 - Suicide Prevention - First Reading - Clean</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-09-18/AR-5141.52-Suicide-Prevention-First-Reading-For-Reference-Only-Marked.pdf" target="_blank" rel="noopener">AR 5141.52 - Suicide Prevention - First Reading - For Reference Only - Marked</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-09-18/AR-5141.52-Suicide-Prevention-First-Reading-For-Reference-Only-Clean.pdf" target="_blank" rel="noopener">AR 5141.52 - Suicide Prevention - First Reading - For Reference Only - Clean</a></div><div class="tv-agenda-item tv-clickable" data-start="379000"><span class="tv-agenda-label">6.4</span><span class="tv-ts">6:19</span><span class="tv-agenda-title">First Reading and Discussion of Board Policy and Administrative Regulation 6174: Education For English Learners</span><span class="tv-agenda-type">Discussion</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-09-18/BP-6174-Education-For-English-Learners-First-Reading-Marked.pdf" target="_blank" rel="noopener">BP 6174 - Education For English Learners - First Reading - Marked</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-09-18/BP-6174-Education-For-English-Learners-First-Reading-Clean.pdf" target="_blank" rel="noopener">BP 6174 - Education For English Learners - First Reading - Clean</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-09-18/AR-6174-Education-for-English-Learners-First-Reading-For-Reference-Only-Marked.pdf" target="_blank" rel="noopener">AR 6174 - Education for English Learners - First Reading - For Reference Only - Marked</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-09-18/AR-6174-Education-for-English-Learners-First-Reading-For-Reference-Only-Clean.pdf" target="_blank" rel="noopener">AR 6174 - Education for English Learners - First Reading - For Reference Only - Clean</a></div><div class="tv-agenda-item tv-clickable" data-start="452000"><span class="tv-agenda-label">6.5</span><span class="tv-ts">7:32</span><span class="tv-agenda-title">First Reading and Discussion of Board Policy 6154: Homework/Makeup Work</span><span class="tv-agenda-type">Discussion</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-09-18/BP-6154-Homework_Makeup-Work-First-Reading-Clean.pdf" target="_blank" rel="noopener">BP 6154 - Homework_Makeup Work - First Reading - Clean</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-09-18/BP-6154-Homework_Makeup-Work-First-Reading-Marked.pdf" target="_blank" rel="noopener">BP 6154 - Homework_Makeup Work - First Reading - Marked</a></div><div class="tv-agenda-section tv-clickable" data-start="524000"><span class="tv-agenda-label">7</span><span class="tv-ts">8:44</span><span class="tv-agenda-title">Approval of Consent Items (Action Required)</span><span class="tv-agenda-duration">1min</span></div><div class="tv-agenda-item tv-clickable" data-start="524000"><span class="tv-agenda-label">7.1</span><span class="tv-ts">8:44</span><span class="tv-agenda-title">Approval of the August 27, 2025, Board Meeting Minutes</span><span class="tv-agenda-type">Action</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-09-18/2025.08.27-Minutes-DRAFT-Regular.pdf" target="_blank" rel="noopener">2025.08.27 Minutes DRAFT - Regular</a></div><div class="tv-agenda-item tv-clickable" data-start="524000"><span class="tv-agenda-label">7.2</span><span class="tv-ts">8:44</span><span class="tv-agenda-title">Approval of North Star Academy's Field Trip to Marin Headlands – October 6, 2025 - October 8, 2025</span><span class="tv-agenda-type">Action</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-09-18/25-26-NSA.-Marine-Headlands.pdf" target="_blank" rel="noopener">25-26 NSA. Marine Headlands</a></div><div class="tv-agenda-item tv-clickable" data-start="524000"><span class="tv-agenda-label">7.3</span><span class="tv-ts">8:44</span><span class="tv-agenda-title">Approval of Garfield Community School Field Trip to Outdoor Education Camp – 09/22/2025-09/26/2025</span><span class="tv-agenda-type">Action</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-09-18/25-26-Garfield.Outdoor-Ed.pdf" target="_blank" rel="noopener">25-26 Garfield.Outdoor Ed</a></div><div class="tv-agenda-item tv-clickable" data-start="524000"><span class="tv-agenda-label">7.4</span><span class="tv-ts">8:44</span><span class="tv-agenda-title">Approval of Personnel Report</span><span class="tv-agenda-type">Action</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-09-18/Personnel-Report-Sept-18-2025.pdf" target="_blank" rel="noopener">Personnel Report - Sept 18, 2025</a></div><div class="tv-agenda-item tv-clickable" data-start="524000"><span class="tv-agenda-label">7.5</span><span class="tv-ts">8:44</span><span class="tv-agenda-title">Approval of the Renewal Agreement between Redwood City School District Instructional Materials Center and 2992 Spring Partners/Beals Martin to Extend the Building Lease</span><span class="tv-agenda-type">Action</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-09-18/778-2nd-Avenue-Lease-Agreement-for-25.26.pdf" target="_blank" rel="noopener">778 2nd Avenue Lease Agreement for 25.26</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-09-18/778-2nd-Avenue-Original-Lease-2021.pdf" target="_blank" rel="noopener">778 2nd Avenue Original Lease 2021</a></div><div class="tv-agenda-item tv-clickable" data-start="524000"><span class="tv-agenda-label">7.6</span><span class="tv-ts">8:44</span><span class="tv-agenda-title">Approval of the MOU between Redwood City School District and Unitek College for Student Nurse Interns for the School Year 2025-2026</span><span class="tv-agenda-type">Action</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-09-18/Unitek-Clinical-Affiliation-Agreement-25.26-Board-9.18.25.pdf" target="_blank" rel="noopener">Unitek Clinical Affiliation Agreement 25.26 Board 9.18.25</a></div><div class="tv-agenda-item tv-clickable" data-start="524000"><span class="tv-agenda-label">7.7</span><span class="tv-ts">8:44</span><span class="tv-agenda-title">Approval of Amendment No. 1 between Redwood City School District and Amergis Healthcare Staffing for Two Behavior Technicians for the School Year 2025-2026</span><span class="tv-agenda-type">Action</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-09-18/Amergis-Amendment-1-Board-9.18.25.pdf" target="_blank" rel="noopener">Amergis Amendment 1 Board 9.18.25</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-09-18/Amergis-Agreement_25.26-FE.pdf" target="_blank" rel="noopener">Amergis Agreement_25.26 FE</a></div><div class="tv-agenda-item tv-clickable" data-start="524000"><span class="tv-agenda-label">7.8</span><span class="tv-ts">8:44</span><span class="tv-agenda-title">Approval of Amendment No. 1 to the Agreement between College Advising Prep (CAP) and the Redwood School District for Increased Tutoring Services for the 2025- 26 School Year</span><span class="tv-agenda-type">Action</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-09-18/CAP-Amendment-2025-2026.pdf" target="_blank" rel="noopener">CAP Amendment  2025-2026</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-09-18/COLLEGE-ADVISING-PREP_board-8.27.25.pdf" target="_blank" rel="noopener">COLLEGE ADVISING PREP_board 8.27.25</a></div><div class="tv-agenda-section"><span class="tv-agenda-label">8</span><span class="tv-agenda-title">Action Items (Action Required)</span><span class="tv-agenda-duration">25min</span></div><div class="tv-agenda-item tv-clickable" data-start="534000"><span class="tv-agenda-label">8.1</span><span class="tv-ts">8:54</span><span class="tv-agenda-title">Adoption of Resolution No. 10, Approval of Education Code for Teaching Assignments for the 2025-2026 School Year</span><span class="tv-agenda-type">Action</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-09-18/Resolution-No.-10-Ed-Code-2025_2026.pdf" target="_blank" rel="noopener">Resolution No. 10 - Ed Code 2025_2026</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-09-18/Employee_EdCode_September18th.pdf" target="_blank" rel="noopener">Employee_EdCode_September18th</a></div><div class="tv-agenda-item tv-clickable" data-start="571000"><span class="tv-agenda-label">8.2</span><span class="tv-ts">9:31</span><span class="tv-agenda-title">Adopt Resolution No. 11 Approving Agreement with KIPP Excelencia for Proposition 2 Charter School Facilities Program Rehabilitation Funding (Fair Oaks Site)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-09-18/Resolution-11-KIPP-FY26-Prop-2-District-Agreement.pdf" target="_blank" rel="noopener">Resolution 11 KIPP FY26 Prop 2 District Agreement</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-09-18/KIPP-Prop-2-Presentation-RCSD-Board-Meeting.pdf" target="_blank" rel="noopener">KIPP Prop 2 Presentation RCSD Board Meeting</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-09-18/KIPP-Excelencia_Prop-2_-District-Notification_Rehabilitation.pdf" target="_blank" rel="noopener">KIPP Excelencia_Prop 2_ District Notification_Rehabilitation</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-09-18/KIPP-Excelencia_Prop-2_District-Notification_New-Construction.pdf" target="_blank" rel="noopener">KIPP Excelencia_Prop 2_District Notification_New Construction</a></div><div class="tv-agenda-section tv-clickable" data-start="1399000"><span class="tv-agenda-label">9</span><span class="tv-ts">23:19</span><span class="tv-agenda-title">Board and Superintendent Reports</span><span class="tv-agenda-duration">10min</span></div><div class="tv-agenda-section"><span class="tv-agenda-label">10</span><span class="tv-agenda-title">Information</span><span class="tv-agenda-duration">30min</span></div><div class="tv-agenda-item tv-clickable" data-start="1497000"><span class="tv-agenda-label">10.1</span><span class="tv-ts">24:57</span><span class="tv-agenda-title">RCSD Cohesion: Alignment of District Priorities</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-09-18/Board-Cohesion-Plan-25-26-9.18.25.pdf" target="_blank" rel="noopener">Board Cohesion Plan 25-26 9.18.25</a></div><div class="tv-agenda-section tv-clickable" data-start="4762000"><span class="tv-agenda-label">11</span><span class="tv-ts">1:19:22</span><span class="tv-agenda-title">Correspondence</span></div><div class="tv-agenda-section tv-clickable" data-start="4793000"><span class="tv-agenda-label">12</span><span class="tv-ts">1:19:53</span><span class="tv-agenda-title">Other Business/Suggested Items for Future Agenda</span><span class="tv-agenda-duration">1min</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-09-18/25-26-Schedule-of-Board-Agenda-Items.pdf" target="_blank" rel="noopener">25-26 Schedule of Board Agenda Items</a></div><div class="tv-agenda-section tv-clickable" data-start="4795000"><span class="tv-agenda-label">13</span><span class="tv-ts">1:19:55</span><span class="tv-agenda-title">Board of Trustees Meeting Calendar</span><span class="tv-agenda-duration">1min</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2025-09-18/25-26-RCSD-Board-Meeting-Calendar.pdf" target="_blank" rel="noopener">25-26 RCSD Board Meeting Calendar</a></div><div class="tv-agenda-section tv-clickable" data-start="4932000"><span class="tv-agenda-label">14</span><span class="tv-ts">1:22:12</span><span class="tv-agenda-title">Adjournment</span></div>
+    </div>
+
+    <div class="tv-panel tv-minutes-panel" id="panel-minutes">
+      <div class="tv-minutes-info"><p>Minutes approved at the December 17, 2025 meeting.</p><a class="tv-minutes-link" href="https://simbli.eboardsolutions.com/Meetings/Attachment.aspx?S=36030397&amp;AID=1351031&amp;MID=48983" target="_blank" rel="noopener">2025.09.18 Minutes Draft - Regular (amended)</a><a class="tv-minutes-link" href="https://simbli.eboardsolutions.com/Meetings/Attachment.aspx?S=36030397&amp;AID=1239500&amp;MID=43741" target="_blank" rel="noopener">2025.09.18 Minutes Draft - Regular</a><iframe class="tv-minutes-embed" src="https://data.rcsd.info/minutes/2025-09-18-minutes.pdf" title="Meeting minutes PDF"></iframe></div>
     </div>
   </div>
 
@@ -405,6 +592,7 @@
   var speakerMap = {};
   var autoScroll = true;
   var activeIdx = -1;
+  var activeTab = 'transcript';
 
   // Load YT IFrame API
   var tag = document.createElement('script');
@@ -418,6 +606,37 @@
     });
   };
 
+  // ---- Tab switching ----
+  var tabs = document.querySelectorAll('.tv-tab');
+  var panels = document.querySelectorAll('.tv-panel');
+  var transcriptControls = document.getElementById('transcript-controls');
+
+  tabs.forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      if (tab.disabled) return;
+      activeTab = tab.dataset.tab;
+      tabs.forEach(function(t) { t.classList.toggle('active', t.dataset.tab === activeTab); });
+      panels.forEach(function(p) { p.classList.toggle('active', p.id === 'panel-' + activeTab); });
+      transcriptControls.style.display = activeTab === 'transcript' ? '' : 'none';
+    });
+  });
+
+  // ---- Seek helper ----
+  function seekTo(ms) {
+    if (player && player.seekTo) {
+      player.seekTo(ms / 1000, true);
+      player.playVideo();
+    }
+  }
+
+  // ---- Agenda click-to-seek ----
+  document.getElementById('panel-agenda').addEventListener('click', function(e) {
+    var el = e.target.closest('.tv-clickable');
+    if (!el || !el.dataset.start) return;
+    seekTo(parseInt(el.dataset.start));
+  });
+
+  // ---- Transcript ----
   function formatTime(ms) {
     var totalSec = Math.floor(ms / 1000);
     var h = Math.floor(totalSec / 3600);
@@ -437,17 +656,15 @@
     return speakerColors[label.charCodeAt(0) % speakerColors.length];
   }
 
-  // Build transcript rows using safe DOM methods
   function renderTranscript() {
-    var container = document.getElementById('transcript-container');
-    container.textContent = ''; // clear
+    var container = document.getElementById('panel-transcript');
+    container.textContent = '';
 
     utterances.forEach(function(u, i) {
       var row = document.createElement('div');
       row.className = 'tv-utterance';
       row.dataset.idx = i;
       row.dataset.start = u.start;
-      row.dataset.end = u.end;
 
       var ts = document.createElement('span');
       ts.className = 'tv-ts';
@@ -470,19 +687,13 @@
       container.appendChild(row);
     });
 
-    // Click to seek
     container.addEventListener('click', function(e) {
       var row = e.target.closest('.tv-utterance');
       if (!row) return;
-      var startMs = parseInt(row.dataset.start);
-      if (player && player.seekTo) {
-        player.seekTo(startMs / 1000, true);
-        player.playVideo();
-      }
+      seekTo(parseInt(row.dataset.start));
     });
   }
 
-  // Fetch transcript
   fetch(transcriptUrl)
     .then(function(r) { return r.json(); })
     .then(function(data) {
@@ -492,36 +703,65 @@
       setInterval(syncHighlight, 250);
     })
     .catch(function() {
-      var c = document.getElementById('transcript-container');
+      var c = document.getElementById('panel-transcript');
       c.textContent = '';
       var msg = document.createElement('div');
-      msg.style.cssText = 'padding:1rem;color:var(--coral)';
+      msg.className = 'tv-empty';
       msg.textContent = 'Failed to load transcript.';
       c.appendChild(msg);
     });
 
+  // ---- Sync highlight (transcript + agenda) ----
+  var activeAgendaEl = null;
+
   function syncHighlight() {
     if (!player || !player.getCurrentTime) return;
     var currentMs = player.getCurrentTime() * 1000;
-    var newIdx = -1;
-    for (var i = utterances.length - 1; i >= 0; i--) {
-      if (utterances[i].start <= currentMs) { newIdx = i; break; }
+
+    // Transcript sync
+    if (activeTab === 'transcript') {
+      var newIdx = -1;
+      for (var i = utterances.length - 1; i >= 0; i--) {
+        if (utterances[i].start <= currentMs) { newIdx = i; break; }
+      }
+      if (newIdx !== activeIdx) {
+        activeIdx = newIdx;
+        var rows = document.querySelectorAll('.tv-utterance');
+        rows.forEach(function(r, i) { r.classList.toggle('active', i === activeIdx); });
+
+        if (autoScroll && activeIdx >= 0 && rows[activeIdx]) {
+          var rect = rows[activeIdx].getBoundingClientRect();
+          var videoCol = document.querySelector('.tv-video-col');
+          var stickyHeight = videoCol ? videoCol.offsetHeight : 0;
+          if (rect.top < stickyHeight + 20 || rect.bottom > window.innerHeight - 40) {
+            window.scrollTo({ top: rows[activeIdx].offsetTop - stickyHeight - 20, behavior: 'smooth' });
+          }
+        }
+      }
     }
-    if (newIdx === activeIdx) return;
-    activeIdx = newIdx;
 
-    var rows = document.querySelectorAll('.tv-utterance');
-    rows.forEach(function(r, i) {
-      r.classList.toggle('active', i === activeIdx);
-    });
-
-    if (autoScroll && activeIdx >= 0 && rows[activeIdx]) {
-      var rect = rows[activeIdx].getBoundingClientRect();
-      var videoCol = document.querySelector('.tv-video-col');
-      var stickyHeight = videoCol ? videoCol.offsetHeight : 0;
-      // Scroll so active row is just below the sticky video
-      if (rect.top < stickyHeight + 20 || rect.bottom > window.innerHeight - 40) {
-        window.scrollTo({ top: rows[activeIdx].offsetTop - stickyHeight - 20, behavior: 'smooth' });
+    // Agenda sync — highlight current agenda item
+    if (activeTab === 'agenda') {
+      var agendaItems = document.querySelectorAll('#panel-agenda [data-start]');
+      var bestEl = null;
+      agendaItems.forEach(function(el) {
+        var start = parseInt(el.dataset.start);
+        if (start <= currentMs) bestEl = el;
+      });
+      if (bestEl !== activeAgendaEl) {
+        if (activeAgendaEl) activeAgendaEl.classList.remove('active');
+        activeAgendaEl = bestEl;
+        if (activeAgendaEl) {
+          activeAgendaEl.classList.add('active');
+          if (autoScroll) {
+            var rect = activeAgendaEl.getBoundingClientRect();
+            var videoCol = document.querySelector('.tv-video-col');
+            var stickyHeight = videoCol ? videoCol.offsetHeight : 0;
+            if (rect.top < stickyHeight + 20 || rect.bottom > window.innerHeight - 40) {
+              window.scrollTo({ top: activeAgendaEl.offsetTop - stickyHeight - 20, behavior: 'smooth' });
+            }
+          }
+        }
       }
     }
   }
@@ -532,10 +772,9 @@
     this.classList.toggle('active', autoScroll);
   });
 
-  // Search with safe DOM highlighting
+  // Search
   var searchInput = document.getElementById('search-input');
   var searchTimeout = null;
-
   searchInput.addEventListener('input', function() {
     clearTimeout(searchTimeout);
     searchTimeout = setTimeout(doSearch, 200);
@@ -544,15 +783,12 @@
   function doSearch() {
     var term = searchInput.value.trim().toLowerCase();
     var rows = document.querySelectorAll('.tv-utterance');
-
     rows.forEach(function(row, i) {
       var textEl = row.querySelector('.tv-text');
       var original = utterances[i].text;
-
       if (term && original.toLowerCase().indexOf(term) >= 0) {
         row.classList.add('search-match');
         row.style.display = '';
-        // Highlight matches using safe DOM methods
         textEl.textContent = '';
         var remaining = original;
         var lc = remaining.toLowerCase();

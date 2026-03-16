@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="index, follow">
-<title>Transcript — Board Meeting, August 26, 2020</title>
-<meta name="description" content="Full diarized transcript of the RCSD Board Meeting on August 26, 2020. Speaker-identified, synced to video.">
+<title>Board Meeting — August 26, 2020 — RCSD Board Meeting</title>
+<meta name="description" content="Full diarized transcript, agenda, and minutes for the RCSD Board Meeting on August 26, 2020.">
 <meta name="theme-color" content="#1a3a2a">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
@@ -14,8 +14,8 @@
 <link rel="manifest" href="/site.webmanifest">
 <link rel="canonical" href="https://rcsd.info/meetings/2020-08-26/">
 
-<meta property="og:title" content="Transcript — Board Meeting, August 26, 2020">
-<meta property="og:description" content="Full diarized transcript of the RCSD Board Meeting on August 26, 2020. Speaker-identified, synced to video.">
+<meta property="og:title" content="Board Meeting — August 26, 2020 — RCSD Board Meeting">
+<meta property="og:description" content="Full diarized transcript, agenda, and minutes for the RCSD Board Meeting on August 26, 2020.">
 <meta property="og:url" content="https://rcsd.info/meetings/2020-08-26/">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://rcsd.info/og-1200.jpg">
@@ -25,8 +25,8 @@
 <meta property="og:site_name" content="RCSD Open Data">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://rcsd.info/og-1200.jpg">
-<meta name="twitter:title" content="Transcript — Board Meeting, August 26, 2020">
-<meta name="twitter:description" content="Full diarized transcript of the RCSD Board Meeting on August 26, 2020. Speaker-identified, synced to video.">
+<meta name="twitter:title" content="Board Meeting — August 26, 2020 — RCSD Board Meeting">
+<meta name="twitter:description" content="Full diarized transcript, agenda, and minutes for the RCSD Board Meeting on August 26, 2020.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -199,7 +199,7 @@
   .tv-main {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0;
   }
 
   .tv-video-col {
@@ -225,6 +225,32 @@
     width: 100%; height: 100%;
     border: none;
   }
+
+  /* ---- Tab bar ---- */
+  .tv-tabs {
+    display: flex;
+    gap: 0;
+    border-bottom: 2px solid var(--rule);
+    margin-top: 0.5rem;
+  }
+
+  .tv-tab {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border: none;
+    background: none;
+    color: var(--text-muted);
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .tv-tab:hover { color: var(--text); }
+  .tv-tab.active { color: var(--green-deep); border-bottom-color: var(--green-mid); }
+  .tv-tab:disabled { opacity: 0.4; cursor: default; }
 
   .tv-controls {
     display: flex;
@@ -259,10 +285,15 @@
   }
   .tv-search:focus { border-color: var(--green-mid); }
 
-  .tv-transcript-col {
+  /* ---- Tab panels ---- */
+  .tv-panel { display: none; }
+  .tv-panel.active { display: block; }
+
+  .tv-transcript-panel {
     border: 1px solid var(--rule-light);
-    border-radius: 6px;
+    border-radius: 0 0 6px 6px;
     background: #fff;
+    border-top: none;
   }
 
   .tv-utterance {
@@ -314,6 +345,147 @@
     border-radius: 2px;
   }
 
+  /* ---- Agenda panel ---- */
+  .tv-agenda-panel {
+    border: 1px solid var(--rule-light);
+    border-radius: 0 0 6px 6px;
+    background: #fff;
+    border-top: none;
+    padding: 0.25rem 0;
+  }
+
+  .tv-clickable { cursor: pointer; }
+  .tv-clickable:hover { background: var(--green-wash); }
+
+  .tv-agenda-section {
+    padding: 0.6rem 0.75rem 0.3rem;
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--green-deep);
+    display: flex;
+    gap: 0.5rem;
+    align-items: baseline;
+    border-top: 1px solid var(--rule-light);
+  }
+  .tv-agenda-section:first-child { border-top: none; }
+  .tv-agenda-section.active { background: #eef6eb; }
+
+  .tv-agenda-item {
+    padding: 0.35rem 0.75rem 0.35rem 1.5rem;
+    font-family: 'Newsreader', serif;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    display: flex;
+    gap: 0.5rem;
+    align-items: baseline;
+    transition: background 0.15s;
+  }
+  .tv-agenda-item.active { background: #eef6eb; }
+
+  .tv-agenda-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--green-mid);
+    font-weight: 500;
+    flex: 0 0 2.5rem;
+  }
+
+  .tv-agenda-title { flex: 1; min-width: 0; }
+
+  .tv-agenda-type {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.55rem;
+    color: var(--text-muted);
+    background: var(--cream-dark);
+    padding: 0.05rem 0.3rem;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+
+  .tv-agenda-duration {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--text-muted);
+  }
+
+  .tv-agenda-atts {
+    padding: 0.1rem 0.75rem 0.3rem 3rem;
+  }
+
+  .tv-agenda-att {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--green-mid);
+    text-decoration: none;
+    display: block;
+    line-height: 1.6;
+  }
+  .tv-agenda-att:hover { text-decoration: underline; color: var(--green-deep); }
+
+  .tv-agenda-pc {
+    padding: 0.1rem 0.75rem 0.3rem 3rem;
+    border-left: 2px solid var(--cream-dark);
+    margin-left: 1.5rem;
+  }
+
+  .tv-agenda-pc-speaker {
+    font-size: 0.8rem;
+    line-height: 1.5;
+    padding: 0.15rem 0;
+  }
+
+  .tv-agenda-pc-name {
+    font-weight: 600;
+    color: var(--green-mid);
+  }
+
+  .tv-agenda-pc-summary {
+    color: var(--text-secondary);
+    font-size: 0.78rem;
+  }
+
+  /* ---- Minutes panel ---- */
+  .tv-minutes-panel {
+    border: 1px solid var(--rule-light);
+    border-radius: 0 0 6px 6px;
+    background: #fff;
+    border-top: none;
+    padding: 1rem;
+  }
+
+  .tv-minutes-info p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.75rem;
+  }
+
+  .tv-minutes-link {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--green-mid);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  .tv-minutes-link:hover { text-decoration: underline; }
+  .tv-minutes-link::before { content: '\1F4C4 '; }
+
+  .tv-minutes-embed {
+    width: 100%;
+    height: 70vh;
+    border: 1px solid var(--rule-light);
+    border-radius: 4px;
+    margin-top: 0.5rem;
+  }
+
+  .tv-empty {
+    padding: 2rem;
+    text-align: center;
+    color: var(--text-muted);
+    font-style: italic;
+  }
+
   .tv-download {
     text-align: center;
     padding: 0.75rem;
@@ -331,6 +503,8 @@
     .tv-utterance { gap: 0.3rem; }
     .tv-ts { flex: 0 0 2.8rem; font-size: 0.6rem; }
     .tv-speaker { max-width: 5rem; font-size: 0.6rem; }
+    .tv-agenda-item { padding-left: 0.75rem; }
+    .tv-tab { padding: 0.4rem 0.6rem; font-size: 0.65rem; }
   }
 
 </style>
@@ -357,7 +531,7 @@
       2h 11m &middot; 
       <a href="https://www.youtube.com/watch?v=okRfyGjPflM" target="_blank" rel="noopener">YouTube</a>
       
-       &middot; <a href="https://go.boarddocs.com/ca/redwood/Board.nsf/goto?open&amp;id=CQV3X908F7FA" target="_blank" rel="noopener">Agenda</a>
+       &middot; <a href="https://go.boarddocs.com/ca/redwood/Board.nsf/goto?open&amp;id=CQV3X908F7FA" target="_blank" rel="noopener">BoardDocs</a>
     </div>
   </div>
 
@@ -366,14 +540,27 @@
       <div class="tv-video-wrap">
         <div id="yt-player"></div>
       </div>
-      <div class="tv-controls">
-        <button class="tv-btn active" id="btn-autoscroll" title="Auto-scroll transcript to current position">Auto-scroll</button>
+      <div class="tv-tabs">
+        <button class="tv-tab active" data-tab="transcript">Transcript</button>
+        <button class="tv-tab" data-tab="agenda">Agenda</button>
+        <button class="tv-tab" data-tab="minutes" disabled>Minutes</button>
+      </div>
+      <div class="tv-controls" id="transcript-controls">
+        <button class="tv-btn active" id="btn-autoscroll">Auto-scroll</button>
         <input class="tv-search" type="text" id="search-input" placeholder="Search transcript...">
       </div>
     </div>
 
-    <div class="tv-transcript-col" id="transcript-container">
+    <div class="tv-panel tv-transcript-panel active" id="panel-transcript">
       <div style="padding:1rem;color:var(--text-muted);font-style:italic">Loading transcript...</div>
+    </div>
+
+    <div class="tv-panel tv-agenda-panel" id="panel-agenda">
+      <div class="tv-agenda-section"><span class="tv-agenda-label">1</span><span class="tv-agenda-title">Call to Order</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">1.1</span><span class="tv-agenda-title">Roll Call</span><span class="tv-agenda-type">Procedural</span></div><div class="tv-agenda-section tv-clickable" data-start="5000"><span class="tv-agenda-label">2</span><span class="tv-ts">0:05</span><span class="tv-agenda-title">Welcome</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">2.1</span><span class="tv-agenda-title">Welcome by the School Board President</span><span class="tv-agenda-type">Procedural</span></div><div class="tv-agenda-section tv-clickable" data-start="76000"><span class="tv-agenda-label">3</span><span class="tv-ts">1:16</span><span class="tv-agenda-title">Changes to the Agenda</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">3.1</span><span class="tv-agenda-title">Changes to the Agenda</span><span class="tv-agenda-type">Discussion</span></div><div class="tv-agenda-section tv-clickable" data-start="93000"><span class="tv-agenda-label">4</span><span class="tv-ts">1:33</span><span class="tv-agenda-title">Approval of Agenda (Action Required)</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">4.1</span><span class="tv-agenda-title">Approval of Agenda</span><span class="tv-agenda-type">Action</span></div><div class="tv-agenda-section tv-clickable" data-start="119000"><span class="tv-agenda-label">5</span><span class="tv-ts">1:59</span><span class="tv-agenda-title">Oral Communication - If you have public comment related to a Regular Board Meeting item, please post it on: (https://docs.google.com/forms/d/e/1FAIpQLSd3rKbPfVCTpOsK5ILqjnU2u-h-NuNx-vUq4OZxYNVR8lc4aQ/viewform?usp=sf_link) prior to the Regular Board Meeting or immediately upon the meeting opening.</span></div><div class="tv-agenda-section tv-clickable" data-start="140000"><span class="tv-agenda-label">6</span><span class="tv-ts">2:20</span><span class="tv-agenda-title">Bond Program Consent Items (Action Required)</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">6.1</span><span class="tv-agenda-title">Approval of Additional Furniture Consultant Proposal for Various Sites with Donna Muller</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQV3ZL094E72/$file/6_1_ProposalForRCSDInteriorDesignServices_0.pdf" target="_blank" rel="noopener">6_1_ProposalForRCSDInteriorDesignServices_0.pdf</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">6.2</span><span class="tv-agenda-title">Approval of Hoover Community School New Gymnasium and Modernization Project Package G Beals Martin, Inc. Change Order #4</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQV42P0977EA/$file/6_2_ChangeOrder4_0.pdf" target="_blank" rel="noopener">6_2_ChangeOrder4_0.pdf</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">6.3</span><span class="tv-agenda-title">Approval of Lunch Shelter Proposal for Roosevelt School with Park Planet</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQV43Z09A961/$file/6_3_RooseveltLunchShelterProposal_0.pdf" target="_blank" rel="noopener">6_3_RooseveltLunchShelterProposal_0.pdf</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">6.4</span><span class="tv-agenda-title">Approval of Hoover Community School New Gymnasium and Modernization Project Package O.C. McDonald, Inc. Change Order #1</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQV44Y09CD5C/$file/6_4_ChangeOrder1_0%20(1).pdf" target="_blank" rel="noopener">6_4_ChangeOrder1_0 (1).pdf</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">6.5</span><span class="tv-agenda-title">Approval of Taft Community School New Buildings, Modernization &amp; Sitework Project Bid Package A Duran and Venables Change Order #2</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQV46409F7E6/$file/6_5_ChangeOrder2_0.pdf" target="_blank" rel="noopener">6_5_ChangeOrder2_0.pdf</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">6.6</span><span class="tv-agenda-title">Approval of Construction Staking Project Authorization Form for Orion Alternative School with Kier and Wright</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQV47W0A3B8E/$file/6_6_ProjectAuthorizationForm_0.pdf" target="_blank" rel="noopener">6_6_ProjectAuthorizationForm_0.pdf</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">6.7</span><span class="tv-agenda-title">Approval of Special Testing and Inspection Project Authorization Form for Roosevelt School with Ninyo and Moore</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQV48Y0A6303/$file/6_7_IndependentConsultantAgreementForProfessionalServices_0.pdf" target="_blank" rel="noopener">6_7_IndependentConsultantAgreementForProfessionalServices_0.pdf</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">6.8</span><span class="tv-agenda-title">Approval of Covid-19 Safety Compliance Officer Proposals for Adelante Selby, Hoover, and Taft Schools with Cal Inc.</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQV4B50AB485/$file/6_8_ProposalForEnvironmentalConsultingServices1_0.pdf" target="_blank" rel="noopener">6_8_ProposalForEnvironmentalConsultingServices1_0.pdf</a><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQV4B70AB6CE/$file/6_8_ProposalForEnvironmentalConsultingServices2_0.pdf" target="_blank" rel="noopener">6_8_ProposalForEnvironmentalConsultingServices2_0.pdf</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">6.9</span><span class="tv-agenda-title">Approval of Plan Review Fee Invoices for Various Sites with the California Department of Education (CDE)</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQV4CM0AECF4/$file/6_9_CDEPlanReviewFeeInvoices_0.pdf" target="_blank" rel="noopener">6_9_CDEPlanReviewFeeInvoices_0.pdf</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">6.10</span><span class="tv-agenda-title">Approval of Toilet Partition Purchase and Installation Proposal for Roosevelt School with Service Metal Products</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQV4DT0B19B6/$file/6_10_ToiletPartitionProposal_0.pdf" target="_blank" rel="noopener">6_10_ToiletPartitionProposal_0.pdf</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">6.11</span><span class="tv-agenda-title">Approval of Measure T Bond Program $20k and Under Items Tracking List</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQV4ET0B3EFE/$file/6_11_ItemsUnder20KTrackingList_0.pdf" target="_blank" rel="noopener">6_11_ItemsUnder20KTrackingList_0.pdf</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">6.12</span><span class="tv-agenda-title">Approval of 2950 Fair Oaks Avenue Site Maintenance Project FE Controls Corporation Change Order #2</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQV4FY0B69C8/$file/6_12_ChangeOrder2_0%20(1).pdf" target="_blank" rel="noopener">6_12_ChangeOrder2_0 (1).pdf</a></div><div class="tv-agenda-section"><span class="tv-agenda-label">7</span><span class="tv-agenda-title">Bond Program Action Items (Action Required)</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">7.1</span><span class="tv-agenda-title">Approval of Construction Agreement for Roy Cloud School with Mar Con Builders</span><span class="tv-agenda-type">Action</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQV4GR0B879D/$file/7_1_ConstructionAgreementWithMarCon_0.pdf" target="_blank" rel="noopener">7_1_ConstructionAgreementWithMarCon_0.pdf</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">7.2</span><span class="tv-agenda-title">Adoption of Resolution #9, Approval of Security Guard Services Resolution and Agreement with Metro Surveillance Security</span><span class="tv-agenda-type">Action</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQW2H7023559/$file/7_2_Resolution9AndAgreement_0.pdf" target="_blank" rel="noopener">7_2_Resolution9AndAgreement_0.pdf</a></div><div class="tv-agenda-section tv-clickable" data-start="197000"><span class="tv-agenda-label">8</span><span class="tv-ts">3:17</span><span class="tv-agenda-title">Discussion Items</span></div><div class="tv-agenda-pc"><div class="tv-agenda-pc-speaker tv-clickable" data-start="6576000"><span class="tv-agenda-pc-name">Michelle Smith</span> (2min)<span class="tv-agenda-pc-summary"> &mdash; Praised the school's distance learning rollout but raised concern about students being able to access YouTube on district Chromebooks unsupervised during instructional time.</span></div><div class="tv-agenda-pc-speaker tv-clickable" data-start="6718000"><span class="tv-agenda-pc-name">Maria Stockton</span> (3min)<span class="tv-agenda-pc-summary"> &mdash; Raised concerns about insufficient PPE protections at school sites for classified staff, broken temperature equipment, lack of protocols for parent entry, and asked why more staff could not work from home.</span></div></div><div class="tv-agenda-item"><span class="tv-agenda-label">8.1</span><span class="tv-agenda-title">Discussion on COVID-19</span><span class="tv-agenda-type">Discussion</span></div><div class="tv-agenda-section tv-clickable" data-start="6999000"><span class="tv-agenda-label">9</span><span class="tv-ts">1:56:39</span><span class="tv-agenda-title">Consent Items (Action Required)</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">9.1</span><span class="tv-agenda-title">Ratification of Warrant Register, July 1, 2020 - July 31, 2020</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQW37G057AC0/$file/9_1_WarrantRegisterJuly12020July312020_0.pdf" target="_blank" rel="noopener">9_1_WarrantRegisterJuly12020July312020_0.pdf</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">9.2</span><span class="tv-agenda-title">Approval of Agreement between the Redwood City School District and Recology Peninsula Services</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQW38M05A6A5/$file/9_2_RecologyAgreementFor91202082022_0.pdf" target="_blank" rel="noopener">9_2_RecologyAgreementFor91202082022_0.pdf</a><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQW38P05A8E5/$file/9_2_RecologyRates_0.pdf" target="_blank" rel="noopener">9_2_RecologyRates_0.pdf</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">9.3</span><span class="tv-agenda-title">Approval of Agreement between the Redwood City School District and Star Vista for Fiscal Year 2020-21</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQW3A305DC6E/$file/9_3_AgreementBetweenRCSDAndStarVista_0.pdf" target="_blank" rel="noopener">9_3_AgreementBetweenRCSDAndStarVista_0.pdf</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">9.4</span><span class="tv-agenda-title">Approval of Agreement between the Redwood City School District and United Through Education, Inc. (Garfield and Taft)</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQW3B40602D5/$file/9_4_AgreementBetweenRCSDAndUnitedThroughEducationIncGarfield_0.pdf" target="_blank" rel="noopener">9_4_AgreementBetweenRCSDAndUnitedThroughEducationIncGarfield_0.pdf</a><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQW3B60604E1/$file/9_4_AgreementBetweenRCSDAndUnitedThroughEducationIncTaft_0.pdf" target="_blank" rel="noopener">9_4_AgreementBetweenRCSDAndUnitedThroughEducationIncTaft_0.pdf</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">9.5</span><span class="tv-agenda-title">Approval of Agreement between the Redwood City School District and United Through Education, Inc. (Henry Ford and Hoover)</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQW3CA062F76/$file/9_5_AgreementBetweenRCSDAndUnitedThroughEducationIncHenryFord_0.pdf" target="_blank" rel="noopener">9_5_AgreementBetweenRCSDAndUnitedThroughEducationIncHenryFord_0.pdf</a><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQW3CC063146/$file/9_5_AgreementBetweenRCSDAndUnitedThroughEducationIncHoover_0.pdf" target="_blank" rel="noopener">9_5_AgreementBetweenRCSDAndUnitedThroughEducationIncHoover_0.pdf</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">9.6</span><span class="tv-agenda-title">Approval of Agreement between the Redwood City School District and United Through Education, Inc. (Newcomer Program)</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQW3DU066A09/$file/9_6_AgreementBetweenRCSDAndUnitedThroughEducationIncNewcomerProgram_0.pdf" target="_blank" rel="noopener">9_6_AgreementBetweenRCSDAndUnitedThroughEducationIncNewcomerProgram_0.pdf</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">9.7</span><span class="tv-agenda-title">Approval of Agreement between the Redwood City School District and Adrian Amandi for Visual Impairment and Assistive Technology Services</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQW3EM0687C8/$file/9_7_AgreementBetweenRCSDAndAdrianAmandi_0.pdf" target="_blank" rel="noopener">9_7_AgreementBetweenRCSDAndAdrianAmandi_0.pdf</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">9.8</span><span class="tv-agenda-title">Approval of Agreement between the Redwood City School District and Dr. Rebekah Will to Provide Audiology Services</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQW3FZ06BBA7/$file/9_8_AgreementBetweenRCSDAndDrRebekahWill_0.pdf" target="_blank" rel="noopener">9_8_AgreementBetweenRCSDAndDrRebekahWill_0.pdf</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">9.9</span><span class="tv-agenda-title">Approval of Agreement between the Redwood City School District and EvalGroup for Special Education Providers</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQW3GT06D9E7/$file/9_9_AgreementBetweenRCSDAndEvalGroupPsychologistHanrahan_0.pdf" target="_blank" rel="noopener">9_9_AgreementBetweenRCSDAndEvalGroupPsychologistHanrahan_0.pdf</a><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQW3GV06DB21/$file/9_9_AgreementBetweenRCSDAndEvalGroupRSPTeacherRodriguez_0.pdf" target="_blank" rel="noopener">9_9_AgreementBetweenRCSDAndEvalGroupRSPTeacherRodriguez_0.pdf</a><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQW3GX06DD4A/$file/9_9_AgreementBetweenRCSDAndEvalGroupSDCTeacherCandelaria_0.pdf" target="_blank" rel="noopener">9_9_AgreementBetweenRCSDAndEvalGroupSDCTeacherCandelaria_0.pdf</a><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQW3GZ06DEF8/$file/9_9_AgreementBetweenRCSDAndEvalGroupSDCTeacherCronin_0.pdf" target="_blank" rel="noopener">9_9_AgreementBetweenRCSDAndEvalGroupSDCTeacherCronin_0.pdf</a><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQW3H306E18F/$file/9_9_AgreementBetweenRCSDAndEvalGroupSLPReeves_0.pdf" target="_blank" rel="noopener">9_9_AgreementBetweenRCSDAndEvalGroupSLPReeves_0.pdf</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">9.10</span><span class="tv-agenda-title">Approval of Agreement between the Redwood City School District and Ivonne Watson to Provide Psychological Evaluations</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQW3JB071254/$file/9_10_AgreementBetweenRCSDAndIvonneWatson_0.pdf" target="_blank" rel="noopener">9_10_AgreementBetweenRCSDAndIvonneWatson_0.pdf</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">9.11</span><span class="tv-agenda-title">Approval of Additional Vendors to be Included with Non-Public School (&quot;NPS&quot;)/Non-Public Agency (&quot;NPA&quot;) Master Contract</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQW3K90733A0/$file/9_11_ExhibitABlankSELPAMasterContract_0.pdf" target="_blank" rel="noopener">9_11_ExhibitABlankSELPAMasterContract_0.pdf</a><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQW3KB073600/$file/9_11_ExhibitBApprovedRateSheets_0.pdf" target="_blank" rel="noopener">9_11_ExhibitBApprovedRateSheets_0.pdf</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">9.12</span><span class="tv-agenda-title">Approval of Board Meeting Calendar, School Assignments and School Committee Assignments for Board Members for the 2020-21 School Year</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQW3L8075966/$file/9_12_CalendarOfBoardMeetingDatesFor202021_0.pdf" target="_blank" rel="noopener">9_12_CalendarOfBoardMeetingDatesFor202021_0.pdf</a><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQW3LA075B27/$file/9_12_FinalSchoolAssignments202021_0.pdf" target="_blank" rel="noopener">9_12_FinalSchoolAssignments202021_0.pdf</a><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQW3LC075D18/$file/9_12_FinalSchoolBoardCommitteeAssignments202021_0.pdf" target="_blank" rel="noopener">9_12_FinalSchoolBoardCommitteeAssignments202021_0.pdf</a></div><div class="tv-agenda-section"><span class="tv-agenda-label">10</span><span class="tv-agenda-title">Action Items (Action Required)</span></div><div class="tv-agenda-item tv-clickable" data-start="7039000"><span class="tv-agenda-label">10.1</span><span class="tv-ts">1:57:19</span><span class="tv-agenda-title">Adoption of Resolution #6, Reduction of Certain Classified Services for Fiscal Year 2020-21</span><span class="tv-agenda-type">Action</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQW3M3077912/$file/10_1_Resolution6_0.pdf" target="_blank" rel="noopener">10_1_Resolution6_0.pdf</a></div><div class="tv-agenda-item tv-clickable" data-start="7165000"><span class="tv-agenda-label">10.2</span><span class="tv-ts">1:59:25</span><span class="tv-agenda-title">Adoption of Resolution #7, Approval of Education Code Options for Teaching Assignments</span><span class="tv-agenda-type">Action</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQW3NA07A6C9/$file/10_2_Resolution7_0.pdf" target="_blank" rel="noopener">10_2_Resolution7_0.pdf</a><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQW3NC07A884/$file/10_2_TeacherConsentFormMontanaMiller_0.pdf" target="_blank" rel="noopener">10_2_TeacherConsentFormMontanaMiller_0.pdf</a><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQW3NE07AA68/$file/10_2_TeacherConsentFormSpencerWright_0.pdf" target="_blank" rel="noopener">10_2_TeacherConsentFormSpencerWright_0.pdf</a></div><div class="tv-agenda-item tv-clickable" data-start="7285000"><span class="tv-agenda-label">10.3</span><span class="tv-ts">2:01:25</span><span class="tv-agenda-title">Approval of Local Assignment Options in Areas of Special Skill and Preparation Outside of Credential Authorization</span><span class="tv-agenda-type">Action</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQW3PE07D0F7/$file/10_3_CommitteeRecommendation_0.pdf" target="_blank" rel="noopener">10_3_CommitteeRecommendation_0.pdf</a></div><div class="tv-agenda-item tv-clickable" data-start="7499000"><span class="tv-agenda-label">10.4</span><span class="tv-ts">2:04:59</span><span class="tv-agenda-title">Approval of Provisional Internship Permit</span><span class="tv-agenda-type">Action</span></div><div class="tv-agenda-item tv-clickable" data-start="7597000"><span class="tv-agenda-label">10.5</span><span class="tv-ts">2:06:37</span><span class="tv-agenda-title">Adoption of Resolution #8, Sufficiency of Instructional Materials</span><span class="tv-agenda-type">Action</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQW3RS082A53/$file/10_5_202021CoreCurriculumList_0.pdf" target="_blank" rel="noopener">10_5_202021CoreCurriculumList_0.pdf</a><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQW3RU082C3D/$file/10_5_PublicNoticeFor202021_0.pdf" target="_blank" rel="noopener">10_5_PublicNoticeFor202021_0.pdf</a><a class="tv-agenda-att" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQW3RW082E35/$file/10_5_Resolution8_0.pdf" target="_blank" rel="noopener">10_5_Resolution8_0.pdf</a></div><div class="tv-agenda-section tv-clickable" data-start="7658000"><span class="tv-agenda-label">11</span><span class="tv-ts">2:07:38</span><span class="tv-agenda-title">Board and Superintendent Report</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">11.1</span><span class="tv-agenda-title">Report from Board Members and Superintendent</span><span class="tv-agenda-type">Reports</span></div><div class="tv-agenda-section tv-clickable" data-start="7706000"><span class="tv-agenda-label">12</span><span class="tv-ts">2:08:26</span><span class="tv-agenda-title">Information</span></div><div class="tv-agenda-section tv-clickable" data-start="7709000"><span class="tv-agenda-label">13</span><span class="tv-ts">2:08:29</span><span class="tv-agenda-title">Correspondence</span></div><div class="tv-agenda-section tv-clickable" data-start="7750000"><span class="tv-agenda-label">14</span><span class="tv-ts">2:09:10</span><span class="tv-agenda-title">Other Business/Suggested Items for Future Agenda</span></div><div class="tv-agenda-section tv-clickable" data-start="7762000"><span class="tv-agenda-label">15</span><span class="tv-ts">2:09:22</span><span class="tv-agenda-title">Board Agenda Calendar</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">15.1</span><span class="tv-agenda-title">Changes to the Board Agenda Schedule</span><span class="tv-agenda-type">Information</span></div><div class="tv-agenda-section tv-clickable" data-start="7822000"><span class="tv-agenda-label">16</span><span class="tv-ts">2:10:22</span><span class="tv-agenda-title">Adjournment (Action Required)</span></div>
+    </div>
+
+    <div class="tv-panel tv-minutes-panel" id="panel-minutes">
+      <div class="tv-empty">Minutes not yet approved for this meeting.</div>
     </div>
   </div>
 
@@ -405,6 +592,7 @@
   var speakerMap = {};
   var autoScroll = true;
   var activeIdx = -1;
+  var activeTab = 'transcript';
 
   // Load YT IFrame API
   var tag = document.createElement('script');
@@ -418,6 +606,37 @@
     });
   };
 
+  // ---- Tab switching ----
+  var tabs = document.querySelectorAll('.tv-tab');
+  var panels = document.querySelectorAll('.tv-panel');
+  var transcriptControls = document.getElementById('transcript-controls');
+
+  tabs.forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      if (tab.disabled) return;
+      activeTab = tab.dataset.tab;
+      tabs.forEach(function(t) { t.classList.toggle('active', t.dataset.tab === activeTab); });
+      panels.forEach(function(p) { p.classList.toggle('active', p.id === 'panel-' + activeTab); });
+      transcriptControls.style.display = activeTab === 'transcript' ? '' : 'none';
+    });
+  });
+
+  // ---- Seek helper ----
+  function seekTo(ms) {
+    if (player && player.seekTo) {
+      player.seekTo(ms / 1000, true);
+      player.playVideo();
+    }
+  }
+
+  // ---- Agenda click-to-seek ----
+  document.getElementById('panel-agenda').addEventListener('click', function(e) {
+    var el = e.target.closest('.tv-clickable');
+    if (!el || !el.dataset.start) return;
+    seekTo(parseInt(el.dataset.start));
+  });
+
+  // ---- Transcript ----
   function formatTime(ms) {
     var totalSec = Math.floor(ms / 1000);
     var h = Math.floor(totalSec / 3600);
@@ -437,17 +656,15 @@
     return speakerColors[label.charCodeAt(0) % speakerColors.length];
   }
 
-  // Build transcript rows using safe DOM methods
   function renderTranscript() {
-    var container = document.getElementById('transcript-container');
-    container.textContent = ''; // clear
+    var container = document.getElementById('panel-transcript');
+    container.textContent = '';
 
     utterances.forEach(function(u, i) {
       var row = document.createElement('div');
       row.className = 'tv-utterance';
       row.dataset.idx = i;
       row.dataset.start = u.start;
-      row.dataset.end = u.end;
 
       var ts = document.createElement('span');
       ts.className = 'tv-ts';
@@ -470,19 +687,13 @@
       container.appendChild(row);
     });
 
-    // Click to seek
     container.addEventListener('click', function(e) {
       var row = e.target.closest('.tv-utterance');
       if (!row) return;
-      var startMs = parseInt(row.dataset.start);
-      if (player && player.seekTo) {
-        player.seekTo(startMs / 1000, true);
-        player.playVideo();
-      }
+      seekTo(parseInt(row.dataset.start));
     });
   }
 
-  // Fetch transcript
   fetch(transcriptUrl)
     .then(function(r) { return r.json(); })
     .then(function(data) {
@@ -492,36 +703,65 @@
       setInterval(syncHighlight, 250);
     })
     .catch(function() {
-      var c = document.getElementById('transcript-container');
+      var c = document.getElementById('panel-transcript');
       c.textContent = '';
       var msg = document.createElement('div');
-      msg.style.cssText = 'padding:1rem;color:var(--coral)';
+      msg.className = 'tv-empty';
       msg.textContent = 'Failed to load transcript.';
       c.appendChild(msg);
     });
 
+  // ---- Sync highlight (transcript + agenda) ----
+  var activeAgendaEl = null;
+
   function syncHighlight() {
     if (!player || !player.getCurrentTime) return;
     var currentMs = player.getCurrentTime() * 1000;
-    var newIdx = -1;
-    for (var i = utterances.length - 1; i >= 0; i--) {
-      if (utterances[i].start <= currentMs) { newIdx = i; break; }
+
+    // Transcript sync
+    if (activeTab === 'transcript') {
+      var newIdx = -1;
+      for (var i = utterances.length - 1; i >= 0; i--) {
+        if (utterances[i].start <= currentMs) { newIdx = i; break; }
+      }
+      if (newIdx !== activeIdx) {
+        activeIdx = newIdx;
+        var rows = document.querySelectorAll('.tv-utterance');
+        rows.forEach(function(r, i) { r.classList.toggle('active', i === activeIdx); });
+
+        if (autoScroll && activeIdx >= 0 && rows[activeIdx]) {
+          var rect = rows[activeIdx].getBoundingClientRect();
+          var videoCol = document.querySelector('.tv-video-col');
+          var stickyHeight = videoCol ? videoCol.offsetHeight : 0;
+          if (rect.top < stickyHeight + 20 || rect.bottom > window.innerHeight - 40) {
+            window.scrollTo({ top: rows[activeIdx].offsetTop - stickyHeight - 20, behavior: 'smooth' });
+          }
+        }
+      }
     }
-    if (newIdx === activeIdx) return;
-    activeIdx = newIdx;
 
-    var rows = document.querySelectorAll('.tv-utterance');
-    rows.forEach(function(r, i) {
-      r.classList.toggle('active', i === activeIdx);
-    });
-
-    if (autoScroll && activeIdx >= 0 && rows[activeIdx]) {
-      var rect = rows[activeIdx].getBoundingClientRect();
-      var videoCol = document.querySelector('.tv-video-col');
-      var stickyHeight = videoCol ? videoCol.offsetHeight : 0;
-      // Scroll so active row is just below the sticky video
-      if (rect.top < stickyHeight + 20 || rect.bottom > window.innerHeight - 40) {
-        window.scrollTo({ top: rows[activeIdx].offsetTop - stickyHeight - 20, behavior: 'smooth' });
+    // Agenda sync — highlight current agenda item
+    if (activeTab === 'agenda') {
+      var agendaItems = document.querySelectorAll('#panel-agenda [data-start]');
+      var bestEl = null;
+      agendaItems.forEach(function(el) {
+        var start = parseInt(el.dataset.start);
+        if (start <= currentMs) bestEl = el;
+      });
+      if (bestEl !== activeAgendaEl) {
+        if (activeAgendaEl) activeAgendaEl.classList.remove('active');
+        activeAgendaEl = bestEl;
+        if (activeAgendaEl) {
+          activeAgendaEl.classList.add('active');
+          if (autoScroll) {
+            var rect = activeAgendaEl.getBoundingClientRect();
+            var videoCol = document.querySelector('.tv-video-col');
+            var stickyHeight = videoCol ? videoCol.offsetHeight : 0;
+            if (rect.top < stickyHeight + 20 || rect.bottom > window.innerHeight - 40) {
+              window.scrollTo({ top: activeAgendaEl.offsetTop - stickyHeight - 20, behavior: 'smooth' });
+            }
+          }
+        }
       }
     }
   }
@@ -532,10 +772,9 @@
     this.classList.toggle('active', autoScroll);
   });
 
-  // Search with safe DOM highlighting
+  // Search
   var searchInput = document.getElementById('search-input');
   var searchTimeout = null;
-
   searchInput.addEventListener('input', function() {
     clearTimeout(searchTimeout);
     searchTimeout = setTimeout(doSearch, 200);
@@ -544,15 +783,12 @@
   function doSearch() {
     var term = searchInput.value.trim().toLowerCase();
     var rows = document.querySelectorAll('.tv-utterance');
-
     rows.forEach(function(row, i) {
       var textEl = row.querySelector('.tv-text');
       var original = utterances[i].text;
-
       if (term && original.toLowerCase().indexOf(term) >= 0) {
         row.classList.add('search-match');
         row.style.display = '';
-        // Highlight matches using safe DOM methods
         textEl.textContent = '';
         var remaining = original;
         var lc = remaining.toLowerCase();
