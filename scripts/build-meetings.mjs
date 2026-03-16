@@ -414,6 +414,17 @@ if (existsSync(agendaAttPath)) {
 const allMeetings = [...simbliMeetings, ...boarddocsMeetings]
   .sort((a, b) => b.date.localeCompare(a.date)); // Reverse chronological
 
+// Deduplicate slugs — append suffix for collisions
+const slugCounts = {};
+for (const m of allMeetings) {
+  if (!slugCounts[m.slug]) {
+    slugCounts[m.slug] = 1;
+  } else {
+    slugCounts[m.slug]++;
+    m.slug = `${m.slug}-${slugCounts[m.slug]}`;
+  }
+}
+
 // Merge YouTube IDs and timestamps into all meetings
 for (const m of allMeetings) {
   // Fill in YouTube ID from youtube-index.json if not already set
