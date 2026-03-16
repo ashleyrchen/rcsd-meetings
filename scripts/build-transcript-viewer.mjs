@@ -77,14 +77,16 @@ const pageCSS = `
 
   .tv-main {
     display: flex;
-    gap: 1.5rem;
-    align-items: flex-start;
+    flex-direction: column;
+    gap: 1rem;
   }
 
   .tv-video-col {
-    flex: 0 0 480px;
     position: sticky;
-    top: 1rem;
+    top: 0;
+    z-index: 10;
+    background: var(--cream);
+    padding-bottom: 0.5rem;
   }
 
   .tv-video-wrap {
@@ -137,11 +139,6 @@ const pageCSS = `
   .tv-search:focus { border-color: var(--green-mid); }
 
   .tv-transcript-col {
-    flex: 1;
-    min-width: 0;
-    max-height: 80vh;
-    overflow-y: auto;
-    scroll-behavior: smooth;
     border: 1px solid var(--rule-light);
     border-radius: 6px;
     background: #fff;
@@ -207,12 +204,6 @@ const pageCSS = `
     text-decoration: none;
   }
   .tv-download a:hover { text-decoration: underline; }
-
-  @media (max-width: 900px) {
-    .tv-main { flex-direction: column; }
-    .tv-video-col { flex: none; width: 100%; position: static; }
-    .tv-transcript-col { max-height: 60vh; }
-  }
 
   @media (max-width: 640px) {
     .tv-layout { padding: 0.75rem 1rem; }
@@ -404,9 +395,13 @@ ${siteFooter({ lang: 'en' })}
     });
 
     if (autoScroll && activeIdx >= 0 && rows[activeIdx]) {
-      var container = document.getElementById('transcript-container');
-      var rowTop = rows[activeIdx].offsetTop - container.offsetTop;
-      container.scrollTop = rowTop - container.clientHeight / 3;
+      var rect = rows[activeIdx].getBoundingClientRect();
+      var videoCol = document.querySelector('.tv-video-col');
+      var stickyHeight = videoCol ? videoCol.offsetHeight : 0;
+      // Scroll so active row is just below the sticky video
+      if (rect.top < stickyHeight + 20 || rect.bottom > window.innerHeight - 40) {
+        window.scrollTo({ top: rows[activeIdx].offsetTop - stickyHeight - 20, behavior: 'smooth' });
+      }
     }
   }
 
