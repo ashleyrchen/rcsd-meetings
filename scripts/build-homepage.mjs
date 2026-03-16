@@ -1079,116 +1079,71 @@ writeFileSync(resolve(ROOT, 'docs/llms.txt'), renderTemplate('llms.txt', templat
 console.log('Wrote docs/llms.txt');
 
 // ---- sitemap.xml ----
+// Google best practices: use xhtml:link hreflang for bilingual pages,
+// accurate lastmod dates, NO changefreq or priority (Google ignores them).
 const blogPosts = JSON.parse(readFileSync(resolve(ROOT, 'data/blog-posts.json'), 'utf-8'));
 const sitemapDate = new Date().toISOString().slice(0, 10);
-const schoolUrls = schools.schools.map(s => `  <url>
-    <loc>https://rcsd.info/schools/${s.slug}/</loc>
-    <lastmod>${sitemapDate}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+
+// Helper: bilingual URL pair with hreflang annotations
+function bilingualUrl(enPath, esPath, lastmod) {
+  const en = `https://rcsd.info${enPath}`;
+  const es = `https://rcsd.info${esPath}`;
+  return `  <url>
+    <loc>${en}</loc>
+    <lastmod>${lastmod}</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="${en}"/>
+    <xhtml:link rel="alternate" hreflang="es" href="${es}"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="${en}"/>
   </url>
   <url>
-    <loc>https://rcsd.info/escuelas/${s.slug}/</loc>
-    <lastmod>${sitemapDate}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>`).join('\n');
-const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://rcsd.info/</loc>
-    <lastmod>${sitemapDate}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://rcsd.info/schools/</loc>
-    <lastmod>${sitemapDate}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://rcsd.info/escuelas/</loc>
-    <lastmod>${sitemapDate}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-${schoolUrls}
-  <url>
-    <loc>https://rcsd.info/meetings/</loc>
-    <lastmod>${sitemapDate}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://rcsd.info/reuniones/</loc>
-    <lastmod>${sitemapDate}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://rcsd.info/district/</loc>
-    <lastmod>${sitemapDate}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://rcsd.info/distrito/</loc>
-    <lastmod>${sitemapDate}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://rcsd.info/blog/</loc>
-    <lastmod>${sitemapDate}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://rcsd.info/blog/es/</loc>
-    <lastmod>${sitemapDate}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-${blogPosts.map(p => `  <url>
-    <loc>https://rcsd.info/blog/${p.slug}/</loc>
-    <lastmod>${p.date}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://rcsd.info/blog/${p.slugEs}/</loc>
-    <lastmod>${p.date}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>`).join('\n')}
-${(() => {
-  // Add per-meeting viewer pages
-  try {
-    const meetings = JSON.parse(readFileSync(resolve(ROOT, 'data/meetings-data.json'), 'utf-8'));
-    const byDate = {};
-    for (const m of meetings.meetings) {
-      if (!byDate[m.date]) byDate[m.date] = [];
-      byDate[m.date].push(m);
-    }
-    return meetings.meetings.map(m => {
-      const isMulti = byDate[m.date].length > 1;
-      const path = isMulti ? m.slug : m.date;
-      return `  <url>
-    <loc>https://rcsd.info/meetings/${path}/</loc>
-    <lastmod>${m.date}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <loc>${es}</loc>
+    <lastmod>${lastmod}</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="${en}"/>
+    <xhtml:link rel="alternate" hreflang="es" href="${es}"/>
   </url>`;
-    }).join('\n');
-  } catch { return ''; }
-})()}
-  <url>
-    <loc>https://rcsd.info/llms.txt</loc>
-    <lastmod>${sitemapDate}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
+}
+
+// Helper: single-language URL
+function singleUrl(path, lastmod) {
+  return `  <url>
+    <loc>https://rcsd.info${path}</loc>
+    <lastmod>${lastmod}</lastmod>
+  </url>`;
+}
+
+const schoolUrls = schools.schools.map(s =>
+  bilingualUrl(`/schools/${s.slug}/`, `/escuelas/${s.slug}/`, sitemapDate)
+).join('\n');
+
+// Meeting viewer pages
+let meetingUrls = '';
+try {
+  const meetings = JSON.parse(readFileSync(resolve(ROOT, 'data/meetings-data.json'), 'utf-8'));
+  const byDate = {};
+  for (const m of meetings.meetings) {
+    if (!byDate[m.date]) byDate[m.date] = [];
+    byDate[m.date].push(m);
+  }
+  meetingUrls = meetings.meetings.map(m => {
+    const isMulti = byDate[m.date].length > 1;
+    const path = isMulti ? m.slug : m.date;
+    return singleUrl(`/meetings/${path}/`, m.date);
+  }).join('\n');
+} catch {}
+
+const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+${bilingualUrl('/', '/', sitemapDate)}
+${bilingualUrl('/schools/', '/escuelas/', sitemapDate)}
+${schoolUrls}
+${bilingualUrl('/meetings/', '/reuniones/', sitemapDate)}
+${bilingualUrl('/district/', '/distrito/', sitemapDate)}
+${bilingualUrl('/budget/', '/presupuesto/', sitemapDate)}
+${bilingualUrl('/blog/', '/blog/es/', sitemapDate)}
+${blogPosts.map(p => bilingualUrl(`/blog/${p.slug}/`, `/blog/${p.slugEs}/`, p.date)).join('\n')}
+${meetingUrls}
+${singleUrl('/llms.txt', sitemapDate)}
 </urlset>
 `;
 writeFileSync(resolve(ROOT, 'docs/sitemap.xml'), sitemap);
