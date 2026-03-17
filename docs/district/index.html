@@ -682,6 +682,112 @@
   .margin-link a.watch::before { content: '\25b6'; }
   .margin-link a.read::before { content: '\2197'; }
 
+  /* ---- DOCUMENT TABS ---- */
+  .doc-tabs {
+    display: flex;
+    gap: 0;
+    border-bottom: 1px solid var(--rule);
+    margin-top: 1rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .doc-tab {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.02em;
+    padding: 0.7rem 1.2rem;
+    border: none;
+    background: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+    transition: color 0.15s, border-color 0.15s;
+  }
+
+  .doc-tab:hover {
+    color: var(--green-mid);
+  }
+
+  .doc-tab.active {
+    color: var(--green-deep);
+    border-bottom-color: var(--green-mid);
+  }
+
+  .doc-panel {
+    display: none;
+    padding-top: 1.2rem;
+  }
+
+  .doc-panel.active {
+    display: block;
+  }
+
+  .doc-year-heading {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text);
+    margin: 1.2rem 0 0.5rem;
+  }
+
+  .doc-year-heading:first-child {
+    margin-top: 0;
+  }
+
+  .doc-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .doc-link {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.68rem;
+    color: var(--green-mid);
+    text-decoration: none;
+    padding: 0.25rem 0;
+  }
+
+  .doc-link:hover {
+    color: var(--green-deep);
+    text-decoration: underline;
+  }
+
+  .doc-school-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 0.4rem;
+  }
+
+  .doc-school-link {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.68rem;
+    color: var(--green-mid);
+    text-decoration: none;
+    padding: 0.4rem 0.6rem;
+    border: 1px solid var(--rule-light);
+    background: #fff;
+    text-align: center;
+    transition: all 0.15s;
+  }
+
+  .doc-school-link:hover {
+    border-color: var(--green-light);
+    background: var(--green-wash);
+    color: var(--green-deep);
+  }
+
+  .doc-lang-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin: 0.8rem 0 0.3rem;
+  }
+
   /* ---- RESPONSIVE ---- */
   @media (max-width: 900px) {
     .margin-link { display: none; }
@@ -695,6 +801,8 @@
     .glossary { columns: 1; }
     .toc a { padding: 0.8rem 0.6rem; font-size: 0.6rem; }
     .goal-metrics { grid-template-columns: 1fr; }
+    .doc-school-grid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); }
+    .doc-tab { padding: 0.6rem 0.8rem; font-size: 0.6rem; }
   }
 
   /* page-specific footer overrides */
@@ -765,6 +873,7 @@
     <a href="#spsa">School budgets</a>
     <a href="#trends">Trends</a>
     <a href="#glossary">Glossary</a>
+    <a href="#documents">Documents</a>
   </div>
 </nav>
 
@@ -1293,8 +1402,339 @@
     </div>
   </section>
 
-</main>
 
+<section class="section" id="documents">
+  <div class="section-rule"></div>
+  <div class="section-num">08</div>
+  <h2>Documents & Reports</h2>
+  <p class="section-subtitle">School plans, budgets, and accountability reports archived from official sources.</p>
+  <div class="doc-tabs">
+    <button class="doc-tab active" data-doc-tab="budget">Budget</button>
+    <button class="doc-tab" data-doc-tab="lcap">LCAP</button>
+    <button class="doc-tab" data-doc-tab="spsa">School Plans (SPSA)</button>
+    <button class="doc-tab" data-doc-tab="sarc">School Report Cards</button>
+  </div>
+  <div class="doc-panel active" data-doc-panel="budget">
+    <h3 class="doc-year-heading">2025-26</h3>
+    <div class="doc-list">
+      <a class="doc-link" href="https://data.rcsd.info/board-packets/2025-12-17/25-26-First-Interim-MYP.pdf" target="_blank" rel="noopener">First Interim Report — MYP</a>
+      <a class="doc-link" href="https://data.rcsd.info/board-packets/2025-12-17/25-26-First-Interim-Budget-Report.pdf" target="_blank" rel="noopener">First Interim Report</a>
+      <a class="doc-link" href="https://data.rcsd.info/board-packets/2025-12-17/25-26-First-Interim-Presentation.pdf" target="_blank" rel="noopener">First Interim Report — Presentation (2025-12-17)</a>
+      <a class="doc-link" href="https://data.rcsd.info/board-packets/2025-12-17/Revised-25-26-First-Interim-Presentation.pdf" target="_blank" rel="noopener">First Interim Report — Presentation (2025-12-17)</a>
+      <a class="doc-link" href="https://data.rcsd.info/board-packets/2025-06-18/8.2-25-26-Budget-MYP.pdf" target="_blank" rel="noopener">Multi-Year Projection</a>
+      <a class="doc-link" href="https://data.rcsd.info/board-packets/2025-06-18/8.2-2025-26-Budget-Presentation.pdf" target="_blank" rel="noopener">Budget Presentation (2025-06-18)</a>
+      <a class="doc-link" href="https://data.rcsd.info/board-packets/2025-06-18/8.2-2025-26-Budget-Presentation-Updated-2025.06.18.pdf" target="_blank" rel="noopener">Budget Presentation (2025-06-18)</a>
+      <a class="doc-link" href="https://data.rcsd.info/board-packets/2025-06-25/2025-26-Budget-Presentation-6.25.25.pdf" target="_blank" rel="noopener">Budget Presentation (2025-06-25)</a>
+      <a class="doc-link" href="https://data.rcsd.info/board-packets/2026-02-11/2026_LCAP_Mid-Year_Budget-Report_for_the_2025-26_LCAP_Redwood_City_Elementary_Sc.pdf" target="_blank" rel="noopener">Budget Presentation (2026-02-11)</a>
+      <a class="doc-link" href="https://data.rcsd.info/board-packets/2025-10-08/Gann-Limit-Resolution-12-2025-26.pdf" target="_blank" rel="noopener">Gann Limit Resolution</a>
+      <a class="doc-link" href="https://data.rcsd.info/board-packets/2026-01-13/Spreadsheet-Scenario-Development_-Preliminary-Budget-Reduction-Options-FSP-P1-1.pdf" target="_blank" rel="noopener">Budget Reduction Plan (2026-01-13)</a>
+      <a class="doc-link" href="https://data.rcsd.info/board-packets/2026-02-04/Superintendent-Budget-Reduction-Recommendations-020426pdf.pdf" target="_blank" rel="noopener">Budget Reduction Plan (2026-02-04)</a>
+    </div>
+    <h3 class="doc-year-heading">2024-25</h3>
+    <div class="doc-list">
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/D98NY8622968/$file/2024-25%20Adopted%20Budget%20-%20Form%20MYP.pdf" target="_blank" rel="noopener">Adopted Budget — MYP</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DBX4LM0C18AC/$file/24-25%20First%20Interim%20Book_final.pdf" target="_blank" rel="noopener">First Interim Report</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DBX3PQ07DC55/$file/24-25%201st%20Interim%20MYP.pdf" target="_blank" rel="noopener">First Interim Report — MYP</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DBX49L0A7B06/$file/2024-25%20First%20Interim%20Presentation.pdf" target="_blank" rel="noopener">First Interim Report — Presentation</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DEYVHT80DF44/$file/2024-25%20Second%20Interim.pdf" target="_blank" rel="noopener">Second Interim Report</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DEYQ8D680898/$file/2024-25%20Second%20Interim%20Presentation.pdf" target="_blank" rel="noopener">Second Interim Report — Presentation</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DEYQHV6957BD/$file/24-25%202nd%20Interim%20MYP.pdf" target="_blank" rel="noopener">Second Interim Report — MYP</a>
+      <a class="doc-link" href="https://data.rcsd.info/board-packets/2025-10-08/24_25-Unaudited-Actuals-Book.pdf" target="_blank" rel="noopener">Unaudited Actuals</a>
+      <a class="doc-link" href="https://data.rcsd.info/board-packets/2025-10-08/Unaudited-Actuals-24-25-Presentation.pdf" target="_blank" rel="noopener">Unaudited Actuals — Presentation</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/D68SKC730840/$file/24-25%20Proposed%20Budget%20-%20MYP.pdf" target="_blank" rel="noopener">Multi-Year Projection</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/D6EQF868C3EE/$file/2024%20RCSD%20LCAP%20LCFF%20Budget%20Overview%20for%20Parents%202024.06.20%20combined.pdf" target="_blank" rel="noopener">Budget Presentation (2024-06-20)</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/D6FMQQ5C621D/$file/2024-25%20Budget%20Presentation-.pdf" target="_blank" rel="noopener">Budget Presentation (2024-06-20)</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/D9ATCS76C23E/$file/Gann%20Limit%20Resolution%207%2024.25.pdf" target="_blank" rel="noopener">Gann Limit Resolution</a>
+      <a class="doc-link" href="https://data.rcsd.info/board-packets/2025-12-17/Final-24-25-Developer-Fee-Report.pdf" target="_blank" rel="noopener">Developer Fee Study</a>
+    </div>
+    <h3 class="doc-year-heading">2023-24</h3>
+    <div class="doc-list">
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CSXU487A310B/$file/2023-24%20Budget%20Adoption%20Presentation.pdf" target="_blank" rel="noopener">Adopted Budget — Presentation</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CZ8QGY694FA3/$file/23.24%201st%20Interim%20Complete.pdf" target="_blank" rel="noopener">First Interim Report</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CZ8PQQ65C1AC/$file/2023-24%20First%20Interim%20Presentation--.pdf" target="_blank" rel="noopener">First Interim Report — Presentation</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CZ8MMU5BF60C/$file/MYP%2023-24%201st%20Interim.pdf" target="_blank" rel="noopener">First Interim Report — MYP</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/D3HVCS80227A/$file/23-24%20Second%20Interim%20Book.pdf" target="_blank" rel="noopener">Second Interim Report</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/D3HVCU802499/$file/2023-24%202nd%20Interim%20Presentation.pdf" target="_blank" rel="noopener">Second Interim Report — Presentation</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/D3DU8R7ADB5B/$file/Final%202nd%20Interim%2023-24%20MYP.pdf" target="_blank" rel="noopener">Second Interim Report — MYP</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/D9AT3L7569B7/$file/23_24%20Unaudited%20Actuals%20Book-FINAL.pdf" target="_blank" rel="noopener">Unaudited Actuals (2024-09-25)</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/D9ATCL76BB3F/$file/Unaudited%20Actuals%2023-24%20Presentation.pdf" target="_blank" rel="noopener">Unaudited Actuals — Presentation</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DDCVES73B00D/$file/Form%20CEA%20from%2023-24%20Unaudited%20Actuals.pdf" target="_blank" rel="noopener">Unaudited Actuals (2025-03-26)</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CSWUF47BC92C/$file/23-24%20Proposed%20Budget%20-%20MYP.pdf" target="_blank" rel="noopener">Multi-Year Projection (2023-06-21)</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CVWRDC6D7805/$file/Form%20MYP%20from%2023.24%20Adopted.pdf" target="_blank" rel="noopener">Multi-Year Projection (2023-09-27)</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CVWPQ665AD5B/$file/Gann%20Limit%20Res%204%2023.24.pdf" target="_blank" rel="noopener">Gann Limit Resolution (2023-09-27)</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/D99MCB5A90B1/$file/23-24%20UA%20GANN%20Limit.pdf" target="_blank" rel="noopener">Gann Limit Resolution (2024-09-25)</a>
+    </div>
+    <h3 class="doc-year-heading">2022-23</h3>
+    <div class="doc-list">
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CFLS6B711F9B/$file/2022-23%20budget%20adoption%20-%20public%20hearing%206.22.2022.pdf" target="_blank" rel="noopener">Adopted Budget (2022-06-22)</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CFFLR5568C01/$file/Statement%20of%20Reasons%20for%20Excess%20Reserves%20FY22-23%20Adopted%20Budget.pdf" target="_blank" rel="noopener">Adopted Budget (2022-06-22)</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CFL2B30151EF/$file/Statement%20of%20Reasons%20for%20Excess%20Reserves%20FY22-23%20Adopted%20Budget.pdf" target="_blank" rel="noopener">Adopted Budget (2022-06-29)</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CHBSTQ744310/$file/2022.23_Connect_Adopted%20Budget%20(Board).pdf" target="_blank" rel="noopener">Adopted Budget — Connect Report</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CLY7JX19E8D5/$file/22.23%20First%20Interim.pdf" target="_blank" rel="noopener">First Interim Report</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CLY8AV1D6B70/$file/22-23%20First%20Interim%20MYP.pdf" target="_blank" rel="noopener">First Interim Report — MYP</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CLZS64711804/$file/2022-23%20First%20Interim%20Report%20Presentation.pdf" target="_blank" rel="noopener">First Interim Report — Presentation</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQ249K0A79D2/$file/22.23%202nd%20Interim%20Financial%20Report.pdf" target="_blank" rel="noopener">Second Interim Report</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQ24FV0B665F/$file/22-23%20Second%20Interim%20MYP.pdf" target="_blank" rel="noopener">Second Interim Report — MYP</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQ24BS0ACD54/$file/22.23%20Second%20Interim%20Report%20Presentation.pdf" target="_blank" rel="noopener">Second Interim Report — Presentation</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CJBTU476DA0C/$file/GANN%20Limit%20Unaudited%20Actuals%202021.22.pdf" target="_blank" rel="noopener">Unaudited Actuals (2022-09-21)</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CVX3BB060B39/$file/22-23%20Unaudited%20Actuals%20Book.pdf" target="_blank" rel="noopener">Unaudited Actuals (2023-09-27)</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CVX3BL061577/$file/22-23%20Unaudited%20Actuals%20Presentation.pdf" target="_blank" rel="noopener">Unaudited Actuals — Presentation</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CFGKU452CDE2/$file/2022%20LCAP%20Budget%20Overview%20for%20Parents%20(BOP)%20-%20FINAL.pdf" target="_blank" rel="noopener">Budget Presentation (2022-06-22)</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CHELXW58509F/$file/Budget%20Update%20Presentation%20-%2008-24-2022.pdf" target="_blank" rel="noopener">Budget Presentation (2022-08-24)</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CJBTU676DE2F/$file/Gann%20Limit%20Resolution%2014.pdf" target="_blank" rel="noopener">Gann Limit Resolution</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CYGQ6K67C960/$file/22-23%20Developer%20Fee%20Report.pdf" target="_blank" rel="noopener">Developer Fee Study</a>
+    </div>
+    <h3 class="doc-year-heading">2021-22</h3>
+    <div class="doc-list">
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/C7RQG3654838/$file/SMCOE%20Review_LCAP_Adopted%20Budget_21.22.pdf" target="_blank" rel="noopener">Adopted Budget</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/C9KVM38154F8/$file/2021.22%20First%20Interim%20Report.pdf" target="_blank" rel="noopener">First Interim Report</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/C9PVD4802DE4/$file/2021-22%20First%20Interim%20PowerPoint%20Presentation.pdf" target="_blank" rel="noopener">First Interim Report — Presentation</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CC3VZ4831C80/$file/SMCOE%20Review%20of%20First%20Interim%2021.22.pdf" target="_blank" rel="noopener">First Interim Report — Review Letter</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CCMP98637928/$file/2nd%20Interim%20book%202021-22.pdf" target="_blank" rel="noopener">Second Interim Report</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CCSKD3514D6E/$file/2021-22%202nd%20Interim%20PowerPoint%20Presentation%20-%203.23.2022%20.pdf" target="_blank" rel="noopener">Second Interim Report — Presentation</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CF5LNY575C97/$file/SMCOE%20Review%20of%20RCSD%202021-22%202nd%20Interim.pdf" target="_blank" rel="noopener">Second Interim Report — Review Letter</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/C6XR596ABD84/$file/Form%20GANN_2021%20Unaudited%20Actuals.pdf" target="_blank" rel="noopener">Unaudited Actuals (2021-09-22)</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CJG3QF07F826/$file/21-22%20Unaudited%20Actuals.pdf" target="_blank" rel="noopener">Unaudited Actuals (2022-09-21)</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRY4BD0ABD8A/$file/11_3_PowerPointPresentation_0.pdf" target="_blank" rel="noopener">Budget Presentation (2021-06-23)</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRY4BD0ABD8A/$file/11_3_PowerPointPresentation_0.pdf" target="_blank" rel="noopener">Budget Presentation (2021-06-23)</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/C68MA557D84F/$file/Budget%20Update%20Presentation%20-%208.25.2021%20Board%20Meeting.pdf" target="_blank" rel="noopener">Budget Presentation (2021-08-25)</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CFFU7U79BC0D/$file/2022%20LCAP%20Budget%20Overview%20for%20Parents%20(BOP).pdf" target="_blank" rel="noopener">Budget Presentation (2022-06-22)</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CFPLPH5750EF/$file/2022%20LCAP%20Budget%20Overview%20for%20Parents%20(BOP)%20-%20FINAL%20ADOPTION%206.29.2022.pdf" target="_blank" rel="noopener">Budget Presentation (2022-06-29)</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/C6VVUF826D19/$file/Gann%20Limit%20Resolution%207.pdf" target="_blank" rel="noopener">Gann Limit Resolution</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CMY2S4038569/$file/21-22%20Developer%20Fee%20Report.pdf" target="_blank" rel="noopener">Developer Fee Study</a>
+    </div>
+    <h3 class="doc-year-heading">2020-21</h3>
+    <div class="doc-list">
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/D326PE15D599/$file/2020-21%20First%20Interim%20Budget%20Report.pdf" target="_blank" rel="noopener">First Interim Report</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/D326PQ15ED2A/$file/Power%20Point%20Presentation%201st%20Interim%20Report.pdf" target="_blank" rel="noopener">First Interim Report — Presentation</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/C6XUBV7B4C2F/$file/Unaudited%20Actuals%202020_21.pdf" target="_blank" rel="noopener">Unaudited Actuals (2021-09-22)</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/C74LN2574561/$file/2020-21%20Unaudited%20Actuals%20PowerPoint.pdf" target="_blank" rel="noopener">Unaudited Actuals (2021-09-22)</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQV2HZ02568D/$file/13_1_Connect2021AdoptedBudgetCOVID19OperationsReportLetter_0.pdf" target="_blank" rel="noopener">Budget Presentation (2020-08-12)</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQV2PD031F58/$file/13_5_202021Budget45DayRevisionSummaryOfChanges_0.pdf" target="_blank" rel="noopener">Budget Presentation (2020-08-12)</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQXTU67902F9/$file/10_1_SMCOEReviewOfCOVID19OperationsWrittenReportAndAdoptedBudgetForFY2021_0" target="_blank" rel="noopener">Budget Presentation (2020-09-30)</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/D326MN159FD4/$file/2020%20LCFF%20Budget%20Overview%20For%20Parents.pdf" target="_blank" rel="noopener">Budget Presentation (2020-12-09)</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRE3MH0789C6/$file/16_2_Connect202021BudgetOverviewForParents_0.pdf" target="_blank" rel="noopener">Budget Presentation (2021-02-10)</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRG2MT02E3DF/$file/14_1_202021SecondInterimPowerPointPresentation_0.pdf" target="_blank" rel="noopener">Budget Presentation (2021-03-10)</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRY49L0A7AAB/$file/11_2_202122BudgetOverviewForParents_0.pdf" target="_blank" rel="noopener">Budget Presentation (2021-06-23)</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRY49L0A7AAB/$file/11_2_202122BudgetOverviewForParents_0.pdf" target="_blank" rel="noopener">Budget Presentation (2021-06-23)</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRZ2270004FF/$file/13_2_202122BudgetOverviewForParents_0.pdf" target="_blank" rel="noopener">Budget Presentation (2021-06-30)</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/C9ARQR6EE09B/$file/2020-21%20Annual%20Developer%20Fees%20Report.pdf" target="_blank" rel="noopener">Developer Fee Study</a>
+    </div>
+    <h3 class="doc-year-heading">2019-20</h3>
+    <div class="doc-list">
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/D5QQUM665472/$file/7_2_AdoptedBudgetPowerPointPresentation_0.pdf" target="_blank" rel="noopener">Budget Presentation</a>
+    </div>
+  </div>
+  <div class="doc-panel" data-doc-panel="lcap">
+    <h3 class="doc-year-heading">2025-26</h3>
+    <div class="doc-list">
+      <a class="doc-link" href="https://data.rcsd.info/board-packets/2026-02-11/Mid-year-LCAP-2025-2026-1.pdf" target="_blank" rel="noopener">LCAP Mid-Year Report</a>
+      <a class="doc-link" href="https://data.rcsd.info/board-packets/2025-08-27/2025-2026-Local-Control-Accountability-Plan-LCAP-readoption.pdf" target="_blank" rel="noopener">LCAP (2025-08-27)</a>
+      <a class="doc-link" href="https://data.rcsd.info/board-packets/2025-06-25/LCAP-Final_Local_Control_and_Accountability_Plan_Redwood_City_Elementary_School_.pdf" target="_blank" rel="noopener">LCAP (2025-06-25)</a>
+      <a class="doc-link" href="https://data.rcsd.info/board-packets/2025-06-25/LCAP-Final-Update-June-24-2025-2025_Local_Control_and_Accountability_Plan_Redwoo.pdf" target="_blank" rel="noopener">LCAP (2025-06-25)</a>
+      <a class="doc-link" href="https://data.rcsd.info/board-packets/2025-06-18/8.1-LCAP-Final-REPORT-June-2025-1.pdf" target="_blank" rel="noopener">LCAP (2025-06-18)</a>
+      <a class="doc-link" href="https://data.rcsd.info/board-packets/2025-06-18/8.1-LCAP-Final-REPORT-June-2025-uploaded-06.17.2025.pdf" target="_blank" rel="noopener">LCAP (2025-06-18)</a>
+    </div>
+    <h3 class="doc-year-heading">2024-25</h3>
+    <div class="doc-list">
+      <a class="doc-link" href="https://data.rcsd.info/board-packets/2025-06-25/2025_LCAP_Federal_Addendum_Redwood_City_Elementary_School_District_20250610.pdf" target="_blank" rel="noopener">LCAP Federal Addendum (2025-06-25)</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DE432A04B866/$file/LCAP%20MID%20YEAR%20REPORT%202024-2025.pdf" target="_blank" rel="noopener">LCAP (2025-02-26)</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DE4RLL6E8742/$file/MID%20year%20LCAP%20Budget%2024-25.pdf" target="_blank" rel="noopener">LCAP (2025-02-26)</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/D7HSWE74A725/$file/2024_LCAP_Federal_Addendum_Redwood_City_Elementary_School_District_20240725.pdf" target="_blank" rel="noopener">LCAP Federal Addendum (2024-08-07)</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/D6LLCV55F5BE/$file/2024_LCAP_June%2026%2C%202024%20_Redwood_City_Elementary_School_District_20240620-combined%5Bupdated%206.26.24%5D.pdf" target="_blank" rel="noopener">LCAP Combined</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/D6EM7W59EB8E/$file/LCAP%20Public%20Hearing%20June%2020%2C%202024.pdf" target="_blank" rel="noopener">LCAP Public Hearing Draft (2024-06-20)</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/D6FMZQ5DB423/$file/LCAP%20Public%20Hearing%20June%2020%2C%202024%20%5BUpdated%5D.pdf" target="_blank" rel="noopener">LCAP Public Hearing Draft (2024-06-20)</a>
+    </div>
+    <h3 class="doc-year-heading">2023-24</h3>
+    <div class="doc-list">
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/D67P7V634A97/$file/2024_LCAP_Annual_Update_for_the_2023-24_Redwood_City_Elementary_School_District_20240612-combined.pdf" target="_blank" rel="noopener">LCAP Combined</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/D2P6UR06DC41/$file/2024_LCAP_Mid-Year_Monitoring_Report_for_the_2023-24_LCAP_Redwood_City_Elementary_School_District_20240221%20(3).pdf" target="_blank" rel="noopener">LCAP Mid-Year Report</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/D2UM4W5934E3/$file/23-24%20LCAP%20Mid%20Year%20Report.pdf" target="_blank" rel="noopener">LCAP</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CWQ2ED01CEC8/$file/2022_LCAP_Federal_Addendum_Redwood_City_Elementary_School_District_20220621.pdf" target="_blank" rel="noopener">LCAP Federal Addendum</a>
+    </div>
+    <h3 class="doc-year-heading">2022-23</h3>
+    <div class="doc-list">
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQJTUT779D8F/$file/BP_AR%200460%20Local%20Control%20Accountability%20Plan.pdf" target="_blank" rel="noopener">LCAP (2023-04-19)</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CPFVC8800D4A/$file/BP_AR%200460%20Local%20Control%20Accountability%20Plan.pdf" target="_blank" rel="noopener">LCAP (2023-03-22)</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CHBSTN7437C1/$file/2022.23%20Connect_LCAP.pdf" target="_blank" rel="noopener">LCAP Connect Report</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CGWUS37D3F10/$file/2022_Local_Control_and_Accountability_Plan_LCAP_Draft_Account_20220802.pdf" target="_blank" rel="noopener">LCAP (2022-08-10)</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CFLQY96B66E0/$file/2022_LCAP_Federal_Addendum_Redwood_City_Elementary_School_District_20220621.pdf" target="_blank" rel="noopener">LCAP Federal Addendum</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CFPMKY5BAF88/$file/2022_Local_Control_and_Accountability_Plan_LCAP_Draft_Account_20220624.pdf" target="_blank" rel="noopener">LCAP (2022-06-29)</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CFGKU952D151/$file/2022_Local_Control_and_Accountability_Plan_LCAP_Draft_Account_20220616.pdf" target="_blank" rel="noopener">LCAP (2022-06-22)</a>
+    </div>
+    <h3 class="doc-year-heading">2022-22</h3>
+    <div class="doc-list">
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CFLNX962077D/$file/LCAP%20Board%20presentation%206-22-22.pdf" target="_blank" rel="noopener">LCAP Presentation</a>
+    </div>
+    <h3 class="doc-year-heading">2021-22</h3>
+    <div class="doc-list">
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CBFU6L7A8A09/$file/2022_Supplement_to_Annual_Update_for_2021-22_LCAP_Redwood_City_Elementary_School_District_20220208.pdf" target="_blank" rel="noopener">LCAP Annual Update (2022-02-16)</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CBFU6N7A8CAC/$file/2021_LCAP_Mid-Year_Report_Redwood_City_Elementary_School_District_20220208.pdf" target="_blank" rel="noopener">LCAP Mid-Year Report</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CB4PRZ65A0BB/$file/BP%200460%20Local%20Control%20Accountability%20Plan.pdf" target="_blank" rel="noopener">LCAP (2022-02-09)</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CALPT5661CDA/$file/BP%200460%20Local%20Control%20Accountability%20Plan.pdf" target="_blank" rel="noopener">LCAP (2022-01-12)</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRY4890A485E/$file/11_1_LCAPAnnualUpdate_0.pdf" target="_blank" rel="noopener">LCAP Annual Update (2021-06-23)</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRY48B0A4AC1/$file/11_1_LCAPPlanSummaryFor202122_0.pdf" target="_blank" rel="noopener">LCAP (2021-06-23)</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRY4890A485E/$file/11_1_LCAPAnnualUpdate_0.pdf" target="_blank" rel="noopener">LCAP Annual Update (2021-06-23)</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRY48B0A4AC1/$file/11_1_LCAPPlanSummaryFor202122_0.pdf" target="_blank" rel="noopener">LCAP (2021-06-23)</a>
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRY4MZ0C4BCE/$file/12_1_2021LCAPFederalAddendum_0.pdf" target="_blank" rel="noopener">LCAP Federal Addendum</a>
+    </div>
+    <h3 class="doc-year-heading">2020-21</h3>
+    <div class="doc-list">
+      <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQL2AX014DE6/$file/13_3_LCAPBoardMemo_0.pdf" target="_blank" rel="noopener">LCAP</a>
+    </div>
+  </div>
+  <div class="doc-panel" data-doc-panel="spsa">
+    <h3 class="doc-year-heading">2025-26</h3>
+    <div class="doc-school-grid">
+      <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DGF5DU0FC9EF/$file/Clifford%20SPSA%202025-26_(Spring)__20250506.pdf" target="_blank" rel="noopener">Clifford</a>
+      <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DFSL3A54881C/$file/25-26%20Garfield%20_SPSA_(Spring)%2020250416%20(Updated%204.16.25).pdf" target="_blank" rel="noopener">Garfield</a>
+      <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DFSL3C548A5D/$file/25-26%20Henry%20Ford%20_SPSA_(Spring)%2020250416%20(Updated%204.16.25).pdf" target="_blank" rel="noopener">Henry Ford</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/board-packets/2026-03-11/Hoover_-SPSA-2026.pdf" target="_blank" rel="noopener">Hoover</a>
+      <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DGUT9D760E17/$file/Kennedy%20SPSA%202025-26_(Spring)__20250519.pdf" target="_blank" rel="noopener">Kennedy</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/board-packets/2026-03-11/MIT-SPSA-2025-26__McKinley_Institute_of_Technology_20260304-combined.pdf" target="_blank" rel="noopener">McKinley MIT</a>
+      <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DGUT85761179/$file/North%20Star%20Academy%202025-26_SPSA(Spring)__20250514.pdf" target="_blank" rel="noopener">North Star</a>
+      <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DFE49Q0A7FE1/$file/Orion%202025-26_SPSA_(Spring)__20250403.pdf" target="_blank" rel="noopener">Orion</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/board-packets/2026-03-11/Roosevelt-2025-26_SPSA-Spring-_20260303.pdf" target="_blank" rel="noopener">Roosevelt</a>
+      <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DGUT9F761296/$file/Roy%20Cloud%20SPSA%202025-26_20250514.pdf" target="_blank" rel="noopener">Roy Cloud</a>
+      <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DFE49S0A81A0/$file/Taft%202025-26_SPSA%20(Sprin)_20250403.pdf" target="_blank" rel="noopener">Taft</a>
+    </div>
+    <h3 class="doc-year-heading">2024-25</h3>
+    <div class="doc-school-grid">
+      <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DGF5DJ0FBD10/$file/Adelante%20Selby%20Sp.%20.%20SPSA(Spring)_20250506.pdf" target="_blank" rel="noopener">Adelante Selby</a>
+      <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DFSL3S549F75/$file/SPSA%20Updates.HF.Garfield.Orion.Taft%2020250416.pdf" target="_blank" rel="noopener">Garfield</a>
+      <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/D5QT3P713132/$file/Henry%20Ford%20SPSA%202024-25_Spring%20.pdf" target="_blank" rel="noopener">Henry Ford</a>
+      <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/D5PUPD7CFDA7/$file/Hoover%20Community%20School%20SPSA%202024-25_.pdf" target="_blank" rel="noopener">Hoover</a>
+      <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DGUT82760FEE/$file/MCKinley%20Middle%20School%20SPSA%20(%20SPRING%202025.pdf" target="_blank" rel="noopener">McKinley MIT</a>
+      <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/D5PUPK7CFDCB/$file/North%20Star%20SPSA%202024-25_.pdf" target="_blank" rel="noopener">North Star</a>
+      <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/D5PUPM7CFDD7/$file/Orion%20Alternative%20SPSA%202024-25_.pdf" target="_blank" rel="noopener">Orion</a>
+      <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/D5QSZT710FBF/$file/Roosevelt%20SPSA%202024-25_Spring.pdf" target="_blank" rel="noopener">Roosevelt</a>
+      <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/D5PUPP7CFDDE/$file/Roy%20Cloud%20SPSA%202024-25_Spring.pdf" target="_blank" rel="noopener">Roy Cloud</a>
+      <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/D5PUPR7CFDE5/$file/Taft%20SPSA%202024-25.pdf" target="_blank" rel="noopener">Taft</a>
+    </div>
+    <h3 class="doc-year-heading">2023-24</h3>
+    <div class="doc-school-grid">
+      <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CX6SSR741E0C/$file/2023_Adelante%20Selby%20Spanish%20Immersion%20SPSA_20231023.pdf" target="_blank" rel="noopener">Adelante Selby</a>
+      <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/D5PUP97CF917/$file/Clifford%20(%20Spring)%20SPSA%202024_2025.pdf" target="_blank" rel="noopener">Clifford</a>
+      <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CX6STU744787/$file/2023_Garfield%20Elementary%20School%20SPSA_20231023.pdf" target="_blank" rel="noopener">Garfield</a>
+      <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CX6SU974566B/$file/2023_Henry%20Ford%20Elementary%20SPSA_20231030.pdf" target="_blank" rel="noopener">Henry Ford</a>
+      <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/D2NV7Q7B531D/$file/Hoover%20Community%20School%20Updated%20SPSA%201-30-2024.pdf" target="_blank" rel="noopener">Hoover</a>
+      <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/D5PUPF7CFDB3/$file/Kennedy%20Middle%20School%20SPSA%202024_2025.pdf" target="_blank" rel="noopener">Kennedy</a>
+      <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CX6SWN74A621/$file/2023_McKinley%20Middle%20School%20SPSA_20231023.pdf" target="_blank" rel="noopener">McKinley MIT</a>
+      <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CX6SWG749DDC/$file/2023_North%20Star%20SPSA_20231031.pdf" target="_blank" rel="noopener">North Star</a>
+      <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CX6SX274BF56/$file/2023_Orion%20Alternative%20School%20SPSA_20231023.pdf" target="_blank" rel="noopener">Orion</a>
+      <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CX6SY374E5DA/$file/2023_Roosevelt%20Elementary%20School%20SPSA_20231017.pdf" target="_blank" rel="noopener">Roosevelt</a>
+      <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CX6SYB74ED3D/$file/2023_Roy%20Cloud%20School%20SPSA_20231027.pdf" target="_blank" rel="noopener">Roy Cloud</a>
+      <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CX6SYQ74FE8F/$file/2023_%20Taft%20Elementary%20SPSA_20231027.pdf" target="_blank" rel="noopener">Taft</a>
+    </div>
+    <h3 class="doc-year-heading">2022-23</h3>
+    <div class="doc-school-grid">
+      <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CNM2HR024C81/$file/Adelante%20Selby%20SPSA%20Board%20Report.pdf" target="_blank" rel="noopener">Adelante Selby</a>
+      <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQNUYT7E6199/$file/Clifford%20SPSA%20Board%20Report%20.pdf" target="_blank" rel="noopener">Clifford</a>
+      <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQYU9E79F882/$file/Garfield%20SPSA%20Board%20Report.pdf" target="_blank" rel="noopener">Garfield</a>
+      <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CR9QQY696359/$file/Henry%20Ford%20SPSA%20Board%20Report%20%20(1).pdf" target="_blank" rel="noopener">Henry Ford</a>
+      <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CMYQS56A9B98/$file/SPSA%20Board%20Report_%20Hoover.pdf" target="_blank" rel="noopener">Hoover</a>
+      <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CPHVL5813605/$file/Kennedy%20SPSA%20Board%20Report%20.pdf" target="_blank" rel="noopener">Kennedy</a>
+      <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CPHVL78137FB/$file/MIT%20SPSA%20Board%20Report.pdf" target="_blank" rel="noopener">McKinley MIT</a>
+      <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CPXUH77C168E/$file/North%20Star%20SPSA%20Board%20Report%20.pdf" target="_blank" rel="noopener">North Star</a>
+      <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CP3MEH5A352C/$file/Orion%20SPSA%20Board%20Report%20.pdf" target="_blank" rel="noopener">Orion</a>
+      <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQZM9L5A27B1/$file/Roosevelt%20SPSA%20Board%20Report%20%20(1).pdf" target="_blank" rel="noopener">Roosevelt</a>
+      <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CPXUH57C1536/$file/Roy%20Cloud%20SPSA%20Board%20Report.pdf" target="_blank" rel="noopener">Roy Cloud</a>
+      <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CP3MFU5A6A79/$file/Taft%20SPSA%20Board%20Report%20(1).pdf" target="_blank" rel="noopener">Taft</a>
+    </div>
+    <h3 class="doc-year-heading">2019-20</h3>
+    <div class="doc-school-grid">
+      <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQPQF6690B56/$file/14_6_SPSAAdelanteSelby_0.pdf" target="_blank" rel="noopener">Adelante Selby</a>
+      <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQPQF8690DB2/$file/14_6_SPSAClifford_0.pdf" target="_blank" rel="noopener">Clifford</a>
+      <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQPQFE691546/$file/14_6_SPSAGarfield_0.pdf" target="_blank" rel="noopener">Garfield</a>
+      <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQPQFL691C05/$file/14_6_SPSAHenryFord_0.pdf" target="_blank" rel="noopener">Henry Ford</a>
+      <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQPQFP691FFA/$file/14_6_SPSAHoover_0.pdf" target="_blank" rel="noopener">Hoover</a>
+      <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQPQFV6926A1/$file/14_6_SPSAKennedy_0.pdf" target="_blank" rel="noopener">Kennedy</a>
+      <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQPQFX692942/$file/14_6_SPSAMIT_0.pdf" target="_blank" rel="noopener">McKinley MIT</a>
+      <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQPQG3692E03/$file/14_6_SPSANorthStar_0.pdf" target="_blank" rel="noopener">North Star</a>
+      <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQPQG5692F8E/$file/14_6_SPSAOrionMandarinImmersion_0.pdf" target="_blank" rel="noopener">Orion</a>
+      <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQPQGM694306/$file/14_6_SPSARoosevelt_0.pdf" target="_blank" rel="noopener">Roosevelt</a>
+      <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQPQGP6944FE/$file/14_6_SPSARoyCloud_0.pdf" target="_blank" rel="noopener">Roy Cloud</a>
+      <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQPQGR6946F4/$file/14_6_SPSATaft_0.pdf" target="_blank" rel="noopener">Taft</a>
+    </div>
+  </div>
+  <div class="doc-panel" data-doc-panel="sarc">
+    <h3 class="doc-year-heading">2025-26</h3>
+    <div class="doc-school-grid">
+      <a class="doc-school-link" href="https://data.rcsd.info/board-packets/2026-03-11/AdelanteSelby-2025SARC.pdf" target="_blank" rel="noopener">Adelante Selby</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/board-packets/2026-03-11/Clifford-2025SARC.pdf" target="_blank" rel="noopener">Clifford</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/board-packets/2026-03-11/Garfield-2025SARC.pdf" target="_blank" rel="noopener">Garfield</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/board-packets/2026-03-11/HenryFord-2025SARCpdf.pdf" target="_blank" rel="noopener">Henry Ford</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/board-packets/2026-03-11/Hoover-2025SARC.pdf" target="_blank" rel="noopener">Hoover</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/board-packets/2026-03-11/Kennedy-2025SARC.pdf" target="_blank" rel="noopener">Kennedy</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/board-packets/2026-03-11/NorthStar-2025SARC.pdf" target="_blank" rel="noopener">North Star</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/board-packets/2026-03-11/OrionAlternative-2025SARC.pdf" target="_blank" rel="noopener">Orion</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/board-packets/2026-03-11/Roosevelt-2025SARC.pdf" target="_blank" rel="noopener">Roosevelt</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/board-packets/2026-03-11/RoyCloud-2025SARC.pdf" target="_blank" rel="noopener">Roy Cloud</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/board-packets/2026-03-11/Taft-2025SARC.pdf" target="_blank" rel="noopener">Taft</a>
+    </div>
+    <h3 class="doc-year-heading">2024-25</h3>
+    <div class="doc-lang-label">English</div>
+    <div class="doc-school-grid">
+      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2024-25/english/adelante-selby.pdf" target="_blank" rel="noopener">Adelante Selby</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2024-25/english/clifford.pdf" target="_blank" rel="noopener">Clifford</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2024-25/english/garfield.pdf" target="_blank" rel="noopener">Garfield</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2024-25/english/henry-ford.pdf" target="_blank" rel="noopener">Henry Ford</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2024-25/english/hoover.pdf" target="_blank" rel="noopener">Hoover</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2024-25/english/kennedy.pdf" target="_blank" rel="noopener">Kennedy</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2024-25/english/mckinley-mit.pdf" target="_blank" rel="noopener">McKinley MIT</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2024-25/english/north-star.pdf" target="_blank" rel="noopener">North Star</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2024-25/english/orion.pdf" target="_blank" rel="noopener">Orion</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2024-25/english/roosevelt.pdf" target="_blank" rel="noopener">Roosevelt</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2024-25/english/roy-cloud.pdf" target="_blank" rel="noopener">Roy Cloud</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2024-25/english/taft.pdf" target="_blank" rel="noopener">Taft</a>
+    </div>
+    <h3 class="doc-year-heading">2023-24</h3>
+    <div class="doc-school-grid">
+      <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CZY2NC02D2CA/$file/ENGLISH-AdelanteSelby-2023SARC.pdf" target="_blank" rel="noopener">Adelante Selby</a>
+      <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CZY2NA02D2B5/$file/ENGLISH-Clifford-2023SARC.pdf" target="_blank" rel="noopener">Clifford</a>
+      <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CZY2N802D2A8/$file/ENGLISH-Garfield-2023SARC.pdf" target="_blank" rel="noopener">Garfield</a>
+      <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CZY2N602D29B/$file/ENGLISH-HenryFord-2023SARC.pdf" target="_blank" rel="noopener">Henry Ford</a>
+      <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CZY2N402D286/$file/ENGLISH-Hoover-2023SARC.pdf" target="_blank" rel="noopener">Hoover</a>
+      <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CZY2N202D278/$file/ENGLISH-Kennedy-2023SARC.pdf" target="_blank" rel="noopener">Kennedy</a>
+      <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CZY2MU02D22C/$file/ENGLISH-Orion-2023SARC.pdf" target="_blank" rel="noopener">Orion</a>
+      <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CZY2MS02D21F/$file/ENGLISH-Roosevelt-2023SARC.pdf" target="_blank" rel="noopener">Roosevelt</a>
+      <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CZY2MQ02D20E/$file/ENGLISH-RoyCloud-2023SARC.pdf" target="_blank" rel="noopener">Roy Cloud</a>
+      <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CZY2MN02D1FB/$file/ENGLISH-Taft-2023SARC.pdf" target="_blank" rel="noopener">Taft</a>
+    </div>
+    <div class="doc-lang-label">English</div>
+    <div class="doc-school-grid">
+      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/english/adelante-selby.pdf" target="_blank" rel="noopener">Adelante Selby</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/english/clifford.pdf" target="_blank" rel="noopener">Clifford</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/english/garfield.pdf" target="_blank" rel="noopener">Garfield</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/english/henry-ford.pdf" target="_blank" rel="noopener">Henry Ford</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/english/hoover.pdf" target="_blank" rel="noopener">Hoover</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/english/kennedy.pdf" target="_blank" rel="noopener">Kennedy</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/english/mckinley-mit.pdf" target="_blank" rel="noopener">McKinley MIT</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/english/north-star.pdf" target="_blank" rel="noopener">North Star</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/english/orion.pdf" target="_blank" rel="noopener">Orion</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/english/roosevelt.pdf" target="_blank" rel="noopener">Roosevelt</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/english/roy-cloud.pdf" target="_blank" rel="noopener">Roy Cloud</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/english/taft.pdf" target="_blank" rel="noopener">Taft</a>
+    </div>
+    <div class="doc-lang-label">Español</div>
+    <div class="doc-school-grid">
+      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/spanish/adelante-selby.pdf" target="_blank" rel="noopener">Adelante Selby</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/spanish/clifford.pdf" target="_blank" rel="noopener">Clifford</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/spanish/garfield.pdf" target="_blank" rel="noopener">Garfield</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/spanish/henry-ford.pdf" target="_blank" rel="noopener">Henry Ford</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/spanish/hoover.pdf" target="_blank" rel="noopener">Hoover</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/spanish/kennedy.pdf" target="_blank" rel="noopener">Kennedy</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/spanish/mckinley-mit.pdf" target="_blank" rel="noopener">McKinley MIT</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/spanish/north-star.pdf" target="_blank" rel="noopener">North Star</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/spanish/orion.pdf" target="_blank" rel="noopener">Orion</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/spanish/roosevelt.pdf" target="_blank" rel="noopener">Roosevelt</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/spanish/roy-cloud.pdf" target="_blank" rel="noopener">Roy Cloud</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/spanish/taft.pdf" target="_blank" rel="noopener">Taft</a>
+    </div>
+  </div>
+</section>
+
+</main>
 
 <footer class="site-footer">
   <p>Independently compiled from publicly available RCSD documents. Source documents at <a href="https://www.rcsdk8.net">rcsdk8.net</a> and the <a href="https://simbli.eboardsolutions.com/SB_Meetings/SB_MeetingListing.aspx?S=36030397">GAMUT board portal</a>.</p>
@@ -1308,6 +1748,20 @@
     <a href="mailto:team@rcsd.info">team@rcsd.info</a>
   </div>
 </footer>
+
+<script>
+(function() {
+  var docTabs = document.querySelectorAll('.doc-tab');
+  var docPanels = document.querySelectorAll('.doc-panel');
+  docTabs.forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      var target = tab.dataset.docTab;
+      docTabs.forEach(function(t) { t.classList.toggle('active', t.dataset.docTab === target); });
+      docPanels.forEach(function(p) { p.classList.toggle('active', p.dataset.docPanel === target); });
+    });
+  });
+})();
+</script>
 
 </body>
 </html>

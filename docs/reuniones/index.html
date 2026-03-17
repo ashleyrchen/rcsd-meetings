@@ -1041,112 +1041,6 @@
     text-decoration: underline;
   }
 
-  /* ---- DOCUMENT TABS ---- */
-  .doc-tabs {
-    display: flex;
-    gap: 0;
-    border-bottom: 1px solid var(--rule);
-    margin-top: 1rem;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .doc-tab {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.68rem;
-    letter-spacing: 0.02em;
-    padding: 0.7rem 1.2rem;
-    border: none;
-    background: none;
-    color: var(--text-muted);
-    cursor: pointer;
-    border-bottom: 2px solid transparent;
-    white-space: nowrap;
-    transition: color 0.15s, border-color 0.15s;
-  }
-
-  .doc-tab:hover {
-    color: var(--green-mid);
-  }
-
-  .doc-tab.active {
-    color: var(--green-deep);
-    border-bottom-color: var(--green-mid);
-  }
-
-  .doc-panel {
-    display: none;
-    padding-top: 1.2rem;
-  }
-
-  .doc-panel.active {
-    display: block;
-  }
-
-  .doc-year-heading {
-    font-family: 'Fraunces', Georgia, serif;
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: var(--text);
-    margin: 1.2rem 0 0.5rem;
-  }
-
-  .doc-year-heading:first-child {
-    margin-top: 0;
-  }
-
-  .doc-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0.3rem;
-  }
-
-  .doc-link {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.68rem;
-    color: var(--green-mid);
-    text-decoration: none;
-    padding: 0.25rem 0;
-  }
-
-  .doc-link:hover {
-    color: var(--green-deep);
-    text-decoration: underline;
-  }
-
-  .doc-school-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    gap: 0.4rem;
-  }
-
-  .doc-school-link {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.68rem;
-    color: var(--green-mid);
-    text-decoration: none;
-    padding: 0.4rem 0.6rem;
-    border: 1px solid var(--rule-light);
-    background: #fff;
-    text-align: center;
-    transition: all 0.15s;
-  }
-
-  .doc-school-link:hover {
-    border-color: var(--green-light);
-    background: var(--green-wash);
-    color: var(--green-deep);
-  }
-
-  .doc-lang-label {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.6rem;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    margin: 0.8rem 0 0.3rem;
-  }
-
   /* ---- RESPONSIVE (page-specific) ---- */
   @media (max-width: 640px) {
     html { font-size: 15px; }
@@ -1162,8 +1056,6 @@
     .resource-grid { grid-template-columns: 1fr; }
     .thread-filters { gap: 0.4rem; }
     .thread-btn { padding: 0.45rem 0.75rem; font-size: 0.6rem; }
-    .doc-school-grid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); }
-    .doc-tab { padding: 0.6rem 0.8rem; font-size: 0.6rem; }
   }
 
   /* page-specific footer overrides */
@@ -1249,7 +1141,6 @@
     <a href="#sy202122">2021-22</a>
     <a href="#sy202021">2020-21</a>
     <a href="#sy201920">2019-20</a>
-    <a href="#documents">Documentos</a>
     <a href="#resources">Recursos</a>
   </div>
 </nav>
@@ -4478,161 +4369,6 @@ Los comentarios en español son bienvenidos — hay un intérprete disponible en
   </div>
 </details>
 
-<section class="section" id="documents">
-  <div class="section-rule"></div>
-  <h2>Documentos del Distrito</h2>
-  <p class="section-subtitle">Planes escolares, presupuestos e informes de rendición de cuentas archivados de fuentes oficiales.</p>
-  <div class="doc-tabs">
-    <button class="doc-tab active" data-doc-tab="budget">Presupuesto</button>
-    <button class="doc-tab" data-doc-tab="lcap">LCAP</button>
-    <button class="doc-tab" data-doc-tab="spsa">Planes Escolares (SPSA)</button>
-    <button class="doc-tab" data-doc-tab="sarc">Boletas de Calificaciones Escolares</button>
-  </div>
-  <div class="doc-panel active" data-doc-panel="budget">
-    <h3 class="doc-year-heading">Other</h3>
-    <div class="doc-list">
-      <a class="doc-link" href="https://data.rcsd.info/documents/budget/superintendent-budget-reduction-2026-02-04.pdf" target="_blank" rel="noopener">Superintendent Budget Reduction 2026 02 04</a>
-    </div>
-    <h3 class="doc-year-heading">2025-26</h3>
-    <div class="doc-list">
-      <a class="doc-link" href="https://data.rcsd.info/documents/budget/2025-26-adopted-budget.pdf" target="_blank" rel="noopener">Adopted Budget</a>
-      <a class="doc-link" href="https://data.rcsd.info/documents/budget/2025-26-budget-myp.pdf" target="_blank" rel="noopener">Budget Myp</a>
-      <a class="doc-link" href="https://data.rcsd.info/documents/budget/2025-26-budget-presentation.pdf" target="_blank" rel="noopener">Budget Presentation</a>
-      <a class="doc-link" href="https://data.rcsd.info/documents/budget/2025-26-first-interim-myp.pdf" target="_blank" rel="noopener">First Interim Myp</a>
-      <a class="doc-link" href="https://data.rcsd.info/documents/budget/2025-26-first-interim-presentation.pdf" target="_blank" rel="noopener">First Interim Presentation</a>
-      <a class="doc-link" href="https://data.rcsd.info/documents/budget/2025-26-first-interim.pdf" target="_blank" rel="noopener">First Interim</a>
-    </div>
-    <h3 class="doc-year-heading">2024-25</h3>
-    <div class="doc-list">
-      <a class="doc-link" href="https://data.rcsd.info/documents/budget/2024-25-adopted-budget.pdf" target="_blank" rel="noopener">Adopted Budget</a>
-      <a class="doc-link" href="https://data.rcsd.info/documents/budget/2024-25-first-interim-myp.pdf" target="_blank" rel="noopener">First Interim Myp</a>
-      <a class="doc-link" href="https://data.rcsd.info/documents/budget/2024-25-first-interim-presentation.pdf" target="_blank" rel="noopener">First Interim Presentation</a>
-      <a class="doc-link" href="https://data.rcsd.info/documents/budget/2024-25-first-interim.pdf" target="_blank" rel="noopener">First Interim</a>
-      <a class="doc-link" href="https://data.rcsd.info/documents/budget/2024-25-second-interim-myp.pdf" target="_blank" rel="noopener">Second Interim Myp</a>
-      <a class="doc-link" href="https://data.rcsd.info/documents/budget/2024-25-second-interim-presentation.pdf" target="_blank" rel="noopener">Second Interim Presentation</a>
-      <a class="doc-link" href="https://data.rcsd.info/documents/budget/2024-25-second-interim.pdf" target="_blank" rel="noopener">Second Interim</a>
-    </div>
-  </div>
-  <div class="doc-panel" data-doc-panel="lcap">
-    <h3 class="doc-year-heading">2025-26</h3>
-    <div class="doc-list">
-      <a class="doc-link" href="https://data.rcsd.info/documents/lcap/2025-26-lcap-adopted.pdf" target="_blank" rel="noopener">Lcap Adopted</a>
-      <a class="doc-link" href="https://data.rcsd.info/documents/lcap/2025-26-lcap-federal-addendum.pdf" target="_blank" rel="noopener">Lcap Federal Addendum</a>
-      <a class="doc-link" href="https://data.rcsd.info/documents/lcap/2025-26-lcap-midyear-budget.pdf" target="_blank" rel="noopener">Lcap Midyear Budget</a>
-      <a class="doc-link" href="https://data.rcsd.info/documents/lcap/2025-26-lcap-midyear.pdf" target="_blank" rel="noopener">Lcap Midyear</a>
-      <a class="doc-link" href="https://data.rcsd.info/documents/lcap/2025-26-lcap-public-hearing.pdf" target="_blank" rel="noopener">Lcap Public Hearing</a>
-    </div>
-    <h3 class="doc-year-heading">2024-25</h3>
-    <div class="doc-list">
-      <a class="doc-link" href="https://data.rcsd.info/documents/lcap/2024-25-lcap-adopted.pdf" target="_blank" rel="noopener">Lcap Adopted</a>
-      <a class="doc-link" href="https://data.rcsd.info/documents/lcap/2024-25-lcap-budget-overview-parents.pdf" target="_blank" rel="noopener">Lcap Budget Overview Parents</a>
-      <a class="doc-link" href="https://data.rcsd.info/documents/lcap/2024-25-lcap-federal-addendum.pdf" target="_blank" rel="noopener">Lcap Federal Addendum</a>
-      <a class="doc-link" href="https://data.rcsd.info/documents/lcap/2024-25-lcap-midyear-budget.pdf" target="_blank" rel="noopener">Lcap Midyear Budget</a>
-      <a class="doc-link" href="https://data.rcsd.info/documents/lcap/2024-25-lcap-midyear-report.pdf" target="_blank" rel="noopener">Lcap Midyear Report</a>
-    </div>
-    <h3 class="doc-year-heading">2023-24</h3>
-    <div class="doc-list">
-      <a class="doc-link" href="https://data.rcsd.info/documents/lcap/2023-24-lcap-annual-update.pdf" target="_blank" rel="noopener">Lcap Annual Update</a>
-    </div>
-  </div>
-  <div class="doc-panel" data-doc-panel="spsa">
-    <h3 class="doc-year-heading">2025-26</h3>
-    <div class="doc-school-grid">
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/spsa/2025-26/adelante-selby.pdf" target="_blank" rel="noopener">Adelante Selby</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/spsa/2025-26/clifford.pdf" target="_blank" rel="noopener">Clifford</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/spsa/2025-26/garfield.pdf" target="_blank" rel="noopener">Garfield</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/spsa/2025-26/henry-ford.pdf" target="_blank" rel="noopener">Henry Ford</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/spsa/2025-26/hoover.pdf" target="_blank" rel="noopener">Hoover</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/spsa/2025-26/kennedy.pdf" target="_blank" rel="noopener">Kennedy</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/spsa/2025-26/mckinley-mit.pdf" target="_blank" rel="noopener">McKinley MIT</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/spsa/2025-26/north-star.pdf" target="_blank" rel="noopener">North Star</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/spsa/2025-26/orion.pdf" target="_blank" rel="noopener">Orion</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/spsa/2025-26/roosevelt.pdf" target="_blank" rel="noopener">Roosevelt</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/spsa/2025-26/roy-cloud.pdf" target="_blank" rel="noopener">Roy Cloud</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/spsa/2025-26/taft.pdf" target="_blank" rel="noopener">Taft</a>
-    </div>
-    <h3 class="doc-year-heading">2024-25</h3>
-    <div class="doc-school-grid">
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/spsa/2024-25/adelante-selby.pdf" target="_blank" rel="noopener">Adelante Selby</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/spsa/2024-25/clifford.pdf" target="_blank" rel="noopener">Clifford</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/spsa/2024-25/garfield.pdf" target="_blank" rel="noopener">Garfield</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/spsa/2024-25/henry-ford.pdf" target="_blank" rel="noopener">Henry Ford</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/spsa/2024-25/hoover.pdf" target="_blank" rel="noopener">Hoover</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/spsa/2024-25/kennedy.pdf" target="_blank" rel="noopener">Kennedy</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/spsa/2024-25/mckinley-mit.pdf" target="_blank" rel="noopener">McKinley MIT</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/spsa/2024-25/north-star.pdf" target="_blank" rel="noopener">North Star</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/spsa/2024-25/orion.pdf" target="_blank" rel="noopener">Orion</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/spsa/2024-25/roosevelt.pdf" target="_blank" rel="noopener">Roosevelt</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/spsa/2024-25/roy-cloud.pdf" target="_blank" rel="noopener">Roy Cloud</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/spsa/2024-25/taft.pdf" target="_blank" rel="noopener">Taft</a>
-    </div>
-    <h3 class="doc-year-heading">2023-24</h3>
-    <div class="doc-school-grid">
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/spsa/2023-24/adelante-selby.pdf" target="_blank" rel="noopener">Adelante Selby</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/spsa/2023-24/clifford.pdf" target="_blank" rel="noopener">Clifford</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/spsa/2023-24/garfield.pdf" target="_blank" rel="noopener">Garfield</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/spsa/2023-24/henry-ford.pdf" target="_blank" rel="noopener">Henry Ford</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/spsa/2023-24/hoover.pdf" target="_blank" rel="noopener">Hoover</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/spsa/2023-24/kennedy.pdf" target="_blank" rel="noopener">Kennedy</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/spsa/2023-24/mckinley-mit.pdf" target="_blank" rel="noopener">McKinley MIT</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/spsa/2023-24/north-star.pdf" target="_blank" rel="noopener">North Star</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/spsa/2023-24/orion.pdf" target="_blank" rel="noopener">Orion</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/spsa/2023-24/roosevelt.pdf" target="_blank" rel="noopener">Roosevelt</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/spsa/2023-24/roy-cloud.pdf" target="_blank" rel="noopener">Roy Cloud</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/spsa/2023-24/taft.pdf" target="_blank" rel="noopener">Taft</a>
-    </div>
-  </div>
-  <div class="doc-panel" data-doc-panel="sarc">
-    <h3 class="doc-year-heading">2024-25</h3>
-    <div class="doc-lang-label">English</div>
-    <div class="doc-school-grid">
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2024-25/english/adelante-selby.pdf" target="_blank" rel="noopener">Adelante Selby</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2024-25/english/clifford.pdf" target="_blank" rel="noopener">Clifford</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2024-25/english/garfield.pdf" target="_blank" rel="noopener">Garfield</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2024-25/english/henry-ford.pdf" target="_blank" rel="noopener">Henry Ford</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2024-25/english/hoover.pdf" target="_blank" rel="noopener">Hoover</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2024-25/english/kennedy.pdf" target="_blank" rel="noopener">Kennedy</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2024-25/english/mckinley-mit.pdf" target="_blank" rel="noopener">McKinley MIT</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2024-25/english/north-star.pdf" target="_blank" rel="noopener">North Star</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2024-25/english/orion.pdf" target="_blank" rel="noopener">Orion</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2024-25/english/roosevelt.pdf" target="_blank" rel="noopener">Roosevelt</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2024-25/english/roy-cloud.pdf" target="_blank" rel="noopener">Roy Cloud</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2024-25/english/taft.pdf" target="_blank" rel="noopener">Taft</a>
-    </div>
-    <h3 class="doc-year-heading">2023-24</h3>
-    <div class="doc-lang-label">English</div>
-    <div class="doc-school-grid">
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/english/adelante-selby.pdf" target="_blank" rel="noopener">Adelante Selby</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/english/clifford.pdf" target="_blank" rel="noopener">Clifford</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/english/garfield.pdf" target="_blank" rel="noopener">Garfield</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/english/henry-ford.pdf" target="_blank" rel="noopener">Henry Ford</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/english/hoover.pdf" target="_blank" rel="noopener">Hoover</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/english/kennedy.pdf" target="_blank" rel="noopener">Kennedy</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/english/mckinley-mit.pdf" target="_blank" rel="noopener">McKinley MIT</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/english/north-star.pdf" target="_blank" rel="noopener">North Star</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/english/orion.pdf" target="_blank" rel="noopener">Orion</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/english/roosevelt.pdf" target="_blank" rel="noopener">Roosevelt</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/english/roy-cloud.pdf" target="_blank" rel="noopener">Roy Cloud</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/english/taft.pdf" target="_blank" rel="noopener">Taft</a>
-    </div>
-    <div class="doc-lang-label">Español</div>
-    <div class="doc-school-grid">
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/spanish/adelante-selby.pdf" target="_blank" rel="noopener">Adelante Selby</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/spanish/clifford.pdf" target="_blank" rel="noopener">Clifford</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/spanish/garfield.pdf" target="_blank" rel="noopener">Garfield</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/spanish/henry-ford.pdf" target="_blank" rel="noopener">Henry Ford</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/spanish/hoover.pdf" target="_blank" rel="noopener">Hoover</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/spanish/kennedy.pdf" target="_blank" rel="noopener">Kennedy</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/spanish/mckinley-mit.pdf" target="_blank" rel="noopener">McKinley MIT</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/spanish/north-star.pdf" target="_blank" rel="noopener">North Star</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/spanish/orion.pdf" target="_blank" rel="noopener">Orion</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/spanish/roosevelt.pdf" target="_blank" rel="noopener">Roosevelt</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/spanish/roy-cloud.pdf" target="_blank" rel="noopener">Roy Cloud</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/spanish/taft.pdf" target="_blank" rel="noopener">Taft</a>
-    </div>
-  </div>
-</section>
-
 <section class="section" id="resources">
   <div class="section-rule"></div>
   <h2>Recursos</h2>
@@ -4729,17 +4465,6 @@ Los comentarios en español son bienvenidos — hay un intérprete disponible en
     if (now <= sixHoursAfter) {
       link.classList.add('zoom-active');
     }
-  });
-
-  // Document tab switching
-  var docTabs = document.querySelectorAll('.doc-tab');
-  var docPanels = document.querySelectorAll('.doc-panel');
-  docTabs.forEach(function(tab) {
-    tab.addEventListener('click', function() {
-      var target = tab.dataset.docTab;
-      docTabs.forEach(function(t) { t.classList.toggle('active', t.dataset.docTab === target); });
-      docPanels.forEach(function(p) { p.classList.toggle('active', p.dataset.docPanel === target); });
-    });
   });
 
   // Auto-expand collapsed sections when TOC links are clicked

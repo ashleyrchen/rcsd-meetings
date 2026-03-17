@@ -8,9 +8,13 @@ import { readFileSync, writeFileSync, mkdirSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { headMeta, siteNav, siteFooter } from './html-parts.mjs';
+import { scanDocuments, prettyDocName, prettySchool, R2_BASE } from './document-inventory.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
+
+// Scan document inventory once for both EN and ES pages
+const documentInventory = scanDocuments(ROOT);
 
 // ---- Page-specific CSS (shared by both EN and ES) ----
 const districtCSS = `
@@ -532,6 +536,112 @@ const districtCSS = `
   .margin-link a.watch::before { content: '\\25b6'; }
   .margin-link a.read::before { content: '\\2197'; }
 
+  /* ---- DOCUMENT TABS ---- */
+  .doc-tabs {
+    display: flex;
+    gap: 0;
+    border-bottom: 1px solid var(--rule);
+    margin-top: 1rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .doc-tab {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.02em;
+    padding: 0.7rem 1.2rem;
+    border: none;
+    background: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+    transition: color 0.15s, border-color 0.15s;
+  }
+
+  .doc-tab:hover {
+    color: var(--green-mid);
+  }
+
+  .doc-tab.active {
+    color: var(--green-deep);
+    border-bottom-color: var(--green-mid);
+  }
+
+  .doc-panel {
+    display: none;
+    padding-top: 1.2rem;
+  }
+
+  .doc-panel.active {
+    display: block;
+  }
+
+  .doc-year-heading {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text);
+    margin: 1.2rem 0 0.5rem;
+  }
+
+  .doc-year-heading:first-child {
+    margin-top: 0;
+  }
+
+  .doc-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .doc-link {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.68rem;
+    color: var(--green-mid);
+    text-decoration: none;
+    padding: 0.25rem 0;
+  }
+
+  .doc-link:hover {
+    color: var(--green-deep);
+    text-decoration: underline;
+  }
+
+  .doc-school-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 0.4rem;
+  }
+
+  .doc-school-link {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.68rem;
+    color: var(--green-mid);
+    text-decoration: none;
+    padding: 0.4rem 0.6rem;
+    border: 1px solid var(--rule-light);
+    background: #fff;
+    text-align: center;
+    transition: all 0.15s;
+  }
+
+  .doc-school-link:hover {
+    border-color: var(--green-light);
+    background: var(--green-wash);
+    color: var(--green-deep);
+  }
+
+  .doc-lang-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin: 0.8rem 0 0.3rem;
+  }
+
   /* ---- RESPONSIVE ---- */
   @media (max-width: 900px) {
     .margin-link { display: none; }
@@ -545,12 +655,147 @@ const districtCSS = `
     .glossary { columns: 1; }
     .toc a { padding: 0.8rem 0.6rem; font-size: 0.6rem; }
     .goal-metrics { grid-template-columns: 1fr; }
+    .doc-school-grid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); }
+    .doc-tab { padding: 0.6rem 0.8rem; font-size: 0.6rem; }
   }
 
   /* page-specific footer overrides */
   .site-footer { font-size: 0.8rem; text-align: left; }
   .footer-nav { margin-top: 1rem; }
   .footer-nav a { font-size: 0.68rem; margin: 0 1.5rem 0 0; }`;
+
+// ---- i18n labels for documents section ----
+const DOC_LABELS = {
+  en: {
+    docsTitle: 'Documents & Reports',
+    docsSubtitle: 'School plans, budgets, and accountability reports archived from official sources.',
+    docsBudget: 'Budget',
+    docsLcap: 'LCAP',
+    docsSpsa: 'School Plans (SPSA)',
+    docsSarc: 'School Report Cards',
+    docsEnglish: 'English',
+    docsSpanish: 'Espa\u00f1ol',
+  },
+  es: {
+    docsTitle: 'Documentos e Informes',
+    docsSubtitle: 'Planes escolares, presupuestos e informes de rendici\u00f3n de cuentas archivados de fuentes oficiales.',
+    docsBudget: 'Presupuesto',
+    docsLcap: 'LCAP',
+    docsSpsa: 'Planes Escolares (SPSA)',
+    docsSarc: 'Boletas Escolares',
+    docsEnglish: 'Ingl\u00e9s',
+    docsSpanish: 'Espa\u00f1ol',
+  },
+};
+
+/**
+ * Render the Documents & Reports section HTML for a given language.
+ */
+function renderDocuments(lang) {
+  const L = DOC_LABELS[lang];
+  const inv = documentInventory;
+  const hasDocs = Object.keys(inv.budget).length || Object.keys(inv.lcap).length ||
+    Object.keys(inv.spsa).length || Object.keys(inv.sarc).length;
+  if (!hasDocs) return '';
+
+  let html = `<section class="section" id="documents">
+  <div class="section-rule"></div>
+  <div class="section-num">08</div>
+  <h2>${L.docsTitle}</h2>
+  <p class="section-subtitle">${L.docsSubtitle}</p>
+  <div class="doc-tabs">
+    <button class="doc-tab active" data-doc-tab="budget">${L.docsBudget}</button>
+    <button class="doc-tab" data-doc-tab="lcap">${L.docsLcap}</button>
+    <button class="doc-tab" data-doc-tab="spsa">${L.docsSpsa}</button>
+    <button class="doc-tab" data-doc-tab="sarc">${L.docsSarc}</button>
+  </div>`;
+
+  // Helper: render doc list, appending meeting date when titles collide
+  function renderDocList(docs) {
+    // Count how many times each title appears
+    const titleCounts = {};
+    for (const d of docs) titleCounts[d.title] = (titleCounts[d.title] || 0) + 1;
+    let out = '';
+    for (const d of docs) {
+      const label = titleCounts[d.title] > 1 && d.meetingDate
+        ? `${d.title} (${d.meetingDate})` : d.title;
+      out += `\n      <a class="doc-link" href="${d.url}" target="_blank" rel="noopener">${label}</a>`;
+    }
+    return out;
+  }
+
+  // Budget panel — grouped by year, sorted by subtype priority
+  html += `\n  <div class="doc-panel active" data-doc-panel="budget">`;
+  for (const year of Object.keys(inv.budget).sort().reverse()) {
+    html += `\n    <h3 class="doc-year-heading">${year}</h3>`;
+    html += `\n    <div class="doc-list">`;
+    html += renderDocList(inv.budget[year]);
+    html += `\n    </div>`;
+  }
+  html += `\n  </div>`;
+
+  // LCAP panel
+  html += `\n  <div class="doc-panel" data-doc-panel="lcap">`;
+  for (const year of Object.keys(inv.lcap).sort().reverse()) {
+    html += `\n    <h3 class="doc-year-heading">${year}</h3>`;
+    html += `\n    <div class="doc-list">`;
+    html += renderDocList(inv.lcap[year]);
+    html += `\n    </div>`;
+  }
+  html += `\n  </div>`;
+
+  // SPSA panel — school grid per year
+  html += `\n  <div class="doc-panel" data-doc-panel="spsa">`;
+  for (const year of Object.keys(inv.spsa).sort().reverse()) {
+    html += `\n    <h3 class="doc-year-heading">${year}</h3>`;
+    html += `\n    <div class="doc-school-grid">`;
+    for (const s of inv.spsa[year]) {
+      html += `\n      <a class="doc-school-link" href="${s.url}" target="_blank" rel="noopener">${prettySchool(s.school)}</a>`;
+    }
+    html += `\n    </div>`;
+  }
+  html += `\n  </div>`;
+
+  // SARC panel — board-presented SARCs + language-specific versions from artifacts
+  html += `\n  <div class="doc-panel" data-doc-panel="sarc">`;
+  for (const year of Object.keys(inv.sarc).sort().reverse()) {
+    const yearData = inv.sarc[year];
+    html += `\n    <h3 class="doc-year-heading">${year}</h3>`;
+
+    // Board-presented SARCs (from document-index.json)
+    if (yearData.schools?.length) {
+      html += `\n    <div class="doc-school-grid">`;
+      for (const s of yearData.schools) {
+        html += `\n      <a class="doc-school-link" href="${s.url}" target="_blank" rel="noopener">${prettySchool(s.school)}</a>`;
+      }
+      html += `\n    </div>`;
+    }
+
+    // Language-specific SARCs from artifacts/documents/sarc/
+    const englishSarcs = Object.values(yearData).filter(v => v?.lang === 'english');
+    const spanishSarcs = Object.values(yearData).filter(v => v?.lang === 'spanish');
+    if (englishSarcs.length) {
+      html += `\n    <div class="doc-lang-label">${L.docsEnglish}</div>`;
+      html += `\n    <div class="doc-school-grid">`;
+      for (const s of englishSarcs.sort((a, b) => a.school.localeCompare(b.school))) {
+        html += `\n      <a class="doc-school-link" href="${s.url}" target="_blank" rel="noopener">${prettySchool(s.school)}</a>`;
+      }
+      html += `\n    </div>`;
+    }
+    if (spanishSarcs.length) {
+      html += `\n    <div class="doc-lang-label">${L.docsSpanish}</div>`;
+      html += `\n    <div class="doc-school-grid">`;
+      for (const s of spanishSarcs.sort((a, b) => a.school.localeCompare(b.school))) {
+        html += `\n      <a class="doc-school-link" href="${s.url}" target="_blank" rel="noopener">${prettySchool(s.school)}</a>`;
+      }
+      html += `\n    </div>`;
+    }
+  }
+  html += `\n  </div>`;
+
+  html += `\n</section>`;
+  return html;
+}
 
 // ---- Page configs ----
 const PAGES = [
@@ -590,6 +835,7 @@ const PAGES = [
 
 for (const page of PAGES) {
   const bodyContent = readFileSync(resolve(ROOT, page.template), 'utf-8');
+  const documentsSection = renderDocuments(page.lang);
 
   const html = `<!DOCTYPE html>
 <html lang="${page.lang}">
@@ -609,7 +855,25 @@ ${siteNav({ activePage: 'district', lang: page.lang, altLangHref: page.altLangHr
 
 ${bodyContent}
 
+${documentsSection}
+
+</main>
+
 ${siteFooter({ lang: page.lang })}
+
+<script>
+(function() {
+  var docTabs = document.querySelectorAll('.doc-tab');
+  var docPanels = document.querySelectorAll('.doc-panel');
+  docTabs.forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      var target = tab.dataset.docTab;
+      docTabs.forEach(function(t) { t.classList.toggle('active', t.dataset.docTab === target); });
+      docPanels.forEach(function(p) { p.classList.toggle('active', p.dataset.docPanel === target); });
+    });
+  });
+})();
+</script>
 
 </body>
 </html>`;

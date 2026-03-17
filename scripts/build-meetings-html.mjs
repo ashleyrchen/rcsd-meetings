@@ -8,6 +8,7 @@ import { readFileSync, writeFileSync, existsSync, readdirSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { headMeta, siteNav, siteFooter } from './html-parts.mjs';
+import { prettySchool } from './document-inventory.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
@@ -87,60 +88,6 @@ function agendaSlug(type) {
   return 'regular';
 }
 
-// Build document inventory from artifacts/documents/
-const documentInventory = { spsa: {}, budget: [], lcap: [], sarc: {} };
-
-function scanDocuments() {
-  const docsRoot = resolve(ROOT, 'artifacts/documents');
-  // SPSAs: spsa/{year}/{school}.pdf
-  try {
-    for (const year of readdirSync(resolve(docsRoot, 'spsa')).sort()) {
-      documentInventory.spsa[year] = [];
-      try {
-        for (const f of readdirSync(resolve(docsRoot, 'spsa', year)).sort()) {
-          if (f.endsWith('.pdf')) {
-            documentInventory.spsa[year].push({
-              school: f.replace('.pdf', ''),
-              path: `documents/spsa/${year}/${f}`,
-            });
-          }
-        }
-      } catch {}
-    }
-  } catch {}
-  // Budget
-  try {
-    for (const f of readdirSync(resolve(docsRoot, 'budget')).sort()) {
-      if (f.endsWith('.pdf')) documentInventory.budget.push({ name: f.replace('.pdf', ''), path: `documents/budget/${f}` });
-    }
-  } catch {}
-  // LCAP
-  try {
-    for (const f of readdirSync(resolve(docsRoot, 'lcap')).sort()) {
-      if (f.endsWith('.pdf')) documentInventory.lcap.push({ name: f.replace('.pdf', ''), path: `documents/lcap/${f}` });
-    }
-  } catch {}
-  // SARCs: sarc/{year}/{lang}/{school}.pdf
-  try {
-    for (const year of readdirSync(resolve(docsRoot, 'sarc')).sort()) {
-      documentInventory.sarc[year] = { english: [], spanish: [] };
-      for (const lang of ['english', 'spanish']) {
-        try {
-          for (const f of readdirSync(resolve(docsRoot, 'sarc', year, lang)).sort()) {
-            if (f.endsWith('.pdf')) {
-              documentInventory.sarc[year][lang].push({
-                school: f.replace('.pdf', ''),
-                path: `documents/sarc/${year}/${lang}/${f}`,
-              });
-            }
-          }
-        } catch {}
-      }
-    }
-  } catch {}
-}
-scanDocuments();
-
 // ---- Internationalization ----
 const LOCALES = {
   en: {
@@ -175,7 +122,6 @@ const LOCALES = {
     siteNavDistrict: 'District',
     siteNavCode: 'Code',
     navTopics: 'Key Topics',
-    navDocuments: 'Documents',
     navResources: 'Resources',
     navSourceCode: 'Source Code',
     threadSectionTitle: 'Key Topics This Year',
@@ -218,14 +164,6 @@ Comments in Spanish are welcome — an interpreter is available at every meeting
     resYouTubeDesc: 'Video recordings of public board meetings.',
     resDistrictTitle: 'District Website',
     resDistrictDesc: 'Official RCSD information and announcements.',
-    docsTitle: 'District Documents',
-    docsSubtitle: 'School plans, budgets, and accountability reports archived from official sources.',
-    docsBudget: 'Budget',
-    docsLcap: 'LCAP',
-    docsSpsa: 'School Plans (SPSA)',
-    docsSarc: 'School Report Cards',
-    docsEnglish: 'English',
-    docsSpanish: 'Espa\u00f1ol',
     footerText: 'Compiled from publicly available RCSD documents. Source documents are available at',
     footerAnd: 'and through the',
     footerPortal: 'GAMUT board portal',
@@ -276,7 +214,6 @@ Comments in Spanish are welcome — an interpreter is available at every meeting
     siteNavDistrict: 'Distrito',
     siteNavCode: 'C\u00f3digo',
     navTopics: 'Temas Clave',
-    navDocuments: 'Documentos',
     navResources: 'Recursos',
     navSourceCode: 'C\u00f3digo Fuente',
     threadSectionTitle: 'Temas Clave de Este A\u00f1o',
@@ -319,14 +256,6 @@ Los comentarios en espa\u00f1ol son bienvenidos \u2014 hay un int\u00e9rprete di
     resYouTubeDesc: 'Grabaciones de video de las reuniones p\u00fablicas de la junta.',
     resDistrictTitle: 'Sitio Web del Distrito',
     resDistrictDesc: 'Informaci\u00f3n oficial y anuncios de RCSD.',
-    docsTitle: 'Documentos del Distrito',
-    docsSubtitle: 'Planes escolares, presupuestos e informes de rendici\u00f3n de cuentas archivados de fuentes oficiales.',
-    docsBudget: 'Presupuesto',
-    docsLcap: 'LCAP',
-    docsSpsa: 'Planes Escolares (SPSA)',
-    docsSarc: 'Boletas de Calificaciones Escolares',
-    docsEnglish: 'English',
-    docsSpanish: 'Espa\u00f1ol',
     footerText: 'Compilado a partir de documentos p\u00fablicos de RCSD. Los documentos originales est\u00e1n disponibles en',
     footerAnd: 'y a trav\u00e9s del',
     footerPortal: 'portal de la junta GAMUT',
@@ -1070,128 +999,6 @@ function renderResources(data) {
     </div>
   </div>
 </section>`;
-}
-
-// Prettify school/document names
-function prettySchool(slug) {
-  const map = {
-    'adelante-selby': 'Adelante Selby',
-    'clifford': 'Clifford',
-    'garfield': 'Garfield',
-    'henry-ford': 'Henry Ford',
-    'hoover': 'Hoover',
-    'kennedy': 'Kennedy',
-    'mckinley-mit': 'McKinley MIT',
-    'north-star': 'North Star',
-    'orion': 'Orion',
-    'roosevelt': 'Roosevelt',
-    'roy-cloud': 'Roy Cloud',
-    'taft': 'Taft',
-  };
-  return map[slug] || slug.split('-').map(w => w[0].toUpperCase() + w.slice(1)).join(' ');
-}
-
-function prettyDocName(slug) {
-  return slug
-    .replace(/^\d{4}-\d{2}-/, '')  // strip year prefix
-    .split('-').map(w => w[0].toUpperCase() + w.slice(1)).join(' ');
-}
-
-// Documents section — SPSAs, Budget, LCAP, SARCs
-function renderDocuments() {
-  const inv = documentInventory;
-  const hasDocs = inv.budget.length || inv.lcap.length ||
-    Object.keys(inv.spsa).length || Object.keys(inv.sarc).length;
-  if (!hasDocs) return '';
-
-  let html = `<section class="section" id="documents">
-  <div class="section-rule"></div>
-  <h2>${L.docsTitle}</h2>
-  <p class="section-subtitle">${L.docsSubtitle}</p>
-  <div class="doc-tabs">
-    <button class="doc-tab active" data-doc-tab="budget">${L.docsBudget}</button>
-    <button class="doc-tab" data-doc-tab="lcap">${L.docsLcap}</button>
-    <button class="doc-tab" data-doc-tab="spsa">${L.docsSpsa}</button>
-    <button class="doc-tab" data-doc-tab="sarc">${L.docsSarc}</button>
-  </div>`;
-
-  // Budget panel
-  html += `\n  <div class="doc-panel active" data-doc-panel="budget">`;
-  // Group budget docs by year
-  const budgetByYear = {};
-  for (const b of inv.budget) {
-    const yearMatch = b.name.match(/^(\d{4}-\d{2})/);
-    const year = yearMatch ? yearMatch[1] : 'Other';
-    if (!budgetByYear[year]) budgetByYear[year] = [];
-    budgetByYear[year].push(b);
-  }
-  for (const [year, docs] of Object.entries(budgetByYear).sort().reverse()) {
-    html += `\n    <h3 class="doc-year-heading">${year}</h3>`;
-    html += `\n    <div class="doc-list">`;
-    for (const d of docs) {
-      html += `\n      <a class="doc-link" href="${R2_BASE}/${d.path}" target="_blank" rel="noopener">${prettyDocName(d.name)}</a>`;
-    }
-    html += `\n    </div>`;
-  }
-  html += `\n  </div>`;
-
-  // LCAP panel
-  html += `\n  <div class="doc-panel" data-doc-panel="lcap">`;
-  const lcapByYear = {};
-  for (const l of inv.lcap) {
-    const yearMatch = l.name.match(/^(\d{4}-\d{2})/);
-    const year = yearMatch ? yearMatch[1] : 'Other';
-    if (!lcapByYear[year]) lcapByYear[year] = [];
-    lcapByYear[year].push(l);
-  }
-  for (const [year, docs] of Object.entries(lcapByYear).sort().reverse()) {
-    html += `\n    <h3 class="doc-year-heading">${year}</h3>`;
-    html += `\n    <div class="doc-list">`;
-    for (const d of docs) {
-      html += `\n      <a class="doc-link" href="${R2_BASE}/${d.path}" target="_blank" rel="noopener">${prettyDocName(d.name)}</a>`;
-    }
-    html += `\n    </div>`;
-  }
-  html += `\n  </div>`;
-
-  // SPSA panel — by year with school grid
-  html += `\n  <div class="doc-panel" data-doc-panel="spsa">`;
-  for (const year of Object.keys(inv.spsa).sort().reverse()) {
-    html += `\n    <h3 class="doc-year-heading">${year}</h3>`;
-    html += `\n    <div class="doc-school-grid">`;
-    for (const s of inv.spsa[year]) {
-      html += `\n      <a class="doc-school-link" href="${R2_BASE}/${s.path}" target="_blank" rel="noopener">${prettySchool(s.school)}</a>`;
-    }
-    html += `\n    </div>`;
-  }
-  html += `\n  </div>`;
-
-  // SARC panel — by year with English/Spanish sub-sections
-  html += `\n  <div class="doc-panel" data-doc-panel="sarc">`;
-  for (const year of Object.keys(inv.sarc).sort().reverse()) {
-    const yearData = inv.sarc[year];
-    html += `\n    <h3 class="doc-year-heading">${year}</h3>`;
-    if (yearData.english.length) {
-      html += `\n    <div class="doc-lang-label">${L.docsEnglish}</div>`;
-      html += `\n    <div class="doc-school-grid">`;
-      for (const s of yearData.english) {
-        html += `\n      <a class="doc-school-link" href="${R2_BASE}/${s.path}" target="_blank" rel="noopener">${prettySchool(s.school)}</a>`;
-      }
-      html += `\n    </div>`;
-    }
-    if (yearData.spanish.length) {
-      html += `\n    <div class="doc-lang-label">${L.docsSpanish}</div>`;
-      html += `\n    <div class="doc-school-grid">`;
-      for (const s of yearData.spanish) {
-        html += `\n      <a class="doc-school-link" href="${R2_BASE}/${s.path}" target="_blank" rel="noopener">${prettySchool(s.school)}</a>`;
-      }
-      html += `\n    </div>`;
-    }
-  }
-  html += `\n  </div>`;
-
-  html += `\n</section>`;
-  return html;
 }
 
 function generatePage() {
@@ -2074,112 +1881,6 @@ const pageCSS = `
     text-decoration: underline;
   }
 
-  /* ---- DOCUMENT TABS ---- */
-  .doc-tabs {
-    display: flex;
-    gap: 0;
-    border-bottom: 1px solid var(--rule);
-    margin-top: 1rem;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .doc-tab {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.68rem;
-    letter-spacing: 0.02em;
-    padding: 0.7rem 1.2rem;
-    border: none;
-    background: none;
-    color: var(--text-muted);
-    cursor: pointer;
-    border-bottom: 2px solid transparent;
-    white-space: nowrap;
-    transition: color 0.15s, border-color 0.15s;
-  }
-
-  .doc-tab:hover {
-    color: var(--green-mid);
-  }
-
-  .doc-tab.active {
-    color: var(--green-deep);
-    border-bottom-color: var(--green-mid);
-  }
-
-  .doc-panel {
-    display: none;
-    padding-top: 1.2rem;
-  }
-
-  .doc-panel.active {
-    display: block;
-  }
-
-  .doc-year-heading {
-    font-family: 'Fraunces', Georgia, serif;
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: var(--text);
-    margin: 1.2rem 0 0.5rem;
-  }
-
-  .doc-year-heading:first-child {
-    margin-top: 0;
-  }
-
-  .doc-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0.3rem;
-  }
-
-  .doc-link {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.68rem;
-    color: var(--green-mid);
-    text-decoration: none;
-    padding: 0.25rem 0;
-  }
-
-  .doc-link:hover {
-    color: var(--green-deep);
-    text-decoration: underline;
-  }
-
-  .doc-school-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    gap: 0.4rem;
-  }
-
-  .doc-school-link {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.68rem;
-    color: var(--green-mid);
-    text-decoration: none;
-    padding: 0.4rem 0.6rem;
-    border: 1px solid var(--rule-light);
-    background: #fff;
-    text-align: center;
-    transition: all 0.15s;
-  }
-
-  .doc-school-link:hover {
-    border-color: var(--green-light);
-    background: var(--green-wash);
-    color: var(--green-deep);
-  }
-
-  .doc-lang-label {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.6rem;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    margin: 0.8rem 0 0.3rem;
-  }
-
   /* ---- RESPONSIVE (page-specific) ---- */
   @media (max-width: 640px) {
     html { font-size: 15px; }
@@ -2195,8 +1896,6 @@ const pageCSS = `
     .resource-grid { grid-template-columns: 1fr; }
     .thread-filters { gap: 0.4rem; }
     .thread-btn { padding: 0.45rem 0.75rem; font-size: 0.6rem; }
-    .doc-school-grid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); }
-    .doc-tab { padding: 0.6rem 0.8rem; font-size: 0.6rem; }
   }
 
   /* page-specific footer overrides */
@@ -2276,7 +1975,6 @@ ${siteNav({ activePage: 'meetings', lang: L.lang, altLangHref: L.altLangHref })}
   <div class="toc-inner">
     <a href="#threads">${L.navTopics}</a>
     ${schoolYears.map(([sy]) => `<a href="#sy${sy}">${sy.slice(0,4)}-${sy.slice(4)}</a>`).join('\n    ')}
-    <a href="#documents">${L.navDocuments}</a>
     <a href="#resources">${L.navResources}</a>
   </div>
 </nav>
@@ -2299,8 +1997,6 @@ ${schoolYears.map(([sy, meetings]) => {
   const expanded = sy === '202526' || sy === '202425';
   return renderSchoolYear(`sy${sy}`, L.schoolYearTitle(sy), meetings, L.schoolYearSubtitle(sy, meetings.length), !expanded);
 }).join('\n\n')}
-
-${renderDocuments()}
 
 ${renderResources(data)}
 </main>
@@ -2357,17 +2053,6 @@ ${siteFooter({ lang: L.lang })}
     if (now <= sixHoursAfter) {
       link.classList.add('zoom-active');
     }
-  });
-
-  // Document tab switching
-  var docTabs = document.querySelectorAll('.doc-tab');
-  var docPanels = document.querySelectorAll('.doc-panel');
-  docTabs.forEach(function(tab) {
-    tab.addEventListener('click', function() {
-      var target = tab.dataset.docTab;
-      docTabs.forEach(function(t) { t.classList.toggle('active', t.dataset.docTab === target); });
-      docPanels.forEach(function(p) { p.classList.toggle('active', p.dataset.docPanel === target); });
-    });
   });
 
   // Auto-expand collapsed sections when TOC links are clicked
