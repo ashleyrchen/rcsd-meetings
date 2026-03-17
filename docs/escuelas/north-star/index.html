@@ -28,9 +28,10 @@
 <meta name="twitter:image" content="https://rcsd.info/og-1200.jpg">
 <meta name="twitter:title" content="Academia North Star — RCSD Open Data">
 <meta name="twitter:description" content="Datos públicos de Academia North Star: rendimiento académico, demografía, financiamiento y personal para el año escolar 2025-26.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preload" href="/fonts/fraunces-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/newsreader-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/ibm-plex-mono-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/fonts/fonts.css">
 
 
 <style>
@@ -843,7 +844,7 @@
 <header class="site-header">
   <div class="header-inner">
     <div class="header-district"><a href="/distrito/">Distrito Escolar de Redwood City</a></div>
-    <img src="https://data.rcsd.info/logos/north-star.jpg" alt="Academia North Star" class="header-logo">
+    <img src="https://data.rcsd.info/logos/north-star.jpg" alt="Academia North Star" class="header-logo" width="1200" height="451" fetchpriority="high">
     <h1 class="header-title">Academia North Star</h1>
     <p class="header-subtitle">North Star Academy es una escuela de elección de 3-8 grados con la mayor competencia en exámenes estatales del distrito pero las tasas más bajas de crecimiento estudiantil. No recibe fondos del Título I ni federales y tiene el financiamiento público per cápita más bajo. Su PTA ($326K) cubre el 58% del presupuesto SPSA.</p>
     <div style="margin-top:0.8rem">
@@ -897,7 +898,7 @@
 
     <div class="principal-row">
       <div style="flex-shrink:0">
-        <a href="https://northstar.rcsdk8.net/our-school/meet-our-school-leadership"><img src="/img/principals/north-star.jpg" alt="Erin Kekos" style="width:160px; border-radius:10px; display:block"></a>
+        <a href="https://northstar.rcsdk8.net/our-school/meet-our-school-leadership"><img src="/img/principals/north-star.jpg" alt="Erin Kekos" width="300" height="400" loading="lazy" style="width:160px; height:213px; object-fit:cover; border-radius:10px; display:block"></a>
         <div style="text-align:center; margin-top:0.6rem">
           <div style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--text-muted)">Director/a</div>
           <div style="font-size:1.05rem; font-weight:500; margin-top:0.15rem"><a href="https://northstar.rcsdk8.net/our-school/meet-our-school-leadership" style="color:var(--green-mid); text-decoration:none">Erin Kekos</a></div>
@@ -1236,36 +1237,14 @@
             </div>
         </div><div style="margin-bottom:2rem">
           <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
-            <h3 style="margin:0; font-size:1rem">11 de febrero de 2026</h3>
-            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Regular</span>
-            <a href="/meetings/#2026-02-11" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
-          </div>
-          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
-              <div style="font-size:0.9rem; line-height:1.4">Nueva posición de guardia de cruce (~$13K/año)</div>
-              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=6VgYicePQto" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
-              
-            </div>
-        </div><div style="margin-bottom:2rem">
-          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
-            <h3 style="margin:0; font-size:1rem">4 de febrero de 2026</h3>
-            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Regular</span>
-            <a href="/meetings/#2026-02-04" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
-          </div>
-          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
-              <div style="font-size:0.9rem; line-height:1.4">Plan de seguridad anual</div>
-              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=Nw7_DtNMPVk&t=1291" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
-              
-            </div>
-        </div><div style="margin-bottom:2rem">
-          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
             <h3 style="margin:0; font-size:1rem">22 de octubre de 2025</h3>
             <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Regular</span>
             <a href="/meetings/#2025-10-22" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
           </div>
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
-              <div style="font-size:0.9rem; line-height:1.4">Excursión de 5.° grado al Muelle 40 en San Francisco</div>
+              <div style="font-size:0.9rem; line-height:1.4">Approval of the North Star 5th-Grade Field Trip to Pier 40, San Francisco on March 10, March 17, and March 24</div>
               <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=RAoGh9R-GDM" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
-              
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2025-10-22/25-26-NSA.-Pier-40.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">25-26 NSA. Pier 40 &#8599;</a></div>
             </div>
         </div><div style="margin-bottom:2rem">
           <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
@@ -1274,36 +1253,14 @@
             <a href="/meetings/#2025-09-18" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
           </div>
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
-              <div style="font-size:0.9rem; line-height:1.4">Excursión a Marin Headlands</div>
+              <div style="font-size:0.9rem; line-height:1.4">Approval of North Star Academy's Field Trip to Marin Headlands – October 6, 2025 - October 8, 2025</div>
               <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=1-KJszTHygc&t=502" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
               <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2025-09-18/25-26-NSA.-Marine-Headlands.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">25-26 NSA. Marine Headlands &#8599;</a></div>
             </div>
         </div><div style="margin-bottom:2rem">
           <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
-            <h3 style="margin:0; font-size:1rem">19 de agosto de 2025</h3>
-            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Regular</span>
-            <a href="/meetings/#2025-08-19" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
-          </div>
-          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
-              <div style="font-size:0.9rem; line-height:1.4">Programa después de clases ampliado a 140 estudiantes</div>
-              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=B8blJsqUL_4" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
-              
-            </div>
-        </div><div style="margin-bottom:2rem">
-          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
-            <h3 style="margin:0; font-size:1rem">25 de junio de 2025</h3>
-            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Regular</span>
-            <a href="/meetings/#2025-06-25" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
-          </div>
-          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
-              <div style="font-size:0.9rem; line-height:1.4">Contrato de servicios después de clases</div>
-              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=nsizIuPIt5E" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
-              
-            </div>
-        </div><div style="margin-bottom:2rem">
-          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
             <h3 style="margin:0; font-size:1rem">28 de mayo de 2025</h3>
-            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Closed Session</span>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
             <a href="/meetings/#2025-05-28" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
           </div>
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
@@ -1314,23 +1271,23 @@
         </div><div style="margin-bottom:2rem">
           <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
             <h3 style="margin:0; font-size:1rem">26 de febrero de 2025</h3>
-            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Closed Session</span>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
             <a href="/meetings/#2025-02-26" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
           </div>
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
               <div style="font-size:0.9rem; line-height:1.4">La junta aprobó el plan de gastos actualizado de Measure U.</div>
-              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=pydG3eHdP0M" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=pydG3eHdP0M&t=6402" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
               <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DDUPZM671020/$file/2024-25%20North%20Star%20Measure%20U%20Addendum%20%5BPending%20Board%20Approval%5D.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">2024-25 North Star Measure U Addendum [Pending Board Approval].pdf &#8599;</a></div>
             </div>
         </div><div style="margin-bottom:2rem">
           <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
             <h3 style="margin:0; font-size:1rem">20 de noviembre de 2024</h3>
-            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Closed Session</span>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
             <a href="/meetings/#2024-11-20" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
           </div>
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
               <div style="font-size:0.9rem; line-height:1.4">La escuela presentó su informe del año escolar 2024-25 a la junta.</div>
-              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=VUIwMGNG5Qk&t=4896" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=VUIwMGNG5Qk&t=333" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
               <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DB6Q9Y684907/$file/North%20Star%2024-25%20Data%20for%20Board%20presentation.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">North Star 24-25 Data for Board presentation.pdf &#8599;</a></div>
             </div>
         </div><div style="margin-bottom:2rem">
@@ -1341,7 +1298,7 @@
           </div>
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
               <div style="font-size:0.9rem; line-height:1.4">La junta aprobó el plan de gastos actualizado de Measure U.</div>
-              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=xSE2S51UgBg&t=2510" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=xSE2S51UgBg" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
               <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/D4PNDR5EE5D8/$file/23-24%20North%20Star%20Measure%20U%20Addendum.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">23-24 North Star Measure U Addendum.pdf &#8599;</a></div>
             </div>
         </div><div style="margin-bottom:2rem">
@@ -1354,6 +1311,142 @@
               <div style="font-size:0.9rem; line-height:1.4">Clifford and North Star School Presentations for the 2023-2024 School Year</div>
               <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"></div>
               <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CZCS8Y6C66B5/$file/Clifford%20Board%20Report%202024.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Clifford Board Report 2024.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CZEMPW5BF22B/$file/NSA%20Board%20Report%20%202024.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">NSA Board Report  2024.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">22 de marzo de 2023</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2023-03-22" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Discussion of School Plan for Student Achievement (SPSA): Roy Cloud School and North Star Academy</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=TYxODeND3Dw" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CPXUH57C1536/$file/Roy%20Cloud%20SPSA%20Board%20Report.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Roy Cloud SPSA Board Report.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CPXUH77C168E/$file/North%20Star%20SPSA%20Board%20Report%20.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">North Star SPSA Board Report .pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">26 de octubre de 2022</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2022-10-26" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Addendum to 2022-23 Measure U Application for North Star Academy</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=SfC3rjM00jw" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CKBVFE80850C/$file/NSA%20Measure%20U%20Addendum%202022-23.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">NSA Measure U Addendum 2022-23.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">10 de agosto de 2022</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2022-08-10" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Agreement between the Redwood City School District and Legarza Sports for PE Enrichment Program at North Star Academy for the 2022-23 School Year</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=XOwgAIqGlKE" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CGYQ8M658D20/$file/Legarza%20Agreement%20(North%20Star)%2022.23.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Legarza Agreement (North Star) 22.23.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">15 de junio de 2022</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2022-06-15" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Recommended Options to the School Board Regarding North Star Academy (NSA)</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=voWg7JVoYU4" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CF8LRT55EE51/$file/NSA%20Forward%20Committee%20Feedback.%20Names%20Redacted.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">NSA Forward Committee Feedback. Names Redacted.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CFF2BR016C30/$file/North%20Star%20Forward_%20Board%20Recommendation%20(1).pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">North Star Forward_ Board Recommendation (1).pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">20 de abril de 2022</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Special Meeting</span>
+            <a href="/meetings/#2022-04-20" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Review of Preliminary Ideas Generated by North Star Forward Committee</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=TnMWnUVFiAk" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CDFSBE712178/$file/North%20Star%20Forward%202.12.20.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">North Star Forward 2.12.20.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CDFSBJ712587/$file/North%20Star%20Forward%202.25.20.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">North Star Forward 2.25.20.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CDFSBL712830/$file/North%20Star%20Forward%203.9.20.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">North Star Forward 3.9.20.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CDFSBN712C3C/$file/North%20Star%20Forward%20Committee%201.20.22.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">North Star Forward Committee 1.20.22.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CDFSBQ712F51/$file/NSA%20Data%202022.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">NSA Data 2022.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CDFSBW71336B/$file/NSA%20Forward%202.10.22.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">NSA Forward 2.10.22.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CDFSBZ713648/$file/NSA%20Forward%203.24.22.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">NSA Forward 3.24.22.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CDFSC371391D/$file/NSA%20Forward%204.07.2022.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">NSA Forward 4.07.2022.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CDFSC5713E84/$file/NSA%20Forward%20Jamboard%20April%207%2C%202022.ALL.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">NSA Forward Jamboard April 7, 2022.ALL.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CDFSC97140DE/$file/NSA%20Forward%20PPT%203.3.22.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">NSA Forward PPT 3.3.22.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CDFSCB71445F/$file/NSA%20Forward%20Survey%203.2022%20with%20personal%20reference%20comments%20redacted.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">NSA Forward Survey 3.2022 with personal reference comments redacted.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CDFSCD7147EA/$file/NSA%20Forward_%20Preliminary%20Ideas%20for%20Board%20Discussion.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">NSA Forward_ Preliminary Ideas for Board Discussion.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CDFSCG714A5D/$file/Report%20on%20Interviews%20with%20Bayside%20Parents.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Report on Interviews with Bayside Parents.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CDP29E01138D/$file/North%20Star%20Forward_%20Board%20Study%20Session.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">North Star Forward_ Board Study Session.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">8 de diciembre de 2021</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2021-12-08" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Addendum to 2021-22 Measure U Application for North Star Academy</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=1WVKb5e5QOY" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/C99S3V68EA59/$file/NSA%20Addendum%20Measure%20U%202021_22.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">NSA Addendum Measure U 2021_22.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">17 de noviembre de 2021</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2021-11-17" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Discussion of Reconvening North Star Forward Committee</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=kcTl2zJsh2A" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/C8US496D4316/$file/NorthStarForward-November17BoardMeeting.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">NorthStarForward-November17BoardMeeting.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">10 de febrero de 2021</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2021-02-10" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Virtual Winter Concert (Clifford School, McKinley Institute of Technology and North Star Academy)</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=2t3bBlJiP6Q" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">9 de diciembre de 2020</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2020-12-09" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Touchless Plumbing Fixture Replacement Construction Management (CM) Fee Proposal for Adelante Selby Spanish Immersion School, McKinley Institute of Technology, North Star Academy, and Roy Cloud School with Kitchell</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=C6EkF9qWMJ4" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CU52B201517B/$file/Touchless%20Plumbing%20Fixture%20Replacement%20CM%20Fee%20Proposal.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Touchless Plumbing Fixture Replacement CM Fee Proposal.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Addendum to 2020-21 Measure U Application for North Star Academy</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=C6EkF9qWMJ4" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CR86FY14CA3A/$file/14_5_AddendumToMeasureUNorthStarAcademy_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">14_5_AddendumToMeasureUNorthStarAcademy_0.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">21 de octubre de 2020</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2020-10-21" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Touchless Plumbing Fixture Replacement Construction Agreement for McKinley Institute of Technology and North Star Academy with Ciari Plumbing</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CR36JY153ABE/$file/6_12_PlumbingRetrofitAgreement_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">6_12_PlumbingRetrofitAgreement_0.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">10 de junio de 2020</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2020-06-10" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Modernization Project, Change Order #1 at North Star Academy with Cal-Pacific Construction</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=VIbi8F87vKg" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/D5WT5T75BD07/$file/ChangeOrder01.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">ChangeOrder01.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">1 de abril de 2020</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2020-04-01" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Motorized Gate Proposal with A&D Auto Gate for North Star Academy</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=0cWwZ9lGR0U" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/D343D60645DB/$file/North%20Star%20Motorized%20Gate%20Proposal.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">North Star Motorized Gate Proposal.pdf &#8599;</a></div>
             </div>
         </div>
   </section>

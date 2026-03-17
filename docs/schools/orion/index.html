@@ -28,9 +28,10 @@
 <meta name="twitter:image" content="https://rcsd.info/og-1200.jpg">
 <meta name="twitter:title" content="Orion Alternative School — RCSD Open Data">
 <meta name="twitter:description" content="Public data for Orion Alternative School: academic performance, demographics, funding, and staffing for the 2025-26 school year.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preload" href="/fonts/fraunces-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/newsreader-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/ibm-plex-mono-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/fonts/fonts.css">
 
 
 <style>
@@ -843,7 +844,7 @@
 <header class="site-header">
   <div class="header-inner">
     <div class="header-district"><a href="/district/">Redwood City School District</a></div>
-    <img src="https://data.rcsd.info/logos/orion.jpg" alt="Orion Alternative School" class="header-logo">
+    <img src="https://data.rcsd.info/logos/orion.jpg" alt="Orion Alternative School" class="header-logo" width="1200" height="424" fetchpriority="high">
     <h1 class="header-title">Orion Alternative School</h1>
     <p class="header-subtitle">Orion is a TK-5 alternative school of choice offering Mandarin dual-language immersion with a parent participation (co-op) model. It is the most ethnically diverse school in the district. Achievement gaps exist within the school between White and Hispanic students.</p>
     <div style="margin-top:0.8rem">
@@ -897,7 +898,7 @@
 
     <div class="principal-row">
       <div style="flex-shrink:0">
-        <a href="https://orion.rcsdk8.net/our-school/meet-our-school-leadership"><img src="/img/principals/orion.jpg" alt="Winnie Chen" style="width:160px; border-radius:10px; display:block"></a>
+        <a href="https://orion.rcsdk8.net/our-school/meet-our-school-leadership"><img src="/img/principals/orion.jpg" alt="Winnie Chen" width="300" height="375" loading="lazy" style="width:160px; height:213px; object-fit:cover; border-radius:10px; display:block"></a>
         <div style="text-align:center; margin-top:0.6rem">
           <div style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--text-muted)">Principal</div>
           <div style="font-size:1.05rem; font-weight:500; margin-top:0.15rem"><a href="https://orion.rcsdk8.net/our-school/meet-our-school-leadership" style="color:var(--green-mid); text-decoration:none">Winnie Chen</a></div>
@@ -1231,13 +1232,20 @@
             <a href="/meetings/#2026-02-04" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
           </div>
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
-              <div style="font-size:0.9rem; line-height:1.4">HVAC Phase 2 contract; construction scheduled Summer 2026</div>
-              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=Nw7_DtNMPVk&t=936" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
-              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2026-02-04/Presentation-Revision-1-RCSD-Measure-S-Implementation-Plan-02042026.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Presentation - Revision #1 - RCSD Measure S Implementation Plan 02042026 &#8599;</a><a href="https://data.rcsd.info/board-packets/2026-02-04/Res-16-Supporting-LLB-Award-HVAC-Upgrades-PH-2-Blach_-rev-01.27.2026-4533797.1.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Res 16 Supporting LLB Award (HVAC Upgrades PH 2 - Blach_ rev 01.27.2026) (4533797.1) &#8599;</a><a href="https://data.rcsd.info/board-packets/2026-02-04/RCSD-POs-20k-and-Under-Tracking-List-FY-25-26-February-4-2026.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">RCSD POs $20k and Under Tracking List FY 25-26 - February 4, 2026 &#8599;</a><a href="https://data.rcsd.info/board-packets/2026-02-04/2026.01.13-Minutes-DRAFT-Study-Session.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">2026.01.13 Minutes DRAFT - Study Session &#8599;</a><a href="https://data.rcsd.info/board-packets/2026-02-04/2026.01.14-Minutes-DRAFT.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">2026.01.14 Minutes DRAFT &#8599;</a><a href="https://data.rcsd.info/board-packets/2026-02-04/2026.01.21-Minutes-DRAFT.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">2026.01.21 Minutes DRAFT &#8599;</a><a href="https://data.rcsd.info/board-packets/2026-02-04/2025_Comprehensive_School_Safety_Plan__Pt._1_-Public-_John_F._Kennedy_Middle_Sch.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">2025_Comprehensive_School_Safety_Plan__Pt._1_(Public)_John_F._Kennedy_Middle_School _20260127 &#8599;</a></div>
-            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
-              <div style="font-size:0.9rem; line-height:1.4">Annual safety plan</div>
-              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=Nw7_DtNMPVk&t=1291" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
-              
+              <div style="font-size:0.9rem; line-height:1.4">Adoption of Resolution No. 16, Lease-Leaseback Agreement with Blach Construction for HVAC Projects, Phase 2 at Clifford School, Orion School, and Kennedy Middle School</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=Nw7_DtNMPVk" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2026-02-04/Res-16-Supporting-LLB-Award-HVAC-Upgrades-PH-2-Blach_-rev-01.27.2026-4533797.1.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Res 16 Supporting LLB Award (HVAC Upgrades PH 2 - Blach_ rev 01.27.2026)(4533797.1) &#8599;</a><a href="https://data.rcsd.info/board-packets/2026-02-04/Facilities-Lease-HVAC-Upgrades-Projects-Increment-2-Blach-4533164.1.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Facilities Lease - HVAC Upgrades Projects - Increment 2 (Blach)(4533164.1) &#8599;</a><a href="https://data.rcsd.info/board-packets/2026-02-04/Site-Lease-HVAC-Upgrades-Projects-Increment-2-Blach-4533153.1.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Site Lease - HVAC Upgrades Projects - Increment 2 (Blach)(4533153.1) &#8599;</a><a href="https://data.rcsd.info/board-packets/2026-02-04/LLB-Contract-Documents-HVAC-Upgrades-Projects-Increment-2-Blach-4533156.1.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">LLB Contract Documents - HVAC Upgrades Projects - Increment 2 (Blach)(4533156.1) &#8599;</a><a href="https://data.rcsd.info/board-packets/2026-02-04/Facilities-Lease-Exhibit-C-HVAC-Upgrades-Projects-Increment-2-Blach-4533165.1.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Facilities Lease - Exhibit C - HVAC Upgrades Projects - Increment 2 (Blach)(4533165.1) &#8599;</a><a href="https://data.rcsd.info/board-packets/2026-02-04/Facilities-Lease-Exhibit-D-HVAC-Upgrades-Projects-Increment-2-Blach-4533163.1.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Facilities Lease - Exhibit D - HVAC Upgrades Projects - Increment 2 (Blach)(4533163.1) &#8599;</a><a href="https://data.rcsd.info/board-packets/2026-02-04/Facilities-Lease-Exhibit-D-1-HVAC-Upgrades-Projects-Increment-2-Blach-4533157.1.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Facilities Lease - Exhibit D-1 - HVAC Upgrades Projects - Increment 2 (Blach)(4533157.1) &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">November 12, 2025</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Regular</span>
+            <a href="/meetings/#2025-11-12" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Orion Alternative School Field Trip to Outdoor Education from 11/17/25 through 11/21/25</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=Pk0Zg38fzKc" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2025-11-12/25-26-Orion.-Outdoor-Ed.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">25-26 Orion. Outdoor Ed &#8599;</a></div>
             </div>
         </div><div style="margin-bottom:2rem">
           <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
@@ -1246,13 +1254,13 @@
             <a href="/meetings/#2025-10-08" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
           </div>
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
-              <div style="font-size:0.9rem; line-height:1.4">4th-grade Gold Rush field trip to Sierra Outdoor School</div>
-              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=WYi7kzyEnuw&t=86" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Orion Alternative and Mandarin Immersion School Field Trip to Sierra Outdoor School, Gold Rush Field Trip – April 13th and April 14th, 2026</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=WYi7kzyEnuw" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
               <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2025-10-08/Orion-4th-Grade-Gold-Rush-Overnight-Field-Trip.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Orion 4th Grade Gold Rush Overnight Field Trip &#8599;</a></div>
             </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
-              <div style="font-size:0.9rem; line-height:1.4">PBIS Tier 1/2 staff training agreement</div>
-              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=WYi7kzyEnuw&t=86" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
-              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2025-10-08/SCCOE-_-PBIS-25.26-MOU-Board-10.8.25.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">SCCOE _ PBIS 25.26 MOU Board 10.8.25 &#8599;</a></div>
+              <div style="font-size:0.9rem; line-height:1.4">Approval of the Agreement between Redwood City School District and You Consulting LLC for Mandarin Oral Language, Literacy, and Teacher Support at Orion Alternative and Mandarin Immersion School for the 2025–2026 School Year</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=WYi7kzyEnuw" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2025-10-08/You-Consulting-Board-10.8.25.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">You Consulting Board 10.8.25 &#8599;</a></div>
             </div>
         </div><div style="margin-bottom:2rem">
           <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
@@ -1261,20 +1269,13 @@
             <a href="/meetings/#2025-09-10" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
           </div>
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
-              <div style="font-size:0.9rem; line-height:1.4">HVAC Phase 2 design services contract (Measure S)</div>
+              <div style="font-size:0.9rem; line-height:1.4">Approval of the Pre-Construction Services Agreement with Siemens Building Management Systems for the Phase II HVAC Upgrades Projects at Kennedy MS, Orion, and Clifford</div>
               <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=KWsBnYENz7o" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
-              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2025-09-10/RCSD-Phase-2-HVAC-Upgrades-Precon-v2.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">RCSD Phase 2 HVAC Upgrades Precon v2 &#8599;</a></div>
-            </div>
-        </div><div style="margin-bottom:2rem">
-          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
-            <h3 style="margin:0; font-size:1rem">August 19, 2025</h3>
-            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Regular</span>
-            <a href="/meetings/#2025-08-19" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
-          </div>
-          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
-              <div style="font-size:0.9rem; line-height:1.4">Afterschool extended learning program funded for 828 students</div>
-              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=B8blJsqUL_4" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
-              
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2025-09-10/Siemens_Contract_080824.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Siemens_Contract_080824 &#8599;</a><a href="https://data.rcsd.info/board-packets/2025-09-10/RCSD-Phase-2-HVAC-Upgrades-Precon-v2.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">RCSD Phase 2 HVAC Upgrades Precon v2 &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Contracts with Quattrocchi Kwok Architects (QKA) for Design Services for HVAC Upgrades Projects at Kennedy Middle , Orion Alternative, and Clifford schools</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=KWsBnYENz7o" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2025-09-10/Redwood-City-SD-Quattrocchi-Architect-Agreement-Kennedy-DWK-Aug-19-25.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Redwood City SD-Quattrocchi - Architect Agreement - Kennedy (DWK Aug-19-25) &#8599;</a><a href="https://data.rcsd.info/board-packets/2025-09-10/Redwood-City-SD-Quattrocchi-Architect-Agreement-Orion-DWK-Aug-19-25.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Redwood City SD-Quattrocchi - Architect Agreement - Orion (DWK Aug-19-25) &#8599;</a><a href="https://data.rcsd.info/board-packets/2025-09-10/Redwood-City-SD-Quattrocchi-Architect-Agreement-Clifford-DWK-Aug-19-25.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Redwood City SD-Quattrocchi - Architect Agreement - Clifford (DWK Aug-19-25) &#8599;</a></div>
             </div>
         </div><div style="margin-bottom:2rem">
           <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
@@ -1283,36 +1284,36 @@
             <a href="/meetings/#2025-06-25" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
           </div>
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
-              <div style="font-size:0.9rem; line-height:1.4">HVAC Phase 2 replacement project ($21.25M, Measure S)</div>
+              <div style="font-size:0.9rem; line-height:1.4">Approval of HVAC Upgrade Projects Phase II: Kennedy Middle School, Orion Alternative School, and Clifford School</div>
               <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=nsizIuPIt5E" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
               
             </div>
         </div><div style="margin-bottom:2rem">
           <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
             <h3 style="margin:0; font-size:1rem">May 14, 2025</h3>
-            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Closed Session</span>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
             <a href="/meetings/#2025-05-14" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
           </div>
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
               <div style="font-size:0.9rem; line-height:1.4">Multi-year school growth and improvement plan</div>
-              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=6qHkEM3tahc&t=1599" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=6qHkEM3tahc" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
               
             </div>
         </div><div style="margin-bottom:2rem">
           <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
             <h3 style="margin:0; font-size:1rem">April 16, 2025</h3>
-            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Closed Session</span>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
             <a href="/meetings/#2025-04-16" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
           </div>
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
               <div style="font-size:0.9rem; line-height:1.4">School Plan for Student Achievement (SPSA review)</div>
-              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=RKaYeTaZ6qI&t=2215" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=RKaYeTaZ6qI" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
               <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DFE49Q0A7FE1/$file/Orion%202025-26_SPSA_(Spring)__20250403.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Orion 2025-26_SPSA_(Spring)__20250403.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DFE49S0A81A0/$file/Taft%202025-26_SPSA%20(Sprin)_20250403.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Taft 2025-26_SPSA (Sprin)_20250403.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DFSL3A54881C/$file/25-26%20Garfield%20_SPSA_(Spring)%2020250416%20(Updated%204.16.25).pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">25-26 Garfield _SPSA_(Spring) 20250416 (Updated 4.16.25).pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DFSL3C548A5D/$file/25-26%20Henry%20Ford%20_SPSA_(Spring)%2020250416%20(Updated%204.16.25).pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">25-26 Henry Ford _SPSA_(Spring) 20250416 (Updated 4.16.25).pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DFSL3S549F75/$file/SPSA%20Updates.HF.Garfield.Orion.Taft%2020250416.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">SPSA Updates.HF.Garfield.Orion.Taft 20250416.pdf &#8599;</a></div>
             </div>
         </div><div style="margin-bottom:2rem">
           <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
             <h3 style="margin:0; font-size:1rem">February 26, 2025</h3>
-            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Closed Session</span>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
             <a href="/meetings/#2025-02-26" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
           </div>
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
@@ -1328,7 +1329,7 @@
           </div>
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
               <div style="font-size:0.9rem; line-height:1.4">School presented its 2024-25 academic year report to the board.</div>
-              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=oYXptXv6Y5I&t=189" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=oYXptXv6Y5I&t=165" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
               <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DCQPN4655D42/$file/Orion%2024-25%20Data%20for%20Board%20presentation.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Orion 24-25 Data for Board presentation.pdf &#8599;</a></div>
             </div>
         </div><div style="margin-bottom:2rem">
@@ -1350,7 +1351,7 @@
           </div>
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
               <div style="font-size:0.9rem; line-height:1.4">Orion and Taft School Presentations for the 2023-2024 School Year</div>
-              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"></div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=KRjx8Mh0MZ0" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
               <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CYP4D20AFBC7/$file/Orion%20Board%20Report%202023-2024.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Orion Board Report 2023-2024.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CYP4D40AFBF7/$file/Taft%20Board%20Report%2023-24.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Taft Board Report 23-24.pdf &#8599;</a></div>
             </div>
         </div><div style="margin-bottom:2rem">
@@ -1361,7 +1362,7 @@
           </div>
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
               <div style="font-size:0.9rem; line-height:1.4">Approval of Addendum to 2023-24 Measure U Application for Orion Alternative and Mandarin Immersion School</div>
-              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"></div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=LPmyvuhgudA" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
               <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CXE3YN092C1C/$file/Orion%20Measure%20U%20Addendum%20No.%201.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Orion Measure U Addendum No. 1.pdf &#8599;</a></div>
             </div>
         </div><div style="margin-bottom:2rem">
@@ -1372,8 +1373,739 @@
           </div>
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
               <div style="font-size:0.9rem; line-height:1.4">Approval of Construction Management Agreement Amendment #3 for Orion Alternative School (Formerly John Gill School) with RGM Kramer, Inc.</div>
-              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"></div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=DKpqLPmVPIg" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
               <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CUQQA665E1F6/$file/190320%20RCSD%20JG%20Agreement%20for%20CM%20Services-Fully%20Executed.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">190320 RCSD JG Agreement for CM Services-Fully Executed.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CUQQVV681E3E/$file/190924%20RCSD%20Assignment%2C%20Assumption%2C%20and%20Consent%20Agreement-Fully%20Executed.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">190924 RCSD Assignment, Assumption, and Consent Agreement-Fully Executed.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CUQPCA6277BD/$file/200624%20John%20Gill%20CM%20Fee%20Amendment%20%231.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">200624 John Gill CM Fee Amendment #1.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CUQN345D8DB8/$file/210620%20John%20Gill%20CM%20Fee%20Amendment%20%232%20with%20RGMK%20-%20Fully%20Executed.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">210620 John Gill CM Fee Amendment #2 with RGMK - Fully Executed.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CUQP5D622EBC/$file/230823%20John%20Gill%20CM%20Fee%20Amendment%20%233%20with%20RGMK.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">230823 John Gill CM Fee Amendment #3 with RGMK.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">June 28, 2023</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2023-06-28" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Proposal for Fire Alarm Repair with Vanden Bos Electric for Orion Alternative School (Formerly John Gill School)</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=l1JfnuQT9Ho" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CSY25Y009361/$file/230628%20John%20Gill%20Bldg%20A%20FA%20Investigation%20and%20Repair%20Proposal%20with%20VDB%20-%20Signed%20by%20MC.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">230628 John Gill Bldg A FA Investigation and Repair Proposal with VDB - Signed by MC.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">May 10, 2023</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2023-05-10" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Final Plan Review Invoice with the Division of the State Architect (DSA) for Orion Alternative School (Formerly John Gill School)</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=RfAKmoBkvr4" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CR9SWS74B531/$file/01-118012_Invoice_01-13356_2023-04-18.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">01-118012_Invoice_01-13356_2023-04-18.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">April 26, 2023</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2023-04-26" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Proposal for the Furnishing and Installation of a Water Pump with Scapes, Inc. for Orion Alternative School (Formerly John Gill School)</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=inuwqFycW2Q" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQYKMM528DCE/$file/221018%20John%20Gill%20Water%20Pump%20Proposal%20with%20Scapes%20-%20Signed%20by%20MC.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">221018 John Gill Water Pump Proposal with Scapes - Signed by MC.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">March 22, 2023</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2023-03-22" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Proposal for Classroom Tackboards with Beals Martin for Orion Alternative School (Formerly John Gill School)</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=TYxODeND3Dw" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CPWPMN654F3F/$file/Orion%20Alternative%20School%20Tackboards%20Proposal.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Orion Alternative School Tackboards Proposal.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">March 8, 2023</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2023-03-08" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Architect Additional Service Amendment #12 with CAW for Orion Alternative School (Formerly John Gill School)</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=sVxkVRPrIvI" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CNPVBE7FEEB6/$file/230131%20John%20Gill%20Add%20Service%20Proposal%20with%20CAW%20-%20Signed%20by%20MC.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">230131 John Gill Add Service Proposal with CAW - Signed by MC.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">February 15, 2023</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2023-02-15" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Single Plan for Student Achievement for Orion, Garfield, and Taft Community Schools</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=LmFOastk8Js" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CP3MEH5A352C/$file/Orion%20SPSA%20Board%20Report%20.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Orion SPSA Board Report .pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CP3MFJ5A41E9/$file/Garfield%20SPSA%20Board%20Report.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Garfield SPSA Board Report.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CP3MFU5A6A79/$file/Taft%20SPSA%20Board%20Report%20(1).pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Taft SPSA Board Report (1).pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">February 8, 2023</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2023-02-08" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Modernization and New Building, Bid Package A, Change Order #9 to the Agreement with Duran & Venables for Orion Alternative School (Formerly John Gill School)</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=Ptx7Oy4E3zE" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CNLTZU79D8BE/$file/230208%20RCSD%20JG%20Bid%20Package%20A%20CO%20No.%209%20Package.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">230208 RCSD JG Bid Package A CO No. 9 Package.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">School Plan for Student Achievement: Adelante Selby and Orion</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=Ptx7Oy4E3zE" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CNM2HR024C81/$file/Adelante%20Selby%20SPSA%20Board%20Report.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Adelante Selby SPSA Board Report.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CNM2JA0260FB/$file/Orion%20SPSA%20Board%20Report%20.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Orion SPSA Board Report .pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">January 18, 2023</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2023-01-18" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of New Buildings, Modernization and Sitework, Bid Package G, Change Order #20 to the Agreement and Allowance Expenditure Directives #3 and #4 with Sausal Corporation for Orion Alternative School (Formerly John Gill School)</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=tqvsE4VeAzE" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CMU26Y00B88D/$file/221117%20RCSD%20JG%20Bid%20Package%20G%20AED%20No.%203%20Package%20-%20Fully%20Executed.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">221117 RCSD JG Bid Package G AED No. 3 Package - Fully Executed.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CMU27200B9F0/$file/221121%20RCSD%20JG%20Bid%20Package%20G%20AED%20No.%204%20Package%20-%20Fully%20Executed.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">221121 RCSD JG Bid Package G AED No. 4 Package - Fully Executed.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CMX2BR731412/$file/230118%20RCSD%20JG%20Bid%20Package%20G%20CO%20No.%2020%20Package.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">230118 RCSD JG Bid Package G CO No. 20 Package.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">January 11, 2023</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2023-01-11" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Proposal for Asphalt Replacement with Dryco for Orion Alternative School (Formerly John Gill School)</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=1O2eUw21SqE" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CMKT7475ECB1/$file/221110%20John%20Gill%20Asphalt%20Work%20with%20Dryco%20-%20Signed%20by%20MC.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">221110 John Gill Asphalt Work with Dryco - Signed by MC.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">December 14, 2022</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2022-12-14" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of New Buildings, Modernization and Sitework, Bid Package G, Change Order #19 to the Agreement with Sausal Corporation for Orion Alternative School (Formerly John Gill School)</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=wT_bmU3AGc8" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CLUSWA70FE05/$file/221214%20RCSD%20JG%20Bid%20Package%20G%20CO%20No.%2019%20Package.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">221214 RCSD JG Bid Package G CO No. 19 Package.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">October 12, 2022</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2022-10-12" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Proposal for 48 Port Switches and Supporting Equipment with CDW-G at Garfield Community School and Orion Alternative School</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=68biYKZX78M" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CJVM8Q57EE8E/$file/220919%20GA%20JG%20Meraki%20Switches%20Proposal%20with%20CDWG%20-%20Signed%20by%20MC.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">220919 GA JG Meraki Switches Proposal with CDWG - Signed by MC.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">September 21, 2022</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2022-09-21" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of New Buildings, Modernization and Sitework Project Bid, Package G, Change Order #17 to the Agreement with Sausal Corporation for Orion Alternative School (Formerly John Gill School)</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=3-iyZ3om4SE" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CJ8NBR5F265A/$file/220921%20RCSD%20JG%20Bid%20Package%20G%20CO%20No.%2017%20Package%20-%20Revised.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">220921 RCSD JG Bid Package G CO No. 17 Package - Revised.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">September 7, 2022</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2022-09-07" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Proposal for Demolition of Asphalt Concrete Around Old Portable Buildings Scheduled for Removal with Duran and Venables at Orion Alternative School (Formerly John Gill School)</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=PfxY0tBfY9g" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CHSKLR523754/$file/220420%20John%20Gill%20IH%20Asphalt%20Restoration%20with%20Duran%20and%20Venables%20-%20Signed%20by%20DD.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">220420 John Gill IH Asphalt Restoration with Duran and Venables - Signed by DD.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Project Inspector Agreement Amendment #12 with Inspectacon at Kennedy Middle School's Maker Space Project, Orion Alternative School (Formerly John Gill School), and McKinley Institute of Technology's Theater Projection Screen</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=PfxY0tBfY9g" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CHTKPC52CE42/$file/220907%20RCSD%20Project%20Inspector%20Amendment%20%2312%20with%20Inspectacon.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">220907 RCSD Project Inspector Amendment #12 with Inspectacon.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">August 24, 2022</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2022-08-24" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Proposal for the Furnishing and Installation of an Automatic Watering System and Sod/Lawn with Scapes, Inc., at Orion Alternative School (Formerly John Gill School)</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=Z_wF6k93A10" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CHBNX360A967/$file/John%20Gill%20Elementary%20School%20Filed%20proposal%20rev1.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">John Gill Elementary School Filed proposal rev1.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of New Building and Modernization Project Bid Package F, Change Order #3 to the Agreement with Scapes Landscape Company, Inc., for Orion Alternative School (Formerly John Gill School)</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=Z_wF6k93A10" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CH8SU774540D/$file/220824%20RCSD%20JG%20Bid%20Package%20F%20CO%20No.%203%20Package%20Signed.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">220824 RCSD JG Bid Package F CO No. 3 Package Signed.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of New Building and Modernization Project Bid Package E, Change Order #4 to the Agreement with Foothill Air Conditioning & Heating, Inc., for Orion Alternative School (Formerly John Gill School)</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=Z_wF6k93A10" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CHBMD45A92A7/$file/220824%20RCSD%20JG%20Bid%20Package%20E%20CO%20No.%204%20Package.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">220824 RCSD JG Bid Package E CO No. 4 Package.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Agreement between United Through Education, Inc. and the Redwood City School District for Orion Alternative Mandarin Immersion School</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=Z_wF6k93A10" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CHDNYE605828/$file/United%20through%20Education_22.23.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">United through Education_22.23.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">August 10, 2022</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2022-08-10" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Proposal for Soil Preparation, Ripping, Tilling and Placement of Sod with Scapes, Inc. at Orion Alternative School (Formerly, John Gill School)</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=XOwgAIqGlKE" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CGWRSF6F632C/$file/220729%20John%20Gill%20IH%20Restoration%20Sod%20Proposal%20with%20Scapes%20-%20Signed%20by%20DD.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">220729 John Gill IH Restoration Sod Proposal with Scapes - Signed by DD.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of New Buildings, Modernization and Sitework Project Bid Package G Change Order #16 with Sausal Corporation for Orion Alternative School</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=XOwgAIqGlKE" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CGWSFA726F1D/$file/220810%20RCSD%20JG%20Bid%20Package%20G%20CO%20No.%2016%20Front%20Load%20Package.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">220810 RCSD JG Bid Package G CO No. 16 Front Load Package.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">June 29, 2022</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2022-06-29" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Modernization and New Building Project Change Order #15 for Orion Alternative School (Formerly John Gill School) with Sausal Corporation</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=ehyzHnix3lo" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CFMU4Z7A4F31/$file/220622%20RCSD%20JG%20Bid%20Package%20G%20CO%20No.%2015%20Front%20Load%20Package.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">220622 RCSD JG Bid Package G CO No. 15 Front Load Package.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">June 15, 2022</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2022-06-15" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Concrete Masonry Unit (CMU) Wall Adjustment Proposal for Orion Alternative School (Formerly John Gill) with Boeger</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=voWg7JVoYU4" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CF6MUU5CB268/$file/220607%20John%20Gill%20CMU%20Veneer%20Fix%20Proposal%20with%20Boeger%20-%20Signed%20by%20DD.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">220607 John Gill CMU Veneer Fix Proposal with Boeger - Signed by DD.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">May 25, 2022</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2022-05-25" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Modernization and New Buildings Project Change Order #3 for Orion Alternative School with Foothill Air Conditioning & Heating, Inc.</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=w5fpt_wSvTA" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CEJNCJ5EDC7E/$file/220525RCSD%20JG%20Bid%20Package%20E%20CO%20No.%203%20Cover%20Sheet%20-%20Frontload%20Packet%20(%2434%2C382.00).pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">220525RCSD JG Bid Package E CO No. 3 Cover Sheet - Frontload Packet ($34,382.00).pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Interim Housing Portable Removal Proposal for Garfield Community School and Orion Alternative School with Mobile Modular</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=w5fpt_wSvTA" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CEJNNB607766/$file/220518%20John%20Gill%20IH%20Portable%20Removal%20Proposal%20with%20Mobile%20Modular%20-%20Signed%20by%20DD.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">220518 John Gill IH Portable Removal Proposal with Mobile Modular - Signed by DD.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CEJNND607874/$file/220518%20Garfield%20IH%20Portable%20Removal%20Proposal%20with%20Mobile%20Modular%20-%20Signed%20by%20DD.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">220518 Garfield IH Portable Removal Proposal with Mobile Modular - Signed by DD.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">April 27, 2022</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2022-04-27" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Electric Vehicle (EV) Charger Installation Proposal for Orion Alternative School (Formerly John Gill) with VDB</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=UFLEqXKCqPk" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CDN4KT0BF9EF/$file/220316%20John%20Gill%20EV%20Charger%20Proposal%20with%20VDB%20-%20Signed%20by%20DD.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">220316 John Gill EV Charger Proposal with VDB - Signed by DD.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">April 13, 2022</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2022-04-13" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Project Inspector Agreement Amendment #11 for Orion Alternative (Formerly John Gill) and Taft Community School with Inspectacon</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=Ya0CfvXo1kI" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CD86YF173387/$file/220405%20RCSD%20Project%20Inspector%20Amendment%20%2311%20with%20Inspectacon.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">220405 RCSD Project Inspector Amendment #11 with Inspectacon.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">March 9, 2022</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2022-03-09" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Addendum to 2021-22 Measure U Application for Orion Alternative Mandarin Immersion</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=NLKrmWq9AQs" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CC4SUS73C3AB/$file/Addendum%20Orion%20Mandarin%20Immersion%20Measure%20U%202021-22.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Addendum Orion Mandarin Immersion Measure U 2021-22.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">February 16, 2022</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2022-02-16" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Modernization and New Building Project Bid Package F Change Order #1 for Orion Alternative School (Formerly John Gill Elementary School) with Scapes</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=4E5Qh0Z8I50" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CBG29R01207E/$file/220204%20RCSD%20JG%20Bid%20Package%20F%20CO%20No.%201%20Cover%20Sheet%20Frontload%20packet%20(%2420%2C021.26).pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">220204 RCSD JG Bid Package F CO No. 1 Cover Sheet Frontload packet ($20,021.26).pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Modernization and New Building Project Bid Package D Electric, Change Order #5 for Orion Alternative School (Formerly John Gill Elementary School) with Vanden Bos</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=4E5Qh0Z8I50" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CBG2CA01804B/$file/220216%20RCSD%20JG%20Bid%20Package%20D%20CO%20No.%205%20Cover%20Sheet%20Frontload%20packet%20(%2424%2C728.82).pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">220216 RCSD JG Bid Package D CO No. 5 Cover Sheet Frontload packet ($24,728.82).pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">February 9, 2022</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2022-02-09" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Lunch Shelter Construction Agreement for Orion Alternative School (Formerly John Gill) with Park Planet</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=IFbtMC08QVs" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CB9M35589161/$file/220201%20John%20Gill%20Lunch%20Shelter%20Construction%20Agreement%20with%20Park%20Planet.PDF" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">220201 John Gill Lunch Shelter Construction Agreement with Park Planet.PDF &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of TK and Kinder Play Structure Construction Agreement for Orion Alternative School (Formerly John Gill) with Park Planet</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=IFbtMC08QVs" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CB92LW02C2EF/$file/220123%20John%20Gill%20TK%20%26%20Kinder%20Play%20Structure%20Construction%20Agreement%20with%20Park%20Planet.PDF" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">220123 John Gill TK & Kinder Play Structure Construction Agreement with Park Planet.PDF &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Child Day Care (CDC) Portable Roof Replacement Proposal for Orion Alternative School (Formerly John Gill ) with State Roofing</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=IFbtMC08QVs" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CB92Y404666E/$file/220201%20John%20Gill%20CDC%20Portable%20Roof%20Proposal%20with%20State%20Roofing%20-%20Signed%20by%20DD.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">220201 John Gill CDC Portable Roof Proposal with State Roofing - Signed by DD.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Special Testing and Inspection Project Authorization Form (PAF) #27-2 for Orion Alternative School (Formerly John Gill) with Ninyo and Moore</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=IFbtMC08QVs" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CB92VW0413F6/$file/220113%20John%20Gill%20Special%20Inspection%20Agreement%20PAF%20%2327-2%20-%20Signed%20by%20Ninyo%20and%20Moore.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">220113 John Gill Special Inspection Agreement PAF #27-2 - Signed by Ninyo and Moore.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">January 19, 2022</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2022-01-19" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Adoption of Resolution 23, Approval of Orion Alternative School (Formerly John Gill Elementary School) Modernization and New Building Project Bid Package I Marquee Fire Protection, Change Order #1</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=Gg3x5yYfQBU" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CAL2EK01A387/$file/211217%20RCSD%20JG%20Bid%20Package%20I%20CO%20No.%201%20Cover%20Sheet%20%20-%20Frontload%20Packet%20(%2414%2C337).pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">211217 RCSD JG Bid Package I CO No. 1 Cover Sheet  - Frontload Packet ($14,337).pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CAL2ER01C034/$file/220119%20John%20Gill%20Change%20Order%20Futility%20Resolution%20%23%20with%20Marquee.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">220119 John Gill Change Order Futility Resolution # with Marquee.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CALNPN606EED/$file/220119%20John%20Gill%20Change%20Order%20Futility%20Resolution%2023%20with%20Marquee.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">220119 John Gill Change Order Futility Resolution 23 with Marquee.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">January 12, 2022</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2022-01-12" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Adoption of Resolution 20, Approval of Orion Alternative School (Formerly John Gill Elementary School) Modernization and New Building Project Bid Package E Foothill Air Conditioning Change Order #1</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=tTOQWrbPAjM" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CACTPB780009/$file/211222%20RCSD%20JG%20Bid%20Package%20E%20CO%20No.%201%20Cover%20Sheet%20-%20Front%20load%20Packet%20(121%2C400).pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">211222 RCSD JG Bid Package E CO No. 1 Cover Sheet - Front load Packet (121,400).pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CAJL8J554C3A/$file/220112%20John%20Gill%20Change%20Order%20Futility%20Resolution%20%2320%20with%20Foothill%20-%20Revised.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">220112 John Gill Change Order Futility Resolution #20 with Foothill - Revised.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">December 15, 2021</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2021-12-15" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Architect Additional Services Proposals for Orion Alternative School (Formerly John Gill) with CAW</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=uP_HUD2JghY" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/C9GUEB784A9E/$file/211207%20John%20Gill%20Water%20Irrigation%20Proposal%20Add%20%2312%20with%20CAW%20-%20Signed%20by%20DD.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">211207 John Gill Water Irrigation Proposal Add #12 with CAW - Signed by DD.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/C9GUED784B15/$file/211207%20John%20Gill%20CA%20Extension%20Proposal%20Add%20%235%20with%20CAW%20-%20Signed%20by%20DD.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">211207 John Gill CA Extension Proposal Add #5 with CAW - Signed by DD.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">December 8, 2021</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2021-12-08" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Architect Additional Service Amendments #6, #8, and #9 for Orion Alternative School (Formerly John Gill) with CAW</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=1WVKb5e5QOY" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/C9A2AN7B33C9/$file/211122%20John%20Gill%20Contractor%20Coordination%20Proposal%20Add%20%239%20with%20CAW%20-%20Signed%20by%20DD.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">211122 John Gill Contractor Coordination Proposal Add #9 with CAW - Signed by DD.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/C9A2AQ7B33FC/$file/211122%20John%20Gill%20Off%20Site%20Permit%20Proposal%20Add%20%236%20with%20CAW%20-%20Signed%20by%20DD.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">211122 John Gill Off Site Permit Proposal Add #6 with CAW - Signed by DD.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/C9A2AS7B342F/$file/211122%20John%20Gill%20Building%20A%20Foundation%20Design%20Proposal%20Add%20%238%20with%20CAW%20-%20Signed%20by%20DD.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">211122 John Gill Building A Foundation Design Proposal Add #8 with CAW - Signed by DD.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">November 17, 2021</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2021-11-17" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Project Inspector Agreement Amendment #10 for Orion Alternative (Formerly John Gill) and Taft Schools with Inspectacon</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=kcTl2zJsh2A" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/C8LVS9821BC6/$file/211109%20RCSD%20Project%20Inspector%20Amendment%20%2310%20with%20Inspectacon.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">211109 RCSD Project Inspector Amendment #10 with Inspectacon.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">October 6, 2021</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2021-10-06" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Modernization & New Buildings Project Change Order #7 for Orion Alternative School with Sausal Corporation</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=lOTx3uh-ifo" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/C7BN7B5DEA80/$file/210927%20RCSD%20Orion%20(Formerly%20John%20Gill)%20Bid%20Package%20G%20CO%20No.%207%20Front%20Load%20Package.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">210927 RCSD Orion (Formerly John Gill) Bid Package G CO No. 7 Front Load Package.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Turnkey Security Camera and Intrusion System Agreement for Garfield, Orion Alternative (Formerly John Gill), and Taft Schools with Siemens</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=lOTx3uh-ifo" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/C7BTKS77C61A/$file/210927%20GA%20JG%20TA%20Security%20Camera%20and%20Intrusion%20Agreement%20with%20Siemens%20-%20Signed%20by%20Siemens.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">210927 GA JG TA Security Camera and Intrusion Agreement with Siemens - Signed by Siemens.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">September 22, 2021</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2021-09-22" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of STEAM Furniture Proposal for Orion Alternative School (Formerly John Gill) with Campbell Keller</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=RT_ihJDbQTY" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/C6UPXU6147EA/$file/210914%20John%20Gill%20STEAM%20Furniture%20Proposal%20with%20Campbell%20Keller%20-%20Signed%20by%20DD.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">210914 John Gill STEAM Furniture Proposal with Campbell Keller - Signed by DD.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Interim Housing Power Payment for Orion Alternative School (Formerly John Gill) with PG&E</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=RT_ihJDbQTY" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/C6URAX6C0B47/$file/210914%20John%20Gill%20Interim%20Housing%20Power%20Bill%20with%20PGE.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">210914 John Gill Interim Housing Power Bill with PGE.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Security Camera and Intrusion System Rough-in Proposals for Garfield School and Orion Alternative School (Formerly John Gill) with Siemens</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=RT_ihJDbQTY" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/C6URFA6C93E5/$file/210826%20Garfield%20Security%20Rough-in%20Proposal%20with%20Siemens%20-%20Signed%20by%20WR.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">210826 Garfield Security Rough-in Proposal with Siemens - Signed by WR.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/C6URFC6C9423/$file/210826%20John%20Gill%20Security%20Rough-in%20Proposal%20with%20Siemens%20-%20Signed%20by%20WR.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">210826 John Gill Security Rough-in Proposal with Siemens - Signed by WR.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">August 25, 2021</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2021-08-25" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Classroom Furniture Proposal for Orion Alternative School (Formerly John Gill Elementary School) with Virco</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/C5YV8A7F7A3B/$file/210806%20John%20Gill%20Classroom%20Furniture%20Proposal%20with%20Virco%20-%20Signed%20by%20DD.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">210806 John Gill Classroom Furniture Proposal with Virco - Signed by DD.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Administration Furniture Proposal for Orion Alternative School (Formerly John Gill Elementary School) with Campbell Keller</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/C5YVYC83003E/$file/210817%20John%20Gill%20Admin%20Furniture%20Proposal%20with%20RDI%20-%20Signed%20by%20DD.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">210817 John Gill Admin Furniture Proposal with RDI - Signed by DD.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Modernization and New Building Project Change Order #6 for Orion Alternative School (Formerly John Gill Elementary School) with Sausal Corporation</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/C5Z2E801C7E2/$file/210816%20RCSD%20JG%20Bid%20Package%20G%20CO%20No.%206%20Front%20Load%20Package.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">210816 RCSD JG Bid Package G CO No. 6 Front Load Package.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">August 11, 2021</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2021-08-11" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Modernization and New Building Project Change Order #4 for Orion Alternative School with Sausal Corporation</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=L9391IDRd9A" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/C5K23L002C92/$file/210622%20RCSD%20JG%20Bid%20Package%20G%20CO%20No.%204%20Front%20Load%20Package%20Revised.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">210622 RCSD JG Bid Package G CO No. 4 Front Load Package Revised.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Construction Management (CM) Fee Amendments for Garfield, Hoover, Taft Community Schools and Orion Alternative School (Formerly John Gill) with RGM Kramer</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=L9391IDRd9A" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/C5KP6X51F24D/$file/210802%20Hoover%20CM%20Fee%20Amendment%20%232%20with%20RGMK%20-%20Signed%20by%20RK%20and%20DD.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">210802 Hoover CM Fee Amendment #2 with RGMK - Signed by RK and DD.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/C5KP7551FE92/$file/210620%20John%20Gill%20CM%20Fee%20Amendment%20%232%20with%20RGMK%20-%20Fully%20Executed.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">210620 John Gill CM Fee Amendment #2 with RGMK - Fully Executed.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/C5KP7A5203DE/$file/210620%20Taft%20CM%20Fee%20Amendment%20%233%20with%20RGMK%20-%20Fully%20Executed.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">210620 Taft CM Fee Amendment #3 with RGMK - Fully Executed.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/C5KKN95279D8/$file/210804%20Garfield%20CM%20Fee%20Amendment%20%232%20with%20RGMK%20-%20Signed%20by%20RK%20and%20DD.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">210804 Garfield CM Fee Amendment #2 with RGMK - Signed by RK and DD.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Play Structure Relocation and Repair Proposal for Orion Alternative School (Formerly John Gill) with SpectraTurf</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=L9391IDRd9A" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/C5KPSL568736/$file/210715%20John%20Gill%20Play%20Structure%20Relocation%20Proposal%20with%20SpectraTurf%20-%20Signed%20by%20DD%20and%20WR.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">210715 John Gill Play Structure Relocation Proposal with SpectraTurf - Signed by DD and WR.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Additional Interim Housing Portable Rental and Removal Allowance for Orion Alternative School (Formerly John Gill) and Garfield Community School with Mobile Modular</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=L9391IDRd9A" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">June 30, 2021</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2021-06-30" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Modernization and New Building Project Change Order #4 for Orion Alternative School with Sausal Corporation</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRYVH780C52C/$file/10_1_ChangeOrder4_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">10_1_ChangeOrder4_0.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">June 23, 2021</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2021-06-23" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Special Testing and Inspection Project Authorization Form (PAF) #27-1 for Orion Alternative School with Ninyo and Moore</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRX3FK06A992/$file/7_2_SpecialInspectionAgreement_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">7_2_SpecialInspectionAgreement_0.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Additional California Environmental Quality Act (CEQA) Oversight Proposal for Orion Alternative School (Formerly John Gill School) with SCS Engineers</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRXVVR829EC1/$file/7_6_ChangeOrder5_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">7_6_ChangeOrder5_0.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">June 16, 2021</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2021-06-16" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Additional California Environmental Quality Act (CEQA) Air Monitoring Project Authorization Form #31-6 for Orion Alternative School (Formerly John Gill School) with Ninyo and Moore</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRW4DB0B06DA/$file/10_9_SpecialInspectionAgreementForOrionAlternative_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">10_9_SpecialInspectionAgreementForOrionAlternative_0.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">May 19, 2021</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2021-05-19" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Orion Alternative School’s Multicultural Presentation</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=z8PdGgT5GxU" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">April 21, 2021</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2021-04-21" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of the Modernization and New Building Project Bid Package G for Orion Alternative School (Formerly John Gill Elementary School) with Sausal Corporation, Change Order #3</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=CJFM_ZJtleg" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRM33W04F42B/$file/7_1_ChangeOrder3_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">7_1_ChangeOrder3_0.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">April 14, 2021</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2021-04-14" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Additional California Environmental Quality Act (CEQA) Air Monitoring Project Authorization Form #31-5 for Orion Alternative School (Formerly John Gill School) with Ninyo and Moore</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=vpbKJKWTv8k" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRLV6M7F3B31/$file/10_6_SpecialInspectionAgreementForOrionAlternative_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">10_6_SpecialInspectionAgreementForOrionAlternative_0.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">March 24, 2021</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2021-03-24" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Orion Alternative School (Formerly John Gill Elementary School) Modernization and New Building Project Bid Package H, Change Order #1 with OC McDonald</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=sJQNqQu1Jfs" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRL23X00473B/$file/7_2_ChangeOrder1_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">7_2_ChangeOrder1_0.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Orion Alternative School (Formerly John Gill Elementary School) Modernization and New Building Project Bid Package G, Change Order #2 with Sausal Corporation</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=sJQNqQu1Jfs" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRL26E00A1B8/$file/7_3_ChangeOrder2_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">7_3_ChangeOrder2_0.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">March 10, 2021</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2021-03-10" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Additional California Environmental Quality Act (CEQA) Oversight Proposal for Orion Alternative School (Formerly John Gill School) with SCS Engineers</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=08x22IQb514" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRG27D00C841/$file/10_5_ChangeOrder4_0%20(1).pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">10_5_ChangeOrder4_0 (1).pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">January 27, 2021</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2021-01-27" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Additional California Environmental Quality Act (CEQA) Air Monitoring Project Authorization Form #31-4 for Orion Alternative School (Formerly John Gill School) with Ninyo and Moore</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=lRB-pyUKq6E" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQYN8B5E335A/$file/10_1_SpecialInspectionAgreement_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">10_1_SpecialInspectionAgreement_0.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Fire Sprinkler Piping Upsize Proposal for Orion Alternative School (Formerly John Gill School) with Marquee Fire Protection</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=lRB-pyUKq6E" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQYN8Q5E7D34/$file/10_2_FireSprinklerUpsizedPipingProposal_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">10_2_FireSprinklerUpsizedPipingProposal_0.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">January 13, 2021</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2021-01-13" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Orion Alternative School (Formerly John Gill Elementary School) Modernization and New Building Project Bid Package G with Sausal Corporation, Change Order #1</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=wb0HEPHZHM0" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRAUWQ7C78BF/$file/7_3_ChangeOrder1_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">7_3_ChangeOrder1_0.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Orion Alternative School (Formerly John Gill Elementary School) Modernization and New Building Project Bid Package A Duran & Venables, Change Order #3</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=wb0HEPHZHM0" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRAUX97CAF79/$file/7_4_ChangeOrder3_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">7_4_ChangeOrder3_0.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Soil Off Haul Proposal for Orion Alternative School (Formerly John Gill School) with Duran and Venables</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=wb0HEPHZHM0" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRAUZ57D9B1C/$file/7_9_SoilOffHaulProposal_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">7_9_SoilOffHaulProposal_0.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Additional California Environmental Quality Act (CEQA) Air Monitoring Project Authorization Form #31-3 for Orion Alternative School (Formerly John Gill School) with Ninyo and Moore</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=wb0HEPHZHM0" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRAUZW7E2181/$file/7_12_SpecialInspectionAgreement_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">7_12_SpecialInspectionAgreement_0.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Utility Relocation and Upgrade Proposals for Garfield School and Orion Alternative School (Formerly John Gill School) with PG&E</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=wb0HEPHZHM0" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRAV577F05E6/$file/7_13_ElectricalUpgradeAgreementJohnGill_0%20(1).pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">7_13_ElectricalUpgradeAgreementJohnGill_0 (1).pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRAV5B7F088F/$file/7_13_PGEGasLineRelocationAgreementJohnGill_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">7_13_PGEGasLineRelocationAgreementJohnGill_0.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRAV5D7F0B1C/$file/7_13_Phase1ElectricalRelocationAgreementGarfield_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">7_13_Phase1ElectricalRelocationAgreementGarfield_0.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRAV5F7F0D36/$file/7_13_Phase2ElectricalRelocationAgreementGarfield_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">7_13_Phase2ElectricalRelocationAgreementGarfield_0.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Pressure Release Valve (PRV) for Water Main Line Proposal for Orion Alternative School (Formerly John Gill School) with MK Pipelines</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=wb0HEPHZHM0" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRAV897F7857/$file/7_16_UndergroundPRVWaterMainProposal_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">7_16_UndergroundPRVWaterMainProposal_0.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">December 9, 2020</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2020-12-09" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Touchless Plumbing Fixture Replacement Construction Agreements for Garfield School, Orion Alternative (Formerly John Gill School), and Taft School with Ciari and Hoover School with Dinelli</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=C6EkF9qWMJ4" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CU52JF0255FC/$file/Garfield%20and%20Taft%20Plumbing%20Fixture%20Replacement%20Agreement%20with%20Ciari.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Garfield and Taft Plumbing Fixture Replacement Agreement with Ciari.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CU52JH02579B/$file/Hoover%20Plumbing%20Fixture%20Replacement%20Agreement%20with%20Dinelli.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Hoover Plumbing Fixture Replacement Agreement with Dinelli.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CU52JK0258F2/$file/Orion%20Alternative%20Plumbing%20Fixture%20Replacement%20Agreement%20with%20Ciari.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Orion Alternative Plumbing Fixture Replacement Agreement with Ciari.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">November 18, 2020</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2020-11-18" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Orion Alternative School (Formerly John Gill Elementary School) Modernization and New Building Project Bid Package B with MK Pipelines, Change Order #2</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=WuVzcQVlzOI" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CR6UW37DFAA5/$file/10_6_ChangeOrder2_0%20(1).pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">10_6_ChangeOrder2_0 (1).pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Orion Alternative School (Formerly John Gill Elementary School) Modernization and New Building Project Bid Package D with Vanden Bos Electric, Change Order #1</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=WuVzcQVlzOI" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CR6VL9813A5C/$file/10_13_ChangeOrder1_0%20(1).pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">10_13_ChangeOrder1_0 (1).pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of California Environmental Air Quality (CEQA) Construction Oversight Add Service Proposal for Orion Alternative School (Formerly John Gill School) with SCS Engineers</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=WuVzcQVlzOI" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CR6VSH822556/$file/10_15_ChangeOrder3_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">10_15_ChangeOrder3_0.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">November 4, 2020</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2020-11-04" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of California Environmental Air Quality (CEQA) Construction Oversight Add Service Proposal for Orion Alternative School (Formerly John Gill School) with SCS Engineers</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=lw0ARuWI664" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CR635Q0539E9/$file/9_2_AdditionalOversightProposalWithSCSEngineers_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">9_2_AdditionalOversightProposalWithSCSEngineers_0.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Agreement between the Redwood City School District and United Through Education, Inc. (Orion Alternative Mandarin Immersion, Roosevelt School, and Taft Community School)</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=lw0ARuWI664" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CR678P18689D/$file/13_5_AgreementBetweenRCSDAndUnitedThroughEducationInc_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">13_5_AgreementBetweenRCSDAndUnitedThroughEducationInc_0.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Addendum to 2020-21 Measure U Application for Orion Alternative Mandarin Immersion</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=lw0ARuWI664" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CR67D619112C/$file/13_8_AddendumToMeasureU_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">13_8_AddendumToMeasureU_0.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">October 21, 2020</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2020-10-21" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Encroachment Permit Fee Proposal for Orion Alternative School (Formerly John Gill School) with the City of Redwood City</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQZ7CW190772/$file/6_4_EncroachmentFeePaymentLetter_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">6_4_EncroachmentFeePaymentLetter_0.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQZ7CZ190A7B/$file/6_4_FeeProposal_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">6_4_FeeProposal_0.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Play Structure Construction Agreements for Garfield School and Orion Alternative School (Formerly John Gill School) with Park Planet</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"></div>
+              
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of California Environmental Air Quality (CEQA) Construction Oversight Change Order #2 Proposal for Orion Alternative School (Formerly John Gill School) with SCS Engineers</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CR36DW147C45/$file/6_7_ChangeOrder2_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">6_7_ChangeOrder2_0.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">September 23, 2020</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2020-09-23" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Touchless Plumbing Fixture Replacement Proposals for Orion Alternative School (Formerly John Gill School) and Roy Cloud School with CAW</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=4nO0pTNJcyc" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQX3YY0937AE/$file/10_5_TouchlessPlumbingFixtureReplacementProposalRoyCloudSchool_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">10_5_TouchlessPlumbingFixtureReplacementProposalRoyCloudSchool_0.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQX3Z20939C5/$file/10_5_TouchlessPlumbingFixtureReplacementsProposalOrionAlternative_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">10_5_TouchlessPlumbingFixtureReplacementsProposalOrionAlternative_0.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Consideration of 1) Canceling Contract with Sausal Corporation for the Orion Alternative School (Formerly John Gill Elementary School) Modernization and New Building Project, or 2) Assessing a Penalty against Sausal Corporation No More than 10% of Sausal Corporation’s Subcontract with National Glass</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=4nO0pTNJcyc" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">September 9, 2020</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2020-09-09" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Generator Rental and Purchase Proposals for Orion Alternative School (Formerly John Gill School) with Peterson Power</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=JXT4UVeAZw8" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQWQLR69DDF1/$file/7_3_GeneratorPurchaseProposalWithPetersonPower_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">7_3_GeneratorPurchaseProposalWithPetersonPower_0.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQWQLT69E03B/$file/7_3_GeneratorRentalProposalWithPetersonPower_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">7_3_GeneratorRentalProposalWithPetersonPower_0.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of California Environmental Air Quality (CEQA) Construction Oversight Proposal and Change Order #1 for Orion Alternative School (Formerly John Gill School) with SCS Engineers</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=JXT4UVeAZw8" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQWQMZ6A0CD3/$file/7_4_CEQAOversightProposal_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">7_4_CEQAOversightProposal_0.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQWQN36A0EEF/$file/7_4_ChangeOrder1_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">7_4_ChangeOrder1_0.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">August 26, 2020</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2020-08-26" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Construction Staking Project Authorization Form for Orion Alternative School with Kier and Wright</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=okRfyGjPflM" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQV47W0A3B8E/$file/6_6_ProjectAuthorizationForm_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">6_6_ProjectAuthorizationForm_0.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">August 12, 2020</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2020-08-12" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Soil Mitigation Plan (SMP) Project Authorization Form (PAF) for Orion Alternative School (formerly known as John Gill School) with Ninyo and Moore</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=I78B15ybGP0" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQS62612C418/$file/7_3_SpecialInspectionAgreement_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">7_3_SpecialInspectionAgreement_0.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">July 29, 2020</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Special Meeting</span>
+            <a href="/meetings/#2020-07-29" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Safety Compliance Officer Proposal for Orion Alternative School with The Safety Guys</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=1B7zQJJk7JM" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQR4F70B4CFE/$file/6_13_SCOProposal_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">6_13_SCOProposal_0.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Special Testing and Inspection Project Authorization Forms for Orion Alternative School (Formerly John Gill School) and Garfield School with Ninyo and Moore</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=1B7zQJJk7JM" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQR4HL0BA6A8/$file/6_15_InspectionAgreementGarfield_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">6_15_InspectionAgreementGarfield_0.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQR4HN0BA928/$file/6_15_InspectionAgreementOrionAlternativeSchoolFormerlyJohnGillSchool_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">6_15_InspectionAgreementOrionAlternativeSchoolFormerlyJohnGillSchool_0.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">June 24, 2020</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2020-06-24" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Time Lapse Camera Temporary Power and Installation and San Francisco Airport Noise Tower Relocation Proposal for Orion Alternative School with Vanden Bos</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=LXTYptrXhUM" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQPNFK5F8342/$file/10_5_TimeLapseCameraTempPowerAndSFNoiseRelocationProposal_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">10_5_TimeLapseCameraTempPowerAndSFNoiseRelocationProposal_0.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Construction Management Consultant Fee Reconciliation Proposal for Orion Alternative School with RGM Kramer</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=LXTYptrXhUM" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQPNHU6010D0/$file/10_6_ContractModification_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">10_6_ContractModification_0.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">May 20, 2020</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2020-05-20" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Multi-Prime Construction Agreement with Various Contractors for Orion Alternative School</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=lTrmXqjt76k" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQKW5F83BFB0/$file/11_2_PackageADV_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">11_2_PackageADV_0.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQKW5H83C180/$file/11_2_PackageBMKPipelines_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">11_2_PackageBMKPipelines_0.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQKW5K83C39C/$file/11_2_PackageCCaseyFogliConcrete_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">11_2_PackageCCaseyFogliConcrete_0.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQKW5M83C5C7/$file/11_2_PackageDVandenBosElectric_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">11_2_PackageDVandenBosElectric_0.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQKW5T83C822/$file/11_2_PackageEFoothillAirConditioningHeating_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">11_2_PackageEFoothillAirConditioningHeating_0.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQKW5V83CAF7/$file/11_2_PackageFScapes_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">11_2_PackageFScapes_0.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQKW5Z83CD63/$file/11_2_PackageGSausal_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">11_2_PackageGSausal_0.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQL22383CF97/$file/11_2_PackageHOCMcDonald_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">11_2_PackageHOCMcDonald_0.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQL22583D1C6/$file/11_2_PackageIMarqueeFireProtection_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">11_2_PackageIMarqueeFireProtection_0.pdf &#8599;</a></div>
             </div>
         </div>
   </section>

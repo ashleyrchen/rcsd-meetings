@@ -17,6 +17,35 @@ import { headMeta, siteNav, siteFooter } from './html-parts.mjs';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
 
+// ---- Read JPEG/PNG height from file header ----
+function jpegHeight(filePath) {
+  try {
+    const buf = readFileSync(filePath);
+    for (let i = 0; i < buf.length - 9; i++) {
+      if (buf[i] === 0xFF && (buf[i + 1] === 0xC0 || buf[i + 1] === 0xC2)) {
+        return buf.readUInt16BE(i + 5);
+      }
+    }
+  } catch { /* fall through */ }
+  return 400; // fallback
+}
+
+// ---- School logo dimensions (all 1200px wide, heights from R2 originals) ----
+const LOGO_DIMS = {
+  'adelante-selby': { w: 1200, h: 450 },
+  'clifford':       { w: 1200, h: 494 },
+  'garfield':       { w: 1200, h: 434 },
+  'henry-ford':     { w: 1200, h: 500 },
+  'hoover':         { w: 1200, h: 444 },
+  'kennedy':        { w: 1200, h: 462 },
+  'mckinley-mit':   { w: 1200, h: 372 },
+  'north-star':     { w: 1200, h: 451 },
+  'orion':          { w: 1200, h: 424 },
+  'roosevelt':      { w: 1200, h: 424 },
+  'roy-cloud':      { w: 1200, h: 421 },
+  'taft':           { w: 1200, h: 400 },
+};
+
 // ---- Load schools.json for base directory data ----
 const schoolsData = JSON.parse(readFileSync(resolve(ROOT, 'data/schools.json'), 'utf-8'));
 
@@ -1646,7 +1675,7 @@ ${siteNav({ activePage: 'schools', lang, altLangHref })}
 <header class="site-header">
   <div class="header-inner">
     <div class="header-district"><a href="${isEs ? '/distrito/' : '/district/'}">${isEs ? 'Distrito Escolar de Redwood City' : 'Redwood City School District'}</a></div>
-    <img src="${logoUrl}" alt="${displayName}" class="header-logo">
+    <img src="${logoUrl}" alt="${displayName}" class="header-logo" width="${LOGO_DIMS[slug]?.w || 1200}" height="${LOGO_DIMS[slug]?.h || 400}" fetchpriority="high">
     <h1 class="header-title">${displayName}</h1>
     <p class="header-subtitle">${description}</p>
     <div style="margin-top:0.8rem">
@@ -1700,7 +1729,7 @@ ${siteNav({ activePage: 'schools', lang, altLangHref })}
 
     <div class="principal-row">
       ${existsSync(resolve(ROOT, 'docs/img/principals', slug + '.jpg')) ? `<div style="flex-shrink:0">
-        <a href="${school.website}/our-school/meet-our-school-leadership"><img src="/img/principals/${slug}.jpg" alt="${school.principal}" style="width:160px; border-radius:10px; display:block"></a>
+        <a href="${school.website}/our-school/meet-our-school-leadership"><img src="/img/principals/${slug}.jpg" alt="${school.principal}" width="300" height="${jpegHeight(resolve(ROOT, 'docs/img/principals', slug + '.jpg'))}" loading="lazy" style="width:160px; height:213px; object-fit:cover; border-radius:10px; display:block"></a>
         <div style="text-align:center; margin-top:0.6rem">
           <div style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--text-muted)">${L.principal}</div>
           <div style="font-size:1.05rem; font-weight:500; margin-top:0.15rem"><a href="${school.website}/our-school/meet-our-school-leadership" style="color:var(--green-mid); text-decoration:none">${school.principal}</a></div>

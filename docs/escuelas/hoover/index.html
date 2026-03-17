@@ -28,9 +28,10 @@
 <meta name="twitter:image" content="https://rcsd.info/og-1200.jpg">
 <meta name="twitter:title" content="Escuela Comunitaria Hoover — RCSD Open Data">
 <meta name="twitter:description" content="Datos públicos de Escuela Comunitaria Hoover: rendimiento académico, demografía, financiamiento y personal para el año escolar 2025-26.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preload" href="/fonts/fraunces-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/newsreader-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/ibm-plex-mono-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/fonts/fonts.css">
 
 
 <style>
@@ -843,7 +844,7 @@
 <header class="site-header">
   <div class="header-inner">
     <div class="header-district"><a href="/distrito/">Distrito Escolar de Redwood City</a></div>
-    <img src="https://data.rcsd.info/logos/hoover.jpg" alt="Escuela Comunitaria Hoover" class="header-logo">
+    <img src="https://data.rcsd.info/logos/hoover.jpg" alt="Escuela Comunitaria Hoover" class="header-logo" width="1200" height="444" fetchpriority="high">
     <h1 class="header-title">Escuela Comunitaria Hoover</h1>
     <p class="header-subtitle">Hoover es una Escuela Comunitaria de vecindario TK-8 y una de las escuelas con mayores necesidades del distrito. A pesar de tener la tasa más baja de credencialización docente, el personal joven de Hoover produce el segundo mayor crecimiento estudiantil en ELA y Matemáticas. Ofrece un programa de música K-8 completo e instrucción STEAM.</p>
     <div style="margin-top:0.8rem">
@@ -897,7 +898,7 @@
 
     <div class="principal-row">
       <div style="flex-shrink:0">
-        <a href="https://hoover.rcsdk8.net/our-school/meet-our-school-leadership"><img src="/img/principals/hoover.jpg" alt="Lupe Guzmán" style="width:160px; border-radius:10px; display:block"></a>
+        <a href="https://hoover.rcsdk8.net/our-school/meet-our-school-leadership"><img src="/img/principals/hoover.jpg" alt="Lupe Guzmán" width="300" height="300" loading="lazy" style="width:160px; height:213px; object-fit:cover; border-radius:10px; display:block"></a>
         <div style="text-align:center; margin-top:0.6rem">
           <div style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--text-muted)">Director/a</div>
           <div style="font-size:1.05rem; font-weight:500; margin-top:0.15rem"><a href="https://hoover.rcsdk8.net/our-school/meet-our-school-leadership" style="color:var(--green-mid); text-decoration:none">Lupe Guzmán</a></div>
@@ -1254,28 +1255,20 @@
               <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"></div>
               <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2026-03-11/Hoover_-SPSA-2026.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Hoover_ SPSA 2026 &#8599;</a><a href="https://data.rcsd.info/board-packets/2026-03-11/Hoover-25-26-Data-for-Board-presentation.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Hoover 25-26 Data for Board presentation &#8599;</a></div>
             </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
-              <div style="font-size:0.9rem; line-height:1.4">Addenda de Medida U para el año escolar 2025-26</div>
+              <div style="font-size:0.9rem; line-height:1.4">Approval of the Addendum to the Measure U Application for Hoover Community School for the 2025–2026 School Year</div>
               <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"></div>
-              
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2026-03-11/2025-26-Hoover-Community-School-Measure-U-Addendum.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">2025-26 Hoover Community School Measure U Addendum &#8599;</a></div>
             </div>
         </div><div style="margin-bottom:2rem">
           <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
-            <h3 style="margin:0; font-size:1rem">4 de febrero de 2026</h3>
+            <h3 style="margin:0; font-size:1rem">12 de noviembre de 2025</h3>
             <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Regular</span>
-            <a href="/meetings/#2026-02-04" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+            <a href="/meetings/#2025-11-12" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
           </div>
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
-              <div style="font-size:0.9rem; line-height:1.4">Fase 1 de HVAC completada; $2.3M devueltos al fondo de bonos de Medida S</div>
-              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=Nw7_DtNMPVk&t=1291" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
-              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2026-02-04/25-115-RCSD-HVAC-Deductive-Change-Order-001-Return-Unspent-Funds-to-District-1-2.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">25-115 RCSD HVAC Deductive Change Order 001- Return Unspent Funds to District 1- 26-26 &#8599;</a></div>
-            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
-              <div style="font-size:0.9rem; line-height:1.4">Aviso de finalización de Fase 1 de HVAC presentado</div>
-              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=Nw7_DtNMPVk&t=1291" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
-              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2026-02-04/Notice-of-Completion-Blach-Temp-Cooling.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">g g  Notice of Completion - Blach - Temp Cooling &#8599;</a><a href="https://data.rcsd.info/board-packets/2026-02-04/Notice-of-Completion-Blach-Taft.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">g  Notice of Completion - Blach - Taft &#8599;</a><a href="https://data.rcsd.info/board-packets/2026-02-04/Notice-of-Completion-Blach-Roosevelt.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Notice of Completion - Blach - Roosevelt &#8599;</a><a href="https://data.rcsd.info/board-packets/2026-02-04/Notice-of-Completion-Blach-Hoover.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">p  Notice of Completion - Blach - Hoover &#8599;</a><a href="https://data.rcsd.info/board-packets/2026-02-04/Notice-of-Completion-Blach-Adelante-Selby.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Notice of Completion - Blach - Adelante Selby &#8599;</a></div>
-            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
-              <div style="font-size:0.9rem; line-height:1.4">Plan de seguridad anual</div>
-              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=Nw7_DtNMPVk&t=1291" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
-              
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Purchase for New Trash Compactor for Hoover School</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=Pk0Zg38fzKc" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2025-11-12/Hoover-American-Trash-Quote-001584.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Hoover - American Trash Quote# 001584 &#8599;</a></div>
             </div>
         </div><div style="margin-bottom:2rem">
           <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
@@ -1284,9 +1277,35 @@
             <a href="/meetings/#2025-10-08" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
           </div>
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
-              <div style="font-size:0.9rem; line-height:1.4">Orden de cambio de Fase II solar ($61,835 por modificación de distribución de paneles)</div>
-              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=WYi7kzyEnuw" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
-              
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Additional Steel Costs Change Order #4 for Hoover Community School's Solar Phase II Project with Holt Renewables, LLC.</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=WYi7kzyEnuw&t=86" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2025-10-08/251008-RCSD-Hoover-CO-4-for-Additional-Steel-Costs.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">251008 RCSD Hoover CO#4 for Additional Steel Costs &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">27 de agosto de 2025</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Regular</span>
+            <a href="/meetings/#2025-08-27" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of the Industrial Hygienist Services agreements with ProTech Consulting & Engineering for the HVAC Upgrade projects at Taft, Roosevelt, Hoover, Adelante Selby,  and campuses with temporary AC units.</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=NutJa858kMY&t=1418" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2025-08-27/ProTech-Contract-HVAC-Temp-AC-Units.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">ProTech Contract (HVAC) Temp AC Units &#8599;</a><a href="https://data.rcsd.info/board-packets/2025-08-27/ProTech-Contract-HVAC-Taft.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">ProTech Contract (HVAC) Taft &#8599;</a><a href="https://data.rcsd.info/board-packets/2025-08-27/ProTech-Contract-HVAC-Roosevelt.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">ProTech Contract (HVAC) Roosevelt &#8599;</a><a href="https://data.rcsd.info/board-packets/2025-08-27/ProTech-Contract-HVAC-Hoover.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">ProTech Contract (HVAC) Hoover &#8599;</a><a href="https://data.rcsd.info/board-packets/2025-08-27/ProTech-Contract-HVAC-Adelante-Selby.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">ProTech Contract (HVAC) Adelante Selby &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">25 de junio de 2025</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Regular</span>
+            <a href="/meetings/#2025-06-25" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of the Agreements for Special Inspection and Testing Services with Applied Materials and Engineering for the HVAC Upgrade projects at Taft, Roosevelt, Hoover, and Adelante Selby</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=nsizIuPIt5E" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2025-06-25/Adelante-Selby-Special-Inspection-Testing-Agreement.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Adelante Selby Special Inspection & Testing Agreement &#8599;</a><a href="https://data.rcsd.info/board-packets/2025-06-25/Hoover-Special-Inspection-Testing-Agreement.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Hoover Special Inspection & Testing Agreement &#8599;</a><a href="https://data.rcsd.info/board-packets/2025-06-25/Roosevelt-Special-Inspection-Testing-Agreement.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Roosevelt Special Inspection & Testing Agreement &#8599;</a><a href="https://data.rcsd.info/board-packets/2025-06-25/Taft-Special-Inspection-Testing-Agreement.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Taft Special Inspection & Testing Agreement &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of the Agreements for Commissioning Services with Cypress Engineering Group for the HVAC Upgrade projects at Taft, Roosevelt, Hoover, and Adelante Selby</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=nsizIuPIt5E" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2025-06-25/Adelante-Selby-CX-Agreement-signed.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Adelante Selby CX Agreement-signed &#8599;</a><a href="https://data.rcsd.info/board-packets/2025-06-25/Hoover-CX-Agreement-signed.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Hoover CX Agreement-signed &#8599;</a><a href="https://data.rcsd.info/board-packets/2025-06-25/Roosevelt-CX-Agreement-signed.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Roosevelt CX Agreement-signed &#8599;</a><a href="https://data.rcsd.info/board-packets/2025-06-25/Taft-CX-Agreement-signed.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Taft CX Agreement-signed &#8599;</a></div>
             </div>
         </div><div style="margin-bottom:2rem">
           <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
@@ -1295,18 +1314,14 @@
             <a href="/meetings/#2025-06-11" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
           </div>
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
-              <div style="font-size:0.9rem; line-height:1.4">Actualización del sistema de gestión de HVAC (Medida S)</div>
-              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=CdvAkolAYk4&t=720" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Siemens Building Management System for Mechanical Controls at Hoover, Taft, Roosevelt, and Adelante Selby</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=CdvAkolAYk4&t=6580" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
               <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2025-06-11/7.2-RCSD-Mech-Replacements-Proposal-Siemens.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">7.2 RCSD Mech Replacements Proposal Siemens &#8599;</a></div>
-            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
-              <div style="font-size:0.9rem; line-height:1.4">Contrato de construcción de reemplazo de HVAC Fase 1 (Medida S)</div>
-              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=CdvAkolAYk4" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
-              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2025-06-11/7.3-Blach-Original-Agreement_Facilities-Lease-24.25.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">7.3 Blach Original Agreement_Facilities Lease 24.25 &#8599;</a></div>
             </div>
         </div><div style="margin-bottom:2rem">
           <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
             <h3 style="margin:0; font-size:1rem">28 de mayo de 2025</h3>
-            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Closed Session</span>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
             <a href="/meetings/#2025-05-28" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
           </div>
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
@@ -1317,27 +1332,27 @@
         </div><div style="margin-bottom:2rem">
           <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
             <h3 style="margin:0; font-size:1rem">14 de mayo de 2025</h3>
-            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Closed Session</span>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
             <a href="/meetings/#2025-05-14" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
           </div>
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
               <div style="font-size:0.9rem; line-height:1.4">Acuerdo de construcción de arrendamiento para proyecto de HVAC</div>
-              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=6qHkEM3tahc&t=557" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=6qHkEM3tahc&t=1029" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
               <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DGGPJB64D1D2/$file/Resolution%2024%20LLB%20Award(4283830.1).pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Resolution 24 LLB Award(4283830.1).pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DGM2WN043061/$file/UPDATED%201.2%20-%20Site%20Lease%20-RCSD%20-%20HVAC%20Upgrades%20Projects%20(DWK%20clean%205.12.2025)(4400783.1).pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">UPDATED 1.2 - Site Lease -RCSD - HVAC Upgrades Projects (DWK clean 5.12.2025)(4400783.1).pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DGM2XG044F15/$file/UPDATED%201.3%20-%20Facilities%20Lease%20-%20RCSD%20HVAC%20Upgrades%20Projects%20(DWK%20clean%2005.12.2025)(4400785.1).pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">UPDATED 1.3 - Facilities Lease - RCSD HVAC Upgrades Projects (DWK clean 05.12.2025)(4400785.1).pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DGGRGN6DF3F1/$file/1.4%20-%20Facilities%20Lease%20Ex%20C%20-%20RCSD%20HVAC%20Upgrades%20Projects%20(DWK%20rev%2005.06.2025)(4397961.1).pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">1.4 - Facilities Lease Ex C - RCSD HVAC Upgrades Projects (DWK rev 05.06.2025)(4397961.1).pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DGGRGQ6DF666/$file/1.5%20-%20Facilites%20Lease%20Ex%20D%20-%20RCSD%20HVAC%20Upgrades%20Projects%20(DWK%20rev%2005.06.2025)(4397930.1).pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">1.5 - Facilites Lease Ex D - RCSD HVAC Upgrades Projects (DWK rev 05.06.2025)(4397930.1).pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DGM2WZ043E34/$file/UPDATED%201.6%20-%20Facilities%20Lease%20Ex%20D-1%20-%20RCSD%20HVAC%20Upgrades%20Projects%20(DWK%20clean%2005.12.2025)(4400781.1).pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">UPDATED 1.6 - Facilities Lease Ex D-1 - RCSD HVAC Upgrades Projects (DWK clean 05.12.2025)(4400781.1).pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DGGRJC6E02F8/$file/1.7%20-%20LLB%20Contract%20Documents%20-%20RCSD%20HVAC%20Upgrades%20Projects%20(DWK%20rev%2005.06.2025)(4397886.1).pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">1.7 - LLB Contract Documents - RCSD HVAC Upgrades Projects (DWK rev 05.06.2025)(4397886.1).pdf &#8599;</a></div>
             </div>
         </div><div style="margin-bottom:2rem">
           <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
             <h3 style="margin:0; font-size:1rem">5 de febrero de 2025</h3>
-            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Closed Session</span>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
             <a href="/meetings/#2025-02-05" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
           </div>
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
               <div style="font-size:0.9rem; line-height:1.4">La escuela presentó su informe del año escolar 2024-25 a la junta.</div>
-              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=yoUvmhll1uk&t=5666" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=yoUvmhll1uk&t=8813" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
               <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DDD33E04E29D/$file/Hoover%2024-25%20Data%20for%20Board%20presentation.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Hoover 24-25 Data for Board presentation.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DDD33H04E6B6/$file/Roy%20cloud%2024-25%20Data%20for%20Board%20presentation.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Roy cloud 24-25 Data for Board presentation.pdf &#8599;</a></div>
             </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
               <div style="font-size:0.9rem; line-height:1.4">La junta aprobó el plan de gastos actualizado de Measure U.</div>
-              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=yoUvmhll1uk&t=8715" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=yoUvmhll1uk" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
               <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DCWN4X5E043C/$file/2024-25%20Hoover%20Measure%20U%20ADDENDUM.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">2024-25 Hoover Measure U ADDENDUM.pdf &#8599;</a></div>
             </div>
         </div><div style="margin-bottom:2rem">
@@ -1348,7 +1363,7 @@
           </div>
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
               <div style="font-size:0.9rem; line-height:1.4">La junta aprobó el contrato de diseño para mejoras de HVAC.</div>
-              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=bH2yII-W07A&t=3426" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=bH2yII-W07A" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
               <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DAJPQ663F3C3/$file/Architect%20Agreement%20Taft%20HVAC.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Architect Agreement Taft HVAC.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DAJPQ863F46B/$file/Architect%20Agreement%20Roosevelt%20HVAC.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Architect Agreement Roosevelt HVAC.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DAJPQC63F534/$file/Architect%20Agreement%20Hoover%20HVAC.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Architect Agreement Hoover HVAC.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DAJPQA63F50D/$file/Architect%20Agreement%20Adelante%20Selby%20HVAC.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Architect Agreement Adelante Selby HVAC.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DAXTRF789C9A/$file/7.3%20Overview.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">7.3 Overview.pdf &#8599;</a></div>
             </div>
         </div><div style="margin-bottom:2rem">
@@ -1365,23 +1380,23 @@
         </div><div style="margin-bottom:2rem">
           <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
             <h3 style="margin:0; font-size:1rem">28 de febrero de 2024</h3>
-            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Closed Session</span>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
             <a href="/meetings/#2024-02-28" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
           </div>
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
               <div style="font-size:0.9rem; line-height:1.4">Approval of the Updated Hoover SPSA</div>
-              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"></div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=ZJmrW8iPlSs" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
               <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/D2NV7Q7B531D/$file/Hoover%20Community%20School%20Updated%20SPSA%201-30-2024.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Hoover Community School Updated SPSA 1-30-2024.pdf &#8599;</a></div>
             </div>
         </div><div style="margin-bottom:2rem">
           <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
             <h3 style="margin:0; font-size:1rem">19 de diciembre de 2023</h3>
-            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Closed Session</span>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
             <a href="/meetings/#2023-12-19" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
           </div>
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
               <div style="font-size:0.9rem; line-height:1.4">Approval of Addendum to Measure U Application for 2023-24 for Hoover Community School</div>
-              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"></div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=zk4YAUZU_4k" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
               <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CYGR826B8CF8/$file/HOOVER%20Measure%20U%20Addendum%20No.%201.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">HOOVER Measure U Addendum No. 1.pdf &#8599;</a></div>
             </div>
         </div><div style="margin-bottom:2rem">
@@ -1392,8 +1407,522 @@
           </div>
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
               <div style="font-size:0.9rem; line-height:1.4">Hoover and Henry Ford School Presentations for 2023-2024 School Year</div>
-              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"></div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=LPmyvuhgudA" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
               <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CXD2FL01FC6C/$file/23-%2024%20Henry%20Ford%20Board%20Presentation.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">23- 24 Henry Ford Board Presentation.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CXYRAN6CB9C2/$file/23-24%20Henry%20Ford%20Board%20Presentation%20(Updated).pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">23-24 Henry Ford Board Presentation (Updated).pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CXD2FN01FC9D/$file/23-24%20Hoover%20Board%20Presentation.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">23-24 Hoover Board Presentation.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">28 de junio de 2023</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2023-06-28" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Proposals for the Furnishing and Installation of Exterior Speakers with Atlas Pellizzari for Hoover Community School and Roosevelt School</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=l1JfnuQT9Ho" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CSQRX56FCBD9/$file/230607%20Hoover%20CS%20Add%20Exterior%20IP%20Speakers%20with%20Atlas%20Pellizzari.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">230607 Hoover CS Add Exterior IP Speakers with Atlas Pellizzari.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CSQRXD6FDBB9/$file/230607%20Roosevelt%20ES%20Add%20Exterior%20IP%20Speakers%20with%20Atlas%20Pellizzari.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">230607 Roosevelt ES Add Exterior IP Speakers with Atlas Pellizzari.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">24 de mayo de 2023</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2023-05-24" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Addendum to 2022-23 Measure U Application for Hoover Community School</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=VKX0ACAEDh0" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRVRJK6C58D1/$file/Addendum%20Hoover%20Measure%20U%202022-23.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Addendum Hoover Measure U 2022-23.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">18 de enero de 2023</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2023-01-18" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">School Plan for Student Achievement (SPSA) Report: Hoover School</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=tqvsE4VeAzE" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CMYQS56A9B98/$file/SPSA%20Board%20Report_%20Hoover.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">SPSA Board Report_ Hoover.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">7 de diciembre de 2022</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2022-12-07" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Proposal for Wrought Iron Fence and Gates with Dryco for Hoover Community School</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=NvOutE9gXOk" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CLLVVW7B8C98/$file/221110%20Hoover%20Iron%20Fencing%20and%20Gates%20Proposal%20with%20Dryco%20-%20Signed%20by%20MC.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">221110 Hoover Iron Fencing and Gates Proposal with Dryco - Signed by MC.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">29 de junio de 2022</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2022-06-29" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of New Gym and Modernization Project Final Invoice for Hoover Community School with the Division of the State Architect (DSA)</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=ehyzHnix3lo" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CFLUME7CB5ED/$file/01-117196_DSA_Final_Invoice_2022.06.13.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">01-117196_DSA_Final_Invoice_2022.06.13.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Agreement between United Through Education, Inc., and Redwood City School District for Hoover Community School</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=ehyzHnix3lo" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CFNTYD79A188/$file/United%20Through%20Ed_Hoover_21.22_Board%206.29.22.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">United Through Ed_Hoover_21.22_Board 6.29.22.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">1 de junio de 2022</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2022-06-01" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of STEAM Tables Proposal for Hoover Community School with RDI</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=3HRymBa5cio" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CEQUFG7BD625/$file/220520%20Hoover%20STEAM%20Tables%20Proposal%20with%20RDI%20-%20Signed%20by%20DD.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">220520 Hoover STEAM Tables Proposal with RDI - Signed by DD.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">23 de marzo de 2022</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2022-03-23" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Agreement between Redwood City School District and San Mateo County Sheriff's Activities League (SAL) to Provide Extra Curricular Programs for Students at Garfield, Clifford and Hoover</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=Epb9euKROWk" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CCHQ3F67545F/$file/SAL%20agreement%20board%203.24.22.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">SAL agreement board 3.24.22.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">9 de marzo de 2022</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2022-03-09" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Off-Site Concrete and Asphalt Proposal at Hoover Community School with Dryco</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=NLKrmWq9AQs" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CC4RGA6D9790/$file/220223%20Hoover%20Off-Site%20Concrete%20and%20Asphalt%20Proposal%20with%20Dryco%20-%20Signed%20by%20DD.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">220223 Hoover Off-Site Concrete and Asphalt Proposal with Dryco - Signed by DD.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Outdoor Classroom Landscaping Proposal at Hoover Community School with Scapes</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=NLKrmWq9AQs" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CC4U4W6FD0DC/$file/220223%20Hoover%20Outdoor%20Classroom%20Landscaping%20Proposal%20with%20Scapes%20-%20Signed%20by%20DD.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">220223 Hoover Outdoor Classroom Landscaping Proposal with Scapes - Signed by DD.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Kitchen Equipment Upgrades Proposal at Hoover Community School with Beals Martin</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=NLKrmWq9AQs" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CC4SFQ726B0C/$file/220301%20Hoover%20Kitchen%20Equipment%20Upgrades%20Proposal%20with%20BMI%20-%20Signed%20by%20DD.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">220301 Hoover Kitchen Equipment Upgrades Proposal with BMI - Signed by DD.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">16 de febrero de 2022</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2022-02-16" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Final Construction Management (CM) Fee Amendment for Hoover Community School with RGMK</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=4E5Qh0Z8I50" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CBGKRU532C8D/$file/220208%20Hoover%20Final%20CM%20Fee%20Amendment%20%233%20with%20RGMK.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">220208 Hoover Final CM Fee Amendment #3 with RGMK.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CBGKRW532CAA/$file/220208%20Hoover%20Final%20CM%20Fee%20Reconciliation%20Letter%20with%20RGMK.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">220208 Hoover Final CM Fee Reconciliation Letter with RGMK.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">19 de enero de 2022</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2022-01-19" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Extension of Effective School Solutions Services at Hoover School for 2021-22</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=Gg3x5yYfQBU" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CAFT7F736693/$file/ESS%2021-22%20Contract.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">ESS 21-22 Contract.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CAFT7M736EFB/$file/Effective%20School%20Solutions%20Appendix%20A.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Effective School Solutions Appendix A.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CAFT7P73723E/$file/1st%20Amendment%20ESS%20.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">1st Amendment ESS .pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CAFT7S737419/$file/2nd%20Amendment%20ESS%20.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">2nd Amendment ESS .pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CAMPYE64C9ED/$file/Third%20Amendment%20ESS_21.22.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Third Amendment ESS_21.22.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">8 de diciembre de 2021</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2021-12-08" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Hoover Community School New Gymnasium and Modernization Project Package A with Galeb Paving, Inc., Change Order #6</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=1WVKb5e5QOY" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/C99VX3775DC6/$file/211127%20RCSD%20Hoover%20Pkg%20A%20Galeb%20CO%20No.%206%20Cover%20Sheet%20-%20Frontload%20Packet%20(-%2428%2C004.08).pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">211127 RCSD Hoover Pkg A Galeb CO No. 6 Cover Sheet - Frontload Packet (-$28,004.08).pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Adoption of Resolution 18, Approval of New Gym and Modernization Project Change Order #5 with Atlas Pellizzari for Hoover School</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=1WVKb5e5QOY" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/C99VQY76C34C/$file/211118%20RCSD%20Hoover%20Pkg%20D%20Atlas%20Pellizzari%20CO%20No.%205%20Cover%20Sheet%20-%20Frontload%20Package.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">211118 RCSD Hoover Pkg D Atlas Pellizzari CO No. 5 Cover Sheet - Frontload Package.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/C99VZK77ED85/$file/211208%20Hoover%20Change%20Order%20Futility%20Resolution%20%2318%20with%20Atlas.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">211208 Hoover Change Order Futility Resolution #18 with Atlas.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">10 de noviembre de 2021</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2021-11-10" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Electives Offered by PAL to Garfield, Taft and Hoover Students</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"></div>
+              
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">3 de septiembre de 2021</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Special Meeting</span>
+            <a href="/meetings/#2021-09-03" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Memorandum of Understanding (MOU) with Police Activities League (PAL) to Provide After School Elective Program for Students at Garfield, Taft and Hoover</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/C6G75Y18038B/$file/PAL%20Agreement.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">PAL Agreement.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">25 de agosto de 2021</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2021-08-25" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Robotic Floor Scrubber Proposal for Hoover Community School with Tennant</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/C5YW2K8352D5/$file/210806%20Hoover%20Robot%20Scrubber%20Proposal%20with%20Tennant%20-%20Signed%20by%20DD.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">210806 Hoover Robot Scrubber Proposal with Tennant - Signed by DD.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">11 de agosto de 2021</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2021-08-11" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Construction Management (CM) Fee Amendments for Garfield, Hoover, Taft Community Schools and Orion Alternative School (Formerly John Gill) with RGM Kramer</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=L9391IDRd9A" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/C5KP6X51F24D/$file/210802%20Hoover%20CM%20Fee%20Amendment%20%232%20with%20RGMK%20-%20Signed%20by%20RK%20and%20DD.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">210802 Hoover CM Fee Amendment #2 with RGMK - Signed by RK and DD.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/C5KP7551FE92/$file/210620%20John%20Gill%20CM%20Fee%20Amendment%20%232%20with%20RGMK%20-%20Fully%20Executed.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">210620 John Gill CM Fee Amendment #2 with RGMK - Fully Executed.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/C5KP7A5203DE/$file/210620%20Taft%20CM%20Fee%20Amendment%20%233%20with%20RGMK%20-%20Fully%20Executed.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">210620 Taft CM Fee Amendment #3 with RGMK - Fully Executed.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/C5KKN95279D8/$file/210804%20Garfield%20CM%20Fee%20Amendment%20%232%20with%20RGMK%20-%20Signed%20by%20RK%20and%20DD.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">210804 Garfield CM Fee Amendment #2 with RGMK - Signed by RK and DD.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Americans with Disabilities Act (ADA) Ramp and Slurry Proposal for Hoover Community School with Bay Area Paving</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=L9391IDRd9A" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/C5KPVU573730/$file/210629%20Hoover%20ADA%20Ramps%20and%20Slurry%20Proposal%20with%20Bay%20Area%20Asphalt%20-%20Signed%20by%20WR.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">210629 Hoover ADA Ramps and Slurry Proposal with Bay Area Asphalt - Signed by WR.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">23 de junio de 2021</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2021-06-23" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Parking Lot Bollard Installation Proposal for Hoover School with Casey Fogli</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRX3MF078690/$file/7_3_ParkingLotBollardProposal_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">7_3_ParkingLotBollardProposal_0.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Debris Removal Proposal for Hoover School with Galeb Paving</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRXVX882D5F0/$file/7_8_DebrisRemovalProposal_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">7_8_DebrisRemovalProposal_0.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">16 de junio de 2021</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2021-06-16" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of New Gymnasium and Modernization Project Change Order #7G for Hoover School with Beals Martin, Inc.</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRW4930A6703/$file/10_4_ChangeOrder7_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">10_4_ChangeOrder7_0.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Food Storage Backup Generator Construction Agreements for Hoover School with Various Trade Contractors</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRW4AR0AA5EB/$file/10_6_BackupGeneratorConcreteConstructionAgreementWithCaseyFogli_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">10_6_BackupGeneratorConcreteConstructionAgreementWithCaseyFogli_0.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRW4AT0AA825/$file/10_6_BackupGeneratorElectricalConstructionAgreementWithAtlasPellizzari_0.pd" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">10_6_BackupGeneratorElectricalConstructionAgreementWithAtlasPellizzari_0.pd &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRW4AV0AAA99/$file/10_6_BackupGeneratorPlumbingConstructionAgreementWithOCMcDonald_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">10_6_BackupGeneratorPlumbingConstructionAgreementWithOCMcDonald_0.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Phone Server Proposal for the District Office and Hoover School with AMS.net</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRW5JZ108C3C/$file/10_12_PhoneServerProposalWithAMSnet_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">10_12_PhoneServerProposalWithAMSnet_0.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">19 de mayo de 2021</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2021-05-19" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Additional Asphalt Proposal for Hoover School with Galeb</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=z8PdGgT5GxU" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRTW3T838287/$file/11_6_AdditionalAsphaltProposal_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">11_6_AdditionalAsphaltProposal_0.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Backup Generator Purchase Proposal for Clifford, Hoover, and Roy Cloud School with Bayside</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=z8PdGgT5GxU" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRU26C00A1B4/$file/11_7_GeneratorPurchaseProposalClifford_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">11_7_GeneratorPurchaseProposalClifford_0.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRU26E00A379/$file/11_7_GeneratorPurchaseProposalHoover_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">11_7_GeneratorPurchaseProposalHoover_0.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRU26G00A560/$file/11_7_GeneratorPurchaseProposalRoyCloud_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">11_7_GeneratorPurchaseProposalRoyCloud_0.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Adoption of Resolution 22, Approval of Child Day Care (CDC) Ornamental Fencing Project Resolution and Construction Agreement for Hoover School with AAA Fence</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=z8PdGgT5GxU" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRU2E901C97B/$file/12_1_AgreementForConstructionServices_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">12_1_AgreementForConstructionServices_0.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRU2ED01CEC6/$file/12_1_Resolution22_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">12_1_Resolution22_0.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">14 de abril de 2021</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2021-04-14" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Seat Wall Proposal with Casey Fogli for Hoover School</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=vpbKJKWTv8k" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRLUVG7DE455/$file/10_1_SeatWallsProposalForHooverSchool_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">10_1_SeatWallsProposalForHooverSchool_0.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Architect Add Service Proposal for Hoover School with CSDA</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=vpbKJKWTv8k" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRM24M005F81/$file/10_19_ArchitectAddServiceProposalForHoover_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">10_19_ArchitectAddServiceProposalForHoover_0.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">10 de marzo de 2021</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2021-03-10" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Landscaping Proposal for Hoover School with Marina</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=08x22IQb514" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRG26M00ABFE/$file/10_4_LandscapingProposalForHooverSchool_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">10_4_LandscapingProposalForHooverSchool_0.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">24 de febrero de 2021</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2021-02-24" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Kindergarten Classroom Bathrooms Remodel Proposal for Hoover Community School with Beals Martin</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=tKbeQmP8jmE" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRF63P12FAAA/$file/10_1_BathroomRemodelProposalWithBealsMartin_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">10_1_BathroomRemodelProposalWithBealsMartin_0.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Special Testing and Inspection Project Authorization Form (PAF) #16-1 for Hoover Community School with Ninyo and Moore</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=tKbeQmP8jmE" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRF66E1363A2/$file/10_3_GymSpecialInspectionAgreement_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">10_3_GymSpecialInspectionAgreement_0.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Asphalt Replacement Project Construction Agreement for Hoover Community School with Galeb Paving</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=tKbeQmP8jmE" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRF68513A3BA/$file/10_5_AsphaltReplacementConstructionAgreement_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">10_5_AsphaltReplacementConstructionAgreement_0.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">27 de enero de 2021</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2021-01-27" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Path of Travel Upgrades Construction Agreement for Hoover School with Guerra</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=lRB-pyUKq6E" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQYP7Z62EBCD/$file/10_8_PathOfTravelConstructionAgreement_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">10_8_PathOfTravelConstructionAgreement_0.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Adoption of Resolution 15, Approval of Hoover Community School New Gymnasium and Modernization Project Package D with Atlas Pellizzari, Inc., Change Order #3</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=lRB-pyUKq6E" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQYPCM635FF1/$file/11_1_ChangeOrder3_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">11_1_ChangeOrder3_0.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQYPCP6361C5/$file/11_1_Resolution15_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">11_1_Resolution15_0.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">13 de enero de 2021</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2021-01-13" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of School District Requested Additional Scope Proposal for Hoover School with Beals Martin</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=wb0HEPHZHM0" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRAUZP7DF9B0/$file/7_11_RequestedAddScopeProposal_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">7_11_RequestedAddScopeProposal_0.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">9 de diciembre de 2020</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2020-12-09" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Picnic Tables and Umbrella Proposal for Hoover School with Park Planet</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=C6EkF9qWMJ4" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CU523F0033C3/$file/Picnic%20Tables%20and%20Umbrellas'%20Proposal.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Picnic Tables and Umbrellas' Proposal.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Child Day Care (CDC) Low Voltage Proposal for Hoover Schools with Atlas Pellizzari</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=C6EkF9qWMJ4" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CU52BR016B81/$file/CDC%20Low%20Voltage%20Proposal.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">CDC Low Voltage Proposal.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Security Camera and Intrusion Systems Rough-In Proposal for Hoover and Roosevelt Schools with Siemens</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=C6EkF9qWMJ4" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CU52HP0191FF/$file/Admin%20Security%20Camera%20and%20Intrusion%20Rough%20In%20Proposal.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Admin Security Camera and Intrusion Rough In Proposal.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of School District Requested Additional Site Work Proposal for Hoover School with Galeb</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=C6EkF9qWMJ4" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CU52J9020281/$file/School%20District%20Request%20Add%20Scope%20Proposal.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">School District Request Add Scope Proposal.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Touchless Plumbing Fixture Replacement Construction Agreements for Garfield School, Orion Alternative (Formerly John Gill School), and Taft School with Ciari and Hoover School with Dinelli</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=C6EkF9qWMJ4" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CU52JF0255FC/$file/Garfield%20and%20Taft%20Plumbing%20Fixture%20Replacement%20Agreement%20with%20Ciari.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Garfield and Taft Plumbing Fixture Replacement Agreement with Ciari.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CU52JH02579B/$file/Hoover%20Plumbing%20Fixture%20Replacement%20Agreement%20with%20Dinelli.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Hoover Plumbing Fixture Replacement Agreement with Dinelli.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CU52JK0258F2/$file/Orion%20Alternative%20Plumbing%20Fixture%20Replacement%20Agreement%20with%20Ciari.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Orion Alternative Plumbing Fixture Replacement Agreement with Ciari.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">18 de noviembre de 2020</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2020-11-18" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Hoover Community School New Gymnasium and Modernization Project Package G with Beals Martin, Inc., Changer Order #5</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=WuVzcQVlzOI" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CR6US87D6A2F/$file/10_4_ChangeOrder5_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">10_4_ChangeOrder5_0.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of New Gymnasium Furniture Proposals for Hoover School with Virco and RDI</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=WuVzcQVlzOI" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CR6VWU82C451/$file/10_19_HooverGymFurnitureProposalWithRDI_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">10_19_HooverGymFurnitureProposalWithRDI_0.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CR6VWW82C654/$file/10_19_HooverGymFurnitureProposalWithVirco_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">10_19_HooverGymFurnitureProposalWithVirco_0.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Backup Power Design Agreement for Multi-Use Buildings (MUB) at Clifford and Roy Cloud Schools and Food Storage at Hoover School with HED</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=WuVzcQVlzOI" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CR6W4N839D7D/$file/10_20_MasterArchitectAgreement_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">10_20_MasterArchitectAgreement_0.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">21 de octubre de 2020</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2020-10-21" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Kinder Play Structure Construction Agreement for Hoover School with Park Planet</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"></div>
+              
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">26 de agosto de 2020</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2020-08-26" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Hoover Community School New Gymnasium and Modernization Project Package G Beals Martin, Inc. Change Order #4</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=okRfyGjPflM" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQV42P0977EA/$file/6_2_ChangeOrder4_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">6_2_ChangeOrder4_0.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Hoover Community School New Gymnasium and Modernization Project Package O.C. McDonald, Inc. Change Order #1</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=okRfyGjPflM" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQV44Y09CD5C/$file/6_4_ChangeOrder1_0%20(1).pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">6_4_ChangeOrder1_0 (1).pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Covid-19 Safety Compliance Officer Proposals for Adelante Selby, Hoover, and Taft Schools with Cal Inc.</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=okRfyGjPflM" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQV4B50AB485/$file/6_8_ProposalForEnvironmentalConsultingServices1_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">6_8_ProposalForEnvironmentalConsultingServices1_0.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQV4B70AB6CE/$file/6_8_ProposalForEnvironmentalConsultingServices2_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">6_8_ProposalForEnvironmentalConsultingServices2_0.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Agreement between the Redwood City School District and United Through Education, Inc. (Henry Ford and Hoover)</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=okRfyGjPflM" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQW3CA062F76/$file/9_5_AgreementBetweenRCSDAndUnitedThroughEducationIncHenryFord_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">9_5_AgreementBetweenRCSDAndUnitedThroughEducationIncHenryFord_0.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQW3CC063146/$file/9_5_AgreementBetweenRCSDAndUnitedThroughEducationIncHoover_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">9_5_AgreementBetweenRCSDAndUnitedThroughEducationIncHoover_0.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">12 de agosto de 2020</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2020-08-12" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Additional Covid-19 Safety Compliance Officer Proposal (SCO) for Adelante Selby, Hoover Community School, and Taft Community School with Cal Inc.</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=I78B15ybGP0" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQS5YA127DE9/$file/7_2_ProposalForEnvironmentalConsultingServices_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">7_2_ProposalForEnvironmentalConsultingServices_0.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Architect Additional Service Proposals for Hoover School with CSDA</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=I78B15ybGP0" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQT5CX0FA7E1/$file/7_8_ArchitectPathOfTravelAddServiceProposal_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">7_8_ArchitectPathOfTravelAddServiceProposal_0.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQT5D20FAA2F/$file/7_8_ArchitectSiteScopeChangeAddServiceProposal_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">7_8_ArchitectSiteScopeChangeAddServiceProposal_0.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">29 de julio de 2020</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Special Meeting</span>
+            <a href="/meetings/#2020-07-29" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Hoover Community School New Gymnasium and Modernization Project Package C Casey-Fogli Concrete Contractors, Inc. Change Order #1</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=1B7zQJJk7JM" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQR38R05AB47/$file/6_2_ChangeOrder1_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">6_2_ChangeOrder1_0.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Hoover Community School New Gymnasium and Modernization Project Package A Galeb Paving, Inc. Change Order #2</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=1B7zQJJk7JM" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQR3BR061B85/$file/6_3_ChangeOrder2_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">6_3_ChangeOrder2_0.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Hoover Community School New Gymnasium and Modernization Project Package B MK Pipelines, Inc. Change Order #1</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=1B7zQJJk7JM" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQR3DX066DF4/$file/6_4_ChangeOrder1_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">6_4_ChangeOrder1_0.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Kitchen HVAC Upgrades Proposal for Hoover School with CP Mechanical</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=1B7zQJJk7JM" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQR3F4069941/$file/6_5_HVACProposal_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">6_5_HVACProposal_0.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Hoover Community School New Gymnasium and Modernization Project Package D Atlas Pellizzari, Inc. Change Order #2</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=1B7zQJJk7JM" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQR4DF0B0B8C/$file/6_12_ChangeOrder2_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">6_12_ChangeOrder2_0.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">24 de junio de 2020</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2020-06-24" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Kindergarten Play Structure Proposal for Hoover School with Park Planet</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=LXTYptrXhUM" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of New Network Operation Center (NOC) Firewall Licensing Proposal for Hoover School with AMS.net</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=LXTYptrXhUM" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQPP2Z629415/$file/10_16_NetworkOperationCenterFirewallLicensingProposal_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">10_16_NetworkOperationCenterFirewallLicensingProposal_0.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Storage Cabinet Purchase Proposal for Hoover School with Schoolsin</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=LXTYptrXhUM" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQPP4P62D344/$file/10_17_StorageCabinetProposal_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">10_17_StorageCabinetProposal_0.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">10 de junio de 2020</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2020-06-10" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of New Gymnasium and Modernization Project Package G, Change Order #3 at Hoover Community School with Beals Martin, Inc.</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=VIbi8F87vKg" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/D5WSM672DF43/$file/ChangeOrder3.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">ChangeOrder3.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Covid-19 Safety Compliance Officer Proposal at Adelante Selby School, Hoover School, and Taft School with Cal, Inc.</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=VIbi8F87vKg" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/D5WT88761718/$file/ProposalForEnvironmentalConsultingServices.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">ProposalForEnvironmentalConsultingServices.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Project Inspector Amendment #6 at Hoover Community School with Inspectacon</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=VIbi8F87vKg" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/D5WUXM7E34FE/$file/9.4_Amendment6WithInspectacon.PDF" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">9.4_Amendment6WithInspectacon.PDF &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">6 de mayo de 2020</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2020-05-06" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Kitchen HVAC Upgrade Proposal with CP Mechanical for Hoover School</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQF46K0A094D/$file/9_3_KitchenHVACUpgradeProposalForHoover_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">9_3_KitchenHVACUpgradeProposalForHoover_0.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Moving Services with Chipman for Henry Ford School, Hoover School, and Roosevelt School</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQF4CP0AEEF0/$file/10_1_ProposalForHenryFordSchool_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">10_1_ProposalForHenryFordSchool_0.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQF4CT0AF3CB/$file/10_1_ProposalForHooverSchool_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">10_1_ProposalForHooverSchool_0.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQF4CW0AF733/$file/10_1_ProposalForRooseveltSchool_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">10_1_ProposalForRooseveltSchool_0.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">22 de abril de 2020</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2020-04-22" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of New Gymnasium and Modernization Project Package D Change Order #1 with Atlas Pellizzari for Hoover Community School</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=DVMh89SIUFY" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQD46509F8B2/$file/9_3_ChangeOrder1_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">9_3_ChangeOrder1_0.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Agreement for Abatement Construction with ATI at Hoover School</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=DVMh89SIUFY" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQD4CJ0AE97A/$file/10_1_AgreementForAbatementConstructionAtHoover_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">10_1_AgreementForAbatementConstructionAtHoover_0.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of New Gymnasium and Modernization Project Package G Change Order #2 with Beals Martin, Inc. for Hoover Community School</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=DVMh89SIUFY" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQD4FJ0B5A15/$file/10_2_ChangeOrder2_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">10_2_ChangeOrder2_0.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">1 de abril de 2020</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2020-04-01" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Utility Fees with the City of Redwood City for Hoover School</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=0cWwZ9lGR0U" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/D343CA05E8EE/$file/Utilities%20Fees%20Proposal.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Utilities Fees Proposal.pdf &#8599;</a></div>
             </div>
         </div>
   </section>

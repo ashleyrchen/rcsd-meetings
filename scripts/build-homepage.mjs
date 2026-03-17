@@ -705,7 +705,7 @@ ${siteNav({ activePage: 'home', lang: 'en' })}
 
 <header class="hero">
   <div class="hero-inner">
-    <img src="https://data.rcsd.info/logos/district.jpg" alt="Redwood City School District" class="hero-logo">
+    <img src="https://data.rcsd.info/logos/district.jpg" alt="Redwood City School District" class="hero-logo" width="1200" height="451" fetchpriority="high">
     <div class="bi-row">
       <div class="bi-en">
         <h1>Open Data for Redwood City School District</h1>

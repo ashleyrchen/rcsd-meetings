@@ -28,9 +28,10 @@
 <meta name="twitter:image" content="https://rcsd.info/og-1200.jpg">
 <meta name="twitter:title" content="Adelante Selby Spanish Immersion School — RCSD Open Data">
 <meta name="twitter:description" content="Public data for Adelante Selby Spanish Immersion School: academic performance, demographics, funding, and staffing for the 2025-26 school year.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preload" href="/fonts/fraunces-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/newsreader-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/ibm-plex-mono-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/fonts/fonts.css">
 
 
 <style>
@@ -843,7 +844,7 @@
 <header class="site-header">
   <div class="header-inner">
     <div class="header-district"><a href="/district/">Redwood City School District</a></div>
-    <img src="https://data.rcsd.info/logos/adelante-selby.jpg" alt="Adelante Selby Spanish Immersion School" class="header-logo">
+    <img src="https://data.rcsd.info/logos/adelante-selby.jpg" alt="Adelante Selby Spanish Immersion School" class="header-logo" width="1200" height="450" fetchpriority="high">
     <h1 class="header-title">Adelante Selby Spanish Immersion School</h1>
     <p class="header-subtitle">Adelante Selby is RCSD's Spanish dual-language immersion school, using the SEAL bilingual model. It is a Community School and a school of choice, drawing families from across the district.</p>
     <div style="margin-top:0.8rem">
@@ -897,7 +898,7 @@
 
     <div class="principal-row">
       <div style="flex-shrink:0">
-        <a href="https://adelanteselby.rcsdk8.net/our-school/meet-our-school-leadership"><img src="/img/principals/adelante-selby.jpg" alt="Patricia Alcocer" style="width:160px; border-radius:10px; display:block"></a>
+        <a href="https://adelanteselby.rcsdk8.net/our-school/meet-our-school-leadership"><img src="/img/principals/adelante-selby.jpg" alt="Patricia Alcocer" width="300" height="400" loading="lazy" style="width:160px; height:213px; object-fit:cover; border-radius:10px; display:block"></a>
         <div style="text-align:center; margin-top:0.6rem">
           <div style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--text-muted)">Principal</div>
           <div style="font-size:1.05rem; font-weight:500; margin-top:0.15rem"><a href="https://adelanteselby.rcsdk8.net/our-school/meet-our-school-leadership" style="color:var(--green-mid); text-decoration:none">Patricia Alcocer</a></div>
@@ -1253,59 +1254,51 @@
 
     <div style="margin-bottom:2rem">
           <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
-            <h3 style="margin:0; font-size:1rem">February 4, 2026</h3>
-            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Regular</span>
-            <a href="/meetings/#2026-02-04" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
-          </div>
-          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
-              <div style="font-size:0.9rem; line-height:1.4">HVAC Phase 1 complete; $2.3M returned to Measure S bond fund</div>
-              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=Nw7_DtNMPVk&t=1291" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
-              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2026-02-04/25-115-RCSD-HVAC-Deductive-Change-Order-001-Return-Unspent-Funds-to-District-1-2.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">25-115 RCSD HVAC Deductive Change Order 001- Return Unspent Funds to District 1- 26-26 &#8599;</a></div>
-            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
-              <div style="font-size:0.9rem; line-height:1.4">HVAC Phase 1 notice of completion filed</div>
-              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=Nw7_DtNMPVk&t=1291" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
-              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2026-02-04/Notice-of-Completion-Blach-Temp-Cooling.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">g g  Notice of Completion - Blach - Temp Cooling &#8599;</a><a href="https://data.rcsd.info/board-packets/2026-02-04/Notice-of-Completion-Blach-Taft.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">g  Notice of Completion - Blach - Taft &#8599;</a><a href="https://data.rcsd.info/board-packets/2026-02-04/Notice-of-Completion-Blach-Roosevelt.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Notice of Completion - Blach - Roosevelt &#8599;</a><a href="https://data.rcsd.info/board-packets/2026-02-04/Notice-of-Completion-Blach-Hoover.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">p  Notice of Completion - Blach - Hoover &#8599;</a><a href="https://data.rcsd.info/board-packets/2026-02-04/Notice-of-Completion-Blach-Adelante-Selby.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Notice of Completion - Blach - Adelante Selby &#8599;</a></div>
-            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
-              <div style="font-size:0.9rem; line-height:1.4">Annual safety plan</div>
-              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=Nw7_DtNMPVk&t=1291" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
-              
-            </div>
-        </div><div style="margin-bottom:2rem">
-          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
             <h3 style="margin:0; font-size:1rem">January 21, 2026</h3>
             <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Regular</span>
             <a href="/meetings/#2026-01-21" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
           </div>
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
-              <div style="font-size:0.9rem; line-height:1.4">EV charger installation ($70,520 across three sites)</div>
+              <div style="font-size:0.9rem; line-height:1.4">Approval of the Agreement for Atlas Pellizzari Electric for the amount of $70,520 to Install the PowerFlex Electric Vehicle Chargers at Adelante Selby, Clifford, and Kennedy Schools</div>
               <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=-nOpGerpRGA" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
               <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2026-01-21/Atlas-EV-Charger-Replacement_Agreement-Small-Projects-SD-rev-Nov-2022-3968000.1.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Atlas EV Charger Replacement_Agreement-Small Projects (SD) - rev Nov 2022(3968000.1) &#8599;</a></div>
             </div>
         </div><div style="margin-bottom:2rem">
           <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
-            <h3 style="margin:0; font-size:1rem">October 8, 2025</h3>
+            <h3 style="margin:0; font-size:1rem">September 10, 2025</h3>
             <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Regular</span>
-            <a href="/meetings/#2025-10-08" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+            <a href="/meetings/#2025-09-10" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
           </div>
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
-              <div style="font-size:0.9rem; line-height:1.4">PBIS Tier 1/2 staff training agreement</div>
-              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=WYi7kzyEnuw&t=86" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
-              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2025-10-08/SCCOE-_-PBIS-25.26-MOU-Board-10.8.25.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">SCCOE _ PBIS 25.26 MOU Board 10.8.25 &#8599;</a></div>
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Agreement with Dryco for Installation of Fencing Around Ground-Mounted HVAC Units at Adelante Selby</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=KWsBnYENz7o&t=6526" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2025-09-10/Dryco-Agreement-_-Adelante-Selby-_-25.26.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Dryco Agreement _ Adelante Selby _ 25.26 &#8599;</a></div>
             </div>
         </div><div style="margin-bottom:2rem">
           <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
-            <h3 style="margin:0; font-size:1rem">August 19, 2025</h3>
+            <h3 style="margin:0; font-size:1rem">August 27, 2025</h3>
             <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Regular</span>
-            <a href="/meetings/#2025-08-19" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+            <a href="/meetings/#2025-08-27" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
           </div>
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
-              <div style="font-size:0.9rem; line-height:1.4">Afterschool extended learning program funded for 828 students</div>
-              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=B8blJsqUL_4" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
-              
+              <div style="font-size:0.9rem; line-height:1.4">Approval of the Industrial Hygienist Services agreements with ProTech Consulting & Engineering for the HVAC Upgrade projects at Taft, Roosevelt, Hoover, Adelante Selby,  and campuses with temporary AC units.</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=NutJa858kMY&t=1418" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2025-08-27/ProTech-Contract-HVAC-Temp-AC-Units.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">ProTech Contract (HVAC) Temp AC Units &#8599;</a><a href="https://data.rcsd.info/board-packets/2025-08-27/ProTech-Contract-HVAC-Taft.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">ProTech Contract (HVAC) Taft &#8599;</a><a href="https://data.rcsd.info/board-packets/2025-08-27/ProTech-Contract-HVAC-Roosevelt.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">ProTech Contract (HVAC) Roosevelt &#8599;</a><a href="https://data.rcsd.info/board-packets/2025-08-27/ProTech-Contract-HVAC-Hoover.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">ProTech Contract (HVAC) Hoover &#8599;</a><a href="https://data.rcsd.info/board-packets/2025-08-27/ProTech-Contract-HVAC-Adelante-Selby.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">ProTech Contract (HVAC) Adelante Selby &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">June 25, 2025</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Regular</span>
+            <a href="/meetings/#2025-06-25" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of the Agreements for Special Inspection and Testing Services with Applied Materials and Engineering for the HVAC Upgrade projects at Taft, Roosevelt, Hoover, and Adelante Selby</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=nsizIuPIt5E" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2025-06-25/Adelante-Selby-Special-Inspection-Testing-Agreement.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Adelante Selby Special Inspection & Testing Agreement &#8599;</a><a href="https://data.rcsd.info/board-packets/2025-06-25/Hoover-Special-Inspection-Testing-Agreement.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Hoover Special Inspection & Testing Agreement &#8599;</a><a href="https://data.rcsd.info/board-packets/2025-06-25/Roosevelt-Special-Inspection-Testing-Agreement.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Roosevelt Special Inspection & Testing Agreement &#8599;</a><a href="https://data.rcsd.info/board-packets/2025-06-25/Taft-Special-Inspection-Testing-Agreement.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Taft Special Inspection & Testing Agreement &#8599;</a></div>
             </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
-              <div style="font-size:0.9rem; line-height:1.4">YMCA afterschool program for 80 students</div>
-              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=B8blJsqUL_4" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
-              
+              <div style="font-size:0.9rem; line-height:1.4">Approval of the Agreements for Commissioning Services with Cypress Engineering Group for the HVAC Upgrade projects at Taft, Roosevelt, Hoover, and Adelante Selby</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=nsizIuPIt5E" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2025-06-25/Adelante-Selby-CX-Agreement-signed.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Adelante Selby CX Agreement-signed &#8599;</a><a href="https://data.rcsd.info/board-packets/2025-06-25/Hoover-CX-Agreement-signed.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Hoover CX Agreement-signed &#8599;</a><a href="https://data.rcsd.info/board-packets/2025-06-25/Roosevelt-CX-Agreement-signed.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Roosevelt CX Agreement-signed &#8599;</a><a href="https://data.rcsd.info/board-packets/2025-06-25/Taft-CX-Agreement-signed.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Taft CX Agreement-signed &#8599;</a></div>
             </div>
         </div><div style="margin-bottom:2rem">
           <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
@@ -1314,27 +1307,23 @@
             <a href="/meetings/#2025-06-11" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
           </div>
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
-              <div style="font-size:0.9rem; line-height:1.4">HVAC building management system upgrade (Measure S)</div>
-              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=CdvAkolAYk4&t=720" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Siemens Building Management System for Mechanical Controls at Hoover, Taft, Roosevelt, and Adelante Selby</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=CdvAkolAYk4&t=6580" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
               <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2025-06-11/7.2-RCSD-Mech-Replacements-Proposal-Siemens.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">7.2 RCSD Mech Replacements Proposal Siemens &#8599;</a></div>
-            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
-              <div style="font-size:0.9rem; line-height:1.4">HVAC Phase 1 replacement construction contract (Measure S)</div>
-              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=CdvAkolAYk4" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
-              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2025-06-11/7.3-Blach-Original-Agreement_Facilities-Lease-24.25.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">7.3 Blach Original Agreement_Facilities Lease 24.25 &#8599;</a></div>
             </div>
         </div><div style="margin-bottom:2rem">
           <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
             <h3 style="margin:0; font-size:1rem">May 14, 2025</h3>
-            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Closed Session</span>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
             <a href="/meetings/#2025-05-14" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
           </div>
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
               <div style="font-size:0.9rem; line-height:1.4">Lease-leaseback construction agreement for HVAC project</div>
-              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=6qHkEM3tahc&t=557" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=6qHkEM3tahc&t=1029" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
               <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DGGPJB64D1D2/$file/Resolution%2024%20LLB%20Award(4283830.1).pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Resolution 24 LLB Award(4283830.1).pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DGM2WN043061/$file/UPDATED%201.2%20-%20Site%20Lease%20-RCSD%20-%20HVAC%20Upgrades%20Projects%20(DWK%20clean%205.12.2025)(4400783.1).pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">UPDATED 1.2 - Site Lease -RCSD - HVAC Upgrades Projects (DWK clean 5.12.2025)(4400783.1).pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DGM2XG044F15/$file/UPDATED%201.3%20-%20Facilities%20Lease%20-%20RCSD%20HVAC%20Upgrades%20Projects%20(DWK%20clean%2005.12.2025)(4400785.1).pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">UPDATED 1.3 - Facilities Lease - RCSD HVAC Upgrades Projects (DWK clean 05.12.2025)(4400785.1).pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DGGRGN6DF3F1/$file/1.4%20-%20Facilities%20Lease%20Ex%20C%20-%20RCSD%20HVAC%20Upgrades%20Projects%20(DWK%20rev%2005.06.2025)(4397961.1).pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">1.4 - Facilities Lease Ex C - RCSD HVAC Upgrades Projects (DWK rev 05.06.2025)(4397961.1).pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DGGRGQ6DF666/$file/1.5%20-%20Facilites%20Lease%20Ex%20D%20-%20RCSD%20HVAC%20Upgrades%20Projects%20(DWK%20rev%2005.06.2025)(4397930.1).pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">1.5 - Facilites Lease Ex D - RCSD HVAC Upgrades Projects (DWK rev 05.06.2025)(4397930.1).pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DGM2WZ043E34/$file/UPDATED%201.6%20-%20Facilities%20Lease%20Ex%20D-1%20-%20RCSD%20HVAC%20Upgrades%20Projects%20(DWK%20clean%2005.12.2025)(4400781.1).pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">UPDATED 1.6 - Facilities Lease Ex D-1 - RCSD HVAC Upgrades Projects (DWK clean 05.12.2025)(4400781.1).pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DGGRJC6E02F8/$file/1.7%20-%20LLB%20Contract%20Documents%20-%20RCSD%20HVAC%20Upgrades%20Projects%20(DWK%20rev%2005.06.2025)(4397886.1).pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">1.7 - LLB Contract Documents - RCSD HVAC Upgrades Projects (DWK rev 05.06.2025)(4397886.1).pdf &#8599;</a></div>
             </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
               <div style="font-size:0.9rem; line-height:1.4">School Plan for Student Achievement (SPSA review)</div>
-              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=6qHkEM3tahc&t=1516" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=6qHkEM3tahc" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
               <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DGF5DJ0FBD10/$file/Adelante%20Selby%20Sp.%20.%20SPSA(Spring)_20250506.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Adelante Selby Sp. . SPSA(Spring)_20250506.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DGF5DQ0FC63A/$file/Roosevelt%20SPSA%202025-26_(Spring)__20250506.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Roosevelt SPSA 2025-26_(Spring)__20250506.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DGF5DU0FC9EF/$file/Clifford%20SPSA%202025-26_(Spring)__20250506.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Clifford SPSA 2025-26_(Spring)__20250506.pdf &#8599;</a></div>
             </div>
         </div><div style="margin-bottom:2rem">
@@ -1345,18 +1334,18 @@
           </div>
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
               <div style="font-size:0.9rem; line-height:1.4">School presented its 2024-25 academic year report to the board.</div>
-              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=5WLS-u2miac&t=2312" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=5WLS-u2miac" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
               <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DC3SXY74E1D8/$file/Taft%2024-25%20Data%20for%20Board%20presentation.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Taft 24-25 Data for Board presentation.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DC4MFP5B0F01/$file/Adelante%20Selby%2024-25%20Data%20for%20Board%20presentation%20(1).pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Adelante Selby 24-25 Data for Board presentation (1).pdf &#8599;</a></div>
             </div>
         </div><div style="margin-bottom:2rem">
           <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
             <h3 style="margin:0; font-size:1rem">November 20, 2024</h3>
-            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Closed Session</span>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
             <a href="/meetings/#2024-11-20" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
           </div>
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
               <div style="font-size:0.9rem; line-height:1.4">Board updated Measure U spending plan.</div>
-              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=VUIwMGNG5Qk&t=333" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=VUIwMGNG5Qk" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
               <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DAQUPY7D15DB/$file/2024-25%20Adelante%20Selby%20Measure%20U%20ADDENDUM.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">2024-25 Adelante Selby Measure U ADDENDUM.pdf &#8599;</a></div>
             </div>
         </div><div style="margin-bottom:2rem">
@@ -1367,13 +1356,13 @@
           </div>
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
               <div style="font-size:0.9rem; line-height:1.4">Board design services contract for HVAC upgrades.</div>
-              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=bH2yII-W07A&t=3426" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=bH2yII-W07A" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
               <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DAJPQ663F3C3/$file/Architect%20Agreement%20Taft%20HVAC.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Architect Agreement Taft HVAC.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DAJPQ863F46B/$file/Architect%20Agreement%20Roosevelt%20HVAC.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Architect Agreement Roosevelt HVAC.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DAJPQC63F534/$file/Architect%20Agreement%20Hoover%20HVAC.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Architect Agreement Hoover HVAC.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DAJPQA63F50D/$file/Architect%20Agreement%20Adelante%20Selby%20HVAC.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Architect Agreement Adelante Selby HVAC.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DAXTRF789C9A/$file/7.3%20Overview.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">7.3 Overview.pdf &#8599;</a></div>
             </div>
         </div><div style="margin-bottom:2rem">
           <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
             <h3 style="margin:0; font-size:1rem">November 8, 2023</h3>
-            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Closed Session</span>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
             <a href="/meetings/#2023-11-08" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
           </div>
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
@@ -1389,8 +1378,317 @@
           </div>
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
               <div style="font-size:0.9rem; line-height:1.4">Adelante Selby and Roy Cloud School Presentations for the 2023-2024 School Year</div>
-              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"></div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=P5et35d5g7c" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
               <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CWPV587D7868/$file/Adelante%20Selby%20Spanish%20Immersion%20School%20Board%20Presentation.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Adelante Selby Spanish Immersion School Board Presentation.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CWYM5558EF3C/$file/23-24%20Roy%20Cloud%20SPSA%20Board%20Report.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">23-24 Roy Cloud SPSA Board Report.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">February 8, 2023</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2023-02-08" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">School Plan for Student Achievement: Adelante Selby and Orion</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=Ptx7Oy4E3zE" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CNM2HR024C81/$file/Adelante%20Selby%20SPSA%20Board%20Report.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Adelante Selby SPSA Board Report.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CNM2JA0260FB/$file/Orion%20SPSA%20Board%20Report%20.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Orion SPSA Board Report .pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">January 11, 2023</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2023-01-11" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Proposal for New Asphalt and Storage Container Replacement with Dryco for Adelante Selby Spanish Immersion School</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=1O2eUw21SqE" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CMKREG6DA1DE/$file/221214%20Selby%20Storage%20Container%20Asphalt%20Proposal%20with%20Dryco%20-%20Signed%20by%20MC.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">221214 Selby Storage Container Asphalt Proposal with Dryco - Signed by MC.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Addendum to 2022-23 Measure U Application for Adelante Selby Spanish Immersion</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=1O2eUw21SqE" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CMQRXL6E1999/$file/Addendum%20Adelante%20Selby%20Measure%20U%202022-23%20docx.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Addendum Adelante Selby Measure U 2022-23 docx.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">December 14, 2022</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2022-12-14" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Proposal for STEAM Tables and Podium with Campbell Keller for Adelante Selby Spanish Immersion School</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=wT_bmU3AGc8" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CLUQSD6A7ABD/$file/221202%20Selby%20STEAM%20Tables%20and%20Podium%20Proposal%20with%20CK%20-%20Signed%20by%20MC.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">221202 Selby STEAM Tables and Podium Proposal with CK - Signed by MC.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">May 25, 2022</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2022-05-25" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Update from Stanford University on the Dual-Language Immersion Program Research for Adelante Selby Spanish Immersion School</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=w5fpt_wSvTA" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CERN9N5ED95B/$file/2022%20Presentation.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">2022 Presentation.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CERN9W5EDD13/$file/Foreign%20Language%20Annals%20-%202022%20-%20Padilla%20-%20Longitudinal%20study%20of%20Spanish%20Dual%20Language%20Immersion%20graduates%20%20Secondary.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Foreign Language Annals - 2022 - Padilla - Longitudinal study of Spanish Dual Language Immersion graduates  Secondary.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CERNA35EE01E/$file/Padilla%20et%20al%20(2022)%20Longitudinal%20Study%20of%20Spanish%20Dual%20Language%20Immersion%20Graduates.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Padilla et al (2022) Longitudinal Study of Spanish Dual Language Immersion Graduates.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">February 16, 2022</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2022-02-16" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Storm Drain Upgrade Proposal at Adelante Selby Spanish Immersion School with Silicon Valley Paving</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=4E5Qh0Z8I50" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CBFURT7D5AE7/$file/220208%20Selby%20Storm%20Drain%20Proposal%20with%20Silicon%20Valley%20Paving%20-%20Signed%20by%20DD.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">220208 Selby Storm Drain Proposal with Silicon Valley Paving - Signed by DD.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Picnic Tables Proposal at Adelante Selby Spanish Immersion School and Garfield Community School with Park Planet</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=4E5Qh0Z8I50" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CBFV4S7EF66E/$file/220208%20Selby%20Picnic%20Table%20Proposal%20with%20Park%20Planet%20-%20Signed%20by%20DD.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">220208 Selby Picnic Table Proposal with Park Planet - Signed by DD.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CBFV577EFF36/$file/220208%20Garfield%20Picnic%20Table%20Proposal%20with%20Park%20Planet%20-%20Signed%20by%20DD.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">220208 Garfield Picnic Table Proposal with Park Planet - Signed by DD.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">February 9, 2022</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2022-02-09" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Addendum to Measure U Application for 2021-22 for Adelante Selby Spanish Immersion School</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=IFbtMC08QVs" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CB7VU6826337/$file/Adelante%20Selby%20Spanish%20Immersion%20Measure%20U%20Addendum%202021-22.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Adelante Selby Spanish Immersion Measure U Addendum 2021-22.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">December 15, 2021</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2021-12-15" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Kinder/TK Play Structure Construction Agreements for Clifford and Adelante Selby Schools with Park Planet</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=uP_HUD2JghY" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/C9HPSF6514D8/$file/211208%20Selby%20Kinder-TK%20Play%20Structure%20Construction%20Agreement%20with%20Park%20Planet.PDF" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">211208 Selby Kinder-TK Play Structure Construction Agreement with Park Planet.PDF &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/C9HPSK651B8D/$file/211208%20Clifford%20Kinder-TK%20Play%20Structure%20Construction%20Agreement%20with%20Park%20Planet.PDF" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">211208 Clifford Kinder-TK Play Structure Construction Agreement with Park Planet.PDF &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">August 11, 2021</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2021-08-11" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Measure T Ribbon Cutting: Adelante Selby Spanish Immersion School</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=L9391IDRd9A" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">June 16, 2021</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2021-06-16" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Final Plan and Field Review Invoice for Adelante Selby School with the Division of the State Architect (DSA)</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRW49Y0A8984/$file/10_5_FinalPlanAndReviewInvoiceForAdelanteSelby_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">10_5_FinalPlanAndReviewInvoiceForAdelanteSelby_0.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">March 10, 2021</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2021-03-10" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Fencing Proposal for Adelante Selby School with VS Fencing</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=08x22IQb514" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRG28N00F795/$file/10_6_FencingProposalForAdelanteSelby_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">10_6_FencingProposalForAdelanteSelby_0.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">February 10, 2021</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2021-02-10" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Adelante Spanish Immersion School New Administration and Campus Modernization Project ICC General Contractors, Change Order #4</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=2t3bBlJiP6Q" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRDVEZ807599/$file/10_2_ChangeOrder4_0%20(1).pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">10_2_ChangeOrder4_0 (1).pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">January 27, 2021</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2021-01-27" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Adelante Selby Spanish Immersion School Musical</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=lRB-pyUKq6E" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Additional Construction Management Services Fee Proposal for Roosevelt School, Roy Cloud School, and Adelante Selby School with Kitchell</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=lRB-pyUKq6E" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQYNE85F880A/$file/10_4_AddServiceProposal_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">10_4_AddServiceProposal_0.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">December 9, 2020</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2020-12-09" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Conference With Real Property Negotiators Property: Adelante School site, 3150 Granger Way, Redwood City Agency Negotiators: Dominic Dutra, 3D Strategies; Janet Mueller, DWK Negotiating parties: RCSD and Spring Education/Stratford School Under Negotiation: Price and Terms of Payment</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=C6EkF9qWMJ4" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Touchless Plumbing Fixture Replacement Construction Management (CM) Fee Proposal for Adelante Selby Spanish Immersion School, McKinley Institute of Technology, North Star Academy, and Roy Cloud School with Kitchell</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=C6EkF9qWMJ4" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CU52B201517B/$file/Touchless%20Plumbing%20Fixture%20Replacement%20CM%20Fee%20Proposal.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Touchless Plumbing Fixture Replacement CM Fee Proposal.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Legacy Project Closeout Proposals for 3150 Granger Way Site (Formerly Adelante School) with WLC</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=C6EkF9qWMJ4" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CU52NS030919/$file/Additional%20DSA%20Legacy%20Closeout%20Support%20Proposal.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Additional DSA Legacy Closeout Support Proposal.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CU52NU030AE9/$file/DSA%20Legacy%20Closeout%20Support%20Proposal.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">DSA Legacy Closeout Support Proposal.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">November 18, 2020</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2020-11-18" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Touchless Plumbing Fixture Replacement Construction Agreement for Adelante Selby Spanish Immersion School with NV Heathorn and Roosevelt School with Kearny Plumbing</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=WuVzcQVlzOI" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CR6ULT7C9F9F/$file/10_1_AgreementBetweenRCSDAndKearneyPlumbingInc_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">10_1_AgreementBetweenRCSDAndKearneyPlumbingInc_0.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CR6ULX7CA20F/$file/10_1_AgreementBetweenRCSDAndNVHeathornForPlumbing_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">10_1_AgreementBetweenRCSDAndNVHeathornForPlumbing_0.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">October 21, 2020</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2020-10-21" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Adelante Selby Spanish Immersion School Storm Drain & Bio-Retention Project with Silicon Valley Paving - Change Order #1</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQZ7AU18B94E/$file/6_2_ChangeOrder1_0%20(1).pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">6_2_ChangeOrder1_0 (1).pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of New Administration Building Furniture Proposal for Adelante Selby School with RDI</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CR36BN1428B6/$file/6_5_FurnitureProposal_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">6_5_FurnitureProposal_0.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Security Camera and Intrusion Turnkey System Installation for Adelante Selby School with Siemens</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CR36GY14EF8A/$file/6_10_IntrusionLaborInfrastructureProposal_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">6_10_IntrusionLaborInfrastructureProposal_0.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CR36H214F1BB/$file/6_10_IntrusionPartsAndSmartsProposal_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">6_10_IntrusionPartsAndSmartsProposal_0.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CR36H414F3B5/$file/6_10_SecurityCameraSystemNetworkPartsProposal_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">6_10_SecurityCameraSystemNetworkPartsProposal_0.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CR36H614F608/$file/6_10_SecurityCameraSystemPartsAndSmartsProposal_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">6_10_SecurityCameraSystemPartsAndSmartsProposal_0.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CR36H814F827/$file/6_10_SecurityCameraSystemProposal_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">6_10_SecurityCameraSystemProposal_0.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">August 26, 2020</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2020-08-26" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Covid-19 Safety Compliance Officer Proposals for Adelante Selby, Hoover, and Taft Schools with Cal Inc.</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=okRfyGjPflM" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQV4B50AB485/$file/6_8_ProposalForEnvironmentalConsultingServices1_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">6_8_ProposalForEnvironmentalConsultingServices1_0.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQV4B70AB6CE/$file/6_8_ProposalForEnvironmentalConsultingServices2_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">6_8_ProposalForEnvironmentalConsultingServices2_0.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">August 12, 2020</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2020-08-12" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Additional Covid-19 Safety Compliance Officer Proposal (SCO) for Adelante Selby, Hoover Community School, and Taft Community School with Cal Inc.</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=I78B15ybGP0" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQS5YA127DE9/$file/7_2_ProposalForEnvironmentalConsultingServices_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">7_2_ProposalForEnvironmentalConsultingServices_0.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Security Camera and Intrusion Conduit and Wiring Rough-in Proposals for Adelante Selby School with ETA</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=I78B15ybGP0" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQT5A80F4263/$file/7_6_IntrusionConduitAndWiringProposal_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">7_6_IntrusionConduitAndWiringProposal_0.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQT5AA0F4470/$file/7_6_SecurityCameraConduitAndWiringProposal_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">7_6_SecurityCameraConduitAndWiringProposal_0.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">July 15, 2020</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Special Meeting</span>
+            <a href="/meetings/#2020-07-15" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Drainage Upgrades and Bioswale Project Construction Agreement for Adelante Selby Spanish Immersion School with Silicon Valley Paving</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=vuhxZKBmGsM" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQQ7K919F51B/$file/6_3_SLDrainageSiliconValleyPavingAgreement_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">6_3_SLDrainageSiliconValleyPavingAgreement_0.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Boundary Survey Project Authorization Form for Adelante Selby Spanish Immersion School with Kier and Wright</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=vuhxZKBmGsM" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQQ7N41A6031/$file/6_5_AdelanteSelbyProjectAuthorizationForm_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">6_5_AdelanteSelbyProjectAuthorizationForm_0.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">June 24, 2020</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2020-06-24" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of New Administration and Campus Modernization Project, Change Order #1 for Adelante Selby Spanish Immersion School with ICC General Contractors</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=LXTYptrXhUM" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQPNAG5EB7BE/$file/10_2_ChangeOrder1_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">10_2_ChangeOrder1_0.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Construction Management Fee Amendments for Adelante Selby Spanish Immersion School, Hawes School, Roosevelt School, and Roy Cloud School with Kitchell</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=LXTYptrXhUM" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQPNT6616D47/$file/10_11_ConstructionManagementFeeAmendmentAdelanteSelby_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">10_11_ConstructionManagementFeeAmendmentAdelanteSelby_0.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQPNT861706B/$file/10_11_ConstructionManagementFeeAmendmentHawes_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">10_11_ConstructionManagementFeeAmendmentHawes_0.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQPNTB6173A2/$file/10_11_ConstructionManagementFeeAmendmentRoosevelt_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">10_11_ConstructionManagementFeeAmendmentRoosevelt_0.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQPNTE617789/$file/10_11_ConstructionManagementFeeAmendmentRoyCloud_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">10_11_ConstructionManagementFeeAmendmentRoyCloud_0.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Modernization Project Special Testing and Inspection Services Project Authorization Form for Adelante Selby Spanish Immersion School with Ninyo and Moore</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=LXTYptrXhUM" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQPNYU6242CD/$file/10_14_SpecialInspectionAgreement_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">10_14_SpecialInspectionAgreement_0.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">June 17, 2020</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Special Meeting</span>
+            <a href="/meetings/#2020-06-17" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Permanently Renaming the 170 Selby Lane in Atherton site, currently on file with the California Department of Education as Selby Lane Elementary School, as Adelante Selby Spanish Immersion School</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=frJ7lyhm8S8" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">June 10, 2020</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2020-06-10" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Permanently Renaming the 170 Selby Lane in Atherton site, currently on file with the California Department of Education as Selby Lane Elementary School, as Adelante Selby Spanish Immersion School</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=VIbi8F87vKg" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Covid-19 Safety Compliance Officer Proposal at Adelante Selby School, Hoover School, and Taft School with Cal, Inc.</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=VIbi8F87vKg" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/D5WT88761718/$file/ProposalForEnvironmentalConsultingServices.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">ProposalForEnvironmentalConsultingServices.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of IDF and Fiber Upgrades Proposal at Adelante Selby School and Roosevelt School with Vanden Bos</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=VIbi8F87vKg" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/D5WTPX78652D/$file/IDFAndFiberProposal.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">IDFAndFiberProposal.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">April 22, 2020</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2020-04-22" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Parking Lot Expansion Change Order #2 with Tri Valley Excavating for Adelante Selby</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=DVMh89SIUFY" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQD45909D848/$file/9_2_ChangeOrder2_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">9_2_ChangeOrder2_0.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Permanently Renaming the 170 Selby Lane in Atherton site, currently on file with the California Department of Education as Selby Lane Elementary School, as Adelante Selby Spanish Immersion School</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=DVMh89SIUFY" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">April 1, 2020</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2020-04-01" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Full meeting &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Agreement for a Modernization Project with ICC at Adelante Selby School</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=0cWwZ9lGR0U" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/D3364S1325E9/$file/Agreement%20between%20RCSD%20and%20ICC%20General%20Contractors.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Agreement between RCSD and ICC General Contractors.pdf &#8599;</a></div>
             </div>
         </div>
   </section>

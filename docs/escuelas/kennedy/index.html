@@ -28,9 +28,10 @@
 <meta name="twitter:image" content="https://rcsd.info/og-1200.jpg">
 <meta name="twitter:title" content="Escuela Secundaria John F. Kennedy — RCSD Open Data">
 <meta name="twitter:description" content="Datos públicos de Escuela Secundaria John F. Kennedy: rendimiento académico, demografía, financiamiento y personal para el año escolar 2025-26.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preload" href="/fonts/fraunces-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/newsreader-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/ibm-plex-mono-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/fonts/fonts.css">
 
 
 <style>
@@ -843,7 +844,7 @@
 <header class="site-header">
   <div class="header-inner">
     <div class="header-district"><a href="/distrito/">Distrito Escolar de Redwood City</a></div>
-    <img src="https://data.rcsd.info/logos/kennedy.jpg" alt="Escuela Secundaria John F. Kennedy" class="header-logo">
+    <img src="https://data.rcsd.info/logos/kennedy.jpg" alt="Escuela Secundaria John F. Kennedy" class="header-logo" width="1200" height="462" fetchpriority="high">
     <h1 class="header-title">Escuela Secundaria John F. Kennedy</h1>
     <p class="header-subtitle">Kennedy es la escuela más grande del distrito, una Escuela Comunitaria de vecindario de 6-8 grados y escuela secundaria. Tiene grandes brechas de logro dentro de la escuela, con estudiantes blancos obteniendo puntajes significativamente más altos que los estudiantes hispanos.</p>
     <div style="margin-top:0.8rem">
@@ -897,7 +898,7 @@
 
     <div class="principal-row">
       <div style="flex-shrink:0">
-        <a href="https://kennedy.rcsdk8.net/our-school/meet-our-school-leadership"><img src="/img/principals/kennedy.jpg" alt="Chandra Leonardo" style="width:160px; border-radius:10px; display:block"></a>
+        <a href="https://kennedy.rcsdk8.net/our-school/meet-our-school-leadership"><img src="/img/principals/kennedy.jpg" alt="Chandra Leonardo" width="300" height="300" loading="lazy" style="width:160px; height:213px; object-fit:cover; border-radius:10px; display:block"></a>
         <div style="text-align:center; margin-top:0.6rem">
           <div style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--text-muted)">Director/a</div>
           <div style="font-size:1.05rem; font-weight:500; margin-top:0.15rem"><a href="https://kennedy.rcsdk8.net/our-school/meet-our-school-leadership" style="color:var(--green-mid); text-decoration:none">Chandra Leonardo</a></div>
@@ -1228,21 +1229,17 @@
             <a href="/meetings/#2026-02-04" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
           </div>
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
-              <div style="font-size:0.9rem; line-height:1.4">Contrato de Fase 2 de HVAC; construcción programada para verano 2026</div>
-              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=Nw7_DtNMPVk&t=936" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
-              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2026-02-04/Presentation-Revision-1-RCSD-Measure-S-Implementation-Plan-02042026.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Presentation - Revision #1 - RCSD Measure S Implementation Plan 02042026 &#8599;</a><a href="https://data.rcsd.info/board-packets/2026-02-04/Res-16-Supporting-LLB-Award-HVAC-Upgrades-PH-2-Blach_-rev-01.27.2026-4533797.1.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Res 16 Supporting LLB Award (HVAC Upgrades PH 2 - Blach_ rev 01.27.2026) (4533797.1) &#8599;</a><a href="https://data.rcsd.info/board-packets/2026-02-04/RCSD-POs-20k-and-Under-Tracking-List-FY-25-26-February-4-2026.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">RCSD POs $20k and Under Tracking List FY 25-26 - February 4, 2026 &#8599;</a><a href="https://data.rcsd.info/board-packets/2026-02-04/2026.01.13-Minutes-DRAFT-Study-Session.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">2026.01.13 Minutes DRAFT - Study Session &#8599;</a><a href="https://data.rcsd.info/board-packets/2026-02-04/2026.01.14-Minutes-DRAFT.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">2026.01.14 Minutes DRAFT &#8599;</a><a href="https://data.rcsd.info/board-packets/2026-02-04/2026.01.21-Minutes-DRAFT.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">2026.01.21 Minutes DRAFT &#8599;</a><a href="https://data.rcsd.info/board-packets/2026-02-04/2025_Comprehensive_School_Safety_Plan__Pt._1_-Public-_John_F._Kennedy_Middle_Sch.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">2025_Comprehensive_School_Safety_Plan__Pt._1_(Public)_John_F._Kennedy_Middle_School _20260127 &#8599;</a></div>
+              <div style="font-size:0.9rem; line-height:1.4">Adoption of Resolution No. 16, Lease-Leaseback Agreement with Blach Construction for HVAC Projects, Phase 2 at Clifford School, Orion School, and Kennedy Middle School</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=Nw7_DtNMPVk" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2026-02-04/Res-16-Supporting-LLB-Award-HVAC-Upgrades-PH-2-Blach_-rev-01.27.2026-4533797.1.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Res 16 Supporting LLB Award (HVAC Upgrades PH 2 - Blach_ rev 01.27.2026)(4533797.1) &#8599;</a><a href="https://data.rcsd.info/board-packets/2026-02-04/Facilities-Lease-HVAC-Upgrades-Projects-Increment-2-Blach-4533164.1.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Facilities Lease - HVAC Upgrades Projects - Increment 2 (Blach)(4533164.1) &#8599;</a><a href="https://data.rcsd.info/board-packets/2026-02-04/Site-Lease-HVAC-Upgrades-Projects-Increment-2-Blach-4533153.1.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Site Lease - HVAC Upgrades Projects - Increment 2 (Blach)(4533153.1) &#8599;</a><a href="https://data.rcsd.info/board-packets/2026-02-04/LLB-Contract-Documents-HVAC-Upgrades-Projects-Increment-2-Blach-4533156.1.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">LLB Contract Documents - HVAC Upgrades Projects - Increment 2 (Blach)(4533156.1) &#8599;</a><a href="https://data.rcsd.info/board-packets/2026-02-04/Facilities-Lease-Exhibit-C-HVAC-Upgrades-Projects-Increment-2-Blach-4533165.1.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Facilities Lease - Exhibit C - HVAC Upgrades Projects - Increment 2 (Blach)(4533165.1) &#8599;</a><a href="https://data.rcsd.info/board-packets/2026-02-04/Facilities-Lease-Exhibit-D-HVAC-Upgrades-Projects-Increment-2-Blach-4533163.1.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Facilities Lease - Exhibit D - HVAC Upgrades Projects - Increment 2 (Blach)(4533163.1) &#8599;</a><a href="https://data.rcsd.info/board-packets/2026-02-04/Facilities-Lease-Exhibit-D-1-HVAC-Upgrades-Projects-Increment-2-Blach-4533157.1.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Facilities Lease - Exhibit D-1 - HVAC Upgrades Projects - Increment 2 (Blach)(4533157.1) &#8599;</a></div>
             </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
-              <div style="font-size:0.9rem; line-height:1.4">Orden de cambio de Fase 2 solar ($28,724 de tiempo extra)</div>
-              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=Nw7_DtNMPVk&t=1291" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Overtime Allowance, Change Order #3 for Solar Phase 2 Project at Kennedy Middle School #2 with Holt Renewables</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=Nw7_DtNMPVk" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
               <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2026-02-04/260204-RCSD-Kennedy-MS2-CO-3-OT-Allowance.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">260204 RCSD Kennedy MS2 CO#3 - OT Allowance &#8599;</a></div>
             </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
-              <div style="font-size:0.9rem; line-height:1.4">Addenda de Medida U ($252,653); añade tutoría extraescolar y más Chromebooks</div>
-              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=Nw7_DtNMPVk&t=1291" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
-              
-            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
-              <div style="font-size:0.9rem; line-height:1.4">Plan de seguridad anual</div>
-              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=Nw7_DtNMPVk&t=1291" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
-              
+              <div style="font-size:0.9rem; line-height:1.4">Approval of the Addendum to the Measure U Application for Kennedy Middle School for the 2025-2026 School Year</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=Nw7_DtNMPVk" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2026-02-04/2025-26-Kennedy-Measure-U-Addendum-Signed.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">2025-26 Kennedy Measure U Addendum Signed &#8599;</a></div>
             </div>
         </div><div style="margin-bottom:2rem">
           <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
@@ -1251,46 +1248,9 @@
             <a href="/meetings/#2026-01-21" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
           </div>
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
-              <div style="font-size:0.9rem; line-height:1.4">Instalación de cargadores de vehículos eléctricos ($70,520 en tres sitios)</div>
+              <div style="font-size:0.9rem; line-height:1.4">Approval of the Agreement for Atlas Pellizzari Electric for the amount of $70,520 to Install the PowerFlex Electric Vehicle Chargers at Adelante Selby, Clifford, and Kennedy Schools</div>
               <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=-nOpGerpRGA" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
               <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2026-01-21/Atlas-EV-Charger-Replacement_Agreement-Small-Projects-SD-rev-Nov-2022-3968000.1.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Atlas EV Charger Replacement_Agreement-Small Projects (SD) - rev Nov 2022(3968000.1) &#8599;</a></div>
-            </div>
-        </div><div style="margin-bottom:2rem">
-          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
-            <h3 style="margin:0; font-size:1rem">22 de octubre de 2025</h3>
-            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Regular</span>
-            <a href="/meetings/#2025-10-22" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
-          </div>
-          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
-              <div style="font-size:0.9rem; line-height:1.4">Permiso de pasantía provisional para maestra de 6.° grado</div>
-              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=RAoGh9R-GDM" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
-              
-            </div>
-        </div><div style="margin-bottom:2rem">
-          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
-            <h3 style="margin:0; font-size:1rem">8 de octubre de 2025</h3>
-            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Regular</span>
-            <a href="/meetings/#2025-10-08" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
-          </div>
-          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
-              <div style="font-size:0.9rem; line-height:1.4">Acuerdo de capacitación del personal en PBIS Niveles 1/2</div>
-              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=WYi7kzyEnuw&t=86" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
-              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2025-10-08/SCCOE-_-PBIS-25.26-MOU-Board-10.8.25.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">SCCOE _ PBIS 25.26 MOU Board 10.8.25 &#8599;</a></div>
-            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
-              <div style="font-size:0.9rem; line-height:1.4">Contrato de consejería de salud mental aumentado en $21,575</div>
-              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=WYi7kzyEnuw&t=86" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
-              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2025-10-08/Caminar-Amendment-1-Board-10.8.25.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Caminar Amendment 1 Board 10.8.25 &#8599;</a></div>
-            </div>
-        </div><div style="margin-bottom:2rem">
-          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
-            <h3 style="margin:0; font-size:1rem">18 de septiembre de 2025</h3>
-            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Regular</span>
-            <a href="/meetings/#2025-09-18" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
-          </div>
-          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
-              <div style="font-size:0.9rem; line-height:1.4">Contrato de tutoría de matemáticas aumentado a $240K en total</div>
-              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=1-KJszTHygc&t=502" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
-              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2025-09-18/COLLEGE-ADVISING-PREP_board-8.27.25.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">COLLEGE ADVISING PREP_board 8.27.25 &#8599;</a></div>
             </div>
         </div><div style="margin-bottom:2rem">
           <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
@@ -1299,9 +1259,13 @@
             <a href="/meetings/#2025-09-10" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
           </div>
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
-              <div style="font-size:0.9rem; line-height:1.4">Contrato de diseño de HVAC Fase 2 (Medida S)</div>
+              <div style="font-size:0.9rem; line-height:1.4">Approval of the Pre-Construction Services Agreement with Siemens Building Management Systems for the Phase II HVAC Upgrades Projects at Kennedy MS, Orion, and Clifford</div>
               <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=KWsBnYENz7o" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
-              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2025-09-10/RCSD-Phase-2-HVAC-Upgrades-Precon-v2.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">RCSD Phase 2 HVAC Upgrades Precon v2 &#8599;</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2025-09-10/Siemens_Contract_080824.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Siemens_Contract_080824 &#8599;</a><a href="https://data.rcsd.info/board-packets/2025-09-10/RCSD-Phase-2-HVAC-Upgrades-Precon-v2.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">RCSD Phase 2 HVAC Upgrades Precon v2 &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Contracts with Quattrocchi Kwok Architects (QKA) for Design Services for HVAC Upgrades Projects at Kennedy Middle , Orion Alternative, and Clifford schools</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=KWsBnYENz7o" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2025-09-10/Redwood-City-SD-Quattrocchi-Architect-Agreement-Kennedy-DWK-Aug-19-25.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Redwood City SD-Quattrocchi - Architect Agreement - Kennedy (DWK Aug-19-25) &#8599;</a><a href="https://data.rcsd.info/board-packets/2025-09-10/Redwood-City-SD-Quattrocchi-Architect-Agreement-Orion-DWK-Aug-19-25.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Redwood City SD-Quattrocchi - Architect Agreement - Orion (DWK Aug-19-25) &#8599;</a><a href="https://data.rcsd.info/board-packets/2025-09-10/Redwood-City-SD-Quattrocchi-Architect-Agreement-Clifford-DWK-Aug-19-25.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Redwood City SD-Quattrocchi - Architect Agreement - Clifford (DWK Aug-19-25) &#8599;</a></div>
             </div>
         </div><div style="margin-bottom:2rem">
           <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
@@ -1310,9 +1274,9 @@
             <a href="/meetings/#2025-08-27" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
           </div>
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
-              <div style="font-size:0.9rem; line-height:1.4">Excursión a Yosemite</div>
-              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=NutJa858kMY&t=2726" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
-              
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Kennedy Middle School Field Trip to Yosemite – October 19 - 24, 2025</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=NutJa858kMY" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2025-08-27/25-26-Kennedy.Yosemite-Updated-2025.08.26.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">25-26 Kennedy.Yosemite (Updated 2025.08.26) &#8599;</a></div>
             </div>
         </div><div style="margin-bottom:2rem">
           <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
@@ -1321,14 +1285,14 @@
             <a href="/meetings/#2025-06-25" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
           </div>
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
-              <div style="font-size:0.9rem; line-height:1.4">Proyecto de reemplazo de HVAC Fase 2 ($21.25M, Medida S)</div>
+              <div style="font-size:0.9rem; line-height:1.4">Approval of HVAC Upgrade Projects Phase II: Kennedy Middle School, Orion Alternative School, and Clifford School</div>
               <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=nsizIuPIt5E" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
               
             </div>
         </div><div style="margin-bottom:2rem">
           <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
             <h3 style="margin:0; font-size:1rem">28 de mayo de 2025</h3>
-            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Closed Session</span>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
             <a href="/meetings/#2025-05-28" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
           </div>
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
@@ -1343,12 +1307,12 @@
         </div><div style="margin-bottom:2rem">
           <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
             <h3 style="margin:0; font-size:1rem">5 de febrero de 2025</h3>
-            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Closed Session</span>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
             <a href="/meetings/#2025-02-05" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
           </div>
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
               <div style="font-size:0.9rem; line-height:1.4">La junta aprobó el plan de gastos actualizado de Measure U.</div>
-              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=yoUvmhll1uk&t=8715" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=yoUvmhll1uk&t=9206" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
               <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DDDQVA6B1DD8/$file/2024-25%20Kennedy%20Measure%20U%20Addendum_signed.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">2024-25 Kennedy Measure U Addendum_signed.pdf &#8599;</a></div>
             </div>
         </div><div style="margin-bottom:2rem">
@@ -1359,19 +1323,377 @@
           </div>
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
               <div style="font-size:0.9rem; line-height:1.4">Kennedy and McKinley School Presentations for 2023-2024 School Year</div>
-              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"></div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=r4H-KUxQIsA" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
               <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CY22T703AEAA/$file/Kennedy%20Board%20Report%202023.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Kennedy Board Report 2023.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CY3TW27948E5/$file/MIT%20Board%20Report%202023.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">MIT Board Report 2023.pdf &#8599;</a></div>
             </div>
         </div><div style="margin-bottom:2rem">
           <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
             <h3 style="margin:0; font-size:1rem">8 de noviembre de 2023</h3>
-            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Closed Session</span>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
             <a href="/meetings/#2023-11-08" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
           </div>
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
               <div style="font-size:0.9rem; line-height:1.4">Approval of Addendum to 2023-24 Measure U Application for Kennedy Middle School</div>
               <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"></div>
               <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CX5KQQ52FF8F/$file/Kennedy%20Measure%20U%20Addendum%20No.%201.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Kennedy Measure U Addendum No. 1.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">24 de mayo de 2023</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2023-05-24" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Proposal for Cabinets and Sink Replacement with Beals Martin for Kennedy Middle School</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=VKX0ACAEDh0" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRMMF45AC13A/$file/230524%20Kennedy%20STEAM%20Cabinet%20and%20Sink%20Replacement%20with%20Beals%20Martin%20-%20Signed%20by%20MC.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">230524 Kennedy STEAM Cabinet and Sink Replacement with Beals Martin - Signed by MC.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Proposal for STEAM Rover Tables with Campbell Keller for Kennedy Middle School</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=VKX0ACAEDh0" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRMUDX7B9D6D/$file/230524%20Kennedy%20Maker's%20Space%20Rover%20Tables%20-%20Signed%20by%20MC.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">230524 Kennedy Maker's Space Rover Tables - Signed by MC.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">8 de marzo de 2023</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2023-03-08" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Presentations on School Plans for Student Achievement: McKinley Institute of Technology (MIT) and Kennedy Middle School</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=sVxkVRPrIvI" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CPHVL5813605/$file/Kennedy%20SPSA%20Board%20Report%20.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Kennedy SPSA Board Report .pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CPHVL78137FB/$file/MIT%20SPSA%20Board%20Report.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">MIT SPSA Board Report.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Addendum to 2022-23 Measure U Application for Kennedy Middle School</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=sVxkVRPrIvI" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CPGRU66D5C90/$file/Kennedy%20Measure%20U%20ADDENDUM%202022-23.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Kennedy Measure U ADDENDUM 2022-23.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">18 de enero de 2023</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2023-01-18" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Proposal for Mobile Robotics Tables with Campbell Keller for Kennedy Middle School</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=tqvsE4VeAzE" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CMTRYL6E6331/$file/221214%20Kennedy%20Maker's%20Space%20Robotics%20Tables%20Proposal%20with%20Campbell%20Keller%20-%20Signed%20by%20MC.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">221214 Kennedy Maker's Space Robotics Tables Proposal with Campbell Keller - Signed by MC.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">16 de noviembre de 2022</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2022-11-16" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Proposal for Panic Gates and Bike Rack Fence with Dryco for Kennedy Middle School</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=mceQnlsG7wc" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CKUS3670AA2C/$file/New%20Panic%20Gates%20and%20Bike%20Rack%20Fence%20Proposal%20-%20Kennedy.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">New Panic Gates and Bike Rack Fence Proposal - Kennedy.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">7 de septiembre de 2022</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2022-09-07" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Project Inspector Agreement Amendment #12 with Inspectacon at Kennedy Middle School's Maker Space Project, Orion Alternative School (Formerly John Gill School), and McKinley Institute of Technology's Theater Projection Screen</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=PfxY0tBfY9g" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CHTKPC52CE42/$file/220907%20RCSD%20Project%20Inspector%20Amendment%20%2312%20with%20Inspectacon.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">220907 RCSD Project Inspector Amendment #12 with Inspectacon.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">10 de agosto de 2022</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2022-08-10" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Adoption of Futility Resolution 3, Approval of Maker Space Project Change Order #2 with Castillo Plumbing & Construction at Kennedy Middle School</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=XOwgAIqGlKE" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CGWUKZ73BEBB/$file/220810%20RCSD%20JFK%20Maker%20Space%20CO%20No.%202%20Front%20Load%20Package.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">220810 RCSD JFK Maker Space CO No. 2 Front Load Package.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CGWUTV756309/$file/220810%20Kennedy%20Change%20Order%20Futility%20Resolution%20%233%20with%20Castillo.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">220810 Kennedy Change Order Futility Resolution #3 with Castillo.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">27 de abril de 2022</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2022-04-27" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of New Garden Proposal at Kennedy Middle School with Scapes</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=UFLEqXKCqPk" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CDMUL67C3BEC/$file/220406%20Kennedy%20Garden%20Proposal%20with%20Scapes%20-%20Signed%20by%20DD.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">220406 Kennedy Garden Proposal with Scapes - Signed by DD.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">15 de diciembre de 2021</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2021-12-15" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Architect Additional Services Proposals for Garfield, Kennedy, and Taft Schools with HED</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=uP_HUD2JghY" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/C9GUA3778C5D/$file/211202%20Kennedy%20Maker%20Space%20Misc%20Services%20Proposal%20with%20HED%20-%20Signed%20by%20DD.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">211202 Kennedy Maker Space Misc Services Proposal with HED - Signed by DD.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/C9GUA5778C89/$file/211202%20Garfield%20Off-Site%20Coordination%20Proposal%20with%20HED%20-%20Signed%20by%20DD.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">211202 Garfield Off-Site Coordination Proposal with HED - Signed by DD.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/C9GUA7778CB5/$file/211202%20Garfield%20Additional%20CA%20Proposal%20with%20HED%20-%20Signed%20by%20DD.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">211202 Garfield Additional CA Proposal with HED - Signed by DD.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/C9GUA9778CE0/$file/211202%20Taft%20Additional%20CA%20Proposal%20with%20HED%20-%20Signed%20by%20DD.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">211202 Taft Additional CA Proposal with HED - Signed by DD.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">8 de diciembre de 2021</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2021-12-08" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Maker Space Construction Agreement with Castillo Plumbing for Kennedy Middle School</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=1WVKb5e5QOY" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/C9A29L7AE1FE/$file/211118%20RCSD%20JFK%20Castillo%20Plumbing-Construction%20%20Agreement%20-%20signed.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">211118 RCSD JFK Castillo Plumbing-Construction  Agreement - signed.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">6 de octubre de 2021</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2021-10-06" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Maker Space Window Replacement Proposal for Kennedy Middle School with Golden Bay Glass</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=lOTx3uh-ifo" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/C7BLVB583D4C/$file/210923%20Kennedy%20Maker%20Space%20Window%20Replacement%20Proposal%20with%20Golden%20Bay%20-%20Signed%20by%20DD.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">210923 Kennedy Maker Space Window Replacement Proposal with Golden Bay - Signed by DD.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">22 de septiembre de 2021</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2021-09-22" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Soil Off Haul Proposal for Kennedy Middle School with O'Grady</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=RT_ihJDbQTY" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/C6UQ56626789/$file/210825%20Kennedy%20Parking%20Lot%20Expansion%20Soil%20Off%20Haul%20Proposal%20with%20O'Grady%20-%20Signed%20by%20WR.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">210825 Kennedy Parking Lot Expansion Soil Off Haul Proposal with O'Grady - Signed by WR.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">25 de agosto de 2021</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2021-08-25" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Maker's Space Furniture Proposal for Kennedy Middle School with Campbell Keller</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/C5Z28U00FEA8/$file/210817%20Kennedy%20Maker's%20Space%20Furniture%20Proposal%20with%20Campbell%20Keller%20-%20Signed%20by%20DD.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">210817 Kennedy Maker's Space Furniture Proposal with Campbell Keller - Signed by DD.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">11 de agosto de 2021</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2021-08-11" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Parking Lot Expansion Project Change Order #1 for Kennedy Middle School with O’Grady Paving</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=L9391IDRd9A" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/C5KMGV5A39F9/$file/210802%20RCSD%20JFK%20Parking%20Lot%20Expansion%20CO%20No.1-%20Frontload%20Package.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">210802 RCSD JFK Parking Lot Expansion CO No.1- Frontload Package.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">30 de junio de 2021</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2021-06-30" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Maker's Space Design Proposal for Kennedy Middle School and Boiler Replacement Design Proposal for Garfield School with HED</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRYVN8818418/$file/10_6_GarfieldBoilerReplacementDesign_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">10_6_GarfieldBoilerReplacementDesign_0.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRYVNA818694/$file/10_6_KennedyMakersSpaceDesignProposal_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">10_6_KennedyMakersSpaceDesignProposal_0.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">16 de junio de 2021</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2021-06-16" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Kennedy Middle School’s Advanced Band Performance, “The Mandalorian”</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"></div>
+              
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">19 de mayo de 2021</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2021-05-19" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Parking Lot Expansion Construction Agreement for Kennedy Middle School with O'Grady Paving</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=z8PdGgT5GxU" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRU2A9013380/$file/11_8_AgreementForParkingLotExpansion_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">11_8_AgreementForParkingLotExpansion_0.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">5 de mayo de 2021</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2021-05-05" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Agreement for Additional Mental Health Therapist at Kennedy Middle School with Effective School Solutions (ESS) Program</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=7xAZwVgRrJk" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRP3ET81A982/$file/13_4_ESSFirstAmendment_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">13_4_ESSFirstAmendment_0.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRP3EV81AB64/$file/13_4_ESSOriginalAgreement_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">13_4_ESSOriginalAgreement_0.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRP3EX81AD8C/$file/13_4_ESSSecondAmendment_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">13_4_ESSSecondAmendment_0.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">14 de abril de 2021</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2021-04-14" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of the Proposal to Refresh the Track for Kennedy Middle School with Scapes</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=vpbKJKWTv8k" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRLV8Q7F8A96/$file/10_7_TrackRefreshProposalForKennedy_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">10_7_TrackRefreshProposalForKennedy_0.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Parking Lot Expansion Architect Agreement for Kennedy Middle School with HED</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=vpbKJKWTv8k" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRM23N003C77/$file/10_18_ParkingLotExpansionArchitectAgreementForKennedy_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">10_18_ParkingLotExpansionArchitectAgreementForKennedy_0.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">24 de marzo de 2021</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2021-03-24" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Addendum to 2020-21 Measure U Application for Kennedy Middle School</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=sJQNqQu1Jfs" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRLU667A7A11/$file/10_3_202021AddendumToApplicationForUseOfMeasureUFunds_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">10_3_202021AddendumToApplicationForUseOfMeasureUFunds_0.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">13 de enero de 2021</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2021-01-13" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Kennedy Middle School Art Show</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=wb0HEPHZHM0" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Kennedy Middle School Modernization Project with Cal-Pacific Construction, Change Order #6</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=wb0HEPHZHM0" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">18 de noviembre de 2020</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2020-11-18" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Kennedy Middle School Modernization Project with Cal-Pacific Construction, Change Order #5</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=WuVzcQVlzOI" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CR6V6D7F312F/$file/10_11_ChangeOrder5_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">10_11_ChangeOrder5_0.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Interim Housing Electrical Disconnect Proposal for Kennedy Middle School with Fusion Electric</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=WuVzcQVlzOI" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CR6VVN829B55/$file/10_18_InterimHousingElectricalDisconnectProposal_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">10_18_InterimHousingElectricalDisconnectProposal_0.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">4 de noviembre de 2020</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2020-11-04" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Interim Housing Removal Asphalt Repair Proposals for Henry Ford School and Kennedy Middle School with Dryco</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=lw0ARuWI664" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CR672A17786B/$file/9_8_AdditionalAsphaltReplacementKennedy_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">9_8_AdditionalAsphaltReplacementKennedy_0.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CR672C177B36/$file/9_8_RampAsphaltReplacementProposalHenryFord_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">9_8_RampAsphaltReplacementProposalHenryFord_0.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CR672G177E05/$file/9_8_RampAsphaltReplacementProposalKennedy_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">9_8_RampAsphaltReplacementProposalKennedy_0.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">21 de octubre de 2020</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2020-10-21" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Touchless Plumbing Fixture Replacement Construction Agreement for Kennedy Middle School with Milestone Contractors</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CR36J31517C9/$file/6_11_AgreementForPlumbingFixtureReplacementProject_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">6_11_AgreementForPlumbingFixtureReplacementProject_0.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">23 de septiembre de 2020</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2020-09-23" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Kennedy Middle School Modernization Project Cal-Pacific Construction Change Order #4</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=4nO0pTNJcyc" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQX3WC08D3FF/$file/10_2_ChangeOrder4_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">10_2_ChangeOrder4_0.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">9 de septiembre de 2020</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2020-09-09" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Final Plan and Field Review Invoice for Kennedy Middle School Administration and Parking Lot Project with the Division of the State Architect (DSA)</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=JXT4UVeAZw8" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQWQP26A32C7/$file/7_5_AdminAndParkingDSAFinalInvoice_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">7_5_AdminAndParkingDSAFinalInvoice_0.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">29 de julio de 2020</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Special Meeting</span>
+            <a href="/meetings/#2020-07-29" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Kennedy School Modernization Project Cal-Pacific Construction Change Order #3</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=1B7zQJJk7JM" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQR3WT08E71D/$file/6_9_ChangeOrder3_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">6_9_ChangeOrder3_0.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">24 de junio de 2020</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2020-06-24" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Additional Covid-19 Safety Compliance Officer Proposal for 2950 Fair Oaks Site, Henry Ford School, and Kennedy Middle School with The Safety Guys</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=LXTYptrXhUM" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQPNJZ603C2C/$file/10_7_Covid19SCOAddendumB_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">10_7_Covid19SCOAddendumB_0.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">10 de junio de 2020</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2020-06-10" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Covid-19 Safety Compliance Officer Proposal at 2950 Fair Oaks Site, Henry Ford School, and Kennedy School with The Safety Guys</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=VIbi8F87vKg" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/D5WTCN76B4AA/$file/SafetyComplianceOfficerProposal.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">SafetyComplianceOfficerProposal.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Modernization Project, Change Order #2 at Kennedy Middle School with Cal-Pacific Construction</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=VIbi8F87vKg" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/D5WTX57971EB/$file/ChangeOrder2.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">ChangeOrder2.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">20 de mayo de 2020</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2020-05-20" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Administration Building and Parking Lot Project Change Order #8 with Beals Martin for Kennedy Middle School</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=lTrmXqjt76k" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQL22U001E54/$file/11_3_ChangeOrder8_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">11_3_ChangeOrder8_0.pdf &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">22 de abril de 2020</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Board Meeting</span>
+            <a href="/meetings/#2020-04-22" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Administration Building and Parking Lot Project Change Order #7 with Beals Martin for Kennedy Middle School</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=DVMh89SIUFY" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQD3Z4093C79/$file/9_1_ChangeOrder7_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">9_1_ChangeOrder7_0.pdf &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of Modernization Project Change Order #1 with Cal-Pacific Construction for Kennedy Middle School</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=DVMh89SIUFY" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Ver video</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQD47G0A2AE9/$file/9_4_ChangeOrder1_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">9_4_ChangeOrder1_0.pdf &#8599;</a></div>
             </div>
         </div>
   </section>
