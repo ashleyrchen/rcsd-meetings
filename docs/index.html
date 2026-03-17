@@ -29,9 +29,10 @@
 <meta name="twitter:image" content="https://rcsd.info/og-1200.jpg">
 <meta name="twitter:title" content="RCSD Open Data — Redwood City School District Public Records">
 <meta name="twitter:description" content="Open data portal for the Redwood City School District. 12 schools, 6,299 students, 188 board meetings with agendas, minutes, and video. Bilingual English/Spanish.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preload" href="/fonts/fraunces-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/newsreader-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/ibm-plex-mono-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/fonts/fonts.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -824,7 +825,7 @@
 
 <header class="hero">
   <div class="hero-inner">
-    <img src="https://data.rcsd.info/logos/district.jpg" alt="Redwood City School District" class="hero-logo">
+    <img src="https://data.rcsd.info/logos/district.jpg" alt="Redwood City School District" class="hero-logo" width="1200" height="451" fetchpriority="high">
     <div class="bi-row">
       <div class="bi-en">
         <h1>Open Data for Redwood City School District</h1>
@@ -849,7 +850,7 @@
         <span class="hero-stat-label">Meetings · Reuniones</span>
       </div>
       <div class="hero-stat">
-        <span class="hero-stat-value">4,461</span>
+        <span class="hero-stat-value">4,464</span>
         <span class="hero-stat-label">Attachments · Anexos</span>
       </div>
     </div>
@@ -1158,21 +1159,6 @@
   <div class="bi-row events-section">
     <div class="bi-en events-col">
 
-        <div class="event-row event--no-school">
-          <span class="event-date-inline">Fri, MAR 13</span>
-          <span class="event-text">Lincoln's Day (Observed) <span class="no-school-icon" aria-label="No School">🏫</span></span>
-        </div>
-
-        <div class="event-row event--no-school">
-          <span class="event-date-inline">Mon, MAR 16</span>
-          <span class="event-text">Planning/Development Day <span class="no-school-icon" aria-label="No School">🏫</span></span>
-        </div>
-
-        <div class="event-row event--early-release event--multi">
-          <span class="event-date-inline">Mon–Fri, MAR 16–20</span>
-          <span class="event-text">Parent Teacher Conference Week</span>
-        </div>
-
         <div class="event-row event--board-meeting">
           <span class="event-date-inline">Wed, MAR 25</span>
           <span class="event-text"><a href="/meetings/#sy2526" class="event-label-link">Board Meeting</a></span>
@@ -1217,23 +1203,23 @@
           <span class="event-date-inline">Wed, AUG 12</span>
           <span class="event-text">First Day of School</span>
         </div>
-    </div>
-    <div class="bi-es events-col" lang="es">
 
         <div class="event-row event--no-school">
-          <span class="event-date-inline">vie, MAR 13</span>
-          <span class="event-text">Día de Lincoln (Observado) <span class="no-school-icon" aria-label="No School">🏫</span></span>
+          <span class="event-date-inline">Mon, SEP 7</span>
+          <span class="event-text">Labor Day <span class="no-school-icon" aria-label="No School">🏫</span></span>
         </div>
 
         <div class="event-row event--no-school">
-          <span class="event-date-inline">lun, MAR 16</span>
-          <span class="event-text">Día de Planificación <span class="no-school-icon" aria-label="No School">🏫</span></span>
+          <span class="event-date-inline">Mon, SEP 28</span>
+          <span class="event-text">Planning/Development Day <span class="no-school-icon" aria-label="No School">🏫</span></span>
         </div>
 
         <div class="event-row event--early-release event--multi">
-          <span class="event-date-inline">lun–vie, MAR 16–20</span>
-          <span class="event-text">Semana de Conferencias con Padres</span>
+          <span class="event-date-inline">Tue SEP 29 – Fri OCT 2</span>
+          <span class="event-text">Parent Teacher Conference Week</span>
         </div>
+    </div>
+    <div class="bi-es events-col" lang="es">
 
         <div class="event-row event--board-meeting">
           <span class="event-date-inline">mié, MAR 25</span>
@@ -1278,6 +1264,21 @@
         <div class="event-row event--milestone">
           <span class="event-date-inline">mié, AGO 12</span>
           <span class="event-text">Primer Día de Clases</span>
+        </div>
+
+        <div class="event-row event--no-school">
+          <span class="event-date-inline">lun, SEPT 7</span>
+          <span class="event-text">Día del Trabajo <span class="no-school-icon" aria-label="No School">🏫</span></span>
+        </div>
+
+        <div class="event-row event--no-school">
+          <span class="event-date-inline">lun, SEPT 28</span>
+          <span class="event-text">Día de Planificación <span class="no-school-icon" aria-label="No School">🏫</span></span>
+        </div>
+
+        <div class="event-row event--early-release event--multi">
+          <span class="event-date-inline">mar SEPT 29 – vie OCT 2</span>
+          <span class="event-text">Semana de Conferencias con Padres</span>
         </div>
     </div>
   </div>
