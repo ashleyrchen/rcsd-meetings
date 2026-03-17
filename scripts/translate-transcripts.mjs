@@ -76,7 +76,7 @@ async function translateMeeting(date) {
   const inputJson = JSON.stringify(input);
 
   // For very long transcripts, split into batches
-  const MAX_CHARS = 200000; // stay well within context
+  const MAX_CHARS = 200000; // 1M context model handles full transcripts in one call
   const batches = [];
   let currentBatch = [];
   let currentSize = 0;
@@ -100,13 +100,15 @@ async function translateMeeting(date) {
     const batch = batches[b];
     const batchJson = JSON.stringify(batch);
 
-    const response = await client.messages.create({
+    // Use streaming to handle long requests
+    const stream = await client.messages.stream({
       model: 'claude-sonnet-4-6',
-      max_tokens: 16384,
+      max_tokens: 65536,
       system: SYSTEM_PROMPT,
       messages: [{ role: 'user', content: batchJson }],
     });
 
+    const response = await stream.finalMessage();
     totalInput += response.usage.input_tokens;
     totalOutput += response.usage.output_tokens;
 
@@ -179,21 +181,42 @@ async function main() {
   let translated = 0, cached = 0, errors = 0;
   let totalCost = 0;
 
-  console.log(`${toProcess.length} transcripts to process`);
-
+  // Filter to uncached
+  const needsWork = [];
   for (const date of toProcess) {
-    const result = await translateMeeting(date);
+    const esPath = resolve(SLIM_DIR, `${date}-es.json`);
+    const enPath = resolve(SLIM_DIR, `${date}.json`);
+    if (!existsSync(enPath)) continue;
+    if (!force && existsSync(esPath)) { cached++; continue; }
+    needsWork.push(date);
+  }
 
-    if (result === 'cached') {
-      cached++;
-      continue;
+  console.log(`${needsWork.length} to translate (${cached} cached, ${toProcess.length} total)`);
+
+  // Process in parallel batches of CONCURRENCY
+  const CONCURRENCY = 10;
+  for (let i = 0; i < needsWork.length; i += CONCURRENCY) {
+    const batch = needsWork.slice(i, i + CONCURRENCY);
+    const results = await Promise.allSettled(batch.map(date => translateMeeting(date)));
+
+    for (let j = 0; j < results.length; j++) {
+      const r = results[j];
+      const date = batch[j];
+      if (r.status === 'rejected') {
+        console.error(`${date}: ERROR ${r.reason?.message || r.reason}`);
+        errors++;
+        continue;
+      }
+      const result = r.value;
+      if (result === 'cached') { cached++; continue; }
+      if (result === null || result === 'empty') continue;
+      if (typeof result === 'object') {
+        translated++;
+        totalCost += result.cost;
+        console.log(`${date}: ${result.utterances} utt ($${result.cost.toFixed(3)})`);
+      }
     }
-    if (result === null || result === 'empty') continue;
-    if (typeof result === 'object') {
-      translated++;
-      totalCost += result.cost;
-      console.log(`${date}: ${result.utterances} utterances ($${result.cost.toFixed(4)})`);
-    }
+    console.log(`  [${Math.min(i + CONCURRENCY, needsWork.length)}/${needsWork.length}] $${totalCost.toFixed(2)} so far`);
   }
 
   console.log(`\nDone: ${translated} translated, ${cached} cached, ${errors} errors`);
