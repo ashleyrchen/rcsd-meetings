@@ -99,30 +99,93 @@ function downloadAudio(videoId) {
   throw new Error(`Audio file not found after download for ${videoId}`);
 }
 
+// ---- Board composition by date range ----
+// Source: approved board minutes attendance sections
+const BOARD_ERAS = [
+  {
+    start: '2020-01-01', end: '2020-12-08',
+    trustees: ['Alisa MacAvoy', 'Hilary Paulson', 'John Baker', 'Sharilyn Cain', 'Jan Stine'],
+    superintendent: 'Dr. John Baker (Interim)',
+  },
+  {
+    start: '2020-12-09', end: '2022-12-06',
+    trustees: ['Alisa MacAvoy', 'María Marquez', 'Sharilyn Cain', 'David Weekly', 'Monica Lozano-Wells'],
+    superintendent: 'Dr. John Baker',
+  },
+  {
+    start: '2022-12-07', end: '2024-12-10',
+    trustees: ['María Marquez', 'Dhara Patel', 'David Weekly', 'Monica Lozano-Wells', 'Jesse Lawson'],
+    superintendent: 'Dr. Susan Hartley (to Jun 2024), Dr. Yvette Baker (from Jul 2024)',
+  },
+  {
+    start: '2024-12-11', end: '2099-12-31',
+    trustees: ['David Weekly', 'Priya Varma', 'Stephanie Sena', 'Kavitha Hanna', 'Dhara Patel'],
+    superintendent: 'Dr. Yvette Irving-Baker',
+  },
+];
+
+// Key district staff who frequently present at board meetings
+const DISTRICT_STAFF = [
+  'Ellie Salazar', 'Nicole Ochi', 'Lisa Yim', 'Terri Nickerson',
+  'Omar Manzano', 'Katherine Rivera', 'Kathryn Mateo',
+];
+
+function getBoardEra(date) {
+  for (const era of BOARD_ERAS) {
+    if (date >= era.start && date <= era.end) return era;
+  }
+  return BOARD_ERAS[BOARD_ERAS.length - 1]; // fallback to latest
+}
+
+/**
+ * Build a transcription prompt with meeting context.
+ * Universal-3 Pro supports up to 1,500 words of prompt context.
+ * Note: prompt and keyterms_prompt are mutually exclusive in the API,
+ * so we embed key terms directly in the prompt text.
+ */
+function buildPrompt(meeting) {
+  const date = meeting.date;
+  const type = meeting.type || 'Board Meeting';
+  const era = getBoardEra(date);
+
+  const trusteesStr = era.trustees.map(t => `Trustee ${t.split(' ').pop()} (${t})`).join(', ');
+
+  // Collect agenda item titles if available
+  const agendaItems = (meeting.items || [])
+    .filter(item => item.title)
+    .map(item => item.title);
+  const agendaSnippet = agendaItems.length > 0
+    ? `\n\nAgenda items for this meeting:\n${agendaItems.slice(0, 40).join('\n')}`
+    : '';
+
+  return `You are transcribing a ${type} of the Redwood City School District held on ${date}. Your job is to accurately transcribe the meeting and diarize speakers for public reporting purposes. Do not include disfluencies, stutters, or repetitions. The meeting is mostly in English but some public comments may be in Spanish; a translation is then read aloud after such comments.
+
+Board members present at this meeting: ${trusteesStr}. Superintendent: ${era.superintendent}. District staff who may present: ${DISTRICT_STAFF.join(', ')}.
+
+School names: Adelante Selby, Clifford, Garfield, Henry Ford, Hoover, Kennedy, McKinley Institute of Technology (MIT), North Star Academy, Orion, Roosevelt, Roy Cloud, Taft.
+
+Key terms: RCSD, LCAP, SPSA, CAASPP, ELPAC, CSSP, SARC, Measure U, Measure S, Brown Act, consent agenda, ParentSquare, Simbli, BoardDocs, RCTA, CSEA, DELAC, ELAC, IEP, MTSS, PBIS, TK, UCP, Williams.${agendaSnippet}`;
+}
+
 /**
  * Upload local audio to AssemblyAI and transcribe with diarization.
+ * Uses Universal-3 Pro with a contextual prompt for best accuracy.
+ * Falls back to Universal-2 for non-English segments via speech_models array.
  * Returns the full transcript object.
  */
-async function transcribe(audioPath) {
+async function transcribe(audioPath, meeting) {
+  const prompt = buildPrompt(meeting);
+
   const transcript = await client.transcripts.transcribe({
     audio: audioPath,
-    speech_model: 'best',
+    speech_models: ['universal-3-pro', 'universal-2'], // Universal-3 Pro + Universal-2 fallback
     speaker_labels: true,
-    word_boost: [
-      // Board members and district leadership
-      'Redwood City School District', 'RCSD',
-      'Trustee Weekly', 'Trustee Sena', 'Trustee Hanna', 'Trustee Varma', 'Trustee Patel',
-      'Superintendent Ramsey', 'Dr. Ramsey',
-      // School names
-      'Adelante Selby', 'Clifford', 'Garfield', 'Henry Ford',
-      'Hoover', 'Kennedy', 'McKinley', 'North Star',
-      'Orion', 'Roosevelt', 'Roy Cloud', 'Taft',
-      // Common terms
-      'LCAP', 'SPSA', 'CAASPP', 'ELPAC', 'CSSP',
-      'Measure U', 'Measure S',
-      'Brown Act', 'consent agenda',
-      'ParentSquare', 'Simbli', 'BoardDocs',
-    ],
+    speakers_expected: 10, // board meetings typically have 7-15 distinct speakers
+    language_detection: true, // handle English/Spanish code-switching
+    disfluencies: false, // omit um, uh, stutters
+    remove_audio_tags: 'all', // strip [MUSIC], [APPLAUSE], etc.
+    temperature: 0.1, // slight exploration for better accuracy per AAI docs
+    prompt,
   });
 
   return transcript;
@@ -158,7 +221,7 @@ async function main() {
       console.log(`${label} — Downloading audio...`);
       audioPath = downloadAudio(videoId);
       console.log(`${label} — Uploading & transcribing with AssemblyAI...`);
-      const transcript = await transcribe(audioPath);
+      const transcript = await transcribe(audioPath, mtg);
 
       if (transcript.status === 'error') {
         console.error(`${label} — AssemblyAI error: ${transcript.error}`);
