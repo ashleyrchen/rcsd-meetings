@@ -590,8 +590,11 @@ function sectionParcelTaxEN() {
   <h3>What Happens if the 2026 Measure Fails?</h3>
   <p>The district's multi-year projections already require $5.25 million in unidentified budget cuts for 2026-27. Without the additional $12.2M in parcel tax revenue, the district would face even deeper reductions to staffing, programs, and services. The existing Measure U ($1.6M/year) continues through 2030 regardless of the June 2026 outcome.</p>
 
-  <h3>Get Involved</h3>
-  <p>A parent-led initiative, <strong>Strong Schools for Redwood City</strong>, is organizing community support for the 2026 parcel tax measure. Visit <a href="https://www.strongschools4rwc.org/en/">strongschools4rwc.org</a> to learn more, volunteer, or donate.</p>
+  <h3>Community Resources</h3>
+  <ul>
+    <li><strong>Strong Schools for Redwood City</strong> (pro-measure campaign): <a href="https://www.strongschools4rwc.org/en/" target="_blank">strongschools4rwc.org</a></li>
+    <li><strong>Official ballot information</strong>: <a href="https://www.smcacre.org/" target="_blank">San Mateo County Assessor-Clerk-Recorder</a></li>
+  </ul>
 
   <p class="source">Source: <a href="https://www.rwcpulse.com/education/2026/02/27/redwood-city-school-district-puts-parcel-tax-measure-on-june-ballot/">Redwood City Pulse, Feb. 27, 2026</a>.</p>
 </section>`;
@@ -1161,8 +1164,11 @@ function sectionParcelTaxES() {
   <h3>\u00bfQu\u00e9 Pasa si la Medida 2026 No se Aprueba?</h3>
   <p>Las proyecciones multianuales del distrito ya requieren $5.25 millones en recortes no identificados para 2026-27. Sin los $12.2M adicionales en ingresos de impuestos parcelarios, el distrito enfrentar\u00eda reducciones a\u00fan m\u00e1s profundas en personal, programas y servicios.</p>
 
-  <h3>Part\u00edcipe</h3>
-  <p>Una iniciativa liderada por padres, <strong>Strong Schools for Redwood City</strong>, est\u00e1 organizando apoyo comunitario para la medida de impuesto parcelario de 2026. Visite <a href="https://www.strongschools4rwc.org/es/">strongschools4rwc.org</a> para obtener m\u00e1s informaci\u00f3n, ser voluntario o donar.</p>
+  <h3>Recursos de la Comunidad</h3>
+  <ul>
+    <li><strong>Strong Schools for Redwood City</strong> (campa\u00f1a a favor): <a href="https://www.strongschools4rwc.org/es/" target="_blank">strongschools4rwc.org</a></li>
+    <li><strong>Informaci\u00f3n oficial de la boleta</strong>: <a href="https://www.smcacre.org/" target="_blank">San Mateo County Assessor-Clerk-Recorder</a></li>
+  </ul>
 
   <p class="source">Fuente: <a href="https://www.rwcpulse.com/education/2026/02/27/redwood-city-school-district-puts-parcel-tax-measure-on-june-ballot/">Redwood City Pulse, 27 de feb. 2026</a>.</p>
 </section>`;
