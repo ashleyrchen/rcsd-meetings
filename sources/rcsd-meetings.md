@@ -1,8 +1,8 @@
 # RCSD Board Meetings — 2025-2026 School Year
-Last updated: March 6, 2026
+Last updated: March 20, 2026
 
 ## Overview
-- 24 meetings on Simbli (June 2025 - present)
+- 25 meetings on Simbli (June 2025 - present)
 - Pre-June 2025 meetings on BoardDocs: https://go.boarddocs.com/ca/redwood/Board.nsf/goto?open&id=CVLPDX62089F
 - Agendas: https://simbli.eboardsolutions.com/SB_Meetings/SB_MeetingListing.aspx?S=36030397
 - YouTube: https://www.youtube.com/@redwoodcityschooldistrict
@@ -12,6 +12,7 @@ Last updated: March 6, 2026
 
 | Date | Type | MID | YouTube | Key Topics |
 |------|------|-----|---------|------------|
+| 03/25/2026 | Regular | 50617 | — | Taft/Garfield SPSA presentations, 2024-25 financial audit (Eide Bailly), Second Interim Budget ($158.1M rev), AI-assisted literacy info item, drone policy BP 3515.21 second reading, Connect charter audit review, Ed Code 41372 salary waiver (55.54% vs 60%), 650 Chromebooks ($323.9K), 16 CSBA policy updates, Measure U addenda (North Star/Henry Ford) |
 | 03/11/2026 | Regular | 50616 | — | Roosevelt/McKinley/Hoover SPSA presentations, Eide Bailly bond audit, 2025 SARCs, Measure U addenda (Roosevelt/McKinley/Hoover), NV5 EV charging amendment, Feb warrant registers |
 | 02/26/2026 | Special | 56022 | [Video](https://www.youtube.com/watch?v=8NOEEW_cpyU) | Parcel tax public hearing + election resolution |
 | 02/11/2026 | Regular | 50344 | [Video](https://www.youtube.com/watch?v=6VgYicePQto) | LCAP mid-year ($151.5M), parcel tax draft resolution ($12.2M/yr), ZESBI electric buses ($1.44M grant), certificated reductions (Res 17-20), RCTA negotiations |
@@ -40,6 +41,61 @@ Last updated: March 6, 2026
 ---
 
 ## Detailed Meeting Agendas
+
+### 03/25/2026 — Regular Meeting (MID 50617)
+- **Zoom:** https://rcsdk8-net.zoom.us/s/83593509461
+- **Simbli:** https://simbli.eboardsolutions.com/SB_Meetings/ViewMeeting.aspx?S=36030397&MID=50617
+
+**Bond Program Consent:**
+1. Approval of Steel Casing Cost, Change Order #3 for Solar Phase 2 Project at Taft Community School with Holt Renewables (Measure T) — $39,952.63
+
+**School/Community Reports (30 min):**
+1. Information on Financial Audit Report for Redwood City School District for the 2024-25 School Year (Eide Bailly)
+
+**Action Items (1 hr 30 min):**
+1. Taft School Presentation and School Plan for Student Achievement (SPSA) Approval
+2. Garfield School Presentation and School Plan for Student Achievement (SPSA) Approval
+3. Approval of the 2025-26 Second Interim Budget Report for Redwood City School District
+
+**Discussion Items (15 min):**
+1. Second Reading and Discussion of Board Policy 3515.21: Unmanned Aircraft Systems (Drones)
+
+**Consent Items:**
+1. Approval of the February 11, 2026, Regular Meeting Minutes
+2. Approval of the Addendum to the Measure U Application for North Star Academy for the 2025-2026 School Year
+3. Approval of the Measure U Addendum for Henry Ford for the 2025-26 School Year
+4. Approval of Roy Cloud's Field Trip to Washington DC – May 18 - May 22, 2026
+5. Approval of Roy Cloud School Field Trip to Elks Club – June 1, 2026
+6. Approval of Personnel Changes for the 2025-2026 School Year (VI Teacher 0.5→1.0 FTE, $78K/yr)
+7. Approval of the Second Amendment between RCSD and Amergis Healthcare Staffing for One Additional Behavior Technician ($17K)
+8. Second Reading and Approval of Board Bylaw 9324: Minutes and Recordings
+9. Approval of Board Policy 1330.1: Joint Use Agreements
+10. Approval of Board Policy 3110: Transfer of Funds
+11. Approval of Board Policy 3220.1: Lottery Funds
+12. Approval of Board Policy 3312.2: Educational Travel Program Contracts
+13. Approval of Board Policy 3314: Payment For Goods And Services
+14. Approval of Board Policy 3400: Management Of District Assets/Accounts
+15. Approval of Board Policy 3460: Financial Reports and Accountability
+16. Approval of Board Policy 3516.5: Emergency Schedules
+17. Approval of Board Policy 7110: Facilities Master Plan
+18. Approval of Board Policy 7211: Developer Fees
+19. Approval of Board Policy 1445: Response to Immigration Enforcement
+20. Approval of Board Policy 0500: Accountability
+21. Approval of Board Policy 5145.3: Nondiscrimination/Harassment
+22. Approval of Board Policy 5145.7: Sexual Harassment
+23. Approval of Board Policy 6115: Ceremonies And Observances
+24. Approval of Board Policy 6141.2: Recognition Of Religious Beliefs And Customs
+25. Approval of the Application for Exemption from Required Classroom Teachers' Salary Expenditures (Education Code 41372) — 55.54% vs 60% requirement, $5.7M deficiency
+26. Approval of the Purchase of 650 Acer Chromebooks for Incoming 6th Grade Students ($323,886.06)
+27. Approval of the Agreement between RCSD and AT&T for Internet Connectivity for the IMC building through E-Rate ($5,506.20/yr)
+
+**Information:**
+1. AI-Assisted Literacy and Numeracy: Current Landscape and Framework for Evaluation (David Weekly)
+2. Redwood City School District Review of Connect's Audit Report for FY 2024-25
+3. Learning Communities for School Success Program End-of-Project Information
+4. Information on San Mateo County Investment Fund - February 2026 (3.89% gross pool earnings)
+
+---
 
 ### 03/11/2026 — Regular Meeting (MID 50616)
 - **Zoom:** https://rcsdk8-net.zoom.us/s/82092147587
