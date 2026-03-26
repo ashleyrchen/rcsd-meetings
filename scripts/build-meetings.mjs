@@ -301,48 +301,27 @@ const manualDurations = {
   '2026-02-11': { seconds: 6120, display: '1h 42m' }, // no auto-captions on YouTube
 };
 
-const transcriptDir = resolve(ROOT, 'artifacts/transcripts');
 const transcriptAaiDir = resolve(ROOT, 'artifacts/transcripts-aai');
 function hasTranscript(videoId) {
   if (!videoId) return false;
-  // Only use AssemblyAI transcripts (YouTube auto-captions are too poor)
   return existsSync(resolve(transcriptAaiDir, `${videoId}.json`));
 }
 
 function getDurationFromTranscript(videoId) {
   if (!videoId) return null;
-  // Try AssemblyAI transcript first (has audio_duration field)
   const aaiPath = resolve(transcriptAaiDir, `${videoId}.json`);
-  if (existsSync(aaiPath)) {
-    try {
-      const aai = JSON.parse(readFileSync(aaiPath, 'utf-8'));
-      const totalSeconds = Math.round(aai.audio_duration || 0);
-      if (totalSeconds > 0) {
-        const hours = Math.floor(totalSeconds / 3600);
-        const minutes = Math.floor((totalSeconds % 3600) / 60);
-        if (hours > 0) return { seconds: totalSeconds, display: `${hours}h ${minutes}m` };
-        return { seconds: totalSeconds, display: `${minutes}m` };
-      }
-    } catch {}
-  }
-  // Fall back to SRT timestamp parsing
-  const srtPath = resolve(transcriptDir, `${videoId}.en.srt`);
-  if (!existsSync(srtPath)) return null;
-  const content = readFileSync(srtPath, 'utf-8');
-  // Find last timestamp in SRT (format: HH:MM:SS,mmm --> HH:MM:SS,mmm)
-  const timestamps = content.match(/(\d{2}:\d{2}:\d{2}),\d{3}\s*-->/g);
-  if (!timestamps || timestamps.length === 0) return null;
-  const last = timestamps[timestamps.length - 1].match(/(\d{2}):(\d{2}):(\d{2})/);
-  if (!last) return null;
-  const hours = parseInt(last[1]);
-  const minutes = parseInt(last[2]);
-  const seconds = parseInt(last[3]);
-  const totalSeconds = hours * 3600 + minutes * 60 + seconds;
-  // Format as "Xh Ym" or "Ym"
-  if (hours > 0) {
-    return { seconds: totalSeconds, display: `${hours}h ${minutes}m` };
-  }
-  return { seconds: totalSeconds, display: `${minutes}m` };
+  if (!existsSync(aaiPath)) return null;
+  try {
+    const aai = JSON.parse(readFileSync(aaiPath, 'utf-8'));
+    const totalSeconds = Math.round(aai.audio_duration || 0);
+    if (totalSeconds > 0) {
+      const hours = Math.floor(totalSeconds / 3600);
+      const minutes = Math.floor((totalSeconds % 3600) / 60);
+      if (hours > 0) return { seconds: totalSeconds, display: `${hours}h ${minutes}m` };
+      return { seconds: totalSeconds, display: `${minutes}m` };
+    }
+  } catch {}
+  return null;
 }
 
 // ---- Replace Simbli attachments with authoritative agenda PDF data ----
@@ -441,7 +420,8 @@ for (const m of allMeetings) {
   }
 
   // Merge chapter markers (preferred) or timestamp map into items
-  const cm = chapterMarkers[m.date];
+  // Look up by slug first (supports multiple meetings per date), fall back to date
+  const cm = chapterMarkers[m.slug] || chapterMarkers[m.date];
   if (cm && m.items) {
     // Store full chapter markers on the meeting for HTML rendering
     m.chapterMarkers = cm;

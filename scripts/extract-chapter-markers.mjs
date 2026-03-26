@@ -37,6 +37,7 @@ mkdirSync(CACHE_DIR, { recursive: true });
 const args = process.argv.slice(2);
 const force = args.includes('--force');
 const dateFilter = args.includes('--date') ? args[args.indexOf('--date') + 1] : null;
+const slugFilter = args.includes('--slug') ? args[args.indexOf('--slug') + 1] : null;
 
 // ---- Format AAI utterances as compact text ----
 
@@ -393,8 +394,8 @@ async function main() {
   const client = new Anthropic();
   const data = JSON.parse(readFileSync(DATA_PATH, 'utf-8'));
 
-  // Load existing output when filtering by date
-  const chapterMarkers = (dateFilter && existsSync(OUTPUT_PATH))
+  // Load existing output when filtering by date or slug
+  const chapterMarkers = ((dateFilter || slugFilter) && existsSync(OUTPUT_PATH))
     ? JSON.parse(readFileSync(OUTPUT_PATH, 'utf-8'))
     : {};
   let apiCalls = 0;
@@ -404,19 +405,25 @@ async function main() {
 
   for (const meeting of data.meetings) {
     if (dateFilter && meeting.date !== dateFilter) continue;
+    if (slugFilter && meeting.slug !== slugFilter) continue;
     if (!meeting.youtube) { skipped++; continue; }
     if (!meeting.items || meeting.items.length === 0) { skipped++; continue; }
 
     const aaiPath = resolve(TRANSCRIPT_AAI_DIR, `${meeting.youtube}.json`);
     if (!existsSync(aaiPath)) { skipped++; continue; }
 
-    // Check cache
-    const cacheFile = resolve(CACHE_DIR, `${meeting.date}.json`);
-    if (!force && existsSync(cacheFile)) {
+    // Use slug as the key to support multiple meetings on the same date
+    const markerKey = meeting.slug;
+
+    // Check cache (support both new slug-based and legacy date-based cache files)
+    const cacheFile = resolve(CACHE_DIR, `${markerKey}.json`);
+    const legacyCacheFile = resolve(CACHE_DIR, `${meeting.date}.json`);
+    const activeCacheFile = existsSync(cacheFile) ? cacheFile : (existsSync(legacyCacheFile) ? legacyCacheFile : null);
+    if (!force && activeCacheFile) {
       try {
-        const cacheData = JSON.parse(readFileSync(cacheFile, 'utf-8'));
+        const cacheData = JSON.parse(readFileSync(activeCacheFile, 'utf-8'));
         if (cacheData.result && cacheData.itemCount === meeting.items.length) {
-          chapterMarkers[meeting.date] = cacheData.result;
+          chapterMarkers[markerKey] = cacheData.result;
           cached++;
           continue;
         }
@@ -433,7 +440,7 @@ async function main() {
     // Load full formal agenda
     const formalAgenda = loadFormalAgenda(meeting.date);
 
-    console.log(`${meeting.date} (${formalAgenda ? formalAgenda.length : meeting.items.length} agenda items, ${aai.utterances.length} utterances, ${Math.round(compactTranscript.length / 1000)}K chars${minutesText ? ', +minutes' : ''}${formalAgenda ? ', formal agenda' : ''})...`);
+    console.log(`${markerKey} (${formalAgenda ? formalAgenda.length : meeting.items.length} agenda items, ${aai.utterances.length} utterances, ${Math.round(compactTranscript.length / 1000)}K chars${minutesText ? ', +minutes' : ''}${formalAgenda ? ', formal agenda' : ''})...`);
 
     const prompt = buildPrompt(meeting, compactTranscript, minutesText, formalAgenda);
 
@@ -498,11 +505,13 @@ async function main() {
         items: llmResult.items || [],
       };
 
-      chapterMarkers[meeting.date] = result;
+      chapterMarkers[markerKey] = result;
 
-      // Cache
-      writeFileSync(cacheFile, JSON.stringify({
+      // Cache using slug-based filename
+      const newCacheFile = resolve(CACHE_DIR, `${markerKey}.json`);
+      writeFileSync(newCacheFile, JSON.stringify({
         date: meeting.date,
+        slug: markerKey,
         itemCount: meeting.items.length,
         llmResponse: llmResult,
         result,

@@ -52,8 +52,8 @@ for (const m of data.meetings) {
   const aai = JSON.parse(readFileSync(aaiPath, 'utf-8'));
   if (!aai.utterances || aai.utterances.length === 0) continue;
 
-  // Build speaker map from chapter markers
-  const cm = chapterMarkers[m.date];
+  // Build speaker map from chapter markers (slug-keyed, with date fallback)
+  const cm = chapterMarkers[m.slug] || chapterMarkers[m.date];
   const speakers = cm?.speakers || {};
 
   const slim = {

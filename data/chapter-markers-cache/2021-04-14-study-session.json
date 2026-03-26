@@ -1,0 +1,321 @@
+{
+  "date": "2021-04-14",
+  "slug": "2021-04-14-study-session",
+  "itemCount": 14,
+  "llmResponse": {
+    "speakers": {
+      "A": {
+        "name": "Alisa MacAvoy",
+        "role": "Board President"
+      },
+      "B": {
+        "name": "Kyle (staff/clerk reading roll)",
+        "role": "Staff/Clerk conducting roll call and procedural support"
+      },
+      "C": {
+        "name": "María Díaz-Slocum",
+        "role": "Board Clerk"
+      },
+      "D": {
+        "name": "Janet Lawson",
+        "role": "Board Vice President (per ASR confusion — actually Vice President per agenda context)"
+      },
+      "E": {
+        "name": "Mike Wells",
+        "role": "Trustee"
+      },
+      "F": {
+        "name": "Janet Lawson",
+        "role": "Board Member (Trustee/Clerk per agenda — ASR label overlap with D)"
+      },
+      "G": {
+        "name": "Maria Stockton",
+        "role": "Public commenter / classified employee"
+      },
+      "H": {
+        "name": "Dr. Baker",
+        "role": "Superintendent"
+      },
+      "I": {
+        "name": "Cecilia I. Márquez",
+        "role": "Trustee"
+      },
+      "J": {
+        "name": "Kyle (AV/tech support)",
+        "role": "Technical support staff / also Nathan Edelman context"
+      }
+    },
+    "agendaChanges": "Two changes made to agenda: (1) Item 16.1 (Financial Audit Report) moved earlier, to be heard after bond program action items (after item 11, before discussion items at item 12); (2) A closed session continuation added after item 19 (adjournment), to be held at the end of the meeting. These changes were approved by roll-call vote.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order / Roll Call",
+        "phases": {
+          "opened": 0,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Welcome by the School Board President",
+        "phases": {
+          "opened": 19,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 243,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 243,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 303,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 336,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 351,
+          "presentation": null,
+          "publicComment": 451,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Maria Stockton",
+            "startSeconds": 451,
+            "endSeconds": 648,
+            "summary": "Spoke on behalf of classified employees, asking the board to more openly recognize and acknowledge the exhausting essential work classified staff have done during the pandemic, and expressing that a simple 'thank you' is insufficient without meaningful compensation or recognition comparable to what teachers have received."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Update on Workforce Housing at 750 Bradford Street",
+        "phases": {
+          "opened": 7681,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Adjourn the Meeting",
+        "phases": {
+          "opened": 8302,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "result": {
+    "videoId": "vpbKJKWTv8k",
+    "speakers": {
+      "A": {
+        "name": "Alisa MacAvoy",
+        "role": "Board President"
+      },
+      "B": {
+        "name": "Kyle (staff/clerk reading roll)",
+        "role": "Staff/Clerk conducting roll call and procedural support"
+      },
+      "C": {
+        "name": "María Díaz-Slocum",
+        "role": "Board Clerk"
+      },
+      "D": {
+        "name": "Janet Lawson",
+        "role": "Board Vice President (per ASR confusion — actually Vice President per agenda context)"
+      },
+      "E": {
+        "name": "Mike Wells",
+        "role": "Trustee"
+      },
+      "F": {
+        "name": "Janet Lawson",
+        "role": "Board Member (Trustee/Clerk per agenda — ASR label overlap with D)"
+      },
+      "G": {
+        "name": "Maria Stockton",
+        "role": "Public commenter / classified employee"
+      },
+      "H": {
+        "name": "Dr. Baker",
+        "role": "Superintendent"
+      },
+      "I": {
+        "name": "Cecilia I. Márquez",
+        "role": "Trustee"
+      },
+      "J": {
+        "name": "Kyle (AV/tech support)",
+        "role": "Technical support staff / also Nathan Edelman context"
+      }
+    },
+    "agendaChanges": "Two changes made to agenda: (1) Item 16.1 (Financial Audit Report) moved earlier, to be heard after bond program action items (after item 11, before discussion items at item 12); (2) A closed session continuation added after item 19 (adjournment), to be held at the end of the meeting. These changes were approved by roll-call vote.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order / Roll Call",
+        "phases": {
+          "opened": 0,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Welcome by the School Board President",
+        "phases": {
+          "opened": 19,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 243,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 243,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 303,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 336,
+            "type": "roll-call",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 351,
+          "presentation": null,
+          "publicComment": 451,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Maria Stockton",
+            "startSeconds": 451,
+            "endSeconds": 648,
+            "summary": "Spoke on behalf of classified employees, asking the board to more openly recognize and acknowledge the exhausting essential work classified staff have done during the pandemic, and expressing that a simple 'thank you' is insufficient without meaningful compensation or recognition comparable to what teachers have received."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Update on Workforce Housing at 750 Bradford Street",
+        "phases": {
+          "opened": 7681,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Adjourn the Meeting",
+        "phases": {
+          "opened": 8302,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "cachedAt": "2026-03-26T22:21:41.203Z",
+  "inputTokens": 29017,
+  "outputTokens": 1202
+}

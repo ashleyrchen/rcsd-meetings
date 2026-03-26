@@ -1,0 +1,1003 @@
+{
+  "date": "2022-01-12",
+  "slug": "2022-01-12-board-meeting",
+  "itemCount": 46,
+  "llmResponse": {
+    "speakers": {
+      "A": {
+        "name": "María Díaz-Slocum",
+        "role": "Board President"
+      },
+      "B": {
+        "name": "John Baker",
+        "role": "Superintendent"
+      },
+      "C": {
+        "name": "Alisa MacAvoy",
+        "role": "Board Member (Trustee/President per roster, but acting as trustee here)"
+      },
+      "D": {
+        "name": "Eliana (staff)",
+        "role": "Staff (Roll Call / Meeting Support)"
+      },
+      "E": {
+        "name": "Mike Wells",
+        "role": "Trustee"
+      },
+      "F": {
+        "name": "Cecilia I. Márquez",
+        "role": "Clerk"
+      },
+      "G": {
+        "name": "Janet Lawson",
+        "role": "Trustee"
+      }
+    },
+    "agendaChanges": "Action items 10.5 (Measure U Addendum - McKinley), 10.6 (Measure U Addendum - Taft), and 10.7 (Measure U Addendum - Clifford) were moved to consent. Action items 10.3 (Approval of Personnel Changes) and 10.4 (Approval of Personnel Report) were also moved to consent. Oral Communication (Section 5) public speakers were deferred to agenda item 8.1 (COVID-19 Update). Items were otherwise heard in agenda order.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order / Roll Call",
+        "phases": {
+          "opened": 0,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Welcome by the School Board President",
+        "phases": {
+          "opened": 66,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 108,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 159,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 161,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 173,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Bond Program Consent Items",
+        "phases": {
+          "opened": 184,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 245,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7.1",
+        "title": "Adoption of Resolution 20 - Orion Alternative School Bid Package E Foothill Air Conditioning Change Order #1",
+        "phases": {
+          "opened": 245,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 272,
+          "vote": {
+            "seconds": 282,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7.2",
+        "title": "Adoption of Resolution 21 - Garfield Community School Bid Package H O.C. McDonald Change Order #2",
+        "phases": {
+          "opened": 289,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 310,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.1",
+        "title": "Covid-19 Update for January 2022",
+        "phases": {
+          "opened": 322,
+          "presentation": 334,
+          "publicComment": 1922,
+          "discussion": 1455,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Pam Barrage",
+            "startSeconds": 1947,
+            "endSeconds": 2116,
+            "summary": "Expressed concern that staff were not receiving adequate KN95/N95 masks and requested that teachers receive five masks per week through the end of the surge at minimum, without having to pay out of pocket."
+          },
+          {
+            "name": "Ayla Spinelli Stanc",
+            "startSeconds": 2231,
+            "endSeconds": 2361,
+            "summary": "Asked about expediting the volunteer clearance process so that Healthy Cities tutors could be matched with students more quickly, and offered to help with volunteer paperwork."
+          },
+          {
+            "name": "Rebecca Fouch",
+            "startSeconds": 2443,
+            "endSeconds": 2613,
+            "summary": "Asked whether a student whose day-five isolation end date falls on a Monday could use a home test result to return to school, and what the protocol is for school-administered testing for positive students."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.2",
+        "title": "First Reading and Discussion of Board Policy 1240 – Volunteer Assistance",
+        "phases": {
+          "opened": 3057,
+          "presentation": 3057,
+          "publicComment": null,
+          "discussion": 3121,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.3",
+        "title": "First Reading and Discussion of Board Policy 3555 - Nutrition Program Compliance",
+        "phases": {
+          "opened": 3214,
+          "presentation": 3234,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.4",
+        "title": "First Reading and Discussion of Board Policy 0460 – Local Control and Accountability Plan",
+        "phases": {
+          "opened": 3268,
+          "presentation": 3276,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.5",
+        "title": "First Reading and Discussion of Board Policy 5141.31 - Immunizations",
+        "phases": {
+          "opened": 3307,
+          "presentation": 3316,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9",
+        "title": "Consent Items (including pulled action items 10.3, 10.4, 10.5, 10.6, 10.7)",
+        "phases": {
+          "opened": 3365,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3393,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.1",
+        "title": "Revisiting the School Board's March 11, 2020 Vote on Interdistrict Transfers",
+        "phases": {
+          "opened": 3399,
+          "presentation": 3407,
+          "publicComment": 3819,
+          "discussion": 3885,
+          "vote": {
+            "seconds": 5062,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [
+          {
+            "name": "Jen Parsons",
+            "startSeconds": 3835,
+            "endSeconds": 3872,
+            "summary": "Read by staff: Expressed support for grandfathering Mandarin Immersion program siblings because families had been encouraged to join the program and honoring that commitment builds trust with the school community."
+          },
+          {
+            "name": "Lily Milton",
+            "startSeconds": 4983,
+            "endSeconds": 5055,
+            "summary": "As co-PTO president at Orion, expressed support for retaining the Mandarin Immersion program siblings, citing the difficulty of recovering from family attrition and emphasizing a community-first approach."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.2",
+        "title": "Adoption of Resolution 22, Authorizing Electronic Meetings of the Board of Trustees During a State of Emergency",
+        "phases": {
+          "opened": 5084,
+          "presentation": 5116,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 5246,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.3",
+        "title": "Approval of Personnel Changes for 2021-22",
+        "phases": {
+          "opened": 3365,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3393,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.4",
+        "title": "Approval of Personnel Report",
+        "phases": {
+          "opened": 3365,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3393,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.5",
+        "title": "Approval of Addendum to 2021-22 Measure U Application for McKinley Institute of Technology",
+        "phases": {
+          "opened": 3365,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3393,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.6",
+        "title": "Approval of Addendum to 2021-22 Measure U Application for Taft Community School",
+        "phases": {
+          "opened": 3365,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3393,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.7",
+        "title": "Approval of Addendum to 2021-22 Measure U Application for Clifford School",
+        "phases": {
+          "opened": 3365,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3393,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "Report from Board Members and Superintendent",
+        "phases": {
+          "opened": 5267,
+          "presentation": 5274,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12",
+        "title": "Quarterly Williams Report, 2nd Quarter, October 2021 through December 2021",
+        "phases": {
+          "opened": 5839,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 5854,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14",
+        "title": "Possible Other Business/Suggested Items for Future Agenda",
+        "phases": {
+          "opened": 5882,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Changes to the Board Agenda Schedule",
+        "phases": {
+          "opened": 5887,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 5893,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 5912,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "result": {
+    "videoId": "tTOQWrbPAjM",
+    "speakers": {
+      "A": {
+        "name": "María Díaz-Slocum",
+        "role": "Board President"
+      },
+      "B": {
+        "name": "John Baker",
+        "role": "Superintendent"
+      },
+      "C": {
+        "name": "Alisa MacAvoy",
+        "role": "Board Member (Trustee/President per roster, but acting as trustee here)"
+      },
+      "D": {
+        "name": "Eliana (staff)",
+        "role": "Staff (Roll Call / Meeting Support)"
+      },
+      "E": {
+        "name": "Mike Wells",
+        "role": "Trustee"
+      },
+      "F": {
+        "name": "Cecilia I. Márquez",
+        "role": "Clerk"
+      },
+      "G": {
+        "name": "Janet Lawson",
+        "role": "Trustee"
+      }
+    },
+    "agendaChanges": "Action items 10.5 (Measure U Addendum - McKinley), 10.6 (Measure U Addendum - Taft), and 10.7 (Measure U Addendum - Clifford) were moved to consent. Action items 10.3 (Approval of Personnel Changes) and 10.4 (Approval of Personnel Report) were also moved to consent. Oral Communication (Section 5) public speakers were deferred to agenda item 8.1 (COVID-19 Update). Items were otherwise heard in agenda order.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order / Roll Call",
+        "phases": {
+          "opened": 0,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Welcome by the School Board President",
+        "phases": {
+          "opened": 66,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 108,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 159,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 161,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 173,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Bond Program Consent Items",
+        "phases": {
+          "opened": 184,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 245,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7.1",
+        "title": "Adoption of Resolution 20 - Orion Alternative School Bid Package E Foothill Air Conditioning Change Order #1",
+        "phases": {
+          "opened": 245,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 272,
+          "vote": {
+            "seconds": 282,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7.2",
+        "title": "Adoption of Resolution 21 - Garfield Community School Bid Package H O.C. McDonald Change Order #2",
+        "phases": {
+          "opened": 289,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 310,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.1",
+        "title": "Covid-19 Update for January 2022",
+        "phases": {
+          "opened": 322,
+          "presentation": 334,
+          "publicComment": 1922,
+          "discussion": 1455,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Pam Barrage",
+            "startSeconds": 1947,
+            "endSeconds": 2116,
+            "summary": "Expressed concern that staff were not receiving adequate KN95/N95 masks and requested that teachers receive five masks per week through the end of the surge at minimum, without having to pay out of pocket."
+          },
+          {
+            "name": "Ayla Spinelli Stanc",
+            "startSeconds": 2231,
+            "endSeconds": 2361,
+            "summary": "Asked about expediting the volunteer clearance process so that Healthy Cities tutors could be matched with students more quickly, and offered to help with volunteer paperwork."
+          },
+          {
+            "name": "Rebecca Fouch",
+            "startSeconds": 2443,
+            "endSeconds": 2613,
+            "summary": "Asked whether a student whose day-five isolation end date falls on a Monday could use a home test result to return to school, and what the protocol is for school-administered testing for positive students."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.2",
+        "title": "First Reading and Discussion of Board Policy 1240 – Volunteer Assistance",
+        "phases": {
+          "opened": 3057,
+          "presentation": 3057,
+          "publicComment": null,
+          "discussion": 3121,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.3",
+        "title": "First Reading and Discussion of Board Policy 3555 - Nutrition Program Compliance",
+        "phases": {
+          "opened": 3214,
+          "presentation": 3234,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.4",
+        "title": "First Reading and Discussion of Board Policy 0460 – Local Control and Accountability Plan",
+        "phases": {
+          "opened": 3268,
+          "presentation": 3276,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.5",
+        "title": "First Reading and Discussion of Board Policy 5141.31 - Immunizations",
+        "phases": {
+          "opened": 3307,
+          "presentation": 3316,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9",
+        "title": "Consent Items (including pulled action items 10.3, 10.4, 10.5, 10.6, 10.7)",
+        "phases": {
+          "opened": 3365,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3393,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.1",
+        "title": "Revisiting the School Board's March 11, 2020 Vote on Interdistrict Transfers",
+        "phases": {
+          "opened": 3399,
+          "presentation": 3407,
+          "publicComment": 3819,
+          "discussion": 3885,
+          "vote": {
+            "seconds": 5062,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [
+          {
+            "name": "Jen Parsons",
+            "startSeconds": 3835,
+            "endSeconds": 3872,
+            "summary": "Read by staff: Expressed support for grandfathering Mandarin Immersion program siblings because families had been encouraged to join the program and honoring that commitment builds trust with the school community."
+          },
+          {
+            "name": "Lily Milton",
+            "startSeconds": 4983,
+            "endSeconds": 5055,
+            "summary": "As co-PTO president at Orion, expressed support for retaining the Mandarin Immersion program siblings, citing the difficulty of recovering from family attrition and emphasizing a community-first approach."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.2",
+        "title": "Adoption of Resolution 22, Authorizing Electronic Meetings of the Board of Trustees During a State of Emergency",
+        "phases": {
+          "opened": 5084,
+          "presentation": 5116,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 5246,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.3",
+        "title": "Approval of Personnel Changes for 2021-22",
+        "phases": {
+          "opened": 3365,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3393,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.4",
+        "title": "Approval of Personnel Report",
+        "phases": {
+          "opened": 3365,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3393,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.5",
+        "title": "Approval of Addendum to 2021-22 Measure U Application for McKinley Institute of Technology",
+        "phases": {
+          "opened": 3365,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3393,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.6",
+        "title": "Approval of Addendum to 2021-22 Measure U Application for Taft Community School",
+        "phases": {
+          "opened": 3365,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3393,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.7",
+        "title": "Approval of Addendum to 2021-22 Measure U Application for Clifford School",
+        "phases": {
+          "opened": 3365,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3393,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "Report from Board Members and Superintendent",
+        "phases": {
+          "opened": 5267,
+          "presentation": 5274,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12",
+        "title": "Quarterly Williams Report, 2nd Quarter, October 2021 through December 2021",
+        "phases": {
+          "opened": 5839,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 5854,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14",
+        "title": "Possible Other Business/Suggested Items for Future Agenda",
+        "phases": {
+          "opened": 5882,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Changes to the Board Agenda Schedule",
+        "phases": {
+          "opened": 5887,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 5893,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 5912,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "cachedAt": "2026-03-26T22:20:42.365Z",
+  "inputTokens": 22855,
+  "outputTokens": 3870
+}

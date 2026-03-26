@@ -1,0 +1,679 @@
+{
+  "date": "2023-03-22",
+  "slug": "2023-03-22-board-meeting",
+  "itemCount": 47,
+  "llmResponse": {
+    "speakers": {
+      "A": {
+        "name": "Janet Lawson",
+        "role": "Clerk / Trustee"
+      },
+      "B": {
+        "name": "Cecilia I. Márquez",
+        "role": "President (acting as presiding officer)"
+      },
+      "C": {
+        "name": "Alisa MacAvoy",
+        "role": "Trustee"
+      },
+      "D": {
+        "name": "María Díaz-Slocum",
+        "role": "Vice President"
+      },
+      "E": {
+        "name": "Mike Wells",
+        "role": "Trustee"
+      },
+      "F": {
+        "name": "Dr. Baker (Superintendent)",
+        "role": "Superintendent"
+      }
+    },
+    "agendaChanges": "The agenda lists Section 2 Welcome as being delivered by Cecilia Márquez, who is listed as Vice President, but in the transcript she presides as President. Roll call and Welcome/Section 2 items were combined at the opening. Section 7 (Bond Program Action Items) had no items and was skipped. The discussion items (Section 9) were taken up after Section 8 without any intervening Section 7 action. Board and Superintendent Reports (Section 12) occurred after the action items (Section 11). Sections 13–17 followed in order. No items were pulled from either consent calendar.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order / Roll Call",
+        "phases": {
+          "opened": 5,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Welcome by the School Board President",
+        "phases": {
+          "opened": 19,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 88,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 92,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 102,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 102,
+          "presentation": null,
+          "publicComment": 102,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Approval of Bond Program Consent Items",
+        "phases": {
+          "opened": 113,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 134,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Bond Program Action Items",
+        "phases": {
+          "opened": 138,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.1",
+        "title": "Discussion of School Plan for Student Achievement (SPSA): Roy Cloud School and North Star Academy",
+        "phases": {
+          "opened": 138,
+          "presentation": 157,
+          "publicComment": null,
+          "discussion": 1622,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.1",
+        "title": "First Reading and Discussion of Board Policy 0460 - Local Control Accountability Plan",
+        "phases": {
+          "opened": 5929,
+          "presentation": 5945,
+          "publicComment": null,
+          "discussion": 5980,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.2",
+        "title": "First Reading and Discussion of Board Bylaw 9220 - Governing Board Elections",
+        "phases": {
+          "opened": 6082,
+          "presentation": 6099,
+          "publicComment": null,
+          "discussion": 6134,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.3",
+        "title": "First Reading and Discussion of Board Bylaw 9323 - Meeting Conduct",
+        "phases": {
+          "opened": 6139,
+          "presentation": 6148,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "Approval of Consent Items",
+        "phases": {
+          "opened": 6169,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6182,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11.1",
+        "title": "Adoption of Resolution 31 - Establishing Fund 35, County School Facilities Fund",
+        "phases": {
+          "opened": 6186,
+          "presentation": 6196,
+          "publicComment": null,
+          "discussion": 6309,
+          "vote": {
+            "seconds": 6326,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11.2",
+        "title": "Approval of the RCSD 2022-23 Second Interim Financial Report",
+        "phases": {
+          "opened": 6328,
+          "presentation": 6363,
+          "publicComment": null,
+          "discussion": 7428,
+          "vote": {
+            "seconds": 7656,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12",
+        "title": "Report from Board Members and Superintendent",
+        "phases": {
+          "opened": 7661,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 7671,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "Information on San Mateo County Investment Fund - January, 2023",
+        "phases": {
+          "opened": 8151,
+          "presentation": 8162,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 8169,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Possible Other Business/Suggested Items for Future Agenda",
+        "phases": {
+          "opened": 8188,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 8188,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16",
+        "title": "Changes to the Board Meetings Calendar",
+        "phases": {
+          "opened": 8226,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 8229,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "17",
+        "title": "Adjourn the Meeting",
+        "phases": {
+          "opened": 8309,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 8342,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "result": {
+    "videoId": "TYxODeND3Dw",
+    "speakers": {
+      "A": {
+        "name": "Janet Lawson",
+        "role": "Clerk / Trustee"
+      },
+      "B": {
+        "name": "Cecilia I. Márquez",
+        "role": "President (acting as presiding officer)"
+      },
+      "C": {
+        "name": "Alisa MacAvoy",
+        "role": "Trustee"
+      },
+      "D": {
+        "name": "María Díaz-Slocum",
+        "role": "Vice President"
+      },
+      "E": {
+        "name": "Mike Wells",
+        "role": "Trustee"
+      },
+      "F": {
+        "name": "Dr. Baker (Superintendent)",
+        "role": "Superintendent"
+      }
+    },
+    "agendaChanges": "The agenda lists Section 2 Welcome as being delivered by Cecilia Márquez, who is listed as Vice President, but in the transcript she presides as President. Roll call and Welcome/Section 2 items were combined at the opening. Section 7 (Bond Program Action Items) had no items and was skipped. The discussion items (Section 9) were taken up after Section 8 without any intervening Section 7 action. Board and Superintendent Reports (Section 12) occurred after the action items (Section 11). Sections 13–17 followed in order. No items were pulled from either consent calendar.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order / Roll Call",
+        "phases": {
+          "opened": 5,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Welcome by the School Board President",
+        "phases": {
+          "opened": 19,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 88,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Approval of Agenda",
+        "phases": {
+          "opened": 92,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 102,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Oral Communication",
+        "phases": {
+          "opened": 102,
+          "presentation": null,
+          "publicComment": 102,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Approval of Bond Program Consent Items",
+        "phases": {
+          "opened": 113,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 134,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Bond Program Action Items",
+        "phases": {
+          "opened": 138,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.1",
+        "title": "Discussion of School Plan for Student Achievement (SPSA): Roy Cloud School and North Star Academy",
+        "phases": {
+          "opened": 138,
+          "presentation": 157,
+          "publicComment": null,
+          "discussion": 1622,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.1",
+        "title": "First Reading and Discussion of Board Policy 0460 - Local Control Accountability Plan",
+        "phases": {
+          "opened": 5929,
+          "presentation": 5945,
+          "publicComment": null,
+          "discussion": 5980,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.2",
+        "title": "First Reading and Discussion of Board Bylaw 9220 - Governing Board Elections",
+        "phases": {
+          "opened": 6082,
+          "presentation": 6099,
+          "publicComment": null,
+          "discussion": 6134,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.3",
+        "title": "First Reading and Discussion of Board Bylaw 9323 - Meeting Conduct",
+        "phases": {
+          "opened": 6139,
+          "presentation": 6148,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "Approval of Consent Items",
+        "phases": {
+          "opened": 6169,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 6182,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11.1",
+        "title": "Adoption of Resolution 31 - Establishing Fund 35, County School Facilities Fund",
+        "phases": {
+          "opened": 6186,
+          "presentation": 6196,
+          "publicComment": null,
+          "discussion": 6309,
+          "vote": {
+            "seconds": 6326,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11.2",
+        "title": "Approval of the RCSD 2022-23 Second Interim Financial Report",
+        "phases": {
+          "opened": 6328,
+          "presentation": 6363,
+          "publicComment": null,
+          "discussion": 7428,
+          "vote": {
+            "seconds": 7656,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12",
+        "title": "Report from Board Members and Superintendent",
+        "phases": {
+          "opened": 7661,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 7671,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "Information on San Mateo County Investment Fund - January, 2023",
+        "phases": {
+          "opened": 8151,
+          "presentation": 8162,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 8169,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Possible Other Business/Suggested Items for Future Agenda",
+        "phases": {
+          "opened": 8188,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 8188,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16",
+        "title": "Changes to the Board Meetings Calendar",
+        "phases": {
+          "opened": 8226,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 8229,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "17",
+        "title": "Adjourn the Meeting",
+        "phases": {
+          "opened": 8309,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 8342,
+            "type": "voice",
+            "result": "approved"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "cachedAt": "2026-03-26T22:19:56.582Z",
+  "inputTokens": 32626,
+  "outputTokens": 2466
+}
