@@ -2,9 +2,9 @@
 /**
  * Map agenda items to transcript timestamps using Claude Haiku.
  *
- * For each meeting with a transcript, sends the compact transcript text +
- * agenda items + approved minutes to Haiku, which returns the exact word
- * sequences marking each agenda item's start. We then search the SRT for
+ * For each meeting with an AssemblyAI transcript, sends the compact transcript
+ * text + agenda items + approved minutes to Haiku, which returns the exact word
+ * sequences marking each agenda item's start. We then search the transcript for
  * those sequences to get precise timestamps.
  *
  * Results are cached per meeting in data/llm-timestamp-cache/
@@ -25,7 +25,7 @@ import { execFileSync } from 'child_process';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
 const CACHE_DIR = resolve(ROOT, 'data/llm-timestamp-cache');
-const TRANSCRIPT_DIR = resolve(ROOT, 'artifacts/transcripts');
+const TRANSCRIPT_AAI_DIR = resolve(ROOT, 'artifacts/transcripts-aai');
 const MINUTES_DIR = resolve(ROOT, 'artifacts/minutes');
 const DATA_PATH = resolve(ROOT, 'data/meetings-data.json');
 const OUTPUT_PATH = resolve(ROOT, 'data/timestamp-map.json');
@@ -36,32 +36,35 @@ const args = process.argv.slice(2);
 const force = args.includes('--force');
 const dateFilter = args.includes('--date') ? args[args.indexOf('--date') + 1] : null;
 
-// ---- Parse SRT ----
+// ---- Parse AssemblyAI transcript JSON into blocks ----
 
-function parseSRT(content) {
+function parseAAI(aaiJson) {
+  // Group words into ~5-second blocks for compatibility with search functions
   const blocks = [];
-  for (const entry of content.split(/\n\n+/)) {
-    const lines = entry.trim().split('\n');
-    if (lines.length < 3) continue;
-    const tm = lines[1].match(/(\d{2}):(\d{2}):(\d{2})[,.](\d{3})/);
-    if (!tm) continue;
-    const seconds = parseInt(tm[1]) * 3600 + parseInt(tm[2]) * 60 + parseInt(tm[3]);
-    const text = lines.slice(2).join(' ').replace(/<[^>]+>/g, '').trim();
-    if (text) blocks.push({ seconds, text });
+  const words = aaiJson.words || [];
+  if (words.length === 0) return blocks;
+
+  let blockStart = Math.floor(words[0].start / 1000);
+  let blockText = '';
+
+  for (const w of words) {
+    const sec = Math.floor(w.start / 1000);
+    // Start a new block every ~5 seconds
+    if (sec - blockStart >= 5 && blockText) {
+      blocks.push({ seconds: blockStart, text: blockText.trim() });
+      blockStart = sec;
+      blockText = '';
+    }
+    blockText += w.text + ' ';
+  }
+  if (blockText.trim()) {
+    blocks.push({ seconds: blockStart, text: blockText.trim() });
   }
   return blocks;
 }
 
-function srtToCompactText(blocks) {
-  let text = '';
-  let last = '';
-  for (const b of blocks) {
-    if (b.text !== last) {
-      text += b.text + ' ';
-      last = b.text;
-    }
-  }
-  return text;
+function blocksToCompactText(blocks) {
+  return blocks.map(b => b.text).join(' ');
 }
 
 function formatTimestamp(seconds) {
@@ -90,9 +93,9 @@ function extractMinutesText(date) {
   }
 }
 
-// ---- Search SRT for word sequence ----
+// ---- Search transcript blocks for word sequence ----
 
-function findWordsInSRT(blocks, phrase, afterSeconds = 0) {
+function findWordsInBlocks(blocks, phrase, afterSeconds = 0) {
   if (!phrase || phrase.toLowerCase().includes('not found') || phrase.toLowerCase().includes('part of consent')) {
     return null;
   }
@@ -187,8 +190,8 @@ async function main() {
     if (!meeting.youtube) { skipped++; continue; }
     if (!meeting.items || meeting.items.length === 0) { skipped++; continue; }
 
-    const srtPath = resolve(TRANSCRIPT_DIR, `${meeting.youtube}.en.srt`);
-    if (!existsSync(srtPath)) { skipped++; continue; }
+    const aaiPath = resolve(TRANSCRIPT_AAI_DIR, `${meeting.youtube}.json`);
+    if (!existsSync(aaiPath)) { skipped++; continue; }
 
     // Check cache
     const cacheFile = resolve(CACHE_DIR, `${meeting.date}.json`);
@@ -204,9 +207,9 @@ async function main() {
     }
 
     // Parse transcript
-    const srtContent = readFileSync(srtPath, 'utf-8');
-    const blocks = parseSRT(srtContent);
-    const transcriptText = srtToCompactText(blocks);
+    const aaiContent = JSON.parse(readFileSync(aaiPath, 'utf-8'));
+    const blocks = parseAAI(aaiContent);
+    const transcriptText = blocksToCompactText(blocks);
     if (blocks.length === 0) { skipped++; continue; }
 
     // Extract minutes if available
@@ -249,7 +252,7 @@ async function main() {
         const llmItem = llmResult.items?.find(it => it.item === i + 1);
         if (!llmItem || llmItem.status === 'consent_bundle' || llmItem.status === 'pulled') continue;
 
-        const seconds = findWordsInSRT(blocks, llmItem.intro_words, lastTimestamp > 0 ? lastTimestamp - 120 : 0);
+        const seconds = findWordsInBlocks(blocks, llmItem.intro_words, lastTimestamp > 0 ? lastTimestamp - 120 : 0);
         if (seconds != null && seconds >= lastTimestamp - 120) {
           lastTimestamp = seconds;
           itemTimestamps[i] = {
@@ -273,7 +276,7 @@ async function main() {
       let consentSeconds = null;
       if (llmResult.consent_vote_words) {
         const afterSecs = Math.max(preConsentSecs - 60, 0);
-        consentSeconds = findWordsInSRT(blocks, llmResult.consent_vote_words, afterSecs);
+        consentSeconds = findWordsInBlocks(blocks, llmResult.consent_vote_words, afterSecs);
       }
 
       for (let i = 0; i < meeting.items.length; i++) {

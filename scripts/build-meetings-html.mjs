@@ -41,7 +41,6 @@ if (existsSync(agendaTitlesEsPath)) {
 // Build lookup of available R2 artifacts from local artifacts/ directory
 const agendaFiles = new Set();
 const minutesFiles = new Set();
-const transcriptFiles = new Set();
 
 try {
   for (const f of readdirSync(resolve(ROOT, 'artifacts/agendas'))) {
@@ -53,12 +52,6 @@ try {
     if (f.endsWith('.pdf')) minutesFiles.add(f);
   }
 } catch {}
-try {
-  for (const f of readdirSync(resolve(ROOT, 'artifacts/transcripts'))) {
-    if (f.endsWith('.srt')) transcriptFiles.add(f);
-  }
-} catch {}
-
 // Build AID → R2 path lookup from board-memo JSON files
 // Maps attachment AID to "board-packets/{date}/{filename}" for R2-hosted PDFs
 const aidToR2Path = {};
@@ -722,8 +715,6 @@ function renderMeeting(m) {
   const agendaFile = `${m.date}-${slug}.pdf`;
   const hasR2Agenda = agendaFiles.has(agendaFile);
   const minutesFile = minutesFiles.has(`${m.date}-minutes.pdf`) ? `${m.date}-minutes.pdf` : null;
-  const transcriptFile = m.youtube ? `${m.youtube}.en.srt` : null;
-  const hasR2Transcript = transcriptFile && transcriptFiles.has(transcriptFile);
 
   let links = '';
   // Zoom link — hidden by default, shown by client-side JS for upcoming/recent meetings
@@ -757,8 +748,6 @@ function renderMeeting(m) {
   }
   if (m.hasTranscript) {
     links += `<a href="/meetings/${m.date}/" class="meeting-link meeting-link--transcript">&#128221; ${L.transcript}</a>`;
-  } else if (hasR2Transcript) {
-    links += `<a href="${R2_BASE}/transcripts/${transcriptFile}" class="meeting-link meeting-link--transcript" target="_blank" rel="noopener">&#128221; ${L.transcript}</a>`;
   }
   if (m.boarddocs) {
     links += `<a href="${escapeHtml(m.boarddocs)}" class="meeting-link meeting-link--agenda" target="_blank" rel="noopener">&#8599; ${L.agenda}</a>`;

@@ -22,7 +22,7 @@ Every dataset on this site is traceable to its public source. We document the or
 | Pipeline | Methodology | Key Details |
 |----------|-------------|-------------|
 | Meeting transcription | [`data/METHODOLOGY-transcription.md`](data/METHODOLOGY-transcription.md) | AssemblyAI Universal 3 Pro, Opus audio from YouTube, speaker diarization |
-| Meeting aggregation | [Data sources](#data-sources) below | Simbli + BoardDocs APIs, YouTube captions |
+| Meeting aggregation | [Data sources](#data-sources) below | Simbli + BoardDocs APIs |
 | School profiles | `data/schools.json` | CDE enrollment, CAASPP, SARC, IRS 990 PTO filings |
 | Budget data | `data/budget/` | RCSD adopted budget documents, CDE LCFF data |
 
@@ -52,26 +52,25 @@ Scripts run in order. Most can be run independently. All cache aggressively — 
  2. scrape:boarddocs      → data/boarddocs-scraped.json
  3. scrape:simbli         → sources/simbli-*.md
  4. scrape:packets        → data/board-memos/*.json + artifacts/board-packets/
- 5. download:transcripts  → artifacts/transcripts/*.srt (YouTube auto-captions)
 
  Transcription (AssemblyAI)
  ──────────────────────────
- 6. transcribe            → artifacts/audio/*.webm + artifacts/transcripts-aai/*.json
+ 5. transcribe            → artifacts/audio/*.webm + artifacts/transcripts-aai/*.json
     See: data/METHODOLOGY-transcription.md
 
  Processing
  ──────────
- 7. extract:links         → data/agenda-attachments.json (requires pymupdf)
- 8. map:timestamps:llm    → data/timestamp-map.json (requires ANTHROPIC_API_KEY)
+ 6. extract:links         → data/agenda-attachments.json (requires pymupdf)
+ 7. map:timestamps:llm    → data/timestamp-map.json (requires ANTHROPIC_API_KEY)
 
  Build
  ─────
- 9.  build:data           → data/meetings-data.json
- 10. build:home           → docs/index.html, sitemap.xml, robots.txt
- 11. build:html           → docs/meetings/index.html
- 12. build:schools        → docs/schools/**/index.html
- 13. build:district       → docs/district/index.html
- 14. build:budget         → docs/district/budget/
+ 8.  build:data           → data/meetings-data.json
+ 9.  build:home           → docs/index.html, sitemap.xml, robots.txt
+ 10. build:html           → docs/meetings/index.html
+ 11. build:schools        → docs/schools/**/index.html
+ 12. build:district       → docs/district/index.html
+ 13. build:budget         → docs/district/budget/
 
  Deploy
  ──────
