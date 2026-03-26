@@ -895,7 +895,7 @@ ${upcoming.map(e => eventRow(e, 'es')).join('\n')}
     <pre>
 RCSD Open Data — structured data for the Redwood City School District
 
-MCP:     <code><a href="https://mcp.rcsd.info/mcp">https://mcp.rcsd.info/mcp</a></code>  (Model Context Protocol — works with Claude, VS Code, Cursor)
+MCP:     <code>https://mcp.rcsd.info/mcp</code>  (Model Context Protocol — works with Claude, VS Code, Cursor)  <a href="/mcp/">Setup instructions &#8599;</a>
 GitHub:  <code><a href="https://github.com/dweekly/rcsd-meetings">https://github.com/dweekly/rcsd-meetings</a></code>
 Website: <code><a href="https://rcsd.info">https://rcsd.info</a></code>
 CDN:     <code><a href="https://data.rcsd.info">https://data.rcsd.info</a></code>
