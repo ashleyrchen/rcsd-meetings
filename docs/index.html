@@ -688,6 +688,10 @@
     margin-top: 0.15rem;
     line-height: 1.35;
   }
+  .event-summary--provisional {
+    font-style: italic;
+    color: var(--text-tertiary, #888);
+  }
   .event--multi {
     background: var(--cream-dark, #f5f0e8);
     border-radius: 4px;
@@ -925,7 +929,7 @@
         <a href="/schools/adelante-selby/" class="school-name-link">Adelante Selby →</a>
         <span class="school-grades">TK-5</span>
       </div>
-      <div class="school-badges"><span class="school-badge school-badge--choice">Choice · Elección</span><span class="school-badge school-badge--community">CS</span></div>
+      <div class="school-badges"><span class="school-badge school-badge--choice">Choice · Elección</span><span class="school-badge school-badge--community" title="Community School · Escuela Comunitaria">🏫 Community</span></div>
       <div class="school-program">Spanish · Español</div>
       <div class="school-details">
         <div class="school-detail">630 students · 42% EL · 63% FRL</div>
@@ -963,7 +967,7 @@
         <a href="/schools/garfield/" class="school-name-link">Garfield →</a>
         <span class="school-grades">K-5</span>
       </div>
-      <div class="school-badges"><span class="school-badge school-badge--neighborhood">Neighborhood · Vecindario</span><span class="school-badge school-badge--community">CS</span></div>
+      <div class="school-badges"><span class="school-badge school-badge--neighborhood">Neighborhood · Vecindario</span><span class="school-badge school-badge--community" title="Community School · Escuela Comunitaria">🏫 Community</span></div>
       
       <div class="school-details">
         <div class="school-detail">260 students · 68% EL · 95% FRL</div>
@@ -982,7 +986,7 @@
         <a href="/schools/henry-ford/" class="school-name-link">Henry Ford →</a>
         <span class="school-grades">TK-5</span>
       </div>
-      <div class="school-badges"><span class="school-badge school-badge--neighborhood">Neighborhood · Vecindario</span><span class="school-badge school-badge--community">CS</span></div>
+      <div class="school-badges"><span class="school-badge school-badge--neighborhood">Neighborhood · Vecindario</span><span class="school-badge school-badge--community" title="Community School · Escuela Comunitaria">🏫 Community</span></div>
       
       <div class="school-details">
         <div class="school-detail">461 students · 36% EL · 63% FRL</div>
@@ -1001,7 +1005,7 @@
         <a href="/schools/hoover/" class="school-name-link">Hoover →</a>
         <span class="school-grades">TK-8</span>
       </div>
-      <div class="school-badges"><span class="school-badge school-badge--neighborhood">Neighborhood · Vecindario</span><span class="school-badge school-badge--community">CS</span></div>
+      <div class="school-badges"><span class="school-badge school-badge--neighborhood">Neighborhood · Vecindario</span><span class="school-badge school-badge--community" title="Community School · Escuela Comunitaria">🏫 Community</span></div>
       
       <div class="school-details">
         <div class="school-detail">659 students · 67% EL · 97% FRL</div>
@@ -1020,7 +1024,7 @@
         <a href="/schools/kennedy/" class="school-name-link">Kennedy →</a>
         <span class="school-grades">6-8</span>
       </div>
-      <div class="school-badges"><span class="school-badge school-badge--neighborhood">Neighborhood · Vecindario</span><span class="school-badge school-badge--community">CS</span></div>
+      <div class="school-badges"><span class="school-badge school-badge--neighborhood">Neighborhood · Vecindario</span><span class="school-badge school-badge--community" title="Community School · Escuela Comunitaria">🏫 Community</span></div>
       
       <div class="school-details">
         <div class="school-detail">788 students · 26% EL · 66% FRL</div>
@@ -1039,7 +1043,7 @@
         <a href="/schools/mckinley-mit/" class="school-name-link">McKinley →</a>
         <span class="school-grades">6-8</span>
       </div>
-      <div class="school-badges"><span class="school-badge school-badge--choice">Choice · Elección</span><span class="school-badge school-badge--community">CS</span></div>
+      <div class="school-badges"><span class="school-badge school-badge--choice">Choice · Elección</span><span class="school-badge school-badge--community" title="Community School · Escuela Comunitaria">🏫 Community</span></div>
       
       <div class="school-details">
         <div class="school-detail">401 students · 46% EL · 93% FRL</div>
@@ -1096,7 +1100,7 @@
         <a href="/schools/roosevelt/" class="school-name-link">Roosevelt →</a>
         <span class="school-grades">TK-5</span>
       </div>
-      <div class="school-badges"><span class="school-badge school-badge--neighborhood">Neighborhood · Vecindario</span><span class="school-badge school-badge--community">CS</span></div>
+      <div class="school-badges"><span class="school-badge school-badge--neighborhood">Neighborhood · Vecindario</span><span class="school-badge school-badge--community" title="Community School · Escuela Comunitaria">🏫 Community</span></div>
       
       <div class="school-details">
         <div class="school-detail">344 students · 43% EL · 70% FRL</div>
@@ -1134,7 +1138,7 @@
         <a href="/schools/taft/" class="school-name-link">Taft →</a>
         <span class="school-grades">TK-5</span>
       </div>
-      <div class="school-badges"><span class="school-badge school-badge--neighborhood">Neighborhood · Vecindario</span><span class="school-badge school-badge--community">CS</span></div>
+      <div class="school-badges"><span class="school-badge school-badge--neighborhood">Neighborhood · Vecindario</span><span class="school-badge school-badge--community" title="Community School · Escuela Comunitaria">🏫 Community</span></div>
       
       <div class="school-details">
         <div class="school-detail">325 students · 66% EL · 90% FRL</div>
@@ -1160,13 +1164,8 @@
     <div class="bi-en events-col">
 
         <div class="event-row event--board-meeting">
-          <span class="event-date-inline">Wed, MAR 25</span>
-          <span class="event-text"><a href="/meetings/#sy2526" class="event-label-link">Board Meeting</a><span class="event-summary">Two school presentations with SPSA approvals for Taft and Garfield. Eide Bailly presents the 2024-25 financial audit. Board votes on the Second Interim Budget Report ($158.1M revenue, $161.3M expenditures). Second reading of drone policy BP 3515.21. Large consent agenda includes 16 CSBA board policy updates, Ed Code 41372 classroom salary waiver (55.54% vs 60% requirement, $5.7M deficiency), 650 Chromebooks for incoming 6th graders ($323.9K), Measure U addenda for North Star and Henry Ford, AT&T E-Rate internet agreement, and personnel changes. Information items cover AI-assisted literacy and numeracy (David Weekly), Connect charter audit review, LCSSP grant outcomes, and county investment fund.</span></span>
-        </div>
-
-        <div class="event-row event--board-meeting">
           <span class="event-date-inline">Wed, APR 1</span>
-          <span class="event-text"><a href="/meetings/#sy2526" class="event-label-link">Board Meeting</a></span>
+          <span class="event-text"><a href="/meetings/#sy2526" class="event-label-link">Board Meeting</a><span class="event-summary event-summary--provisional" title="Provisional topics from the Schedule of Board Agenda Items">Planned: School presentations & SPSA approvals; Personnel Report; Graduation/Promotion assignments discussion</span></span>
         </div>
 
         <div class="event-row event--no-school event--multi">
@@ -1176,12 +1175,12 @@
 
         <div class="event-row event--board-meeting">
           <span class="event-date-inline">Wed, APR 22</span>
-          <span class="event-text"><a href="/meetings/#sy2526" class="event-label-link">Board Meeting</a></span>
+          <span class="event-text"><a href="/meetings/#sy2526" class="event-label-link">Board Meeting</a><span class="event-summary event-summary--provisional" title="Provisional topics from the Schedule of Board Agenda Items">Planned: Superintendent evaluation; School presentations & SPSA approvals; Quarterly Williams Report (Q3)</span></span>
         </div>
 
         <div class="event-row event--board-meeting">
           <span class="event-date-inline">Wed, MAY 13</span>
-          <span class="event-text"><a href="/meetings/#sy2526" class="event-label-link">Board Meeting</a></span>
+          <span class="event-text"><a href="/meetings/#sy2526" class="event-label-link">Board Meeting</a><span class="event-summary event-summary--provisional" title="Provisional topics from the Schedule of Board Agenda Items">Planned: Superintendent evaluation; Charter school second interim reviews (KIPP, Rocketship, Connect); Outdoor Ed agreement; Math report</span></span>
         </div>
 
         <div class="event-row event--no-school">
@@ -1191,7 +1190,7 @@
 
         <div class="event-row event--board-meeting">
           <span class="event-date-inline">Wed, MAY 27</span>
-          <span class="event-text"><a href="/meetings/#sy2526" class="event-label-link">Board Meeting</a></span>
+          <span class="event-text"><a href="/meetings/#sy2526" class="event-label-link">Board Meeting</a><span class="event-summary event-summary--provisional" title="Provisional topics from the Schedule of Board Agenda Items">Planned: ConApp approval; Special Education Report</span></span>
         </div>
 
         <div class="event-row event--milestone">
@@ -1218,17 +1217,17 @@
           <span class="event-date-inline">Tue SEP 29 – Fri OCT 2</span>
           <span class="event-text">Parent Teacher Conference Week</span>
         </div>
+
+        <div class="event-row event--no-school">
+          <span class="event-date-inline">Mon, OCT 12</span>
+          <span class="event-text">Indigenous Peoples' Day <span class="no-school-icon" aria-label="No School">🏫</span></span>
+        </div>
     </div>
     <div class="bi-es events-col" lang="es">
 
         <div class="event-row event--board-meeting">
-          <span class="event-date-inline">mié, MAR 25</span>
-          <span class="event-text"><a href="/reuniones/#sy2526" class="event-label-link">Reunión de la Junta</a><span class="event-summary">Dos presentaciones escolares con aprobación de planes de logro estudiantil (SPSA) para Taft y Garfield. Eide Bailly presenta la auditoría financiera 2024-25. La Mesa Directiva vota el Segundo Reporte Interino de Presupuesto ($158.1M en ingresos, $161.3M en gastos). Segunda lectura de la política de drones BP 3515.21. La agenda de consentimiento incluye 16 actualizaciones de políticas de CSBA, exención del Código de Educación 41372 para salarios de maestros (55.54% vs el 60% requerido, déficit de $5.7M), 650 Chromebooks para estudiantes de 6to grado ($323.9K), adéndums de la Medida U para North Star y Henry Ford, acuerdo de internet AT&T por E-Rate, y cambios de personal. Los temas informativos cubren herramientas de inteligencia artificial para lectura y matemáticas (David Weekly), revisión de auditoría de Connect, resultados del programa LCSSP y el fondo de inversión del condado.</span></span>
-        </div>
-
-        <div class="event-row event--board-meeting">
           <span class="event-date-inline">mié, ABR 1</span>
-          <span class="event-text"><a href="/reuniones/#sy2526" class="event-label-link">Reunión de la Junta</a></span>
+          <span class="event-text"><a href="/reuniones/#sy2526" class="event-label-link">Reunión de la Junta</a><span class="event-summary event-summary--provisional" title="Temas provisionales del calendario de temas de la agenda">Planificado: Presentaciones escolares y aprobaciones de SPSA; Informe de personal; Discusión de asignaciones de graduación/promoción</span></span>
         </div>
 
         <div class="event-row event--no-school event--multi">
@@ -1238,12 +1237,12 @@
 
         <div class="event-row event--board-meeting">
           <span class="event-date-inline">mié, ABR 22</span>
-          <span class="event-text"><a href="/reuniones/#sy2526" class="event-label-link">Reunión de la Junta</a></span>
+          <span class="event-text"><a href="/reuniones/#sy2526" class="event-label-link">Reunión de la Junta</a><span class="event-summary event-summary--provisional" title="Temas provisionales del calendario de temas de la agenda">Planificado: Evaluación del superintendente; Presentaciones escolares y aprobaciones de SPSA; Informe trimestral Williams (T3)</span></span>
         </div>
 
         <div class="event-row event--board-meeting">
           <span class="event-date-inline">mié, MAY 13</span>
-          <span class="event-text"><a href="/reuniones/#sy2526" class="event-label-link">Reunión de la Junta</a></span>
+          <span class="event-text"><a href="/reuniones/#sy2526" class="event-label-link">Reunión de la Junta</a><span class="event-summary event-summary--provisional" title="Temas provisionales del calendario de temas de la agenda">Planificado: Evaluación del superintendente; Revisiones intermedias de escuelas chárter (KIPP, Rocketship, Connect); Acuerdo de educación al aire libre; Informe de matemáticas</span></span>
         </div>
 
         <div class="event-row event--no-school">
@@ -1253,7 +1252,7 @@
 
         <div class="event-row event--board-meeting">
           <span class="event-date-inline">mié, MAY 27</span>
-          <span class="event-text"><a href="/reuniones/#sy2526" class="event-label-link">Reunión de la Junta</a></span>
+          <span class="event-text"><a href="/reuniones/#sy2526" class="event-label-link">Reunión de la Junta</a><span class="event-summary event-summary--provisional" title="Temas provisionales del calendario de temas de la agenda">Planificado: Aprobación de ConApp; Informe de educación especial</span></span>
         </div>
 
         <div class="event-row event--milestone">
@@ -1279,6 +1278,11 @@
         <div class="event-row event--early-release event--multi">
           <span class="event-date-inline">mar SEPT 29 – vie OCT 2</span>
           <span class="event-text">Semana de Conferencias con Padres</span>
+        </div>
+
+        <div class="event-row event--no-school">
+          <span class="event-date-inline">lun, OCT 12</span>
+          <span class="event-text">Día de los Pueblos Indígenas <span class="no-school-icon" aria-label="No School">🏫</span></span>
         </div>
     </div>
   </div>
