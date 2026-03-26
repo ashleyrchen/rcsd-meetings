@@ -103,6 +103,12 @@ const summariesEs = (() => {
   catch { return {}; }
 })();
 
+// Load governance calendar for provisional topics on future board meetings
+const governanceCal = (() => {
+  try { return JSON.parse(readFileSync(resolve(ROOT, 'data/governance-calendar.json'), 'utf-8')); }
+  catch { return { provisionalTopics: {} }; }
+})();
+
 function eventRow(e, lang) {
   const start = dateBadge(e.date, lang);
   const isMulti = !!e.dateEnd;
@@ -126,7 +132,7 @@ function eventRow(e, lang) {
     dateLabel = `${start.dow}, ${start.month} ${start.day}`;
   }
 
-  // Board meeting: link + summary
+  // Board meeting: link + summary (or provisional topics for future meetings)
   let summaryHtml = '';
   if (e.type === 'board-meeting') {
     const summaries = isEn ? summariesEn : summariesEs;
@@ -134,6 +140,14 @@ function eventRow(e, lang) {
     const meetingLink = isEn ? '/meetings/#sy2526' : '/reuniones/#sy2526';
     if (summary) {
       summaryHtml = `<span class="event-summary">${summary}</span>`;
+    } else {
+      // Show provisional topics from governance calendar for future meetings
+      const provisional = governanceCal.provisionalTopics?.[e.date];
+      if (provisional) {
+        const topicText = isEn ? provisional.en : provisional.es;
+        const provLabel = isEn ? 'Planned' : 'Planificado';
+        summaryHtml = `<span class="event-summary event-summary--provisional" title="${isEn ? 'Provisional topics from the Schedule of Board Agenda Items' : 'Temas provisionales del calendario de temas de la agenda'}">${provLabel}: ${topicText}</span>`;
+      }
     }
   }
 
@@ -446,6 +460,10 @@ const homepageCSS = `
     color: var(--text-secondary);
     margin-top: 0.15rem;
     line-height: 1.35;
+  }
+  .event-summary--provisional {
+    font-style: italic;
+    color: var(--text-tertiary, #888);
   }
   .event--multi {
     background: var(--cream-dark, #f5f0e8);
