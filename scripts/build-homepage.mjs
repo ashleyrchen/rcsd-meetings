@@ -60,7 +60,7 @@ function schoolCard(s) {
   const typeBadgeEn = s.type === 'choice' ? 'Choice' : 'Neighborhood';
   const typeBadgeEs = s.type === 'choice' ? 'Elección' : 'Vecindario';
   const typeCls = s.type === 'choice' ? 'school-badge--choice' : 'school-badge--neighborhood';
-  const communityBadge = s.communitySchool ? '<span class="school-badge school-badge--community">CS</span>' : '';
+  const communityBadge = s.communitySchool ? '<span class="school-badge school-badge--community" title="Community School · Escuela Comunitaria">🏫 Community</span>' : '';
 
   const detailUrl = `/schools/${s.slug}/`;
   const dashboardUrl = `https://www.caschooldashboard.org/reports/${s.cdsCode}/2024`;
