@@ -1,21 +1,33 @@
 {
   "date": "2025-02-26",
   "items": [
+    "Call to Order",
     "Roll Call",
+    "Oral Communication on Closed Session Items Only",
     "If you have public comment related to a Closed Session item, please post it on the links under Public Content prior to the Closed Session Meeting or immediately upon the meeting opening.",
+    "Closed Session – 5:00 p.m.",
     "CONFERENCE WITH LEGAL COUNSEL— ANTICIPATED LITIGATION (Significant exposure to litigation pursuant to Paragraph (2) of subdivision (d) of Section 54956.9). One case: confidential pupil matter.",
     "CSEA Negotiations Update",
     "RCTA Negotiations Update",
+    "Reconvene to Regular Session at Approximately 7:00 p.m.",
     "Roll Call",
     "Report Out on Closed Session from February 26, 2025",
+    "Welcome",
     "Welcome by the School Board President, Mike Wells",
+    "Changes to the Agenda",
     "Additions, Deletions, or Modifications to the Agenda",
     "Approval of Agenda",
+    "Approval of Agenda",
+    "Oral Communication",
     "If you have public comment related to a Regular Board Meeting item, please post it on the links available under Public Content prior to the Regular Board Meeting or immediately upon the meeting opening.",
+    "Bond Program Discussion Item(s)",
     "Update on the Facilities Master Plan",
+    "School/Community Reports",
     "Annual Update to the Local Control Accountability Plan (LCAP)",
+    "Discussion Items",
     "First Reading and Discussion of Board Policy 3515.5: Sex Offender Notification",
     "First Reading and Discussion of Board Policy 6170.1 Transitional Kindergarten",
+    "Consent Items",
     "Approval of Consent Items",
     "Approval of the February 5 Board Meeting Minutes",
     "Approval of Addendum to the 2024-25 Measure U Application for Roy Cloud School",
@@ -24,6 +36,7 @@
     "Approval of Personnel Report",
     "Approval of Comprehensive School Safety Plans (Public) 2024-2025",
     "Ratification of Warrant Registers, January 1, 2025 - January 31, 2025",
+    "Action Items",
     "Submission of 2025 CSBA Delegate Assembly Nominations",
     "Adoption of Resolution No. 16, Release and Reassignment of Certificated Administrator(s)",
     "Adoption of Resolution No. 17, Reduction or Elimination of Certificated Services for Fiscal Year 2024-2025",
@@ -32,127 +45,248 @@
     "Adoption of Resolution No. 20, Approval of Education Code and Title V Options for Teaching Assignments 2024-2025 School Year",
     "Approval of Release of Temporary Teachers",
     "Approval of Declaration of Need for the 2025-2026 School Year",
+    "Board and Superintendent Reports",
     "Report from Board Members and Superintendent",
+    "Information",
     "Contract Update Information and Credit Card Summary",
     "Information on San Mateo County Investment Fund - December 2024",
     "Information on San Mateo County Investment Fund - January 2025",
     "Correspondence",
+    "Correspondence",
+    "Other Business/Suggested Items For Future Agenda",
     "Possible Other Business/Suggested Items for Future Agenda",
+    "Board Meetings Calendar",
     "Changes to the Board Meetings Calendar",
+    "Adjournment",
     "Adjourn the Meeting"
   ],
   "llmResponse": {
-    "agenda_changes": "No changes to the posted agenda were announced at the start of the meeting. The meeting proceeded with items in the order listed on the posted agenda after the closed session.",
-    "consent_vote_words": "can I have a motion to approve the consent agenda I move we approve the consent agenda I second okay all those in favor I",
+    "agenda_changes": "No changes to agenda announced. Agenda was approved as posted.",
+    "consent_vote_words": "With that, we can move to the consent agenda, which we approve in one motion. Can I have a motion to approve the consent agenda? I move we approve the consent agenda. I second. Okay. All those in favor Aye.",
     "items": [
       {
         "item": 1,
-        "intro_words": "if you could start with a roll call trusty Lee here truste King",
+        "intro_words": "Okay, seven o'. Clock. So we will reconvene to our regular session.",
         "status": "found"
       },
       {
-        "item": 3,
-        "intro_words": "report out on closed session um for 3.1 we received information",
+        "item": 2,
+        "intro_words": "Evelyn, if you could start with the roll call. Trustee Lee.",
         "status": "found"
       },
       {
-        "item": 8,
-        "intro_words": "welcome everyone uh good evening uh it's the February 26 2025",
-        "status": "found"
-      },
-      {
-        "item": 9,
-        "intro_words": "so this is for agenda item 15.4 have one speaker's card here let me check and see if there's any on or Evelyn I don't know if you've seen that are there any online no online no online okay so with that we will move on to uh H sorry then I'm G to jump to changes of to the agenda does anyone have any Chang addition then let's make a motion to approve the agenda can I we approve the agenda bye great all in favor okay for oral communication we said we had no speakers and we'll jump to 9.1 uh update on the facilities Masters plan",
+        "item": 11,
+        "intro_words": "So report out on closed session. For 3.1 we received information",
         "status": "found"
       },
       {
         "item": 12,
-        "intro_words": "uh update on the facilities Masters plan R board uh staff",
-        "status": "found"
-      },
-      {
-        "item": 13,
-        "intro_words": "so let's move on to our school and Community reports we have",
+        "intro_words": "Great. Welcome everyone. Good evening. It's the February 26, 2025",
         "status": "found"
       },
       {
         "item": 14,
-        "intro_words": "um which is the first reading and discussion of board policy 3",
+        "intro_words": "Okay, so this is for agenda item 15.4. One speakers card here.",
         "status": "found"
       },
       {
         "item": 15,
-        "intro_words": "which is now the first reading and potential discussion of board policy",
+        "intro_words": "Then I'm going to jump to changes of to the agenda.",
         "status": "found"
       },
       {
         "item": 16,
-        "intro_words": "um with that we can move to the consent agenda um which",
-        "status": "consent_bundle"
+        "intro_words": "Okay, then let's make a motion to approve the agenda.",
+        "status": "found"
       },
       {
-        "item": 24,
-        "intro_words": "and the first one is uh 13.1 the submission of the 2025",
+        "item": 18,
+        "intro_words": "And for oral communication we said we had no speakers and we'll jump to 9.1.",
+        "status": "found"
+      },
+      {
+        "item": 20,
+        "intro_words": "And we'll jump to 9.1. Update on the facilities master's plan.",
+        "status": "found"
+      },
+      {
+        "item": 22,
+        "intro_words": "All right, let's move on to our school and community reports.",
+        "status": "found"
+      },
+      {
+        "item": 23,
+        "intro_words": "All right, let's move on to our school and community reports. We have 10.1,",
         "status": "found"
       },
       {
         "item": 25,
-        "intro_words": "so now we're on to 13.2 adoption of resolution number 16 uh",
+        "intro_words": "All right, let's move on to section 11. And we'll start with 11.1,",
         "status": "found"
       },
       {
         "item": 26,
-        "intro_words": "so now we're on to 13.3 which is resolution 17 and this",
+        "intro_words": "Let's move on to 11.2, which is now the first reading and potential discussion",
         "status": "found"
       },
       {
         "item": 27,
-        "intro_words": "so now we are on to uh 13.4 which is resolution 18",
+        "intro_words": "With that, we can move to the consent agenda, which we approve in one motion.",
         "status": "found"
       },
       {
         "item": 28,
-        "intro_words": "all right uh our next action item in our long list here is",
-        "status": "found"
+        "intro_words": "With that, we can move to the consent agenda, which we approve in one motion.",
+        "status": "consent_bundle"
       },
       {
         "item": 29,
-        "intro_words": "um and finally we're at 13.8 approval of Declaration of need so",
-        "status": "found"
+        "intro_words": "With that, we can move to the consent agenda, which we approve in one motion.",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 30,
+        "intro_words": "With that, we can move to the consent agenda, which we approve in one motion.",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 31,
+        "intro_words": "With that, we can move to the consent agenda, which we approve in one motion.",
+        "status": "consent_bundle"
       },
       {
         "item": 32,
-        "intro_words": "so now we're on to board and superintendent reports uh who has",
-        "status": "found"
+        "intro_words": "With that, we can move to the consent agenda, which we approve in one motion.",
+        "status": "consent_bundle"
       },
       {
         "item": 33,
-        "intro_words": "um we've got received the information does anybody have questions about it",
-        "status": "found"
+        "intro_words": "With that, we can move to the consent agenda, which we approve in one motion.",
+        "status": "consent_bundle"
       },
       {
         "item": 34,
-        "intro_words": "um we have three information items here uh and Rick ad don't",
-        "status": "found"
+        "intro_words": "With that, we can move to the consent agenda, which we approve in one motion.",
+        "status": "consent_bundle"
       },
       {
         "item": 35,
-        "intro_words": "um we have three information items here uh and Rick ad don't",
-        "status": "found"
+        "intro_words": "With that, we can move to the consent agenda, which we approve in one motion.",
+        "status": "consent_bundle"
       },
       {
         "item": 36,
-        "intro_words": "all right perfect then I think we can move on to correspondence does",
+        "intro_words": "Great. So now we're on to the action items. And the first one is 13.1,",
         "status": "found"
       },
       {
         "item": 37,
-        "intro_words": "all right perfect then I think we can move on to correspondence does anyone have correspondents that they want to share okay then we can move on to other business um and suggested items for future agenda I think we have the study session that's going to be on for the facilities master plan",
+        "intro_words": "Great. So now we're on to the action items. And the first one is 13.1,",
+        "status": "found"
+      },
+      {
+        "item": 38,
+        "intro_words": "So now we're on to 13.2, adoption of resolution number 16.",
         "status": "found"
       },
       {
         "item": 39,
-        "intro_words": "adjourn I move we adjourn second and all those in favor I",
+        "intro_words": "Okay, so now we're on to 13.3, which is resolution 17.",
+        "status": "found"
+      },
+      {
+        "item": 40,
+        "intro_words": "All right, so now we are on to 13.4, which is resolution 18.",
+        "status": "found"
+      },
+      {
+        "item": 41,
+        "intro_words": "Okay, so now we're to resolution 20, which is the approval of education code",
+        "status": "found"
+      },
+      {
+        "item": 42,
+        "intro_words": "All right, our next action item in our long list here is this is 13.7.",
+        "status": "found"
+      },
+      {
+        "item": 43,
+        "intro_words": "All right, our next action item in our long list here is this is 13.7.",
+        "status": "found"
+      },
+      {
+        "item": 44,
+        "intro_words": "And finally, we're at 13.8 approval of declaration of Need.",
+        "status": "found"
+      },
+      {
+        "item": 45,
+        "intro_words": "Excellent. Okay, so now we're on to board and superintendent reports",
+        "status": "found"
+      },
+      {
+        "item": 46,
+        "intro_words": "Excellent. Okay, so now we're on to board and superintendent reports",
+        "status": "found"
+      },
+      {
+        "item": 47,
+        "intro_words": "All right, well then we can move on to information.",
+        "status": "found"
+      },
+      {
+        "item": 48,
+        "intro_words": "All right, well then we can move on to information.",
+        "status": "found"
+      },
+      {
+        "item": 49,
+        "intro_words": "All right, well then we can move on to information.",
+        "status": "found"
+      },
+      {
+        "item": 50,
+        "intro_words": "All right, well then we can move on to information.",
+        "status": "found"
+      },
+      {
+        "item": 51,
+        "intro_words": "Then I think we can move on to correspondence.",
+        "status": "found"
+      },
+      {
+        "item": 52,
+        "intro_words": "Then I think we can move on to correspondence.",
+        "status": "found"
+      },
+      {
+        "item": 53,
+        "intro_words": "Okay. Then we can move on to other business and suggested items for future agenda.",
+        "status": "found"
+      },
+      {
+        "item": 54,
+        "intro_words": "Okay. Then we can move on to other business and suggested items for future agenda.",
+        "status": "found"
+      },
+      {
+        "item": 55,
+        "intro_words": "I think we have the study session that's going to be on for the facilities",
+        "status": "found"
+      },
+      {
+        "item": 56,
+        "intro_words": "I think we have the study session that's going to be on for the facilities",
+        "status": "found"
+      },
+      {
+        "item": 57,
+        "intro_words": "And nothing on the calendar. So then we are on to adjournment.",
+        "status": "found"
+      },
+      {
+        "item": 58,
+        "intro_words": "And nothing on the calendar. So then we are on to adjournment.",
         "status": "found"
       }
     ]
@@ -164,111 +298,206 @@
         "timestamp": "00:00:04",
         "timestampSeconds": 4
       },
-      null,
       {
-        "timestamp": "00:00:07",
-        "timestampSeconds": 7
+        "timestamp": "00:00:04",
+        "timestampSeconds": 4
       },
       null,
       null,
       null,
       null,
-      {
-        "timestamp": "00:00:26",
-        "timestampSeconds": 26
-      },
-      {
-        "timestamp": "00:01:47",
-        "timestampSeconds": 107
-      },
+      null,
+      null,
       null,
       null,
       {
-        "timestamp": "00:02:00",
-        "timestampSeconds": 120
+        "timestamp": "00:00:09",
+        "timestampSeconds": 9
       },
       {
-        "timestamp": "00:26:14",
-        "timestampSeconds": 1574
+        "timestamp": "00:00:29",
+        "timestampSeconds": 29
+      },
+      null,
+      {
+        "timestamp": "00:01:43",
+        "timestampSeconds": 103
       },
       {
-        "timestamp": "01:24:55",
-        "timestampSeconds": 5095
+        "timestamp": "00:01:53",
+        "timestampSeconds": 113
       },
       {
-        "timestamp": "01:25:10",
-        "timestampSeconds": 5110
+        "timestamp": "00:01:38",
+        "timestampSeconds": 98
+      },
+      null,
+      {
+        "timestamp": "00:01:38",
+        "timestampSeconds": 98
+      },
+      null,
+      {
+        "timestamp": "00:01:58",
+        "timestampSeconds": 118
+      },
+      null,
+      {
+        "timestamp": "00:26:21",
+        "timestampSeconds": 1581
+      },
+      {
+        "timestamp": "00:26:16",
+        "timestampSeconds": 1576
+      },
+      null,
+      {
+        "timestamp": "01:24:57",
+        "timestampSeconds": 5097
+      },
+      {
+        "timestamp": "01:25:07",
+        "timestampSeconds": 5107
+      },
+      {
+        "timestamp": "01:26:32",
+        "timestampSeconds": 5192
+      },
+      {
+        "timestamp": "01:26:32",
+        "timestampSeconds": 5192,
+        "consent": true
+      },
+      {
+        "timestamp": "01:26:32",
+        "timestampSeconds": 5192,
+        "consent": true
+      },
+      {
+        "timestamp": "01:26:32",
+        "timestampSeconds": 5192,
+        "consent": true
+      },
+      {
+        "timestamp": "01:26:32",
+        "timestampSeconds": 5192,
+        "consent": true
+      },
+      {
+        "timestamp": "01:26:32",
+        "timestampSeconds": 5192,
+        "consent": true
+      },
+      {
+        "timestamp": "01:26:32",
+        "timestampSeconds": 5192,
+        "consent": true
+      },
+      {
+        "timestamp": "01:26:32",
+        "timestampSeconds": 5192,
+        "consent": true
+      },
+      {
+        "timestamp": "01:26:32",
+        "timestampSeconds": 5192,
+        "consent": true
       },
       {
         "timestamp": "01:26:53",
-        "timestampSeconds": 5213,
-        "consent": true
-      },
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      {
-        "timestamp": "01:27:22",
-        "timestampSeconds": 5242
+        "timestampSeconds": 5213
       },
       {
-        "timestamp": "01:27:38",
-        "timestampSeconds": 5258
+        "timestamp": "01:26:53",
+        "timestampSeconds": 5213
       },
       {
-        "timestamp": "01:28:41",
-        "timestampSeconds": 5321
+        "timestamp": "01:27:41",
+        "timestampSeconds": 5261
       },
       {
-        "timestamp": "01:28:41",
-        "timestampSeconds": 5321
+        "timestamp": "01:28:34",
+        "timestampSeconds": 5314
       },
       {
-        "timestamp": "01:43:03",
-        "timestampSeconds": 6183
+        "timestamp": "01:28:23",
+        "timestampSeconds": 5303
       },
       {
-        "timestamp": "01:44:25",
-        "timestampSeconds": 6265
-      },
-      null,
-      null,
-      {
-        "timestamp": "01:46:42",
-        "timestampSeconds": 6402
+        "timestamp": "01:28:49",
+        "timestampSeconds": 5329
       },
       {
-        "timestamp": "01:50:53",
-        "timestampSeconds": 6653
+        "timestamp": "01:43:14",
+        "timestampSeconds": 6194
       },
       {
-        "timestamp": "01:50:45",
-        "timestampSeconds": 6645
+        "timestamp": "01:43:14",
+        "timestampSeconds": 6194
       },
       {
-        "timestamp": "01:50:45",
-        "timestampSeconds": 6645
+        "timestamp": "01:44:15",
+        "timestampSeconds": 6255
       },
       {
-        "timestamp": "01:51:15",
-        "timestampSeconds": 6675
+        "timestamp": "01:46:43",
+        "timestampSeconds": 6403
       },
       {
-        "timestamp": "01:51:06",
-        "timestampSeconds": 6666
+        "timestamp": "01:46:43",
+        "timestampSeconds": 6403
       },
-      null,
       {
-        "timestamp": "01:53:50",
-        "timestampSeconds": 6830
+        "timestamp": "01:50:56",
+        "timestampSeconds": 6656
+      },
+      {
+        "timestamp": "01:50:56",
+        "timestampSeconds": 6656
+      },
+      {
+        "timestamp": "01:50:56",
+        "timestampSeconds": 6656
+      },
+      {
+        "timestamp": "01:50:56",
+        "timestampSeconds": 6656
+      },
+      {
+        "timestamp": "01:51:18",
+        "timestampSeconds": 6678
+      },
+      {
+        "timestamp": "01:51:18",
+        "timestampSeconds": 6678
+      },
+      {
+        "timestamp": "01:51:18",
+        "timestampSeconds": 6678
+      },
+      {
+        "timestamp": "01:51:18",
+        "timestampSeconds": 6678
+      },
+      {
+        "timestamp": "01:51:18",
+        "timestampSeconds": 6678
+      },
+      {
+        "timestamp": "01:51:18",
+        "timestampSeconds": 6678
+      },
+      {
+        "timestamp": "01:53:31",
+        "timestampSeconds": 6811
+      },
+      {
+        "timestamp": "01:53:31",
+        "timestampSeconds": 6811
       }
     ]
   },
-  "cachedAt": "2026-03-04T19:06:32.502Z",
-  "inputTokens": 24348,
-  "outputTokens": 1264
+  "cachedAt": "2026-03-26T22:29:34.973Z",
+  "inputTokens": 26158,
+  "outputTokens": 2251
 }

@@ -1,46 +1,142 @@
 {
   "date": "2025-06-18",
   "items": [
-    "Public Hearing: LCAP for 2025-2026 — $133.2M total revenue, 8 goals with 59 actions/services. Public testimony period. Board discussion of priorities and LCFF supplemental/concentration funding.",
-    "Public Hearing: 2025-26 Proposed Budget — $148.7M revenue, $151.5M expenditures = deficit spending of ~$2.7M. Multi-year projections show structural deficit. Board discussion of budget sustainability strategies.",
-    "2025-26 Board Meeting Calendar — adoption",
-    "Solar Phase 2 DSA Inspector Services — $287,600 for Division of the State Architect inspection during solar panel installations at 9 school sites",
-    "Proposition 28 Arts Education Expenditure Plan — $1,020,000 annual allocation for arts education across the district per voter-approved Prop 28",
-    "Bullseye Translation Services Amendment — $64,400 increase for translation/interpretation services supporting multilingual families"
+    "Call to Order",
+    "Roll Call",
+    "Welcome",
+    "Welcome by the School Board President, Mike Wells",
+    "Changes to the Agenda",
+    "Additions, Deletions, or Modifications to the Agenda",
+    "Approval of Agenda",
+    "Approval of Agenda",
+    "Oral Communication",
+    "If you have public comment related to a Regular Board Meeting item, please post it on the links available under Public Content prior to the Regular Board Meeting or immediately upon the meeting opening.",
+    "Approval of Bond Program Consent Items",
+    "Approval of Phase 2 Solar Project DSA Project Inspector Services Agreement with Pinelli & Associates, Inc.",
+    "Bond Program Action Items",
+    "Public Hearing",
+    "Public Hearing – Local Control and Accountability Plan (LCAP) for 2025-2026",
+    "Public Hearing: RCSD 2025/26 Proposed Budget",
+    "Approval of Consent Items",
+    "Approval of the 2025–2026 Board Meeting Calendar",
+    "Approval of Amendment No. 3 between Redwood City School District and Bullseye Translation to provide additional interpretation services 2024-2025 school year",
+    "Action Items",
+    "Approval of the Prop 28 Expenditure Plan for the 2025-2026 School Year",
+    "Board and Superintendent Reports",
+    "Report from Board Members and Superintendent",
+    "Information",
+    "Correspondence",
+    "Correspondence",
+    "Other Business/Suggested Items for Future Agenda",
+    "Possible Other Business/Suggested Items for Future Agenda",
+    "Board Meetings Calendar",
+    "Changes to the Board Meetings Calendar",
+    "Adjournment of Meeting",
+    "Adjourn the Meeting"
   ],
   "llmResponse": {
     "agenda_changes": null,
-    "consent_vote_words": "I move we approve the consent and a second. Second. All in favor? I",
+    "consent_vote_words": "Can I get a motion to approve the consent to items? I move we approve the bond consent items. I'll second. All in favor?",
     "items": [
       {
         "item": 1,
-        "intro_words": "So now we're on to 8.1 which is the public hearing for the local control",
+        "intro_words": "Hey, it's seven o', clock, so I think we can go ahead",
         "status": "found"
       },
       {
         "item": 2,
-        "intro_words": "So, next on the agenda is our public hearing. And then next on our agenda",
+        "intro_words": "Evelyn, can you kick us off with a roll call?",
         "status": "found"
       },
       {
         "item": 3,
-        "intro_words": "Now we're on to our consent agenda. There's one two items on it",
-        "status": "consent_bundle"
+        "intro_words": "Good evening. So welcome to our June 18, 2025 meeting",
+        "status": "found"
       },
       {
         "item": 4,
-        "intro_words": "pulled",
-        "status": "pulled"
+        "intro_words": "On the eve of Juneteenth, we honor the freedom and",
+        "status": "found"
       },
       {
         "item": 5,
-        "intro_words": "Now we're on to our action items and this is 10.1 approval of the Prop",
+        "intro_words": "With that, let's get through the approval of the agenda",
         "status": "found"
       },
       {
         "item": 6,
-        "intro_words": "consent_bundle",
+        "intro_words": "So the first is changes to the agenda. Any changes?",
+        "status": "found"
+      },
+      {
+        "item": 7,
+        "intro_words": "Okay, so let's move to approval. Can I get a motion?",
+        "status": "found"
+      },
+      {
+        "item": 8,
+        "intro_words": "All in favor? Okay, perfect. So now we are on",
+        "status": "found"
+      },
+      {
+        "item": 9,
+        "intro_words": "Perfect. Then we'll move on to the next agenda item",
+        "status": "found"
+      },
+      {
+        "item": 11,
+        "intro_words": "Can I get a motion to approve the consent to items?",
         "status": "consent_bundle"
+      },
+      {
+        "item": 12,
+        "intro_words": "All right, thanks. So now we are on to 8.1,",
+        "status": "found"
+      },
+      {
+        "item": 15,
+        "intro_words": "All right, so next on the agenda is our public hearing.",
+        "status": "found"
+      },
+      {
+        "item": 16,
+        "intro_words": "So I'll now open the public hearing on the 2526",
+        "status": "found"
+      },
+      {
+        "item": 17,
+        "intro_words": "Great. Then if there's no additional comments from the public,",
+        "status": "found"
+      },
+      {
+        "item": 20,
+        "intro_words": "Okay, then we can move on to our action items.",
+        "status": "found"
+      },
+      {
+        "item": 21,
+        "intro_words": "Okay, now we're on to board and superintendent reports.",
+        "status": "found"
+      },
+      {
+        "item": 24,
+        "intro_words": "Yeah, there are no information items tonight, so we're on",
+        "status": "found"
+      },
+      {
+        "item": 25,
+        "intro_words": "Does anyone have correspondence to report? I did receive some",
+        "status": "found"
+      },
+      {
+        "item": 27,
+        "intro_words": "Correspondence, other business suggested items for future agenda.",
+        "status": "found"
+      },
+      {
+        "item": 31,
+        "intro_words": "Okay, great. Then we're out of adjournment. Can I get",
+        "status": "found"
       }
     ]
   },
@@ -48,31 +144,101 @@
     "videoId": "-TNa0V1WU5M",
     "items": [
       {
-        "timestamp": "00:02:40",
-        "timestampSeconds": 160
+        "timestamp": "00:00:05",
+        "timestampSeconds": 5
       },
       {
-        "timestamp": "01:18:26",
-        "timestampSeconds": 4706
+        "timestamp": "00:00:05",
+        "timestampSeconds": 5
       },
       {
-        "timestamp": "01:38:17",
-        "timestampSeconds": 5897,
-        "consent": true
+        "timestamp": "00:00:14",
+        "timestampSeconds": 14
+      },
+      {
+        "timestamp": "00:00:14",
+        "timestampSeconds": 14
+      },
+      {
+        "timestamp": "00:01:45",
+        "timestampSeconds": 105
+      },
+      {
+        "timestamp": "00:01:35",
+        "timestampSeconds": 95
+      },
+      {
+        "timestamp": "00:01:45",
+        "timestampSeconds": 105
+      },
+      {
+        "timestamp": "00:01:45",
+        "timestampSeconds": 105
+      },
+      {
+        "timestamp": "00:02:33",
+        "timestampSeconds": 153
       },
       null,
       {
-        "timestamp": "01:49:46",
-        "timestampSeconds": 6586
+        "timestamp": "00:02:10",
+        "timestampSeconds": 130,
+        "consent": true
       },
       {
-        "timestamp": "01:38:17",
-        "timestampSeconds": 5897,
-        "consent": true
-      }
+        "timestamp": "00:02:00",
+        "timestampSeconds": 120
+      },
+      null,
+      null,
+      {
+        "timestamp": "00:02:58",
+        "timestampSeconds": 178
+      },
+      {
+        "timestamp": "00:02:48",
+        "timestampSeconds": 168
+      },
+      {
+        "timestamp": "01:38:42",
+        "timestampSeconds": 5922
+      },
+      null,
+      null,
+      {
+        "timestamp": "01:49:34",
+        "timestampSeconds": 6574
+      },
+      {
+        "timestamp": "01:49:54",
+        "timestampSeconds": 6594
+      },
+      null,
+      null,
+      {
+        "timestamp": "01:51:39",
+        "timestampSeconds": 6699
+      },
+      {
+        "timestamp": "01:51:54",
+        "timestampSeconds": 6714
+      },
+      null,
+      {
+        "timestamp": "01:53:56",
+        "timestampSeconds": 6836
+      },
+      null,
+      null,
+      null,
+      {
+        "timestamp": "01:53:51",
+        "timestampSeconds": 6831
+      },
+      null
     ]
   },
-  "cachedAt": "2026-03-04T19:00:51.893Z",
-  "inputTokens": 27999,
-  "outputTokens": 325
+  "cachedAt": "2026-03-26T22:27:55.451Z",
+  "inputTokens": 25259,
+  "outputTokens": 958
 }

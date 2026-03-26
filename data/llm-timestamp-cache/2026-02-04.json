@@ -1,93 +1,363 @@
 {
   "date": "2026-02-04",
   "items": [
-    "Revised Measure S Implementation Plan (Partial) — refines districtwide projects: TK/K classroom projects at Clifford, Henry Ford, and Roy Cloud; utility upgrades (aging water/sewer/gas/storm); kitchen upgrades (code compliance, scratch-prepared meals); elevator replacements (ADA/Title 24); HVAC phasing. Partial approval preserves Board flexibility as enrollment trends and funding evolve.",
-    "Resolution No. 16: Lease-Leaseback with Blach Construction for HVAC Phase 2 at Clifford, Orion, Kennedy Middle School. Preconstruction $29,595 + early procurement authorization up to $3M, total NTE $3,029,595 from Measure S Bond. Construction scheduled Summer 2026. 4 proposals received Jan 21, 2026; Blach selected on best value (lowest cost, lowest overhead/profit at 2.75%). — 7 attachments",
-    "Measure T Bond Program tracking list under $20k ($8,000.05, Fund 21)",
-    "Solar Phase 2 Change Order #3: Kennedy MS #2 with Holt Renewables ($28,723.50 overtime allowance for DSA schedule impacts, NEM 2 deadline)",
-    "Solar Phase 2 Change Order #4: Roy Cloud with Holt Renewables ($86,170.50 overtime allowance, same DSA/NEM 2 reason)",
-    "Final Deductive Change Order for Blach HVAC Phase 1 — returning $2,293,889.47 to Measure S Bond Fund. Phase 1 (Taft, Hoover, Roosevelt, Adelante Selby + temp HVAC) substantially complete. Revised total contract: $17,447,987.53 (from original GMP $19,741,877).",
-    "Notice of Completion for Blach HVAC Phase 1 (5 separate notices: Temp Cooling, Taft, Roosevelt, Hoover, Adelante Selby) — 6 attachments",
-    "ERWC Teacher PD Report — Expository Reading and Writing Course for grades 6-8 ELA teachers. Partnered with CSU Aug 2025 (4-day training) and Jan 2026 (implementation debrief). CSU grant covered costs; RCSD paid stipends for 18 teachers (2 days). Scaffolding complex text, rhetorical reading/writing.",
-    "Strategic Resource Alignment: Final Budget Reduction Recommendations — $6.4M in ongoing savings. District Office restructuring ($3.5M: reducing 3.75 management FTEs, classified management, support staff, reducing SpEd contracted services, streamlining). School-based reductions ($2.9M: site administrator aligned with enrollment, teacher positions, guest teacher funding, TK-8 staffing reviews). IEP admin support continues for PreK-5 (6 schools with only principal). SRA Committee met 4 times (Sep 16, Oct 14, Nov 18, Jan 20). Effective July 1, 2026.",
-    "Approval of Jan 13, 14, 21 meeting minutes",
-    "Kennedy Measure U Addendum ($252,653: $197,247 allotment + $55,406 carryover. Increases: clubs/activities $20K→$24.4K, music $7K→$12K, Chromebooks $20K→$48K, new $18K after-school tutoring)",
-    "Roy Cloud Measure U Addendum ($164,703: $158,880 + $5,823 carryover. Changes: cease Academic Counselor funding, reallocate to school supplies/tech $19.3K, tech repairs $5K, staff stipends $10K, substitute planning $5K)",
-    "Comprehensive School Safety Plans (Public) for all 12 schools — 12 attachments (Taft, Roy Cloud, Roosevelt, Orion Alternative, North Star, McKinley, Kennedy, Hoover, Henry Ford, Garfield, Clifford, Adelante Selby)",
-    "5 Policy second readings: BP/AR 1330 (Use of School Facilities), BP 3510 (Green School Operations), BP/AR 3511 (Energy and Water Management), BP/AR 3511.1 (Integrated Waste Management), BP/AR 3514 (Environmental Safety)"
+    "Call to Order",
+    "Roll Call",
+    "Public Comment on Closed Session Items Only",
+    "Announcement of Closed Session Purpose",
+    "Closed Session",
+    "Approval of the Comprehensive School Safety Plans (Internal/Non-Public) for the 2025-2026 School Year (Education Code § 32281)",
+    "Reconvene to Open Session at approximately 7:00 PM",
+    "Roll Call",
+    "Report Out on Closed Session from February 4, 2026",
+    "Welcome",
+    "Pledge of Allegiance",
+    "Changes to the Agenda",
+    "Approval of the Agenda (Action Required)",
+    "Public Comment",
+    "Labor Association Comments",
+    "Bond Program Action Items",
+    "Approval of Revised Measure S Implementation Plan (Partial Implementation)",
+    "Adoption of Resolution No. 16, Lease-Leaseback Agreement with Blach Construction for HVAC Projects, Phase 2 at Clifford School, Orion School, and Kennedy Middle School",
+    "Approval of the Bond Program Consent Items",
+    "Approval of Measure T Bond Program Tracking List of Items Under $20k",
+    "Approval of Overtime Allowance, Change Order #3 for Solar Phase 2 Project at Kennedy Middle School #2 with Holt Renewables",
+    "Approval of Overtime Allowance, Change Order #4 for Solar Phase 2 Project at Roy Cloud School with Holt Renewables",
+    "Approval of Final Deductive Change Order for Blach Construction on the HVAC Upgrades Projects, Phase 1",
+    "Approval of Notice of Completion for Blach Construction on the HVAC Upgrades Projects, Phase 1",
+    "School/Community Reports",
+    "Report on Teacher Professional Development for English Language Art Teachers in Grades 6-8:  Expository Reading and Writing Course (\"ERWC\")",
+    "Action Items (Action Required)",
+    "Strategic Resource Alignment: Final Recommendations",
+    "Discussion Items",
+    "Approval of Consent Items (Action Required)",
+    "Approval of the January 13, 2026, Study Session Minutes",
+    "Approval of the January 14, 2026, Board Meeting Minutes",
+    "Approval of the January 21, 2026, Board Meeting Minutes",
+    "Approval of the Addendum to the Measure U Application for Kennedy Middle School for the 2025-2026 School Year",
+    "Approval of the Addendum to the Measure U Application for Roy Cloud for the 2025-2026 School Year",
+    "Approval of the Comprehensive School Safety Plans (Public) for the 2025-2026 School Year",
+    "Second Reading and Approval of Board Policy and Administrative Regulation 1330: Use of School Facilities",
+    "Second Reading and Approval of Board Policy 3510: Green School Operations",
+    "Second Reading and Approval of Board Policy and Administrative Regulation 3511: Energy and Water Management",
+    "Second Reading and Approval of Board Policy and Administrative Regulation 3511.1: Integrated Waste Management",
+    "Second Reading and Approval of Board Policy and Administrative Regulation 3514: Environmental Safety",
+    "Second Reading and Approval of Board Policy and Administrative Regulation 3515: Campus Security",
+    "Second Reading and Approval of Board Policy 3515.7: Firearms on School Grounds",
+    "Second Reading and Approval of Board Policy and Administrative Regulation 3523: Electronic Signatures",
+    "Second Reading and Approval of Board Policy and Administrative Regulation 7150: Site Selection and Development",
+    "Second Reading and Approval of Board Policy 7210: Facilities Financing",
+    "Approval of Agreement with ProTech Consulting & Engineering for Three-Year Asbestos Reinspection Services at All District Sites",
+    "Board and Superintendent Reports",
+    "Information",
+    "RCSD Review of Connect Community Charter First Interim Financial Report for FY 2025-26",
+    "RCSD Review of KIPP Excelencia Community Prep's First Interim Financial Report for FY 2025-26",
+    "RCSD Review of Rocketship Redwood City Charter School's First Interim Financial Report for FY 2025-26",
+    "RCSD Review of KIPP Excelencia Community Prep's Audit Report for FY 2024–25",
+    "RCSD Review of Rocketship Redwood City Prep Charter School's Audit Report for FY 2024-25",
+    "Correspondence",
+    "Other Business/Suggested Items for Future Agenda",
+    "Board of Trustees Meeting Reflection",
+    "Board of Trustees Meeting Calendar",
+    "Adjournment (Action Required)"
   ],
   "llmResponse": {
-    "agenda_changes": "Item 10.1 (Revised Measure S Implementation Plan) was pulled from the agenda to allow additional time for review and refinement, with staff intending to bring it back at a future meeting after further project alignment, phasing, and sequencing.",
-    "consent_vote_words": "Would someone like to move that we approve the bond program consent items?",
+    "agenda_changes": "Item 10.1 (Approval of the Revised Measure S Implementation Plan - Partial Implementation) was pulled from the agenda to allow additional time for review and refinement.",
+    "consent_vote_words": "Would someone like to move that we approve the consent agenda? So I'll second. All those in favor? Aye.",
     "items": [
       {
         "item": 1,
-        "intro_words": "The board approved the comprehensive school safety plans for the",
+        "intro_words": "Ladies and gentlemen, at seven o'. Clock.",
         "status": "found"
       },
       {
         "item": 2,
-        "intro_words": "We're going to be hearing about resolution 16 concerning leaseback",
+        "intro_words": "Evelyn. Roll call please. Trustee Wells.",
         "status": "found"
       },
       {
         "item": 3,
-        "intro_words": "consent_bundle",
-        "status": "consent_bundle"
+        "intro_words": "not found in transcript",
+        "status": "not found"
       },
       {
         "item": 4,
-        "intro_words": "consent_bundle",
-        "status": "consent_bundle"
+        "intro_words": "not found in transcript",
+        "status": "not found"
       },
       {
         "item": 5,
-        "intro_words": "consent_bundle",
-        "status": "consent_bundle"
+        "intro_words": "not found in transcript",
+        "status": "not found"
       },
       {
         "item": 6,
-        "intro_words": "consent_bundle",
-        "status": "consent_bundle"
+        "intro_words": "The Board met in closed session to consider the approval",
+        "status": "found"
       },
       {
         "item": 7,
-        "intro_words": "consent_bundle",
-        "status": "consent_bundle"
+        "intro_words": "Reconvene to Open Session at approximately 7:00 PM",
+        "status": "not found"
       },
       {
         "item": 8,
-        "intro_words": "We'll now hear about professional development that we've been doing",
+        "intro_words": "Evelyn. Roll call please. Trustee Wells.",
         "status": "found"
       },
       {
         "item": 9,
-        "intro_words": "Now we'll hear the superintendent's final recommendations around budget",
+        "intro_words": "The next item is a report out from closed session.",
         "status": "found"
       },
       {
         "item": 10,
+        "intro_words": "Welcome everybody. At today's meeting we're going",
+        "status": "found"
+      },
+      {
+        "item": 11,
+        "intro_words": "I don't think we have a student with us today",
+        "status": "found"
+      },
+      {
+        "item": 12,
+        "intro_words": "Next up is changes to the agenda. Does anyone.",
+        "status": "found"
+      },
+      {
+        "item": 13,
+        "intro_words": "All right. Are there any other changes that people",
+        "status": "found"
+      },
+      {
+        "item": 14,
+        "intro_words": "The agenda has been approved. So now we are going",
+        "status": "found"
+      },
+      {
+        "item": 15,
+        "intro_words": "Good evening everybody. I'm call, I'm talking to the board",
+        "status": "found"
+      },
+      {
+        "item": 16,
+        "intro_words": "So with that, we have yanked 10.1. So we're going",
+        "status": "found"
+      },
+      {
+        "item": 17,
         "intro_words": "pulled",
         "status": "pulled"
       },
       {
-        "item": 11,
+        "item": 18,
+        "intro_words": "Good evening, board. Tonight, joining the discussion is Martin",
+        "status": "found"
+      },
+      {
+        "item": 19,
+        "intro_words": "All right, next, we're going to approve all the bond",
+        "status": "found"
+      },
+      {
+        "item": 20,
         "intro_words": "consent_bundle",
         "status": "consent_bundle"
       },
       {
-        "item": 12,
+        "item": 21,
         "intro_words": "consent_bundle",
         "status": "consent_bundle"
       },
       {
-        "item": 13,
+        "item": 22,
         "intro_words": "consent_bundle",
         "status": "consent_bundle"
       },
       {
-        "item": 14,
+        "item": 23,
+        "intro_words": "consent_bundle",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 24,
+        "intro_words": "consent_bundle",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 25,
+        "intro_words": "not found in transcript",
+        "status": "not found"
+      },
+      {
+        "item": 26,
+        "intro_words": "All right, we're on to 12.1. We'll now hear about professional",
+        "status": "found"
+      },
+      {
+        "item": 27,
+        "intro_words": "not found in transcript",
+        "status": "not found"
+      },
+      {
+        "item": 28,
+        "intro_words": "And with that, we're on to 13.1. Now we'll hear the",
+        "status": "found"
+      },
+      {
+        "item": 29,
+        "intro_words": "not found in transcript",
+        "status": "not found"
+      },
+      {
+        "item": 30,
         "intro_words": "Would someone like to move that we approve the consent",
+        "status": "found"
+      },
+      {
+        "item": 31,
+        "intro_words": "consent_bundle",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 32,
+        "intro_words": "consent_bundle",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 33,
+        "intro_words": "consent_bundle",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 34,
+        "intro_words": "consent_bundle",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 35,
+        "intro_words": "consent_bundle",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 36,
+        "intro_words": "consent_bundle",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 37,
+        "intro_words": "consent_bundle",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 38,
+        "intro_words": "consent_bundle",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 39,
+        "intro_words": "consent_bundle",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 40,
+        "intro_words": "consent_bundle",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 41,
+        "intro_words": "consent_bundle",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 42,
+        "intro_words": "consent_bundle",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 43,
+        "intro_words": "consent_bundle",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 44,
+        "intro_words": "consent_bundle",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 45,
+        "intro_words": "consent_bundle",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 46,
+        "intro_words": "consent_bundle",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 47,
+        "intro_words": "consent_bundle",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 48,
+        "intro_words": "All right. Next up, our board and superintendent reports 16.",
+        "status": "found"
+      },
+      {
+        "item": 49,
+        "intro_words": "And so now we're on to information. So just so members",
+        "status": "found"
+      },
+      {
+        "item": 50,
+        "intro_words": "not specifically called out in transcript",
+        "status": "not found"
+      },
+      {
+        "item": 51,
+        "intro_words": "not specifically called out in transcript",
+        "status": "not found"
+      },
+      {
+        "item": 52,
+        "intro_words": "not specifically called out in transcript",
+        "status": "not found"
+      },
+      {
+        "item": 53,
+        "intro_words": "not specifically called out in transcript",
+        "status": "not found"
+      },
+      {
+        "item": 54,
+        "intro_words": "not specifically called out in transcript",
+        "status": "not found"
+      },
+      {
+        "item": 55,
+        "intro_words": "All right, next up is correspondence. Anyone on the board",
+        "status": "found"
+      },
+      {
+        "item": 56,
+        "intro_words": "Other business suggested items for future agendas. Yes.",
+        "status": "found"
+      },
+      {
+        "item": 57,
+        "intro_words": "All right, next up is meeting reflection. How'd that go?",
+        "status": "found"
+      },
+      {
+        "item": 58,
+        "intro_words": "Okay. And that brings us to the end of our meeting.",
+        "status": "found"
+      },
+      {
+        "item": 59,
+        "intro_words": "Would somebody like to move that we adjourn? I move",
         "status": "found"
       }
     ]
@@ -96,69 +366,227 @@
     "videoId": "Nw7_DtNMPVk",
     "items": [
       {
+        "timestamp": "00:00:07",
+        "timestampSeconds": 7
+      },
+      {
+        "timestamp": "00:00:07",
+        "timestampSeconds": 7
+      },
+      null,
+      null,
+      null,
+      {
+        "timestamp": "00:01:45",
+        "timestampSeconds": 105
+      },
+      null,
+      {
+        "timestamp": "00:00:07",
+        "timestampSeconds": 7
+      },
+      {
         "timestamp": "00:01:40",
         "timestampSeconds": 100
       },
       {
-        "timestamp": "00:15:36",
-        "timestampSeconds": 936
+        "timestamp": "00:02:20",
+        "timestampSeconds": 140
       },
       {
-        "timestamp": "00:21:31",
-        "timestampSeconds": 1291,
-        "consent": true
+        "timestamp": "00:03:10",
+        "timestampSeconds": 190
       },
       {
-        "timestamp": "00:21:31",
-        "timestampSeconds": 1291,
-        "consent": true
+        "timestamp": "00:03:20",
+        "timestampSeconds": 200
       },
       {
-        "timestamp": "00:21:31",
-        "timestampSeconds": 1291,
-        "consent": true
+        "timestamp": "00:04:13",
+        "timestampSeconds": 253
       },
       {
-        "timestamp": "00:21:31",
-        "timestampSeconds": 1291,
-        "consent": true
+        "timestamp": "00:04:18",
+        "timestampSeconds": 258
       },
       {
-        "timestamp": "00:21:31",
-        "timestampSeconds": 1291,
-        "consent": true
+        "timestamp": "00:13:10",
+        "timestampSeconds": 790
       },
       {
-        "timestamp": "00:22:03",
-        "timestampSeconds": 1323
-      },
-      {
-        "timestamp": "00:42:15",
-        "timestampSeconds": 2535
+        "timestamp": "00:15:28",
+        "timestampSeconds": 928
       },
       null,
       {
-        "timestamp": "00:21:31",
-        "timestampSeconds": 1291,
+        "timestamp": "00:15:55",
+        "timestampSeconds": 955
+      },
+      {
+        "timestamp": "00:15:33",
+        "timestampSeconds": 933
+      },
+      {
+        "timestamp": "00:21:34",
+        "timestampSeconds": 1294,
         "consent": true
       },
       {
-        "timestamp": "00:21:31",
-        "timestampSeconds": 1291,
+        "timestamp": "00:21:34",
+        "timestampSeconds": 1294,
         "consent": true
       },
       {
-        "timestamp": "00:21:31",
-        "timestampSeconds": 1291,
+        "timestamp": "00:21:34",
+        "timestampSeconds": 1294,
         "consent": true
       },
       {
-        "timestamp": "01:31:06",
-        "timestampSeconds": 5466
+        "timestamp": "00:21:34",
+        "timestampSeconds": 1294,
+        "consent": true
+      },
+      {
+        "timestamp": "00:21:34",
+        "timestampSeconds": 1294,
+        "consent": true
+      },
+      null,
+      {
+        "timestamp": "00:15:33",
+        "timestampSeconds": 933
+      },
+      null,
+      {
+        "timestamp": "00:15:23",
+        "timestampSeconds": 923
+      },
+      null,
+      {
+        "timestamp": "00:21:34",
+        "timestampSeconds": 1294
+      },
+      {
+        "timestamp": "00:21:34",
+        "timestampSeconds": 1294,
+        "consent": true
+      },
+      {
+        "timestamp": "00:21:34",
+        "timestampSeconds": 1294,
+        "consent": true
+      },
+      {
+        "timestamp": "00:21:34",
+        "timestampSeconds": 1294,
+        "consent": true
+      },
+      {
+        "timestamp": "00:21:34",
+        "timestampSeconds": 1294,
+        "consent": true
+      },
+      {
+        "timestamp": "00:21:34",
+        "timestampSeconds": 1294,
+        "consent": true
+      },
+      {
+        "timestamp": "00:21:34",
+        "timestampSeconds": 1294,
+        "consent": true
+      },
+      {
+        "timestamp": "00:21:34",
+        "timestampSeconds": 1294,
+        "consent": true
+      },
+      {
+        "timestamp": "00:21:34",
+        "timestampSeconds": 1294,
+        "consent": true
+      },
+      {
+        "timestamp": "00:21:34",
+        "timestampSeconds": 1294,
+        "consent": true
+      },
+      {
+        "timestamp": "00:21:34",
+        "timestampSeconds": 1294,
+        "consent": true
+      },
+      {
+        "timestamp": "00:21:34",
+        "timestampSeconds": 1294,
+        "consent": true
+      },
+      {
+        "timestamp": "00:21:34",
+        "timestampSeconds": 1294,
+        "consent": true
+      },
+      {
+        "timestamp": "00:21:34",
+        "timestampSeconds": 1294,
+        "consent": true
+      },
+      {
+        "timestamp": "00:21:34",
+        "timestampSeconds": 1294,
+        "consent": true
+      },
+      {
+        "timestamp": "00:21:34",
+        "timestampSeconds": 1294,
+        "consent": true
+      },
+      {
+        "timestamp": "00:21:34",
+        "timestampSeconds": 1294,
+        "consent": true
+      },
+      {
+        "timestamp": "00:21:34",
+        "timestampSeconds": 1294,
+        "consent": true
+      },
+      {
+        "timestamp": "01:31:13",
+        "timestampSeconds": 5473
+      },
+      {
+        "timestamp": "01:29:14",
+        "timestampSeconds": 5354
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      {
+        "timestamp": "01:31:13",
+        "timestampSeconds": 5473
+      },
+      {
+        "timestamp": "01:34:43",
+        "timestampSeconds": 5683
+      },
+      {
+        "timestamp": "01:37:09",
+        "timestampSeconds": 5829
+      },
+      {
+        "timestamp": "01:36:38",
+        "timestampSeconds": 5798
+      },
+      {
+        "timestamp": "01:35:37",
+        "timestampSeconds": 5737
       }
     ]
   },
-  "cachedAt": "2026-03-04T18:59:23.901Z",
-  "inputTokens": 20694,
-  "outputTokens": 640
+  "cachedAt": "2026-03-26T22:24:26.342Z",
+  "inputTokens": 19795,
+  "outputTokens": 2419
 }

@@ -1,0 +1,446 @@
+{
+  "date": "2020-09-09",
+  "items": [
+    "Call to Order",
+    "Roll Call",
+    "Welcome",
+    "Welcome by the School Board President",
+    "Changes to the Agenda",
+    "Changes to the Agenda",
+    "Approval of Agenda (Action Required)",
+    "Approval of Agenda",
+    "Oral Communication - If you have public comment related to a Regular Board Meeting item, please post it on: (https://docs.google.com/forms/d/e/1FAIpQLSd3rKbPfVCTpOsK5ILqjnU2u-h-NuNx-vUq4OZxYNVR8lc4aQ/viewform?usp=sf_link) prior to the Regular Board Meeting or immediately upon the meeting opening.",
+    "School/Community Reports",
+    "The Sobrato Organization Report",
+    "Bond Program Consent Items (Action Required)",
+    "Approval of $200,000 Movement from Program Contingency to Energy and Security Project",
+    "Approval of Encroachment Permit Fee for Taft School with the City of Redwood City",
+    "Approval of Generator Rental and Purchase Proposals for Orion Alternative School (Formerly John Gill School) with Peterson Power",
+    "Approval of California Environmental Air Quality (CEQA) Construction Oversight Proposal and Change Order #1 for Orion Alternative School (Formerly John Gill School) with SCS Engineers",
+    "Approval of Final Plan and Field Review Invoice for Kennedy Middle School Administration and Parking Lot Project with the Division of the State Architect (DSA)",
+    "Bond Program Action Items (Action Required)",
+    "Approval of Covid-19 Safety Compliance Officer (SCO) August Proposal and New Agreement for Active Construction Sites with The Safety Guys",
+    "Discussion Items",
+    "Discussion on COVID-19",
+    "Consent Items (Action Required)",
+    "Acceptance of Donations",
+    "Approval of Additional Vendors to be Included with Non-Public School (\"NPS\")/Non-Public Agency (\"NPA\") Master Contract",
+    "Approval of Agreement between Redwood City School District and Peninsula Community Center (PCC) for Fiscal Year 2020-21 (PE+ Program)",
+    "Approval of Agreement between Redwood City School District and Sequoia Healthcare District (Healthy Schools Initiative Grant)",
+    "Approval of Agreement between Redwood City School District and One Life Counseling (Increased Counseling Services)",
+    "Approval of Agreement between Redwood City School District and San Mateo County Office of Education for Library Services for 2020-21",
+    "Ratification of Warrant Register, August 1, 2020 - August 31, 2020",
+    "Action Items (Action Required)",
+    "Approval of the Memorandum of Understanding between the Redwood City School District and the California School Employees Association",
+    "Approval of Variable Term Waiver Request",
+    "Approval of Personnel Changes for 2020-21",
+    "Board and Superintendent Report",
+    "Report from Board Members and Superintendent",
+    "Information",
+    "Information on San Mateo County Investment Fund - July, 2020",
+    "Correspondence",
+    "Other Business/Suggested Items for Future Agenda",
+    "Board Agenda Calendar",
+    "Changes to the Board Agenda Schedule",
+    "Adjournment (Action Required)"
+  ],
+  "llmResponse": {
+    "agenda_changes": "Multiple changes announced: (1) Item 8 moved into item 7; (2) All bond action items moved to bond consent; (3) All action items under section 11 moved to consent. Board President stated: 'I'd like to suggest we move agenda item eight into seven, and we make all the action items go to consent.' Trustee McAvoy agreed and added: 'the bond action items go to bond consent, and all of the items under 11 Action items to consent.'",
+    "consent_vote_words": "So moved. Maria. Second. Cecilia, can we have a roll call vote, please?",
+    "items": [
+      {
+        "item": 1,
+        "intro_words": "This is now our September 9th meeting of the Road City School Board.",
+        "status": "found"
+      },
+      {
+        "item": 2,
+        "intro_words": "Jesse Marquez. Here. Trustee Diaz Lilcombe. Vice President McAvoy.",
+        "status": "found"
+      },
+      {
+        "item": 3,
+        "intro_words": "welcome, everybody. This is now our September 9th meeting",
+        "status": "found"
+      },
+      {
+        "item": 4,
+        "intro_words": "This is now our September 9th meeting of the Road City School Board.",
+        "status": "found"
+      },
+      {
+        "item": 5,
+        "intro_words": "So are there any changes to the agenda? I'd like to suggest",
+        "status": "found"
+      },
+      {
+        "item": 6,
+        "intro_words": "So are there any changes to the agenda? I'd like to suggest",
+        "status": "found"
+      },
+      {
+        "item": 7,
+        "intro_words": "Okay. So is there a motion to approve? So approved.",
+        "status": "found"
+      },
+      {
+        "item": 8,
+        "intro_words": "Okay. So is there a motion to approve? So approved.",
+        "status": "found"
+      },
+      {
+        "item": 9,
+        "intro_words": "We have. We do have speaker cards. They're all for the COVID",
+        "status": "found"
+      },
+      {
+        "item": 10,
+        "intro_words": "That brings us to item 6, the Sobrato organization report.",
+        "status": "found"
+      },
+      {
+        "item": 11,
+        "intro_words": "That brings us to item 6, the Sobrato organization report.",
+        "status": "found"
+      },
+      {
+        "item": 12,
+        "intro_words": "Okay, so that brings us to where are we? Item we're on the bond",
+        "status": "found"
+      },
+      {
+        "item": 13,
+        "intro_words": "Okay, so that brings us to where are we? Item we're on the bond",
+        "status": "found"
+      },
+      {
+        "item": 14,
+        "intro_words": "Okay, so that brings us to where are we? Item we're on the bond",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 15,
+        "intro_words": "Okay, so that brings us to where are we? Item we're on the bond",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 16,
+        "intro_words": "Okay, so that brings us to where are we? Item we're on the bond",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 18,
+        "intro_words": "Okay, so that brings us to where are we? Item we're on the bond",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 19,
+        "intro_words": "Okay, so that brings us to where are we? Item we're on the bond",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 20,
+        "intro_words": "Okay, so now we are on item 9.1. Discussion on COVID 19.",
+        "status": "found"
+      },
+      {
+        "item": 21,
+        "intro_words": "Okay, so now we are on item 9.1. Discussion on COVID 19.",
+        "status": "found"
+      },
+      {
+        "item": 22,
+        "intro_words": "So we are on item 10, consent, and that also includes all",
+        "status": "found"
+      },
+      {
+        "item": 23,
+        "intro_words": "So we are on item 10, consent, and that also includes all",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 24,
+        "intro_words": "So we are on item 10, consent, and that also includes all",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 25,
+        "intro_words": "So we are on item 10, consent, and that also includes all",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 26,
+        "intro_words": "So we are on item 10, consent, and that also includes all",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 27,
+        "intro_words": "So we are on item 10, consent, and that also includes all",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 28,
+        "intro_words": "So we are on item 10, consent, and that also includes all",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 29,
+        "intro_words": "So we are on item 10, consent, and that also includes all",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 30,
+        "intro_words": "So we are on item 10, consent, and that also includes all",
+        "status": "found"
+      },
+      {
+        "item": 31,
+        "intro_words": "So we are on item 10, consent, and that also includes all",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 32,
+        "intro_words": "So we are on item 10, consent, and that also includes all",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 33,
+        "intro_words": "So we are on item 10, consent, and that also includes all",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 34,
+        "intro_words": "Okay, so that brings us to reports from board members and superintendents.",
+        "status": "found"
+      },
+      {
+        "item": 35,
+        "intro_words": "Okay, so that brings us to reports from board members and superintendents.",
+        "status": "found"
+      },
+      {
+        "item": 36,
+        "intro_words": "And then today on the county call, I don't know.",
+        "status": "found"
+      },
+      {
+        "item": 37,
+        "intro_words": "And then today on the county call, I don't know.",
+        "status": "found"
+      },
+      {
+        "item": 38,
+        "intro_words": "Okay, so we're on to item 13.1, information from the San Mateo",
+        "status": "found"
+      },
+      {
+        "item": 39,
+        "intro_words": "Okay, correspondence. Hearing? None. Okay, we'll move forward.",
+        "status": "found"
+      },
+      {
+        "item": 40,
+        "intro_words": "Okay, then we are on to other business suggested items for future",
+        "status": "found"
+      },
+      {
+        "item": 41,
+        "intro_words": "Okay, so we are. Where are we? 161 Changes to the board",
+        "status": "found"
+      },
+      {
+        "item": 42,
+        "intro_words": "Is there a motion to adjourn? I would like to make one.",
+        "status": "found"
+      }
+    ]
+  },
+  "result": {
+    "videoId": "JXT4UVeAZw8",
+    "items": [
+      {
+        "timestamp": "00:00:00",
+        "timestampSeconds": 0
+      },
+      {
+        "timestamp": "00:00:00",
+        "timestampSeconds": 0
+      },
+      {
+        "timestamp": "00:00:00",
+        "timestampSeconds": 0
+      },
+      {
+        "timestamp": "00:00:00",
+        "timestampSeconds": 0
+      },
+      {
+        "timestamp": "00:00:57",
+        "timestampSeconds": 57
+      },
+      {
+        "timestamp": "00:00:57",
+        "timestampSeconds": 57
+      },
+      {
+        "timestamp": "00:01:17",
+        "timestampSeconds": 77
+      },
+      {
+        "timestamp": "00:01:17",
+        "timestampSeconds": 77
+      },
+      {
+        "timestamp": "00:01:50",
+        "timestampSeconds": 110
+      },
+      {
+        "timestamp": "00:03:53",
+        "timestampSeconds": 233
+      },
+      {
+        "timestamp": "00:03:53",
+        "timestampSeconds": 233
+      },
+      {
+        "timestamp": "00:03:53",
+        "timestampSeconds": 233
+      },
+      {
+        "timestamp": "00:03:53",
+        "timestampSeconds": 233
+      },
+      {
+        "timestamp": "00:37:49",
+        "timestampSeconds": 2269,
+        "consent": true
+      },
+      {
+        "timestamp": "00:37:49",
+        "timestampSeconds": 2269,
+        "consent": true
+      },
+      {
+        "timestamp": "00:37:49",
+        "timestampSeconds": 2269,
+        "consent": true
+      },
+      null,
+      {
+        "timestamp": "00:37:49",
+        "timestampSeconds": 2269,
+        "consent": true
+      },
+      {
+        "timestamp": "00:37:49",
+        "timestampSeconds": 2269,
+        "consent": true
+      },
+      {
+        "timestamp": "00:38:11",
+        "timestampSeconds": 2291
+      },
+      {
+        "timestamp": "00:38:11",
+        "timestampSeconds": 2291
+      },
+      {
+        "timestamp": "02:35:56",
+        "timestampSeconds": 9356
+      },
+      {
+        "timestamp": "00:37:49",
+        "timestampSeconds": 2269,
+        "consent": true
+      },
+      {
+        "timestamp": "00:37:49",
+        "timestampSeconds": 2269,
+        "consent": true
+      },
+      {
+        "timestamp": "00:37:49",
+        "timestampSeconds": 2269,
+        "consent": true
+      },
+      {
+        "timestamp": "00:37:49",
+        "timestampSeconds": 2269,
+        "consent": true
+      },
+      {
+        "timestamp": "00:37:49",
+        "timestampSeconds": 2269,
+        "consent": true
+      },
+      {
+        "timestamp": "00:37:49",
+        "timestampSeconds": 2269,
+        "consent": true
+      },
+      {
+        "timestamp": "00:37:49",
+        "timestampSeconds": 2269,
+        "consent": true
+      },
+      {
+        "timestamp": "02:35:56",
+        "timestampSeconds": 9356
+      },
+      {
+        "timestamp": "00:37:49",
+        "timestampSeconds": 2269,
+        "consent": true
+      },
+      {
+        "timestamp": "00:37:49",
+        "timestampSeconds": 2269,
+        "consent": true
+      },
+      {
+        "timestamp": "00:37:49",
+        "timestampSeconds": 2269,
+        "consent": true
+      },
+      {
+        "timestamp": "02:36:17",
+        "timestampSeconds": 9377
+      },
+      {
+        "timestamp": "02:36:17",
+        "timestampSeconds": 9377
+      },
+      {
+        "timestamp": "02:38:46",
+        "timestampSeconds": 9526
+      },
+      {
+        "timestamp": "02:38:46",
+        "timestampSeconds": 9526
+      },
+      {
+        "timestamp": "02:43:49",
+        "timestampSeconds": 9829
+      },
+      {
+        "timestamp": "02:44:04",
+        "timestampSeconds": 9844
+      },
+      {
+        "timestamp": "02:44:37",
+        "timestampSeconds": 9877
+      },
+      {
+        "timestamp": "02:46:11",
+        "timestampSeconds": 9971
+      },
+      {
+        "timestamp": "02:47:04",
+        "timestampSeconds": 10024
+      }
+    ]
+  },
+  "cachedAt": "2026-03-26T22:49:43.390Z",
+  "inputTokens": 33522,
+  "outputTokens": 2118
+}

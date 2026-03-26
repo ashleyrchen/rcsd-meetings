@@ -1,0 +1,159 @@
+{
+  "date": "2022-09-14",
+  "items": [
+    "Call to Order",
+    "Roll Call",
+    "Welcome",
+    "Welcome by the School Board President, María Díaz-Slocum",
+    "Changes to the Agenda",
+    "Additions, Deletions or Modifications to the agenda.",
+    "Approval of Agenda",
+    "Approval of Agenda",
+    "Oral Communication",
+    "If you have public comment related to a Special Board Meeting item, please post it on the links under Public Content prior to the meeting or immediately upon the meeting opening.",
+    "Bond Program Action Items",
+    "Measure T Bond Program Budget Update Presentation and Adoption of New Budget",
+    "Adjournment",
+    "Adjourn the Meeting"
+  ],
+  "llmResponse": {
+    "agenda_changes": null,
+    "consent_vote_words": null,
+    "items": [
+      {
+        "item": 1,
+        "intro_words": "Good evening everyone. Welcome to our special meeting. Roll call please.",
+        "status": "found"
+      },
+      {
+        "item": 2,
+        "intro_words": "Roll call please. Trustee McAvoy? Present. Trustee Wells?",
+        "status": "found"
+      },
+      {
+        "item": 3,
+        "intro_words": "Thank you everybody for joining us this evening. If you need translation,",
+        "status": "found"
+      },
+      {
+        "item": 4,
+        "intro_words": "Thank you everybody for joining us this evening. If you need translation,",
+        "status": "found"
+      },
+      {
+        "item": 5,
+        "intro_words": "Do we have any changes to the agenda this evening? None.",
+        "status": "found"
+      },
+      {
+        "item": 6,
+        "intro_words": "Do we have any changes to the agenda this evening? None.",
+        "status": "found"
+      },
+      {
+        "item": 7,
+        "intro_words": "Well, great. I have a motion to move the agenda.",
+        "status": "found"
+      },
+      {
+        "item": 8,
+        "intro_words": "Well, great. I have a motion to move the agenda.",
+        "status": "found"
+      },
+      {
+        "item": 9,
+        "intro_words": "Do we have any oral communication this evening? No oral communication.",
+        "status": "found"
+      },
+      {
+        "item": 10,
+        "intro_words": "Do we have any oral communication this evening? No oral communication.",
+        "status": "found"
+      },
+      {
+        "item": 11,
+        "intro_words": "And moving right along to item number six, which is tonight's",
+        "status": "found"
+      },
+      {
+        "item": 12,
+        "intro_words": "And moving right along to item number six, which is tonight's",
+        "status": "found"
+      },
+      {
+        "item": 13,
+        "intro_words": "Can I have a motion to adjourn? I'd like to make",
+        "status": "found"
+      },
+      {
+        "item": 14,
+        "intro_words": "Can I have a motion to adjourn? I'd like to make",
+        "status": "found"
+      }
+    ]
+  },
+  "result": {
+    "videoId": "uSC-1C1ITa8",
+    "items": [
+      {
+        "timestamp": "00:00:06",
+        "timestampSeconds": 6
+      },
+      {
+        "timestamp": "00:00:06",
+        "timestampSeconds": 6
+      },
+      {
+        "timestamp": "00:00:13",
+        "timestampSeconds": 13
+      },
+      {
+        "timestamp": "00:00:13",
+        "timestampSeconds": 13
+      },
+      {
+        "timestamp": "00:00:29",
+        "timestampSeconds": 29
+      },
+      {
+        "timestamp": "00:00:29",
+        "timestampSeconds": 29
+      },
+      {
+        "timestamp": "00:00:29",
+        "timestampSeconds": 29
+      },
+      {
+        "timestamp": "00:00:29",
+        "timestampSeconds": 29
+      },
+      {
+        "timestamp": "00:01:28",
+        "timestampSeconds": 88
+      },
+      {
+        "timestamp": "00:01:28",
+        "timestampSeconds": 88
+      },
+      {
+        "timestamp": "00:01:38",
+        "timestampSeconds": 98
+      },
+      {
+        "timestamp": "00:01:38",
+        "timestampSeconds": 98
+      },
+      {
+        "timestamp": "00:11:36",
+        "timestampSeconds": 696
+      },
+      {
+        "timestamp": "00:11:36",
+        "timestampSeconds": 696
+      }
+    ]
+  },
+  "cachedAt": "2026-03-26T22:39:55.393Z",
+  "inputTokens": 6106,
+  "outputTokens": 659
+}

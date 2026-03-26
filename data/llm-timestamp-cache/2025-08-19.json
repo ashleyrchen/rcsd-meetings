@@ -1,181 +1,369 @@
 {
   "date": "2025-08-19",
   "items": [
-    "Parcel Tax Survey Findings (TeamCivX/Godbe Research) — tested multiple structures: 17.5¢/sq ft (~$14.3M/yr), 5.5¢/sq ft (~$4.5M/yr), and 10¢ alternative. Top priorities: preserving STEM, protecting arts/music, supporting reading/writing, maintaining class sizes. District engaged in April 2025 to study feasibility for June 2026 ballot.",
-    "Board Member School/Committee Assignments for 2025-26 — annual rotation of school site and committee assignments",
-    "Public Hearing: Sufficiency of Instructional Materials — Ed Code 60119 compliance; confirmed all pupils have sufficient textbooks/materials in core curriculum",
-    "Promotion/Acceleration/Retention Policy (BP 5123) — third reading (final approval)",
-    "Connect Community Charter School 5-Year FUA — facilities use agreement at former Fair Oaks Elementary site, July 2025 – June 2030, space shared with KIPP Excelencia",
-    "Connect Community Charter School 5-Year MOU — memorandum of understanding aligned with renewed charter petition (approved March 26, 2025), oversight fee up to 1% of LCFF revenues",
-    "Resolution No. 1 — Teachers Gaining Permanent Status (tenure)",
-    "Resolution No. 2 — Approval of Ed Code and Title V Options for Teaching Assignments",
-    "Resolution No. 3 — Sufficiency of Instructional Materials for 2025-26",
-    "REACH Afterschool (City of Redwood City) — $1,184,298 for extended day learning at Adelante Selby, Henry Ford, Roosevelt, Orion (828 students total)",
-    "Catalyst Family Inc. Amendment — increased from 120 to 140 students, amended total $959,906 for North Star Academy afterschool",
-    "Casa Circulo Cultural — $412,500 afterschool academic support for 165 unduplicated students at off-site location",
-    "YMCA of Silicon Valley — $200,000 afterschool at Adelante Selby (80 students)",
-    "UC Regents / CRLP — $153,000 California Reading and Literature Project for Science of Reading professional development",
-    "Procare Therapy — $231,840 for 2 vacant SPED LVN positions",
-    "Amergis Healthcare — $96,600 for 1 SPED LVN position (1:1 care)",
-    "TCM Language Power ELD Curriculum — $81,803 supplemental designated ELD for grades K-8 English Learners",
-    "SMCOE Teacher Induction — $57,750 for ~11 new teachers",
-    "SCCOE Innovations Collaborative MOU — $14,970 for equity/inclusion professional learning",
-    "7 Food Service Bid Extensions: Sysco Grocery ($1.2M), Bonami Baking ($500K), Pacific Produce ($325K), Del Monte Meats ($250K), Healthy Kids Pizza ($250K), Daylight Dairy ($250K), Sysco Protein ($200K) — total $2.975M",
-    "Roy Cloud field trip to GGNRA (6th grade science, Oct 1-3)",
-    "6 University interagency agreements (SFSU, SJSU ×2, REACH, NDNU ×2) — student teachers/interns",
-    "Measure T Bond tracking list ($8,327 credit)",
-    "Quarterly Williams Report Q4 — no complaints, full compliance",
-    "Warrant registers: June 2025 ($10.96M) + July 2025 ($7.72M)",
-    "Personnel report",
-    "June 11, 18, 25 meeting minutes approval"
+    "Call to Order",
+    "Roll Call",
+    "Public Comment on Closed Session Items Only",
+    "Closed Session - 6:30 PM",
+    "CONFERENCE WITH LEGAL COUNSEL—ANTICIPATED LITIGATION Initiation of litigation pursuant to paragraph (4) of subdivision (d) of Section 54956.9: 1 case.",
+    "Reconvene to Open Session at approximately 7:00 PM",
+    "Roll Call",
+    "Report Out on Closed Session from August 19, 2025",
+    "Welcome",
+    "Changes to the Agenda",
+    "Approval of the Agenda (Action Required)",
+    "Public Comment",
+    "Approval of the Bond Program Consent Items",
+    "Approval of Measure T Bond Program Tracking List of Items Under $20k",
+    "Bond Program Action Items",
+    "Discussion Items",
+    "Discussion of Parcel Tax Survey Findings and Recommended Next Steps",
+    "Discussion of School Assignments and Committee Assignments for Board Members for the 2025–26 School Year",
+    "Public Hearing",
+    "Public Hearing of Sufficiency of Instructional Materials for the 2025-2026 School Year",
+    "Approval of Consent Items (Action Required)",
+    "Approval of the June 11, June 18, and June 25, 2025, Board Meeting Minutes",
+    "Third Reading and Approval of Board Policy and Administrative Regulation 5123- Promotion/Acceleration/Retention",
+    "Approval of Roy Cloud School Field Trip to Golden Gate National Recreation Area (GGNRA) – October 1, 2025 – October 3, 2025",
+    "Approval of the Agreement between Redwood City School District and YMCA of Silicon Valley for the 2025-2026 School Year",
+    "Approval of the Agreement between the Redwood City School District and Casa Circulo Cultural Inc. for the 2025-2026 School Year",
+    "Approval of the Agreement between Redwood City School District and the City of Redwood City (REACH) for the 2025-2026 School Year",
+    "Approval of the Agreement between Redwood City School District and the Regents of the University of California  for the 2025-2026 School Year",
+    "Approval of the Agreements between Redwood City School District and Procare Therapy to fill two vacant Licensed Vocational Nurse (LVN) Positions for the 2025-2026 School Year",
+    "Approval of the Agreement between Redwood City School District and Amergis Healthcare Staffing for the 2025-2026 School Year",
+    "Approval of the Amendment to the Agreement between Redwood City School District and Catalyst Family Inc. for the 2025-2026 School Year and Summer",
+    "Approval of the Memorandum of Understanding between Redwood City School District and the Santa Clara County Office of Education (SCCOE) for the 2025-2026 School Year",
+    "Approval of the Teacher Induction Agreement with San Mateo County Office of Education",
+    "Approval of Teacher Created Materials Language Power ELD Curriculum for the school year 2025-2026",
+    "Approval of Local Interagency Agreement to Provide Education and Training to Credential Candidates - San Francisco State University - Student Teachers",
+    "Approval of Local Interagency Agreement to Provide Education and Training to Credential Candidates - San Jose State University - Intern Program (Pre-K to 3rd)",
+    "Approval of Local Interagency Agreement to Provide Education and Training to Credential Candidates - San Jose State University - Intern Program - (Multiple and Single Subject)",
+    "Approval of Local Interagency Agreement to Provide Education and Training to Credential Candidates - REACH University",
+    "Approval of Local Interagency Agreement to Provide Education and Training to Credential Candidates - Notre Dame de Namur University - Unpaid Student Teachers",
+    "Approval of Local Interagency Agreement to Provide Education and Training to Credential Candidates - Notre Dame de Namur University - Intern Program",
+    "Approval of Personnel Report",
+    "Approval of Non-Public School (NPS)/Non-Public Agency (NPA) Master Contracts",
+    "Approval of the Facilities Use Agreement between Redwood City School District and Connect Community Charter School for the 2025-2030 School Years",
+    "Extension of Bid with Healthy Kids/Tasty Pizza for the 25-26 School Year",
+    "Extension of Bid with Allen Bros./Del Monte Meats for the 25-26 School Year",
+    "Extension of Bid with Bonami Baking Company for the 25-26 School Year",
+    "Extension of Bid with Sysco Foods for Grocery Products for the 25-26 School Year",
+    "Extension of Bid with Pacific Produce Company/Pacific Rim Produce for the 25-26 School Year",
+    "Extension of Bid with Daylight Foods for the 25-26 School Year",
+    "Extension of Bid with Sysco Foods Protein for the 25-26 School Year",
+    "Ratification of Warrant Registers, June 1, 2025 - June 30, 2025",
+    "Ratification of Warrant Registers, July 1, 2025 - July 31, 2025",
+    "Action Items (Action Required)",
+    "Approval of Memorandum of Understanding – Connect Community Charter School (2025–2030)",
+    "Adoption of Resolution No. 1: Teachers Gaining Permanent Status",
+    "Adoption of Resolution No. 2, Approval of Education Code and Title V Options for Teaching Assignments",
+    "Adoption of Resolution No. 3 Sufficiency of Instructional Materials for the 2025-26 School Year",
+    "Approval of Provisional Internship Permit",
+    "Board and Superintendent Reports",
+    "Information"
   ],
   "llmResponse": {
     "agenda_changes": null,
-    "consent_vote_words": "The School Board approved the Consent Items (Weekly, Li; 5-0), taking the following action:",
+    "consent_vote_words": "I move we approve the consent agenda. A second. All right. All in favor? Aye.",
     "items": [
       {
         "item": 1,
-        "intro_words": "our first item is a discussion of parcel tax survey findings and recommended next steps",
+        "intro_words": "let's reconvene, and we'll have Evelyn start with a roll call",
         "status": "found"
       },
       {
         "item": 2,
-        "intro_words": "our next item is a discussion of school assign wait before we move on",
+        "intro_words": "Trustee Lee. Here. Trustee King. Here. Trustee Marquez",
         "status": "found"
       },
       {
         "item": 3,
-        "intro_words": "next on the agenda is our public hearing for sufficiency of instructional materials",
+        "intro_words": "I'm going to report out on your closed session. So, in compliance",
         "status": "found"
       },
       {
         "item": 4,
-        "intro_words": "I'm going to now open the public hearing on the sufficiency of instructional materials",
+        "intro_words": "closed session, the board took action to initiate legal proceedings related",
         "status": "found"
       },
       {
         "item": 5,
-        "intro_words": "we are going to pass all of these items in one motion uh and this was",
-        "status": "consent_bundle"
+        "intro_words": "closed session, the board took action to initiate legal proceedings related",
+        "status": "found"
       },
       {
         "item": 6,
-        "intro_words": "we will start with the first one which is the approval of theou for connect",
+        "intro_words": "Welcome to the August 19, 2025 meeting of the Redwood City",
         "status": "found"
       },
       {
         "item": 7,
-        "intro_words": "Moving on to our second um action item this is adoption of resolution number one",
+        "intro_words": "Welcome back to school, everyone you know. It's a warm",
         "status": "found"
       },
       {
         "item": 8,
-        "intro_words": "we'll move on to resolution number two um and that's approval of education code",
+        "intro_words": "Do we have any changes to the agenda? All right",
         "status": "found"
       },
       {
         "item": 9,
-        "intro_words": "Moving on to resolution number three uh this is the one from the public hearing",
+        "intro_words": "All right, let's go through a motion to approve the agenda",
         "status": "found"
       },
       {
         "item": 10,
-        "intro_words": "so we are not covering REACH Afterschool as a separate action item",
-        "status": "pulled"
-      },
-      {
-        "item": 11,
-        "intro_words": "so we are not covering Catalyst Family Inc Amendment as a separate action item",
-        "status": "pulled"
-      },
-      {
-        "item": 12,
-        "intro_words": "so we are not covering Casa Circulo Cultural as a separate action item",
-        "status": "pulled"
-      },
-      {
-        "item": 13,
-        "intro_words": "so we are not covering YMCA of Silicon Valley as a separate action item",
-        "status": "pulled"
-      },
-      {
-        "item": 14,
-        "intro_words": "so we are not covering UC Regents CRLP as a separate action item",
-        "status": "pulled"
-      },
-      {
-        "item": 15,
-        "intro_words": "so we are not covering Procare Therapy as a separate action item",
-        "status": "pulled"
-      },
-      {
-        "item": 16,
-        "intro_words": "so we are not covering Amergis Healthcare as a separate action item",
-        "status": "pulled"
-      },
-      {
-        "item": 17,
-        "intro_words": "so we are not covering TCM Language Power ELD Curriculum as a separate action item",
-        "status": "pulled"
-      },
-      {
-        "item": 18,
-        "intro_words": "so we are not covering SMCOE Teacher Induction as a separate action item",
-        "status": "pulled"
-      },
-      {
-        "item": 19,
-        "intro_words": "so we are not covering SCCOE Innovations Collaborative MOU as a separate action item",
-        "status": "pulled"
-      },
-      {
-        "item": 20,
-        "intro_words": "so we are not covering Food Service Bid Extensions as a separate action item",
-        "status": "pulled"
-      },
-      {
-        "item": 21,
-        "intro_words": "so we are not covering Roy Cloud field trip as a separate action item",
-        "status": "pulled"
-      },
-      {
-        "item": 22,
-        "intro_words": "so we are not covering University interagency agreements as a separate action item",
-        "status": "pulled"
-      },
-      {
-        "item": 23,
-        "intro_words": "we will move this without discussion so is there a motion to approve bond",
+        "intro_words": "let's go through a motion to approve the agenda. I move",
         "status": "found"
       },
       {
+        "item": 11,
+        "intro_words": "All right. All in favor? Aye. Great. Okay, so no",
+        "status": "found"
+      },
+      {
+        "item": 12,
+        "intro_words": "we're going to move on to public comment. I don't think",
+        "status": "found"
+      },
+      {
+        "item": 13,
+        "intro_words": "we'll move on to approval of the bond program consent items",
+        "status": "found"
+      },
+      {
+        "item": 14,
+        "intro_words": "There are no bond program action items, so thank you",
+        "status": "found"
+      },
+      {
+        "item": 15,
+        "intro_words": "We're on to discussion items. And our first item is",
+        "status": "found"
+      },
+      {
+        "item": 16,
+        "intro_words": "We're on to discussion items. And our first item is",
+        "status": "found"
+      },
+      {
+        "item": 17,
+        "intro_words": "tonight we will hear about an option that could make",
+        "status": "found"
+      },
+      {
+        "item": 18,
+        "intro_words": "Our next item is a discussion of school assignment. Wait",
+        "status": "found"
+      },
+      {
+        "item": 19,
+        "intro_words": "is our public hearing for sufficiency of instruct materials for",
+        "status": "found"
+      },
+      {
+        "item": 20,
+        "intro_words": "I'm going to now open the public hearing on the sufficiency",
+        "status": "found"
+      },
+      {
+        "item": 21,
+        "intro_words": "I move we approve the consent agenda. A second. All",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 22,
+        "intro_words": "I move we approve the consent agenda. A second. All",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 23,
+        "intro_words": "I move we approve the consent agenda. A second. All",
+        "status": "consent_bundle"
+      },
+      {
         "item": 24,
-        "intro_words": "so we are not covering Measure T Bond tracking as a separate action item",
-        "status": "pulled"
+        "intro_words": "I move we approve the consent agenda. A second. All",
+        "status": "consent_bundle"
       },
       {
         "item": 25,
-        "intro_words": "so we are not covering Quarterly Williams Report as a separate action item",
-        "status": "pulled"
+        "intro_words": "I move we approve the consent agenda. A second. All",
+        "status": "consent_bundle"
       },
       {
         "item": 26,
-        "intro_words": "so we are not covering Warrant registers as a separate action item",
-        "status": "pulled"
+        "intro_words": "I move we approve the consent agenda. A second. All",
+        "status": "consent_bundle"
       },
       {
         "item": 27,
-        "intro_words": "we are not covering Personnel report as a separate action item per se",
-        "status": "pulled"
+        "intro_words": "I move we approve the consent agenda. A second. All",
+        "status": "consent_bundle"
       },
       {
         "item": 28,
-        "intro_words": "we are not covering June meeting minutes as a separate action item per se",
-        "status": "pulled"
+        "intro_words": "I move we approve the consent agenda. A second. All",
+        "status": "consent_bundle"
       },
       {
-        "item": "provisional_internship",
-        "intro_words": "but we are still uh here to approve the provisional internship permit wendy",
+        "item": 29,
+        "intro_words": "I move we approve the consent agenda. A second. All",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 30,
+        "intro_words": "I move we approve the consent agenda. A second. All",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 31,
+        "intro_words": "I move we approve the consent agenda. A second. All",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 32,
+        "intro_words": "I move we approve the consent agenda. A second. All",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 33,
+        "intro_words": "I move we approve the consent agenda. A second. All",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 34,
+        "intro_words": "I move we approve the consent agenda. A second. All",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 35,
+        "intro_words": "I move we approve the consent agenda. A second. All",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 36,
+        "intro_words": "I move we approve the consent agenda. A second. All",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 37,
+        "intro_words": "I move we approve the consent agenda. A second. All",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 38,
+        "intro_words": "I move we approve the consent agenda. A second. All",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 39,
+        "intro_words": "I move we approve the consent agenda. A second. All",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 40,
+        "intro_words": "I move we approve the consent agenda. A second. All",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 41,
+        "intro_words": "I move we approve the consent agenda. A second. All",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 42,
+        "intro_words": "I move we approve the consent agenda. A second. All",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 43,
+        "intro_words": "I move we approve the consent agenda. A second. All",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 44,
+        "intro_words": "I move we approve the consent agenda. A second. All",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 45,
+        "intro_words": "I move we approve the consent agenda. A second. All",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 46,
+        "intro_words": "I move we approve the consent agenda. A second. All",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 47,
+        "intro_words": "I move we approve the consent agenda. A second. All",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 48,
+        "intro_words": "I move we approve the consent agenda. A second. All",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 49,
+        "intro_words": "I move we approve the consent agenda. A second. All",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 50,
+        "intro_words": "I move we approve the consent agenda. A second. All",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 51,
+        "intro_words": "I move we approve the consent agenda. A second. All",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 52,
+        "intro_words": "I move we approve the consent agenda. A second. All",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 53,
+        "intro_words": "we're at the action items. Now, many of these feel",
+        "status": "found"
+      },
+      {
+        "item": 54,
+        "intro_words": "we will start with the first one, which is the",
+        "status": "found"
+      },
+      {
+        "item": 55,
+        "intro_words": "This is adoption of resolution number one. And these are",
+        "status": "found"
+      },
+      {
+        "item": 56,
+        "intro_words": "we'll move on to resolution number two, and that's approval",
+        "status": "found"
+      },
+      {
+        "item": 57,
+        "intro_words": "moving on to resolution number three. This is the one",
+        "status": "found"
+      },
+      {
+        "item": 58,
+        "intro_words": "we are still here to approve the provisional internship permit",
+        "status": "found"
+      },
+      {
+        "item": 59,
+        "intro_words": "Moving on. Board and superintendent reports. Guess this goes",
+        "status": "found"
+      },
+      {
+        "item": 60,
+        "intro_words": "let's move on to the information items. There's two",
         "status": "found"
       }
     ]
@@ -184,59 +372,277 @@
     "videoId": "B8blJsqUL_4",
     "items": [
       {
-        "timestamp": "00:02:49",
-        "timestampSeconds": 169
+        "timestamp": "00:00:06",
+        "timestampSeconds": 6
       },
       {
-        "timestamp": "01:01:43",
-        "timestampSeconds": 3703
+        "timestamp": "00:00:06",
+        "timestampSeconds": 6
       },
       {
-        "timestamp": "01:09:28",
-        "timestampSeconds": 4168
+        "timestamp": "00:00:06",
+        "timestampSeconds": 6
       },
       {
-        "timestamp": "01:10:11",
-        "timestampSeconds": 4211
+        "timestamp": "00:00:11",
+        "timestampSeconds": 11
+      },
+      {
+        "timestamp": "00:00:11",
+        "timestampSeconds": 11
+      },
+      {
+        "timestamp": "00:00:47",
+        "timestampSeconds": 47
+      },
+      {
+        "timestamp": "00:01:17",
+        "timestampSeconds": 77
+      },
+      {
+        "timestamp": "00:02:04",
+        "timestampSeconds": 124
+      },
+      {
+        "timestamp": "00:02:04",
+        "timestampSeconds": 124
+      },
+      {
+        "timestamp": "00:02:04",
+        "timestampSeconds": 124
+      },
+      {
+        "timestamp": "00:02:04",
+        "timestampSeconds": 124
+      },
+      {
+        "timestamp": "00:01:59",
+        "timestampSeconds": 119
+      },
+      {
+        "timestamp": "00:02:04",
+        "timestampSeconds": 124
+      },
+      {
+        "timestamp": "00:02:14",
+        "timestampSeconds": 134
+      },
+      {
+        "timestamp": "00:02:29",
+        "timestampSeconds": 149
+      },
+      {
+        "timestamp": "00:02:29",
+        "timestampSeconds": 149
+      },
+      {
+        "timestamp": "00:03:04",
+        "timestampSeconds": 184
+      },
+      {
+        "timestamp": "01:01:41",
+        "timestampSeconds": 3701
+      },
+      {
+        "timestamp": "01:09:38",
+        "timestampSeconds": 4178
+      },
+      {
+        "timestamp": "01:10:19",
+        "timestampSeconds": 4219
+      },
+      {
+        "timestamp": "01:13:00",
+        "timestampSeconds": 4380,
+        "consent": true
+      },
+      {
+        "timestamp": "01:13:00",
+        "timestampSeconds": 4380,
+        "consent": true
+      },
+      {
+        "timestamp": "01:13:00",
+        "timestampSeconds": 4380,
+        "consent": true
+      },
+      {
+        "timestamp": "01:13:00",
+        "timestampSeconds": 4380,
+        "consent": true
+      },
+      {
+        "timestamp": "01:13:00",
+        "timestampSeconds": 4380,
+        "consent": true
+      },
+      {
+        "timestamp": "01:13:00",
+        "timestampSeconds": 4380,
+        "consent": true
+      },
+      {
+        "timestamp": "01:13:00",
+        "timestampSeconds": 4380,
+        "consent": true
+      },
+      {
+        "timestamp": "01:13:00",
+        "timestampSeconds": 4380,
+        "consent": true
+      },
+      {
+        "timestamp": "01:13:00",
+        "timestampSeconds": 4380,
+        "consent": true
+      },
+      {
+        "timestamp": "01:13:00",
+        "timestampSeconds": 4380,
+        "consent": true
+      },
+      {
+        "timestamp": "01:13:00",
+        "timestampSeconds": 4380,
+        "consent": true
+      },
+      {
+        "timestamp": "01:13:00",
+        "timestampSeconds": 4380,
+        "consent": true
+      },
+      {
+        "timestamp": "01:13:00",
+        "timestampSeconds": 4380,
+        "consent": true
+      },
+      {
+        "timestamp": "01:13:00",
+        "timestampSeconds": 4380,
+        "consent": true
+      },
+      {
+        "timestamp": "01:13:00",
+        "timestampSeconds": 4380,
+        "consent": true
+      },
+      {
+        "timestamp": "01:13:00",
+        "timestampSeconds": 4380,
+        "consent": true
+      },
+      {
+        "timestamp": "01:13:00",
+        "timestampSeconds": 4380,
+        "consent": true
+      },
+      {
+        "timestamp": "01:13:00",
+        "timestampSeconds": 4380,
+        "consent": true
+      },
+      {
+        "timestamp": "01:13:00",
+        "timestampSeconds": 4380,
+        "consent": true
+      },
+      {
+        "timestamp": "01:13:00",
+        "timestampSeconds": 4380,
+        "consent": true
+      },
+      {
+        "timestamp": "01:13:00",
+        "timestampSeconds": 4380,
+        "consent": true
+      },
+      {
+        "timestamp": "01:13:00",
+        "timestampSeconds": 4380,
+        "consent": true
+      },
+      {
+        "timestamp": "01:13:00",
+        "timestampSeconds": 4380,
+        "consent": true
+      },
+      {
+        "timestamp": "01:13:00",
+        "timestampSeconds": 4380,
+        "consent": true
+      },
+      {
+        "timestamp": "01:13:00",
+        "timestampSeconds": 4380,
+        "consent": true
+      },
+      {
+        "timestamp": "01:13:00",
+        "timestampSeconds": 4380,
+        "consent": true
+      },
+      {
+        "timestamp": "01:13:00",
+        "timestampSeconds": 4380,
+        "consent": true
+      },
+      {
+        "timestamp": "01:13:00",
+        "timestampSeconds": 4380,
+        "consent": true
+      },
+      {
+        "timestamp": "01:13:00",
+        "timestampSeconds": 4380,
+        "consent": true
+      },
+      {
+        "timestamp": "01:13:00",
+        "timestampSeconds": 4380,
+        "consent": true
+      },
+      {
+        "timestamp": "01:13:00",
+        "timestampSeconds": 4380,
+        "consent": true
+      },
+      {
+        "timestamp": "01:13:00",
+        "timestampSeconds": 4380,
+        "consent": true
+      },
+      {
+        "timestamp": "01:18:15",
+        "timestampSeconds": 4695
       },
       null,
       {
-        "timestamp": "01:13:41",
-        "timestampSeconds": 4421
+        "timestamp": "01:17:39",
+        "timestampSeconds": 4659
       },
       {
-        "timestamp": "01:14:41",
-        "timestampSeconds": 4481
+        "timestamp": "01:15:41",
+        "timestampSeconds": 4541
       },
       {
-        "timestamp": "01:15:44",
-        "timestampSeconds": 4544
+        "timestamp": "01:14:46",
+        "timestampSeconds": 4486
       },
       {
-        "timestamp": "01:17:25",
-        "timestampSeconds": 4645
+        "timestamp": "01:18:00",
+        "timestampSeconds": 4680
       },
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "timestamp": "01:19:10",
+        "timestampSeconds": 4750
+      },
+      {
+        "timestamp": "01:21:55",
+        "timestampSeconds": 4915
+      }
     ]
   },
-  "cachedAt": "2026-03-04T19:00:41.823Z",
-  "inputTokens": 22161,
-  "outputTokens": 1417
+  "cachedAt": "2026-03-26T22:27:34.620Z",
+  "inputTokens": 19089,
+  "outputTokens": 2735
 }

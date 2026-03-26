@@ -1,22 +1,34 @@
 {
   "date": "2025-02-05",
   "items": [
+    "Call to Order",
     "Roll Call",
+    "Oral Communication on Closed Session Items Only",
     "If you have public comment related to a Closed Session item, please post it on the links under Public Content prior to the Closed Session Meeting or immediately upon the meeting opening.",
+    "Closed Session – 5:45 - 6:45 p.m.",
     "CONFERENCE WITH REAL PROPERTY NEGOTIATORS (Gov. Code, 54956.8) Property: 750 Bradford St, Redwood City, CA 94063 Agency negotiators: John Baker, Superintendent, Peter Ingram, Consultant, and Clarissa Canady, Legal Counsel, Negotiating parties: Redwood City School District and The Sobrato Organization Under negotiation: Price and terms of payment of Property Exchange Agreement",
+    "Reconvene to Regular Session at Approximately 7:00 p.m.",
     "Roll Call",
     "Report Out on Closed Session from February 5, 2025",
+    "Welcome",
     "Welcome by the School Board President, Mike Wells",
+    "Changes to the Agenda",
     "Additions, Deletions, or Modifications to the Agenda",
     "Approval of Agenda",
+    "Approval of Agenda",
+    "Oral Communication",
     "If you have public comment related to a Regular Board Meeting item, please post it on the links available under Public Content prior to the Regular Board Meeting or immediately upon the meeting opening.",
+    "Bond Program Consent Items",
     "Approval of Bond Program Consent Items",
     "Approval of Performance Audit Administration Services Agreement with Christy White, Inc.",
     "Approval of Proposal for Phase 2 Solar Procore Project Management Information Systems Software with Holt Renewables",
+    "Bond Program Action Items",
     "Approval of Agreement for Rental and Purchase of Mobile Air Conditioning Units",
-    "Information on 2023-24 Financial and Performance Audits Building Fund (Measure T &amp; S) for RCSD",
+    "School/Community Reports",
+    "Information on 2023-24 Financial and Performance Audits Building Fund (Measure T & S) for RCSD",
     "Information on Financial Audit Report for RCSD for 2023-24 School Year",
     "Hoover and Roy Cloud School Presentations for the 2024-2025 School Year",
+    "Consent Items",
     "Approval of Consent Items",
     "Approval of the January 8 Board Meeting Minutes",
     "Approval of the January 10 Board Meeting Minutes",
@@ -25,207 +37,234 @@
     "Approval of Addendum to the 2024-25 Measure U Application for McKinley Institute of Technology (MIT)",
     "Approval of Addendum to the 2024-25 Measure U Application for Kennedy Middle School",
     "Award of Bid to Supply Specialty Protein Products",
-    "Acceptance of the Redwood City Teachers Association&#039;s Sunshine Proposal",
-    "Receipt of Governing Board&#039;s initial proposal for negotiations with the Redwood City Teachers Association for the 2025-2026 School Year",
+    "Action Items",
+    "Acceptance of the Redwood City Teachers Association's Sunshine Proposal",
+    "Receipt of Governing Board's initial proposal for negotiations with the Redwood City Teachers Association for the 2025-2026 School Year",
+    "Board and Superintendent Reports",
     "Report from Board Members and Superintendent",
-    "RCSD Review of Rocketship Redwood City Charter School&#039;s First Interim Financial Report for FY 2024-25",
+    "Information",
+    "RCSD Review of Rocketship Redwood City Charter School's First Interim Financial Report for FY 2024-25",
     "RCSD Review of Connect Community Charter First Interim Financial Report for FY 2024-25",
-    "RCSD Review of KIPP Excelencia Community Prep&#039;s First Interim Financial Report for FY 2024-25",
-    "RCSD Review of Rocketship Redwood City Charter School&#039;s Audit Report for FY 2023-24",
-    "RCSD Review of Connect Community Charter School&#039;s Audit Report for FY 2023-24",
-    "RCSD Review of KIPP Excelencia Community Prep&#039;s Audit Report for FY 2023-24",
+    "RCSD Review of KIPP Excelencia Community Prep's First Interim Financial Report for FY 2024-25",
+    "RCSD Review of Rocketship Redwood City Charter School's Audit Report for FY 2023-24",
+    "RCSD Review of Connect Community Charter School's Audit Report for FY 2023-24",
+    "RCSD Review of KIPP Excelencia Community Prep's Audit Report for FY 2023-24",
     "Correspondence",
+    "Correspondence",
+    "Other Business/Suggested Items For Future Agenda",
     "Possible Other Business/Suggested Items for Future Agenda",
+    "Board Meetings Calendar",
     "Changes to the Board Meetings Calendar",
+    "Adjournment",
     "Adjourn the Meeting"
   ],
   "llmResponse": {
-    "agenda_changes": "No changes to the posted agenda were announced. The board president stated 'I don't know if anyone has an additions deletions modifications' and received no responses before approving the agenda.",
-    "consent_vote_words": "motion to approve the consent items okay that was a second from Jen uh all in favor I",
+    "agenda_changes": "No formal agenda changes announced. Dr. Baker provided clarification regarding Orion Co-op TK class placement during oral communications, but this was not framed as an agenda change.",
+    "consent_vote_words": "Is there a motion to approve the consent items? I move to approve the consent items. Okay, that was a second from Jen. Uh, all in favor? Aye.",
     "items": [
       {
         "item": 1,
-        "intro_words": "all right I think we'll go ahead and get started um Evelyn can you start with a roll call",
+        "intro_words": "I think we'll go ahead and get started. Um, Evelyn, can you start with",
         "status": "found"
       },
       {
         "item": 2,
-        "intro_words": "If you have public comment related to a Closed Session item",
+        "intro_words": "Trustee Lee? Present. Trustee King? Trustee Marcus? Here.",
         "status": "found"
       },
       {
         "item": 3,
-        "intro_words": "CONFERENCE WITH REAL PROPERTY NEGOTIATORS Gov. Code 54956.8",
-        "status": "pulled"
-      },
-      {
-        "item": 4,
-        "intro_words": "roll call trusty Lee present trusty King trusty Marquez here",
-        "status": "found"
-      },
-      {
-        "item": 5,
-        "intro_words": "I'm going to start with the report out on the closed session from today February 5th",
-        "status": "found"
-      },
-      {
-        "item": 6,
-        "intro_words": "let's move on to our welcome uh good evening welcome to the February",
-        "status": "found"
-      },
-      {
-        "item": 7,
-        "intro_words": "I'll move on to changes for the uh to the agenda I don't know if anyone has an additions",
-        "status": "found"
-      },
-      {
-        "item": 8,
-        "intro_words": "with that uh let's uh can I get a motion to approve the agenda",
+        "intro_words": "I'm going to start with the report out on the Closed Session from today",
         "status": "found"
       },
       {
         "item": 9,
-        "intro_words": "If you have public comment related to a Regular Board Meeting item",
+        "intro_words": "I'm going to start with the report out on the Closed Session from today, February 5th, 2025.",
         "status": "found"
       },
       {
         "item": 10,
-        "intro_words": "so we're on to the bond program consent items um and so 9.1",
+        "intro_words": "let's move on to our welcome. Uh, good evening. Welcome to the",
         "status": "found"
       },
       {
         "item": 11,
-        "intro_words": "Bond program action items this is 10.1 approval of the agreement for rental",
+        "intro_words": "Welcome by the School Board President, Mike Wells",
         "status": "found"
       },
       {
         "item": 12,
-        "intro_words": "Approval of Proposal for Phase 2 Solar Procore Project Management Information Systems",
-        "status": "not_found"
-      },
-      {
-        "item": 13,
-        "intro_words": "moving on to school and Community reports we're going to start with 11.1",
+        "intro_words": "I'll move on to changes for the, uh, to the agenda. I don't know",
         "status": "found"
       },
       {
         "item": 14,
-        "intro_words": "Information on 2023-24 Financial and Performance Audits Building Fund",
-        "status": "found"
-      },
-      {
-        "item": 15,
-        "intro_words": "Information on Financial Audit Report for RCSD for 2023-24 School Year",
+        "intro_words": "can I get a motion to approve the agenda? Motion to approve the agenda.",
         "status": "found"
       },
       {
         "item": 16,
-        "intro_words": "we're going to have um Roy Cloud Administration come up and share um their presentation",
+        "intro_words": "we will move on to Oral Communication. We have a few speakers' cards",
         "status": "found"
       },
       {
-        "item": 17,
-        "intro_words": "we're on to the consent items is there a motion to approve",
-        "status": "consent_bundle"
-      },
-      {
         "item": 18,
-        "intro_words": "Approval of the January 8 Board Meeting Minutes",
-        "status": "consent_bundle"
+        "intro_words": "I'm going to move on to the Bond Program Consent Items. Um, and so",
+        "status": "found"
       },
       {
         "item": 19,
-        "intro_words": "Approval of the January 10 Board Meeting Minutes",
-        "status": "consent_bundle"
+        "intro_words": "moving on to the, um, Bond Program Consent Items, um, is there a motion",
+        "status": "found"
       },
       {
         "item": 20,
-        "intro_words": "Approval of the January 15 Board Meeting Minutes",
+        "intro_words": "All the items. Uh, can I have a motion to approve Oh yeah, do you wanna",
         "status": "consent_bundle"
       },
       {
         "item": 21,
-        "intro_words": "Approval of Addendum to 2024-25 Measure U Application for Hoover",
+        "intro_words": "All the items. Uh, can I have a motion to approve Oh yeah, do you wanna",
         "status": "consent_bundle"
       },
       {
         "item": 22,
-        "intro_words": "Approval of Addendum to the 2024-25 Measure U Application for McKinley",
-        "status": "consent_bundle"
+        "intro_words": "Let's move on to Bond Program Action Items. This is 10.1, Approval of the",
+        "status": "found"
       },
       {
         "item": 23,
-        "intro_words": "Approval of Addendum to the 2024-25 Measure U Application for Kennedy",
-        "status": "consent_bundle"
+        "intro_words": "This is 10.1, Approval of the Agreement for Rental and Purchase of Mobile Air Conditioning Units.",
+        "status": "found"
       },
       {
         "item": 24,
-        "intro_words": "Award of Bid to Supply Specialty Protein Products",
-        "status": "consent_bundle"
+        "intro_words": "All right, let's move on to School and Community Reports. We're going to start",
+        "status": "found"
       },
       {
         "item": 25,
-        "intro_words": "on to 13.2 which is the receipt of the governing board's initial proposal",
+        "intro_words": "we are presenting under 11.1, the Financial and Performance Audit for both",
         "status": "found"
       },
       {
         "item": 26,
-        "intro_words": "Receipt of Governing Board's initial proposal for negotiations with the Redwood City",
+        "intro_words": "And so this is for the full district audit. All right, and, and so this",
         "status": "found"
       },
       {
         "item": 27,
-        "intro_words": "we're on to board and superintendent reports you have things to report",
+        "intro_words": "All right, our next item in the School and Community Reports is, uh, I think",
         "status": "found"
       },
       {
         "item": 28,
-        "intro_words": "RCSD Review of Rocketship Redwood City Charter School's First Interim Financial Report",
-        "status": "found"
-      },
-      {
-        "item": 29,
-        "intro_words": "items 15 four five and six uh rocket ship connect and Kip respectively",
+        "intro_words": "we're on to the consent items. Is there a motion to approve? I move to approve",
         "status": "found"
       },
       {
         "item": 30,
-        "intro_words": "RCSD Review of KIPP Excelencia Community Prep's First Interim Financial Report",
-        "status": "not_found"
+        "intro_words": "I move to approve the consent items. Okay, that was a second from Jen. Uh, all in favor? Aye.",
+        "status": "consent_bundle"
       },
       {
         "item": 31,
-        "intro_words": "RCSD Review of Rocketship Redwood City Charter School's Audit Report",
-        "status": "found"
+        "intro_words": "I move to approve the consent items. Okay, that was a second from Jen. Uh, all in favor? Aye.",
+        "status": "consent_bundle"
       },
       {
         "item": 32,
-        "intro_words": "items 15 four five and six uh rocket ship connect and Kip respectively",
-        "status": "found"
+        "intro_words": "I move to approve the consent items. Okay, that was a second from Jen. Uh, all in favor? Aye.",
+        "status": "consent_bundle"
       },
       {
         "item": 33,
-        "intro_words": "RCSD Review of KIPP Excelencia Community Prep's Audit Report",
-        "status": "found"
+        "intro_words": "I move to approve the consent items. Okay, that was a second from Jen. Uh, all in favor? Aye.",
+        "status": "consent_bundle"
       },
       {
         "item": 34,
-        "intro_words": "does anyone have correspondence I wanted to mention one thing",
-        "status": "found"
+        "intro_words": "I move to approve the consent items. Okay, that was a second from Jen. Uh, all in favor? Aye.",
+        "status": "consent_bundle"
       },
       {
         "item": 35,
-        "intro_words": "other business suggested items for future agenda none",
-        "status": "found"
+        "intro_words": "I move to approve the consent items. Okay, that was a second from Jen. Uh, all in favor? Aye.",
+        "status": "consent_bundle"
       },
       {
         "item": 36,
-        "intro_words": "we need to talk about that okay yeah so um it's in regard to the partial tax",
-        "status": "found"
+        "intro_words": "I move to approve the consent items. Okay, that was a second from Jen. Uh, all in favor? Aye.",
+        "status": "consent_bundle"
       },
       {
         "item": 37,
-        "intro_words": "all right we're on to 19.1 adjourn the meeting can I get a motion to adjourn",
+        "intro_words": "Then we are on to, uh, 13.2, which is the receipt of the Governing Board's",
+        "status": "found"
+      },
+      {
+        "item": 38,
+        "intro_words": "This is an action item, so, uh, this time I will ask if there's a motion to approve",
+        "status": "found"
+      },
+      {
+        "item": 39,
+        "intro_words": "Then we are on to, uh, 13.2, which is the receipt of the Governing Board's initial",
+        "status": "found"
+      },
+      {
+        "item": 40,
+        "intro_words": "we can move on to Board and Superintendent Reports. Anyone have things to report?",
+        "status": "found"
+      },
+      {
+        "item": 43,
+        "intro_words": "Um, Rick, I think I'm turning this over to you to sort of walk us through it.",
+        "status": "found"
+      },
+      {
+        "item": 44,
+        "intro_words": "Um, Rick, I think I'm turning this over to you to sort of walk us through it.",
+        "status": "found"
+      },
+      {
+        "item": 45,
+        "intro_words": "Um, Rick, I think I'm turning this over to you to sort of walk us through it.",
+        "status": "found"
+      },
+      {
+        "item": 46,
+        "intro_words": "Um, Rick, I think I'm turning this over to you to sort of walk us through it.",
+        "status": "found"
+      },
+      {
+        "item": 47,
+        "intro_words": "Um, Rick, I think I'm turning this over to you to sort of walk us through it.",
+        "status": "found"
+      },
+      {
+        "item": 48,
+        "intro_words": "Um, Rick, I think I'm turning this over to you to sort of walk us through it.",
+        "status": "found"
+      },
+      {
+        "item": 49,
+        "intro_words": "moving on to correspondence. Does anyone have correspondence? I wanted to mention one",
+        "status": "found"
+      },
+      {
+        "item": 51,
+        "intro_words": "Other business? Suggested items for future agenda? None? Okay.",
+        "status": "found"
+      },
+      {
+        "item": 53,
+        "intro_words": "All right, we're on to 19.1, adjourn the meeting. Can I get a motion to adjourn?",
+        "status": "found"
+      },
+      {
+        "item": 56,
+        "intro_words": "Can I get a motion to adjourn? All right, then move motion to second.",
         "status": "found"
       }
     ]
@@ -234,137 +273,193 @@
     "videoId": "yoUvmhll1uk",
     "items": [
       {
-        "timestamp": "00:00:04",
-        "timestampSeconds": 4
-      },
-      null,
-      null,
-      {
-        "timestamp": "00:00:04",
-        "timestampSeconds": 4
-      },
-      {
-        "timestamp": "00:00:04",
-        "timestampSeconds": 4
+        "timestamp": "00:00:06",
+        "timestampSeconds": 6
       },
       {
         "timestamp": "00:00:06",
         "timestampSeconds": 6
       },
       {
-        "timestamp": "00:01:13",
-        "timestampSeconds": 73
-      },
-      {
-        "timestamp": "00:01:23",
-        "timestampSeconds": 83
-      },
-      null,
-      {
-        "timestamp": "00:13:19",
-        "timestampSeconds": 799
-      },
-      {
-        "timestamp": "00:15:22",
-        "timestampSeconds": 922
-      },
-      null,
-      {
-        "timestamp": "00:28:11",
-        "timestampSeconds": 1691
-      },
-      {
-        "timestamp": "00:28:25",
-        "timestampSeconds": 1705
-      },
-      null,
-      {
-        "timestamp": "01:34:26",
-        "timestampSeconds": 5666
-      },
-      {
-        "timestamp": "02:25:15",
-        "timestampSeconds": 8715,
-        "consent": true
-      },
-      {
-        "timestamp": "02:25:15",
-        "timestampSeconds": 8715,
-        "consent": true
-      },
-      {
-        "timestamp": "02:25:15",
-        "timestampSeconds": 8715,
-        "consent": true
-      },
-      {
-        "timestamp": "02:25:15",
-        "timestampSeconds": 8715,
-        "consent": true
-      },
-      {
-        "timestamp": "02:25:15",
-        "timestampSeconds": 8715,
-        "consent": true
-      },
-      {
-        "timestamp": "02:25:15",
-        "timestampSeconds": 8715,
-        "consent": true
-      },
-      {
-        "timestamp": "02:25:15",
-        "timestampSeconds": 8715,
-        "consent": true
-      },
-      {
-        "timestamp": "02:25:15",
-        "timestampSeconds": 8715,
-        "consent": true
-      },
-      {
-        "timestamp": "02:26:06",
-        "timestampSeconds": 8766
-      },
-      {
-        "timestamp": "02:26:25",
-        "timestampSeconds": 8785
-      },
-      {
-        "timestamp": "02:26:53",
-        "timestampSeconds": 8813
-      },
-      null,
-      {
-        "timestamp": "02:31:48",
-        "timestampSeconds": 9108
+        "timestamp": "00:00:06",
+        "timestampSeconds": 6
       },
       null,
       null,
+      null,
+      null,
+      null,
       {
-        "timestamp": "02:31:48",
-        "timestampSeconds": 9108
+        "timestamp": "00:00:06",
+        "timestampSeconds": 6
+      },
+      {
+        "timestamp": "00:00:06",
+        "timestampSeconds": 6
       },
       null,
       {
-        "timestamp": "02:32:45",
-        "timestampSeconds": 9165
+        "timestamp": "00:01:07",
+        "timestampSeconds": 67
+      },
+      null,
+      {
+        "timestamp": "00:01:22",
+        "timestampSeconds": 82
+      },
+      null,
+      {
+        "timestamp": "00:01:42",
+        "timestampSeconds": 102
+      },
+      null,
+      {
+        "timestamp": "00:13:10",
+        "timestampSeconds": 790
       },
       {
-        "timestamp": "02:33:26",
-        "timestampSeconds": 9206
+        "timestamp": "00:13:20",
+        "timestampSeconds": 800
       },
       {
-        "timestamp": "02:33:28",
-        "timestampSeconds": 9208
+        "timestamp": "02:25:17",
+        "timestampSeconds": 8717,
+        "consent": true
       },
       {
-        "timestamp": "02:34:35",
-        "timestampSeconds": 9275
+        "timestamp": "02:25:17",
+        "timestampSeconds": 8717,
+        "consent": true
+      },
+      {
+        "timestamp": "00:15:14",
+        "timestampSeconds": 914
+      },
+      {
+        "timestamp": "00:15:26",
+        "timestampSeconds": 926
+      },
+      {
+        "timestamp": "00:28:26",
+        "timestampSeconds": 1706
+      },
+      {
+        "timestamp": "00:28:21",
+        "timestampSeconds": 1701
+      },
+      {
+        "timestamp": "00:31:45",
+        "timestampSeconds": 1905
+      },
+      {
+        "timestamp": "00:36:04",
+        "timestampSeconds": 2164
+      },
+      {
+        "timestamp": "02:25:17",
+        "timestampSeconds": 8717
+      },
+      null,
+      {
+        "timestamp": "02:25:17",
+        "timestampSeconds": 8717,
+        "consent": true
+      },
+      {
+        "timestamp": "02:25:17",
+        "timestampSeconds": 8717,
+        "consent": true
+      },
+      {
+        "timestamp": "02:25:17",
+        "timestampSeconds": 8717,
+        "consent": true
+      },
+      {
+        "timestamp": "02:25:17",
+        "timestampSeconds": 8717,
+        "consent": true
+      },
+      {
+        "timestamp": "02:25:17",
+        "timestampSeconds": 8717,
+        "consent": true
+      },
+      {
+        "timestamp": "02:25:17",
+        "timestampSeconds": 8717,
+        "consent": true
+      },
+      {
+        "timestamp": "02:25:17",
+        "timestampSeconds": 8717,
+        "consent": true
+      },
+      {
+        "timestamp": "02:26:03",
+        "timestampSeconds": 8763
+      },
+      {
+        "timestamp": "02:26:08",
+        "timestampSeconds": 8768
+      },
+      {
+        "timestamp": "02:26:03",
+        "timestampSeconds": 8763
+      },
+      {
+        "timestamp": "02:26:55",
+        "timestampSeconds": 8815
+      },
+      null,
+      null,
+      {
+        "timestamp": "02:31:40",
+        "timestampSeconds": 9100
+      },
+      {
+        "timestamp": "02:31:40",
+        "timestampSeconds": 9100
+      },
+      {
+        "timestamp": "02:31:40",
+        "timestampSeconds": 9100
+      },
+      {
+        "timestamp": "02:31:40",
+        "timestampSeconds": 9100
+      },
+      {
+        "timestamp": "02:31:40",
+        "timestampSeconds": 9100
+      },
+      {
+        "timestamp": "02:31:40",
+        "timestampSeconds": 9100
+      },
+      {
+        "timestamp": "02:32:42",
+        "timestampSeconds": 9162
+      },
+      null,
+      {
+        "timestamp": "02:33:43",
+        "timestampSeconds": 9223
+      },
+      null,
+      {
+        "timestamp": "02:34:28",
+        "timestampSeconds": 9268
+      },
+      null,
+      null,
+      {
+        "timestamp": "02:35:54",
+        "timestampSeconds": 9354
       }
     ]
   },
-  "cachedAt": "2026-03-04T19:03:18.424Z",
-  "inputTokens": 29857,
-  "outputTokens": 1878
+  "cachedAt": "2026-03-26T22:29:49.942Z",
+  "inputTokens": 34969,
+  "outputTokens": 2270
 }

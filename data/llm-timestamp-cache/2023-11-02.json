@@ -1,0 +1,111 @@
+{
+  "date": "2023-11-02",
+  "items": [
+    "Call to Order",
+    "Roll Call",
+    "Welcome",
+    "Welcome by the School Board President, Cecilia Márquez",
+    "Changes to the Agenda",
+    "Additions, Deletions, or Modifications to the Agenda",
+    "Approval of Agenda (Action Required)",
+    "Approval of Agenda",
+    "Information",
+    "Update on Workforce Housing",
+    "Oral Communication",
+    "If you have public comment related to the Study Session item, please complete a Speakers Card (available at the entrance) and give it to the secretary.",
+    "Adjournment (Action Required)",
+    "Adjourn the Meeting"
+  ],
+  "llmResponse": {
+    "agenda_changes": "No changes to the agenda were announced. The moderator asked 'are there any additions or changes to the agenda?' and proceeded directly to approval without announcing any modifications.",
+    "consent_vote_words": null,
+    "items": [
+      {
+        "item": 1,
+        "intro_words": "Good evening everyone. Again, can you please be welcome.",
+        "status": "found"
+      },
+      {
+        "item": 2,
+        "intro_words": "Again, welcome everyone to, um, this Study Session, um, Thursday, November 2nd",
+        "status": "found"
+      },
+      {
+        "item": 3,
+        "intro_words": "If you wish to to report on a subject listed on the agenda",
+        "status": "found"
+      },
+      {
+        "item": 4,
+        "intro_words": "And with that, are there any additions or changes to the agenda?",
+        "status": "found"
+      },
+      {
+        "item": 5,
+        "intro_words": "With that, can I please get a motion to approve?",
+        "status": "found"
+      },
+      {
+        "item": 10,
+        "intro_words": "Okay, and so today, um, we're speaking on item 5.1, Update on Workforce Housing",
+        "status": "found"
+      },
+      {
+        "item": 11,
+        "intro_words": "And that goes straight into what, you know, we're going to get into our Q&A",
+        "status": "found"
+      },
+      {
+        "item": 13,
+        "intro_words": "I'm going to make a motion to adjourn the meeting. All those in favor.",
+        "status": "found"
+      }
+    ]
+  },
+  "result": {
+    "videoId": "uEJsKPqWg_0",
+    "items": [
+      {
+        "timestamp": "00:00:05",
+        "timestampSeconds": 5
+      },
+      {
+        "timestamp": "00:00:05",
+        "timestampSeconds": 5
+      },
+      {
+        "timestamp": "00:00:05",
+        "timestampSeconds": 5
+      },
+      {
+        "timestamp": "00:00:52",
+        "timestampSeconds": 52
+      },
+      {
+        "timestamp": "00:01:12",
+        "timestampSeconds": 72
+      },
+      null,
+      null,
+      null,
+      null,
+      {
+        "timestamp": "00:01:12",
+        "timestampSeconds": 72
+      },
+      {
+        "timestamp": "01:02:09",
+        "timestampSeconds": 3729
+      },
+      null,
+      {
+        "timestamp": "01:57:44",
+        "timestampSeconds": 7064
+      },
+      null
+    ]
+  },
+  "cachedAt": "2026-03-26T22:35:05.901Z",
+  "inputTokens": 25770,
+  "outputTokens": 452
+}

@@ -1,15 +1,58 @@
 {
   "date": "2025-10-16",
   "items": [
-    "Implementation Plan for the Facilities Master Plan — Board direction on priorities, phasing, and funding for Measure S bond projects. Discussion: project prioritization (modernization vs safety vs design), guiding principles (equity, capacity, condition, student outcomes), community engagement, operational/educational impact, long-term sustainability. Prepared by VPCS (Nick Olsen, Eric Van Pelt), reviewed by Martin Cervantes (Interim Bond Director), Rick Edson (CBO)"
+    "Call to Order",
+    "Roll Call",
+    "Welcome",
+    "Changes to the Agenda",
+    "Approval of the Agenda (Action Required)",
+    "Public Comment",
+    "Discussion Items",
+    "Study Session: Implementation Plan for the Facilities Master Plan (FMP)",
+    "Adjournment (Action Required)"
   ],
   "llmResponse": {
     "agenda_changes": null,
-    "consent_vote_words": null,
+    "consent_vote_words": "All in favor? Aye.",
     "items": [
       {
         "item": 1,
-        "intro_words": "Good evening. Uh tonight's stud session is focused on the facility's master plan",
+        "intro_words": "All right, we can get started before we do roll call then.",
+        "status": "found"
+      },
+      {
+        "item": 2,
+        "intro_words": "With that, we can commence with roll call. Trustee Lee.",
+        "status": "found"
+      },
+      {
+        "item": 3,
+        "intro_words": "Good evening. Welcome to our October 16, 2025, special meeting of the Redwood City School Board.",
+        "status": "found"
+      },
+      {
+        "item": 4,
+        "intro_words": "Not a lengthy agenda. Are there any changes to the agenda?",
+        "status": "found"
+      },
+      {
+        "item": 5,
+        "intro_words": "Can I get a motion to approve the agenda? I move we approve the agenda.",
+        "status": "found"
+      },
+      {
+        "item": 6,
+        "intro_words": "We'll move on to public comment. I did not. I don't have any.",
+        "status": "found"
+      },
+      {
+        "item": 8,
+        "intro_words": "With that, I am going to hand it off to Rick. Good evening. Tonight's session is focused on the Facilities Master Plan, specifically the implementation plan that we're working to create, which builds upon the work completed under Measure T and guides the next phase of improvements.",
+        "status": "found"
+      },
+      {
+        "item": 9,
+        "intro_words": "Can I just check real fast? Jen, did you have any comments? You don't have to. I just wanted to make sure we didn't ignore you for being online. No, all good. Thank you. Okay. Anyone else? Cecilia or David? No. Okay, great. All right, perfect. Let's go. Great. So again, this conversation we kind of thought would happen. So the next section of this presentation is the next scenario of the the other identified high IOQ scoring projects.",
         "status": "found"
       }
     ]
@@ -18,12 +61,41 @@
     "videoId": "zOYpECyitAM",
     "items": [
       {
-        "timestamp": "00:01:33",
-        "timestampSeconds": 93
+        "timestamp": "00:00:07",
+        "timestampSeconds": 7
+      },
+      {
+        "timestamp": "00:01:01",
+        "timestampSeconds": 61
+      },
+      {
+        "timestamp": "00:01:16",
+        "timestampSeconds": 76
+      },
+      {
+        "timestamp": "00:02:11",
+        "timestampSeconds": 131
+      },
+      {
+        "timestamp": "00:02:16",
+        "timestampSeconds": 136
+      },
+      {
+        "timestamp": "00:02:42",
+        "timestampSeconds": 162
+      },
+      null,
+      {
+        "timestamp": "00:03:07",
+        "timestampSeconds": 187
+      },
+      {
+        "timestamp": "01:00:55",
+        "timestampSeconds": 3655
       }
     ]
   },
-  "cachedAt": "2026-03-04T19:00:02.448Z",
-  "inputTokens": 24852,
-  "outputTokens": 90
+  "cachedAt": "2026-03-26T22:26:34.945Z",
+  "inputTokens": 23742,
+  "outputTokens": 556
 }

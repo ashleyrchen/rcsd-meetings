@@ -1,0 +1,293 @@
+{
+  "date": "2023-05-24",
+  "items": [
+    "Call to Order",
+    "Roll Call",
+    "Oral Communication on Closed Session Items Only",
+    "If you have a public comment related to a Closed Session item, please post it on the links available under Public Content prior to the Closed Board Meeting or immediately upon the meeting opening.",
+    "Closed Session - 6:30 PM",
+    "Conference with Legal Counsel – Anticipated Litigation",
+    "Reconvene to Regular Session at Approximately 7:00 PM",
+    "Roll Call",
+    "Report Out on Closed Session from May 24, 2023",
+    "Welcome",
+    "Welcome by the School Board President, Cecilia Márquez",
+    "Changes to the Agenda",
+    "Additions, Deletions or Modifications to the Agenda",
+    "Approval of Agenda",
+    "Approval of Agenda",
+    "Oral Communication",
+    "If you have public comment related to a Regular Board Meeting item, please post it on the links available under Public Content prior to the Regular Board Meeting or immediately upon the meeting opening.",
+    "Bond Program Consent Items",
+    "Approval of Bond Program Consent Items",
+    "Approval of Proposal for In-Wall Tables and Benches with Nelson Adams NACO, Inc. for Henry Ford School",
+    "Approval of Proposal for Cabinets and Sink Replacement with Beals Martin for Kennedy Middle School",
+    "Approval of Proposal for STEAM Rover Tables with Campbell Keller for Kennedy Middle School",
+    "Bond Program Action Items",
+    "School/Community Reports",
+    "Community Schools and Expanded Learning Program Board Report",
+    "Consent Items",
+    "Approval of Consent Items",
+    "Approval of April 26, 2023 Board Minutes",
+    "Approval of May 10, 2023 Board Minutes",
+    "Approval of Agreement between Redwood City School District and St. Francis Center for Siena Youth Center for Summer of 2023",
+    "Approval of Agreement between Redwood City School District and Peninsula Covenant Church for the 2023 RCSD Summer Session",
+    "Approval of Agreement between Redwood City School District and Olimpico Learning for the 2023 RCSD Summer Session",
+    "Second Reading and Approval of Board Policy 3250 - Transportation Fees",
+    "Second Reading and Approval of Board Policy 3540 - Transportation",
+    "Second Reading and Approval of Board Policy 3555 - Nutrition Program Compliance",
+    "Second Reading and Approval of Board Policy 4030 - Nondiscrimination in Employment",
+    "Second Reading and Approval of Board Policy 5142 - Safety",
+    "Second Reading and Approval of Board Policy 5142.2 - Safe Routes to School Program",
+    "Second Reading and Approval of Board Bylaw 9320 - Meetings and Notices",
+    "Approval of Facilities Use Agreement between Redwood City School District and Rocketship Redwood City Prep Charter School",
+    "Approval of Facilities Use Agreement between Redwood City School District and Connect Community Charter School",
+    "Accept the Measure T Citizens' Bond Oversight Committee FY 2020-21 Annual Report",
+    "Approval of Addendum to 2022-23 Measure U Application for Hoover Community School",
+    "Approval of RCAA Compensation Proposal",
+    "Action Items",
+    "Approval of CBEST Waiver for Substitute Teachers for 2023-2024",
+    "Approval of Prop 28 Expenditure Plan for 2023-24 school year",
+    "Approval of Local Interagency Agreement(s) to Provide Education and Training to Credential Candidates",
+    "Information",
+    "Recognition of RCSD Employees",
+    "Board and Superintendent Reports",
+    "Report from Board Members and Superintendent",
+    "Correspondence",
+    "Correspondence",
+    "Other Business/Suggested Items For Future Agenda",
+    "Possible Other Business/Suggested Items for Future Agenda",
+    "Board Meetings Calendar",
+    "Changes to the Board Meetings Calendar",
+    "Adjournment",
+    "Adjourn the Meeting"
+  ],
+  "llmResponse": {
+    "agenda_changes": "Item 14.1 (Recognition of RCSD Employees) was moved up before Oral Communication. President Marquez stated: 'Do we want to move the recognitions up to. Oral communication? Sounds good. Yeah. Okay, so we would like to move item 14.1 before oral communication.'",
+    "consent_vote_words": "Can I please get a motion to approve the agenda? So moved. Seconded. All those in favor?",
+    "items": [
+      {
+        "item": 1,
+        "intro_words": "Good evening, everyone. Welcome.",
+        "status": "found"
+      },
+      {
+        "item": 2,
+        "intro_words": "Evelyn. Can you please do roll call?",
+        "status": "found"
+      },
+      {
+        "item": 5,
+        "intro_words": "So reported on closed session for May 24, 2023.",
+        "status": "found"
+      },
+      {
+        "item": 9,
+        "intro_words": "So reported on closed session for May 24, 2023.",
+        "status": "found"
+      },
+      {
+        "item": 10,
+        "intro_words": "And now again, welcome, everyone to. To another Redwood City School District board meeting.",
+        "status": "found"
+      },
+      {
+        "item": 12,
+        "intro_words": "And are there any changes to the agenda?",
+        "status": "found"
+      },
+      {
+        "item": 14,
+        "intro_words": "Can I please get a motion to approve the agenda?",
+        "status": "found"
+      },
+      {
+        "item": 14.1,
+        "intro_words": "We are moving on to item 14.1, which we've just moved up before oral communication.",
+        "status": "found"
+      },
+      {
+        "item": 16,
+        "intro_words": "Evelyn, do we have any oral communication? No, I'm sorry.",
+        "status": "found"
+      },
+      {
+        "item": 18,
+        "intro_words": "moving on to item nine, bond program consent items.",
+        "status": "found"
+      },
+      {
+        "item": 24,
+        "intro_words": "moving on to 11. School and community report.",
+        "status": "found"
+      },
+      {
+        "item": 26,
+        "intro_words": "moving on to item 12, consent items. Can I get a motion to approve?",
+        "status": "found"
+      },
+      {
+        "item": 28,
+        "intro_words": "13.1. Approval of SEVIs waiver for substitute teachers for the 2023. 2024.",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 46,
+        "intro_words": "13.2. Approval of Prop 28 expenditure plan for 202324",
+        "status": "found"
+      },
+      {
+        "item": 48,
+        "intro_words": "13.3 Approval of local interagency agreements to provide education and training to credential candidates.",
+        "status": "found"
+      },
+      {
+        "item": 51,
+        "intro_words": "moving on to item 15, board and superintendent report.",
+        "status": "found"
+      },
+      {
+        "item": 53,
+        "intro_words": "Sixteen correspondence. I know. Let's see.",
+        "status": "found"
+      },
+      {
+        "item": 55,
+        "intro_words": "Any other possible business suggested items for future agenda?",
+        "status": "found"
+      },
+      {
+        "item": 57,
+        "intro_words": "item 18.1, changes to the board calendar.",
+        "status": "found"
+      },
+      {
+        "item": 60,
+        "intro_words": "does somebody want to make a motion to. To adjourn the meeting?",
+        "status": "found"
+      }
+    ]
+  },
+  "result": {
+    "videoId": "VKX0ACAEDh0",
+    "items": [
+      {
+        "timestamp": "00:00:04",
+        "timestampSeconds": 4
+      },
+      {
+        "timestamp": "00:00:04",
+        "timestampSeconds": 4
+      },
+      null,
+      null,
+      {
+        "timestamp": "00:00:04",
+        "timestampSeconds": 4
+      },
+      null,
+      null,
+      null,
+      {
+        "timestamp": "00:00:04",
+        "timestampSeconds": 4
+      },
+      {
+        "timestamp": "00:00:09",
+        "timestampSeconds": 9
+      },
+      null,
+      {
+        "timestamp": "00:02:00",
+        "timestampSeconds": 120
+      },
+      null,
+      {
+        "timestamp": "00:01:38",
+        "timestampSeconds": 98
+      },
+      null,
+      {
+        "timestamp": "00:01:53",
+        "timestampSeconds": 113
+      },
+      null,
+      {
+        "timestamp": "00:13:15",
+        "timestampSeconds": 795
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      {
+        "timestamp": "00:13:59",
+        "timestampSeconds": 839
+      },
+      null,
+      {
+        "timestamp": "00:13:15",
+        "timestampSeconds": 795
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      {
+        "timestamp": "01:13:45",
+        "timestampSeconds": 4425
+      },
+      null,
+      {
+        "timestamp": "01:17:49",
+        "timestampSeconds": 4669
+      },
+      null,
+      null,
+      {
+        "timestamp": "01:24:09",
+        "timestampSeconds": 5049
+      },
+      null,
+      {
+        "timestamp": "01:34:53",
+        "timestampSeconds": 5693
+      },
+      null,
+      {
+        "timestamp": "01:36:24",
+        "timestampSeconds": 5784
+      },
+      null,
+      {
+        "timestamp": "01:36:40",
+        "timestampSeconds": 5800
+      },
+      null,
+      null,
+      {
+        "timestamp": "01:37:13",
+        "timestampSeconds": 5833
+      }
+    ]
+  },
+  "cachedAt": "2026-03-26T22:36:43.395Z",
+  "inputTokens": 18289,
+  "outputTokens": 1034
+}

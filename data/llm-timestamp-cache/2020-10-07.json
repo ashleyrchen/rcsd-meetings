@@ -1,0 +1,97 @@
+{
+  "date": "2020-10-07",
+  "items": [
+    "Call to Order",
+    "Roll Call",
+    "Welcome",
+    "Welcome by the School Board President",
+    "Changes to the Agenda",
+    "Changes to the Agenda",
+    "Approval of Agenda (Action Required)",
+    "Approval of Agenda",
+    "Oral Communication - If you have public comment related to a Regular Board Meeting item, please post it on: (https://docs.google.com/forms/d/e/1FAIpQLSd3rKbPfVCTpOsK5ILqjnU2u-h-NuNx-vUq4OZxYNVR8lc4aQ/viewform?usp=sf_link) prior to the Regular Board Meeting or immediately upon the meeting opening.",
+    "Discussion Items",
+    "Study Session on Distance Learning/In Person Learning",
+    "Adjournment (Action Required)"
+  ],
+  "llmResponse": {
+    "agenda_changes": "No formal agenda changes announced during the early part of the meeting. The president stated 'we have kind of a simple agenda if there are any changes or we need a motion to approve' and the agenda was approved by roll call vote without announced changes.",
+    "consent_vote_words": "So moved. Alisa. Second. Maria. Can we have a roll call vote, please? Trustee McBride. Aye. Trustee Marquez. Trustee D. Silocum. Aye. Vice President Macavoy. Aye. President Lawson. Aye.",
+    "items": [
+      {
+        "item": 1,
+        "intro_words": "Call to Order",
+        "status": "found"
+      },
+      {
+        "item": 2,
+        "intro_words": "Trustee McBride. Here. Trustee Marquez. Here. Trustee Locum. Here. Oh. Oh.",
+        "status": "found"
+      },
+      {
+        "item": 3,
+        "intro_words": "Welcome, Everybody, to the October 7th Rowan City School Board meeting.",
+        "status": "found"
+      },
+      {
+        "item": 4,
+        "intro_words": "Welcome by the School Board President",
+        "status": "not_explicitly_found"
+      },
+      {
+        "item": 5,
+        "intro_words": "With that said, we have kind of a simple agenda if there are any changes",
+        "status": "found"
+      },
+      {
+        "item": 7,
+        "intro_words": "So moved. Alisa. Second. Maria. Can we have a roll call vote",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 9,
+        "intro_words": "We are on now oral communication, and we don't have any",
+        "status": "found"
+      },
+      {
+        "item": 11,
+        "intro_words": "we can move on to the study session. All right, thank you",
+        "status": "found"
+      },
+      {
+        "item": 12,
+        "intro_words": "Well, that's the end of our agenda. Unless there's other comments",
+        "status": "found"
+      }
+    ]
+  },
+  "result": {
+    "videoId": "JcNZt38Y1yo",
+    "items": [
+      {
+        "timestamp": "01:13:34",
+        "timestampSeconds": 4414
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      {
+        "timestamp": "01:40:45",
+        "timestampSeconds": 6045
+      },
+      null,
+      null,
+      {
+        "timestamp": "02:08:21",
+        "timestampSeconds": 7701
+      }
+    ]
+  },
+  "cachedAt": "2026-03-26T22:49:14.392Z",
+  "inputTokens": 23638,
+  "outputTokens": 580
+}

@@ -1,0 +1,422 @@
+{
+  "date": "2022-03-23",
+  "items": [
+    "Call to Order",
+    "Roll Call",
+    "Welcome",
+    "Welcome by the School Board President, María Díaz-Slocum",
+    "Changes to the Agenda",
+    "Additions, Deletions or Modifications to the Agenda",
+    "Approval of Agenda",
+    "Approval of Agenda",
+    "Oral Communication",
+    "If you have public comment related to a Regular Board Meeting item, please post it on the links available under Public Content prior to the Regular Board Meeting or immediately upon the meeting opening.",
+    "School/Community Reports",
+    "2022 Bond Measure Feasibility Survey Results",
+    "Bond Program Update",
+    "Bond Program Consent Items",
+    "Approval of Consent Items",
+    "Approval of Measure T Bond Program Tracking List of Items Under $20k",
+    "Approval of Play Structure Rubber Surfacing Proposal for Garfield School with Park Planet",
+    "Approval of New Buildings, Modernization and Sitework Project Change Order #6 for Garfield School with Rodan Builders",
+    "Bond Program Action Items",
+    "Consent Items",
+    "Approval of Consent Items",
+    "Approval of February 9th Board Minutes",
+    "Approval of February 16th Board Minutes",
+    "Approval of Agreement between Redwood City School District and San Mateo County Sheriff's Activities League (SAL) to Provide Extra Curricular Programs for Students at Garfield, Clifford and Hoover",
+    "Action items",
+    "Information Regarding the Teacher Residency Program for Special Education Teachers with San Mateo County Office of Education and Alder Graduate School of Education",
+    "Approval of Personnel Report",
+    "Approval of the 2021-22 Second Interim Budget Report for RCSD",
+    "Board and Superintendent Reports",
+    "Report from Board Members and Superintendent",
+    "Information",
+    "Information on San Mateo County Investment Fund - February, 2022",
+    "Correspondence",
+    "Correspondence",
+    "Other Business/Suggested Items For Future Agenda",
+    "Possible Other Business/Suggested Items for Future Agenda",
+    "Board Agenda Calendar",
+    "Changes to the Board Agenda Schedule",
+    "Adjournment",
+    "Adjourn the Meeting"
+  ],
+  "llmResponse": {
+    "agenda_changes": "No agenda changes announced. Board President confirmed 'Do we have any changes or deletions to the agenda this evening? None.'",
+    "consent_vote_words": "Can I have a motion to move those items, please? So moved. So moved. Second roll call",
+    "items": [
+      {
+        "item": 1,
+        "intro_words": "Hi, everyone. I just want to see if you can hear me",
+        "status": "found"
+      },
+      {
+        "item": 2,
+        "intro_words": "Roll call, please. Ellie. Trustee mcavoy. Present.",
+        "status": "found"
+      },
+      {
+        "item": 3,
+        "intro_words": "Welcome, everyone. Once again, if you like to speak to the board",
+        "status": "found"
+      },
+      {
+        "item": 4,
+        "intro_words": "Welcome, everyone. Once again, if you like to speak to the board",
+        "status": "found"
+      },
+      {
+        "item": 5,
+        "intro_words": "Now, let's see. Do we have any changes or deletions to the agenda",
+        "status": "found"
+      },
+      {
+        "item": 6,
+        "intro_words": "Can I have a motion to approve the agenda? So moved.",
+        "status": "found"
+      },
+      {
+        "item": 7,
+        "intro_words": "Can I have a motion to approve the agenda? So moved.",
+        "status": "found"
+      },
+      {
+        "item": 8,
+        "intro_words": "Can I have a motion to approve the agenda? So moved.",
+        "status": "found"
+      },
+      {
+        "item": 9,
+        "intro_words": "Do we have any oral communication this evening? We do.",
+        "status": "found"
+      },
+      {
+        "item": 10,
+        "intro_words": "Do we have any oral communication this evening? We do.",
+        "status": "found"
+      },
+      {
+        "item": 11,
+        "intro_words": "Moving along to school and community reports, we are on item 6.1",
+        "status": "found"
+      },
+      {
+        "item": 12,
+        "intro_words": "Good evening, everyone. And so this evening we have Brian Godby from",
+        "status": "found"
+      },
+      {
+        "item": 13,
+        "intro_words": "And moving right along with item 6.2, the bond program update.",
+        "status": "found"
+      },
+      {
+        "item": 14,
+        "intro_words": "Can I have a motion to move those items, please? So moved.",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 15,
+        "intro_words": "Can I have a motion to move those items, please? So moved.",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 16,
+        "intro_words": "Can I have a motion to move those items, please? So moved.",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 17,
+        "intro_words": "Can I have a motion to move those items, please? So moved.",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 18,
+        "intro_words": "Can I have a motion to move those items, please? So moved.",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 19,
+        "intro_words": "Now moving on to bond program consent items. Can I have a motion",
+        "status": "found"
+      },
+      {
+        "item": 20,
+        "intro_words": "Moving on to the consent items. Can I have a motion to move",
+        "status": "found"
+      },
+      {
+        "item": 21,
+        "intro_words": "Moving on to the consent items. Can I have a motion to move",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 22,
+        "intro_words": "And now on to Action Items 10.1. Recommendation regarding information regarding",
+        "status": "found"
+      },
+      {
+        "item": 23,
+        "intro_words": "Thank you. So tonight I bring forward to you an opportunity for the",
+        "status": "found"
+      },
+      {
+        "item": 24,
+        "intro_words": "And moving right along with item 6.2, the bond program update.",
+        "status": "found"
+      },
+      {
+        "item": 25,
+        "intro_words": "And now on to Action Items 10.1. Recommendation regarding information regarding",
+        "status": "found"
+      },
+      {
+        "item": 26,
+        "intro_words": "Thank you. So tonight I bring forward to you an opportunity for the",
+        "status": "found"
+      },
+      {
+        "item": 27,
+        "intro_words": "And now on to 10.2 recommendation regarding approval of personnel report.",
+        "status": "found"
+      },
+      {
+        "item": 28,
+        "intro_words": "And now on to 10.3 Recommendation regarding approval of the 202122 Second",
+        "status": "found"
+      },
+      {
+        "item": 29,
+        "intro_words": "Priscilla is here. Good evening. Good evening, everyone. I would like to",
+        "status": "found"
+      },
+      {
+        "item": 30,
+        "intro_words": "And with that, we move on to board and superintendent reports. Mike,",
+        "status": "found"
+      },
+      {
+        "item": 31,
+        "intro_words": "The only thing I have to report is that we visited some of",
+        "status": "found"
+      },
+      {
+        "item": 32,
+        "intro_words": "12.1 information of San Mateo County Investment Fund February 2020. Do we",
+        "status": "found"
+      },
+      {
+        "item": 33,
+        "intro_words": "No item 13.1 correspondence. I think I got some emails from parents.",
+        "status": "found"
+      },
+      {
+        "item": 34,
+        "intro_words": "No item 13.1 correspondence. I think I got some emails from parents.",
+        "status": "found"
+      },
+      {
+        "item": 35,
+        "intro_words": "14.1 possible other business adjusted items for a few future agendas. So",
+        "status": "found"
+      },
+      {
+        "item": 36,
+        "intro_words": "14.1 possible other business adjusted items for a few future agendas. So",
+        "status": "found"
+      },
+      {
+        "item": 37,
+        "intro_words": "15.1 changes to the board agenda schedule, Besides the one you just",
+        "status": "found"
+      },
+      {
+        "item": 38,
+        "intro_words": "Okay. So with that, can I have a motion to return? So",
+        "status": "found"
+      },
+      {
+        "item": 39,
+        "intro_words": "Thank you, everybody. Good.",
+        "status": "found"
+      },
+      {
+        "item": 40,
+        "intro_words": "Thank you, everybody. Good.",
+        "status": "found"
+      }
+    ]
+  },
+  "result": {
+    "videoId": "Epb9euKROWk",
+    "items": [
+      {
+        "timestamp": "00:04:10",
+        "timestampSeconds": 250
+      },
+      {
+        "timestamp": "00:04:15",
+        "timestampSeconds": 255
+      },
+      {
+        "timestamp": "00:04:15",
+        "timestampSeconds": 255
+      },
+      {
+        "timestamp": "00:04:15",
+        "timestampSeconds": 255
+      },
+      {
+        "timestamp": "00:05:53",
+        "timestampSeconds": 353
+      },
+      {
+        "timestamp": "00:05:48",
+        "timestampSeconds": 348
+      },
+      {
+        "timestamp": "00:05:48",
+        "timestampSeconds": 348
+      },
+      {
+        "timestamp": "00:05:48",
+        "timestampSeconds": 348
+      },
+      {
+        "timestamp": "00:06:32",
+        "timestampSeconds": 392
+      },
+      {
+        "timestamp": "00:06:32",
+        "timestampSeconds": 392
+      },
+      {
+        "timestamp": "00:09:04",
+        "timestampSeconds": 544
+      },
+      {
+        "timestamp": "00:09:11",
+        "timestampSeconds": 551
+      },
+      {
+        "timestamp": "00:46:36",
+        "timestampSeconds": 2796
+      },
+      {
+        "timestamp": "00:51:57",
+        "timestampSeconds": 3117,
+        "consent": true
+      },
+      {
+        "timestamp": "00:51:57",
+        "timestampSeconds": 3117,
+        "consent": true
+      },
+      {
+        "timestamp": "00:51:57",
+        "timestampSeconds": 3117,
+        "consent": true
+      },
+      {
+        "timestamp": "00:51:57",
+        "timestampSeconds": 3117,
+        "consent": true
+      },
+      {
+        "timestamp": "00:51:57",
+        "timestampSeconds": 3117,
+        "consent": true
+      },
+      {
+        "timestamp": "00:51:47",
+        "timestampSeconds": 3107
+      },
+      {
+        "timestamp": "00:51:57",
+        "timestampSeconds": 3117
+      },
+      {
+        "timestamp": "00:51:57",
+        "timestampSeconds": 3117,
+        "consent": true
+      },
+      {
+        "timestamp": "00:53:05",
+        "timestampSeconds": 3185
+      },
+      {
+        "timestamp": "00:53:31",
+        "timestampSeconds": 3211
+      },
+      null,
+      {
+        "timestamp": "00:53:05",
+        "timestampSeconds": 3185
+      },
+      {
+        "timestamp": "00:53:31",
+        "timestampSeconds": 3211
+      },
+      {
+        "timestamp": "00:59:41",
+        "timestampSeconds": 3581
+      },
+      {
+        "timestamp": "01:00:36",
+        "timestampSeconds": 3636
+      },
+      {
+        "timestamp": "01:00:46",
+        "timestampSeconds": 3646
+      },
+      {
+        "timestamp": "01:37:27",
+        "timestampSeconds": 5847
+      },
+      {
+        "timestamp": "01:36:10",
+        "timestampSeconds": 5770
+      },
+      {
+        "timestamp": "01:43:41",
+        "timestampSeconds": 6221
+      },
+      {
+        "timestamp": "01:43:46",
+        "timestampSeconds": 6226
+      },
+      {
+        "timestamp": "01:43:46",
+        "timestampSeconds": 6226
+      },
+      {
+        "timestamp": "01:43:46",
+        "timestampSeconds": 6226
+      },
+      {
+        "timestamp": "01:43:46",
+        "timestampSeconds": 6226
+      },
+      {
+        "timestamp": "01:46:37",
+        "timestampSeconds": 6397
+      },
+      {
+        "timestamp": "01:44:59",
+        "timestampSeconds": 6299
+      },
+      {
+        "timestamp": "01:47:26",
+        "timestampSeconds": 6446
+      },
+      {
+        "timestamp": "01:47:26",
+        "timestampSeconds": 6446
+      }
+    ]
+  },
+  "cachedAt": "2026-03-26T22:42:37.949Z",
+  "inputTokens": 18386,
+  "outputTokens": 1925
+}

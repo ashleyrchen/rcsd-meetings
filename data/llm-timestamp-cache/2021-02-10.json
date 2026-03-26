@@ -1,0 +1,462 @@
+{
+  "date": "2021-02-10",
+  "items": [
+    "Call to Order",
+    "Roll Call",
+    "Oral Communication on Closed Session Items Only",
+    "If you have public comment related to a Closed Session item, please post it on: (https://docs.google.com/forms/d/e/1FAIpQLSd3rKbPfVCTpOsK5ILqjnU2u-h-NuNx-vUq4OZxYNVR8lc4aQ/viewform?usp=sf_link) prior to the Closed Session Meeting or immediately upon the meeting opening.",
+    "Closed Session 6:00-7:00 pm",
+    "Consideration of Employee Request for Unpaid Leave of Absence (4 cases)",
+    "CSEA Negotiations Update",
+    "RCTA Negotiations Update",
+    "Reconvene to Regular Session at Approximately 7:00p.m.",
+    "Roll Call",
+    "Report Out on Closed Session from 2.10.21",
+    "Welcome",
+    "Welcome by the School Board President",
+    "Changes to the Agenda",
+    "Changes to the Agenda",
+    "Approval of Agenda (Action Required)",
+    "Approval of Agenda",
+    "Oral Communication",
+    "If you have public comment related to a Regular Board Meeting item, please post it on: (https://docs.google.com/forms/d/e/1FAIpQLSd3rKbPfVCTpOsK5ILqjnU2u-h-NuNx-vUq4OZxYNVR8lc4aQ/viewform?usp=sf_link) prior to the Regular Board Meeting or immediately upon the meeting opening.",
+    "School/Community Reports",
+    "Virtual Winter Concert (Clifford School, McKinley Institute of Technology and North Star Academy)",
+    "Bond Program Consent Items (Action Required)",
+    "Approval of Measure T Bond Program $20K and Under Tracking List",
+    "Approval of Adelante Spanish Immersion School New Administration and Campus Modernization Project ICC General Contractors, Change Order #4",
+    "Approval of Electric Vehicle (EV) Bus Charging Infrastructure Design and Oversight California Energy Commission (CEC) Grant Add Service Proposal for Maintenance Yard at 601 James Avenue Site with Sage Renewables",
+    "Approval of Picnic Table Purchase and Installation Proposal for Clifford School with Park Planet",
+    "Approval of Program Advisor Consultant Agreement with Group Garrett",
+    "Approval of Project Inspector Agreement Amendment #7 for Various Sites with Inspectacon",
+    "Bond Program Action Items (Action Required)",
+    "Discussion Items",
+    "Discussion on COVID-19",
+    "Information and Discussion on 3150 Granger Way",
+    "Consent Items",
+    "Approval of January 27th Board Minutes",
+    "Approval of Board Policy 3530 - Risk Management",
+    "Approval of Board Policy 4040 - Employee Use of Technology",
+    "Approval of Addendum to 2020-21 Measure U Application for Clifford School",
+    "Ratification of Warrant Register, January 1, 2021 - January 31, 2021",
+    "Action items",
+    "Approval of the Tentative Agreement between the California School Employees Association Chapter V and the Redwood City School District",
+    "Declaration of Need for 2021-2022",
+    "Approval of Personnel Report",
+    "Approval of 2020-21 Certificated Seniority Report",
+    "Board and Superintendent Reports",
+    "Report from Board Members and Superintendent",
+    "Information",
+    "Contract Update Information and Credit Card Summary",
+    "RCSD Review of Connect Community Charter School's First Interim Financial Report for FY 2020-21",
+    "RCSD Review of Connect Community Charter School's Audit Report for FY 2019-20",
+    "RCSD Review of KIPP's First Interim Financial Report for FY 2020-21",
+    "RCSD Review of KIPP's Audit Report for FY 2019-20",
+    "RCSD Review of Rocketship's First Interim Financial Report for FY 2020-21",
+    "RCSD Review of Rocketship's Audit Report for FY 2019-20",
+    "Correspondence",
+    "Correspondence",
+    "Other Business/Suggested Items For Future Agenda",
+    "Board Agenda Calendar",
+    "Changes to the Board Agenda Schedule",
+    "Adjournment",
+    "Adjourn the Meeting"
+  ],
+  "llmResponse": {
+    "agenda_changes": "Items 14.3 (Approval of Personnel Report) and 14.4 (Approval of 2020-21 Certificated Seniority Report) were moved from action items to consent items during the 'Changes to the Agenda' section.",
+    "consent_vote_words": "Trustee Wells. Aye. Trustee Lawson. Hi. Christy Marquez. Aye. Vice President Diaz Locum. Aye. President Nakavoy. Hi.",
+    "items": [
+      {
+        "item": 1,
+        "intro_words": "Call to Order",
+        "status": "found"
+      },
+      {
+        "item": 2,
+        "intro_words": "Roll Call",
+        "status": "found"
+      },
+      {
+        "item": 3,
+        "intro_words": "Oral Communication on Closed Session Items Only",
+        "status": "found"
+      },
+      {
+        "item": 5,
+        "intro_words": "Closed Session 6:00-7:00 pm",
+        "status": "found"
+      },
+      {
+        "item": 9,
+        "intro_words": "Reconvene to Regular Session at Approximately 7:00p.m.",
+        "status": "found"
+      },
+      {
+        "item": 10,
+        "intro_words": "Roll Call",
+        "status": "found"
+      },
+      {
+        "item": 11,
+        "intro_words": "Report Out on Closed Session from 2.10.21",
+        "status": "found"
+      },
+      {
+        "item": 12,
+        "intro_words": "Welcome",
+        "status": "found"
+      },
+      {
+        "item": 13,
+        "intro_words": "Welcome by the School Board President",
+        "status": "found"
+      },
+      {
+        "item": 14,
+        "intro_words": "So onto the business. I have posted some things",
+        "status": "found"
+      },
+      {
+        "item": 18,
+        "intro_words": "Alrighty. So, changes to the agenda. Did we want to move",
+        "status": "found"
+      },
+      {
+        "item": 20,
+        "intro_words": "Okay, oral communication. I do think we have a speaker",
+        "status": "found"
+      },
+      {
+        "item": 21,
+        "intro_words": "Oh, we're on to one of my favorite parts of the agenda",
+        "status": "found"
+      },
+      {
+        "item": 22,
+        "intro_words": "All right, so the next item is bond program consent items",
+        "status": "found"
+      },
+      {
+        "item": 30,
+        "intro_words": "Okay, so we're at the discussion on COVID 19",
+        "status": "found"
+      },
+      {
+        "item": 33,
+        "intro_words": "Okay, so we're on to 13 consent items. Do I have",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 34,
+        "intro_words": "Okay, so we're on to 13 consent items. Do I have",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 35,
+        "intro_words": "Okay, so we're on to 13 consent items. Do I have",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 36,
+        "intro_words": "Okay, so we're on to 13 consent items. Do I have",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 37,
+        "intro_words": "Okay, so we're on to 13 consent items. Do I have",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 38,
+        "intro_words": "Okay, so we're on to 13 consent items. Do I have",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 39,
+        "intro_words": "Items 14.1, the approval of the tentative agreement",
+        "status": "found"
+      },
+      {
+        "item": 40,
+        "intro_words": "All right, the next one is 14.2, recommendation on the",
+        "status": "found"
+      },
+      {
+        "item": 41,
+        "intro_words": "All right, the next one is 14.2, recommendation on the",
+        "status": "found"
+      },
+      {
+        "item": 42,
+        "intro_words": "All right, the next one is 14.2, recommendation on the",
+        "status": "found"
+      },
+      {
+        "item": 43,
+        "intro_words": "All right, the next one is 14.2, recommendation on the",
+        "status": "found"
+      },
+      {
+        "item": 44,
+        "intro_words": "Okay, so we're on to board and superintendent reports",
+        "status": "found"
+      },
+      {
+        "item": 45,
+        "intro_words": "Okay, so we're on to board and superintendent reports",
+        "status": "found"
+      },
+      {
+        "item": 46,
+        "intro_words": "All right, so we're on to the informational items and 16.1",
+        "status": "found"
+      },
+      {
+        "item": 47,
+        "intro_words": "All right, so we're on to the informational items and 16.1",
+        "status": "found"
+      },
+      {
+        "item": 48,
+        "intro_words": "All right, so we're on to the informational items and 16.1",
+        "status": "found"
+      },
+      {
+        "item": 49,
+        "intro_words": "All right, so we're on to the informational items and 16.1",
+        "status": "found"
+      },
+      {
+        "item": 50,
+        "intro_words": "All right, so we're on to the informational items and 16.1",
+        "status": "found"
+      },
+      {
+        "item": 51,
+        "intro_words": "All right, so we're on to the informational items and 16.1",
+        "status": "found"
+      },
+      {
+        "item": 52,
+        "intro_words": "All right, so we're on to the informational items and 16.1",
+        "status": "found"
+      },
+      {
+        "item": 53,
+        "intro_words": "All right, so we're on to the informational items and 16.1",
+        "status": "found"
+      },
+      {
+        "item": 54,
+        "intro_words": "All right, so any correspondence? Yeah, I know we've",
+        "status": "found"
+      },
+      {
+        "item": 55,
+        "intro_words": "All right, so any correspondence? Yeah, I know we've",
+        "status": "found"
+      },
+      {
+        "item": 56,
+        "intro_words": "Okay, other business suggested items for future agendas",
+        "status": "found"
+      },
+      {
+        "item": 57,
+        "intro_words": "Okay, other business suggested items for future agendas",
+        "status": "found"
+      },
+      {
+        "item": 58,
+        "intro_words": "Okay, other business suggested items for future agendas",
+        "status": "found"
+      },
+      {
+        "item": 59,
+        "intro_words": "All right. Right before 10 o' Clock. That's pretty good",
+        "status": "found"
+      },
+      {
+        "item": 60,
+        "intro_words": "All right. So do I have a motion to adjourn",
+        "status": "found"
+      }
+    ]
+  },
+  "result": {
+    "videoId": "2t3bBlJiP6Q",
+    "items": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      {
+        "timestamp": "00:03:43",
+        "timestampSeconds": 223
+      },
+      null,
+      null,
+      null,
+      {
+        "timestamp": "00:06:17",
+        "timestampSeconds": 377
+      },
+      null,
+      {
+        "timestamp": "00:07:38",
+        "timestampSeconds": 458
+      },
+      {
+        "timestamp": "00:13:16",
+        "timestampSeconds": 796
+      },
+      {
+        "timestamp": "00:17:07",
+        "timestampSeconds": 1027
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      {
+        "timestamp": "00:22:21",
+        "timestampSeconds": 1341
+      },
+      null,
+      null,
+      {
+        "timestamp": "02:42:18",
+        "timestampSeconds": 9738,
+        "consent": true
+      },
+      {
+        "timestamp": "02:42:18",
+        "timestampSeconds": 9738,
+        "consent": true
+      },
+      {
+        "timestamp": "02:42:18",
+        "timestampSeconds": 9738,
+        "consent": true
+      },
+      {
+        "timestamp": "02:42:18",
+        "timestampSeconds": 9738,
+        "consent": true
+      },
+      {
+        "timestamp": "02:42:18",
+        "timestampSeconds": 9738,
+        "consent": true
+      },
+      {
+        "timestamp": "02:42:18",
+        "timestampSeconds": 9738,
+        "consent": true
+      },
+      {
+        "timestamp": "02:42:33",
+        "timestampSeconds": 9753
+      },
+      {
+        "timestamp": "02:43:55",
+        "timestampSeconds": 9835
+      },
+      {
+        "timestamp": "02:43:55",
+        "timestampSeconds": 9835
+      },
+      {
+        "timestamp": "02:43:55",
+        "timestampSeconds": 9835
+      },
+      {
+        "timestamp": "02:43:55",
+        "timestampSeconds": 9835
+      },
+      {
+        "timestamp": "02:42:03",
+        "timestampSeconds": 9723
+      },
+      {
+        "timestamp": "02:42:03",
+        "timestampSeconds": 9723
+      },
+      {
+        "timestamp": "02:41:50",
+        "timestampSeconds": 9710
+      },
+      {
+        "timestamp": "02:41:50",
+        "timestampSeconds": 9710
+      },
+      {
+        "timestamp": "02:41:50",
+        "timestampSeconds": 9710
+      },
+      {
+        "timestamp": "02:41:50",
+        "timestampSeconds": 9710
+      },
+      {
+        "timestamp": "02:41:50",
+        "timestampSeconds": 9710
+      },
+      {
+        "timestamp": "02:41:50",
+        "timestampSeconds": 9710
+      },
+      {
+        "timestamp": "02:41:50",
+        "timestampSeconds": 9710
+      },
+      {
+        "timestamp": "02:41:50",
+        "timestampSeconds": 9710
+      },
+      {
+        "timestamp": "02:45:33",
+        "timestampSeconds": 9933
+      },
+      {
+        "timestamp": "02:45:33",
+        "timestampSeconds": 9933
+      },
+      {
+        "timestamp": "02:55:59",
+        "timestampSeconds": 10559
+      },
+      {
+        "timestamp": "02:55:59",
+        "timestampSeconds": 10559
+      },
+      {
+        "timestamp": "02:55:59",
+        "timestampSeconds": 10559
+      },
+      {
+        "timestamp": "02:56:46",
+        "timestampSeconds": 10606
+      },
+      {
+        "timestamp": "02:56:22",
+        "timestampSeconds": 10582
+      }
+    ]
+  },
+  "cachedAt": "2026-03-26T22:48:02.806Z",
+  "inputTokens": 33359,
+  "outputTokens": 2061
+}

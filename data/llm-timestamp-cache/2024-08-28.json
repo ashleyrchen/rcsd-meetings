@@ -1,26 +1,36 @@
 {
   "date": "2024-08-28",
   "items": [
+    "Call to Order",
     "Roll Call",
+    "Welcome",
     "Welcome by the School Board President, Janet Lawson",
+    "Changes to the Agenda",
     "Additions, Deletions, or Modifications to the Agenda",
     "Approval of Agenda",
+    "Approval of Agenda",
+    "Oral Communication",
     "If you have public comment related to a Regular Board Meeting item, please post it on the links available under Public Content prior to the Regular Board Meeting or immediately upon the meeting opening.",
+    "Bond Program Action Items",
     "Approval of Program Management Services Amendment #4 with Cumming Group (Formerly RGMK)",
+    "Bond Program Discussion Item(s)",
     "Update on the Progress of the Facilities Master Plan and Next Steps",
+    "Discussion Items",
     "Discussion of School Assignments and Committee Assignments for Board Members for the 2024-25 School Year",
     "Discussion of Process to Appoint Area III Trustee",
+    "Public Hearing",
     "Public Hearing of Sufficiency of Instructional Materials for the 2024-2025 School Year",
+    "Consent Items",
     "Approval of Consent Items",
     "Approval of the August 7 Board Meeting Minutes",
     "Approval of the Agreement between Redwood City School District and One Life Counseling for the 2024-2025 School Year",
     "Approval of the Agreement between the Redwood City School District and One Life Counseling Center for the 2024-2025 School Year",
-    "Approval of the Agreement between Redwood City School District and Dannis, Woliver &amp; Kelley for Fiscal Years 2024-25 and 2025-26",
+    "Approval of the Agreement between Redwood City School District and Dannis, Woliver & Kelley for Fiscal Years 2024-25 and 2025-26",
     "Approval of the Agreement between the Redwood City School District and the Santa Clara County Office of Education for the 2024-2025 School Year",
     "Approval of the Agreement between Redwood City School District and the City of Redwood City Parks and Recreation (Reach) for the 2024-2025 School Year",
     "Approval of the Agreement between Redwood City School District and AHS Staffing LLC for a Speech Pathologist for the 2024-2025 School Year",
     "Approval of the Agreement between the Redwood City School District and Newsela, Inc. for the 2024-2025 School Year",
-    "Approval of Citizens&#039; Bond Oversight Committee Membership",
+    "Approval of Citizens' Bond Oversight Committee Membership",
     "Approval of Renewal Agreement Between Redwood City School District Instructional Materials Center and 2992 Spring Partners/Beals Martin",
     "Approval of Renewal Agreement Between Redwood City School District Instructional Materials Center and 2992 Spring Partners/Beals Martin",
     "Approval of the Memorandum of Understanding (MOU) between Redwood City School District and the County of San Mateo for the 2024-2025 School Year",
@@ -29,130 +39,307 @@
     "Approval to Purchase a Fleet Truck for Use By the Facilities Department",
     "Ratification of Warrant Registers, June 1, 2024 - June 30, 2024",
     "Ratification of Warrant Registers, July 1, 2024 - July 31, 2024",
+    "Action Items",
     "Adoption of Resolution No. 2, Sufficiency of Instructional Materials for the 2024-25 School Year",
     "Adoption of Resolution No. 3, Approval of Certificated Staff Gaining Tenured Status",
     "First Reading and Approval of Board Bylaw 9223 - Filling Vacancies",
+    "Board and Superintendent Reports",
     "Report from Board Members and Superintendent",
+    "Information",
     "Information on Decision Against Parcel Tax on November Ballot",
     "Information on San Mateo County Investment Fund - June 2024",
     "Information on San Mateo County Investment Fund - July 2024",
     "Correspondence",
+    "Correspondence",
+    "Other Business/Suggested Items For Future Agenda",
     "Possible Other Business/Suggested Items for Future Agenda",
+    "Board Meetings Calendar",
     "Changes to the Board Meetings Calendar",
+    "Adjournment",
     "Adjourn the Meeting"
   ],
   "llmResponse": {
-    "agenda_changes": "No changes to agenda announced during 'Changes to the Agenda' or 'Approval of Agenda' section. The board president stated 'okay that brings us to changes to the agenda there any changes we have a motion to approve the agenda I move we approve the agenda second all those in favor thank you' with no changes mentioned.",
-    "consent_vote_words": "I'll move to approve the consent items seconded all those in favor I",
+    "agenda_changes": "No changes to agenda announced during Changes to the Agenda section. Agenda was approved as posted.",
+    "consent_vote_words": "I'll move to approve the consent items. Seconded. All those in favor?",
     "items": [
       {
         "item": 1,
-        "intro_words": "look like we're all set so we can go ahead and get started um if we can have a ra",
+        "intro_words": "Looks like we're all set. So we can go ahead and get started.",
         "status": "found"
       },
       {
         "item": 2,
-        "intro_words": "uh welcome everybody uh CA Al DEA the public is encouraged to speak to the board",
+        "intro_words": "If we can have a roll call. Trustee Marquez.",
         "status": "found"
       },
       {
         "item": 3,
-        "intro_words": "okay that brings us to changes to the agenda there any changes",
+        "intro_words": "Welcome, everybody. Sine truccion en espanol, por favor.",
         "status": "found"
       },
       {
         "item": 4,
-        "intro_words": "we have a motion to approve the agenda I move we approve the agenda second",
-        "status": "found"
+        "intro_words": "Welcome by the School Board President, Janet Lawson",
+        "status": "not_found_in_transcript"
       },
       {
         "item": 5,
-        "intro_words": "oral communication we do have a speaker card um this is for Jeffrey",
+        "intro_words": "Okay, that brings us to changes to the agenda. Any changes?",
         "status": "found"
       },
       {
         "item": 6,
-        "intro_words": "we're going to move on to um let's see 6.1 approval of program Management Services amendment",
-        "status": "found"
+        "intro_words": "not applicable - same section as item 5",
+        "status": "combined_with_item_5"
       },
       {
         "item": 7,
-        "intro_words": "we are on 7.1 discussion update to on the progress of the facility's master plan",
+        "intro_words": "We have a motion to approve the agenda. I move we approve",
         "status": "found"
       },
       {
         "item": 8,
-        "intro_words": "I'm going to move us on to uh 8.1 discussion of school assignments and committee assignments",
-        "status": "found"
+        "intro_words": "not applicable - duplicate of item 7",
+        "status": "duplicate"
       },
       {
         "item": 9,
-        "intro_words": "let's move on to the discussion at hand the process of appointment for trustee Area",
+        "intro_words": "Oral communication. We do have a speaker's card.",
         "status": "found"
       },
       {
         "item": 10,
-        "intro_words": "we're GNA go ahead and open the public hearing of sufficiency of instructional materials",
-        "status": "found"
+        "intro_words": "not applicable - informational only",
+        "status": "informational"
       },
       {
         "item": 11,
-        "intro_words": "that brings us to number 10 or consent items I'll move to approve the consent items",
-        "status": "consent_bundle"
+        "intro_words": "we're going to move on to 6.1 approval of Program Management Services",
+        "status": "found"
       },
       {
         "item": 12,
-        "intro_words": "11.1 adoption of resolution number two sufficiency of instructional materials for the 2425",
+        "intro_words": "We are on 7.1. Discussion Update on the progress of the facilities master plan",
         "status": "found"
       },
       {
         "item": 13,
-        "intro_words": "11.2 adoption of resolution number three approval of certificated staff gaining tenur status",
-        "status": "found"
+        "intro_words": "not applicable - same section as item 12",
+        "status": "combined_with_item_12"
       },
       {
         "item": 14,
-        "intro_words": "11.1 first reading and approval of board bylaw 9223 filling vacancies so",
+        "intro_words": "not applicable - same section as item 12",
+        "status": "combined_with_item_12"
+      },
+      {
+        "item": 15,
+        "intro_words": "I'm going to move us on to 8.1. Discussion of school assignments and committee",
         "status": "found"
+      },
+      {
+        "item": 16,
+        "intro_words": "not applicable - same section as item 15",
+        "status": "combined_with_item_15"
+      },
+      {
+        "item": 17,
+        "intro_words": "the process of appointment for Trustee Area 3. Wendy, if you do",
+        "status": "found"
+      },
+      {
+        "item": 18,
+        "intro_words": "We're going to go ahead and open the public hearing of sufficient efficiency",
+        "status": "found"
+      },
+      {
+        "item": 19,
+        "intro_words": "not applicable - same section as item 18",
+        "status": "combined_with_item_18"
+      },
+      {
+        "item": 20,
+        "intro_words": "All right, that brings us to number 10, our consent items.",
+        "status": "found"
+      },
+      {
+        "item": 21,
+        "intro_words": "I'll move to approve the consent items. Seconded.",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 22,
+        "intro_words": "consent_bundle",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 23,
+        "intro_words": "consent_bundle",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 24,
+        "intro_words": "consent_bundle",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 25,
+        "intro_words": "consent_bundle",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 26,
+        "intro_words": "consent_bundle",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 27,
+        "intro_words": "consent_bundle",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 28,
+        "intro_words": "consent_bundle",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 29,
+        "intro_words": "consent_bundle",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 30,
+        "intro_words": "consent_bundle",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 31,
+        "intro_words": "consent_bundle",
+        "status": "consent_bundle"
       },
       {
         "item": 32,
-        "intro_words": "we are on reports from board members and superintendent I'll report out first",
-        "status": "found"
+        "intro_words": "consent_bundle",
+        "status": "consent_bundle"
       },
       {
         "item": 33,
-        "intro_words": "we do have a speaker card we want to I don't know um the information here is is just to",
-        "status": "found"
+        "intro_words": "consent_bundle",
+        "status": "consent_bundle"
       },
       {
         "item": 34,
-        "intro_words": "13.2 information on S County investment fund any questions thank you",
-        "status": "found"
+        "intro_words": "consent_bundle",
+        "status": "consent_bundle"
       },
       {
         "item": 35,
-        "intro_words": "13.3 information on S County investment fund sorry 202 all right thank you",
-        "status": "found"
+        "intro_words": "consent_bundle",
+        "status": "consent_bundle"
       },
       {
         "item": 36,
-        "intro_words": "correspondence emails about AC ditto yeah same I think that's all",
-        "status": "found"
+        "intro_words": "consent_bundle",
+        "status": "consent_bundle"
       },
       {
         "item": 37,
-        "intro_words": "15.1 possible other business suggested items for future agenda we have a lot coming up",
-        "status": "found"
+        "intro_words": "consent_bundle",
+        "status": "consent_bundle"
       },
       {
         "item": 38,
-        "intro_words": "changes to the board meetings calendar all right that moves us to a Jour",
-        "status": "found"
+        "intro_words": "consent_bundle",
+        "status": "consent_bundle"
       },
       {
         "item": 39,
-        "intro_words": "in the meeting if we can get it done before 9 o'clock I'm Mo to a journey second",
+        "intro_words": "11.1 Adoption of resolution number two, sufficiency of instructional materials",
+        "status": "found"
+      },
+      {
+        "item": 40,
+        "intro_words": "not applicable - same section as item 39",
+        "status": "combined_with_item_39"
+      },
+      {
+        "item": 41,
+        "intro_words": "11.2. Adoption of resolution number three, approval of certificates.",
+        "status": "found"
+      },
+      {
+        "item": 42,
+        "intro_words": "11.1 first reading and approval of Board Bylaw 9223 filling vacancies.",
+        "status": "found"
+      },
+      {
+        "item": 43,
+        "intro_words": "All right, we are on reports from board members and superintendent.",
+        "status": "found"
+      },
+      {
+        "item": 44,
+        "intro_words": "not applicable - same section as item 43",
+        "status": "combined_with_item_43"
+      },
+      {
+        "item": 45,
+        "intro_words": "That moves us to 13.1 information on decision against partial tax on November",
+        "status": "found"
+      },
+      {
+        "item": 46,
+        "intro_words": "not applicable - same section as item 45",
+        "status": "combined_with_item_45"
+      },
+      {
+        "item": 47,
+        "intro_words": "13.2, Information on San Mateo county investment fund and questions.",
+        "status": "found"
+      },
+      {
+        "item": 48,
+        "intro_words": "13.3, information on Samato County Investment Fund. Sorry. July 2024.",
+        "status": "found"
+      },
+      {
+        "item": 49,
+        "intro_words": "Correspondence, emails about AC Ditto.",
+        "status": "found"
+      },
+      {
+        "item": 50,
+        "intro_words": "not applicable - same section as item 49",
+        "status": "combined_with_item_49"
+      },
+      {
+        "item": 51,
+        "intro_words": "15.1 possible other business suggested items for future agenda.",
+        "status": "found"
+      },
+      {
+        "item": 52,
+        "intro_words": "not applicable - same section as item 51",
+        "status": "combined_with_item_51"
+      },
+      {
+        "item": 53,
+        "intro_words": "Changes to the board meetings calendar. All right, that moves us to",
+        "status": "found"
+      },
+      {
+        "item": 54,
+        "intro_words": "not applicable - same section as item 53",
+        "status": "combined_with_item_53"
+      },
+      {
+        "item": 55,
+        "intro_words": "Adjournment. If we can get it done before 9 o'clock.",
+        "status": "found"
+      },
+      {
+        "item": 56,
+        "intro_words": "I move to adjourn second. I'll second. All those in favor?",
         "status": "found"
       }
     ]
@@ -169,106 +356,200 @@
         "timestampSeconds": 4
       },
       {
-        "timestamp": "00:01:02",
-        "timestampSeconds": 62
+        "timestamp": "00:00:09",
+        "timestampSeconds": 9
+      },
+      null,
+      {
+        "timestamp": "00:01:07",
+        "timestampSeconds": 67
+      },
+      null,
+      {
+        "timestamp": "00:01:12",
+        "timestampSeconds": 72
+      },
+      null,
+      {
+        "timestamp": "00:01:22",
+        "timestampSeconds": 82
+      },
+      null,
+      {
+        "timestamp": "00:01:22",
+        "timestampSeconds": 82
       },
       {
-        "timestamp": "00:01:10",
-        "timestampSeconds": 70
+        "timestamp": "00:03:15",
+        "timestampSeconds": 195
+      },
+      null,
+      null,
+      {
+        "timestamp": "01:06:31",
+        "timestampSeconds": 3991
+      },
+      null,
+      {
+        "timestamp": "01:14:26",
+        "timestampSeconds": 4466
       },
       {
-        "timestamp": "00:01:14",
-        "timestampSeconds": 74
+        "timestamp": "01:38:50",
+        "timestampSeconds": 5930
+      },
+      null,
+      {
+        "timestamp": "01:39:21",
+        "timestampSeconds": 5961
       },
       {
-        "timestamp": "00:01:37",
-        "timestampSeconds": 97
-      },
-      {
-        "timestamp": "00:02:55",
-        "timestampSeconds": 175
-      },
-      {
-        "timestamp": "01:06:36",
-        "timestampSeconds": 3996
-      },
-      {
-        "timestamp": "01:14:14",
-        "timestampSeconds": 4454
-      },
-      {
-        "timestamp": "01:38:51",
-        "timestampSeconds": 5931
-      },
-      {
-        "timestamp": "01:39:20",
-        "timestampSeconds": 5960,
+        "timestamp": "01:39:15",
+        "timestampSeconds": 5955,
         "consent": true
       },
       {
-        "timestamp": "01:39:27",
-        "timestampSeconds": 5967
+        "timestamp": "01:39:15",
+        "timestampSeconds": 5955,
+        "consent": true
       },
       {
-        "timestamp": "01:39:54",
-        "timestampSeconds": 5994
+        "timestamp": "01:39:15",
+        "timestampSeconds": 5955,
+        "consent": true
       },
       {
-        "timestamp": "01:42:08",
-        "timestampSeconds": 6128
-      },
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      {
-        "timestamp": "01:48:25",
-        "timestampSeconds": 6505
+        "timestamp": "01:39:15",
+        "timestampSeconds": 5955,
+        "consent": true
       },
       {
-        "timestamp": "01:51:04",
-        "timestampSeconds": 6664
+        "timestamp": "01:39:15",
+        "timestampSeconds": 5955,
+        "consent": true
       },
       {
-        "timestamp": "01:57:25",
-        "timestampSeconds": 7045
+        "timestamp": "01:39:15",
+        "timestampSeconds": 5955,
+        "consent": true
       },
       {
-        "timestamp": "01:57:25",
-        "timestampSeconds": 7045
+        "timestamp": "01:39:15",
+        "timestampSeconds": 5955,
+        "consent": true
       },
       {
-        "timestamp": "01:57:32",
-        "timestampSeconds": 7052
+        "timestamp": "01:39:15",
+        "timestampSeconds": 5955,
+        "consent": true
       },
       {
-        "timestamp": "01:57:42",
-        "timestampSeconds": 7062
+        "timestamp": "01:39:15",
+        "timestampSeconds": 5955,
+        "consent": true
       },
       {
-        "timestamp": "01:57:38",
-        "timestampSeconds": 7058
+        "timestamp": "01:39:15",
+        "timestampSeconds": 5955,
+        "consent": true
       },
       {
-        "timestamp": "01:57:45",
-        "timestampSeconds": 7065
+        "timestamp": "01:39:15",
+        "timestampSeconds": 5955,
+        "consent": true
+      },
+      {
+        "timestamp": "01:39:15",
+        "timestampSeconds": 5955,
+        "consent": true
+      },
+      {
+        "timestamp": "01:39:15",
+        "timestampSeconds": 5955,
+        "consent": true
+      },
+      {
+        "timestamp": "01:39:15",
+        "timestampSeconds": 5955,
+        "consent": true
+      },
+      {
+        "timestamp": "01:39:15",
+        "timestampSeconds": 5955,
+        "consent": true
+      },
+      {
+        "timestamp": "01:39:15",
+        "timestampSeconds": 5955,
+        "consent": true
+      },
+      {
+        "timestamp": "01:39:15",
+        "timestampSeconds": 5955,
+        "consent": true
+      },
+      {
+        "timestamp": "01:39:15",
+        "timestampSeconds": 5955,
+        "consent": true
+      },
+      {
+        "timestamp": "01:39:31",
+        "timestampSeconds": 5971
+      },
+      null,
+      {
+        "timestamp": "01:39:47",
+        "timestampSeconds": 5987
+      },
+      {
+        "timestamp": "01:42:05",
+        "timestampSeconds": 6125
+      },
+      {
+        "timestamp": "01:48:23",
+        "timestampSeconds": 6503
+      },
+      null,
+      {
+        "timestamp": "01:50:52",
+        "timestampSeconds": 6652
+      },
+      null,
+      {
+        "timestamp": "01:57:26",
+        "timestampSeconds": 7046
+      },
+      {
+        "timestamp": "01:57:26",
+        "timestampSeconds": 7046
+      },
+      {
+        "timestamp": "01:57:37",
+        "timestampSeconds": 7057
+      },
+      null,
+      {
+        "timestamp": "01:57:52",
+        "timestampSeconds": 7072
+      },
+      null,
+      {
+        "timestamp": "01:57:31",
+        "timestampSeconds": 7051
+      },
+      null,
+      {
+        "timestamp": "01:57:57",
+        "timestampSeconds": 7077
+      },
+      {
+        "timestamp": "01:58:02",
+        "timestampSeconds": 7082
       }
     ]
   },
-  "cachedAt": "2026-03-04T19:04:56.225Z",
-  "inputTokens": 24556,
-  "outputTokens": 1200
+  "cachedAt": "2026-03-26T22:32:06.472Z",
+  "inputTokens": 26946,
+  "outputTokens": 2476
 }

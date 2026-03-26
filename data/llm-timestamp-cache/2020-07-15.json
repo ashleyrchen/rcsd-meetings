@@ -1,0 +1,142 @@
+{
+  "date": "2020-07-15",
+  "items": [
+    "Call to Order",
+    "Roll Call",
+    "Welcome",
+    "Welcome by the School Board President",
+    "Changes to the Agenda",
+    "Changes to the Agenda",
+    "Approval of Agenda (Action Required)",
+    "Approval of Agenda",
+    "Oral Communication - If you have public comment related to a Regular Board Meeting item, please post it on: (https://docs.google.com/forms/d/e/1FAIpQLSd3rKbPfVCTpOsK5ILqjnU2u-h-NuNx-vUq4OZxYNVR8lc4aQ/viewform?usp=sf_link) prior to the Regular Board Meeting or immediately upon the meeting opening.",
+    "Bond Program Consent Items (Action Required)",
+    "Approval of Program Management Team Amendment #4 with Brailsford and Dunlavey",
+    "Approval of Multi-Prime Construction Agreements for Garfield School with Various Contractors",
+    "Approval of Drainage Upgrades and Bioswale Project Construction Agreement for Adelante Selby Spanish Immersion School with Silicon Valley Paving",
+    "Approval of IT Wiring Upgrades for Roosevelt School with Vanden Bos",
+    "Approval of Boundary Survey Project Authorization Form for Adelante Selby Spanish Immersion School with Kier and Wright",
+    "Bond Program Action Items (Action Required)",
+    "Discussion Items",
+    "Discussion of Roadmap to Reopening My School Plan",
+    "Consent Items (Action Required)",
+    "Action Items (Action Required)",
+    "Adoption of Resolution 1, Consent of the San Mateo County Special Education Local Plan Area (SELPA) Local Plan 2020-2023",
+    "Approval of Personnel Changes for 2020-21",
+    "Approval of Facilities Use Agreement between RCSD and Connect Community Charter School",
+    "Approval of Joint Use Agreement with Little Budz, Inc. dba BuildingKidz School at Hawes School Site",
+    "Adjournment (Action Required)"
+  ],
+  "llmResponse": {
+    "agenda_changes": "Item 10.2 pulled from agenda because item 8.1 is discussion only. Items 10.3 and 10.4 moved to consent agenda.",
+    "consent_vote_words": "So moved. Maria. Second. Is that Elisa? Yeah. Second. Okay. Thank you. So, Eliana, can we have a roll call vote, please?",
+    "items": [
+      {
+        "item": 1,
+        "intro_words": "Started. Eliana, can we have a roll call, please?",
+        "status": "found"
+      },
+      {
+        "item": 2,
+        "intro_words": "Welcome, everyone, to our July 15th special board meeting.",
+        "status": "found"
+      },
+      {
+        "item": 5,
+        "intro_words": "So do we have any changes to the agenda?",
+        "status": "found"
+      },
+      {
+        "item": 7,
+        "intro_words": "Can we have a roll call vote, please? And Eliana probably needs to be unmuted again.",
+        "status": "found"
+      },
+      {
+        "item": 8,
+        "intro_words": "It looks like all of our speakers cards are for item 8.1, so we can move on to the bond consent.",
+        "status": "found"
+      },
+      {
+        "item": 10,
+        "intro_words": "Do we have a motion to approve? So move. Second, Dennis and Elisa, roll call vote, please.",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 18,
+        "intro_words": "Thank you, Dr. Baker. I'm going to share my screen. Let's hope all goes well.",
+        "status": "found"
+      },
+      {
+        "item": 21,
+        "intro_words": "Then we would need a motion to approve it. I'll second Dennis and Elisa. Can we have a roll call vote, please?",
+        "status": "found"
+      },
+      {
+        "item": 25,
+        "intro_words": "That brings us to the end of our agenda 1055. And we'll see you back here for our next.",
+        "status": "found"
+      }
+    ]
+  },
+  "result": {
+    "videoId": "vuhxZKBmGsM",
+    "items": [
+      {
+        "timestamp": "00:00:00",
+        "timestampSeconds": 0
+      },
+      {
+        "timestamp": "00:01:03",
+        "timestampSeconds": 63
+      },
+      null,
+      null,
+      {
+        "timestamp": "00:01:44",
+        "timestampSeconds": 104
+      },
+      null,
+      {
+        "timestamp": "00:11:44",
+        "timestampSeconds": 704
+      },
+      {
+        "timestamp": "00:12:19",
+        "timestampSeconds": 739
+      },
+      null,
+      {
+        "timestamp": "04:47:36",
+        "timestampSeconds": 17256,
+        "consent": true
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      {
+        "timestamp": "00:16:03",
+        "timestampSeconds": 963
+      },
+      null,
+      null,
+      {
+        "timestamp": "04:50:53",
+        "timestampSeconds": 17453
+      },
+      null,
+      null,
+      null,
+      {
+        "timestamp": "04:51:20",
+        "timestampSeconds": 17480
+      }
+    ]
+  },
+  "cachedAt": "2026-03-26T22:50:49.164Z",
+  "inputTokens": 54210,
+  "outputTokens": 577
+}

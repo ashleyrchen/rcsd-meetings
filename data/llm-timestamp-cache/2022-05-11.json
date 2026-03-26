@@ -1,0 +1,412 @@
+{
+  "date": "2022-05-11",
+  "items": [
+    "Call to Order",
+    "Roll Call",
+    "Welcome",
+    "Welcome by the School Board President, María Díaz-Slocum",
+    "Changes to the Agenda",
+    "Additions, Deletions or Modifications to the Agenda",
+    "Approval of Agenda",
+    "Approval of Agenda",
+    "Oral Communication",
+    "If you have public comment related to a Regular Board Meeting item, please post it on the links available under Public Content prior to the Regular Board Meeting or immediately upon the meeting opening.",
+    "Bond Program Consent Items",
+    "Approval of Consent Items",
+    "Approval of Measure T Bond Program Tracking List of Items Under $20k",
+    "Approval of Interim Housing Asphalt Removal and Replacement Proposal for Garfield Community School with Duran and Venables",
+    "Approval of New Buildings, Modernization and Site-work Project Bid Package B, Change Order #4 for Garfield Community School with MK Pipelines",
+    "Approval of Interim Housing, Classroom, and Library Moving Services Proposal for Garfield Community School with Rentacrate",
+    "Approval of New Buildings, Modernization and Site-work Project Bid Package C, Change Order #4 for Taft Community School with Dryco",
+    "Bond Program Action Items",
+    "Approval of Structural Upgrade Project Construction, Change Order #2 for 3150 Granger Way Site with EE Gilbert and Adoption of Futility Resolution #34",
+    "Discussion Items",
+    "Update on the Workforce Housing Project",
+    "Consent Items",
+    "Approval of Consent Items",
+    "Approval of March 9th Board Minutes",
+    "Approval of March 23rd Board Minutes",
+    "Approval of Additional Vision Evaluations and Services for 2021-2022",
+    "Ratification of Warrant Register, April 1, 2022 to April 30, 2022",
+    "Action items",
+    "Adoption of Resolution 33, Authorizing Electronic Meetings of the Board of Trustees During a State of Emergency Pursuant to Government Code Section 54953(e)",
+    "Board and Superintendent Reports",
+    "Report from Board Members and Superintendent",
+    "Correspondence",
+    "Correspondence",
+    "Other Business/Suggested Items For Future Agenda",
+    "Possible Other Business/Suggested Items for Future Agenda",
+    "Board Agenda Calendar",
+    "Changes to the Board Agenda Schedule",
+    "Adjournment",
+    "Adjourn the Meeting"
+  ],
+  "llmResponse": {
+    "agenda_changes": "Item 8.1 (Update on the Workforce Housing Project) moved to immediately after approval of agenda (item 4.1), before oral communications. President Díaz-Slocum requested this change to accommodate guest presenters with other commitments.",
+    "consent_vote_words": "Moving on to content items, do I get a motion to approve the consent items?",
+    "items": [
+      {
+        "item": 1,
+        "intro_words": "Roll call, please. Trustee mcavoy.",
+        "status": "found"
+      },
+      {
+        "item": 2,
+        "intro_words": "Roll call, please. Trustee mcavoy.",
+        "status": "found"
+      },
+      {
+        "item": 3,
+        "intro_words": "So, good evening, everyone, and welcome to tonight's board meeting.",
+        "status": "found"
+      },
+      {
+        "item": 4,
+        "intro_words": "So, good evening, everyone, and welcome to tonight's board meeting.",
+        "status": "found"
+      },
+      {
+        "item": 5,
+        "intro_words": "Are there any changes to the agenda? I wanted to make one.",
+        "status": "found"
+      },
+      {
+        "item": 6,
+        "intro_words": "Are there any changes to the agenda? I wanted to make one.",
+        "status": "found"
+      },
+      {
+        "item": 7,
+        "intro_words": "I'll move to. I'll move the agenda with the change to move 8.1 after 4.1.",
+        "status": "found"
+      },
+      {
+        "item": 8,
+        "intro_words": "I'll move to. I'll move the agenda with the change to move 8.1 after 4.1.",
+        "status": "found"
+      },
+      {
+        "item": 9,
+        "intro_words": "If you would like to speak to the board, for those in person, please fill out",
+        "status": "found"
+      },
+      {
+        "item": 10,
+        "intro_words": "If you would like to speak to the board, for those in person, please fill out",
+        "status": "found"
+      },
+      {
+        "item": 11,
+        "intro_words": "Bond program consent items. Can I get a motion.",
+        "status": "found"
+      },
+      {
+        "item": 12,
+        "intro_words": "Can I get a motion to approve the bond? Consent items so moved.",
+        "status": "found"
+      },
+      {
+        "item": 13,
+        "intro_words": "Can I get a motion to approve the bond? Consent items so moved.",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 14,
+        "intro_words": "Can I get a motion to approve the bond? Consent items so moved.",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 15,
+        "intro_words": "Can I get a motion to approve the bond? Consent items so moved.",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 16,
+        "intro_words": "Can I get a motion to approve the bond? Consent items so moved.",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 17,
+        "intro_words": "Can I get a motion to approve the bond? Consent items so moved.",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 18,
+        "intro_words": "Recommendation regarding approval? Structural upgrade. With Gilbert.",
+        "status": "found"
+      },
+      {
+        "item": 19,
+        "intro_words": "Recommendation regarding approval? Structural upgrade. With Gilbert.",
+        "status": "found"
+      },
+      {
+        "item": 20,
+        "intro_words": "Well, thank you very much, honorable president and trustees and Dr. Baker, for having me here tonight.",
+        "status": "found"
+      },
+      {
+        "item": 21,
+        "intro_words": "Good evening, everyone. Joy Coomer. And I'll just keep it simple.",
+        "status": "found"
+      },
+      {
+        "item": 22,
+        "intro_words": "Moving on to content items, do I get a motion to approve the consent items?",
+        "status": "found"
+      },
+      {
+        "item": 23,
+        "intro_words": "Moving on to content items, do I get a motion to approve the consent items?",
+        "status": "found"
+      },
+      {
+        "item": 24,
+        "intro_words": "Moving on to content items, do I get a motion to approve the consent items?",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 25,
+        "intro_words": "Moving on to content items, do I get a motion to approve the consent items?",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 26,
+        "intro_words": "Moving on to content items, do I get a motion to approve the consent items?",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 27,
+        "intro_words": "Moving on to content items, do I get a motion to approve the consent items?",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 28,
+        "intro_words": "So with Item 10. Action Items 10.1. Recommendation regarding adoption of Resolution 33,",
+        "status": "found"
+      },
+      {
+        "item": 29,
+        "intro_words": "So with Item 10. Action Items 10.1. Recommendation regarding adoption of Resolution 33,",
+        "status": "found"
+      },
+      {
+        "item": 30,
+        "intro_words": "So we have a wellness committee last week, I believe, and Petrina did a great job",
+        "status": "found"
+      },
+      {
+        "item": 31,
+        "intro_words": "So we have a wellness committee last week, I believe, and Petrina did a great job",
+        "status": "found"
+      },
+      {
+        "item": 32,
+        "intro_words": "Any correspondence? Any correspondence? I mean, the one that was read tonight.",
+        "status": "found"
+      },
+      {
+        "item": 33,
+        "intro_words": "Any correspondence? Any correspondence? I mean, the one that was read tonight.",
+        "status": "found"
+      },
+      {
+        "item": 34,
+        "intro_words": "Other business suggested items for future agenda. And board agenda, calendar.",
+        "status": "found"
+      },
+      {
+        "item": 35,
+        "intro_words": "Other business suggested items for future agenda. And board agenda, calendar.",
+        "status": "found"
+      },
+      {
+        "item": 36,
+        "intro_words": "Other business suggested items for future agenda. And board agenda, calendar.",
+        "status": "found"
+      },
+      {
+        "item": 37,
+        "intro_words": "Are there any changes to the board agenda? There will. There will just be one coming up.",
+        "status": "found"
+      },
+      {
+        "item": 38,
+        "intro_words": "Can I get a motion to adjourn? Yeah. Before we do, I would like to just say",
+        "status": "found"
+      },
+      {
+        "item": 39,
+        "intro_words": "Can I get a motion to adjourn? Yeah. Before we do, I would like to just say",
+        "status": "found"
+      }
+    ]
+  },
+  "result": {
+    "videoId": "0ZA0ZSHv5to",
+    "items": [
+      {
+        "timestamp": "00:00:07",
+        "timestampSeconds": 7
+      },
+      {
+        "timestamp": "00:00:07",
+        "timestampSeconds": 7
+      },
+      {
+        "timestamp": "00:00:07",
+        "timestampSeconds": 7
+      },
+      {
+        "timestamp": "00:00:07",
+        "timestampSeconds": 7
+      },
+      {
+        "timestamp": "00:01:02",
+        "timestampSeconds": 62
+      },
+      {
+        "timestamp": "00:01:02",
+        "timestampSeconds": 62
+      },
+      {
+        "timestamp": "00:00:52",
+        "timestampSeconds": 52
+      },
+      {
+        "timestamp": "00:00:52",
+        "timestampSeconds": 52
+      },
+      {
+        "timestamp": "00:00:22",
+        "timestampSeconds": 22
+      },
+      {
+        "timestamp": "00:00:22",
+        "timestampSeconds": 22
+      },
+      {
+        "timestamp": "00:34:54",
+        "timestampSeconds": 2094
+      },
+      {
+        "timestamp": "00:34:54",
+        "timestampSeconds": 2094
+      },
+      {
+        "timestamp": "00:36:31",
+        "timestampSeconds": 2191,
+        "consent": true
+      },
+      {
+        "timestamp": "00:36:31",
+        "timestampSeconds": 2191,
+        "consent": true
+      },
+      {
+        "timestamp": "00:36:31",
+        "timestampSeconds": 2191,
+        "consent": true
+      },
+      {
+        "timestamp": "00:36:31",
+        "timestampSeconds": 2191,
+        "consent": true
+      },
+      {
+        "timestamp": "00:36:31",
+        "timestampSeconds": 2191,
+        "consent": true
+      },
+      {
+        "timestamp": "00:35:13",
+        "timestampSeconds": 2113
+      },
+      {
+        "timestamp": "00:35:13",
+        "timestampSeconds": 2113
+      },
+      null,
+      null,
+      {
+        "timestamp": "00:36:31",
+        "timestampSeconds": 2191
+      },
+      {
+        "timestamp": "00:36:31",
+        "timestampSeconds": 2191
+      },
+      {
+        "timestamp": "00:36:31",
+        "timestampSeconds": 2191,
+        "consent": true
+      },
+      {
+        "timestamp": "00:36:31",
+        "timestampSeconds": 2191,
+        "consent": true
+      },
+      {
+        "timestamp": "00:36:31",
+        "timestampSeconds": 2191,
+        "consent": true
+      },
+      {
+        "timestamp": "00:36:31",
+        "timestampSeconds": 2191,
+        "consent": true
+      },
+      {
+        "timestamp": "00:36:41",
+        "timestampSeconds": 2201
+      },
+      {
+        "timestamp": "00:36:41",
+        "timestampSeconds": 2201
+      },
+      {
+        "timestamp": "00:38:16",
+        "timestampSeconds": 2296
+      },
+      {
+        "timestamp": "00:38:16",
+        "timestampSeconds": 2296
+      },
+      {
+        "timestamp": "00:45:42",
+        "timestampSeconds": 2742
+      },
+      {
+        "timestamp": "00:45:42",
+        "timestampSeconds": 2742
+      },
+      {
+        "timestamp": "00:45:47",
+        "timestampSeconds": 2747
+      },
+      {
+        "timestamp": "00:45:47",
+        "timestampSeconds": 2747
+      },
+      {
+        "timestamp": "00:45:47",
+        "timestampSeconds": 2747
+      },
+      {
+        "timestamp": "00:45:42",
+        "timestampSeconds": 2742
+      },
+      {
+        "timestamp": "00:47:35",
+        "timestampSeconds": 2855
+      },
+      {
+        "timestamp": "00:47:35",
+        "timestampSeconds": 2855
+      }
+    ]
+  },
+  "cachedAt": "2026-03-26T22:41:43.817Z",
+  "inputTokens": 8582,
+  "outputTokens": 1977
+}

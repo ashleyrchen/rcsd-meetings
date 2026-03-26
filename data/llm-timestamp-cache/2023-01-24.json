@@ -1,0 +1,113 @@
+{
+  "date": "2023-01-24",
+  "items": [
+    "Call to Order",
+    "Roll Call",
+    "Welcome",
+    "Welcome by the School Board President, Cecilia Márquez",
+    "Changes to the Agenda",
+    "Additions, Deletions or Modifications to the Agenda",
+    "Approval of Agenda",
+    "Approval of Agenda",
+    "Oral Communication",
+    "If you have public comment related to a Special Board Meeting item, please post it on the links available under Public Content prior to the Regular Board Meeting or immediately upon the meeting opening.",
+    "Action Item(s)",
+    "Adoption of Resolution 23, Authorizing Electronic Meetings of the Board of Trustees During a State of Emergency Pursuant to Government Code Section 54953(e)",
+    "Adjournment",
+    "Adjourn the Meeting"
+  ],
+  "llmResponse": {
+    "agenda_changes": null,
+    "consent_vote_words": null,
+    "items": [
+      {
+        "item": 1,
+        "intro_words": "Good morning, everyone. Everlinda. Roll call, please.",
+        "status": "found"
+      },
+      {
+        "item": 2,
+        "intro_words": "Good morning, everyone. Everlinda. Roll call, please.",
+        "status": "found"
+      },
+      {
+        "item": 3,
+        "intro_words": "not present in transcript",
+        "status": "not_found"
+      },
+      {
+        "item": 4,
+        "intro_words": "not present in transcript",
+        "status": "not_found"
+      },
+      {
+        "item": 5,
+        "intro_words": "Are there any changes to the agenda?",
+        "status": "found"
+      },
+      {
+        "item": 7,
+        "intro_words": "I'll move to approve. Second roll call, please.",
+        "status": "found"
+      },
+      {
+        "item": 9,
+        "intro_words": "Is there any oral communication? No oral communication.",
+        "status": "found"
+      },
+      {
+        "item": 12,
+        "intro_words": "Action Item 6.1, Recommendation Regarding Adoption of Resolution 23,",
+        "status": "found"
+      },
+      {
+        "item": 13,
+        "intro_words": "Can I please get a more motion to adjourn the meeting?",
+        "status": "found"
+      }
+    ]
+  },
+  "result": {
+    "videoId": "hjUd6bV4bS8",
+    "items": [
+      {
+        "timestamp": "00:00:04",
+        "timestampSeconds": 4
+      },
+      {
+        "timestamp": "00:00:04",
+        "timestampSeconds": 4
+      },
+      null,
+      null,
+      {
+        "timestamp": "00:00:04",
+        "timestampSeconds": 4
+      },
+      null,
+      {
+        "timestamp": "00:00:04",
+        "timestampSeconds": 4
+      },
+      null,
+      {
+        "timestamp": "00:00:04",
+        "timestampSeconds": 4
+      },
+      null,
+      null,
+      {
+        "timestamp": "00:00:19",
+        "timestampSeconds": 19
+      },
+      {
+        "timestamp": "00:01:29",
+        "timestampSeconds": 89
+      },
+      null
+    ]
+  },
+  "cachedAt": "2026-03-26T22:38:21.319Z",
+  "inputTokens": 886,
+  "outputTokens": 418
+}

@@ -1,0 +1,228 @@
+{
+  "date": "2022-12-07",
+  "items": [
+    "Call to Order",
+    "Roll Call",
+    "Oral Communication on Closed Session Items Only",
+    "If you have public comment related to a Closed Board Meeting item, please post it on the links available under Public Content prior to the Closed Board Meeting or immediately upon the meeting opening.",
+    "Closed Session - 6:00 p.m. (Not Open to the Public)",
+    "Public Employee Performance Evaluation, Title: Superintendent (§ 54957)",
+    "Reconvene to Regular Session at Approximately 7:00 p.m.",
+    "Roll Call",
+    "Report Out on Closed Session from December 7, 2022",
+    "Welcome",
+    "Welcome by the School Board President, María Díaz-Slocum",
+    "Changes to the Agenda",
+    "Additions, Deletions or Modifications to the Agenda",
+    "Approval of Agenda",
+    "Approval of Agenda",
+    "Oral Communication",
+    "If you have public comment related to a Regular Board Meeting item, please post it on the links available under Public Content prior to the Regular Board Meeting or immediately upon the meeting opening.",
+    "School/Community Reports",
+    "Citizens' Measure U Oversight Committee Year Five Report for 2021-2022",
+    "Bond Program Consent Items",
+    "Approval of Bond Program Consent Items",
+    "Approval of Measure T Bond Program Tracking List of Items Under $20k",
+    "Approval of Proposal for Wrought Iron Fence and Gates with Dryco for Hoover Community School",
+    "Approval of Proposal for Manual Roller Shades with Creative Window Interiors, Inc., for Roosevelt School",
+    "Approval of New Buildings, Modernization and Sitework, Bid Package G, Change Order #12 with Rodan Builders for Garfield Community School",
+    "Bond Program Action Items",
+    "Adoption of Futility Resolution 19, Approval of New Classroom Building, Modernization, and Sitework Landscaping Project, Bid Package F, Change Order #6 with Scapes, Inc., at Garfield Community School",
+    "Consent Items",
+    "Approval of Consent Items",
+    "Approval of November 9th Board Minutes",
+    "Approval of November 16th Board Minutes",
+    "Approval of the Agreement between Redwood City School District and The City of Redwood City for the Fiscal Year 2022-2023",
+    "Approval of Non-Public School (NPS)/Non-Public Agency (NPA) Master Contracts",
+    "Ratification of Warrant Registers, November 1, 2022 - November 30, 2022",
+    "Action Items",
+    "Approval of Personnel Increase",
+    "Approval of Variable Term Waiver",
+    "Approval of First Amendment to the Agreement between Redwood City School District and National Urban Alliance",
+    "Approval of Addendum to 2022-23 Measure U Application for Roosevelt School",
+    "Approval of Addendum to 2022-23 Measure U Application for McKinley Institute of Technology",
+    "Second Reading and Approval of Board Policy 4118 - Dismissal/Suspension/Disciplinary Action - Certificated Employees",
+    "Second Reading and Approval of Board Policy 4218 - Dismissal/Suspension/Disciplinary Action - Classified Employees",
+    "Second Reading and Approval of Board Policy 4119.1, 4219.1, 4319.1 - Civil and Legal Rights",
+    "Second Reading and Approval of Board Policy 4216 - Probationary/Permanent Status - Classified Personnel",
+    "Second Reading and Approval of Board Policy 4030 - Nondiscrimination in Employment",
+    "Second Reading and Approval of Board Bylaw 9100 - Organization",
+    "Board and Superintendent Reports",
+    "Report from Board Members and Superintendent",
+    "Correspondence",
+    "Correspondence",
+    "Other Business/Suggested Items For Future Agenda",
+    "Possible Other Business/Suggested Items for Future Agenda",
+    "Board Meetings Calendar",
+    "Changes to the Board Meetings Calendar",
+    "Adjournment",
+    "Adjourn the Meeting"
+  ],
+  "llmResponse": {
+    "agenda_changes": "President Díaz-Slocum announced two groups of modifications: (1) Move all second reading and approvals EXCEPT the bylaw (items 13.6-13.10) to consent; (2) Move the Measure U addendums (items 13.4-13.10) to consent. Board unanimously approved these changes.",
+    "consent_vote_words": "Moving to the Consent items, which includes action items 13.4 to 13.10. Can I have a motion to move them? Second, all in favor? Hi.",
+    "items": [
+      {
+        "item": 1,
+        "intro_words": "Good evening, everyone. We're going to reconvene the meeting.",
+        "status": "found"
+      },
+      {
+        "item": 2,
+        "intro_words": "Evelyn, can I have roll call, please? Trustee mcevoy?",
+        "status": "found"
+      },
+      {
+        "item": 3,
+        "intro_words": "No oral communication. None. In person as well.",
+        "status": "found"
+      },
+      {
+        "item": 9,
+        "intro_words": "Moving right along to item nine, school community reports citizens measure",
+        "status": "found"
+      },
+      {
+        "item": 10,
+        "intro_words": "Moving on to item 10, bond program consent items.",
+        "status": "found"
+      },
+      {
+        "item": 11,
+        "intro_words": "Item 11, bond program action items. Let's see. We have one.",
+        "status": "found"
+      },
+      {
+        "item": 13,
+        "intro_words": "Moving to the Consent items, which includes action items 13.4 to 13.10.",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 14,
+        "intro_words": "Which brings us to 14.1 Report from board members and Superintendent Cecilia.",
+        "status": "found"
+      },
+      {
+        "item": 16,
+        "intro_words": "16.1 possible other business suggested items for future agendas. None.",
+        "status": "found"
+      },
+      {
+        "item": 53,
+        "intro_words": "And seven. I'm sorry, I don't have one. It's going to be an off site",
+        "status": "found"
+      },
+      {
+        "item": 54,
+        "intro_words": "So are there any changes to the board meeting calendar besides the ones you mentioned?",
+        "status": "found"
+      },
+      {
+        "item": 55,
+        "intro_words": "Well thank you everybody. And can I have a motion to adjourn?",
+        "status": "found"
+      }
+    ]
+  },
+  "result": {
+    "videoId": "NvOutE9gXOk",
+    "items": [
+      {
+        "timestamp": "00:00:05",
+        "timestampSeconds": 5
+      },
+      {
+        "timestamp": "00:00:05",
+        "timestampSeconds": 5
+      },
+      {
+        "timestamp": "00:02:45",
+        "timestampSeconds": 165
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      {
+        "timestamp": "00:02:55",
+        "timestampSeconds": 175
+      },
+      {
+        "timestamp": "00:03:37",
+        "timestampSeconds": 217
+      },
+      {
+        "timestamp": "00:03:47",
+        "timestampSeconds": 227
+      },
+      null,
+      {
+        "timestamp": "00:04:32",
+        "timestampSeconds": 272,
+        "consent": true
+      },
+      {
+        "timestamp": "00:18:28",
+        "timestampSeconds": 1108
+      },
+      null,
+      {
+        "timestamp": "00:29:05",
+        "timestampSeconds": 1745
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      {
+        "timestamp": "00:27:33",
+        "timestampSeconds": 1653
+      },
+      {
+        "timestamp": "00:30:55",
+        "timestampSeconds": 1855
+      },
+      {
+        "timestamp": "00:31:39",
+        "timestampSeconds": 1899
+      },
+      null
+    ]
+  },
+  "cachedAt": "2026-03-26T22:39:00.050Z",
+  "inputTokens": 7094,
+  "outputTokens": 717
+}

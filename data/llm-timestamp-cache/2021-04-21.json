@@ -1,0 +1,223 @@
+{
+  "date": "2021-04-21",
+  "items": [
+    "Call to Order",
+    "Roll Call",
+    "Welcome",
+    "Welcome by the School Board President",
+    "Report Out on Closed Session 4.14.21",
+    "Changes to the Agenda",
+    "Changes to the Agenda",
+    "Approval of Agenda (Action Required)",
+    "Approval of Agenda",
+    "Oral Communication",
+    "If you have public comment related to a Regular Board Meeting item, please post it on: (https://docs.google.com/forms/d/e/1FAIpQLSd3rKbPfVCTpOsK5ILqjnU2u-h-NuNx-vUq4OZxYNVR8lc4aQ/viewform?usp=sf_link) prior to the Regular Board Meeting or immediately upon the meeting opening.",
+    "School/Community Reports",
+    "McKinley Institute of Technology Student Projects Aligned with ISTE Standards",
+    "Bond Program Consent Items (Action Required)",
+    "Approval of the Modernization and New Building Project Bid Package G for Orion Alternative School (Formerly John Gill Elementary School) with Sausal Corporation, Change Order #3",
+    "Approval of Measure T Bond Program Tracking List for Items Under $20K",
+    "Bond Program Action Items (Action Required)",
+    "Measure T Bond Program Budget Update Presentation",
+    "Discussion Items",
+    "Spring Expansion of School District January Reopening",
+    "Consent Items",
+    "Action items",
+    "Board and Superintendent Reports",
+    "Report from Board Members and Superintendent",
+    "Information",
+    "Information on San Mateo County Investment Fund - March, 2021",
+    "Quarterly Williams Report, 3rd Quarter, January 1, 2021 through March 31, 2021",
+    "Correspondence",
+    "Correspondence",
+    "Other Business/Suggested Items For Future Agenda",
+    "Board Agenda Calendar",
+    "Changes to the Board Agenda Schedule",
+    "Adjournment",
+    "Adjourn the Meeting"
+  ],
+  "llmResponse": {
+    "agenda_changes": "Item 8.1 was pulled from the agenda. A new item 6 was added after the McKinley Institute of Technology showcase - a quick video from Kennedy School showcasing an upcoming musical.",
+    "consent_vote_words": "All right, well, thank you very much. So we had an add on. Yeah, lots of typing. Thank you so much. We're going to see a quick video from Kennedy and it's a teaser for the Little Mermaid musical that's coming up. So why don't we go ahead and show that and then Sabrina, we could bring you on if you want to say anything or if you could put in the chat how we get tickets, that would be helpful. And then we can copy it and send it out to all the attendees as well.",
+    "items": [
+      {
+        "item": 1,
+        "intro_words": "All right, welcome, everyone, to our board meeting tonight.",
+        "status": "found"
+      },
+      {
+        "item": 2,
+        "intro_words": "And we'll start with roll call, please. Trustee Wells.",
+        "status": "found"
+      },
+      {
+        "item": 3,
+        "intro_words": "All right, I did want to welcome everyone. So happy you're here.",
+        "status": "found"
+      },
+      {
+        "item": 4,
+        "intro_words": "All right, so welcome. Thank you, everyone, for being here.",
+        "status": "found"
+      },
+      {
+        "item": 5,
+        "intro_words": "And then I wanted to report out on our closed session from last week's meeting.",
+        "status": "found"
+      },
+      {
+        "item": 6,
+        "intro_words": "All right, so changes to the agenda. That's the next item on the agenda.",
+        "status": "found"
+      },
+      {
+        "item": 8,
+        "intro_words": "Do I have a motion to approve? So moved. Second, let's see.",
+        "status": "found"
+      },
+      {
+        "item": 10,
+        "intro_words": "All right, well, communication. Eliana, I didn't have a chance to look at the speakers in the last hour.",
+        "status": "found"
+      },
+      {
+        "item": 13,
+        "intro_words": "All right, all right. No oral communications. So wonderful. We're onto our favorite part of the agenda every meeting.",
+        "status": "found"
+      },
+      {
+        "item": 14,
+        "intro_words": "Bond program consent items. I need a motion to approve. So moved.",
+        "status": "found"
+      },
+      {
+        "item": 20,
+        "intro_words": "Onto the boat. Bond program action. No, sorry. Bond program consent items.",
+        "status": "found"
+      },
+      {
+        "item": 23,
+        "intro_words": "All right, so let's see. Let me look at the agenda. Onto the boat.",
+        "status": "found"
+      },
+      {
+        "item": 26,
+        "intro_words": "Under information, there's 13.1, the San Mateo County Investment Fund and the 13.2 quarterly Williams report.",
+        "status": "found"
+      },
+      {
+        "item": 28,
+        "intro_words": "All right, correspondence. Okay. Other business suggested items for future agenda.",
+        "status": "found"
+      },
+      {
+        "item": 30,
+        "intro_words": "All right, correspondence. Okay. Other business suggested items for future agenda.",
+        "status": "found"
+      },
+      {
+        "item": 33,
+        "intro_words": "All right, so I think that's. That's it. Unless there's anything else, I believe we're at the end of the agenda.",
+        "status": "found"
+      },
+      {
+        "item": 34,
+        "intro_words": "All right, so do I have a motion to adjourn? I'll second Cecilia and Janet.",
+        "status": "found"
+      }
+    ]
+  },
+  "result": {
+    "videoId": "CJFM_ZJtleg",
+    "items": [
+      {
+        "timestamp": "00:00:00",
+        "timestampSeconds": 0
+      },
+      {
+        "timestamp": "00:00:00",
+        "timestampSeconds": 0
+      },
+      {
+        "timestamp": "00:00:05",
+        "timestampSeconds": 5
+      },
+      {
+        "timestamp": "00:00:30",
+        "timestampSeconds": 30
+      },
+      {
+        "timestamp": "00:01:42",
+        "timestampSeconds": 102
+      },
+      {
+        "timestamp": "00:00:45",
+        "timestampSeconds": 45
+      },
+      null,
+      {
+        "timestamp": "00:02:58",
+        "timestampSeconds": 178
+      },
+      null,
+      {
+        "timestamp": "00:03:18",
+        "timestampSeconds": 198
+      },
+      null,
+      null,
+      {
+        "timestamp": "00:03:18",
+        "timestampSeconds": 198
+      },
+      {
+        "timestamp": "00:26:49",
+        "timestampSeconds": 1609
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      {
+        "timestamp": "00:26:44",
+        "timestampSeconds": 1604
+      },
+      null,
+      null,
+      {
+        "timestamp": "00:26:34",
+        "timestampSeconds": 1594
+      },
+      null,
+      null,
+      {
+        "timestamp": "01:30:25",
+        "timestampSeconds": 5425
+      },
+      null,
+      {
+        "timestamp": "01:30:30",
+        "timestampSeconds": 5430
+      },
+      null,
+      {
+        "timestamp": "01:30:30",
+        "timestampSeconds": 5430
+      },
+      null,
+      null,
+      {
+        "timestamp": "01:33:05",
+        "timestampSeconds": 5585
+      },
+      {
+        "timestamp": "01:33:25",
+        "timestampSeconds": 5605
+      }
+    ]
+  },
+  "cachedAt": "2026-03-26T22:46:13.643Z",
+  "inputTokens": 18081,
+  "outputTokens": 1039
+}

@@ -1,13 +1,21 @@
 {
   "date": "2024-12-11",
   "items": [
+    "Call to Order",
     "Roll Call",
+    "Welcome",
     "Welcome by the School Board President, Janet Lawson",
+    "Changes to the Agenda",
     "Additions, Deletions, or Modifications to the Agenda",
     "Approval of Agenda",
+    "Approval of Agenda",
+    "Oral Communication",
     "If you have public comment related to a Regular Board Meeting item, please post it on the links available under Public Content prior to the Regular Board Meeting or immediately upon the meeting opening.",
+    "Bond Program Discussion Item(s)",
     "Update on the Facilities Master Planning Process",
+    "School/Community Reports",
     "Roosevelt Elementary School Presentation for the 2024-2025 School Year",
+    "Consent Items",
     "Approval of Consent Items",
     "Approval of the November 20 Board Meeting Minutes",
     "Approval of Addendum to the 2024-25 Measure U Application for Henry Ford School",
@@ -25,127 +33,125 @@
     "Second Reading and Approval of Board Policy 4040: Employee Use of Technology",
     "Second Reading and Approval of Board Policy 4113: Assignment",
     "Ratification of Warrant Registers, November 1, 2024 - November 30, 2024",
-    "Approval of Membership to the Citizen&#039;s Oversight Committee for Measure U",
+    "Approval of Membership to the Citizen's Oversight Committee for Measure U",
+    "Action Items",
     "Approval of Budget Renewal Initiative, Superintendent Recommendations",
     "Adoption of Resolution No. 11, Reduction of Certain Classified Services for Fiscal Year 2024-2025",
     "Adoption of Resolution No. 12, Reduction or Elimination of Certificated Services for Fiscal Year 2024-2025",
     "Adoption of Resolution No. 13, Release and Reassignment of Certificated Administrator(s)",
     "Adoption of Resolution No. 14, Determination of Order of Employment for Certificated Employees for Elimination of or Reductions in Particular Kinds of Services for Fiscal Year 2025-2026",
+    "Discussion Item(s)",
     "Debrief on the 2024 California School Boards Association (CSBA) Annual Education Conference (AEC) and Trade Show",
+    "Board and Superintendent Reports",
     "Report from Board Members and Superintendent",
+    "Information",
     "Information on San Mateo County Investment Fund - October 2024",
     "Correspondence",
+    "Correspondence",
+    "Other Business/Suggested Items For Future Agenda",
     "Possible Other Business/Suggested Items for Future Agenda",
+    "Board Meetings Calendar",
     "Changes to the Board Meetings Calendar",
+    "Adjournment",
     "Adjourn the Meeting"
   ],
   "llmResponse": {
-    "agenda_changes": "No agenda changes announced during the early portion of the meeting. The board president asked \"Do we have any changes to the agenda?\" and received a motion to approve the agenda as posted with no modifications mentioned.",
-    "consent_vote_words": "I move to approve the agenda uh second all those in favor I thank you",
+    "agenda_changes": "No changes to the agenda announced at the start of the meeting. The agenda was approved as posted.",
+    "consent_vote_words": "I'll move to approve that consent agenda. Second. All those in favor?",
     "items": [
       {
         "item": 1,
-        "intro_words": "can we have a roll call please trusty Marquez here trusty weekly",
+        "intro_words": "Can we have a roll call, please?",
         "status": "found"
       },
       {
         "item": 2,
-        "intro_words": "I'm um going to apologize ahead of time everybody I I have",
-        "status": "found"
-      },
-      {
-        "item": 3,
-        "intro_words": "so with that said Do we have any changes to the",
-        "status": "found"
-      },
-      {
-        "item": 4,
-        "intro_words": "a motion to approve I move to approve the agenda uh",
+        "intro_words": "Can we have a roll call, please?",
         "status": "found"
       },
       {
         "item": 5,
-        "intro_words": "um we do have one item for oral communication um for",
-        "status": "found"
-      },
-      {
-        "item": 6,
-        "intro_words": "that brings us to the um update on facilities master plan",
+        "intro_words": "So with that said, do we have any changes to the agenda?",
         "status": "found"
       },
       {
         "item": 7,
-        "intro_words": "that brings us to um Roosevelt School presentation a little",
+        "intro_words": "A motion to approve. I'll move to approve the agenda second.",
         "status": "found"
-      },
-      {
-        "item": 8,
-        "intro_words": "so I think we should take a break before we hop into",
-        "status": "consent_bundle"
       },
       {
         "item": 9,
-        "intro_words": "so we are on what are we um 9.1 approval no yes",
-        "status": "found"
-      },
-      {
-        "item": 10,
-        "intro_words": "I move to approve that consent agen H second um all those",
-        "status": "consent_bundle"
-      },
-      {
-        "item": 11,
-        "intro_words": "9.2 adoption of resolution number 11 reduction of certain classified",
+        "intro_words": "We do have one item for oral communication for Maria upon this.",
         "status": "found"
       },
       {
         "item": 12,
-        "intro_words": "9.3 adoption of resolution number 12 reduction or elimination of",
-        "status": "found"
-      },
-      {
-        "item": 13,
-        "intro_words": "9.4 is that where we are now adoption of resolution number",
+        "intro_words": "That brings us to the update on facilities master plan process.",
         "status": "found"
       },
       {
         "item": 14,
-        "intro_words": "9.5 adoption of resolution number 14 determination of order of",
+        "intro_words": "That brings us to Roosevelt School presentation a little bit later than we planned.",
         "status": "found"
       },
       {
         "item": 15,
-        "intro_words": "um so we before we move on we do have some",
+        "intro_words": "Oh, we have consent items, so we can do that.",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 35,
+        "intro_words": "All right, so we are on. What are we? 9.1 approval.",
         "status": "found"
       },
       {
-        "item": 16,
-        "intro_words": "it was a great conference I attended um sessions about board",
+        "item": 36,
+        "intro_words": "9.2, adoption of resolution number 11, reduction of certain classified services",
         "status": "found"
       },
       {
-        "item": 17,
-        "intro_words": "reification and the dreamers um the only other thing I have",
+        "item": 37,
+        "intro_words": "9.3, adoption of resolution number 12, reduction or elimination of certificates services",
         "status": "found"
       },
       {
-        "item": 18,
-        "intro_words": "information on S County investment fund any questions correspondence mostly",
+        "item": 38,
+        "intro_words": "9.4. Is that where we are now? Adoption of resolution number 13",
         "status": "found"
       },
       {
-        "item": 19,
-        "intro_words": "um possible other business suggested items for future agenda Cecilia",
+        "item": 39,
+        "intro_words": "9.5. Adoption of resolution number 14, determination of order of employment",
         "status": "found"
       },
       {
-        "item": 20,
-        "intro_words": "just a reminder our next meeting is on Tuesday next week",
+        "item": 41,
+        "intro_words": "10.1 debrief on the CSBA annual education conference. I did not attend",
         "status": "found"
       },
       {
-        "item": 21,
-        "intro_words": "well second all those in favor I thanks for good night",
+        "item": 42,
+        "intro_words": "Reports from board members and superintendent. So going all the way back",
+        "status": "found"
+      },
+      {
+        "item": 45,
+        "intro_words": "Information on San Mateo county investment fund. Any questions?",
+        "status": "found"
+      },
+      {
+        "item": 48,
+        "intro_words": "Possible other business suggested items for future agenda.",
+        "status": "found"
+      },
+      {
+        "item": 50,
+        "intro_words": "No changes to the board meeting calendar. Just a reminder.",
+        "status": "found"
+      },
+      {
+        "item": 52,
+        "intro_words": "All right. It's 10:40. I'll move to adjourn.",
         "status": "found"
       }
     ]
@@ -161,103 +167,112 @@
         "timestamp": "00:00:03",
         "timestampSeconds": 3
       },
+      null,
+      null,
       {
-        "timestamp": "00:01:14",
-        "timestampSeconds": 74
+        "timestamp": "00:01:16",
+        "timestampSeconds": 76
       },
+      null,
+      {
+        "timestamp": "00:01:16",
+        "timestampSeconds": 76
+      },
+      null,
       {
         "timestamp": "00:01:26",
         "timestampSeconds": 86
       },
+      null,
+      null,
       {
-        "timestamp": "00:01:24",
-        "timestampSeconds": 84
+        "timestamp": "00:03:24",
+        "timestampSeconds": 204
+      },
+      null,
+      {
+        "timestamp": "00:55:58",
+        "timestampSeconds": 3358
       },
       {
-        "timestamp": "00:03:25",
-        "timestampSeconds": 205
-      },
-      {
-        "timestamp": "00:49:08",
-        "timestampSeconds": 2948
-      },
-      {
-        "timestamp": "01:51:45",
-        "timestampSeconds": 6705,
+        "timestamp": "01:51:39",
+        "timestampSeconds": 6699,
         "consent": true
       },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
       {
-        "timestamp": "01:52:00",
-        "timestampSeconds": 6720
+        "timestamp": "01:51:34",
+        "timestampSeconds": 6694
       },
       {
-        "timestamp": "01:51:45",
-        "timestampSeconds": 6705,
-        "consent": true
+        "timestamp": "03:12:54",
+        "timestampSeconds": 11574
       },
       {
-        "timestamp": "03:12:52",
-        "timestampSeconds": 11572
+        "timestamp": "03:14:40",
+        "timestampSeconds": 11680
       },
       {
-        "timestamp": "03:12:52",
-        "timestampSeconds": 11572
+        "timestamp": "03:15:42",
+        "timestampSeconds": 11742
       },
       {
-        "timestamp": "03:15:40",
-        "timestampSeconds": 11740
+        "timestamp": "03:17:17",
+        "timestampSeconds": 11837
+      },
+      null,
+      {
+        "timestamp": "03:19:16",
+        "timestampSeconds": 11956
       },
       {
-        "timestamp": "03:17:16",
-        "timestampSeconds": 11836
-      },
-      {
-        "timestamp": "03:17:40",
-        "timestampSeconds": 11860
-      },
-      {
-        "timestamp": "03:19:17",
-        "timestampSeconds": 11957
-      },
-      {
-        "timestamp": "03:29:47",
-        "timestampSeconds": 12587
-      },
-      {
-        "timestamp": "03:30:22",
-        "timestampSeconds": 12622
-      },
-      {
-        "timestamp": "03:30:35",
-        "timestampSeconds": 12635
-      },
-      {
-        "timestamp": "03:31:43",
-        "timestampSeconds": 12703
-      },
-      {
-        "timestamp": "03:32:02",
-        "timestampSeconds": 12722
+        "timestamp": "03:27:52",
+        "timestampSeconds": 12472
       },
       null,
       null,
+      {
+        "timestamp": "03:30:24",
+        "timestampSeconds": 12624
+      },
       null,
       null,
+      {
+        "timestamp": "03:30:39",
+        "timestampSeconds": 12639
+      },
       null,
+      {
+        "timestamp": "03:31:42",
+        "timestampSeconds": 12702
+      },
       null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
+      {
+        "timestamp": "03:31:59",
+        "timestampSeconds": 12719
+      },
       null
     ]
   },
-  "cachedAt": "2026-03-04T19:03:51.762Z",
-  "inputTokens": 41718,
-  "outputTokens": 1016
+  "cachedAt": "2026-03-26T22:30:42.073Z",
+  "inputTokens": 44622,
+  "outputTokens": 928
 }

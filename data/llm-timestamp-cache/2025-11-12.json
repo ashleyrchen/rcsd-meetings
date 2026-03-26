@@ -1,79 +1,214 @@
 {
   "date": "2025-11-12",
   "items": [
-    "Community Schools & Partnerships report (1 hr)",
-    "Mental Health Program report (1 hr)",
-    "Ninyo and Moore geotechnical agreement (bond program)",
-    "Many policy first readings (construction cost accounting, charter school oversight, compensation, health care, mental health, physical education)",
-    "Bond program consent/action items"
+    "Call to Order",
+    "Roll Call",
+    "Welcome",
+    "Changes to the Agenda",
+    "Approval of the Agenda (Action Required)",
+    "Public Comment",
+    "Approval of the Bond Program Consent Item(s)",
+    "Approval of the Geotechnical, Special Testing, and Inspection Agreement between the Redwood City School District and Ninyo and Moore",
+    "Bond Program Action Item(s)",
+    "School/Community Reports",
+    "Community Schools & Partnerships Department Board Report (1 hr)",
+    "Mental Health Program Board Report (1 hr)",
+    "Discussion Items",
+    "First Reading and Discussion of Board Policy 3311.1: Uniform Public Construction Cost Accounting Procedures",
+    "First Reading and Discussion of Board Policy and Administrative Regulation 0420.4: Charter School Authorization",
+    "First Reading and Discussion of Board Policy 0420.41: Charter School Oversight",
+    "First Reading and Discussion of Board Policy and Administrative Regulation 3100: Budget",
+    "First Reading and Discussion of Board Policy and Administrative Regulation 3260: Fees and Charges",
+    "First Reading and Discussion of Board Policy and Administrative Regulation 3311: Bids",
+    "First Reading and Discussion of Board Policy 3312: Contracts",
+    "First Reading and Discussion of Board Policy and Administrative Regulation 3550: Food Service/Child Nutrition Program",
+    "First Reading and Discussion of Board Policy and Administrative Regulation 3551: Food Service Operations/Cafeteria Fund",
+    "First Reading and Discussion of Board Policy and Administrative Regulation 3553: Free and Reduced Price Meals",
+    "First Reading and Discussion of Board Policy and Administrative Regulation 4121: Temporary/ Substitute Personnel",
+    "First Reading and Discussion of Board Policy 6144: Controversial Issues",
+    "First Reading and Discussion of Board Policy and Administrative Regulation 7214: General Obligation Bonds",
+    "First Reading and Discussion of Board Bylaw 9250: Remuneration, Reimbursement, and Other Benefits",
+    "Approval of Consent Items (Action Required)",
+    "Second Reading and Approval of Board Policy and Administrative Regulation 3515.2: Disruptions",
+    "Second Reading and Approval of Board Policy 4020: Drug and Alcohol Free Workplace",
+    "Second Reading and Approval of Board Policy and Administrative Regulation 4200: Classified Personnel",
+    "Second Reading and Approval of Board Policy 4313.4: Temporary Modified/Light Duty Assignment",
+    "Second Reading and Approval of Board Policy 4315: Evaluation/Supervision",
+    "Second Reading and Approval of Board Policy and Administrative Regulation 4257: Employee Safety",
+    "Second Reading and Approval of Board Policy and Administrative Regulation 4357: Employee Safety",
+    "Second Reading and Approval of Board Policy and Administrative Regulation 4158: Employee Security",
+    "Second Reading and Approval of Board Policy and Administrative Regulation 4258: Employee Security",
+    "Second Reading and Approval of Board Policy and Administrative Regulation 4358: Employee Security",
+    "Second Reading and Approval of Board Policy 4259: Employee Assistance Programs",
+    "Second Reading and Approval of Board Policy 4359: Employee Assistance Programs",
+    "Second Reading and Approval of Board Policy and Administrative Regulation 5131.6: Alcohol and Other Drugs",
+    "Second Reading and Approval of Board Policy 6142.93: Science Instruction",
+    "Second Reading and Approval of Board Policy 6142.94: History-Social Science Instruction",
+    "Second Reading and Approval of Board Policy 6161.11: Supplementary Instructional Materials",
+    "Second Reading and Approval of Board Policy and Administrative Regulation 6163.2: Animals at School",
+    "Approval of the October 8, 2025, Board Meeting Minutes",
+    "Approval of the October 16, 2025, Board Meeting Minutes",
+    "Approval of the October 22, 2025, Board Meeting Minutes",
+    "Approval of Proposals for Annual Tree Health Care and Risk Management",
+    "Approval of Purchase for New Trash Compactor for Hoover School",
+    "Approval of Agreement with the San Joaquin County Office of Education (SJCOE ) for Medi-Cal LEA Billing Option Program Services for the 2025-26 School Year",
+    "Approval of the Agreement between Redwood City School District and BMR Health Services, Inc. for a SPED Speech and Language Pathologist for the 2025-2026 School Year",
+    "Approval of Orion Alternative School Field Trip to Outdoor Education from 11/17/25 through 11/21/25",
+    "Approval of Amendment No. 1 between Redwood City School District and One Life Counseling for Additional Counseling Hours at Roy Cloud and Henry Ford for the 2025-2026 School Year",
+    "Action Items (Action Required)",
+    "Board and Superintendent Reports",
+    "Information",
+    "Correspondence",
+    "Other Business/Suggested Items for Future Agenda",
+    "Board of Trustees Meeting Reflection"
   ],
   "llmResponse": {
     "agenda_changes": null,
-    "consent_vote_words": "I move we approve the bond consent items.",
+    "consent_vote_words": "I move we approve the bond consent items. Seconded. All right, all in favor?",
     "items": [
       {
         "item": 1,
-        "intro_words": "we're on to the bond program consent items. We passed these as",
+        "intro_words": "All right, Evelyn, I think we can start with a roll call.",
         "status": "found"
       },
       {
         "item": 2,
-        "intro_words": "we're on to uh the meat of our meeting uh which is the school",
+        "intro_words": "Trustee Lee. Here. Trustee King is absent.",
         "status": "found"
       },
       {
         "item": 3,
-        "intro_words": "Michelle Griffith, Director of Community Schools and Partnerships, accompanied by part of her",
+        "intro_words": "Good evening. Welcome. It's the November 12, 2025 meeting",
         "status": "found"
       },
       {
         "item": 4,
-        "intro_words": "Ana Paula Garay and the Mental Health team presented to the School Board",
+        "intro_words": "All right. And with that, we will move on to. Are there any changes to the agenda?",
         "status": "found"
       },
       {
         "item": 5,
-        "intro_words": "First Reading and Discussion of Board Policy 3311.1: Uniform Public Construction Cost",
+        "intro_words": "Can I get a motion to approve the agenda? I move we approve",
         "status": "found"
       },
       {
         "item": 6,
-        "intro_words": "First Reading and Discussion of Board Policy and Administrative Regulation 0420.4: Charter",
+        "intro_words": "Okay, and then we're on to public comment. I shall look and see",
         "status": "found"
       },
       {
         "item": 7,
-        "intro_words": "First Reading and Discussion of Board Policy 0420.41: Charter School Oversight",
-        "status": "found"
+        "intro_words": "Okay, then we're on to the bond program consent items. We passed these",
+        "status": "consent_bundle"
       },
       {
         "item": 8,
-        "intro_words": "First Reading and Discussion of Board Policy and Administrative Regulation 3100: Budget",
-        "status": "found"
-      },
-      {
-        "item": 9,
-        "intro_words": "First Reading and Discussion of Board Policy and Administrative Regulation 3260: Fees",
+        "intro_words": "And there are no bond program action items. So we're on to",
         "status": "found"
       },
       {
         "item": 10,
-        "intro_words": "First Reading and Discussion of Board Policy and Administrative Regulation 3311: Bids",
+        "intro_words": "And we're going to start with the community schools and partnerships department board report.",
         "status": "found"
       },
       {
         "item": 11,
-        "intro_words": "First Reading and Discussion of Board Policy 3312: Contracts",
+        "intro_words": "So tonight we have our community, our first report, community schools with Ms. Michelle",
         "status": "found"
       },
       {
         "item": 12,
-        "intro_words": "First Reading and Discussion of Board Policy and Administrative Regulation 3550: Food",
+        "intro_words": "All right, so now we're on to our mental health program board report. Ana.",
         "status": "found"
       },
       {
         "item": 13,
-        "intro_words": "First Reading and Discussion of Board Policy and Administrative Regulation 3551: Food",
+        "intro_words": "All right, so now we're on to our discussion items, which is making",
+        "status": "found"
+      },
+      {
+        "item": 14,
+        "intro_words": "All right, so let's start with the first one. First reading and discussion",
+        "status": "found"
+      },
+      {
+        "item": 15,
+        "intro_words": "The second one is the board policy and administrative regulations. 042. 0.4 charter",
+        "status": "found"
+      },
+      {
+        "item": 16,
+        "intro_words": "Okay, then we can talk about the discussion of board policy 042041",
+        "status": "found"
+      },
+      {
+        "item": 17,
+        "intro_words": "The Next one's number five. It's board policy and AR3260, fees and charges.",
+        "status": "found"
+      },
+      {
+        "item": 18,
+        "intro_words": "Okay, then we're on to board policy 3312, which is contracts.",
+        "status": "found"
+      },
+      {
+        "item": 19,
+        "intro_words": "So this will be board policy, administrative regulation. 3311 bids also",
+        "status": "found"
+      },
+      {
+        "item": 20,
+        "intro_words": "Okay, so now we're on to 35, 550 food service and child nutrition",
+        "status": "found"
+      },
+      {
+        "item": 21,
+        "intro_words": "All right, thanks for that clarification. Are you concerned? You sick one?",
+        "status": "found"
+      },
+      {
+        "item": 22,
+        "intro_words": "Okay then. 3551. Right? Yeah. So. So we're three. No, 3550.",
+        "status": "found"
+      },
+      {
+        "item": 23,
+        "intro_words": "Okay, so then we'll do 3551 again. The food service and operations cafeteria",
+        "status": "found"
+      },
+      {
+        "item": 24,
+        "intro_words": "Then I will move on to 3553 free and reduced price meals.",
+        "status": "found"
+      },
+      {
+        "item": 25,
+        "intro_words": "Okay then. 4121. This is temporary and substitute personnel. Sure. Two option",
+        "status": "found"
+      },
+      {
+        "item": 26,
+        "intro_words": "Okay then. 6,144 controversial issues. Anything on controversial Issues Feel",
+        "status": "found"
+      },
+      {
+        "item": 27,
+        "intro_words": "General Obligation Bonds, 7214. I've learned to pause just a little",
+        "status": "found"
+      },
+      {
+        "item": 28,
+        "intro_words": "Can I get a motion to approve? I move we approve the bond consent",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 29,
+        "intro_words": "And then we're on to so on no action items. So board and superintendent",
+        "status": "found"
+      },
+      {
+        "item": 46,
+        "intro_words": "I move we adjourn. Second all in favor? Aye.",
         "status": "found"
       }
     ]
@@ -82,22 +217,154 @@
     "videoId": "Pk0Zg38fzKc",
     "items": [
       {
-        "timestamp": "00:05:10",
-        "timestampSeconds": 310
+        "timestamp": "00:00:05",
+        "timestampSeconds": 5
       },
       {
-        "timestamp": "00:05:46",
-        "timestampSeconds": 346
+        "timestamp": "00:00:05",
+        "timestampSeconds": 5
+      },
+      {
+        "timestamp": "00:00:05",
+        "timestampSeconds": 5
+      },
+      {
+        "timestamp": "00:01:00",
+        "timestampSeconds": 60
+      },
+      {
+        "timestamp": "00:01:30",
+        "timestampSeconds": 90
+      },
+      {
+        "timestamp": "00:01:15",
+        "timestampSeconds": 75
+      },
+      {
+        "timestamp": "00:05:21",
+        "timestampSeconds": 321,
+        "consent": true
+      },
+      {
+        "timestamp": "00:05:11",
+        "timestampSeconds": 311
+      },
+      null,
+      {
+        "timestamp": "00:05:48",
+        "timestampSeconds": 348
+      },
+      {
+        "timestamp": "00:05:48",
+        "timestampSeconds": 348
+      },
+      {
+        "timestamp": "01:48:59",
+        "timestampSeconds": 6539
+      },
+      {
+        "timestamp": "01:49:25",
+        "timestampSeconds": 6565
+      },
+      {
+        "timestamp": "03:15:50",
+        "timestampSeconds": 11750
+      },
+      {
+        "timestamp": "03:16:01",
+        "timestampSeconds": 11761
+      },
+      {
+        "timestamp": "03:16:50",
+        "timestampSeconds": 11810
+      },
+      {
+        "timestamp": "03:16:55",
+        "timestampSeconds": 11815
+      },
+      {
+        "timestamp": "03:17:07",
+        "timestampSeconds": 11827
+      },
+      {
+        "timestamp": "03:17:43",
+        "timestampSeconds": 11863
+      },
+      {
+        "timestamp": "03:20:11",
+        "timestampSeconds": 12011
+      },
+      {
+        "timestamp": "03:21:26",
+        "timestampSeconds": 12086
+      },
+      {
+        "timestamp": "03:22:55",
+        "timestampSeconds": 12175
+      },
+      {
+        "timestamp": "03:27:22",
+        "timestampSeconds": 12442
+      },
+      {
+        "timestamp": "03:27:22",
+        "timestampSeconds": 12442
+      },
+      null,
+      {
+        "timestamp": "03:28:01",
+        "timestampSeconds": 12481
+      },
+      {
+        "timestamp": "03:44:37",
+        "timestampSeconds": 13477
+      },
+      {
+        "timestamp": "00:05:21",
+        "timestampSeconds": 321,
+        "consent": true
+      },
+      {
+        "timestamp": "03:48:17",
+        "timestampSeconds": 13697
       },
       null,
       null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
       {
-        "timestamp": "03:16:28",
-        "timestampSeconds": 11788
-      }
+        "timestamp": "03:55:37",
+        "timestampSeconds": 14137
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
     ]
   },
-  "cachedAt": "2026-03-04T18:59:57.787Z",
-  "inputTokens": 49201,
-  "outputTokens": 664
+  "cachedAt": "2026-03-26T22:26:20.819Z",
+  "inputTokens": 46665,
+  "outputTokens": 1460
 }

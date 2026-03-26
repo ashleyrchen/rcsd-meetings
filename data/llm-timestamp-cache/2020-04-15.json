@@ -1,0 +1,232 @@
+{
+  "date": "2020-04-15",
+  "items": [
+    "Call to Order",
+    "Roll Call",
+    "Welcome",
+    "Welcome by the School Board President",
+    "Pledge of Allegiance",
+    "Changes to the Agenda",
+    "Changes to the Agenda",
+    "Approval of Agenda (Action Required)",
+    "Approval of Agenda",
+    "Oral Communication - (for items not on the Regular Board Agenda) If you have public comment related to a Regular Session item, please post it on this link (https://docs.google.com/forms/d/e/1FAIpQLSd3rKbPfVCTpOsK5ILqjnU2u-h-NuNx-vUq4OZxYNVR8lc4aQ/viewform?usp=sf_link) prior to the meeting or immediately upon the meeting opening.",
+    "Bond Program Consent Items (Action Required)",
+    "Approval of Construction Agreement with Fremont Millworks for Roosevelt School's Building E Casework",
+    "Bond Program Action Items (Action Required)",
+    "Measure T Bond Program Budget Study, Update, and Adoption",
+    "Approval of Construction Agreements with FE Controls for 2950 Fair Oaks Avenue Site",
+    "Discussion Items",
+    "Discussion of Temporary Rule: Paid Leave Under the Families First Coronavirus Response Act (FFCRA or ACT)",
+    "Consent Items (Action Required)",
+    "Action Items (Action Required)",
+    "Approval of Connect Community Charter School Preliminary Space Offer",
+    "Adjournment (Action Required)"
+  ],
+  "llmResponse": {
+    "agenda_changes": null,
+    "consent_vote_words": "So I have a motion to approve. So moved. I'll second it.",
+    "items": [
+      {
+        "item": 1,
+        "intro_words": "Okay, so now that that's updated and the public can come in, we'll go ahead and get started.",
+        "status": "found"
+      },
+      {
+        "item": 2,
+        "intro_words": "So, Ellie, can we have a roll call, please?",
+        "status": "found"
+      },
+      {
+        "item": 3,
+        "intro_words": "So welcome, everyone. Thanks for your patience as we work out",
+        "status": "found"
+      },
+      {
+        "item": 4,
+        "intro_words": "It's welcome back from spring break, and we do have some",
+        "status": "found"
+      },
+      {
+        "item": 5,
+        "intro_words": "With that said, we're going to move to. We have some",
+        "status": "found"
+      },
+      {
+        "item": 6,
+        "intro_words": "Moving on to 3.1 changes to the agenda. Are there any",
+        "status": "found"
+      },
+      {
+        "item": 7,
+        "intro_words": "Moving on to 3.1 changes to the agenda. Are there any",
+        "status": "found"
+      },
+      {
+        "item": 8,
+        "intro_words": "Is there a motion to approve? Hang on, I have to",
+        "status": "found"
+      },
+      {
+        "item": 9,
+        "intro_words": "Okay, so we are on the consent item for the bond",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 10,
+        "intro_words": "No, I did not receive any public comments. And then did",
+        "status": "found"
+      },
+      {
+        "item": 11,
+        "intro_words": "So if we have no oral communication, then we can move",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 12,
+        "intro_words": "So if we have no oral communication, then we can move",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 13,
+        "intro_words": "Item 7.1, the budget study and update. Take it away.",
+        "status": "found"
+      },
+      {
+        "item": 14,
+        "intro_words": "Item 7.1, the budget study and update. Take it away.",
+        "status": "found"
+      },
+      {
+        "item": 15,
+        "intro_words": "Moving on to Item 7.2. Recommendation for the approval of construction",
+        "status": "found"
+      },
+      {
+        "item": 16,
+        "intro_words": "Moving on to item 8.1. Discussion of the temporary rule for",
+        "status": "found"
+      },
+      {
+        "item": 17,
+        "intro_words": "Moving on to item 8.1. Discussion of the temporary rule for",
+        "status": "found"
+      },
+      {
+        "item": 18,
+        "intro_words": "So there's Nothing on item nine for consent.",
+        "status": "found"
+      },
+      {
+        "item": 19,
+        "intro_words": "So 10.1 is the adoption of resolution 23. Thank you.",
+        "status": "found"
+      },
+      {
+        "item": 20,
+        "intro_words": "So 10.1 is the adoption of resolution 23. Thank you.",
+        "status": "found"
+      },
+      {
+        "item": 21,
+        "intro_words": "Well, that brings us to the end of our agenda, so",
+        "status": "found"
+      }
+    ]
+  },
+  "result": {
+    "videoId": "VDe9qhUq-zI",
+    "items": [
+      {
+        "timestamp": "00:00:01",
+        "timestampSeconds": 1
+      },
+      {
+        "timestamp": "00:00:01",
+        "timestampSeconds": 1
+      },
+      {
+        "timestamp": "00:00:06",
+        "timestampSeconds": 6
+      },
+      {
+        "timestamp": "00:00:06",
+        "timestampSeconds": 6
+      },
+      {
+        "timestamp": "00:01:47",
+        "timestampSeconds": 107
+      },
+      {
+        "timestamp": "00:02:59",
+        "timestampSeconds": 179
+      },
+      {
+        "timestamp": "00:02:59",
+        "timestampSeconds": 179
+      },
+      {
+        "timestamp": "00:03:04",
+        "timestampSeconds": 184
+      },
+      {
+        "timestamp": "00:04:59",
+        "timestampSeconds": 299,
+        "consent": true
+      },
+      {
+        "timestamp": "00:04:06",
+        "timestampSeconds": 246
+      },
+      {
+        "timestamp": "00:04:59",
+        "timestampSeconds": 299,
+        "consent": true
+      },
+      {
+        "timestamp": "00:04:59",
+        "timestampSeconds": 299,
+        "consent": true
+      },
+      {
+        "timestamp": "00:06:13",
+        "timestampSeconds": 373
+      },
+      {
+        "timestamp": "00:06:13",
+        "timestampSeconds": 373
+      },
+      {
+        "timestamp": "00:29:35",
+        "timestampSeconds": 1775
+      },
+      {
+        "timestamp": "00:30:39",
+        "timestampSeconds": 1839
+      },
+      {
+        "timestamp": "00:30:39",
+        "timestampSeconds": 1839
+      },
+      {
+        "timestamp": "00:38:28",
+        "timestampSeconds": 2308
+      },
+      {
+        "timestamp": "00:38:28",
+        "timestampSeconds": 2308
+      },
+      {
+        "timestamp": "00:38:28",
+        "timestampSeconds": 2308
+      },
+      {
+        "timestamp": "00:42:53",
+        "timestampSeconds": 2573
+      }
+    ]
+  },
+  "cachedAt": "2026-03-26T22:52:12.249Z",
+  "inputTokens": 8230,
+  "outputTokens": 1016
+}

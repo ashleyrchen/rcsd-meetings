@@ -1,0 +1,169 @@
+{
+  "date": "2021-05-07",
+  "items": [
+    "Call to Order",
+    "Roll Call",
+    "Welcome",
+    "Welcome by the School Board President",
+    "Changes to the Agenda",
+    "Changes to the Agenda",
+    "Approval of Agenda (Action Required)",
+    "Approval of Agenda",
+    "Oral Communication",
+    "If you have public comment related to the Board Retreat Meeting item, please post it on: (https://docs.google.com/forms/d/e/1FAIpQLSd3rKbPfVCTpOsK5ILqjnU2u-h-NuNx-vUq4OZxYNVR8lc4aQ/viewform?usp=sf_link) prior to the Superintendent's Evaluation Meeting or immediately upon the meeting opening.",
+    "Discussion Items",
+    "Review of RCSD's Beliefs/Values, Mission, and Vision (11:00-12:30pm) - Open to the Public",
+    "Superintendent's Evaluation (1:00-2:30pm) - Closed to the Public",
+    "Adjournment",
+    "Adjourn the Meeting"
+  ],
+  "llmResponse": {
+    "agenda_changes": "No changes to the agenda announced. The meeting proceeded with agenda items as posted.",
+    "consent_vote_words": null,
+    "items": [
+      {
+        "item": 1,
+        "intro_words": "Welcome, everybody. Roll call, please. Trustee Wells?",
+        "status": "found"
+      },
+      {
+        "item": 2,
+        "intro_words": "Roll call, please. Trustee Wells? Here. Trustee",
+        "status": "found"
+      },
+      {
+        "item": 3,
+        "intro_words": "All right, welcome, everyone. I did put",
+        "status": "found"
+      },
+      {
+        "item": 4,
+        "intro_words": "All right, welcome, everyone. I did put",
+        "status": "found"
+      },
+      {
+        "item": 5,
+        "intro_words": "Do I have any changes to the agenda?",
+        "status": "found"
+      },
+      {
+        "item": 6,
+        "intro_words": "Do I have any changes to the agenda?",
+        "status": "found"
+      },
+      {
+        "item": 7,
+        "intro_words": "May I have an approval of the agenda?",
+        "status": "found"
+      },
+      {
+        "item": 8,
+        "intro_words": "May I have an approval of the agenda?",
+        "status": "found"
+      },
+      {
+        "item": 9,
+        "intro_words": "I did not have a chance to look",
+        "status": "found"
+      },
+      {
+        "item": 10,
+        "intro_words": "I did not have a chance to look",
+        "status": "found"
+      },
+      {
+        "item": 11,
+        "intro_words": "Okay, so the agenda here. All right, so",
+        "status": "found"
+      },
+      {
+        "item": 12,
+        "intro_words": "Okay, so the agenda here. All right, so",
+        "status": "found"
+      },
+      {
+        "item": 13,
+        "intro_words": "All right, so I think if we are",
+        "status": "found"
+      },
+      {
+        "item": 14,
+        "intro_words": "All right, so I think if we are",
+        "status": "found"
+      },
+      {
+        "item": 15,
+        "intro_words": "All right, so I think if we are",
+        "status": "found"
+      }
+    ]
+  },
+  "result": {
+    "videoId": "g9pnDfzRjuc",
+    "items": [
+      {
+        "timestamp": "00:00:00",
+        "timestampSeconds": 0
+      },
+      {
+        "timestamp": "00:00:00",
+        "timestampSeconds": 0
+      },
+      {
+        "timestamp": "00:00:00",
+        "timestampSeconds": 0
+      },
+      {
+        "timestamp": "00:00:00",
+        "timestampSeconds": 0
+      },
+      {
+        "timestamp": "00:00:00",
+        "timestampSeconds": 0
+      },
+      {
+        "timestamp": "00:00:00",
+        "timestampSeconds": 0
+      },
+      {
+        "timestamp": "00:00:00",
+        "timestampSeconds": 0
+      },
+      {
+        "timestamp": "00:00:00",
+        "timestampSeconds": 0
+      },
+      {
+        "timestamp": "00:00:43",
+        "timestampSeconds": 43
+      },
+      {
+        "timestamp": "00:00:43",
+        "timestampSeconds": 43
+      },
+      {
+        "timestamp": "00:01:03",
+        "timestampSeconds": 63
+      },
+      {
+        "timestamp": "00:01:03",
+        "timestampSeconds": 63
+      },
+      {
+        "timestamp": "00:09:38",
+        "timestampSeconds": 578
+      },
+      {
+        "timestamp": "00:09:38",
+        "timestampSeconds": 578
+      },
+      {
+        "timestamp": "00:09:38",
+        "timestampSeconds": 578
+      }
+    ]
+  },
+  "cachedAt": "2026-03-26T22:45:52.710Z",
+  "inputTokens": 15195,
+  "outputTokens": 672
+}

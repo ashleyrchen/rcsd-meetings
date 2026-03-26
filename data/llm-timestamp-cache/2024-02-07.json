@@ -1,0 +1,406 @@
+{
+  "date": "2024-02-07",
+  "items": [
+    "Call to Order",
+    "Roll Call",
+    "Oral Communication on Closed Session Items Only",
+    "If you have public comment related to a Closed Session item, please post it on the links under Public Content prior to the Closed Session Meeting or immediately upon the meeting opening.",
+    "Closed Session – 5:00 p.m.",
+    "CONFERENCE WITH REAL PROPERTY NEGOTIATORS (Gov. Code, 54956.8) Property: 750 Bradford St, Redwood City, CA 94063 Agency negotiators: John Baker, Superintendent, Peter Ingram, Consultant, and Clarissa Canady, Legal Counsel, Negotiating parties: Redwood City School District and The Sobrato Organization Under negotiation: Price and terms of payment of Property Exchange Agreement",
+    "Public Employee Performance Evaluation, Title: Superintendent (§ 54957)",
+    "Reconvene to Regular Session at Approximately 7:00 p.m.",
+    "Roll Call",
+    "Report Out on Closed Session from February 7, 2024",
+    "Welcome",
+    "Welcome by the School Board President, Janet Lawson",
+    "Changes to the Agenda",
+    "Additions, Deletions, or Modifications to the Agenda",
+    "Approval of Agenda",
+    "Approval of Agenda",
+    "Oral Communication",
+    "If you have public comment related to a Regular Board Meeting item, please post it on the links available under Public Content prior to the Regular Board Meeting or immediately upon the meeting opening.",
+    "Bond Program Consent Items",
+    "Approval of Bond Program Consent Items",
+    "Approval of Measure T Bond Program Tracking List of Items Under $20k",
+    "Bond Program Action Items",
+    "School/Community Reports - 1.5 hr",
+    "Information on Financial Audit Report for RCSD for 2022-23 School Year",
+    "Communications Update: RCSD Logo Redesign Project - Completion Report",
+    "Report on the RCSD THRIVE Manual as part of the Homeless Innovative Practice - HIP Grant",
+    "Consent Items",
+    "Approval of Consent Items",
+    "Acceptance of Donations",
+    "Approval of January 10 Board Meeting Minutes",
+    "Approval of January 17 Board Meeting Minutes",
+    "Approval of January 19 Board Retreat Meeting Minutes",
+    "Approval of the Second Amendment between the Redwood City School District and Maxim Healthcare Services for the 2023-24 School Year",
+    "Approval of the Agreement between Redwood City School District and Aequor Healthcare Services for a SPED Teacher for the 2023-2024 School Year",
+    "Approval of the 2023 School Accountability Report Cards (SARCs)",
+    "Approval of Personnel Report",
+    "Approval of Additional Personnel Needed for the 2023-24 School Year",
+    "Acceptance of Redwood City Teachers Association's Sunshine Proposal",
+    "Receipt of Governing Board's initial proposal for negotiations with the Redwood City Teachers Association for the 2024-2025 School Year",
+    "Ratification of Warrant Registers, January 1, 2024 - January 31, 2024",
+    "Action Items",
+    "Adoption of Resolution No. 6, Determination of Order of Employment for Certificated Employees for Elimination of or Reductions in Particular Kinds of Services for Fiscal Year 2023-2024",
+    "Acceptance of California School Employees Association Chapter V Sunshine Proposal for 2023-2024",
+    "Receipt of Governing Board's initial proposal for negotiations with the California School Employees Association, Chapter V, for 2023- 2024",
+    "Board and Superintendent Reports",
+    "Report from Board Members and Superintendent",
+    "Information",
+    "Information on San Mateo County Investment Fund - December 2023",
+    "Correspondence",
+    "Correspondence",
+    "Other Business/Suggested Items For Future Agenda",
+    "Possible Other Business/Suggested Items for Future Agenda",
+    "Board Meetings Calendar",
+    "Changes to the Board Meetings Calendar",
+    "Adjournment",
+    "Adjourn the Meeting"
+  ],
+  "llmResponse": {
+    "agenda_changes": "Items 13.2 and 13.3 (CSEA Sunshine proposal and CSEA initial proposal) moved from Action Items to Consent Items",
+    "consent_vote_words": "I'll move to approve. Seconded. Thank you. Roll call vote, please.",
+    "items": [
+      {
+        "item": 1,
+        "intro_words": "Okay, now we are all set. Evelyn, can we have a roll call, please?",
+        "status": "found"
+      },
+      {
+        "item": 2,
+        "intro_words": "Trustee Marquez. Here. Trustee Weekly. President. Trustee McEvoy.",
+        "status": "found"
+      },
+      {
+        "item": 10,
+        "intro_words": "Item 4.2, Report out on closed session from February 7, 2024.",
+        "status": "found"
+      },
+      {
+        "item": 12,
+        "intro_words": "Welcome everybody to February 6th board meeting, 2024. Hang on just a second.",
+        "status": "found"
+      },
+      {
+        "item": 13,
+        "intro_words": "And before we move on to changes to the agenda, I just want to thank the students",
+        "status": "found"
+      },
+      {
+        "item": 13,
+        "intro_words": "Moving on to 6.1 changes to the agenda. I think we're going to.",
+        "status": "found"
+      },
+      {
+        "item": 17,
+        "intro_words": "Okay, we are on oral communication. We have a card from Brian Kle and Aaron Washburn.",
+        "status": "found"
+      },
+      {
+        "item": 19,
+        "intro_words": "Let's see. We are on bond consent items. The motion to approve.",
+        "status": "found"
+      },
+      {
+        "item": 22,
+        "intro_words": "We have no bond program action items. So we'll move on to 11.1 information on financial audit report for RCSD.",
+        "status": "found"
+      },
+      {
+        "item": 24,
+        "intro_words": "Okay. 11.2 Communications update our CSD logo redesign project. So we have Mr. Quintana here this evening",
+        "status": "found"
+      },
+      {
+        "item": 26,
+        "intro_words": "We are Moving on to 11.3 Report on RCSD Thrive Manual as part of the homeless initiative practice.",
+        "status": "found"
+      },
+      {
+        "item": 27,
+        "intro_words": "Let's see. 12 consent items. I'll move to approve. Seconded.",
+        "status": "found"
+      },
+      {
+        "item": 28,
+        "intro_words": "Let's see. 12 consent items. I'll move to approve. Seconded.",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 29,
+        "intro_words": "Let's see. 12 consent items. I'll move to approve. Seconded.",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 30,
+        "intro_words": "Let's see. 12 consent items. I'll move to approve. Seconded.",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 31,
+        "intro_words": "Let's see. 12 consent items. I'll move to approve. Seconded.",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 32,
+        "intro_words": "Let's see. 12 consent items. I'll move to approve. Seconded.",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 33,
+        "intro_words": "Let's see. 12 consent items. I'll move to approve. Seconded.",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 34,
+        "intro_words": "Let's see. 12 consent items. I'll move to approve. Seconded.",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 35,
+        "intro_words": "Let's see. 12 consent items. I'll move to approve. Seconded.",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 36,
+        "intro_words": "Let's see. 12 consent items. I'll move to approve. Seconded.",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 37,
+        "intro_words": "Let's see. 12 consent items. I'll move to approve. Seconded.",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 38,
+        "intro_words": "Let's see. 12 consent items. I'll move to approve. Seconded.",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 39,
+        "intro_words": "Let's see. 12 consent items. I'll move to approve. Seconded.",
+        "status": "consent_bundle"
+      },
+      {
+        "item": 41,
+        "intro_words": "That included 13.2 and 13.3. Also action item 13.1, adoption of resolution number six.",
+        "status": "found"
+      },
+      {
+        "item": 42,
+        "intro_words": "Yes. Thank you. So this is a annual customary memo that is brought from human resources",
+        "status": "found"
+      },
+      {
+        "item": 43,
+        "intro_words": "pulled",
+        "status": "pulled"
+      },
+      {
+        "item": 44,
+        "intro_words": "pulled",
+        "status": "pulled"
+      },
+      {
+        "item": 45,
+        "intro_words": "Item 14.1. Report from board members and superintendent. Who would like to start?",
+        "status": "found"
+      },
+      {
+        "item": 48,
+        "intro_words": "Item 15.1, information on San Mateo county investment fund there any questions?",
+        "status": "found"
+      },
+      {
+        "item": 50,
+        "intro_words": "Correspondence. Anybody have anything? I've. Yeah, let's see.",
+        "status": "found"
+      },
+      {
+        "item": 51,
+        "intro_words": "17.1 Possible other business suggested items for the future agenda. I do have something.",
+        "status": "found"
+      },
+      {
+        "item": 54,
+        "intro_words": "18.1 changes to the board meeting calendar. Antonio Perez, Director of Student Services, did request",
+        "status": "found"
+      },
+      {
+        "item": 56,
+        "intro_words": "Okay, that brings us to the end of our agenda move. We adjourn.",
+        "status": "found"
+      }
+    ]
+  },
+  "result": {
+    "videoId": "HhZe4qcyt94",
+    "items": [
+      {
+        "timestamp": "00:00:05",
+        "timestampSeconds": 5
+      },
+      {
+        "timestamp": "00:00:05",
+        "timestampSeconds": 5
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      {
+        "timestamp": "00:00:05",
+        "timestampSeconds": 5
+      },
+      null,
+      {
+        "timestamp": "00:00:15",
+        "timestampSeconds": 15
+      },
+      {
+        "timestamp": "00:01:43",
+        "timestampSeconds": 103
+      },
+      null,
+      null,
+      null,
+      {
+        "timestamp": "00:02:33",
+        "timestampSeconds": 153
+      },
+      null,
+      {
+        "timestamp": "00:05:02",
+        "timestampSeconds": 302
+      },
+      null,
+      null,
+      {
+        "timestamp": "00:04:52",
+        "timestampSeconds": 292
+      },
+      null,
+      {
+        "timestamp": "00:09:21",
+        "timestampSeconds": 561
+      },
+      null,
+      {
+        "timestamp": "00:43:14",
+        "timestampSeconds": 2594
+      },
+      {
+        "timestamp": "01:26:18",
+        "timestampSeconds": 5178
+      },
+      {
+        "timestamp": "01:26:01",
+        "timestampSeconds": 5161,
+        "consent": true
+      },
+      {
+        "timestamp": "01:26:01",
+        "timestampSeconds": 5161,
+        "consent": true
+      },
+      {
+        "timestamp": "01:26:01",
+        "timestampSeconds": 5161,
+        "consent": true
+      },
+      {
+        "timestamp": "01:26:01",
+        "timestampSeconds": 5161,
+        "consent": true
+      },
+      {
+        "timestamp": "01:26:01",
+        "timestampSeconds": 5161,
+        "consent": true
+      },
+      {
+        "timestamp": "01:26:01",
+        "timestampSeconds": 5161,
+        "consent": true
+      },
+      {
+        "timestamp": "01:26:01",
+        "timestampSeconds": 5161,
+        "consent": true
+      },
+      {
+        "timestamp": "01:26:01",
+        "timestampSeconds": 5161,
+        "consent": true
+      },
+      {
+        "timestamp": "01:26:01",
+        "timestampSeconds": 5161,
+        "consent": true
+      },
+      {
+        "timestamp": "01:26:01",
+        "timestampSeconds": 5161,
+        "consent": true
+      },
+      {
+        "timestamp": "01:26:01",
+        "timestampSeconds": 5161,
+        "consent": true
+      },
+      {
+        "timestamp": "01:26:01",
+        "timestampSeconds": 5161,
+        "consent": true
+      },
+      null,
+      {
+        "timestamp": "01:26:40",
+        "timestampSeconds": 5200
+      },
+      {
+        "timestamp": "01:26:30",
+        "timestampSeconds": 5190
+      },
+      null,
+      null,
+      {
+        "timestamp": "01:27:36",
+        "timestampSeconds": 5256
+      },
+      null,
+      null,
+      {
+        "timestamp": "01:34:24",
+        "timestampSeconds": 5664
+      },
+      null,
+      {
+        "timestamp": "01:34:31",
+        "timestampSeconds": 5671
+      },
+      {
+        "timestamp": "01:35:49",
+        "timestampSeconds": 5749
+      },
+      null,
+      null,
+      {
+        "timestamp": "01:37:24",
+        "timestampSeconds": 5844
+      },
+      null,
+      {
+        "timestamp": "01:38:09",
+        "timestampSeconds": 5889
+      }
+    ]
+  },
+  "cachedAt": "2026-03-26T22:34:12.328Z",
+  "inputTokens": 19369,
+  "outputTokens": 1818
+}
