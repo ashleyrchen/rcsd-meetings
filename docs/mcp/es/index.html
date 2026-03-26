@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<title>Servidor MCP — Datos Abiertos del RCSD</title>
+<meta name="description" content="Conecta tu asistente de IA a los datos del Distrito Escolar de Redwood City a través del servidor MCP del RCSD. Instrucciones de instalación para Claude Desktop, Claude Code, Claude.ai y otros clientes MCP.">
+<meta name="theme-color" content="#1a3a2a">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="canonical" href="https://rcsd.info/mcp/es/">
+<link rel="alternate" hreflang="en" href="https://rcsd.info/mcp/">
+<link rel="alternate" hreflang="es" href="https://rcsd.info/mcp/es/">
+<meta property="og:title" content="Servidor MCP — Datos Abiertos del RCSD">
+<meta property="og:description" content="Conecta tu asistente de IA a los datos del Distrito Escolar de Redwood City a través del servidor MCP del RCSD. Instrucciones de instalación para Claude Desktop, Claude Code, Claude.ai y otros clientes MCP.">
+<meta property="og:url" content="https://rcsd.info/mcp/es/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://rcsd.info/og-1200.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="es_MX">
+<meta property="og:site_name" content="RCSD Open Data">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://rcsd.info/og-1200.jpg">
+<meta name="twitter:title" content="Servidor MCP — Datos Abiertos del RCSD">
+<meta name="twitter:description" content="Conecta tu asistente de IA a los datos del Distrito Escolar de Redwood City a través del servidor MCP del RCSD. Instrucciones de instalación para Claude Desktop, Claude Code, Claude.ai y otros clientes MCP.">
+<link rel="preload" href="/fonts/fraunces-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/newsreader-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/ibm-plex-mono-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/fonts/fonts.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Servidor MCP de Datos Abiertos del RCSD",
+  "description": "Conecta tu asistente de IA a los datos del Distrito Escolar de Redwood City a través del Protocolo de Contexto de Modelos (MCP).",
+  "url": "https://rcsd.info/mcp/es/",
+  "publisher": {
+    "@type": "Organization",
+    "name": "RCSD Open Data",
+    "url": "https://rcsd.info"
+  }
+}
+</script>
+
+<style>
+  :root {
+    --green-deep: #1a3a2a;
+    --green-mid: #2d5a3f;
+    --green-light: #4a8c6a;
+    --green-pale: #dcebd5;
+    --green-wash: #f0f6ed;
+    --cream: #faf8f4;
+    --cream-dark: #f2efe8;
+    --amber: #c4842d;
+    --amber-light: #f0d9a8;
+    --coral: #c45d4a;
+    --coral-light: #f5ddd8;
+    --text: #2a2a28;
+    --text-secondary: #5a5a56;
+    --text-muted: #8a8a84;
+    --rule: #d4d0c8;
+    --rule-light: #e8e4dc;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html {
+    font-size: 17px;
+    scroll-behavior: smooth;
+    background: var(--cream);
+  }
+
+  body {
+    font-family: 'Newsreader', Georgia, serif;
+    color: var(--text);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    background: var(--cream);
+  }
+
+  a {
+    color: var(--green-mid);
+    text-decoration-color: var(--rule);
+    text-underline-offset: 2px;
+    transition: color 0.15s, text-decoration-color 0.15s;
+  }
+  a:hover {
+    color: var(--green-deep);
+    text-decoration-color: var(--green-mid);
+  }
+
+  /* ---- SITE NAV ---- */
+  .site-nav {
+    background: #1a2e1a;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .site-nav-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .site-nav-tabs { display: flex; gap: 0; }
+  .site-nav-tab {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: rgba(255,255,255,0.7);
+    padding: 0.75rem 1rem;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .site-nav-tab:hover { color: #fff; }
+  .site-nav-tab.active { color: #fff; border-bottom-color: var(--green-light); }
+
+  .site-nav-right {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .site-nav-lang {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    padding: 0.35rem 0.65rem;
+    border: 1px solid rgba(255,255,255,0.35);
+    border-radius: 3px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .site-nav-lang:hover {
+    color: #fff;
+    border-color: rgba(255,255,255,0.6);
+  }
+
+  /* ---- FOOTER ---- */
+  .site-footer {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2rem 2rem 4rem;
+    border-top: 1px solid var(--rule);
+    text-align: center;
+  }
+  .site-footer p {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    font-style: italic;
+  }
+  .site-footer a { color: var(--green-mid); }
+  .footer-nav {
+    margin-top: 0.8rem;
+    font-style: normal;
+  }
+  .footer-nav a {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--green-mid);
+    text-decoration: none;
+    margin: 0 0.75rem;
+  }
+  .footer-nav a:hover { text-decoration: underline; }
+
+  /* ---- RESPONSIVE (nav + footer) ---- */
+  @media (max-width: 640px) {
+    .site-nav-tab { padding: 0.6rem 0.7rem; font-size: 0.7rem; }
+    .site-nav-inner { padding: 0 1.2rem; }
+  }
+
+  /* ---- PAGE HEADER ---- */
+  .site-header {
+    background: var(--green-deep);
+    color: var(--cream);
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .site-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 20% 80%, rgba(74,140,106,0.3) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 20%, rgba(196,132,45,0.15) 0%, transparent 50%);
+    pointer-events: none;
+  }
+  .header-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 3rem 2rem 2.5rem;
+    position: relative;
+  }
+  .header-district {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--green-light);
+    margin-bottom: 0.5rem;
+  }
+  .header-inner h1 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 2.2rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+  }
+  .header-inner .subtitle {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.8);
+    max-width: 600px;
+    line-height: 1.55;
+  }
+
+  /* ---- CONTENT ---- */
+  .content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2.5rem 2rem 3rem;
+  }
+
+  .content h2 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--green-deep);
+    margin: 2.5rem 0 0.75rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--rule-light);
+  }
+  .content h2:first-child {
+    margin-top: 0;
+  }
+
+  .content h3 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--green-mid);
+    margin: 1.5rem 0 0.5rem;
+  }
+
+  .content p {
+    margin-bottom: 1rem;
+    max-width: 680px;
+  }
+
+  .content ul, .content ol {
+    margin: 0 0 1rem 1.5rem;
+    max-width: 680px;
+  }
+  .content li {
+    margin-bottom: 0.35rem;
+  }
+
+  /* ---- ENDPOINT BANNER ---- */
+  .endpoint-banner {
+    background: var(--green-wash);
+    border: 1px solid var(--green-pale);
+    border-radius: 6px;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .endpoint-banner .label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--green-mid);
+    font-weight: 600;
+  }
+  .endpoint-banner code {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.95rem;
+    color: var(--green-deep);
+    background: rgba(255,255,255,0.6);
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    user-select: all;
+  }
+
+  /* ---- CODE BLOCKS ---- */
+  pre {
+    background: #1a2e1a;
+    color: #d4e8c8;
+    border-radius: 6px;
+    padding: 1.25rem 1.5rem;
+    overflow-x: auto;
+    margin: 0.75rem 0 1.5rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.82rem;
+    line-height: 1.6;
+    position: relative;
+  }
+  pre code {
+    background: none;
+    padding: 0;
+    font-size: inherit;
+    color: inherit;
+  }
+  code {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.88rem;
+    background: var(--cream-dark);
+    padding: 0.15rem 0.4rem;
+    border-radius: 3px;
+    color: var(--green-deep);
+  }
+
+  /* Copy button */
+  .code-wrap {
+    position: relative;
+  }
+  .copy-btn {
+    position: absolute;
+    top: 0.6rem;
+    right: 0.6rem;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.6);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.04em;
+    padding: 0.3rem 0.6rem;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+  }
+  .copy-btn:hover {
+    background: rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.9);
+  }
+  .copy-btn.copied {
+    background: var(--green-mid);
+    color: #fff;
+    border-color: var(--green-mid);
+  }
+
+  /* ---- TOOLS TABLE ---- */
+  .tools-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0.75rem 0 1.5rem;
+  }
+  .tools-table th {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    text-align: left;
+    padding: 0.5rem 0.75rem;
+    border-bottom: 2px solid var(--rule);
+  }
+  .tools-table td {
+    padding: 0.6rem 0.75rem;
+    border-bottom: 1px solid var(--rule-light);
+    vertical-align: top;
+  }
+  .tools-table td:first-child {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.82rem;
+    color: var(--green-deep);
+    white-space: nowrap;
+  }
+  .tools-table td:nth-child(2) {
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+  }
+  .tools-table tr:last-child td {
+    border-bottom: none;
+  }
+
+  /* ---- EXAMPLE QUERIES ---- */
+  .examples {
+    list-style: none;
+    margin-left: 0;
+    padding: 0;
+  }
+  .examples li {
+    background: var(--green-wash);
+    border-left: 3px solid var(--green-light);
+    padding: 0.6rem 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 0 4px 4px 0;
+    font-style: italic;
+    color: var(--text-secondary);
+  }
+
+  /* ---- CLIENT CARDS ---- */
+  .client-section {
+    background: #fff;
+    border: 1px solid var(--rule-light);
+    border-radius: 8px;
+    padding: 1.5rem 1.75rem;
+    margin: 1rem 0 1.5rem;
+  }
+  .client-section h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  /* ---- NOTE CALLOUT ---- */
+  .note {
+    background: var(--amber-light);
+    border-left: 3px solid var(--amber);
+    padding: 0.75rem 1rem;
+    border-radius: 0 4px 4px 0;
+    margin: 1rem 0;
+    font-size: 0.92rem;
+  }
+
+  @media (max-width: 640px) {
+    .header-inner { padding: 2rem 1.2rem 1.5rem; }
+    .header-inner h1 { font-size: 1.6rem; }
+    .content { padding: 1.5rem 1.2rem 2rem; }
+    .content h2 { font-size: 1.3rem; }
+    .client-section { padding: 1rem 1.2rem; }
+    .endpoint-banner { padding: 1rem; }
+    .tools-table td:first-child { white-space: normal; }
+  }
+</style>
+</head>
+
+<body>
+
+<nav class="site-nav">
+  <div class="site-nav-inner">
+    <div class="site-nav-tabs">
+      <a href="/" class="site-nav-tab">Inicio</a>
+      <a href="/reuniones/" class="site-nav-tab">Reuniones</a>
+      <a href="/escuelas/" class="site-nav-tab">Escuelas</a>
+      <a href="/distrito/" class="site-nav-tab">Distrito</a>
+      <a href="/presupuesto/" class="site-nav-tab">Presupuesto</a>
+      <a href="/blog/es/" class="site-nav-tab">Blog</a>
+    </div>
+    <div class="site-nav-right">
+      <a href="/mcp/" class="site-nav-lang">EN</a>
+    </div>
+  </div>
+</nav>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-district">Distrito Escolar de Redwood City &middot; Datos Abiertos</div>
+    <h1>Servidor MCP</h1>
+    <p class="subtitle">Conecta tu asistente de IA directamente a los datos del RCSD &mdash; calendarios, menús del almuerzo, reuniones de la junta, matrícula y más.</p>
+  </div>
+</header>
+
+<main class="content">
+
+  <div class="endpoint-banner">
+    <span class="label">Endpoint</span>
+    <code>https://mcp.rcsd.info/mcp</code>
+  </div>
+
+  <h2>¿Qué es MCP?</h2>
+  <p>El <a href="https://modelcontextprotocol.io/" target="_blank">Protocolo de Contexto de Modelos</a> (MCP) es un estándar abierto que permite a los asistentes de IA llamar herramientas externas y acceder a datos en tiempo real. En lugar de depender únicamente de datos de entrenamiento, tu IA puede obtener información actualizada del servidor MCP del RCSD &mdash; como el menú del almuerzo de hoy o el resumen de la próxima reunión de la junta escolar.</p>
+  <p>El servidor MCP del RCSD es <strong>público y de uso gratuito</strong>. No requiere clave de API ni autenticación. Utiliza el <strong>transporte HTTP con transmisión continua</strong> (no SSE, no stdio), lo que significa que funciona como servidor remoto &mdash; no hay nada que instalar localmente.</p>
+
+  <h2>Instalación</h2>
+
+  <div class="client-section">
+    <h3>Claude Desktop</h3>
+    <p>Abre <strong>Configuración &rarr; Desarrollador &rarr; Editar configuración</strong> para editar tu archivo <code>claude_desktop_config.json</code> y agrega el servidor <code>rcsd</code>:</p>
+    <div class="code-wrap">
+      <button class="copy-btn" onclick="copyCode(this)">Copiar</button>
+      <pre><code>{
+  "mcpServers": {
+    "rcsd": {
+      "url": "https://mcp.rcsd.info/mcp"
+    }
+  }
+}</code></pre>
+    </div>
+    <p>Reinicia Claude Desktop. Las herramientas del RCSD deberían aparecer en el menú de herramientas (ícono de martillo).</p>
+  </div>
+
+  <div class="client-section">
+    <h3>Claude Code (CLI)</h3>
+    <p>Agrega el servidor con un solo comando:</p>
+    <div class="code-wrap">
+      <button class="copy-btn" onclick="copyCode(this)">Copiar</button>
+      <pre><code>claude mcp add rcsd --transport http https://mcp.rcsd.info/mcp</code></pre>
+    </div>
+    <p>O agrégalo al archivo <code>.mcp.json</code> de tu proyecto:</p>
+    <div class="code-wrap">
+      <button class="copy-btn" onclick="copyCode(this)">Copiar</button>
+      <pre><code>{
+  "mcpServers": {
+    "rcsd": {
+      "type": "url",
+      "url": "https://mcp.rcsd.info/mcp"
+    }
+  }
+}</code></pre>
+    </div>
+  </div>
+
+  <div class="client-section">
+    <h3>Claude.ai (Web)</h3>
+    <p>Claude.ai admite servidores MCP remotos de forma nativa:</p>
+    <ol>
+      <li>Ve a <a href="https://claude.ai" target="_blank">claude.ai</a> y abre <strong>Configuración</strong> (parte inferior izquierda)</li>
+      <li>Navega a <strong>Integraciones</strong></li>
+      <li>Haz clic en <strong>Agregar más</strong> y elige <strong>Integración personalizada</strong></li>
+      <li>Ingresa <code>https://mcp.rcsd.info/mcp</code> como URL</li>
+      <li>Nómbralo <strong>RCSD</strong> y guarda</li>
+    </ol>
+    <p>Las herramientas del RCSD estarán disponibles en cualquier conversación nueva.</p>
+  </div>
+
+  <div class="client-section">
+    <h3>Cursor / VS Code / Windsurf</h3>
+    <p>La mayoría de los editores compatibles con MCP admiten un archivo de configuración <code>.mcp.json</code> o <code>mcp.json</code>. Agrega lo siguiente a la raíz de tu proyecto o a la configuración de usuario:</p>
+    <div class="code-wrap">
+      <button class="copy-btn" onclick="copyCode(this)">Copiar</button>
+      <pre><code>{
+  "mcpServers": {
+    "rcsd": {
+      "type": "url",
+      "url": "https://mcp.rcsd.info/mcp"
+    }
+  }
+}</code></pre>
+    </div>
+  </div>
+
+  <div class="client-section">
+    <h3>ChatGPT</h3>
+    <div class="note">ChatGPT no admite servidores MCP de forma nativa en este momento. Sin embargo, puedes acceder a los mismos datos directamente en <a href="https://rcsd.info" target="_blank">rcsd.info</a>, o utilizar la <a href="https://data.rcsd.info/json/" target="_blank">API JSON pública</a> si estás creando un GPT personalizado con acciones.</div>
+  </div>
+
+  <div class="client-section">
+    <h3>Otros clientes MCP</h3>
+    <p>Cualquier cliente MCP que admita el <strong>transporte HTTP con transmisión continua</strong> puede conectarse. Apúntalo a:</p>
+    <div class="code-wrap">
+      <button class="copy-btn" onclick="copyCode(this)">Copiar</button>
+      <pre><code>https://mcp.rcsd.info/mcp</code></pre>
+    </div>
+    <p>No se necesitan encabezados de autenticación. El servidor admite el protocolo HTTP con transmisión continua estándar de MCP. Consulta la <a href="https://modelcontextprotocol.io/docs" target="_blank">documentación de MCP</a> para detalles sobre implementación de clientes.</p>
+  </div>
+
+  <h2>Herramientas disponibles</h2>
+  <table class="tools-table">
+    <thead>
+      <tr><th>Herramienta</th><th>Descripción</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>list-schools</td>
+        <td>Lista las 12 escuelas del RCSD con nombre, grados, tipo y matrícula</td>
+      </tr>
+      <tr>
+        <td>query-school</td>
+        <td>Información detallada de una escuela específica &mdash; horario de clases, director/a, dirección, PTO, enlace al menú del almuerzo y más. Acepta nombre o identificador (ej. "orion", "Roy Cloud").</td>
+      </tr>
+      <tr>
+        <td>check-calendar</td>
+        <td>Verifica si hay clases en una fecha determinada, incluyendo días festivos, vacaciones, días de horario reducido y días regulares. Cubre los años escolares 2025-26 y 2026-27.</td>
+      </tr>
+      <tr>
+        <td>get-lunch-menu</td>
+        <td>Obtiene el menú del almuerzo en tiempo real para una escuela en una fecha específica. Extrae datos en vivo de HealthePro y reconoce los días sin clases.</td>
+      </tr>
+      <tr>
+        <td>get-meeting-summary</td>
+        <td>Resúmenes de reuniones de la junta &mdash; ya sean las reuniones más recientes o una fecha específica. Generados por IA a partir de transcripciones de reuniones.</td>
+      </tr>
+      <tr>
+        <td>get-school-board-items</td>
+        <td>Puntos del orden del día de la junta que mencionan una escuela específica. Útil para rastrear decisiones que afectan a un plantel en particular.</td>
+      </tr>
+      <tr>
+        <td>get-sped-data</td>
+        <td>Datos de matrícula de educación especial (IEP) &mdash; totales del distrito o desglose por escuela, incluyendo conteos por grado y colocación en el LRE.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Ejemplos de consultas</h2>
+  <p>Una vez conectado, prueba hacerle preguntas a tu asistente de IA como:</p>
+  <ul class="examples">
+    <li>"¿Qué hay de almuerzo en Orion hoy?"</li>
+    <li>"¿Hay clases el 31 de marzo de 2026?"</li>
+    <li>"Lista todas las escuelas del RCSD y su matrícula."</li>
+    <li>"¿Qué pasó en la última reunión de la junta escolar?"</li>
+    <li>"Muéstrame el horario de clases de Roy Cloud."</li>
+    <li>"¿Cuáles son los números de educación especial en Clifford?"</li>
+    <li>"¿Qué puntos del orden del día de la junta han mencionado a Adelante?"</li>
+  </ul>
+
+  <h2>Fuentes de datos</h2>
+  <p>Todos los datos del servidor MCP provienen de documentos públicos del RCSD. La información de las escuelas, los calendarios y las transcripciones de las reuniones de la junta se recopilan y mantienen en <a href="https://rcsd.info" target="_blank">rcsd.info</a>. Los menús del almuerzo se obtienen en tiempo real del sistema <a href="https://menus.healthepro.com/" target="_blank">HealthePro</a> utilizado por el distrito. El código fuente está disponible en <a href="https://github.com/dweekly/rcsd-meetings" target="_blank">GitHub</a>.</p>
+
+</main>
+
+<footer class="site-footer">
+  <p>Compilado de forma independiente a partir de documentos públicos del RCSD. Documentos fuente en <a href="https://www.rcsdk8.net">rcsdk8.net</a> y el <a href="https://simbli.eboardsolutions.com/SB_Meetings/SB_MeetingListing.aspx?S=36030397">portal GAMUT de la junta</a>.</p>
+  <div class="footer-nav">
+    <a href="/">Inicio</a>
+    <a href="/reuniones/">Reuniones</a>
+    <a href="/escuelas/">Escuelas</a>
+    <a href="/distrito/">Distrito</a>
+    <a href="/presupuesto/">Presupuesto</a>
+    <a href="https://github.com/dweekly/rcsd-meetings">Código fuente &#8599;</a>
+    <a href="mailto:team@rcsd.info">team@rcsd.info</a>
+  </div>
+</footer>
+
+<script>
+function copyCode(btn) {
+  const pre = btn.parentElement.querySelector('pre');
+  const text = pre.textContent;
+  navigator.clipboard.writeText(text).then(function() {
+    btn.textContent = 'Copiado';
+    btn.classList.add('copied');
+    setTimeout(function() {
+      btn.textContent = 'Copiar';
+      btn.classList.remove('copied');
+    }, 2000);
+  });
+}
+</script>
+
+</body>
+</html>

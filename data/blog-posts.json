@@ -1,5 +1,28 @@
 [
   {
+    "slug": "two-weeks-in",
+    "slugEs": "dos-semanas-despues",
+    "date": "2026-03-26",
+    "author": "David Weekly",
+    "authorUrl": "https://david.weekly.org",
+    "template": {
+      "en": "2026-03-week2-en.html",
+      "es": "2026-03-week2-es.html"
+    },
+    "title": {
+      "en": "Two weeks in: from 58 meetings to 189",
+      "es": "Dos semanas después: de 58 reuniones a 189"
+    },
+    "description": {
+      "en": "What changed between the rcsd.info launch and the first public announcement at the March 25 board meeting.",
+      "es": "Qué cambió entre el lanzamiento de rcsd.info y el primer anuncio público en la reunión de la junta del 25 de marzo."
+    },
+    "excerpt": {
+      "en": "Two weeks ago I launched rcsd.info with 58 meetings. Yesterday I announced it at the board meeting. In between, the corpus tripled.",
+      "es": "Hace dos semanas lancé rcsd.info con 58 reuniones. Ayer lo anuncié en la reunión de la junta. En el intermedio, el corpus se triplicó."
+    }
+  },
+  {
     "slug": "open-data-for-rcsd",
     "slugEs": "datos-abiertos-para-rcsd",
     "date": "2026-03-13",

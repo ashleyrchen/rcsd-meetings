@@ -109,6 +109,9 @@
   - Would capture: Garfield Nov 2023 presentation, Kennedy Nov 2023 presentation, full 2023-24 school year
   - BoardDocs is client-side Angular; need to hit API endpoints or use headful browser
   - Enables multi-year trending of board actions per school
+- [ ] Pre-April 2020 BoardDocs backfill (agenda-only, no video) — 2019-2020 school year meetings exist in BoardDocs but YouTube recordings only start April 2020 (first COVID virtual meeting)
+- [ ] Add "comprehensive from" statement on meetings page — clearly state April 2020 as start of full coverage (agenda + video + transcript), with agenda-only for earlier meetings if/when backfilled
+- [ ] Backfill board packet PDFs for pre-June 2025 meetings — currently only 22 recent meetings have downloaded attachments; 167 older meetings have metadata links but no archived PDFs. BoardDocs links may break; good candidate for trogdor batch job
 
 ## Board Meetings — Lifecycle States
 
@@ -151,6 +154,9 @@ Build a pipeline for rich per-meeting summaries (inputs already in place: AAI tr
 - Open questions: glossary via `<abbr title>` vs popover component? Define terms once per page or per first-use per section?
 
 ## Agent / API Layer
+- [ ] **Enhanced MCP server** — add `get-meeting-details` tool returning transcript, agenda items with PDF download links, timecode mappings, minutes, and source links (BoardDocs/Simbli/YouTube) for a given meeting date
+- [ ] **ChatGPT App** via OpenAI Apps SDK (https://developers.openai.com/apps-sdk) — a "RCSD Assistant" that non-technical parents can use directly without knowing what MCP is; backed by the data.rcsd.info JSON API
+- [ ] **MCP docs in Spanish** — translate /mcp/ page to match the bilingual pattern of the rest of the site
 - [ ] Per-child teacher/homeroom config in family settings — enables teacher-aware queries (field trips, homework, class-specific events)
 - [ ] Per-school teacher roster data — enables "Who teaches 3rd grade MI at Orion?" queries
 - [ ] Subscribable lunch calendar (iCal .ics) for overlay onto Apple Calendar / Outlook / Google Calendar
@@ -175,6 +181,16 @@ Build a pipeline for rich per-meeting summaries (inputs already in place: AAI tr
 - [x] Multi-school tagging per document
 - [ ] Surface document index on meetings page and school pages
 - [ ] Document timeline/history view per type (e.g., all adopted budgets chronologically)
+
+## Automation & Infrastructure
+- [ ] **Trogdor cron automation** — move scraping pipeline to trogdor (beefy Linux server with CUDA) on a schedule:
+  - Simbli agenda scrape (daily or 2x/week)
+  - YouTube channel index (daily)
+  - Board packet download (daily)
+  - AssemblyAI transcription (triggered on new video detection)
+  - Timestamp mapping via Claude (after transcription)
+  - Site rebuild + `wrangler pages deploy` (after any data change)
+- [ ] **Screencap demo** — narrated screen recording showing: homepage, clicking into a meeting, transcript click-to-seek, Spanish toggle, chapter markers, MCP query. For embedding on the site and social sharing.
 
 ## Data Attribution (in progress)
 - [ ] Growth data (ELA/Math growth %) — find and link to the actual source document (currently attributed to "CDE Growth Model" but original data came from an untracked `hr-data-briefing-2026-03.md`)

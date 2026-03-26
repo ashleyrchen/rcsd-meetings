@@ -1,0 +1,63 @@
+<header class="post-header">
+  <div class="post-header-inner">
+    <div class="post-meta">
+      <span class="post-date">March 26, 2026</span>
+      <span class="post-author">by <a href="https://david.weekly.org">David Weekly</a></span>
+    </div>
+    <h1>Two weeks in: from 58 meetings to 189</h1>
+    <p class="post-subtitle">What changed between launch day and the first public announcement.</p>
+  </div>
+</header>
+
+<main class="post-content">
+  <div class="post-body">
+
+    <section>
+      <h2>The short version</h2>
+      <p>Two weeks ago I launched <a href="/">rcsd.info</a> with 58 meetings and a <a href="/blog/open-data-for-rcsd">blog post</a> explaining why. Yesterday I stood up at the March 25 board meeting and told people about it for the first time. In between, the corpus tripled.</p>
+      <p>189 meetings now, covering April 2020 through March 2026. 7,810 agenda items, up from about 1,700. Over a thousand indexed documents. The sitemap went from 36 URLs to 228. Thirty-two commits, 429 files changed, roughly 574,000 lines added over 13 days. I wanted the coverage to be solid before pointing anyone at it.</p>
+    </section>
+
+    <section>
+      <h2>Going back to 2020</h2>
+      <p>The original launch only covered August 2023 forward -- what I could scrape from Simbli, the district's current board portal. But RCSD used BoardDocs before that, and those older meetings still matter. COVID-era school reopening votes, budget shifts during enrollment drops, two superintendent transitions. All public record, all sitting in an archive nobody was looking at.</p>
+      <p>I wrote scrapers for BoardDocs and backfilled everything to April 2020. That alone tripled the meeting count. Every meeting got the same treatment: parsed agendas, indexed documents, AI-generated bilingual summaries.</p>
+    </section>
+
+    <section>
+      <h2>Transcript viewer</h2>
+      <p>Each meeting now has its own page with a synced YouTube player. Click a line in the transcript and the video jumps there. Board meetings run two to four hours. Before this, if you wanted to find the facilities master plan discussion, you had to scrub through the whole recording or hope somebody timestamped it in the YouTube description (they didn't).</p>
+      <p>There's also a Spanish translation toggle on every transcript page. The translations are AI-generated and labeled as such. About 40% of RCSD families speak Spanish at home, so even imperfect machine translation is better than English-only.</p>
+    </section>
+
+    <section>
+      <h2>Chapter markers and agenda parsing</h2>
+      <p>I wrote a script that feeds each meeting's transcript alongside its formal agenda into Claude, which figures out where in the recording each agenda item is discussed. The result is a set of chapter markers you can click to jump straight to a specific topic without scrubbing through the whole video.</p>
+      <p>On the agenda side, I added formal structure parsing. Board agendas follow a hierarchy -- consent calendar, action items, information items -- and the site now reflects that instead of dumping everything in a flat list. Consent items are numbered correctly under their parent section, which turns out to be harder than it sounds when the district's portal doesn't always agree with itself about numbering.</p>
+    </section>
+
+    <section>
+      <h2>Pipeline improvements</h2>
+      <p>Eight new scripts. The transcription step now feeds the meeting's agenda text to AssemblyAI as context, which helps it get proper nouns right. Before this, "Taft" came back as "tapped," "Garfield" as "Garfield's," and staff names were a coin flip. Not perfect now, but noticeably better.</p>
+      <p>I also self-hosted the web fonts (no more loading from Google's servers), fixed the Community School badge that was showing up as a cryptic "CS" nobody understood, and added a governance calendar that shows provisional topics for upcoming board meetings even before the formal agenda is posted.</p>
+    </section>
+
+    <section>
+      <h2>The MCP server</h2>
+      <p>I mentioned the <a href="/mcp/">MCP server</a> in the first post but didn't say much about it. MCP is the Model Context Protocol -- it lets AI assistants query data sources directly. Point Claude Desktop, Claude Code, or another MCP client at <code>mcp.rcsd.info/mcp</code> and you can ask questions about the district in plain language: what's for lunch at Taft on Thursday, when's the next board meeting, what did the board discuss about the budget last month.</p>
+      <p><a href="/mcp/">Installation instructions</a> are now on the site. I'm curious whether parents will actually use this. Asking a question in English or Spanish is easier than navigating half a dozen district websites, but the setup still requires knowing what MCP is, which limits the audience for now.</p>
+    </section>
+
+    <section>
+      <h2>The board meeting</h2>
+      <p>I announced rcsd.info during Board Member Reports at last night's meeting. I wanted to be upfront with my colleagues: this is a personal project, not a district project, built on my own time with public data. A few board members asked about the transcript viewer afterward, and one parent told me she'd been trying to find the recording of a specific discussion for weeks. So at least one person will use it.</p>
+    </section>
+
+    <section>
+      <h2>What's next</h2>
+      <p>The scraping pipeline is still semi-manual. I run the scripts, look at the output, and deploy. That should be automated -- new meetings ought to show up within hours of being posted, not whenever I get around to it.</p>
+      <p>After that, I want to add CAASPP test score trends by school and demographic group, and eventually cross-district comparisons so people can see how RCSD compares to neighboring districts. If there's public data you wish were easier to find, or if something on the site is wrong, <a href="mailto:team@rcsd.info">team@rcsd.info</a> or <a href="https://github.com/dweekly/rcsd-meetings" target="_blank">GitHub</a>.</p>
+    </section>
+
+  </div>
+</main>
