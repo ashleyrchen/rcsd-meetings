@@ -58,12 +58,18 @@ export function parseSimbliAgenda(memoItems) {
   const result = [];
   let currentSectionLabel = null;
   let highWaterMark = 0;
+  // Track the last sub-item prefix to detect sub-item sequences that exceed
+  // the parent section number. For example, a consent section numbered 15 may
+  // have sub-items 1, 2, ..., 17, 18, 27. Once we see sub-item 17, we know
+  // that item 18 is still a sub-item (17+1 == 18), not a new top-level section.
+  let lastSubItemPrefix = null;
 
   for (const item of memoItems) {
     const raw = item.title || '';
 
     const prefixMatch = raw.match(/^(\d+)\.\s*/);
     if (!prefixMatch) {
+      lastSubItemPrefix = null;
       result.push({
         itemLabel: String(item.order),
         title: raw.trim(),
@@ -93,16 +99,24 @@ export function parseSimbliAgenda(memoItems) {
 
     const hasTimeSuffix = timeSuffix != null;
 
+    // A sub-item continuation is when the prefix is exactly lastSubItemPrefix + 1.
+    // This catches the case where sub-item numbers exceed the parent section number
+    // (e.g., section 15 with sub-items 1..27: once we see 15.17, item "18" must
+    // be 15.18 because 18 === 17 + 1, not a new top-level section 18).
+    const isContinuation = lastSubItemPrefix !== null && prefixNum === lastSubItemPrefix + 1;
+
     // Determine if this is a section header:
     // - Must have prefix > highWaterMark (ascending section sequence)
     // - AND either has a time suffix (definite) or prefix is NOT claimed by a
     //   definite-section item (no time-suffix item exists with this prefix number)
+    // - AND is NOT a continuation of the current sub-item sequence
     const isNewSection = prefixNum > highWaterMark &&
-      (hasTimeSuffix || !definiteSectionPrefixes.has(prefixNum));
+      (hasTimeSuffix || (!definiteSectionPrefixes.has(prefixNum) && !isContinuation));
 
     if (isNewSection) {
       highWaterMark = prefixNum;
       currentSectionLabel = String(prefixNum);
+      lastSubItemPrefix = null;
 
       result.push({
         itemLabel: currentSectionLabel,
@@ -119,6 +133,8 @@ export function parseSimbliAgenda(memoItems) {
       const itemLabel = currentSectionLabel
         ? `${currentSectionLabel}.${prefixNum}`
         : String(prefixNum);
+
+      lastSubItemPrefix = prefixNum;
 
       result.push({
         itemLabel,
