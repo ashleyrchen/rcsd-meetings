@@ -162,7 +162,7 @@ Build a pipeline for rich per-meeting summaries (inputs already in place: AAI tr
 - [ ] Subscribable lunch calendar (iCal .ics) for overlay onto Apple Calendar / Outlook / Google Calendar
 - [ ] OpenAPI / JSON API endpoints on data.rcsd.info for school info, calendars, menus, meetings
 - [ ] Publish plugin to npm / Claude Code plugin registry for easy installation
-- [ ] **"Dial the District" voice agent** — two phone numbers (English and Spanish) that let callers ask questions about the district via voice. Backed by the MCP data layer. Could use Twilio + a voice LLM (e.g. Vapi, Bland, or Anthropic voice when available). Parents call and ask "Is there school next Friday?" or "What's for lunch at Taft tomorrow?" and get an answer.
+- [ ] **"Dial the District" voice agent** — two Vapi phone numbers (English and Spanish) backed by the MCP data layer. Parents call and ask "Is there school next Friday?" or "What's for lunch at Taft tomorrow?" and get a spoken answer. Implementation: Vapi assistant with Claude as the LLM, MCP server as the tool provider, separate assistant configs for EN and ES with appropriate system prompts and voices. Vapi handles telephony, STT, TTS; Claude + MCP handle the intelligence. Cost estimate: ~$0.10-0.15/min per call (Vapi telephony + Claude API + Deepgram STT + ElevenLabs TTS).
 - [ ] **WhatsApp bot** — same concept as the phone agent but over text. Parents text questions to a WhatsApp number and get answers from district data. Lower barrier than MCP setup, reaches parents where they already are. Could use the WhatsApp Business API + Claude.
 
 ## Key Parties Roster
