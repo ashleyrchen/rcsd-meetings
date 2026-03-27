@@ -5,13 +5,14 @@
  * Redwood City School District data. Public, no auth required.
  *
  * Tools:
- *   list-schools        — List all 12 RCSD schools
- *   query-school        — Detailed info for a specific school
- *   check-calendar      — Is there school on a given date?
- *   get-lunch-menu      — Live lunch menu from HealthePro API
- *   get-meeting-summary — Board meeting summaries
+ *   list-schools          — List all 12 RCSD schools
+ *   query-school          — Detailed info for a specific school
+ *   check-calendar        — Is there school on a given date?
+ *   get-lunch-menu        — Live lunch menu from HealthePro API
+ *   get-meeting-summary   — Board meeting summaries
+ *   get-meeting-details   — Comprehensive details for a single board meeting
  *   get-school-board-items — Board items for a specific school
- *   get-sped-data       — Special education stats
+ *   get-sped-data         — Special education stats
  */
 
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
@@ -110,6 +111,17 @@ function formatSchool(s: any): string {
     lines.push("  PTO: None — school is supported by RCEF (Redwood City Education Foundation)");
   }
   return lines.join("\n");
+}
+
+// ---- Helper: format seconds into HH:MM:SS or MM:SS ----
+
+function formatTimestamp(seconds: number): string {
+  const h = Math.floor(seconds / 3600);
+  const m = Math.floor((seconds % 3600) / 60);
+  const s = Math.floor(seconds % 60);
+  const mm = String(m).padStart(2, "0");
+  const ss = String(s).padStart(2, "0");
+  return h > 0 ? `${h}:${mm}:${ss}` : `${mm}:${ss}`;
 }
 
 // ---- Helper: parse HealthePro menu ID from lunch URL ----
@@ -399,6 +411,163 @@ function createServer(): McpServer {
     }
   );
 
+  // ---- get-meeting-details ----
+  server.tool(
+    "get-meeting-details",
+    "Get comprehensive details about a specific board meeting: agenda items, timestamps, chapter markers, transcript link, topics, and threads",
+    {
+      meeting: z
+        .string()
+        .describe("Meeting date (YYYY-MM-DD) or slug (e.g. '2026-03-25-regular')"),
+    },
+    async ({ meeting }) => {
+      // Fetch all required data in parallel
+      const [meetingsData, summaries, timestampMap, chapterMarkers] = await Promise.all([
+        fetchJSON("meetings-data.json"),
+        fetchJSON("meeting-summaries.json"),
+        fetchJSON("timestamp-map.json"),
+        fetchJSON("chapter-markers.json"),
+      ]);
+
+      // Find the meeting by date or slug
+      const isDate = /^\d{4}-\d{2}-\d{2}$/.test(meeting);
+      const mtg = meetingsData.meetings.find((m: any) =>
+        isDate ? m.date === meeting : m.slug === meeting
+      );
+
+      if (!mtg) {
+        const recent = meetingsData.meetings
+          .slice(-5)
+          .reverse()
+          .map((m: any) => `${m.date} (${m.slug})`)
+          .join(", ");
+        return {
+          isError: true,
+          content: [
+            {
+              type: "text",
+              text: `Meeting not found: "${meeting}". Recent meetings: ${recent}`,
+            },
+          ],
+        };
+      }
+
+      const lines: string[] = [];
+
+      // 1. Basic info
+      lines.push(`=== Board Meeting: ${mtg.date} (${mtg.type}) ===`);
+      lines.push(`Slug: ${mtg.slug}`);
+      lines.push(`Source: ${mtg.source}`);
+      if (mtg.simbli) lines.push(`Simbli: ${mtg.simbli}`);
+      if (mtg.boarddocs) lines.push(`BoardDocs: ${mtg.boarddocs}`);
+      if (mtg.youtube) lines.push(`YouTube: https://www.youtube.com/watch?v=${mtg.youtube}`);
+      if (mtg.zoom) lines.push(`Zoom: ${mtg.zoom}`);
+
+      // 2. Summary
+      const summary = summaries[mtg.date];
+      if (summary) {
+        lines.push("");
+        lines.push("--- Summary ---");
+        lines.push(summary);
+      }
+
+      // 3. Topics and threads
+      if (mtg.topics && mtg.topics.length > 0) {
+        lines.push("");
+        lines.push("--- Topics ---");
+        for (const topic of mtg.topics) {
+          lines.push(`  - ${topic}`);
+        }
+      }
+      if (mtg.threads && mtg.threads.length > 0) {
+        lines.push("");
+        lines.push("--- Threads ---");
+        for (const thread of mtg.threads) {
+          lines.push(`  - ${thread}`);
+        }
+      }
+
+      // 4. Agenda items (skip procedural)
+      const proceduralTitles = new Set([
+        "call to order",
+        "roll call",
+        "pledge of allegiance",
+        "adjournment",
+        "closed session",
+        "reconvene to open session",
+        "report out of closed session",
+      ]);
+
+      if (mtg.items && mtg.items.length > 0) {
+        const substantiveItems = mtg.items.filter((item: any) => {
+          if (item.actionType === "Procedural") return false;
+          const titleLower = (item.title || "").toLowerCase().trim();
+          return !proceduralTitles.has(titleLower);
+        });
+
+        if (substantiveItems.length > 0) {
+          lines.push("");
+          lines.push(`--- Agenda Items (${substantiveItems.length} substantive) ---`);
+          for (const item of substantiveItems) {
+            const label = item.itemLabel ? `[${item.itemLabel}] ` : "";
+            const action = item.actionType ? ` (${item.actionType})` : "";
+            const speaker = item.speaker ? ` — ${item.speaker}` : "";
+            lines.push(`  ${label}${item.title}${action}${speaker}`);
+
+            if (item.attachments && item.attachments.length > 0) {
+              for (const att of item.attachments) {
+                const url = `https://data.rcsd.info/board-packets/${mtg.date}/${att.filename}`;
+                lines.push(`    📎 ${att.title}: ${url}`);
+              }
+            }
+          }
+        }
+      }
+
+      // 5. Timestamp mappings
+      if (mtg.youtube && timestampMap[mtg.youtube]) {
+        const timestamps = timestampMap[mtg.youtube];
+        lines.push("");
+        lines.push("--- Video Timestamps ---");
+        for (const ts of timestamps) {
+          const start = formatTimestamp(ts.startTime);
+          const end = ts.endTime ? ` - ${formatTimestamp(ts.endTime)}` : "";
+          lines.push(`  ${start}${end}: ${ts.item}`);
+        }
+      }
+
+      // 6. Chapter markers
+      const markers = chapterMarkers[mtg.slug] || chapterMarkers[mtg.date];
+      if (markers && markers.length > 0) {
+        lines.push("");
+        lines.push("--- Chapter Markers ---");
+        for (const ch of markers) {
+          const time = formatTimestamp(ch.timestamp || ch.startTime || 0);
+          lines.push(`  ${time}: ${ch.topic || ch.title}`);
+        }
+      }
+
+      // 7. Transcript availability
+      const transcriptUrl = `https://data.rcsd.info/transcripts/${mtg.date}.json`;
+      const viewerUrl = `https://rcsd.info/meetings/${mtg.slug}/`;
+      lines.push("");
+      lines.push("--- Transcript ---");
+      try {
+        const res = await fetch(transcriptUrl, { method: "HEAD" });
+        if (res.ok) {
+          lines.push(`Transcript available: ${transcriptUrl}`);
+          lines.push(`Viewer: ${viewerUrl}`);
+        } else {
+          lines.push("No transcript available for this meeting.");
+        }
+      } catch {
+        lines.push("Unable to check transcript availability.");
+      }
+
+      return { content: [{ type: "text", text: lines.join("\n") }] };
+    }
+  );
+
   // ---- get-school-board-items ----
   server.tool(
     "get-school-board-items",
@@ -588,13 +757,14 @@ Connect this MCP server to Claude Desktop, claude.ai, VS Code, Cursor, or any MC
 Endpoint: ${url.origin}/mcp
 
 Tools available:
-  list-schools         — List all 12 RCSD schools
-  query-school         — Detailed school info by name or slug
-  check-calendar       — Is there school on a given date?
-  get-lunch-menu       — Live lunch menu from HealthePro
-  get-meeting-summary  — Board meeting summaries
+  list-schools           — List all 12 RCSD schools
+  query-school           — Detailed school info by name or slug
+  check-calendar         — Is there school on a given date?
+  get-lunch-menu         — Live lunch menu from HealthePro
+  get-meeting-summary    — Board meeting summaries
+  get-meeting-details    — Full details for a board meeting (agenda, timestamps, transcript)
   get-school-board-items — Board items for a specific school
-  get-sped-data        — Special education enrollment data
+  get-sped-data          — Special education enrollment data
 
 Data source: https://rcsd.info
 GitHub: https://github.com/dweekly/rcsd-meetings

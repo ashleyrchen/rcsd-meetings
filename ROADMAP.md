@@ -162,6 +162,8 @@ Build a pipeline for rich per-meeting summaries (inputs already in place: AAI tr
 - [ ] Subscribable lunch calendar (iCal .ics) for overlay onto Apple Calendar / Outlook / Google Calendar
 - [ ] OpenAPI / JSON API endpoints on data.rcsd.info for school info, calendars, menus, meetings
 - [ ] Publish plugin to npm / Claude Code plugin registry for easy installation
+- [ ] **"Dial the District" voice agent** — two phone numbers (English and Spanish) that let callers ask questions about the district via voice. Backed by the MCP data layer. Could use Twilio + a voice LLM (e.g. Vapi, Bland, or Anthropic voice when available). Parents call and ask "Is there school next Friday?" or "What's for lunch at Taft tomorrow?" and get an answer.
+- [ ] **WhatsApp bot** — same concept as the phone agent but over text. Parents text questions to a WhatsApp number and get answers from district data. Lower barrier than MCP setup, reaches parents where they already are. Could use the WhatsApp Business API + Claude.
 
 ## Key Parties Roster
 - [ ] Build a "who's who" page: district cabinet/staff, board members (historical), vendors, unions (RCTA, CSEA, RCAA), consultants
