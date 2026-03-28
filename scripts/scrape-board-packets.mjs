@@ -47,6 +47,7 @@ const MEETINGS = [
   { date: '2026-02-26', mid: 56022 },
   { date: '2026-03-11', mid: 50616 },
   { date: '2026-03-25', mid: 50617 },
+  { date: '2026-04-01', mid: 51011 },
 ];
 
 const SIMBLI_BASE = 'https://simbli.eboardsolutions.com';

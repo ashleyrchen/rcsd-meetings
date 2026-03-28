@@ -12,6 +12,7 @@ Last updated: March 20, 2026
 
 | Date | Type | MID | YouTube | Key Topics |
 |------|------|-----|---------|------------|
+| 04/01/2026 | Regular | 51011 | — | Roy Cloud/Clifford SPSA presentations, EV charger PowerFlex replacement (Shell Recharge discontinuation), RCTA class size info item, BP/AR 3580 District Records second reading, 22 CSBA policy updates (employee HR policies), MIT/Kennedy field trips, election services agreement |
 | 03/25/2026 | Regular | 50617 | — | Taft/Garfield SPSA presentations, 2024-25 financial audit (Eide Bailly), Second Interim Budget ($158.1M rev), AI-assisted literacy info item, drone policy BP 3515.21 second reading, Connect charter audit review, Ed Code 41372 salary waiver (55.54% vs 60%), 650 Chromebooks ($323.9K), 16 CSBA policy updates, Measure U addenda (North Star/Henry Ford) |
 | 03/11/2026 | Regular | 50616 | — | Roosevelt/McKinley/Hoover SPSA presentations, Eide Bailly bond audit, 2025 SARCs, Measure U addenda (Roosevelt/McKinley/Hoover), NV5 EV charging amendment, Feb warrant registers |
 | 02/26/2026 | Special | 56022 | [Video](https://www.youtube.com/watch?v=8NOEEW_cpyU) | Parcel tax public hearing + election resolution |
@@ -41,6 +42,30 @@ Last updated: March 20, 2026
 ---
 
 ## Detailed Meeting Agendas
+
+### 04/01/2026 — Regular Meeting (MID 51011)
+- **Simbli:** https://simbli.eboardsolutions.com/SB_Meetings/ViewMeeting.aspx?S=36030397&MID=51011
+
+**Closed Session:**
+1. Conference with Labor Negotiators (Gov. Code 54957.6) — RCTA
+
+**Action Items:**
+1. Roy Cloud SPSA presentation and approval
+2. Clifford SPSA presentation and approval
+3. EV Charger Technology Purchase Agreement with PowerFlex (Shell Recharge replacement at 6 campuses)
+
+**Discussion Items:**
+1. BP/AR 3580 District Records — second reading (moved to consent)
+
+**Consent Items:**
+1. MIT field trips to Treasure Island (May 20-21)
+2. Kennedy field trip to Grand Canyon (May 13-22)
+3. Personnel changes (Garfield SpEd preschool FTE increase)
+4-25. 22 CSBA policy updates (employee HR: complaints, nondiscrimination, legal status, drug testing, notifications, personnel reduction, sexual harassment, professional standards, leaves, political activities, athletic coaches)
+26. Agreement with San Mateo County for election services
+
+**Information:**
+1. RCTA Class Size presentation
 
 ### 03/25/2026 — Regular Meeting (MID 50617)
 - **Zoom:** https://rcsdk8-net.zoom.us/s/83593509461
