@@ -197,6 +197,15 @@
   .tv-meta a { color: var(--green-mid); text-decoration: none; }
   .tv-meta a:hover { text-decoration: underline; }
 
+  .tv-summary {
+    font-family: 'Newsreader', serif;
+    font-size: 0.9rem;
+    line-height: 1.55;
+    color: var(--text-secondary);
+    margin-top: 0.5rem;
+    max-width: 640px;
+  }
+
   .tv-main {
     display: flex;
     flex-direction: column;
@@ -534,6 +543,7 @@
       
        &middot; <a href="https://go.boarddocs.com/ca/redwood/Board.nsf/goto?open&amp;id=D6KTVG7913EC" target="_blank" rel="noopener">BoardDocs</a>
     </div>
+    <p class="tv-summary">Board heard the annual mental health report and discussed year-end assessment results for 2023-24. Continued the Area III trustee appointment process. Approved the 2023-24 unaudited actuals financial statement, adopted the Gann Limit (Resolution 7), and approved teaching assignment options (Resolution 6). Approved Measure U addendum for Garfield.</p>
   </div>
 
   <div class="tv-main">
@@ -597,6 +607,16 @@
   var activeTab = "transcript";
   var currentLang = 'en';
 
+  // Handle #hash on load to activate the corresponding tab
+  function activateTabFromHash() {
+    var hash = location.hash.replace('#', '');
+    if (!hash) return;
+    var tab = document.querySelector('.tv-tab[data-tab="' + hash + '"]');
+    if (tab && !tab.disabled) {
+      tab.click();
+    }
+  }
+
   // Load YT IFrame API (only if we have video)
   if (videoId) {
     var tag = document.createElement('script');
@@ -622,7 +642,7 @@
       activeTab = tab.dataset.tab;
       tabs.forEach(function(t) { t.classList.toggle('active', t.dataset.tab === activeTab); });
       panels.forEach(function(p) { p.classList.toggle('active', p.id === 'panel-' + activeTab); });
-      transcriptControls.style.display = activeTab === 'transcript' ? '' : 'none';
+      if (transcriptControls) transcriptControls.style.display = activeTab === 'transcript' ? '' : 'none';
     });
   });
 
@@ -714,7 +734,7 @@
         c.textContent = '';
         var msg = document.createElement('div');
         msg.className = 'tv-empty';
-        msg.textContent = 'Failed to load transcript.';
+        msg.textContent = "Failed to load transcript.";
         c.appendChild(msg);
       });
 
@@ -729,7 +749,7 @@
           if (btn) btn.style.opacity = '1';
         })
         .catch(function() {
-          // No Spanish translation available — disable button
+          // No Spanish translation available -- disable button
           var btn = document.getElementById('btn-lang');
           if (btn) { btn.disabled = true; btn.title = 'Spanish translation not yet available'; }
         });
@@ -767,7 +787,7 @@
       }
     }
 
-    // Agenda sync — highlight current agenda item
+    // Agenda sync -- highlight current agenda item
     if (activeTab === 'agenda') {
       var agendaItems = document.querySelectorAll('#panel-agenda [data-start]');
       var bestEl = null;
@@ -811,13 +831,13 @@
         utterances = utterancesEs;
         langBtn.textContent = 'EN';
         langBtn.classList.add('active');
-        langBtn.title = 'Switch to English';
+        langBtn.title = "Switch to English";
       } else {
         currentLang = 'en';
         utterances = utterancesEn;
         langBtn.textContent = 'ES';
         langBtn.classList.remove('active');
-        langBtn.title = 'Toggle Spanish translation';
+        langBtn.title = "Toggle Spanish translation";
       }
       activeIdx = -1;
       renderTranscript();
@@ -827,11 +847,12 @@
   // Search
   var searchInput = document.getElementById('search-input');
   var searchTimeout = null;
-  if (!searchInput) return; // no search on agenda-only pages
-  searchInput.addEventListener('input', function() {
-    clearTimeout(searchTimeout);
-    searchTimeout = setTimeout(doSearch, 200);
-  });
+  if (searchInput) {
+    searchInput.addEventListener('input', function() {
+      clearTimeout(searchTimeout);
+      searchTimeout = setTimeout(doSearch, 200);
+    });
+  }
 
   function doSearch() {
     var term = searchInput.value.trim().toLowerCase();
@@ -863,6 +884,10 @@
       }
     });
   }
+
+  // Activate tab from URL hash on load
+  activateTabFromHash();
+  window.addEventListener('hashchange', activateTabFromHash);
 })();
 </script>
 </body>
