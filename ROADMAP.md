@@ -169,11 +169,18 @@ Build a pipeline for rich per-meeting summaries (inputs already in place: AAI tr
 - [ ] **"Dial the District" voice agent** — two phone numbers (English and Spanish) that parents can call to ask questions about the district and get spoken answers. Use **Gemini 3.1 Flash Live** (native voice-to-voice, no STT→LLM→TTS pipeline, inherently multilingual). Flash Live scores 90.8% on ComplexFuncBench Audio (multi-step function calling in voice) so it can call district data tools natively during conversation. Available via Gemini Live API in Google AI Studio (preview). Architecture: Gemini 3.1 Flash Live + function declarations mirroring MCP tool schemas + Twilio SIP trunk or LiveKit for telephony. Audio is SynthID-watermarked. Separate EN/ES assistant configs with language-appropriate system prompts. Ref: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-flash-live/
 - [ ] **WhatsApp bot** — same concept as the phone agent but over text. Parents text questions to a WhatsApp number and get answers from district data. Lower barrier than MCP setup, reaches parents where they already are. Could use the WhatsApp Business API + Claude.
 
-## Key Parties Roster
-- [ ] Build a "who's who" page: district cabinet/staff, board members (historical), vendors, unions (RCTA, CSEA, RCAA), consultants
-- [ ] Neutral, judgement-free descriptions of roles and tenures (date ranges)
-- [ ] Link each party to relevant documents (e.g., contract approvals for vendors, tentative agreements for unions)
-- [ ] Cross-reference from meeting items to party roster entries
+## Entity Registry & Key Parties
+- [ ] **Structured person/entity registry** (`data/entities.json`) — canonical list of individuals with:
+  - Name, slug, role history (role + date range), e.g. `{name: "David Weekly", roles: [{role: "Trustee", from: "2022-12-14"}, {role: "Board President", from: "2025-12-17"}]}`
+  - Enables: "What meetings did X speak at before becoming a Trustee?", "How many times has Anna Herrera presented?", tracking public commenter appearances across meetings
+  - Speaker diarization labels (speaker A/B/C) in transcripts can be mapped to entity slugs, enabling role-aware transcript display ("Board President Weekly asked..." instead of "Speaker F said...")
+  - Officer rotation annotations should be derived from this registry, not hardcoded
+- [ ] **Board member tenure tracking** — historical board composition at any point in time, including departures and swearing-in dates
+- [ ] **Staff roster** — district cabinet, principals, key staff with role dates
+- [ ] **Public commenter index** — cross-meeting appearances with summaries of what they spoke about
+- [ ] **"Who's who" page** — neutral, judgment-free descriptions of roles and tenures
+- [ ] Link entities to relevant documents (contract approvals for vendors, tentative agreements for unions)
+- [ ] Cross-reference from meeting items and transcript utterances to entity entries
 
 ## Warrant Register Analysis
 - [ ] Scrape all warrant registers (ratification of warrants) from board meeting attachments

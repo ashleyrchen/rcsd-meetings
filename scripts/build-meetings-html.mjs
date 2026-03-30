@@ -188,7 +188,7 @@ const LOCALES = {
     transcript: 'Transcript',
     joinZoom: 'Join via Zoom',
     rotationTitle: 'Annual Officer Rotation \u00b7 Per Board Bylaws',
-    rotationBelow: 'Elected:',
+    rotationBelow: 'Rotated to:',
     govCalTitle: 'Governance Calendar',
     govCalDesc: (dateStr) => `Planned board agenda items for the school year. From the ${dateStr} agenda.`,
     govCalLink: 'View Schedule (PDF)',
@@ -287,7 +287,7 @@ Comments in Spanish are welcome — an interpreter is available at every meeting
     transcript: 'Transcripci\u00f3n',
     joinZoom: 'Unirse por Zoom',
     rotationTitle: 'Rotaci\u00f3n Anual de Oficiales \u00b7 Seg\u00fan Estatutos de la Junta',
-    rotationBelow: 'Elegidos:',
+    rotationBelow: 'Rotaci\u00f3n a:',
     govCalTitle: 'Calendario de Gobernanza',
     govCalDesc: (dateStr) => `Puntos de agenda planificados para el a\u00f1o escolar. De la agenda del ${dateStr}.`,
     govCalLink: 'Ver Calendario (PDF)',
@@ -676,38 +676,44 @@ function renderMeeting(m) {
     </div>`;
 }
 
-// Officer rotation annotations (date = first meeting UNDER the new officers)
+// Officer rotation annotations
+// `date` = the meeting where rotation occurred
+// `officers` = the NEW officers after rotation (per Board Bylaw 9100, rotation by seniority)
+// TODO: Pre-2025 data needs verification against approved minutes. Will be replaced
+// by a proper entity/role registry (see ROADMAP: Key Parties Roster).
 const OFFICER_ROTATIONS = [
   {
     afterDate: '2025-12-17',
     previous: { president: 'David Weekly', vp: 'Cecilia I. Márquez', clerk: 'Ng Kwing King' },
+    // Verified from meeting summary and transcript
   },
   {
     afterDate: '2024-12-17',
-    previous: { president: 'Janet Lawson', vp: 'Mike Wells', clerk: 'Alisa MacAvoy' },
+    previous: { president: 'Mike Wells', vp: 'David Weekly', clerk: 'Cecilia I. Márquez' },
     note: 'Trustees Lawson (9 yrs) and MacAvoy (17 yrs) departed; Li and Ng Kwing King sworn in',
+    // Wells confirmed as incoming president from transcript [149]: "honored to step into this role as board president"
   },
   {
     afterDate: '2023-12-06',
-    previous: { president: 'Cecilia I. Márquez', vp: 'Janet Lawson', clerk: 'Mike Wells' },
+    previous: { president: 'Janet Lawson', vp: 'Mike Wells', clerk: 'Alisa MacAvoy' },
+    // Outgoing president was Márquez (per agenda Welcome item). Needs verification.
   },
   {
     afterDate: '2022-12-14',
-    previous: { president: 'María Díaz-Slocum', vp: 'Cecilia I. Márquez', clerk: 'Janet Lawson' },
+    previous: { president: 'Cecilia I. Márquez', vp: 'Janet Lawson', clerk: 'Mike Wells' },
     note: 'Trustee Díaz-Slocum departed; Weekly and Márquez sworn in',
+    // Outgoing president was Díaz-Slocum (per agenda Welcome item). Needs verification.
   },
   {
     afterDate: '2021-12-15',
-    previous: { president: 'Alisa MacAvoy', vp: 'María Díaz-Slocum', clerk: 'Cecilia I. Márquez' },
+    previous: { president: 'María Díaz-Slocum', vp: 'Cecilia I. Márquez', clerk: 'Janet Lawson' },
+    // Outgoing president was MacAvoy (per agenda Welcome item). Needs verification.
   },
   {
     afterDate: '2020-12-11',
-    previous: { president: 'Janet Lawson', vp: 'Alisa MacAvoy', clerk: 'María Díaz-Slocum' },
+    previous: { president: 'Alisa MacAvoy', vp: 'María Díaz-Slocum', clerk: 'Cecilia I. Márquez' },
     note: 'Trustee McBride departed; Wells, MacAvoy, and Lawson sworn in',
-  },
-  {
-    afterDate: '2019-12-11',
-    previous: { president: 'Dennis McBride', vp: 'Janet Lawson', clerk: 'Alisa MacAvoy' },
+    // Needs verification.
   },
 ];
 
