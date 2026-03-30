@@ -188,6 +188,21 @@ Build a pipeline for rich per-meeting summaries (inputs already in place: AAI tr
 - [ ] Surface document index on meetings page and school pages
 - [ ] Document timeline/history view per type (e.g., all adopted budgets chronologically)
 
+## Data Completeness Indicators
+- [ ] **"Awaiting" tags on meeting cards** — highlight when expected data is missing based on typical cadence:
+  - YouTube video: expected within 72 hours of meeting. Show "Awaiting video" yellow tag if meeting was >3 days ago and no YouTube link (e.g. March 11 and March 25 currently missing)
+  - Transcript: expected within 1 day of video posting
+  - Minutes: expected to be approved ~2 meetings later
+  - Agenda: expected ~5 days before a scheduled meeting
+- [ ] **Broader document expectations** — track whether expected documents are published on time:
+  - SPSAs: due annually, one per school
+  - SARCs: due annually by February 1
+  - LCAPs: due annually by June 30
+  - Interim budget reports: 1st interim (Dec), 2nd interim (Mar)
+  - Audits: annual, typically presented by January
+- [ ] **Visual treatment**: subtle yellow dot or tag, not red/alarming. Informational, not punitive. Tooltip explains what's expected and when. Disappears when the data appears.
+- [ ] **District dashboard view**: aggregate completeness across all schools and document types. "8/12 schools have published 2025-26 SARCs" etc.
+
 ## Automation & Infrastructure
 - [ ] **Trogdor cron automation** — move scraping pipeline to trogdor (beefy Linux server with CUDA) on a schedule:
   - Simbli agenda scrape (daily or 2x/week)
