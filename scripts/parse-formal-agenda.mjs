@@ -57,6 +57,7 @@ export function parseSimbliAgenda(memoItems) {
   // Pass 2: assign sections and sub-items
   const result = [];
   let currentSectionLabel = null;
+  let currentSectionIsConsent = false;
   let highWaterMark = 0;
   // Track the last sub-item prefix to detect sub-item sequences that exceed
   // the parent section number. For example, a consent section numbered 15 may
@@ -118,12 +119,16 @@ export function parseSimbliAgenda(memoItems) {
       currentSectionLabel = String(prefixNum);
       lastSubItemPrefix = null;
 
+      const sectionActionType = inferActionType(raw);
+      // Track whether children should inherit consent actionType
+      currentSectionIsConsent = sectionActionType === 'Action (Consent)';
+
       result.push({
         itemLabel: currentSectionLabel,
         title: titleBody,
         isSection: true,
         plannedMinutes,
-        actionType: inferActionType(raw),
+        actionType: sectionActionType,
         speaker: item.memo?.Speaker || null,
         attachments: (item.attachments || []).map(a => ({
           title: a.name, aid: a.aid, filename: a.filename,
@@ -136,12 +141,17 @@ export function parseSimbliAgenda(memoItems) {
 
       lastSubItemPrefix = prefixNum;
 
+      // Inherit consent from parent section; otherwise infer from item title
+      const itemActionType = currentSectionIsConsent
+        ? 'Action (Consent)'
+        : inferActionType(raw);
+
       result.push({
         itemLabel,
         title: titleBody,
         isSection: false,
         plannedMinutes: null,
-        actionType: inferActionType(raw),
+        actionType: itemActionType,
         speaker: item.memo?.Speaker || null,
         attachments: (item.attachments || []).map(a => ({
           title: a.name, aid: a.aid, filename: a.filename,
@@ -227,9 +237,10 @@ export function parseBoarddocsAgenda(scrapedMeeting) {
  */
 function inferActionType(title) {
   const t = title.toLowerCase();
+  // Check consent BEFORE action — "Approval of Consent Items (Action Required)" is consent
+  if (t.includes('consent')) return 'Action (Consent)';
   if (t.includes('(action required)')) return 'Action';
   if (t.includes('action required')) return 'Action';
-  if (t.includes('consent')) return 'Action (Consent)';
 
   // Procedural patterns
   const procedural = [
