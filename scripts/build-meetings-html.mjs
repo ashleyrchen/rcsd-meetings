@@ -84,6 +84,14 @@ for (const [suffix, lang] of [['', 'en'], ['-es', 'es']]) {
 }
 let manualSummaries = summariesByLang.en;
 
+// Load optional short meeting titles (2-5 words per meeting)
+const meetingTitlesPath = resolve(ROOT, 'data/meeting-titles.json');
+let meetingTitles = {};
+if (existsSync(meetingTitlesPath)) {
+  meetingTitles = JSON.parse(readFileSync(meetingTitlesPath, 'utf-8'));
+  console.log(`Loaded ${Object.keys(meetingTitles).length} meeting titles`);
+}
+
 // Load optional agenda item title translations for Spanish bilingual display
 const agendaTitlesEsPath = resolve(ROOT, 'data/agenda-titles-es.json');
 let agendaTitlesEs = {};
@@ -642,6 +650,14 @@ function renderMeeting(m) {
       '</div>';
   }
 
+  // Short meeting title (2-5 words capturing the main topic)
+  // Look up by slug first (for multi-meeting dates), then by date
+  const titleEntry = meetingTitles[m.slug] || meetingTitles[m.date];
+  const titleText = titleEntry ? (titleEntry[L.lang] || titleEntry.en) : '';
+  const titleHtml = titleText
+    ? `<span class="meeting-title">${escapeHtml(titleText)}</span>`
+    : '';
+
   // Summary paragraph (replaces topic bullets)
   const summary = generateSummary(m);
   const summaryHtml = summary
@@ -666,7 +682,7 @@ function renderMeeting(m) {
       </a>
       <div class="meeting-body">
         <div class="meeting-header">
-          <a href="${viewerHref}" class="meeting-type">${escapeHtml(L.meetingTypes[m.type] || m.type)}</a>${m.duration ? `<span class="meeting-duration">${m.duration}</span>` : ''}
+          <a href="${viewerHref}" class="meeting-type">${escapeHtml(L.meetingTypes[m.type] || m.type)}</a>${titleHtml}${m.duration ? `<span class="meeting-duration">${m.duration}</span>` : ''}
           <div class="meeting-links">${links}</div>
         </div>
         ${threadTags}
@@ -1475,6 +1491,15 @@ const pageCSS = `
 
   .meeting-type:hover {
     color: var(--green-mid);
+  }
+
+  .meeting-title {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.03em;
+    color: var(--text-muted);
+    margin-left: 0.5rem;
+    opacity: 0.85;
   }
 
   .meeting-duration {
