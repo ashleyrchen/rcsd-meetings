@@ -9,6 +9,7 @@ import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { headMeta, siteNav, siteFooter } from './html-parts.mjs';
 import { prettySchool } from './document-inventory.mjs';
+import { isSubstantiveItem } from './meeting-utils.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
@@ -178,6 +179,8 @@ const LOCALES = {
       return `${n} meetings from the BoardDocs archive.`;
     },
     agendaItemsLabel: (n) => `${n} agenda item${n === 1 ? '' : 's'}`,
+    agendaItemsLink: 'agenda items',
+    meetingsPath: 'meetings',
     otherAttachments: 'Other Attachments',
     video: 'Video',
     agenda: 'Agenda',
@@ -275,6 +278,8 @@ Comments in Spanish are welcome — an interpreter is available at every meeting
       return `${n} reuniones del archivo de BoardDocs.`;
     },
     agendaItemsLabel: (n) => `${n} punto${n === 1 ? '' : 's'} de agenda`,
+    agendaItemsLink: 'puntos de agenda',
+    meetingsPath: 'reuniones',
     otherAttachments: 'Otros Anexos',
     video: 'Video',
     agenda: 'Agenda',
@@ -562,194 +567,8 @@ function highlightSummary(text) {
   return html;
 }
 
-// ---- Agenda item rendering ----
-// Render expandable agenda items
-// Filter to substantive items only (skip procedural boilerplate and routine consent items)
-// Works with both old schema (order/category/actionType) and new formal schema (itemLabel/isSection)
-function isSubstantiveItem(item) {
-  const title = (item.title || '').toLowerCase();
-  const cat = (item.category || '').toLowerCase();
-  const actionType = item.actionType || '';
 
-  // Always show items that have public comment speaker data
-  if (item.publicComments && item.publicComments.length > 0) return true;
-
-  // New schema: skip section headers (they're structural, not items)
-  if (item.isSection) return false;
-
-  // Always skip procedural items
-  if (actionType === 'Procedural') return false;
-
-  // Skip routine consent items, but keep high-signal ones (policies, resolutions, measures, compensation)
-  if (actionType === 'Action (Consent)') {
-    const isSignificantConsent =
-      title.includes('policy') || title.includes('bylaw') || title.includes('regulation') ||
-      title.includes('resolution') || title.includes('measure') || title.includes('bond') ||
-      title.includes('compensation') || title.includes('tentative agreement') ||
-      title.includes('charter') || title.includes('budget') || title.includes('lcap') ||
-      title.includes('spsa') || title.includes('school plan');
-    if (!isSignificantConsent) return false;
-  }
-
-  // Skip boilerplate by title
-  const skipTitles = [
-    'roll call', 'approval of agenda', 'approval of consent', 'adjourn',
-    'pledge of allegiance', 'welcome by', 'additions, deletions',
-    'changes to the agenda', 'public comment', 'oral communication',
-    'correspondence', 'possible other business', 'suggested items for future',
-    'report from board members', 'reconvene', 'return to open session',
-    'report out of closed session', 'approval of minutes',
-    'ratification of warrant', 'information on san mateo county investment',
-    'approval of personnel changes', 'changes to the board meetings calendar',
-    'rejection of claim', 'quarterly williams report',
-    'notification of remote participation', 'welcome',
-  ];
-  if (skipTitles.some(s => title.includes(s))) return false;
-
-  // Skip boilerplate categories
-  // Note: 'consent' is NOT here — the actionType check above already filters routine
-  // consent items while keeping significant ones (policies, resolutions, etc.)
-  const skipCats = [
-    'call to order', 'oral communication', 'reconvene', 'welcome',
-    'pledge of allegiance', 'adjournment', 'closed session', 'report out',
-  ];
-  if (skipCats.some(s => cat.includes(s))) return false;
-
-  // Skip routine consent-style items: individual contract/agreement approvals,
-  // bid awards, service agreements (keep resolutions, plans, presentations)
-  const isRoutineApproval =
-    (title.startsWith('approval of the agreement') ||
-     title.startsWith('approval of agreement') ||
-     title.startsWith('approval of service agreement') ||
-     title.startsWith('approval of the memorandum') ||
-     title.startsWith('award of bid') ||
-     title.startsWith('approval of the ') && title.includes(' quote'));
-  // But keep items with "resolution", "plan", "report", "presentation", "budget", "lcap"
-  const isHighSignal =
-    title.includes('resolution') || title.includes('plan') ||
-    title.includes('budget') || title.includes('lcap') ||
-    title.includes('presentation') || title.includes('measure') ||
-    title.includes('parcel tax') || title.includes('bond') ||
-    title.includes('charter') || title.includes('superintendent') ||
-    title.includes('facilities master') || title.includes('tentative agreement');
-  if (isRoutineApproval && !isHighSignal) return false;
-
-  // Skip very short titles (likely procedural)
-  if (item.title && item.title.length <= 10) return false;
-
-  return true;
-}
-
-function renderAgendaItems(m) {
-  if (!m.items || m.items.length === 0) return '';
-
-  // Filter to substantive items for both sources
-  const items = m.items.filter(isSubstantiveItem);
-
-  if (items.length === 0) return '';
-
-  let itemsHtml = '';
-  for (const item of items) {
-    const title = item.title || '';
-
-    // Use itemLabel (new schema) or order (legacy) for display
-    const label = item.itemLabel || item.order || '';
-    const order = label ? `<span class="agenda-item-order">${escapeHtml(String(label))}</span>` : '';
-    const typeLabel = item.actionType && item.actionType !== 'Information' ?
-      `<span class="agenda-item-type">${escapeHtml(item.actionType)}</span>` : '';
-
-    // Timestamp / chapter phase links
-    let tsLink = '';
-    const ytBase = m.youtube ? `https://www.youtube.com/watch?v=${m.youtube}` : '';
-    if (item.phases && ytBase) {
-      // Rich chapter markers: show phase links
-      const phases = item.phases;
-      const phaseLinks = [];
-      if (phases.opened != null) {
-        phaseLinks.push(`<a class="agenda-phase agenda-phase-start" href="${ytBase}&t=${phases.opened}" target="_blank" rel="noopener">${formatTS(phases.opened)}</a>`);
-      }
-      if (phases.presentation != null) {
-        phaseLinks.push(`<a class="agenda-phase" href="${ytBase}&t=${phases.presentation}" target="_blank" rel="noopener">${L.lang === 'es' ? 'Presentación' : 'Presentation'}</a>`);
-      }
-      if (phases.discussion != null) {
-        phaseLinks.push(`<a class="agenda-phase" href="${ytBase}&t=${phases.discussion}" target="_blank" rel="noopener">${L.lang === 'es' ? 'Discusión' : 'Discussion'}</a>`);
-      }
-      if (phases.publicComment != null) {
-        phaseLinks.push(`<a class="agenda-phase" href="${ytBase}&t=${phases.publicComment}" target="_blank" rel="noopener">${L.lang === 'es' ? 'Comentario público' : 'Public Comment'}</a>`);
-      }
-      if (phases.vote != null) {
-        const voteSec = typeof phases.vote === 'object' ? phases.vote.seconds : phases.vote;
-        const voteResult = typeof phases.vote === 'object' && phases.vote.result ? ` (${phases.vote.result})` : '';
-        if (voteSec != null) {
-          phaseLinks.push(`<a class="agenda-phase agenda-phase-vote" href="${ytBase}&t=${voteSec}" target="_blank" rel="noopener">${L.lang === 'es' ? 'Voto' : 'Vote'}${voteResult}</a>`);
-        }
-      }
-      if (phaseLinks.length > 0) {
-        tsLink = `<span class="agenda-phases">${phaseLinks.join(' ')}</span>`;
-      }
-    } else if (item.timestampSeconds != null && ytBase) {
-      // Legacy single timestamp
-      tsLink = `<a class="agenda-timestamp" href="${ytBase}&t=${item.timestampSeconds}" target="_blank" rel="noopener">${escapeHtml(item.timestamp)}</a>`;
-    }
-
-    itemsHtml += `<div class="agenda-item">${order}${tsLink}${escapeHtml(title)}${typeLabel}</div>`;
-
-    // Bilingual subtitle on Spanish page
-    if (L.lang === 'es' && agendaTitlesEs[title]) {
-      itemsHtml += `<div class="agenda-item-es">${escapeHtml(agendaTitlesEs[title])}</div>`;
-    }
-
-    // Render public comment speakers
-    if (item.publicComments && item.publicComments.length > 0) {
-      itemsHtml += '<div class="agenda-public-comments">';
-      const commentLabel = L.lang === 'es' ? 'Comentarios públicos' : 'Public comments';
-      itemsHtml += `<div class="agenda-public-comments-label">${commentLabel} (${item.publicComments.length}):</div>`;
-      for (const pc of item.publicComments) {
-        const name = escapeHtml(pc.name || (L.lang === 'es' ? 'Hablante no identificado' : 'Unidentified speaker'));
-        const duration = pc.endSeconds && pc.startSeconds
-          ? ` (${formatDuration(pc.endSeconds - pc.startSeconds)})`
-          : '';
-        let speakerLink = name;
-        if (pc.startSeconds != null && ytBase) {
-          speakerLink = `<a class="agenda-phase" href="${ytBase}&t=${pc.startSeconds}" target="_blank" rel="noopener">${name}</a>`;
-        }
-        const summary = pc.summary ? ` — ${escapeHtml(pc.summary)}` : '';
-        itemsHtml += `<div class="agenda-public-comment">${speakerLink}${duration}${summary}</div>`;
-      }
-      itemsHtml += '</div>';
-    }
-
-    // Render attachments
-    if (item.attachments && item.attachments.length > 0) {
-      itemsHtml += '<div class="agenda-attachments">';
-      for (const att of item.attachments) {
-        const name = att.title || att.name || 'Attachment';
-        const r2Path = att.aid && aidToR2Path[att.aid];
-        const href = att.href || (r2Path ? `${R2_BASE}/${r2Path}` : (att.aid ? `https://simbli.eboardsolutions.com/Meetings/Attachment.aspx?S=36030397&AID=${att.aid}&MID=${m.mid}` : '#'));
-        const size = att.size ? ` <span class="agenda-attachment-size">(${att.size})</span>` : '';
-        itemsHtml += `<a class="agenda-attachment" href="${escapeHtml(href)}" target="_blank" rel="noopener">${escapeHtml(name)}${size}</a>`;
-      }
-      itemsHtml += '</div>';
-    }
-  }
-
-  // Render extra (unmatched) attachments at meeting level
-  if (m.extraAttachments && m.extraAttachments.length > 0) {
-    itemsHtml += `<div class="agenda-item" style="opacity:0.7">${L.otherAttachments}</div>`;
-    itemsHtml += '<div class="agenda-attachments">';
-    for (const att of m.extraAttachments) {
-      const name = att.title || 'Attachment';
-      const r2Path = att.aid && aidToR2Path[att.aid];
-      const href = att.href || (r2Path ? `${R2_BASE}/${r2Path}` : (att.aid ? `https://simbli.eboardsolutions.com/Meetings/Attachment.aspx?S=36030397&AID=${att.aid}&MID=${m.mid}` : '#'));
-      itemsHtml += `<a class="agenda-attachment" href="${escapeHtml(href)}" target="_blank" rel="noopener">${escapeHtml(name)}</a>`;
-    }
-    itemsHtml += '</div>';
-  }
-
-  if (!itemsHtml) return '';
-
-  return `<div class="meeting-agenda-items open">${itemsHtml}</div>`;
-}
+// isSubstantiveItem imported from meeting-utils.mjs
 
 // Render a single meeting row
 // Classify meeting type for visual treatment
@@ -829,16 +648,15 @@ function renderMeeting(m) {
     ? `<p class="meeting-summary">${highlightSummary(summary)}</p>`
     : '';
 
-  // Agenda items in accordion
-  const agendaSection = renderAgendaItems(m);
+  // Linked item count (detail page has full agenda)
   const itemCount = (m.items || []).filter(isSubstantiveItem).length;
-  const accordionHtml = agendaSection
-    ? `<details class="meeting-details"><summary class="meeting-details-toggle">${L.agendaItemsLabel(itemCount)}</summary>${agendaSection}</details>`
-    : '';
 
   // For multi-meeting dates, link to slug-based path; for single, use date
   const sameDateCount = data.meetings.filter(x => x.date === m.date).length;
-  const viewerHref = sameDateCount > 1 ? `/meetings/${m.slug}/` : `/meetings/${m.date}/`;
+  const viewerHref = sameDateCount > 1 ? `/${L.meetingsPath}/${m.slug}/` : `/${L.meetingsPath}/${m.date}/`;
+  const itemCountHtml = itemCount > 0
+    ? `<a href="${viewerHref}#agenda" class="meeting-item-count">${itemCount} ${L.agendaItemsLink} &#8594;</a>`
+    : '';
 
   return `    <div class="meeting-row${sparseClass}${typeModifier}"${threadAttrs}${schoolAttrs}${topicAttrs}>
       <a href="${viewerHref}" class="meeting-date">
@@ -853,7 +671,7 @@ function renderMeeting(m) {
         </div>
         ${threadTags}
         ${summaryHtml}
-        ${accordionHtml}
+        ${itemCountHtml}
       </div>
     </div>`;
 }
@@ -956,14 +774,13 @@ function renderUpcomingSection() {
       ? `<p class="meeting-summary">${highlightSummary(summary)}</p>`
       : '';
 
-    const agendaSection = renderAgendaItems(m);
     const itemCount = (m.items || []).filter(isSubstantiveItem).length;
-    const accordionHtml = agendaSection
-      ? `<details class="meeting-details"><summary class="meeting-details-toggle">${L.agendaItemsLabel(itemCount)}</summary>${agendaSection}</details>`
-      : '';
 
     const sameDateCount = data.meetings.filter(x => x.date === m.date).length;
-    const viewerHref = sameDateCount > 1 ? `/meetings/${m.slug}/` : `/meetings/${m.date}/`;
+    const viewerHref = sameDateCount > 1 ? `/${L.meetingsPath}/${m.slug}/` : `/${L.meetingsPath}/${m.date}/`;
+    const itemCountHtml = itemCount > 0
+      ? `<a href="${viewerHref}#agenda" class="meeting-item-count">${itemCount} ${L.agendaItemsLink} &#8594;</a>`
+      : '';
 
     cards += `    <div class="meeting-row${typeModifier}"${threadAttrs}${schoolAttrs}${topicAttrs}>
       <a href="${viewerHref}" class="meeting-date">
@@ -979,7 +796,7 @@ function renderUpcomingSection() {
           <div class="meeting-links">${links}</div>
         </div>
         ${summaryHtml}
-        ${accordionHtml}
+        ${itemCountHtml}
       </div>
     </div>`;
   }
@@ -1575,167 +1392,18 @@ const pageCSS = `
     color: #2d6b6b;
   }
 
-  /* ---- AGENDA ITEMS ---- */
-  .meeting-agenda-items {
-    display: block;
-    margin-top: 0.5rem;
-    padding-left: 0;
-    list-style: none;
-    border-left: 2px solid var(--rule-light);
-    padding-left: 0.8rem;
-  }
-
-  .agenda-category {
+  /* ---- AGENDA ITEM COUNT LINK ---- */
+  .meeting-item-count {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.6rem;
-    font-weight: 500;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    margin-top: 0.6rem;
-    margin-bottom: 0.15rem;
-  }
-
-  .agenda-category:first-child {
-    margin-top: 0;
-  }
-
-  .agenda-item {
-    font-size: 0.82rem;
-    color: var(--text-secondary);
-    line-height: 1.45;
-    padding: 0.15rem 0;
-  }
-
-  .agenda-item-es {
-    font-size: 0.75rem;
-    color: var(--text-muted);
-    font-style: italic;
-    padding: 0 0 0.1rem 1.8rem;
-    line-height: 1.35;
-  }
-
-  .agenda-item-order {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.65rem;
-    color: var(--text-muted);
-    margin-right: 0.3rem;
-  }
-
-  .agenda-item-type {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.55rem;
-    color: var(--text-muted);
-    background: var(--cream-dark);
-    padding: 0.05rem 0.3rem;
-    border-radius: 2px;
-    margin-left: 0.3rem;
-    vertical-align: middle;
-  }
-
-  .agenda-public-comments {
-    padding-left: 1.8rem;
-    margin: 0.15rem 0 0.3rem;
-  }
-
-  .agenda-public-comments-label {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.6rem;
-    color: var(--text-muted);
-    font-weight: 600;
-    margin-bottom: 0.1rem;
-  }
-
-  .agenda-public-comment {
-    font-family: 'Newsreader', serif;
     font-size: 0.7rem;
-    line-height: 1.5;
-    color: var(--text-secondary);
-    padding-left: 0.5rem;
-    border-left: 2px solid var(--cream-dark);
-    margin-bottom: 0.2rem;
-  }
-
-  .agenda-public-comment a {
-    font-weight: 600;
-    color: var(--green-mid);
-    text-decoration: none;
-  }
-
-  .agenda-public-comment a:hover {
-    color: var(--green-deep);
-    text-decoration: underline;
-  }
-
-  .agenda-attachments {
-    padding-left: 1.8rem;
-    margin: 0.15rem 0 0.3rem;
-  }
-
-  .agenda-attachment {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.6rem;
-    line-height: 1.6;
-    color: var(--green-mid);
+    color: var(--text-muted);
     text-decoration: none;
     display: block;
+    margin-top: 0.3rem;
   }
-
-  .agenda-attachment:hover {
-    color: var(--green-deep);
+  .meeting-item-count:hover {
+    color: var(--green-mid);
     text-decoration: underline;
-  }
-
-  .agenda-attachment-size {
-    color: var(--text-muted);
-    font-size: 0.55rem;
-  }
-
-  .agenda-timestamp {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.6rem;
-    color: var(--coral);
-    text-decoration: none;
-    margin-right: 0.4rem;
-    white-space: nowrap;
-  }
-
-  .agenda-timestamp:hover {
-    color: var(--green-deep);
-    text-decoration: underline;
-  }
-
-  .agenda-phases {
-    display: inline-flex;
-    gap: 0.25rem;
-    margin-right: 0.4rem;
-    flex-shrink: 0;
-  }
-
-  .agenda-phase {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.55rem;
-    color: var(--coral);
-    text-decoration: none;
-    padding: 0.05rem 0.25rem;
-    border: 1px solid var(--green-pale);
-    border-radius: 3px;
-    white-space: nowrap;
-  }
-
-  .agenda-phase:hover {
-    color: var(--green-deep);
-    border-color: var(--green-deep);
-    text-decoration: none;
-  }
-
-  .agenda-phase-start {
-    font-weight: 600;
-  }
-
-  .agenda-phase-vote {
-    color: var(--green-deep);
-    font-weight: 600;
   }
 
   .meeting-date {
@@ -1972,39 +1640,6 @@ const pageCSS = `
   .meeting-summary strong {
     color: var(--text);
     font-weight: 500;
-  }
-
-  .meeting-details {
-    margin-top: 0.5rem;
-  }
-
-  .meeting-details-toggle {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.65rem;
-    letter-spacing: 0.02em;
-    color: var(--text-muted);
-    cursor: pointer;
-    user-select: none;
-    list-style: none;
-    padding: 0.3rem 0;
-  }
-
-  .meeting-details-toggle::-webkit-details-marker { display: none; }
-  .meeting-details-toggle::marker { display: none; content: ''; }
-
-  .meeting-details-toggle::before {
-    content: '\\25B8';
-    display: inline-block;
-    margin-right: 0.3rem;
-    transition: transform 0.15s;
-  }
-
-  .meeting-details[open] > .meeting-details-toggle::before {
-    transform: rotate(90deg);
-  }
-
-  .meeting-details-toggle:hover {
-    color: var(--green-mid);
   }
 
   /* ---- RESOURCE GRID ---- */
