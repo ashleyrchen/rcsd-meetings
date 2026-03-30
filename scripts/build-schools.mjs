@@ -105,16 +105,16 @@ const SCHOOL_PRESENTATIONS = {
     videoUrl: 'https://www.youtube.com/watch?v=5WLS-u2miac&t=2312',
   },
   'clifford': {
-    date: '2025-03-26',
-    year: '2024-25',
-    pdfUrl: 'https://go.boarddocs.com/ca/redwood/Board.nsf/files/DF4SDZ723F29/$file/Clifford%2024-25%20Data%20for%20Board%20presentation%20%5BUpdated%202025.03.25%5D.pdf',
-    videoUrl: 'https://www.youtube.com/watch?v=JNqq_NcFXuc&t=96',
+    date: '2026-04-01',
+    year: '2025-26',
+    pdfUrl: 'https://data.rcsd.info/board-packets/2026-04-01/Clifford-25-26-Data-for-Board-presentation.pdf',
+    videoUrl: null, // Meeting not yet held
   },
   'garfield': {
-    date: '2023-11-08',
-    year: '2023-24',
-    pdfUrl: 'https://go.boarddocs.com/ca/redwood/Board.nsf/files/CX5UVX7DF620/$file/Garfield%20Board%20Report%202023-2024.pdf',
-    videoUrl: null,
+    date: '2026-03-25',
+    year: '2025-26',
+    pdfUrl: 'https://data.rcsd.info/board-packets/2026-03-25/Garfield-25-26-Data-for-Board-presentation-DRAFT.pdf',
+    videoUrl: null, // Video not yet posted
   },
   'henry-ford': {
     date: '2025-03-12',
@@ -159,16 +159,16 @@ const SCHOOL_PRESENTATIONS = {
     videoUrl: null, // Video not yet available
   },
   'roy-cloud': {
-    date: '2025-02-05',
-    year: '2024-25',
-    pdfUrl: 'https://go.boarddocs.com/ca/redwood/Board.nsf/files/DDD33H04E6B6/$file/Roy%20cloud%2024-25%20Data%20for%20Board%20presentation.pdf',
-    videoUrl: 'https://www.youtube.com/watch?v=yoUvmhll1uk&t=5666',
+    date: '2026-04-01',
+    year: '2025-26',
+    pdfUrl: 'https://data.rcsd.info/board-packets/2026-04-01/Roy-cloud-25-26-Data-for-Board-presentation-1.pdf',
+    videoUrl: null, // Meeting not yet held
   },
   'taft': {
-    date: '2025-01-08',
-    year: '2024-25',
-    pdfUrl: 'https://go.boarddocs.com/ca/redwood/Board.nsf/files/DC3SXY74E1D8/$file/Taft%2024-25%20Data%20for%20Board%20presentation.pdf',
-    videoUrl: 'https://www.youtube.com/watch?v=5WLS-u2miac&t=2312',
+    date: '2026-03-25',
+    year: '2025-26',
+    pdfUrl: 'https://data.rcsd.info/board-packets/2026-03-25/Taft-25-26-Board-Presentation.pdf',
+    videoUrl: null, // Video not yet posted
   },
 };
 
