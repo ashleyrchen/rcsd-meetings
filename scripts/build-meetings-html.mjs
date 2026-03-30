@@ -828,7 +828,6 @@ function renderUpcomingSection() {
           <span class="meeting-type">${escapeHtml(L.meetingTypes['Board Meeting'] || 'Board Meeting')}</span>
           <span class="upcoming-badge upcoming-badge--provisional">${L.badgeUpcoming}</span>
           <div class="meeting-links">
-            <a href="${simbliListingUrl}" class="meeting-link meeting-link--agenda" target="_blank" rel="noopener">&#8599; Simbli</a>
           </div>
         </div>
         ${topicHtml}
