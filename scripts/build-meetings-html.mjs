@@ -680,7 +680,7 @@ function renderMeeting(m) {
 const OFFICER_ROTATIONS = [
   {
     afterDate: '2025-12-17',
-    previous: { president: 'Mike Wells', vp: 'David Weekly', clerk: 'Cecilia I. Márquez' },
+    previous: { president: 'David Weekly', vp: 'Cecilia I. Márquez', clerk: 'Ng Kwing King' },
   },
   {
     afterDate: '2024-12-17',
