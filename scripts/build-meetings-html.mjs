@@ -188,7 +188,7 @@ const LOCALES = {
     transcript: 'Transcript',
     joinZoom: 'Join via Zoom',
     rotationTitle: 'Annual Officer Rotation \u00b7 Per Board Bylaws',
-    rotationBelow: 'Meetings below:',
+    rotationBelow: 'Elected:',
     govCalTitle: 'Governance Calendar',
     govCalDesc: (dateStr) => `Planned board agenda items for the school year. From the ${dateStr} agenda.`,
     govCalLink: 'View Schedule (PDF)',
@@ -287,7 +287,7 @@ Comments in Spanish are welcome — an interpreter is available at every meeting
     transcript: 'Transcripci\u00f3n',
     joinZoom: 'Unirse por Zoom',
     rotationTitle: 'Rotaci\u00f3n Anual de Oficiales \u00b7 Seg\u00fan Estatutos de la Junta',
-    rotationBelow: 'Reuniones a continuaci\u00f3n:',
+    rotationBelow: 'Elegidos:',
     govCalTitle: 'Calendario de Gobernanza',
     govCalDesc: (dateStr) => `Puntos de agenda planificados para el a\u00f1o escolar. De la agenda del ${dateStr}.`,
     govCalLink: 'Ver Calendario (PDF)',
@@ -844,13 +844,13 @@ ${cards}
 function renderSchoolYear(id, title, meetings, subtitle, collapsed = false) {
   const meetingRows = [];
   for (const m of meetings) {
-    meetingRows.push(renderMeeting(m));
-    // Insert rotation divider after the rotation meeting
+    // Insert rotation divider before the meeting where rotation occurred
     for (const rot of OFFICER_ROTATIONS) {
       if (m.date === rot.afterDate) {
         meetingRows.push(renderRotationDivider(rot));
       }
     }
+    meetingRows.push(renderMeeting(m));
   }
 
   if (collapsed) {
