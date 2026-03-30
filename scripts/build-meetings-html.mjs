@@ -17,6 +17,59 @@ const R2_BASE = 'https://data.rcsd.info';
 
 const data = JSON.parse(readFileSync(resolve(ROOT, 'data/meetings-data.json'), 'utf-8'));
 
+// Load district calendars to find board meeting dates
+const districtCalendars = [];
+for (const suffix of ['2025-26', '2026-27']) {
+  const p = resolve(ROOT, `data/district-calendar-${suffix}.json`);
+  if (existsSync(p)) {
+    districtCalendars.push(JSON.parse(readFileSync(p, 'utf-8')));
+  }
+}
+
+// Load governance calendar for provisional topic descriptions
+const govCalPath = resolve(ROOT, 'data/governance-calendar.json');
+let govCalTopics = {};
+if (existsSync(govCalPath)) {
+  const gc = JSON.parse(readFileSync(govCalPath, 'utf-8'));
+  govCalTopics = gc.provisionalTopics || {};
+  console.log(`Loaded ${Object.keys(govCalTopics).length} provisional topic entries`);
+}
+
+// Today's date string (YYYY-MM-DD) for upcoming meeting logic
+const todayStr = new Date().toISOString().slice(0, 10);
+
+// Collect all board meeting dates from district calendars that are today or in the future
+const futureBoardMeetingDates = [];
+for (const cal of districtCalendars) {
+  for (const evt of cal.events) {
+    if (evt.type === 'board-meeting' && evt.date >= todayStr) {
+      futureBoardMeetingDates.push(evt.date);
+    }
+  }
+}
+futureBoardMeetingDates.sort(); // chronological
+
+// Build a Set of meeting dates that exist in meetings-data.json (agenda published)
+const publishedMeetingDates = new Set(data.meetings.map(m => m.date));
+
+// Categorize upcoming meetings into two tiers
+const upcomingPublished = []; // meetings with agendas in meetings-data.json
+const upcomingProvisional = []; // calendar dates without published agendas
+for (const dateStr of futureBoardMeetingDates) {
+  if (publishedMeetingDates.has(dateStr)) {
+    // Find the actual meeting objects for this date
+    const meetings = data.meetings.filter(m => m.date === dateStr);
+    upcomingPublished.push(...meetings);
+  } else {
+    upcomingProvisional.push(dateStr);
+  }
+}
+
+// Set of all upcoming meeting dates (both tiers) to exclude from school year sections
+const upcomingDates = new Set(futureBoardMeetingDates);
+
+console.log(`Upcoming meetings: ${upcomingPublished.length} published, ${upcomingProvisional.length} provisional`);
+
 // Load optional hand-crafted summaries (override auto-generated)
 const summariesByLang = {};
 for (const [suffix, lang] of [['', 'en'], ['-es', 'es']]) {
@@ -163,6 +216,11 @@ Comments in Spanish are welcome — an interpreter is available at every meeting
     footerDistrict: 'District Summary',
     footerDistrito: 'Resumen del Distrito',
     meetingTypes: {},
+    upcomingTitle: 'Upcoming Meetings',
+    upcomingSubtitle: 'Board meetings scheduled for the coming weeks.',
+    badgeAgendaPosted: 'Agenda Posted',
+    badgeUpcoming: 'Upcoming',
+    plannedPrefix: 'Planned:',
     altLangLink: 'Reuniones (Espa\u00f1ol)',
     altLangHref: '/reuniones/',
     outFile: 'docs/meetings/index.html',
@@ -263,6 +321,11 @@ Los comentarios en espa\u00f1ol son bienvenidos \u2014 hay un int\u00e9rprete di
       'Retreat (Offsite)': 'Retiro',
       'Board Meeting': 'Reuni\u00f3n de la Junta',
     },
+    upcomingTitle: 'Pr\u00f3ximas Reuniones',
+    upcomingSubtitle: 'Reuniones de la junta programadas para las pr\u00f3ximas semanas.',
+    badgeAgendaPosted: 'Agenda Publicada',
+    badgeUpcoming: 'Pr\u00f3xima',
+    plannedPrefix: 'Planificado:',
     altLangLink: 'Meetings (English)',
     altLangHref: '/meetings/',
     outFile: 'docs/reuniones/index.html',
@@ -842,6 +905,122 @@ function renderRotationDivider(rotation) {
         ${L.rotationBelow} ${officers}${note}
       </div>
     </div>`;
+}
+
+// Render the "Upcoming Meetings" section with two tiers
+function renderUpcomingSection() {
+  if (upcomingPublished.length === 0 && upcomingProvisional.length === 0) return '';
+
+  const simbliListingUrl = 'https://simbli.eboardsolutions.com/SB_Meetings/SB_MeetingListing.aspx?S=36030397';
+
+  let cards = '';
+
+  // Tier 1: Published meetings (agenda available) — render like regular meeting cards with badge
+  for (const m of upcomingPublished) {
+    const { month, day, year } = formatDateBadge(m.date);
+    const threadAttrs = m.threads.length ? ` data-threads="${m.threads.join(' ')}"` : '';
+    const mSchools = meetingSchools[m.date] || new Set();
+    const mTopics = meetingTopics[m.date] || new Set();
+    const schoolAttrs = mSchools.size ? ` data-schools="${[...mSchools].join(' ')}"` : '';
+    const topicAttrs = mTopics.size ? ` data-topics="${[...mTopics].join(' ')}"` : '';
+    const typeClass = meetingTypeClass(m.type);
+    const typeModifier = typeClass ? ` meeting-row--${typeClass}` : '';
+
+    // Build links (same as renderMeeting)
+    const slug = agendaSlug(m.type);
+    const agendaFile = `${m.date}-${slug}.pdf`;
+    const hasR2Agenda = agendaFiles.has(agendaFile);
+    const minutesFile = minutesFiles.has(`${m.date}-minutes.pdf`) ? `${m.date}-minutes.pdf` : null;
+
+    let links = '';
+    if (m.zoom) {
+      links += `<a href="${escapeHtml(m.zoom)}" class="meeting-link meeting-link--zoom" data-zoom-date="${m.date}" target="_blank" rel="noopener">&#9678; ${L.joinZoom}</a>`;
+    }
+    if (m.youtube) {
+      links += `<a href="https://www.youtube.com/watch?v=${m.youtube}" class="meeting-link meeting-link--video" target="_blank" rel="noopener">&#9654; ${L.video}</a>`;
+    }
+    if (hasR2Agenda) {
+      links += `<a href="${R2_BASE}/agendas/${agendaFile}" class="meeting-link meeting-link--agenda" target="_blank" rel="noopener">&#128196; ${L.agenda}</a>`;
+    } else if (m.simbli) {
+      links += `<a href="${escapeHtml(m.simbli)}" class="meeting-link meeting-link--agenda" target="_blank" rel="noopener">&#8599; ${L.agenda}</a>`;
+    }
+    if (minutesFile) {
+      links += `<a href="${R2_BASE}/minutes/${minutesFile}" class="meeting-link meeting-link--minutes" target="_blank" rel="noopener">&#128196; ${L.minutes}</a>`;
+    }
+    if (m.hasTranscript) {
+      links += `<a href="/meetings/${m.date}/" class="meeting-link meeting-link--transcript">&#128221; ${L.transcript}</a>`;
+    }
+
+    const summary = generateSummary(m);
+    const summaryHtml = summary
+      ? `<p class="meeting-summary">${highlightSummary(summary)}</p>`
+      : '';
+
+    const agendaSection = renderAgendaItems(m);
+    const itemCount = (m.items || []).filter(isSubstantiveItem).length;
+    const accordionHtml = agendaSection
+      ? `<details class="meeting-details"><summary class="meeting-details-toggle">${L.agendaItemsLabel(itemCount)}</summary>${agendaSection}</details>`
+      : '';
+
+    const sameDateCount = data.meetings.filter(x => x.date === m.date).length;
+    const viewerHref = sameDateCount > 1 ? `/meetings/${m.slug}/` : `/meetings/${m.date}/`;
+
+    cards += `    <div class="meeting-row${typeModifier}"${threadAttrs}${schoolAttrs}${topicAttrs}>
+      <a href="${viewerHref}" class="meeting-date">
+        <span class="meeting-date-month">${month}</span>
+        <span class="meeting-date-day">${day}</span>
+        <span class="meeting-date-year">${year}</span>
+      </a>
+      <div class="meeting-body">
+        <div class="meeting-header">
+          <a href="${viewerHref}" class="meeting-type">${escapeHtml(L.meetingTypes[m.type] || m.type)}</a>
+          <span class="upcoming-badge upcoming-badge--published">${L.badgeAgendaPosted}</span>
+          ${m.duration ? `<span class="meeting-duration">${m.duration}</span>` : ''}
+          <div class="meeting-links">${links}</div>
+        </div>
+        ${summaryHtml}
+        ${accordionHtml}
+      </div>
+    </div>`;
+  }
+
+  // Tier 2: Provisional meetings (no agenda yet) — show date and planned topics
+  for (const dateStr of upcomingProvisional) {
+    const { month, day, year } = formatDateBadge(dateStr);
+    const topics = govCalTopics[dateStr];
+    const topicText = topics ? topics[L.lang] || topics.en : null;
+
+    const topicHtml = topicText
+      ? `<p class="meeting-summary upcoming-provisional-topics"><em>${L.plannedPrefix} ${escapeHtml(topicText)}</em></p>`
+      : '';
+
+    cards += `    <div class="meeting-row upcoming-provisional">
+      <div class="meeting-date">
+        <span class="meeting-date-month">${month}</span>
+        <span class="meeting-date-day">${day}</span>
+        <span class="meeting-date-year">${year}</span>
+      </div>
+      <div class="meeting-body">
+        <div class="meeting-header">
+          <span class="meeting-type">${escapeHtml(L.meetingTypes['Board Meeting'] || 'Board Meeting')}</span>
+          <span class="upcoming-badge upcoming-badge--provisional">${L.badgeUpcoming}</span>
+          <div class="meeting-links">
+            <a href="${simbliListingUrl}" class="meeting-link meeting-link--agenda" target="_blank" rel="noopener">&#8599; Simbli</a>
+          </div>
+        </div>
+        ${topicHtml}
+      </div>
+    </div>`;
+  }
+
+  return `<section class="section upcoming-section" id="upcoming">
+  <div class="section-rule"></div>
+  <h2>${L.upcomingTitle}</h2>
+  <p class="section-subtitle">${L.upcomingSubtitle}</p>
+  <div class="meeting-list">
+${cards}
+  </div>
+</section>`;
 }
 
 // Render a school year section
@@ -1887,6 +2066,53 @@ const pageCSS = `
     .thread-btn { padding: 0.45rem 0.75rem; font-size: 0.6rem; }
   }
 
+  /* ---- UPCOMING MEETINGS SECTION ---- */
+  .upcoming-section {
+    background: #f0f9f4;
+    border-radius: 8px;
+    padding: 2rem 1.5rem 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .upcoming-section .section-rule {
+    display: none;
+  }
+
+  .upcoming-badge {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.55rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 0.15rem 0.5rem;
+    border-radius: 3px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .upcoming-badge--published {
+    background: #d1fae5;
+    color: #065f46;
+    border: 1px solid #a7f3d0;
+  }
+
+  .upcoming-badge--provisional {
+    background: #fef3c7;
+    color: #92400e;
+    border: 1px solid #fde68a;
+  }
+
+  .upcoming-provisional {
+    opacity: 0.75;
+  }
+
+  .upcoming-provisional:hover {
+    opacity: 0.9;
+  }
+
+  .upcoming-provisional-topics {
+    color: var(--text-muted);
+  }
+
   /* page-specific footer overrides */
   .site-footer { font-size: 0.8rem; text-align: left; }
   .footer-nav { margin-top: 1rem; }
@@ -1963,7 +2189,7 @@ ${siteNav({ activePage: 'meetings', lang: L.lang, altLangHref: L.altLangHref })}
 <nav class="toc">
   <div class="toc-inner">
     <a href="#threads">${L.navTopics}</a>
-    ${schoolYears.map(([sy]) => `<a href="#sy${sy}">${sy.slice(0,4)}-${sy.slice(4)}</a>`).join('\n    ')}
+    ${(upcomingPublished.length > 0 || upcomingProvisional.length > 0) ? '<a href="#upcoming">' + L.upcomingTitle + '</a>\n    ' : ''}${schoolYears.map(([sy]) => `<a href="#sy${sy}">${sy.slice(0,4)}-${sy.slice(4)}</a>`).join('\n    ')}
     <a href="#resources">${L.navResources}</a>
   </div>
 </nav>
@@ -1982,10 +2208,15 @@ ${renderThreadFilters()}
   </details>
 </div>
 
+${renderUpcomingSection()}
+
 ${schoolYears.map(([sy, meetings]) => {
+  // Filter out meetings that appear in the Upcoming section to avoid duplication
+  const filtered = meetings.filter(m => !upcomingDates.has(m.date));
+  if (filtered.length === 0) return '';
   const expanded = sy === '202526' || sy === '202425';
-  return renderSchoolYear(`sy${sy}`, L.schoolYearTitle(sy), meetings, L.schoolYearSubtitle(sy, meetings.length), !expanded);
-}).join('\n\n')}
+  return renderSchoolYear(`sy${sy}`, L.schoolYearTitle(sy), filtered, L.schoolYearSubtitle(sy, filtered.length), !expanded);
+}).filter(Boolean).join('\n\n')}
 
 ${renderResources(data)}
 </main>

@@ -1058,6 +1058,53 @@
     .thread-btn { padding: 0.45rem 0.75rem; font-size: 0.6rem; }
   }
 
+  /* ---- UPCOMING MEETINGS SECTION ---- */
+  .upcoming-section {
+    background: #f0f9f4;
+    border-radius: 8px;
+    padding: 2rem 1.5rem 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .upcoming-section .section-rule {
+    display: none;
+  }
+
+  .upcoming-badge {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.55rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 0.15rem 0.5rem;
+    border-radius: 3px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .upcoming-badge--published {
+    background: #d1fae5;
+    color: #065f46;
+    border: 1px solid #a7f3d0;
+  }
+
+  .upcoming-badge--provisional {
+    background: #fef3c7;
+    color: #92400e;
+    border: 1px solid #fde68a;
+  }
+
+  .upcoming-provisional {
+    opacity: 0.75;
+  }
+
+  .upcoming-provisional:hover {
+    opacity: 0.9;
+  }
+
+  .upcoming-provisional-topics {
+    color: var(--text-muted);
+  }
+
   /* page-specific footer overrides */
   .site-footer { font-size: 0.8rem; text-align: left; }
   .footer-nav { margin-top: 1rem; }
@@ -1134,6 +1181,7 @@
 <nav class="toc">
   <div class="toc-inner">
     <a href="#threads">Key Topics</a>
+    <a href="#upcoming">Upcoming Meetings</a>
     <a href="#sy202526">2025-26</a>
     <a href="#sy202425">2024-25</a>
     <a href="#sy202324">2023-24</a>
@@ -1263,10 +1311,10 @@ Comments in Spanish are welcome — an interpreter is available at every meeting
   </details>
 </div>
 
-<section class="section" id="sy202526">
+<section class="section upcoming-section" id="upcoming">
   <div class="section-rule"></div>
-  <h2>2025–26 School Year</h2>
-  <p class="section-subtitle">26 meetings from June 2025 to present. Full agendas and video available.</p>
+  <h2>Upcoming Meetings</h2>
+  <p class="section-subtitle">Board meetings scheduled for the coming weeks.</p>
   <div class="meeting-list">
     <div class="meeting-row" data-threads="policy" data-schools="clifford kennedy mckinley-mit roy-cloud">
       <a href="/meetings/2026-04-01/" class="meeting-date">
@@ -1277,13 +1325,70 @@ Comments in Spanish are welcome — an interpreter is available at every meeting
       <div class="meeting-body">
         <div class="meeting-header">
           <a href="/meetings/2026-04-01/" class="meeting-type">Regular</a>
+          <span class="upcoming-badge upcoming-badge--published">Agenda Posted</span>
+          
           <div class="meeting-links"><a href="https://rcsdk8-net.zoom.us/s/83593509461" class="meeting-link meeting-link--zoom" data-zoom-date="2026-04-01" target="_blank" rel="noopener">&#9678; Join via Zoom</a><a href="https://simbli.eboardsolutions.com/SB_Meetings/ViewMeeting.aspx?S=36030397&amp;MID=51011" class="meeting-link meeting-link--agenda" target="_blank" rel="noopener">&#8599; Agenda</a></div>
         </div>
-        <div class="meeting-threads"><span class="meeting-thread-tag" data-thread="policy">Policy Updates</span></div>
         <p class="meeting-summary">Roy Cloud and Clifford school presentations with SPSA approvals. EV charger replacement agreement with PowerFlex after Shell Recharge discontinuation at six campuses. 22 CSBA employee policy updates on consent. RCTA class size presentation as information item. Kennedy Grand Canyon and MIT Treasure Island field trips.</p>
         <details class="meeting-details"><summary class="meeting-details-toggle">32 agenda items</summary><div class="meeting-agenda-items open"><div class="agenda-item"><span class="agenda-item-order">4.1</span>CONFERENCE WITH LABOR NEGOTIATORS (Gov. Code section 54957.6)</div><div class="agenda-item"><span class="agenda-item-order">9.1</span>Labor Association Comments</div><div class="agenda-item"><span class="agenda-item-order">10.1</span>Approval of the Measure T Bond Program Tracking List of Items Under $20k (Measure T)<span class="agenda-item-type">Action</span></div><div class="agenda-attachments"><a class="agenda-attachment" href="https://data.rcsd.info/board-packets/2026-04-01/RCSD-POs-20k-and-Under-Tracking-List-FY-25-26-April-1-2026.pdf" target="_blank" rel="noopener">RCSD POs $20k and Under Tracking List FY 25-26 - April 1, 2026</a></div><div class="agenda-item"><span class="agenda-item-order">12.1</span>Roy Cloud School Presentation and School Plan for Student Achievement (SPSA) Approval<span class="agenda-item-type">Action</span></div><div class="agenda-attachments"><a class="agenda-attachment" href="https://data.rcsd.info/board-packets/2026-04-01/Roy-cloud-25-26-Data-for-Board-presentation-1.pdf" target="_blank" rel="noopener">Roy cloud 25-26 Data for Board presentation (1)</a><a class="agenda-attachment" href="https://data.rcsd.info/board-packets/2026-04-01/Roy-Cloud-2025-26_SPSA_-Spring-_Roy_Cloud_Elementary_School_20260323.pdf" target="_blank" rel="noopener">Roy Cloud 2025-26_SPSA_(Spring)_Roy_Cloud_Elementary_School_20260323</a></div><div class="agenda-item"><span class="agenda-item-order">12.2</span>Clifford School Presentation and School Plan for Student Achievement (SPSA) Approval<span class="agenda-item-type">Action</span></div><div class="agenda-attachments"><a class="agenda-attachment" href="https://data.rcsd.info/board-packets/2026-04-01/Clifford-2025-26_SPSA-Spring-_Clifford_Elementary_School_20260320.pdf" target="_blank" rel="noopener">Clifford 2025-26_SPSA (Spring)_Clifford_Elementary_School_20260320</a><a class="agenda-attachment" href="https://data.rcsd.info/board-packets/2026-04-01/Clifford-25-26-Data-for-Board-presentation.pdf" target="_blank" rel="noopener">Clifford 25-26 Data for Board presentation</a></div><div class="agenda-item"><span class="agenda-item-order">14.1</span>Approval of the McKinley Institute of Technology (MIT) Field Trip Requests (2) to Treasure Island - May 20 and May 21,  2026<span class="agenda-item-type">Action</span></div><div class="agenda-attachments"><a class="agenda-attachment" href="https://data.rcsd.info/board-packets/2026-04-01/25-26-MIT.-Treasure-Island-2.pdf" target="_blank" rel="noopener">25-26 MIT. Treasure Island (2)</a></div><div class="agenda-item"><span class="agenda-item-order">14.2</span>Approval of Kennedy’s Field Trip Request to the Grand Canyon from May 13th through 22nd, 2026<span class="agenda-item-type">Action</span></div><div class="agenda-attachments"><a class="agenda-attachment" href="https://data.rcsd.info/board-packets/2026-04-01/25-26-Kennedy.-Grand-Canyon.pdf" target="_blank" rel="noopener">25-26 Kennedy. Grand Canyon</a></div><div class="agenda-item"><span class="agenda-item-order">14.4</span>Approval of Board Policy 1312.1: Complaints Concerning District Employees<span class="agenda-item-type">Action</span></div><div class="agenda-attachments"><a class="agenda-attachment" href="https://data.rcsd.info/board-packets/2026-04-01/BP-1312.1-Complaints-Concerning-District-Employees-Marked.pdf" target="_blank" rel="noopener">BP 1312.1 - Complaints Concerning District Employees - Marked</a><a class="agenda-attachment" href="https://data.rcsd.info/board-packets/2026-04-01/BP-1312.1-Complaints-Concerning-District-Employees-Clean.pdf" target="_blank" rel="noopener">BP 1312.1 - Complaints Concerning District Employees - Clean</a></div><div class="agenda-item"><span class="agenda-item-order">14.5</span>Approval of Board Policy 4030: Nondiscrimination In Employment<span class="agenda-item-type">Action</span></div><div class="agenda-attachments"><a class="agenda-attachment" href="https://data.rcsd.info/board-packets/2026-04-01/BP-4030-Nondiscrimination-In-Employment-Marked.pdf" target="_blank" rel="noopener">BP 4030 - Nondiscrimination In Employment - Marked</a><a class="agenda-attachment" href="https://data.rcsd.info/board-packets/2026-04-01/BP-4030-Nondiscrimination-In-Employment-Clean.pdf" target="_blank" rel="noopener">BP 4030 - Nondiscrimination In Employment - Clean</a></div><div class="agenda-item"><span class="agenda-item-order">14.6</span>Approval of Board Policy 4111.2: Legal Status Requirement<span class="agenda-item-type">Action</span></div><div class="agenda-attachments"><a class="agenda-attachment" href="https://data.rcsd.info/board-packets/2026-04-01/BP-4111.2-Legal-Status-Requirement-Marked.pdf" target="_blank" rel="noopener">BP 4111.2 - Legal Status Requirement - Marked</a><a class="agenda-attachment" href="https://data.rcsd.info/board-packets/2026-04-01/BP-4111.2-Legal-Status-Requirement-Clean.pdf" target="_blank" rel="noopener">BP 4111.2 - Legal Status Requirement - Clean</a></div><div class="agenda-item"><span class="agenda-item-order">14.7</span>Approval of Board Policy 4211.2: Legal Status Requirement<span class="agenda-item-type">Action</span></div><div class="agenda-attachments"><a class="agenda-attachment" href="https://data.rcsd.info/board-packets/2026-04-01/BP-4211.2-Legal-Status-Requirement-Marked.pdf" target="_blank" rel="noopener">BP 4211.2 - Legal Status Requirement - Marked</a><a class="agenda-attachment" href="https://data.rcsd.info/board-packets/2026-04-01/BP-4211.2-Legal-Status-Requirement-Clean.pdf" target="_blank" rel="noopener">BP 4211.2 - Legal Status Requirement - Clean</a></div><div class="agenda-item"><span class="agenda-item-order">14.8</span>Approval of Board Policy 4311.2: Legal Status Requirement<span class="agenda-item-type">Action</span></div><div class="agenda-attachments"><a class="agenda-attachment" href="https://data.rcsd.info/board-packets/2026-04-01/BP-4311.2-Legal-Status-Requirement-Marked.pdf" target="_blank" rel="noopener">BP 4311.2 - Legal Status Requirement - Marked</a><a class="agenda-attachment" href="https://data.rcsd.info/board-packets/2026-04-01/BP-4311.2-Legal-Status-Requirement-Clean.pdf" target="_blank" rel="noopener">BP 4311.2 - Legal Status Requirement - Clean</a></div><div class="agenda-item"><span class="agenda-item-order">14.9</span>Approval of Board Policy 4212.41: Employee Drug Testing<span class="agenda-item-type">Action</span></div><div class="agenda-attachments"><a class="agenda-attachment" href="https://data.rcsd.info/board-packets/2026-04-01/BP-4212.41-Employee-Drug-Testing-Marked.pdf" target="_blank" rel="noopener">BP 4212.41 -  Employee Drug Testing - Marked</a><a class="agenda-attachment" href="https://data.rcsd.info/board-packets/2026-04-01/BP-4212.41-Employee-Drug-Testing-Clean.pdf" target="_blank" rel="noopener">BP 4212.41 -  Employee Drug Testing - Clean</a></div><div class="agenda-item"><span class="agenda-item-order">14.10</span>Approval of Board Policy 4312.41: Employee Drug Testing<span class="agenda-item-type">Action</span></div><div class="agenda-attachments"><a class="agenda-attachment" href="https://data.rcsd.info/board-packets/2026-04-01/BP-4312.41-Employee-Drug-Testing-Marked.pdf" target="_blank" rel="noopener">BP 4312.41 -  Employee Drug Testing - Marked</a><a class="agenda-attachment" href="https://data.rcsd.info/board-packets/2026-04-01/BP-4312.41-Employee-Drug-Testing-Clean.pdf" target="_blank" rel="noopener">BP 4312.41 -  Employee Drug Testing - Clean</a></div><div class="agenda-item"><span class="agenda-item-order">14.11</span>Approval of Board Policy 4112.9: Employee Notifications<span class="agenda-item-type">Action</span></div><div class="agenda-attachments"><a class="agenda-attachment" href="https://data.rcsd.info/board-packets/2026-04-01/BP-4112.9-Employee-Notifications-Marked.pdf" target="_blank" rel="noopener">BP 4112.9 - Employee Notifications - Marked</a><a class="agenda-attachment" href="https://data.rcsd.info/board-packets/2026-04-01/BP-4112.9-Employee-Notifications-Clean.pdf" target="_blank" rel="noopener">BP 4112.9 - Employee Notifications - Clean</a></div><div class="agenda-item"><span class="agenda-item-order">14.12</span>Approval of Board Policy 4212.9: Employee Notifications<span class="agenda-item-type">Action</span></div><div class="agenda-attachments"><a class="agenda-attachment" href="https://data.rcsd.info/board-packets/2026-04-01/BP-4212.9-Employee-Notifications-Marked.pdf" target="_blank" rel="noopener">BP 4212.9 - Employee Notifications - Marked</a><a class="agenda-attachment" href="https://data.rcsd.info/board-packets/2026-04-01/BP-4212.9-Employee-Notifications-Clean.pdf" target="_blank" rel="noopener">BP 4212.9 - Employee Notifications - Clean</a></div><div class="agenda-item"><span class="agenda-item-order">14.13</span>Approval of Board Policy 4312.9: Employee Notifications<span class="agenda-item-type">Action</span></div><div class="agenda-attachments"><a class="agenda-attachment" href="https://data.rcsd.info/board-packets/2026-04-01/BP-4312.9-Employee-Notifications-Clean.pdf" target="_blank" rel="noopener">BP 4312.9 - Employee Notifications - Clean</a><a class="agenda-attachment" href="https://data.rcsd.info/board-packets/2026-04-01/BP-4312.9-Employee-Notifications-Marked.pdf" target="_blank" rel="noopener">BP 4312.9 - Employee Notifications - Marked</a></div><div class="agenda-item"><span class="agenda-item-order">14.14</span>Approval of Board Policy 4117.3: Personnel Reduction<span class="agenda-item-type">Action</span></div><div class="agenda-attachments"><a class="agenda-attachment" href="https://data.rcsd.info/board-packets/2026-04-01/BP-4117.3-Personnel-Reduction-Marked.pdf" target="_blank" rel="noopener">BP 4117.3 - Personnel Reduction - Marked</a><a class="agenda-attachment" href="https://data.rcsd.info/board-packets/2026-04-01/BP-4117.3-Personnel-Reduction-Clean.pdf" target="_blank" rel="noopener">BP 4117.3 - Personnel Reduction - Clean</a></div><div class="agenda-item"><span class="agenda-item-order">14.15</span>Approval of Board Policy 4119.11: Sexual Harassment<span class="agenda-item-type">Action</span></div><div class="agenda-attachments"><a class="agenda-attachment" href="https://data.rcsd.info/board-packets/2026-04-01/BP-4119.11-Sexual-Harassment-Marked.pdf" target="_blank" rel="noopener">BP 4119.11 - Sexual Harassment - Marked</a><a class="agenda-attachment" href="https://data.rcsd.info/board-packets/2026-04-01/BP-4119.11-Sexual-Harassment-Clean.pdf" target="_blank" rel="noopener">BP 4119.11 - Sexual Harassment - Clean</a></div><div class="agenda-item"><span class="agenda-item-order">14.16</span>Approval of Board Policy 4219.11: Sexual Harassment<span class="agenda-item-type">Action</span></div><div class="agenda-attachments"><a class="agenda-attachment" href="https://data.rcsd.info/board-packets/2026-04-01/BP-4219.11-Sexual-Harassment-Marked.pdf" target="_blank" rel="noopener">BP 4219.11 - Sexual Harassment - Marked</a><a class="agenda-attachment" href="https://data.rcsd.info/board-packets/2026-04-01/BP-4219.11-Sexual-Harassment-Clean.pdf" target="_blank" rel="noopener">BP 4219.11 - Sexual Harassment - Clean</a></div><div class="agenda-item"><span class="agenda-item-order">14.17</span>Approval of Board Policy 4319.11: Sexual Harassment<span class="agenda-item-type">Action</span></div><div class="agenda-attachments"><a class="agenda-attachment" href="https://data.rcsd.info/board-packets/2026-04-01/BP-4319.11-Sexual-Harassment-Marked.pdf" target="_blank" rel="noopener">BP 4319.11 - Sexual Harassment - Marked</a><a class="agenda-attachment" href="https://data.rcsd.info/board-packets/2026-04-01/BP-4319.11-Sexual-Harassment-Clean.pdf" target="_blank" rel="noopener">BP 4319.11 - Sexual Harassment - Clean</a></div><div class="agenda-item"><span class="agenda-item-order">14.18</span>Approval of Board Policy 4119.21: Professional Standards<span class="agenda-item-type">Action</span></div><div class="agenda-attachments"><a class="agenda-attachment" href="https://data.rcsd.info/board-packets/2026-04-01/BP-4119.21-Professional-Standards-Marked.pdf" target="_blank" rel="noopener">BP 4119.21 - Professional Standards - Marked</a><a class="agenda-attachment" href="https://data.rcsd.info/board-packets/2026-04-01/BP-4119.21-Professional-Standards-Clean.pdf" target="_blank" rel="noopener">BP 4119.21 - Professional Standards - Clean</a></div><div class="agenda-item"><span class="agenda-item-order">14.19</span>Approval of Board Policy 4219.21 : Professional Standards<span class="agenda-item-type">Action</span></div><div class="agenda-attachments"><a class="agenda-attachment" href="https://data.rcsd.info/board-packets/2026-04-01/BP-4219.21-Professional-Standards-Marked.pdf" target="_blank" rel="noopener">BP 4219.21 - Professional Standards - Marked</a><a class="agenda-attachment" href="https://data.rcsd.info/board-packets/2026-04-01/BP-4219.21-Professional-Standards-Clean.pdf" target="_blank" rel="noopener">BP 4219.21 - Professional Standards - Clean</a></div><div class="agenda-item"><span class="agenda-item-order">14.20</span>Approval of Board Policy 4161.3: Professional Leaves<span class="agenda-item-type">Action</span></div><div class="agenda-attachments"><a class="agenda-attachment" href="https://data.rcsd.info/board-packets/2026-04-01/BP-4161.3-Professional-Leaves-Marked.pdf" target="_blank" rel="noopener">BP 4161.3 - Professional Leaves - Marked</a><a class="agenda-attachment" href="https://data.rcsd.info/board-packets/2026-04-01/BP-4161.3-Professional-Leaves-Clean.pdf" target="_blank" rel="noopener">BP 4161.3 - Professional Leaves - Clean</a></div><div class="agenda-item"><span class="agenda-item-order">14.21</span>Approval of Board Policy 4119.25: Political Activities of Employees<span class="agenda-item-type">Action</span></div><div class="agenda-attachments"><a class="agenda-attachment" href="https://data.rcsd.info/board-packets/2026-04-01/BP-4119.25-Political-Activities-Of-Employees-Marked.pdf" target="_blank" rel="noopener">BP 4119.25 - Political Activities Of Employees - Marked</a><a class="agenda-attachment" href="https://data.rcsd.info/board-packets/2026-04-01/BP-4119.25-Political-Activities-Of-Employees-Clean.pdf" target="_blank" rel="noopener">BP 4119.25 - Political Activities Of Employees - Clean</a></div><div class="agenda-item"><span class="agenda-item-order">14.22</span>Approval of Board Policy 4219.25: Political Activities of Employees<span class="agenda-item-type">Action</span></div><div class="agenda-attachments"><a class="agenda-attachment" href="https://data.rcsd.info/board-packets/2026-04-01/BP-4219.25-Political-Activities-Of-Employees-Marked.pdf" target="_blank" rel="noopener">BP 4219.25 - Political Activities Of Employees - Marked</a><a class="agenda-attachment" href="https://data.rcsd.info/board-packets/2026-04-01/BP-4219.25-Political-Activities-Of-Employees-Clean.pdf" target="_blank" rel="noopener">BP 4219.25 - Political Activities Of Employees - Clean</a></div><div class="agenda-item"><span class="agenda-item-order">14.23</span>Approval of Board Policy 4127: Temporary Athletic Team Coaches<span class="agenda-item-type">Action</span></div><div class="agenda-attachments"><a class="agenda-attachment" href="https://data.rcsd.info/board-packets/2026-04-01/BP-4127-Temporary-Athletic-Team-Coaches-Marked.pdf" target="_blank" rel="noopener">BP 4127 - Temporary Athletic Team Coaches - Marked</a><a class="agenda-attachment" href="https://data.rcsd.info/board-packets/2026-04-01/BP-4127-Temporary-Athletic-Team-Coaches-Clean.pdf" target="_blank" rel="noopener">BP 4127 - Temporary Athletic Team Coaches - Clean</a></div><div class="agenda-item"><span class="agenda-item-order">14.24</span>Approval of Board Policy 4227: Temporary Athletic Team Coaches<span class="agenda-item-type">Action</span></div><div class="agenda-attachments"><a class="agenda-attachment" href="https://data.rcsd.info/board-packets/2026-04-01/BP-4227-Temporary-Athletic-Team-Coaches-Marked.pdf" target="_blank" rel="noopener">BP 4227- Temporary Athletic Team Coaches - Marked</a><a class="agenda-attachment" href="https://data.rcsd.info/board-packets/2026-04-01/BP-4227-Temporary-Athletic-Team-Coaches-Clean.pdf" target="_blank" rel="noopener">BP 4227- Temporary Athletic Team Coaches - Clean</a></div><div class="agenda-item"><span class="agenda-item-order">14.25</span>Approval of Board Policy 4327: Temporary Athletic Team Coaches<span class="agenda-item-type">Action</span></div><div class="agenda-attachments"><a class="agenda-attachment" href="https://data.rcsd.info/board-packets/2026-04-01/BP-4327-Temporary-Athletic-Team-Coaches-Marked.pdf" target="_blank" rel="noopener">BP 4327 - Temporary Athletic Team Coaches - Marked</a><a class="agenda-attachment" href="https://data.rcsd.info/board-packets/2026-04-01/BP-4327-Temporary-Athletic-Team-Coaches-Clean.pdf" target="_blank" rel="noopener">BP 4327 - Temporary Athletic Team Coaches - Clean</a></div><div class="agenda-item"><span class="agenda-item-order">14.26</span>Second Reading and Approval of Board Policy and Administrative Regulation 3580: District Records<span class="agenda-item-type">Action</span></div><div class="agenda-attachments"><a class="agenda-attachment" href="https://data.rcsd.info/board-packets/2026-04-01/BP-3580-District-Records-Second-Reading-Marked.pdf" target="_blank" rel="noopener">BP 3580 - District Records - Second Reading - Marked</a><a class="agenda-attachment" href="https://data.rcsd.info/board-packets/2026-04-01/BP-3580-District-Records-Second-Reading-Clean.pdf" target="_blank" rel="noopener">BP 3580 - District Records - Second Reading - Clean</a><a class="agenda-attachment" href="https://data.rcsd.info/board-packets/2026-04-01/AR-3580-District-Records-Second-Reading-Marked.pdf" target="_blank" rel="noopener">AR 3580 - District Records - Second Reading  - Marked</a><a class="agenda-attachment" href="https://data.rcsd.info/board-packets/2026-04-01/AR-3580-District-Records-Second-Reading-Clean.pdf" target="_blank" rel="noopener">AR 3580 - District Records - Second Reading - Clean</a></div><div class="agenda-item"><span class="agenda-item-order">14.27</span>Approval of Service Agreement for the Provision of Election Services between the Superintendent of Schools (Relating to the Redwood City School District) and the San Mateo County Chief Elections Officer &amp; Assessor - County Clerk - Recorder<span class="agenda-item-type">Action</span></div><div class="agenda-attachments"><a class="agenda-attachment" href="https://data.rcsd.info/board-packets/2026-04-01/SMC-Chief-Elections-Officer-Agreement-2026_.pdf" target="_blank" rel="noopener">SMC Chief Elections Officer Agreement 2026_</a></div><div class="agenda-item"><span class="agenda-item-order">16.1</span>Redwood City Teachers Association Presentation: Class Size</div><div class="agenda-attachments"><a class="agenda-attachment" href="https://data.rcsd.info/board-packets/2026-04-01/Class-Size-Presentation.pdf" target="_blank" rel="noopener">Class Size Presentation</a></div></div></details>
       </div>
+    </div>    <div class="meeting-row upcoming-provisional">
+      <div class="meeting-date">
+        <span class="meeting-date-month">APR</span>
+        <span class="meeting-date-day">22</span>
+        <span class="meeting-date-year">2026</span>
+      </div>
+      <div class="meeting-body">
+        <div class="meeting-header">
+          <span class="meeting-type">Board Meeting</span>
+          <span class="upcoming-badge upcoming-badge--provisional">Upcoming</span>
+          <div class="meeting-links">
+            <a href="https://simbli.eboardsolutions.com/SB_Meetings/SB_MeetingListing.aspx?S=36030397" class="meeting-link meeting-link--agenda" target="_blank" rel="noopener">&#8599; Simbli</a>
+          </div>
+        </div>
+        <p class="meeting-summary upcoming-provisional-topics"><em>Planned: Superintendent evaluation; School presentations &amp; SPSA approvals; Quarterly Williams Report (Q3)</em></p>
+      </div>
+    </div>    <div class="meeting-row upcoming-provisional">
+      <div class="meeting-date">
+        <span class="meeting-date-month">MAY</span>
+        <span class="meeting-date-day">13</span>
+        <span class="meeting-date-year">2026</span>
+      </div>
+      <div class="meeting-body">
+        <div class="meeting-header">
+          <span class="meeting-type">Board Meeting</span>
+          <span class="upcoming-badge upcoming-badge--provisional">Upcoming</span>
+          <div class="meeting-links">
+            <a href="https://simbli.eboardsolutions.com/SB_Meetings/SB_MeetingListing.aspx?S=36030397" class="meeting-link meeting-link--agenda" target="_blank" rel="noopener">&#8599; Simbli</a>
+          </div>
+        </div>
+        <p class="meeting-summary upcoming-provisional-topics"><em>Planned: Superintendent evaluation; Charter school second interim reviews (KIPP, Rocketship, Connect); Outdoor Ed agreement; Math report</em></p>
+      </div>
+    </div>    <div class="meeting-row upcoming-provisional">
+      <div class="meeting-date">
+        <span class="meeting-date-month">MAY</span>
+        <span class="meeting-date-day">27</span>
+        <span class="meeting-date-year">2026</span>
+      </div>
+      <div class="meeting-body">
+        <div class="meeting-header">
+          <span class="meeting-type">Board Meeting</span>
+          <span class="upcoming-badge upcoming-badge--provisional">Upcoming</span>
+          <div class="meeting-links">
+            <a href="https://simbli.eboardsolutions.com/SB_Meetings/SB_MeetingListing.aspx?S=36030397" class="meeting-link meeting-link--agenda" target="_blank" rel="noopener">&#8599; Simbli</a>
+          </div>
+        </div>
+        <p class="meeting-summary upcoming-provisional-topics"><em>Planned: ConApp approval; Special Education Report</em></p>
+      </div>
     </div>
+  </div>
+</section>
+
+<section class="section" id="sy202526">
+  <div class="section-rule"></div>
+  <h2>2025–26 School Year</h2>
+  <p class="section-subtitle">25 meetings from June 2025 to present. Full agendas and video available.</p>
+  <div class="meeting-list">
     <div class="meeting-row" data-threads="budget policy charter" data-schools="garfield henry-ford north-star roy-cloud taft" data-topics="solar">
       <a href="/meetings/2026-03-25/" class="meeting-date">
         <span class="meeting-date-month">MAR</span>
