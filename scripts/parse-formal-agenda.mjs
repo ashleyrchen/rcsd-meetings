@@ -57,7 +57,7 @@ export function parseSimbliAgenda(memoItems) {
   // Pass 2: assign sections and sub-items
   const result = [];
   let currentSectionLabel = null;
-  let currentSectionIsConsent = false;
+  let currentSectionActionType = null;
   let highWaterMark = 0;
   // Track the last sub-item prefix to detect sub-item sequences that exceed
   // the parent section number. For example, a consent section numbered 15 may
@@ -120,8 +120,8 @@ export function parseSimbliAgenda(memoItems) {
       lastSubItemPrefix = null;
 
       const sectionActionType = inferActionType(raw);
-      // Track whether children should inherit consent actionType
-      currentSectionIsConsent = sectionActionType === 'Action (Consent)';
+      // Track parent section type for child inheritance
+      currentSectionActionType = sectionActionType;
 
       result.push({
         itemLabel: currentSectionLabel,
@@ -141,10 +141,15 @@ export function parseSimbliAgenda(memoItems) {
 
       lastSubItemPrefix = prefixNum;
 
-      // Inherit consent from parent section; otherwise infer from item title
-      const itemActionType = currentSectionIsConsent
-        ? 'Action (Consent)'
-        : inferActionType(raw);
+      // Consent sections override children (items say "Approval of..." but are still consent).
+      // For other sections (Information, Discussion), inherit if item has no clear type.
+      let itemActionType;
+      if (currentSectionActionType === 'Action (Consent)') {
+        itemActionType = 'Action (Consent)';
+      } else {
+        const ownType = inferActionType(raw);
+        itemActionType = ownType || currentSectionActionType;
+      }
 
       result.push({
         itemLabel,
@@ -236,7 +241,8 @@ export function parseBoarddocsAgenda(scrapedMeeting) {
  * Infer action type from Simbli title text.
  */
 function inferActionType(title) {
-  const t = title.toLowerCase();
+  // Strip leading number prefix (e.g. "17. Information - 15 min" → "information - 15 min")
+  const t = title.toLowerCase().replace(/^\d+\.\s*/, '');
   // Check consent BEFORE action — "Approval of Consent Items (Action Required)" is consent
   if (t.includes('consent')) return 'Action (Consent)';
   if (t.includes('(action required)')) return 'Action';
@@ -251,6 +257,13 @@ function inferActionType(title) {
 
   if (t.includes('public comment') || t.includes('public hearing')) return 'Information';
   if (t.includes('discussion')) return 'Discussion';
+
+  // Information section patterns
+  if (/^information\b/.test(t) || t.includes('school/community reports') ||
+      t.includes('board and superintendent reports') || t.includes('correspondence') ||
+      t.includes('other business') || t.includes('suggested items for future') ||
+      t.includes('meeting reflection') || t.includes('meeting calendar')) return 'Information';
+
   if (t.includes('approval')) return 'Action';
   if (t.includes('adoption')) return 'Action';
 
