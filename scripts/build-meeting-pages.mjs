@@ -700,7 +700,8 @@ ${siteFooter({ lang: L.lang })}
   var videoId = ${JSON.stringify(m.youtube || null)};
   var transcriptUrlEn = ${JSON.stringify(transcriptUrl)};
   var transcriptUrlEs = ${JSON.stringify(transcriptUrl ? transcriptUrl.replace('.json', '-es.json') : null)};
-  var transcriptUrl = transcriptUrlEn;
+  var defaultLangEs = ${L.lang === 'es' ? 'true' : 'false'};
+  var transcriptUrl = defaultLangEs ? transcriptUrlEs : transcriptUrlEn;
   var speakerColors = ${JSON.stringify(SPEAKER_COLORS)};
   var player = null;
   var utterances = [];
@@ -710,7 +711,7 @@ ${siteFooter({ lang: L.lang })}
   var autoScroll = true;
   var activeIdx = -1;
   var activeTab = ${JSON.stringify(defaultTab)};
-  var currentLang = 'en';
+  var currentLang = defaultLangEs ? 'es' : 'en';
 
   // Handle #hash on load to activate the corresponding tab
   function activateTabFromHash() {
@@ -825,14 +826,21 @@ ${siteFooter({ lang: L.lang })}
   }
 
   if (transcriptUrlEn) {
-    fetch(transcriptUrlEn)
+    // Fetch primary transcript (ES for Spanish pages, EN otherwise)
+    var primaryUrl = defaultLangEs ? transcriptUrlEs : transcriptUrlEn;
+    var secondaryUrl = defaultLangEs ? transcriptUrlEn : transcriptUrlEs;
+
+    fetch(primaryUrl)
       .then(function(r) { return r.json(); })
       .then(function(data) {
-        utterancesEn = data.utterances;
-        utterances = utterancesEn;
+        if (defaultLangEs) { utterancesEs = data.utterances; } else { utterancesEn = data.utterances; }
+        utterances = data.utterances;
         speakerMap = data.speakers || {};
         renderTranscript();
         setInterval(syncHighlight, 250);
+        // Update lang button to reflect current state
+        var btn = document.getElementById('btn-lang');
+        if (btn) btn.textContent = defaultLangEs ? 'EN' : 'ES';
       })
       .catch(function() {
         var c = document.getElementById('panel-transcript');
@@ -843,13 +851,13 @@ ${siteFooter({ lang: L.lang })}
         c.appendChild(msg);
       });
 
-    // Pre-fetch Spanish translation
-    if (transcriptUrlEs) {
-      fetch(transcriptUrlEs)
+    // Pre-fetch secondary language
+    if (secondaryUrl) {
+      fetch(secondaryUrl)
         .then(function(r) { if (!r.ok) throw new Error(); return r.json(); })
         .then(function(data) {
-          utterancesEs = data.utterances;
-          // Enable the ES button
+          if (defaultLangEs) { utterancesEn = data.utterances; } else { utterancesEs = data.utterances; }
+          // Enable the lang toggle button
           var btn = document.getElementById('btn-lang');
           if (btn) btn.style.opacity = '1';
         })

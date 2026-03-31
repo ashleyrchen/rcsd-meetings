@@ -595,7 +595,8 @@
   var videoId = "bH2yII-W07A";
   var transcriptUrlEn = "https://data.rcsd.info/transcripts/2024-11-06.json";
   var transcriptUrlEs = "https://data.rcsd.info/transcripts/2024-11-06-es.json";
-  var transcriptUrl = transcriptUrlEn;
+  var defaultLangEs = false;
+  var transcriptUrl = defaultLangEs ? transcriptUrlEs : transcriptUrlEn;
   var speakerColors = ["#1a5276","#7d3c98","#1e8449","#b9770e","#922b21","#117a65","#6c3483","#1f618d","#b7950b","#943126","#148f77","#7d6608","#2e4053","#884ea0","#239b56"];
   var player = null;
   var utterances = [];
@@ -605,7 +606,7 @@
   var autoScroll = true;
   var activeIdx = -1;
   var activeTab = "transcript";
-  var currentLang = 'en';
+  var currentLang = defaultLangEs ? 'es' : 'en';
 
   // Handle #hash on load to activate the corresponding tab
   function activateTabFromHash() {
@@ -720,14 +721,21 @@
   }
 
   if (transcriptUrlEn) {
-    fetch(transcriptUrlEn)
+    // Fetch primary transcript (ES for Spanish pages, EN otherwise)
+    var primaryUrl = defaultLangEs ? transcriptUrlEs : transcriptUrlEn;
+    var secondaryUrl = defaultLangEs ? transcriptUrlEn : transcriptUrlEs;
+
+    fetch(primaryUrl)
       .then(function(r) { return r.json(); })
       .then(function(data) {
-        utterancesEn = data.utterances;
-        utterances = utterancesEn;
+        if (defaultLangEs) { utterancesEs = data.utterances; } else { utterancesEn = data.utterances; }
+        utterances = data.utterances;
         speakerMap = data.speakers || {};
         renderTranscript();
         setInterval(syncHighlight, 250);
+        // Update lang button to reflect current state
+        var btn = document.getElementById('btn-lang');
+        if (btn) btn.textContent = defaultLangEs ? 'EN' : 'ES';
       })
       .catch(function() {
         var c = document.getElementById('panel-transcript');
@@ -738,13 +746,13 @@
         c.appendChild(msg);
       });
 
-    // Pre-fetch Spanish translation
-    if (transcriptUrlEs) {
-      fetch(transcriptUrlEs)
+    // Pre-fetch secondary language
+    if (secondaryUrl) {
+      fetch(secondaryUrl)
         .then(function(r) { if (!r.ok) throw new Error(); return r.json(); })
         .then(function(data) {
-          utterancesEs = data.utterances;
-          // Enable the ES button
+          if (defaultLangEs) { utterancesEn = data.utterances; } else { utterancesEs = data.utterances; }
+          // Enable the lang toggle button
           var btn = document.getElementById('btn-lang');
           if (btn) btn.style.opacity = '1';
         })
