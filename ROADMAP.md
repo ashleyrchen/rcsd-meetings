@@ -169,7 +169,12 @@ Build a pipeline for rich per-meeting summaries (inputs already in place: AAI tr
 - [ ] **"Dial the District" voice agent** — two phone numbers (English and Spanish) that parents can call to ask questions about the district and get spoken answers. Use **Gemini 3.1 Flash Live** (native voice-to-voice, no STT→LLM→TTS pipeline, inherently multilingual). Flash Live scores 90.8% on ComplexFuncBench Audio (multi-step function calling in voice) so it can call district data tools natively during conversation. Available via Gemini Live API in Google AI Studio (preview). Architecture: Gemini 3.1 Flash Live + function declarations mirroring MCP tool schemas + Twilio SIP trunk or LiveKit for telephony. Audio is SynthID-watermarked. Separate EN/ES assistant configs with language-appropriate system prompts. Ref: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-flash-live/
 - [ ] **WhatsApp bot** — same concept as the phone agent but over text. Parents text questions to a WhatsApp number and get answers from district data. Lower barrier than MCP setup, reaches parents where they already are. Could use the WhatsApp Business API + Claude.
 
-## Entity Registry & Key Parties
+## People Tab & Entity Registry
+- [ ] **People page** — a top-level "People" page showing key district personnel and administrators
+  - Best-effort: name, photo, title, contact info, LinkedIn where available
+  - Roles change over time — show current role prominently, with role history available
+  - Board members (current + historical), superintendent, cabinet, principals, key classified staff
+  - Officers of unions (RCTA president, CSEA president, RCAA)
 - [ ] **Structured person/entity registry** (`data/entities.json`) — canonical list of individuals with:
   - Name, slug, role history (role + date range), e.g. `{name: "David Weekly", roles: [{role: "Trustee", from: "2022-12-14"}, {role: "Board President", from: "2025-12-17"}]}`
   - Enables: "What meetings did X speak at before becoming a Trustee?", "How many times has Anna Herrera presented?", tracking public commenter appearances across meetings
@@ -178,15 +183,17 @@ Build a pipeline for rich per-meeting summaries (inputs already in place: AAI tr
 - [ ] **Board member tenure tracking** — historical board composition at any point in time, including departures and swearing-in dates
 - [ ] **Staff roster** — district cabinet, principals, key staff with role dates
 - [ ] **Public commenter index** — cross-meeting appearances with summaries of what they spoke about
-- [ ] **"Who's who" page** — neutral, judgment-free descriptions of roles and tenures
 - [ ] Link entities to relevant documents (contract approvals for vendors, tentative agreements for unions)
 - [ ] Cross-reference from meeting items and transcript utterances to entity entries
 
-## Warrant Register Analysis
+## Vendors Tab
+- [ ] **Vendor spending dashboard** — a top-level "Vendors" page showing who the district does business with and annual spend
 - [ ] Scrape all warrant registers (ratification of warrants) from board meeting attachments
 - [ ] Parse payee names, amounts, dates, fund sources
 - [ ] Aggregate: which entities have been paid how much over what time period
 - [ ] Surface per-vendor spending trends and per-fund breakdowns
+- [ ] Cross-reference contracts from consent agendas (agreements, amendments, service contracts) with warrant payments
+- [ ] Vendor search: "How much have we paid PowerFlex?" or "What contracts does Eide Bailly have?"
 
 ## Document Index
 - [x] Unified document index from all meeting attachments (data/document-index.json) — 1,000+ docs classified
@@ -209,6 +216,31 @@ Build a pipeline for rich per-meeting summaries (inputs already in place: AAI tr
   - Audits: annual, typically presented by January
 - [ ] **Visual treatment**: subtle yellow dot or tag, not red/alarming. Informational, not punitive. Tooltip explains what's expected and when. Disappears when the data appears.
 - [ ] **District dashboard view**: aggregate completeness across all schools and document types. "8/12 schools have published 2025-26 SARCs" etc.
+
+## Email Subscriptions & Notifications
+- [ ] **Subscribe to meeting updates** — email notification when:
+  - A new agenda posts for an upcoming meeting
+  - Meeting summary is available (after the meeting happens)
+  - YouTube recording posts
+  - Approved minutes are available
+- [ ] Implementation: Cloudflare Workers + D1 for subscriber list, Resend or SES for delivery, unsubscribe link in every email
+- [ ] Frequency options: per-meeting (every event) or weekly digest
+- [ ] Bilingual emails matching user language preference
+
+## Personalization (Cookies/Preferences)
+- [ ] **Remember your schools** — cookie-based preference to highlight schools you care about (e.g. filter meeting items by school, show your school first on homepage)
+- [ ] **Address lookup → community school mapping** — enter your address and see which RCSD school(s) you're zoned for, including any community school overlays. Would need to source attendance boundary GIS data from the district or San Mateo County GIS.
+- [ ] **Language preference** — remember EN/ES choice across visits
+
+## Getting Involved / Civic Participation
+- [ ] **"Get Involved" page** — showcase opportunities for community participation:
+  - **School-level committees**: School Site Council (SSC), ELAC, PTO/PTA — what they do, who's on them, how to join, meeting schedules
+  - **District-level committees**: DELAC, DAC, LCAP Advisory, Citizens' Bond Oversight Committee (CBOC), Safety Committee — membership, terms, how people are appointed
+  - **Board of Trustees**: how to run for trustee (filing requirements, election dates, terms), how to attend/speak at board meetings, how to submit written public comment
+  - **Volunteering**: classroom volunteering, chaperoning, PTO, RCEF
+- [ ] Bilingual (EN/ES)
+- [ ] Include applicable legal requirements: Greene Act for SSCs/ELACs, Brown Act for board meetings, election code for trustee candidacy
+- [ ] Link to district pages where they exist; fill gaps with original content where district pages are incomplete
 
 ## Automation & Infrastructure
 - [ ] **Trogdor cron automation** — move scraping pipeline to trogdor (beefy Linux server with CUDA) on a schedule:
