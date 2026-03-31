@@ -242,6 +242,18 @@ Build a pipeline for rich per-meeting summaries (inputs already in place: AAI tr
 - [ ] Include applicable legal requirements: Greene Act for SSCs/ELACs, Brown Act for board meetings, election code for trustee candidacy
 - [ ] Link to district pages where they exist; fill gaps with original content where district pages are incomplete
 
+## Structured Minutes
+- [ ] **Parse approved minutes PDFs into structured data** (`data/minutes-structured/{date}.json`) with:
+  - Attendance: who was present, absent, arrived late, left early
+  - Motions: who moved, who seconded, vote tally (including individual votes when recorded)
+  - Public comment speakers: names, topics, duration
+  - Agenda changes: items pulled from consent, reordered, added, tabled
+  - Key actions: resolutions adopted, contracts approved, amounts
+- [ ] Use minutes as authoritative source for transcription prompts (who was present, who spoke) — much more reliable than hardcoded board era guesses
+- [ ] Feed structured minutes into entity registry (track individuals across meetings)
+- [ ] Surface on per-meeting detail pages: structured attendance, vote records, public comment index
+- [ ] Enable queries like "How did Trustee X vote on Y?" or "How many times did Z speak at public comment?"
+
 ## Data Changelog
 - [ ] **`data/changelog.json`** — append-only log of pipeline events with timestamps, structured as `{date, type, meetings[], details}`. Types: `agenda-scraped`, `youtube-ingested`, `transcribed`, `summary-generated`, `packets-downloaded`, etc.
 - [ ] Pipeline scripts append to changelog after each run (what was new, what was skipped, errors)
