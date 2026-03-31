@@ -101,33 +101,38 @@ function downloadAudio(videoId) {
 
 // ---- Board composition by date range ----
 // Source: approved board minutes attendance sections
+// Source: approved board minutes attendance records and swearing-in dates
 const BOARD_ERAS = [
   {
-    start: '2020-01-01', end: '2020-12-08',
-    trustees: ['Alisa MacAvoy', 'Hilary Paulson', 'John Baker', 'Sharilyn Cain', 'Jan Stine'],
-    superintendent: 'Dr. John Baker (Interim)',
+    start: '2020-04-01', end: '2020-12-10',
+    trustees: ['Dennis McBride', 'Janet Lawson', 'Alisa MacAvoy', 'María Díaz-Slocum', 'Cecilia I. Márquez'],
+    superintendent: 'Dr. John R. Baker',
   },
   {
-    start: '2020-12-09', end: '2022-12-06',
-    trustees: ['Alisa MacAvoy', 'María Marquez', 'Sharilyn Cain', 'David Weekly', 'Monica Lozano-Wells'],
-    superintendent: 'Dr. John Baker',
+    start: '2020-12-11', end: '2022-12-13',
+    trustees: ['Janet Lawson', 'Alisa MacAvoy', 'María Díaz-Slocum', 'Cecilia I. Márquez', 'Mike Wells'],
+    superintendent: 'Dr. John R. Baker',
+    // McBride departed Dec 2020; Wells, MacAvoy, Lawson sworn in
   },
   {
-    start: '2022-12-07', end: '2024-12-10',
-    trustees: ['María Marquez', 'Dhara Patel', 'David Weekly', 'Monica Lozano-Wells', 'Jesse Lawson'],
-    superintendent: 'Dr. Susan Hartley (to Jun 2024), Dr. Yvette Baker (from Jul 2024)',
+    start: '2022-12-14', end: '2024-12-16',
+    trustees: ['Janet Lawson', 'Alisa MacAvoy', 'Cecilia I. Márquez', 'Mike Wells', 'David Weekly'],
+    superintendent: 'Dr. John R. Baker',
+    // Díaz-Slocum departed Dec 2022; Weekly and Márquez sworn in
   },
   {
-    start: '2024-12-11', end: '2099-12-31',
-    trustees: ['David Weekly', 'Priya Varma', 'Stephanie Sena', 'Kavitha Hanna', 'Dhara Patel'],
-    superintendent: 'Dr. Yvette Irving-Baker',
+    start: '2024-12-17', end: '2099-12-31',
+    trustees: ['Cecilia I. Márquez', 'Mike Wells', 'David Weekly', 'David Li', 'Jennifer Ng Kwing King'],
+    superintendent: 'Dr. John R. Baker (to Feb 2026), Dr. Christian Rubalcaba (from Mar 2026)',
+    // Lawson and MacAvoy departed Dec 2024; Li and Ng Kwing King sworn in
   },
 ];
 
 // Key district staff who frequently present at board meetings
 const DISTRICT_STAFF = [
-  'Ellie Salazar', 'Nicole Ochi', 'Lisa Yim', 'Terri Nickerson',
-  'Omar Manzano', 'Katherine Rivera', 'Kathryn Mateo',
+  'Wendy Kelly', 'Rick Edson', 'Anna Herrera', 'Patrinia Redd',
+  'Martín Cervantes', 'Will Robertson', 'Carlos Reyna',
+  'Evelyn Campos', 'Melissa Bowdoin', 'Kristy Jackson',
 ];
 
 function getBoardEra(date) {
@@ -158,13 +163,13 @@ function buildPrompt(meeting) {
     ? `\n\nAgenda items for this meeting:\n${agendaItems.slice(0, 40).join('\n')}`
     : '';
 
-  return `You are transcribing a ${type} of the Redwood City School District held on ${date}. Your job is to accurately transcribe the meeting and diarize speakers for public reporting purposes. Do not include disfluencies, stutters, or repetitions. The meeting is mostly in English but some public comments may be in Spanish; a translation is then read aloud after such comments.
+  return `You are transcribing a recording of a meeting of the Redwood City School District's Board of Trustees on ${date}. Accurately transcribe and diarize speakers. Do not include disfluencies or repetitions. If there is silence, produce no output for that segment. The meeting is mostly in English; some public comments may be in Spanish with a translation read aloud afterward.
 
-Board members present at this meeting: ${trusteesStr}. Superintendent: ${era.superintendent}. District staff who may present: ${DISTRICT_STAFF.join(', ')}.
+Board of Trustees: ${trusteesStr}. Superintendent: ${era.superintendent}. Staff: ${DISTRICT_STAFF.join(', ')}.
 
-School names: Adelante Selby, Clifford, Garfield, Henry Ford, Hoover, Kennedy, McKinley Institute of Technology (MIT), North Star Academy, Orion, Roosevelt, Roy Cloud, Taft.
+Schools: Adelante Selby, Clifford, Garfield, Henry Ford, Hoover, Kennedy, McKinley Institute of Technology (MIT), North Star Academy, Orion, Roosevelt, Roy Cloud, Taft.
 
-Key terms: RCSD, LCAP, SPSA, CAASPP, ELPAC, CSSP, SARC, Measure U, Measure S, Brown Act, consent agenda, ParentSquare, Simbli, BoardDocs, RCTA, CSEA, DELAC, ELAC, IEP, MTSS, PBIS, TK, UCP, Williams.${agendaSnippet}`;
+Key terms: RCSD, LCAP, SPSA, CAASPP, ELPAC, SARC, Measure U, Measure S, Measure T, Brown Act, ParentSquare, Simbli, RCTA, CSEA, DELAC, ELAC, IEP, MTSS, PBIS, TK, UCP, Williams, i-Ready, EL, SED, SWD, FRL.${agendaSnippet}`;
 }
 
 /**
