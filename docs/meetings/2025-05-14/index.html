@@ -605,6 +605,7 @@
   var speakerMap = {};
   var autoScroll = true;
   var activeIdx = -1;
+  var renderedUtterances = [];
   var activeTab = "transcript";
   var currentLang = defaultLangEs ? 'es' : 'en';
 
@@ -682,11 +683,45 @@
     return speakerColors[label.charCodeAt(0) % speakerColors.length];
   }
 
+  // Split long utterances into ~3-sentence paragraphs with interpolated timestamps
+  function splitUtterance(u) {
+    var text = u.text || '';
+    if (text.length < 300) return [u];
+
+    // Split on sentence boundaries (period/question/exclamation followed by space and capital)
+    var sentences = text.match(/[^.!?]*[.!?]+(?:s+|$)/g) || [text];
+    var chunks = [];
+    var current = '';
+    var sentenceCount = 0;
+    var chunkStart = 0;
+
+    for (var s = 0; s < sentences.length; s++) {
+      current += sentences[s];
+      sentenceCount++;
+      if (sentenceCount >= 3 || s === sentences.length - 1) {
+        var fraction = chunks.length / Math.max(1, Math.ceil(sentences.length / 3));
+        var startMs = Math.round(u.start + (u.end - u.start) * (chunkStart / sentences.length));
+        chunks.push({ start: startMs, end: u.end, speaker: u.speaker, text: current.trim() });
+        current = '';
+        chunkStart = s + 1;
+        sentenceCount = 0;
+      }
+    }
+    return chunks.length > 0 ? chunks : [u];
+  }
+
   function renderTranscript() {
     var container = document.getElementById('panel-transcript');
     container.textContent = '';
 
-    utterances.forEach(function(u, i) {
+    // Flatten utterances into smaller chunks for readability
+    renderedUtterances = [];
+    utterances.forEach(function(u) {
+      var parts = splitUtterance(u);
+      for (var p = 0; p < parts.length; p++) renderedUtterances.push(parts[p]);
+    });
+
+    renderedUtterances.forEach(function(u, i) {
       var row = document.createElement('div');
       row.className = 'tv-utterance';
       row.dataset.idx = i;
@@ -776,8 +811,8 @@
     // Transcript sync
     if (activeTab === 'transcript') {
       var newIdx = -1;
-      for (var i = utterances.length - 1; i >= 0; i--) {
-        if (utterances[i].start <= currentMs) { newIdx = i; break; }
+      for (var i = renderedUtterances.length - 1; i >= 0; i--) {
+        if (renderedUtterances[i].start <= currentMs) { newIdx = i; break; }
       }
       if (newIdx !== activeIdx) {
         activeIdx = newIdx;
