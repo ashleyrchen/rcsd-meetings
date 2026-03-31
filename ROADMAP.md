@@ -242,6 +242,13 @@ Build a pipeline for rich per-meeting summaries (inputs already in place: AAI tr
 - [ ] Include applicable legal requirements: Greene Act for SSCs/ELACs, Brown Act for board meetings, election code for trustee candidacy
 - [ ] Link to district pages where they exist; fill gaps with original content where district pages are incomplete
 
+## Data Changelog
+- [ ] **`data/changelog.json`** — append-only log of pipeline events with timestamps, structured as `{date, type, meetings[], details}`. Types: `agenda-scraped`, `youtube-ingested`, `transcribed`, `summary-generated`, `packets-downloaded`, etc.
+- [ ] Pipeline scripts append to changelog after each run (what was new, what was skipped, errors)
+- [ ] **`/changelog` page** — human-readable feed of data ingestion events ("March 31: Added March 11 & 25 YouTube videos and transcripts")
+- [ ] Feeds into email subscription system — changelog entries become notification content
+- [ ] Bilingual (EN/ES)
+
 ## Automation & Infrastructure
 - [ ] **Trogdor cron automation** — move scraping pipeline to trogdor (beefy Linux server with CUDA) on a schedule:
   - Simbli agenda scrape (daily or 2x/week)
