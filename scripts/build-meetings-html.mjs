@@ -637,7 +637,7 @@ function renderMeeting(m) {
     }
   }
   if (m.hasTranscript) {
-    links += `<a href="/meetings/${m.date}/" class="meeting-link meeting-link--transcript">&#128221; ${L.transcript}</a>`;
+    links += `<a href="/${L.meetingsPath}/${m.date}/" class="meeting-link meeting-link--transcript">&#128221; ${L.transcript}</a>`;
   }
   if (m.boarddocs) {
     links += `<a href="${escapeHtml(m.boarddocs)}" class="meeting-link meeting-link--agenda" target="_blank" rel="noopener">&#8599; ${L.agenda}</a>`;
@@ -788,7 +788,7 @@ function renderUpcomingSection() {
       links += `<a href="${R2_BASE}/minutes/${minutesFile}" class="meeting-link meeting-link--minutes" target="_blank" rel="noopener">&#128196; ${L.minutes}</a>`;
     }
     if (m.hasTranscript) {
-      links += `<a href="/meetings/${m.date}/" class="meeting-link meeting-link--transcript">&#128221; ${L.transcript}</a>`;
+      links += `<a href="/${L.meetingsPath}/${m.date}/" class="meeting-link meeting-link--transcript">&#128221; ${L.transcript}</a>`;
     }
 
     const summary = generateSummary(m);
