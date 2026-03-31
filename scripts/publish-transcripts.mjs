@@ -38,6 +38,39 @@ const chapterMarkers = existsSync(CHAPTER_PATH)
   ? JSON.parse(readFileSync(CHAPTER_PATH, 'utf-8'))
   : {};
 
+/**
+ * Strip trailing ASR hallucinations — repeated short phrases that appear when
+ * the audio has silence or background noise after a meeting ends.
+ * Detects runs of short, repetitive utterances at the end of the transcript.
+ */
+function stripTrailingHallucinations(utterances) {
+  if (utterances.length < 5) return utterances;
+
+  // Walk backwards from the end looking for hallucination patterns
+  let cutoff = utterances.length;
+  for (let i = utterances.length - 1; i >= Math.max(0, utterances.length - 50); i--) {
+    const text = (utterances[i].text || '').trim();
+    // Hallucination indicators: very short, or highly repetitive phrases
+    const words = text.split(/\s+/);
+    const uniqueWords = new Set(words.map(w => w.toLowerCase().replace(/[^a-z]/g, '')));
+    const isRepetitive = words.length >= 3 && uniqueWords.size <= 3;
+    const isShort = text.length < 40;
+
+    if (isRepetitive || (isShort && i > utterances.length - 20)) {
+      cutoff = i;
+    } else {
+      break;
+    }
+  }
+
+  if (cutoff < utterances.length) {
+    const removed = utterances.length - cutoff;
+    console.log(`    Stripped ${removed} trailing hallucinated utterances`);
+    return utterances.slice(0, cutoff);
+  }
+  return utterances;
+}
+
 let generated = 0;
 let uploaded = 0;
 let totalSize = 0;
@@ -62,12 +95,12 @@ for (const m of data.meetings) {
     videoId: m.youtube,
     audioDuration: Math.round(aai.audio_duration || 0),
     speakers,
-    utterances: aai.utterances.map(u => ({
+    utterances: stripTrailingHallucinations(aai.utterances.map(u => ({
       start: u.start,
       end: u.end,
       speaker: u.speaker,
       text: u.text,
-    })),
+    }))),
   };
 
   const json = JSON.stringify(slim);
