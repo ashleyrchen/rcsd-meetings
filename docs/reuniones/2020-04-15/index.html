@@ -330,13 +330,11 @@
 
   .tv-speaker {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.65rem;
-    font-weight: 500;
+    font-size: 0.6rem;
+    font-weight: 400;
     flex: 0 0 auto;
-    max-width: 8rem;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    width: 1rem;
+    opacity: 0.5;
     padding-top: 0.15rem;
   }
 
@@ -512,7 +510,7 @@
     .tv-layout { padding: 0.75rem 1rem; }
     .tv-utterance { gap: 0.3rem; }
     .tv-ts { flex: 0 0 2.8rem; font-size: 0.6rem; }
-    .tv-speaker { max-width: 5rem; font-size: 0.6rem; }
+    .tv-speaker { width: 0.8rem; font-size: 0.55rem; }
     .tv-agenda-item { padding-left: 0.75rem; }
     .tv-tab { padding: 0.4rem 0.6rem; font-size: 0.65rem; }
   }
@@ -597,7 +595,7 @@
   var transcriptUrlEs = "https://data.rcsd.info/transcripts/2020-04-15-es.json";
   var defaultLangEs = true;
   var transcriptUrl = defaultLangEs ? transcriptUrlEs : transcriptUrlEn;
-  var speakerColors = ["#1a5276","#7d3c98","#1e8449","#b9770e","#922b21","#117a65","#6c3483","#1f618d","#b7950b","#943126","#148f77","#7d6608","#2e4053","#884ea0","#239b56"];
+  var speakerColors = ["#2a2a28","#4a3728","#28382a","#2a2838","#382a28","#283a38","#38282a","#2a3828","#382838","#283828","#2a2838","#382a38","#283828","#2a3828","#38282a"];
   var player = null;
   var utterances = [];
   var utterancesEn = null;
@@ -675,8 +673,7 @@
   }
 
   function speakerName(label) {
-    var sp = speakerMap[label];
-    return (sp && sp.name) ? sp.name : 'Speaker ' + label;
+    return label;
   }
 
   function speakerColor(label) {
