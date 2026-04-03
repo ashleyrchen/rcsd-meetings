@@ -37,7 +37,7 @@ if (existsSync(govCalPath)) {
 }
 
 // Today's date string (YYYY-MM-DD) for upcoming meeting logic
-const todayStr = new Date().toISOString().slice(0, 10);
+const todayStr = new Date().toLocaleDateString('en-CA', { timeZone: 'America/Los_Angeles' });
 
 // Collect all board meeting dates from district calendars that are today or in the future
 const futureBoardMeetingDates = [];

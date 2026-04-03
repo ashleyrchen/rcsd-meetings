@@ -35,14 +35,19 @@ function parseMenuInfo(lunchUrl) {
   return { siteId: parseInt(match[1]), menuId: parseInt(match[2]) };
 }
 
+// RCSD is in Pacific time — resolve "today"/"tomorrow" in that zone
+function pacificDateStr(date) {
+  return date.toLocaleDateString('en-CA', { timeZone: 'America/Los_Angeles' });
+}
+
 function resolveDate(input) {
   if (!input || input === 'today') {
-    return new Date().toISOString().split('T')[0];
+    return pacificDateStr(new Date());
   }
   if (input === 'tomorrow') {
     const d = new Date();
     d.setDate(d.getDate() + 1);
-    return d.toISOString().split('T')[0];
+    return pacificDateStr(d);
   }
   if (/^\d{4}-\d{2}-\d{2}$/.test(input)) return input;
   throw new Error(`Invalid date: ${input}. Use YYYY-MM-DD, "today", or "tomorrow".`);

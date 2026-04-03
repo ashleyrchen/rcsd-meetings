@@ -1,16 +1,22 @@
 ---
-name: RCSD School Data
-description: This skill should be used when the user asks about "Redwood City schools", "RCSD", "school hours", "school enrollment", "school calendar", "is there school today", "next board meeting", "what's for lunch", "lunch menu", "report an absence", "IEP data", "special education", "EL percentage", "free and reduced lunch", "PTO", "Konstella", "ParentSquare", "which school", "board meeting", "SARC", "test scores", "CAASPP", "school budget", "RCEF", "Measure U", "expenditures", "watch board meeting", or any question about Redwood City School District schools, demographics, calendars, meetings, lunch menus, funding, or parent resources. Also activates when the user mentions a child's name in the context of school.
-version: 0.2.0
+name: RCSD Data Analyst
+description: This skill should be used when the user asks about "Redwood City schools", "RCSD", "school hours", "school enrollment", "school calendar", "is there school today", "next board meeting", "what's for lunch", "lunch menu", "report an absence", "IEP data", "special education", "EL percentage", "free and reduced lunch", "PTO", "Konstella", "ParentSquare", "which school", "board meeting", "SARC", "test scores", "CAASPP", "school budget", "RCEF", "Measure U", "expenditures", "watch board meeting", "compare schools", "school demographics", "meeting transcript", "board discussion", or any question about Redwood City School District schools, demographics, calendars, meetings, lunch menus, funding, or parent resources. Also activates when the user mentions a child's name in the context of school.
+version: 0.3.0
 ---
 
-# RCSD School Data
+# RCSD Data Analyst
 
-Query and answer questions about Redwood City School District (RCSD) — a TK-8 public school district in Redwood City, California serving ~6,500 students across 12 schools.
+Answer any question about Redwood City School District (RCSD) — a TK-8 public school district in Redwood City, California serving ~6,500 students across 12 schools — by reading and reasoning over local data files directly.
+
+## Core Approach
+
+All structured data lives in `data/` within the rcsd.info project (typically `/Users/dew/dev/rcsd/rcsd.info/data/`). The files are small JSON (under 500KB total) — read them directly with the Read tool and reason over the contents. This enables arbitrary queries, comparisons, and cross-file analysis that no pre-built tool can match.
+
+For questions requiring live external data (lunch menus), use the bundled scripts.
 
 ## Family Configuration
 
-Check for a `.claude/rcsd-info.local.md` file in the user's home directory or project root. This file stores family context so the agent can resolve questions like "What's Max having for lunch tomorrow?" without asking which school.
+Check for `~/.claude/rcsd-info.local.md` in the user's home directory. This stores family context for resolving child-specific questions ("What's Max having for lunch?").
 
 Expected format:
 ```yaml
@@ -27,33 +33,42 @@ children:
 ---
 ```
 
-Fields:
-- `program` — optional but useful for schools with multiple tracks (e.g., Orion has both Mandarin Immersion and Parent Co-op; Adelante Selby is Spanish Immersion)
-- `teachers`, `homeroom` — reserved for future use. When per-teacher/homeroom data is available (e.g., class-specific field trips, homework policies), these fields enable teacher-aware queries.
+When a user mentions a child by name, resolve their school and grade from this config. If the config doesn't exist and the user asks a child-specific question, ask which school and offer to save the config.
 
-When a user mentions a child by name, look up their school and grade from this config. If the config doesn't exist and the user asks a child-specific question, ask which school and offer to save the config for next time.
+## Data File Inventory
 
-## Data Corpus
+Read these files from `data/` to answer questions. For field-by-field documentation, consult `references/data-schema.md`.
 
-All structured data is published at `https://data.rcsd.info/json/` and also available locally in the `data/` directory if the repo is cloned. When the local files aren't available, fetch from the remote URL. The scripts handle this fallback automatically.
+### Schools & District
 
-### Core Data Files
+| File | Size | Use For |
+|------|------|---------|
+| `schools.json` | 609 lines | School profiles, bell schedules, addresses, principals, PTO/PTA info, parent links, CDS codes |
+| `district-calendar-2025-26.json` | ~17 events | "Is there school?" queries for 2025-26 year |
+| `district-calendar-2026-27.json` | ~17 events | "Is there school?" queries for 2026-27 year |
+| `governance-calendar.json` | ~12 events | Board meeting schedule |
 
-| File | Contents |
-|------|----------|
-| `data/schools.json` | All 12 schools: name, slug, grades, type, enrollment, address, phone, website, principal, bell schedule, lunch URL, parent links, PTO/PTA info, CDS codes |
-| `data/district-calendar-2025-26.json` | 2025-26 school year calendar events |
-| `data/district-calendar-2026-27.json` | 2026-27 school year calendar events |
-| `data/sped-enrollment.json` | IEP student counts per school per grade (CDE 2024-25) |
-| `data/sped-categories.json` | Disability categories and LRE placement per school (CDE 2024-25) |
-| `data/sarc/sarc-summary.json` | Demographics, CAASPP scores, expenditures per school |
-| `data/sarc/{slug}.json` | Detailed SARC per school (teachers, textbooks, facilities, test scores) |
-| `data/meeting-summaries.json` | Board meeting summaries keyed by date |
-| `data/meeting-summaries-es.json` | Spanish translations of meeting summaries |
-| `data/school-board-summaries.json` | Board agenda items tagged to specific schools |
-| `data/board-memos/{date}.json` | Per-meeting agenda details and attachments |
-| `data/youtube-index.json` | YouTube video links for board meeting recordings |
-| `data/meetings-data.json` | Comprehensive meeting data with timestamps and transcripts |
+### Demographics & Academics
+
+| File | Use For |
+|------|---------|
+| `sped-enrollment.json` | IEP student counts by school and grade (CDE 2024-25) |
+| `sped-categories.json` | Disability categories and LRE placement by school |
+| `sarc/sarc-summary.json` | Demographics, CAASPP scores, per-pupil spending across all schools |
+| `sarc/{slug}.json` | Detailed SARC per school: teachers, textbooks, facilities, test results by student group |
+
+### Board Meetings (190 meetings, Aug 2020 - present)
+
+| File | Size | Use For |
+|------|------|---------|
+| `meetings-data.json` | Largest file | Comprehensive: all meetings, agenda items, timestamps, topics, threads |
+| `meeting-summaries.json` | 194 entries | AI-generated 1-3 sentence summaries per meeting |
+| `meeting-summaries-es.json` | 194 entries | Spanish translations of summaries |
+| `school-board-summaries.json` | ~750 entries | Agenda items tagged to specific schools |
+| `board-memos/{date}.json` | Per-meeting | Per-meeting agenda details and attachments |
+| `youtube-index.json` | ~893 entries | YouTube video links for meeting recordings |
+| `timestamp-map.json` | 694 offsets | Agenda item to video timestamp mapping |
+| `document-index.json` | Taxonomy | Categorized index of all board attachments |
 
 ### School Slugs
 
@@ -72,99 +87,70 @@ All structured data is published at `https://data.rcsd.info/json/` and also avai
 | `roy-cloud` | Roy Cloud School | TK-8 | Neighborhood |
 | `taft` | Taft School | TK-5 | Neighborhood |
 
-## Answering Common Questions
+## Query Strategy
 
-### "What's [child] having for lunch [date]?"
+### Simple lookups (single file)
+Read the relevant file and extract the answer. Examples: school phone number, bell schedule, calendar check, meeting summary.
 
-1. Resolve the child's school from the family config (`.claude/rcsd-info.local.md`)
-2. Run `scripts/lunch-menu.mjs` with the school slug and date:
-   ```bash
-   node ${SKILL_DIR}/scripts/lunch-menu.mjs orion tomorrow
-   node ${SKILL_DIR}/scripts/lunch-menu.mjs orion 2026-03-17
-   ```
-3. The script calls the public HealthePro API (no auth needed) and returns the daily menu grouped by category (Entree, Vegetables, Fruit, Milk)
-4. Present the entree options conversationally — parents care most about the main dish
+### Cross-file analysis (join reasoning)
+Read multiple files and reason across them. Examples: "Which schools have high EL% but low math scores?" requires joining `sarc/sarc-summary.json` (demographics + CAASPP) with `schools.json` (enrollment context).
 
-If the script is unavailable, the HealthePro API can be called directly:
+### Temporal/topical analysis (meetings corpus)
+For "what has the board discussed about X?", search `meetings-data.json` for topic keywords in the `topics` array and item titles, then read `meeting-summaries.json` for context. For deeper detail, read the specific `board-memos/{date}.json` files. See `references/meetings-guide.md` for navigating the meeting corpus.
+
+### Comparative queries
+Read the relevant data for all schools and present side-by-side. The data is small enough to load entirely.
+
+For detailed cross-file query examples, consult `references/query-patterns.md`.
+
+## Live Data (Scripts)
+
+Only lunch menus require live API calls. Everything else is answered from local JSON.
+
+### Lunch Menus
+
+Fetch live from the HealthePro API using the bundled script:
+```bash
+node ${SKILL_DIR}/scripts/lunch-menu.mjs <slug> [date]
+node ${SKILL_DIR}/scripts/lunch-menu.mjs orion tomorrow
+node ${SKILL_DIR}/scripts/lunch-menu.mjs orion 2026-04-03
 ```
-GET https://menus.healthepro.com/api/organizations/1184/menus/{menuId}/year/{year}/month/{month}/date_overwrites
+
+Date accepts: `YYYY-MM-DD`, `today`, `tomorrow` (defaults to today).
+
+If the script is unavailable, call the HealthePro API directly. See `references/data-schema.md` for endpoint details and school-to-menuId mapping.
+
+### School Lookup (Convenience)
+
+For quick formatted school profiles, the bundled script is available but reading `schools.json` directly is preferred for flexibility:
+```bash
+node ${SKILL_DIR}/scripts/query-school.mjs <slug> [--sped] [--meetings]
+node ${SKILL_DIR}/scripts/query-school.mjs --calendar YYYY-MM-DD
+node ${SKILL_DIR}/scripts/query-school.mjs --list
 ```
-The `menuId` is embedded in each school's `lunchUrl` in `schools.json` (pattern: `/menus/{menuId}`). Response contains per-day entries with a `setting` JSON string; parse `current_display` for item names and categories.
-
-### "Is there school on [date]?"
-
-Read the calendar JSON for the relevant school year. Check if the date falls within any `no-school` event range (check both `date` and `dateEnd` for multi-day events like Spring Break). If no matching event and the date is between First Day and Last Day, school is in session.
-
-### "What time does school start/end?"
-
-Read `schools.json` → `bellSchedule.start`, `.end`, `.earlyRelease`. Wednesday is typically early release day.
-
-### "How do I report an absence?"
-
-District-wide: SchoolMessenger app. Links in `schools.json` → `districtLinks.absenceReporting` (iOS and Android app store URLs).
-
-### "How do I join the PTO / connect with parents?"
-
-Check `schools.json` → school's `parentLinks` for platform and join URLs. District-wide ParentSquare: `districtLinks.parentSquare`.
-
-### "What's the IEP/special ed rate?"
-
-Read `sped-enrollment.json` → `schools.{slug}.pct`. For LRE placement details, read `sped-categories.json`. Note: 504 plan data not available from CDE.
-
-### "What happened at the board meeting?"
-
-Read `meeting-summaries.json` for full-meeting summaries. For school-specific items, read `school-board-summaries.json`.
-
-## Live Data & Document Fetching
-
-Some questions require fetching live data beyond the static JSON files.
-
-### Lunch Menus (HealthePro API)
-
-The HealthePro REST API is public and requires no authentication:
-- **Site list:** `GET /api/organizations/1184/sites/list` — all school sites with IDs
-- **Menus for site:** `GET /api/organizations/1184/sites/{siteId}/menus/` — available menus (lunch, breakfast)
-- **Daily items:** `GET /api/organizations/1184/menus/{menuId}/year/{YYYY}/month/{M}/date_overwrites` — per-day meal items
-- **Recipes catalog:** `GET /api/organizations/1184/menus/{menuId}/start_date/{start}/end_date/{end}/recipes/` — ingredient/allergen/nutrition details
-
-Use `scripts/lunch-menu.mjs` for the common case; call the API directly for allergen queries or nutrition details.
-
-### Board Meeting Documents
-
-Board agendas, attachments, and minutes are on BoardDocs:
-- **Scraped data:** `data/boarddocs-scraped.json` contains historical agenda data
-- **Board memos:** `data/board-memos/{YYYY-MM-DD}.json` for per-meeting details
-- **Live agendas:** Fetch from `https://go.boarddocs.com/ca/redwood/Board.nsf` (use WebFetch)
-- **Meeting videos:** YouTube links in `data/youtube-index.json`
-
-### School Accountability Report Cards (SARCs)
-
-- **Structured data:** `data/sarc/{slug}.json` and `data/sarc/sarc-summary.json`
-- **PDF SARCs:** Hosted at `data.rcsd.info/documents/sarc/2024-25/{slug}-sarc-2024-25.pdf`
-- To fetch a SARC PDF for reading, use the Read tool on a downloaded copy or WebFetch on the URL
-
-### District Calendar PDFs
-
-Calendar PDF URLs are in the calendar JSON files (`calendarUrl` field). These are the official board-approved calendars. Fetch with WebFetch or download and Read for visual confirmation.
 
 ## Data Caveats
 
-- **Cell suppression**: CDE data uses `null` where counts are <=10 students (privacy)
-- **SARC year lag**: 2024-25 SARCs report 2023-24 data
-- **504 plans**: Not tracked by CDE; only from OCR CRDC (lags ~5 years)
-- **Bilingual**: Calendar events have `en` and `es` fields. Site has `/schools/` and `/escuelas/` mirrors.
-- **Lunch menus**: Published monthly; future months may not be available yet
+- **Cell suppression**: CDE data uses `null` where counts are <=10 students (privacy). State this when presenting data.
+- **SARC year lag**: 2024-25 SARCs report 2023-24 data. Note the reporting year.
+- **504 plans**: Not tracked by CDE; only available from OCR CRDC (lags ~5 years).
+- **AI-generated content**: Meeting summaries are AI-generated and labeled as such. Always note this.
+- **Lunch menus**: Published monthly; future months may not yet be available.
+- **Bilingual**: Calendar events have `en` and `es` fields. The site has `/schools/` and `/escuelas/` mirrors.
 
-## Scripts
+## Remote Fallback
 
-| Script | Purpose |
-|--------|---------|
-| `scripts/query-school.mjs <slug> [--sped] [--meetings]` | School profile lookup |
-| `scripts/query-school.mjs --calendar YYYY-MM-DD` | Check if a date is a school day |
-| `scripts/query-school.mjs --list` | List all 12 schools |
-| `scripts/lunch-menu.mjs <slug> [date]` | Fetch lunch menu (date: YYYY-MM-DD, "today", "tomorrow") |
+If local data files are not available (e.g., repo not cloned), all JSON is published at `https://data.rcsd.info/json/`. Use WebFetch as a fallback. Board meeting videos are on YouTube (links in `youtube-index.json`).
 
 ## Additional Resources
 
-- **`references/data-schema.md`** — Complete field-by-field documentation of every JSON data file
-- **Website:** rcsd.info — school pages at `/schools/{slug}/`, meetings at `/meetings/`, budget at `/budget/`
+### Reference Files
+
+- **`references/data-schema.md`** — Complete field-by-field documentation of every JSON data file, plus HealthePro API details
+- **`references/query-patterns.md`** — Examples of cross-file analysis queries with step-by-step approaches
+- **`references/meetings-guide.md`** — Navigating the 190-meeting board corpus: structure, timestamps, transcripts
+
+### Website
+
+- **rcsd.info** — school pages at `/schools/{slug}/`, meetings at `/meetings/`, budget at `/budget/`
+- **data.rcsd.info** — public JSON and artifact hosting

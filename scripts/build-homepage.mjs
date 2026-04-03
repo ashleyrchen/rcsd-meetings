@@ -30,7 +30,7 @@ const totalEnrollment = schools.schools.reduce((sum, s) => sum + s.enrollment, 0
 const numSchools = schools.schools.length;
 
 // ---- Upcoming events (merge both school years, from today forward) ----
-const today = new Date().toISOString().slice(0, 10);
+const today = new Date().toLocaleDateString('en-CA', { timeZone: 'America/Los_Angeles' });
 const allEvents = [...calendar2526.events, ...calendar2627.events]
   .sort((a, b) => a.date.localeCompare(b.date));
 const upcoming = allEvents
@@ -889,16 +889,42 @@ ${upcoming.map(e => eventRow(e, 'es')).join('\n')}
     </div>
   </div>
 
-  <!-- AI AGENT INSTRUCTIONS (full-width) -->
+  <!-- CLAUDE CODE PLUGIN (primary AI integration) -->
   <div class="ai-section">
-    <h2>For AI Agents &amp; Developers</h2>
+    <h2>Claude Code Plugin</h2>
     <pre>
-RCSD Open Data — structured data for the Redwood City School District
+Install the rcsd-info plugin for <a href="https://claude.com/claude-code">Claude Code</a> to query RCSD data
+from your terminal. The plugin teaches Claude about every data file,
+schema, and analysis pattern — so it can answer arbitrary questions,
+compare schools, cross-reference datasets, and track board topics
+over time. No pre-built queries needed; ask anything.
 
-MCP:     <code>https://mcp.rcsd.info/mcp</code>  (Model Context Protocol — works with Claude, VS Code, Cursor)  <a href="/mcp/">Setup instructions &#8599;</a>
+  <code>/plugin marketplace add dweekly/rcsd-meetings</code>
+  <code>/plugin install rcsd-info@rcsd-info</code>
+
+Optional: create <code>~/.claude/rcsd-info.local.md</code> to personalize queries:
+
+  <code>---</code>
+  <code>children:</code>
+  <code>  - name: Jill</code>
+  <code>    grade: 2</code>
+  <code>    school: orion</code>
+  <code>    program: Mandarin Immersion</code>
+  <code>---</code>
+
+Then ask: "What's Jill having for lunch tomorrow?"</pre>
+  </div>
+
+  <!-- OPEN DATA / MCP -->
+  <div class="ai-section" style="margin-top:1rem">
+    <h2>Open Data &amp; MCP</h2>
+    <pre>
+RCSD Open Data — structured JSON for the Redwood City School District
+
 GitHub:  <code><a href="https://github.com/dweekly/rcsd-meetings">https://github.com/dweekly/rcsd-meetings</a></code>
 Website: <code><a href="https://rcsd.info">https://rcsd.info</a></code>
 CDN:     <code><a href="https://data.rcsd.info">https://data.rcsd.info</a></code>
+MCP:     <code>https://mcp.rcsd.info/mcp</code>  <a href="/mcp/">Setup instructions &#8599;</a>
 
 DATA FILES (<a href="https://data.rcsd.info/json/">data.rcsd.info/json/</a>):
   <a href="https://data.rcsd.info/json/meetings-data.json">meetings-data.json</a>       All meetings with agendas, items, attachments, timestamps
@@ -925,30 +951,6 @@ STRUCTURED PAGES:
   /distrito/        District overview (ES)
 
 Contact: team@rcsd.info</pre>
-  </div>
-
-  <!-- CLAUDE CODE PLUGIN -->
-  <div class="ai-section" style="margin-top:1rem">
-    <h2>Claude Code Plugin</h2>
-    <pre>
-Install the rcsd-info plugin for <a href="https://claude.com/claude-code">Claude Code</a> to query RCSD data
-from your terminal — school info, live lunch menus, calendars,
-board meetings, demographics, and special education stats.
-
-  <code>/plugin marketplace add dweekly/rcsd-meetings</code>
-  <code>/plugin install rcsd-info@rcsd-info</code>
-
-Optional: create <code>~/.claude/rcsd-info.local.md</code> to personalize queries:
-
-  <code>---</code>
-  <code>children:</code>
-  <code>  - name: Jill</code>
-  <code>    grade: 2</code>
-  <code>    school: orion</code>
-  <code>    program: Mandarin Immersion</code>
-  <code>---</code>
-
-Then ask: "What's Jill having for lunch tomorrow?"</pre>
   </div>
 
 </main>

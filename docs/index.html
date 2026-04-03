@@ -1163,11 +1163,6 @@
   <div class="bi-row events-section">
     <div class="bi-en events-col">
 
-        <div class="event-row event--board-meeting">
-          <span class="event-date-inline">Wed, APR 1</span>
-          <span class="event-text"><a href="/meetings/#sy2526" class="event-label-link">Board Meeting</a><span class="event-summary">Roy Cloud and Clifford school presentations with SPSA approvals. EV charger replacement agreement with PowerFlex after Shell Recharge discontinuation at six campuses. 22 CSBA employee policy updates on consent. RCTA class size presentation as information item. Kennedy Grand Canyon and MIT Treasure Island field trips.</span></span>
-        </div>
-
         <div class="event-row event--no-school event--multi">
           <span class="event-date-inline">Mon–Fri, APR 6–10</span>
           <span class="event-text">Spring Break <span class="no-school-icon" aria-label="No School">🏫</span></span>
@@ -1222,13 +1217,13 @@
           <span class="event-date-inline">Mon, OCT 12</span>
           <span class="event-text">Indigenous Peoples' Day <span class="no-school-icon" aria-label="No School">🏫</span></span>
         </div>
+
+        <div class="event-row event--no-school">
+          <span class="event-date-inline">Wed, NOV 11</span>
+          <span class="event-text">Veterans Day <span class="no-school-icon" aria-label="No School">🏫</span></span>
+        </div>
     </div>
     <div class="bi-es events-col" lang="es">
-
-        <div class="event-row event--board-meeting">
-          <span class="event-date-inline">mié, ABR 1</span>
-          <span class="event-text"><a href="/reuniones/#sy2526" class="event-label-link">Reunión de la Junta</a><span class="event-summary">Presentaciones de Roy Cloud y Clifford con aprobaciones de SPSA. Acuerdo de reemplazo de cargadores EV con PowerFlex tras la discontinuación de Shell Recharge en seis escuelas. 22 actualizaciones de políticas de empleados de CSBA en consentimiento. Presentación de RCTA sobre tamaño de clases como punto informativo. Excursiones de Kennedy al Gran Cañón y de MIT a Treasure Island.</span></span>
-        </div>
 
         <div class="event-row event--no-school event--multi">
           <span class="event-date-inline">lun–vie, ABR 6–10</span>
@@ -1283,6 +1278,11 @@
         <div class="event-row event--no-school">
           <span class="event-date-inline">lun, OCT 12</span>
           <span class="event-text">Día de los Pueblos Indígenas <span class="no-school-icon" aria-label="No School">🏫</span></span>
+        </div>
+
+        <div class="event-row event--no-school">
+          <span class="event-date-inline">mié, NOV 11</span>
+          <span class="event-text">Día de los Veteranos <span class="no-school-icon" aria-label="No School">🏫</span></span>
         </div>
     </div>
   </div>
@@ -1340,16 +1340,42 @@
     </div>
   </div>
 
-  <!-- AI AGENT INSTRUCTIONS (full-width) -->
+  <!-- CLAUDE CODE PLUGIN (primary AI integration) -->
   <div class="ai-section">
-    <h2>For AI Agents &amp; Developers</h2>
+    <h2>Claude Code Plugin</h2>
     <pre>
-RCSD Open Data — structured data for the Redwood City School District
+Install the rcsd-info plugin for <a href="https://claude.com/claude-code">Claude Code</a> to query RCSD data
+from your terminal. The plugin teaches Claude about every data file,
+schema, and analysis pattern — so it can answer arbitrary questions,
+compare schools, cross-reference datasets, and track board topics
+over time. No pre-built queries needed; ask anything.
 
-MCP:     <code>https://mcp.rcsd.info/mcp</code>  (Model Context Protocol — works with Claude, VS Code, Cursor)  <a href="/mcp/">Setup instructions &#8599;</a>
+  <code>/plugin marketplace add dweekly/rcsd-meetings</code>
+  <code>/plugin install rcsd-info@rcsd-info</code>
+
+Optional: create <code>~/.claude/rcsd-info.local.md</code> to personalize queries:
+
+  <code>---</code>
+  <code>children:</code>
+  <code>  - name: Jill</code>
+  <code>    grade: 2</code>
+  <code>    school: orion</code>
+  <code>    program: Mandarin Immersion</code>
+  <code>---</code>
+
+Then ask: "What's Jill having for lunch tomorrow?"</pre>
+  </div>
+
+  <!-- OPEN DATA / MCP -->
+  <div class="ai-section" style="margin-top:1rem">
+    <h2>Open Data &amp; MCP</h2>
+    <pre>
+RCSD Open Data — structured JSON for the Redwood City School District
+
 GitHub:  <code><a href="https://github.com/dweekly/rcsd-meetings">https://github.com/dweekly/rcsd-meetings</a></code>
 Website: <code><a href="https://rcsd.info">https://rcsd.info</a></code>
 CDN:     <code><a href="https://data.rcsd.info">https://data.rcsd.info</a></code>
+MCP:     <code>https://mcp.rcsd.info/mcp</code>  <a href="/mcp/">Setup instructions &#8599;</a>
 
 DATA FILES (<a href="https://data.rcsd.info/json/">data.rcsd.info/json/</a>):
   <a href="https://data.rcsd.info/json/meetings-data.json">meetings-data.json</a>       All meetings with agendas, items, attachments, timestamps
@@ -1376,30 +1402,6 @@ STRUCTURED PAGES:
   /distrito/        District overview (ES)
 
 Contact: team@rcsd.info</pre>
-  </div>
-
-  <!-- CLAUDE CODE PLUGIN -->
-  <div class="ai-section" style="margin-top:1rem">
-    <h2>Claude Code Plugin</h2>
-    <pre>
-Install the rcsd-info plugin for <a href="https://claude.com/claude-code">Claude Code</a> to query RCSD data
-from your terminal — school info, live lunch menus, calendars,
-board meetings, demographics, and special education stats.
-
-  <code>/plugin marketplace add dweekly/rcsd-meetings</code>
-  <code>/plugin install rcsd-info@rcsd-info</code>
-
-Optional: create <code>~/.claude/rcsd-info.local.md</code> to personalize queries:
-
-  <code>---</code>
-  <code>children:</code>
-  <code>  - name: Jill</code>
-  <code>    grade: 2</code>
-  <code>    school: orion</code>
-  <code>    program: Mandarin Immersion</code>
-  <code>---</code>
-
-Then ask: "What's Jill having for lunch tomorrow?"</pre>
   </div>
 
 </main>
