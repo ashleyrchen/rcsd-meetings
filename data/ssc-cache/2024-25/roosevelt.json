@@ -1,0 +1,54 @@
+{
+  "school": "Roosevelt Elementary School",
+  "schoolYear": "2024-25",
+  "composition": {
+    "principal": 1,
+    "classroomTeachers": 3,
+    "otherStaff": 1,
+    "parentCommunity": 5
+  },
+  "members": [
+    {
+      "name": "Tina Mercer",
+      "role": "principal"
+    },
+    {
+      "name": "Montana Miller",
+      "role": "classroomTeacher"
+    },
+    {
+      "name": "Veronica Hernandez-Lobos",
+      "role": "otherStaff"
+    },
+    {
+      "name": "Lydia Pacheco",
+      "role": "classroomTeacher"
+    },
+    {
+      "name": "Kayla Kamlley",
+      "role": "classroomTeacher"
+    },
+    {
+      "name": "Gloria Arteaga",
+      "role": "parentCommunity"
+    },
+    {
+      "name": "Jennifer Brinkley",
+      "role": "parentCommunity"
+    },
+    {
+      "name": "Whitney Glockner Black",
+      "role": "parentCommunity"
+    },
+    {
+      "name": "Harmony Younes",
+      "role": "parentCommunity"
+    },
+    {
+      "name": "Julie Escudero",
+      "role": "parentCommunity"
+    }
+  ],
+  "chairperson": "Lydia Pacheco",
+  "adoptionDate": "2024-05-21"
+}

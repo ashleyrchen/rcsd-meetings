@@ -1,0 +1,54 @@
+{
+  "school": "Henry Ford Elementary School",
+  "schoolYear": "2023-24",
+  "composition": {
+    "principal": 1,
+    "classroomTeachers": 3,
+    "otherStaff": 1,
+    "parentCommunity": 5
+  },
+  "members": [
+    {
+      "name": "Jennifer Knopf",
+      "role": "principal"
+    },
+    {
+      "name": "Sandra Covacha",
+      "role": "classroomTeacher"
+    },
+    {
+      "name": "Steve Borg",
+      "role": "classroomTeacher"
+    },
+    {
+      "name": "Amy Barstad",
+      "role": "classroomTeacher"
+    },
+    {
+      "name": "Shaunna Ingersoll",
+      "role": "otherStaff"
+    },
+    {
+      "name": "Mathew Moore",
+      "role": "parentCommunity"
+    },
+    {
+      "name": "Nicole Caldwell",
+      "role": "parentCommunity"
+    },
+    {
+      "name": "Nadia Nothelfer",
+      "role": "parentCommunity"
+    },
+    {
+      "name": "Carlo Contavalli",
+      "role": "parentCommunity"
+    },
+    {
+      "name": "Keeley Vega",
+      "role": "parentCommunity"
+    }
+  ],
+  "chairperson": "Matthew Moore",
+  "adoptionDate": "2023-09-26"
+}

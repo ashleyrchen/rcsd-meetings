@@ -1,0 +1,54 @@
+{
+  "school": "Garfield Community School",
+  "schoolYear": "2025-26",
+  "composition": {
+    "principal": 1,
+    "classroomTeachers": 3,
+    "otherStaff": 4,
+    "parentCommunity": 2
+  },
+  "members": [
+    {
+      "name": "Sara Shackel",
+      "role": "principal"
+    },
+    {
+      "name": "Frida Miranda",
+      "role": "classroomTeacher"
+    },
+    {
+      "name": "Kim Gray",
+      "role": "classroomTeacher"
+    },
+    {
+      "name": "Sergio Simarro Martinez",
+      "role": "classroomTeacher"
+    },
+    {
+      "name": "Alicia Alvarez",
+      "role": "otherStaff"
+    },
+    {
+      "name": "Maricruz Sanchez",
+      "role": "parentCommunity"
+    },
+    {
+      "name": "Maritza Gutierrez",
+      "role": "parentCommunity"
+    },
+    {
+      "name": "Cassandra Garcia",
+      "role": "otherStaff"
+    },
+    {
+      "name": "Yadira DiSiena",
+      "role": "otherStaff"
+    },
+    {
+      "name": "Karina Arellano",
+      "role": "otherStaff"
+    }
+  ],
+  "chairperson": "Maricruz Sanchez",
+  "adoptionDate": "2024-05-22"
+}

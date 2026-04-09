@@ -1,0 +1,54 @@
+{
+  "school": "Adelante Selby Spanish Immersion School",
+  "schoolYear": "2025-26",
+  "composition": {
+    "principal": 1,
+    "classroomTeachers": 3,
+    "otherStaff": 1,
+    "parentCommunity": 5
+  },
+  "members": [
+    {
+      "name": "Warren Sedar",
+      "role": "principal"
+    },
+    {
+      "name": "Jessenia Linares",
+      "role": "otherStaff"
+    },
+    {
+      "name": "Yessica Gallagher",
+      "role": "parentCommunity"
+    },
+    {
+      "name": "Damien Fuentes",
+      "role": "parentCommunity"
+    },
+    {
+      "name": "Lauren Berlin",
+      "role": "parentCommunity"
+    },
+    {
+      "name": "Marina Fashchenko",
+      "role": "parentCommunity"
+    },
+    {
+      "name": "Jen Brown",
+      "role": "parentCommunity"
+    },
+    {
+      "name": "Maria Orozco",
+      "role": "classroomTeacher"
+    },
+    {
+      "name": "Adriana Gomez",
+      "role": "classroomTeacher"
+    },
+    {
+      "name": "Narda Garcia",
+      "role": "classroomTeacher"
+    }
+  ],
+  "chairperson": "Yessica Gallagher",
+  "adoptionDate": "2025-04-23"
+}

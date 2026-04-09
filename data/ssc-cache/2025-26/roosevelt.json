@@ -1,0 +1,54 @@
+{
+  "school": "Roosevelt Elementary School",
+  "schoolYear": "2025-26",
+  "composition": {
+    "principal": 1,
+    "classroomTeachers": 3,
+    "otherStaff": 1,
+    "parentCommunity": 5
+  },
+  "members": [
+    {
+      "name": "Tina Mercer",
+      "role": "principal"
+    },
+    {
+      "name": "Wendi Brown",
+      "role": "classroomTeacher"
+    },
+    {
+      "name": "Veronica Hernandez-Lobos",
+      "role": "otherStaff"
+    },
+    {
+      "name": "Lydia Pacheco",
+      "role": "classroomTeacher"
+    },
+    {
+      "name": "Kayla Kamlley",
+      "role": "classroomTeacher"
+    },
+    {
+      "name": "Martha Rodriguez",
+      "role": "parentCommunity"
+    },
+    {
+      "name": "Guadalupe Arias",
+      "role": "parentCommunity"
+    },
+    {
+      "name": "Whitney Glockner Black",
+      "role": "parentCommunity"
+    },
+    {
+      "name": "Isela Garcia",
+      "role": "parentCommunity"
+    },
+    {
+      "name": "Nina Wemmer",
+      "role": "parentCommunity"
+    }
+  ],
+  "chairperson": "Martha Rodriguez",
+  "adoptionDate": "2025-04-04"
+}

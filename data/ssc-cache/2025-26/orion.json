@@ -1,0 +1,66 @@
+{
+  "school": "Orion Alternative Elementary School",
+  "schoolYear": "2025-26",
+  "composition": {
+    "principal": 1,
+    "classroomTeachers": 4,
+    "otherStaff": 2,
+    "parentCommunity": 6
+  },
+  "members": [
+    {
+      "name": "Winnie Chen",
+      "role": "principal"
+    },
+    {
+      "name": "Cathy Schechter",
+      "role": "classroomTeacher"
+    },
+    {
+      "name": "Chenchen Gong",
+      "role": "classroomTeacher"
+    },
+    {
+      "name": "Jiaying Xu",
+      "role": "classroomTeacher"
+    },
+    {
+      "name": "Dana Bozin",
+      "role": "classroomTeacher"
+    },
+    {
+      "name": "Katie O'Hara",
+      "role": "otherStaff"
+    },
+    {
+      "name": "Brian Tuomy",
+      "role": "otherStaff"
+    },
+    {
+      "name": "Michael Alba",
+      "role": "parentCommunity"
+    },
+    {
+      "name": "Christina Luke",
+      "role": "parentCommunity"
+    },
+    {
+      "name": "Linda Khiev-Louie",
+      "role": "parentCommunity"
+    },
+    {
+      "name": "Oscar Flores",
+      "role": "parentCommunity"
+    },
+    {
+      "name": "Hana Ma",
+      "role": "parentCommunity"
+    },
+    {
+      "name": "Joe Ballou",
+      "role": "parentCommunity"
+    }
+  ],
+  "chairperson": "Michael Alba",
+  "adoptionDate": "2025-04-02"
+}
