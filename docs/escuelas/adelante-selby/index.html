@@ -649,6 +649,32 @@
     color: var(--text-muted);
   }
 
+  /* ---- SSC MEMBERSHIP ---- */
+  .resource-card.ssc-card {
+    grid-column: 1 / -1;
+  }
+  .ssc-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+    margin-top: 0.3rem;
+  }
+  .ssc-table th {
+    text-align: left;
+    font-weight: 600;
+    padding: 0.3rem 0.5rem;
+    border-bottom: 2px solid var(--green-pale);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+  .ssc-table td {
+    padding: 0.25rem 0.5rem;
+    border-bottom: 1px solid var(--cream-dark);
+  }
+  .ssc-table tr:last-child td {
+    border-bottom: none;
+  }
+
   /* ---- BELL SCHEDULE ---- */
   .resource-card.bell-card {
     grid-column: 1 / -1;
@@ -1233,9 +1259,15 @@
         <h4>Plan Integral de Seguridad</h4>
         <p>Plan 2025-26, aprobado por la junta el 4 de feb de 2026.</p><p><a href="https://data.rcsd.info/board-packets/2026-02-04/2025_Comprehensive_School_Safety_Plan-_Pt._1_-Public-_Adelante_Selby_Spanish_Imm.pdf" target="_blank">Descargar CSSP (PDF) &#8599;</a></p>
       </div>
-      <div class="resource-card">
+      <div class="resource-card ssc-card">
         <h4>Consejo del Sitio Escolar</h4>
-        <p class="coming-soon">Próximamente</p>
+        <p style="margin-bottom:0.4rem"><strong>Presidente:</strong> Yessica Gallagher</p>
+          <p style="margin-bottom:0.6rem; font-size:0.85rem; color:#666">SPSA adoptado: 23 de abril de 2025</p>
+          <table class="ssc-table">
+            <thead><tr><th>Nombre</th><th>Rol</th></tr></thead>
+            <tbody><tr><td>Warren Sedar</td><td>Director(a)</td></tr><tr><td>Jessenia Linares</td><td>Personal</td></tr><tr><td>Yessica Gallagher</td><td>Padre / Comunidad</td></tr><tr><td>Damien Fuentes</td><td>Padre / Comunidad</td></tr><tr><td>Lauren Berlin</td><td>Padre / Comunidad</td></tr><tr><td>Marina Fashchenko</td><td>Padre / Comunidad</td></tr><tr><td>Jen Brown</td><td>Padre / Comunidad</td></tr><tr><td>Maria Orozco</td><td>Maestro(a)</td></tr><tr><td>Adriana Gomez</td><td>Maestro(a)</td></tr><tr><td>Narda Garcia</td><td>Maestro(a)</td></tr></tbody>
+          </table>
+          <p style="margin-top:0.5rem"><a href="https://data.rcsd.info/documents/spsa/2025-26/adelante-selby.pdf" target="_blank">Ver SPSA &#8599;</a></p>
       </div>
       <div class="resource-card">
         <h4>Programas Extracurriculares</h4>

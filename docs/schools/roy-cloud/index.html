@@ -649,6 +649,32 @@
     color: var(--text-muted);
   }
 
+  /* ---- SSC MEMBERSHIP ---- */
+  .resource-card.ssc-card {
+    grid-column: 1 / -1;
+  }
+  .ssc-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+    margin-top: 0.3rem;
+  }
+  .ssc-table th {
+    text-align: left;
+    font-weight: 600;
+    padding: 0.3rem 0.5rem;
+    border-bottom: 2px solid var(--green-pale);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+  .ssc-table td {
+    padding: 0.25rem 0.5rem;
+    border-bottom: 1px solid var(--cream-dark);
+  }
+  .ssc-table tr:last-child td {
+    border-bottom: none;
+  }
+
   /* ---- BELL SCHEDULE ---- */
   .resource-card.bell-card {
     grid-column: 1 / -1;
@@ -1212,9 +1238,15 @@
         <h4>Comprehensive Safety Plan</h4>
         <p>2025-26 plan, board-approved Feb 4, 2026.</p><p><a href="https://data.rcsd.info/board-packets/2026-02-04/2025_Comprehensive_School_Safety_Plan__Pt._1_-Public-_Roy_Cloud_Elementary_Schoo.pdf" target="_blank">Download CSSP (PDF) &#8599;</a></p>
       </div>
-      <div class="resource-card">
+      <div class="resource-card ssc-card">
         <h4>School Site Council</h4>
-        <p class="coming-soon">Coming soon</p>
+        <p style="margin-bottom:0.4rem"><strong>Chair:</strong> Keeley Vega</p>
+          <p style="margin-bottom:0.6rem; font-size:0.85rem; color:#666">SPSA adopted: April 29, 2025</p>
+          <table class="ssc-table">
+            <thead><tr><th>Name</th><th>Role</th></tr></thead>
+            <tbody><tr><td>Melissa Bowdoin</td><td>Principal</td></tr><tr><td>Anna Rivoli</td><td>Teacher</td></tr><tr><td>Linda Kiefer</td><td>Teacher</td></tr><tr><td>Joan Perez</td><td>Teacher</td></tr><tr><td>Annette Bacab</td><td>Staff</td></tr><tr><td>Courtney Borrone</td><td>Parent / Community</td></tr><tr><td>Keeley Vega</td><td>Parent / Community</td></tr><tr><td>Zane Rogers</td><td>Parent / Community</td></tr><tr><td>Harmony Younes</td><td>Parent / Community</td></tr></tbody>
+          </table>
+          <p style="margin-top:0.5rem"><a href="https://data.rcsd.info/documents/spsa/2025-26/roy-cloud.pdf" target="_blank">View SPSA &#8599;</a></p>
       </div>
       <div class="resource-card">
         <h4>After-School Programs</h4>

@@ -67,6 +67,7 @@ const DISTRICT_AVG_PER_PUPIL = sarcSlugs.length > 0
 // ---- Load SpEd data ----
 const SPED_ENROLLMENT = (() => { try { return JSON.parse(readFileSync(resolve(ROOT, 'data/sped-enrollment.json'), 'utf-8')); } catch { return {}; } })();
 const SPED_CATEGORIES = (() => { try { return JSON.parse(readFileSync(resolve(ROOT, 'data/sped-categories.json'), 'utf-8')); } catch { return {}; } })();
+const SSC_DATA = (() => { try { return JSON.parse(readFileSync(resolve(ROOT, 'data/ssc-membership.json'), 'utf-8')); } catch { return {}; } })();
 
 // Compute district-wide SpEd averages
 const districtSpedPct = SPED_ENROLLMENT.district
@@ -969,6 +970,32 @@ const schoolCSS = `
     color: var(--text-muted);
   }
 
+  /* ---- SSC MEMBERSHIP ---- */
+  .resource-card.ssc-card {
+    grid-column: 1 / -1;
+  }
+  .ssc-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+    margin-top: 0.3rem;
+  }
+  .ssc-table th {
+    text-align: left;
+    font-weight: 600;
+    padding: 0.3rem 0.5rem;
+    border-bottom: 2px solid var(--green-pale);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+  .ssc-table td {
+    padding: 0.25rem 0.5rem;
+    border-bottom: 1px solid var(--cream-dark);
+  }
+  .ssc-table tr:last-child td {
+    border-bottom: none;
+  }
+
   /* ---- BELL SCHEDULE ---- */
   .resource-card.bell-card {
     grid-column: 1 / -1;
@@ -1299,6 +1326,14 @@ const LABELS = {
     dismissal: 'Dismissal',
     lunchMenu: 'Lunch Menu',
     schoolSiteCouncil: 'School Site Council',
+    sscChair: 'Chair',
+    sscAdopted: 'SPSA adopted',
+    sscRolePrincipal: 'Principal',
+    sscRoleTeacher: 'Teacher',
+    sscRoleStaff: 'Staff',
+    sscRoleParent: 'Parent / Community',
+    sscMemberName: 'Name',
+    sscMemberRole: 'Role',
     ptoPtaOrg: 'PTO / PTA',
     afterSchool: 'After-School Programs',
     parentComm: 'Parent Communication',
@@ -1419,6 +1454,14 @@ const LABELS = {
     dismissal: 'Salida',
     lunchMenu: 'Menú de Almuerzo',
     schoolSiteCouncil: 'Consejo del Sitio Escolar',
+    sscChair: 'Presidente',
+    sscAdopted: 'SPSA adoptado',
+    sscRolePrincipal: 'Director(a)',
+    sscRoleTeacher: 'Maestro(a)',
+    sscRoleStaff: 'Personal',
+    sscRoleParent: 'Padre / Comunidad',
+    sscMemberName: 'Nombre',
+    sscMemberRole: 'Rol',
     ptoPtaOrg: 'PTO / PTA',
     afterSchool: 'Programas Extracurriculares',
     parentComm: 'Comunicación con Padres',
@@ -2033,9 +2076,21 @@ ${siteNav({ activePage: 'schools', lang, altLangHref })}
           ? `<p>${L.csspDesc}</p><p><a href="${CSSP_URLS[slug]}" target="_blank">${L.viewCssp} &#8599;</a></p>`
           : `<p class="coming-soon">${L.comingSoon}</p>`}
       </div>
-      <div class="resource-card">
+      <div class="resource-card ssc-card">
         <h4>${L.schoolSiteCouncil}</h4>
-        <p class="coming-soon">${L.comingSoon}</p>
+        ${(() => {
+          const ssc = SSC_DATA[slug]?.['2025-26'];
+          if (!ssc?.members?.length) return `<p class="coming-soon">${L.comingSoon}</p>`;
+          const roleLabel = { principal: L.sscRolePrincipal, classroomTeacher: L.sscRoleTeacher, otherStaff: L.sscRoleStaff, parentCommunity: L.sscRoleParent };
+          const adoptedStr = ssc.adoptionDate ? new Date(ssc.adoptionDate + 'T12:00:00').toLocaleDateString(lang === 'es' ? 'es-US' : 'en-US', { year: 'numeric', month: 'long', day: 'numeric' }) : '';
+          return `${ssc.chairperson ? `<p style="margin-bottom:0.4rem"><strong>${L.sscChair}:</strong> ${ssc.chairperson}</p>` : ''}
+          ${adoptedStr ? `<p style="margin-bottom:0.6rem; font-size:0.85rem; color:#666">${L.sscAdopted}: ${adoptedStr}</p>` : ''}
+          <table class="ssc-table">
+            <thead><tr><th>${L.sscMemberName}</th><th>${L.sscMemberRole}</th></tr></thead>
+            <tbody>${ssc.members.map(m => `<tr><td>${m.name}</td><td>${roleLabel[m.role] || m.role}</td></tr>`).join('')}</tbody>
+          </table>
+          <p style="margin-top:0.5rem"><a href="https://data.rcsd.info/documents/spsa/2025-26/${slug}.pdf" target="_blank">${isEs ? 'Ver SPSA' : 'View SPSA'} &#8599;</a></p>`;
+        })()}
       </div>
       <div class="resource-card">
         <h4>${L.afterSchool}</h4>
