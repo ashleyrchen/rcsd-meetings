@@ -1,0 +1,153 @@
+{
+  "_metadata": {
+    "description": "Long-term English learner counts by school",
+    "source": "https://dq.cde.ca.gov/dataquest/longtermel/lteldnld.aspx?year=2024-25",
+    "dataYear": "2024-25",
+    "downloadDate": "2026-04-12",
+    "fileStructure": "https://dq.cde.ca.gov/dataquest/longtermel/",
+    "pipeline": "scripts/pull-cde-data.mjs --dataset ltel"
+  },
+  "district": {
+    "totalEnrollment": 15046,
+    "el": 5710,
+    "rfep": 1734,
+    "atRisk": 900,
+    "ltel": 652,
+    "el4plus": 814,
+    "el03y": 3344,
+    "el45y": 1188,
+    "el6plusY": 1178
+  },
+  "clifford": {
+    "totalEnrollment": 1396,
+    "el": 286,
+    "rfep": 128,
+    "atRisk": 24,
+    "ltel": 38,
+    "el4plus": 44,
+    "el03y": 180,
+    "el45y": 40,
+    "el6plusY": 66
+  },
+  "roy-cloud": {
+    "totalEnrollment": 1272,
+    "el": 66,
+    "rfep": 48,
+    "atRisk": 4,
+    "ltel": 10,
+    "el4plus": 2,
+    "el03y": 50,
+    "el45y": 6,
+    "el6plusY": 10
+  },
+  "garfield": {
+    "totalEnrollment": 560,
+    "el": 422,
+    "rfep": 28,
+    "atRisk": 88,
+    "ltel": 0,
+    "el4plus": 26,
+    "el03y": 308,
+    "el45y": 108,
+    "el6plusY": 6
+  },
+  "henry-ford": {
+    "totalEnrollment": 890,
+    "el": 330,
+    "rfep": 38,
+    "atRisk": 44,
+    "ltel": 0,
+    "el4plus": 38,
+    "el03y": 248,
+    "el45y": 76,
+    "el6plusY": 6
+  },
+  "hoover": {
+    "totalEnrollment": 1350,
+    "el": 900,
+    "rfep": 224,
+    "atRisk": 174,
+    "ltel": 86,
+    "el4plus": 102,
+    "el03y": 538,
+    "el45y": 204,
+    "el6plusY": 158
+  },
+  "kennedy": {
+    "totalEnrollment": 1616,
+    "el": 416,
+    "rfep": 460,
+    "atRisk": 14,
+    "ltel": 160,
+    "el4plus": 122,
+    "el03y": 120,
+    "el45y": 14,
+    "el6plusY": 282
+  },
+  "mckinley-mit": {
+    "totalEnrollment": 952,
+    "el": 426,
+    "rfep": 324,
+    "atRisk": 38,
+    "ltel": 216,
+    "el4plus": 78,
+    "el03y": 94,
+    "el45y": 38,
+    "el6plusY": 294
+  },
+  "roosevelt": {
+    "totalEnrollment": 764,
+    "el": 330,
+    "rfep": 30,
+    "atRisk": 90,
+    "ltel": 0,
+    "el4plus": 26,
+    "el03y": 214,
+    "el45y": 106,
+    "el6plusY": 10
+  },
+  "adelante-selby": {
+    "totalEnrollment": 1164,
+    "el": 462,
+    "rfep": 60,
+    "atRisk": 62,
+    "ltel": 0,
+    "el4plus": 66,
+    "el03y": 334,
+    "el45y": 122,
+    "el6plusY": 6
+  },
+  "taft": {
+    "totalEnrollment": 714,
+    "el": 470,
+    "rfep": 42,
+    "atRisk": 124,
+    "ltel": 0,
+    "el4plus": 18,
+    "el03y": 328,
+    "el45y": 138,
+    "el6plusY": 4
+  },
+  "orion": {
+    "totalEnrollment": 1024,
+    "el": 172,
+    "rfep": 10,
+    "atRisk": 22,
+    "ltel": 0,
+    "el4plus": 16,
+    "el03y": 134,
+    "el45y": 34,
+    "el6plusY": 4
+  },
+  "north-star": {
+    "totalEnrollment": 1054,
+    "el": 26,
+    "rfep": 84,
+    "atRisk": 2,
+    "ltel": 0,
+    "el4plus": 16,
+    "el03y": 8,
+    "el45y": 18,
+    "el6plusY": 0
+  }
+}

@@ -1,0 +1,1431 @@
+{
+  "_metadata": {
+    "description": "Chronic absenteeism rates by school and student group",
+    "source": "https://www3.cde.ca.gov/demo-downloads/attendance/chronicabsenteeism25-v2.txt",
+    "dataYear": "2024-25",
+    "downloadDate": "2026-04-12",
+    "fileStructure": "https://www.cde.ca.gov/ds/ad/fsabd.asp",
+    "pipeline": "scripts/pull-cde-data.mjs --dataset absenteeism"
+  },
+  "district": {
+    "GF": {
+      "enrolled": 3701,
+      "count": 653,
+      "rate": 17.6
+    },
+    "GM": {
+      "enrolled": 4036,
+      "count": 764,
+      "rate": 18.9
+    },
+    "GR13": {
+      "enrolled": 2361,
+      "count": 385,
+      "rate": 16.3
+    },
+    "GR46": {
+      "enrolled": 2502,
+      "count": 417,
+      "rate": 16.7
+    },
+    "GR78": {
+      "enrolled": 1719,
+      "count": 364,
+      "rate": 21.2
+    },
+    "GRTK8": {
+      "enrolled": 7737,
+      "count": 1417,
+      "rate": 18.3
+    },
+    "GRTKKN": {
+      "enrolled": 1155,
+      "count": 251,
+      "rate": 21.7
+    },
+    "RA": {
+      "enrolled": 359,
+      "count": 22,
+      "rate": 6.1
+    },
+    "RB": {
+      "enrolled": 43,
+      "count": 19,
+      "rate": 44.2
+    },
+    "RD": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "RF": {
+      "enrolled": 74,
+      "count": 8,
+      "rate": 10.8
+    },
+    "RH": {
+      "enrolled": 5306,
+      "count": 1197,
+      "rate": 22.6
+    },
+    "RI": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "RP": {
+      "enrolled": 67,
+      "count": 26,
+      "rate": 38.8
+    },
+    "RT": {
+      "enrolled": 471,
+      "count": 38,
+      "rate": 8.1
+    },
+    "RW": {
+      "enrolled": 1408,
+      "count": 106,
+      "rate": 7.5
+    },
+    "SD": {
+      "enrolled": 1445,
+      "count": 406,
+      "rate": 28.1
+    },
+    "SE": {
+      "enrolled": 2999,
+      "count": 727,
+      "rate": 24.2
+    },
+    "SF": {
+      "enrolled": 12,
+      "count": 4,
+      "rate": 33.3
+    },
+    "SH": {
+      "enrolled": 796,
+      "count": 214,
+      "rate": 26.9
+    },
+    "SM": {
+      "enrolled": 52,
+      "count": 5,
+      "rate": 9.6
+    },
+    "SS": {
+      "enrolled": 5055,
+      "count": 1207,
+      "rate": 23.9
+    },
+    "TA": {
+      "enrolled": 7737,
+      "count": 1417,
+      "rate": 18.3
+    }
+  },
+  "clifford": {
+    "GF": {
+      "enrolled": 353,
+      "count": 65,
+      "rate": 18.4
+    },
+    "GM": {
+      "enrolled": 368,
+      "count": 73,
+      "rate": 19.8
+    },
+    "GR13": {
+      "enrolled": 252,
+      "count": 37,
+      "rate": 14.7
+    },
+    "GR46": {
+      "enrolled": 204,
+      "count": 37,
+      "rate": 18.1
+    },
+    "GR78": {
+      "enrolled": 146,
+      "count": 36,
+      "rate": 24.7
+    },
+    "GRTK8": {
+      "enrolled": 721,
+      "count": 138,
+      "rate": 19.1
+    },
+    "GRTKKN": {
+      "enrolled": 119,
+      "count": 28,
+      "rate": 23.5
+    },
+    "RA": {
+      "enrolled": 33,
+      "count": 6,
+      "rate": 18.2
+    },
+    "RB": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "RD": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "RF": {
+      "enrolled": 25,
+      "count": 3,
+      "rate": 12
+    },
+    "RH": {
+      "enrolled": 328,
+      "count": 88,
+      "rate": 26.8
+    },
+    "RI": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "RP": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "RT": {
+      "enrolled": 63,
+      "count": 9,
+      "rate": 14.3
+    },
+    "RW": {
+      "enrolled": 264,
+      "count": 28,
+      "rate": 10.6
+    },
+    "SD": {
+      "enrolled": 162,
+      "count": 39,
+      "rate": 24.1
+    },
+    "SE": {
+      "enrolled": 150,
+      "count": 39,
+      "rate": 26
+    },
+    "SF": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "SH": {
+      "enrolled": 30,
+      "count": 7,
+      "rate": 23.3
+    },
+    "SM": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "SS": {
+      "enrolled": 365,
+      "count": 103,
+      "rate": 28.2
+    },
+    "TA": {
+      "enrolled": 721,
+      "count": 138,
+      "rate": 19.1
+    }
+  },
+  "roy-cloud": {
+    "GF": {
+      "enrolled": 296,
+      "count": 22,
+      "rate": 7.4
+    },
+    "GM": {
+      "enrolled": 348,
+      "count": 25,
+      "rate": 7.2
+    },
+    "GR13": {
+      "enrolled": 213,
+      "count": 8,
+      "rate": 3.8
+    },
+    "GR46": {
+      "enrolled": 178,
+      "count": 15,
+      "rate": 8.4
+    },
+    "GR78": {
+      "enrolled": 133,
+      "count": 13,
+      "rate": 9.8
+    },
+    "GRTK8": {
+      "enrolled": 644,
+      "count": 47,
+      "rate": 7.3
+    },
+    "GRTKKN": {
+      "enrolled": 120,
+      "count": 11,
+      "rate": 9.2
+    },
+    "RA": {
+      "enrolled": 50,
+      "count": 2,
+      "rate": 4
+    },
+    "RB": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "RD": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "RF": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "RH": {
+      "enrolled": 144,
+      "count": 18,
+      "rate": 12.5
+    },
+    "RI": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "RP": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "RT": {
+      "enrolled": 78,
+      "count": 5,
+      "rate": 6.4
+    },
+    "RW": {
+      "enrolled": 362,
+      "count": 22,
+      "rate": 6.1
+    },
+    "SD": {
+      "enrolled": 132,
+      "count": 18,
+      "rate": 13.6
+    },
+    "SE": {
+      "enrolled": 35,
+      "count": 7,
+      "rate": 20
+    },
+    "SH": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "SS": {
+      "enrolled": 104,
+      "count": 17,
+      "rate": 16.3
+    },
+    "TA": {
+      "enrolled": 644,
+      "count": 47,
+      "rate": 7.3
+    }
+  },
+  "garfield": {
+    "GF": {
+      "enrolled": 135,
+      "count": 24,
+      "rate": 17.8
+    },
+    "GM": {
+      "enrolled": 166,
+      "count": 32,
+      "rate": 19.3
+    },
+    "GR13": {
+      "enrolled": 155,
+      "count": 24,
+      "rate": 15.5
+    },
+    "GR46": {
+      "enrolled": 101,
+      "count": 22,
+      "rate": 21.8
+    },
+    "GRTK8": {
+      "enrolled": 301,
+      "count": 56,
+      "rate": 18.6
+    },
+    "GRTKKN": {
+      "enrolled": 45,
+      "count": 10,
+      "rate": 22.2
+    },
+    "RA": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "RB": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "RD": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "RF": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "RH": {
+      "enrolled": 292,
+      "count": 55,
+      "rate": 18.8
+    },
+    "RI": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "RP": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "RT": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "RW": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "SD": {
+      "enrolled": 62,
+      "count": 28,
+      "rate": 45.2
+    },
+    "SE": {
+      "enrolled": 227,
+      "count": 39,
+      "rate": 17.2
+    },
+    "SH": {
+      "enrolled": 64,
+      "count": 11,
+      "rate": 17.2
+    },
+    "SM": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "SS": {
+      "enrolled": 286,
+      "count": 49,
+      "rate": 17.1
+    },
+    "TA": {
+      "enrolled": 301,
+      "count": 56,
+      "rate": 18.6
+    }
+  },
+  "henry-ford": {
+    "GF": {
+      "enrolled": 214,
+      "count": 51,
+      "rate": 23.8
+    },
+    "GM": {
+      "enrolled": 261,
+      "count": 60,
+      "rate": 23
+    },
+    "GR13": {
+      "enrolled": 214,
+      "count": 51,
+      "rate": 23.8
+    },
+    "GR46": {
+      "enrolled": 150,
+      "count": 32,
+      "rate": 21.3
+    },
+    "GRTK8": {
+      "enrolled": 475,
+      "count": 111,
+      "rate": 23.4
+    },
+    "GRTKKN": {
+      "enrolled": 111,
+      "count": 28,
+      "rate": 25.2
+    },
+    "RA": {
+      "enrolled": 17,
+      "count": 1,
+      "rate": 5.9
+    },
+    "RB": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "RD": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "RF": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "RH": {
+      "enrolled": 316,
+      "count": 87,
+      "rate": 27.5
+    },
+    "RI": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "RP": {
+      "enrolled": 11,
+      "count": 5,
+      "rate": 45.5
+    },
+    "RT": {
+      "enrolled": 27,
+      "count": 5,
+      "rate": 18.5
+    },
+    "RW": {
+      "enrolled": 98,
+      "count": 12,
+      "rate": 12.2
+    },
+    "SD": {
+      "enrolled": 111,
+      "count": 36,
+      "rate": 32.4
+    },
+    "SE": {
+      "enrolled": 182,
+      "count": 51,
+      "rate": 28
+    },
+    "SF": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "SH": {
+      "enrolled": 40,
+      "count": 12,
+      "rate": 30
+    },
+    "SM": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "SS": {
+      "enrolled": 323,
+      "count": 94,
+      "rate": 29.1
+    },
+    "TA": {
+      "enrolled": 475,
+      "count": 111,
+      "rate": 23.4
+    }
+  },
+  "hoover": {
+    "GF": {
+      "enrolled": 346,
+      "count": 75,
+      "rate": 21.7
+    },
+    "GM": {
+      "enrolled": 376,
+      "count": 82,
+      "rate": 21.8
+    },
+    "GR13": {
+      "enrolled": 236,
+      "count": 50,
+      "rate": 21.2
+    },
+    "GR46": {
+      "enrolled": 247,
+      "count": 46,
+      "rate": 18.6
+    },
+    "GR78": {
+      "enrolled": 159,
+      "count": 38,
+      "rate": 23.9
+    },
+    "GRTK8": {
+      "enrolled": 722,
+      "count": 157,
+      "rate": 21.7
+    },
+    "GRTKKN": {
+      "enrolled": 80,
+      "count": 23,
+      "rate": 28.8
+    },
+    "RA": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "RB": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "RD": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "RF": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "RH": {
+      "enrolled": 688,
+      "count": 150,
+      "rate": 21.8
+    },
+    "RI": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "RP": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "RT": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "RW": {
+      "enrolled": 12,
+      "count": 1,
+      "rate": 8.3
+    },
+    "SD": {
+      "enrolled": 146,
+      "count": 50,
+      "rate": 34.2
+    },
+    "SE": {
+      "enrolled": 485,
+      "count": 116,
+      "rate": 23.9
+    },
+    "SF": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "SH": {
+      "enrolled": 199,
+      "count": 52,
+      "rate": 26.1
+    },
+    "SM": {
+      "enrolled": 22,
+      "count": 2,
+      "rate": 9.1
+    },
+    "SS": {
+      "enrolled": 705,
+      "count": 154,
+      "rate": 21.8
+    },
+    "TA": {
+      "enrolled": 722,
+      "count": 157,
+      "rate": 21.7
+    }
+  },
+  "kennedy": {
+    "GF": {
+      "enrolled": 397,
+      "count": 76,
+      "rate": 19.1
+    },
+    "GM": {
+      "enrolled": 421,
+      "count": 93,
+      "rate": 22.1
+    },
+    "GR46": {
+      "enrolled": 287,
+      "count": 58,
+      "rate": 20.2
+    },
+    "GR78": {
+      "enrolled": 531,
+      "count": 111,
+      "rate": 20.9
+    },
+    "GRTK8": {
+      "enrolled": 818,
+      "count": 169,
+      "rate": 20.7
+    },
+    "RA": {
+      "enrolled": 22,
+      "count": 0,
+      "rate": 0
+    },
+    "RB": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "RD": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "RF": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "RH": {
+      "enrolled": 631,
+      "count": 149,
+      "rate": 23.6
+    },
+    "RI": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "RP": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "RT": {
+      "enrolled": 33,
+      "count": 1,
+      "rate": 3
+    },
+    "RW": {
+      "enrolled": 113,
+      "count": 13,
+      "rate": 11.5
+    },
+    "SD": {
+      "enrolled": 166,
+      "count": 43,
+      "rate": 25.9
+    },
+    "SE": {
+      "enrolled": 215,
+      "count": 65,
+      "rate": 30.2
+    },
+    "SF": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "SH": {
+      "enrolled": 78,
+      "count": 23,
+      "rate": 29.5
+    },
+    "SM": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "SS": {
+      "enrolled": 562,
+      "count": 140,
+      "rate": 24.9
+    },
+    "TA": {
+      "enrolled": 818,
+      "count": 169,
+      "rate": 20.7
+    }
+  },
+  "mckinley-mit": {
+    "GF": {
+      "enrolled": 259,
+      "count": 75,
+      "rate": 29
+    },
+    "GM": {
+      "enrolled": 250,
+      "count": 70,
+      "rate": 28
+    },
+    "GR46": {
+      "enrolled": 148,
+      "count": 31,
+      "rate": 20.9
+    },
+    "GR78": {
+      "enrolled": 361,
+      "count": 114,
+      "rate": 31.6
+    },
+    "GRTK8": {
+      "enrolled": 509,
+      "count": 145,
+      "rate": 28.5
+    },
+    "RA": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "RB": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "RD": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "RF": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "RH": {
+      "enrolled": 483,
+      "count": 135,
+      "rate": 28
+    },
+    "RI": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "RP": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "RT": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "RW": {
+      "enrolled": 11,
+      "count": 4,
+      "rate": 36.4
+    },
+    "SD": {
+      "enrolled": 102,
+      "count": 45,
+      "rate": 44.1
+    },
+    "SE": {
+      "enrolled": 237,
+      "count": 79,
+      "rate": 33.3
+    },
+    "SF": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "SH": {
+      "enrolled": 86,
+      "count": 28,
+      "rate": 32.6
+    },
+    "SM": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "SS": {
+      "enrolled": 474,
+      "count": 137,
+      "rate": 28.9
+    },
+    "TA": {
+      "enrolled": 509,
+      "count": 145,
+      "rate": 28.5
+    }
+  },
+  "roosevelt": {
+    "GF": {
+      "enrolled": 186,
+      "count": 40,
+      "rate": 21.5
+    },
+    "GM": {
+      "enrolled": 218,
+      "count": 48,
+      "rate": 22
+    },
+    "GR13": {
+      "enrolled": 167,
+      "count": 38,
+      "rate": 22.8
+    },
+    "GR46": {
+      "enrolled": 139,
+      "count": 20,
+      "rate": 14.4
+    },
+    "GRTK8": {
+      "enrolled": 404,
+      "count": 88,
+      "rate": 21.8
+    },
+    "GRTKKN": {
+      "enrolled": 98,
+      "count": 30,
+      "rate": 30.6
+    },
+    "RA": {
+      "enrolled": 11,
+      "count": 3,
+      "rate": 27.3
+    },
+    "RB": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "RD": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "RF": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "RH": {
+      "enrolled": 297,
+      "count": 74,
+      "rate": 24.9
+    },
+    "RI": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "RP": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "RT": {
+      "enrolled": 24,
+      "count": 6,
+      "rate": 25
+    },
+    "RW": {
+      "enrolled": 64,
+      "count": 3,
+      "rate": 4.7
+    },
+    "SD": {
+      "enrolled": 106,
+      "count": 31,
+      "rate": 29.2
+    },
+    "SE": {
+      "enrolled": 177,
+      "count": 48,
+      "rate": 27.1
+    },
+    "SH": {
+      "enrolled": 52,
+      "count": 17,
+      "rate": 32.7
+    },
+    "SS": {
+      "enrolled": 289,
+      "count": 81,
+      "rate": 28
+    },
+    "TA": {
+      "enrolled": 404,
+      "count": 88,
+      "rate": 21.8
+    }
+  },
+  "adelante-selby": {
+    "GF": {
+      "enrolled": 294,
+      "count": 38,
+      "rate": 12.9
+    },
+    "GM": {
+      "enrolled": 291,
+      "count": 37,
+      "rate": 12.7
+    },
+    "GR13": {
+      "enrolled": 283,
+      "count": 34,
+      "rate": 12
+    },
+    "GR46": {
+      "enrolled": 148,
+      "count": 15,
+      "rate": 10.1
+    },
+    "GRTK8": {
+      "enrolled": 585,
+      "count": 75,
+      "rate": 12.8
+    },
+    "GRTKKN": {
+      "enrolled": 154,
+      "count": 26,
+      "rate": 16.9
+    },
+    "RA": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "RB": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "RD": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "RF": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "RH": {
+      "enrolled": 476,
+      "count": 71,
+      "rate": 14.9
+    },
+    "RI": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "RP": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "RT": {
+      "enrolled": 20,
+      "count": 0,
+      "rate": 0
+    },
+    "RW": {
+      "enrolled": 81,
+      "count": 4,
+      "rate": 4.9
+    },
+    "SD": {
+      "enrolled": 89,
+      "count": 24,
+      "rate": 27
+    },
+    "SE": {
+      "enrolled": 234,
+      "count": 41,
+      "rate": 17.5
+    },
+    "SF": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "SH": {
+      "enrolled": 42,
+      "count": 5,
+      "rate": 11.9
+    },
+    "SM": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "SS": {
+      "enrolled": 359,
+      "count": 64,
+      "rate": 17.8
+    },
+    "TA": {
+      "enrolled": 585,
+      "count": 75,
+      "rate": 12.8
+    }
+  },
+  "taft": {
+    "GF": {
+      "enrolled": 172,
+      "count": 38,
+      "rate": 22.1
+    },
+    "GM": {
+      "enrolled": 210,
+      "count": 63,
+      "rate": 30
+    },
+    "GR13": {
+      "enrolled": 163,
+      "count": 32,
+      "rate": 19.6
+    },
+    "GR46": {
+      "enrolled": 135,
+      "count": 35,
+      "rate": 25.9
+    },
+    "GRTK8": {
+      "enrolled": 382,
+      "count": 101,
+      "rate": 26.4
+    },
+    "GRTKKN": {
+      "enrolled": 84,
+      "count": 34,
+      "rate": 40.5
+    },
+    "RA": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "RB": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "RD": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "RF": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "RH": {
+      "enrolled": 361,
+      "count": 94,
+      "rate": 26
+    },
+    "RI": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "RP": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "RT": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "RW": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "SD": {
+      "enrolled": 103,
+      "count": 38,
+      "rate": 36.9
+    },
+    "SE": {
+      "enrolled": 255,
+      "count": 67,
+      "rate": 26.3
+    },
+    "SF": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "SH": {
+      "enrolled": 75,
+      "count": 22,
+      "rate": 29.3
+    },
+    "SM": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "SS": {
+      "enrolled": 363,
+      "count": 94,
+      "rate": 25.9
+    },
+    "TA": {
+      "enrolled": 382,
+      "count": 101,
+      "rate": 26.4
+    }
+  },
+  "orion": {
+    "GF": {
+      "enrolled": 242,
+      "count": 25,
+      "rate": 10.3
+    },
+    "GM": {
+      "enrolled": 281,
+      "count": 36,
+      "rate": 12.8
+    },
+    "GR13": {
+      "enrolled": 240,
+      "count": 25,
+      "rate": 10.4
+    },
+    "GR46": {
+      "enrolled": 100,
+      "count": 21,
+      "rate": 21
+    },
+    "GRTK8": {
+      "enrolled": 523,
+      "count": 61,
+      "rate": 11.7
+    },
+    "GRTKKN": {
+      "enrolled": 183,
+      "count": 15,
+      "rate": 8.2
+    },
+    "RA": {
+      "enrolled": 109,
+      "count": 4,
+      "rate": 3.7
+    },
+    "RB": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "RD": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "RF": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "RH": {
+      "enrolled": 150,
+      "count": 38,
+      "rate": 25.3
+    },
+    "RI": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "RP": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "RT": {
+      "enrolled": 127,
+      "count": 5,
+      "rate": 3.9
+    },
+    "RW": {
+      "enrolled": 120,
+      "count": 8,
+      "rate": 6.7
+    },
+    "SD": {
+      "enrolled": 68,
+      "count": 18,
+      "rate": 26.5
+    },
+    "SE": {
+      "enrolled": 87,
+      "count": 17,
+      "rate": 19.5
+    },
+    "SH": {
+      "enrolled": 16,
+      "count": 5,
+      "rate": 31.3
+    },
+    "SS": {
+      "enrolled": 151,
+      "count": 44,
+      "rate": 29.1
+    },
+    "TA": {
+      "enrolled": 523,
+      "count": 61,
+      "rate": 11.7
+    }
+  },
+  "north-star": {
+    "GF": {
+      "enrolled": 258,
+      "count": 6,
+      "rate": 2.3
+    },
+    "GM": {
+      "enrolled": 273,
+      "count": 6,
+      "rate": 2.2
+    },
+    "GR13": {
+      "enrolled": 90,
+      "count": 2,
+      "rate": 2.2
+    },
+    "GR46": {
+      "enrolled": 272,
+      "count": 3,
+      "rate": 1.1
+    },
+    "GR78": {
+      "enrolled": 169,
+      "count": 7,
+      "rate": 4.1
+    },
+    "GRTK8": {
+      "enrolled": 531,
+      "count": 12,
+      "rate": 2.3
+    },
+    "RA": {
+      "enrolled": 95,
+      "count": 3,
+      "rate": 3.2
+    },
+    "RB": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "RD": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "RF": {
+      "enrolled": 14,
+      "count": 0,
+      "rate": 0
+    },
+    "RH": {
+      "enrolled": 71,
+      "count": 1,
+      "rate": 1.4
+    },
+    "RI": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "RP": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "RT": {
+      "enrolled": 88,
+      "count": 0,
+      "rate": 0
+    },
+    "RW": {
+      "enrolled": 262,
+      "count": 8,
+      "rate": 3.1
+    },
+    "SD": {
+      "enrolled": 50,
+      "count": 0,
+      "rate": 0
+    },
+    "SE": {
+      "enrolled": 13,
+      "count": 0,
+      "rate": 0
+    },
+    "SH": {
+      "enrolled": null,
+      "count": null,
+      "rate": null
+    },
+    "SS": {
+      "enrolled": 49,
+      "count": 1,
+      "rate": 2
+    },
+    "TA": {
+      "enrolled": 531,
+      "count": 12,
+      "rate": 2.3
+    }
+  }
+}
