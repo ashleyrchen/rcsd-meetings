@@ -1,0 +1,38 @@
+{
+  "school": "Roy Cloud School",
+  "schoolYear": "2025-26",
+  "consolidatedAppFunds": 0,
+  "csiFunds": 0,
+  "totalBudgeted": 695353.64,
+  "federalPrograms": [],
+  "stateLocalPrograms": [
+    {
+      "name": "District Funded",
+      "amount": 234000
+    },
+    {
+      "name": "Measure U",
+      "amount": 117043.64
+    },
+    {
+      "name": "None Specified",
+      "amount": 1500
+    },
+    {
+      "name": "Other",
+      "amount": 33256
+    },
+    {
+      "name": "Parent Teacher Association/Parent Faculty Club (PTA/PFC/PTSO, PTO, etc.)",
+      "amount": 215204
+    },
+    {
+      "name": "Prop. 28",
+      "amount": 70870
+    },
+    {
+      "name": "Site Formula Funds",
+      "amount": 23480
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "school": "Adelante Selby Spanish Immersion School",
+  "schoolYear": "2025-26",
+  "consolidatedAppFunds": 87430,
+  "csiFunds": 0,
+  "totalBudgeted": 854047,
+  "federalPrograms": [
+    {
+      "name": "Title I",
+      "amount": 72871
+    }
+  ],
+  "stateLocalPrograms": [
+    {
+      "name": "D100",
+      "amount": 28285
+    },
+    {
+      "name": "District Funded",
+      "amount": 289028
+    },
+    {
+      "name": "Measure U",
+      "amount": 147333
+    },
+    {
+      "name": "Parent Teacher Association/Parent Faculty Club (PTA/PFC)",
+      "amount": 15000
+    },
+    {
+      "name": "Parent Teacher Association/Parent Faculty Club (PTA/PFC/PTSO, PTO, etc.)",
+      "amount": 149746
+    },
+    {
+      "name": "Prop. 28",
+      "amount": 85852
+    },
+    {
+      "name": "Site Improvement Funds",
+      "amount": 65932
+    }
+  ]
+}

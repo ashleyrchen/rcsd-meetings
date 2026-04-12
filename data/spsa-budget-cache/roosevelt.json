@@ -1,0 +1,35 @@
+{
+  "school": "Roosevelt Elementary School",
+  "schoolYear": "2025-26",
+  "consolidatedAppFunds": 107867,
+  "csiFunds": 0,
+  "totalBudgeted": 410139,
+  "federalPrograms": [
+    {
+      "name": "Title I",
+      "amount": 54965
+    }
+  ],
+  "stateLocalPrograms": [
+    {
+      "name": "District Funded",
+      "amount": 0
+    },
+    {
+      "name": "Measure U",
+      "amount": 109217
+    },
+    {
+      "name": "None Specified",
+      "amount": 1000
+    },
+    {
+      "name": "Prop. 28",
+      "amount": 88397
+    },
+    {
+      "name": "Site Improvement Funds",
+      "amount": 156560
+    }
+  ]
+}
