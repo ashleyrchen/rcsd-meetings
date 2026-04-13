@@ -649,6 +649,32 @@
     color: var(--text-muted);
   }
 
+  /* ---- SSC MEMBERSHIP ---- */
+  .resource-card.ssc-card {
+    grid-column: 1 / -1;
+  }
+  .ssc-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+    margin-top: 0.3rem;
+  }
+  .ssc-table th {
+    text-align: left;
+    font-weight: 600;
+    padding: 0.3rem 0.5rem;
+    border-bottom: 2px solid var(--green-pale);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+  .ssc-table td {
+    padding: 0.25rem 0.5rem;
+    border-bottom: 1px solid var(--cream-dark);
+  }
+  .ssc-table tr:last-child td {
+    border-bottom: none;
+  }
+
   /* ---- BELL SCHEDULE ---- */
   .resource-card.bell-card {
     grid-column: 1 / -1;
@@ -1044,18 +1070,18 @@
       </div>
       <div class="stat-card">
         <div class="stat-card-label">SPSA Per Pupil</div>
-        <div class="stat-card-value">$694 <span class="info-bubble" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://data.rcsd.info/documents/spsa/2025-26/kennedy.pdf" target="_blank">SPSA 2025-26</a></span></span></div>
+        <div class="stat-card-value">$714 <span class="info-bubble" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://data.rcsd.info/documents/spsa/2025-26/kennedy.pdf" target="_blank">SPSA 2025-26</a></span></span></div>
       </div>
     </div>
 
     <h3>SPSA Source Breakdown</h3>
 
     <div class="funding-bar">
-      <div class="funding-bar-segment" style="width:13.5%; background:#4a8c6a"></div><div class="funding-bar-segment" style="width:17.1%; background:#1a3a2a"></div><div class="funding-bar-segment" style="width:3.6%; background:#c4842d"></div><div class="funding-bar-segment" style="width:34.1%; background:#5b9bd5"></div><div class="funding-bar-segment" style="width:20.8%; background:#9b7cb8"></div>
+      <div class="funding-bar-segment" style="width:13.5%; background:#4a8c6a"></div><div class="funding-bar-segment" style="width:28.2%; background:#1a3a2a"></div><div class="funding-bar-segment" style="width:3.6%; background:#c4842d"></div><div class="funding-bar-segment" style="width:34.1%; background:#5b9bd5"></div><div class="funding-bar-segment" style="width:20.8%; background:#9b7cb8"></div>
     </div>
     <div class="funding-legend">
       <span class="funding-legend-item"><span class="funding-legend-swatch" style="background:#4a8c6a"></span>Title I: $76K</span>
-          <span class="funding-legend-item"><span class="funding-legend-swatch" style="background:#1a3a2a"></span>District: $96K</span>
+          <span class="funding-legend-item"><span class="funding-legend-swatch" style="background:#1a3a2a"></span>District: $159K</span>
           <span class="funding-legend-item"><span class="funding-legend-swatch" style="background:#c4842d"></span>PTO/PTA: $20K</span>
           <span class="funding-legend-item"><span class="funding-legend-swatch" style="background:#5b9bd5"></span>Measure U: $192K</span>
           <span class="funding-legend-item"><span class="funding-legend-swatch" style="background:#9b7cb8"></span>Prop 28: $117K</span>
@@ -1078,8 +1104,8 @@
           </tr>
           <tr>
             <td class="label-cell">District</td>
-            <td class="num">$96K</td>
-            <td class="num">17%</td>
+            <td class="num">$159K</td>
+            <td class="num">28%</td>
           </tr>
           <tr>
             <td class="label-cell">PTO/PTA</td>
@@ -1203,9 +1229,15 @@
         <h4>Comprehensive Safety Plan</h4>
         <p>2025-26 plan, board-approved Feb 4, 2026.</p><p><a href="https://data.rcsd.info/board-packets/2026-02-04/2025_Comprehensive_School_Safety_Plan__Pt._1_-Public-_John_F._Kennedy_Middle_Sch.pdf" target="_blank">Download CSSP (PDF) &#8599;</a></p>
       </div>
-      <div class="resource-card">
+      <div class="resource-card ssc-card">
         <h4>School Site Council</h4>
-        <p class="coming-soon">Coming soon</p>
+        <p style="margin-bottom:0.4rem"><strong>Chair:</strong> Aravind Somanchi</p>
+          <p style="margin-bottom:0.6rem; font-size:0.85rem; color:#666">SPSA adopted: May 7, 2025</p>
+          <table class="ssc-table">
+            <thead><tr><th>Name</th><th>Role</th></tr></thead>
+            <tbody><tr><td>Chandra Leonardo</td><td>Principal</td></tr><tr><td>Shanna Laney</td><td>Staff</td></tr><tr><td>Cynthia Cardona</td><td>Staff</td></tr><tr><td>Jennifer Virnich</td><td>Teacher</td></tr><tr><td>Endre Balogh</td><td>Teacher</td></tr><tr><td>Christina Codemo</td><td>Parent / Community</td></tr><tr><td>Steve Osborn</td><td>Parent / Community</td></tr><tr><td>Jessica Bryski</td><td>Parent / Community</td></tr><tr><td>Christina Codemo</td><td>Parent / Community</td></tr><tr><td>Katie Robles</td><td>Staff</td></tr><tr><td>Arvind Somanchi</td><td>Parent / Community</td></tr><tr><td>Jim Smith</td><td>Parent / Community</td></tr><tr><td>Irma Zoepf</td><td>Parent / Community</td></tr><tr><td>Whitney Glockner-Black</td><td>Parent / Community</td></tr></tbody>
+          </table>
+          <p style="margin-top:0.5rem"><a href="https://data.rcsd.info/documents/spsa/2025-26/kennedy.pdf" target="_blank">View SPSA &#8599;</a></p>
       </div>
       <div class="resource-card">
         <h4>After-School Programs</h4>

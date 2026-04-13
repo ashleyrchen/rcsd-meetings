@@ -649,6 +649,32 @@
     color: var(--text-muted);
   }
 
+  /* ---- SSC MEMBERSHIP ---- */
+  .resource-card.ssc-card {
+    grid-column: 1 / -1;
+  }
+  .ssc-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+    margin-top: 0.3rem;
+  }
+  .ssc-table th {
+    text-align: left;
+    font-weight: 600;
+    padding: 0.3rem 0.5rem;
+    border-bottom: 2px solid var(--green-pale);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+  .ssc-table td {
+    padding: 0.25rem 0.5rem;
+    border-bottom: 1px solid var(--cream-dark);
+  }
+  .ssc-table tr:last-child td {
+    border-bottom: none;
+  }
+
   /* ---- BELL SCHEDULE ---- */
   .resource-card.bell-card {
     grid-column: 1 / -1;
@@ -1044,18 +1070,18 @@
       </div>
       <div class="stat-card">
         <div class="stat-card-label">SPSA Por Alumno</div>
-        <div class="stat-card-value">$1,523 <span class="info-bubble" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://data.rcsd.info/documents/spsa/2025-26/henry-ford.pdf" target="_blank">SPSA 2025-26</a></span></span></div>
+        <div class="stat-card-value">$1,476 <span class="info-bubble" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://data.rcsd.info/documents/spsa/2025-26/henry-ford.pdf" target="_blank">SPSA 2025-26</a></span></span></div>
       </div>
     </div>
 
     <h3>Desglose de Fuentes SPSA</h3>
 
     <div class="funding-bar">
-      <div class="funding-bar-segment" style="width:9.0%; background:#4a8c6a"></div><div class="funding-bar-segment" style="width:36.6%; background:#1a3a2a"></div><div class="funding-bar-segment" style="width:11.0%; background:#c4842d"></div><div class="funding-bar-segment" style="width:21.6%; background:#5b9bd5"></div><div class="funding-bar-segment" style="width:11.0%; background:#9b7cb8"></div>
+      <div class="funding-bar-segment" style="width:9.0%; background:#4a8c6a"></div><div class="funding-bar-segment" style="width:47.6%; background:#1a3a2a"></div><div class="funding-bar-segment" style="width:11.0%; background:#c4842d"></div><div class="funding-bar-segment" style="width:21.6%; background:#5b9bd5"></div><div class="funding-bar-segment" style="width:11.0%; background:#9b7cb8"></div>
     </div>
     <div class="funding-legend">
       <span class="funding-legend-item"><span class="funding-legend-swatch" style="background:#4a8c6a"></span>Título I: $61K</span>
-          <span class="funding-legend-item"><span class="funding-legend-swatch" style="background:#1a3a2a"></span>Distrito: $249K</span>
+          <span class="funding-legend-item"><span class="funding-legend-swatch" style="background:#1a3a2a"></span>Distrito: $324K</span>
           <span class="funding-legend-item"><span class="funding-legend-swatch" style="background:#c4842d"></span>PTO/PTA: $75K</span>
           <span class="funding-legend-item"><span class="funding-legend-swatch" style="background:#5b9bd5"></span>Medida U: $147K</span>
           <span class="funding-legend-item"><span class="funding-legend-swatch" style="background:#9b7cb8"></span>Prop 28: $75K</span>
@@ -1078,8 +1104,8 @@
           </tr>
           <tr>
             <td class="label-cell">Distrito</td>
-            <td class="num">$249K</td>
-            <td class="num">37%</td>
+            <td class="num">$324K</td>
+            <td class="num">48%</td>
           </tr>
           <tr>
             <td class="label-cell">PTO/PTA</td>
@@ -1224,9 +1250,15 @@
         <h4>Plan Integral de Seguridad</h4>
         <p>Plan 2025-26, aprobado por la junta el 4 de feb de 2026.</p><p><a href="https://data.rcsd.info/board-packets/2026-02-04/2025_Comprehensive_School_Safety_Plan-_Pt._1_-Public-_Henry_Ford_Elementary_Scho.pdf" target="_blank">Descargar CSSP (PDF) &#8599;</a></p>
       </div>
-      <div class="resource-card">
+      <div class="resource-card ssc-card">
         <h4>Consejo del Sitio Escolar</h4>
-        <p class="coming-soon">Próximamente</p>
+        <p style="margin-bottom:0.4rem"><strong>Presidente:</strong> Courtney Rogerson</p>
+          <p style="margin-bottom:0.6rem; font-size:0.85rem; color:#666">SPSA adoptado: 28 de mayo de 2024</p>
+          <table class="ssc-table">
+            <thead><tr><th>Nombre</th><th>Rol</th></tr></thead>
+            <tbody><tr><td>Jennifer Knopf</td><td>Director(a)</td></tr><tr><td>Maryann Nakhla</td><td>Personal</td></tr><tr><td>Steve Borg</td><td>Maestro(a)</td></tr><tr><td>Amy Barstad</td><td>Maestro(a)</td></tr><tr><td>Shaunna Ingersoll</td><td>Personal</td></tr><tr><td>Courtney Rogerson</td><td>Padre / Comunidad</td></tr><tr><td>George Rodriguez</td><td>Padre / Comunidad</td></tr><tr><td>Mimi Turner</td><td>Padre / Comunidad</td></tr><tr><td>Abraham Frailey</td><td>Padre / Comunidad</td></tr><tr><td>Chuck Walter</td><td>Padre / Comunidad</td></tr></tbody>
+          </table>
+          <p style="margin-top:0.5rem"><a href="https://data.rcsd.info/documents/spsa/2025-26/henry-ford.pdf" target="_blank">Ver SPSA &#8599;</a></p>
       </div>
       <div class="resource-card">
         <h4>Programas Extracurriculares</h4>

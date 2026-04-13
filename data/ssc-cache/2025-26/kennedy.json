@@ -1,0 +1,70 @@
+{
+  "school": "Kennedy Middle School",
+  "schoolYear": "2025-26",
+  "composition": {
+    "principal": 1,
+    "classroomTeachers": 3,
+    "otherStaff": 3,
+    "parentCommunity": 6
+  },
+  "members": [
+    {
+      "name": "Chandra Leonardo",
+      "role": "principal"
+    },
+    {
+      "name": "Shanna Laney",
+      "role": "otherStaff"
+    },
+    {
+      "name": "Cynthia Cardona",
+      "role": "otherStaff"
+    },
+    {
+      "name": "Jennifer Virnich",
+      "role": "classroomTeacher"
+    },
+    {
+      "name": "Endre Balogh",
+      "role": "classroomTeacher"
+    },
+    {
+      "name": "Christina Codemo",
+      "role": "parentCommunity"
+    },
+    {
+      "name": "Steve Osborn",
+      "role": "parentCommunity"
+    },
+    {
+      "name": "Jessica Bryski",
+      "role": "parentCommunity"
+    },
+    {
+      "name": "Christina Codemo",
+      "role": "parentCommunity"
+    },
+    {
+      "name": "Katie Robles",
+      "role": "otherStaff"
+    },
+    {
+      "name": "Arvind Somanchi",
+      "role": "parentCommunity"
+    },
+    {
+      "name": "Jim Smith",
+      "role": "parentCommunity"
+    },
+    {
+      "name": "Irma Zoepf",
+      "role": "parentCommunity"
+    },
+    {
+      "name": "Whitney Glockner-Black",
+      "role": "parentCommunity"
+    }
+  ],
+  "chairperson": "Aravind Somanchi",
+  "adoptionDate": "2025-05-07"
+}

@@ -1,0 +1,58 @@
+{
+  "school": "Garfield Community School",
+  "schoolYear": "2023-24",
+  "composition": {
+    "principal": 1,
+    "classroomTeachers": 3,
+    "otherStaff": 1,
+    "parentCommunity": 6
+  },
+  "members": [
+    {
+      "name": "Lupe Torres-Khalil",
+      "role": "principal"
+    },
+    {
+      "name": "Brittany Benedict",
+      "role": "classroomTeacher"
+    },
+    {
+      "name": "Gabriel Font",
+      "role": "classroomTeacher"
+    },
+    {
+      "name": "Frida Miranda",
+      "role": "classroomTeacher"
+    },
+    {
+      "name": "Alicia Alvarez",
+      "role": "otherStaff"
+    },
+    {
+      "name": "Blanca Aguilar",
+      "role": "parentCommunity"
+    },
+    {
+      "name": "Isabel Rojas",
+      "role": "parentCommunity"
+    },
+    {
+      "name": "Elizandro Morales",
+      "role": "parentCommunity"
+    },
+    {
+      "name": "Jessica Camacho",
+      "role": "parentCommunity"
+    },
+    {
+      "name": "Luis Chavez",
+      "role": "parentCommunity"
+    },
+    {
+      "name": "Jose Rueda",
+      "role": "parentCommunity"
+    }
+  ],
+  "chairperson": "Blanca Aguilar",
+  "adoptionDate": "2023-10-17"
+}

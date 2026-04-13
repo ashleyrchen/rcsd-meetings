@@ -1,0 +1,70 @@
+{
+  "school": "Clifford School",
+  "schoolYear": "2025-26",
+  "composition": {
+    "principal": 1,
+    "classroomTeachers": 4,
+    "otherStaff": 2,
+    "parentCommunity": 7
+  },
+  "members": [
+    {
+      "name": "Kristy Jackson",
+      "role": "principal"
+    },
+    {
+      "name": "Jennifer Overbey",
+      "role": "classroomTeacher"
+    },
+    {
+      "name": "Dione Smith",
+      "role": "classroomTeacher"
+    },
+    {
+      "name": "Marianne Chance",
+      "role": "classroomTeacher"
+    },
+    {
+      "name": "Shannon Cody",
+      "role": "classroomTeacher"
+    },
+    {
+      "name": "Casey Nosky",
+      "role": "otherStaff"
+    },
+    {
+      "name": "Julie Harrison",
+      "role": "otherStaff"
+    },
+    {
+      "name": "Katie McNally",
+      "role": "parentCommunity"
+    },
+    {
+      "name": "Alex Chalmer",
+      "role": "parentCommunity"
+    },
+    {
+      "name": "Jennifer Erskine",
+      "role": "parentCommunity"
+    },
+    {
+      "name": "Alana Ballon",
+      "role": "parentCommunity"
+    },
+    {
+      "name": "Susie Crowell",
+      "role": "parentCommunity"
+    },
+    {
+      "name": "Jennifer Toller",
+      "role": "parentCommunity"
+    },
+    {
+      "name": "Scarlett Mineta",
+      "role": "parentCommunity"
+    }
+  ],
+  "chairperson": "Dione Smith",
+  "adoptionDate": "2025-04-18"
+}

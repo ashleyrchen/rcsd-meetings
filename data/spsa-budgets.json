@@ -1,0 +1,561 @@
+{
+  "_metadata": {
+    "description": "SPSA budget summaries extracted from 2025-26 SPSA PDFs",
+    "source": "Budget Summary pages in artifacts/documents/spsa/2025-26/",
+    "extractionMethod": "Claude Haiku via document content block API",
+    "lastUpdated": "2026-04-12"
+  },
+  "adelante-selby": {
+    "raw": {
+      "school": "Adelante Selby Spanish Immersion School",
+      "schoolYear": "2025-26",
+      "consolidatedAppFunds": 87430,
+      "csiFunds": 0,
+      "totalBudgeted": 854047,
+      "federalPrograms": [
+        {
+          "name": "Title I",
+          "amount": 72871
+        }
+      ],
+      "stateLocalPrograms": [
+        {
+          "name": "D100",
+          "amount": 28285
+        },
+        {
+          "name": "District Funded",
+          "amount": 289028
+        },
+        {
+          "name": "Measure U",
+          "amount": 147333
+        },
+        {
+          "name": "Parent Teacher Association/Parent Faculty Club (PTA/PFC)",
+          "amount": 15000
+        },
+        {
+          "name": "Parent Teacher Association/Parent Faculty Club (PTA/PFC/PTSO, PTO, etc.)",
+          "amount": 149746
+        },
+        {
+          "name": "Prop. 28",
+          "amount": 85852
+        },
+        {
+          "name": "Site Improvement Funds",
+          "amount": 65932
+        }
+      ]
+    },
+    "categorized": {
+      "spsaTotal": 854047,
+      "titleI": 72871,
+      "district": 383245,
+      "ptoPta": 164746,
+      "measureU": 147333,
+      "prop28": 85852
+    }
+  },
+  "clifford": {
+    "raw": {
+      "school": "Clifford School",
+      "schoolYear": "2025-26",
+      "consolidatedAppFunds": 0,
+      "csiFunds": 0,
+      "totalBudgeted": 664835,
+      "federalPrograms": [
+        {
+          "name": "Title I",
+          "amount": 73079
+        }
+      ],
+      "stateLocalPrograms": [
+        {
+          "name": "D100",
+          "amount": 208
+        },
+        {
+          "name": "District Funded",
+          "amount": 73200
+        },
+        {
+          "name": "Measure U",
+          "amount": 172711
+        },
+        {
+          "name": "Parent Teacher Association/Parent Faculty Club (PTA/PFC/PTSO, PTO, etc.)",
+          "amount": 196142
+        },
+        {
+          "name": "Prop. 28",
+          "amount": 93472
+        },
+        {
+          "name": "Site Improvement Funds",
+          "amount": 56023
+        }
+      ]
+    },
+    "categorized": {
+      "spsaTotal": 664835,
+      "titleI": 73079,
+      "district": 129431,
+      "ptoPta": 196142,
+      "measureU": 172711,
+      "prop28": 93472
+    }
+  },
+  "garfield": {
+    "raw": {
+      "school": "Garfield Community School",
+      "schoolYear": "2025-26",
+      "consolidatedAppFunds": 113476,
+      "csiFunds": 0,
+      "totalBudgeted": 243415,
+      "federalPrograms": [
+        {
+          "name": "Title I",
+          "amount": 55174
+        }
+      ],
+      "stateLocalPrograms": [
+        {
+          "name": "D100",
+          "amount": 13680
+        },
+        {
+          "name": "Measure U",
+          "amount": 79463
+        },
+        {
+          "name": "Prop. 28",
+          "amount": 90098
+        },
+        {
+          "name": "Site Formula Funds",
+          "amount": 5000
+        }
+      ]
+    },
+    "categorized": {
+      "spsaTotal": 243415,
+      "titleI": 55174,
+      "district": 18680,
+      "ptoPta": 0,
+      "measureU": 79463,
+      "prop28": 90098
+    }
+  },
+  "henry-ford": {
+    "raw": {
+      "school": "Henry Ford Elementary School",
+      "schoolYear": "2025-26",
+      "consolidatedAppFunds": 0,
+      "csiFunds": 0,
+      "totalBudgeted": 680588,
+      "federalPrograms": [
+        {
+          "name": "Title I",
+          "amount": 61211
+        }
+      ],
+      "stateLocalPrograms": [
+        {
+          "name": "D100",
+          "amount": 21627
+        },
+        {
+          "name": "District Funded",
+          "amount": 249047
+        },
+        {
+          "name": "Measure U",
+          "amount": 146727
+        },
+        {
+          "name": "None Specified",
+          "amount": 0
+        },
+        {
+          "name": "Parent-Teacher Association (PTA)",
+          "amount": 74500
+        },
+        {
+          "name": "Prop. 28",
+          "amount": 74560
+        },
+        {
+          "name": "Site Formula Funds",
+          "amount": 52916
+        }
+      ]
+    },
+    "categorized": {
+      "spsaTotal": 680588,
+      "titleI": 61211,
+      "district": 323590,
+      "ptoPta": 74500,
+      "measureU": 146727,
+      "prop28": 74560
+    }
+  },
+  "hoover": {
+    "raw": {
+      "school": "Hoover Community School",
+      "schoolYear": "2025-26",
+      "consolidatedAppFunds": 154531,
+      "csiFunds": 0,
+      "totalBudgeted": 734276,
+      "federalPrograms": [
+        {
+          "name": "Title I",
+          "amount": 127596
+        }
+      ],
+      "stateLocalPrograms": [
+        {
+          "name": "Donations",
+          "amount": 29179
+        },
+        {
+          "name": "Foundation",
+          "amount": 100000
+        },
+        {
+          "name": "Measure U",
+          "amount": 183080
+        },
+        {
+          "name": "Other",
+          "amount": 80000
+        },
+        {
+          "name": "Prop. 28",
+          "amount": 116272
+        },
+        {
+          "name": "Site Improvement Funds",
+          "amount": 98149
+        }
+      ]
+    },
+    "categorized": {
+      "spsaTotal": 734276,
+      "titleI": 127596,
+      "district": 307328,
+      "ptoPta": 0,
+      "measureU": 183080,
+      "prop28": 116272
+    }
+  },
+  "kennedy": {
+    "raw": {
+      "school": "Kennedy Middle School",
+      "schoolYear": "2025-26",
+      "consolidatedAppFunds": 104296,
+      "csiFunds": 0,
+      "totalBudgeted": 562989,
+      "federalPrograms": [
+        {
+          "name": "Title I",
+          "amount": 75689
+        }
+      ],
+      "stateLocalPrograms": [
+        {
+          "name": "General Fund",
+          "amount": 95600
+        },
+        {
+          "name": "Measure U",
+          "amount": 192247
+        },
+        {
+          "name": "Other",
+          "amount": 25000
+        },
+        {
+          "name": "Parent Teacher Association/Parent Faculty Club (PTA/PFC/PTSO, PTO, etc.)",
+          "amount": 20000
+        },
+        {
+          "name": "Prop. 28",
+          "amount": 116517
+        },
+        {
+          "name": "Site Formula Funds",
+          "amount": 10000
+        },
+        {
+          "name": "Site Improvement Funds",
+          "amount": 27936
+        }
+      ]
+    },
+    "categorized": {
+      "spsaTotal": 562989,
+      "titleI": 75689,
+      "district": 158536,
+      "ptoPta": 20000,
+      "measureU": 192247,
+      "prop28": 116517
+    }
+  },
+  "mckinley-mit": {
+    "raw": {
+      "school": "McKinley Institute of Technology",
+      "schoolYear": "2025-26",
+      "consolidatedAppFunds": 65535,
+      "csiFunds": 0,
+      "totalBudgeted": 794618,
+      "federalPrograms": [
+        {
+          "name": "Title I",
+          "amount": 27000
+        }
+      ],
+      "stateLocalPrograms": [
+        {
+          "name": "District Funded",
+          "amount": 610072
+        },
+        {
+          "name": "Measure U",
+          "amount": 74634
+        },
+        {
+          "name": "Prop. 28",
+          "amount": 76912
+        },
+        {
+          "name": "Site Formula Funds",
+          "amount": 6000
+        }
+      ]
+    },
+    "categorized": {
+      "spsaTotal": 794618,
+      "titleI": 27000,
+      "district": 616072,
+      "ptoPta": 0,
+      "measureU": 74634,
+      "prop28": 76912
+    }
+  },
+  "north-star": {
+    "raw": {
+      "school": "North Star Academy",
+      "schoolYear": "2025-26",
+      "consolidatedAppFunds": 0,
+      "csiFunds": 0,
+      "totalBudgeted": 564160,
+      "federalPrograms": [],
+      "stateLocalPrograms": [
+        {
+          "name": "District Funded",
+          "amount": 10000
+        },
+        {
+          "name": "Measure U",
+          "amount": 134914
+        },
+        {
+          "name": "Parent Teacher Association/Parent Faculty Club (PTA/PFC/PTSO, PTO, etc.)",
+          "amount": 325840
+        },
+        {
+          "name": "Prop. 28",
+          "amount": 59454
+        },
+        {
+          "name": "Site Formula Funds",
+          "amount": 33952
+        }
+      ]
+    },
+    "categorized": {
+      "spsaTotal": 564160,
+      "titleI": 0,
+      "district": 43952,
+      "ptoPta": 325840,
+      "measureU": 134914,
+      "prop28": 59454
+    }
+  },
+  "orion": {
+    "raw": {
+      "school": "Orion Alternative Elementary School",
+      "schoolYear": "2025-26",
+      "consolidatedAppFunds": 40035,
+      "csiFunds": 0,
+      "totalBudgeted": 1062025,
+      "federalPrograms": [],
+      "stateLocalPrograms": [
+        {
+          "name": "D100",
+          "amount": 24883
+        },
+        {
+          "name": "District Funded",
+          "amount": 83160
+        },
+        {
+          "name": "Measure U",
+          "amount": 131218
+        },
+        {
+          "name": "None Specified",
+          "amount": 0
+        },
+        {
+          "name": "Parent Teacher Association/Parent Faculty Club (PTA/PFC/PTSO, PTO, etc.)",
+          "amount": 721057
+        },
+        {
+          "name": "Prop. 28",
+          "amount": 59454
+        },
+        {
+          "name": "Site Improvement Funds",
+          "amount": 42253
+        }
+      ]
+    },
+    "categorized": {
+      "spsaTotal": 1062025,
+      "titleI": 0,
+      "district": 150296,
+      "ptoPta": 721057,
+      "measureU": 131218,
+      "prop28": 59454
+    }
+  },
+  "roosevelt": {
+    "raw": {
+      "school": "Roosevelt Elementary School",
+      "schoolYear": "2025-26",
+      "consolidatedAppFunds": 107867,
+      "csiFunds": 0,
+      "totalBudgeted": 410139,
+      "federalPrograms": [
+        {
+          "name": "Title I",
+          "amount": 54965
+        }
+      ],
+      "stateLocalPrograms": [
+        {
+          "name": "District Funded",
+          "amount": 0
+        },
+        {
+          "name": "Measure U",
+          "amount": 109217
+        },
+        {
+          "name": "None Specified",
+          "amount": 1000
+        },
+        {
+          "name": "Prop. 28",
+          "amount": 88397
+        },
+        {
+          "name": "Site Improvement Funds",
+          "amount": 156560
+        }
+      ]
+    },
+    "categorized": {
+      "spsaTotal": 410139,
+      "titleI": 54965,
+      "district": 157560,
+      "ptoPta": 0,
+      "measureU": 109217,
+      "prop28": 88397
+    }
+  },
+  "roy-cloud": {
+    "raw": {
+      "school": "Roy Cloud School",
+      "schoolYear": "2025-26",
+      "consolidatedAppFunds": 0,
+      "csiFunds": 0,
+      "totalBudgeted": 695353.64,
+      "federalPrograms": [],
+      "stateLocalPrograms": [
+        {
+          "name": "District Funded",
+          "amount": 234000
+        },
+        {
+          "name": "Measure U",
+          "amount": 117043.64
+        },
+        {
+          "name": "None Specified",
+          "amount": 1500
+        },
+        {
+          "name": "Other",
+          "amount": 33256
+        },
+        {
+          "name": "Parent Teacher Association/Parent Faculty Club (PTA/PFC/PTSO, PTO, etc.)",
+          "amount": 215204
+        },
+        {
+          "name": "Prop. 28",
+          "amount": 70870
+        },
+        {
+          "name": "Site Formula Funds",
+          "amount": 23480
+        }
+      ]
+    },
+    "categorized": {
+      "spsaTotal": 695354,
+      "titleI": 0,
+      "district": 292236,
+      "ptoPta": 215204,
+      "measureU": 117044,
+      "prop28": 70870
+    }
+  },
+  "taft": {
+    "raw": {
+      "school": "Taft Community School",
+      "schoolYear": "2025-26",
+      "consolidatedAppFunds": 57231,
+      "csiFunds": 0,
+      "totalBudgeted": 238201,
+      "federalPrograms": [
+        {
+          "name": "Title I",
+          "amount": 69478
+        }
+      ],
+      "stateLocalPrograms": [
+        {
+          "name": "Measure U",
+          "amount": 96640
+        },
+        {
+          "name": "Prop. 28",
+          "amount": 72083
+        }
+      ]
+    },
+    "categorized": {
+      "spsaTotal": 238201,
+      "titleI": 69478,
+      "district": 0,
+      "ptoPta": 0,
+      "measureU": 96640,
+      "prop28": 72083
+    }
+  }
+}

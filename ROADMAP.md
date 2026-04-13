@@ -33,6 +33,7 @@
 - [ ] School Site Councils (SSCs) — scrape and index meeting agendas, minutes, and materials per school
   - Currently "Coming soon" on school pages
   - SSCs approve CSSPs and SPSAs; membership is public record
+  - [x] Extract structured SSC membership from SPSA PDFs (member names, roles [parent/staff/community]) into `data/ssc-membership.json` — 12 schools × 3 years extracted, surfaced on school pages and MCP server
   - Subject to Greene Act (Ed Code 35147): 72-hour agenda posting, open meetings, 3-year record retention
   - Known sources: Taft has Google Docs (https://docs.google.com/document/d/1YsMiY6CFhrxRX9ploZViPZqy4UigzYUTZMVYTf53VdI/); Kennedy has Sept/Oct 2023 on website; Orion and MIT have placeholder pages only
   - Most schools have no publicly visible SSC documentation

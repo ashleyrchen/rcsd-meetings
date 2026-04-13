@@ -1,0 +1,54 @@
+{
+  "school": "Taft Community School",
+  "schoolYear": "2025-26",
+  "composition": {
+    "principal": 1,
+    "classroomTeachers": 2,
+    "otherStaff": 2,
+    "parentCommunity": 5
+  },
+  "members": [
+    {
+      "name": "David Camarena",
+      "role": "principal"
+    },
+    {
+      "name": "Melissa Lopez",
+      "role": "classroomTeacher"
+    },
+    {
+      "name": "Ian Milos",
+      "role": "classroomTeacher"
+    },
+    {
+      "name": "Jocelyne Arriaga",
+      "role": "otherStaff"
+    },
+    {
+      "name": "Jennifer C Torres",
+      "role": "otherStaff"
+    },
+    {
+      "name": "Rick Soriano",
+      "role": "parentCommunity"
+    },
+    {
+      "name": "Blanca Madrigal",
+      "role": "parentCommunity"
+    },
+    {
+      "name": "Fabiola Kerfoot",
+      "role": "parentCommunity"
+    },
+    {
+      "name": "Jade Martinez",
+      "role": "parentCommunity"
+    },
+    {
+      "name": "Florence Ortiz",
+      "role": "parentCommunity"
+    }
+  ],
+  "chairperson": "Rick Soriano",
+  "adoptionDate": "2025-03-31"
+}

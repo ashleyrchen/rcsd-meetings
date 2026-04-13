@@ -182,7 +182,23 @@ function createServer(): McpServer {
           ],
         };
       }
-      return { content: [{ type: "text", text: formatSchool(found) }] };
+      let text = formatSchool(found);
+      // Append SSC membership if available
+      try {
+        const sscData = await fetchJSON("ssc-membership.json");
+        const ssc = sscData[found.slug]?.["2025-26"];
+        if (ssc?.members?.length) {
+          const roleLabel: Record<string, string> = { principal: "Principal", classroomTeacher: "Teacher", otherStaff: "Staff", parentCommunity: "Parent/Community" };
+          text += "\n  School Site Council (2025-26):";
+          if (ssc.chairperson) text += `\n    Chair: ${ssc.chairperson}`;
+          if (ssc.adoptionDate) text += `\n    SPSA adopted: ${ssc.adoptionDate}`;
+          text += `\n    Members (${ssc.members.length}):`;
+          for (const m of ssc.members) {
+            text += `\n      ${m.name} — ${roleLabel[m.role] || m.role}`;
+          }
+        }
+      } catch { /* SSC data not yet available — skip silently */ }
+      return { content: [{ type: "text", text }] };
     }
   );
 

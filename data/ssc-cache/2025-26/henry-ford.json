@@ -1,0 +1,54 @@
+{
+  "school": "Henry Ford Elementary School",
+  "schoolYear": "2025-26",
+  "composition": {
+    "principal": 1,
+    "classroomTeachers": 3,
+    "otherStaff": 2,
+    "parentCommunity": 5
+  },
+  "members": [
+    {
+      "name": "Jennifer Knopf",
+      "role": "principal"
+    },
+    {
+      "name": "Maryann Nakhla",
+      "role": "otherStaff"
+    },
+    {
+      "name": "Steve Borg",
+      "role": "classroomTeacher"
+    },
+    {
+      "name": "Amy Barstad",
+      "role": "classroomTeacher"
+    },
+    {
+      "name": "Shaunna Ingersoll",
+      "role": "otherStaff"
+    },
+    {
+      "name": "Courtney Rogerson",
+      "role": "parentCommunity"
+    },
+    {
+      "name": "George Rodriguez",
+      "role": "parentCommunity"
+    },
+    {
+      "name": "Mimi Turner",
+      "role": "parentCommunity"
+    },
+    {
+      "name": "Abraham Frailey",
+      "role": "parentCommunity"
+    },
+    {
+      "name": "Chuck Walter",
+      "role": "parentCommunity"
+    }
+  ],
+  "chairperson": "Courtney Rogerson",
+  "adoptionDate": "2024-05-28"
+}

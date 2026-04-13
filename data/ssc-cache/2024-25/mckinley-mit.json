@@ -1,0 +1,58 @@
+{
+  "school": "McKinley Institute of Technology",
+  "schoolYear": "2024-25",
+  "composition": {
+    "principal": 1,
+    "classroomTeachers": 3,
+    "otherStaff": 2,
+    "parentCommunity": 3
+  },
+  "members": [
+    {
+      "name": "Susana Garcia Fernandez",
+      "role": "principal"
+    },
+    {
+      "name": "Jackelyne Campos",
+      "role": "otherStaff"
+    },
+    {
+      "name": "Kathleen Murphy",
+      "role": "classroomTeacher"
+    },
+    {
+      "name": "Angela Ha",
+      "role": "classroomTeacher"
+    },
+    {
+      "name": "Maryjane Gertz",
+      "role": "classroomTeacher"
+    },
+    {
+      "name": "Yuricci Cruz",
+      "role": "parentCommunity"
+    },
+    {
+      "name": "Danna Perez",
+      "role": "parentCommunity"
+    },
+    {
+      "name": "Diana Mora",
+      "role": "parentCommunity"
+    },
+    {
+      "name": "Carlos Gonzalez",
+      "role": "parentCommunity"
+    },
+    {
+      "name": "Laura Robles",
+      "role": "otherStaff"
+    },
+    {
+      "name": "Nancy Torres",
+      "role": "parentCommunity"
+    }
+  ],
+  "chairperson": "Nancy Torres",
+  "adoptionDate": "2024-05-22"
+}

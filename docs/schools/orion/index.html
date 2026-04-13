@@ -649,6 +649,32 @@
     color: var(--text-muted);
   }
 
+  /* ---- SSC MEMBERSHIP ---- */
+  .resource-card.ssc-card {
+    grid-column: 1 / -1;
+  }
+  .ssc-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+    margin-top: 0.3rem;
+  }
+  .ssc-table th {
+    text-align: left;
+    font-weight: 600;
+    padding: 0.3rem 0.5rem;
+    border-bottom: 2px solid var(--green-pale);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+  .ssc-table td {
+    padding: 0.25rem 0.5rem;
+    border-bottom: 1px solid var(--cream-dark);
+  }
+  .ssc-table tr:last-child td {
+    border-bottom: none;
+  }
+
   /* ---- BELL SCHEDULE ---- */
   .resource-card.bell-card {
     grid-column: 1 / -1;
@@ -1040,23 +1066,24 @@
     <div class="stat-grid">
       <div class="stat-card">
         <div class="stat-card-label">Supplemental (SPSA)</div>
-        <div class="stat-card-value">$235K <span class="info-bubble" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://data.rcsd.info/documents/spsa/2025-26/orion.pdf" target="_blank">SPSA 2025-26</a></span></span></div>
+        <div class="stat-card-value">$1.1M <span class="info-bubble" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://data.rcsd.info/documents/spsa/2025-26/orion.pdf" target="_blank">SPSA 2025-26</a></span></span></div>
       </div>
       <div class="stat-card">
         <div class="stat-card-label">SPSA Per Pupil</div>
-        <div class="stat-card-value">$456 <span class="info-bubble" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://data.rcsd.info/documents/spsa/2025-26/orion.pdf" target="_blank">SPSA 2025-26</a></span></span></div>
+        <div class="stat-card-value">$1,934 <span class="info-bubble" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://data.rcsd.info/documents/spsa/2025-26/orion.pdf" target="_blank">SPSA 2025-26</a></span></span></div>
       </div>
     </div>
 
     <h3>SPSA Source Breakdown</h3>
 
     <div class="funding-bar">
-      <div class="funding-bar-segment" style="width:55.3%; background:#c4842d"></div><div class="funding-bar-segment" style="width:31.1%; background:#5b9bd5"></div><div class="funding-bar-segment" style="width:3.8%; background:#9b7cb8"></div>
+      <div class="funding-bar-segment" style="width:14.1%; background:#1a3a2a"></div><div class="funding-bar-segment" style="width:67.9%; background:#c4842d"></div><div class="funding-bar-segment" style="width:12.3%; background:#5b9bd5"></div><div class="funding-bar-segment" style="width:5.6%; background:#9b7cb8"></div>
     </div>
     <div class="funding-legend">
-      <span class="funding-legend-item"><span class="funding-legend-swatch" style="background:#c4842d"></span>PTO/PTA: $130K</span>
-          <span class="funding-legend-item"><span class="funding-legend-swatch" style="background:#5b9bd5"></span>Measure U: $73K</span>
-          <span class="funding-legend-item"><span class="funding-legend-swatch" style="background:#9b7cb8"></span>Prop 28: $9K</span>
+      <span class="funding-legend-item"><span class="funding-legend-swatch" style="background:#1a3a2a"></span>District: $150K</span>
+          <span class="funding-legend-item"><span class="funding-legend-swatch" style="background:#c4842d"></span>PTO/PTA: $721K</span>
+          <span class="funding-legend-item"><span class="funding-legend-swatch" style="background:#5b9bd5"></span>Measure U: $131K</span>
+          <span class="funding-legend-item"><span class="funding-legend-swatch" style="background:#9b7cb8"></span>Prop 28: $59K</span>
     </div>
 
     <div class="table-wrap">
@@ -1070,23 +1097,28 @@
         </thead>
         <tbody>
           <tr>
+            <td class="label-cell">District</td>
+            <td class="num">$150K</td>
+            <td class="num">14%</td>
+          </tr>
+          <tr>
             <td class="label-cell">PTO/PTA</td>
-            <td class="num">$130K</td>
-            <td class="num">55%</td>
+            <td class="num">$721K</td>
+            <td class="num">68%</td>
           </tr>
           <tr>
             <td class="label-cell">Measure U</td>
-            <td class="num">$73K</td>
-            <td class="num">31%</td>
+            <td class="num">$131K</td>
+            <td class="num">12%</td>
           </tr>
           <tr>
             <td class="label-cell">Prop 28</td>
-            <td class="num">$9K</td>
-            <td class="num">4%</td>
+            <td class="num">$59K</td>
+            <td class="num">6%</td>
           </tr>
           <tr class="total-row">
             <td class="label-cell">Total</td>
-            <td class="num">$235K</td>
+            <td class="num">$1.1M</td>
             <td class="num">100%</td>
           </tr>
         </tbody>
@@ -1206,9 +1238,15 @@
         <h4>Comprehensive Safety Plan</h4>
         <p>2025-26 plan, board-approved Feb 4, 2026.</p><p><a href="https://data.rcsd.info/board-packets/2026-02-04/2025_Comprehensive_School_Safety_Plan__Pt._1_-Public-_Orion_Alternative_School_2.pdf" target="_blank">Download CSSP (PDF) &#8599;</a></p>
       </div>
-      <div class="resource-card">
+      <div class="resource-card ssc-card">
         <h4>School Site Council</h4>
-        <p class="coming-soon">Coming soon</p>
+        <p style="margin-bottom:0.4rem"><strong>Chair:</strong> Michael Alba</p>
+          <p style="margin-bottom:0.6rem; font-size:0.85rem; color:#666">SPSA adopted: April 2, 2025</p>
+          <table class="ssc-table">
+            <thead><tr><th>Name</th><th>Role</th></tr></thead>
+            <tbody><tr><td>Winnie Chen</td><td>Principal</td></tr><tr><td>Cathy Schechter</td><td>Teacher</td></tr><tr><td>Chenchen Gong</td><td>Teacher</td></tr><tr><td>Jiaying Xu</td><td>Teacher</td></tr><tr><td>Dana Bozin</td><td>Teacher</td></tr><tr><td>Katie O'Hara</td><td>Staff</td></tr><tr><td>Brian Tuomy</td><td>Staff</td></tr><tr><td>Michael Alba</td><td>Parent / Community</td></tr><tr><td>Christina Luke</td><td>Parent / Community</td></tr><tr><td>Linda Khiev-Louie</td><td>Parent / Community</td></tr><tr><td>Oscar Flores</td><td>Parent / Community</td></tr><tr><td>Hana Ma</td><td>Parent / Community</td></tr><tr><td>Joe Ballou</td><td>Parent / Community</td></tr></tbody>
+          </table>
+          <p style="margin-top:0.5rem"><a href="https://data.rcsd.info/documents/spsa/2025-26/orion.pdf" target="_blank">View SPSA &#8599;</a></p>
       </div>
       <div class="resource-card">
         <h4>After-School Programs</h4>

@@ -1,0 +1,54 @@
+{
+  "school": "Hoover Community School",
+  "schoolYear": "2024-25",
+  "composition": {
+    "principal": 1,
+    "classroomTeachers": 3,
+    "otherStaff": 1,
+    "parentCommunity": 5
+  },
+  "members": [
+    {
+      "name": "Lupe Guzman",
+      "role": "principal"
+    },
+    {
+      "name": "Community School Coordinator/Alma Rosas",
+      "role": "otherStaff"
+    },
+    {
+      "name": "Annie Cho",
+      "role": "classroomTeacher"
+    },
+    {
+      "name": "Devon Mullane",
+      "role": "classroomTeacher"
+    },
+    {
+      "name": "Jennifer Nally",
+      "role": "classroomTeacher"
+    },
+    {
+      "name": "Mayra Murrillo",
+      "role": "parentCommunity"
+    },
+    {
+      "name": "Guadalupe Quezada",
+      "role": "parentCommunity"
+    },
+    {
+      "name": "Marbella Pimentel",
+      "role": "parentCommunity"
+    },
+    {
+      "name": "Yolanda Calles",
+      "role": "parentCommunity"
+    },
+    {
+      "name": "Maria Quezada",
+      "role": "parentCommunity"
+    }
+  ],
+  "chairperson": "Guadalupe Quezada",
+  "adoptionDate": "2024-05-21"
+}

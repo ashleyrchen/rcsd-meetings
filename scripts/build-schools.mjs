@@ -67,6 +67,7 @@ const DISTRICT_AVG_PER_PUPIL = sarcSlugs.length > 0
 // ---- Load SpEd data ----
 const SPED_ENROLLMENT = (() => { try { return JSON.parse(readFileSync(resolve(ROOT, 'data/sped-enrollment.json'), 'utf-8')); } catch { return {}; } })();
 const SPED_CATEGORIES = (() => { try { return JSON.parse(readFileSync(resolve(ROOT, 'data/sped-categories.json'), 'utf-8')); } catch { return {}; } })();
+const SSC_DATA = (() => { try { return JSON.parse(readFileSync(resolve(ROOT, 'data/ssc-membership.json'), 'utf-8')); } catch { return {}; } })();
 
 // Compute district-wide SpEd averages
 const districtSpedPct = SPED_ENROLLMENT.district
@@ -295,8 +296,8 @@ const SCHOOL_DATA = {
     growth: { ela: 22.2, math: 9.2, elaTeachers: 6, mathTeachers: null },
     demographics: { sed: 62.6, el: 42.4, chronicAbsent: 15.4, suspension: 0.00 },
     funding: {
-      spsaTotal: 854000, perPupil: 1467,
-      titleI: 73000, district: 289000, ptoPta: 165000, measureU: 147000, prop28: 86000,
+      spsaTotal: 854000, perPupil: 1356,
+      titleI: 73000, district: 383000, ptoPta: 165000, measureU: 147000, prop28: 86000,
       titleISchool: true, atsi: false,
     },
     staffing: { credentialed: 90.5, misassigned: 0, elMisassigned: 0 },
@@ -311,8 +312,8 @@ const SCHOOL_DATA = {
     growth: { ela: 12.5, math: 9.8, elaTeachers: 13, mathTeachers: null },
     demographics: { sed: 44.2, el: 23.5, chronicAbsent: 20.7, suspension: 1.39 },
     funding: {
-      spsaTotal: 665000, perPupil: 951,
-      titleI: 73000, district: 73000, ptoPta: 196000, measureU: 173000, prop28: 93000,
+      spsaTotal: 665000, perPupil: 1001,
+      titleI: 73000, district: 129000, ptoPta: 196000, measureU: 173000, prop28: 93000,
       titleISchool: true, atsi: false,
     },
     staffing: { credentialed: 86.1, misassigned: 0, elMisassigned: null },
@@ -327,8 +328,8 @@ const SCHOOL_DATA = {
     growth: { ela: 49.0, math: 22.8, elaTeachers: 4, mathTeachers: null },
     demographics: { sed: 95.0, el: 68.2, chronicAbsent: 28.8, suspension: 3.23 },
     funding: {
-      spsaTotal: 243000, perPupil: 872,
-      titleI: 55000, district: 0, ptoPta: 0, measureU: 79000, prop28: 90000,
+      spsaTotal: 243000, perPupil: 936,
+      titleI: 55000, district: 19000, ptoPta: 0, measureU: 79000, prop28: 90000,
       titleISchool: true, atsi: false,
     },
     staffing: { credentialed: 87.4, misassigned: 0.3, elMisassigned: null },
@@ -343,8 +344,8 @@ const SCHOOL_DATA = {
     growth: { ela: 15.2, math: 10.2, elaTeachers: 6, mathTeachers: null },
     demographics: { sed: 63.1, el: 36.2, chronicAbsent: 24.8, suspension: 1.00 },
     funding: {
-      spsaTotal: 681000, perPupil: 1523,
-      titleI: 61000, district: 249000, ptoPta: 75000, measureU: 147000, prop28: 75000,
+      spsaTotal: 681000, perPupil: 1476,
+      titleI: 61000, district: 324000, ptoPta: 75000, measureU: 147000, prop28: 75000,
       titleISchool: true, atsi: false,
     },
     staffing: { credentialed: 90.6, misassigned: 1.7, elMisassigned: null },
@@ -359,8 +360,8 @@ const SCHOOL_DATA = {
     growth: { ela: 36.0, math: 25.6, elaTeachers: 17, mathTeachers: null },
     demographics: { sed: 96.6, el: 66.9, chronicAbsent: 28.5, suspension: 4.79 },
     funding: {
-      spsaTotal: 734000, perPupil: 1073,
-      titleI: 128000, district: 0, ptoPta: 0, measureU: 183000, prop28: 116000,
+      spsaTotal: 734000, perPupil: 1114,
+      titleI: 128000, district: 307000, ptoPta: 0, measureU: 183000, prop28: 116000,
       titleISchool: true, atsi: false,
     },
     staffing: { credentialed: 52.0, misassigned: 36.7, elMisassigned: 35.2 },
@@ -375,8 +376,8 @@ const SCHOOL_DATA = {
     growth: { ela: 15.4, math: 11.2, elaTeachers: 30, mathTeachers: null },
     demographics: { sed: 65.8, el: 25.8, chronicAbsent: 23.8, suspension: 2.97 },
     funding: {
-      spsaTotal: 563000, perPupil: 694,
-      titleI: 76000, district: 96000, ptoPta: 20000, measureU: 192000, prop28: 117000,
+      spsaTotal: 563000, perPupil: 714,
+      titleI: 76000, district: 159000, ptoPta: 20000, measureU: 192000, prop28: 117000,
       titleISchool: true, atsi: false,
     },
     staffing: { credentialed: 60.5, misassigned: 22.3, elMisassigned: 16.7 },
@@ -407,8 +408,8 @@ const SCHOOL_DATA = {
     growth: { ela: 9.6, math: 10.6, elaTeachers: 16, mathTeachers: null },
     demographics: { sed: 8.9, el: 2.5, chronicAbsent: 3.2, suspension: 0.19 },
     funding: {
-      spsaTotal: 564000, perPupil: 1066,
-      titleI: 0, district: 10000, ptoPta: 326000, measureU: 135000, prop28: 59000,
+      spsaTotal: 564000, perPupil: 1020,
+      titleI: 0, district: 44000, ptoPta: 326000, measureU: 135000, prop28: 59000,
       titleISchool: false, atsi: false,
     },
     staffing: { credentialed: 79.7, misassigned: 0, elMisassigned: 0 },
@@ -423,8 +424,8 @@ const SCHOOL_DATA = {
     growth: { ela: 11.4, math: 11.3, elaTeachers: 3, mathTeachers: null },
     demographics: { sed: 31.8, el: 22.8, chronicAbsent: 12.6, suspension: 0.21 },
     funding: {
-      spsaTotal: 235000, perPupil: 456,
-      titleI: 0, district: 0, ptoPta: 130000, measureU: 73000, prop28: 9000,
+      spsaTotal: 1062000, perPupil: 1934,
+      titleI: 0, district: 150000, ptoPta: 721000, measureU: 131000, prop28: 59000,
       titleISchool: false, atsi: false,
     },
     staffing: { credentialed: 68.4, misassigned: 14.6, elMisassigned: 14.6 },
@@ -439,8 +440,8 @@ const SCHOOL_DATA = {
     growth: { ela: 21.5, math: 16.8, elaTeachers: 6, mathTeachers: null },
     demographics: { sed: 69.5, el: 42.6, chronicAbsent: 26.9, suspension: 3.11 },
     funding: {
-      spsaTotal: 223000, perPupil: 569,
-      titleI: 40000, district: 0, ptoPta: 0, measureU: 0, prop28: 88000,
+      spsaTotal: 410000, perPupil: 1192,
+      titleI: 55000, district: 158000, ptoPta: 0, measureU: 109000, prop28: 88000,
       titleISchool: true, atsi: false,
     },
     staffing: { credentialed: 56.5, misassigned: 28.1, elMisassigned: 28.1 },
@@ -455,8 +456,8 @@ const SCHOOL_DATA = {
     growth: { ela: 17.5, math: 15.9, elaTeachers: 13, mathTeachers: null },
     demographics: { sed: 11.4, el: 3.4, chronicAbsent: 8.0, suspension: 1.75 },
     funding: {
-      spsaTotal: 415000, perPupil: 652,
-      titleI: 0, district: 234000, ptoPta: 113000, measureU: 59000, prop28: 0,
+      spsaTotal: 695000, perPupil: 1046,
+      titleI: 0, district: 292000, ptoPta: 215000, measureU: 117000, prop28: 71000,
       titleISchool: false, atsi: false,
     },
     staffing: { credentialed: 79.7, misassigned: 8.3, elMisassigned: null },
@@ -471,14 +472,14 @@ const SCHOOL_DATA = {
     growth: { ela: 22.6, math: 27.6, elaTeachers: 7, mathTeachers: null },
     demographics: { sed: 90.0, el: 65.7, chronicAbsent: 26.7, suspension: 0.51 },
     funding: {
-      spsaTotal: 190000, perPupil: 521,
-      titleI: 42000, district: 0, ptoPta: 0, measureU: 48000, prop28: 72000,
+      spsaTotal: 238000, perPupil: 733,
+      titleI: 69000, district: 0, ptoPta: 0, measureU: 97000, prop28: 72000,
       titleISchool: true, atsi: false,
     },
     staffing: { credentialed: 56.3, misassigned: 15.6, elMisassigned: 15.6 },
     teacherDemo: { hispanicStaff: 29.2, whiteStaff: null, over55: null, under35: 41.7 },
-    notes: '#1 Math student growth (27.6%), #3 ELA growth. Youngest staff in district alongside Hoover (41.7% under 35). Smallest SPSA budget ($190K). Exited ATSI in 2024-25. 7% of students experiencing homelessness.',
-    notesEs: 'N.º 1 en crecimiento estudiantil en matemáticas (27.6%), N.º 3 en crecimiento en ELA. Personal más joven del distrito junto con Hoover (41.7% menor de 35). El presupuesto SPSA más pequeño ($190K).',
+    notes: '#1 Math student growth (27.6%), #3 ELA growth. Youngest staff in district alongside Hoover (41.7% under 35). Smallest SPSA budget ($238K). Exited ATSI in 2024-25. 7% of students experiencing homelessness.',
+    notesEs: 'N.º 1 en crecimiento estudiantil en matemáticas (27.6%), N.º 3 en crecimiento en ELA. Personal más joven del distrito junto con Hoover (41.7% menor de 35). El presupuesto SPSA más pequeño ($238K).',
   },
 };
 
@@ -969,6 +970,32 @@ const schoolCSS = `
     color: var(--text-muted);
   }
 
+  /* ---- SSC MEMBERSHIP ---- */
+  .resource-card.ssc-card {
+    grid-column: 1 / -1;
+  }
+  .ssc-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+    margin-top: 0.3rem;
+  }
+  .ssc-table th {
+    text-align: left;
+    font-weight: 600;
+    padding: 0.3rem 0.5rem;
+    border-bottom: 2px solid var(--green-pale);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+  .ssc-table td {
+    padding: 0.25rem 0.5rem;
+    border-bottom: 1px solid var(--cream-dark);
+  }
+  .ssc-table tr:last-child td {
+    border-bottom: none;
+  }
+
   /* ---- BELL SCHEDULE ---- */
   .resource-card.bell-card {
     grid-column: 1 / -1;
@@ -1299,6 +1326,14 @@ const LABELS = {
     dismissal: 'Dismissal',
     lunchMenu: 'Lunch Menu',
     schoolSiteCouncil: 'School Site Council',
+    sscChair: 'Chair',
+    sscAdopted: 'SPSA adopted',
+    sscRolePrincipal: 'Principal',
+    sscRoleTeacher: 'Teacher',
+    sscRoleStaff: 'Staff',
+    sscRoleParent: 'Parent / Community',
+    sscMemberName: 'Name',
+    sscMemberRole: 'Role',
     ptoPtaOrg: 'PTO / PTA',
     afterSchool: 'After-School Programs',
     parentComm: 'Parent Communication',
@@ -1419,6 +1454,14 @@ const LABELS = {
     dismissal: 'Salida',
     lunchMenu: 'Menú de Almuerzo',
     schoolSiteCouncil: 'Consejo del Sitio Escolar',
+    sscChair: 'Presidente',
+    sscAdopted: 'SPSA adoptado',
+    sscRolePrincipal: 'Director(a)',
+    sscRoleTeacher: 'Maestro(a)',
+    sscRoleStaff: 'Personal',
+    sscRoleParent: 'Padre / Comunidad',
+    sscMemberName: 'Nombre',
+    sscMemberRole: 'Rol',
     ptoPtaOrg: 'PTO / PTA',
     afterSchool: 'Programas Extracurriculares',
     parentComm: 'Comunicación con Padres',
@@ -2033,9 +2076,21 @@ ${siteNav({ activePage: 'schools', lang, altLangHref })}
           ? `<p>${L.csspDesc}</p><p><a href="${CSSP_URLS[slug]}" target="_blank">${L.viewCssp} &#8599;</a></p>`
           : `<p class="coming-soon">${L.comingSoon}</p>`}
       </div>
-      <div class="resource-card">
+      <div class="resource-card ssc-card">
         <h4>${L.schoolSiteCouncil}</h4>
-        <p class="coming-soon">${L.comingSoon}</p>
+        ${(() => {
+          const ssc = SSC_DATA[slug]?.['2025-26'];
+          if (!ssc?.members?.length) return `<p class="coming-soon">${L.comingSoon}</p>`;
+          const roleLabel = { principal: L.sscRolePrincipal, classroomTeacher: L.sscRoleTeacher, otherStaff: L.sscRoleStaff, parentCommunity: L.sscRoleParent };
+          const adoptedStr = ssc.adoptionDate ? new Date(ssc.adoptionDate + 'T12:00:00').toLocaleDateString(lang === 'es' ? 'es-US' : 'en-US', { year: 'numeric', month: 'long', day: 'numeric' }) : '';
+          return `${ssc.chairperson ? `<p style="margin-bottom:0.4rem"><strong>${L.sscChair}:</strong> ${ssc.chairperson}</p>` : ''}
+          ${adoptedStr ? `<p style="margin-bottom:0.6rem; font-size:0.85rem; color:#666">${L.sscAdopted}: ${adoptedStr}</p>` : ''}
+          <table class="ssc-table">
+            <thead><tr><th>${L.sscMemberName}</th><th>${L.sscMemberRole}</th></tr></thead>
+            <tbody>${ssc.members.map(m => `<tr><td>${m.name}</td><td>${roleLabel[m.role] || m.role}</td></tr>`).join('')}</tbody>
+          </table>
+          <p style="margin-top:0.5rem"><a href="https://data.rcsd.info/documents/spsa/2025-26/${slug}.pdf" target="_blank">${isEs ? 'Ver SPSA' : 'View SPSA'} &#8599;</a></p>`;
+        })()}
       </div>
       <div class="resource-card">
         <h4>${L.afterSchool}</h4>

@@ -1,0 +1,31 @@
+{
+  "school": "Garfield Community School",
+  "schoolYear": "2025-26",
+  "consolidatedAppFunds": 113476,
+  "csiFunds": 0,
+  "totalBudgeted": 243415,
+  "federalPrograms": [
+    {
+      "name": "Title I",
+      "amount": 55174
+    }
+  ],
+  "stateLocalPrograms": [
+    {
+      "name": "D100",
+      "amount": 13680
+    },
+    {
+      "name": "Measure U",
+      "amount": 79463
+    },
+    {
+      "name": "Prop. 28",
+      "amount": 90098
+    },
+    {
+      "name": "Site Formula Funds",
+      "amount": 5000
+    }
+  ]
+}
