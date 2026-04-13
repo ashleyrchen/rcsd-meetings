@@ -391,6 +391,477 @@ Document types and counts:
 
 ---
 
+## data/cde/absenteeism-2024-25.json
+
+CDE Chronic Absenteeism data — disaggregated by reporting category (student subgroup) per school.
+
+### Sample
+
+```json
+{
+  "_metadata": {
+    "description": "Chronic absenteeism rates by school and student group",
+    "source": "https://www3.cde.ca.gov/demo-downloads/attendance/chronicabsenteeism25-v2.txt",
+    "dataYear": "2024-25",
+    "downloadDate": "2026-04-12",
+    "fileStructure": "https://www.cde.ca.gov/ds/ad/fsabd.asp",
+    "pipeline": "scripts/pull-cde-data.mjs --dataset absenteeism"
+  },
+  "district": {
+    "TA": { "enrolled": 7737, "count": 1417, "rate": 18.3 },
+    "RH": { "enrolled": 5306, "count": 1197, "rate": 22.6 },
+    "SE": { "enrolled": 2999, "count": 727, "rate": 24.2 }
+  },
+  "clifford": {
+    "TA": { "enrolled": 721, "count": 138, "rate": 19.1 },
+    "RH": { "enrolled": 328, "count": 88, "rate": 26.8 }
+  }
+}
+```
+
+### Schema
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `_metadata` | object | Source provenance (URL, date, pipeline command) |
+| `district` | object | District-wide data keyed by reporting category code |
+| `{school-slug}` | object | Per-school data keyed by reporting category code |
+| `{code}.enrolled` | number/null | Cumulative enrollment for that subgroup |
+| `{code}.count` | number/null | Number of chronically absent students (absent >=10% of enrolled days) |
+| `{code}.rate` | number/null | Chronic absenteeism rate as a percentage |
+
+### Reporting Category Codes
+
+| Code | Description |
+|------|-------------|
+| `TA` | All Students (Total) |
+| `GF` | Female |
+| `GM` | Male |
+| `GRTKKN` | TK/Kindergarten |
+| `GR13` | Grades 1-3 |
+| `GR46` | Grades 4-6 |
+| `GR78` | Grades 7-8 |
+| `GRTK8` | Grades TK-8 (all grades) |
+| `RA` | Asian |
+| `RB` | African American / Black |
+| `RD` | Not Reported |
+| `RF` | Filipino |
+| `RH` | Hispanic or Latino |
+| `RI` | American Indian or Alaska Native |
+| `RP` | Pacific Islander |
+| `RT` | Two or More Races |
+| `RW` | White |
+| `SD` | Students with Disabilities |
+| `SE` | English Learners |
+| `SF` | Foster Youth |
+| `SH` | Homeless |
+| `SM` | Migrant |
+| `SS` | Socioeconomically Disadvantaged |
+
+### Key Field Notes
+
+- `null` values = CDE privacy suppression (cell size too small to report)
+- `rate` = `count / enrolled * 100`
+- "Chronically absent" = absent 10% or more of enrolled school days
+- Not all reporting categories are present for every school — depends on student population
+
+---
+
+## data/cde/ltel-2024-25.json
+
+CDE Long-Term English Learner (LTEL) and English Learner Academic Status (ELAS) data per school.
+
+### Sample
+
+```json
+{
+  "_metadata": {
+    "description": "Long-term English learner counts by school",
+    "source": "https://dq.cde.ca.gov/dataquest/longtermel/lteldnld.aspx?year=2024-25",
+    "dataYear": "2024-25",
+    "downloadDate": "2026-04-12",
+    "fileStructure": "https://dq.cde.ca.gov/dataquest/longtermel/",
+    "pipeline": "scripts/pull-cde-data.mjs --dataset ltel"
+  },
+  "district": {
+    "totalEnrollment": 15046,
+    "el": 5710,
+    "rfep": 1734,
+    "atRisk": 900,
+    "ltel": 652,
+    "el4plus": 814,
+    "el03y": 3344,
+    "el45y": 1188,
+    "el6plusY": 1178
+  },
+  "clifford": {
+    "totalEnrollment": 1396,
+    "el": 286,
+    "rfep": 128,
+    "atRisk": 24,
+    "ltel": 38,
+    "el4plus": 44,
+    "el03y": 180,
+    "el45y": 40,
+    "el6plusY": 66
+  }
+}
+```
+
+### Schema
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `_metadata` | object | Source provenance (URL, date, pipeline command) |
+| `district` | object | District-wide totals |
+| `{school-slug}` | object | Per-school totals |
+| `totalEnrollment` | number | Total school enrollment (all students) |
+| `el` | number | Current English Learners |
+| `rfep` | number | Reclassified Fluent English Proficient (exited EL status) |
+| `atRisk` | number | At-Risk of becoming LTEL (EL for 4-5 years, not meeting criteria) |
+| `ltel` | number | Long-Term English Learners (EL for 6+ years without reclassification) |
+| `el4plus` | number | EL students enrolled 4+ years |
+| `el03y` | number | EL students enrolled 0-3 years |
+| `el45y` | number | EL students enrolled 4-5 years |
+| `el6plusY` | number | EL students enrolled 6+ years |
+
+### Key Field Notes
+
+- `ltel` = 0 at elementary-only schools (students haven't been enrolled long enough to qualify as LTEL)
+- `totalEnrollment` here is from the LTEL dataset and may differ slightly from Census Day enrollment
+- RFEP students are no longer classified as EL but are tracked for monitoring
+- `atRisk` students are a subset of EL students who may become LTEL without intervention
+
+---
+
+## data/cde/staff-ethnicity-2024-25.json
+
+CDE Staff Demographics — teacher race/ethnicity counts per school.
+
+### Sample
+
+```json
+{
+  "_metadata": {
+    "description": "Staff ethnicity/race counts by school (teachers)",
+    "source": "https://www3.cde.ca.gov/demo-downloads/staff/stre2425.txt",
+    "dataYear": "2024-25",
+    "downloadDate": "2026-04-12",
+    "fileStructure": "https://www.cde.ca.gov/ds/ad/fsspre.asp",
+    "pipeline": "scripts/pull-cde-data.mjs --dataset staff-ethnicity"
+  },
+  "district": {
+    "total": 364,
+    "africanAmerican": 15,
+    "americanIndian": 1,
+    "asian": 46,
+    "filipino": 21,
+    "hispanicLatino": 84,
+    "pacificIslander": 1,
+    "white": 184,
+    "twoOrMore": 2,
+    "notReported": 10
+  },
+  "adelante-selby": {
+    "total": 23,
+    "africanAmerican": 0,
+    "americanIndian": 0,
+    "asian": 0,
+    "filipino": 0,
+    "hispanicLatino": 18,
+    "pacificIslander": 0,
+    "white": 4,
+    "twoOrMore": 0,
+    "notReported": 1
+  }
+}
+```
+
+### Schema
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `_metadata` | object | Source provenance (URL, date, pipeline command) |
+| `district` | object | District-wide teacher counts by ethnicity |
+| `{school-slug}` | object | Per-school teacher counts by ethnicity |
+| `total` | number | Total number of teachers |
+| `africanAmerican` | number | African American / Black teachers |
+| `americanIndian` | number | American Indian or Alaska Native teachers |
+| `asian` | number | Asian teachers |
+| `filipino` | number | Filipino teachers |
+| `hispanicLatino` | number | Hispanic or Latino teachers |
+| `pacificIslander` | number | Pacific Islander teachers |
+| `white` | number | White teachers |
+| `twoOrMore` | number | Two or More Races teachers |
+| `notReported` | number | Race/ethnicity not reported |
+
+### Key Field Notes
+
+- Counts are for **teachers only** (certificated classroom teachers), not all staff
+- District total may not equal sum of school totals (district office staff, itinerant teachers)
+- Source file uses CDE's standard staff race/ethnicity categories per Ed Code reporting
+
+---
+
+## data/cde/staff-experience-2024-25.json
+
+CDE Staff Experience — teacher experience levels per school.
+
+### Sample
+
+```json
+{
+  "_metadata": {
+    "description": "Staff experience levels by school (teachers)",
+    "source": "https://www3.cde.ca.gov/demo-downloads/staff/stex2425.txt",
+    "dataYear": "2024-25",
+    "downloadDate": "2026-04-12",
+    "fileStructure": "https://www.cde.ca.gov/ds/ad/fsspex.asp",
+    "pipeline": "scripts/pull-cde-data.mjs --dataset staff-experience"
+  },
+  "district": {
+    "total": 364,
+    "avgYearsTotal": 11,
+    "avgYearsDistrict": 9.2,
+    "experienced": 267,
+    "inexperienced": 97,
+    "firstYear": 27,
+    "secondYear": 70
+  },
+  "garfield": {
+    "total": 14,
+    "avgYearsTotal": 4.5,
+    "avgYearsDistrict": 2.7,
+    "experienced": 6,
+    "inexperienced": 8,
+    "firstYear": 2,
+    "secondYear": 6
+  }
+}
+```
+
+### Schema
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `_metadata` | object | Source provenance (URL, date, pipeline command) |
+| `district` | object | District-wide teacher experience |
+| `{school-slug}` | object | Per-school teacher experience |
+| `total` | number | Total number of teachers |
+| `avgYearsTotal` | number | Average years of total teaching experience |
+| `avgYearsDistrict` | number | Average years teaching in this district |
+| `experienced` | number | Teachers with 3+ years experience |
+| `inexperienced` | number | Teachers with fewer than 3 years experience |
+| `firstYear` | number | First-year teachers |
+| `secondYear` | number | Second-year teachers |
+
+### Key Field Notes
+
+- "Inexperienced" = first- or second-year teachers (CDE definition, not pejorative)
+- `firstYear` + `secondYear` should roughly equal `inexperienced` (minor rounding differences possible)
+- `experienced` + `inexperienced` = `total`
+- High inexperienced counts at a school can indicate retention challenges
+- Garfield is a notable outlier with very low average experience and majority inexperienced staff
+
+---
+
+## data/cde/staff-ratios-2024-25.json
+
+CDE Student-Staff Ratios — student-to-teacher, student-to-admin, and student-to-pupil-services ratios per school.
+
+### Sample
+
+```json
+{
+  "_metadata": {
+    "description": "Student-to-staff ratios by school",
+    "source": "https://www3.cde.ca.gov/demo-downloads/staff/strat2425.txt",
+    "dataYear": "2024-25",
+    "downloadDate": "2026-04-12",
+    "fileStructure": "https://www.cde.ca.gov/ds/ad/fssprat.asp",
+    "pipeline": "scripts/pull-cde-data.mjs --dataset staff-ratios"
+  },
+  "district": {
+    "enrollment": 7507,
+    "teacherFTE": 357.8,
+    "adminFTE": 36.7,
+    "pupilServicesFTE": 30.2,
+    "studentTeacherRatio": 21,
+    "studentAdminRatio": 204.6,
+    "studentPupilServicesRatio": 248.2
+  },
+  "mckinley-mit": {
+    "enrollment": 476,
+    "teacherFTE": 21.1,
+    "adminFTE": 0.9,
+    "pupilServicesFTE": 0,
+    "studentTeacherRatio": 22.6,
+    "studentAdminRatio": null,
+    "studentPupilServicesRatio": null
+  }
+}
+```
+
+### Schema
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `_metadata` | object | Source provenance (URL, date, pipeline command) |
+| `district` | object | District-wide ratios |
+| `{school-slug}` | object | Per-school ratios |
+| `enrollment` | number | Total student enrollment |
+| `teacherFTE` | number | Full-time equivalent teachers |
+| `adminFTE` | number | Full-time equivalent administrators |
+| `pupilServicesFTE` | number | Full-time equivalent pupil services staff (counselors, psychologists, etc.) |
+| `studentTeacherRatio` | number | Students per teacher |
+| `studentAdminRatio` | number/null | Students per administrator |
+| `studentPupilServicesRatio` | number/null | Students per pupil services staff member |
+
+### Key Field Notes
+
+- `null` ratios appear when FTE is below 1.0 (CDE suppresses ratio calculation for very small FTE)
+- FTE values are decimal (e.g., 0.9 = part-time administrator)
+- `pupilServicesFTE` includes school counselors, psychologists, social workers, and nurses
+- `enrollment` here is from the staffing dataset and may differ slightly from Census Day enrollment
+- Adelante Selby (25.3) and North Star (25.7) have notably high student-teacher ratios vs. district average (21.0)
+
+---
+
+## data/ssc-membership.json
+
+School Site Council (SSC) membership extracted from SPSA (School Plan for Student Achievement) PDF documents.
+
+### Sample
+
+```json
+{
+  "_metadata": {
+    "description": "School Site Council membership extracted from SPSA PDFs",
+    "source": "SPSA documents at artifacts/documents/spsa/",
+    "extractionMethod": "Claude Haiku via document content block API",
+    "lastUpdated": "2026-04-09"
+  },
+  "adelante-selby": {
+    "2023-24": {
+      "school": "Adelante Selby Spanish Immersion School",
+      "schoolYear": "2023-24",
+      "composition": {
+        "principal": 1,
+        "classroomTeachers": 3,
+        "otherStaff": 1,
+        "parentCommunity": 5
+      },
+      "members": [
+        { "name": "Warren Sedar", "role": "principal" },
+        { "name": "Silvia Antonelli", "role": "classroomTeacher" },
+        { "name": "Yessica Gallagher", "role": "parentCommunity" }
+      ],
+      "chairperson": "Yessica Gallagher",
+      "adoptionDate": "2023-10-18"
+    }
+  }
+}
+```
+
+### Schema
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `_metadata` | object | Source provenance and extraction method |
+| `{school-slug}` | object | Per-school membership, keyed by school year |
+| `{year}.school` | string | Full school name |
+| `{year}.schoolYear` | string | Academic year (e.g., "2023-24") |
+| `{year}.composition` | object | Seat counts by role category |
+| `{year}.composition.principal` | number | Number of principal seats (always 1) |
+| `{year}.composition.classroomTeachers` | number | Number of classroom teacher seats |
+| `{year}.composition.otherStaff` | number | Number of other school staff seats |
+| `{year}.composition.parentCommunity` | number | Number of parent/community member seats |
+| `{year}.members[]` | array | Individual members with name and role |
+| `{year}.chairperson` | string | SSC chairperson name |
+| `{year}.adoptionDate` | string | Date the SPSA was adopted by the SSC |
+
+### Key Field Notes
+
+- SSC membership is required by Ed Code for Title I schools — equal representation of staff and parents
+- Extracted via AI (Claude Haiku) from SPSA PDFs; verify against source documents for critical uses
+- Multiple school years may be present per school as SPSAs are updated annually
+- `composition` totals should satisfy: `principal + classroomTeachers + otherStaff = parentCommunity` (parity requirement)
+
+---
+
+## data/spsa-budgets.json
+
+SPSA budget summaries extracted from 2025-26 SPSA (School Plan for Student Achievement) PDF documents.
+
+### Sample
+
+```json
+{
+  "_metadata": {
+    "description": "SPSA budget summaries extracted from 2025-26 SPSA PDFs",
+    "source": "Budget Summary pages in artifacts/documents/spsa/2025-26/",
+    "extractionMethod": "Claude Haiku via document content block API",
+    "lastUpdated": "2026-04-12"
+  },
+  "adelante-selby": {
+    "raw": {
+      "school": "Adelante Selby Spanish Immersion School",
+      "schoolYear": "2025-26",
+      "consolidatedAppFunds": 87430,
+      "csiFunds": 0,
+      "totalBudgeted": 854047,
+      "federalPrograms": [
+        { "name": "Title I", "amount": 72871 }
+      ],
+      "stateLocalPrograms": [
+        { "name": "District Funded", "amount": 289028 },
+        { "name": "Measure U", "amount": 147333 },
+        { "name": "Prop. 28", "amount": 85852 }
+      ]
+    },
+    "categorized": {
+      "spsaTotal": 854047,
+      "titleI": 72871,
+      "district": 383245,
+      "ptoPta": 164746,
+      "measureU": 147333,
+      "prop28": 85852
+    }
+  }
+}
+```
+
+### Schema
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `_metadata` | object | Source provenance and extraction method |
+| `{school-slug}.raw` | object | Raw budget data as extracted from the SPSA PDF |
+| `{school-slug}.raw.school` | string | Full school name |
+| `{school-slug}.raw.schoolYear` | string | Budget year (e.g., "2025-26") |
+| `{school-slug}.raw.consolidatedAppFunds` | number | Consolidated Application funds (Title I + other federal) |
+| `{school-slug}.raw.csiFunds` | number | Comprehensive Support and Improvement funds |
+| `{school-slug}.raw.totalBudgeted` | number | Total budgeted across all funding sources |
+| `{school-slug}.raw.federalPrograms[]` | array | Federal funding line items (`{ name, amount }`) |
+| `{school-slug}.raw.stateLocalPrograms[]` | array | State and local funding line items (`{ name, amount }`) |
+| `{school-slug}.categorized` | object | Simplified/categorized budget breakdown |
+| `{school-slug}.categorized.spsaTotal` | number | Total SPSA budget |
+| `{school-slug}.categorized.titleI` | number | Title I federal funding |
+| `{school-slug}.categorized.district` | number | District-funded amounts (D100 + District Funded + Site Improvement) |
+| `{school-slug}.categorized.ptoPta` | number | PTO/PTA/PFC contributions |
+| `{school-slug}.categorized.measureU` | number | Measure U parcel tax funds |
+| `{school-slug}.categorized.prop28` | number | Proposition 28 (arts/music) funding |
+
+### Key Field Notes
+
+- Extracted via AI (Claude Haiku) from SPSA PDFs; verify against source documents for critical uses
+- `categorized` rolls up multiple `raw` line items into standardized categories for cross-school comparison
+- `ptoPta` may be 0 at schools without active parent organizations (those schools rely on RCEF)
+- `csiFunds` is non-zero only for schools identified for Comprehensive Support and Improvement
+- Budget amounts are for the school site plan only; does not include all district spending at the school
+
+---
+
 ## HealthePro Lunch Menu API
 
 Public REST API (no authentication). Base URL: `https://menus.healthepro.com/api/organizations/1184`

@@ -198,6 +198,84 @@ function createServer(): McpServer {
           }
         }
       } catch { /* SSC data not yet available — skip silently */ }
+      // Append CDE data if available
+      try {
+        const [absenteeism, ltel, staffEthnicity, staffExperience, staffRatios] = await Promise.all([
+          fetchJSON("cde/absenteeism-2024-25.json"),
+          fetchJSON("cde/ltel-2024-25.json"),
+          fetchJSON("cde/staff-ethnicity-2024-25.json"),
+          fetchJSON("cde/staff-experience-2024-25.json"),
+          fetchJSON("cde/staff-ratios-2024-25.json"),
+        ]);
+        const slug = found.slug;
+        const cdeLines: string[] = ["\n  CDE Data (2024-25):"];
+
+        // Chronic absenteeism
+        const abs = absenteeism[slug];
+        if (abs) {
+          const parts: string[] = [];
+          if (abs.TA?.rate != null) parts.push(`${abs.TA.rate}% overall`);
+          if (abs.RH?.rate != null) parts.push(`Hispanic ${abs.RH.rate}%`);
+          if (abs.SE?.rate != null) parts.push(`EL ${abs.SE.rate}%`);
+          if (abs.SS?.rate != null) parts.push(`SED ${abs.SS.rate}%`);
+          if (parts.length) cdeLines.push(`    Chronic Absenteeism: ${parts.join(" | ")}`);
+        }
+
+        // English learners / LTEL
+        const el = ltel[slug];
+        if (el) {
+          const parts: string[] = [];
+          if (el.el != null) parts.push(`${el.el} EL`);
+          if (el.ltel != null) parts.push(`${el.ltel} LTEL`);
+          if (el.atRisk != null) parts.push(`${el.atRisk} At-Risk`);
+          if (el.rfep != null) parts.push(`${el.rfep} Reclassified`);
+          if (parts.length) cdeLines.push(`    English Learners: ${parts.join(", ")}`);
+        }
+
+        // Teacher diversity (ethnicity)
+        const eth = staffEthnicity[slug];
+        if (eth && eth.total) {
+          // Build top 3 ethnicities by count (descending), skipping zero
+          const categories: [string, number][] = [
+            ["White", eth.white], ["Hispanic", eth.hispanicLatino],
+            ["Asian", eth.asian], ["African American", eth.africanAmerican],
+            ["Filipino", eth.filipino], ["Pacific Islander", eth.pacificIslander],
+            ["Two+", eth.twoOrMore], ["Am. Indian", eth.americanIndian],
+            ["Not Reported", eth.notReported],
+          ];
+          const top = categories
+            .filter(([, n]) => n > 0)
+            .sort((a, b) => b[1] - a[1])
+            .slice(0, 3)
+            .map(([label, n]) => `${((n / eth.total) * 100).toFixed(1)}% ${label}`);
+          if (top.length) cdeLines.push(`    Teacher Diversity: ${eth.total} teachers — ${top.join(", ")}`);
+        }
+
+        // Teacher experience
+        const exp = staffExperience[slug];
+        if (exp) {
+          const parts: string[] = [];
+          if (exp.avgYearsTotal != null) parts.push(`${exp.avgYearsTotal} avg years`);
+          if (exp.inexperienced != null) {
+            let inexp = `${exp.inexperienced} inexperienced`;
+            if (exp.firstYear != null && exp.firstYear > 0) inexp += ` (${exp.firstYear} first-year)`;
+            parts.push(inexp);
+          }
+          if (parts.length) cdeLines.push(`    Teacher Experience: ${parts.join(", ")}`);
+        }
+
+        // Pupil ratios
+        const rat = staffRatios[slug];
+        if (rat) {
+          const parts: string[] = [];
+          if (rat.studentTeacherRatio != null) parts.push(`Pupil:Teacher ${rat.studentTeacherRatio}:1`);
+          if (rat.studentPupilServicesRatio != null) parts.push(`Pupil:Counselor ${rat.studentPupilServicesRatio}:1`);
+          if (parts.length) cdeLines.push(`    ${parts.join(" | ")}`);
+        }
+
+        // Only append if we have more than just the header
+        if (cdeLines.length > 1) text += cdeLines.join("\n");
+      } catch { /* CDE data not yet available — skip silently */ }
       return { content: [{ type: "text", text }] };
     }
   );
