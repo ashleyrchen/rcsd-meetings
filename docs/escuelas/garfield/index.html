@@ -650,29 +650,27 @@
   }
 
   /* ---- SSC MEMBERSHIP ---- */
-  .resource-card.ssc-card {
-    grid-column: 1 / -1;
-  }
-  .ssc-table {
-    width: 100%;
-    border-collapse: collapse;
+  .ssc-members {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.1rem 1.5rem;
     font-size: 0.85rem;
-    margin-top: 0.3rem;
+    margin-top: 0.5rem;
   }
-  .ssc-table th {
-    text-align: left;
-    font-weight: 600;
-    padding: 0.3rem 0.5rem;
-    border-bottom: 2px solid var(--green-pale);
-    font-size: 0.8rem;
-    color: var(--text-muted);
+  @media (max-width: 600px) {
+    .ssc-members { grid-template-columns: 1fr; }
   }
-  .ssc-table td {
-    padding: 0.25rem 0.5rem;
+  .ssc-member {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.2rem 0;
     border-bottom: 1px solid var(--cream-dark);
   }
-  .ssc-table tr:last-child td {
-    border-bottom: none;
+  .ssc-role {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    white-space: nowrap;
+    margin-left: 0.5rem;
   }
 
   /* ---- BELL SCHEDULE ---- */
@@ -1266,14 +1264,11 @@
         <h4>Plan Integral de Seguridad</h4>
         <p>Plan 2025-26, aprobado por la junta el 4 de feb de 2026.</p><p><a href="https://data.rcsd.info/board-packets/2026-02-04/2025_Comprehensive_School_Safety_Plan__Pt._1_-Public-_Garfield_Elementary_School.pdf" target="_blank">Descargar CSSP (PDF) &#8599;</a></p>
       </div>
-      <div class="resource-card ssc-card">
+      <div class="resource-card">
         <h4>Consejo del Sitio Escolar</h4>
-        <p style="margin-bottom:0.4rem"><strong>Presidente:</strong> Maricruz Sanchez</p>
-          <p style="margin-bottom:0.6rem; font-size:0.85rem; color:#666">SPSA adoptado: 22 de mayo de 2024</p>
-          <table class="ssc-table">
-            <thead><tr><th>Nombre</th><th>Rol</th></tr></thead>
-            <tbody><tr><td>Sara Shackel</td><td>Director(a)</td></tr><tr><td>Frida Miranda</td><td>Maestro(a)</td></tr><tr><td>Kim Gray</td><td>Maestro(a)</td></tr><tr><td>Sergio Simarro Martinez</td><td>Maestro(a)</td></tr><tr><td>Alicia Alvarez</td><td>Personal</td></tr><tr><td>Maricruz Sanchez</td><td>Padre / Comunidad</td></tr><tr><td>Maritza Gutierrez</td><td>Padre / Comunidad</td></tr><tr><td>Cassandra Garcia</td><td>Personal</td></tr><tr><td>Yadira DiSiena</td><td>Personal</td></tr><tr><td>Karina Arellano</td><td>Personal</td></tr></tbody>
-          </table>
+        <p style="margin-bottom:0.2rem"><strong>Presidente:</strong> Maricruz Sanchez</p>
+          <p style="margin-bottom:0.4rem; font-size:0.82rem; color:#666">SPSA adoptado: 22 de mayo de 2024</p>
+          <div class="ssc-members"><div class="ssc-member"><span>Sara Shackel</span><span class="ssc-role">Director(a)</span></div><div class="ssc-member"><span>Frida Miranda</span><span class="ssc-role">Maestro(a)</span></div><div class="ssc-member"><span>Kim Gray</span><span class="ssc-role">Maestro(a)</span></div><div class="ssc-member"><span>Sergio Simarro Martinez</span><span class="ssc-role">Maestro(a)</span></div><div class="ssc-member"><span>Alicia Alvarez</span><span class="ssc-role">Personal</span></div><div class="ssc-member"><span>Maricruz Sanchez</span><span class="ssc-role">Padre / Comunidad</span></div><div class="ssc-member"><span>Maritza Gutierrez</span><span class="ssc-role">Padre / Comunidad</span></div><div class="ssc-member"><span>Cassandra Garcia</span><span class="ssc-role">Personal</span></div><div class="ssc-member"><span>Yadira DiSiena</span><span class="ssc-role">Personal</span></div><div class="ssc-member"><span>Karina Arellano</span><span class="ssc-role">Personal</span></div></div>
           <p style="margin-top:0.5rem"><a href="https://data.rcsd.info/documents/spsa/2025-26/garfield.pdf" target="_blank">Ver SPSA &#8599;</a></p>
       </div>
       <div class="resource-card">

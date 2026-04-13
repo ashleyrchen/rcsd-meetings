@@ -650,29 +650,27 @@
   }
 
   /* ---- SSC MEMBERSHIP ---- */
-  .resource-card.ssc-card {
-    grid-column: 1 / -1;
-  }
-  .ssc-table {
-    width: 100%;
-    border-collapse: collapse;
+  .ssc-members {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.1rem 1.5rem;
     font-size: 0.85rem;
-    margin-top: 0.3rem;
+    margin-top: 0.5rem;
   }
-  .ssc-table th {
-    text-align: left;
-    font-weight: 600;
-    padding: 0.3rem 0.5rem;
-    border-bottom: 2px solid var(--green-pale);
-    font-size: 0.8rem;
-    color: var(--text-muted);
+  @media (max-width: 600px) {
+    .ssc-members { grid-template-columns: 1fr; }
   }
-  .ssc-table td {
-    padding: 0.25rem 0.5rem;
+  .ssc-member {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.2rem 0;
     border-bottom: 1px solid var(--cream-dark);
   }
-  .ssc-table tr:last-child td {
-    border-bottom: none;
+  .ssc-role {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    white-space: nowrap;
+    margin-left: 0.5rem;
   }
 
   /* ---- BELL SCHEDULE ---- */
@@ -1283,14 +1281,11 @@
         <h4>Comprehensive Safety Plan</h4>
         <p>2025-26 plan, board-approved Feb 4, 2026.</p><p><a href="https://data.rcsd.info/board-packets/2026-02-04/2025_Comprehensive_School_Safety_Plan-_Pt._1_-Public-_Henry_Ford_Elementary_Scho.pdf" target="_blank">Download CSSP (PDF) &#8599;</a></p>
       </div>
-      <div class="resource-card ssc-card">
+      <div class="resource-card">
         <h4>School Site Council</h4>
-        <p style="margin-bottom:0.4rem"><strong>Chair:</strong> Courtney Rogerson</p>
-          <p style="margin-bottom:0.6rem; font-size:0.85rem; color:#666">SPSA adopted: May 28, 2024</p>
-          <table class="ssc-table">
-            <thead><tr><th>Name</th><th>Role</th></tr></thead>
-            <tbody><tr><td>Jennifer Knopf</td><td>Principal</td></tr><tr><td>Maryann Nakhla</td><td>Staff</td></tr><tr><td>Steve Borg</td><td>Teacher</td></tr><tr><td>Amy Barstad</td><td>Teacher</td></tr><tr><td>Shaunna Ingersoll</td><td>Staff</td></tr><tr><td>Courtney Rogerson</td><td>Parent / Community</td></tr><tr><td>George Rodriguez</td><td>Parent / Community</td></tr><tr><td>Mimi Turner</td><td>Parent / Community</td></tr><tr><td>Abraham Frailey</td><td>Parent / Community</td></tr><tr><td>Chuck Walter</td><td>Parent / Community</td></tr></tbody>
-          </table>
+        <p style="margin-bottom:0.2rem"><strong>Chair:</strong> Courtney Rogerson</p>
+          <p style="margin-bottom:0.4rem; font-size:0.82rem; color:#666">SPSA adopted: May 28, 2024</p>
+          <div class="ssc-members"><div class="ssc-member"><span>Jennifer Knopf</span><span class="ssc-role">Principal</span></div><div class="ssc-member"><span>Maryann Nakhla</span><span class="ssc-role">Staff</span></div><div class="ssc-member"><span>Steve Borg</span><span class="ssc-role">Teacher</span></div><div class="ssc-member"><span>Amy Barstad</span><span class="ssc-role">Teacher</span></div><div class="ssc-member"><span>Shaunna Ingersoll</span><span class="ssc-role">Staff</span></div><div class="ssc-member"><span>Courtney Rogerson</span><span class="ssc-role">Parent / Community</span></div><div class="ssc-member"><span>George Rodriguez</span><span class="ssc-role">Parent / Community</span></div><div class="ssc-member"><span>Mimi Turner</span><span class="ssc-role">Parent / Community</span></div><div class="ssc-member"><span>Abraham Frailey</span><span class="ssc-role">Parent / Community</span></div><div class="ssc-member"><span>Chuck Walter</span><span class="ssc-role">Parent / Community</span></div></div>
           <p style="margin-top:0.5rem"><a href="https://data.rcsd.info/documents/spsa/2025-26/henry-ford.pdf" target="_blank">View SPSA &#8599;</a></p>
       </div>
       <div class="resource-card">

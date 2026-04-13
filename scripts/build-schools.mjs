@@ -995,29 +995,27 @@ const schoolCSS = `
   }
 
   /* ---- SSC MEMBERSHIP ---- */
-  .resource-card.ssc-card {
-    grid-column: 1 / -1;
-  }
-  .ssc-table {
-    width: 100%;
-    border-collapse: collapse;
+  .ssc-members {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.1rem 1.5rem;
     font-size: 0.85rem;
-    margin-top: 0.3rem;
+    margin-top: 0.5rem;
   }
-  .ssc-table th {
-    text-align: left;
-    font-weight: 600;
-    padding: 0.3rem 0.5rem;
-    border-bottom: 2px solid var(--green-pale);
-    font-size: 0.8rem;
-    color: var(--text-muted);
+  @media (max-width: 600px) {
+    .ssc-members { grid-template-columns: 1fr; }
   }
-  .ssc-table td {
-    padding: 0.25rem 0.5rem;
+  .ssc-member {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.2rem 0;
     border-bottom: 1px solid var(--cream-dark);
   }
-  .ssc-table tr:last-child td {
-    border-bottom: none;
+  .ssc-role {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    white-space: nowrap;
+    margin-left: 0.5rem;
   }
 
   /* ---- BELL SCHEDULE ---- */
@@ -2219,19 +2217,16 @@ ${siteNav({ activePage: 'schools', lang, altLangHref })}
           ? `<p>${L.csspDesc}</p><p><a href="${CSSP_URLS[slug]}" target="_blank">${L.viewCssp} &#8599;</a></p>`
           : `<p class="coming-soon">${L.comingSoon}</p>`}
       </div>
-      <div class="resource-card ssc-card">
+      <div class="resource-card">
         <h4>${L.schoolSiteCouncil}</h4>
         ${(() => {
           const ssc = SSC_DATA[slug]?.['2025-26'];
           if (!ssc?.members?.length) return `<p class="coming-soon">${L.comingSoon}</p>`;
           const roleLabel = { principal: L.sscRolePrincipal, classroomTeacher: L.sscRoleTeacher, otherStaff: L.sscRoleStaff, parentCommunity: L.sscRoleParent };
           const adoptedStr = ssc.adoptionDate ? new Date(ssc.adoptionDate + 'T12:00:00').toLocaleDateString(lang === 'es' ? 'es-US' : 'en-US', { year: 'numeric', month: 'long', day: 'numeric' }) : '';
-          return `${ssc.chairperson ? `<p style="margin-bottom:0.4rem"><strong>${L.sscChair}:</strong> ${ssc.chairperson}</p>` : ''}
-          ${adoptedStr ? `<p style="margin-bottom:0.6rem; font-size:0.85rem; color:#666">${L.sscAdopted}: ${adoptedStr}</p>` : ''}
-          <table class="ssc-table">
-            <thead><tr><th>${L.sscMemberName}</th><th>${L.sscMemberRole}</th></tr></thead>
-            <tbody>${ssc.members.map(m => `<tr><td>${m.name}</td><td>${roleLabel[m.role] || m.role}</td></tr>`).join('')}</tbody>
-          </table>
+          return `${ssc.chairperson ? `<p style="margin-bottom:0.2rem"><strong>${L.sscChair}:</strong> ${ssc.chairperson}</p>` : ''}
+          ${adoptedStr ? `<p style="margin-bottom:0.4rem; font-size:0.82rem; color:#666">${L.sscAdopted}: ${adoptedStr}</p>` : ''}
+          <div class="ssc-members">${ssc.members.map(m => `<div class="ssc-member"><span>${m.name}</span><span class="ssc-role">${roleLabel[m.role] || m.role}</span></div>`).join('')}</div>
           <p style="margin-top:0.5rem"><a href="https://data.rcsd.info/documents/spsa/2025-26/${slug}.pdf" target="_blank">${isEs ? 'Ver SPSA' : 'View SPSA'} &#8599;</a></p>`;
         })()}
       </div>
