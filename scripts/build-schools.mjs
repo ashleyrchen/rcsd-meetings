@@ -69,6 +69,30 @@ const SPED_ENROLLMENT = (() => { try { return JSON.parse(readFileSync(resolve(RO
 const SPED_CATEGORIES = (() => { try { return JSON.parse(readFileSync(resolve(ROOT, 'data/sped-categories.json'), 'utf-8')); } catch { return {}; } })();
 const SSC_DATA = (() => { try { return JSON.parse(readFileSync(resolve(ROOT, 'data/ssc-membership.json'), 'utf-8')); } catch { return {}; } })();
 
+// ---- Load CDE data ----
+const CDE_ABSENT = (() => { try { return JSON.parse(readFileSync(resolve(ROOT, 'data/cde/absenteeism-2024-25.json'), 'utf-8')); } catch { return {}; } })();
+const CDE_LTEL = (() => { try { return JSON.parse(readFileSync(resolve(ROOT, 'data/cde/ltel-2024-25.json'), 'utf-8')); } catch { return {}; } })();
+const CDE_STAFF_ETH = (() => { try { return JSON.parse(readFileSync(resolve(ROOT, 'data/cde/staff-ethnicity-2024-25.json'), 'utf-8')); } catch { return {}; } })();
+const CDE_STAFF_EXP = (() => { try { return JSON.parse(readFileSync(resolve(ROOT, 'data/cde/staff-experience-2024-25.json'), 'utf-8')); } catch { return {}; } })();
+const CDE_RATIOS = (() => { try { return JSON.parse(readFileSync(resolve(ROOT, 'data/cde/staff-ratios-2024-25.json'), 'utf-8')); } catch { return {}; } })();
+
+const ABSENT_LABELS = {
+  TA: 'All Students', RH: 'Hispanic/Latino', RW: 'White', RA: 'Asian',
+  RB: 'African American', RF: 'Filipino', RI: 'American Indian', RP: 'Pacific Islander',
+  RT: 'Two or More Races', RD: 'Not Reported',
+  SE: 'English Learners', SD: 'Students with Disabilities',
+  SS: 'Socioeconomically Disadvantaged', SH: 'Homeless', SF: 'Foster Youth', SM: 'Migrant',
+  GF: 'Female', GM: 'Male', GX: 'Non-Binary',
+};
+const ABSENT_LABELS_ES = {
+  TA: 'Todos los Estudiantes', RH: 'Hispano/Latino', RW: 'Blanco', RA: 'Asiático',
+  RB: 'Afroamericano', RF: 'Filipino', RI: 'Indígena Americano', RP: 'Isleño del Pacífico',
+  RT: 'Dos o Más Razas', RD: 'No Reportado',
+  SE: 'Estudiantes de Inglés', SD: 'Estudiantes con Discapacidades',
+  SS: 'Desventaja Socioeconómica', SH: 'Sin Hogar', SF: 'Jóvenes de Crianza', SM: 'Migrante',
+  GF: 'Femenino', GM: 'Masculino', GX: 'No Binario',
+};
+
 // Compute district-wide SpEd averages
 const districtSpedPct = SPED_ENROLLMENT.district
   ? (() => {
@@ -1360,6 +1384,23 @@ const LABELS = {
     viewAttachments: 'Attachments',
     viewFullMeeting: 'Full meeting',
     noBoardItems: 'No board meeting items found for this school.',
+    cdeAbsenteeismBreakdown: 'Chronic Absenteeism by Subgroup',
+    cdeAbsenteeismNote: 'Chronic absenteeism rate by student subgroup. A student is chronically absent if they miss 10% or more of school days. Source: CDE 2024-25.',
+    cdeLtel: 'Long-Term ELs',
+    cdeLtelCount: 'LTEL Students',
+    cdeAtRisk: 'At-Risk of LTEL',
+    cdeReclassified: 'Reclassified (RFEP)',
+    cdeLtelNote: 'English Learner status counts. LTEL = 6+ years as EL. At-Risk = 4-5 years. Source: CDE ELAS/LTEL 2024-25.',
+    cdeStaffDiversity: 'Teacher Diversity (CDE)',
+    cdeStaffDiversityNote: 'Certificated teacher race/ethnicity from CDE Census Day 2024-25.',
+    cdeStaffExperience: 'Teacher Experience',
+    cdeAvgYears: 'Avg Years Experience',
+    cdeInexperienced: 'New Teachers (≤2 yr)',
+    cdeStaffExpNote: 'Teacher experience from CDE Census Day 2024-25. Inexperienced = 2 or fewer years total.',
+    cdeRatios: 'Student-Staff Ratios',
+    cdePupilTeacher: 'Pupil:Teacher',
+    cdePupilCounselor: 'Pupil:Counselor',
+    cdeRatiosNote: 'Ratios from CDE Census Day 2024-25. Pupil Services includes counselors, psychologists, social workers.',
   },
   es: {
     overview: 'Resumen',
@@ -1488,6 +1529,23 @@ const LABELS = {
     viewAttachments: 'Documentos',
     viewFullMeeting: 'Reunión completa',
     noBoardItems: 'No se encontraron temas de reuniones de la mesa directiva para esta escuela.',
+    cdeAbsenteeismBreakdown: 'Ausentismo Crónico por Subgrupo',
+    cdeAbsenteeismNote: 'Tasa de ausentismo crónico por subgrupo estudiantil. Un estudiante está crónicamente ausente si falta el 10% o más de los días escolares. Fuente: CDE 2024-25.',
+    cdeLtel: 'ELs a Largo Plazo',
+    cdeLtelCount: 'Estudiantes LTEL',
+    cdeAtRisk: 'En Riesgo de LTEL',
+    cdeReclassified: 'Reclasificados (RFEP)',
+    cdeLtelNote: 'Conteos de estado de Estudiantes de Inglés. LTEL = 6+ años como EL. En Riesgo = 4-5 años. Fuente: CDE ELAS/LTEL 2024-25.',
+    cdeStaffDiversity: 'Diversidad Docente (CDE)',
+    cdeStaffDiversityNote: 'Raza/etnicidad de maestros certificados del Día del Censo CDE 2024-25.',
+    cdeStaffExperience: 'Experiencia Docente',
+    cdeAvgYears: 'Años Promedio de Experiencia',
+    cdeInexperienced: 'Maestros Nuevos (≤2 años)',
+    cdeStaffExpNote: 'Experiencia docente del Día del Censo CDE 2024-25. Sin experiencia = 2 o menos años en total.',
+    cdeRatios: 'Relación Estudiante-Personal',
+    cdePupilTeacher: 'Alumno:Maestro',
+    cdePupilCounselor: 'Alumno:Consejero',
+    cdeRatiosNote: 'Relaciones del Día del Censo CDE 2024-25. Servicios al Alumno incluye consejeros, psicólogos, trabajadores sociales.',
   },
 };
 
@@ -1873,6 +1931,42 @@ ${siteNav({ activePage: 'schools', lang, altLangHref })}
         <div class="stat-card-note">${isEs ? 'Promedio del distrito' : 'District avg'}: ${fmtPct(districtInclusionPct)}</div>
       </div>` : ''}
     </div>
+
+    ${(() => {
+      const absent = CDE_ABSENT[slug];
+      if (!absent) return '';
+      // Show key subgroups: race/ethnicity + program categories
+      const show = ['TA','RH','RW','RA','RB','RT','SE','SD','SS','SH'];
+      const labels = isEs ? ABSENT_LABELS_ES : ABSENT_LABELS;
+      const rows = show.filter(k => absent[k]?.rate !== null).map(k => {
+        const d = absent[k];
+        return `<tr${k === 'TA' ? ' class="total-row"' : ''}><td class="label-cell">${labels[k] || k}</td><td class="num">${d.rate}%</td><td class="num">${fmt(d.count)}</td><td class="num">${fmt(d.enrolled)}</td></tr>`;
+      }).join('');
+      if (!rows) return '';
+      return `
+        <h3 style="margin-top:2rem">${L.cdeAbsenteeismBreakdown}</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>${isEs ? 'Subgrupo' : 'Subgroup'}</th><th class="num">${isEs ? 'Tasa' : 'Rate'}</th><th class="num">${isEs ? 'Ausentes' : 'Absent'}</th><th class="num">${isEs ? 'Inscritos' : 'Enrolled'}</th></tr></thead>
+            <tbody>${rows}</tbody>
+          </table>
+        </div>
+        <p class="source">${L.cdeAbsenteeismNote}</p>`;
+    })()}
+
+    ${(() => {
+      const ltel = CDE_LTEL[slug];
+      if (!ltel || !ltel.el) return '';
+      return `
+        <h3 style="margin-top:2rem">${isEs ? 'Estudiantes de Inglés' : 'English Learners'}</h3>
+        <div class="stat-grid">
+          <div class="stat-card"><div class="stat-card-label">${isEs ? 'Estudiantes EL' : 'EL Students'}</div><div class="stat-card-value">${fmt(ltel.el)}</div></div>
+          <div class="stat-card"><div class="stat-card-label">${L.cdeLtelCount}</div><div class="stat-card-value">${fmt(ltel.ltel)}</div><div class="stat-card-note">${isEs ? '6+ años como EL' : '6+ years as EL'}</div></div>
+          <div class="stat-card"><div class="stat-card-label">${L.cdeAtRisk}</div><div class="stat-card-value">${fmt(ltel.atRisk)}</div><div class="stat-card-note">${isEs ? '4-5 años' : '4-5 years'}</div></div>
+          <div class="stat-card"><div class="stat-card-label">${L.cdeReclassified}</div><div class="stat-card-value">${fmt(ltel.rfep)}</div></div>
+        </div>
+        <p class="source">${L.cdeLtelNote}</p>`;
+    })()}
   </section>
 
   <!-- ======== 4. FUNDING ======== -->
@@ -2004,6 +2098,55 @@ ${siteNav({ activePage: 'schools', lang, altLangHref })}
     <div class="callout">
       <p>${notes}</p>
     </div>` : ''}
+
+    ${(() => {
+      const eth = CDE_STAFF_ETH[slug];
+      if (!eth || !eth.total) return '';
+      const cats = [
+        ['hispanicLatino', isEs ? 'Hispano/Latino' : 'Hispanic/Latino'],
+        ['white', isEs ? 'Blanco' : 'White'],
+        ['asian', isEs ? 'Asiático' : 'Asian'],
+        ['africanAmerican', isEs ? 'Afroamericano' : 'African American'],
+        ['filipino', 'Filipino'],
+        ['twoOrMore', isEs ? 'Dos o Más' : 'Two or More'],
+        ['pacificIslander', isEs ? 'Isleño del Pacífico' : 'Pacific Islander'],
+        ['americanIndian', isEs ? 'Indígena Americano' : 'American Indian'],
+      ].filter(([k]) => eth[k] > 0);
+      const rows = cats.map(([k, label]) => {
+        const pct = (eth[k] / eth.total * 100).toFixed(1);
+        return `<tr><td class="label-cell">${label}</td><td class="num">${eth[k]}</td><td class="num">${pct}%</td></tr>`;
+      }).join('');
+      return `
+        <h3 style="margin-top:2rem">${L.cdeStaffDiversity}</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>${isEs ? 'Raza/Etnicidad' : 'Race/Ethnicity'}</th><th class="num">${isEs ? 'Maestros' : 'Teachers'}</th><th class="num">%</th></tr></thead>
+            <tbody>${rows}
+            <tr class="total-row"><td class="label-cell">Total</td><td class="num">${eth.total}</td><td class="num">100%</td></tr></tbody>
+          </table>
+        </div>
+        <p class="source">${L.cdeStaffDiversityNote}</p>`;
+    })()}
+
+    ${(() => {
+      const exp = CDE_STAFF_EXP[slug];
+      const ratios = CDE_RATIOS[slug];
+      if (!exp && !ratios) return '';
+      let html = '<h3 style="margin-top:2rem">' + L.cdeStaffExperience + '</h3><div class="stat-grid">';
+      if (exp) {
+        html += `<div class="stat-card"><div class="stat-card-label">${L.cdeAvgYears}</div><div class="stat-card-value">${exp.avgYearsTotal}</div></div>`;
+        html += `<div class="stat-card"><div class="stat-card-label">${L.cdeInexperienced}</div><div class="stat-card-value">${exp.inexperienced} / ${exp.total}</div><div class="stat-card-note">${exp.firstYear} ${isEs ? 'primer año' : 'first-year'}</div></div>`;
+      }
+      if (ratios) {
+        html += `<div class="stat-card"><div class="stat-card-label">${L.cdePupilTeacher}</div><div class="stat-card-value">${ratios.studentTeacherRatio}:1</div></div>`;
+        if (ratios.studentPupilServicesRatio) {
+          html += `<div class="stat-card"><div class="stat-card-label">${L.cdePupilCounselor}</div><div class="stat-card-value">${ratios.studentPupilServicesRatio}:1</div></div>`;
+        }
+      }
+      html += '</div>';
+      if (exp) html += `<p class="source">${L.cdeStaffExpNote}</p>`;
+      return html;
+    })()}
   </section>
 
   <!-- ======== 6. DOCUMENTS & RESOURCES ======== -->

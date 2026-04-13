@@ -1,6 +1,6 @@
 ---
 name: RCSD Data Analyst
-description: This skill should be used when the user asks about "Redwood City schools", "RCSD", "school hours", "school enrollment", "school calendar", "is there school today", "next board meeting", "what's for lunch", "lunch menu", "report an absence", "IEP data", "special education", "EL percentage", "free and reduced lunch", "PTO", "Konstella", "ParentSquare", "which school", "board meeting", "SARC", "test scores", "CAASPP", "school budget", "RCEF", "Measure U", "expenditures", "watch board meeting", "compare schools", "school demographics", "meeting transcript", "board discussion", or any question about Redwood City School District schools, demographics, calendars, meetings, lunch menus, funding, or parent resources. Also activates when the user mentions a child's name in the context of school.
+description: This skill should be used when the user asks about "Redwood City schools", "RCSD", "school hours", "school enrollment", "school calendar", "is there school today", "next board meeting", "what's for lunch", "lunch menu", "report an absence", "IEP data", "special education", "EL percentage", "LTEL", "long-term English learner", "chronic absenteeism", "teacher diversity", "staff demographics", "teacher experience", "pupil-teacher ratio", "school site council", "SSC", "SPSA", "free and reduced lunch", "PTO", "Konstella", "ParentSquare", "which school", "board meeting", "SARC", "test scores", "CAASPP", "school budget", "RCEF", "Measure U", "expenditures", "watch board meeting", "compare schools", "school demographics", "meeting transcript", "board discussion", or any question about Redwood City School District schools, demographics, calendars, meetings, lunch menus, funding, staffing, or parent resources. Also activates when the user mentions a child's name in the context of school.
 version: 0.3.0
 ---
 
@@ -56,6 +56,13 @@ Read these files from `data/` to answer questions. For field-by-field documentat
 | `sped-categories.json` | Disability categories and LRE placement by school |
 | `sarc/sarc-summary.json` | Demographics, CAASPP scores, per-pupil spending across all schools |
 | `sarc/{slug}.json` | Detailed SARC per school: teachers, textbooks, facilities, test results by student group |
+| `cde/absenteeism-2024-25.json` | Chronic absenteeism by subgroup per school (race, EL, SED, SWD, homeless) — CDE 2024-25 |
+| `cde/ltel-2024-25.json` | English Learner status: EL, LTEL, At-Risk, Reclassified counts per school — CDE 2024-25 |
+| `cde/staff-ethnicity-2024-25.json` | Teacher race/ethnicity counts per school — CDE Census Day 2024-25 |
+| `cde/staff-experience-2024-25.json` | Teacher experience: avg years, inexperienced count per school — CDE 2024-25 |
+| `cde/staff-ratios-2024-25.json` | Student-teacher ratio, pupil services ratio per school — CDE 2024-25 |
+| `ssc-membership.json` | School Site Council members, roles, chairperson per school (3 years from SPSA PDFs) |
+| `spsa-budgets.json` | SPSA budget summaries: funding by source per school (from 2025-26 SPSA PDFs) |
 
 ### Board Meetings (190 meetings, Aug 2020 - present)
 
@@ -133,8 +140,12 @@ node ${SKILL_DIR}/scripts/query-school.mjs --list
 
 - **Cell suppression**: CDE data uses `null` where counts are <=10 students (privacy). State this when presenting data.
 - **SARC year lag**: 2024-25 SARCs report 2023-24 data. Note the reporting year.
+- **CDE data year**: CDE bulk files in `data/cde/` are 2024-25 (more current than SARCs).
+- **LTEL at elementary**: Elementary schools (TK-5) typically show 0 LTELs because students haven't been ELs long enough (6+ years). At-Risk is the relevant metric for elementary.
+- **Absenteeism codes**: Use reporting category codes (TA=All, RH=Hispanic, SE=English Learners, SS=SED, SD=Students with Disabilities, SH=Homeless). See `references/data-schema.md` for full code table.
+- **Staff ratios**: `null` ratio means denominator FTE < 1.0 (CDE doesn't compute ratio).
 - **504 plans**: Not tracked by CDE; only available from OCR CRDC (lags ~5 years).
-- **AI-generated content**: Meeting summaries are AI-generated and labeled as such. Always note this.
+- **AI-generated content**: Meeting summaries and SSC membership data (extracted from PDFs via Claude) are AI-generated and labeled as such.
 - **Lunch menus**: Published monthly; future months may not yet be available.
 - **Bilingual**: Calendar events have `en` and `es` fields. The site has `/schools/` and `/escuelas/` mirrors.
 

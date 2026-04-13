@@ -25,6 +25,8 @@ Every dataset on this site is traceable to its public source. We document the or
 | Meeting aggregation | [Data sources](#data-sources) below | Simbli + BoardDocs APIs |
 | School profiles | `data/schools.json` | CDE enrollment, CAASPP, SARC, IRS 990 PTO filings |
 | Budget data | `data/budget/` | RCSD adopted budget documents, CDE LCFF data |
+| CDE datasets | `data/cde/*.json` | Absenteeism, LTEL, staff ethnicity/experience/ratios via `pull-cde-data.mjs` |
+| SPSA extraction | `data/ssc-membership.json`, `data/spsa-budgets.json` | SSC membership and budgets extracted from SPSA PDFs via Claude Haiku |
 
 AI-generated content (meeting summaries, timestamp mappings) is always labeled as such and links back to the source transcript or agenda.
 
@@ -39,6 +41,12 @@ AI-generated content (meeting summaries, timestamp mappings) is always labeled a
 | [AssemblyAI](https://www.assemblyai.com/) | Diarized transcripts with word-level timestamps | Universal 3 Pro API | `transcribe-assemblyai.mjs` |
 | Claude Haiku | Agenda item → video timestamp mapping | LLM transcript analysis | `map-timestamps-llm.mjs` |
 | [CDE DataQuest](https://data1.cde.ca.gov/dataquest/) | Enrollment, demographics, test scores, SpEd | Public data files | `data/sped-enrollment.json`, `data/sped-categories.json` |
+| [CDE Chronic Absenteeism](https://www.cde.ca.gov/ds/ad/fsabd.asp) | Chronic absenteeism by subgroup | CDE bulk download | `data/cde/absenteeism-2024-25.json` |
+| [CDE LTEL/ELAS](https://dq.cde.ca.gov/dataquest/longtermel/) | Long-term English Learner status | CDE bulk download | `data/cde/ltel-2024-25.json` |
+| [CDE Staff Demographics](https://www.cde.ca.gov/ds/ad/fsspre.asp) | Teacher race/ethnicity | CDE bulk download | `data/cde/staff-ethnicity-2024-25.json` |
+| [CDE Staff Experience](https://www.cde.ca.gov/ds/ad/fsspex.asp) | Teacher experience levels | CDE bulk download | `data/cde/staff-experience-2024-25.json` |
+| [CDE Staff Ratios](https://www.cde.ca.gov/ds/ad/fssprat.asp) | Student-staff ratios | CDE bulk download | `data/cde/staff-ratios-2024-25.json` |
+| SPSA PDFs | SSC membership, school budgets | Claude Haiku extraction from board packets | `data/ssc-membership.json`, `data/spsa-budgets.json` |
 | [IRS 990 filings](https://projects.propublica.org/nonprofits/) | PTO/PTA per-pupil funding | ProPublica Nonprofit Explorer | `data/schools.json` |
 
 ## Pipeline
@@ -57,6 +65,10 @@ Scripts run in order. Most can be run independently. All cache aggressively — 
  ──────────────────────────
  5. transcribe            → artifacts/audio/*.webm + artifacts/transcripts-aai/*.json
     See: data/METHODOLOGY-transcription.md
+
+ CDE Data (California Dept of Education)
+ ───────────────────────────────────────
+ 5b. pull:cde             → data/cde/*.json (absenteeism, LTEL, staff ethnicity/experience/ratios)
 
  Processing
  ──────────
