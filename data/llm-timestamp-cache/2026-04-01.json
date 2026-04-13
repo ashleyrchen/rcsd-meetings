@@ -1,0 +1,363 @@
+{
+  "date": "2026-04-01",
+  "items": [
+    "Call to Order",
+    "Roll Call",
+    "Public Comment on Closed Session Items Only",
+    "Announcement of Closed Session Purpose",
+    "Closed Session",
+    "CONFERENCE WITH LABOR NEGOTIATORS (Gov. Code section 54957.6)",
+    "Reconvene to Open Session at approximately 7:00 PM",
+    "Roll Call",
+    "Report Out on Closed Session from April 1, 2026",
+    "Welcome",
+    "Pledge of Allegiance",
+    "Changes to the Agenda",
+    "Approval of the Agenda (Action Required)",
+    "Public Comment",
+    "Labor Association Comments",
+    "Approval of the Bond Program Consent Items",
+    "Approval of the Measure T Bond Program Tracking List of Items Under $20k (Measure T)",
+    "Bond Program Action Items",
+    "Action Items (Action Required) - 1 hr 30 min",
+    "Roy Cloud School Presentation and School Plan for Student Achievement (SPSA) Approval",
+    "Clifford School Presentation and School Plan for Student Achievement (SPSA) Approval",
+    "Discussion Items",
+    "Approval of Consent Items (Action Required)",
+    "Approval of the McKinley Institute of Technology (MIT) Field Trip Requests (2) to Treasure Island - May 20 and May 21,  2026",
+    "Approval of Kennedy’s Field Trip Request to the Grand Canyon from May 13th through 22nd, 2026",
+    "Approval of Personnel Changes for the 2025-2026 School Year",
+    "Approval of Board Policy 1312.1: Complaints Concerning District Employees",
+    "Approval of Board Policy 4030: Nondiscrimination In Employment",
+    "Approval of Board Policy 4111.2: Legal Status Requirement",
+    "Approval of Board Policy 4211.2: Legal Status Requirement",
+    "Approval of Board Policy 4311.2: Legal Status Requirement",
+    "Approval of Board Policy 4212.41: Employee Drug Testing",
+    "Approval of Board Policy 4312.41: Employee Drug Testing",
+    "Approval of Board Policy 4112.9: Employee Notifications",
+    "Approval of Board Policy 4212.9: Employee Notifications",
+    "Approval of Board Policy 4312.9: Employee Notifications",
+    "Approval of Board Policy 4117.3: Personnel Reduction",
+    "Approval of Board Policy 4119.11: Sexual Harassment",
+    "Approval of Board Policy 4219.11: Sexual Harassment",
+    "Approval of Board Policy 4319.11: Sexual Harassment",
+    "Approval of Board Policy 4119.21: Professional Standards",
+    "Approval of Board Policy 4219.21 : Professional Standards",
+    "Approval of Board Policy 4161.3: Professional Leaves",
+    "Approval of Board Policy 4119.25: Political Activities of Employees",
+    "Approval of Board Policy 4219.25: Political Activities of Employees",
+    "Approval of Board Policy 4127: Temporary Athletic Team Coaches",
+    "Approval of Board Policy 4227: Temporary Athletic Team Coaches",
+    "Approval of Board Policy 4327: Temporary Athletic Team Coaches",
+    "Second Reading and Approval of Board Policy and Administrative Regulation 3580: District Records",
+    "Approval of Service Agreement for the Provision of Election Services between the Superintendent of Schools (Relating to the Redwood City School District) and the San Mateo County Chief Elections Officer & Assessor - County Clerk - Recorder",
+    "Board and Superintendent Reports",
+    "Information",
+    "Redwood City Teachers Association Presentation: Class Size",
+    "Correspondence",
+    "Other Business/Suggested Items for Future Agenda",
+    "Board of Trustees Meeting Reflection",
+    "Board of Trustees Meeting Calendar",
+    "Adjournment (Action Required)"
+  ],
+  "llmResponse": {
+    "agenda_changes": "Item 14.15 (Policy 4119.11: Sexual Harassment) pulled from Consent Calendar and moved to Discussion Items as item 12.3 for first reading discussion",
+    "consent_vote_words": "All those in favor? Aye. Fantastic.",
+    "items": [
+      {
+        "item": 1,
+        "intro_words": "Ladies and gentlemen, it is 7:01, and the board is reconvened",
+        "status": "found"
+      },
+      {
+        "item": 2,
+        "intro_words": "Roll call, please. Evelyn, roll call, please.",
+        "status": "found"
+      },
+      {
+        "item": 3,
+        "intro_words": "Not applicable - closed session item",
+        "status": "not_found"
+      },
+      {
+        "item": 4,
+        "intro_words": "Not applicable - closed session item",
+        "status": "not_found"
+      },
+      {
+        "item": 5,
+        "intro_words": "Not applicable - closed session item",
+        "status": "not_found"
+      },
+      {
+        "item": 6,
+        "intro_words": "During closed session, the board consulted with the district",
+        "status": "found"
+      },
+      {
+        "item": 7,
+        "intro_words": "Not applicable - reconvened at start of meeting",
+        "status": "not_found"
+      },
+      {
+        "item": 8,
+        "intro_words": "Roll call, please. Evelyn, roll call, please. Trustee Wells.",
+        "status": "found"
+      },
+      {
+        "item": 9,
+        "intro_words": "During closed session, the board consulted with the district",
+        "status": "found"
+      },
+      {
+        "item": 10,
+        "intro_words": "Welcome. Bienvenidos a todos. Welcome everyone to the public",
+        "status": "found"
+      },
+      {
+        "item": 11,
+        "intro_words": "And do we have a student-led Pledge of Allegiance for tonight?",
+        "status": "found"
+      },
+      {
+        "item": 12,
+        "intro_words": "Next up is any changes to the agenda proposed.",
+        "status": "found"
+      },
+      {
+        "item": 13,
+        "intro_words": "With that, would somebody like to move to approve the agenda?",
+        "status": "found"
+      },
+      {
+        "item": 14,
+        "intro_words": "We will now hear public comment on items not on the agenda.",
+        "status": "found"
+      },
+      {
+        "item": 15,
+        "intro_words": "We already have a presentation from Brenna a little bit later.",
+        "status": "found"
+      },
+      {
+        "item": 16,
+        "intro_words": "So next up, we are now going to approve our bond consent items.",
+        "status": "found"
+      },
+      {
+        "item": 17,
+        "intro_words": "There's no bond program action item, so we move on to 12.1.",
+        "status": "found"
+      },
+      {
+        "item": 18,
+        "intro_words": "There's no bond program action item, so we move on to 12.1.",
+        "status": "found"
+      },
+      {
+        "item": 20,
+        "intro_words": "We'll be hearing Roy Cloud's presentation, and we'll after that",
+        "status": "found"
+      },
+      {
+        "item": 21,
+        "intro_words": "All right, Clifford. You know that, that was— We have some people",
+        "status": "found"
+      },
+      {
+        "item": 22,
+        "intro_words": "Per the, per the change in agenda, moving on to discussion items",
+        "status": "found"
+      },
+      {
+        "item": 23,
+        "intro_words": "All right, uh, lots of other consent items today. Field trips, policies",
+        "status": "found"
+      },
+      {
+        "item": 51,
+        "intro_words": "All right, we are on to Board and Superintendent Reports.",
+        "status": "found"
+      },
+      {
+        "item": 52,
+        "intro_words": "All right, we are on to Board and Superintendent Reports.",
+        "status": "found"
+      },
+      {
+        "item": 53,
+        "intro_words": "I'll start. I went to a training, MIG 3 on finance",
+        "status": "found"
+      },
+      {
+        "item": 54,
+        "intro_words": "Has anyone received any notable correspondence they'd like to share",
+        "status": "found"
+      },
+      {
+        "item": 55,
+        "intro_words": "Okay. Other business or suggested items for future agenda topics?",
+        "status": "found"
+      },
+      {
+        "item": 56,
+        "intro_words": "Okay. So any other items for the agenda? Future agendas?",
+        "status": "found"
+      },
+      {
+        "item": 57,
+        "intro_words": "Okay. So with that, we are on to meeting reflection.",
+        "status": "found"
+      },
+      {
+        "item": 58,
+        "intro_words": "I move to adjourn. I'll second. All those in favor?",
+        "status": "found"
+      }
+    ]
+  },
+  "result": {
+    "videoId": "MUo_j2IxTzw",
+    "items": [
+      {
+        "timestamp": "00:00:05",
+        "timestampSeconds": 5
+      },
+      {
+        "timestamp": "00:00:05",
+        "timestampSeconds": 5
+      },
+      null,
+      null,
+      null,
+      {
+        "timestamp": "00:00:05",
+        "timestampSeconds": 5
+      },
+      null,
+      {
+        "timestamp": "00:00:05",
+        "timestampSeconds": 5
+      },
+      {
+        "timestamp": "00:00:05",
+        "timestampSeconds": 5
+      },
+      {
+        "timestamp": "00:00:30",
+        "timestampSeconds": 30
+      },
+      {
+        "timestamp": "00:02:47",
+        "timestampSeconds": 167
+      },
+      {
+        "timestamp": "00:02:37",
+        "timestampSeconds": 157
+      },
+      {
+        "timestamp": "00:03:40",
+        "timestampSeconds": 220
+      },
+      {
+        "timestamp": "00:01:42",
+        "timestampSeconds": 102
+      },
+      {
+        "timestamp": "00:25:57",
+        "timestampSeconds": 1557
+      },
+      {
+        "timestamp": "00:26:31",
+        "timestampSeconds": 1591
+      },
+      {
+        "timestamp": "00:27:01",
+        "timestampSeconds": 1621
+      },
+      {
+        "timestamp": "00:27:01",
+        "timestampSeconds": 1621
+      },
+      null,
+      {
+        "timestamp": "00:26:56",
+        "timestampSeconds": 1616
+      },
+      {
+        "timestamp": "00:56:31",
+        "timestampSeconds": 3391
+      },
+      {
+        "timestamp": "01:26:58",
+        "timestampSeconds": 5218
+      },
+      {
+        "timestamp": "01:28:59",
+        "timestampSeconds": 5339
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      {
+        "timestamp": "01:30:04",
+        "timestampSeconds": 5404
+      },
+      {
+        "timestamp": "01:30:04",
+        "timestampSeconds": 5404
+      },
+      {
+        "timestamp": "01:30:14",
+        "timestampSeconds": 5414
+      },
+      {
+        "timestamp": "01:40:59",
+        "timestampSeconds": 6059
+      },
+      {
+        "timestamp": "01:40:54",
+        "timestampSeconds": 6054
+      },
+      {
+        "timestamp": "01:42:11",
+        "timestampSeconds": 6131
+      },
+      {
+        "timestamp": "01:41:52",
+        "timestampSeconds": 6112
+      },
+      {
+        "timestamp": "01:48:40",
+        "timestampSeconds": 6520
+      }
+    ]
+  },
+  "cachedAt": "2026-04-13T19:27:30.150Z",
+  "inputTokens": 24868,
+  "outputTokens": 1427
+}

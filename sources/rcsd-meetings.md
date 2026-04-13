@@ -12,7 +12,7 @@ Last updated: March 20, 2026
 
 | Date | Type | MID | YouTube | Key Topics |
 |------|------|-----|---------|------------|
-| 04/01/2026 | Regular | 51011 | — | Roy Cloud/Clifford SPSA presentations, EV charger PowerFlex replacement (Shell Recharge discontinuation), RCTA class size info item, BP/AR 3580 District Records second reading, 22 CSBA policy updates (employee HR policies), MIT/Kennedy field trips, election services agreement |
+| 04/01/2026 | Regular | 51011 | [Video](https://www.youtube.com/watch?v=MUo_j2IxTzw) | Roy Cloud/Clifford SPSA presentations, EV charger PowerFlex replacement (Shell Recharge discontinuation), RCTA class size info item, BP/AR 3580 District Records second reading, 22 CSBA policy updates (employee HR policies), MIT/Kennedy field trips, election services agreement |
 | 03/25/2026 | Regular | 50617 | — | Taft/Garfield SPSA presentations, 2024-25 financial audit (Eide Bailly), Second Interim Budget ($158.1M rev), AI-assisted literacy info item, drone policy BP 3515.21 second reading, Connect charter audit review, Ed Code 41372 salary waiver (55.54% vs 60%), 650 Chromebooks ($323.9K), 16 CSBA policy updates, Measure U addenda (North Star/Henry Ford) |
 | 03/11/2026 | Regular | 50616 | — | Roosevelt/McKinley/Hoover SPSA presentations, Eide Bailly bond audit, 2025 SARCs, Measure U addenda (Roosevelt/McKinley/Hoover), NV5 EV charging amendment, Feb warrant registers |
 | 02/26/2026 | Special | 56022 | [Video](https://www.youtube.com/watch?v=8NOEEW_cpyU) | Parcel tax public hearing + election resolution |
