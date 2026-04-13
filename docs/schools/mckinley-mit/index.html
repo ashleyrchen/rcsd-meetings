@@ -651,26 +651,13 @@
 
   /* ---- SSC MEMBERSHIP ---- */
   .ssc-members {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.1rem 1.5rem;
     font-size: 0.85rem;
-    margin-top: 0.5rem;
-  }
-  @media (max-width: 600px) {
-    .ssc-members { grid-template-columns: 1fr; }
-  }
-  .ssc-member {
-    display: flex;
-    justify-content: space-between;
-    padding: 0.2rem 0;
-    border-bottom: 1px solid var(--cream-dark);
+    line-height: 1.5;
+    margin-top: 0.4rem;
   }
   .ssc-role {
     color: var(--text-muted);
     font-size: 0.8rem;
-    white-space: nowrap;
-    margin-left: 0.5rem;
   }
 
   /* ---- BELL SCHEDULE ---- */
@@ -1266,12 +1253,8 @@
         <h4>School Site Council</h4>
         <p style="margin-bottom:0.2rem"><strong>Chair:</strong> Nancy Torres</p>
           <p style="margin-bottom:0.4rem; font-size:0.82rem; color:#666">SPSA adopted: April 22, 2025</p>
-          <div class="ssc-members"><div class="ssc-member"><span>Beatrice Williams</span><span class="ssc-role">Principal</span></div><div class="ssc-member"><span>Jackelyne Campos</span><span class="ssc-role">Staff</span></div><div class="ssc-member"><span>Kathleen Murphy</span><span class="ssc-role">Teacher</span></div><div class="ssc-member"><span>Gabriel Font</span><span class="ssc-role">Teacher</span></div><div class="ssc-member"><span>Maryjane Gertz</span><span class="ssc-role">Teacher</span></div><div class="ssc-member"><span>Yuricci Cruz</span><span class="ssc-role">Parent / Community</span></div><div class="ssc-member"><span>Danna Perez</span><span class="ssc-role">Parent / Community</span></div><div class="ssc-member"><span>Diana Mora</span><span class="ssc-role">Parent / Community</span></div><div class="ssc-member"><span>Carlos Gonzalez</span><span class="ssc-role">Parent / Community</span></div><div class="ssc-member"><span>Laura Robles</span><span class="ssc-role">Staff</span></div><div class="ssc-member"><span>Nancy Torres</span><span class="ssc-role">Parent / Community</span></div></div>
+          <div class="ssc-members"><span class="ssc-role">Principal:</span> Beatrice Williams<br><span class="ssc-role">Teacher:</span> Kathleen Murphy, Gabriel Font, Maryjane Gertz<br><span class="ssc-role">Staff:</span> Jackelyne Campos, Laura Robles<br><span class="ssc-role">Parent / Community:</span> Yuricci Cruz, Danna Perez, Diana Mora, Carlos Gonzalez, Nancy Torres</div>
           <p style="margin-top:0.5rem"><a href="https://data.rcsd.info/documents/spsa/2025-26/mckinley-mit.pdf" target="_blank">View SPSA &#8599;</a></p>
-      </div>
-      <div class="resource-card">
-        <h4>After-School Programs</h4>
-        <p class="coming-soon">Coming soon</p>
       </div>
     </div>
 

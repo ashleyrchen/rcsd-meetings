@@ -996,26 +996,13 @@ const schoolCSS = `
 
   /* ---- SSC MEMBERSHIP ---- */
   .ssc-members {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.1rem 1.5rem;
     font-size: 0.85rem;
-    margin-top: 0.5rem;
-  }
-  @media (max-width: 600px) {
-    .ssc-members { grid-template-columns: 1fr; }
-  }
-  .ssc-member {
-    display: flex;
-    justify-content: space-between;
-    padding: 0.2rem 0;
-    border-bottom: 1px solid var(--cream-dark);
+    line-height: 1.5;
+    margin-top: 0.4rem;
   }
   .ssc-role {
     color: var(--text-muted);
     font-size: 0.8rem;
-    white-space: nowrap;
-    margin-left: 0.5rem;
   }
 
   /* ---- BELL SCHEDULE ---- */
@@ -2226,13 +2213,12 @@ ${siteNav({ activePage: 'schools', lang, altLangHref })}
           const adoptedStr = ssc.adoptionDate ? new Date(ssc.adoptionDate + 'T12:00:00').toLocaleDateString(lang === 'es' ? 'es-US' : 'en-US', { year: 'numeric', month: 'long', day: 'numeric' }) : '';
           return `${ssc.chairperson ? `<p style="margin-bottom:0.2rem"><strong>${L.sscChair}:</strong> ${ssc.chairperson}</p>` : ''}
           ${adoptedStr ? `<p style="margin-bottom:0.4rem; font-size:0.82rem; color:#666">${L.sscAdopted}: ${adoptedStr}</p>` : ''}
-          <div class="ssc-members">${ssc.members.map(m => `<div class="ssc-member"><span>${m.name}</span><span class="ssc-role">${roleLabel[m.role] || m.role}</span></div>`).join('')}</div>
+          <div class="ssc-members">${[['principal', L.sscRolePrincipal], ['classroomTeacher', L.sscRoleTeacher], ['otherStaff', L.sscRoleStaff], ['parentCommunity', L.sscRoleParent]].map(([role, label]) => {
+            const names = ssc.members.filter(m => m.role === role).map(m => m.name);
+            return names.length ? `<span class="ssc-role">${label}:</span> ${names.join(', ')}` : '';
+          }).filter(Boolean).join('<br>')}</div>
           <p style="margin-top:0.5rem"><a href="https://data.rcsd.info/documents/spsa/2025-26/${slug}.pdf" target="_blank">${isEs ? 'Ver SPSA' : 'View SPSA'} &#8599;</a></p>`;
         })()}
-      </div>
-      <div class="resource-card">
-        <h4>${L.afterSchool}</h4>
-        <p class="coming-soon">${L.comingSoon}</p>
       </div>
     </div>
 

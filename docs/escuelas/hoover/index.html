@@ -651,26 +651,13 @@
 
   /* ---- SSC MEMBERSHIP ---- */
   .ssc-members {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.1rem 1.5rem;
     font-size: 0.85rem;
-    margin-top: 0.5rem;
-  }
-  @media (max-width: 600px) {
-    .ssc-members { grid-template-columns: 1fr; }
-  }
-  .ssc-member {
-    display: flex;
-    justify-content: space-between;
-    padding: 0.2rem 0;
-    border-bottom: 1px solid var(--cream-dark);
+    line-height: 1.5;
+    margin-top: 0.4rem;
   }
   .ssc-role {
     color: var(--text-muted);
     font-size: 0.8rem;
-    white-space: nowrap;
-    margin-left: 0.5rem;
   }
 
   /* ---- BELL SCHEDULE ---- */
@@ -1292,12 +1279,8 @@
         <h4>Consejo del Sitio Escolar</h4>
         <p style="margin-bottom:0.2rem"><strong>Presidente:</strong> Lilia Valdez</p>
           <p style="margin-bottom:0.4rem; font-size:0.82rem; color:#666">SPSA adoptado: 23 de abril de 2025</p>
-          <div class="ssc-members"><div class="ssc-member"><span>Lupe Guzman</span><span class="ssc-role">Director(a)</span></div><div class="ssc-member"><span>Community School Coordinator/Andrea Hernandez</span><span class="ssc-role">Personal</span></div><div class="ssc-member"><span>Laura Lentz</span><span class="ssc-role">Maestro(a)</span></div><div class="ssc-member"><span>Erin Crescenti</span><span class="ssc-role">Maestro(a)</span></div><div class="ssc-member"><span>Jake Mauldin</span><span class="ssc-role">Maestro(a)</span></div><div class="ssc-member"><span>Lilia Valdez</span><span class="ssc-role">Padre / Comunidad</span></div><div class="ssc-member"><span>Mayra Valencia</span><span class="ssc-role">Padre / Comunidad</span></div><div class="ssc-member"><span>Flor Magallanes</span><span class="ssc-role">Padre / Comunidad</span></div><div class="ssc-member"><span>Lizbeth Ponce</span><span class="ssc-role">Padre / Comunidad</span></div></div>
+          <div class="ssc-members"><span class="ssc-role">Director(a):</span> Lupe Guzman<br><span class="ssc-role">Maestro(a):</span> Laura Lentz, Erin Crescenti, Jake Mauldin<br><span class="ssc-role">Personal:</span> Community School Coordinator/Andrea Hernandez<br><span class="ssc-role">Padre / Comunidad:</span> Lilia Valdez, Mayra Valencia, Flor Magallanes, Lizbeth Ponce</div>
           <p style="margin-top:0.5rem"><a href="https://data.rcsd.info/documents/spsa/2025-26/hoover.pdf" target="_blank">Ver SPSA &#8599;</a></p>
-      </div>
-      <div class="resource-card">
-        <h4>Programas Extracurriculares</h4>
-        <p class="coming-soon">Próximamente</p>
       </div>
     </div>
 

@@ -651,26 +651,13 @@
 
   /* ---- SSC MEMBERSHIP ---- */
   .ssc-members {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.1rem 1.5rem;
     font-size: 0.85rem;
-    margin-top: 0.5rem;
-  }
-  @media (max-width: 600px) {
-    .ssc-members { grid-template-columns: 1fr; }
-  }
-  .ssc-member {
-    display: flex;
-    justify-content: space-between;
-    padding: 0.2rem 0;
-    border-bottom: 1px solid var(--cream-dark);
+    line-height: 1.5;
+    margin-top: 0.4rem;
   }
   .ssc-role {
     color: var(--text-muted);
     font-size: 0.8rem;
-    white-space: nowrap;
-    margin-left: 0.5rem;
   }
 
   /* ---- BELL SCHEDULE ---- */
@@ -1285,12 +1272,8 @@
         <h4>School Site Council</h4>
         <p style="margin-bottom:0.2rem"><strong>Chair:</strong> Courtney Rogerson</p>
           <p style="margin-bottom:0.4rem; font-size:0.82rem; color:#666">SPSA adopted: May 28, 2024</p>
-          <div class="ssc-members"><div class="ssc-member"><span>Jennifer Knopf</span><span class="ssc-role">Principal</span></div><div class="ssc-member"><span>Maryann Nakhla</span><span class="ssc-role">Staff</span></div><div class="ssc-member"><span>Steve Borg</span><span class="ssc-role">Teacher</span></div><div class="ssc-member"><span>Amy Barstad</span><span class="ssc-role">Teacher</span></div><div class="ssc-member"><span>Shaunna Ingersoll</span><span class="ssc-role">Staff</span></div><div class="ssc-member"><span>Courtney Rogerson</span><span class="ssc-role">Parent / Community</span></div><div class="ssc-member"><span>George Rodriguez</span><span class="ssc-role">Parent / Community</span></div><div class="ssc-member"><span>Mimi Turner</span><span class="ssc-role">Parent / Community</span></div><div class="ssc-member"><span>Abraham Frailey</span><span class="ssc-role">Parent / Community</span></div><div class="ssc-member"><span>Chuck Walter</span><span class="ssc-role">Parent / Community</span></div></div>
+          <div class="ssc-members"><span class="ssc-role">Principal:</span> Jennifer Knopf<br><span class="ssc-role">Teacher:</span> Steve Borg, Amy Barstad<br><span class="ssc-role">Staff:</span> Maryann Nakhla, Shaunna Ingersoll<br><span class="ssc-role">Parent / Community:</span> Courtney Rogerson, George Rodriguez, Mimi Turner, Abraham Frailey, Chuck Walter</div>
           <p style="margin-top:0.5rem"><a href="https://data.rcsd.info/documents/spsa/2025-26/henry-ford.pdf" target="_blank">View SPSA &#8599;</a></p>
-      </div>
-      <div class="resource-card">
-        <h4>After-School Programs</h4>
-        <p class="coming-soon">Coming soon</p>
       </div>
     </div>
 

@@ -651,26 +651,13 @@
 
   /* ---- SSC MEMBERSHIP ---- */
   .ssc-members {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.1rem 1.5rem;
     font-size: 0.85rem;
-    margin-top: 0.5rem;
-  }
-  @media (max-width: 600px) {
-    .ssc-members { grid-template-columns: 1fr; }
-  }
-  .ssc-member {
-    display: flex;
-    justify-content: space-between;
-    padding: 0.2rem 0;
-    border-bottom: 1px solid var(--cream-dark);
+    line-height: 1.5;
+    margin-top: 0.4rem;
   }
   .ssc-role {
     color: var(--text-muted);
     font-size: 0.8rem;
-    white-space: nowrap;
-    margin-left: 0.5rem;
   }
 
   /* ---- BELL SCHEDULE ---- */
@@ -1281,12 +1268,8 @@
         <h4>School Site Council</h4>
         <p style="margin-bottom:0.2rem"><strong>Chair:</strong> Rick Soriano</p>
           <p style="margin-bottom:0.4rem; font-size:0.82rem; color:#666">SPSA adopted: March 31, 2025</p>
-          <div class="ssc-members"><div class="ssc-member"><span>David Camarena</span><span class="ssc-role">Principal</span></div><div class="ssc-member"><span>Melissa Lopez</span><span class="ssc-role">Teacher</span></div><div class="ssc-member"><span>Ian Milos</span><span class="ssc-role">Teacher</span></div><div class="ssc-member"><span>Jocelyne Arriaga</span><span class="ssc-role">Staff</span></div><div class="ssc-member"><span>Jennifer C Torres</span><span class="ssc-role">Staff</span></div><div class="ssc-member"><span>Rick Soriano</span><span class="ssc-role">Parent / Community</span></div><div class="ssc-member"><span>Blanca Madrigal</span><span class="ssc-role">Parent / Community</span></div><div class="ssc-member"><span>Fabiola Kerfoot</span><span class="ssc-role">Parent / Community</span></div><div class="ssc-member"><span>Jade Martinez</span><span class="ssc-role">Parent / Community</span></div><div class="ssc-member"><span>Florence Ortiz</span><span class="ssc-role">Parent / Community</span></div></div>
+          <div class="ssc-members"><span class="ssc-role">Principal:</span> David Camarena<br><span class="ssc-role">Teacher:</span> Melissa Lopez, Ian Milos<br><span class="ssc-role">Staff:</span> Jocelyne Arriaga, Jennifer C Torres<br><span class="ssc-role">Parent / Community:</span> Rick Soriano, Blanca Madrigal, Fabiola Kerfoot, Jade Martinez, Florence Ortiz</div>
           <p style="margin-top:0.5rem"><a href="https://data.rcsd.info/documents/spsa/2025-26/taft.pdf" target="_blank">View SPSA &#8599;</a></p>
-      </div>
-      <div class="resource-card">
-        <h4>After-School Programs</h4>
-        <p class="coming-soon">Coming soon</p>
       </div>
     </div>
 

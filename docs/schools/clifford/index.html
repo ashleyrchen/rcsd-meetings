@@ -651,26 +651,13 @@
 
   /* ---- SSC MEMBERSHIP ---- */
   .ssc-members {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.1rem 1.5rem;
     font-size: 0.85rem;
-    margin-top: 0.5rem;
-  }
-  @media (max-width: 600px) {
-    .ssc-members { grid-template-columns: 1fr; }
-  }
-  .ssc-member {
-    display: flex;
-    justify-content: space-between;
-    padding: 0.2rem 0;
-    border-bottom: 1px solid var(--cream-dark);
+    line-height: 1.5;
+    margin-top: 0.4rem;
   }
   .ssc-role {
     color: var(--text-muted);
     font-size: 0.8rem;
-    white-space: nowrap;
-    margin-left: 0.5rem;
   }
 
   /* ---- BELL SCHEDULE ---- */
@@ -1283,12 +1270,8 @@
         <h4>School Site Council</h4>
         <p style="margin-bottom:0.2rem"><strong>Chair:</strong> Dione Smith</p>
           <p style="margin-bottom:0.4rem; font-size:0.82rem; color:#666">SPSA adopted: April 18, 2025</p>
-          <div class="ssc-members"><div class="ssc-member"><span>Kristy Jackson</span><span class="ssc-role">Principal</span></div><div class="ssc-member"><span>Jennifer Overbey</span><span class="ssc-role">Teacher</span></div><div class="ssc-member"><span>Dione Smith</span><span class="ssc-role">Teacher</span></div><div class="ssc-member"><span>Marianne Chance</span><span class="ssc-role">Teacher</span></div><div class="ssc-member"><span>Shannon Cody</span><span class="ssc-role">Teacher</span></div><div class="ssc-member"><span>Casey Nosky</span><span class="ssc-role">Staff</span></div><div class="ssc-member"><span>Julie Harrison</span><span class="ssc-role">Staff</span></div><div class="ssc-member"><span>Katie McNally</span><span class="ssc-role">Parent / Community</span></div><div class="ssc-member"><span>Alex Chalmer</span><span class="ssc-role">Parent / Community</span></div><div class="ssc-member"><span>Jennifer Erskine</span><span class="ssc-role">Parent / Community</span></div><div class="ssc-member"><span>Alana Ballon</span><span class="ssc-role">Parent / Community</span></div><div class="ssc-member"><span>Susie Crowell</span><span class="ssc-role">Parent / Community</span></div><div class="ssc-member"><span>Jennifer Toller</span><span class="ssc-role">Parent / Community</span></div><div class="ssc-member"><span>Scarlett Mineta</span><span class="ssc-role">Parent / Community</span></div></div>
+          <div class="ssc-members"><span class="ssc-role">Principal:</span> Kristy Jackson<br><span class="ssc-role">Teacher:</span> Jennifer Overbey, Dione Smith, Marianne Chance, Shannon Cody<br><span class="ssc-role">Staff:</span> Casey Nosky, Julie Harrison<br><span class="ssc-role">Parent / Community:</span> Katie McNally, Alex Chalmer, Jennifer Erskine, Alana Ballon, Susie Crowell, Jennifer Toller, Scarlett Mineta</div>
           <p style="margin-top:0.5rem"><a href="https://data.rcsd.info/documents/spsa/2025-26/clifford.pdf" target="_blank">View SPSA &#8599;</a></p>
-      </div>
-      <div class="resource-card">
-        <h4>After-School Programs</h4>
-        <p class="coming-soon">Coming soon</p>
       </div>
     </div>
 
