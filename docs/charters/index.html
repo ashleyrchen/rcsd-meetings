@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<title>Charter schools — Redwood City School District</title>
+<meta name="description" content="The three charter schools authorized by Redwood City School District: Connect, KIPP Excelencia, and Rocketship.">
+<meta name="theme-color" content="#1a3a2a">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="canonical" href="https://rcsd.info/charters/">
+<link rel="alternate" hreflang="en" href="https://rcsd.info/charters/">
+<link rel="alternate" hreflang="es" href="https://rcsd.info/escuelas-charter/">
+<meta property="og:title" content="Charter schools — Redwood City School District">
+<meta property="og:description" content="The three charter schools authorized by Redwood City School District: Connect, KIPP Excelencia, and Rocketship.">
+<meta property="og:url" content="https://rcsd.info/charters/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://rcsd.info/og-1200.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="RCSD Open Data">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://rcsd.info/og-1200.jpg">
+<meta name="twitter:title" content="Charter schools — Redwood City School District">
+<meta name="twitter:description" content="The three charter schools authorized by Redwood City School District: Connect, KIPP Excelencia, and Rocketship.">
+<link rel="preload" href="/fonts/fraunces-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/newsreader-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/ibm-plex-mono-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/fonts/fonts.css">
+
+
+<style>
+
+  :root {
+    --green-deep: #1a3a2a;
+    --green-mid: #2d5a3f;
+    --green-light: #4a8c6a;
+    --green-pale: #dcebd5;
+    --green-wash: #f0f6ed;
+    --cream: #faf8f4;
+    --cream-dark: #f2efe8;
+    --amber: #c4842d;
+    --amber-light: #f0d9a8;
+    --coral: #c45d4a;
+    --coral-light: #f5ddd8;
+    --text: #2a2a28;
+    --text-secondary: #5a5a56;
+    --text-muted: #8a8a84;
+    --rule: #d4d0c8;
+    --rule-light: #e8e4dc;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html {
+    font-size: 17px;
+    scroll-behavior: smooth;
+    background: var(--cream);
+  }
+
+  body {
+    font-family: 'Newsreader', Georgia, serif;
+    color: var(--text);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    background: var(--cream);
+  }
+
+  a {
+    color: var(--green-mid);
+    text-decoration-color: var(--rule);
+    text-underline-offset: 2px;
+    transition: color 0.15s, text-decoration-color 0.15s;
+  }
+  a:hover {
+    color: var(--green-deep);
+    text-decoration-color: var(--green-mid);
+  }
+
+  /* ---- SITE NAV ---- */
+  .site-nav {
+    background: #1a2e1a;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .site-nav-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .site-nav-tabs { display: flex; gap: 0; }
+  .site-nav-tab {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: rgba(255,255,255,0.7);
+    padding: 0.75rem 1rem;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .site-nav-tab:hover { color: #fff; }
+  .site-nav-tab.active { color: #fff; border-bottom-color: var(--green-light); }
+
+  .site-nav-right {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .site-nav-lang {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    padding: 0.35rem 0.65rem;
+    border: 1px solid rgba(255,255,255,0.35);
+    border-radius: 3px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .site-nav-lang:hover {
+    color: #fff;
+    border-color: rgba(255,255,255,0.6);
+  }
+
+  /* ---- FOOTER ---- */
+  .site-footer {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2rem 2rem 4rem;
+    border-top: 1px solid var(--rule);
+    text-align: center;
+  }
+  .site-footer p {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    font-style: italic;
+  }
+  .site-footer a { color: var(--green-mid); }
+  .footer-nav {
+    margin-top: 0.8rem;
+    font-style: normal;
+  }
+  .footer-nav a {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--green-mid);
+    text-decoration: none;
+    margin: 0 0.75rem;
+  }
+  .footer-nav a:hover { text-decoration: underline; }
+
+  /* ---- RESPONSIVE (nav + footer) ---- */
+  @media (max-width: 640px) {
+    .site-nav-tab { padding: 0.6rem 0.7rem; font-size: 0.7rem; }
+    .site-nav-inner { padding: 0 1.2rem; }
+  }
+
+  main.charters-content { max-width: 960px; margin: 0 auto; padding: 0 2rem 6rem; }
+  @media (max-width: 640px) { main.charters-content { padding: 0 1.2rem 4rem; } }
+  .charters-header { padding: 3rem 0 2rem; }
+  .charters-header .eyebrow {
+    font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; font-weight: 500;
+    letter-spacing: 0.08em; text-transform: uppercase; color: var(--green-mid);
+    margin-bottom: 0.6rem;
+  }
+  .charters-header h1 {
+    font-family: 'Fraunces', Georgia, serif; font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 400; color: var(--green-deep); margin-bottom: 1rem;
+  }
+  .charters-header p { max-width: 640px; margin-bottom: 2rem; color: var(--text-secondary); }
+  .charters-table-wrap { overflow-x: auto; }
+  .charters-table-wrap table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+  .charters-table-wrap thead th {
+    font-family: 'IBM Plex Mono', monospace; font-size: 0.66rem; font-weight: 500;
+    letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted);
+    text-align: left; padding: 0.6rem 0.8rem; border-bottom: 2px solid var(--green-deep);
+    white-space: nowrap;
+  }
+  .charters-table-wrap thead th.num { text-align: right; }
+  .charters-table-wrap tbody td {
+    padding: 0.7rem 0.8rem; border-bottom: 1px solid var(--rule-light);
+  }
+  .charters-table-wrap tbody td.num {
+    text-align: right; font-family: 'IBM Plex Mono', monospace; font-size: 0.86rem;
+    white-space: nowrap;
+  }
+  .charters-table-wrap tbody td.school-name { font-weight: 500; }
+  .charters-table-wrap tbody td.school-name a { color: var(--green-mid); text-decoration: underline; text-decoration-color: var(--rule); text-underline-offset: 2px; }
+  .charters-table-wrap tbody td.school-name a:hover { color: var(--green-deep); }
+  .charters-table-wrap tbody td.school-name .arrow { color: var(--text-muted); }
+  .charters-table-wrap tbody tr:hover td { background: var(--green-wash); }
+  .charters-table-wrap tbody tr:hover .arrow { color: var(--green-mid); }
+
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="site-nav-inner">
+    <div class="site-nav-tabs">
+      <a href="/" class="site-nav-tab">Home</a>
+      <a href="/meetings/" class="site-nav-tab">Meetings</a>
+      <a href="/schools/" class="site-nav-tab">Schools</a>
+      <a href="/district/" class="site-nav-tab active">District</a>
+      <a href="/budget/" class="site-nav-tab">Budget</a>
+      <a href="/blog/" class="site-nav-tab">Blog</a>
+    </div>
+    <div class="site-nav-right">
+      <a href="/escuelas-charter/" class="site-nav-lang">ES</a>
+    </div>
+  </div>
+</nav>
+
+<main class="charters-content">
+  <div class="charters-header">
+    <div class="eyebrow">Charter oversight</div>
+    <h1>RCSD-authorized charter schools</h1>
+    <p>The Redwood City School District authorizes and oversees three directly-funded charter schools. Their budgets, interim reports, and audits are presented regularly to the Board as part of the district’s fiscal oversight role.</p>
+  </div>
+
+  <div class="charters-table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>School</th>
+          <th>Grades</th>
+          <th class="num">Enrollment</th>
+          <th>Network</th>
+          <th class="num">Opened</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr onclick="location.href='/charters/connect/'" style="cursor:pointer">
+            <td class="school-name"><a href="/charters/connect/">Connect Community Charter School <span class="arrow">&rarr;</span></a></td>
+            <td>K-8</td>
+            <td class="num">142</td>
+            <td>Independent</td>
+            <td class="num">2013</td>
+          </tr>
+          <tr onclick="location.href='/charters/kipp-excelencia/'" style="cursor:pointer">
+            <td class="school-name"><a href="/charters/kipp-excelencia/">KIPP Excelencia Community Preparatory <span class="arrow">&rarr;</span></a></td>
+            <td>TK-8</td>
+            <td class="num">704</td>
+            <td>KIPP Public Schools Northern California (KIPP NorCal)</td>
+            <td class="num">2015</td>
+          </tr>
+          <tr onclick="location.href='/charters/rocketship-redwood-city/'" style="cursor:pointer">
+            <td class="school-name"><a href="/charters/rocketship-redwood-city/">Rocketship Redwood City Prep <span class="arrow">&rarr;</span></a></td>
+            <td>TK-5</td>
+            <td class="num">273</td>
+            <td>Rocketship Public Schools</td>
+            <td class="num">2015</td>
+          </tr>
+      </tbody>
+    </table>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <p>Independently compiled from publicly available RCSD documents. Source documents at <a href="https://www.rcsdk8.net">rcsdk8.net</a> and the <a href="https://simbli.eboardsolutions.com/SB_Meetings/SB_MeetingListing.aspx?S=36030397">GAMUT board portal</a>.</p>
+  <div class="footer-nav">
+    <a href="/">Home</a>
+    <a href="/meetings/">Meetings</a>
+    <a href="/schools/">Schools</a>
+    <a href="/district/">District</a>
+    <a href="/budget/">Budget</a>
+    <a href="https://github.com/dweekly/rcsd-meetings">Source Code &#8599;</a>
+    <a href="mailto:team@rcsd.info">team@rcsd.info</a>
+  </div>
+</footer>
+
+</body>
+</html>

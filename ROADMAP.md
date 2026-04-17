@@ -187,6 +187,15 @@ Build a pipeline for rich per-meeting summaries (inputs already in place: AAI tr
 - [ ] Link entities to relevant documents (contract approvals for vendors, tentative agreements for unions)
 - [ ] Cross-reference from meeting items and transcript utterances to entity entries
 
+## Charter School Pages
+- [ ] **Per-charter pages** for the three RCSD-authorized charters: Connect Community Charter, KIPP Excelencia Community Prep, Rocketship Redwood City Prep
+  - Basic info: authorizing relationship, campus address, grades served, enrollment
+  - Financial docs: adopted budgets, 1st/2nd interim reports, unaudited actuals, annual audits — with RCSD's review letters alongside each
+  - Source: already landing in board packets under Information items (e.g. 2026-02-04 items 17.1–17.5, 2026-03-25 item 17.2). Document index tagging should make extraction straightforward.
+  - Historical series so trends are visible (multi-year audits, interim-to-actual variance)
+  - Link from district page + surface in board meeting summaries when charter items are discussed
+- [ ] Consider same treatment for the KIPP Excelencia Fair Oaks site given the ongoing Prop 2 CSFP funding workstream (Res 11 Sept 2025, Res 23 April 2026)
+
 ## Vendors Tab
 - [ ] **Vendor spending dashboard** — a top-level "Vendors" page showing who the district does business with and annual spend
 - [ ] Scrape all warrant registers (ratification of warrants) from board meeting attachments

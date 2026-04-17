@@ -24,6 +24,7 @@ Every dataset on this site is traceable to its public source. We document the or
 | Meeting transcription | [`data/METHODOLOGY-transcription.md`](data/METHODOLOGY-transcription.md) | AssemblyAI Universal 3 Pro, Opus audio from YouTube, speaker diarization |
 | Meeting aggregation | [Data sources](#data-sources) below | Simbli + BoardDocs APIs |
 | School profiles | `data/schools.json` | CDE enrollment, CAASPP, SARC, IRS 990 PTO filings |
+| Charter profiles | `data/charters.json` | CDE School Directory + Profile for metadata; financial docs filtered from `document-index.json` by title patterns |
 | Budget data | `data/budget/` | RCSD adopted budget documents, CDE LCFF data |
 | CDE datasets | `data/cde/*.json` | Absenteeism, LTEL, staff ethnicity/experience/ratios via `pull-cde-data.mjs` |
 | SPSA extraction | `data/ssc-membership.json`, `data/spsa-budgets.json` | SSC membership and budgets extracted from SPSA PDFs via Claude Haiku |
@@ -48,6 +49,7 @@ AI-generated content (meeting summaries, timestamp mappings) is always labeled a
 | [CDE Staff Ratios](https://www.cde.ca.gov/ds/ad/fssprat.asp) | Student-staff ratios | CDE bulk download | `data/cde/staff-ratios-2024-25.json` |
 | SPSA PDFs | SSC membership, school budgets | Claude Haiku extraction from board packets | `data/ssc-membership.json`, `data/spsa-budgets.json` |
 | [IRS 990 filings](https://projects.propublica.org/nonprofits/) | PTO/PTA per-pupil funding | ProPublica Nonprofit Explorer | `data/schools.json` |
+| [CDE School Directory](https://www.cde.ca.gov/SchoolDirectory/) | Charter entity metadata (CDS, address, charter number, date opened) | Manual transcription | `data/charters.json` |
 
 ## Pipeline
 

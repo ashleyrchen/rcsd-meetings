@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<title>Rocketship Redwood City Prep — RCSD Open Data</title>
+<meta name="description" content="Rocketship Redwood City Prep: TK-5, 273 students (2025-26). Charter school authorized by Redwood City School District.">
+<meta name="theme-color" content="#1a3a2a">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="canonical" href="https://rcsd.info/escuelas-charter/rocketship-redwood-city/">
+<link rel="alternate" hreflang="en" href="https://rcsd.info/charters/rocketship-redwood-city/">
+<link rel="alternate" hreflang="es" href="https://rcsd.info/escuelas-charter/rocketship-redwood-city/">
+<meta property="og:title" content="Rocketship Redwood City Prep — RCSD Open Data">
+<meta property="og:description" content="Rocketship Redwood City Prep: TK-5, 273 students (2025-26). Charter school authorized by Redwood City School District.">
+<meta property="og:url" content="https://rcsd.info/escuelas-charter/rocketship-redwood-city/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://rcsd.info/og-1200.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="es_US">
+<meta property="og:site_name" content="RCSD Open Data">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://rcsd.info/og-1200.jpg">
+<meta name="twitter:title" content="Rocketship Redwood City Prep — RCSD Open Data">
+<meta name="twitter:description" content="Rocketship Redwood City Prep: TK-5, 273 students (2025-26). Charter school authorized by Redwood City School District.">
+<link rel="preload" href="/fonts/fraunces-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/newsreader-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/ibm-plex-mono-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/fonts/fonts.css">
+
+
+<style>
+
+  :root {
+    --green-deep: #1a3a2a;
+    --green-mid: #2d5a3f;
+    --green-light: #4a8c6a;
+    --green-pale: #dcebd5;
+    --green-wash: #f0f6ed;
+    --cream: #faf8f4;
+    --cream-dark: #f2efe8;
+    --amber: #c4842d;
+    --amber-light: #f0d9a8;
+    --coral: #c45d4a;
+    --coral-light: #f5ddd8;
+    --text: #2a2a28;
+    --text-secondary: #5a5a56;
+    --text-muted: #8a8a84;
+    --rule: #d4d0c8;
+    --rule-light: #e8e4dc;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html {
+    font-size: 17px;
+    scroll-behavior: smooth;
+    background: var(--cream);
+  }
+
+  body {
+    font-family: 'Newsreader', Georgia, serif;
+    color: var(--text);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    background: var(--cream);
+  }
+
+  a {
+    color: var(--green-mid);
+    text-decoration-color: var(--rule);
+    text-underline-offset: 2px;
+    transition: color 0.15s, text-decoration-color 0.15s;
+  }
+  a:hover {
+    color: var(--green-deep);
+    text-decoration-color: var(--green-mid);
+  }
+
+  /* ---- SITE NAV ---- */
+  .site-nav {
+    background: #1a2e1a;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .site-nav-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .site-nav-tabs { display: flex; gap: 0; }
+  .site-nav-tab {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: rgba(255,255,255,0.7);
+    padding: 0.75rem 1rem;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .site-nav-tab:hover { color: #fff; }
+  .site-nav-tab.active { color: #fff; border-bottom-color: var(--green-light); }
+
+  .site-nav-right {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .site-nav-lang {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    padding: 0.35rem 0.65rem;
+    border: 1px solid rgba(255,255,255,0.35);
+    border-radius: 3px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .site-nav-lang:hover {
+    color: #fff;
+    border-color: rgba(255,255,255,0.6);
+  }
+
+  /* ---- FOOTER ---- */
+  .site-footer {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2rem 2rem 4rem;
+    border-top: 1px solid var(--rule);
+    text-align: center;
+  }
+  .site-footer p {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    font-style: italic;
+  }
+  .site-footer a { color: var(--green-mid); }
+  .footer-nav {
+    margin-top: 0.8rem;
+    font-style: normal;
+  }
+  .footer-nav a {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--green-mid);
+    text-decoration: none;
+    margin: 0 0.75rem;
+  }
+  .footer-nav a:hover { text-decoration: underline; }
+
+  /* ---- RESPONSIVE (nav + footer) ---- */
+  @media (max-width: 640px) {
+    .site-nav-tab { padding: 0.6rem 0.7rem; font-size: 0.7rem; }
+    .site-nav-inner { padding: 0 1.2rem; }
+  }
+
+  main.charter-content { max-width: 960px; margin: 0 auto; padding: 0 2rem 6rem; }
+  @media (max-width: 640px) { main.charter-content { padding: 0 1.2rem 4rem; } }
+  .charter-header { padding: 3rem 0 2rem; border-bottom: 1px solid var(--rule-light); margin-bottom: 2rem; }
+  .charter-header .eyebrow {
+    font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; font-weight: 500;
+    letter-spacing: 0.08em; text-transform: uppercase; color: var(--green-mid);
+    margin-bottom: 0.6rem;
+  }
+  .charter-header h1 {
+    font-family: 'Fraunces', Georgia, serif; font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 400; color: var(--green-deep); margin-bottom: 0.4rem; line-height: 1.15;
+  }
+  .charter-header .tagline { color: var(--text-secondary); font-size: 1.05rem; margin-bottom: 1.4rem; }
+  .charter-meta-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.2rem 2rem; margin-top: 1rem;
+  }
+  .charter-meta-grid dt {
+    font-family: 'IBM Plex Mono', monospace; font-size: 0.66rem; font-weight: 500;
+    letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted);
+    margin-bottom: 0.15rem;
+  }
+  .charter-meta-grid dd {
+    font-size: 0.92rem; color: var(--text); line-height: 1.5;
+  }
+  .charter-meta-grid dd a { word-break: break-word; }
+  section.docs-section { margin-top: 2rem; }
+  section.docs-section > h2 {
+    font-family: 'Fraunces', Georgia, serif; font-weight: 400; color: var(--green-deep);
+    font-size: 1.5rem; margin-bottom: 0.4rem;
+  }
+  section.docs-section > p.intro {
+    color: var(--text-secondary); font-size: 0.94rem; margin-bottom: 1.5rem; max-width: 640px;
+  }
+  .year-group { margin-bottom: 2rem; }
+  .year-group h3 {
+    font-family: 'IBM Plex Mono', monospace; font-size: 0.85rem; font-weight: 500;
+    letter-spacing: 0.06em; color: var(--green-mid);
+    padding-bottom: 0.3rem; margin-bottom: 0.6rem;
+    border-bottom: 2px solid var(--green-deep);
+  }
+  .docs-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+  .docs-table td {
+    padding: 0.55rem 0.7rem; border-bottom: 1px solid var(--rule-light);
+    vertical-align: top;
+  }
+  .docs-table tr:last-child td { border-bottom: none; }
+  .docs-table td.doc-label {
+    font-weight: 500; white-space: nowrap; color: var(--green-deep);
+    width: 30%;
+  }
+  .docs-table td.doc-links { line-height: 1.8; }
+  .docs-table td.doc-links a { white-space: nowrap; }
+  .docs-table td.doc-links .ext {
+    font-size: 0.75em; color: var(--text-muted); vertical-align: super;
+  }
+  .docs-table td.doc-meeting {
+    text-align: right; white-space: nowrap; font-size: 0.85rem;
+  }
+  .docs-table td.doc-meeting a.meeting-link {
+    font-family: 'IBM Plex Mono', monospace; font-size: 0.76rem;
+    color: var(--text-secondary); text-decoration: none;
+  }
+  .docs-table td.doc-meeting a.meeting-link:hover { color: var(--green-mid); text-decoration: underline; }
+  @media (max-width: 640px) {
+    .docs-table, .docs-table tbody, .docs-table tr, .docs-table td { display: block; width: 100%; }
+    .docs-table tr { padding: 0.6rem 0; border-bottom: 1px solid var(--rule-light); }
+    .docs-table td { border: none; padding: 0.15rem 0; }
+    .docs-table td.doc-meeting { text-align: left; }
+  }
+  p.empty { color: var(--text-muted); font-style: italic; padding: 1rem 0; }
+  aside.caveat {
+    background: var(--cream-dark); border-left: 3px solid var(--amber);
+    padding: 0.8rem 1rem; margin: 1.4rem 0; font-size: 0.88rem; color: var(--text-secondary);
+  }
+
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="site-nav-inner">
+    <div class="site-nav-tabs">
+      <a href="/" class="site-nav-tab">Inicio</a>
+      <a href="/reuniones/" class="site-nav-tab">Reuniones</a>
+      <a href="/escuelas/" class="site-nav-tab">Escuelas</a>
+      <a href="/distrito/" class="site-nav-tab active">Distrito</a>
+      <a href="/presupuesto/" class="site-nav-tab">Presupuesto</a>
+      <a href="/blog/es/" class="site-nav-tab">Blog</a>
+    </div>
+    <div class="site-nav-right">
+      <a href="/charters/rocketship-redwood-city/" class="site-nav-lang">EN</a>
+    </div>
+  </div>
+</nav>
+
+<main class="charter-content">
+
+  <header class="charter-header">
+    <div class="eyebrow">Escuela autónoma autorizada por RCSD</div>
+    <h1>Rocketship Redwood City Prep</h1>
+    <p class="tagline">Escuela chárter autorizada por el Distrito Escolar de Redwood City. Parte de la red Rocketship Public Schools.</p>
+    <dl class="charter-meta-grid">
+<div><dt>Dirección</dt><dd><a href="https://www.google.com/maps/search/?api=1&query=909%20Roosevelt%20Avenue%2C%20Redwood%20City%2C%20CA%2094061" target="_blank" rel="noopener">909 Roosevelt Avenue, Redwood City, CA 94061</a></dd></div>
+<div><dt>Teléfono</dt><dd><a href="tel:6502389970">(650) 238-9970</a></dd></div>
+<div><dt>Grados</dt><dd>TK-5</dd></div>
+<div><dt>Inscripción</dt><dd>273<br><span style="font-size:0.78rem; color:var(--text-muted)">Año 2025-26 (CDE)</span></dd></div>
+<div><dt>Sitio web</dt><dd><a href="https://www.rocketshipschools.org/en/schools/redwood-city-prep/" target="_blank" rel="noopener">www.rocketshipschools.org/en/schools/redwood-city-prep <span style="font-size:0.8em">&#8599;</span></a></dd></div>
+<div><dt>Red</dt><dd><a href="https://www.rocketshipschools.org" target="_blank" rel="noopener">Rocketship Public Schools <span style="font-size:0.8em">&#8599;</span></a></dd></div>
+<div><dt>Autorizador</dt><dd>Redwood City School District</dd></div>
+<div><dt>Número de Charter</dt><dd>1736</dd></div>
+<div><dt>Código CDS</dt><dd><a href="https://www.cde.ca.gov/schooldirectory/details?cdscode=41690050132076" target="_blank" rel="noopener">41690050132076 <span style="font-size:0.8em">&#8599;</span></a></dd></div>
+<div><dt>Inauguración</dt><dd>2015-08-17</dd></div>
+    </dl>
+  </header>
+
+  <section class="docs-section">
+    <h2>Documentos financieros</h2>
+    <p class="intro">Presupuestos, informes interinos, resultados reales no auditados y cartas anuales de revisión fiscal de RCSD, obtenidas de los paquetes de la mesa directiva de RCSD.</p>
+    <section class="year-group">
+        <h3>2025-26</h3>
+        <table class="docs-table">
+          <tbody>
+<tr>
+              <td class="doc-label">Presupuesto adoptado</td>
+              <td class="doc-links"><a href="https://data.rcsd.info/board-packets/2025-09-10/Rocketship-RC-FY2026-Adopted-Budget-Board.pdf" target="_blank" rel="noopener">Informe <span class="ext">&#8599;</span></a> &middot; <a href="https://data.rcsd.info/board-packets/2025-09-10/Rocketship-Adopted-Budget-Review-Letter-FY-2025-26.pdf" target="_blank" rel="noopener">Carta de revisión de RCSD <span class="ext">&#8599;</span></a></td>
+              <td class="doc-meeting"><a class="meeting-link" href="/reuniones/2025-09-10-regular/">Reunión del 10 sept 2025</a></td>
+            </tr>
+<tr>
+              <td class="doc-label">1er Informe Interino</td>
+              <td class="doc-links"><a href="https://data.rcsd.info/board-packets/2026-02-04/2025-26-Rocketship-Redwood-City-First-Interim-Report-Board.pdf" target="_blank" rel="noopener">Informe <span class="ext">&#8599;</span></a> &middot; <a href="https://data.rcsd.info/board-packets/2026-02-04/Rocketship-1st-Interim-Review-Letter-FY-2025-26.pdf" target="_blank" rel="noopener">Carta de revisión de RCSD <span class="ext">&#8599;</span></a></td>
+              <td class="doc-meeting"><a class="meeting-link" href="/reuniones/2026-02-04-regular/">Reunión del 4 feb 2026</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+<section class="year-group">
+        <h3>2024-25</h3>
+        <table class="docs-table">
+          <tbody>
+<tr>
+              <td class="doc-label">Presupuesto adoptado</td>
+              <td class="doc-links"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/D8SN7L5E8D87/$file/Rocketship%20Redwood%20City%202024-25%20Adopted%20Budget%20Report%20(Board).pdf" target="_blank" rel="noopener">Informe <span class="ext">&#8599;</span></a> &middot; <a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/D8SN7J5E8D6E/$file/Rocketship%20Adopted%20Budget%20Review%20Letter%20-%20FY%202024-25.pdf" target="_blank" rel="noopener">Carta de revisión de RCSD <span class="ext">&#8599;</span></a></td>
+              <td class="doc-meeting"><a class="meeting-link" href="/reuniones/2024-09-11-regular/">Reunión del 11 sept 2024</a></td>
+            </tr>
+<tr>
+              <td class="doc-label">1er Informe Interino</td>
+              <td class="doc-links"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DDDQS96A6F3F/$file/Rocketship%20Redwood%20City%202024-25%20First%20Interim%20Report.pdf" target="_blank" rel="noopener">Informe <span class="ext">&#8599;</span></a> &middot; <a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DDDQXJ6B7206/$file/Rocketship%201st%20Interim%20Review%20Letter%20-%20FY%202024-25.pdf" target="_blank" rel="noopener">Carta de revisión de RCSD <span class="ext">&#8599;</span></a></td>
+              <td class="doc-meeting"><a class="meeting-link" href="/reuniones/2025-02-05-regular/">Reunión del 5 feb 2025</a></td>
+            </tr>
+<tr>
+              <td class="doc-label">2do Informe Interino</td>
+              <td class="doc-links"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DGEVHT80DEFF/$file/Rocketship%20RC%202nd%20Interim%202024_2025%20Board.pdf" target="_blank" rel="noopener">Informe <span class="ext">&#8599;</span></a> &middot; <a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DGEUZL7E7ED4/$file/Rocketship%202nd%20Interim%20Review%20Letter%20-%20FY%202024-25.pdf" target="_blank" rel="noopener">Carta de revisión de RCSD <span class="ext">&#8599;</span></a></td>
+              <td class="doc-meeting"><a class="meeting-link" href="/reuniones/2025-05-14-regular/">Reunión del 14 may 2025</a></td>
+            </tr>
+<tr>
+              <td class="doc-label">Resultados reales no auditados</td>
+              <td class="doc-links"><a href="https://data.rcsd.info/board-packets/2025-10-22/Rocketship-Redwood-City-2024-25-Unaudited-Actuals.pdf" target="_blank" rel="noopener">Informe <span class="ext">&#8599;</span></a> &middot; <a href="https://data.rcsd.info/board-packets/2025-10-22/Rocketship-Unaudited-Actuals-Review-Letter-FY-2024-25.pdf" target="_blank" rel="noopener">Carta de revisión de RCSD <span class="ext">&#8599;</span></a></td>
+              <td class="doc-meeting"><a class="meeting-link" href="/reuniones/2025-10-22-regular/">Reunión del 22 oct 2025</a></td>
+            </tr>
+<tr>
+              <td class="doc-label">LCAP</td>
+              <td class="doc-links"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/D8SN7N5E8DA0/$file/Rocketship%20Redwood%20City-RRWC_LCAP%202025.pdf" target="_blank" rel="noopener">Informe <span class="ext">&#8599;</span></a></td>
+              <td class="doc-meeting"><a class="meeting-link" href="/reuniones/2024-09-11-regular/">Reunión del 11 sept 2024</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+<section class="year-group">
+        <h3>2023-24</h3>
+        <table class="docs-table">
+          <tbody>
+<tr>
+              <td class="doc-label">Presupuesto adoptado</td>
+              <td class="doc-links"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CVFQRY69DEA0/$file/Rocketship%202023.24%20Adopted%20Budget%20(Board).pdf" target="_blank" rel="noopener">Informe <span class="ext">&#8599;</span></a> &middot; <a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CVFQS269DF39/$file/Rocketship%202023.24%20Adopted%20Budget%20Review%20Letter.pdf" target="_blank" rel="noopener">Carta de revisión de RCSD <span class="ext">&#8599;</span></a></td>
+              <td class="doc-meeting"><a class="meeting-link" href="/reuniones/2023-09-13-regular/">Reunión del 13 sept 2023</a></td>
+            </tr>
+<tr>
+              <td class="doc-label">1er Informe Interino</td>
+              <td class="doc-links"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/D2MRWQ6F8A3B/$file/Rocketship%202023-24%201st%20Interim%20Report.pdf" target="_blank" rel="noopener">Informe <span class="ext">&#8599;</span></a> &middot; <a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/D2MRWS6F9006/$file/Rocketship%201st%20Interim%20Review%20Letter%20-%20FY%202023-24.pdf" target="_blank" rel="noopener">Carta de revisión de RCSD <span class="ext">&#8599;</span></a></td>
+              <td class="doc-meeting"><a class="meeting-link" href="/reuniones/2024-02-28-regular/">Reunión del 28 feb 2024</a></td>
+            </tr>
+<tr>
+              <td class="doc-label">2do Informe Interino</td>
+              <td class="doc-links"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/D4TU956CE8CA/$file/Rocketship%20Redwood%20City%202023-24%202nd%20Interim%20Report.pdf" target="_blank" rel="noopener">Informe <span class="ext">&#8599;</span></a> &middot; <a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/D4TTQ66A2785/$file/Rocketship%202nd%20Interim%20Review%20Letter%20-%20FY%202023-24.pdf" target="_blank" rel="noopener">Carta de revisión de RCSD <span class="ext">&#8599;</span></a></td>
+              <td class="doc-meeting"><a class="meeting-link" href="/reuniones/2024-05-08-regular/">Reunión del 8 may 2024</a></td>
+            </tr>
+<tr>
+              <td class="doc-label">Resultados reales no auditados</td>
+              <td class="doc-links"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DA3R376BFB30/$file/Rocketship%20Unaudited%20Actuals%202023.24.pdf" target="_blank" rel="noopener">Informe <span class="ext">&#8599;</span></a> &middot; <a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DA3QTC6AD4D3/$file/Rocketship%2023-24%20Unaudited%20Actuals%20Review%20Letter.pdf" target="_blank" rel="noopener">Carta de revisión de RCSD <span class="ext">&#8599;</span></a></td>
+              <td class="doc-meeting"><a class="meeting-link" href="/reuniones/2024-10-23-regular/">Reunión del 23 oct 2024</a></td>
+            </tr>
+<tr>
+              <td class="doc-label">LCAP</td>
+              <td class="doc-links"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CVFQS669E000/$file/Rocketship%202023.24%20LCAP.pdf" target="_blank" rel="noopener">Informe <span class="ext">&#8599;</span></a></td>
+              <td class="doc-meeting"><a class="meeting-link" href="/reuniones/2023-09-13-regular/">Reunión del 13 sept 2023</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+<section class="year-group">
+        <h3>2022-23</h3>
+        <table class="docs-table">
+          <tbody>
+<tr>
+              <td class="doc-label">Presupuesto adoptado</td>
+              <td class="doc-links"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CHBSVS748F9F/$file/2022.23%20Rocketship%20Redwood%20City_Adopted%20Budget%20(Board).pdf" target="_blank" rel="noopener">Informe <span class="ext">&#8599;</span></a> &middot; <a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CHUNZS626538/$file/Rocketship%20RC%2022.23%20Adopted%20Budget%20Review%20Letter.pdf" target="_blank" rel="noopener">Carta de revisión de RCSD <span class="ext">&#8599;</span></a></td>
+              <td class="doc-meeting"><a class="meeting-link" href="/reuniones/2022-09-07-regular/">Reunión del 7 sept 2022</a></td>
+            </tr>
+<tr>
+              <td class="doc-label">1er Informe Interino</td>
+              <td class="doc-links"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CNU2ZB0494E4/$file/Rocketship%20Redwood%20City%202022-23%201st%20Interim%20Report.pdf" target="_blank" rel="noopener">Informe <span class="ext">&#8599;</span></a> &middot; <a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CNU2ZD049518/$file/Rocketship%20RC%2022.23%201st%20Interim%20Report%20Review%20Letter.pdf" target="_blank" rel="noopener">Carta de revisión de RCSD <span class="ext">&#8599;</span></a></td>
+              <td class="doc-meeting"><a class="meeting-link" href="/reuniones/2023-02-15-regular/">Reunión del 15 feb 2023</a></td>
+            </tr>
+<tr>
+              <td class="doc-label">2do Informe Interino</td>
+              <td class="doc-links"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRERS968BC64/$file/Rocketship%20RC%2022.23%202nd%20Interim%20Report.pdf" target="_blank" rel="noopener">Informe <span class="ext">&#8599;</span></a> &middot; <a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRERSD68BED6/$file/Rocketship%20RC%2022.23%202nd%20Interim%20Report%20Review%20Letter.pdf" target="_blank" rel="noopener">Carta de revisión de RCSD <span class="ext">&#8599;</span></a></td>
+              <td class="doc-meeting"><a class="meeting-link" href="/reuniones/2023-05-10-regular/">Reunión del 10 may 2023</a></td>
+            </tr>
+<tr>
+              <td class="doc-label">Resultados reales no auditados</td>
+              <td class="doc-links"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CWRULG7C932E/$file/Rocketship%20RC%20FY2023%20Unaudited%20Actuals.pdf" target="_blank" rel="noopener">Informe <span class="ext">&#8599;</span></a> &middot; <a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CWRULN7C99E0/$file/Rocketship%20Unaudited%20Actuals%20Review%20Letter%20-%20FY%202022-23.pdf" target="_blank" rel="noopener">Carta de revisión de RCSD <span class="ext">&#8599;</span></a></td>
+              <td class="doc-meeting"><a class="meeting-link" href="/reuniones/2023-10-25-regular/">Reunión del 25 oct 2023</a></td>
+            </tr>
+<tr>
+              <td class="doc-label">LCAP</td>
+              <td class="doc-links"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CHBSVV749102/$file/2022.23%20Rocketship%20Redwood%20City_LCAP.pdf" target="_blank" rel="noopener">Informe <span class="ext">&#8599;</span></a></td>
+              <td class="doc-meeting"><a class="meeting-link" href="/reuniones/2022-09-07-regular/">Reunión del 7 sept 2022</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+<section class="year-group">
+        <h3>2021-22</h3>
+        <table class="docs-table">
+          <tbody>
+<tr>
+              <td class="doc-label">Presupuesto adoptado</td>
+              <td class="doc-links"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/C69PG65FC998/$file/Rocketship%202021.22%20Adopted%20Budget.pdf" target="_blank" rel="noopener">Informe <span class="ext">&#8599;</span></a> &middot; <a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/C6AMEF5A8B1F/$file/Rocketship%2021.22%20Adopted%20Budget_RCSD%20Review%20Letter.pdf" target="_blank" rel="noopener">Carta de revisión de RCSD <span class="ext">&#8599;</span></a></td>
+              <td class="doc-meeting"><a class="meeting-link" href="/reuniones/2021-09-01-regular/">Reunión del 1 sept 2021</a></td>
+            </tr>
+<tr>
+              <td class="doc-label">1er Informe Interino</td>
+              <td class="doc-links"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CB7VEP806A5F/$file/Rocketship%202021-22%201st%20Interim%20Report.pdf" target="_blank" rel="noopener">Informe <span class="ext">&#8599;</span></a> &middot; <a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CB7VES806D8C/$file/Rocketship%201st%20Interim%20Review%20Letter%20-%20FY%202021-22.pdf" target="_blank" rel="noopener">Carta de revisión de RCSD <span class="ext">&#8599;</span></a></td>
+              <td class="doc-meeting"><a class="meeting-link" href="/reuniones/2022-02-09-regular/">Reunión del 9 feb 2022</a></td>
+            </tr>
+<tr>
+              <td class="doc-label">2do Informe Interino</td>
+              <td class="doc-links"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CDMNW561D99B/$file/Rocketship%20RC%202021-22%202nd%20Interim%20Report.pdf" target="_blank" rel="noopener">Informe <span class="ext">&#8599;</span></a> &middot; <a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CDMNW261D0A1/$file/Rocketship%202nd%20Interim%20RCSD%20Review%20Letter%20-%20FY%202021-22.pdf" target="_blank" rel="noopener">Carta de revisión de RCSD <span class="ext">&#8599;</span></a></td>
+              <td class="doc-meeting"><a class="meeting-link" href="/reuniones/2022-04-27-regular/">Reunión del 27 abr 2022</a></td>
+            </tr>
+<tr>
+              <td class="doc-label">Resultados reales no auditados</td>
+              <td class="doc-links"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CKAUD77B8050/$file/Rocketship%20RC%202021-22%20Unaudited%20Actuals.pdf" target="_blank" rel="noopener">Informe <span class="ext">&#8599;</span></a> &middot; <a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CKAUD57B7F30/$file/Rocketship%20Unaudited%20Actuals%20Review%20Letter%20-%20FY%202021-22.pdf" target="_blank" rel="noopener">Carta de revisión de RCSD <span class="ext">&#8599;</span></a></td>
+              <td class="doc-meeting"><a class="meeting-link" href="/reuniones/2022-10-26-regular/">Reunión del 26 oct 2022</a></td>
+            </tr>
+<tr>
+              <td class="doc-label">LCAP</td>
+              <td class="doc-links"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/C69PG85FCA14/$file/Rocketship%202021.22%20LCAP.pdf" target="_blank" rel="noopener">Informe <span class="ext">&#8599;</span></a></td>
+              <td class="doc-meeting"><a class="meeting-link" href="/reuniones/2021-09-01-regular/">Reunión del 1 sept 2021</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+<section class="year-group">
+        <h3>2020-21</h3>
+        <table class="docs-table">
+          <tbody>
+<tr>
+              <td class="doc-label">Resultados reales no auditados</td>
+              <td class="doc-links"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/C7RRBE691BCC/$file/Rocketship%20RC%20FY20_21%20Unaudited%20Actuals.pdf" target="_blank" rel="noopener">Informe <span class="ext">&#8599;</span></a> &middot; <a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/C7RUD87B8345/$file/Rocketship%20FY20_21%20Unaudited%20Actuals%20Review%20Letter.pdf" target="_blank" rel="noopener">Carta de revisión de RCSD <span class="ext">&#8599;</span></a></td>
+              <td class="doc-meeting"><a class="meeting-link" href="/reuniones/2021-10-20-regular/">Reunión del 20 oct 2021</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    <aside class="caveat">Los informes de auditoría anuales de charter y sus cartas de revisión se presentan a la mesa directiva pero actualmente no están indexados automáticamente; consulte la reunión correspondiente para acceder al informe.</aside>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>Preparado con documentos públicos de RCSD. Los documentos originales están disponibles en <a href="https://www.rcsdk8.net">rcsdk8.net</a> y en el <a href="https://simbli.eboardsolutions.com/SB_Meetings/SB_MeetingListing.aspx?S=36030397">portal de la mesa directiva GAMUT</a>.</p>
+  <div class="footer-nav">
+    <a href="/">Inicio</a>
+    <a href="/reuniones/">Reuniones</a>
+    <a href="/escuelas/">Escuelas</a>
+    <a href="/distrito/">Distrito</a>
+    <a href="/presupuesto/">Presupuesto</a>
+    <a href="https://github.com/dweekly/rcsd-meetings">Código Fuente &#8599;</a>
+    <a href="mailto:team@rcsd.info">team@rcsd.info</a>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1135,6 +1135,14 @@ const schoolUrls = schools.schools.map(s =>
   bilingualUrl(`/schools/${s.slug}/`, `/escuelas/${s.slug}/`, sitemapDate)
 ).join('\n');
 
+let charterUrls = '';
+try {
+  const charters = JSON.parse(readFileSync(resolve(ROOT, 'data/charters.json'), 'utf-8'));
+  charterUrls = charters.charters.map(c =>
+    bilingualUrl(`/charters/${c.slug}/`, `/escuelas-charter/${c.slug}/`, sitemapDate)
+  ).join('\n');
+} catch {}
+
 // Meeting viewer pages
 let meetingUrls = '';
 try {
@@ -1157,6 +1165,8 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 ${bilingualUrl('/', '/', sitemapDate)}
 ${bilingualUrl('/schools/', '/escuelas/', sitemapDate)}
 ${schoolUrls}
+${bilingualUrl('/charters/', '/escuelas-charter/', sitemapDate)}
+${charterUrls}
 ${bilingualUrl('/meetings/', '/reuniones/', sitemapDate)}
 ${bilingualUrl('/district/', '/distrito/', sitemapDate)}
 ${bilingualUrl('/budget/', '/presupuesto/', sitemapDate)}
