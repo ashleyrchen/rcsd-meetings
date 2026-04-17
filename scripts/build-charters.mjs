@@ -3,10 +3,12 @@
  * Build per-charter pages for RCSD-authorized charter schools.
  *
  * Output:
- *   docs/charters/{slug}/index.html (EN)
- *   docs/escuelas-charter/{slug}/index.html (ES)
- *   docs/charters/index.html (EN index)
- *   docs/escuelas-charter/index.html (ES index)
+ *   docs/schools/charters/{slug}/index.html (EN)
+ *   docs/escuelas/charter/{slug}/index.html (ES)
+ *
+ * The /schools/ and /escuelas/ index pages list charters as a section; see
+ * build-schools.mjs for the three-section index (district schools, charters,
+ * district properties).
  *
  * Data sources:
  *   data/charters.json      — entity metadata (CDE-sourced)
@@ -149,7 +151,7 @@ function renderDocsTimeline(group, lang) {
       const label = L[subtype] || subtype;
       const anchor = primary || review || all[0];
       const meetingDate = anchor?.meetingDate;
-      const meetingHref = meetingDate ? `/${isEs ? 'reuniones' : 'meetings'}/${meetingDate}-regular/` : null;
+      const meetingHref = meetingDate ? `${isEs ? '/reuniones' : '/meetings'}/${meetingDate}-regular/` : null;
 
       const links = [];
       if (primary) {
@@ -271,8 +273,8 @@ const charterCSS = `
 
 function buildCharterPage(charter, lang) {
   const isEs = lang === 'es';
-  const enPath = `/charters/${charter.slug}/`;
-  const esPath = `/escuelas-charter/${charter.slug}/`;
+  const enPath = `/schools/charters/${charter.slug}/`;
+  const esPath = `/escuelas/charter/${charter.slug}/`;
   const canonical = `https://rcsd.info${isEs ? esPath : enPath}`;
   const altHref = isEs ? enPath : esPath;
   const displayName = isEs ? (charter.nameEs || charter.name) : charter.name;
@@ -322,7 +324,7 @@ function buildCharterPage(charter, lang) {
 
   const addrMap = encodeURIComponent(charter.address);
   const metaGridRows = [
-    charter.address && `<div><dt>${L.metaAddress}</dt><dd><a href="https://www.google.com/maps/search/?api=1&query=${addrMap}" target="_blank" rel="noopener">${escapeHtml(charter.address)}</a></dd></div>`,
+    charter.address && `<div><dt>${L.metaAddress}</dt><dd><a href="https://www.google.com/maps/search/?api=1&query=${addrMap}" target="_blank" rel="noopener">${escapeHtml(charter.address)}</a>${charter.addressNote ? `<br><span style="font-size:0.78rem; color:var(--text-muted); line-height:1.4">${escapeHtml(charter.addressNote)}</span>` : ''}</dd></div>`,
     charter.phone && `<div><dt>${L.metaPhone}</dt><dd><a href="tel:${charter.phone.replace(/[^0-9+]/g, '')}">${escapeHtml(charter.phone)}</a></dd></div>`,
     charter.grades && `<div><dt>${L.metaGrades}</dt><dd>${escapeHtml(charter.grades)}</dd></div>`,
     charter.enrollment && `<div><dt>${L.metaEnrollment}</dt><dd>${charter.enrollment.toLocaleString(isEs ? 'es-US' : 'en-US')}<br><span style="font-size:0.78rem; color:var(--text-muted)">${L.metaEnrollmentNote(charter.enrollmentYear)}</span></dd></div>`,
@@ -351,7 +353,7 @@ ${headMeta({
 </head>
 <body>
 
-${siteNav({ activePage: 'district', lang, altLangHref: altHref })}
+${siteNav({ activePage: 'schools', lang, altLangHref: altHref })}
 
 <main class="charter-content">
 
@@ -379,163 +381,47 @@ ${siteFooter({ lang })}
 </html>`;
 }
 
-// ---- Index page ----
+// ---- Charter summaries (consumed by build-schools.mjs for the /schools/ index) ----
 
-function buildChartersIndex(lang) {
-  const isEs = lang === 'es';
-  const title = isEs
-    ? 'Escuelas chárter — Distrito Escolar de Redwood City'
-    : 'Charter schools — Redwood City School District';
-  const description = isEs
-    ? 'Las tres escuelas chárter autorizadas por el Distrito Escolar de Redwood City: Connect, KIPP Excelencia y Rocketship.'
-    : 'The three charter schools authorized by Redwood City School District: Connect, KIPP Excelencia, and Rocketship.';
-  const enPath = '/charters/';
-  const esPath = '/escuelas-charter/';
-  const canonical = `https://rcsd.info${isEs ? esPath : enPath}`;
-  const altHref = isEs ? enPath : esPath;
-
-  const L = isEs ? {
-    eyebrow: 'Supervisión de charter',
-    heading: 'Escuelas chárter autorizadas por RCSD',
-    subtitle: 'El Distrito Escolar de Redwood City autoriza y supervisa tres escuelas chárter financiadas directamente. Sus presupuestos, informes interinos y auditorías se presentan regularmente a la mesa directiva como parte de la supervisión fiscal del distrito.',
-    thName: 'Escuela', thGrades: 'Grados', thEnroll: 'Inscripción', thNetwork: 'Red', thOpened: 'Inauguración',
-    viewDetails: 'Ver',
-    networkIndep: 'Independiente',
-    pathPrefix: esPath,
-  } : {
-    eyebrow: 'Charter oversight',
-    heading: 'RCSD-authorized charter schools',
-    subtitle: 'The Redwood City School District authorizes and oversees three directly-funded charter schools. Their budgets, interim reports, and audits are presented regularly to the Board as part of the district\u2019s fiscal oversight role.',
-    thName: 'School', thGrades: 'Grades', thEnroll: 'Enrollment', thNetwork: 'Network', thOpened: 'Opened',
-    viewDetails: 'View',
-    networkIndep: 'Independent',
-    pathPrefix: enPath,
-  };
-
-  const rows = chartersData.charters.map(c => {
-    const href = `${L.pathPrefix}${c.slug}/`;
-    return `          <tr onclick="location.href='${href}'" style="cursor:pointer">
-            <td class="school-name"><a href="${href}">${escapeHtml(isEs ? (c.nameEs || c.name) : c.name)} <span class="arrow">&rarr;</span></a></td>
-            <td>${escapeHtml(c.grades || '')}</td>
-            <td class="num">${c.enrollment ? c.enrollment.toLocaleString() : ''}</td>
-            <td>${escapeHtml(c.network || L.networkIndep)}</td>
-            <td class="num">${escapeHtml((c.dateOpened || '').slice(0, 4))}</td>
-          </tr>`;
-  }).join('\n');
-
-  const indexCSS = `
-  main.charters-content { max-width: 960px; margin: 0 auto; padding: 0 2rem 6rem; }
-  @media (max-width: 640px) { main.charters-content { padding: 0 1.2rem 4rem; } }
-  .charters-header { padding: 3rem 0 2rem; }
-  .charters-header .eyebrow {
-    font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; font-weight: 500;
-    letter-spacing: 0.08em; text-transform: uppercase; color: var(--green-mid);
-    margin-bottom: 0.6rem;
-  }
-  .charters-header h1 {
-    font-family: 'Fraunces', Georgia, serif; font-size: clamp(1.8rem, 4vw, 2.5rem);
-    font-weight: 400; color: var(--green-deep); margin-bottom: 1rem;
-  }
-  .charters-header p { max-width: 640px; margin-bottom: 2rem; color: var(--text-secondary); }
-  .charters-table-wrap { overflow-x: auto; }
-  .charters-table-wrap table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
-  .charters-table-wrap thead th {
-    font-family: 'IBM Plex Mono', monospace; font-size: 0.66rem; font-weight: 500;
-    letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted);
-    text-align: left; padding: 0.6rem 0.8rem; border-bottom: 2px solid var(--green-deep);
-    white-space: nowrap;
-  }
-  .charters-table-wrap thead th.num { text-align: right; }
-  .charters-table-wrap tbody td {
-    padding: 0.7rem 0.8rem; border-bottom: 1px solid var(--rule-light);
-  }
-  .charters-table-wrap tbody td.num {
-    text-align: right; font-family: 'IBM Plex Mono', monospace; font-size: 0.86rem;
-    white-space: nowrap;
-  }
-  .charters-table-wrap tbody td.school-name { font-weight: 500; }
-  .charters-table-wrap tbody td.school-name a { color: var(--green-mid); text-decoration: underline; text-decoration-color: var(--rule); text-underline-offset: 2px; }
-  .charters-table-wrap tbody td.school-name a:hover { color: var(--green-deep); }
-  .charters-table-wrap tbody td.school-name .arrow { color: var(--text-muted); }
-  .charters-table-wrap tbody tr:hover td { background: var(--green-wash); }
-  .charters-table-wrap tbody tr:hover .arrow { color: var(--green-mid); }
-`;
-
-  return `<!DOCTYPE html>
-<html lang="${lang}">
-<head>
-${headMeta({
-  title,
-  description,
-  canonical,
-  ogLocale: isEs ? 'es_US' : 'en_US',
-  hreflang: [
-    { lang: 'en', href: 'https://rcsd.info/charters/' },
-    { lang: 'es', href: 'https://rcsd.info/escuelas-charter/' },
-  ],
-  pageCSS: indexCSS,
-})}
-</head>
-<body>
-
-${siteNav({ activePage: 'district', lang, altLangHref: altHref })}
-
-<main class="charters-content">
-  <div class="charters-header">
-    <div class="eyebrow">${L.eyebrow}</div>
-    <h1>${L.heading}</h1>
-    <p>${L.subtitle}</p>
-  </div>
-
-  <div class="charters-table-wrap">
-    <table>
-      <thead>
-        <tr>
-          <th>${L.thName}</th>
-          <th>${L.thGrades}</th>
-          <th class="num">${L.thEnroll}</th>
-          <th>${L.thNetwork}</th>
-          <th class="num">${L.thOpened}</th>
-        </tr>
-      </thead>
-      <tbody>
-${rows}
-      </tbody>
-    </table>
-  </div>
-</main>
-
-${siteFooter({ lang })}
-
-</body>
-</html>`;
+/**
+ * Exported helper so build-schools.mjs can render the Charter section of the
+ * three-section /schools/ index without duplicating data-loading logic.
+ */
+export function charterSummaries() {
+  return chartersData.charters.map(c => ({
+    slug: c.slug,
+    name: c.name,
+    nameShort: c.nameShort || c.name,
+    nameEs: c.nameEs || c.name,
+    grades: c.grades,
+    enrollment: c.enrollment,
+    enrollmentYear: c.enrollmentYear,
+    network: c.network,
+    dateOpened: c.dateOpened,
+    enPath: `/schools/charters/${c.slug}/`,
+    esPath: `/escuelas/charter/${c.slug}/`,
+  }));
 }
 
 // ---- Main ----
 
-let count = 0;
-for (const charter of chartersData.charters) {
-  const enDir = resolve(ROOT, 'docs', 'charters', charter.slug);
-  mkdirSync(enDir, { recursive: true });
-  writeFileSync(resolve(enDir, 'index.html'), buildCharterPage(charter, 'en'));
-  console.log(`Wrote docs/charters/${charter.slug}/index.html`);
+// Only run the build loop when invoked as a script (so build-schools.mjs can
+// import charterSummaries without side effects).
+const isMainModule = process.argv[1] && resolve(process.argv[1]) === __filename;
+if (isMainModule) {
+  let count = 0;
+  for (const charter of chartersData.charters) {
+    const enDir = resolve(ROOT, 'docs', 'schools', 'charters', charter.slug);
+    mkdirSync(enDir, { recursive: true });
+    writeFileSync(resolve(enDir, 'index.html'), buildCharterPage(charter, 'en'));
+    console.log(`Wrote docs/schools/charters/${charter.slug}/index.html`);
 
-  const esDir = resolve(ROOT, 'docs', 'escuelas-charter', charter.slug);
-  mkdirSync(esDir, { recursive: true });
-  writeFileSync(resolve(esDir, 'index.html'), buildCharterPage(charter, 'es'));
-  console.log(`Wrote docs/escuelas-charter/${charter.slug}/index.html`);
+    const esDir = resolve(ROOT, 'docs', 'escuelas', 'charter', charter.slug);
+    mkdirSync(esDir, { recursive: true });
+    writeFileSync(resolve(esDir, 'index.html'), buildCharterPage(charter, 'es'));
+    console.log(`Wrote docs/escuelas/charter/${charter.slug}/index.html`);
 
-  count++;
+    count++;
+  }
+  console.log(`\nGenerated ${count} charter pages (${count * 2} HTML files total). /schools/ index is built by build-schools.mjs.`);
 }
-
-const enIdx = resolve(ROOT, 'docs', 'charters');
-mkdirSync(enIdx, { recursive: true });
-writeFileSync(resolve(enIdx, 'index.html'), buildChartersIndex('en'));
-console.log('Wrote docs/charters/index.html');
-
-const esIdx = resolve(ROOT, 'docs', 'escuelas-charter');
-mkdirSync(esIdx, { recursive: true });
-writeFileSync(resolve(esIdx, 'index.html'), buildChartersIndex('es'));
-console.log('Wrote docs/escuelas-charter/index.html');
-
-console.log(`\nGenerated ${count} charter pages + 2 index pages (${count * 2 + 2} HTML files total).`);

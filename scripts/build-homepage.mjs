@@ -1139,7 +1139,7 @@ let charterUrls = '';
 try {
   const charters = JSON.parse(readFileSync(resolve(ROOT, 'data/charters.json'), 'utf-8'));
   charterUrls = charters.charters.map(c =>
-    bilingualUrl(`/charters/${c.slug}/`, `/escuelas-charter/${c.slug}/`, sitemapDate)
+    bilingualUrl(`/schools/charters/${c.slug}/`, `/escuelas/charter/${c.slug}/`, sitemapDate)
   ).join('\n');
 } catch {}
 
@@ -1165,7 +1165,6 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 ${bilingualUrl('/', '/', sitemapDate)}
 ${bilingualUrl('/schools/', '/escuelas/', sitemapDate)}
 ${schoolUrls}
-${bilingualUrl('/charters/', '/escuelas-charter/', sitemapDate)}
 ${charterUrls}
 ${bilingualUrl('/meetings/', '/reuniones/', sitemapDate)}
 ${bilingualUrl('/district/', '/distrito/', sitemapDate)}

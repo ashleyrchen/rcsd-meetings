@@ -13,6 +13,7 @@ import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync } from 
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { headMeta, siteNav, siteFooter } from './html-parts.mjs';
+import { charterSummaries } from './build-charters.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
@@ -48,6 +49,14 @@ const LOGO_DIMS = {
 
 // ---- Load schools.json for base directory data ----
 const schoolsData = JSON.parse(readFileSync(resolve(ROOT, 'data/schools.json'), 'utf-8'));
+
+// ---- Load properties.json (district-owned properties that aren't schools/charters) ----
+let propertiesData = { properties: [] };
+try {
+  propertiesData = JSON.parse(readFileSync(resolve(ROOT, 'data/properties.json'), 'utf-8'));
+} catch {
+  console.warn('data/properties.json not found — district properties section will be empty');
+}
 
 // ---- Load SARC data (expenditures per pupil) ----
 const SARC_DATA = {};
@@ -2304,21 +2313,37 @@ function buildSchoolsIndex(lang) {
   const altHref = isEs ? '/schools/' : '/escuelas/';
 
   const L = isEs ? {
-    heading: 'Escuelas del distrito',
-    subtitle: 'Seleccione una escuela para ver datos detallados sobre rendimiento acad\u00e9mico, demograf\u00eda, financiamiento y recursos.',
+    pageHeading: 'Escuelas y propiedades',
+    pageSubtitle: 'Las 12 escuelas operadas por el distrito, las tres escuelas ch\u00e1rter autorizadas por RCSD, y otras propiedades del distrito.',
+    districtH2: 'Escuelas del distrito',
+    charterH2: 'Escuelas ch\u00e1rter autorizadas por RCSD',
+    charterIntro: 'Tres escuelas ch\u00e1rter financiadas directamente. Sus presupuestos, informes interinos y auditor\u00edas se presentan regularmente a la mesa directiva como parte de la supervisi\u00f3n fiscal del distrito.',
+    propertiesH2: 'Otras propiedades del distrito',
+    propertiesIntro: 'Edificios y terrenos propiedad del distrito (o alquilados por el distrito) que actualmente no albergan una escuela operada por el distrito ni una escuela ch\u00e1rter autorizada por RCSD.',
     thSchool: 'Escuela', thGrades: 'Grados', thEnroll: 'Inscripci\u00f3n', thHighNeed: '% alta necesidad',
-    thGrowthEla: 'Crec. Inglés', thGrowthMath: 'Crec. Mat',
+    thGrowthEla: 'Crec. Ingl\u00e9s', thGrowthMath: 'Crec. Mat',
+    thNetwork: 'Red', thOpened: 'Inauguraci\u00f3n',
+    thProperty: 'Propiedad', thAddress: 'Direcci\u00f3n', thUse: 'Uso actual', thFormer: 'Uso anterior',
+    networkIndep: 'Independiente',
     growthExplainer: '<strong>% alta necesidad</strong> = porcentaje de estudiantes socioeconómicamente desfavorecidos o aprendices de inglés. <strong>Crecimiento</strong> = porcentaje de estudiantes que superaron el crecimiento esperado en el examen estatal de CA (CAASPP). Mide cuánto aprenden los estudiantes cada año, sin importar su punto de partida — una escuela con baja competencia pero alto crecimiento está acelerando el aprendizaje.',
-    viewDetails: 'Ver detalles',
     pathPrefix: '/escuelas/',
+    charterPathKey: 'esPath',
   } : {
-    heading: 'District schools',
-    subtitle: 'Select a school to see detailed data on academic performance, demographics, funding, and resources.',
+    pageHeading: 'Schools & properties',
+    pageSubtitle: 'The 12 district-operated schools, the three RCSD-authorized charter schools, and other district-owned properties.',
+    districtH2: 'District schools',
+    charterH2: 'RCSD-authorized charter schools',
+    charterIntro: 'Three directly-funded charter schools. Their budgets, interim reports, and audits are presented regularly to the Board as part of the district\u2019s fiscal oversight role.',
+    propertiesH2: 'Other district properties',
+    propertiesIntro: 'Buildings and sites owned (or leased) by the district that do not currently host a district-operated school or an RCSD-authorized charter.',
     thSchool: 'School', thGrades: 'Grades', thEnroll: 'Enrollment', thHighNeed: '% high-need',
     thGrowthEla: 'English growth', thGrowthMath: 'Math growth',
+    thNetwork: 'Network', thOpened: 'Opened',
+    thProperty: 'Property', thAddress: 'Address', thUse: 'Current use', thFormer: 'Former use',
+    networkIndep: 'Independent',
     growthExplainer: '<strong>% high-need</strong> = share of students who are socioeconomically disadvantaged or English learners. <strong>Growth</strong> = percentage of students who exceeded expected growth on the CA state test (CAASPP). It measures how much students are learning each year regardless of starting point\u2014a school with low proficiency but high growth is accelerating learning.',
-    viewDetails: 'View details',
     pathPrefix: '/schools/',
+    charterPathKey: 'enPath',
   };
 
   // Sort schools by name for the index
@@ -2345,6 +2370,32 @@ function buildSchoolsIndex(lang) {
           </tr>`;
   }).join('\n');
 
+  // ---- Section 2: Charter schools ----
+  const charterRows = charterSummaries().map(c => {
+    const href = c[L.charterPathKey];
+    const name = isEs ? (c.nameEs || c.name) : c.name;
+    return `          <tr onclick="location.href='${href}'" style="cursor:pointer">
+            <td class="school-name"><a href="${href}">${name} <span class="arrow">&rarr;</span></a></td>
+            <td>${c.grades || ''}</td>
+            <td class="num">${c.enrollment ? c.enrollment.toLocaleString() : ''}</td>
+            <td>${c.network || L.networkIndep}</td>
+            <td class="num">${(c.dateOpened || '').slice(0, 4)}</td>
+          </tr>`;
+  }).join('\n');
+
+  // ---- Section 3: District properties ----
+  const propertyRows = (propertiesData.properties || []).map(p => {
+    const name = isEs ? (p.nameEs || p.name) : p.name;
+    const useLabel = isEs ? (p.useLabelEs || p.useLabel) : p.useLabel;
+    const formerUse = isEs ? (p.formerUseEs || p.formerUse) : p.formerUse;
+    return `          <tr>
+            <td class="school-name">${name}</td>
+            <td>${p.address || '<span style="color:var(--text-muted); font-style:italic">TBD</span>'}</td>
+            <td>${useLabel || ''}</td>
+            <td>${formerUse || '&mdash;'}</td>
+          </tr>`;
+  }).join('\n');
+
   const indexCSS = `
   .schools-header { padding: 3rem 0 0; }
   .schools-header h1 {
@@ -2355,6 +2406,15 @@ function buildSchoolsIndex(lang) {
     margin-bottom: 1rem;
   }
   .schools-header p { max-width: 640px; margin-bottom: 2rem; }
+  .schools-section { margin-top: 3rem; }
+  .schools-section:first-of-type { margin-top: 0; }
+  .schools-section h2 {
+    font-family: 'Fraunces', Georgia, serif; font-size: 1.5rem; font-weight: 400;
+    color: var(--green-deep); margin-bottom: 0.3rem;
+  }
+  .schools-section p.section-intro {
+    color: var(--text-secondary); font-size: 0.92rem; max-width: 640px; margin-bottom: 1rem;
+  }
   .schools-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
   .schools-table-wrap table { width: 100%; border-collapse: collapse; font-size: 0.88rem; line-height: 1.45; }
   .schools-table-wrap thead th {
@@ -2404,29 +2464,72 @@ ${siteNav({ activePage: 'schools', lang, altLangHref: altHref })}
 
 <div class="schools-content">
   <div class="schools-header">
-    <h1>${L.heading}</h1>
-    <p>${L.subtitle}</p>
+    <h1>${L.pageHeading}</h1>
+    <p>${L.pageSubtitle}</p>
   </div>
 
-  <div class="schools-table-wrap">
-    <table>
-      <thead>
-        <tr>
-          <th>${L.thSchool}</th>
-          <th>${L.thGrades}</th>
-          <th class="num">${L.thEnroll}</th>
-          <th class="num">${L.thHighNeed}</th>
-          <th class="num">${L.thGrowthEla}</th>
-          <th class="num">${L.thGrowthMath}</th>
-        </tr>
-      </thead>
-      <tbody>
+  <section class="schools-section">
+    <h2>${L.districtH2}</h2>
+    <div class="schools-table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>${L.thSchool}</th>
+            <th>${L.thGrades}</th>
+            <th class="num">${L.thEnroll}</th>
+            <th class="num">${L.thHighNeed}</th>
+            <th class="num">${L.thGrowthEla}</th>
+            <th class="num">${L.thGrowthMath}</th>
+          </tr>
+        </thead>
+        <tbody>
 ${rows}
-      </tbody>
-    </table>
-  </div>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:0.82rem; color:var(--text-muted); margin-top:1.2rem; line-height:1.5">${L.growthExplainer}</p>
+  </section>
 
-  <p style="font-size:0.82rem; color:var(--text-muted); margin-top:1.2rem; line-height:1.5">${L.growthExplainer}</p>
+  <section class="schools-section" id="charters">
+    <h2>${L.charterH2}</h2>
+    <p class="section-intro">${L.charterIntro}</p>
+    <div class="schools-table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>${L.thSchool}</th>
+            <th>${L.thGrades}</th>
+            <th class="num">${L.thEnroll}</th>
+            <th>${L.thNetwork}</th>
+            <th class="num">${L.thOpened}</th>
+          </tr>
+        </thead>
+        <tbody>
+${charterRows}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="schools-section" id="properties">
+    <h2>${L.propertiesH2}</h2>
+    <p class="section-intro">${L.propertiesIntro}</p>
+    <div class="schools-table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>${L.thProperty}</th>
+            <th>${L.thAddress}</th>
+            <th>${L.thUse}</th>
+            <th>${L.thFormer}</th>
+          </tr>
+        </thead>
+        <tbody>
+${propertyRows}
+        </tbody>
+      </table>
+    </div>
+  </section>
 </div>
 
 ${siteFooter({ lang })}

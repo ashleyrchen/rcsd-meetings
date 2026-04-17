@@ -1,0 +1,66 @@
+{
+  "_metadata": {
+    "description": "District-owned properties in the Redwood City School District that are not currently RCSD-operated schools or RCSD-authorized charter school sites. Includes administrative buildings, leased-out former school sites, and operational facilities. Charter sites and district school sites are tracked separately in charters.json and schools.json respectively.",
+    "sources": {
+      "districtInventory": "TBD — seed data from Board President (2026-04-17); authoritative list pending",
+      "cdeDirectory": "https://www.cde.ca.gov/SchoolDirectory/"
+    },
+    "generated": "2026-04-17",
+    "status": "seed — needs verification of tenant names (especially 'Haper School' spelling) and warehouse details"
+  },
+  "properties": [
+    {
+      "slug": "district-office",
+      "name": "District Office",
+      "nameEs": "Oficina del Distrito",
+      "address": "750 Bradford Street, Redwood City, CA 94063",
+      "use": "admin",
+      "useLabel": "District administrative headquarters",
+      "useLabelEs": "Sede administrativa del distrito",
+      "tenant": null,
+      "formerUse": null,
+      "notes": "Board meetings are held here."
+    },
+    {
+      "slug": "former-adelante-campus",
+      "name": "Harper School (Ravenswood City SD) — verify name",
+      "nameEs": "Harper School (Distrito Escolar de Ravenswood) — verificar nombre",
+      "address": "3150 Granger Way, Redwood City, CA 94063",
+      "use": "leased-out",
+      "useLabel": "Leased to an outside tenant",
+      "useLabelEs": "Alquilado a un inquilino externo",
+      "tenant": {
+        "name": "Harper School (name pending verification)",
+        "url": null
+      },
+      "formerUse": "Former Adelante Selby Spanish Immersion campus",
+      "formerUseEs": "Antiguo campus de Adelante Selby Spanish Immersion",
+      "notes": "Tenant name 'Haper/Harper School' needs confirmation from District."
+    },
+    {
+      "slug": "former-orion-campus",
+      "name": "Creative Learning Center",
+      "nameEs": "Creative Learning Center",
+      "address": "815 Allerton Street, Redwood City, CA 94063",
+      "use": "district-program",
+      "useLabel": "District-operated program (not a full school)",
+      "useLabelEs": "Programa operado por el distrito (no una escuela completa)",
+      "tenant": null,
+      "formerUse": "Former Orion Alternative School campus (Orion is now at 555 Avenue del Ora)",
+      "formerUseEs": "Antiguo campus de Orion Alternative (Orion ahora está en 555 Avenue del Ora)",
+      "notes": null
+    },
+    {
+      "slug": "district-warehouse",
+      "name": "District warehouse (verify)",
+      "nameEs": "Almacén del distrito (verificar)",
+      "address": null,
+      "use": "leased-in",
+      "useLabel": "Leased by the district (not district-owned)",
+      "useLabelEs": "Alquilado por el distrito (no es propiedad del distrito)",
+      "tenant": null,
+      "formerUse": null,
+      "notes": "Warehouse the district leases for operations. Address + lease details pending confirmation."
+    }
+  ]
+}

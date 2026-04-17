@@ -173,6 +173,15 @@
     margin-bottom: 1rem;
   }
   .schools-header p { max-width: 640px; margin-bottom: 2rem; }
+  .schools-section { margin-top: 3rem; }
+  .schools-section:first-of-type { margin-top: 0; }
+  .schools-section h2 {
+    font-family: 'Fraunces', Georgia, serif; font-size: 1.5rem; font-weight: 400;
+    color: var(--green-deep); margin-bottom: 0.3rem;
+  }
+  .schools-section p.section-intro {
+    color: var(--text-secondary); font-size: 0.92rem; max-width: 640px; margin-bottom: 1rem;
+  }
   .schools-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
   .schools-table-wrap table { width: 100%; border-collapse: collapse; font-size: 0.88rem; line-height: 1.45; }
   .schools-table-wrap thead th {
@@ -222,23 +231,25 @@
 
 <div class="schools-content">
   <div class="schools-header">
-    <h1>District schools</h1>
-    <p>Select a school to see detailed data on academic performance, demographics, funding, and resources.</p>
+    <h1>Schools & properties</h1>
+    <p>The 12 district-operated schools, the three RCSD-authorized charter schools, and other district-owned properties.</p>
   </div>
 
-  <div class="schools-table-wrap">
-    <table>
-      <thead>
-        <tr>
-          <th>School</th>
-          <th>Grades</th>
-          <th class="num">Enrollment</th>
-          <th class="num">% high-need</th>
-          <th class="num">English growth</th>
-          <th class="num">Math growth</th>
-        </tr>
-      </thead>
-      <tbody>
+  <section class="schools-section">
+    <h2>District schools</h2>
+    <div class="schools-table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>School</th>
+            <th>Grades</th>
+            <th class="num">Enrollment</th>
+            <th class="num">% high-need</th>
+            <th class="num">English growth</th>
+            <th class="num">Math growth</th>
+          </tr>
+        </thead>
+        <tbody>
           <tr onclick="location.href='/schools/adelante-selby/'" style="cursor:pointer">
             <td class="school-name"><a href="/schools/adelante-selby/">Adelante Selby <span class="arrow">&rarr;</span></a></td>
             <td>TK-5</td>
@@ -335,11 +346,95 @@
             <td class="num"><span class="bar bar-green" style="width:27px"></span>23%</td>
             <td class="num"><span class="bar bar-green" style="width:57px"></span>28%</td>
           </tr>
-      </tbody>
-    </table>
-  </div>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:0.82rem; color:var(--text-muted); margin-top:1.2rem; line-height:1.5"><strong>% high-need</strong> = share of students who are socioeconomically disadvantaged or English learners. <strong>Growth</strong> = percentage of students who exceeded expected growth on the CA state test (CAASPP). It measures how much students are learning each year regardless of starting point—a school with low proficiency but high growth is accelerating learning.</p>
+  </section>
 
-  <p style="font-size:0.82rem; color:var(--text-muted); margin-top:1.2rem; line-height:1.5"><strong>% high-need</strong> = share of students who are socioeconomically disadvantaged or English learners. <strong>Growth</strong> = percentage of students who exceeded expected growth on the CA state test (CAASPP). It measures how much students are learning each year regardless of starting point—a school with low proficiency but high growth is accelerating learning.</p>
+  <section class="schools-section" id="charters">
+    <h2>RCSD-authorized charter schools</h2>
+    <p class="section-intro">Three directly-funded charter schools. Their budgets, interim reports, and audits are presented regularly to the Board as part of the district’s fiscal oversight role.</p>
+    <div class="schools-table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>School</th>
+            <th>Grades</th>
+            <th class="num">Enrollment</th>
+            <th>Network</th>
+            <th class="num">Opened</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr onclick="location.href='/schools/charters/connect/'" style="cursor:pointer">
+            <td class="school-name"><a href="/schools/charters/connect/">Connect Community Charter School <span class="arrow">&rarr;</span></a></td>
+            <td>K-8</td>
+            <td class="num">142</td>
+            <td>Independent</td>
+            <td class="num">2013</td>
+          </tr>
+          <tr onclick="location.href='/schools/charters/kipp-excelencia/'" style="cursor:pointer">
+            <td class="school-name"><a href="/schools/charters/kipp-excelencia/">KIPP Excelencia Community Preparatory <span class="arrow">&rarr;</span></a></td>
+            <td>TK-8</td>
+            <td class="num">704</td>
+            <td>KIPP Public Schools Northern California (KIPP NorCal)</td>
+            <td class="num">2015</td>
+          </tr>
+          <tr onclick="location.href='/schools/charters/rocketship-redwood-city/'" style="cursor:pointer">
+            <td class="school-name"><a href="/schools/charters/rocketship-redwood-city/">Rocketship Redwood City Prep <span class="arrow">&rarr;</span></a></td>
+            <td>TK-5</td>
+            <td class="num">273</td>
+            <td>Rocketship Public Schools</td>
+            <td class="num">2015</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="schools-section" id="properties">
+    <h2>Other district properties</h2>
+    <p class="section-intro">Buildings and sites owned (or leased) by the district that do not currently host a district-operated school or an RCSD-authorized charter.</p>
+    <div class="schools-table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Property</th>
+            <th>Address</th>
+            <th>Current use</th>
+            <th>Former use</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="school-name">District Office</td>
+            <td>750 Bradford Street, Redwood City, CA 94063</td>
+            <td>District administrative headquarters</td>
+            <td>&mdash;</td>
+          </tr>
+          <tr>
+            <td class="school-name">Harper School (Ravenswood City SD) — verify name</td>
+            <td>3150 Granger Way, Redwood City, CA 94063</td>
+            <td>Leased to an outside tenant</td>
+            <td>Former Adelante Selby Spanish Immersion campus</td>
+          </tr>
+          <tr>
+            <td class="school-name">Creative Learning Center</td>
+            <td>815 Allerton Street, Redwood City, CA 94063</td>
+            <td>District-operated program (not a full school)</td>
+            <td>Former Orion Alternative School campus (Orion is now at 555 Avenue del Ora)</td>
+          </tr>
+          <tr>
+            <td class="school-name">District warehouse (verify)</td>
+            <td><span style="color:var(--text-muted); font-style:italic">TBD</span></td>
+            <td>Leased by the district (not district-owned)</td>
+            <td>&mdash;</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
 </div>
 
 <footer class="site-footer">
