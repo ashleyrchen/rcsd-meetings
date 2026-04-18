@@ -553,6 +553,8 @@ function generateSummary(m) {
 
 function highlightSummary(text) {
   let html = escapeHtml(text);
+  // Preserve <strong> tags that the summary-generation prompt emits.
+  html = html.replace(/&lt;(\/?strong)&gt;/g, '<$1>');
   // Highlight dollar amounts
   html = html.replace(/\$[\d,.]+[MKBmkb]?(?:\/\w+)?/g, '<strong>$&</strong>');
   // Highlight key terms (case-insensitive, word boundary)
