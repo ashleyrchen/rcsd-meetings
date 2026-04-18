@@ -1,0 +1,338 @@
+- generic [active] [ref=e1]:
+  - link "Skip to main content" [ref=e2] [cursor=pointer]:
+    - /url: "#content"
+  - generic [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e6]:
+        - link "A link to the California Department of Education home page." [ref=e8] [cursor=pointer]:
+          - /url: /
+        - generic [ref=e10]:
+          - searchbox "search term" [ref=e11]
+          - button "Search" [ref=e13] [cursor=pointer]
+      - generic [ref=e15]:
+        - generic: 
+        - list [ref=e17]:
+          - listitem [ref=e18]:
+            - link "Teaching & Learning" [ref=e19] [cursor=pointer]:
+              - /url: "#"
+              - text: Teaching & Learning
+          - listitem [ref=e21]:
+            - link "Testing & Accountability" [ref=e22] [cursor=pointer]:
+              - /url: "#"
+              - text: Testing & Accountability
+          - listitem [ref=e24]:
+            - link "Finance & Grants" [ref=e25] [cursor=pointer]:
+              - /url: "#"
+              - text: Finance & Grants
+          - listitem [ref=e27]:
+            - link "Data & Statistics" [ref=e28] [cursor=pointer]:
+              - /url: "#"
+              - text: Data & Statistics
+          - listitem [ref=e30]:
+            - link "Specialized Programs" [ref=e31] [cursor=pointer]:
+              - /url: "#"
+              - text: Specialized Programs
+          - listitem [ref=e33]:
+            - link "Learning Support" [ref=e34] [cursor=pointer]:
+              - /url: "#"
+              - text: Learning Support
+    - generic [ref=e36]:
+      - list [ref=e37]:
+        - listitem [ref=e38]:
+          - link "Home" [ref=e39] [cursor=pointer]:
+            - /url: /
+        - listitem [ref=e40]:
+          - text: /
+          - link "Data & Statistics" [ref=e41] [cursor=pointer]:
+            - /url: /ds/
+        - listitem [ref=e42]:
+          - text: /
+          - link "Accessing Educational Data" [ref=e43] [cursor=pointer]:
+            - /url: /ds/ad/
+        - listitem [ref=e44]: / Staff Experience Downloadable Data Files
+      - generic [ref=e45]:
+        - heading "Staff Experience Downloadable Data Files" [level=1] [ref=e46]
+        - text: Downloadable data files about certificated staff employed on Census Day disaggregated by years of experience, academic year, staff type, school grade span, and gender.
+        - separator [ref=e47]
+      - generic [ref=e48]:
+        - generic [ref=e49]:
+          - paragraph [ref=e50]:
+            - text: Files include state, county, district, and school level data. Please refer to the file structure for details on which data are included in the file. For more information about these data, please visit the
+            - link "Information about the Staff Experience Data" [ref=e51] [cursor=pointer]:
+              - /url: stexinfo.asp
+            - text: web page.
+          - paragraph [ref=e52]:
+            - strong [ref=e53]: "Note:"
+            - text: The staff data may include small N-sizes. Therefore, the California Department of Education (CDE) urges caution when comparing percentages, ratios, or other calculations based on small N-sizes, which may negatively impact data reliability. Data are not included for districts and independently reporting charter schools (IRCs) that did not certify their California Longitudinal Pupil Achievement Data System (CALPADS) Fall 2 submission.
+          - generic [ref=e54]:
+            - table [ref=e55]:
+              - rowgroup [ref=e56]:
+                - row "Year of Data Data File File Structure" [ref=e57]:
+                  - columnheader "Year of Data" [ref=e58]
+                  - columnheader "Data File" [ref=e59]
+                  - columnheader "File Structure" [ref=e60]
+                - 'row "2024–25 stex2425 (TXT; 36MB; Posted 17-Sep-2025) File Structure: Staff Experience Data" [ref=e61]':
+                  - cell "2024–25" [ref=e62]
+                  - cell "stex2425 (TXT; 36MB; Posted 17-Sep-2025)" [ref=e63]:
+                    - link "stex2425 (TXT; 36MB; Posted 17-Sep-2025)" [ref=e64] [cursor=pointer]:
+                      - /url: https://www3.cde.ca.gov/demo-downloads/staff/stex2425.txt
+                      - text: stex2425
+                      - generic [ref=e65]: (TXT; 36MB; Posted 17-Sep-2025)
+                  - 'cell "File Structure: Staff Experience Data" [ref=e66]':
+                    - 'link "File Structure: Staff Experience Data" [ref=e67] [cursor=pointer]':
+                      - /url: fsstex.asp
+                - 'row "2023–24 stex2324 (TXT; 35MB; Posted 17-Jul-2025) File Structure: Staff Experience Data" [ref=e68]':
+                  - cell "2023–24" [ref=e69]
+                  - cell "stex2324 (TXT; 35MB; Posted 17-Jul-2025)" [ref=e70]:
+                    - link "stex2324 (TXT; 35MB; Posted 17-Jul-2025)" [ref=e71] [cursor=pointer]:
+                      - /url: https://www3.cde.ca.gov/demo-downloads/staff/stex2324.txt
+                      - text: stex2324
+                      - generic [ref=e72]: (TXT; 35MB; Posted 17-Jul-2025)
+                  - 'cell "File Structure: Staff Experience Data" [ref=e73]':
+                    - 'link "File Structure: Staff Experience Data" [ref=e74] [cursor=pointer]':
+                      - /url: fsstex.asp
+                - 'row "2022–23 stex2223 (TXT; 35MB; Posted 17-Jul-2025) File Structure: Staff Experience Data" [ref=e75]':
+                  - cell "2022–23" [ref=e76]
+                  - cell "stex2223 (TXT; 35MB; Posted 17-Jul-2025)" [ref=e77]:
+                    - link "stex2223 (TXT; 35MB; Posted 17-Jul-2025)" [ref=e78] [cursor=pointer]:
+                      - /url: https://www3.cde.ca.gov/demo-downloads/staff/stex2223.txt
+                      - text: stex2223
+                      - generic [ref=e79]: (TXT; 35MB; Posted 17-Jul-2025)
+                  - 'cell "File Structure: Staff Experience Data" [ref=e80]':
+                    - 'link "File Structure: Staff Experience Data" [ref=e81] [cursor=pointer]':
+                      - /url: fsstex.asp
+                - 'row "2021–22 stex2122 (TXT; 34MB; Posted 17-Jul-2025) File Structure: Staff Experience Data" [ref=e82]':
+                  - cell "2021–22" [ref=e83]
+                  - cell "stex2122 (TXT; 34MB; Posted 17-Jul-2025)" [ref=e84]:
+                    - link "stex2122 (TXT; 34MB; Posted 17-Jul-2025)" [ref=e85] [cursor=pointer]:
+                      - /url: https://www3.cde.ca.gov/demo-downloads/staff/stex2122.txt
+                      - text: stex2122
+                      - generic [ref=e86]: (TXT; 34MB; Posted 17-Jul-2025)
+                  - 'cell "File Structure: Staff Experience Data" [ref=e87]':
+                    - 'link "File Structure: Staff Experience Data" [ref=e88] [cursor=pointer]':
+                      - /url: fsstex.asp
+                - 'row "2020–21 stex2021 (TXT; 34MB; Posted 17-Jul-2025) File Structure: Staff Experience Data" [ref=e89]':
+                  - cell "2020–21" [ref=e90]
+                  - cell "stex2021 (TXT; 34MB; Posted 17-Jul-2025)" [ref=e91]:
+                    - link "stex2021 (TXT; 34MB; Posted 17-Jul-2025)" [ref=e92] [cursor=pointer]:
+                      - /url: https://www3.cde.ca.gov/demo-downloads/staff/stex2021.txt
+                      - text: stex2021
+                      - generic [ref=e93]: (TXT; 34MB; Posted 17-Jul-2025)
+                  - 'cell "File Structure: Staff Experience Data" [ref=e94]':
+                    - 'link "File Structure: Staff Experience Data" [ref=e95] [cursor=pointer]':
+                      - /url: fsstex.asp
+                - 'row "2019–20 stex1920 (TXT; 35MB; Posted 17-Jul-2025) File Structure: Staff Experience Data" [ref=e96]':
+                  - cell "2019–20" [ref=e97]
+                  - cell "stex1920 (TXT; 35MB; Posted 17-Jul-2025)" [ref=e98]:
+                    - link "stex1920 (TXT; 35MB; Posted 17-Jul-2025)" [ref=e99] [cursor=pointer]:
+                      - /url: https://www3.cde.ca.gov/demo-downloads/staff/stex1920.txt
+                      - text: stex1920
+                      - generic [ref=e100]: (TXT; 35MB; Posted 17-Jul-2025)
+                  - 'cell "File Structure: Staff Experience Data" [ref=e101]':
+                    - 'link "File Structure: Staff Experience Data" [ref=e102] [cursor=pointer]':
+                      - /url: fsstex.asp
+            - paragraph [ref=e103]: "Instructions: Click on the file name you wish to download and save the file to your computer. To view the file, import and open the file in a database or spreadsheet program."
+          - generic [ref=e104]:
+            - text: "Questions: Analysis Measurement & Accountability Reporting Division |"
+            - link "DataQuest@cde.ca.gov" [ref=e105] [cursor=pointer]:
+              - /url: mailto:dataquest@cde.ca.gov
+          - generic [ref=e106]: "Last Reviewed: Tuesday, April 7, 2026"
+        - generic [ref=e107]:
+          - generic [ref=e108]:
+            - generic [ref=e110]: Trending in Accessing Educational Data
+            - generic [ref=e111]:
+              - list [ref=e112]:
+                - listitem [ref=e113]:
+                  - link "Adjusted Cohort Graduation Rate and Outcome Data" [ref=e114] [cursor=pointer]:
+                    - /url: /ds/ad/filesacgr.asp
+                - listitem [ref=e115]:
+                  - link "DataQuest" [ref=e116] [cursor=pointer]:
+                    - /url: /ds/ad/dataquest.asp
+                - listitem [ref=e117]:
+                  - link "Downloadable Data Files" [ref=e118] [cursor=pointer]:
+                    - /url: /ds/ad/downloadabledata.asp
+                - listitem [ref=e119]:
+                  - link "Free or Reduced-Price Meal (Student Poverty) Data" [ref=e120] [cursor=pointer]:
+                    - /url: /ds/ad/filessp.asp
+                - listitem [ref=e121]:
+                  - link "Fingertip Facts on Education in California" [ref=e122] [cursor=pointer]:
+                    - /url: /ds/ad/ceffingertipfacts.asp
+              - button "More Trending Items" [ref=e123] [cursor=pointer]
+          - generic [ref=e124]:
+            - generic [ref=e126]: Recently Posted in Accessing Educational Data
+            - generic [ref=e127]: No items posted in the last 60 days.
+    - contentinfo [ref=e128]:
+      - generic [ref=e129]:
+        - heading "Footer Navigation Menu" [level=2] [ref=e130]
+        - generic [ref=e131]:
+          - generic [ref=e132]:
+            - heading "About CDE" [level=3] [ref=e133]
+            - paragraph [ref=e134]:
+              - link "CDE Locations" [ref=e135] [cursor=pointer]:
+                - /url: /re/di/cd/cde.asp
+            - paragraph [ref=e136]:
+              - link "CDE Mission" [ref=e137] [cursor=pointer]:
+                - /url: /eo/mn/mv
+            - paragraph [ref=e138]:
+              - link "CDE Organization" [ref=e139] [cursor=pointer]:
+                - /url: /re/di/or/
+            - paragraph [ref=e140]:
+              - link "Contact Us" [ref=e141] [cursor=pointer]:
+                - /url: /re/di/cd/
+            - paragraph [ref=e142]:
+              - link "Equal Opportunity" [ref=e143] [cursor=pointer]:
+                - /url: /re/di/eo/
+            - paragraph [ref=e144]:
+              - link "Jobs at CDE" [ref=e145] [cursor=pointer]:
+                - /url: /re/di/jb/
+            - paragraph [ref=e146]:
+              - link "Newsroom" [ref=e147] [cursor=pointer]:
+                - /url: /nr/
+            - paragraph [ref=e148]:
+              - link "Stay Connected with CDE" [ref=e149] [cursor=pointer]:
+                - /url: /re/di/sc/
+            - paragraph [ref=e150]:
+              - link "Superintendent's Initiatives" [ref=e151] [cursor=pointer]:
+                - /url: /eo/in/
+          - generic [ref=e152]:
+            - heading "State Board of Education" [level=3] [ref=e153]
+            - paragraph [ref=e154]:
+              - link "Meeting Agendas" [ref=e155] [cursor=pointer]:
+                - /url: /be/ag/ag/
+            - paragraph [ref=e156]:
+              - link "Meeting Minutes & Schedule" [ref=e157] [cursor=pointer]:
+                - /url: /be/mt/
+            - paragraph [ref=e158]:
+              - link "Members" [ref=e159] [cursor=pointer]:
+                - /url: /be/ms/mm/
+        - generic [ref=e161]:
+          - heading "Popular Content" [level=3] [ref=e162]
+          - paragraph [ref=e163]:
+            - link "California School Dashboard" [ref=e164] [cursor=pointer]:
+              - /url: /ta/ac/cm/
+          - paragraph [ref=e165]:
+            - link "Common Core State Standards" [ref=e166] [cursor=pointer]:
+              - /url: /re/cc/
+          - paragraph [ref=e167]:
+            - link "Complaint Procedures" [ref=e168] [cursor=pointer]:
+              - /url: /re/cp/
+          - paragraph [ref=e169]:
+            - link "Content Standards" [ref=e170] [cursor=pointer]:
+              - /url: /be/st/ss/
+          - paragraph [ref=e171]:
+            - link "Curriculum Resources" [ref=e172] [cursor=pointer]:
+              - /url: /ci/cr/
+          - paragraph [ref=e173]:
+            - link "Education Funding" [ref=e174] [cursor=pointer]:
+              - /url: /fg/fo/
+          - paragraph [ref=e175]:
+            - link "English Language Development Standards" [ref=e176] [cursor=pointer]:
+              - /url: /sp/el/er/eldstandards.asp
+          - paragraph [ref=e177]:
+            - link "Financial Allocations & Apportionments" [ref=e178] [cursor=pointer]:
+              - /url: /fg/aa/
+          - paragraph [ref=e179]:
+            - link "High School Equivalency Tests" [ref=e180] [cursor=pointer]:
+              - /url: /ta/tg/gd/
+          - paragraph [ref=e181]:
+            - link "High School Graduation Requirements" [ref=e182] [cursor=pointer]:
+              - /url: /ci/gs/hs/hsgrgen.asp
+          - paragraph [ref=e183]:
+            - link "Kindergarten in California" [ref=e184] [cursor=pointer]:
+              - /url: /ci/gs/em/kinderinfo.asp
+          - paragraph [ref=e185]:
+            - link "Social and Emotional Learning" [ref=e186] [cursor=pointer]:
+              - /url: /eo/in/socialemotionallearning.asp
+          - paragraph [ref=e187]:
+            - link "Standards & Frameworks" [ref=e188] [cursor=pointer]:
+              - /url: /be/st/
+        - generic [ref=e190]:
+          - heading "Popular Program Areas" [level=3] [ref=e191]
+          - paragraph [ref=e192]:
+            - link "Accountability - School Performance" [ref=e193] [cursor=pointer]:
+              - /url: /ta/ac/
+          - paragraph [ref=e194]:
+            - link "Career Technical Education" [ref=e195] [cursor=pointer]:
+              - /url: /ci/ct/
+          - paragraph [ref=e196]:
+            - link "Charter Schools" [ref=e197] [cursor=pointer]:
+              - /url: /sp/ch/
+          - paragraph [ref=e198]:
+            - link "Child Nutrition" [ref=e199] [cursor=pointer]:
+              - /url: /ls/nu/
+          - paragraph [ref=e200]:
+            - link "Child Development" [ref=e201] [cursor=pointer]:
+              - /url: /sp/cd/
+          - paragraph [ref=e202]:
+            - link "Disaster and Emergency Management" [ref=e203] [cursor=pointer]:
+              - /url: /ls/ep/
+          - paragraph [ref=e204]:
+            - link "Expanded Learning" [ref=e205] [cursor=pointer]:
+              - /url: /ls/ex/
+          - paragraph [ref=e206]:
+            - link "Principal Apportionments" [ref=e207] [cursor=pointer]:
+              - /url: /fg/aa/pa/
+          - paragraph [ref=e208]:
+            - link "Safe Schools" [ref=e209] [cursor=pointer]:
+              - /url: /ls/ss/
+          - paragraph [ref=e210]:
+            - link "School Facilities" [ref=e211] [cursor=pointer]:
+              - /url: /ls/fa/
+          - paragraph [ref=e212]:
+            - link "Special Education" [ref=e213] [cursor=pointer]:
+              - /url: /sp/se/
+          - paragraph [ref=e214]:
+            - link "Standardized Testing" [ref=e215] [cursor=pointer]:
+              - /url: /ta/tg/
+          - paragraph [ref=e216]:
+            - link "Title I" [ref=e217] [cursor=pointer]:
+              - /url: /sp/sw/
+          - paragraph [ref=e218]:
+            - link "Title III" [ref=e219] [cursor=pointer]:
+              - /url: /sp/el/t3/
+        - generic [ref=e220]:
+          - generic [ref=e221]:
+            - heading "Resources" [level=3] [ref=e222]
+            - paragraph [ref=e223]:
+              - link "California School Directory" [ref=e224] [cursor=pointer]:
+                - /url: /schooldirectory/
+            - paragraph [ref=e225]:
+              - link "Education Calendars" [ref=e226] [cursor=pointer]:
+                - /url: /re/ca/
+            - paragraph [ref=e227]:
+              - link "Education FAQs" [ref=e228] [cursor=pointer]:
+                - /url: /re/di/fq/
+            - paragraph [ref=e229]:
+              - link "Language Access Complaint" [ref=e230] [cursor=pointer]:
+                - /url: /re/di/eo/languageservices.asp
+            - paragraph [ref=e231]:
+              - link "Laws & Regulations" [ref=e232] [cursor=pointer]:
+                - /url: /re/lr/
+            - paragraph [ref=e233]:
+              - link "Multilingual Documents" [ref=e234] [cursor=pointer]:
+                - /url: /ls/pf/cm/
+            - paragraph [ref=e235]:
+              - link "Publications" [ref=e236] [cursor=pointer]:
+                - /url: /re/pn/
+            - paragraph [ref=e237]:
+              - link "School and District Reports" [ref=e238] [cursor=pointer]:
+                - /url: /sdprofile/search.aspx
+            - paragraph [ref=e239]:
+              - text: ">>"
+              - link "More Resources" [ref=e240] [cursor=pointer]:
+                - /url: /re/
+          - generic [ref=e241]:
+            - heading "Site Information" [level=3] [ref=e242]
+            - paragraph [ref=e243]:
+              - link "A-Z Index" [ref=e244] [cursor=pointer]:
+                - /url: /azindex/
+              - text: "|"
+              - link "Site Map" [ref=e245] [cursor=pointer]:
+                - /url: /sitemap/
+            - paragraph [ref=e246]:
+              - link "Web Policy" [ref=e247] [cursor=pointer]:
+                - /url: /re/di/ws/webpolicy.asp
+            - paragraph [ref=e248]:
+              - link "Accessibility Certification" [ref=e249] [cursor=pointer]:
+                - /url: /re/di/ws/accessibility2017.asp
+      - paragraph [ref=e250]: © California Department of Education

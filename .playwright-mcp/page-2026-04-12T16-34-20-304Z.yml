@@ -1,0 +1,79 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - link "skip to main content" [ref=e3] [cursor=pointer]:
+      - /url: "#main"
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - link "CAASPP TRCA website." [ref=e6] [cursor=pointer]:
+          - /url: https://caaspp-elpac.ets.org/caaspp/
+          - img "CAASPP TRCA website." [ref=e7]
+        - link "ELPAC TRCA website." [ref=e8] [cursor=pointer]:
+          - /url: https://caaspp-elpac.ets.org/elpac/
+          - img "ELPAC TRCA website." [ref=e9]
+      - link "California Department of Education Website." [ref=e11] [cursor=pointer]:
+        - /url: https://www.cde.ca.gov/
+        - img "California Department of Education Website." [ref=e12]
+  - generic [ref=e13]:
+    - generic [ref=e14]:
+      - navigation "main" [ref=e15]:
+        - navigation [ref=e16]:
+          - menubar [ref=e18]:
+            - menuitem "Home" [ref=e19] [cursor=pointer]
+            - menuitem "About" [ref=e20] [cursor=pointer]
+            - menuitem "press enter to open assessments sub menu" [ref=e21] [cursor=pointer]:
+              - generic [ref=e22]: Assessments ▼
+            - menuitem "Additional Resources" [ref=e23] [cursor=pointer]
+            - menuitem "Communications" [ref=e24] [cursor=pointer]
+            - menuitem "Contact" [ref=e25] [cursor=pointer]
+      - region "Sign Out"
+      - main [ref=e26]:
+        - generic [ref=e27]: This link will open in a new window
+        - region "Test Results" [ref=e32]:
+          - heading "Test Results for California's Assessments" [level=1] [ref=e33]
+          - generic [ref=e34]:
+            - generic [ref=e35]:
+              - link "English Language Arts/Literacy and Mathematics Smarter Balanced Summative Assessments English language arts/literacy (ELA) and mathematics academic assessment for students in grades 3–8 and grade 11." [ref=e37] [cursor=pointer]:
+                - /url: DashViewReportSB.aspx?ps=true&lstTestYear=2025&lstTestType=B&lstGroup=1&lstSubGroup=1&lstSchoolType=A&lstGrade=13&lstCounty=00&lstDistrict=00000&lstSchool=0000000
+                - generic [ref=e40]:
+                  - heading "English Language Arts/Literacy and Mathematics" [level=2] [ref=e41]
+                  - heading "Smarter Balanced Summative Assessments" [level=3] [ref=e43]
+                  - paragraph [ref=e44]: English language arts/literacy (ELA) and mathematics academic assessment for students in grades 3–8 and grade 11.
+              - link "Alternate English Language Arts/Literacy and Mathematics California Alternate Assessments (CAAs) for ELA and Mathematics For students whose individualized education programs indicate they should take an alternate assessment for ELA and mathematics." [ref=e47] [cursor=pointer]:
+                - /url: DashViewReportCAA.aspx?ps=true&lstTestYear=2025&lstTestType=A&lstGroup=1&lstSubGroup=1&lstSchoolType=A&lstGrade=13&lstCounty=00&lstDistrict=00000&lstSchool=0000000
+                - generic [ref=e50]:
+                  - heading "Alternate English Language Arts/Literacy and Mathematics" [level=2] [ref=e51]
+                  - heading "California Alternate Assessments (CAAs) for ELA and Mathematics" [level=3] [ref=e53]
+                  - paragraph [ref=e54]: For students whose individualized education programs indicate they should take an alternate assessment for ELA and mathematics.
+              - link "English Language Proficiency English Language Proficiency Assessments for California (ELPAC) Tests for English language proficiency given to students whose primary language is a language other than English." [ref=e57] [cursor=pointer]:
+                - /url: https://caaspp-elpac.ets.org/elpac/
+                - generic [ref=e60]:
+                  - heading "English Language Proficiency" [level=2] [ref=e61]
+                  - heading "English Language Proficiency Assessments for California (ELPAC)" [level=3] [ref=e63]
+                  - paragraph [ref=e64]: Tests for English language proficiency given to students whose primary language is a language other than English.
+            - generic [ref=e66]:
+              - link "Science California Science Test (CAST) A science test measuring how well students understand the scientific core ideas, concepts, and practices they have learned." [ref=e68] [cursor=pointer]:
+                - /url: DashViewReportCAST.aspx?ps=true&lstTestYear=2025&lstTestType=X&lstGroup=1&lstSubGroup=1&lstSchoolType=A&lstGrade=13&lstCounty=00&lstDistrict=00000&lstSchool=0000000
+                - generic [ref=e71]:
+                  - heading "Science" [level=2] [ref=e72]
+                  - heading "California Science Test (CAST)" [level=3] [ref=e74]
+                  - paragraph [ref=e75]: A science test measuring how well students understand the scientific core ideas, concepts, and practices they have learned.
+              - link "Alternate Science California Alternate Assessment (CAA) for Science For students whose individualized education programs indicate they should take an alternate assessment for science." [ref=e78] [cursor=pointer]:
+                - /url: DashViewReportCAAS.aspx?ps=true&lstTestYear=2025&lstTestType=Y&lstGroup=1&lstSubGroup=1&lstSchoolType=A&lstGrade=13&lstCounty=00&lstDistrict=00000&lstSchool=0000000
+                - generic [ref=e81]:
+                  - heading "Alternate Science" [level=2] [ref=e82]
+                  - heading "California Alternate Assessment (CAA) for Science" [level=3] [ref=e84]
+                  - paragraph [ref=e85]: For students whose individualized education programs indicate they should take an alternate assessment for science.
+              - link "Spanish Reading/Language Arts California Spanish Assessment (CSA) This optional assessment is for students seeking a measure of their Spanish reading/language arts skills." [ref=e88] [cursor=pointer]:
+                - /url: DashViewReportCSA.aspx?ps=true&lstTestYear=2025&lstTestType=R&lstGroup=1&lstSubGroup=1&lstSchoolType=A&lstGrade=13&lstCounty=00&lstDistrict=00000&lstSchool=0000000
+                - generic [ref=e91]:
+                  - heading "Spanish Reading/Language Arts" [level=2] [ref=e92]
+                  - heading "California Spanish Assessment (CSA)" [level=3] [ref=e94]
+                  - paragraph [ref=e95]: This optional assessment is for students seeking a measure of their Spanish reading/language arts skills.
+    - region "footer" [ref=e97]:
+      - generic "footer" [ref=e98]:
+        - generic [ref=e99]:
+          - text: California Department of Education
+          - generic [ref=e100]: "|"
+          - text: 1430 N Street
+          - generic [ref=e101]: "|"
+          - text: Sacramento, CA 95814

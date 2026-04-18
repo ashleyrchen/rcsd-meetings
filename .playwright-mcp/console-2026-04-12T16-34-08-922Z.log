@@ -1,0 +1,4 @@
+[     116ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ https://www.cde.ca.gov/ds/ad/filesstra%E2%80%8Bt.asp:0
+[     118ms] [ERROR] Mixed Content: The page at 'https://www.cde.ca.gov/ds/ad/filesstra%E2%80%8Bt.asp' was loaded over HTTPS, but requested an insecure script 'http://www.google.com/jsapi'. This request has been blocked; the content must be served over HTTPS. @ https://www.cde.ca.gov/ds/ad/filesstra%E2%80%8Bt.asp:0
+[     143ms] ReferenceError: google is not defined
+    at https://www.cde.ca.gov/ds/ad/filesstra%E2%80%8Bt.asp:34:2

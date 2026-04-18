@@ -12,9 +12,10 @@ Last updated: March 20, 2026
 
 | Date | Type | MID | YouTube | Key Topics |
 |------|------|-----|---------|------------|
+| 04/22/2026 | Regular | 51012 | — | Kennedy/Orion/Adelante Selby SPSA presentations, HVAC Upgrades Phase 3 (Henry Ford, Roy Cloud), HVAC Phase 2 GMP Amendment (Clifford, Orion, Kennedy), Res 22 Ed Code teaching assignments, Res 23 KIPP Excelencia Prop 2 facilities funding, IMC lease renewal (777 3rd Ave), RCTA teacher salary info, Q3 Williams report, 23 CSBA policy approvals (HR/library) |
 | 04/01/2026 | Regular | 51011 | [Video](https://www.youtube.com/watch?v=MUo_j2IxTzw) | Roy Cloud/Clifford SPSA presentations, EV charger PowerFlex replacement (Shell Recharge discontinuation), RCTA class size info item, BP/AR 3580 District Records second reading, 22 CSBA policy updates (employee HR policies), MIT/Kennedy field trips, election services agreement |
-| 03/25/2026 | Regular | 50617 | — | Taft/Garfield SPSA presentations, 2024-25 financial audit (Eide Bailly), Second Interim Budget ($158.1M rev), AI-assisted literacy info item, drone policy BP 3515.21 second reading, Connect charter audit review, Ed Code 41372 salary waiver (55.54% vs 60%), 650 Chromebooks ($323.9K), 16 CSBA policy updates, Measure U addenda (North Star/Henry Ford) |
-| 03/11/2026 | Regular | 50616 | — | Roosevelt/McKinley/Hoover SPSA presentations, Eide Bailly bond audit, 2025 SARCs, Measure U addenda (Roosevelt/McKinley/Hoover), NV5 EV charging amendment, Feb warrant registers |
+| 03/25/2026 | Regular | 50617 | [Video](https://www.youtube.com/watch?v=u4Is6bk2Gh8) | Taft/Garfield SPSA presentations, 2024-25 financial audit (Eide Bailly), Second Interim Budget ($158.1M rev), AI-assisted literacy info item, drone policy BP 3515.21 second reading, Connect charter audit review, Ed Code 41372 salary waiver (55.54% vs 60%), 650 Chromebooks ($323.9K), 16 CSBA policy updates, Measure U addenda (North Star/Henry Ford) |
+| 03/11/2026 | Regular | 50616 | [Video](https://www.youtube.com/watch?v=6pIMx-lAQN8) | Roosevelt/McKinley/Hoover SPSA presentations, Eide Bailly bond audit, 2025 SARCs, Measure U addenda (Roosevelt/McKinley/Hoover), NV5 EV charging amendment, Feb warrant registers |
 | 02/26/2026 | Special | 56022 | [Video](https://www.youtube.com/watch?v=8NOEEW_cpyU) | Parcel tax public hearing + election resolution |
 | 02/11/2026 | Regular | 50344 | [Video](https://www.youtube.com/watch?v=6VgYicePQto) | LCAP mid-year ($151.5M), parcel tax draft resolution ($12.2M/yr), ZESBI electric buses ($1.44M grant), certificated reductions (Res 17-20), RCTA negotiations |
 | 02/04/2026 | Regular | 50343 | [Video](https://www.youtube.com/watch?v=Nw7_DtNMPVk) | Revised Measure S implementation plan, Blach HVAC Phase 2 lease-leaseback ($3M), budget reductions ($6.4M), HVAC Phase 1 closeout, 5 policy second readings |
@@ -42,6 +43,46 @@ Last updated: March 20, 2026
 ---
 
 ## Detailed Meeting Agendas
+
+### 04/22/2026 — Regular Meeting (MID 51012)
+- **Simbli:** https://simbli.eboardsolutions.com/SB_Meetings/ViewMeeting.aspx?S=36030397&MID=51012
+- **Zoom:** https://rcsdk8-net.zoom.us/s/87859569873
+
+**Closed Session (5:45 PM):**
+1. Conference with Legal Counsel — Anticipated Litigation (1 case, Gov. Code 54956.9(d)(4))
+2. Conference with Labor Negotiators (Gov. Code 54957.6) — RCTA
+
+**Bond Program Consent:**
+1. Notice of Completion — Southland Industries, District-Wide Lighting and Controls Upgrades
+2. Early Procurement Equipment List — HVAC Upgrades Phase 2 (Blach Construction)
+3. Cumming Group Amendment #6 — Program Management Services
+
+**Bond Program Action Items (30 min):**
+1. HVAC Upgrades Projects Phase 3 (Henry Ford and Roy Cloud, construction targeted Summer 2027)
+2. Guaranteed Maximum Price Amendment #1 — HVAC Phase 2 Facilities Lease with Blach (Clifford, Orion, Kennedy)
+3. Industrial Hygienist Services Agreements — HVAC Phase 2 (ProTech: Clifford, Orion, Kennedy)
+
+**Action Items (2 hrs):**
+1. Kennedy Middle School SPSA presentation and approval
+2. Orion Alternative / Mandarin Immersion SPSA presentation and approval
+3. Adelante Selby Spanish Immersion SPSA presentation and approval
+4. Resolution No. 22 — Ed Code options for teaching assignments (2025-26)
+5. Resolution No. 23 — KIPP Excelencia Prop 2 Charter School Facilities Program (Fair Oaks site)
+
+**Discussion Items (5 min):**
+1. Graduation/Promotions Assignments for Trustees (2025-26)
+
+**Consent Items (39 items):**
+1-4. Meeting minutes (3/11, 3/25, 4/01 regular; 8/27/25 and 10/08/25 amended)
+5. IMC Lease Renewal Agreement (777 3rd Ave, through 06/30/2028) with 2992 Spring Partners/Beals Martin
+6. Bonami Baking Company PO increase ($100K, 2025-26)
+7-37. 31 Board Policy approvals (4219.23 confidential info; 4119.11 sexual harassment; 3515.21 drones; 4117.13/4317.13 early retirement; 0460 LCAP; 4000 concepts/roles; 4301 admin staff; 4312.1 contracts; 4112.2 certification; 4112.21 interns; 4212.8/4312.8 employment of relatives; 4115 evaluation/supervision; 4117.2/4217.2/4317.2 resignation; 4118/4218 dismissal/suspension/disciplinary; 4119.24/4219.24/4319.24 adult-student interactions; 4119.41/4319.41 infectious disease; 4222 paraprofessionals; 4131.1 teacher support; 4033 lactation accommodation; 4143.1/4243.1 personnel negotiations notice; 6163.1 library media centers; 6164.6 Section 504)
+38. Rejection of Claim
+39. Ratification of Warrant Registers (March 2026)
+
+**Information:**
+1. RCTA Presentation — Teacher Salary
+2. Quarterly Williams Report, Q3 (Jan-Mar 2026)
 
 ### 04/01/2026 — Regular Meeting (MID 51011)
 - **Simbli:** https://simbli.eboardsolutions.com/SB_Meetings/ViewMeeting.aspx?S=36030397&MID=51011
