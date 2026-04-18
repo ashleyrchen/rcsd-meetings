@@ -632,7 +632,7 @@ function generateMeetingPage(m, L) {
   const summaries = summariesByLang[L.lang] || summariesByLang.en || {};
   const summary = summaries[m.date] || null;
   const summaryHtml = summary
-    ? `<p class="tv-summary">${escapeHtml(summary)}</p>`
+    ? `<p class="tv-summary">${escapeHtml(summary).replace(/&lt;(\/?strong)&gt;/g, '<$1>')}</p>`
     : '';
 
   const html = `<!DOCTYPE html>

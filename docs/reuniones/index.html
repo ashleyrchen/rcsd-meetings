@@ -311,6 +311,25 @@
     border-bottom-color: var(--green-light);
   }
 
+  .toc-year-select {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    background: transparent;
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    padding: 0.35rem 0.4rem;
+    margin: 0.55rem 0.4rem;
+    cursor: pointer;
+  }
+
+  .toc-year-select:hover {
+    color: var(--green-mid);
+    border-color: var(--green-light);
+  }
+
   /* ---- MAIN ---- */
   .content {
     max-width: 900px;
@@ -1009,13 +1028,16 @@
   <div class="toc-inner">
     <a href="#threads">Temas Clave</a>
     <a href="#upcoming">Próximas Reuniones</a>
-    <a href="#sy202526">2025-26</a>
-    <a href="#sy202425">2024-25</a>
-    <a href="#sy202324">2023-24</a>
-    <a href="#sy202223">2022-23</a>
-    <a href="#sy202122">2021-22</a>
-    <a href="#sy202021">2020-21</a>
-    <a href="#sy201920">2019-20</a>
+    <select class="toc-year-select" aria-label="Año escolar">
+      <option value="">Año escolar…</option>
+      <option value="#sy202526">2025-26</option>
+      <option value="#sy202425">2024-25</option>
+      <option value="#sy202324">2023-24</option>
+      <option value="#sy202223">2022-23</option>
+      <option value="#sy202122">2021-22</option>
+      <option value="#sy202021">2020-21</option>
+      <option value="#sy201920">2019-20</option>
+    </select>
     <a href="#resources">Recursos</a>
   </div>
 </nav>
@@ -4429,15 +4451,18 @@ Los comentarios en español son bienvenidos — hay un intérprete disponible en
     }
   });
 
-  // Auto-expand collapsed sections when TOC links are clicked
-  document.querySelectorAll('.toc a[href^="#sy"]').forEach(function(link) {
-    link.addEventListener('click', function(e) {
-      var target = document.querySelector(link.getAttribute('href'));
-      if (target && target.tagName === 'DETAILS' && !target.open) {
-        target.open = true;
-      }
+  // School-year dropdown: navigate + auto-expand the target <details>
+  var yearSelect = document.querySelector('.toc-year-select');
+  if (yearSelect) {
+    yearSelect.addEventListener('change', function() {
+      var hash = yearSelect.value;
+      if (!hash) return;
+      var target = document.querySelector(hash);
+      if (target && target.tagName === 'DETAILS' && !target.open) target.open = true;
+      window.location.hash = hash;
+      yearSelect.value = '';
     });
-  });
+  }
 
   // Also handle direct URL hash on page load
   if (window.location.hash && window.location.hash.startsWith('#sy')) {
