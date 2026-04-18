@@ -1,5 +1,0 @@
-[     586ms] Uncaught Error: Must call google.charts.load before google.charts.setOnLoadCallback
-    at Cc (https://www.google.com/jsapi:142:27)
-    at <anonymous> (https://www.cde.ca.gov/ds/ad/filesstex.asp:65:8)
-[     588ms] Uncaught Error: Module "search" is not supported.
-    at <anonymous> (https://www.google.com/jsapi:147:433)
