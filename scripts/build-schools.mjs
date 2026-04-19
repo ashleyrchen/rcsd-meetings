@@ -1838,7 +1838,8 @@ ${siteNav({ activePage: 'schools', lang, altLangHref })}
             <tr><td class="label-cell">${L.communitySchool}</td><td>${isEs ? 'Sí' : 'Yes'}</td></tr>` : ''}
             <tr><td class="label-cell">${L.address}</td><td>${school.address}</td></tr>
             <tr><td class="label-cell">${L.phone}</td><td>${school.phone}</td></tr>
-            <tr><td class="label-cell">${L.schoolWebsite}</td><td><a href="${school.website}">${school.website.replace('https://', '')}</a></td></tr>
+            <tr><td class="label-cell">${L.schoolWebsite}</td><td><a href="${school.website}">${school.website.replace('https://', '')}</a></td></tr>${school.greatSchools ? `
+            <tr><td class="label-cell">GreatSchools</td><td><a href="${school.greatSchools.url}" target="_blank" rel="noopener">${school.greatSchools.rating != null ? `${school.greatSchools.rating}/10` : (isEs ? 'Ver perfil' : 'View profile')} <span style="font-size:0.8em">&#8599;</span></a></td></tr>` : ''}
           </tbody>
         </table>
       </div>
@@ -2388,8 +2389,12 @@ function buildSchoolsIndex(lang) {
     const name = isEs ? (p.nameEs || p.name) : p.name;
     const useLabel = isEs ? (p.useLabelEs || p.useLabel) : p.useLabel;
     const formerUse = isEs ? (p.formerUseEs || p.formerUse) : p.formerUse;
+    const tenantUrl = p.tenant?.url;
+    const nameCell = tenantUrl
+      ? `<a href="${tenantUrl}" target="_blank" rel="noopener">${name} <span style="font-size:0.8em; color:var(--text-muted)">&#8599;</span></a>`
+      : name;
     return `          <tr>
-            <td class="school-name">${name}</td>
+            <td class="school-name">${nameCell}</td>
             <td>${p.address || '<span style="color:var(--text-muted); font-style:italic">TBD</span>'}</td>
             <td>${useLabel || ''}</td>
             <td>${formerUse || '&mdash;'}</td>

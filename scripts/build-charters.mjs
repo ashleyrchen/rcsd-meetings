@@ -267,6 +267,26 @@ const charterCSS = `
     background: var(--cream-dark); border-left: 3px solid var(--amber);
     padding: 0.8rem 1rem; margin: 1.4rem 0; font-size: 0.88rem; color: var(--text-secondary);
   }
+  dl.filing-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0.9rem 1.6rem; margin: 0.5rem 0 1.2rem;
+  }
+  dl.filing-grid dt {
+    font-family: 'IBM Plex Mono', monospace; font-size: 0.66rem; font-weight: 500;
+    letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted);
+    margin-bottom: 0.15rem;
+  }
+  dl.filing-grid dd {
+    font-size: 0.92rem; color: var(--text); line-height: 1.5;
+  }
+  dl.filing-grid dd code {
+    font-family: 'IBM Plex Mono', monospace; font-size: 0.88rem;
+    color: var(--green-deep); background: var(--green-wash); padding: 0.1rem 0.35rem;
+    border-radius: 3px;
+  }
+  p.filing-link { margin-top: 0.4rem; }
+  p.filing-link a { font-weight: 500; }
+  p.filing-link a .ext { font-size: 0.75em; color: var(--text-muted); vertical-align: super; }
 `;
 
 // ---- Per-charter page ----
@@ -298,6 +318,15 @@ function buildCharterPage(charter, lang) {
     docsH2: 'Documentos financieros',
     docsIntro: 'Presupuestos, informes interinos, resultados reales no auditados y cartas anuales de revisión fiscal de RCSD, obtenidas de los paquetes de la mesa directiva de RCSD.',
     caveatAudit: 'Los informes de auditoría anuales de charter y sus cartas de revisión se presentan a la mesa directiva pero actualmente no están indexados automáticamente; consulte la reunión correspondiente para acceder al informe.',
+    filingsH2: 'Registros federales 990',
+    filingsIntro: 'Declaración 990 del IRS de la entidad sin fines de lucro operadora. La entidad operadora puede ser la escuela misma o una red matriz — vea la relación a continuación.',
+    filingsEntity: 'Entidad declarante',
+    filingsRelationship: 'Relación',
+    filingsEin: 'EIN',
+    filingsFY: 'Año fiscal más reciente',
+    filingsRevenue: 'Ingresos totales',
+    filingsAssets: 'Activos totales',
+    filingsLink: 'Ver en ProPublica Nonprofit Explorer',
   } : {
     eyebrow: 'RCSD-authorized charter school',
     tagline: (net) => net
@@ -317,10 +346,37 @@ function buildCharterPage(charter, lang) {
     docsH2: 'Financial documents',
     docsIntro: 'Adopted budgets, interim reports, unaudited actuals, and RCSD\u2019s annual fiscal oversight review letters, pulled from RCSD board packets.',
     caveatAudit: 'Annual independent audit reports and review letters are presented to the Board but are not yet automatically indexed here; see the corresponding meeting for the report.',
+    filingsH2: 'IRS Form 990 filings',
+    filingsIntro: 'Federal Form 990 filings for the nonprofit operating entity. The filing entity may be the school itself or a parent network \u2014 see the relationship field below.',
+    filingsEntity: 'Filing entity',
+    filingsRelationship: 'Relationship',
+    filingsEin: 'EIN',
+    filingsFY: 'Latest fiscal year',
+    filingsRevenue: 'Total revenue',
+    filingsAssets: 'Total assets',
+    filingsLink: 'View on ProPublica Nonprofit Explorer',
   };
 
   const group = groupCharterDocs(charter);
   const timeline = renderDocsTimeline(group, lang);
+
+  const fmtMoney = (n) => n ? '$' + n.toLocaleString(isEs ? 'es-US' : 'en-US') : '';
+  const filing = charter.filing990;
+  const filingSection = filing ? `
+  <section class="docs-section">
+    <h2>${L.filingsH2}</h2>
+    <p class="intro">${L.filingsIntro}</p>
+    <dl class="filing-grid">
+      <div><dt>${L.filingsEntity}</dt><dd>${escapeHtml(filing.filerName)}</dd></div>
+      <div><dt>${L.filingsRelationship}</dt><dd>${escapeHtml(filing.filerRelationship)}</dd></div>
+      <div><dt>${L.filingsEin}</dt><dd><code>${escapeHtml(filing.ein)}</code></dd></div>
+      <div><dt>${L.filingsFY}</dt><dd>${escapeHtml(filing.latestFiscalYear)}</dd></div>
+      <div><dt>${L.filingsRevenue}</dt><dd>${fmtMoney(filing.totalRevenue)}</dd></div>
+      <div><dt>${L.filingsAssets}</dt><dd>${fmtMoney(filing.totalAssets)}</dd></div>
+    </dl>
+    <p class="filing-link"><a href="${escapeHtml(filing.propublicaUrl)}" target="_blank" rel="noopener">${L.filingsLink} <span class="ext">&#8599;</span></a></p>
+    ${filing.note ? `<aside class="caveat">${escapeHtml(filing.note)}</aside>` : ''}
+  </section>` : '';
 
   const addrMap = encodeURIComponent(charter.address);
   const metaGridRows = [
@@ -334,6 +390,7 @@ function buildCharterPage(charter, lang) {
     charter.charterNumber && `<div><dt>${L.metaCharterNum}</dt><dd>${escapeHtml(charter.charterNumber)}</dd></div>`,
     charter.cdsCode && `<div><dt>${L.metaCds}</dt><dd><a href="${escapeHtml(charter.cdeDirectoryUrl || '#')}" target="_blank" rel="noopener">${escapeHtml(charter.cdsCode)} <span style="font-size:0.8em">&#8599;</span></a></dd></div>`,
     charter.dateOpened && `<div><dt>${L.metaOpened}</dt><dd>${escapeHtml(charter.dateOpened)}</dd></div>`,
+    charter.greatSchools && `<div><dt>${isEs ? 'GreatSchools' : 'GreatSchools'}</dt><dd><a href="${escapeHtml(charter.greatSchools.url)}" target="_blank" rel="noopener">${charter.greatSchools.rating != null ? `${charter.greatSchools.rating}/10` : (isEs ? 'Ver perfil' : 'View profile')} <span style="font-size:0.8em">&#8599;</span></a></dd></div>`,
   ].filter(Boolean).join('\n');
 
   return `<!DOCTYPE html>
@@ -372,7 +429,7 @@ ${metaGridRows}
     ${timeline}
     <aside class="caveat">${L.caveatAudit}</aside>
   </section>
-
+${filingSection}
 </main>
 
 ${siteFooter({ lang })}

@@ -239,6 +239,26 @@
     background: var(--cream-dark); border-left: 3px solid var(--amber);
     padding: 0.8rem 1rem; margin: 1.4rem 0; font-size: 0.88rem; color: var(--text-secondary);
   }
+  dl.filing-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0.9rem 1.6rem; margin: 0.5rem 0 1.2rem;
+  }
+  dl.filing-grid dt {
+    font-family: 'IBM Plex Mono', monospace; font-size: 0.66rem; font-weight: 500;
+    letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted);
+    margin-bottom: 0.15rem;
+  }
+  dl.filing-grid dd {
+    font-size: 0.92rem; color: var(--text); line-height: 1.5;
+  }
+  dl.filing-grid dd code {
+    font-family: 'IBM Plex Mono', monospace; font-size: 0.88rem;
+    color: var(--green-deep); background: var(--green-wash); padding: 0.1rem 0.35rem;
+    border-radius: 3px;
+  }
+  p.filing-link { margin-top: 0.4rem; }
+  p.filing-link a { font-weight: 500; }
+  p.filing-link a .ext { font-size: 0.75em; color: var(--text-muted); vertical-align: super; }
 
 </style>
 </head>
@@ -276,6 +296,7 @@
 <div><dt>Número de Charter</dt><dd>1498</dd></div>
 <div><dt>Código CDS</dt><dd><a href="https://www.cde.ca.gov/schooldirectory/details?cdscode=41690050127282" target="_blank" rel="noopener">41690050127282 <span style="font-size:0.8em">&#8599;</span></a></dd></div>
 <div><dt>Inauguración</dt><dd>2013-08-26</dd></div>
+<div><dt>GreatSchools</dt><dd><a href="https://www.greatschools.org/california/redwood-city/31200-Connect-Community-Charter/" target="_blank" rel="noopener">2/10 <span style="font-size:0.8em">&#8599;</span></a></dd></div>
     </dl>
   </header>
 
@@ -442,6 +463,20 @@
     <aside class="caveat">Los informes de auditoría anuales de charter y sus cartas de revisión se presentan a la mesa directiva pero actualmente no están indexados automáticamente; consulte la reunión correspondiente para acceder al informe.</aside>
   </section>
 
+  <section class="docs-section">
+    <h2>Registros federales 990</h2>
+    <p class="intro">Declaración 990 del IRS de la entidad sin fines de lucro operadora. La entidad operadora puede ser la escuela misma o una red matriz — vea la relación a continuación.</p>
+    <dl class="filing-grid">
+      <div><dt>Entidad declarante</dt><dd>Connect Community Charter School</dd></div>
+      <div><dt>Relación</dt><dd>The charter itself is the 990 filer (independent 501(c)(3))</dd></div>
+      <div><dt>EIN</dt><dd><code>45-5252714</code></dd></div>
+      <div><dt>Año fiscal más reciente</dt><dd>FY 2023-24</dd></div>
+      <div><dt>Ingresos totales</dt><dd>$3,210,000</dd></div>
+      <div><dt>Activos totales</dt><dd>$1,930,000</dd></div>
+    </dl>
+    <p class="filing-link"><a href="https://projects.propublica.org/nonprofits/organizations/455252714" target="_blank" rel="noopener">Ver en ProPublica Nonprofit Explorer <span class="ext">&#8599;</span></a></p>
+    <aside class="caveat">Figures as of latest ProPublica snapshot (FY ending June 2024).</aside>
+  </section>
 </main>
 
 <footer class="site-footer">

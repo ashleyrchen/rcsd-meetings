@@ -23,19 +23,22 @@
     },
     {
       "slug": "former-adelante-campus",
-      "name": "Harper School (Ravenswood City SD) — verify name",
-      "nameEs": "Harper School (Distrito Escolar de Ravenswood) — verificar nombre",
+      "name": "Harper School (private)",
+      "nameEs": "Harper School (privada)",
       "address": "3150 Granger Way, Redwood City, CA 94063",
       "use": "leased-out",
-      "useLabel": "Leased to an outside tenant",
-      "useLabelEs": "Alquilado a un inquilino externo",
+      "useLabel": "Leased to a private school tenant",
+      "useLabelEs": "Alquilado a una escuela privada como inquilino",
       "tenant": {
-        "name": "Harper School (name pending verification)",
-        "url": null
+        "name": "Harper School",
+        "url": "https://www.harperschool.org",
+        "type": "private",
+        "programs": "Toddler, preschool, pre-kindergarten, kindergarten, and elementary",
+        "networkNote": "Harper School also operates a Danville campus."
       },
       "formerUse": "Former Adelante Selby Spanish Immersion campus",
       "formerUseEs": "Antiguo campus de Adelante Selby Spanish Immersion",
-      "notes": "Tenant name 'Haper/Harper School' needs confirmation from District."
+      "notes": null
     },
     {
       "slug": "former-orion-campus",
@@ -52,15 +55,28 @@
     },
     {
       "slug": "district-warehouse",
-      "name": "District warehouse (verify)",
-      "nameEs": "Almacén del distrito (verificar)",
-      "address": null,
+      "name": "District storage warehouse",
+      "nameEs": "Almacén del distrito",
+      "address": "1757 East Bayshore Road, Suites 4 & 6, Redwood City, CA 94063",
       "use": "leased-in",
-      "useLabel": "Leased by the district (not district-owned)",
-      "useLabelEs": "Alquilado por el distrito (no es propiedad del distrito)",
+      "useLabel": "Leased by the district (landlord: East Bayshore Investment Group, managed by Beals Martin Inc.)",
+      "useLabelEs": "Alquilado por el distrito (propietario: East Bayshore Investment Group, administrado por Beals Martin Inc.)",
       "tenant": null,
+      "landlord": {
+        "name": "East Bayshore Investment Group",
+        "propertyManager": "Beals Martin, Inc.",
+        "note": "Beals Martin also manages the IMC / Instructional Materials Center building."
+      },
+      "squareFeet": 2868,
       "formerUse": null,
-      "notes": "Warehouse the district leases for operations. Address + lease details pending confirmation."
+      "notes": "Commercial storage space (~2,868 sq ft). Lease use clause: \"STORAGE FOR SCHOOL DISTRICT.\" Last board-approved renewal was 2022-08-24 (consent item 11.8) through 2023-08-31 at $6,020/mo. Current status pending verification with Business Services — no subsequent renewal has surfaced in the board-packet index.",
+      "verifyStatus": true,
+      "source": {
+        "boardMeeting": "2022-08-24",
+        "itemLabel": "11.8",
+        "originalLeaseUrl": "https://go.boarddocs.com/ca/redwood/Board.nsf/files/CHDNEQ5E13AA/$file/Beals%20Martin%201757%20E%20Bayshore%204%20%26%206_Original%20Lease%202021.pdf",
+        "renewalUrl": "https://go.boarddocs.com/ca/redwood/Board.nsf/files/CHDSSK7417CA/$file/Beals%20Martin%201757%20E%20Bayshore%204%20%26%206_Renewal_22.23.pdf"
+      }
     }
   ]
 }
