@@ -523,6 +523,12 @@ function createServer(): McpServer {
         fetchJSON("chapter-markers.json"),
       ]);
 
+      // board-memos holds the rich per-item body (Quick Summary / Rationale /
+      // Financial Impact / etc). Scraped by scrape-board-packets.mjs into
+      // data/board-memos/{date}.json. Keyed by lowercase item title since
+      // meetings-data.json and board-memos use different item orderings.
+      let memoByTitle: Map<string, any> = new Map();
+
       // Find the meeting by date or slug
       const isDate = /^\d{4}-\d{2}-\d{2}$/.test(meeting);
       const mtg = meetingsData.meetings.find((m: any) =>
@@ -544,6 +550,20 @@ function createServer(): McpServer {
             },
           ],
         };
+      }
+
+      // Lazy-load the memo file. Not all meetings have one (older meetings
+      // predate the scraper), so swallow 404s and fall back to title-only.
+      try {
+        const memoDoc = await fetchJSON(`board-memos/${mtg.date}.json`);
+        for (const it of memoDoc.items || []) {
+          const key = (it.title || "").toLowerCase().trim();
+          if (key && it.memo && Object.keys(it.memo).length > 0) {
+            memoByTitle.set(key, it.memo);
+          }
+        }
+      } catch {
+        // no memo data for this meeting — continue without bodies
       }
 
       const lines: string[] = [];
@@ -607,6 +627,23 @@ function createServer(): McpServer {
             const action = item.actionType ? ` (${item.actionType})` : "";
             const speaker = item.speaker ? ` — ${item.speaker}` : "";
             lines.push(`  ${label}${item.title}${action}${speaker}`);
+
+            // Surface the rich memo body fields (Quick Summary / Rationale /
+            // Financial Impact / Recommendation) so callers don't have to fetch
+            // and read PDFs to understand what's actually being voted on.
+            const memo = memoByTitle.get((item.title || "").toLowerCase().trim());
+            if (memo) {
+              const fieldOrder = [
+                "Quick Summary / Abstract",
+                "Recommendation",
+                "Rationale",
+                "Financial Impact",
+              ];
+              for (const field of fieldOrder) {
+                const v = memo[field];
+                if (v) lines.push(`    ${field}: ${v}`);
+              }
+            }
 
             if (item.attachments && item.attachments.length > 0) {
               for (const att of item.attachments) {
