@@ -137,6 +137,14 @@
       "enrollmentYear": "2025-26",
       "enrollmentSource": "CDE School Profile",
       "website": "https://www.rocketshipschools.org/en/schools/redwood-city-prep/",
+      "email": "redwoodcity@rsed.org",
+      "fax": "(650) 434-0042",
+      "schoolLeaders": [
+        {
+          "role": "Principal",
+          "name": "Genzel Tolentino"
+        }
+      ],
       "network": "Rocketship Public Schools",
       "networkUrl": "https://www.rocketshipschools.org",
       "titlePatterns": ["\\brocketship\\b"],
