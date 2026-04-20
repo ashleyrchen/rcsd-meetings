@@ -67,6 +67,25 @@
       "enrollmentYear": "2025-26",
       "enrollmentSource": "CDE School Profile",
       "website": "https://excelencia.kippnorcal.org",
+      "email": "info@kippecp.org",
+      "socialMedia": {
+        "facebook": "https://www.facebook.com/KIPPExcelenciaCommunityPrep/",
+        "instagram": "https://www.instagram.com/kippexcelencia/",
+        "linkedin": "https://www.linkedin.com/company/kipp-northern-california/",
+        "linkedinNote": "Network-level LinkedIn (KIPP Northern California), not Excelencia-specific."
+      },
+      "schoolLeaders": [
+        {
+          "role": "Lower School Leader (TK-4)",
+          "name": "Liz Coughenour",
+          "photo": "https://excelencia.kippnorcal.org/wp-content/uploads/sites/6/2018/10/SL_Headshot_Liz_C-1-300x297.jpg"
+        },
+        {
+          "role": "Upper School Leader (5-8)",
+          "name": "Hugo Lawton",
+          "photo": "https://excelencia.kippnorcal.org/wp-content/uploads/sites/6/2018/10/kippexcelencia-300x288.jpg"
+        }
+      ],
       "network": "KIPP Public Schools Northern California (KIPP NorCal)",
       "networkUrl": "https://kippnorcal.org",
       "titlePatterns": ["\\bkipp\\b", "\\bexcelencia\\b"],
