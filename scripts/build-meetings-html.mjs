@@ -553,6 +553,8 @@ function generateSummary(m) {
 
 function highlightSummary(text) {
   let html = escapeHtml(text);
+  // Preserve <strong> tags that the summary-generation prompt emits.
+  html = html.replace(/&lt;(\/?strong)&gt;/g, '<$1>');
   // Highlight dollar amounts
   html = html.replace(/\$[\d,.]+[MKBmkb]?(?:\/\w+)?/g, '<strong>$&</strong>');
   // Highlight key terms (case-insensitive, word boundary)
@@ -1155,6 +1157,25 @@ const pageCSS = `
   .toc a:hover {
     color: var(--green-mid);
     border-bottom-color: var(--green-light);
+  }
+
+  .toc-year-select {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    background: transparent;
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    padding: 0.35rem 0.4rem;
+    margin: 0.55rem 0.4rem;
+    cursor: pointer;
+  }
+
+  .toc-year-select:hover {
+    color: var(--green-mid);
+    border-color: var(--green-light);
   }
 
   /* ---- MAIN ---- */
@@ -1854,7 +1875,10 @@ ${siteNav({ activePage: 'meetings', lang: L.lang, altLangHref: L.altLangHref })}
 <nav class="toc">
   <div class="toc-inner">
     <a href="#threads">${L.navTopics}</a>
-    ${(upcomingPublished.length > 0 || upcomingProvisional.length > 0) ? '<a href="#upcoming">' + L.upcomingTitle + '</a>\n    ' : ''}${schoolYears.map(([sy]) => `<a href="#sy${sy}">${sy.slice(0,4)}-${sy.slice(4)}</a>`).join('\n    ')}
+    ${(upcomingPublished.length > 0 || upcomingProvisional.length > 0) ? '<a href="#upcoming">' + L.upcomingTitle + '</a>\n    ' : ''}<select class="toc-year-select" aria-label="${L.lang === 'es' ? 'Año escolar' : 'School year'}">
+      <option value="">${L.lang === 'es' ? 'Año escolar' : 'School year'}…</option>
+      ${schoolYears.map(([sy]) => `<option value="#sy${sy}">${sy.slice(0,4)}-${sy.slice(4)}</option>`).join('\n      ')}
+    </select>
     <a href="#resources">${L.navResources}</a>
   </div>
 </nav>
@@ -1940,15 +1964,18 @@ ${siteFooter({ lang: L.lang })}
     }
   });
 
-  // Auto-expand collapsed sections when TOC links are clicked
-  document.querySelectorAll('.toc a[href^="#sy"]').forEach(function(link) {
-    link.addEventListener('click', function(e) {
-      var target = document.querySelector(link.getAttribute('href'));
-      if (target && target.tagName === 'DETAILS' && !target.open) {
-        target.open = true;
-      }
+  // School-year dropdown: navigate + auto-expand the target <details>
+  var yearSelect = document.querySelector('.toc-year-select');
+  if (yearSelect) {
+    yearSelect.addEventListener('change', function() {
+      var hash = yearSelect.value;
+      if (!hash) return;
+      var target = document.querySelector(hash);
+      if (target && target.tagName === 'DETAILS' && !target.open) target.open = true;
+      window.location.hash = hash;
+      yearSelect.value = '';
     });
-  });
+  }
 
   // Also handle direct URL hash on page load
   if (window.location.hash && window.location.hash.startsWith('#sy')) {

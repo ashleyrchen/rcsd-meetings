@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<title>Regular — April 22, 2026 — RCSD Board Meeting</title>
+<meta name="description" content="Agenda, transcript, and minutes for the RCSD Regular on April 22, 2026.">
+<meta name="theme-color" content="#1a3a2a">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="canonical" href="https://rcsd.info/meetings/2026-04-22/">
+
+<meta property="og:title" content="Regular — April 22, 2026 — RCSD Board Meeting">
+<meta property="og:description" content="Agenda, transcript, and minutes for the RCSD Regular on April 22, 2026.">
+<meta property="og:url" content="https://rcsd.info/meetings/2026-04-22/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://rcsd.info/og-1200.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="RCSD Open Data">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://rcsd.info/og-1200.jpg">
+<meta name="twitter:title" content="Regular — April 22, 2026 — RCSD Board Meeting">
+<meta name="twitter:description" content="Agenda, transcript, and minutes for the RCSD Regular on April 22, 2026.">
+<link rel="preload" href="/fonts/fraunces-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/newsreader-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/ibm-plex-mono-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/fonts/fonts.css">
+
+
+<style>
+
+  :root {
+    --green-deep: #1a3a2a;
+    --green-mid: #2d5a3f;
+    --green-light: #4a8c6a;
+    --green-pale: #dcebd5;
+    --green-wash: #f0f6ed;
+    --cream: #faf8f4;
+    --cream-dark: #f2efe8;
+    --amber: #c4842d;
+    --amber-light: #f0d9a8;
+    --coral: #c45d4a;
+    --coral-light: #f5ddd8;
+    --text: #2a2a28;
+    --text-secondary: #5a5a56;
+    --text-muted: #8a8a84;
+    --rule: #d4d0c8;
+    --rule-light: #e8e4dc;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html {
+    font-size: 17px;
+    scroll-behavior: smooth;
+    background: var(--cream);
+  }
+
+  body {
+    font-family: 'Newsreader', Georgia, serif;
+    color: var(--text);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    background: var(--cream);
+  }
+
+  a {
+    color: var(--green-mid);
+    text-decoration-color: var(--rule);
+    text-underline-offset: 2px;
+    transition: color 0.15s, text-decoration-color 0.15s;
+  }
+  a:hover {
+    color: var(--green-deep);
+    text-decoration-color: var(--green-mid);
+  }
+
+  /* ---- SITE NAV ---- */
+  .site-nav {
+    background: #1a2e1a;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .site-nav-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .site-nav-tabs { display: flex; gap: 0; }
+  .site-nav-tab {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: rgba(255,255,255,0.7);
+    padding: 0.75rem 1rem;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .site-nav-tab:hover { color: #fff; }
+  .site-nav-tab.active { color: #fff; border-bottom-color: var(--green-light); }
+
+  .site-nav-right {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .site-nav-lang {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    padding: 0.35rem 0.65rem;
+    border: 1px solid rgba(255,255,255,0.35);
+    border-radius: 3px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .site-nav-lang:hover {
+    color: #fff;
+    border-color: rgba(255,255,255,0.6);
+  }
+
+  /* ---- FOOTER ---- */
+  .site-footer {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2rem 2rem 4rem;
+    border-top: 1px solid var(--rule);
+    text-align: center;
+  }
+  .site-footer p {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    font-style: italic;
+  }
+  .site-footer a { color: var(--green-mid); }
+  .footer-nav {
+    margin-top: 0.8rem;
+    font-style: normal;
+  }
+  .footer-nav a {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--green-mid);
+    text-decoration: none;
+    margin: 0 0.75rem;
+  }
+  .footer-nav a:hover { text-decoration: underline; }
+
+  /* ---- RESPONSIVE (nav + footer) ---- */
+  @media (max-width: 640px) {
+    .site-nav-tab { padding: 0.6rem 0.7rem; font-size: 0.7rem; }
+    .site-nav-inner { padding: 0 1.2rem; }
+  }
+
+  .tv-layout {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 1rem 2rem 2rem;
+  }
+
+  .tv-header { margin-bottom: 1rem; }
+
+  .tv-back {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+  }
+  .tv-back:hover { color: var(--green-mid); }
+
+  .tv-title {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--green-deep);
+    margin-bottom: 0.25rem;
+  }
+
+  .tv-meta {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+  }
+  .tv-meta a { color: var(--green-mid); text-decoration: none; }
+  .tv-meta a:hover { text-decoration: underline; }
+
+  .tv-summary {
+    font-family: 'Newsreader', serif;
+    font-size: 0.9rem;
+    line-height: 1.55;
+    color: var(--text-secondary);
+    margin-top: 0.5rem;
+    max-width: 640px;
+  }
+
+  .tv-main {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .tv-video-col {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--cream);
+    padding-bottom: 0.5rem;
+  }
+
+  .tv-video-wrap {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #000;
+  }
+
+  .tv-video-wrap iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    border: none;
+  }
+
+  /* ---- Tab bar ---- */
+  .tv-tabs {
+    display: flex;
+    gap: 0;
+    border-bottom: 2px solid var(--rule);
+    margin-top: 0.5rem;
+  }
+
+  .tv-tab {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border: none;
+    background: none;
+    color: var(--text-muted);
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .tv-tab:hover { color: var(--text); }
+  .tv-tab.active { color: var(--green-deep); border-bottom-color: var(--green-mid); }
+  .tv-tab:disabled { opacity: 0.4; cursor: default; }
+
+  .tv-controls {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    align-items: center;
+  }
+
+  .tv-btn {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    padding: 0.3rem 0.6rem;
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    background: var(--cream);
+    color: var(--text-secondary);
+    cursor: pointer;
+  }
+  .tv-btn:hover { background: var(--cream-dark); }
+  .tv-btn.active { background: var(--green-pale); border-color: var(--green-mid); color: var(--green-deep); }
+
+  .tv-search {
+    flex: 1;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    padding: 0.3rem 0.6rem;
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    background: #fff;
+    color: var(--text);
+    outline: none;
+  }
+  .tv-search:focus { border-color: var(--green-mid); }
+
+  /* ---- Tab panels ---- */
+  .tv-panel { display: none; }
+  .tv-panel.active { display: block; }
+
+  .tv-transcript-panel {
+    border: 1px solid var(--rule-light);
+    border-radius: 0 0 6px 6px;
+    background: #fff;
+    border-top: none;
+  }
+
+  .tv-utterance {
+    padding: 0.5rem 0.75rem;
+    border-bottom: 1px solid var(--rule-light);
+    cursor: pointer;
+    transition: background 0.15s;
+    display: flex;
+    gap: 0.5rem;
+  }
+  .tv-utterance:last-child { border-bottom: none; }
+  .tv-utterance:hover { background: var(--green-wash); }
+  .tv-utterance.active { background: #eef6eb; }
+  .tv-utterance.search-match { background: #fef9e7; }
+
+  .tv-ts {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    flex: 0 0 3.5rem;
+    padding-top: 0.15rem;
+    text-align: right;
+  }
+
+  .tv-speaker {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.6rem;
+    font-weight: 400;
+    flex: 0 0 auto;
+    width: 1rem;
+    opacity: 0.5;
+    padding-top: 0.15rem;
+  }
+
+  .tv-text {
+    font-family: 'Newsreader', serif;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: var(--text);
+    flex: 1;
+    min-width: 0;
+  }
+
+  .tv-text mark {
+    background: #fde68a;
+    padding: 0 2px;
+    border-radius: 2px;
+  }
+
+  /* ---- Agenda panel ---- */
+  .tv-agenda-panel {
+    border: 1px solid var(--rule-light);
+    border-radius: 0 0 6px 6px;
+    background: #fff;
+    border-top: none;
+    padding: 0.25rem 0;
+  }
+
+  .tv-clickable { cursor: pointer; }
+  .tv-clickable:hover { background: var(--green-wash); }
+
+  .tv-agenda-section {
+    padding: 0.6rem 0.75rem 0.3rem;
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--green-deep);
+    display: flex;
+    gap: 0.5rem;
+    align-items: baseline;
+    border-top: 1px solid var(--rule-light);
+  }
+  .tv-agenda-section:first-child { border-top: none; }
+  .tv-agenda-section.active { background: #eef6eb; }
+
+  .tv-agenda-item {
+    padding: 0.35rem 0.75rem 0.35rem 1.5rem;
+    font-family: 'Newsreader', serif;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    display: flex;
+    gap: 0.5rem;
+    align-items: baseline;
+    transition: background 0.15s;
+  }
+  .tv-agenda-item.active { background: #eef6eb; }
+
+  .tv-agenda-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--green-mid);
+    font-weight: 500;
+    flex: 0 0 2.5rem;
+  }
+
+  .tv-agenda-title { flex: 1; min-width: 0; }
+
+  .tv-agenda-type {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.55rem;
+    color: var(--text-muted);
+    background: var(--cream-dark);
+    padding: 0.05rem 0.3rem;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+
+  .tv-agenda-duration {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--text-muted);
+  }
+
+  .tv-agenda-atts {
+    padding: 0.1rem 0.75rem 0.3rem 3rem;
+  }
+
+  .tv-agenda-att {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--green-mid);
+    text-decoration: none;
+    display: block;
+    line-height: 1.6;
+  }
+  .tv-agenda-att:hover { text-decoration: underline; color: var(--green-deep); }
+
+  .tv-agenda-pc {
+    padding: 0.1rem 0.75rem 0.3rem 3rem;
+    border-left: 2px solid var(--cream-dark);
+    margin-left: 1.5rem;
+  }
+
+  .tv-agenda-pc-speaker {
+    font-size: 0.8rem;
+    line-height: 1.5;
+    padding: 0.15rem 0;
+  }
+
+  .tv-agenda-pc-name {
+    font-weight: 600;
+    color: var(--green-mid);
+  }
+
+  .tv-agenda-pc-summary {
+    color: var(--text-secondary);
+    font-size: 0.78rem;
+  }
+
+  /* ---- Minutes panel ---- */
+  .tv-minutes-panel {
+    border: 1px solid var(--rule-light);
+    border-radius: 0 0 6px 6px;
+    background: #fff;
+    border-top: none;
+    padding: 1rem;
+  }
+
+  .tv-minutes-info p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.75rem;
+  }
+
+  .tv-minutes-link {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--green-mid);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  .tv-minutes-link:hover { text-decoration: underline; }
+  .tv-minutes-link::before { content: '\1F4C4 '; }
+
+  .tv-minutes-embed {
+    width: 100%;
+    height: 70vh;
+    border: 1px solid var(--rule-light);
+    border-radius: 4px;
+    margin-top: 0.5rem;
+  }
+
+  .tv-empty {
+    padding: 2rem;
+    text-align: center;
+    color: var(--text-muted);
+    font-style: italic;
+  }
+
+  .tv-download {
+    text-align: center;
+    padding: 0.75rem;
+  }
+  .tv-download a {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--green-mid);
+    text-decoration: none;
+  }
+  .tv-download a:hover { text-decoration: underline; }
+
+  @media (max-width: 640px) {
+    .tv-layout { padding: 0.75rem 1rem; }
+    .tv-utterance { gap: 0.3rem; }
+    .tv-ts { flex: 0 0 2.8rem; font-size: 0.6rem; }
+    .tv-speaker { width: 0.8rem; font-size: 0.55rem; }
+    .tv-agenda-item { padding-left: 0.75rem; }
+    .tv-tab { padding: 0.4rem 0.6rem; font-size: 0.65rem; }
+  }
+
+</style>
+</head>
+<body>
+<nav class="site-nav">
+  <div class="site-nav-inner">
+    <div class="site-nav-tabs">
+      <a href="/" class="site-nav-tab">Home</a>
+      <a href="/meetings/" class="site-nav-tab active">Meetings</a>
+      <a href="/schools/" class="site-nav-tab">Schools</a>
+      <a href="/district/" class="site-nav-tab">District</a>
+      <a href="/budget/" class="site-nav-tab">Budget</a>
+      <a href="/blog/" class="site-nav-tab">Blog</a>
+    </div>
+  </div>
+</nav>
+
+<div class="tv-layout">
+  <div class="tv-header">
+    <a href="/meetings/" class="tv-back">&larr; All Meetings</a>
+    <h1 class="tv-title">Regular &mdash; April 22, 2026</h1>
+    <div class="tv-meta">
+      
+      
+      <a href="https://simbli.eboardsolutions.com/SB_Meetings/ViewMeeting.aspx?S=36030397&amp;MID=51012" target="_blank" rel="noopener">Simbli</a>
+      
+    </div>
+    <p class="tv-summary">The Board approved multiple facility improvement projects including <strong>HVAC Upgrades Phase 3</strong> at <strong>Henry Ford and Roy Cloud Schools</strong>, a <strong>Guaranteed Maximum Price Amendment</strong> with <strong>Blach Construction</strong> for Phase 2 upgrades, and <strong>Industrial Hygienist Services Agreements</strong>; additionally, the Board reviewed School Plans for Student Achievement (SPSA) for <strong>Kennedy Middle School</strong>, <strong>Orion Alternative and Mandarin Immersion</strong>, and <strong>Adelante Selby Spanish Immersion</strong>, and approved multiple board policy updates and a <strong>$100,000 increase</strong> to the <strong>Bonami Baking Company</strong> purchase order.</p>
+  </div>
+
+  <div class="tv-main">
+    <div class="tv-video-col">
+      
+      <div class="tv-tabs">
+        <button class="tv-tab" data-tab="transcript" disabled>Transcript</button>
+        <button class="tv-tab active" data-tab="agenda">Agenda</button>
+        <button class="tv-tab" data-tab="minutes" disabled>Minutes</button>
+      </div>
+      
+    </div>
+
+    <div class="tv-panel tv-transcript-panel" id="panel-transcript">
+      <div class="tv-empty">No transcript available for this meeting.</div>
+    </div>
+
+    <div class="tv-panel tv-agenda-panel active" id="panel-agenda">
+      <div class="tv-agenda-section"><span class="tv-agenda-label">1</span><span class="tv-agenda-title">Call to Order</span><span class="tv-agenda-duration">1min</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">1.1</span><span class="tv-agenda-title">Roll Call</span><span class="tv-agenda-type">Procedural</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">1.2</span><span class="tv-agenda-title">Public Comment on Closed Session Items Only</span><span class="tv-agenda-type">Information</span></div><div class="tv-agenda-section"><span class="tv-agenda-label">3</span><span class="tv-agenda-title">Announcement of Closed Session Purpose</span><span class="tv-agenda-duration">1min</span></div><div class="tv-agenda-section"><span class="tv-agenda-label">4</span><span class="tv-agenda-title">Closed Session (5:45 PM)</span><span class="tv-agenda-duration">1hr</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">4.1</span><span class="tv-agenda-title">CONFERENCE WITH LEGAL COUNSEL – ANTICIPATED LITIGATION – Initiation of litigation pursuant to paragraph (4) of subdivision (d) of Section 54956.9: (1 case)</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">4.2</span><span class="tv-agenda-title">CONFERENCE WITH LABOR NEGOTIATORS (Gov. Code section 54957.6)</span></div><div class="tv-agenda-section"><span class="tv-agenda-label">5</span><span class="tv-agenda-title">Reconvene to Open Session at approximately 7:00 PM</span><span class="tv-agenda-duration">1min</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">5.1</span><span class="tv-agenda-title">Roll Call</span><span class="tv-agenda-type">Procedural</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">5.2</span><span class="tv-agenda-title">Report Out on Closed Session from April 22, 2026</span><span class="tv-agenda-type">Procedural</span></div><div class="tv-agenda-section"><span class="tv-agenda-label">6</span><span class="tv-agenda-title">Welcome</span><span class="tv-agenda-duration">1min</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">6.1</span><span class="tv-agenda-title">Pledge of Allegiance</span><span class="tv-agenda-type">Procedural</span></div><div class="tv-agenda-section"><span class="tv-agenda-label">7</span><span class="tv-agenda-title">Changes to the Agenda</span><span class="tv-agenda-duration">1min</span></div><div class="tv-agenda-section"><span class="tv-agenda-label">8</span><span class="tv-agenda-title">Approval of the Agenda (Action Required)</span><span class="tv-agenda-duration">1min</span></div><div class="tv-agenda-section"><span class="tv-agenda-label">9</span><span class="tv-agenda-title">Public Comment</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">9.1</span><span class="tv-agenda-title">Labor Association Comments</span><span class="tv-agenda-type">Information</span></div><div class="tv-agenda-section"><span class="tv-agenda-label">10</span><span class="tv-agenda-title">Approval of the Bond Program Consent Items</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">10.1</span><span class="tv-agenda-title">Approval of Notice of Completion for Southland Industries on the District Wide Lighting and Controls Upgrades Project</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/Notice-of-Completion-Southland-Lighting-Upgrade.pdf" target="_blank" rel="noopener">Notice of Completion - Southland - Lighting Upgrade</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">10.2</span><span class="tv-agenda-title">Approval of Early Procurement Equipment List for the HVAC Upgrades Project, Phase 2 through Blach Construction</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/Early-Procurement-Summary-4-14-26-1.pdf" target="_blank" rel="noopener">Early Procurement Summary 4-14-26 (1)</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">10.3</span><span class="tv-agenda-title">Approval of Program Management Services Amendment #6 with Cumming Group</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/260422-RCSD-Cumming-Group-Amendment-6-to-Agreement-for-Program-Management-Svcs.pdf" target="_blank" rel="noopener">260422 RCSD Cumming Group Amendment 6 to Agreement for Program Management Svcs</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/250113-RCSD-Cumming-Group-Amendment-5-to-Agreement-for-Program-Management-Svcs-F.pdf" target="_blank" rel="noopener">250113 RCSD Cumming Group Amendment 5 to Agreement for Program Management Svcs - Fully Executed</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/240917-RCSD-Cumming-Group-Amendment-4-to-Agreement-for-Program-Management-Svcs-F.pdf" target="_blank" rel="noopener">240917 RCSD Cumming Group Amendment 4 to Agreement for Program Management Svcs - Fully Executed</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/230706-RCSD-RGM-Kramer-Amendment-3-to-Agreement-for-Program-Management-Svcs-Full.pdf" target="_blank" rel="noopener">230706 RCSD RGM Kramer Amendment 3 to Agreement for Program Management Svcs - Fully Executed</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/230510-RCSD-RGM-Kramer-Amendment-2-to-Agreement-for-Program-Management-Svcs-Full.pdf" target="_blank" rel="noopener">230510 RCSD RGM Kramer Amendment 2 to Agreement for Program Management Svcs - Fully Executed</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/230118-RCSD-RGM-Kramer-Amendment-1-to-Agreement-for-Program-Management-Svcs-Full.pdf" target="_blank" rel="noopener">230118 RCSD RGM Kramer Amendment 1 to Agreement for Program Management Svcs - Fully Executed</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/220701-RCSD-RGM-Kramer-Agreement-for-Program-Management-Services-Fully-Executed.pdf" target="_blank" rel="noopener">220701 RCSD RGM Kramer Agreement for Program Management Services - Fully Executed</a></div><div class="tv-agenda-section"><span class="tv-agenda-label">11</span><span class="tv-agenda-title">Bond Program Action Items</span><span class="tv-agenda-duration">30min</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">11.1</span><span class="tv-agenda-title">Approval of HVAC Upgrades Projects Phase 3: Henry Ford and Roy Cloud Schools</span><span class="tv-agenda-type">Action</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">11.2</span><span class="tv-agenda-title">Approval of Guaranteed Maximum Price (GMP) Amendment 1 to Facilities Lease with Blach Construction for the HVAC Upgrade projects, Phase 2 at Clifford School, Orion School, and Kennedy Middle School</span><span class="tv-agenda-type">Action</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/Original-Facilities_Lease_-_HVAC_Upgrades_Projects_-_Increment_2_-Blach-4533164..pdf" target="_blank" rel="noopener">Original Facilities_Lease_-_HVAC_Upgrades_Projects_-_Increment_2_(Blach)(4533164.1).docx</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/GMP-Amendment-to-Facilities-Lease-HVAC-Upgrades-Project-Incrmt-2-Signed-Blach.pdf" target="_blank" rel="noopener">GMP Amendment to Facilities Lease - HVAC Upgrades Project, Incrmt 2 - Signed (Blach)</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">11.3</span><span class="tv-agenda-title">Approval of the Industrial Hygienist Services Agreements for the HVAC Upgrade Projects, Phase 2</span><span class="tv-agenda-type">Action</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/ProTech-Contract-HVAC-Orion-sig-ProTech.pdf" target="_blank" rel="noopener">ProTech Contract (HVAC) Orion sig ProTech</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/ProTech-Contract-HVAC-Kennedy-sig-ProTech.pdf" target="_blank" rel="noopener">ProTech Contract (HVAC) Kennedy sig ProTech</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/ProTech-Contract-HVAC-Clifford-sig-ProTech.pdf" target="_blank" rel="noopener">ProTech Contract (HVAC) Clifford sig ProTech</a></div><div class="tv-agenda-section"><span class="tv-agenda-label">12</span><span class="tv-agenda-title">Action Items (Action Required)</span><span class="tv-agenda-duration">2hr</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">12.1</span><span class="tv-agenda-title">Kennedy Middle School Presentation and School Plan for Student Achievement (SPSA) Approval</span><span class="tv-agenda-type">Action</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/Kennedy-SPSA-2025-26_-Spring-_John_F._Kennedy_Middle_School_20260415-1.pdf" target="_blank" rel="noopener">Kennedy SPSA 2025-26_(Spring)_John_F._Kennedy_Middle_School_20260415 (1)</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/Kennedy-25-26-Data-for-Board-presentation.pdf" target="_blank" rel="noopener">Kennedy 25-26 Data for Board presentation </a></div><div class="tv-agenda-item"><span class="tv-agenda-label">12.2</span><span class="tv-agenda-title">Orion Alternative and Mandarin Immersion Presentation and School Plan for Student Achievement (SPSA) Approval</span><span class="tv-agenda-type">Action</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/Orion-Alternative-2025-26_Spring-_20260415.pdf" target="_blank" rel="noopener">Orion Alternative 2025-26_Spring)_20260415</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/Orion-25-26-Data-for-Board-presentation.pdf" target="_blank" rel="noopener">Orion 25-26 Data for Board presentation  </a></div><div class="tv-agenda-item"><span class="tv-agenda-label">12.3</span><span class="tv-agenda-title">Adelante Selby Spanish Immersion Presentation and School Plan for Student Achievement (SPSA) Approval</span><span class="tv-agenda-type">Action</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/Adelante-Selby-25-26-Data-for-Board-presentation.pdf" target="_blank" rel="noopener">Adelante Selby 25-26 Data for Board presentation </a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/Adelante-Selby-2025-26-SPSA-Spring-20260408.pdf" target="_blank" rel="noopener">Adelante Selby 2025-26 SPSA(Spring)20260408</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">12.4</span><span class="tv-agenda-title">Adoption of Resolution No. 22, Approval of Education Code Options for Teaching Assignments for the 2025-2026 School Year</span><span class="tv-agenda-type">Action</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/Resolution-No.-22-Ed-Code-and-Title-5-2025_2026.pdf" target="_blank" rel="noopener">Resolution No. 22 - Ed Code and Title 5 2025_2026</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/Exhibit-A-Ed-Code-Teachers-Assignment.pdf" target="_blank" rel="noopener">Exhibit A - Ed Code Teachers Assignment</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">12.5</span><span class="tv-agenda-title">Adoption of Resolution No. 23, Approving the Agreement with KIPP Excelencia for Proposition 2 Charter School Facilities Program Rehabilitation Funding (Fair Oaks Site)</span><span class="tv-agenda-type">Action</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/Resolution-No.-23_Resolution-No.-23_-Certify-Unhoused-Pupils.pdf" target="_blank" rel="noopener">Resolution No. 23_Resolution No. 23_ Certify Unhoused Pupils</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/Enrollment-Projections.pdf" target="_blank" rel="noopener">Enrollment Projections</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/KIPP-Excelencia_Prop-2_District-Notification_New-Construction.pdf" target="_blank" rel="noopener">KIPP Excelencia_Prop 2_District Notification_New Construction</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/KIPP-Excelencia_Prop-2_-District-Notification_Rehabilitation.pdf" target="_blank" rel="noopener">KIPP Excelencia_Prop 2_ District Notification_Rehabilitation</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/KIPP-Prop-2-Presentation-RCSD-Board.pdf" target="_blank" rel="noopener">KIPP Prop 2 Presentation RCSD Board </a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/Resolution-No.-11_KIPP-Prop-2-Application-Funding.pdf" target="_blank" rel="noopener">Resolution No. 11_KIPP Prop 2 Application Funding</a></div><div class="tv-agenda-section"><span class="tv-agenda-label">13</span><span class="tv-agenda-title">Discussion Items</span><span class="tv-agenda-duration">5min</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">13.1</span><span class="tv-agenda-title">Discussion of the Board of Trustees Graduation/Promotions Assignments for the 2025–26 School Year</span><span class="tv-agenda-type">Discussion</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/DRAFT-02-25-26-SY-Graduation_Promotions-Assignments.pdf" target="_blank" rel="noopener">DRAFT 02 25–26 SY Graduation_Promotions Assignments</a></div><div class="tv-agenda-section"><span class="tv-agenda-label">14</span><span class="tv-agenda-title">Approval of Consent Items (Action Required)</span><span class="tv-agenda-duration">1min</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">14.1</span><span class="tv-agenda-title">Approval of the March 11, 2026, Regular Meeting Minutes</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/2026.03.11-Minutes-DRAFT-Regular.pdf" target="_blank" rel="noopener">2026.03.11 Minutes DRAFT  - Regular</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">14.2</span><span class="tv-agenda-title">Approval of the March 25, 2026, Regular Meeting Minutes</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/2026.03.25-Minutes-DRAFT-Closed.Regular.pdf" target="_blank" rel="noopener">2026.03.25 Minutes DRAFT - Closed.Regular</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">14.3</span><span class="tv-agenda-title">Approval of the April 1, 2026, Regular Meeting Minutes</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/2026.04.01-Minutes-DRAFT-Closed.Regular.pdf" target="_blank" rel="noopener">2026.04.01 Minutes DRAFT - Closed.Regular</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">14.4</span><span class="tv-agenda-title">Approval of the Amended August 27, 2025, and October 8, 2025, Board Meeting Minutes</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/2025.08.27-Minutes-DRAFT-Regular-amended-Marked.pdf" target="_blank" rel="noopener">2025.08.27 Minutes DRAFT - Regular (amended) - Marked</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/2025.08.27-Minutes-DRAFT-Regular-amended.pdf" target="_blank" rel="noopener">2025.08.27 Minutes DRAFT - Regular (amended)</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/2025.10.08-Minutes-DRAFT-Closed.Regular-amended-Marked.pdf" target="_blank" rel="noopener">2025.10.08 Minutes DRAFT - Closed.Regular (amended) - Marked</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/2025.10.08-Minutes-DRAFT-Closed.Regular-amended.pdf" target="_blank" rel="noopener">2025.10.08 Minutes DRAFT - Closed.Regular (amended)</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">14.5</span><span class="tv-agenda-title">Approval of Renewal Agreement Between Redwood City School District Instructional Materials Center and 2992 Spring Partners/Beals Martin</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/IMC-Lease-Agreement-Renewal-777-Third-Ave-06.30.2028-board-4.22.26.pdf" target="_blank" rel="noopener">IMC Lease Agreement Renewal (777 Third Ave) 06.30.2028 board 4.22.26</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/777-3rd-Avenue-Lease_original.pdf" target="_blank" rel="noopener">777 3rd Avenue Lease_original</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">14.6</span><span class="tv-agenda-title">Approval of the Request to Increase Bonami Baking Company Purchase Order (PO) by $100,000 for the 2025-26 School Year</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">14.7</span><span class="tv-agenda-title">Approval of Board Policy 4219.23: Unauthorized Release Of Confidential/Privileged Information</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/Policy-4219.23_-Unauthorized-Release-Of-Confidential_Privileged-Information-Mark.pdf" target="_blank" rel="noopener">Policy 4219.23_ Unauthorized Release Of Confidential_Privileged Information - Marked</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/Policy-4219.23_-Unauthorized-Release-Of-Confidential_Privileged-Information-Clea.pdf" target="_blank" rel="noopener">Policy 4219.23_ Unauthorized Release Of Confidential_Privileged Information - Clean</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">14.8</span><span class="tv-agenda-title">Approval of Board Policy 4119.11: Sexual Harassment</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/BP-4119.11-Sexual-Harassment-Marked.pdf" target="_blank" rel="noopener">BP 4119.11 - Sexual Harassment - Marked</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/BP-4119.11-Sexual-Harassment-Clean.pdf" target="_blank" rel="noopener">BP 4119.11 - Sexual Harassment - Clean</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">14.9</span><span class="tv-agenda-title">Approval of Board Policy 3515.21: Unmanned Aircraft Systems (Drones)</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/BP-3515.21-Unmanned-Aircraft-Systems-Drones-Approval.pdf" target="_blank" rel="noopener">BP 3515.21 - Unmanned Aircraft Systems (Drones) - Approval</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">14.10</span><span class="tv-agenda-title">Approval of Board Policy 4117.13: Early Retirement Option</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/Policy-4117.13_-Early-Retirement-Option-Marked.pdf" target="_blank" rel="noopener">Policy 4117.13_ Early Retirement Option- Marked</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/Policy-4117.13_-Early-Retirement-Option-Clean.pdf" target="_blank" rel="noopener">Policy 4117.13_ Early Retirement Option- Clean</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">14.11</span><span class="tv-agenda-title">Approval of Board Policy 4317.13: Early Retirement Option</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/Policy-4317.13_-Early-Retirement-Option-Marked.pdf" target="_blank" rel="noopener">Policy 4317.13_ Early Retirement Option- Marked</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/Policy-4317.13_-Early-Retirement-Option-Clean.pdf" target="_blank" rel="noopener">Policy 4317.13_ Early Retirement Option- Clean</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">14.12</span><span class="tv-agenda-title">Approval of Board Policy 0460: Local Control And Accountability Plan</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/0460-BP-Local-Control-and-Accountability-Plan-Marked.pdf" target="_blank" rel="noopener">0460 - BP - Local Control and Accountability Plan - Marked</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/0460-BP-Local-Control-and-Accountability-Plan-Clean.pdf" target="_blank" rel="noopener">0460 - BP - Local Control and Accountability Plan - Clean</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">14.13</span><span class="tv-agenda-title">Approval of Board Policy 4000: Concepts And Roles</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/4000-BP-Concepts-and-Roles-Marked.pdf" target="_blank" rel="noopener">4000 - BP - Concepts and Roles - Marked</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/4000-BP-Concepts-and-Roles-Clean.pdf" target="_blank" rel="noopener">4000 - BP - Concepts and Roles - Clean</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">14.14</span><span class="tv-agenda-title">Approval of Board Policy 4301: Administrative Staff Organization</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/Policy-4301_-Administrative-Staff-Organization-Marked.pdf" target="_blank" rel="noopener">Policy 4301_ Administrative Staff Organization-Marked</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/Policy-4301-Administrative-Staff-Organization-Clean.pdf" target="_blank" rel="noopener">Policy 4301 Administrative Staff Organization-Clean</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">14.15</span><span class="tv-agenda-title">Approval of Board Policy 4312.1: Contracts</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/Policy-4312.1_-Contracts-Marked.pdf" target="_blank" rel="noopener">Policy 4312.1_ Contracts- Marked</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/Policy-4312.1-Contracts-Clean.pdf" target="_blank" rel="noopener">Policy 4312.1 Contracts- Clean</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">14.16</span><span class="tv-agenda-title">Approval of Board Policy 4112.2: Certification</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/Policy-4112.2-Certification-Marked.pdf" target="_blank" rel="noopener">Policy 4112.2 Certification- Marked</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/Policy-4112.2-Certification-Clean.pdf" target="_blank" rel="noopener">Policy 4112.2 Certification- Clean</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">14.17</span><span class="tv-agenda-title">Approval of Board Policy 4112.21: Interns</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/4112.21-BP-Interns-Clean.pdf" target="_blank" rel="noopener">4112.21 - BP - Interns - Clean</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/4112.21-BP-Interns-Marked.pdf" target="_blank" rel="noopener">4112.21 - BP - Interns - Marked</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">14.18</span><span class="tv-agenda-title">Approval of Board Policy 4212.8: Employment Of Relatives</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/Policy-4212.8_-Employment-Of-Relatives-Marked.pdf" target="_blank" rel="noopener">Policy 4212.8_ Employment Of Relatives- Marked</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/Policy-4212.8_-Employment-Of-Relatives-Clean.pdf" target="_blank" rel="noopener">Policy 4212.8_ Employment Of Relatives- Clean</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">14.19</span><span class="tv-agenda-title">Approval of Board Policy 4312.8: Employment Of Relatives</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/Policy-4312.8_-Employment-Of-Relatives-Marked.pdf" target="_blank" rel="noopener">Policy 4312.8_ Employment Of Relatives- Marked</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/Policy-4312.8_-Employment-Of-Relatives-Clean.pdf" target="_blank" rel="noopener">Policy 4312.8_ Employment Of Relatives- Clean</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">14.20</span><span class="tv-agenda-title">Approval of Board Policy 4115: Evaluation/Supervision</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/4115-BP-Evaluation_Supervision-Marked.pdf" target="_blank" rel="noopener">4115 - BP - Evaluation_Supervision - Marked</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/4115-BP-Evaluation_Supervision-Clean.pdf" target="_blank" rel="noopener">4115 - BP - Evaluation_Supervision - Clean</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">14.21</span><span class="tv-agenda-title">Approval of Board Policy 4117.2: Resignation</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/Policy-4117.2_-Resignation-Marked.pdf" target="_blank" rel="noopener">Policy 4117.2_ Resignation- Marked</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/Policy-4117.2_-Resignation-Clean.pdf" target="_blank" rel="noopener">Policy 4117.2_ Resignation- Clean</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">14.22</span><span class="tv-agenda-title">Approval of Board Policy 4217.2: Resignation</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/Policy-4217.2_-Resignation-Marked.pdf" target="_blank" rel="noopener">Policy 4217.2_ Resignation- Marked</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/Policy-4217.2_-Resignation-Clean.pdf" target="_blank" rel="noopener">Policy 4217.2_ Resignation- Clean</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">14.23</span><span class="tv-agenda-title">Approval of Board Policy 4317.2: Resignation</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/Policy-4317.2_-Resignation-Marked.pdf" target="_blank" rel="noopener">Policy 4317.2_ Resignation- Marked</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/Policy-4317.2_-Resignation-Clean.pdf" target="_blank" rel="noopener">Policy 4317.2_ Resignation- Clean</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">14.24</span><span class="tv-agenda-title">Approval of Board Policy 4118: Dismissal/Suspension/Disciplinary Action</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/4118-BP-Dismissal_Suspension_Disciplinary-Action-Marked.pdf" target="_blank" rel="noopener">4118 - BP - Dismissal_Suspension_Disciplinary Action - Marked</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/4118-BP-Dismissal_Suspension_Disciplinary-Action-Clean.pdf" target="_blank" rel="noopener">4118 - BP - Dismissal_Suspension_Disciplinary Action - Clean</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">14.25</span><span class="tv-agenda-title">Approval of Board Policy 4218: Dismissal/Suspension/Disciplinary Action</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/4218-BP-Dismissal_Suspension_Disciplinary-Action-Marked.pdf" target="_blank" rel="noopener">4218 - BP - Dismissal_Suspension_Disciplinary Action - Marked</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/4218-BP-Dismissal_Suspension_Disciplinary-Action-Clean.pdf" target="_blank" rel="noopener">4218 - BP - Dismissal_Suspension_Disciplinary Action - Clean</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">14.26</span><span class="tv-agenda-title">Approval of Board Policy 4119.24: Maintaining Appropriate Adult-Student Interactions</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/4119.24-BP-Maintaining-Appropriate-Adult-Student-Interactions-Clean.pdf" target="_blank" rel="noopener">4119.24 - BP - Maintaining Appropriate Adult-Student Interactions - Clean</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/4119.24-BP-Maintaining-Appropriate-Adult-Student-Interactions-Marked.pdf" target="_blank" rel="noopener">4119.24 - BP - Maintaining Appropriate Adult-Student Interactions - Marked</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">14.27</span><span class="tv-agenda-title">Approval of Board Policy 4219.24: Maintaining Appropriate Adult-Student Interactions</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/4219.24-BP-Maintaining-Appropriate-Adult-Student-Interactions-Marked.pdf" target="_blank" rel="noopener">4219.24 - BP - Maintaining Appropriate Adult-Student Interactions - Marked</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/4219.24-BP-Maintaining-Appropriate-Adult-Student-Interactions-Clean.pdf" target="_blank" rel="noopener">4219.24 - BP - Maintaining Appropriate Adult-Student Interactions - Clean</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">14.28</span><span class="tv-agenda-title">Approval of Board Policy 4319.24: Maintaining Appropriate Adult-Student Interactions</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/Policy-4319.24-Maintaining-Appropriate-Adult-Student-Interactions-Marked.pdf" target="_blank" rel="noopener">Policy 4319.24 Maintaining Appropriate Adult-Student Interactions - Marked</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/Policy-4319.24-Maintaining-Appropriate-Adult-Student-Interactions-Clean.pdf" target="_blank" rel="noopener">Policy 4319.24 Maintaining Appropriate Adult-Student Interactions - Clean</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">14.29</span><span class="tv-agenda-title">Approval of Board Policy 4119.41: Employees With Infectious Disease</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/4119.41-BP-Employees-With-Infectious-Disease-Marked.pdf" target="_blank" rel="noopener">4119.41 - BP - Employees With Infectious Disease - Marked</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/4119.41-BP-Employees-With-Infectious-Disease-Clean.pdf" target="_blank" rel="noopener">4119.41 - BP - Employees With Infectious Disease - Clean</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">14.30</span><span class="tv-agenda-title">Approval of Board Policy 4319.41: Employees With Infectious Disease</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/Policy-4319.41_-Employees-With-Infectious-Disease-Marked.pdf" target="_blank" rel="noopener">Policy 4319.41_ Employees With Infectious Disease- Marked</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/Policy-4319.41_-Employees-With-Infectious-Disease-Clean.pdf" target="_blank" rel="noopener">Policy 4319.41_ Employees With Infectious Disease- Clean</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">14.31</span><span class="tv-agenda-title">Approval of Board Policy 4222: Instructional Assistants/Paraprofessionals</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/Policy-4222_-Instructional-Assistants_Paraprofessionals-Marked.pdf" target="_blank" rel="noopener">Policy 4222_ Instructional Assistants_Paraprofessionals - Marked</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/Policy-4222_-Instructional-Assistants_Paraprofessionals-Clean.pdf" target="_blank" rel="noopener">Policy 4222_ Instructional Assistants_Paraprofessionals - Clean</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">14.32</span><span class="tv-agenda-title">Approval of Board Policy 4131.1: Teacher Support And Guidance</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/Policy-4131.1_-Teacher-Support-And-Guidance-Marked.pdf" target="_blank" rel="noopener">Policy 4131.1_ Teacher Support And Guidance-Marked</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/Policy-4131.1_-Teacher-Support-And-Guidance-Clean.pdf" target="_blank" rel="noopener">Policy 4131.1_ Teacher Support And Guidance  -Clean</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">14.33</span><span class="tv-agenda-title">Approval of Board Policy 4033: Lactation Accommodation</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/Policy-4033-Lactation-Accommodation-Clean.pdf" target="_blank" rel="noopener">Policy 4033 Lactation Accommodation-Clean</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/Policy-4033-Lactation-Accommodation-Marked.pdf" target="_blank" rel="noopener">Policy 4033 Lactation Accommodation-Marked</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">14.34</span><span class="tv-agenda-title">Approval of Board Policy 4143.1: Public Notice - Personnel Negotiations</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/Policy-4143.1_-Public-Notice-Personnel-Negotiations-Marked.pdf" target="_blank" rel="noopener">Policy 4143.1_ Public Notice - Personnel Negotiations-- Marked</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/Policy-4143.1_-Public-Notice-Personnel-Negotiations-Clean.pdf" target="_blank" rel="noopener">Policy 4143.1_ Public Notice - Personnel Negotiations- Clean</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">14.35</span><span class="tv-agenda-title">Approval of Board Policy 4243.1: Public Notice - Personnel Negotiations</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/Policy-4243.1_-Public-Notice-Personnel-Negotiations-Marked.pdf" target="_blank" rel="noopener">Policy 4243.1_ Public Notice - Personnel Negotiations- Marked</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/Policy-4243.1_-Public-Notice-Personnel-Negotiations-Clean.pdf" target="_blank" rel="noopener">Policy 4243.1_ Public Notice - Personnel Negotiations- Clean</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">14.36</span><span class="tv-agenda-title">Approval of Board Policy 6163.1: Library Media Centers</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/6163.1-BP-Library-Media-Centers-Marked.pdf" target="_blank" rel="noopener">6163.1 - BP - Library Media Centers - Marked</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/6163.1-BP-Library-Media-Centers-Clean.pdf" target="_blank" rel="noopener">6163.1 - BP - Library Media Centers - Clean</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">14.37</span><span class="tv-agenda-title">Approval of Board Policy 6164.6: Identification And Education Under Section 504</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/6164.6-BP-Identification-And-Education-Under-Section-504-Marked.pdf" target="_blank" rel="noopener">6164.6 - BP - Identification And Education Under Section 504 - Marked</a><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/6164.6-BP-Identification-And-Education-Under-Section-504-Clean.pdf" target="_blank" rel="noopener">6164.6 - BP - Identification And Education Under Section 504 - Clean</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">14.38</span><span class="tv-agenda-title">Rejection of Claim</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">14.39</span><span class="tv-agenda-title">Ratification of Warrant Registers, March 1, 2026 – March 31, 2026</span><span class="tv-agenda-type">Action (Consent)</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/Warrant-Register-March-2026.pdf" target="_blank" rel="noopener">Warrant Register March 2026</a></div><div class="tv-agenda-section"><span class="tv-agenda-label">15</span><span class="tv-agenda-title">Board and Superintendent Reports</span><span class="tv-agenda-duration">10min</span></div><div class="tv-agenda-section"><span class="tv-agenda-label">16</span><span class="tv-agenda-title">Information</span></div><div class="tv-agenda-item"><span class="tv-agenda-label">16.1</span><span class="tv-agenda-title">Redwood City Teachers Association Presentation: Teacher Salary</span><span class="tv-agenda-type">Information</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/Salary-Presentation.pdf" target="_blank" rel="noopener">Salary Presentation</a></div><div class="tv-agenda-item"><span class="tv-agenda-label">16.2</span><span class="tv-agenda-title">Quarterly Williams Report, 3rd Quarter, January 2026 through March 2026</span><span class="tv-agenda-type">Information</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/Williams-UCP-Q-3-report-2025-26.pdf" target="_blank" rel="noopener">Williams UCP Q 3 report 2025-26</a></div><div class="tv-agenda-section"><span class="tv-agenda-label">17</span><span class="tv-agenda-title">Correspondence</span><span class="tv-agenda-duration">1min</span></div><div class="tv-agenda-section"><span class="tv-agenda-label">18</span><span class="tv-agenda-title">Other Business/Suggested Items for Future Agenda</span><span class="tv-agenda-duration">1min</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/25-26-Schedule-of-Board-Agenda-Items.pdf" target="_blank" rel="noopener">25-26 Schedule of Board Agenda Items</a></div><div class="tv-agenda-section"><span class="tv-agenda-label">19</span><span class="tv-agenda-title">Board of Trustees Meeting Reflection</span><span class="tv-agenda-duration">10min</span></div><div class="tv-agenda-section"><span class="tv-agenda-label">20</span><span class="tv-agenda-title">Board of Trustees Meeting Calendar</span><span class="tv-agenda-duration">1min</span></div><div class="tv-agenda-atts"><a class="tv-agenda-att" href="https://data.rcsd.info/board-packets/2026-04-22/25-26-RCSD-Board-Meeting-Calendar.pdf" target="_blank" rel="noopener">25-26 RCSD Board Meeting Calendar</a></div><div class="tv-agenda-section"><span class="tv-agenda-label">21</span><span class="tv-agenda-title">Adjournment (Action Required)</span></div>
+    </div>
+
+    <div class="tv-panel tv-minutes-panel" id="panel-minutes">
+      <div class="tv-empty">Minutes not yet approved for this meeting.</div>
+    </div>
+  </div>
+
+  
+</div>
+
+<footer class="site-footer">
+  <p>Independently compiled from publicly available RCSD documents. Source documents at <a href="https://www.rcsdk8.net">rcsdk8.net</a> and the <a href="https://simbli.eboardsolutions.com/SB_Meetings/SB_MeetingListing.aspx?S=36030397">GAMUT board portal</a>.</p>
+  <div class="footer-nav">
+    <a href="/">Home</a>
+    <a href="/meetings/">Meetings</a>
+    <a href="/schools/">Schools</a>
+    <a href="/district/">District</a>
+    <a href="/budget/">Budget</a>
+    <a href="https://github.com/dweekly/rcsd-meetings">Source Code &#8599;</a>
+    <a href="mailto:team@rcsd.info">team@rcsd.info</a>
+  </div>
+</footer>
+
+<script>
+(function() {
+  var videoId = null;
+  var transcriptUrlEn = null;
+  var transcriptUrlEs = null;
+  var defaultLangEs = false;
+  var transcriptUrl = defaultLangEs ? transcriptUrlEs : transcriptUrlEn;
+  var speakerColors = ["#2a2a28","#4a3728","#28382a","#2a2838","#382a28","#283a38","#38282a","#2a3828","#382838","#283828","#2a2838","#382a38","#283828","#2a3828","#38282a"];
+  var player = null;
+  var utterances = [];
+  var utterancesEn = null;
+  var utterancesEs = null;
+  var speakerMap = {};
+  var autoScroll = true;
+  var activeIdx = -1;
+  var renderedUtterances = [];
+  var activeTab = "agenda";
+  var currentLang = defaultLangEs ? 'es' : 'en';
+
+  // Handle #hash on load to activate the corresponding tab
+  function activateTabFromHash() {
+    var hash = location.hash.replace('#', '');
+    if (!hash) return;
+    var tab = document.querySelector('.tv-tab[data-tab="' + hash + '"]');
+    if (tab && !tab.disabled) {
+      tab.click();
+    }
+  }
+
+  // Load YT IFrame API (only if we have video)
+  if (videoId) {
+    var tag = document.createElement('script');
+    tag.src = 'https://www.youtube.com/iframe_api';
+    document.head.appendChild(tag);
+
+    window.onYouTubeIframeAPIReady = function() {
+      player = new YT.Player('yt-player', {
+        videoId: videoId,
+        playerVars: { rel: 0, modestbranding: 1 },
+      });
+    };
+  }
+
+  // ---- Tab switching ----
+  var tabs = document.querySelectorAll('.tv-tab');
+  var panels = document.querySelectorAll('.tv-panel');
+  var transcriptControls = document.getElementById('transcript-controls');
+
+  tabs.forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      if (tab.disabled) return;
+      activeTab = tab.dataset.tab;
+      tabs.forEach(function(t) { t.classList.toggle('active', t.dataset.tab === activeTab); });
+      panels.forEach(function(p) { p.classList.toggle('active', p.id === 'panel-' + activeTab); });
+      if (transcriptControls) transcriptControls.style.display = activeTab === 'transcript' ? '' : 'none';
+    });
+  });
+
+  // ---- Seek helper ----
+  function seekTo(ms) {
+    if (player && player.seekTo) {
+      player.seekTo(ms / 1000, true);
+      player.playVideo();
+    }
+  }
+
+  // ---- Agenda click-to-seek ----
+  document.getElementById('panel-agenda').addEventListener('click', function(e) {
+    var el = e.target.closest('.tv-clickable');
+    if (!el || !el.dataset.start) return;
+    seekTo(parseInt(el.dataset.start));
+  });
+
+  // ---- Transcript ----
+  function formatTime(ms) {
+    var totalSec = Math.floor(ms / 1000);
+    var h = Math.floor(totalSec / 3600);
+    var m = Math.floor((totalSec % 3600) / 60);
+    var s = totalSec % 60;
+    var pad = function(n) { return n < 10 ? '0' + n : '' + n; };
+    if (h > 0) return h + ':' + pad(m) + ':' + pad(s);
+    return m + ':' + pad(s);
+  }
+
+  function speakerName(label) {
+    return label;
+  }
+
+  function speakerColor(label) {
+    return speakerColors[label.charCodeAt(0) % speakerColors.length];
+  }
+
+  // Split long utterances into ~3-sentence paragraphs with interpolated timestamps
+  function splitUtterance(u) {
+    var text = u.text || '';
+    if (text.length < 300) return [u];
+
+    // Split on sentence boundaries (period/question/exclamation followed by space and capital)
+    var sentences = text.match(/[^.!?]*[.!?]+(?:s+|$)/g) || [text];
+    var chunks = [];
+    var current = '';
+    var sentenceCount = 0;
+    var chunkStart = 0;
+
+    for (var s = 0; s < sentences.length; s++) {
+      current += sentences[s];
+      sentenceCount++;
+      if (sentenceCount >= 3 || s === sentences.length - 1) {
+        var fraction = chunks.length / Math.max(1, Math.ceil(sentences.length / 3));
+        var startMs = Math.round(u.start + (u.end - u.start) * (chunkStart / sentences.length));
+        chunks.push({ start: startMs, end: u.end, speaker: u.speaker, text: current.trim() });
+        current = '';
+        chunkStart = s + 1;
+        sentenceCount = 0;
+      }
+    }
+    return chunks.length > 0 ? chunks : [u];
+  }
+
+  function renderTranscript() {
+    var container = document.getElementById('panel-transcript');
+    container.textContent = '';
+
+    // Flatten utterances into smaller chunks for readability
+    renderedUtterances = [];
+    utterances.forEach(function(u) {
+      var parts = splitUtterance(u);
+      for (var p = 0; p < parts.length; p++) renderedUtterances.push(parts[p]);
+    });
+
+    renderedUtterances.forEach(function(u, i) {
+      var row = document.createElement('div');
+      row.className = 'tv-utterance';
+      row.dataset.idx = i;
+      row.dataset.start = u.start;
+
+      var ts = document.createElement('span');
+      ts.className = 'tv-ts';
+      ts.textContent = formatTime(u.start);
+      row.appendChild(ts);
+
+      var sp = document.createElement('span');
+      sp.className = 'tv-speaker';
+      sp.style.color = speakerColor(u.speaker);
+      var name = speakerName(u.speaker);
+      sp.textContent = name;
+      sp.title = name;
+      row.appendChild(sp);
+
+      var text = document.createElement('span');
+      text.className = 'tv-text';
+      text.textContent = u.text;
+      row.appendChild(text);
+
+      container.appendChild(row);
+    });
+
+    container.addEventListener('click', function(e) {
+      var row = e.target.closest('.tv-utterance');
+      if (!row) return;
+      seekTo(parseInt(row.dataset.start));
+    });
+  }
+
+  if (transcriptUrlEn) {
+    // Fetch primary transcript (ES for Spanish pages, EN otherwise)
+    var primaryUrl = defaultLangEs ? transcriptUrlEs : transcriptUrlEn;
+    var secondaryUrl = defaultLangEs ? transcriptUrlEn : transcriptUrlEs;
+
+    fetch(primaryUrl)
+      .then(function(r) { return r.json(); })
+      .then(function(data) {
+        if (defaultLangEs) { utterancesEs = data.utterances; } else { utterancesEn = data.utterances; }
+        utterances = data.utterances;
+        speakerMap = data.speakers || {};
+        renderTranscript();
+        setInterval(syncHighlight, 250);
+        // Update lang button to reflect current state
+        var btn = document.getElementById('btn-lang');
+        if (btn) btn.textContent = defaultLangEs ? 'EN' : 'ES';
+      })
+      .catch(function() {
+        var c = document.getElementById('panel-transcript');
+        c.textContent = '';
+        var msg = document.createElement('div');
+        msg.className = 'tv-empty';
+        msg.textContent = "Failed to load transcript.";
+        c.appendChild(msg);
+      });
+
+    // Pre-fetch secondary language
+    if (secondaryUrl) {
+      fetch(secondaryUrl)
+        .then(function(r) { if (!r.ok) throw new Error(); return r.json(); })
+        .then(function(data) {
+          if (defaultLangEs) { utterancesEn = data.utterances; } else { utterancesEs = data.utterances; }
+          // Enable the lang toggle button
+          var btn = document.getElementById('btn-lang');
+          if (btn) btn.style.opacity = '1';
+        })
+        .catch(function() {
+          // No Spanish translation available -- disable button
+          var btn = document.getElementById('btn-lang');
+          if (btn) { btn.disabled = true; btn.title = 'Spanish translation not yet available'; }
+        });
+    }
+  } else {
+    if (videoId) setInterval(syncHighlight, 250);
+  }
+
+  // ---- Sync highlight (transcript + agenda) ----
+  var activeAgendaEl = null;
+
+  function syncHighlight() {
+    if (!player || !player.getCurrentTime) return;
+    var currentMs = player.getCurrentTime() * 1000;
+
+    // Transcript sync
+    if (activeTab === 'transcript') {
+      var newIdx = -1;
+      for (var i = renderedUtterances.length - 1; i >= 0; i--) {
+        if (renderedUtterances[i].start <= currentMs) { newIdx = i; break; }
+      }
+      if (newIdx !== activeIdx) {
+        activeIdx = newIdx;
+        var rows = document.querySelectorAll('.tv-utterance');
+        rows.forEach(function(r, i) { r.classList.toggle('active', i === activeIdx); });
+
+        if (autoScroll && activeIdx >= 0 && rows[activeIdx]) {
+          var rect = rows[activeIdx].getBoundingClientRect();
+          var videoCol = document.querySelector('.tv-video-col');
+          var stickyHeight = videoCol ? videoCol.offsetHeight : 0;
+          if (rect.top < stickyHeight + 20 || rect.bottom > window.innerHeight - 40) {
+            window.scrollTo({ top: rows[activeIdx].offsetTop - stickyHeight - 20, behavior: 'smooth' });
+          }
+        }
+      }
+    }
+
+    // Agenda sync -- highlight current agenda item
+    if (activeTab === 'agenda') {
+      var agendaItems = document.querySelectorAll('#panel-agenda [data-start]');
+      var bestEl = null;
+      agendaItems.forEach(function(el) {
+        var start = parseInt(el.dataset.start);
+        if (start <= currentMs) bestEl = el;
+      });
+      if (bestEl !== activeAgendaEl) {
+        if (activeAgendaEl) activeAgendaEl.classList.remove('active');
+        activeAgendaEl = bestEl;
+        if (activeAgendaEl) {
+          activeAgendaEl.classList.add('active');
+          if (autoScroll) {
+            var rect = activeAgendaEl.getBoundingClientRect();
+            var videoCol = document.querySelector('.tv-video-col');
+            var stickyHeight = videoCol ? videoCol.offsetHeight : 0;
+            if (rect.top < stickyHeight + 20 || rect.bottom > window.innerHeight - 40) {
+              window.scrollTo({ top: activeAgendaEl.offsetTop - stickyHeight - 20, behavior: 'smooth' });
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Auto-scroll toggle
+  var autoScrollBtn = document.getElementById('btn-autoscroll');
+  if (autoScrollBtn) {
+    autoScrollBtn.addEventListener('click', function() {
+      autoScroll = !autoScroll;
+      this.classList.toggle('active', autoScroll);
+    });
+  }
+
+  // Language toggle
+  var langBtn = document.getElementById('btn-lang');
+  if (langBtn) {
+    langBtn.addEventListener('click', function() {
+      if (currentLang === 'en' && utterancesEs) {
+        currentLang = 'es';
+        utterances = utterancesEs;
+        langBtn.textContent = 'EN';
+        langBtn.classList.add('active');
+        langBtn.title = "Switch to English";
+      } else {
+        currentLang = 'en';
+        utterances = utterancesEn;
+        langBtn.textContent = 'ES';
+        langBtn.classList.remove('active');
+        langBtn.title = "Toggle Spanish translation";
+      }
+      activeIdx = -1;
+      renderTranscript();
+    });
+  }
+
+  // Search
+  var searchInput = document.getElementById('search-input');
+  var searchTimeout = null;
+  if (searchInput) {
+    searchInput.addEventListener('input', function() {
+      clearTimeout(searchTimeout);
+      searchTimeout = setTimeout(doSearch, 200);
+    });
+  }
+
+  function doSearch() {
+    var term = searchInput.value.trim().toLowerCase();
+    var rows = document.querySelectorAll('.tv-utterance');
+    rows.forEach(function(row, i) {
+      var textEl = row.querySelector('.tv-text');
+      var original = utterances[i].text;
+      if (term && original.toLowerCase().indexOf(term) >= 0) {
+        row.classList.add('search-match');
+        row.style.display = '';
+        textEl.textContent = '';
+        var remaining = original;
+        var lc = remaining.toLowerCase();
+        var pos = lc.indexOf(term);
+        while (pos >= 0) {
+          if (pos > 0) textEl.appendChild(document.createTextNode(remaining.slice(0, pos)));
+          var mark = document.createElement('mark');
+          mark.textContent = remaining.slice(pos, pos + term.length);
+          textEl.appendChild(mark);
+          remaining = remaining.slice(pos + term.length);
+          lc = remaining.toLowerCase();
+          pos = lc.indexOf(term);
+        }
+        if (remaining) textEl.appendChild(document.createTextNode(remaining));
+      } else {
+        row.classList.remove('search-match');
+        textEl.textContent = original;
+        row.style.display = term ? 'none' : '';
+      }
+    });
+  }
+
+  // Activate tab from URL hash on load
+  activateTabFromHash();
+  window.addEventListener('hashchange', activateTabFromHash);
+})();
+</script>
+</body>
+</html>
