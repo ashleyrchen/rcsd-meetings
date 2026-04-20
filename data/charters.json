@@ -27,6 +27,18 @@
       "enrollmentYear": "2025-26",
       "enrollmentSource": "CDE School Profile",
       "website": "https://www.connectrwc.org",
+      "email": "office@connectrwc.org",
+      "socialMedia": {
+        "instagram": "https://www.instagram.com/connect_rwc/"
+      },
+      "schoolLeaders": [
+        {
+          "role": "Principal",
+          "name": "Hayley Dupuy",
+          "photo": "https://lh3.googleusercontent.com/sitesv/AA5AbUCibkxXPu41moZqbH88CleVQ7eaGf-2LORHSYSj6dALFdiZTLhMdscQLrJKjhH-aakrnwO1jLMnpy4KYMjgm1iUgljhS1fYZefxHR3WeZNC8UBlESbpW4qdj1CkO21tUtNOfk75VDEn0pa1R-SDcCpfNmYGRuNowynFnTcK74SCCjPlppUEeN2laRfNscCaPfzPuha2pv0yb8H4lexi5qgIGCHvmoTnzfeXFc4=w1280",
+          "photoNote": "Google Sites CDN URL — may expire; consider mirroring to R2 for long-term stability."
+        }
+      ],
       "network": null,
       "networkNote": "Independent",
       "titlePatterns": ["\\bconnect\\b"],
