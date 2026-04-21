@@ -1,0 +1,54 @@
+<header class="post-header">
+  <div class="post-header-inner">
+    <div class="post-meta">
+      <span class="post-date">20 de abril de 2026</span>
+      <span class="post-author">por <a href="https://david.weekly.org">David Weekly</a></span>
+    </div>
+    <h1>Escuelas autónomas, propiedades del distrito, y un pequeño arreglo de MCP</h1>
+    <p class="post-subtitle">Se publicaron tres páginas de escuelas autónomas, se reorganizó la página /escuelas/, y finalmente hice que la herramienta MCP mostrara el cuerpo de los puntos de la agenda.</p>
+  </div>
+</header>
+
+<main class="post-content">
+  <div class="post-body">
+
+    <section>
+      <h2>La versión corta</h2>
+      <p>Las tres escuelas autónomas (charter) autorizadas por RCSD &mdash; <a href="/escuelas/charter/connect/">Connect Community Charter</a>, <a href="/escuelas/charter/kipp-excelencia/">KIPP Excelencia</a>, y <a href="/escuelas/charter/rocketship-redwood-city/">Rocketship Redwood City Prep</a> &mdash; ahora tienen sus propias páginas en el sitio. La página <a href="/escuelas/">/escuelas/</a> se reorganizó en tres secciones: escuelas del distrito, escuelas autónomas, y otras propiedades del distrito. Y arreglé una omisión vergonzosa en la herramienta MCP que hacía que las reuniones de la junta parecieran más vacías de lo que son.</p>
+    </section>
+
+    <section>
+      <h2>Las escuelas autónomas en el sitio</h2>
+      <p>RCSD autoriza tres escuelas autónomas y supervisa sus finanzas. Cada año el distrito revisa sus presupuestos adoptados, informes interinos, y resultados no auditados, y publica cartas de revisión. Todo eso es información pública que aparece en los paquetes de la junta, y nada de eso era fácil de encontrar.</p>
+      <p>Cada página ahora tiene los metadatos del CDE (código CDS, número de charter, fecha de apertura), información de contacto, liderazgo escolar (con fotos donde pude conseguirlas), enlaces a redes sociales, una línea de tiempo de documentos financieros que empareja cada informe presentado por la escuela con la carta de revisión de RCSD, y la declaración Form 990 del IRS de la entidad que la presenta. Connect presenta su propia 990 como 501(c)(3) independiente; KIPP y Rocketship presentan a través de sus redes matrices, por lo que las cifras reflejan toda la red en lugar de solo la escuela en Redwood City.</p>
+      <p>Una cosa que vale la pena decir claramente: autorizar una escuela autónoma no es lo mismo que operarla. RCSD es el autorizador de estas tres escuelas, lo que significa que el distrito revisa sus finanzas y renueva su charter periódicamente. Pero cada una es una organización 501(c)(3) separada con su propia junta directiva, su propio personal, y sus propios programas. Las páginas hacen explícita esa relación.</p>
+    </section>
+
+    <section>
+      <h2>La página /escuelas/ con tres secciones</h2>
+      <p>La página <a href="/escuelas/">/escuelas/</a> antes solo listaba las 12 escuelas operadas por el distrito. Ahora tiene tres secciones:</p>
+      <ul>
+        <li><strong>Escuelas del distrito</strong> &mdash; las 12 que ya conocían</li>
+        <li><strong>Escuelas autónomas</strong> &mdash; las tres autorizadas por RCSD</li>
+        <li><strong>Otras propiedades del distrito</strong> &mdash; cuatro edificios que le pertenecen al distrito pero que no son escuelas operadas por RCSD: la Oficina del Distrito en 750 Bradford, el antiguo campus de Adelante en 3150 Granger Way (ahora arrendado a Harper School), el antiguo campus de Orion en 815 Allerton (ahora Creative Learning Center), y una bodega arrendada en East Bayshore</li>
+      </ul>
+      <p>Buena parte de esa última sección me sorprendió cuando empecé a mapearla. El distrito es dueño de más propiedad de la que me imaginaba, incluyendo edificios que alquilamos a otros inquilinos. Vale la pena hacerlo público.</p>
+    </section>
+
+    <section>
+      <h2>El arreglo de MCP</h2>
+      <p>Menos visible, pero en realidad lo que generó todo el trabajo de esta noche.</p>
+      <p>El sitio tiene un <a href="/mcp/">servidor MCP</a> que permite a los asistentes de IA consultar datos de las reuniones de la junta. Estaba usándolo para preparar preguntas para la reunión de esta semana y me topaba con el mismo problema: le preguntaba sobre un punto de la agenda y la herramienta me devolvía el título, los PDFs adjuntos, y básicamente nada más. Si el punto era "Aprobación de Proyectos Fase 3 de Modernización HVAC," eso es lo que recibía. El título.</p>
+      <p>Pero el punto en Simbli tiene un cuerpo debajo del título con Resumen Rápido, Recomendación, Justificación, e Impacto Financiero. Para Fase 3, el cuerpo dice $18.75 millones de costo total, financiado con el Bono Measure S, construcción prevista para el verano de 2027, 25% de asignación para costos suaves, y que tras la aprobación el distrito emitirá un RFP de servicios arquitectónicos. Todo eso ya estaba en los datos extraídos en disco. La herramienta MCP simplemente no lo leía.</p>
+      <p>Arreglado esta noche. Debería haberlo notado hace meses.</p>
+    </section>
+
+    <section>
+      <h2>Qué sigue</h2>
+      <p>Extraer e indexar las agendas y actas de los Consejos Escolares (SSC) de cada escuela, empezando con la carpeta pública de Google Drive de Orion. Los SSC son los cuerpos de gobernanza que aprueban el Plan Escolar para el Logro Estudiantil (SPSA) de cada escuela y participan en decisiones presupuestarias a nivel de sitio. Bajo el Acta Greene son reuniones abiertas con registros públicos, pero en la práctica la mayoría de las escuelas no publican sus documentos en ningún lugar fácil de encontrar. Eso cambia en cuanto alguien los indexa.</p>
+      <p>También en la lista: datos de tendencias CAASPP por escuela y grupo demográfico, comparaciones entre distritos, y extender el clasificador de informes para que las auditorías independientes de las escuelas autónomas se enlacen directamente a sus cartas de revisión en lugar de mostrar un aviso de "ver reunión para el informe."</p>
+      <p>Si algo en el sitio está mal o falta, <a href="mailto:team@rcsd.info">team@rcsd.info</a> o <a href="https://github.com/dweekly/rcsd-meetings" target="_blank">GitHub</a>.</p>
+    </section>
+
+  </div>
+</main>
