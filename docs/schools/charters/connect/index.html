@@ -190,6 +190,46 @@
     font-size: 0.92rem; color: var(--text); line-height: 1.5;
   }
   .charter-meta-grid dd a { word-break: break-word; }
+  .charter-social {
+    display: flex; gap: 0.9rem; flex-wrap: wrap; align-items: baseline;
+    margin-top: 1.5rem; font-size: 0.88rem;
+  }
+  .charter-social .social-label {
+    font-family: 'IBM Plex Mono', monospace; font-size: 0.66rem; font-weight: 500;
+    letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted);
+  }
+  .charter-social a { color: var(--green-mid); text-decoration: none; }
+  .charter-social a:hover { text-decoration: underline; }
+  .charter-social .ext { font-size: 0.75em; }
+  .charter-social .social-footnote {
+    flex-basis: 100%; font-size: 0.75rem; color: var(--text-muted); margin-top: 0.2rem;
+  }
+  .charter-leaders { margin-top: 1.75rem; }
+  .charter-leaders .leaders-h3 {
+    font-family: 'IBM Plex Mono', monospace; font-size: 0.66rem; font-weight: 500;
+    letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted);
+    margin-bottom: 0.6rem;
+  }
+  .charter-leaders .leaders-row {
+    display: flex; gap: 1.25rem; flex-wrap: wrap;
+  }
+  .charter-leaders .leader-card {
+    display: flex; gap: 0.9rem; align-items: center;
+    padding: 0.7rem 1rem 0.7rem 0.7rem;
+    border: 1px solid var(--rule-light); border-radius: 10px;
+    min-width: 240px;
+  }
+  .charter-leaders .leader-card img {
+    width: 64px; height: 64px; object-fit: cover;
+    border-radius: 50%; flex-shrink: 0; background: var(--rule-light);
+  }
+  .charter-leaders .leader-role {
+    font-family: 'IBM Plex Mono', monospace; font-size: 0.62rem; font-weight: 500;
+    letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted);
+  }
+  .charter-leaders .leader-name {
+    font-size: 1rem; font-weight: 500; margin-top: 0.15rem; color: var(--text);
+  }
   section.docs-section { margin-top: 2rem; }
   section.docs-section > h2 {
     font-family: 'Fraunces', Georgia, serif; font-weight: 400; color: var(--green-deep);
@@ -289,6 +329,7 @@
     <dl class="charter-meta-grid">
 <div><dt>Address</dt><dd><a href="https://www.google.com/maps/search/?api=1&query=635%20Oakside%20Avenue%2C%20Redwood%20City%2C%20CA%2094063" target="_blank" rel="noopener">635 Oakside Avenue, Redwood City, CA 94063</a><br><span style="font-size:0.78rem; color:var(--text-muted); line-height:1.4">Shares the former Fair Oaks Elementary campus with KIPP Excelencia, which uses the campus's formal 2950 Fair Oaks Avenue address.</span></dd></div>
 <div><dt>Phone</dt><dd><a href="tel:6504822426">(650) 482-2426</a></dd></div>
+<div><dt>Email</dt><dd><a href="mailto:office@connectrwc.org">office@connectrwc.org</a></dd></div>
 <div><dt>Grades</dt><dd>K-8</dd></div>
 <div><dt>Enrollment</dt><dd>142<br><span style="font-size:0.78rem; color:var(--text-muted)">2025-26 year (CDE)</span></dd></div>
 <div><dt>Website</dt><dd><a href="https://www.connectrwc.org" target="_blank" rel="noopener">www.connectrwc.org <span style="font-size:0.8em">&#8599;</span></a></dd></div>
@@ -298,6 +339,25 @@
 <div><dt>Opened</dt><dd>2013-08-26</dd></div>
 <div><dt>GreatSchools</dt><dd><a href="https://www.greatschools.org/california/redwood-city/31200-Connect-Community-Charter/" target="_blank" rel="noopener">2/10 <span style="font-size:0.8em">&#8599;</span></a></dd></div>
     </dl>
+
+    <div class="charter-social">
+      <span class="social-label">Social:</span>
+      <a href="https://www.instagram.com/connect_rwc/" target="_blank" rel="noopener">Instagram <span class="ext">&#8599;</span></a>
+      
+    </div>
+
+    <section class="charter-leaders" aria-label="School leadership">
+      <h3 class="leaders-h3">School leadership</h3>
+      <div class="leaders-row">
+        <div class="leader-card">
+          <img src="https://lh3.googleusercontent.com/sitesv/AA5AbUCibkxXPu41moZqbH88CleVQ7eaGf-2LORHSYSj6dALFdiZTLhMdscQLrJKjhH-aakrnwO1jLMnpy4KYMjgm1iUgljhS1fYZefxHR3WeZNC8UBlESbpW4qdj1CkO21tUtNOfk75VDEn0pa1R-SDcCpfNmYGRuNowynFnTcK74SCCjPlppUEeN2laRfNscCaPfzPuha2pv0yb8H4lexi5qgIGCHvmoTnzfeXFc4=w1280" alt="Hayley Dupuy" width="96" height="96" loading="lazy" referrerpolicy="no-referrer">
+          <div class="leader-text">
+            <div class="leader-role">Principal</div>
+            <div class="leader-name">Hayley Dupuy</div>
+          </div>
+        </div>
+      </div>
+    </section>
   </header>
 
   <section class="docs-section">

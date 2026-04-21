@@ -218,6 +218,46 @@ const charterCSS = `
     font-size: 0.92rem; color: var(--text); line-height: 1.5;
   }
   .charter-meta-grid dd a { word-break: break-word; }
+  .charter-social {
+    display: flex; gap: 0.9rem; flex-wrap: wrap; align-items: baseline;
+    margin-top: 1.5rem; font-size: 0.88rem;
+  }
+  .charter-social .social-label {
+    font-family: 'IBM Plex Mono', monospace; font-size: 0.66rem; font-weight: 500;
+    letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted);
+  }
+  .charter-social a { color: var(--green-mid); text-decoration: none; }
+  .charter-social a:hover { text-decoration: underline; }
+  .charter-social .ext { font-size: 0.75em; }
+  .charter-social .social-footnote {
+    flex-basis: 100%; font-size: 0.75rem; color: var(--text-muted); margin-top: 0.2rem;
+  }
+  .charter-leaders { margin-top: 1.75rem; }
+  .charter-leaders .leaders-h3 {
+    font-family: 'IBM Plex Mono', monospace; font-size: 0.66rem; font-weight: 500;
+    letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted);
+    margin-bottom: 0.6rem;
+  }
+  .charter-leaders .leaders-row {
+    display: flex; gap: 1.25rem; flex-wrap: wrap;
+  }
+  .charter-leaders .leader-card {
+    display: flex; gap: 0.9rem; align-items: center;
+    padding: 0.7rem 1rem 0.7rem 0.7rem;
+    border: 1px solid var(--rule-light); border-radius: 10px;
+    min-width: 240px;
+  }
+  .charter-leaders .leader-card img {
+    width: 64px; height: 64px; object-fit: cover;
+    border-radius: 50%; flex-shrink: 0; background: var(--rule-light);
+  }
+  .charter-leaders .leader-role {
+    font-family: 'IBM Plex Mono', monospace; font-size: 0.62rem; font-weight: 500;
+    letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted);
+  }
+  .charter-leaders .leader-name {
+    font-size: 1rem; font-weight: 500; margin-top: 0.15rem; color: var(--text);
+  }
   section.docs-section { margin-top: 2rem; }
   section.docs-section > h2 {
     font-family: 'Fraunces', Georgia, serif; font-weight: 400; color: var(--green-deep);
@@ -306,6 +346,8 @@ function buildCharterPage(charter, lang) {
       : 'Escuela chárter autorizada por el Distrito Escolar de Redwood City. Operación independiente.',
     metaAddress: 'Dirección',
     metaPhone: 'Teléfono',
+    metaFax: 'Fax',
+    metaEmail: 'Correo electrónico',
     metaGrades: 'Grados',
     metaEnrollment: 'Inscripción',
     metaEnrollmentNote: (y) => `Año ${y} (CDE)`,
@@ -315,6 +357,8 @@ function buildCharterPage(charter, lang) {
     metaAuthorizer: 'Autorizador',
     metaOpened: 'Inauguración',
     metaNetwork: 'Red',
+    leadersH3: 'Liderazgo escolar',
+    socialLabel: 'Redes sociales',
     docsH2: 'Documentos financieros',
     docsIntro: 'Presupuestos, informes interinos, resultados reales no auditados y cartas anuales de revisión fiscal de RCSD, obtenidas de los paquetes de la mesa directiva de RCSD.',
     caveatAudit: 'Los informes de auditoría anuales de charter y sus cartas de revisión se presentan a la mesa directiva pero actualmente no están indexados automáticamente; consulte la reunión correspondiente para acceder al informe.',
@@ -334,6 +378,8 @@ function buildCharterPage(charter, lang) {
       : 'Charter school authorized by the Redwood City School District. Independently operated.',
     metaAddress: 'Address',
     metaPhone: 'Phone',
+    metaFax: 'Fax',
+    metaEmail: 'Email',
     metaGrades: 'Grades',
     metaEnrollment: 'Enrollment',
     metaEnrollmentNote: (y) => `${y} year (CDE)`,
@@ -343,6 +389,8 @@ function buildCharterPage(charter, lang) {
     metaAuthorizer: 'Authorizer',
     metaOpened: 'Opened',
     metaNetwork: 'Network',
+    leadersH3: 'School leadership',
+    socialLabel: 'Social',
     docsH2: 'Financial documents',
     docsIntro: 'Adopted budgets, interim reports, unaudited actuals, and RCSD\u2019s annual fiscal oversight review letters, pulled from RCSD board packets.',
     caveatAudit: 'Annual independent audit reports and review letters are presented to the Board but are not yet automatically indexed here; see the corresponding meeting for the report.',
@@ -382,6 +430,8 @@ function buildCharterPage(charter, lang) {
   const metaGridRows = [
     charter.address && `<div><dt>${L.metaAddress}</dt><dd><a href="https://www.google.com/maps/search/?api=1&query=${addrMap}" target="_blank" rel="noopener">${escapeHtml(charter.address)}</a>${charter.addressNote ? `<br><span style="font-size:0.78rem; color:var(--text-muted); line-height:1.4">${escapeHtml(charter.addressNote)}</span>` : ''}</dd></div>`,
     charter.phone && `<div><dt>${L.metaPhone}</dt><dd><a href="tel:${charter.phone.replace(/[^0-9+]/g, '')}">${escapeHtml(charter.phone)}</a></dd></div>`,
+    charter.fax && `<div><dt>${L.metaFax}</dt><dd>${escapeHtml(charter.fax)}</dd></div>`,
+    charter.email && `<div><dt>${L.metaEmail}</dt><dd><a href="mailto:${escapeHtml(charter.email)}">${escapeHtml(charter.email)}</a></dd></div>`,
     charter.grades && `<div><dt>${L.metaGrades}</dt><dd>${escapeHtml(charter.grades)}</dd></div>`,
     charter.enrollment && `<div><dt>${L.metaEnrollment}</dt><dd>${charter.enrollment.toLocaleString(isEs ? 'es-US' : 'en-US')}<br><span style="font-size:0.78rem; color:var(--text-muted)">${L.metaEnrollmentNote(charter.enrollmentYear)}</span></dd></div>`,
     charter.website && `<div><dt>${L.metaWebsite}</dt><dd><a href="${escapeHtml(charter.website)}" target="_blank" rel="noopener">${escapeHtml(charter.website.replace(/^https?:\/\//, '').replace(/\/$/, ''))} <span style="font-size:0.8em">&#8599;</span></a></dd></div>`,
@@ -392,6 +442,35 @@ function buildCharterPage(charter, lang) {
     charter.dateOpened && `<div><dt>${L.metaOpened}</dt><dd>${escapeHtml(charter.dateOpened)}</dd></div>`,
     charter.greatSchools && `<div><dt>${isEs ? 'GreatSchools' : 'GreatSchools'}</dt><dd><a href="${escapeHtml(charter.greatSchools.url)}" target="_blank" rel="noopener">${charter.greatSchools.rating != null ? `${charter.greatSchools.rating}/10` : (isEs ? 'Ver perfil' : 'View profile')} <span style="font-size:0.8em">&#8599;</span></a></dd></div>`,
   ].filter(Boolean).join('\n');
+
+  const leaders = Array.isArray(charter.schoolLeaders) ? charter.schoolLeaders : [];
+  const leadersBlock = leaders.length ? `
+    <section class="charter-leaders" aria-label="${escapeHtml(L.leadersH3)}">
+      <h3 class="leaders-h3">${escapeHtml(L.leadersH3)}</h3>
+      <div class="leaders-row">
+${leaders.map(leader => `        <div class="leader-card">
+${leader.photo ? `          <img src="${escapeHtml(leader.photo)}" alt="${escapeHtml(leader.name)}" width="96" height="96" loading="lazy" referrerpolicy="no-referrer">` : ''}
+          <div class="leader-text">
+            <div class="leader-role">${escapeHtml(leader.role || '')}</div>
+            <div class="leader-name">${escapeHtml(leader.name || '')}</div>
+          </div>
+        </div>`).join('\n')}
+      </div>
+    </section>` : '';
+
+  const socials = charter.socialMedia || {};
+  const socialLinks = [
+    socials.facebook && { label: 'Facebook', url: socials.facebook },
+    socials.instagram && { label: 'Instagram', url: socials.instagram },
+    socials.linkedin && { label: 'LinkedIn', url: socials.linkedin, note: socials.linkedinNote },
+    socials.twitter && { label: 'Twitter / X', url: socials.twitter },
+  ].filter(Boolean);
+  const socialBlock = socialLinks.length ? `
+    <div class="charter-social">
+      <span class="social-label">${escapeHtml(L.socialLabel)}:</span>
+      ${socialLinks.map(s => `<a href="${escapeHtml(s.url)}" target="_blank" rel="noopener"${s.note ? ` title="${escapeHtml(s.note)}"` : ''}>${escapeHtml(s.label)}${s.note ? ' *' : ''} <span class="ext">&#8599;</span></a>`).join(' ')}
+      ${socialLinks.some(s => s.note) ? `<span class="social-footnote">* ${escapeHtml(socialLinks.find(s => s.note).note)}</span>` : ''}
+    </div>` : '';
 
   return `<!DOCTYPE html>
 <html lang="${lang}">
@@ -421,6 +500,8 @@ ${siteNav({ activePage: 'schools', lang, altLangHref: altHref })}
     <dl class="charter-meta-grid">
 ${metaGridRows}
     </dl>
+${socialBlock}
+${leadersBlock}
   </header>
 
   <section class="docs-section">
