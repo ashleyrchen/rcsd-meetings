@@ -77,6 +77,7 @@ const DISTRICT_AVG_PER_PUPIL = sarcSlugs.length > 0
 const SPED_ENROLLMENT = (() => { try { return JSON.parse(readFileSync(resolve(ROOT, 'data/sped-enrollment.json'), 'utf-8')); } catch { return {}; } })();
 const SPED_CATEGORIES = (() => { try { return JSON.parse(readFileSync(resolve(ROOT, 'data/sped-categories.json'), 'utf-8')); } catch { return {}; } })();
 const SSC_DATA = (() => { try { return JSON.parse(readFileSync(resolve(ROOT, 'data/ssc-membership.json'), 'utf-8')); } catch { return {}; } })();
+const SSC_MEETINGS = (() => { try { return JSON.parse(readFileSync(resolve(ROOT, 'data/ssc-meetings.json'), 'utf-8')); } catch { return {}; } })();
 
 // ---- Load CDE data ----
 const CDE_ABSENT = (() => { try { return JSON.parse(readFileSync(resolve(ROOT, 'data/cde/absenteeism-2024-25.json'), 'utf-8')); } catch { return {}; } })();
@@ -1352,6 +1353,9 @@ const LABELS = {
     sscRoleParent: 'Parent / Community',
     sscMemberName: 'Name',
     sscMemberRole: 'Role',
+    sscMeetings: 'Meetings',
+    sscMeetingAgenda: 'Agenda',
+    sscMeetingMinutes: 'Minutes',
     ptoPtaOrg: 'PTO / PTA',
     afterSchool: 'After-School Programs',
     parentComm: 'Parent Communication',
@@ -1497,6 +1501,9 @@ const LABELS = {
     sscRoleParent: 'Padre / Comunidad',
     sscMemberName: 'Nombre',
     sscMemberRole: 'Rol',
+    sscMeetings: 'Reuniones',
+    sscMeetingAgenda: 'Agenda',
+    sscMeetingMinutes: 'Acta',
     ptoPtaOrg: 'PTO / PTA',
     afterSchool: 'Programas Extracurriculares',
     parentComm: 'Comunicación con Padres',
@@ -2227,7 +2234,23 @@ ${siteNav({ activePage: 'schools', lang, altLangHref })}
             const names = ssc.members.filter(m => m.role === role).map(m => m.name);
             return names.length ? `<span class="ssc-role">${label}:</span> ${names.join(', ')}` : '';
           }).filter(Boolean).join('<br>')}</div>
-          <p style="margin-top:0.5rem"><a href="https://data.rcsd.info/documents/spsa/2025-26/${slug}.pdf" target="_blank">${isEs ? 'Ver SPSA' : 'View SPSA'} &#8599;</a></p>`;
+          <p style="margin-top:0.5rem"><a href="https://data.rcsd.info/documents/spsa/2025-26/${slug}.pdf" target="_blank">${isEs ? 'Ver SPSA' : 'View SPSA'} &#8599;</a></p>
+          ${(() => {
+            const meetings = SSC_MEETINGS[slug]?.['2025-26'] || [];
+            if (!meetings.length) return '';
+            const locale = isEs ? 'es-US' : 'en-US';
+            const rows = [...meetings].sort((a, b) => a.date.localeCompare(b.date)).map(m => {
+              const dateStr = new Date(m.date + 'T12:00:00').toLocaleDateString(locale, { year: 'numeric', month: 'short', day: 'numeric' });
+              const links = [];
+              if (m.agendaPdf) links.push(`<a href="https://data.rcsd.info/${m.agendaPdf}" target="_blank">${L.sscMeetingAgenda} &#8599;</a>`);
+              if (m.minutesPdf) links.push(`<a href="https://data.rcsd.info/${m.minutesPdf}" target="_blank">${L.sscMeetingMinutes} &#8599;</a>`);
+              return `<li style="margin-bottom:0.25rem"><span style="font-family:'IBM Plex Mono',monospace; font-size:0.78rem; color:#666; margin-right:0.5rem">${dateStr}</span>${links.join(' &nbsp;·&nbsp; ')}</li>`;
+            }).join('');
+            return `<div style="margin-top:0.8rem; padding-top:0.6rem; border-top:1px solid var(--rule-light)">
+              <p style="margin:0 0 0.3rem; font-size:0.82rem; font-weight:600">${L.sscMeetings}</p>
+              <ul style="list-style:none; padding:0; margin:0; font-size:0.82rem">${rows}</ul>
+            </div>`;
+          })()}`;
         })()}
       </div>
     </div>

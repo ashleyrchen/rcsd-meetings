@@ -62,6 +62,7 @@ Read these files from `data/` to answer questions. For field-by-field documentat
 | `cde/staff-experience-2024-25.json` | Teacher experience: avg years, inexperienced count per school — CDE 2024-25 |
 | `cde/staff-ratios-2024-25.json` | Student-teacher ratio, pupil services ratio per school — CDE 2024-25 |
 | `ssc-membership.json` | School Site Council members, roles, chairperson per school (3 years from SPSA PDFs) |
+| `ssc-meetings.json` | Per-school SSC meeting agendas and minutes (PDFs on R2). Currently covers Orion 2025-26. |
 | `spsa-budgets.json` | SPSA budget summaries: funding by source per school (from 2025-26 SPSA PDFs) |
 
 ### Board Meetings (190 meetings, Aug 2020 - present)

@@ -28,6 +28,7 @@ Every dataset on this site is traceable to its public source. We document the or
 | Budget data | `data/budget/` | RCSD adopted budget documents, CDE LCFF data |
 | CDE datasets | `data/cde/*.json` | Absenteeism, LTEL, staff ethnicity/experience/ratios via `pull-cde-data.mjs` |
 | SPSA extraction | `data/ssc-membership.json`, `data/spsa-budgets.json` | SSC membership and budgets extracted from SPSA PDFs via Claude Haiku |
+| SSC meetings | `data/ssc-meetings.json` | Per-meeting SSC agenda/minutes PDFs, published per-school to `documents/ssc/{school}/{year}/` on R2 |
 
 AI-generated content (meeting summaries, timestamp mappings) is always labeled as such and links back to the source transcript or agenda.
 
@@ -48,6 +49,7 @@ AI-generated content (meeting summaries, timestamp mappings) is always labeled a
 | [CDE Staff Experience](https://www.cde.ca.gov/ds/ad/fsspex.asp) | Teacher experience levels | CDE bulk download | `data/cde/staff-experience-2024-25.json` |
 | [CDE Staff Ratios](https://www.cde.ca.gov/ds/ad/fssprat.asp) | Student-staff ratios | CDE bulk download | `data/cde/staff-ratios-2024-25.json` |
 | SPSA PDFs | SSC membership, school budgets | Claude Haiku extraction from board packets | `data/ssc-membership.json`, `data/spsa-budgets.json` |
+| SSC-published docs | Per-meeting SSC agendas and minutes | .docx → PDF via pandoc + headless Chromium (`scripts/convert-ssc-docs.mjs`) | `data/ssc-meetings.json` |
 | [IRS 990 filings](https://projects.propublica.org/nonprofits/) | PTO/PTA per-pupil funding | ProPublica Nonprofit Explorer | `data/schools.json` |
 | [CDE School Directory](https://www.cde.ca.gov/SchoolDirectory/) | Charter entity metadata (CDS, address, charter number, date opened) | Manual transcription | `data/charters.json` |
 
