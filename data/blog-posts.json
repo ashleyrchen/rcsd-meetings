@@ -1,5 +1,28 @@
 [
   {
+    "slug": "charter-schools-and-mcp-fix",
+    "slugEs": "escuelas-autonomas-y-arreglo-mcp",
+    "date": "2026-04-20",
+    "author": "David Weekly",
+    "authorUrl": "https://david.weekly.org",
+    "template": {
+      "en": "2026-04-charters-en.html",
+      "es": "2026-04-charters-es.html"
+    },
+    "title": {
+      "en": "Charter schools, district property, and a small MCP fix",
+      "es": "Escuelas autónomas, propiedades del distrito, y un pequeño arreglo de MCP"
+    },
+    "description": {
+      "en": "Three charter school pages went live, /schools/ got reorganized into district schools + charters + other property, and the MCP tool can finally see board-item memo bodies.",
+      "es": "Se publicaron tres páginas de escuelas autónomas, /escuelas/ se reorganizó en escuelas del distrito + autónomas + otras propiedades, y la herramienta MCP finalmente puede ver los cuerpos de los puntos de la agenda."
+    },
+    "excerpt": {
+      "en": "Three RCSD-authorized charters were a 404 on the site for months because a branch never merged. Tonight they're live, the /schools/ index has three sections instead of one, and the MCP tool can finally see what each board item actually proposes.",
+      "es": "Tres escuelas autónomas autorizadas por RCSD daban 404 en el sitio por meses porque una rama nunca se fusionó. Esta noche están en vivo, la página /escuelas/ tiene tres secciones en lugar de una, y la herramienta MCP finalmente puede ver qué propone realmente cada punto de la agenda."
+    }
+  },
+  {
     "slug": "two-weeks-in",
     "slugEs": "dos-semanas-despues",
     "date": "2026-03-26",
