@@ -1,0 +1,81 @@
+{
+  "_metadata": {
+    "description": "District-owned properties in the Redwood City School District that are not currently RCSD-operated schools or RCSD-authorized charter school sites. Includes administrative buildings, leased-out former school sites, and operational facilities. Charter sites and district school sites are tracked separately in charters.json and schools.json respectively.",
+    "sources": {
+      "districtInventory": "TBD — seed data from Board President (2026-04-17); authoritative list pending",
+      "cdeDirectory": "https://www.cde.ca.gov/SchoolDirectory/"
+    },
+    "generated": "2026-04-17",
+    "status": "Harper School tenant and warehouse lease both confirmed by Board President 2026-04-20. Warehouse renewal document post-2023-08-31 not yet indexed in the board-packet index but the lease is current."
+  },
+  "properties": [
+    {
+      "slug": "district-office",
+      "name": "District Office",
+      "nameEs": "Oficina del Distrito",
+      "address": "750 Bradford Street, Redwood City, CA 94063",
+      "use": "admin",
+      "useLabel": "District administrative headquarters",
+      "useLabelEs": "Sede administrativa del distrito",
+      "tenant": null,
+      "formerUse": null,
+      "notes": "Board meetings are held here."
+    },
+    {
+      "slug": "former-adelante-campus",
+      "name": "Harper School (private)",
+      "nameEs": "Harper School (privada)",
+      "address": "3150 Granger Way, Redwood City, CA 94063",
+      "use": "leased-out",
+      "useLabel": "Leased to a private school tenant",
+      "useLabelEs": "Alquilado a una escuela privada como inquilino",
+      "tenant": {
+        "name": "Harper School",
+        "url": "https://www.harperschool.org",
+        "type": "private",
+        "programs": "Toddler, preschool, pre-kindergarten, kindergarten, and elementary",
+        "networkNote": "Harper School also operates a Danville campus."
+      },
+      "formerUse": "Former Adelante Selby Spanish Immersion campus",
+      "formerUseEs": "Antiguo campus de Adelante Selby Spanish Immersion",
+      "notes": null
+    },
+    {
+      "slug": "former-orion-campus",
+      "name": "Creative Learning Center",
+      "nameEs": "Creative Learning Center",
+      "address": "815 Allerton Street, Redwood City, CA 94063",
+      "use": "district-program",
+      "useLabel": "District-operated program (not a full school)",
+      "useLabelEs": "Programa operado por el distrito (no una escuela completa)",
+      "tenant": null,
+      "formerUse": "Former Orion Alternative School campus (Orion is now at 555 Avenue del Ora)",
+      "formerUseEs": "Antiguo campus de Orion Alternative (Orion ahora está en 555 Avenue del Ora)",
+      "notes": null
+    },
+    {
+      "slug": "district-warehouse",
+      "name": "District storage warehouse",
+      "nameEs": "Almacén del distrito",
+      "address": "1757 East Bayshore Road, Suites 4 & 6, Redwood City, CA 94063",
+      "use": "leased-in",
+      "useLabel": "Leased by the district (landlord: East Bayshore Investment Group, managed by Beals Martin Inc.)",
+      "useLabelEs": "Alquilado por el distrito (propietario: East Bayshore Investment Group, administrado por Beals Martin Inc.)",
+      "tenant": null,
+      "landlord": {
+        "name": "East Bayshore Investment Group",
+        "propertyManager": "Beals Martin, Inc.",
+        "note": "Beals Martin also manages the IMC / Instructional Materials Center building."
+      },
+      "squareFeet": 2868,
+      "formerUse": null,
+      "notes": "Commercial storage space (~2,868 sq ft). Lease use clause: \"STORAGE FOR SCHOOL DISTRICT.\" Last board-approved renewal surfaced in the board-packet index is 2022-08-24 (consent item 11.8) through 2023-08-31 at $6,020/mo. Lease is current per Board President confirmation 2026-04-20; subsequent renewal document not yet indexed.",
+      "source": {
+        "boardMeeting": "2022-08-24",
+        "itemLabel": "11.8",
+        "originalLeaseUrl": "https://go.boarddocs.com/ca/redwood/Board.nsf/files/CHDNEQ5E13AA/$file/Beals%20Martin%201757%20E%20Bayshore%204%20%26%206_Original%20Lease%202021.pdf",
+        "renewalUrl": "https://go.boarddocs.com/ca/redwood/Board.nsf/files/CHDSSK7417CA/$file/Beals%20Martin%201757%20E%20Bayshore%204%20%26%206_Renewal_22.23.pdf"
+      }
+    }
+  ]
+}

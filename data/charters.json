@@ -1,0 +1,171 @@
+{
+  "_metadata": {
+    "description": "Charter schools authorized by Redwood City School District (RCSD). Metadata sourced from the CDE Public Schools Directory (authoritative on CDS code, address, authorizer, charter number, date opened) and each charter's own website for current administrators and program details.",
+    "sources": {
+      "cdeDirectory": "https://www.cde.ca.gov/SchoolDirectory/",
+      "cdeSchoolProfile": "https://www.cde.ca.gov/sdprofile/"
+    },
+    "generated": "2026-04-17"
+  },
+  "charters": [
+    {
+      "slug": "connect",
+      "name": "Connect Community Charter School",
+      "nameShort": "Connect",
+      "nameEs": "Escuela Autónoma Connect Community",
+      "cdsCode": "41690050127282",
+      "charterNumber": "1498",
+      "charterFundingType": "Directly funded",
+      "dateOpened": "2013-08-26",
+      "authorizer": "Redwood City School District",
+      "address": "635 Oakside Avenue, Redwood City, CA 94063",
+      "addressNote": "Shares the former Fair Oaks Elementary campus with KIPP Excelencia, which uses the campus's formal 2950 Fair Oaks Avenue address.",
+      "phone": "(650) 482-2426",
+      "grades": "K-8",
+      "gradesNote": "CDE directory lists K-8; includes TK enrollment reported under K.",
+      "enrollment": 142,
+      "enrollmentYear": "2025-26",
+      "enrollmentSource": "CDE School Profile",
+      "website": "https://www.connectrwc.org",
+      "email": "office@connectrwc.org",
+      "socialMedia": {
+        "instagram": "https://www.instagram.com/connect_rwc/"
+      },
+      "schoolLeaders": [
+        {
+          "role": "Principal",
+          "name": "Hayley Dupuy",
+          "photo": "https://lh3.googleusercontent.com/sitesv/AA5AbUCibkxXPu41moZqbH88CleVQ7eaGf-2LORHSYSj6dALFdiZTLhMdscQLrJKjhH-aakrnwO1jLMnpy4KYMjgm1iUgljhS1fYZefxHR3WeZNC8UBlESbpW4qdj1CkO21tUtNOfk75VDEn0pa1R-SDcCpfNmYGRuNowynFnTcK74SCCjPlppUEeN2laRfNscCaPfzPuha2pv0yb8H4lexi5qgIGCHvmoTnzfeXFc4=w1280",
+          "photoNote": "Google Sites CDN URL — may expire; consider mirroring to R2 for long-term stability."
+        }
+      ],
+      "network": null,
+      "networkNote": "Independent",
+      "titlePatterns": ["\\bconnect\\b"],
+      "greatSchools": {
+        "url": "https://www.greatschools.org/california/redwood-city/31200-Connect-Community-Charter/",
+        "id": "31200",
+        "rating": 2
+      },
+      "cdeSchoolProfileUrl": "https://www.cde.ca.gov/sdprofile/details.aspx?cds=41690050127282",
+      "cdeDirectoryUrl": "https://www.cde.ca.gov/schooldirectory/details?cdscode=41690050127282",
+      "filing990": {
+        "filerName": "Connect Community Charter School",
+        "filerRelationship": "The charter itself is the 990 filer (independent 501(c)(3))",
+        "ein": "45-5252714",
+        "propublicaUrl": "https://projects.propublica.org/nonprofits/organizations/455252714",
+        "latestFiscalYear": "FY 2023-24",
+        "totalRevenue": 3210000,
+        "totalAssets": 1930000,
+        "note": "Figures as of latest ProPublica snapshot (FY ending June 2024)."
+      }
+    },
+    {
+      "slug": "kipp-excelencia",
+      "name": "KIPP Excelencia Community Preparatory",
+      "nameShort": "KIPP Excelencia",
+      "nameEs": "KIPP Excelencia Community Preparatory",
+      "cdsCode": "41690050132068",
+      "charterNumber": "1735",
+      "charterFundingType": "Directly funded",
+      "dateOpened": "2015-07-15",
+      "authorizer": "Redwood City School District",
+      "address": "2950 Fair Oaks Avenue, Redwood City, CA 94063",
+      "addressNote": "Formal/CDE address for the former Fair Oaks Elementary campus; shares the grounds with Connect Community Charter, which uses a 635 Oakside Avenue entrance.",
+      "phone": "(650) 482-2428",
+      "grades": "TK-8",
+      "gradesNote": "CDE directory reports K-8; KIPP Excelencia serves TK-8 across lower school (TK-4) and upper school (5-8).",
+      "enrollment": 704,
+      "enrollmentYear": "2025-26",
+      "enrollmentSource": "CDE School Profile",
+      "website": "https://excelencia.kippnorcal.org",
+      "email": "info@kippecp.org",
+      "socialMedia": {
+        "facebook": "https://www.facebook.com/KIPPExcelenciaCommunityPrep/",
+        "instagram": "https://www.instagram.com/kippexcelencia/",
+        "linkedin": "https://www.linkedin.com/company/kipp-northern-california/",
+        "linkedinNote": "Network-level LinkedIn (KIPP Northern California), not Excelencia-specific."
+      },
+      "schoolLeaders": [
+        {
+          "role": "Lower School Leader (TK-4)",
+          "name": "Liz Coughenour",
+          "photo": "https://excelencia.kippnorcal.org/wp-content/uploads/sites/6/2018/10/SL_Headshot_Liz_C-1-300x297.jpg"
+        },
+        {
+          "role": "Upper School Leader (5-8)",
+          "name": "Hugo Lawton",
+          "photo": "https://excelencia.kippnorcal.org/wp-content/uploads/sites/6/2018/10/kippexcelencia-300x288.jpg"
+        }
+      ],
+      "network": "KIPP Public Schools Northern California (KIPP NorCal)",
+      "networkUrl": "https://kippnorcal.org",
+      "titlePatterns": ["\\bkipp\\b", "\\bexcelencia\\b"],
+      "greatSchools": {
+        "url": "https://www.greatschools.org/california/redwood-city/31781-KIPP-Excelencia-Community-Preparatory/",
+        "id": "31781",
+        "rating": 6
+      },
+      "cdeSchoolProfileUrl": "https://www.cde.ca.gov/sdprofile/details.aspx?cds=41690050132068",
+      "cdeDirectoryUrl": "https://www.cde.ca.gov/schooldirectory/details?cdscode=41690050132068",
+      "filing990": {
+        "filerName": "KIPP Bay Area Schools",
+        "filerRelationship": "Network-level parent (KIPP NorCal / KIPP Bay Area Schools) files the 990; figures reflect the entire KIPP Bay Area network, not just KIPP Excelencia.",
+        "ein": "20-5010766",
+        "propublicaUrl": "https://projects.propublica.org/nonprofits/organizations/205010766",
+        "latestFiscalYear": "FY 2023-24",
+        "totalRevenue": 156900000,
+        "totalAssets": 304800000,
+        "note": "Network-wide figures as of latest ProPublica snapshot (FY ending June 2024). For Excelencia-specific finances see the fiscal oversight review letters above."
+      }
+    },
+    {
+      "slug": "rocketship-redwood-city",
+      "name": "Rocketship Redwood City Prep",
+      "nameShort": "Rocketship",
+      "nameEs": "Rocketship Redwood City Prep",
+      "cdsCode": "41690050132076",
+      "charterNumber": "1736",
+      "charterFundingType": "Directly funded",
+      "dateOpened": "2015-08-17",
+      "authorizer": "Redwood City School District",
+      "address": "909 Roosevelt Avenue, Redwood City, CA 94061",
+      "phone": "(650) 238-9970",
+      "grades": "TK-5",
+      "gradesNote": null,
+      "enrollment": 273,
+      "enrollmentYear": "2025-26",
+      "enrollmentSource": "CDE School Profile",
+      "website": "https://www.rocketshipschools.org/en/schools/redwood-city-prep/",
+      "email": "redwoodcity@rsed.org",
+      "fax": "(650) 434-0042",
+      "schoolLeaders": [
+        {
+          "role": "Principal",
+          "name": "Genzel Tolentino",
+          "photo": "https://www.rocketshipschools.org/wp-content/uploads/2024/06/genzel-headshot.png"
+        }
+      ],
+      "network": "Rocketship Public Schools",
+      "networkUrl": "https://www.rocketshipschools.org",
+      "titlePatterns": ["\\brocketship\\b"],
+      "greatSchools": {
+        "url": "https://www.greatschools.org/california/redwood-city/31779-Redwood-City-Prep/",
+        "id": "31779",
+        "rating": 8
+      },
+      "cdeSchoolProfileUrl": "https://www.cde.ca.gov/sdprofile/details.aspx?cds=41690050132076",
+      "cdeDirectoryUrl": "https://www.cde.ca.gov/schooldirectory/details?cdscode=41690050132076",
+      "filing990": {
+        "filerName": "Rocketship Education",
+        "filerRelationship": "Network-level parent (Rocketship Public Schools) files the 990; figures reflect the entire Rocketship network, not just the Redwood City site.",
+        "ein": "20-4040597",
+        "propublicaUrl": "https://projects.propublica.org/nonprofits/organizations/204040597",
+        "latestFiscalYear": "FY 2023-24",
+        "totalRevenue": 187005475,
+        "totalAssets": 271375549,
+        "note": "Network-wide figures as of latest ProPublica snapshot (FY ending June 2024). For Redwood City site-specific finances see the fiscal oversight review letters above."
+      }
+    }
+  ]
+}

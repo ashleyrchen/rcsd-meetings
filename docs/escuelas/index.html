@@ -173,6 +173,15 @@
     margin-bottom: 1rem;
   }
   .schools-header p { max-width: 640px; margin-bottom: 2rem; }
+  .schools-section { margin-top: 3rem; }
+  .schools-section:first-of-type { margin-top: 0; }
+  .schools-section h2 {
+    font-family: 'Fraunces', Georgia, serif; font-size: 1.5rem; font-weight: 400;
+    color: var(--green-deep); margin-bottom: 0.3rem;
+  }
+  .schools-section p.section-intro {
+    color: var(--text-secondary); font-size: 0.92rem; max-width: 640px; margin-bottom: 1rem;
+  }
   .schools-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
   .schools-table-wrap table { width: 100%; border-collapse: collapse; font-size: 0.88rem; line-height: 1.45; }
   .schools-table-wrap thead th {
@@ -222,23 +231,25 @@
 
 <div class="schools-content">
   <div class="schools-header">
-    <h1>Escuelas del distrito</h1>
-    <p>Seleccione una escuela para ver datos detallados sobre rendimiento académico, demografía, financiamiento y recursos.</p>
+    <h1>Escuelas y propiedades</h1>
+    <p>Las 12 escuelas operadas por el distrito, las tres escuelas chárter autorizadas por RCSD, y otras propiedades del distrito.</p>
   </div>
 
-  <div class="schools-table-wrap">
-    <table>
-      <thead>
-        <tr>
-          <th>Escuela</th>
-          <th>Grados</th>
-          <th class="num">Inscripción</th>
-          <th class="num">% alta necesidad</th>
-          <th class="num">Crec. Inglés</th>
-          <th class="num">Crec. Mat</th>
-        </tr>
-      </thead>
-      <tbody>
+  <section class="schools-section">
+    <h2>Escuelas del distrito</h2>
+    <div class="schools-table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Escuela</th>
+            <th>Grados</th>
+            <th class="num">Inscripción</th>
+            <th class="num">% alta necesidad</th>
+            <th class="num">Crec. Inglés</th>
+            <th class="num">Crec. Mat</th>
+          </tr>
+        </thead>
+        <tbody>
           <tr onclick="location.href='/escuelas/adelante-selby/'" style="cursor:pointer">
             <td class="school-name"><a href="/escuelas/adelante-selby/">Adelante Selby <span class="arrow">&rarr;</span></a></td>
             <td>TK-5</td>
@@ -335,11 +346,95 @@
             <td class="num"><span class="bar bar-green" style="width:27px"></span>23%</td>
             <td class="num"><span class="bar bar-green" style="width:57px"></span>28%</td>
           </tr>
-      </tbody>
-    </table>
-  </div>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:0.82rem; color:var(--text-muted); margin-top:1.2rem; line-height:1.5"><strong>% alta necesidad</strong> = porcentaje de estudiantes socioeconómicamente desfavorecidos o aprendices de inglés. <strong>Crecimiento</strong> = porcentaje de estudiantes que superaron el crecimiento esperado en el examen estatal de CA (CAASPP). Mide cuánto aprenden los estudiantes cada año, sin importar su punto de partida — una escuela con baja competencia pero alto crecimiento está acelerando el aprendizaje.</p>
+  </section>
 
-  <p style="font-size:0.82rem; color:var(--text-muted); margin-top:1.2rem; line-height:1.5"><strong>% alta necesidad</strong> = porcentaje de estudiantes socioeconómicamente desfavorecidos o aprendices de inglés. <strong>Crecimiento</strong> = porcentaje de estudiantes que superaron el crecimiento esperado en el examen estatal de CA (CAASPP). Mide cuánto aprenden los estudiantes cada año, sin importar su punto de partida — una escuela con baja competencia pero alto crecimiento está acelerando el aprendizaje.</p>
+  <section class="schools-section" id="charters">
+    <h2>Escuelas chárter autorizadas por RCSD</h2>
+    <p class="section-intro">Tres escuelas chárter financiadas directamente. Sus presupuestos, informes interinos y auditorías se presentan regularmente a la mesa directiva como parte de la supervisión fiscal del distrito.</p>
+    <div class="schools-table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Escuela</th>
+            <th>Grados</th>
+            <th class="num">Inscripción</th>
+            <th>Red</th>
+            <th class="num">Inauguración</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr onclick="location.href='/escuelas/charter/connect/'" style="cursor:pointer">
+            <td class="school-name"><a href="/escuelas/charter/connect/">Escuela Autónoma Connect Community <span class="arrow">&rarr;</span></a></td>
+            <td>K-8</td>
+            <td class="num">142</td>
+            <td>Independiente</td>
+            <td class="num">2013</td>
+          </tr>
+          <tr onclick="location.href='/escuelas/charter/kipp-excelencia/'" style="cursor:pointer">
+            <td class="school-name"><a href="/escuelas/charter/kipp-excelencia/">KIPP Excelencia Community Preparatory <span class="arrow">&rarr;</span></a></td>
+            <td>TK-8</td>
+            <td class="num">704</td>
+            <td>KIPP Public Schools Northern California (KIPP NorCal)</td>
+            <td class="num">2015</td>
+          </tr>
+          <tr onclick="location.href='/escuelas/charter/rocketship-redwood-city/'" style="cursor:pointer">
+            <td class="school-name"><a href="/escuelas/charter/rocketship-redwood-city/">Rocketship Redwood City Prep <span class="arrow">&rarr;</span></a></td>
+            <td>TK-5</td>
+            <td class="num">273</td>
+            <td>Rocketship Public Schools</td>
+            <td class="num">2015</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="schools-section" id="properties">
+    <h2>Otras propiedades del distrito</h2>
+    <p class="section-intro">Edificios y terrenos propiedad del distrito (o alquilados por el distrito) que actualmente no albergan una escuela operada por el distrito ni una escuela chárter autorizada por RCSD.</p>
+    <div class="schools-table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Propiedad</th>
+            <th>Dirección</th>
+            <th>Uso actual</th>
+            <th>Uso anterior</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="school-name">Oficina del Distrito</td>
+            <td>750 Bradford Street, Redwood City, CA 94063</td>
+            <td>Sede administrativa del distrito</td>
+            <td>&mdash;</td>
+          </tr>
+          <tr>
+            <td class="school-name"><a href="https://www.harperschool.org" target="_blank" rel="noopener">Harper School (privada) <span style="font-size:0.8em; color:var(--text-muted)">&#8599;</span></a></td>
+            <td>3150 Granger Way, Redwood City, CA 94063</td>
+            <td>Alquilado a una escuela privada como inquilino</td>
+            <td>Antiguo campus de Adelante Selby Spanish Immersion</td>
+          </tr>
+          <tr>
+            <td class="school-name">Creative Learning Center</td>
+            <td>815 Allerton Street, Redwood City, CA 94063</td>
+            <td>Programa operado por el distrito (no una escuela completa)</td>
+            <td>Antiguo campus de Orion Alternative (Orion ahora está en 555 Avenue del Ora)</td>
+          </tr>
+          <tr>
+            <td class="school-name">Almacén del distrito</td>
+            <td>1757 East Bayshore Road, Suites 4 & 6, Redwood City, CA 94063</td>
+            <td>Alquilado por el distrito (propietario: East Bayshore Investment Group, administrado por Beals Martin Inc.)</td>
+            <td>&mdash;</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
 </div>
 
 <footer class="site-footer">

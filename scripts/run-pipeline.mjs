@@ -57,6 +57,7 @@ run(`${step++}. Meetings index`, 'build-meetings-html.mjs');
 run(`${step++}. Meeting detail pages`, 'build-meeting-pages.mjs');
 run(`${step++}. Homepage`, 'build-homepage.mjs');
 run(`${step++}. School pages`, 'build-schools.mjs');
+run(`${step++}. Charter school pages`, 'build-charters.mjs');
 run(`${step++}. Blog`, 'build-blog.mjs');
 
 console.log(`\n${'='.repeat(60)}`);
