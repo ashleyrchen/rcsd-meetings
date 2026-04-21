@@ -35,7 +35,7 @@
   - SSCs approve CSSPs and SPSAs; membership is public record
   - [x] Extract structured SSC membership from SPSA PDFs (member names, roles [parent/staff/community]) into `data/ssc-membership.json` — 12 schools × 3 years extracted, surfaced on school pages and MCP server
   - Subject to Greene Act (Ed Code 35147): 72-hour agenda posting, open meetings, 3-year record retention
-  - Known sources: Taft has Google Docs (https://docs.google.com/document/d/1YsMiY6CFhrxRX9ploZViPZqy4UigzYUTZMVYTf53VdI/); Kennedy has Sept/Oct 2023 on website; Orion and MIT have placeholder pages only
+  - Known sources: Taft has Google Docs (https://docs.google.com/document/d/1YsMiY6CFhrxRX9ploZViPZqy4UigzYUTZMVYTf53VdI/); Kennedy has Sept/Oct 2023 on website; Orion has a public Google Drive folder at https://drive.google.com/drive/folders/1ZM8gRkBjer18QwlvNG_pEKOYmgFmwRZa (anonymously scrapable, per Board President 2026-04-20); MIT has placeholder pages only
   - Most schools have no publicly visible SSC documentation
 - [ ] DELAC (District English Learner Advisory Committee) — scrape and index meeting agendas, minutes, presentations
   - District page: rcsdk8.net DELAC page has 2025-26 schedule (9 meetings), but only Aug 2025 docs posted
