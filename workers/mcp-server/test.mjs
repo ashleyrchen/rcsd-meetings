@@ -40,6 +40,22 @@ function assert(condition, msg) {
   if (!condition) throw new Error(`Assertion failed: ${msg}`);
 }
 
+// Most recent weekday (today if Mon-Fri, else last Friday).
+// HealthePro only serves a rolling window of ~recent/upcoming menus, so
+// a hardcoded past date will eventually 400.
+function recentWeekday() {
+  const d = new Date();
+  while (d.getDay() === 0 || d.getDay() === 6) d.setDate(d.getDate() - 1);
+  return d.toISOString().slice(0, 10);
+}
+
+// Most recent Saturday — for weekend-behavior checks.
+function recentSaturday() {
+  const d = new Date();
+  while (d.getDay() !== 6) d.setDate(d.getDate() - 1);
+  return d.toISOString().slice(0, 10);
+}
+
 async function test(name, fn) {
   try {
     await fn();
@@ -68,13 +84,14 @@ await test("initialize returns server info", async () => {
   assert(r.result.capabilities.tools, "missing tools capability");
 });
 
-await test("tools/list returns 7 tools", async () => {
+await test("tools/list returns 8 tools", async () => {
   const r = await mcpCall(2, "tools/list");
   const names = r.result.tools.map((t) => t.name).sort();
-  assert(names.length === 7, `expected 7 tools, got ${names.length}`);
+  assert(names.length === 8, `expected 8 tools, got ${names.length}`);
   for (const expected of [
     "check-calendar",
     "get-lunch-menu",
+    "get-meeting-details",
     "get-meeting-summary",
     "get-school-board-items",
     "get-sped-data",
@@ -144,7 +161,7 @@ await test("check-calendar identifies weekend", async () => {
 await test("get-lunch-menu returns menu items", async () => {
   const text = await toolCall("get-lunch-menu", {
     school: "orion",
-    date: "2026-03-12",
+    date: recentWeekday(),
   });
   assert(text.includes("Orion"), "should include school name");
   assert(text.includes("Lunch Entree") || text.includes("Entree"), "should have entree category");
@@ -153,7 +170,7 @@ await test("get-lunch-menu returns menu items", async () => {
 await test("get-lunch-menu weekend returns no lunch", async () => {
   const text = await toolCall("get-lunch-menu", {
     school: "orion",
-    date: "2026-03-14",
+    date: recentSaturday(),
   });
   assert(text.includes("weekend"), "should say weekend");
 });
