@@ -10,12 +10,12 @@
     "test:local": "node test.mjs http://localhost:8787"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.27.1",
-    "agents": "^0.7.6",
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "agents": "^0.11.4",
     "zod": "^4.3.6"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20260313.1",
-    "wrangler": "^4.72.0"
+    "@cloudflare/workers-types": "^4.20260421.1",
+    "wrangler": "^4.84.1"
   }
 }
