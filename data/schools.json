@@ -5,7 +5,7 @@
       "name": "Adelante Selby Spanish Immersion School",
       "nameShort": "Adelante Selby",
       "nameEs": "Escuela de Inmersi\u00f3n en Espa\u00f1ol Adelante Selby",
-      "grades": "PreK-5",
+      "grades": "TK-5",
       "type": "choice",
       "program": "Spanish \u00b7 Espa\u00f1ol",
       "programEs": "Espa\u00f1ol \u00b7 Spanish",
@@ -86,7 +86,8 @@
         "url": "https://www.greatschools.org/california/atherton/6935-Selby-Lane-Elementary-School/",
         "id": "6935",
         "rating": 6
-      }
+      },
+      "cspp": true
     },
     {
       "slug": "clifford",
@@ -180,14 +181,15 @@
         "url": "https://www.greatschools.org/california/redwood-city/6923-Clifford-Elementary-School/",
         "id": "6923",
         "rating": 7
-      }
+      },
+      "cspp": false
     },
     {
       "slug": "garfield",
       "name": "Garfield Community School",
       "nameShort": "Garfield",
       "nameEs": "Escuela Comunitaria Garfield",
-      "grades": "PreK-5",
+      "grades": "K-5",
       "type": "neighborhood",
       "program": null,
       "programEs": null,
@@ -237,7 +239,8 @@
         "url": "https://www.greatschools.org/california/menlo-park/6927-Garfield-Elementary-School/",
         "id": "6927",
         "rating": 6
-      }
+      },
+      "cspp": true
     },
     {
       "slug": "henry-ford",
@@ -335,14 +338,15 @@
         "url": "https://www.greatschools.org/california/redwood-city/6926-Henry-Ford-Elementary-School/",
         "id": "6926",
         "rating": 4
-      }
+      },
+      "cspp": false
     },
     {
       "slug": "hoover",
       "name": "Hoover Community School",
       "nameShort": "Hoover",
       "nameEs": "Escuela Comunitaria Hoover",
-      "grades": "PreK-8",
+      "grades": "TK-8",
       "type": "neighborhood",
       "program": null,
       "programEs": null,
@@ -436,7 +440,8 @@
         "url": "https://www.greatschools.org/california/redwood-city/6930-Hoover-Elementary-School/",
         "id": "6930",
         "rating": 5
-      }
+      },
+      "cspp": true
     },
     {
       "slug": "kennedy",
@@ -494,7 +499,8 @@
         "url": "https://www.greatschools.org/california/redwood-city/6931-John-F.-Kennedy-Middle-School/",
         "id": "6931",
         "rating": 7
-      }
+      },
+      "cspp": false
     },
     {
       "slug": "mckinley-mit",
@@ -546,7 +552,8 @@
         "url": "https://www.greatschools.org/california/redwood-city/6932-Mckinley-Institute-Of-Technology/",
         "id": "6932",
         "rating": 6
-      }
+      },
+      "cspp": false
     },
     {
       "slug": "north-star",
@@ -613,14 +620,15 @@
         "url": "https://www.greatschools.org/california/redwood-city/6933-North-Star-Academy/",
         "id": "6933",
         "rating": 10
-      }
+      },
+      "cspp": false
     },
     {
       "slug": "orion",
       "name": "Orion Alternative School",
       "nameShort": "Orion",
       "nameEs": "Escuela Alternativa Orion",
-      "grades": "PreK-5",
+      "grades": "TK-5",
       "type": "choice",
       "program": "Mandarin | Co-op",
       "programEs": "Mandar\u00edn | Cooperativa",
@@ -710,14 +718,15 @@
         "url": "https://www.greatschools.org/california/redwood-city/11145-Orion-Alternative-School/",
         "id": "11145",
         "rating": 9
-      }
+      },
+      "cspp": true
     },
     {
       "slug": "roosevelt",
       "name": "Roosevelt School",
       "nameShort": "Roosevelt",
       "nameEs": "Escuela Roosevelt",
-      "grades": "PreK-5",
+      "grades": "TK-5",
       "type": "neighborhood",
       "program": null,
       "programEs": null,
@@ -793,7 +802,8 @@
         "url": "https://www.greatschools.org/california/redwood-city/6934-Roosevelt-Elementary-School/",
         "id": "6934",
         "rating": 4
-      }
+      },
+      "cspp": true
     },
     {
       "slug": "roy-cloud",
@@ -880,14 +890,15 @@
         "url": "https://www.greatschools.org/california/redwood-city/6924-Roy-Cloud-Elementary-School/",
         "id": "6924",
         "rating": 9
-      }
+      },
+      "cspp": false
     },
     {
       "slug": "taft",
       "name": "Taft School",
       "nameShort": "Taft",
       "nameEs": "Escuela Taft",
-      "grades": "PreK-5",
+      "grades": "TK-5",
       "type": "neighborhood",
       "program": null,
       "programEs": null,
@@ -963,7 +974,8 @@
         "url": "https://www.greatschools.org/california/redwood-city/6936-Taft-Elementary-School/",
         "id": "6936",
         "rating": 4
-      }
+      },
+      "cspp": true
     }
   ],
   "districtLinks": {
