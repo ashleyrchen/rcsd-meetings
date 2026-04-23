@@ -386,8 +386,8 @@ const SCHOOL_DATA = {
     notesEs: 'La mayor contribución de PTO ($196K) después de North Star. Crisis de LTEL: 0% de estudiantes de inglés a largo plazo al nivel de grado.',
   },
   'garfield': {
-    description: 'Garfield is a TK-8 neighborhood Community School using a 50:50 bilingual model. It is among the highest-need schools in the district and has experienced significant enrollment decline. Despite low proficiency scores, Garfield teachers produce the highest ELA student growth in the district.',
-    descriptionEs: 'Garfield es una Escuela Comunitaria de vecindario TK-8 que utiliza un modelo bilingüe 50:50. Es una de las escuelas con mayores necesidades del distrito y ha experimentado una disminución significativa en la inscripción. A pesar de los bajos puntajes de competencia, los maestros de Garfield producen el mayor crecimiento estudiantil en ELA del distrito.',
+    description: 'Garfield is a K-5 neighborhood Community School (with PreK) using a 50:50 bilingual model. It is among the highest-need schools in the district and has experienced significant enrollment decline. Despite low proficiency scores, Garfield teachers produce the highest ELA student growth in the district.',
+    descriptionEs: 'Garfield es una Escuela Comunitaria de vecindario K-5 (con PreK) que utiliza un modelo bilingüe 50:50. Es una de las escuelas con mayores necesidades del distrito y ha experimentado una disminución significativa en la inscripción. A pesar de los bajos puntajes de competencia, los maestros de Garfield producen el mayor crecimiento estudiantil en ELA del distrito.',
     caaspp: { ela: 12, math: 8 },
     demographics: { sed: 95.0, el: 68.2, chronicAbsent: 28.8, suspension: 3.23 },
     funding: {
