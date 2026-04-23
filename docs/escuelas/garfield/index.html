@@ -589,6 +589,17 @@
     margin-top: 0.3rem;
     line-height: 1.4;
   }
+  .stat-card-source { margin-top: 0.4rem; font-size: 0.72rem; }
+  .stat-card-source a.source-link {
+    color: var(--green-mid);
+    text-decoration: underline;
+    text-decoration-color: var(--rule);
+    text-underline-offset: 2px;
+  }
+  .stat-card-source a.source-link:hover {
+    color: var(--green-deep);
+    text-decoration-color: var(--green-mid);
+  }
   .info-bubble { position:relative; display:inline-flex; align-items:center; margin-left:0.25rem; vertical-align:middle; }
   .info-bubble-icon { font-family:'IBM Plex Mono',monospace; font-size:0.55rem; color:var(--text-muted); cursor:pointer; width:14px; height:14px; display:inline-flex; align-items:center; justify-content:center; border:1px solid var(--rule); border-radius:50%; line-height:1; transition:border-color 0.2s,color 0.2s; }
   .info-bubble-icon:hover { border-color:var(--green-mid); color:var(--green-mid); }
@@ -938,16 +949,19 @@
 
     <h3>Crecimiento Estudiantil</h3>
 
+    
     <div class="stat-grid">
       <div class="stat-card">
-        <div class="stat-card-label">Crecimiento en Inglés</div>
-        <div class="stat-card-value">49% <span class="info-bubble" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://www.cde.ca.gov/ta/ac/acctgrowthmod.asp" target="_blank">CDE Growth Model</a></span></span></div>
-        <div class="stat-card-note">Promedio del distrito: 20.7%</div>
+        <div class="stat-card-label">Crecimiento en inglés</div>
+        <div class="stat-card-value">60.5%</div>
+        <div class="stat-card-note">medio año 2025-26 &middot; Nivel distrital: 60.7%</div>
+        <div class="stat-card-source"><a class="source-link" href="https://data.rcsd.info/board-packets/2026-03-25/Garfield-25-26-Data-for-Board-presentation-DRAFT.pdf#page=19" target="_blank" rel="noopener">Fuente: presentación 2026-03-25, diapositiva 19 &rarr;</a></div>
       </div>
       <div class="stat-card">
-        <div class="stat-card-label">Crecimiento en Matemáticas</div>
-        <div class="stat-card-value">22.8% <span class="info-bubble" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://www.cde.ca.gov/ta/ac/acctgrowthmod.asp" target="_blank">CDE Growth Model</a></span></span></div>
-        <div class="stat-card-note">Promedio del distrito: 13.8%</div>
+        <div class="stat-card-label">Crecimiento en matemáticas</div>
+        <div class="stat-card-value">70.4%</div>
+        <div class="stat-card-note">medio año 2025-26 &middot; Nivel distrital: 56.4%</div>
+        <div class="stat-card-source"><a class="source-link" href="https://data.rcsd.info/board-packets/2026-03-25/Garfield-25-26-Data-for-Board-presentation-DRAFT.pdf#page=21" target="_blank" rel="noopener">Fuente: presentación 2026-03-25, diapositiva 21 &rarr;</a></div>
       </div>
     </div>
 
@@ -970,8 +984,8 @@
       <p>El crecimiento mide cuánto aprenden los estudiantes cada año, sin importar su punto de partida. Una escuela con baja competencia pero alto crecimiento está acelerando el aprendizaje. La competencia mide cuántos estudiantes están al nivel de grado o por encima en este momento.</p>
     </div>
 
-    <p class="source">Crecimiento = % de estudiantes que logran más del 105% del crecimiento esperado en el CAASPP (Evaluación del Rendimiento y Progreso Estudiantil de California), el examen estatal anual estandarizado para grados 3–8. Competencia = % que cumplen o superan los estándares de su grado.</p>
-    <p class="source">Fuentes: SARCs 2024-25, SPSAs 2025-26, LCAP 2025-26, informes de recursos humanos (feb. 2026). Competencia del examen estatal de CA 2023-24. Crecimiento estudiantil de evaluaciones 2024-25.</p>
+    <p class="source">Crecimiento = % de estudiantes que alcanzaron su meta anual de Crecimiento Esperado en i-Ready en la evaluación diagnóstica de medio año. i-Ready es la evaluación local del distrito en lectura y matemáticas para K–8; la meta del LCAP es aumentar este porcentaje 4 puntos cada año. Competencia = % que cumplen o superan los estándares de grado en el CAASPP (examen estatal de California, administrado en primavera a los grados 3–8).</p>
+    <p class="source">Fuentes: SARCs 2024-25, SPSAs 2025-26, LCAP 2025-26, presentaciones 2025-26 de cada escuela a la Mesa Directiva. Competencia del CAASPP 2023-24. Crecimiento de la evaluación diagnóstica de medio año i-Ready 2025-26 reportada a la Mesa.</p>
   </section>
 
   <!-- ======== 3. STUDENT DEMOGRAPHICS ======== -->

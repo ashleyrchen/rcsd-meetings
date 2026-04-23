@@ -5,8 +5,15 @@
  *
  * Data hardcoded from:
  *   - data/schools.json (directory info)
- *   - district-analysis-2025-26.md (CAASPP, demographics, budgets, staffing)
- *   - hr-data-briefing-2026-03.md (student growth, teacher demographics)
+ *   - 2024-25 SARCs (CAASPP proficiency, demographics, staffing credentials)
+ *   - 2025-26 SPSAs (site budgets, funding sources)
+ *   - 2025-26 LCAP and school-level board presentations (student outcomes)
+ *
+ * NOTE (2026-04-22): the `growth` field on each school is currently unverified.
+ * The original numbers were copied from a local working doc that was never
+ * checked in, and the labeling as "CDE Growth Model" is incorrect — the
+ * district's LCAP-tracked growth metric is i-Ready Expected Growth, not CAASPP.
+ * See ROADMAP.md "Data Attribution" for the rebuild plan.
  */
 
 import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync } from 'fs';
@@ -85,6 +92,30 @@ const CDE_STAFF_ETH = (() => { try { return JSON.parse(readFileSync(resolve(ROOT
 const CDE_STAFF_EXP = (() => { try { return JSON.parse(readFileSync(resolve(ROOT, 'data/cde/staff-experience-2024-25.json'), 'utf-8')); } catch { return {}; } })();
 const CDE_RATIOS = (() => { try { return JSON.parse(readFileSync(resolve(ROOT, 'data/cde/staff-ratios-2024-25.json'), 'utf-8')); } catch { return {}; } })();
 
+// i-Ready Expected Growth data, extracted from each school's 25-26 Board of
+// Trustees data presentation PDF. See scripts/extract-ireadyu-growth.mjs.
+// Schools without a 25-26 presentation yet have a pending-status record.
+const IREADYU_DATA = (() => {
+  const out = {};
+  try {
+    const dir = resolve(ROOT, 'data/ireadyu-growth');
+    for (const f of readdirSync(dir)) {
+      if (!f.endsWith('.json') || f.startsWith('_')) continue;
+      out[f.replace(/\.json$/, '')] = JSON.parse(readFileSync(resolve(dir, f), 'utf-8'));
+    }
+  } catch { /* missing dir -> empty */ }
+  return out;
+})();
+
+// District-wide i-Ready Expected Growth from 2025-26 LCAP Mid-Year Report
+// (data.rcsd.info/board-packets/2026-02-11/Mid-year-LCAP-2025-2026-1.pdf, p.22-23).
+const DISTRICT_IREADYU = {
+  reading: 60.7,
+  math: 56.4,
+  year: '2025-26 Winter',
+  pdfUrl: 'https://data.rcsd.info/board-packets/2026-02-11/Mid-year-LCAP-2025-2026-1.pdf',
+};
+
 const ABSENT_LABELS = {
   TA: 'All Students', RH: 'Hispanic/Latino', RW: 'White', RA: 'Asian',
   RB: 'African American', RF: 'Filipino', RI: 'American Indian', RP: 'Pacific Islander',
@@ -133,10 +164,10 @@ const CSSP_URLS = {
 // ---- Most recent school board presentation per school ----
 const SCHOOL_PRESENTATIONS = {
   'adelante-selby': {
-    date: '2025-01-08',
-    year: '2024-25',
-    pdfUrl: 'https://go.boarddocs.com/ca/redwood/Board.nsf/files/DC4MFP5B0F01/$file/Adelante%20Selby%2024-25%20Data%20for%20Board%20presentation%20(1).pdf',
-    videoUrl: 'https://www.youtube.com/watch?v=5WLS-u2miac&t=2312',
+    date: '2026-04-22',
+    year: '2025-26',
+    pdfUrl: 'https://data.rcsd.info/board-packets/2026-04-22/Adelante-Selby-25-26-Data-for-Board-presentation.pdf',
+    videoUrl: null, // Video not yet posted
   },
   'clifford': {
     date: '2026-04-01',
@@ -163,10 +194,10 @@ const SCHOOL_PRESENTATIONS = {
     videoUrl: null, // Video not yet available
   },
   'kennedy': {
-    date: '2023-12-06',
-    year: '2023-24',
-    pdfUrl: 'https://go.boarddocs.com/ca/redwood/Board.nsf/files/CY22T703AEAA/$file/Kennedy%20Board%20Report%202023.pdf',
-    videoUrl: null,
+    date: '2026-04-22',
+    year: '2025-26',
+    pdfUrl: 'https://data.rcsd.info/board-packets/2026-04-22/Kennedy-25-26-Data-for-Board-presentation.pdf',
+    videoUrl: null, // Video not yet posted
   },
   'mckinley-mit': {
     date: '2026-03-11',
@@ -181,10 +212,10 @@ const SCHOOL_PRESENTATIONS = {
     videoUrl: 'https://www.youtube.com/watch?v=VUIwMGNG5Qk&t=4896',
   },
   'orion': {
-    date: '2025-01-15',
-    year: '2024-25',
-    pdfUrl: 'https://go.boarddocs.com/ca/redwood/Board.nsf/files/DCQPN4655D42/$file/Orion%2024-25%20Data%20for%20Board%20presentation.pdf',
-    videoUrl: 'https://www.youtube.com/watch?v=oYXptXv6Y5I&t=189',
+    date: '2026-04-22',
+    year: '2025-26',
+    pdfUrl: 'https://data.rcsd.info/board-packets/2026-04-22/Orion-25-26-Data-for-Board-presentation.pdf',
+    videoUrl: null, // Video not yet posted
   },
   'roosevelt': {
     date: '2026-03-11',
@@ -318,15 +349,16 @@ for (const slug of Object.keys(SCHOOL_BOARD_ITEMS)) {
 
 console.log(`Tagged ${Object.values(SCHOOL_BOARD_ITEMS).reduce((s, arr) => s + arr.length, 0)} board items across ${Object.keys(SCHOOL_BOARD_ITEMS).length} schools`);
 
-// ---- Per-school enrichment data (from analysis docs) ----
-// All numbers sourced from district-analysis-2025-26.md and hr-data-briefing-2026-03.md
+// ---- Per-school enrichment data ----
+// Primary sources: 2024-25 SARCs (data/sarc/), 2025-26 SPSAs, 2025-26 LCAP,
+// and each school's 2025-26 Board of Trustees data presentation.
+// The `growth` field is currently unverified (see file header note).
 
 const SCHOOL_DATA = {
   'adelante-selby': {
     description: 'Adelante Selby is RCSD\'s Spanish dual-language immersion school, using the SEAL bilingual model. It is a Community School and a school of choice, drawing families from across the district.',
     descriptionEs: 'Adelante Selby es la escuela de inmersión bilingüe en español del RCSD, que utiliza el modelo bilingüe SEAL. Es una Escuela Comunitaria y una escuela de elección, atrayendo familias de todo el distrito.',
     caaspp: { ela: 34, math: 36 },
-    growth: { ela: 22.2, math: 9.2, elaTeachers: 6, mathTeachers: null },
     demographics: { sed: 62.6, el: 42.4, chronicAbsent: 15.4, suspension: 0.00 },
     funding: {
       spsaTotal: 854000, perPupil: 1356,
@@ -342,7 +374,6 @@ const SCHOOL_DATA = {
     description: 'Clifford is a TK-8 neighborhood school and one of the larger schools in the district. It serves a socioeconomically mixed population with a notable long-term English Learner challenge.',
     descriptionEs: 'Clifford es una escuela de vecindario de TK-8 y una de las escuelas más grandes del distrito. Sirve a una población socioeconómicamente diversa con un desafío notable de estudiantes de inglés a largo plazo.',
     caaspp: { ela: 55, math: 45 },
-    growth: { ela: 12.5, math: 9.8, elaTeachers: 13, mathTeachers: null },
     demographics: { sed: 44.2, el: 23.5, chronicAbsent: 20.7, suspension: 1.39 },
     funding: {
       spsaTotal: 665000, perPupil: 1001,
@@ -358,7 +389,6 @@ const SCHOOL_DATA = {
     description: 'Garfield is a K-5 neighborhood Community School using a 50:50 bilingual model. It is among the highest-need schools in the district and has experienced significant enrollment decline. Despite low proficiency scores, Garfield teachers produce the highest ELA student growth in the district.',
     descriptionEs: 'Garfield es una Escuela Comunitaria de vecindario K-5 que utiliza un modelo bilingüe 50:50. Es una de las escuelas con mayores necesidades del distrito y ha experimentado una disminución significativa en la inscripción. A pesar de los bajos puntajes de competencia, los maestros de Garfield producen el mayor crecimiento estudiantil en ELA del distrito.',
     caaspp: { ela: 12, math: 8 },
-    growth: { ela: 49.0, math: 22.8, elaTeachers: 4, mathTeachers: null },
     demographics: { sed: 95.0, el: 68.2, chronicAbsent: 28.8, suspension: 3.23 },
     funding: {
       spsaTotal: 243000, perPupil: 936,
@@ -374,7 +404,6 @@ const SCHOOL_DATA = {
     description: 'Henry Ford is a TK-5 neighborhood Community School serving a moderately high-need population. It has strong teacher credentialing but the most significant staff-student demographic mismatch in the district.',
     descriptionEs: 'Henry Ford es una Escuela Comunitaria de vecindario TK-5 que sirve a una población con necesidades moderadamente altas. Tiene una fuerte credencialización docente pero la mayor disparidad demográfica entre personal y estudiantes del distrito.',
     caaspp: { ela: 46, math: 38 },
-    growth: { ela: 15.2, math: 10.2, elaTeachers: 6, mathTeachers: null },
     demographics: { sed: 63.1, el: 36.2, chronicAbsent: 24.8, suspension: 1.00 },
     funding: {
       spsaTotal: 681000, perPupil: 1476,
@@ -390,7 +419,6 @@ const SCHOOL_DATA = {
     description: 'Hoover is a TK-8 neighborhood Community School and one of the highest-need schools in the district. Despite having the lowest teacher credentialing rate, Hoover\'s young staff produces the second-highest student growth in both ELA and Math. It offers a full K-8 music program and STEAM instruction.',
     descriptionEs: 'Hoover es una Escuela Comunitaria de vecindario TK-8 y una de las escuelas con mayores necesidades del distrito. A pesar de tener la tasa más baja de credencialización docente, el personal joven de Hoover produce el segundo mayor crecimiento estudiantil en ELA y Matemáticas. Ofrece un programa de música K-8 completo e instrucción STEAM.',
     caaspp: { ela: 17, math: 13 },
-    growth: { ela: 36.0, math: 25.6, elaTeachers: 17, mathTeachers: null },
     demographics: { sed: 96.6, el: 66.9, chronicAbsent: 28.5, suspension: 4.79 },
     funding: {
       spsaTotal: 734000, perPupil: 1114,
@@ -406,7 +434,6 @@ const SCHOOL_DATA = {
     description: 'Kennedy is the largest school in the district, a 6-8 neighborhood Community School and middle school. It has large within-school achievement gaps, with White students scoring significantly higher than Hispanic students. Recent principal leadership changes have led to significant staff turnover.',
     descriptionEs: 'Kennedy es la escuela más grande del distrito, una Escuela Comunitaria de vecindario de 6-8 grados y escuela secundaria. Tiene grandes brechas de logro dentro de la escuela, con estudiantes blancos obteniendo puntajes significativamente más altos que los estudiantes hispanos.',
     caaspp: { ela: 49, math: 30 },
-    growth: { ela: 15.4, math: 11.2, elaTeachers: 30, mathTeachers: null },
     demographics: { sed: 65.8, el: 25.8, chronicAbsent: 23.8, suspension: 2.97 },
     funding: {
       spsaTotal: 563000, perPupil: 714,
@@ -422,7 +449,6 @@ const SCHOOL_DATA = {
     description: 'McKinley MIT is a 6-8 technology-focused middle school of choice and a Community School. It is ATSI-identified (Additional Targeted Support and Improvement) and receives the largest single district investment ($610K) for intervention programs. It has the lowest state test proficiency and highest suspension rate in the district.',
     descriptionEs: 'McKinley MIT es una escuela secundaria de elección enfocada en tecnología de 6-8 grados y una Escuela Comunitaria. Está identificada como ATSI (Apoyo y Mejora Adicional Dirigido) y recibe la mayor inversión distrital individual ($610K) para programas de intervención.',
     caaspp: { ela: 10, math: 7 },
-    growth: { ela: 21.8, math: 20.0, elaTeachers: 22, mathTeachers: null },
     demographics: { sed: 92.6, el: 45.5, chronicAbsent: 0, suspension: 10.78 },
     funding: {
       spsaTotal: 795000, perPupil: 1656,
@@ -438,7 +464,6 @@ const SCHOOL_DATA = {
     description: 'North Star Academy is a 3-8 school of choice with the highest state test proficiency in the district but the lowest student growth rates. It receives no Title I or federal funds and has the lowest per-pupil public funding. Its PTA ($326K) covers 58% of the SPSA budget, filling the gap that categorical programs cover at other schools.',
     descriptionEs: 'North Star Academy es una escuela de elección de 3-8 grados con la mayor competencia en exámenes estatales del distrito pero las tasas más bajas de crecimiento estudiantil. No recibe fondos del Título I ni federales y tiene el financiamiento público per cápita más bajo. Su PTA ($326K) cubre el 58% del presupuesto SPSA.',
     caaspp: { ela: 96, math: 96 },
-    growth: { ela: 9.6, math: 10.6, elaTeachers: 16, mathTeachers: null },
     demographics: { sed: 8.9, el: 2.5, chronicAbsent: 3.2, suspension: 0.19 },
     funding: {
       spsaTotal: 564000, perPupil: 1020,
@@ -454,7 +479,6 @@ const SCHOOL_DATA = {
     description: 'Orion is a TK-5 alternative school of choice offering Mandarin dual-language immersion with a parent participation (co-op) model. It is the most ethnically diverse school in the district. Achievement gaps exist within the school between White and Hispanic students.',
     descriptionEs: 'Orion es una escuela alternativa de elección TK-5 que ofrece inmersión bilingüe en mandarín con un modelo de participación de padres (cooperativa). Es la escuela más diversa étnicamente del distrito.',
     caaspp: { ela: 53, math: 51 },
-    growth: { ela: 11.4, math: 11.3, elaTeachers: 3, mathTeachers: null },
     demographics: { sed: 31.8, el: 22.8, chronicAbsent: 12.6, suspension: 0.21 },
     funding: {
       spsaTotal: 1062000, perPupil: 1934,
@@ -470,7 +494,6 @@ const SCHOOL_DATA = {
     description: 'Roosevelt is a TK-5 neighborhood Community School that has experienced the steepest enrollment decline in the district, transitioning from K-8 to K-5. It has significant teacher qualification challenges, particularly with EL misassignment.',
     descriptionEs: 'Roosevelt es una Escuela Comunitaria de vecindario TK-5 que ha experimentado la mayor disminución de inscripción del distrito, pasando de K-8 a K-5. Tiene desafíos significativos de calificación docente.',
     caaspp: { ela: 16, math: 18 },
-    growth: { ela: 21.5, math: 16.8, elaTeachers: 6, mathTeachers: null },
     demographics: { sed: 69.5, el: 42.6, chronicAbsent: 26.9, suspension: 3.11 },
     funding: {
       spsaTotal: 410000, perPupil: 1192,
@@ -486,7 +509,6 @@ const SCHOOL_DATA = {
     description: 'Roy Cloud is a TK-8 neighborhood school serving a relatively low-need population. It is one of the higher-performing schools in the district. Despite strong overall performance, its EL and LTEL subgroups are rated RED on the California Dashboard.',
     descriptionEs: 'Roy Cloud es una escuela de vecindario TK-8 que sirve a una población con necesidades relativamente bajas. Es una de las escuelas de mayor rendimiento del distrito. A pesar del fuerte rendimiento general, sus subgrupos de EL y LTEL están calificados en ROJO en el Panel de California.',
     caaspp: { ela: 67, math: 59 },
-    growth: { ela: 17.5, math: 15.9, elaTeachers: 13, mathTeachers: null },
     demographics: { sed: 11.4, el: 3.4, chronicAbsent: 8.0, suspension: 1.75 },
     funding: {
       spsaTotal: 695000, perPupil: 1046,
@@ -502,7 +524,6 @@ const SCHOOL_DATA = {
     description: 'Taft is a TK-5 neighborhood Community School using a 50:50 bilingual model for K-3. It has one of the smallest budgets despite being among the highest-need schools. Taft\'s young teaching staff produces the highest Math student growth in the district.',
     descriptionEs: 'Taft es una Escuela Comunitaria de vecindario TK-5 que utiliza un modelo bilingüe 50:50 para K-3. Tiene uno de los presupuestos más pequeños a pesar de ser una de las escuelas con mayores necesidades. El personal docente joven de Taft produce el mayor crecimiento estudiantil en matemáticas del distrito.',
     caaspp: { ela: 19, math: 13 },
-    growth: { ela: 22.6, math: 27.6, elaTeachers: 7, mathTeachers: null },
     demographics: { sed: 90.0, el: 65.7, chronicAbsent: 26.7, suspension: 0.51 },
     funding: {
       spsaTotal: 238000, perPupil: 733,
@@ -943,6 +964,17 @@ const schoolCSS = `
     margin-top: 0.3rem;
     line-height: 1.4;
   }
+  .stat-card-source { margin-top: 0.4rem; font-size: 0.72rem; }
+  .stat-card-source a.source-link {
+    color: var(--green-mid);
+    text-decoration: underline;
+    text-decoration-color: var(--rule);
+    text-underline-offset: 2px;
+  }
+  .stat-card-source a.source-link:hover {
+    color: var(--green-deep);
+    text-decoration-color: var(--green-mid);
+  }
   .info-bubble { position:relative; display:inline-flex; align-items:center; margin-left:0.25rem; vertical-align:middle; }
   .info-bubble-icon { font-family:'IBM Plex Mono',monospace; font-size:0.55rem; color:var(--text-muted); cursor:pointer; width:14px; height:14px; display:inline-flex; align-items:center; justify-content:center; border:1px solid var(--rule); border-radius:50%; line-height:1; transition:border-color 0.2s,color 0.2s; }
   .info-bubble-icon:hover { border-color:var(--green-mid); color:var(--green-mid); }
@@ -1271,11 +1303,16 @@ const LABELS = {
     program: 'Special program',
     studentGrowth: 'Student Growth',
     growthNote: 'Growth measures how much students are learning each year, regardless of their starting point. A school with low proficiency but high growth is accelerating learning. Proficiency measures how many students are at or above grade level right now.',
-    growthFinePrint: 'Growth = % of students achieving 105%+ of expected growth on the CAASPP (California Assessment of Student Performance and Progress), the annual state standardized test for grades 3\u20138. Proficiency = % meeting or exceeding grade-level standards.',
-    elaGrowth: 'English Growth',
-    mathGrowth: 'Math Growth',
-    districtAvgElaGrowth: 'District avg: 20.7%',
-    districtAvgMathGrowth: 'District avg: 13.8%',
+    growthFinePrint: 'Growth = % of students meeting their annual i-Ready Expected Growth target on the mid-year diagnostic. i-Ready is the district\u2019s local K\u20138 literacy and math assessment; the LCAP goal is to raise this by 4 percentage points each year. Proficiency = % meeting or exceeding grade-level standards on the CAASPP (the California state test, given in spring of grades 3\u20138).',
+    elaGrowth: 'English growth',
+    mathGrowth: 'Math growth',
+    districtAvg: 'District-wide:',
+    growthYearMidYear: '2025-26 mid-year',
+    growthYearY1Actual: '2024-25 actual',
+    ireadyuSourceLabel: (date) => `Board presentation ${date}`,
+    sourceLinkLabel: (date, page) => page ? `Source: board presentation ${date}, slide ${page}` : `Source: board presentation ${date}`,
+    growthPendingHeadline: 'Awaiting 2025-26 board presentation.',
+    growthPendingBody: (date, url) => `This school has not yet presented 2025-26 growth data to the Board of Trustees. Their most recent deck is from <a href="${url}" target="_blank">${date}</a>; we\u2019ll publish updated growth numbers here once a 2025-26 presentation is posted.`,
     caasppProficiency: 'CA State Testing (2023-24)',
     elaProficiency: 'English Proficiency',
     mathProficiency: 'Math Proficiency',
@@ -1365,7 +1402,7 @@ const LABELS = {
     backToDistrict: 'All schools',
     disclaimer: '<strong>Draft document.</strong> Personally prepared by David Weekly; this is not a representation of the district or the Board of Trustees and may contain material factual errors. For official information, visit <a href="https://www.rcsdk8.net" style="color:#664d03; text-decoration:underline">rcsdk8.net</a>.',
     langSwitch: 'Leer en espa&ntilde;ol',
-    sourceNote: 'Sources: 2024-25 SARCs, 2025-26 SPSAs, 2025-26 LCAP, HR data briefing (Feb 2026). Proficiency from 2023-24 CA state testing. Student growth from 2024-25 evaluations.',
+    sourceNote: 'Sources: 2024-25 SARCs, 2025-26 SPSAs, 2025-26 LCAP, each school’s 2025-26 Board of Trustees data presentation. Proficiency from 2023-24 CAASPP. Growth from each school’s 2025-26 mid-year i-Ready diagnostic as reported to the Board.',
     chronicAbsentNote: 'reported as 0% -- likely a data error',
     address: 'Address',
     phone: 'Phone',
@@ -1416,11 +1453,16 @@ const LABELS = {
     program: 'Programa especial',
     studentGrowth: 'Crecimiento Estudiantil',
     growthNote: 'El crecimiento mide cuánto aprenden los estudiantes cada año, sin importar su punto de partida. Una escuela con baja competencia pero alto crecimiento está acelerando el aprendizaje. La competencia mide cuántos estudiantes están al nivel de grado o por encima en este momento.',
-    growthFinePrint: 'Crecimiento = % de estudiantes que logran más del 105% del crecimiento esperado en el CAASPP (Evaluación del Rendimiento y Progreso Estudiantil de California), el examen estatal anual estandarizado para grados 3\u20138. Competencia = % que cumplen o superan los estándares de su grado.',
-    elaGrowth: 'Crecimiento en Inglés',
-    mathGrowth: 'Crecimiento en Matemáticas',
-    districtAvgElaGrowth: 'Promedio del distrito: 20.7%',
-    districtAvgMathGrowth: 'Promedio del distrito: 13.8%',
+    growthFinePrint: 'Crecimiento = % de estudiantes que alcanzaron su meta anual de Crecimiento Esperado en i-Ready en la evaluación diagnóstica de medio año. i-Ready es la evaluación local del distrito en lectura y matemáticas para K\u20138; la meta del LCAP es aumentar este porcentaje 4 puntos cada año. Competencia = % que cumplen o superan los estándares de grado en el CAASPP (examen estatal de California, administrado en primavera a los grados 3\u20138).',
+    elaGrowth: 'Crecimiento en inglés',
+    mathGrowth: 'Crecimiento en matemáticas',
+    districtAvg: 'Nivel distrital:',
+    growthYearMidYear: 'medio año 2025-26',
+    growthYearY1Actual: '2024-25 real',
+    ireadyuSourceLabel: (date) => `Presentación de la Mesa ${date}`,
+    sourceLinkLabel: (date, page) => page ? `Fuente: presentación ${date}, diapositiva ${page}` : `Fuente: presentación ${date}`,
+    growthPendingHeadline: 'En espera de la presentación 2025-26.',
+    growthPendingBody: (date, url) => `Esta escuela aún no ha presentado los datos de crecimiento 2025-26 a la Mesa Directiva. Su presentación más reciente es del <a href="${url}" target="_blank">${date}</a>; publicaremos los números actualizados aquí una vez que se realice la presentación 2025-26.`,
     caasppProficiency: 'Examen Estatal de CA (2023-24)',
     elaProficiency: 'Competencia en Inglés',
     mathProficiency: 'Competencia en Matemáticas',
@@ -1510,7 +1552,7 @@ const LABELS = {
     backToDistrict: 'Todas las escuelas',
     disclaimer: '<strong>Documento borrador.</strong> Preparado personalmente por David Weekly; esto no es una representación del distrito o de la Mesa Directiva y puede contener errores materiales. Para información oficial, visite <a href="https://www.rcsdk8.net" style="color:#664d03; text-decoration:underline">rcsdk8.net</a>.',
     langSwitch: 'Read in English',
-    sourceNote: 'Fuentes: SARCs 2024-25, SPSAs 2025-26, LCAP 2025-26, informes de recursos humanos (feb. 2026). Competencia del examen estatal de CA 2023-24. Crecimiento estudiantil de evaluaciones 2024-25.',
+    sourceNote: 'Fuentes: SARCs 2024-25, SPSAs 2025-26, LCAP 2025-26, presentaciones 2025-26 de cada escuela a la Mesa Directiva. Competencia del CAASPP 2023-24. Crecimiento de la evaluación diagnóstica de medio año i-Ready 2025-26 reportada a la Mesa.',
     chronicAbsentNote: 'reportado como 0% -- probablemente un error de datos',
     address: 'Dirección',
     phone: 'Teléfono',
@@ -1729,11 +1771,11 @@ function buildSchoolPage(school, data, lang) {
     ? Math.round(spedCat.placement.regularGt80 / spedCat.placement.total * 1000) / 10
     : null;
 
-  // Growth stat card note
-  const growthTeacherNote = data.growth.elaTeachers
-    ? ` (${data.growth.elaTeachers} ${L.teachersEvaluated})`
-    : '';
-
+  // i-Ready Expected Growth data for this school. Either a populated record
+  // with reading/math sub-objects, a pending-status record (HF / NS), or missing.
+  const ireadyu = IREADYU_DATA[slug] || null;
+  const ireadyuPending = ireadyu?.status === 'pending_25_26_presentation';
+  const ireadyuAvailable = ireadyu && !ireadyuPending && ireadyu.reading && ireadyu.math;
 
   // School logo
   const logoExt = slug === 'clifford' ? 'png' : 'jpg';
@@ -1742,7 +1784,6 @@ function buildSchoolPage(school, data, lang) {
   // Info bubble helper for source attribution
   const sarcPdfUrl = `https://data.rcsd.info/documents/sarc/2024-25/english/${slug}.pdf`;
   const spsaPdfUrl = `https://data.rcsd.info/documents/spsa/2025-26/${slug}.pdf`;
-  const growthUrl = 'https://www.cde.ca.gov/ta/ac/acctgrowthmod.asp';
   const dashboardUrl = `https://www.caschooldashboard.org/reports/${school.cdsCode}/2024`;
   const infoBubble = (text, url) => `<span class="info-bubble" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="${url}" target="_blank">${text}</a></span></span>`;
 
@@ -1854,18 +1895,38 @@ ${siteNav({ activePage: 'schools', lang, altLangHref })}
 
     <h3>${L.studentGrowth}</h3>
 
+    ${ireadyuPending ? `
+    <div class="callout" style="background:#f6f6f6; border-color:#ddd">
+      <p><strong>${L.growthPendingHeadline}</strong> ${L.growthPendingBody(ireadyu.lastPresentation.date, ireadyu.lastPresentation.pdfUrl)}</p>
+    </div>
+    ` : ireadyuAvailable ? (() => {
+      const r = ireadyu.reading;
+      const m = ireadyu.math;
+      // Prefer mid-year 25-26 when present; fall back to year-1 24-25 actual.
+      const rVal = r.y2_25_26_midyear ?? r.y1_24_25_actual;
+      const mVal = m.y2_25_26_midyear ?? m.y1_24_25_actual;
+      const rYearLbl = r.y2_25_26_midyear != null ? L.growthYearMidYear : L.growthYearY1Actual;
+      const mYearLbl = m.y2_25_26_midyear != null ? L.growthYearMidYear : L.growthYearY1Actual;
+      const rReadingUrl = `${ireadyu.source.pdfUrl}#page=${r.source?.pdfPage ?? ''}`;
+      const mReadingUrl = `${ireadyu.source.pdfUrl}#page=${m.source?.pdfPage ?? ''}`;
+      const sourceLink = (url, page) =>
+        `<a class="source-link" href="${url}" target="_blank" rel="noopener">${L.sourceLinkLabel(ireadyu.source.presentationDate, page)} &rarr;</a>`;
+      return `
     <div class="stat-grid">
       <div class="stat-card">
         <div class="stat-card-label">${L.elaGrowth}</div>
-        <div class="stat-card-value">${fmtPct(data.growth.ela)} ${infoBubble('CDE Growth Model', growthUrl)}</div>
-        <div class="stat-card-note">${L.districtAvgElaGrowth}</div>
+        <div class="stat-card-value">${fmtPct(rVal)}</div>
+        <div class="stat-card-note">${rYearLbl} &middot; ${L.districtAvg} ${fmtPct(DISTRICT_IREADYU.reading)}</div>
+        <div class="stat-card-source">${sourceLink(rReadingUrl, r.source?.pdfPage)}</div>
       </div>
       <div class="stat-card">
         <div class="stat-card-label">${L.mathGrowth}</div>
-        <div class="stat-card-value">${fmtPct(data.growth.math)} ${infoBubble('CDE Growth Model', growthUrl)}</div>
-        <div class="stat-card-note">${L.districtAvgMathGrowth}</div>
+        <div class="stat-card-value">${fmtPct(mVal)}</div>
+        <div class="stat-card-note">${mYearLbl} &middot; ${L.districtAvg} ${fmtPct(DISTRICT_IREADYU.math)}</div>
+        <div class="stat-card-source">${sourceLink(mReadingUrl, m.source?.pdfPage)}</div>
       </div>
-    </div>
+    </div>`;
+    })() : ''}
 
     <h3>${L.caasppProficiency}</h3>
 
@@ -2322,11 +2383,13 @@ function buildSchoolsIndex(lang) {
     propertiesH2: 'Otras propiedades del distrito',
     propertiesIntro: 'Edificios y terrenos propiedad del distrito (o alquilados por el distrito) que actualmente no albergan una escuela operada por el distrito ni una escuela ch\u00e1rter autorizada por RCSD.',
     thSchool: 'Escuela', thGrades: 'Grados', thEnroll: 'Inscripci\u00f3n', thHighNeed: '% alta necesidad',
-    thGrowthEla: 'Crec. Ingl\u00e9s', thGrowthMath: 'Crec. Mat',
+    thGrowthEla: 'Crec. lectura', thGrowthMath: 'Crec. mat',
+    growthPendingShort: 'En espera de la presentaci\u00f3n 2025-26',
+    growthCellSourceTitle: (date, page) => `Ver fuente: presentaci\u00f3n de la Mesa ${date}, diapositiva ${page}`,
     thNetwork: 'Red', thOpened: 'Inauguraci\u00f3n',
     thProperty: 'Propiedad', thAddress: 'Direcci\u00f3n', thUse: 'Uso actual', thFormer: 'Uso anterior',
     networkIndep: 'Independiente',
-    growthExplainer: '<strong>% alta necesidad</strong> = porcentaje de estudiantes socioeconómicamente desfavorecidos o aprendices de inglés. <strong>Crecimiento</strong> = porcentaje de estudiantes que superaron el crecimiento esperado en el examen estatal de CA (CAASPP). Mide cuánto aprenden los estudiantes cada año, sin importar su punto de partida — una escuela con baja competencia pero alto crecimiento está acelerando el aprendizaje.',
+    growthExplainer: '<strong>% alta necesidad</strong> = porcentaje de estudiantes socioeconómicamente desfavorecidos o aprendices de inglés. <strong>Crecimiento</strong> = % de estudiantes que alcanzaron su meta anual de Crecimiento Esperado en i-Ready en la evaluación diagnóstica de medio año 2025-26. La meta del LCAP es aumentar este número 4 puntos cada año. Una escuela con baja competencia pero alto crecimiento está acelerando el aprendizaje.',
     pathPrefix: '/escuelas/',
     charterPathKey: 'esPath',
   } : {
@@ -2338,11 +2401,13 @@ function buildSchoolsIndex(lang) {
     propertiesH2: 'Other district properties',
     propertiesIntro: 'Buildings and sites owned (or leased) by the district that do not currently host a district-operated school or an RCSD-authorized charter.',
     thSchool: 'School', thGrades: 'Grades', thEnroll: 'Enrollment', thHighNeed: '% high-need',
-    thGrowthEla: 'English growth', thGrowthMath: 'Math growth',
+    thGrowthEla: 'Reading growth', thGrowthMath: 'Math growth',
+    growthPendingShort: 'Awaiting 2025-26 presentation',
+    growthCellSourceTitle: (date, page) => `View source: board presentation ${date}, slide ${page}`,
     thNetwork: 'Network', thOpened: 'Opened',
     thProperty: 'Property', thAddress: 'Address', thUse: 'Current use', thFormer: 'Former use',
     networkIndep: 'Independent',
-    growthExplainer: '<strong>% high-need</strong> = share of students who are socioeconomically disadvantaged or English learners. <strong>Growth</strong> = percentage of students who exceeded expected growth on the CA state test (CAASPP). It measures how much students are learning each year regardless of starting point\u2014a school with low proficiency but high growth is accelerating learning.',
+    growthExplainer: '<strong>% high-need</strong> = share of students who are socioeconomically disadvantaged or English learners. <strong>Growth</strong> = % of students who met their annual i-Ready Expected Growth target on the 2025-26 mid-year diagnostic. The district\u2019s LCAP goal is to raise this by 4 percentage points each year. A school with low proficiency but high growth is accelerating learning. Bar colors compare each school to the district-wide mid-year result (Reading 60.7%, Math 56.4%). Schools without a bar have not yet presented 2025-26 data to the Board.',
     pathPrefix: '/schools/',
     charterPathKey: 'enPath',
   };
@@ -2352,22 +2417,45 @@ function buildSchoolsIndex(lang) {
     .filter(s => SCHOOL_DATA[s.slug])
     .sort((a, b) => a.name.localeCompare(b.name));
 
+  // Color thresholds are pegged to the district-wide mid-year result so the
+  // bars communicate "this school vs. district trajectory," not an arbitrary cut.
+  const colorFor = (val, districtPct) => {
+    if (val == null) return 'muted';
+    if (val >= districtPct) return 'green';
+    if (val >= districtPct - 5) return 'amber';
+    return 'coral';
+  };
+  const barWidthForPct = (val) => val == null ? 0 : Math.round((val / 75) * 58); // 75% is a generous visual ceiling
+
   const rows = sorted.map(s => {
-    const d = SCHOOL_DATA[s.slug];
-    const elaG = Math.round(d.growth.ela);
-    const mathG = Math.round(d.growth.math);
-    const elaBarW = Math.round((d.growth.ela / 49) * 58);
-    const mathBarW = Math.round((d.growth.math / 28) * 58);
-    const elaColor = d.growth.ela >= 20 ? 'green' : d.growth.ela >= 15 ? 'amber' : 'coral';
-    const mathColor = d.growth.math >= 20 ? 'green' : d.growth.math >= 15 ? 'amber' : 'coral';
+    const ir = IREADYU_DATA[s.slug];
+    const pending = ir?.status === 'pending_25_26_presentation';
+    const r = !pending && ir?.reading ? (ir.reading.y2_25_26_midyear ?? ir.reading.y1_24_25_actual) : null;
+    const m = !pending && ir?.math ? (ir.math.y2_25_26_midyear ?? ir.math.y1_24_25_actual) : null;
     const href = `${L.pathPrefix}${s.slug}/`;
+    const pdfBase = ir?.source?.pdfUrl;
+    const readingSrc = pdfBase && ir?.reading?.source?.pdfPage ? `${pdfBase}#page=${ir.reading.source.pdfPage}` : null;
+    const mathSrc = pdfBase && ir?.math?.source?.pdfPage ? `${pdfBase}#page=${ir.math.source.pdfPage}` : null;
+
+    const cellFor = (val, districtPct, srcUrl, srcPage) => {
+      if (pending) return `<td class="num" title="${L.growthPendingShort}"><span class="pending-mark">—</span></td>`;
+      if (val == null) return `<td class="num">—</td>`;
+      const color = colorFor(val, districtPct);
+      const w = barWidthForPct(val);
+      const num = `<span class="bar bar-${color}" style="width:${w}px"></span>${Math.round(val)}%`;
+      if (!srcUrl) return `<td class="num">${num}</td>`;
+      // Link opens the source PDF at the exact slide; stopPropagation keeps the
+      // row-level click (which navigates to the school page) from firing too.
+      const title = L.growthCellSourceTitle(ir.source.presentationDate, srcPage);
+      return `<td class="num"><a class="growth-cell-link" href="${srcUrl}" target="_blank" rel="noopener" title="${title}" onclick="event.stopPropagation()">${num}</a></td>`;
+    };
     return `          <tr onclick="location.href='${href}'" style="cursor:pointer">
             <td class="school-name"><a href="${href}">${s.nameShort || s.name} <span class="arrow">&rarr;</span></a></td>
             <td>${s.grades}</td>
             <td class="num">${s.enrollment.toLocaleString()}</td>
             <td class="num">${s.highNeedPct}%</td>
-            <td class="num"><span class="bar bar-${elaColor}" style="width:${elaBarW}px"></span>${elaG}%</td>
-            <td class="num"><span class="bar bar-${mathColor}" style="width:${mathBarW}px"></span>${mathG}%</td>
+            ${cellFor(r, DISTRICT_IREADYU.reading, readingSrc, ir?.reading?.source?.pdfPage)}
+            ${cellFor(m, DISTRICT_IREADYU.math, mathSrc, ir?.math?.source?.pdfPage)}
           </tr>`;
   }).join('\n');
 
@@ -2445,6 +2533,26 @@ function buildSchoolsIndex(lang) {
   .bar-green { background: var(--green-light); }
   .bar-amber { background: var(--amber); }
   .bar-coral { background: var(--coral); }
+  .bar-muted { background: var(--rule); }
+  .pending-mark { color: var(--text-muted); font-style: italic; cursor: help; }
+  a.growth-cell-link {
+    color: var(--green-mid);
+    text-decoration: underline;
+    text-decoration-color: var(--green-mid);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    padding: 3px 8px;
+    border-radius: 4px;
+    transition: background 0.12s, color 0.12s, box-shadow 0.12s;
+  }
+  a.growth-cell-link:hover {
+    color: #fff;
+    background: var(--green-mid);
+    text-decoration-color: #fff;
+    text-decoration-thickness: 2px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+  }
+  a.growth-cell-link:hover .bar { filter: brightness(1.25) saturate(0.6); }
   .schools-content { max-width: 960px; margin: 0 auto; padding: 0 2rem 6rem; }
   @media (max-width: 640px) { .schools-content { padding: 0 1.2rem 4rem; } }`;
 

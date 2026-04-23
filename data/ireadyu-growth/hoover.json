@@ -1,0 +1,37 @@
+{
+  "slug": "hoover",
+  "source": {
+    "presentationDate": "2026-03-11",
+    "pdfUrl": "https://data.rcsd.info/board-packets/2026-03-11/Hoover-25-26-Data-for-Board-presentation.pdf",
+    "extractor": "scripts/extract-ireadyu-growth.mjs",
+    "extractedAt": "2026-04-23"
+  },
+  "reading": {
+    "metric": "% of students meeting i-Ready Expected Growth",
+    "target": "4 percentage point increase each year",
+    "studentGroup": "All students",
+    "base_23_24": 44.9,
+    "y1_24_25_expected": 48.9,
+    "y1_24_25_actual": 55.8,
+    "y2_25_26_expected": 59.8,
+    "y2_25_26_midyear": 59.6,
+    "rawLine": "All students   Increase    44.9%     48.9%     55.8%     59.8%       59.6%",
+    "source": {
+      "pdfPage": 20
+    }
+  },
+  "math": {
+    "metric": "% of students meeting i-Ready Expected Growth",
+    "target": "4 percentage point increase each year",
+    "studentGroup": "All students",
+    "base_23_24": 31.6,
+    "y1_24_25_expected": 35.6,
+    "y1_24_25_actual": 43.1,
+    "y2_25_26_expected": 47.1,
+    "y2_25_26_midyear": 49.3,
+    "rawLine": "All students   Increase    31.6%     35.6%     43.1%     47.1%       49.3%",
+    "source": {
+      "pdfPage": 22
+    }
+  }
+}

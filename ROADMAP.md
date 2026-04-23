@@ -282,5 +282,10 @@ Build a pipeline for rich per-meeting summaries (inputs already in place: AAI tr
 - [ ] **Screencap demo** — narrated screen recording showing: homepage, clicking into a meeting, transcript click-to-seek, Spanish toggle, chapter markers, MCP query. For embedding on the site and social sharing.
 
 ## Data Attribution (in progress)
-- [ ] Growth data (ELA/Math growth %) — find and link to the actual source document (currently attributed to "CDE Growth Model" but original data came from an untracked `hr-data-briefing-2026-03.md`)
+- [ ] **Rebuild school growth numbers from scratch.** Current `growth: { ela, math }` fields on each school (scripts/build-schools.mjs) are unverified and mislabeled — the tooltip claims "CAASPP 105%+ of expected growth" but CAASPP doesn't produce that metric, and the values don't match the district's actual LCAP-tracked metric (i-Ready Expected Growth). Plan:
+  - [ ] Scrape each school's 2025-26 Board of Trustees data presentation PDF (listed in `SCHOOL_BOARD_PRESENTATION` in build-schools.mjs) and extract the LCAP Goal #3 table: "% of students meeting i-Ready Expected Growth" for ELA and Math, with Base 23-24 / Year 1 24-25 Actual / Year 2 25-26 Mid-Year rows.
+  - [ ] Persist extracted numbers as structured JSON under `data/ireadyu-growth/<slug>.json` with per-cell source (PDF URL + page #) so every number links back to its slide.
+  - [ ] Rewrite the growth stat cards to show the metric honestly: "% meeting i-Ready annual growth target, <year>" with a source link that opens the actual PDF slide (not the CDE growth-model page, which is unrelated).
+  - [ ] Rewrite the tooltip/fine-print text in both EN and ES (scripts/build-schools.mjs:1273-1274 and :1418-1419) to describe i-Ready, not CAASPP.
+- [ ] **Provenance tagging across all hardcoded data.** Every value in the `SCHOOL_DATA` object (CAASPP, demographics, funding, staffing) should carry a `source` attribute pointing to the specific document and page/row it came from, so readers (and future us) can audit each claim. Design a lightweight schema (e.g. `{ value: 11.4, source: "2025-26 SPSA, p.12" }`) and migrate existing fields.
 - [ ] Pull CDE growth model spreadsheet (growthmodeldownload2025.xlsx) to check for useful RCSD data not yet represented

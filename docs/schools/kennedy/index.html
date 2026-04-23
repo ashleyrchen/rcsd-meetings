@@ -589,6 +589,17 @@
     margin-top: 0.3rem;
     line-height: 1.4;
   }
+  .stat-card-source { margin-top: 0.4rem; font-size: 0.72rem; }
+  .stat-card-source a.source-link {
+    color: var(--green-mid);
+    text-decoration: underline;
+    text-decoration-color: var(--rule);
+    text-underline-offset: 2px;
+  }
+  .stat-card-source a.source-link:hover {
+    color: var(--green-deep);
+    text-decoration-color: var(--green-mid);
+  }
   .info-bubble { position:relative; display:inline-flex; align-items:center; margin-left:0.25rem; vertical-align:middle; }
   .info-bubble-icon { font-family:'IBM Plex Mono',monospace; font-size:0.55rem; color:var(--text-muted); cursor:pointer; width:14px; height:14px; display:inline-flex; align-items:center; justify-content:center; border:1px solid var(--rule); border-radius:50%; line-height:1; transition:border-color 0.2s,color 0.2s; }
   .info-bubble-icon:hover { border-color:var(--green-mid); color:var(--green-mid); }
@@ -938,16 +949,19 @@
 
     <h3>Student Growth</h3>
 
+    
     <div class="stat-grid">
       <div class="stat-card">
-        <div class="stat-card-label">English Growth</div>
-        <div class="stat-card-value">15.4% <span class="info-bubble" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://www.cde.ca.gov/ta/ac/acctgrowthmod.asp" target="_blank">CDE Growth Model</a></span></span></div>
-        <div class="stat-card-note">District avg: 20.7%</div>
+        <div class="stat-card-label">English growth</div>
+        <div class="stat-card-value">50.2%</div>
+        <div class="stat-card-note">2025-26 mid-year &middot; District-wide: 60.7%</div>
+        <div class="stat-card-source"><a class="source-link" href="https://data.rcsd.info/board-packets/2026-04-22/Kennedy-25-26-Data-for-Board-presentation.pdf#page=22" target="_blank" rel="noopener">Source: board presentation 2026-04-22, slide 22 &rarr;</a></div>
       </div>
       <div class="stat-card">
-        <div class="stat-card-label">Math Growth</div>
-        <div class="stat-card-value">11.2% <span class="info-bubble" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://www.cde.ca.gov/ta/ac/acctgrowthmod.asp" target="_blank">CDE Growth Model</a></span></span></div>
-        <div class="stat-card-note">District avg: 13.8%</div>
+        <div class="stat-card-label">Math growth</div>
+        <div class="stat-card-value">51.8%</div>
+        <div class="stat-card-note">2025-26 mid-year &middot; District-wide: 56.4%</div>
+        <div class="stat-card-source"><a class="source-link" href="https://data.rcsd.info/board-packets/2026-04-22/Kennedy-25-26-Data-for-Board-presentation.pdf#page=24" target="_blank" rel="noopener">Source: board presentation 2026-04-22, slide 24 &rarr;</a></div>
       </div>
     </div>
 
@@ -970,8 +984,8 @@
       <p>Growth measures how much students are learning each year, regardless of their starting point. A school with low proficiency but high growth is accelerating learning. Proficiency measures how many students are at or above grade level right now.</p>
     </div>
 
-    <p class="source">Growth = % of students achieving 105%+ of expected growth on the CAASPP (California Assessment of Student Performance and Progress), the annual state standardized test for grades 3–8. Proficiency = % meeting or exceeding grade-level standards.</p>
-    <p class="source">Sources: 2024-25 SARCs, 2025-26 SPSAs, 2025-26 LCAP, HR data briefing (Feb 2026). Proficiency from 2023-24 CA state testing. Student growth from 2024-25 evaluations.</p>
+    <p class="source">Growth = % of students meeting their annual i-Ready Expected Growth target on the mid-year diagnostic. i-Ready is the district’s local K–8 literacy and math assessment; the LCAP goal is to raise this by 4 percentage points each year. Proficiency = % meeting or exceeding grade-level standards on the CAASPP (the California state test, given in spring of grades 3–8).</p>
+    <p class="source">Sources: 2024-25 SARCs, 2025-26 SPSAs, 2025-26 LCAP, each school’s 2025-26 Board of Trustees data presentation. Proficiency from 2023-24 CAASPP. Growth from each school’s 2025-26 mid-year i-Ready diagnostic as reported to the Board.</p>
   </section>
 
   <!-- ======== 3. STUDENT DEMOGRAPHICS ======== -->
@@ -1208,8 +1222,8 @@
       </div>
       <div class="resource-card">
         <h4>Board Presentation</h4>
-        <p>2023-24 · December 6, 2023</p>
-        <p style="margin-top:0.5rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CY22T703AEAA/$file/Kennedy%20Board%20Report%202023.pdf" target="_blank">View presentation (PDF) &#8599;</a></p>
+        <p>2025-26 · April 22, 2026</p>
+        <p style="margin-top:0.5rem"><a href="https://data.rcsd.info/board-packets/2026-04-22/Kennedy-25-26-Data-for-Board-presentation.pdf" target="_blank">View presentation (PDF) &#8599;</a></p>
       </div>
       <div class="resource-card bell-card">
         <h4>Bell Schedule</h4>

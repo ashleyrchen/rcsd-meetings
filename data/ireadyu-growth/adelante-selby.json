@@ -1,0 +1,37 @@
+{
+  "slug": "adelante-selby",
+  "source": {
+    "presentationDate": "2026-04-22",
+    "pdfUrl": "https://data.rcsd.info/board-packets/2026-04-22/Adelante-Selby-25-26-Data-for-Board-presentation.pdf",
+    "extractor": "scripts/extract-ireadyu-growth.mjs",
+    "extractedAt": "2026-04-23"
+  },
+  "reading": {
+    "metric": "% of students meeting i-Ready Expected Growth",
+    "target": "4 percentage point increase each year",
+    "studentGroup": "All students",
+    "base_23_24": 64.8,
+    "y1_24_25_expected": 68.8,
+    "y1_24_25_actual": 63.4,
+    "y2_25_26_expected": 67.4,
+    "y2_25_26_midyear": 65.4,
+    "rawLine": "All students   Increase   64.8%     68.8%       63.4%       67.4%       65.4%",
+    "source": {
+      "pdfPage": 20
+    }
+  },
+  "math": {
+    "metric": "% of students meeting i-Ready Expected Growth",
+    "target": "4 percentage point increase each year",
+    "studentGroup": "All students",
+    "base_23_24": 46,
+    "y1_24_25_expected": 50,
+    "y1_24_25_actual": 55.2,
+    "y2_25_26_expected": 59.2,
+    "y2_25_26_midyear": 62.1,
+    "rawLine": "All students   Increase   46.0%       50.0%      55.2%       59.2%       62.1%",
+    "source": {
+      "pdfPage": 24
+    }
+  }
+}
