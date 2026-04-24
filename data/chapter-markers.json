@@ -69522,5 +69522,541 @@
         "pulled": false
       }
     ]
+  },
+  "2026-04-22-regular": {
+    "videoId": "8ypMIkdV5jw",
+    "speakers": {
+      "A": {
+        "name": "David Weekly",
+        "role": "Board President"
+      },
+      "B": {
+        "name": "Evelyn Sanchez",
+        "role": "Executive Assistant to Superintendent / Board Secretary"
+      },
+      "C": {
+        "name": "John Baker",
+        "role": "Superintendent (Dr. Baker)"
+      },
+      "D": {
+        "name": "David Li",
+        "role": "Trustee"
+      },
+      "E": {
+        "name": "Cecilia I. Márquez",
+        "role": "Vice President"
+      },
+      "F": {
+        "name": "Multiple speakers",
+        "role": "Various public speakers and presenters"
+      },
+      "G": {
+        "name": "Chandra Leonardo",
+        "role": "Principal, Kennedy Middle School"
+      },
+      "H": {
+        "name": "Multiple public speakers",
+        "role": "Public comment speakers"
+      },
+      "I": {
+        "name": "Mike Wells",
+        "role": "Trustee"
+      },
+      "J": {
+        "name": "John Baker",
+        "role": "Superintendent (Dr. Baker) — also used for some public speakers"
+      }
+    },
+    "agendaChanges": "Two agenda changes were approved: (1) Item 12.5 (Resolution No. 23, KIPP Excelencia) was moved from Action Items to the Consent Agenda; (2) Item 16.1 (RCTA Teacher Salary Presentation) was moved to directly after public comment/labor association comments. Items were then taken in this order: Reconvene/Roll Call, Report Out on Closed Session, Welcome/Pledge, Changes to Agenda, Approval of Agenda, Public Comment, Labor Association Comments, 16.1 (RCTA Salary Presentation), Bond Consent Items (Section 10), Bond Action Items (Section 11: 11.1, 11.2, 11.3), Action Items (12.1 Kennedy SPSA, 12.2 Orion SPSA, 12.3 Adelante Selby SPSA, 12.4 Resolution No. 22), Discussion Items (13.1), Consent Agenda (Section 14 + 12.5), Board/Superintendent Reports (15), Information (16.2 Williams Report), Correspondence (17), Other Business (18), Reflection (19), Calendar (20), Adjournment (21).",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order",
+        "phases": {
+          "opened": 5,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "Roll Call (Open Session)",
+        "title": "Roll Call",
+        "phases": {
+          "opened": 14,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Reconvene to Open Session / Report Out on Closed Session",
+        "phases": {
+          "opened": 5,
+          "presentation": 25,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Welcome / Pledge of Allegiance",
+        "phases": {
+          "opened": 25,
+          "presentation": 204,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 262,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 262,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8",
+        "title": "Approval of the Agenda",
+        "phases": {
+          "opened": 328,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 331,
+            "type": "voice",
+            "result": "Approved unanimously (4-0, Trustee King absent)"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9",
+        "title": "Public Comment",
+        "phases": {
+          "opened": 331,
+          "presentation": null,
+          "publicComment": 359,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Jenny and Archer (Orion students)",
+            "startSeconds": 359,
+            "endSeconds": 427,
+            "summary": "Two Orion students expressed concern about the proposed 3rd/4th grade combo class, asking for two dedicated third-grade classes so students aren't split and can be with more friends."
+          },
+          {
+            "name": "Allison Rhodes",
+            "startSeconds": 444,
+            "endSeconds": 634,
+            "summary": "Representing Clifford Elementary teachers, she presented a petition opposing multiple combination classrooms at Clifford, citing concerns about doubled teacher workload, lack of instructional assistant support, student achievement impacts, high IEP/504 population, and inequitable class size distribution across the district."
+          },
+          {
+            "name": "Andrew Chan",
+            "startSeconds": 642,
+            "endSeconds": 790,
+            "summary": "Parent of four Orion students argued that 3rd grade is a critical immersion year and proposed the district recruit enough students to justify two full 3rd grade classes rather than creating a 3rd/4th combo, warning that weakening the program would be hard to reverse."
+          },
+          {
+            "name": "Richard Palm",
+            "startSeconds": 796,
+            "endSeconds": 905,
+            "summary": "Parent shared how the Mandarin Immersion program has positively impacted his two daughters, including one with a history of epilepsy and an IEP, and expressed concern that a combo class would reduce the individualized attention his younger daughter needs."
+          },
+          {
+            "name": "Jason Madsen",
+            "startSeconds": 905,
+            "endSeconds": 1110,
+            "summary": "Speaking on behalf of many 2nd grade MI families, he explained the proposed 3rd/4th combo structure, emphasized that 3rd grade is the last year of the 60/40 Mandarin-English split, and asked the district to reconsider and provide two full dedicated 3rd grade classes."
+          },
+          {
+            "name": "Ann Law",
+            "startSeconds": 1110,
+            "endSeconds": 1152,
+            "summary": "As a mother of twins in the Mandarin Immersion Program, she described being forced to choose which twin would be placed in the combo class versus a regular class, and asked the district to reconsider the proposal in fairness to all students."
+          },
+          {
+            "name": "Julia Redesnerda",
+            "startSeconds": 1168,
+            "endSeconds": 1317,
+            "summary": "Parent of a current 2nd grader and incoming TK student in the MI program expressed concern that the combo class proposal, combined with an already large class size cap of 31, would discourage families from staying in the program and could lead to further enrollment decline."
+          },
+          {
+            "name": "Heidi Glasser",
+            "startSeconds": 1331,
+            "endSeconds": 1413,
+            "summary": "A parent who has seen the MI program grow since its pilot year in 2015 shared that she previously pulled her son due to uncertainty about the program's future but committed her daughter to it, and now advocates for investing in the program's long-term sustainability to avoid parents having to make that difficult choice again."
+          },
+          {
+            "name": "Jasper Chen",
+            "startSeconds": 1424,
+            "endSeconds": 1485,
+            "summary": "Parent of two Orion children praised Principal Winnie's leadership in building the MI program and echoed concerns about maintaining the pipeline, urging the district to invest rather than compromise the program."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9-Labor",
+        "title": "Labor Association Comments",
+        "phases": {
+          "opened": 1485,
+          "presentation": null,
+          "publicComment": 1516,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Maria Stockton",
+            "startSeconds": 1516,
+            "endSeconds": 1600,
+            "summary": "President of the CSEA classified unit requested that the district reinstate a calendar committee including CSEA and RCTA to collaboratively determine the school calendar start and end dates, noting that classified employees have lost summer work time due to the earlier start date."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16.1",
+        "title": "Redwood City Teachers Association Presentation: Teacher Salary (moved earlier in agenda)",
+        "phases": {
+          "opened": 1600,
+          "presentation": 1668,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "Approval of the Bond Program Consent Items",
+        "phases": {
+          "opened": 1917,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 1929,
+            "type": "voice",
+            "result": "Approved unanimously"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11.1",
+        "title": "Approval of HVAC Upgrades Projects Phase 3: Henry Ford and Roy Cloud Schools",
+        "phases": {
+          "opened": 1933,
+          "presentation": 1971,
+          "publicComment": null,
+          "discussion": 2005,
+          "vote": {
+            "seconds": 2028,
+            "type": "voice",
+            "result": "Approved unanimously"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11.2",
+        "title": "Approval of Guaranteed Maximum Price (GMP) Amendment 1 to Facilities Lease with Blach Construction for HVAC Upgrade Projects, Phase 2",
+        "phases": {
+          "opened": 2028,
+          "presentation": 2043,
+          "publicComment": null,
+          "discussion": 2075,
+          "vote": {
+            "seconds": 2097,
+            "type": "voice",
+            "result": "Approved unanimously"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11.3",
+        "title": "Approval of the Industrial Hygienist Services Agreements for the HVAC Upgrade Projects, Phase 2",
+        "phases": {
+          "opened": 2097,
+          "presentation": 2114,
+          "publicComment": null,
+          "discussion": 2134,
+          "vote": {
+            "seconds": 2181,
+            "type": "voice",
+            "result": "Approved unanimously"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.1",
+        "title": "Kennedy Middle School Presentation and School Plan for Student Achievement (SPSA) Approval",
+        "phases": {
+          "opened": 2181,
+          "presentation": 2206,
+          "publicComment": null,
+          "discussion": 3700,
+          "vote": {
+            "seconds": 4702,
+            "type": "voice",
+            "result": "Approved unanimously"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.2",
+        "title": "Orion Alternative and Mandarin Immersion Presentation and School Plan for Student Achievement (SPSA) Approval",
+        "phases": {
+          "opened": 4702,
+          "presentation": 4725,
+          "publicComment": null,
+          "discussion": 6036,
+          "vote": {
+            "seconds": 6800,
+            "type": "voice",
+            "result": "Approved unanimously"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.3",
+        "title": "Adelante Selby Spanish Immersion Presentation and School Plan for Student Achievement (SPSA) Approval",
+        "phases": {
+          "opened": 6800,
+          "presentation": 6812,
+          "publicComment": null,
+          "discussion": 8467,
+          "vote": {
+            "seconds": 9121,
+            "type": "voice",
+            "result": "Approved unanimously"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.4",
+        "title": "Adoption of Resolution No. 22, Approval of Education Code Options for Teaching Assignments for the 2025-2026 School Year",
+        "phases": {
+          "opened": 9121,
+          "presentation": 9133,
+          "publicComment": null,
+          "discussion": 9223,
+          "vote": {
+            "seconds": 9246,
+            "type": "voice",
+            "result": "Approved unanimously"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13.1",
+        "title": "Discussion of the Board of Trustees Graduation/Promotions Assignments for the 2025-26 School Year",
+        "phases": {
+          "opened": 9249,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 9249,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14",
+        "title": "Approval of Consent Items (including pulled item 12.5 added per agenda change)",
+        "phases": {
+          "opened": 9358,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 9497,
+            "type": "voice",
+            "result": "Approved unanimously"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.5",
+        "title": "Adoption of Resolution No. 23, Approving the Agreement with KIPP Excelencia (moved to Consent)",
+        "phases": {
+          "opened": 9484,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 9497,
+            "type": "voice",
+            "result": "Approved as part of consent agenda unanimously"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Board and Superintendent Reports",
+        "phases": {
+          "opened": 9497,
+          "presentation": 9511,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16.2",
+        "title": "Quarterly Williams Report, 3rd Quarter, January 2026 through March 2026",
+        "phases": {
+          "opened": 9640,
+          "presentation": 9661,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "17",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 9691,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 9691,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "18",
+        "title": "Other Business / Suggested Items for Future Agenda",
+        "phases": {
+          "opened": 9698,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 9698,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "19",
+        "title": "Board of Trustees Meeting Reflection",
+        "phases": {
+          "opened": 9898,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 9911,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "20",
+        "title": "Board of Trustees Meeting Calendar",
+        "phases": {
+          "opened": 10050,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 10050,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "21",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 10080,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 10083,
+            "type": "voice",
+            "result": "Approved unanimously — meeting adjourned"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
   }
 }
