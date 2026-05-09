@@ -398,7 +398,7 @@ function sectionOverviewEN() {
   <p>RCSD is one of roughly 100 "community-funded" (formerly "Basic Aid") districts in California. This means local property tax revenue <em>exceeds</em> what the state would otherwise provide through the Local Control Funding Formula (LCFF). The district keeps all of its local property tax revenue rather than receiving a state check.</p>
 
   <div class="callout">
-    <p><strong>What does Basic Aid mean in practice?</strong> RCSD's funding rises and falls with local property values, not with state budget decisions. When property values grow, so does district revenue. But unlike state-funded districts, RCSD does not receive automatic cost-of-living adjustments from Sacramento. The district also still receives LCFF Supplemental and Concentration grants for its 60.7% unduplicated pupils (low-income, English Learner, foster, and homeless students).</p>
+    <p><strong>What does Basic Aid mean in practice?</strong> RCSD's funding rises and falls with local property values, not with state budget decisions. When property values grow, so does district revenue. But unlike state-funded districts, RCSD does not receive automatic cost-of-living adjustments from Sacramento. RCSD still has an LCFF Supplemental and Concentration entitlement of approximately $10.2M based on its 60.7% unduplicated pupils (low-income, English Learner, foster, and homeless students), but in a community-funded district that entitlement is funded from the district's own property tax revenue rather than as a separate state check. Its main effect is to set the LCAP minimum-proportionality spending floor for those students.</p>
   </div>
 
   <h3>Budget at a Glance</h3>
@@ -421,6 +421,15 @@ function sectionOverviewEN() {
     </table>
   </div>
   <p class="source">Source: <a href="https://www.rcsdk8.net/our-programs-and-services/business-services/district-budget">2025-26 First Interim Financial Report</a>, presented December 17, 2025.</p>
+
+  <h3>What This Page Covers (And What It Doesn't)</h3>
+  <p>The numbers above describe <strong>Fund 01, the General Fund</strong> &mdash; RCSD's main operating fund and the source for teacher salaries, instructional programs, and day-to-day operations. The General Fund is the right lens for "what's the district's budget?" because it's by far the largest fund and drives most policy decisions. But the district also operates a few separately-accounted funds that don't appear in the $160.1M figure:</p>
+  <ul>
+    <li><strong>Fund 12 &mdash; Child Development Center (CDC):</strong> the State Preschool Program (CSPP) and other early-childhood operations, funded primarily by state preschool grants and parent fees.</li>
+    <li><strong>Fund 13 &mdash; Cafeteria / Child Nutrition Services (CNS):</strong> the school meals program, funded by federal and state meal reimbursements plus meal sales.</li>
+    <li><strong>Fund 21 &mdash; Building Fund:</strong> proceeds from voter-approved general obligation bonds (Measures S and T), restricted to capital improvements. Covered separately in the <a href="#bonds">Bonds &amp; Construction</a> section.</li>
+  </ul>
+  <p>Other smaller funds (debt service, special reserves, etc.) exist but are non-material to district operations. Unless otherwise noted, the rest of this page describes Fund 01.</p>
 </section>`;
 }
 
@@ -460,8 +469,8 @@ function sectionRevenueEN() {
   <p>Local property taxes (the LCFF Base plus Special Education property taxes) total approximately $92.8 million, or 59% of all General Fund revenue. San Mateo County collects property taxes and distributes the district's share. Because RCSD is community-funded, it keeps all allocated property tax revenue rather than returning a portion to the state.</p>
   <p>The district assumes 5% annual property tax growth in its multi-year projections. However, as the district notes, "the vast majority of homes in the RCSD attendance zone were purchased when property values were much lower," meaning assessed values (and thus tax revenue) may be lower than neighboring districts with higher turnover.</p>
 
-  <h3>LCFF Supplemental &amp; Concentration Grants</h3>
-  <p>Despite being community-funded, RCSD still receives $10.2 million in Supplemental and Concentration grants because 60.7% of its students are "unduplicated pupils" (qualifying as low-income, English Learner, foster youth, or homeless). These funds must be used to increase or improve services for these students. The LCAP details how this $10.6 million in total supplemental funding is allocated.</p>
+  <h3>LCFF Supplemental &amp; Concentration Entitlement</h3>
+  <p>The $10.2 million on the revenue table for "LCFF Supplemental & Concentration" is the <em>entitlement amount</em> calculated by the LCFF formula based on the 60.7% of RCSD's students who are unduplicated pupils (qualifying as low-income, English Learner, foster youth, or homeless). For state-funded districts this would arrive as separate state cash; for a community-funded district like RCSD the entitlement is funded from the district's own property tax revenue and is reported on this line for accounting purposes. The amount still has real consequences: it sets the LCAP minimum-proportionality spending floor, meaning the district must show at least this much being directed toward increased or improved services for unduplicated pupils.</p>
 
   <h3>Federal Funds</h3>
   <p>Federal revenues ($4.8 million, 3% of budget) include Title I grants for high-poverty schools, Title III for English Learner programs, and IDEA funding for special education. Seven of the district's 12 schools receive Title I funding. Federal funds are "restricted," meaning they must be spent on specific federally mandated purposes.</p>
@@ -895,8 +904,8 @@ function sectionGlossaryEN() {
       <div class="glossary-def">Restricted funds have legal constraints on their use (e.g., federal grants, bond proceeds). Unrestricted funds (mostly property taxes) can be used for any lawful educational purpose.</div>
     </div>
     <div class="glossary-item">
-      <div class="glossary-term">S&amp;C Grants</div>
-      <div class="glossary-def">Supplemental and Concentration grants under LCFF. Additional state funding for districts with high percentages of unduplicated pupils (low-income, EL, foster, homeless). RCSD receives $10.2M.</div>
+      <div class="glossary-term">S&amp;C Entitlement</div>
+      <div class="glossary-def">Supplemental and Concentration amounts under LCFF, calculated based on a district's percentage of unduplicated pupils (low-income, EL, foster, homeless). For state-funded districts this is an additional state grant; for community-funded districts like RCSD it's an entitlement funded from local property tax that sets the LCAP minimum-proportionality spending floor. RCSD's S&amp;C entitlement is $10.2M.</div>
     </div>
     <div class="glossary-item">
       <div class="glossary-term">SPSA</div>
@@ -986,7 +995,7 @@ function sectionOverviewES() {
   <p>RCSD es uno de aproximadamente 100 distritos "financiados por la comunidad" (anteriormente "Basic Aid") en California. Esto significa que los ingresos locales por impuestos a la propiedad <em>superan</em> lo que el estado proporcionar\u00eda a trav\u00e9s de la F\u00f3rmula de Financiamiento de Control Local (LCFF). El distrito retiene todos sus ingresos por impuestos a la propiedad en lugar de recibir un cheque del estado.</p>
 
   <div class="callout">
-    <p><strong>\u00bfQu\u00e9 significa Basic Aid en la pr\u00e1ctica?</strong> El financiamiento de RCSD sube y baja con los valores de las propiedades locales, no con las decisiones del presupuesto estatal. Cuando los valores de las propiedades crecen, tambi\u00e9n lo hacen los ingresos del distrito. Pero a diferencia de los distritos financiados por el estado, RCSD no recibe ajustes autom\u00e1ticos por costo de vida de Sacramento. El distrito a\u00fan recibe subsidios suplementarios y de concentraci\u00f3n LCFF para su 60.7% de alumnos no duplicados.</p>
+    <p><strong>\u00bfQu\u00e9 significa Basic Aid en la pr\u00e1ctica?</strong> El financiamiento de RCSD sube y baja con los valores de las propiedades locales, no con las decisiones del presupuesto estatal. Cuando los valores de las propiedades crecen, tambi\u00e9n lo hacen los ingresos del distrito. Pero a diferencia de los distritos financiados por el estado, RCSD no recibe ajustes autom\u00e1ticos por costo de vida de Sacramento. RCSD tiene un derecho ("entitlement") de Suplementario y Concentraci\u00f3n LCFF de aproximadamente $10.2M basado en su 60.7% de alumnos no duplicados (de bajos ingresos, estudiantes de ingl\u00e9s, en cuidado temporal o sin hogar), pero en un distrito financiado por la comunidad este derecho se paga de los propios impuestos a la propiedad del distrito y no como un cheque aparte del estado. Su efecto principal es establecer el piso m\u00ednimo de gasto proporcional que el LCAP debe destinar a esos estudiantes.</p>
   </div>
 
   <h3>Presupuesto de un Vistazo</h3>
@@ -1009,6 +1018,15 @@ function sectionOverviewES() {
     </table>
   </div>
   <p class="source">Fuente: <a href="https://www.rcsdk8.net/our-programs-and-services/business-services/district-budget">Primer Informe Interino Financiero 2025-26</a>, presentado el 17 de diciembre de 2025.</p>
+
+  <h3>Qué cubre esta página (y qué no)</h3>
+  <p>Los números arriba describen el <strong>Fondo 01, el Fondo General</strong> &mdash; el fondo operativo principal de RCSD y la fuente de los salarios de maestros, programas de instrucción y operaciones diarias. El Fondo General es el lente correcto para "¿cuál es el presupuesto del distrito?" porque es por mucho el fondo más grande y el que guía la mayoría de las decisiones de política. Pero el distrito también opera algunos otros fondos con contabilidad separada que no aparecen en la cifra de $160.1M:</p>
+  <ul>
+    <li><strong>Fondo 12 &mdash; Centro de Desarrollo Infantil (CDC):</strong> el Programa Estatal de Preescolar (CSPP) y otras operaciones de la primera infancia, financiadas principalmente por subvenciones estatales para preescolar y cuotas de los padres.</li>
+    <li><strong>Fondo 13 &mdash; Cafetería / Servicios de Nutrición Infantil (CNS):</strong> el programa de comidas escolares, financiado por reembolsos de comidas federales y estatales más ventas de comidas.</li>
+    <li><strong>Fondo 21 &mdash; Fondo de Construcción:</strong> ingresos de bonos de obligación general aprobados por los votantes (Medidas S y T), restringidos a mejoras de capital. Cubierto por separado en la sección <a href="#bonos">Bonos y Construcción</a>.</li>
+  </ul>
+  <p>Existen otros fondos más pequeños (servicio de la deuda, reservas especiales, etc.) pero son no materiales para las operaciones del distrito. A menos que se indique lo contrario, el resto de esta página describe el Fondo 01.</p>
 </section>`;
 }
 
@@ -1047,8 +1065,8 @@ function sectionRevenueES() {
   <h3>Impuestos a la Propiedad &mdash; La Base</h3>
   <p>Los impuestos locales a la propiedad (la base LCFF m\u00e1s los impuestos de Educaci\u00f3n Especial) totalizan aproximadamente $92.8 millones, o el 59% de todos los ingresos del Fondo General.</p>
 
-  <h3>Subsidios Suplementarios y de Concentraci\u00f3n LCFF</h3>
-  <p>RCSD recibe $10.2 millones en subsidios Suplementarios y de Concentraci\u00f3n porque el 60.7% de sus estudiantes son "alumnos no duplicados" (que califican como de bajos ingresos, estudiantes de ingl\u00e9s, j\u00f3venes en cuidado temporal o sin hogar).</p>
+  <h3>Derecho ("Entitlement") Suplementario y de Concentraci\u00f3n LCFF</h3>
+  <p>Los $10.2 millones que aparecen en la tabla de ingresos como "Suplementario y Concentraci\u00f3n LCFF" son el <em>monto del derecho</em> ("entitlement") calculado por la f\u00f3rmula LCFF, basado en el 60.7% de los estudiantes de RCSD que son alumnos no duplicados (de bajos ingresos, estudiantes de ingl\u00e9s, j\u00f3venes en cuidado temporal o sin hogar). Para los distritos financiados por el estado, esto llegar\u00eda como dinero estatal aparte; para un distrito financiado por la comunidad como RCSD, el derecho se paga con los propios impuestos a la propiedad del distrito y se reporta en esta l\u00ednea por motivos contables. El monto sigue teniendo consecuencias reales: establece el piso m\u00ednimo de gasto proporcional del LCAP, lo que significa que el distrito debe demostrar que al menos esta cantidad se est\u00e1 destinando a aumentar o mejorar los servicios para los alumnos no duplicados.</p>
 
   <h3>Fondos Federales</h3>
   <p>Los ingresos federales ($4.8 millones, 3% del presupuesto) incluyen subsidios T\u00edtulo I para escuelas de alta pobreza, T\u00edtulo III para programas de Estudiantes de Ingl\u00e9s e IDEA para educaci\u00f3n especial.</p>
