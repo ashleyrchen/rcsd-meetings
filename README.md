@@ -60,8 +60,8 @@ Scripts run in order. Most can be run independently. All cache aggressively — 
  ─────────────────────
  1. scrape:youtube        → data/youtube-index.json
  2. scrape:boarddocs      → data/boarddocs-scraped.json
- 3. scrape:simbli         → sources/simbli-*.md
- 4. scrape:packets        → data/board-memos/*.json + artifacts/board-packets/
+ 3. scrape:simbli         → data/board-memos/*.json (agenda + attachment metadata)
+ 4. scrape:packets        → adds local PDFs under artifacts/board-packets/ + memo fields
 
  Transcription (AssemblyAI)
  ──────────────────────────
@@ -97,13 +97,26 @@ Quick rebuild (build steps only):
 npm run build
 ```
 
-### Board packet scraping
+### Simbli agenda scraping
 
-Simbli uses Incapsula/Imperva bot protection that blocks all non-browser HTTP requests. The `scrape:packets` script uses Playwright to open a real Chromium browser, navigate each meeting page (which sets Incapsula cookies), then fetches PDFs from within the browser context.
+Simbli's agenda is rendered by an Angular SPA. Attachment links never appear in the static HTML — the SPA fetches them per item from `GetItemsTreeDTO` + `GetSupportingDocuments`. `scrape:simbli` runs Playwright headless, lets the Imperva/Incapsula JS challenge resolve, intercepts the SPA's session params from those XHRs, and reuses them to enumerate all items + attachment AIDs in one shot. It also walks the meeting listing to discover newly-posted MIDs.
 
 ```bash
-npx playwright install chromium  # one-time setup
-npm run scrape:packets           # scrape all meetings
+npx playwright install chromium      # one-time setup
+npm run scrape:simbli                # discover + scrape any new agendas
+npm run scrape:simbli -- --date 2026-05-13   # single meeting
+npm run scrape:simbli -- --refresh   # re-pull all (preserves memo + filename enrichments)
+npm run scrape:simbli -- --list-only # discovery report; no scrape
+```
+
+`scrape:simbli` runs as Phase 0 of `run-pipeline.mjs`, so a fresh `node scripts/run-pipeline.mjs --quick` automatically picks up newly-posted agendas before the build.
+
+### Board packet PDF download
+
+`scrape:packets` is a follow-on slow path that downloads the actual PDF attachments and adds memo fields (Quick Summary / Recommendation / Rationale / Financial Impact / Speaker) by walking each item's detail view. It enriches the memo files `scrape:simbli` produces.
+
+```bash
+npm run scrape:packets           # scrape all meetings (downloads PDFs)
 npm run scrape:packets -- --date 2026-02-26  # single meeting
 npm run scrape:packets -- --skip-existing    # skip cached meetings
 ```

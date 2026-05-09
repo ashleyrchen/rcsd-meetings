@@ -119,13 +119,14 @@ function classifyThreads(topics, type, date) {
 // ---- Load board memo formal agendas for Simbli meetings ----
 
 const memoDir = resolve(ROOT, 'data/board-memos');
-function loadSimbliItems(date) {
+function loadSimbliMemo(date) {
   const memoPath = resolve(memoDir, `${date}.json`);
-  if (existsSync(memoPath)) {
-    const memo = JSON.parse(readFileSync(memoPath, 'utf-8'));
-    return parseSimbliAgenda(memo.items);
-  }
-  return null;
+  if (!existsSync(memoPath)) return null;
+  return JSON.parse(readFileSync(memoPath, 'utf-8'));
+}
+function loadSimbliItems(date) {
+  const memo = loadSimbliMemo(date);
+  return memo ? parseSimbliAgenda(memo.items) : null;
 }
 
 // Build Simbli meetings
@@ -145,7 +146,8 @@ const simbliMeetings = tableRows.map(row => {
     `https://simbli.eboardsolutions.com/SB_Meetings/ViewMeeting.aspx?S=36030397&MID=${mid}`;
 
   // Use formal agenda from board memo if available, else fall back to markdown-parsed items
-  const formalItems = loadSimbliItems(date);
+  const memo = loadSimbliMemo(date);
+  const formalItems = memo ? parseSimbliAgenda(memo.items) : null;
   const items = formalItems || (detail?.items || []).map((it, i) => ({
     itemLabel: String(i + 1),
     title: it.title,
@@ -165,7 +167,7 @@ const simbliMeetings = tableRows.map(row => {
     youtube: youtubeId,
     simbli: simbliUrl,
     boarddocs: null,
-    zoom: detail?.zoom || null,
+    zoom: memo?.zoom || detail?.zoom || null,
     topics: topics ? [topics] : [],
     threads: classifyThreads(topics, type, date),
     items,

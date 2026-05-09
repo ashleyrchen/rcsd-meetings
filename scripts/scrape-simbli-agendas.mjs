@@ -1,85 +1,373 @@
 #!/usr/bin/env node
 /**
- * Scrape full structured agendas from Simbli meeting pages.
- * Uses Chrome DevTools MCP (via fetch) to navigate to each meeting page
- * and extract the agenda HTML from the DOM.
+ * Fast Simbli agenda scraper — pulls the formal agenda + per-item attachments
+ * via Simbli's Angular SPA APIs (GetItemsTreeDTO + GetSupportingDocuments).
  *
- * For now, this is a MANUAL-ASSIST script: it outputs the Simbli meeting URLs
- * that need scraping. The actual scraping will be done interactively via Chrome
- * DevTools MCP since Simbli uses Incapsula/hCaptcha bot protection.
+ * Why the API path: the agenda tree the public ViewMeeting page renders is
+ * Angular-generated and never includes attachment links in static HTML. The
+ * old scraper iterated each item via Next-button clicks (slow, brittle). This
+ * scraper hijacks the same XHRs the SPA already makes and reuses the session
+ * params, which yields the entire agenda + all attachment AIDs in seconds.
  *
- * Usage: node scripts/scrape-simbli-agendas.mjs
+ * Outputs `data/board-memos/{date}.json` in the schema parseSimbliAgenda
+ * expects: { date, mid, scrapedAt, items: [{ order, title, memo, attachments }] }.
  *
- * Input: data/meetings-data.json (for Simbli meeting list)
- * Output: data/simbli-scraped.json
+ * Memo and per-attachment filename/cached fields are written by
+ * scrape-board-packets.mjs (which downloads PDFs). When this script writes
+ * over an existing memo file, it preserves those enrichments.
+ *
+ * Usage:
+ *   node scripts/scrape-simbli-agendas.mjs               # discover + scrape new
+ *   node scripts/scrape-simbli-agendas.mjs --date 2026-05-13
+ *   node scripts/scrape-simbli-agendas.mjs --mid 51013
+ *   node scripts/scrape-simbli-agendas.mjs --refresh     # re-scrape all known
+ *   node scripts/scrape-simbli-agendas.mjs --list-only   # discovery only
+ *
+ * Networking: Simbli's CDN (Imperva/Incapsula) blocks bare HTTP. Playwright
+ * runs a real Chromium so the JS challenge auto-resolves and cookies are kept.
  */
 
-import { readFileSync, writeFileSync, existsSync } from 'fs';
+import { chromium } from 'playwright';
+import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
 
-const dataPath = resolve(ROOT, 'data/meetings-data.json');
-const outPath = resolve(ROOT, 'data/simbli-scraped.json');
+const SIMBLI_BASE = 'https://simbli.eboardsolutions.com';
+const SCHOOL_ID = '36030397';
+const LISTING_URL = `${SIMBLI_BASE}/SB_Meetings/SB_MeetingListing.aspx?S=${SCHOOL_ID}`;
+const MEMO_DIR = resolve(ROOT, 'data/board-memos');
+const SOURCES_MD_PATH = resolve(ROOT, 'sources/rcsd-meetings.md');
 
-if (!existsSync(dataPath)) {
-  console.error('meetings-data.json not found. Run build-meetings.mjs first.');
-  process.exit(1);
+const INCAPSULA_WAIT_MS = 5000;
+const INCAPSULA_MAX_TRIES = 6;
+const TREE_WAIT_MS = 30000;
+
+function meetingUrl(mid) {
+  return `${SIMBLI_BASE}/SB_Meetings/ViewMeeting.aspx?S=${SCHOOL_ID}&MID=${mid}`;
 }
 
-const data = JSON.parse(readFileSync(dataPath, 'utf-8'));
-const simbliMeetings = data.meetings.filter(m => m.source === 'simbli');
+function delay(ms) { return new Promise(r => setTimeout(r, ms)); }
 
-console.log(`Found ${simbliMeetings.length} Simbli meetings\n`);
+function parseUSDate(s) {
+  const m = s.match(/(\d{2})\/(\d{2})\/(\d{4})/);
+  if (!m) return null;
+  return `${m[3]}-${m[1]}-${m[2]}`;
+}
 
-// Load existing scraped data if available (for incremental scraping)
-let existing = {};
-if (existsSync(outPath)) {
+async function newSimbliBrowser() {
+  const browser = await chromium.launch({
+    headless: true,
+    args: ['--disable-blink-features=AutomationControlled'],
+  });
+  const context = await browser.newContext({
+    userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36',
+  });
+  await context.addInitScript(() => {
+    Object.defineProperty(navigator, 'webdriver', { get: () => false });
+  });
+  return { browser, context };
+}
+
+async function waitForIncapsula(page) {
+  for (let attempt = 1; attempt <= INCAPSULA_MAX_TRIES; attempt++) {
+    await delay(INCAPSULA_WAIT_MS);
+    const html = await page.content();
+    if (!html.includes('Request unsuccessful') && !html.includes('Incapsula incident')) return true;
+  }
+  return false;
+}
+
+async function discoverMeetings(page) {
+  await page.goto(LISTING_URL, { waitUntil: 'domcontentloaded', timeout: 30000 });
+  if (!(await waitForIncapsula(page))) {
+    throw new Error('Incapsula challenge did not clear on listing page');
+  }
+  await page.waitForSelector('table tr a[onclick*="ViewMeeting"]', { timeout: 15000 });
+  const rows = await page.evaluate(() => {
+    const out = [];
+    const trs = document.querySelectorAll('table tr');
+    for (const tr of trs) {
+      const dateSpan = tr.querySelector('span[id*="_sptxt_"][id$="_0"]');
+      const link = tr.querySelector('a[onclick*="ViewMeeting"]');
+      const typeSpan = tr.querySelector('span[id*="_sptxt_"][id$="_3"]');
+      if (!dateSpan || !link) continue;
+      const onclick = link.getAttribute('onclick') || '';
+      const midMatch = onclick.match(/ViewMeeting\(\s*"[^"]+"\s*,\s*"(\d+)"/);
+      if (!midMatch) continue;
+      const dateText = dateSpan.textContent.trim();
+      const dateMatch = dateText.match(/(\d{2}\/\d{2}\/\d{4})/);
+      if (!dateMatch) continue;
+      out.push({
+        usDate: dateMatch[1],
+        mid: midMatch[1],
+        title: link.textContent.trim(),
+        rawType: typeSpan ? typeSpan.textContent.trim() : null,
+      });
+    }
+    return out;
+  });
+  return rows.map(r => ({
+    date: parseUSDate(r.usDate),
+    mid: r.mid,
+    title: r.title,
+    rawType: r.rawType,
+  })).filter(r => r.date);
+}
+
+async function scrapeMeetingAPI(page, mid) {
+  let treeJson = null;
+  let sessionParams = null;
+
+  const onResponse = async (response) => {
+    const url = response.url();
+    if (treeJson === null && url.includes('GetItemsTreeDTO')) {
+      try { treeJson = await response.json(); } catch { /* retry */ }
+      const u = new URL(url);
+      sessionParams = {
+        sct: u.searchParams.get('sct'),
+        endid: u.searchParams.get('endid'),
+        enmid: u.searchParams.get('enmid'),
+      };
+    }
+  };
+  page.on('response', onResponse);
+
   try {
-    const prev = JSON.parse(readFileSync(outPath, 'utf-8'));
-    existing = Object.fromEntries(prev.map(m => [m.date, m]));
-    console.log(`Loaded ${Object.keys(existing).length} previously scraped meetings\n`);
-  } catch { /* ignore */ }
+    await page.goto(meetingUrl(mid), { waitUntil: 'domcontentloaded', timeout: 30000 });
+    if (!(await waitForIncapsula(page))) return null;
+
+    const start = Date.now();
+    while (treeJson === null && Date.now() - start < TREE_WAIT_MS) {
+      await delay(500);
+    }
+    if (!treeJson || !sessionParams || !sessionParams.sct) {
+      console.error(`  Failed to capture GetItemsTreeDTO for MID ${mid}`);
+      return null;
+    }
+
+    const flat = [];
+    function walk(arr) {
+      for (const it of arr || []) {
+        flat.push(it);
+        if (it.Children?.length) walk(it.Children);
+      }
+    }
+    walk(treeJson.Items);
+
+    const itemsWithAtts = flat.filter(it => it.HasAttachment);
+    const docsByItemID = await page.evaluate(async ({ ids, sessionParams }) => {
+      const out = {};
+      const { sct, endid, enmid } = sessionParams;
+      for (const id of ids) {
+        const url = `/Services/api/GetSupportingDocuments/?sct=${sct}` +
+          `&endid=${endid}` +
+          `&enentityid=${enmid}` +
+          `&enitemid=${encodeURIComponent(id)}`;
+        try {
+          const resp = await fetch(url, { headers: { Accept: 'application/json' } });
+          out[id] = await resp.json();
+        } catch (e) {
+          out[id] = { _error: e.message };
+        }
+      }
+      return out;
+    }, { ids: itemsWithAtts.map(it => it.ID), sessionParams });
+
+    const items = flat.map((it, idx) => {
+      const docs = docsByItemID[it.ID];
+      const attachments = [];
+      if (docs && Array.isArray(docs.Attachment)) {
+        for (const a of docs.Attachment) {
+          const aid = a.AttachmentID || a.attachmentID || a.AID || a.ID;
+          if (!aid) continue;
+          attachments.push({
+            name: a.DisplayName || a.Title || a.Name || a.FileName || `attachment-${aid}`,
+            aid: String(aid),
+          });
+        }
+      }
+      if (docs && Array.isArray(docs.HyperLink)) {
+        for (const h of docs.HyperLink) {
+          const url = h.URL || h.Url || h.Link;
+          if (!url) continue;
+          attachments.push({
+            name: h.DisplayName || h.Title || h.Name || url,
+            href: url,
+          });
+        }
+      }
+      return {
+        order: idx + 1,
+        title: (it.Title || '').trim(),
+        memo: {},
+        attachments,
+      };
+    });
+
+    // The Zoom URL lives in the page header text, not in any API response.
+    const zoom = await page.evaluate(() => {
+      const m = document.body.innerText.match(/https:\/\/[a-z0-9.-]*zoom\.us\/[^\s]+/i);
+      return m ? m[0].replace(/[).,;]+$/, '') : null;
+    });
+
+    return { items, zoom };
+  } finally {
+    page.off('response', onResponse);
+  }
 }
 
-// List meetings that need scraping
-const needsScraping = simbliMeetings.filter(m => !existing[m.date]);
-
-if (needsScraping.length === 0) {
-  console.log('All Simbli meetings already scraped!');
-  process.exit(0);
+function mergeWithExisting(date, fresh) {
+  const path = resolve(MEMO_DIR, `${date}.json`);
+  if (!existsSync(path)) return fresh;
+  let prev;
+  try { prev = JSON.parse(readFileSync(path, 'utf-8')); } catch { return fresh; }
+  const prevByTitle = new Map();
+  for (const it of prev.items || []) {
+    if (it.title) prevByTitle.set(it.title.trim(), it);
+  }
+  const merged = fresh.items.map(it => {
+    const old = prevByTitle.get(it.title.trim());
+    if (!old) return it;
+    const memo = (old.memo && Object.keys(old.memo).length > 0) ? old.memo : it.memo;
+    const oldAttsByAid = new Map();
+    for (const a of old.attachments || []) if (a.aid) oldAttsByAid.set(String(a.aid), a);
+    const attachments = it.attachments.map(a => {
+      const o = a.aid ? oldAttsByAid.get(String(a.aid)) : null;
+      if (!o) return a;
+      const out = { ...a };
+      if (o.filename) out.filename = o.filename;
+      if (o.cached !== undefined) out.cached = o.cached;
+      return out;
+    });
+    return { ...it, memo, attachments };
+  });
+  return { items: merged };
 }
 
-console.log(`${needsScraping.length} meetings need scraping:\n`);
-for (const m of needsScraping) {
-  console.log(`  ${m.date} ${m.type} (MID ${m.mid})`);
-  console.log(`    ${m.simbli}`);
-  console.log(`    Items so far: ${m.items.length}`);
-  console.log();
+function loadKnownMids() {
+  const known = new Map();
+  if (!existsSync(SOURCES_MD_PATH)) return known;
+  const md = readFileSync(SOURCES_MD_PATH, 'utf-8');
+  const tableRe = /\|\s*(\d{2}\/\d{2}\/\d{4})\s*\|\s*([^|]+?)\s*\|\s*(\d+)\s*\|/g;
+  let m;
+  while ((m = tableRe.exec(md)) !== null) {
+    const date = parseUSDate(m[1]);
+    const type = m[2].trim();
+    known.set(m[3], { date, type });
+  }
+  return known;
 }
 
-console.log(`\nTo scrape these meetings interactively, use Chrome DevTools MCP:`);
-console.log(`  1. Open Chrome and navigate to a Simbli meeting URL`);
-console.log(`  2. Use the MCP snapshot tool to extract the agenda`);
-console.log(`  3. Save results to ${outPath}`);
-console.log(`\nAlternatively, run with --from-transcripts to extract agenda items from YouTube transcripts.`);
-
-// If --from-transcripts flag, try to extract from transcripts
-if (process.argv.includes('--from-transcripts')) {
-  console.log('\n--- Extracting from transcripts not yet implemented ---');
-  console.log('For now, using existing hand-curated items from meetings-data.json');
-
-  // Save existing items as-is (they're already in meetings-data.json)
-  const output = simbliMeetings.map(m => ({
-    date: m.date,
-    type: m.type,
-    mid: m.mid,
-    items: m.items,
-    source: 'hand-curated'
-  }));
-
-  writeFileSync(outPath, JSON.stringify(output, null, 2));
-  console.log(`Wrote ${output.length} meetings to ${outPath}`);
+function indexRowFor(meeting) {
+  const [yyyy, mm, dd] = meeting.date.split('-');
+  const t = (meeting.title || '').toLowerCase();
+  let type = 'Regular';
+  if (t.includes('special') && t.includes('closed')) type = 'Special (Closed)';
+  else if (t.includes('special')) type = 'Special';
+  else if (t.includes('study')) type = 'Study Session';
+  else if (t.includes('workshop')) type = 'Workshop';
+  return `| ${mm}/${dd}/${yyyy} | ${type} | ${meeting.mid} | — | (auto-discovered, fill in topics) |`;
 }
+
+async function main() {
+  const args = process.argv.slice(2);
+  const dateIdx = args.indexOf('--date');
+  const midIdx = args.indexOf('--mid');
+  const dateFilter = dateIdx >= 0 ? args[dateIdx + 1] : null;
+  const midFilter = midIdx >= 0 ? args[midIdx + 1] : null;
+  const refresh = args.includes('--refresh');
+  const listOnly = args.includes('--list-only');
+
+  mkdirSync(MEMO_DIR, { recursive: true });
+
+  const { browser, context } = await newSimbliBrowser();
+  const page = await context.newPage();
+
+  try {
+    let meetings;
+    if (midFilter) {
+      meetings = [{ mid: midFilter, date: dateFilter || null, title: '', rawType: null }];
+    } else {
+      console.log('Discovering meetings from Simbli listing...');
+      const all = await discoverMeetings(page);
+      console.log(`Found ${all.length} meetings on Simbli listing.`);
+      const known = loadKnownMids();
+      // Simbli's listing extends back into 2020; we only track the
+      // 2025-2026 school year onward unless --date overrides.
+      const TRACKING_FROM = '2025-06-01';
+      const inScope = dateFilter
+        ? all.filter(m => m.date === dateFilter)
+        : all.filter(m => m.date >= TRACKING_FROM);
+      const unknownToMd = inScope
+        .filter(m => !known.has(m.mid))
+        .sort((a, b) => b.date.localeCompare(a.date));
+      if (!dateFilter && unknownToMd.length > 0) {
+        console.log(`\n${unknownToMd.length} meeting(s) not yet in sources/rcsd-meetings.md:`);
+        for (const m of unknownToMd) console.log('  ' + indexRowFor(m));
+        console.log('\n(Add the rows above to sources/rcsd-meetings.md so build-meetings.mjs picks them up.)\n');
+      }
+      meetings = inScope.filter(m => {
+        if (refresh) return true;
+        return !existsSync(resolve(MEMO_DIR, `${m.date}.json`));
+      });
+    }
+
+    if (listOnly) {
+      console.log('--list-only: skipping scrape.');
+      return;
+    }
+
+    if (meetings.length === 0) {
+      console.log('Nothing to scrape (use --refresh to re-pull).');
+      return;
+    }
+
+    console.log(`\nScraping ${meetings.length} meeting(s)...\n`);
+    let ok = 0, failed = 0;
+    for (const m of meetings) {
+      const label = `${m.date || '????-??-??'} MID ${m.mid}`;
+      console.log(`-> ${label}`);
+      const fresh = await scrapeMeetingAPI(page, m.mid);
+      if (!fresh) { failed++; continue; }
+
+      let date = m.date;
+      if (!date) {
+        const heading = await page.evaluate(() => {
+          const m = document.body.innerText.match(/(\d{2}\/\d{2}\/\d{4})/);
+          return m ? m[1] : null;
+        });
+        date = heading ? parseUSDate(heading) : null;
+      }
+      if (!date) {
+        console.error(`  Could not determine date for MID ${m.mid}; skipping write.`);
+        failed++;
+        continue;
+      }
+
+      const merged = mergeWithExisting(date, fresh);
+      const totalAtts = merged.items.reduce((s, it) => s + (it.attachments?.length || 0), 0);
+      const out = {
+        date,
+        mid: String(m.mid),
+        scrapedAt: new Date().toISOString(),
+        zoom: fresh.zoom || null,
+        items: merged.items,
+      };
+      const outPath = resolve(MEMO_DIR, `${date}.json`);
+      writeFileSync(outPath, JSON.stringify(out, null, 2) + '\n');
+      console.log(`  wrote ${outPath} (${merged.items.length} items, ${totalAtts} attachments)`);
+      ok++;
+    }
+    console.log(`\nDone: ${ok} scraped, ${failed} failed.`);
+  } finally {
+    await browser.close();
+  }
+}
+
+main().catch(e => {
+  console.error('Fatal:', e);
+  process.exit(1);
+});

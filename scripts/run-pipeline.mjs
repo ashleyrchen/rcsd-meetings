@@ -32,6 +32,10 @@ function run(label, script) {
 console.log(`\nRCSD Pipeline — ${new Date().toISOString()}`);
 console.log(`Mode: ${quick ? 'QUICK (skip transcription/translation)' : 'FULL'}\n`);
 
+// Phase 0: Pull any newly-posted Simbli agendas (items + attachments) before
+// the build reads them. Idempotent — only fetches MIDs without a memo file.
+run('0. Scrape new Simbli agendas', 'scrape-simbli-agendas.mjs');
+
 // Phase 1: Data assembly
 run('1. Build meetings data', 'build-meetings.mjs');
 
