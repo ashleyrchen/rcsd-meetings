@@ -1,8 +1,8 @@
 # RCSD Board Meetings — 2025-2026 School Year
-Last updated: March 20, 2026
+Last updated: May 8, 2026
 
 ## Overview
-- 25 meetings on Simbli (June 2025 - present)
+- 26 meetings on Simbli (June 2025 - present)
 - Pre-June 2025 meetings on BoardDocs: https://go.boarddocs.com/ca/redwood/Board.nsf/goto?open&id=CVLPDX62089F
 - Agendas: https://simbli.eboardsolutions.com/SB_Meetings/SB_MeetingListing.aspx?S=36030397
 - YouTube: https://www.youtube.com/@redwoodcityschooldistrict
@@ -12,6 +12,7 @@ Last updated: March 20, 2026
 
 | Date | Type | MID | YouTube | Key Topics |
 |------|------|-----|---------|------------|
+| 05/13/2026 | Regular | 51013 | — | North Star/Henry Ford SPSA presentations, EV chargers (Hoover, Roy Cloud — PowerFlex; Adelante Selby/Clifford/Kennedy — Atlas Pellizzari $70.5K), Res 24/25 final non-reemployment notifications (classified/certificated), Res 26 EV charging contract (PCC §20118.2), Cumming PMS Amendment #7, Looking Point Azure server migration, classified reclassification, Casa Circulo summer 2026, TadHealth counseling 2026-27, charter Q2 interim reviews (Connect/KIPP/Rocketship), 35 board policy approvals, 2026-27 board calendar discussion |
 | 04/22/2026 | Regular | 51012 | — | Kennedy/Orion/Adelante Selby SPSA presentations, HVAC Upgrades Phase 3 (Henry Ford, Roy Cloud), HVAC Phase 2 GMP Amendment (Clifford, Orion, Kennedy), Res 22 Ed Code teaching assignments, Res 23 KIPP Excelencia Prop 2 facilities funding, IMC lease renewal (777 3rd Ave), RCTA teacher salary info, Q3 Williams report, 23 CSBA policy approvals (HR/library) |
 | 04/01/2026 | Regular | 51011 | [Video](https://www.youtube.com/watch?v=MUo_j2IxTzw) | Roy Cloud/Clifford SPSA presentations, EV charger PowerFlex replacement (Shell Recharge discontinuation), RCTA class size info item, BP/AR 3580 District Records second reading, 22 CSBA policy updates (employee HR policies), MIT/Kennedy field trips, election services agreement |
 | 03/25/2026 | Regular | 50617 | [Video](https://www.youtube.com/watch?v=u4Is6bk2Gh8) | Taft/Garfield SPSA presentations, 2024-25 financial audit (Eide Bailly), Second Interim Budget ($158.1M rev), AI-assisted literacy info item, drone policy BP 3515.21 second reading, Connect charter audit review, Ed Code 41372 salary waiver (55.54% vs 60%), 650 Chromebooks ($323.9K), 16 CSBA policy updates, Measure U addenda (North Star/Henry Ford) |
@@ -43,6 +44,52 @@ Last updated: March 20, 2026
 ---
 
 ## Detailed Meeting Agendas
+
+### 05/13/2026 — Regular Meeting (MID 51013)
+- **Simbli:** https://simbli.eboardsolutions.com/SB_Meetings/ViewMeeting.aspx?S=36030397&MID=51013
+- **Zoom:** https://rcsdk8-net.zoom.us/s/88656026675
+
+**Bond Program Consent:**
+1. Program and Construction Management Services Amendment #7 with Cumming Group
+2. Measure T Bond Program Tracking List of Items Under $20K
+
+**Bond Program Action Items (20 min):**
+1. Agreement with PowerFlex for the Purchase of 8 EV Chargers for Hoover Community School and Roy Cloud School
+
+**Action Items (2 hrs):**
+1. North Star School SPSA presentation and approval
+2. Henry Ford School SPSA presentation and approval
+3. Reclassification of Classified Employees
+4. Resolution No. 24 — Final Notification Regarding Non-Reemployment of Classified Employees for 2026-27
+5. Resolution No. 25 — Final Notification Regarding Non-Reemployment of Certificated Employees for 2026-27
+6. Resolution No. 26 — Approval of EV Charging Hardware and Software Contract Pursuant to Public Contract Code §20118.2
+7. Agreement with Atlas Pellizzari Electric ($70,520) to install PowerFlex EV chargers at Adelante Selby, Clifford, and Kennedy
+8. Contract with Looking Point to migrate RCSD servers to Microsoft Azure Cloud Services
+
+**Discussion Items (15 min):**
+1. Proposed Board Meeting Calendar for the 2026-27 School Year
+
+**Consent Items (43 items):**
+1. Acceptance of Donation
+2. Agreement between RCSD and Casa Circulo Cultural Inc. for Summer 2026
+3. Agreement between RCSD and TadHealth to bill for counseling services for 2026-27
+4. Amendment No. 1 to the Agreement between RCSD and Redwood City PAL for 2025-26
+5. Amendment No. 1 between RCSD and Rebekah Will Audiology, P.C. for audiology services for 2025-26
+6. Increase of Daylight PO by $75,000
+7. Agreement with CP Mechanical to replace the kitchen RTU and RTU #7 at McKinley
+8. Agreement with CP Mechanical to repair the AC #4 compressor at the District Office
+9-40. 32 Board Policy approvals (0400 Comprehensive Plans; 0420 School Plans/Site Councils; 0420.42 Charter School Renewal; 4156.2/4256.2 Awards and Recognition; 4154/4254/4354 Health and Welfare Benefits; 4361 Leaves; 5000 Concepts and Roles; 5020 Parent Rights and Responsibilities; 5111 Admission; 5112.3 Student Leave of Absence; 5112.5 Open/Closed Campus; 5113 Absences and Excuses; 5116.2 Involuntary Student Transfers; 5117 Interdistrict Attendance; 5119 Students Expelled From Other Districts; 5125 Student Records; 5125.1 Release of Directory Information; 5131.2 Bullying; 5131.7 Weapons and Dangerous Instruments; 5136 Gangs; 5141.4 Child Abuse Prevention and Reporting; 5142 Safety; 5144 Discipline; 5144.1 Suspension and Expulsion/Due Process; 5144.4 Required Parental Attendance; 5145.12 Search and Seizure; 5145.2 Freedom of Speech/Expression; 5146 Married/Pregnant/Parenting Students; 6142.92 Mathematics Instruction)
+41. Request to Discard Obsolete and Damaged Library Books
+42. Ratification of Warrant Registers, April 1-30, 2026
+43. Participation in PG&E's Government K-12 Program for Water Heater Replacement
+
+**Information:**
+1. San Mateo County Investment Fund — March 2026
+2. RCSD Review of Connect Community Charter Second Interim Financial Report for FY 2025-26
+3. RCSD Review of KIPP Excelencia Community Prep Charter Second Interim Financial Report for FY 2025-26
+4. RCSD Review of Rocketship Redwood City Prep Charter School Second Interim Financial Report for FY 2025-26
+
+---
 
 ### 04/22/2026 — Regular Meeting (MID 51012)
 - **Simbli:** https://simbli.eboardsolutions.com/SB_Meetings/ViewMeeting.aspx?S=36030397&MID=51012
