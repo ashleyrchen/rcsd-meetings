@@ -25,12 +25,12 @@
     "transcribe": "node scripts/transcribe-assemblyai.mjs"
   },
   "dependencies": {
-    "@anthropic-ai/sdk": "^0.90.0",
-    "assemblyai": "^4.30.0",
+    "@anthropic-ai/sdk": "^0.95.1",
+    "assemblyai": "^4.32.1",
     "dotenv": "^17.4.2",
     "playwright": "^1.59.1"
   },
   "devDependencies": {
-    "wrangler": "^4.84.1"
+    "wrangler": "^4.90.0"
   }
 }
