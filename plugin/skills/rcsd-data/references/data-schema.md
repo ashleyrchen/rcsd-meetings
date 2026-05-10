@@ -787,6 +787,50 @@ School Site Council (SSC) membership extracted from SPSA (School Plan for Studen
 - Multiple school years may be present per school as SPSAs are updated annually
 - `composition` totals should satisfy: `principal + classroomTeachers + otherStaff = parentCommunity` (parity requirement)
 
+## data/ssc-meetings.json
+
+Per-school, per-year index of SSC meeting agendas and minutes. Meeting documents are published to R2 under `documents/ssc/{school}/{year}/` and served from `data.rcsd.info`.
+
+### Sample
+
+```json
+{
+  "_metadata": {
+    "description": "Per-school School Site Council meeting agendas and minutes.",
+    "source": "Materials shared publicly by each school's SSC.",
+    "extractionMethod": "Source .docx files converted to PDF via pandoc → HTML → Chromium (scripts/convert-ssc-docs.mjs).",
+    "lastUpdated": "2026-04-21"
+  },
+  "orion": {
+    "2025-26": [
+      {
+        "date": "2025-09-24",
+        "agendaPdf": "documents/ssc/orion/2025-26/2025-09-24-agenda.pdf",
+        "minutesPdf": "documents/ssc/orion/2025-26/2025-09-24-minutes.pdf"
+      }
+    ]
+  }
+}
+```
+
+### Schema
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `_metadata` | object | Source provenance and conversion method |
+| `{school-slug}` | object | Per-school meetings, keyed by school year |
+| `{school-slug}.{year}[]` | array | Meetings sorted chronologically |
+| `{meeting}.date` | string | Meeting date (`YYYY-MM-DD`) |
+| `{meeting}.agendaPdf` | string, optional | R2 path to agenda PDF |
+| `{meeting}.minutesPdf` | string, optional | R2 path to minutes PDF |
+
+### Key Field Notes
+
+- Either `agendaPdf` or `minutesPdf` (or both) should be present; absent field means that artifact wasn't yet shared by the SSC.
+- Paths are relative; prefix with `https://data.rcsd.info/` to get the public URL.
+- Coverage today: `orion` 2025-26. Pattern supports adding more schools/years as SSCs share materials.
+
+
 ---
 
 ## data/spsa-budgets.json
