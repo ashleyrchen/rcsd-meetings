@@ -2432,6 +2432,18 @@ function buildSchoolsIndex(lang) {
   };
   const barWidthForPct = (val) => val == null ? 0 : Math.round((val / 75) * 58); // 75% is a generous visual ceiling
 
+  // Sort-key for grades strings like "TK-5", "K-5", "3-8" — use the lowest grade
+  // (TK=-1, K=0, otherwise the integer prefix) so a numeric sort puts the
+  // youngest-served grades first.
+  const gradesSortVal = (g) => {
+    if (!g) return null;
+    const lo = g.split('-')[0].trim().toUpperCase();
+    if (lo === 'TK') return -1;
+    if (lo === 'K') return 0;
+    const n = parseInt(lo, 10);
+    return Number.isFinite(n) ? n : null;
+  };
+
   const rows = sorted.map(s => {
     const ir = IREADYU_DATA[s.slug];
     const pending = ir?.status === 'pending_25_26_presentation';
@@ -2443,22 +2455,23 @@ function buildSchoolsIndex(lang) {
     const mathSrc = pdfBase && ir?.math?.source?.pdfPage ? `${pdfBase}#page=${ir.math.source.pdfPage}` : null;
 
     const cellFor = (val, districtPct, srcUrl, srcPage) => {
-      if (pending) return `<td class="num" title="${L.growthPendingShort}"><span class="pending-mark">—</span></td>`;
-      if (val == null) return `<td class="num">—</td>`;
+      if (pending) return `<td class="num" data-sort-value="" title="${L.growthPendingShort}"><span class="pending-mark">—</span></td>`;
+      if (val == null) return `<td class="num" data-sort-value="">—</td>`;
       const color = colorFor(val, districtPct);
       const w = barWidthForPct(val);
       const num = `<span class="bar bar-${color}" style="width:${w}px"></span>${Math.round(val)}%`;
-      if (!srcUrl) return `<td class="num">${num}</td>`;
+      if (!srcUrl) return `<td class="num" data-sort-value="${val}">${num}</td>`;
       // Link opens the source PDF at the exact slide; stopPropagation keeps the
       // row-level click (which navigates to the school page) from firing too.
       const title = L.growthCellSourceTitle(ir.source.presentationDate, srcPage);
-      return `<td class="num"><a class="growth-cell-link" href="${srcUrl}" target="_blank" rel="noopener" title="${title}" onclick="event.stopPropagation()">${num}</a></td>`;
+      return `<td class="num" data-sort-value="${val}"><a class="growth-cell-link" href="${srcUrl}" target="_blank" rel="noopener" title="${title}" onclick="event.stopPropagation()">${num}</a></td>`;
     };
+    const gv = gradesSortVal(s.grades);
     return `          <tr onclick="location.href='${href}'" style="cursor:pointer">
-            <td class="school-name"><a href="${href}">${s.nameShort || s.name} <span class="arrow">&rarr;</span></a></td>
-            <td>${s.grades}</td>
-            <td class="num">${s.enrollment.toLocaleString()}</td>
-            <td class="num">${s.highNeedPct}%</td>
+            <td class="school-name" data-sort-value="${(s.nameShort || s.name).toLowerCase()}"><a href="${href}">${s.nameShort || s.name} <span class="arrow">&rarr;</span></a></td>
+            <td data-sort-value="${gv ?? ''}">${s.grades}</td>
+            <td class="num" data-sort-value="${s.enrollment}">${s.enrollment.toLocaleString()}</td>
+            <td class="num" data-sort-value="${s.highNeedPct}">${s.highNeedPct}%</td>
             ${cellFor(r, DISTRICT_IREADYU.reading, readingSrc, ir?.reading?.source?.pdfPage)}
             ${cellFor(m, DISTRICT_IREADYU.math, mathSrc, ir?.math?.source?.pdfPage)}
           </tr>`;
@@ -2468,12 +2481,14 @@ function buildSchoolsIndex(lang) {
   const charterRows = charterSummaries().map(c => {
     const href = c[L.charterPathKey];
     const name = isEs ? (c.nameEs || c.name) : c.name;
+    const gv = gradesSortVal(c.grades);
+    const openedYear = (c.dateOpened || '').slice(0, 4);
     return `          <tr onclick="location.href='${href}'" style="cursor:pointer">
-            <td class="school-name"><a href="${href}">${name} <span class="arrow">&rarr;</span></a></td>
-            <td>${c.grades || ''}</td>
-            <td class="num">${c.enrollment ? c.enrollment.toLocaleString() : ''}</td>
+            <td class="school-name" data-sort-value="${name.toLowerCase()}"><a href="${href}">${name} <span class="arrow">&rarr;</span></a></td>
+            <td data-sort-value="${gv ?? ''}">${c.grades || ''}</td>
+            <td class="num" data-sort-value="${c.enrollment ?? ''}">${c.enrollment ? c.enrollment.toLocaleString() : ''}</td>
             <td>${c.network || L.networkIndep}</td>
-            <td class="num">${(c.dateOpened || '').slice(0, 4)}</td>
+            <td class="num" data-sort-value="${openedYear || ''}">${openedYear}</td>
           </tr>`;
   }).join('\n');
 
@@ -2487,10 +2502,10 @@ function buildSchoolsIndex(lang) {
       ? `<a href="${tenantUrl}" target="_blank" rel="noopener">${name} <span style="font-size:0.8em; color:var(--text-muted)">&#8599;</span></a>`
       : name;
     return `          <tr>
-            <td class="school-name">${nameCell}</td>
-            <td>${p.address || '<span style="color:var(--text-muted); font-style:italic">TBD</span>'}</td>
-            <td>${useLabel || ''}</td>
-            <td>${formerUse || '&mdash;'}</td>
+            <td class="school-name" data-sort-value="${name.toLowerCase()}">${nameCell}</td>
+            <td data-sort-value="${(p.address || '').toLowerCase()}">${p.address || '<span style="color:var(--text-muted); font-style:italic">TBD</span>'}</td>
+            <td data-sort-value="${(useLabel || '').toLowerCase()}">${useLabel || ''}</td>
+            <td data-sort-value="${(formerUse || '').toLowerCase()}">${formerUse || '&mdash;'}</td>
           </tr>`;
   }).join('\n');
 
@@ -2521,6 +2536,24 @@ function buildSchoolsIndex(lang) {
     text-align: left; padding: 0.6rem 0.8rem; border-bottom: 2px solid var(--green-deep); white-space: nowrap;
   }
   .schools-table-wrap thead th.num { text-align: right; }
+  .schools-table-wrap table.sortable thead th[data-sort-type] {
+    cursor: pointer; user-select: none; position: relative; padding-right: 1.7rem;
+    transition: color 0.12s;
+  }
+  .schools-table-wrap table.sortable thead th[data-sort-type]::after {
+    content: '↕'; position: absolute; right: 0.5rem; top: 50%;
+    transform: translateY(-50%); opacity: 0.35; font-size: 0.95em;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+  .schools-table-wrap table.sortable thead th[data-sort-type]:hover { color: var(--green-deep); }
+  .schools-table-wrap table.sortable thead th[data-sort-type]:hover::after { opacity: 0.7; }
+  .schools-table-wrap table.sortable thead th[data-sort-type]:focus-visible {
+    outline: 2px solid var(--green-mid); outline-offset: -2px;
+  }
+  .schools-table-wrap table.sortable thead th[aria-sort="ascending"],
+  .schools-table-wrap table.sortable thead th[aria-sort="descending"] { color: var(--green-deep); }
+  .schools-table-wrap table.sortable thead th[aria-sort="ascending"]::after { content: '↑'; opacity: 1; }
+  .schools-table-wrap table.sortable thead th[aria-sort="descending"]::after { content: '↓'; opacity: 1; }
   .schools-table-wrap tbody td {
     padding: 0.55rem 0.8rem; border-bottom: 1px solid var(--rule-light); vertical-align: top;
   }
@@ -2589,15 +2622,15 @@ ${siteNav({ activePage: 'schools', lang, altLangHref: altHref })}
   <section class="schools-section">
     <h2>${L.districtH2}</h2>
     <div class="schools-table-wrap">
-      <table>
+      <table class="sortable">
         <thead>
           <tr>
-            <th>${L.thSchool}</th>
-            <th>${L.thGrades}</th>
-            <th class="num">${L.thEnroll}</th>
-            <th class="num">${L.thHighNeed}</th>
-            <th class="num">${L.thGrowthEla}</th>
-            <th class="num">${L.thGrowthMath}</th>
+            <th data-sort-type="text" data-sort-initial="asc" aria-sort="ascending">${L.thSchool}</th>
+            <th data-sort-type="num">${L.thGrades}</th>
+            <th class="num" data-sort-type="num">${L.thEnroll}</th>
+            <th class="num" data-sort-type="num">${L.thHighNeed}</th>
+            <th class="num" data-sort-type="num">${L.thGrowthEla}</th>
+            <th class="num" data-sort-type="num">${L.thGrowthMath}</th>
           </tr>
         </thead>
         <tbody>
@@ -2612,14 +2645,14 @@ ${rows}
     <h2>${L.charterH2}</h2>
     <p class="section-intro">${L.charterIntro}</p>
     <div class="schools-table-wrap">
-      <table>
+      <table class="sortable">
         <thead>
           <tr>
-            <th>${L.thSchool}</th>
-            <th>${L.thGrades}</th>
-            <th class="num">${L.thEnroll}</th>
-            <th>${L.thNetwork}</th>
-            <th class="num">${L.thOpened}</th>
+            <th data-sort-type="text" data-sort-initial="asc" aria-sort="ascending">${L.thSchool}</th>
+            <th data-sort-type="num">${L.thGrades}</th>
+            <th class="num" data-sort-type="num">${L.thEnroll}</th>
+            <th data-sort-type="text">${L.thNetwork}</th>
+            <th class="num" data-sort-type="num">${L.thOpened}</th>
           </tr>
         </thead>
         <tbody>
@@ -2633,13 +2666,13 @@ ${charterRows}
     <h2>${L.propertiesH2}</h2>
     <p class="section-intro">${L.propertiesIntro}</p>
     <div class="schools-table-wrap">
-      <table>
+      <table class="sortable">
         <thead>
           <tr>
-            <th>${L.thProperty}</th>
-            <th>${L.thAddress}</th>
-            <th>${L.thUse}</th>
-            <th>${L.thFormer}</th>
+            <th data-sort-type="text" data-sort-initial="asc" aria-sort="ascending">${L.thProperty}</th>
+            <th data-sort-type="text">${L.thAddress}</th>
+            <th data-sort-type="text">${L.thUse}</th>
+            <th data-sort-type="text">${L.thFormer}</th>
           </tr>
         </thead>
         <tbody>
@@ -2651,6 +2684,70 @@ ${propertyRows}
 </div>
 
 ${siteFooter({ lang })}
+
+<script>
+(function () {
+  function init(table) {
+    var ths = table.querySelectorAll('thead th[data-sort-type]');
+    var tbody = table.tBodies[0];
+    if (!tbody) return;
+    var current = { idx: -1, dir: null };
+    ths.forEach(function (th) { if (th.getAttribute('aria-sort') === 'ascending') { current.idx = th.cellIndex; current.dir = 'asc'; } });
+
+    function sort(idx, dir) {
+      var th = ths[Array.prototype.findIndex.call(ths, function (t) { return t.cellIndex === idx; })];
+      var type = th.getAttribute('data-sort-type') || 'text';
+      var rows = Array.prototype.slice.call(tbody.rows);
+      rows.sort(function (a, b) {
+        var av = a.children[idx].getAttribute('data-sort-value');
+        var bv = b.children[idx].getAttribute('data-sort-value');
+        if (av === null) av = a.children[idx].textContent.trim();
+        if (bv === null) bv = b.children[idx].textContent.trim();
+        var aMissing = av === '' || av == null;
+        var bMissing = bv === '' || bv == null;
+        if (aMissing && bMissing) return 0;
+        if (aMissing) return 1;  // missing always sorts last
+        if (bMissing) return -1;
+        if (type === 'num') {
+          var an = parseFloat(av), bn = parseFloat(bv);
+          if (isNaN(an) && isNaN(bn)) return 0;
+          if (isNaN(an)) return 1;
+          if (isNaN(bn)) return -1;
+          return dir === 'asc' ? an - bn : bn - an;
+        }
+        var as = String(av).toLowerCase(), bs = String(bv).toLowerCase();
+        if (as < bs) return dir === 'asc' ? -1 : 1;
+        if (as > bs) return dir === 'asc' ? 1 : -1;
+        return 0;
+      });
+      var frag = document.createDocumentFragment();
+      rows.forEach(function (r) { frag.appendChild(r); });
+      tbody.appendChild(frag);
+      ths.forEach(function (t) {
+        t.setAttribute('aria-sort', t.cellIndex === idx ? (dir === 'asc' ? 'ascending' : 'descending') : 'none');
+      });
+      current.idx = idx; current.dir = dir;
+    }
+
+    ths.forEach(function (th) {
+      th.setAttribute('role', 'button');
+      th.setAttribute('tabindex', '0');
+      if (!th.hasAttribute('aria-sort')) th.setAttribute('aria-sort', 'none');
+      function trigger() {
+        var idx = th.cellIndex;
+        var type = th.getAttribute('data-sort-type') || 'text';
+        var dir = current.idx === idx ? (current.dir === 'asc' ? 'desc' : 'asc') : (type === 'num' ? 'desc' : 'asc');
+        sort(idx, dir);
+      }
+      th.addEventListener('click', trigger);
+      th.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); trigger(); }
+      });
+    });
+  }
+  document.querySelectorAll('table.sortable').forEach(init);
+})();
+</script>
 
 </body>
 </html>`;

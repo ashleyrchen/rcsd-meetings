@@ -190,6 +190,24 @@
     text-align: left; padding: 0.6rem 0.8rem; border-bottom: 2px solid var(--green-deep); white-space: nowrap;
   }
   .schools-table-wrap thead th.num { text-align: right; }
+  .schools-table-wrap table.sortable thead th[data-sort-type] {
+    cursor: pointer; user-select: none; position: relative; padding-right: 1.7rem;
+    transition: color 0.12s;
+  }
+  .schools-table-wrap table.sortable thead th[data-sort-type]::after {
+    content: '↕'; position: absolute; right: 0.5rem; top: 50%;
+    transform: translateY(-50%); opacity: 0.35; font-size: 0.95em;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+  .schools-table-wrap table.sortable thead th[data-sort-type]:hover { color: var(--green-deep); }
+  .schools-table-wrap table.sortable thead th[data-sort-type]:hover::after { opacity: 0.7; }
+  .schools-table-wrap table.sortable thead th[data-sort-type]:focus-visible {
+    outline: 2px solid var(--green-mid); outline-offset: -2px;
+  }
+  .schools-table-wrap table.sortable thead th[aria-sort="ascending"],
+  .schools-table-wrap table.sortable thead th[aria-sort="descending"] { color: var(--green-deep); }
+  .schools-table-wrap table.sortable thead th[aria-sort="ascending"]::after { content: '↑'; opacity: 1; }
+  .schools-table-wrap table.sortable thead th[aria-sort="descending"]::after { content: '↓'; opacity: 1; }
   .schools-table-wrap tbody td {
     padding: 0.55rem 0.8rem; border-bottom: 1px solid var(--rule-light); vertical-align: top;
   }
@@ -258,113 +276,113 @@
   <section class="schools-section">
     <h2>Escuelas del distrito</h2>
     <div class="schools-table-wrap">
-      <table>
+      <table class="sortable">
         <thead>
           <tr>
-            <th>Escuela</th>
-            <th>Grados</th>
-            <th class="num">Inscripción</th>
-            <th class="num">% alta necesidad</th>
-            <th class="num">Crec. lectura</th>
-            <th class="num">Crec. mat</th>
+            <th data-sort-type="text" data-sort-initial="asc" aria-sort="ascending">Escuela</th>
+            <th data-sort-type="num">Grados</th>
+            <th class="num" data-sort-type="num">Inscripción</th>
+            <th class="num" data-sort-type="num">% alta necesidad</th>
+            <th class="num" data-sort-type="num">Crec. lectura</th>
+            <th class="num" data-sort-type="num">Crec. mat</th>
           </tr>
         </thead>
         <tbody>
           <tr onclick="location.href='/escuelas/adelante-selby/'" style="cursor:pointer">
-            <td class="school-name"><a href="/escuelas/adelante-selby/">Adelante Selby <span class="arrow">&rarr;</span></a></td>
-            <td>TK-5</td>
-            <td class="num">630</td>
-            <td class="num">65%</td>
-            <td class="num"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-04-22/Adelante-Selby-25-26-Data-for-Board-presentation.pdf#page=20" target="_blank" rel="noopener" title="Ver fuente: presentación de la Mesa 2026-04-22, diapositiva 20" onclick="event.stopPropagation()"><span class="bar bar-green" style="width:51px"></span>65%</a></td>
-            <td class="num"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-04-22/Adelante-Selby-25-26-Data-for-Board-presentation.pdf#page=24" target="_blank" rel="noopener" title="Ver fuente: presentación de la Mesa 2026-04-22, diapositiva 24" onclick="event.stopPropagation()"><span class="bar bar-green" style="width:48px"></span>62%</a></td>
+            <td class="school-name" data-sort-value="adelante selby"><a href="/escuelas/adelante-selby/">Adelante Selby <span class="arrow">&rarr;</span></a></td>
+            <td data-sort-value="-1">TK-5</td>
+            <td class="num" data-sort-value="630">630</td>
+            <td class="num" data-sort-value="65">65%</td>
+            <td class="num" data-sort-value="65.4"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-04-22/Adelante-Selby-25-26-Data-for-Board-presentation.pdf#page=20" target="_blank" rel="noopener" title="Ver fuente: presentación de la Mesa 2026-04-22, diapositiva 20" onclick="event.stopPropagation()"><span class="bar bar-green" style="width:51px"></span>65%</a></td>
+            <td class="num" data-sort-value="62.1"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-04-22/Adelante-Selby-25-26-Data-for-Board-presentation.pdf#page=24" target="_blank" rel="noopener" title="Ver fuente: presentación de la Mesa 2026-04-22, diapositiva 24" onclick="event.stopPropagation()"><span class="bar bar-green" style="width:48px"></span>62%</a></td>
           </tr>
           <tr onclick="location.href='/escuelas/clifford/'" style="cursor:pointer">
-            <td class="school-name"><a href="/escuelas/clifford/">Clifford <span class="arrow">&rarr;</span></a></td>
-            <td>TK-8</td>
-            <td class="num">664</td>
-            <td class="num">52%</td>
-            <td class="num"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-04-01/Clifford-25-26-Data-for-Board-presentation.pdf#page=18" target="_blank" rel="noopener" title="Ver fuente: presentación de la Mesa 2026-04-01, diapositiva 18" onclick="event.stopPropagation()"><span class="bar bar-green" style="width:49px"></span>63%</a></td>
-            <td class="num"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-04-01/Clifford-25-26-Data-for-Board-presentation.pdf#page=20" target="_blank" rel="noopener" title="Ver fuente: presentación de la Mesa 2026-04-01, diapositiva 20" onclick="event.stopPropagation()"><span class="bar bar-coral" style="width:39px"></span>50%</a></td>
+            <td class="school-name" data-sort-value="clifford"><a href="/escuelas/clifford/">Clifford <span class="arrow">&rarr;</span></a></td>
+            <td data-sort-value="-1">TK-8</td>
+            <td class="num" data-sort-value="664">664</td>
+            <td class="num" data-sort-value="52">52%</td>
+            <td class="num" data-sort-value="62.8"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-04-01/Clifford-25-26-Data-for-Board-presentation.pdf#page=18" target="_blank" rel="noopener" title="Ver fuente: presentación de la Mesa 2026-04-01, diapositiva 18" onclick="event.stopPropagation()"><span class="bar bar-green" style="width:49px"></span>63%</a></td>
+            <td class="num" data-sort-value="50.3"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-04-01/Clifford-25-26-Data-for-Board-presentation.pdf#page=20" target="_blank" rel="noopener" title="Ver fuente: presentación de la Mesa 2026-04-01, diapositiva 20" onclick="event.stopPropagation()"><span class="bar bar-coral" style="width:39px"></span>50%</a></td>
           </tr>
           <tr onclick="location.href='/escuelas/garfield/'" style="cursor:pointer">
-            <td class="school-name"><a href="/escuelas/garfield/">Garfield <span class="arrow">&rarr;</span></a></td>
-            <td>K-5</td>
-            <td class="num">260</td>
-            <td class="num">97%</td>
-            <td class="num"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-03-25/Garfield-25-26-Data-for-Board-presentation-DRAFT.pdf#page=19" target="_blank" rel="noopener" title="Ver fuente: presentación de la Mesa 2026-03-25, diapositiva 19" onclick="event.stopPropagation()"><span class="bar bar-amber" style="width:47px"></span>61%</a></td>
-            <td class="num"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-03-25/Garfield-25-26-Data-for-Board-presentation-DRAFT.pdf#page=21" target="_blank" rel="noopener" title="Ver fuente: presentación de la Mesa 2026-03-25, diapositiva 21" onclick="event.stopPropagation()"><span class="bar bar-green" style="width:54px"></span>70%</a></td>
+            <td class="school-name" data-sort-value="garfield"><a href="/escuelas/garfield/">Garfield <span class="arrow">&rarr;</span></a></td>
+            <td data-sort-value="0">K-5</td>
+            <td class="num" data-sort-value="260">260</td>
+            <td class="num" data-sort-value="97">97%</td>
+            <td class="num" data-sort-value="60.5"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-03-25/Garfield-25-26-Data-for-Board-presentation-DRAFT.pdf#page=19" target="_blank" rel="noopener" title="Ver fuente: presentación de la Mesa 2026-03-25, diapositiva 19" onclick="event.stopPropagation()"><span class="bar bar-amber" style="width:47px"></span>61%</a></td>
+            <td class="num" data-sort-value="70.4"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-03-25/Garfield-25-26-Data-for-Board-presentation-DRAFT.pdf#page=21" target="_blank" rel="noopener" title="Ver fuente: presentación de la Mesa 2026-03-25, diapositiva 21" onclick="event.stopPropagation()"><span class="bar bar-green" style="width:54px"></span>70%</a></td>
           </tr>
           <tr onclick="location.href='/escuelas/henry-ford/'" style="cursor:pointer">
-            <td class="school-name"><a href="/escuelas/henry-ford/">Henry Ford <span class="arrow">&rarr;</span></a></td>
-            <td>TK-5</td>
-            <td class="num">461</td>
-            <td class="num">70%</td>
-            <td class="num"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-05-13/Henry-Ford-25-26-Data-for-Board-presentation.pdf#page=18" target="_blank" rel="noopener" title="Ver fuente: presentación de la Mesa 2026-05-13, diapositiva 18" onclick="event.stopPropagation()"><span class="bar bar-green" style="width:51px"></span>66%</a></td>
-            <td class="num"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-05-13/Henry-Ford-25-26-Data-for-Board-presentation.pdf#page=20" target="_blank" rel="noopener" title="Ver fuente: presentación de la Mesa 2026-05-13, diapositiva 20" onclick="event.stopPropagation()"><span class="bar bar-green" style="width:52px"></span>67%</a></td>
+            <td class="school-name" data-sort-value="henry ford"><a href="/escuelas/henry-ford/">Henry Ford <span class="arrow">&rarr;</span></a></td>
+            <td data-sort-value="-1">TK-5</td>
+            <td class="num" data-sort-value="461">461</td>
+            <td class="num" data-sort-value="70">70%</td>
+            <td class="num" data-sort-value="66.2"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-05-13/Henry-Ford-25-26-Data-for-Board-presentation.pdf#page=18" target="_blank" rel="noopener" title="Ver fuente: presentación de la Mesa 2026-05-13, diapositiva 18" onclick="event.stopPropagation()"><span class="bar bar-green" style="width:51px"></span>66%</a></td>
+            <td class="num" data-sort-value="67.2"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-05-13/Henry-Ford-25-26-Data-for-Board-presentation.pdf#page=20" target="_blank" rel="noopener" title="Ver fuente: presentación de la Mesa 2026-05-13, diapositiva 20" onclick="event.stopPropagation()"><span class="bar bar-green" style="width:52px"></span>67%</a></td>
           </tr>
           <tr onclick="location.href='/escuelas/hoover/'" style="cursor:pointer">
-            <td class="school-name"><a href="/escuelas/hoover/">Hoover <span class="arrow">&rarr;</span></a></td>
-            <td>TK-8</td>
-            <td class="num">659</td>
-            <td class="num">97%</td>
-            <td class="num"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-03-11/Hoover-25-26-Data-for-Board-presentation.pdf#page=20" target="_blank" rel="noopener" title="Ver fuente: presentación de la Mesa 2026-03-11, diapositiva 20" onclick="event.stopPropagation()"><span class="bar bar-amber" style="width:46px"></span>60%</a></td>
-            <td class="num"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-03-11/Hoover-25-26-Data-for-Board-presentation.pdf#page=22" target="_blank" rel="noopener" title="Ver fuente: presentación de la Mesa 2026-03-11, diapositiva 22" onclick="event.stopPropagation()"><span class="bar bar-coral" style="width:38px"></span>49%</a></td>
+            <td class="school-name" data-sort-value="hoover"><a href="/escuelas/hoover/">Hoover <span class="arrow">&rarr;</span></a></td>
+            <td data-sort-value="-1">TK-8</td>
+            <td class="num" data-sort-value="659">659</td>
+            <td class="num" data-sort-value="97">97%</td>
+            <td class="num" data-sort-value="59.6"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-03-11/Hoover-25-26-Data-for-Board-presentation.pdf#page=20" target="_blank" rel="noopener" title="Ver fuente: presentación de la Mesa 2026-03-11, diapositiva 20" onclick="event.stopPropagation()"><span class="bar bar-amber" style="width:46px"></span>60%</a></td>
+            <td class="num" data-sort-value="49.3"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-03-11/Hoover-25-26-Data-for-Board-presentation.pdf#page=22" target="_blank" rel="noopener" title="Ver fuente: presentación de la Mesa 2026-03-11, diapositiva 22" onclick="event.stopPropagation()"><span class="bar bar-coral" style="width:38px"></span>49%</a></td>
           </tr>
           <tr onclick="location.href='/escuelas/kennedy/'" style="cursor:pointer">
-            <td class="school-name"><a href="/escuelas/kennedy/">Kennedy <span class="arrow">&rarr;</span></a></td>
-            <td>6-8</td>
-            <td class="num">788</td>
-            <td class="num">69%</td>
-            <td class="num"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-04-22/Kennedy-25-26-Data-for-Board-presentation.pdf#page=22" target="_blank" rel="noopener" title="Ver fuente: presentación de la Mesa 2026-04-22, diapositiva 22" onclick="event.stopPropagation()"><span class="bar bar-coral" style="width:39px"></span>50%</a></td>
-            <td class="num"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-04-22/Kennedy-25-26-Data-for-Board-presentation.pdf#page=24" target="_blank" rel="noopener" title="Ver fuente: presentación de la Mesa 2026-04-22, diapositiva 24" onclick="event.stopPropagation()"><span class="bar bar-amber" style="width:40px"></span>52%</a></td>
+            <td class="school-name" data-sort-value="kennedy"><a href="/escuelas/kennedy/">Kennedy <span class="arrow">&rarr;</span></a></td>
+            <td data-sort-value="6">6-8</td>
+            <td class="num" data-sort-value="788">788</td>
+            <td class="num" data-sort-value="69">69%</td>
+            <td class="num" data-sort-value="50.2"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-04-22/Kennedy-25-26-Data-for-Board-presentation.pdf#page=22" target="_blank" rel="noopener" title="Ver fuente: presentación de la Mesa 2026-04-22, diapositiva 22" onclick="event.stopPropagation()"><span class="bar bar-coral" style="width:39px"></span>50%</a></td>
+            <td class="num" data-sort-value="51.8"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-04-22/Kennedy-25-26-Data-for-Board-presentation.pdf#page=24" target="_blank" rel="noopener" title="Ver fuente: presentación de la Mesa 2026-04-22, diapositiva 24" onclick="event.stopPropagation()"><span class="bar bar-amber" style="width:40px"></span>52%</a></td>
           </tr>
           <tr onclick="location.href='/escuelas/mckinley-mit/'" style="cursor:pointer">
-            <td class="school-name"><a href="/escuelas/mckinley-mit/">McKinley <span class="arrow">&rarr;</span></a></td>
-            <td>6-8</td>
-            <td class="num">401</td>
-            <td class="num">93%</td>
-            <td class="num"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-03-11/MIT-25-26-Data-for-Board-presentation.pdf#page=19" target="_blank" rel="noopener" title="Ver fuente: presentación de la Mesa 2026-03-11, diapositiva 19" onclick="event.stopPropagation()"><span class="bar bar-green" style="width:50px"></span>65%</a></td>
-            <td class="num"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-03-11/MIT-25-26-Data-for-Board-presentation.pdf#page=21" target="_blank" rel="noopener" title="Ver fuente: presentación de la Mesa 2026-03-11, diapositiva 21" onclick="event.stopPropagation()"><span class="bar bar-amber" style="width:42px"></span>55%</a></td>
+            <td class="school-name" data-sort-value="mckinley"><a href="/escuelas/mckinley-mit/">McKinley <span class="arrow">&rarr;</span></a></td>
+            <td data-sort-value="6">6-8</td>
+            <td class="num" data-sort-value="401">401</td>
+            <td class="num" data-sort-value="93">93%</td>
+            <td class="num" data-sort-value="65.1"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-03-11/MIT-25-26-Data-for-Board-presentation.pdf#page=19" target="_blank" rel="noopener" title="Ver fuente: presentación de la Mesa 2026-03-11, diapositiva 19" onclick="event.stopPropagation()"><span class="bar bar-green" style="width:50px"></span>65%</a></td>
+            <td class="num" data-sort-value="54.6"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-03-11/MIT-25-26-Data-for-Board-presentation.pdf#page=21" target="_blank" rel="noopener" title="Ver fuente: presentación de la Mesa 2026-03-11, diapositiva 21" onclick="event.stopPropagation()"><span class="bar bar-amber" style="width:42px"></span>55%</a></td>
           </tr>
           <tr onclick="location.href='/escuelas/north-star/'" style="cursor:pointer">
-            <td class="school-name"><a href="/escuelas/north-star/">North Star <span class="arrow">&rarr;</span></a></td>
-            <td>3-8</td>
-            <td class="num">553</td>
-            <td class="num">1%</td>
-            <td class="num"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-05-13/North-Star-25-26-Data-for-Board-presentation.pdf#page=20" target="_blank" rel="noopener" title="Ver fuente: presentación de la Mesa 2026-05-13, diapositiva 20" onclick="event.stopPropagation()"><span class="bar bar-amber" style="width:44px"></span>57%</a></td>
-            <td class="num"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-05-13/North-Star-25-26-Data-for-Board-presentation.pdf#page=22" target="_blank" rel="noopener" title="Ver fuente: presentación de la Mesa 2026-05-13, diapositiva 22" onclick="event.stopPropagation()"><span class="bar bar-green" style="width:45px"></span>59%</a></td>
+            <td class="school-name" data-sort-value="north star"><a href="/escuelas/north-star/">North Star <span class="arrow">&rarr;</span></a></td>
+            <td data-sort-value="3">3-8</td>
+            <td class="num" data-sort-value="553">553</td>
+            <td class="num" data-sort-value="1">1%</td>
+            <td class="num" data-sort-value="56.5"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-05-13/North-Star-25-26-Data-for-Board-presentation.pdf#page=20" target="_blank" rel="noopener" title="Ver fuente: presentación de la Mesa 2026-05-13, diapositiva 20" onclick="event.stopPropagation()"><span class="bar bar-amber" style="width:44px"></span>57%</a></td>
+            <td class="num" data-sort-value="58.8"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-05-13/North-Star-25-26-Data-for-Board-presentation.pdf#page=22" target="_blank" rel="noopener" title="Ver fuente: presentación de la Mesa 2026-05-13, diapositiva 22" onclick="event.stopPropagation()"><span class="bar bar-green" style="width:45px"></span>59%</a></td>
           </tr>
           <tr onclick="location.href='/escuelas/orion/'" style="cursor:pointer">
-            <td class="school-name"><a href="/escuelas/orion/">Orion <span class="arrow">&rarr;</span></a></td>
-            <td>TK-5</td>
-            <td class="num">549</td>
-            <td class="num">32%</td>
-            <td class="num"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-04-22/Orion-25-26-Data-for-Board-presentation.pdf#page=20" target="_blank" rel="noopener" title="Ver fuente: presentación de la Mesa 2026-04-22, diapositiva 20" onclick="event.stopPropagation()"><span class="bar bar-green" style="width:53px"></span>68%</a></td>
-            <td class="num"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-04-22/Orion-25-26-Data-for-Board-presentation.pdf#page=22" target="_blank" rel="noopener" title="Ver fuente: presentación de la Mesa 2026-04-22, diapositiva 22" onclick="event.stopPropagation()"><span class="bar bar-green" style="width:47px"></span>61%</a></td>
+            <td class="school-name" data-sort-value="orion"><a href="/escuelas/orion/">Orion <span class="arrow">&rarr;</span></a></td>
+            <td data-sort-value="-1">TK-5</td>
+            <td class="num" data-sort-value="549">549</td>
+            <td class="num" data-sort-value="32">32%</td>
+            <td class="num" data-sort-value="68.2"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-04-22/Orion-25-26-Data-for-Board-presentation.pdf#page=20" target="_blank" rel="noopener" title="Ver fuente: presentación de la Mesa 2026-04-22, diapositiva 20" onclick="event.stopPropagation()"><span class="bar bar-green" style="width:53px"></span>68%</a></td>
+            <td class="num" data-sort-value="60.6"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-04-22/Orion-25-26-Data-for-Board-presentation.pdf#page=22" target="_blank" rel="noopener" title="Ver fuente: presentación de la Mesa 2026-04-22, diapositiva 22" onclick="event.stopPropagation()"><span class="bar bar-green" style="width:47px"></span>61%</a></td>
           </tr>
           <tr onclick="location.href='/escuelas/roosevelt/'" style="cursor:pointer">
-            <td class="school-name"><a href="/escuelas/roosevelt/">Roosevelt <span class="arrow">&rarr;</span></a></td>
-            <td>TK-5</td>
-            <td class="num">344</td>
-            <td class="num">73%</td>
-            <td class="num"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-03-11/Roosevelt-25-26-Board-presentation.pdf#page=19" target="_blank" rel="noopener" title="Ver fuente: presentación de la Mesa 2026-03-11, diapositiva 19" onclick="event.stopPropagation()"><span class="bar bar-amber" style="width:45px"></span>58%</a></td>
-            <td class="num"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-03-11/Roosevelt-25-26-Board-presentation.pdf#page=21" target="_blank" rel="noopener" title="Ver fuente: presentación de la Mesa 2026-03-11, diapositiva 21" onclick="event.stopPropagation()"><span class="bar bar-coral" style="width:37px"></span>48%</a></td>
+            <td class="school-name" data-sort-value="roosevelt"><a href="/escuelas/roosevelt/">Roosevelt <span class="arrow">&rarr;</span></a></td>
+            <td data-sort-value="-1">TK-5</td>
+            <td class="num" data-sort-value="344">344</td>
+            <td class="num" data-sort-value="73">73%</td>
+            <td class="num" data-sort-value="58.4"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-03-11/Roosevelt-25-26-Board-presentation.pdf#page=19" target="_blank" rel="noopener" title="Ver fuente: presentación de la Mesa 2026-03-11, diapositiva 19" onclick="event.stopPropagation()"><span class="bar bar-amber" style="width:45px"></span>58%</a></td>
+            <td class="num" data-sort-value="47.5"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-03-11/Roosevelt-25-26-Board-presentation.pdf#page=21" target="_blank" rel="noopener" title="Ver fuente: presentación de la Mesa 2026-03-11, diapositiva 21" onclick="event.stopPropagation()"><span class="bar bar-coral" style="width:37px"></span>48%</a></td>
           </tr>
           <tr onclick="location.href='/escuelas/roy-cloud/'" style="cursor:pointer">
-            <td class="school-name"><a href="/escuelas/roy-cloud/">Roy Cloud <span class="arrow">&rarr;</span></a></td>
-            <td>TK-8</td>
-            <td class="num">665</td>
-            <td class="num">16%</td>
-            <td class="num"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-04-01/Roy-cloud-25-26-Data-for-Board-presentation-1.pdf#page=20" target="_blank" rel="noopener" title="Ver fuente: presentación de la Mesa 2026-04-01, diapositiva 20" onclick="event.stopPropagation()"><span class="bar bar-green" style="width:49px"></span>64%</a></td>
-            <td class="num"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-04-01/Roy-cloud-25-26-Data-for-Board-presentation-1.pdf#page=22" target="_blank" rel="noopener" title="Ver fuente: presentación de la Mesa 2026-04-01, diapositiva 22" onclick="event.stopPropagation()"><span class="bar bar-green" style="width:46px"></span>59%</a></td>
+            <td class="school-name" data-sort-value="roy cloud"><a href="/escuelas/roy-cloud/">Roy Cloud <span class="arrow">&rarr;</span></a></td>
+            <td data-sort-value="-1">TK-8</td>
+            <td class="num" data-sort-value="665">665</td>
+            <td class="num" data-sort-value="16">16%</td>
+            <td class="num" data-sort-value="64"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-04-01/Roy-cloud-25-26-Data-for-Board-presentation-1.pdf#page=20" target="_blank" rel="noopener" title="Ver fuente: presentación de la Mesa 2026-04-01, diapositiva 20" onclick="event.stopPropagation()"><span class="bar bar-green" style="width:49px"></span>64%</a></td>
+            <td class="num" data-sort-value="59.4"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-04-01/Roy-cloud-25-26-Data-for-Board-presentation-1.pdf#page=22" target="_blank" rel="noopener" title="Ver fuente: presentación de la Mesa 2026-04-01, diapositiva 22" onclick="event.stopPropagation()"><span class="bar bar-green" style="width:46px"></span>59%</a></td>
           </tr>
           <tr onclick="location.href='/escuelas/taft/'" style="cursor:pointer">
-            <td class="school-name"><a href="/escuelas/taft/">Taft <span class="arrow">&rarr;</span></a></td>
-            <td>TK-5</td>
-            <td class="num">325</td>
-            <td class="num">97%</td>
-            <td class="num"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-03-25/Taft-25-26-Board-Presentation.pdf#page=21" target="_blank" rel="noopener" title="Ver fuente: presentación de la Mesa 2026-03-25, diapositiva 21" onclick="event.stopPropagation()"><span class="bar bar-green" style="width:51px"></span>65%</a></td>
-            <td class="num"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-03-25/Taft-25-26-Board-Presentation.pdf#page=23" target="_blank" rel="noopener" title="Ver fuente: presentación de la Mesa 2026-03-25, diapositiva 23" onclick="event.stopPropagation()"><span class="bar bar-green" style="width:47px"></span>61%</a></td>
+            <td class="school-name" data-sort-value="taft"><a href="/escuelas/taft/">Taft <span class="arrow">&rarr;</span></a></td>
+            <td data-sort-value="-1">TK-5</td>
+            <td class="num" data-sort-value="325">325</td>
+            <td class="num" data-sort-value="97">97%</td>
+            <td class="num" data-sort-value="65.4"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-03-25/Taft-25-26-Board-Presentation.pdf#page=21" target="_blank" rel="noopener" title="Ver fuente: presentación de la Mesa 2026-03-25, diapositiva 21" onclick="event.stopPropagation()"><span class="bar bar-green" style="width:51px"></span>65%</a></td>
+            <td class="num" data-sort-value="61.2"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-03-25/Taft-25-26-Board-Presentation.pdf#page=23" target="_blank" rel="noopener" title="Ver fuente: presentación de la Mesa 2026-03-25, diapositiva 23" onclick="event.stopPropagation()"><span class="bar bar-green" style="width:47px"></span>61%</a></td>
           </tr>
         </tbody>
       </table>
@@ -376,37 +394,37 @@
     <h2>Escuelas chárter autorizadas por RCSD</h2>
     <p class="section-intro">Tres escuelas chárter financiadas directamente. Sus presupuestos, informes interinos y auditorías se presentan regularmente a la mesa directiva como parte de la supervisión fiscal del distrito.</p>
     <div class="schools-table-wrap">
-      <table>
+      <table class="sortable">
         <thead>
           <tr>
-            <th>Escuela</th>
-            <th>Grados</th>
-            <th class="num">Inscripción</th>
-            <th>Red</th>
-            <th class="num">Inauguración</th>
+            <th data-sort-type="text" data-sort-initial="asc" aria-sort="ascending">Escuela</th>
+            <th data-sort-type="num">Grados</th>
+            <th class="num" data-sort-type="num">Inscripción</th>
+            <th data-sort-type="text">Red</th>
+            <th class="num" data-sort-type="num">Inauguración</th>
           </tr>
         </thead>
         <tbody>
           <tr onclick="location.href='/escuelas/charter/connect/'" style="cursor:pointer">
-            <td class="school-name"><a href="/escuelas/charter/connect/">Escuela Autónoma Connect Community <span class="arrow">&rarr;</span></a></td>
-            <td>K-8</td>
-            <td class="num">142</td>
+            <td class="school-name" data-sort-value="escuela autónoma connect community"><a href="/escuelas/charter/connect/">Escuela Autónoma Connect Community <span class="arrow">&rarr;</span></a></td>
+            <td data-sort-value="0">K-8</td>
+            <td class="num" data-sort-value="142">142</td>
             <td>Independiente</td>
-            <td class="num">2013</td>
+            <td class="num" data-sort-value="2013">2013</td>
           </tr>
           <tr onclick="location.href='/escuelas/charter/kipp-excelencia/'" style="cursor:pointer">
-            <td class="school-name"><a href="/escuelas/charter/kipp-excelencia/">KIPP Excelencia Community Preparatory <span class="arrow">&rarr;</span></a></td>
-            <td>TK-8</td>
-            <td class="num">704</td>
+            <td class="school-name" data-sort-value="kipp excelencia community preparatory"><a href="/escuelas/charter/kipp-excelencia/">KIPP Excelencia Community Preparatory <span class="arrow">&rarr;</span></a></td>
+            <td data-sort-value="-1">TK-8</td>
+            <td class="num" data-sort-value="704">704</td>
             <td>KIPP Public Schools Northern California (KIPP NorCal)</td>
-            <td class="num">2015</td>
+            <td class="num" data-sort-value="2015">2015</td>
           </tr>
           <tr onclick="location.href='/escuelas/charter/rocketship-redwood-city/'" style="cursor:pointer">
-            <td class="school-name"><a href="/escuelas/charter/rocketship-redwood-city/">Rocketship Redwood City Prep <span class="arrow">&rarr;</span></a></td>
-            <td>TK-5</td>
-            <td class="num">273</td>
+            <td class="school-name" data-sort-value="rocketship redwood city prep"><a href="/escuelas/charter/rocketship-redwood-city/">Rocketship Redwood City Prep <span class="arrow">&rarr;</span></a></td>
+            <td data-sort-value="-1">TK-5</td>
+            <td class="num" data-sort-value="273">273</td>
             <td>Rocketship Public Schools</td>
-            <td class="num">2015</td>
+            <td class="num" data-sort-value="2015">2015</td>
           </tr>
         </tbody>
       </table>
@@ -417,39 +435,39 @@
     <h2>Otras propiedades del distrito</h2>
     <p class="section-intro">Edificios y terrenos propiedad del distrito (o alquilados por el distrito) que actualmente no albergan una escuela operada por el distrito ni una escuela chárter autorizada por RCSD.</p>
     <div class="schools-table-wrap">
-      <table>
+      <table class="sortable">
         <thead>
           <tr>
-            <th>Propiedad</th>
-            <th>Dirección</th>
-            <th>Uso actual</th>
-            <th>Uso anterior</th>
+            <th data-sort-type="text" data-sort-initial="asc" aria-sort="ascending">Propiedad</th>
+            <th data-sort-type="text">Dirección</th>
+            <th data-sort-type="text">Uso actual</th>
+            <th data-sort-type="text">Uso anterior</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td class="school-name">Oficina del Distrito</td>
-            <td>750 Bradford Street, Redwood City, CA 94063</td>
-            <td>Sede administrativa del distrito</td>
-            <td>&mdash;</td>
+            <td class="school-name" data-sort-value="oficina del distrito">Oficina del Distrito</td>
+            <td data-sort-value="750 bradford street, redwood city, ca 94063">750 Bradford Street, Redwood City, CA 94063</td>
+            <td data-sort-value="sede administrativa del distrito">Sede administrativa del distrito</td>
+            <td data-sort-value="">&mdash;</td>
           </tr>
           <tr>
-            <td class="school-name"><a href="https://www.harperschool.org" target="_blank" rel="noopener">Harper School (privada) <span style="font-size:0.8em; color:var(--text-muted)">&#8599;</span></a></td>
-            <td>3150 Granger Way, Redwood City, CA 94063</td>
-            <td>Alquilado a una escuela privada como inquilino</td>
-            <td>Antiguo campus de Adelante Selby Spanish Immersion</td>
+            <td class="school-name" data-sort-value="harper school (privada)"><a href="https://www.harperschool.org" target="_blank" rel="noopener">Harper School (privada) <span style="font-size:0.8em; color:var(--text-muted)">&#8599;</span></a></td>
+            <td data-sort-value="3150 granger way, redwood city, ca 94063">3150 Granger Way, Redwood City, CA 94063</td>
+            <td data-sort-value="alquilado a una escuela privada como inquilino">Alquilado a una escuela privada como inquilino</td>
+            <td data-sort-value="antiguo campus de adelante selby spanish immersion">Antiguo campus de Adelante Selby Spanish Immersion</td>
           </tr>
           <tr>
-            <td class="school-name">Creative Learning Center</td>
-            <td>815 Allerton Street, Redwood City, CA 94063</td>
-            <td>Programa operado por el distrito (no una escuela completa)</td>
-            <td>Antiguo campus de Orion Alternative (Orion ahora está en 555 Avenue del Ora)</td>
+            <td class="school-name" data-sort-value="creative learning center">Creative Learning Center</td>
+            <td data-sort-value="815 allerton street, redwood city, ca 94063">815 Allerton Street, Redwood City, CA 94063</td>
+            <td data-sort-value="programa operado por el distrito (no una escuela completa)">Programa operado por el distrito (no una escuela completa)</td>
+            <td data-sort-value="antiguo campus de orion alternative (orion ahora está en 555 avenue del ora)">Antiguo campus de Orion Alternative (Orion ahora está en 555 Avenue del Ora)</td>
           </tr>
           <tr>
-            <td class="school-name">Almacén del distrito</td>
-            <td>1757 East Bayshore Road, Suites 4 & 6, Redwood City, CA 94063</td>
-            <td>Alquilado por el distrito (propietario: East Bayshore Investment Group, administrado por Beals Martin Inc.)</td>
-            <td>&mdash;</td>
+            <td class="school-name" data-sort-value="almacén del distrito">Almacén del distrito</td>
+            <td data-sort-value="1757 east bayshore road, suites 4 & 6, redwood city, ca 94063">1757 East Bayshore Road, Suites 4 & 6, Redwood City, CA 94063</td>
+            <td data-sort-value="alquilado por el distrito (propietario: east bayshore investment group, administrado por beals martin inc.)">Alquilado por el distrito (propietario: East Bayshore Investment Group, administrado por Beals Martin Inc.)</td>
+            <td data-sort-value="">&mdash;</td>
           </tr>
         </tbody>
       </table>
@@ -469,6 +487,70 @@
     <a href="mailto:team@rcsd.info">team@rcsd.info</a>
   </div>
 </footer>
+
+<script>
+(function () {
+  function init(table) {
+    var ths = table.querySelectorAll('thead th[data-sort-type]');
+    var tbody = table.tBodies[0];
+    if (!tbody) return;
+    var current = { idx: -1, dir: null };
+    ths.forEach(function (th) { if (th.getAttribute('aria-sort') === 'ascending') { current.idx = th.cellIndex; current.dir = 'asc'; } });
+
+    function sort(idx, dir) {
+      var th = ths[Array.prototype.findIndex.call(ths, function (t) { return t.cellIndex === idx; })];
+      var type = th.getAttribute('data-sort-type') || 'text';
+      var rows = Array.prototype.slice.call(tbody.rows);
+      rows.sort(function (a, b) {
+        var av = a.children[idx].getAttribute('data-sort-value');
+        var bv = b.children[idx].getAttribute('data-sort-value');
+        if (av === null) av = a.children[idx].textContent.trim();
+        if (bv === null) bv = b.children[idx].textContent.trim();
+        var aMissing = av === '' || av == null;
+        var bMissing = bv === '' || bv == null;
+        if (aMissing && bMissing) return 0;
+        if (aMissing) return 1;  // missing always sorts last
+        if (bMissing) return -1;
+        if (type === 'num') {
+          var an = parseFloat(av), bn = parseFloat(bv);
+          if (isNaN(an) && isNaN(bn)) return 0;
+          if (isNaN(an)) return 1;
+          if (isNaN(bn)) return -1;
+          return dir === 'asc' ? an - bn : bn - an;
+        }
+        var as = String(av).toLowerCase(), bs = String(bv).toLowerCase();
+        if (as < bs) return dir === 'asc' ? -1 : 1;
+        if (as > bs) return dir === 'asc' ? 1 : -1;
+        return 0;
+      });
+      var frag = document.createDocumentFragment();
+      rows.forEach(function (r) { frag.appendChild(r); });
+      tbody.appendChild(frag);
+      ths.forEach(function (t) {
+        t.setAttribute('aria-sort', t.cellIndex === idx ? (dir === 'asc' ? 'ascending' : 'descending') : 'none');
+      });
+      current.idx = idx; current.dir = dir;
+    }
+
+    ths.forEach(function (th) {
+      th.setAttribute('role', 'button');
+      th.setAttribute('tabindex', '0');
+      if (!th.hasAttribute('aria-sort')) th.setAttribute('aria-sort', 'none');
+      function trigger() {
+        var idx = th.cellIndex;
+        var type = th.getAttribute('data-sort-type') || 'text';
+        var dir = current.idx === idx ? (current.dir === 'asc' ? 'desc' : 'asc') : (type === 'num' ? 'desc' : 'asc');
+        sort(idx, dir);
+      }
+      th.addEventListener('click', trigger);
+      th.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); trigger(); }
+      });
+    });
+  }
+  document.querySelectorAll('table.sortable').forEach(init);
+})();
+</script>
 
 </body>
 </html>

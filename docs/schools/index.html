@@ -190,6 +190,24 @@
     text-align: left; padding: 0.6rem 0.8rem; border-bottom: 2px solid var(--green-deep); white-space: nowrap;
   }
   .schools-table-wrap thead th.num { text-align: right; }
+  .schools-table-wrap table.sortable thead th[data-sort-type] {
+    cursor: pointer; user-select: none; position: relative; padding-right: 1.7rem;
+    transition: color 0.12s;
+  }
+  .schools-table-wrap table.sortable thead th[data-sort-type]::after {
+    content: '↕'; position: absolute; right: 0.5rem; top: 50%;
+    transform: translateY(-50%); opacity: 0.35; font-size: 0.95em;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+  .schools-table-wrap table.sortable thead th[data-sort-type]:hover { color: var(--green-deep); }
+  .schools-table-wrap table.sortable thead th[data-sort-type]:hover::after { opacity: 0.7; }
+  .schools-table-wrap table.sortable thead th[data-sort-type]:focus-visible {
+    outline: 2px solid var(--green-mid); outline-offset: -2px;
+  }
+  .schools-table-wrap table.sortable thead th[aria-sort="ascending"],
+  .schools-table-wrap table.sortable thead th[aria-sort="descending"] { color: var(--green-deep); }
+  .schools-table-wrap table.sortable thead th[aria-sort="ascending"]::after { content: '↑'; opacity: 1; }
+  .schools-table-wrap table.sortable thead th[aria-sort="descending"]::after { content: '↓'; opacity: 1; }
   .schools-table-wrap tbody td {
     padding: 0.55rem 0.8rem; border-bottom: 1px solid var(--rule-light); vertical-align: top;
   }
@@ -258,113 +276,113 @@
   <section class="schools-section">
     <h2>District schools</h2>
     <div class="schools-table-wrap">
-      <table>
+      <table class="sortable">
         <thead>
           <tr>
-            <th>School</th>
-            <th>Grades</th>
-            <th class="num">Enrollment</th>
-            <th class="num">% high-need</th>
-            <th class="num">Reading growth</th>
-            <th class="num">Math growth</th>
+            <th data-sort-type="text" data-sort-initial="asc" aria-sort="ascending">School</th>
+            <th data-sort-type="num">Grades</th>
+            <th class="num" data-sort-type="num">Enrollment</th>
+            <th class="num" data-sort-type="num">% high-need</th>
+            <th class="num" data-sort-type="num">Reading growth</th>
+            <th class="num" data-sort-type="num">Math growth</th>
           </tr>
         </thead>
         <tbody>
           <tr onclick="location.href='/schools/adelante-selby/'" style="cursor:pointer">
-            <td class="school-name"><a href="/schools/adelante-selby/">Adelante Selby <span class="arrow">&rarr;</span></a></td>
-            <td>TK-5</td>
-            <td class="num">630</td>
-            <td class="num">65%</td>
-            <td class="num"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-04-22/Adelante-Selby-25-26-Data-for-Board-presentation.pdf#page=20" target="_blank" rel="noopener" title="View source: board presentation 2026-04-22, slide 20" onclick="event.stopPropagation()"><span class="bar bar-green" style="width:51px"></span>65%</a></td>
-            <td class="num"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-04-22/Adelante-Selby-25-26-Data-for-Board-presentation.pdf#page=24" target="_blank" rel="noopener" title="View source: board presentation 2026-04-22, slide 24" onclick="event.stopPropagation()"><span class="bar bar-green" style="width:48px"></span>62%</a></td>
+            <td class="school-name" data-sort-value="adelante selby"><a href="/schools/adelante-selby/">Adelante Selby <span class="arrow">&rarr;</span></a></td>
+            <td data-sort-value="-1">TK-5</td>
+            <td class="num" data-sort-value="630">630</td>
+            <td class="num" data-sort-value="65">65%</td>
+            <td class="num" data-sort-value="65.4"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-04-22/Adelante-Selby-25-26-Data-for-Board-presentation.pdf#page=20" target="_blank" rel="noopener" title="View source: board presentation 2026-04-22, slide 20" onclick="event.stopPropagation()"><span class="bar bar-green" style="width:51px"></span>65%</a></td>
+            <td class="num" data-sort-value="62.1"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-04-22/Adelante-Selby-25-26-Data-for-Board-presentation.pdf#page=24" target="_blank" rel="noopener" title="View source: board presentation 2026-04-22, slide 24" onclick="event.stopPropagation()"><span class="bar bar-green" style="width:48px"></span>62%</a></td>
           </tr>
           <tr onclick="location.href='/schools/clifford/'" style="cursor:pointer">
-            <td class="school-name"><a href="/schools/clifford/">Clifford <span class="arrow">&rarr;</span></a></td>
-            <td>TK-8</td>
-            <td class="num">664</td>
-            <td class="num">52%</td>
-            <td class="num"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-04-01/Clifford-25-26-Data-for-Board-presentation.pdf#page=18" target="_blank" rel="noopener" title="View source: board presentation 2026-04-01, slide 18" onclick="event.stopPropagation()"><span class="bar bar-green" style="width:49px"></span>63%</a></td>
-            <td class="num"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-04-01/Clifford-25-26-Data-for-Board-presentation.pdf#page=20" target="_blank" rel="noopener" title="View source: board presentation 2026-04-01, slide 20" onclick="event.stopPropagation()"><span class="bar bar-coral" style="width:39px"></span>50%</a></td>
+            <td class="school-name" data-sort-value="clifford"><a href="/schools/clifford/">Clifford <span class="arrow">&rarr;</span></a></td>
+            <td data-sort-value="-1">TK-8</td>
+            <td class="num" data-sort-value="664">664</td>
+            <td class="num" data-sort-value="52">52%</td>
+            <td class="num" data-sort-value="62.8"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-04-01/Clifford-25-26-Data-for-Board-presentation.pdf#page=18" target="_blank" rel="noopener" title="View source: board presentation 2026-04-01, slide 18" onclick="event.stopPropagation()"><span class="bar bar-green" style="width:49px"></span>63%</a></td>
+            <td class="num" data-sort-value="50.3"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-04-01/Clifford-25-26-Data-for-Board-presentation.pdf#page=20" target="_blank" rel="noopener" title="View source: board presentation 2026-04-01, slide 20" onclick="event.stopPropagation()"><span class="bar bar-coral" style="width:39px"></span>50%</a></td>
           </tr>
           <tr onclick="location.href='/schools/garfield/'" style="cursor:pointer">
-            <td class="school-name"><a href="/schools/garfield/">Garfield <span class="arrow">&rarr;</span></a></td>
-            <td>K-5</td>
-            <td class="num">260</td>
-            <td class="num">97%</td>
-            <td class="num"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-03-25/Garfield-25-26-Data-for-Board-presentation-DRAFT.pdf#page=19" target="_blank" rel="noopener" title="View source: board presentation 2026-03-25, slide 19" onclick="event.stopPropagation()"><span class="bar bar-amber" style="width:47px"></span>61%</a></td>
-            <td class="num"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-03-25/Garfield-25-26-Data-for-Board-presentation-DRAFT.pdf#page=21" target="_blank" rel="noopener" title="View source: board presentation 2026-03-25, slide 21" onclick="event.stopPropagation()"><span class="bar bar-green" style="width:54px"></span>70%</a></td>
+            <td class="school-name" data-sort-value="garfield"><a href="/schools/garfield/">Garfield <span class="arrow">&rarr;</span></a></td>
+            <td data-sort-value="0">K-5</td>
+            <td class="num" data-sort-value="260">260</td>
+            <td class="num" data-sort-value="97">97%</td>
+            <td class="num" data-sort-value="60.5"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-03-25/Garfield-25-26-Data-for-Board-presentation-DRAFT.pdf#page=19" target="_blank" rel="noopener" title="View source: board presentation 2026-03-25, slide 19" onclick="event.stopPropagation()"><span class="bar bar-amber" style="width:47px"></span>61%</a></td>
+            <td class="num" data-sort-value="70.4"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-03-25/Garfield-25-26-Data-for-Board-presentation-DRAFT.pdf#page=21" target="_blank" rel="noopener" title="View source: board presentation 2026-03-25, slide 21" onclick="event.stopPropagation()"><span class="bar bar-green" style="width:54px"></span>70%</a></td>
           </tr>
           <tr onclick="location.href='/schools/henry-ford/'" style="cursor:pointer">
-            <td class="school-name"><a href="/schools/henry-ford/">Henry Ford <span class="arrow">&rarr;</span></a></td>
-            <td>TK-5</td>
-            <td class="num">461</td>
-            <td class="num">70%</td>
-            <td class="num"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-05-13/Henry-Ford-25-26-Data-for-Board-presentation.pdf#page=18" target="_blank" rel="noopener" title="View source: board presentation 2026-05-13, slide 18" onclick="event.stopPropagation()"><span class="bar bar-green" style="width:51px"></span>66%</a></td>
-            <td class="num"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-05-13/Henry-Ford-25-26-Data-for-Board-presentation.pdf#page=20" target="_blank" rel="noopener" title="View source: board presentation 2026-05-13, slide 20" onclick="event.stopPropagation()"><span class="bar bar-green" style="width:52px"></span>67%</a></td>
+            <td class="school-name" data-sort-value="henry ford"><a href="/schools/henry-ford/">Henry Ford <span class="arrow">&rarr;</span></a></td>
+            <td data-sort-value="-1">TK-5</td>
+            <td class="num" data-sort-value="461">461</td>
+            <td class="num" data-sort-value="70">70%</td>
+            <td class="num" data-sort-value="66.2"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-05-13/Henry-Ford-25-26-Data-for-Board-presentation.pdf#page=18" target="_blank" rel="noopener" title="View source: board presentation 2026-05-13, slide 18" onclick="event.stopPropagation()"><span class="bar bar-green" style="width:51px"></span>66%</a></td>
+            <td class="num" data-sort-value="67.2"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-05-13/Henry-Ford-25-26-Data-for-Board-presentation.pdf#page=20" target="_blank" rel="noopener" title="View source: board presentation 2026-05-13, slide 20" onclick="event.stopPropagation()"><span class="bar bar-green" style="width:52px"></span>67%</a></td>
           </tr>
           <tr onclick="location.href='/schools/hoover/'" style="cursor:pointer">
-            <td class="school-name"><a href="/schools/hoover/">Hoover <span class="arrow">&rarr;</span></a></td>
-            <td>TK-8</td>
-            <td class="num">659</td>
-            <td class="num">97%</td>
-            <td class="num"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-03-11/Hoover-25-26-Data-for-Board-presentation.pdf#page=20" target="_blank" rel="noopener" title="View source: board presentation 2026-03-11, slide 20" onclick="event.stopPropagation()"><span class="bar bar-amber" style="width:46px"></span>60%</a></td>
-            <td class="num"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-03-11/Hoover-25-26-Data-for-Board-presentation.pdf#page=22" target="_blank" rel="noopener" title="View source: board presentation 2026-03-11, slide 22" onclick="event.stopPropagation()"><span class="bar bar-coral" style="width:38px"></span>49%</a></td>
+            <td class="school-name" data-sort-value="hoover"><a href="/schools/hoover/">Hoover <span class="arrow">&rarr;</span></a></td>
+            <td data-sort-value="-1">TK-8</td>
+            <td class="num" data-sort-value="659">659</td>
+            <td class="num" data-sort-value="97">97%</td>
+            <td class="num" data-sort-value="59.6"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-03-11/Hoover-25-26-Data-for-Board-presentation.pdf#page=20" target="_blank" rel="noopener" title="View source: board presentation 2026-03-11, slide 20" onclick="event.stopPropagation()"><span class="bar bar-amber" style="width:46px"></span>60%</a></td>
+            <td class="num" data-sort-value="49.3"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-03-11/Hoover-25-26-Data-for-Board-presentation.pdf#page=22" target="_blank" rel="noopener" title="View source: board presentation 2026-03-11, slide 22" onclick="event.stopPropagation()"><span class="bar bar-coral" style="width:38px"></span>49%</a></td>
           </tr>
           <tr onclick="location.href='/schools/kennedy/'" style="cursor:pointer">
-            <td class="school-name"><a href="/schools/kennedy/">Kennedy <span class="arrow">&rarr;</span></a></td>
-            <td>6-8</td>
-            <td class="num">788</td>
-            <td class="num">69%</td>
-            <td class="num"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-04-22/Kennedy-25-26-Data-for-Board-presentation.pdf#page=22" target="_blank" rel="noopener" title="View source: board presentation 2026-04-22, slide 22" onclick="event.stopPropagation()"><span class="bar bar-coral" style="width:39px"></span>50%</a></td>
-            <td class="num"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-04-22/Kennedy-25-26-Data-for-Board-presentation.pdf#page=24" target="_blank" rel="noopener" title="View source: board presentation 2026-04-22, slide 24" onclick="event.stopPropagation()"><span class="bar bar-amber" style="width:40px"></span>52%</a></td>
+            <td class="school-name" data-sort-value="kennedy"><a href="/schools/kennedy/">Kennedy <span class="arrow">&rarr;</span></a></td>
+            <td data-sort-value="6">6-8</td>
+            <td class="num" data-sort-value="788">788</td>
+            <td class="num" data-sort-value="69">69%</td>
+            <td class="num" data-sort-value="50.2"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-04-22/Kennedy-25-26-Data-for-Board-presentation.pdf#page=22" target="_blank" rel="noopener" title="View source: board presentation 2026-04-22, slide 22" onclick="event.stopPropagation()"><span class="bar bar-coral" style="width:39px"></span>50%</a></td>
+            <td class="num" data-sort-value="51.8"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-04-22/Kennedy-25-26-Data-for-Board-presentation.pdf#page=24" target="_blank" rel="noopener" title="View source: board presentation 2026-04-22, slide 24" onclick="event.stopPropagation()"><span class="bar bar-amber" style="width:40px"></span>52%</a></td>
           </tr>
           <tr onclick="location.href='/schools/mckinley-mit/'" style="cursor:pointer">
-            <td class="school-name"><a href="/schools/mckinley-mit/">McKinley <span class="arrow">&rarr;</span></a></td>
-            <td>6-8</td>
-            <td class="num">401</td>
-            <td class="num">93%</td>
-            <td class="num"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-03-11/MIT-25-26-Data-for-Board-presentation.pdf#page=19" target="_blank" rel="noopener" title="View source: board presentation 2026-03-11, slide 19" onclick="event.stopPropagation()"><span class="bar bar-green" style="width:50px"></span>65%</a></td>
-            <td class="num"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-03-11/MIT-25-26-Data-for-Board-presentation.pdf#page=21" target="_blank" rel="noopener" title="View source: board presentation 2026-03-11, slide 21" onclick="event.stopPropagation()"><span class="bar bar-amber" style="width:42px"></span>55%</a></td>
+            <td class="school-name" data-sort-value="mckinley"><a href="/schools/mckinley-mit/">McKinley <span class="arrow">&rarr;</span></a></td>
+            <td data-sort-value="6">6-8</td>
+            <td class="num" data-sort-value="401">401</td>
+            <td class="num" data-sort-value="93">93%</td>
+            <td class="num" data-sort-value="65.1"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-03-11/MIT-25-26-Data-for-Board-presentation.pdf#page=19" target="_blank" rel="noopener" title="View source: board presentation 2026-03-11, slide 19" onclick="event.stopPropagation()"><span class="bar bar-green" style="width:50px"></span>65%</a></td>
+            <td class="num" data-sort-value="54.6"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-03-11/MIT-25-26-Data-for-Board-presentation.pdf#page=21" target="_blank" rel="noopener" title="View source: board presentation 2026-03-11, slide 21" onclick="event.stopPropagation()"><span class="bar bar-amber" style="width:42px"></span>55%</a></td>
           </tr>
           <tr onclick="location.href='/schools/north-star/'" style="cursor:pointer">
-            <td class="school-name"><a href="/schools/north-star/">North Star <span class="arrow">&rarr;</span></a></td>
-            <td>3-8</td>
-            <td class="num">553</td>
-            <td class="num">1%</td>
-            <td class="num"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-05-13/North-Star-25-26-Data-for-Board-presentation.pdf#page=20" target="_blank" rel="noopener" title="View source: board presentation 2026-05-13, slide 20" onclick="event.stopPropagation()"><span class="bar bar-amber" style="width:44px"></span>57%</a></td>
-            <td class="num"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-05-13/North-Star-25-26-Data-for-Board-presentation.pdf#page=22" target="_blank" rel="noopener" title="View source: board presentation 2026-05-13, slide 22" onclick="event.stopPropagation()"><span class="bar bar-green" style="width:45px"></span>59%</a></td>
+            <td class="school-name" data-sort-value="north star"><a href="/schools/north-star/">North Star <span class="arrow">&rarr;</span></a></td>
+            <td data-sort-value="3">3-8</td>
+            <td class="num" data-sort-value="553">553</td>
+            <td class="num" data-sort-value="1">1%</td>
+            <td class="num" data-sort-value="56.5"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-05-13/North-Star-25-26-Data-for-Board-presentation.pdf#page=20" target="_blank" rel="noopener" title="View source: board presentation 2026-05-13, slide 20" onclick="event.stopPropagation()"><span class="bar bar-amber" style="width:44px"></span>57%</a></td>
+            <td class="num" data-sort-value="58.8"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-05-13/North-Star-25-26-Data-for-Board-presentation.pdf#page=22" target="_blank" rel="noopener" title="View source: board presentation 2026-05-13, slide 22" onclick="event.stopPropagation()"><span class="bar bar-green" style="width:45px"></span>59%</a></td>
           </tr>
           <tr onclick="location.href='/schools/orion/'" style="cursor:pointer">
-            <td class="school-name"><a href="/schools/orion/">Orion <span class="arrow">&rarr;</span></a></td>
-            <td>TK-5</td>
-            <td class="num">549</td>
-            <td class="num">32%</td>
-            <td class="num"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-04-22/Orion-25-26-Data-for-Board-presentation.pdf#page=20" target="_blank" rel="noopener" title="View source: board presentation 2026-04-22, slide 20" onclick="event.stopPropagation()"><span class="bar bar-green" style="width:53px"></span>68%</a></td>
-            <td class="num"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-04-22/Orion-25-26-Data-for-Board-presentation.pdf#page=22" target="_blank" rel="noopener" title="View source: board presentation 2026-04-22, slide 22" onclick="event.stopPropagation()"><span class="bar bar-green" style="width:47px"></span>61%</a></td>
+            <td class="school-name" data-sort-value="orion"><a href="/schools/orion/">Orion <span class="arrow">&rarr;</span></a></td>
+            <td data-sort-value="-1">TK-5</td>
+            <td class="num" data-sort-value="549">549</td>
+            <td class="num" data-sort-value="32">32%</td>
+            <td class="num" data-sort-value="68.2"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-04-22/Orion-25-26-Data-for-Board-presentation.pdf#page=20" target="_blank" rel="noopener" title="View source: board presentation 2026-04-22, slide 20" onclick="event.stopPropagation()"><span class="bar bar-green" style="width:53px"></span>68%</a></td>
+            <td class="num" data-sort-value="60.6"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-04-22/Orion-25-26-Data-for-Board-presentation.pdf#page=22" target="_blank" rel="noopener" title="View source: board presentation 2026-04-22, slide 22" onclick="event.stopPropagation()"><span class="bar bar-green" style="width:47px"></span>61%</a></td>
           </tr>
           <tr onclick="location.href='/schools/roosevelt/'" style="cursor:pointer">
-            <td class="school-name"><a href="/schools/roosevelt/">Roosevelt <span class="arrow">&rarr;</span></a></td>
-            <td>TK-5</td>
-            <td class="num">344</td>
-            <td class="num">73%</td>
-            <td class="num"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-03-11/Roosevelt-25-26-Board-presentation.pdf#page=19" target="_blank" rel="noopener" title="View source: board presentation 2026-03-11, slide 19" onclick="event.stopPropagation()"><span class="bar bar-amber" style="width:45px"></span>58%</a></td>
-            <td class="num"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-03-11/Roosevelt-25-26-Board-presentation.pdf#page=21" target="_blank" rel="noopener" title="View source: board presentation 2026-03-11, slide 21" onclick="event.stopPropagation()"><span class="bar bar-coral" style="width:37px"></span>48%</a></td>
+            <td class="school-name" data-sort-value="roosevelt"><a href="/schools/roosevelt/">Roosevelt <span class="arrow">&rarr;</span></a></td>
+            <td data-sort-value="-1">TK-5</td>
+            <td class="num" data-sort-value="344">344</td>
+            <td class="num" data-sort-value="73">73%</td>
+            <td class="num" data-sort-value="58.4"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-03-11/Roosevelt-25-26-Board-presentation.pdf#page=19" target="_blank" rel="noopener" title="View source: board presentation 2026-03-11, slide 19" onclick="event.stopPropagation()"><span class="bar bar-amber" style="width:45px"></span>58%</a></td>
+            <td class="num" data-sort-value="47.5"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-03-11/Roosevelt-25-26-Board-presentation.pdf#page=21" target="_blank" rel="noopener" title="View source: board presentation 2026-03-11, slide 21" onclick="event.stopPropagation()"><span class="bar bar-coral" style="width:37px"></span>48%</a></td>
           </tr>
           <tr onclick="location.href='/schools/roy-cloud/'" style="cursor:pointer">
-            <td class="school-name"><a href="/schools/roy-cloud/">Roy Cloud <span class="arrow">&rarr;</span></a></td>
-            <td>TK-8</td>
-            <td class="num">665</td>
-            <td class="num">16%</td>
-            <td class="num"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-04-01/Roy-cloud-25-26-Data-for-Board-presentation-1.pdf#page=20" target="_blank" rel="noopener" title="View source: board presentation 2026-04-01, slide 20" onclick="event.stopPropagation()"><span class="bar bar-green" style="width:49px"></span>64%</a></td>
-            <td class="num"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-04-01/Roy-cloud-25-26-Data-for-Board-presentation-1.pdf#page=22" target="_blank" rel="noopener" title="View source: board presentation 2026-04-01, slide 22" onclick="event.stopPropagation()"><span class="bar bar-green" style="width:46px"></span>59%</a></td>
+            <td class="school-name" data-sort-value="roy cloud"><a href="/schools/roy-cloud/">Roy Cloud <span class="arrow">&rarr;</span></a></td>
+            <td data-sort-value="-1">TK-8</td>
+            <td class="num" data-sort-value="665">665</td>
+            <td class="num" data-sort-value="16">16%</td>
+            <td class="num" data-sort-value="64"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-04-01/Roy-cloud-25-26-Data-for-Board-presentation-1.pdf#page=20" target="_blank" rel="noopener" title="View source: board presentation 2026-04-01, slide 20" onclick="event.stopPropagation()"><span class="bar bar-green" style="width:49px"></span>64%</a></td>
+            <td class="num" data-sort-value="59.4"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-04-01/Roy-cloud-25-26-Data-for-Board-presentation-1.pdf#page=22" target="_blank" rel="noopener" title="View source: board presentation 2026-04-01, slide 22" onclick="event.stopPropagation()"><span class="bar bar-green" style="width:46px"></span>59%</a></td>
           </tr>
           <tr onclick="location.href='/schools/taft/'" style="cursor:pointer">
-            <td class="school-name"><a href="/schools/taft/">Taft <span class="arrow">&rarr;</span></a></td>
-            <td>TK-5</td>
-            <td class="num">325</td>
-            <td class="num">97%</td>
-            <td class="num"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-03-25/Taft-25-26-Board-Presentation.pdf#page=21" target="_blank" rel="noopener" title="View source: board presentation 2026-03-25, slide 21" onclick="event.stopPropagation()"><span class="bar bar-green" style="width:51px"></span>65%</a></td>
-            <td class="num"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-03-25/Taft-25-26-Board-Presentation.pdf#page=23" target="_blank" rel="noopener" title="View source: board presentation 2026-03-25, slide 23" onclick="event.stopPropagation()"><span class="bar bar-green" style="width:47px"></span>61%</a></td>
+            <td class="school-name" data-sort-value="taft"><a href="/schools/taft/">Taft <span class="arrow">&rarr;</span></a></td>
+            <td data-sort-value="-1">TK-5</td>
+            <td class="num" data-sort-value="325">325</td>
+            <td class="num" data-sort-value="97">97%</td>
+            <td class="num" data-sort-value="65.4"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-03-25/Taft-25-26-Board-Presentation.pdf#page=21" target="_blank" rel="noopener" title="View source: board presentation 2026-03-25, slide 21" onclick="event.stopPropagation()"><span class="bar bar-green" style="width:51px"></span>65%</a></td>
+            <td class="num" data-sort-value="61.2"><a class="growth-cell-link" href="https://data.rcsd.info/board-packets/2026-03-25/Taft-25-26-Board-Presentation.pdf#page=23" target="_blank" rel="noopener" title="View source: board presentation 2026-03-25, slide 23" onclick="event.stopPropagation()"><span class="bar bar-green" style="width:47px"></span>61%</a></td>
           </tr>
         </tbody>
       </table>
@@ -376,37 +394,37 @@
     <h2>RCSD-authorized charter schools</h2>
     <p class="section-intro">Three directly-funded charter schools. Their budgets, interim reports, and audits are presented regularly to the Board as part of the district’s fiscal oversight role.</p>
     <div class="schools-table-wrap">
-      <table>
+      <table class="sortable">
         <thead>
           <tr>
-            <th>School</th>
-            <th>Grades</th>
-            <th class="num">Enrollment</th>
-            <th>Network</th>
-            <th class="num">Opened</th>
+            <th data-sort-type="text" data-sort-initial="asc" aria-sort="ascending">School</th>
+            <th data-sort-type="num">Grades</th>
+            <th class="num" data-sort-type="num">Enrollment</th>
+            <th data-sort-type="text">Network</th>
+            <th class="num" data-sort-type="num">Opened</th>
           </tr>
         </thead>
         <tbody>
           <tr onclick="location.href='/schools/charters/connect/'" style="cursor:pointer">
-            <td class="school-name"><a href="/schools/charters/connect/">Connect Community Charter School <span class="arrow">&rarr;</span></a></td>
-            <td>K-8</td>
-            <td class="num">142</td>
+            <td class="school-name" data-sort-value="connect community charter school"><a href="/schools/charters/connect/">Connect Community Charter School <span class="arrow">&rarr;</span></a></td>
+            <td data-sort-value="0">K-8</td>
+            <td class="num" data-sort-value="142">142</td>
             <td>Independent</td>
-            <td class="num">2013</td>
+            <td class="num" data-sort-value="2013">2013</td>
           </tr>
           <tr onclick="location.href='/schools/charters/kipp-excelencia/'" style="cursor:pointer">
-            <td class="school-name"><a href="/schools/charters/kipp-excelencia/">KIPP Excelencia Community Preparatory <span class="arrow">&rarr;</span></a></td>
-            <td>TK-8</td>
-            <td class="num">704</td>
+            <td class="school-name" data-sort-value="kipp excelencia community preparatory"><a href="/schools/charters/kipp-excelencia/">KIPP Excelencia Community Preparatory <span class="arrow">&rarr;</span></a></td>
+            <td data-sort-value="-1">TK-8</td>
+            <td class="num" data-sort-value="704">704</td>
             <td>KIPP Public Schools Northern California (KIPP NorCal)</td>
-            <td class="num">2015</td>
+            <td class="num" data-sort-value="2015">2015</td>
           </tr>
           <tr onclick="location.href='/schools/charters/rocketship-redwood-city/'" style="cursor:pointer">
-            <td class="school-name"><a href="/schools/charters/rocketship-redwood-city/">Rocketship Redwood City Prep <span class="arrow">&rarr;</span></a></td>
-            <td>TK-5</td>
-            <td class="num">273</td>
+            <td class="school-name" data-sort-value="rocketship redwood city prep"><a href="/schools/charters/rocketship-redwood-city/">Rocketship Redwood City Prep <span class="arrow">&rarr;</span></a></td>
+            <td data-sort-value="-1">TK-5</td>
+            <td class="num" data-sort-value="273">273</td>
             <td>Rocketship Public Schools</td>
-            <td class="num">2015</td>
+            <td class="num" data-sort-value="2015">2015</td>
           </tr>
         </tbody>
       </table>
@@ -417,39 +435,39 @@
     <h2>Other district properties</h2>
     <p class="section-intro">Buildings and sites owned (or leased) by the district that do not currently host a district-operated school or an RCSD-authorized charter.</p>
     <div class="schools-table-wrap">
-      <table>
+      <table class="sortable">
         <thead>
           <tr>
-            <th>Property</th>
-            <th>Address</th>
-            <th>Current use</th>
-            <th>Former use</th>
+            <th data-sort-type="text" data-sort-initial="asc" aria-sort="ascending">Property</th>
+            <th data-sort-type="text">Address</th>
+            <th data-sort-type="text">Current use</th>
+            <th data-sort-type="text">Former use</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td class="school-name">District Office</td>
-            <td>750 Bradford Street, Redwood City, CA 94063</td>
-            <td>District administrative headquarters</td>
-            <td>&mdash;</td>
+            <td class="school-name" data-sort-value="district office">District Office</td>
+            <td data-sort-value="750 bradford street, redwood city, ca 94063">750 Bradford Street, Redwood City, CA 94063</td>
+            <td data-sort-value="district administrative headquarters">District administrative headquarters</td>
+            <td data-sort-value="">&mdash;</td>
           </tr>
           <tr>
-            <td class="school-name"><a href="https://www.harperschool.org" target="_blank" rel="noopener">Harper School (private) <span style="font-size:0.8em; color:var(--text-muted)">&#8599;</span></a></td>
-            <td>3150 Granger Way, Redwood City, CA 94063</td>
-            <td>Leased to a private school tenant</td>
-            <td>Former Adelante Selby Spanish Immersion campus</td>
+            <td class="school-name" data-sort-value="harper school (private)"><a href="https://www.harperschool.org" target="_blank" rel="noopener">Harper School (private) <span style="font-size:0.8em; color:var(--text-muted)">&#8599;</span></a></td>
+            <td data-sort-value="3150 granger way, redwood city, ca 94063">3150 Granger Way, Redwood City, CA 94063</td>
+            <td data-sort-value="leased to a private school tenant">Leased to a private school tenant</td>
+            <td data-sort-value="former adelante selby spanish immersion campus">Former Adelante Selby Spanish Immersion campus</td>
           </tr>
           <tr>
-            <td class="school-name">Creative Learning Center</td>
-            <td>815 Allerton Street, Redwood City, CA 94063</td>
-            <td>District-operated program (not a full school)</td>
-            <td>Former Orion Alternative School campus (Orion is now at 555 Avenue del Ora)</td>
+            <td class="school-name" data-sort-value="creative learning center">Creative Learning Center</td>
+            <td data-sort-value="815 allerton street, redwood city, ca 94063">815 Allerton Street, Redwood City, CA 94063</td>
+            <td data-sort-value="district-operated program (not a full school)">District-operated program (not a full school)</td>
+            <td data-sort-value="former orion alternative school campus (orion is now at 555 avenue del ora)">Former Orion Alternative School campus (Orion is now at 555 Avenue del Ora)</td>
           </tr>
           <tr>
-            <td class="school-name">District storage warehouse</td>
-            <td>1757 East Bayshore Road, Suites 4 & 6, Redwood City, CA 94063</td>
-            <td>Leased by the district (landlord: East Bayshore Investment Group, managed by Beals Martin Inc.)</td>
-            <td>&mdash;</td>
+            <td class="school-name" data-sort-value="district storage warehouse">District storage warehouse</td>
+            <td data-sort-value="1757 east bayshore road, suites 4 & 6, redwood city, ca 94063">1757 East Bayshore Road, Suites 4 & 6, Redwood City, CA 94063</td>
+            <td data-sort-value="leased by the district (landlord: east bayshore investment group, managed by beals martin inc.)">Leased by the district (landlord: East Bayshore Investment Group, managed by Beals Martin Inc.)</td>
+            <td data-sort-value="">&mdash;</td>
           </tr>
         </tbody>
       </table>
@@ -469,6 +487,70 @@
     <a href="mailto:team@rcsd.info">team@rcsd.info</a>
   </div>
 </footer>
+
+<script>
+(function () {
+  function init(table) {
+    var ths = table.querySelectorAll('thead th[data-sort-type]');
+    var tbody = table.tBodies[0];
+    if (!tbody) return;
+    var current = { idx: -1, dir: null };
+    ths.forEach(function (th) { if (th.getAttribute('aria-sort') === 'ascending') { current.idx = th.cellIndex; current.dir = 'asc'; } });
+
+    function sort(idx, dir) {
+      var th = ths[Array.prototype.findIndex.call(ths, function (t) { return t.cellIndex === idx; })];
+      var type = th.getAttribute('data-sort-type') || 'text';
+      var rows = Array.prototype.slice.call(tbody.rows);
+      rows.sort(function (a, b) {
+        var av = a.children[idx].getAttribute('data-sort-value');
+        var bv = b.children[idx].getAttribute('data-sort-value');
+        if (av === null) av = a.children[idx].textContent.trim();
+        if (bv === null) bv = b.children[idx].textContent.trim();
+        var aMissing = av === '' || av == null;
+        var bMissing = bv === '' || bv == null;
+        if (aMissing && bMissing) return 0;
+        if (aMissing) return 1;  // missing always sorts last
+        if (bMissing) return -1;
+        if (type === 'num') {
+          var an = parseFloat(av), bn = parseFloat(bv);
+          if (isNaN(an) && isNaN(bn)) return 0;
+          if (isNaN(an)) return 1;
+          if (isNaN(bn)) return -1;
+          return dir === 'asc' ? an - bn : bn - an;
+        }
+        var as = String(av).toLowerCase(), bs = String(bv).toLowerCase();
+        if (as < bs) return dir === 'asc' ? -1 : 1;
+        if (as > bs) return dir === 'asc' ? 1 : -1;
+        return 0;
+      });
+      var frag = document.createDocumentFragment();
+      rows.forEach(function (r) { frag.appendChild(r); });
+      tbody.appendChild(frag);
+      ths.forEach(function (t) {
+        t.setAttribute('aria-sort', t.cellIndex === idx ? (dir === 'asc' ? 'ascending' : 'descending') : 'none');
+      });
+      current.idx = idx; current.dir = dir;
+    }
+
+    ths.forEach(function (th) {
+      th.setAttribute('role', 'button');
+      th.setAttribute('tabindex', '0');
+      if (!th.hasAttribute('aria-sort')) th.setAttribute('aria-sort', 'none');
+      function trigger() {
+        var idx = th.cellIndex;
+        var type = th.getAttribute('data-sort-type') || 'text';
+        var dir = current.idx === idx ? (current.dir === 'asc' ? 'desc' : 'asc') : (type === 'num' ? 'desc' : 'asc');
+        sort(idx, dir);
+      }
+      th.addEventListener('click', trigger);
+      th.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); trigger(); }
+      });
+    });
+  }
+  document.querySelectorAll('table.sortable').forEach(init);
+})();
+</script>
 
 </body>
 </html>
