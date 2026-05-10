@@ -1,11 +1,37 @@
 {
   "slug": "henry-ford",
-  "status": "pending_25_26_presentation",
-  "note": "This school has not yet presented 2025-26 data to the Board of Trustees. Growth figures will be published here once the presentation occurs. Their most recent (2024-25) deck pre-dates the current LCAP Goal #3 \"% meeting i-Ready Expected Growth\" table format, so we are not backfilling from it to avoid metric confusion.",
-  "lastPresentation": {
-    "date": "2025-03-12",
-    "pdfUrl": "https://go.boarddocs.com/ca/redwood/Board.nsf/files/DEGT9C7640F7/$file/Henry%20Ford%2024-25%20Data%20for%20Board%20presentation%20-%20(1).pdf"
+  "source": {
+    "presentationDate": "2026-05-13",
+    "pdfUrl": "https://data.rcsd.info/board-packets/2026-05-13/Henry-Ford-25-26-Data-for-Board-presentation.pdf",
+    "extractor": "scripts/extract-ireadyu-growth.mjs",
+    "extractedAt": "2026-05-10"
   },
-  "reading": null,
-  "math": null
+  "reading": {
+    "metric": "% of students meeting i-Ready Expected Growth",
+    "target": "4 percentage point increase each year",
+    "studentGroup": "All students",
+    "base_23_24": 54.4,
+    "y1_24_25_expected": 58.4,
+    "y1_24_25_actual": 63.9,
+    "y2_25_26_expected": 67.9,
+    "y2_25_26_midyear": 66.2,
+    "rawLine": "increase   All students   Increase    54.4%       58.4%       63.9%       67.9%       66.2%",
+    "source": {
+      "pdfPage": 18
+    }
+  },
+  "math": {
+    "metric": "% of students meeting i-Ready Expected Growth",
+    "target": "4 percentage point increase each year",
+    "studentGroup": "All students",
+    "base_23_24": 37.2,
+    "y1_24_25_expected": 41.2,
+    "y1_24_25_actual": 43.5,
+    "y2_25_26_expected": 47.5,
+    "y2_25_26_midyear": 67.2,
+    "rawLine": "Expected                   All students Increase    37.2%       41.2%       43.5%       47.5%       67.2%",
+    "source": {
+      "pdfPage": 20
+    }
+  }
 }

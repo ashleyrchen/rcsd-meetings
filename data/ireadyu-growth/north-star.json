@@ -1,11 +1,37 @@
 {
   "slug": "north-star",
-  "status": "pending_25_26_presentation",
-  "note": "This school has not yet presented 2025-26 data to the Board of Trustees. Growth figures will be published here once the presentation occurs. Their most recent (2024-25) deck pre-dates the current LCAP Goal #3 \"% meeting i-Ready Expected Growth\" table format, so we are not backfilling from it to avoid metric confusion.",
-  "lastPresentation": {
-    "date": "2024-11-20",
-    "pdfUrl": "https://go.boarddocs.com/ca/redwood/Board.nsf/files/DB6Q9Y684907/$file/North%20Star%2024-25%20Data%20for%20Board%20presentation.pdf"
+  "source": {
+    "presentationDate": "2026-05-13",
+    "pdfUrl": "https://data.rcsd.info/board-packets/2026-05-13/North-Star-25-26-Data-for-Board-presentation.pdf",
+    "extractor": "scripts/extract-ireadyu-growth.mjs",
+    "extractedAt": "2026-05-10"
   },
-  "reading": null,
-  "math": null
+  "reading": {
+    "metric": "% of students meeting i-Ready Expected Growth",
+    "target": "4 percentage point increase each year",
+    "studentGroup": "All students",
+    "base_23_24": 61.2,
+    "y1_24_25_expected": 65.2,
+    "y1_24_25_actual": 51.8,
+    "y2_25_26_expected": 55.8,
+    "y2_25_26_midyear": 56.5,
+    "rawLine": "All students    Increase   61.2%    65.2%     51.8%     55.8%      56.5%",
+    "source": {
+      "pdfPage": 20
+    }
+  },
+  "math": {
+    "metric": "% of students meeting i-Ready Expected Growth",
+    "target": "4 percentage point increase each year",
+    "studentGroup": "All students",
+    "base_23_24": 65.1,
+    "y1_24_25_expected": 69.1,
+    "y1_24_25_actual": 47.1,
+    "y2_25_26_expected": 51.1,
+    "y2_25_26_midyear": 58.8,
+    "rawLine": "All students   Increase   65.1%      69.1%   47.1%    51.1%     58.8%",
+    "source": {
+      "pdfPage": 22
+    }
+  }
 }

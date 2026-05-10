@@ -34,9 +34,11 @@ const SOURCES = [
   { slug: 'adelante-selby', date: '2026-04-22', url: 'https://data.rcsd.info/board-packets/2026-04-22/Adelante-Selby-25-26-Data-for-Board-presentation.pdf' },
   { slug: 'clifford',       date: '2026-04-01', url: 'https://data.rcsd.info/board-packets/2026-04-01/Clifford-25-26-Data-for-Board-presentation.pdf' },
   { slug: 'garfield',       date: '2026-03-25', url: 'https://data.rcsd.info/board-packets/2026-03-25/Garfield-25-26-Data-for-Board-presentation-DRAFT.pdf' },
+  { slug: 'henry-ford',     date: '2026-05-13', url: 'https://data.rcsd.info/board-packets/2026-05-13/Henry-Ford-25-26-Data-for-Board-presentation.pdf' },
   { slug: 'hoover',         date: '2026-03-11', url: 'https://data.rcsd.info/board-packets/2026-03-11/Hoover-25-26-Data-for-Board-presentation.pdf' },
   { slug: 'kennedy',        date: '2026-04-22', url: 'https://data.rcsd.info/board-packets/2026-04-22/Kennedy-25-26-Data-for-Board-presentation.pdf' },
   { slug: 'mckinley-mit',   date: '2026-03-11', url: 'https://data.rcsd.info/board-packets/2026-03-11/MIT-25-26-Data-for-Board-presentation.pdf' },
+  { slug: 'north-star',     date: '2026-05-13', url: 'https://data.rcsd.info/board-packets/2026-05-13/North-Star-25-26-Data-for-Board-presentation.pdf' },
   { slug: 'orion',          date: '2026-04-22', url: 'https://data.rcsd.info/board-packets/2026-04-22/Orion-25-26-Data-for-Board-presentation.pdf' },
   { slug: 'roosevelt',      date: '2026-03-11', url: 'https://data.rcsd.info/board-packets/2026-03-11/Roosevelt-25-26-Board-presentation.pdf' },
   { slug: 'roy-cloud',      date: '2026-04-01', url: 'https://data.rcsd.info/board-packets/2026-04-01/Roy-cloud-25-26-Data-for-Board-presentation-1.pdf' },
@@ -50,18 +52,7 @@ const SOURCES = [
 // grade level), which is a different metric and would be misleading to
 // display on the same card. When these schools present 25-26 data, move
 // them to SOURCES and re-run the extractor.
-const PENDING_SOURCES = [
-  {
-    slug: 'henry-ford',
-    lastPresentationDate: '2025-03-12',
-    lastPresentationUrl: 'https://go.boarddocs.com/ca/redwood/Board.nsf/files/DEGT9C7640F7/$file/Henry%20Ford%2024-25%20Data%20for%20Board%20presentation%20-%20(1).pdf',
-  },
-  {
-    slug: 'north-star',
-    lastPresentationDate: '2024-11-20',
-    lastPresentationUrl: 'https://go.boarddocs.com/ca/redwood/Board.nsf/files/DB6Q9Y684907/$file/North%20Star%2024-25%20Data%20for%20Board%20presentation.pdf',
-  },
-];
+const PENDING_SOURCES = [];
 
 function ensureCached(url) {
   mkdirSync(CACHE_DIR, { recursive: true });

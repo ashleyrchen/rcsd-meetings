@@ -69,6 +69,29 @@
     "mathPage": 21
   },
   {
+    "slug": "henry-ford",
+    "readingOk": true,
+    "mathOk": true,
+    "reading": {
+      "base_23_24": 54.4,
+      "y1_24_25_expected": 58.4,
+      "y1_24_25_actual": 63.9,
+      "y2_25_26_expected": 67.9,
+      "y2_25_26_midyear": 66.2,
+      "rawLine": "increase   All students   Increase    54.4%       58.4%       63.9%       67.9%       66.2%"
+    },
+    "math": {
+      "base_23_24": 37.2,
+      "y1_24_25_expected": 41.2,
+      "y1_24_25_actual": 43.5,
+      "y2_25_26_expected": 47.5,
+      "y2_25_26_midyear": 67.2,
+      "rawLine": "Expected                   All students Increase    37.2%       41.2%       43.5%       47.5%       67.2%"
+    },
+    "readingPage": 18,
+    "mathPage": 20
+  },
+  {
     "slug": "hoover",
     "readingOk": true,
     "mathOk": true,
@@ -136,6 +159,29 @@
     },
     "readingPage": 19,
     "mathPage": 21
+  },
+  {
+    "slug": "north-star",
+    "readingOk": true,
+    "mathOk": true,
+    "reading": {
+      "base_23_24": 61.2,
+      "y1_24_25_expected": 65.2,
+      "y1_24_25_actual": 51.8,
+      "y2_25_26_expected": 55.8,
+      "y2_25_26_midyear": 56.5,
+      "rawLine": "All students    Increase   61.2%    65.2%     51.8%     55.8%      56.5%"
+    },
+    "math": {
+      "base_23_24": 65.1,
+      "y1_24_25_expected": 69.1,
+      "y1_24_25_actual": 47.1,
+      "y2_25_26_expected": 51.1,
+      "y2_25_26_midyear": 58.8,
+      "rawLine": "All students   Increase   65.1%      69.1%   47.1%    51.1%     58.8%"
+    },
+    "readingPage": 20,
+    "mathPage": 22
   },
   {
     "slug": "orion",
