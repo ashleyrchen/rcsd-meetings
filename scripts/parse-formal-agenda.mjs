@@ -79,7 +79,7 @@ export function parseSimbliAgenda(memoItems) {
         actionType: inferActionType(raw),
         speaker: item.memo?.Speaker || null,
         attachments: (item.attachments || []).map(a => ({
-          title: a.name, aid: a.aid, filename: a.filename,
+          title: a.name, aid: a.aid, filename: a.filename, href: a.href,
         })),
       });
       continue;
@@ -131,7 +131,7 @@ export function parseSimbliAgenda(memoItems) {
         actionType: sectionActionType,
         speaker: item.memo?.Speaker || null,
         attachments: (item.attachments || []).map(a => ({
-          title: a.name, aid: a.aid, filename: a.filename,
+          title: a.name, aid: a.aid, filename: a.filename, href: a.href,
         })),
       });
     } else {
@@ -159,7 +159,7 @@ export function parseSimbliAgenda(memoItems) {
         actionType: itemActionType,
         speaker: item.memo?.Speaker || null,
         attachments: (item.attachments || []).map(a => ({
-          title: a.name, aid: a.aid, filename: a.filename,
+          title: a.name, aid: a.aid, filename: a.filename, href: a.href,
         })),
       });
     }
