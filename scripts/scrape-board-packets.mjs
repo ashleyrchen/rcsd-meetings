@@ -266,12 +266,26 @@ async function scrapeOneMeeting(meeting, pdfDir, memoDir) {
       return null;
     }
 
-    // Iterate through all items using the Next button
-    const items = [];
+    // Iterate through all items using the Next button.
+    //
+    // This script enriches existing memo data (written by scrape-simbli-agendas.mjs)
+    // with prose memo fields and downloaded PDF filenames — it MUST NOT replace
+    // the authoritative item list, because that scraper captures external
+    // hyperlinks (HyperLink entries) and any items beyond MAX_ITEMS.
+    const existingMemoPath = resolve(memoDir, `${date}.json`);
+    let existingMemo = null;
+    if (existsSync(existingMemoPath)) {
+      try { existingMemo = JSON.parse(readFileSync(existingMemoPath, 'utf-8')); }
+      catch { existingMemo = null; }
+    }
+
+    const scrapedItems = [];
     let firstItemTitle = null;
     let itemOrder = 0;
     const meetingFilenames = new Set(); // track filenames across entire meeting to avoid collisions
-    const MAX_ITEMS = 60; // safety limit
+    // Long policy-heavy agendas can exceed 80 items; raise the cap accordingly
+    // and rely on loop-back detection to stop early.
+    const MAX_ITEMS = 200;
 
     while (itemOrder < MAX_ITEMS) {
       itemOrder++;
@@ -330,7 +344,7 @@ async function scrapeOneMeeting(meeting, pdfDir, memoDir) {
         await randomDelay(DELAY_BETWEEN_DOWNLOADS);
       }
 
-      items.push({
+      scrapedItems.push({
         order: itemOrder,
         title: currentTitle,
         memo: itemData.memo,
@@ -356,16 +370,51 @@ async function scrapeOneMeeting(meeting, pdfDir, memoDir) {
       await randomDelay(DELAY_BETWEEN_ITEMS);
     }
 
-    // Save memo data
+    // Merge scraped enrichments into existing memo. If no prior memo exists,
+    // write a fresh file from what we scraped (legacy behavior for first run).
+    let outItems;
+    if (existingMemo && Array.isArray(existingMemo.items) && existingMemo.items.length > 0) {
+      const scrapedByTitle = new Map();
+      for (const s of scrapedItems) {
+        if (s.title) scrapedByTitle.set(s.title.trim(), s);
+      }
+      outItems = existingMemo.items.map(orig => {
+        const scraped = scrapedByTitle.get((orig.title || '').trim());
+        if (!scraped) return orig;
+        const memo = (scraped.memo && Object.keys(scraped.memo).length > 0)
+          ? scraped.memo
+          : (orig.memo || {});
+        // Overlay filename/cached fields from scraped onto matching attachments by aid.
+        const scrapedByAid = new Map();
+        for (const a of scraped.attachments || []) {
+          if (a.aid) scrapedByAid.set(String(a.aid), a);
+        }
+        const attachments = (orig.attachments || []).map(a => {
+          if (!a.aid) return a;
+          const s = scrapedByAid.get(String(a.aid));
+          if (!s) return a;
+          const merged = { ...a };
+          if (s.filename) merged.filename = s.filename;
+          if (s.cached !== undefined) merged.cached = s.cached;
+          if (s.failed) merged.failed = s.failed;
+          return merged;
+        });
+        return { ...orig, memo, attachments };
+      });
+    } else {
+      outItems = scrapedItems;
+    }
+
     const memoData = {
       date,
       mid,
       scrapedAt: new Date().toISOString(),
-      items,
+      ...(existingMemo?.zoom ? { zoom: existingMemo.zoom } : {}),
+      items: outItems,
     };
     const memoPath = resolve(memoDir, `${date}.json`);
     writeFileSync(memoPath, JSON.stringify(memoData, null, 2));
-    console.log(`\n  Saved memo data: ${memoPath} (${items.length} items)`);
+    console.log(`\n  Saved memo data: ${memoPath} (${outItems.length} items, ${scrapedItems.length} scraped)`);
 
     return memoData;
   } catch (e) {
