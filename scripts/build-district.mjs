@@ -845,7 +845,7 @@ ${headMeta({
   description: page.description,
   canonical: page.canonical,
   ogLocale: page.ogLocale,
-  ogImageKey: 'page-district',
+  ogImageKey: `page-district${page.lang === 'es' ? '-es' : ''}`,
   hreflang: page.hreflang,
   pageCSS: districtCSS,
 })}

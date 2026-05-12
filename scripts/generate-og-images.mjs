@@ -9,12 +9,12 @@
  *
  * Output: artifacts/og/<kind>-<slug>.png at 1200x630.
  *
- * Templates:
- *   meeting-{slug}        Board meeting detail card
- *   school-{slug}         Per-school card (12 schools)
- *   charter-{slug}        Charter school card (3 charters)
- *   blog-{slug}           Blog post card
- *   page-{name}           Top-level page (home, meetings, schools, district, budget, blog)
+ * Templates (each rendered in EN and ES; -es suffix for Spanish variant):
+ *   meeting-{slug}[-es]   Board meeting detail card
+ *   school-{slug}[-es]    Per-school card (12 schools)
+ *   charter-{slug}[-es]   Charter school card (3 charters)
+ *   blog-{slug}           Blog post card (ES posts have their own ES slug)
+ *   page-{name}[-es]      Top-level page (home, meetings, schools, district, budget, blog)
  *
  * Caching: skips regeneration if the output PNG is newer than this script
  * AND newer than the upstream data file.
@@ -31,7 +31,8 @@ import { readFileSync, writeFileSync, existsSync, mkdirSync, statSync, readdirSy
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 const ROOT = resolve(__dirname, '..');
 const OUT_DIR = resolve(ROOT, 'artifacts/og');
 const FONT_DIR = resolve(ROOT, 'node_modules/@fontsource');
@@ -61,6 +62,67 @@ const FONTS = [
   loadFont('IBM Plex Mono', 400),
   loadFont('IBM Plex Mono', 500),
 ];
+
+// ---- localization ----
+//
+// Sixth-grade Californian Spanish — prefer colloquial / borrowed English
+// terms over literary Spanish (e.g. "blog" not "bitácora"). Matches
+// established RCSD-family voice on the rest of the site.
+
+const STRINGS = {
+  en: {
+    tagline: 'Open Data',
+    district: 'Redwood City School District',
+    rcsdShort: 'RCSD',
+    meetingTitles: {
+      'Regular': { headline: 'Board of Trustees', sub: 'Regular Meeting' },
+      'Special': { headline: 'Special Session', sub: '' },
+      'Special (Closed)': { headline: 'Closed Session', sub: '' },
+      'Retreat (Offsite)': { headline: 'Board Retreat', sub: 'Offsite' },
+      'Workshop': { headline: 'Workshop', sub: '' },
+      'Study Session': { headline: 'Study Session', sub: '' },
+      _default: { headline: 'Board Meeting', sub: '' },
+    },
+    plannedMins: (h, m) => h ? (m ? `${h}h ${m}m planned` : `${h}h planned`) : `${m}m planned`,
+    agendaItems: n => `${n} agenda items`,
+    videoTranscript: 'Video + Transcript',
+    video: 'Video',
+    liveZoom: 'Live on Zoom',
+    grades: span => `Grades ${span.replace(/^Grades?\s+/i, '')}`,
+    principal: name => `Principal ${name}`,
+    students: n => `${n} students`,
+    highNeed: pct => `${pct}% high-need`,
+    charterEyebrow: 'CHARTER SCHOOL',
+    schoolEyebrowFallback: 'REDWOOD CITY SCHOOL DISTRICT',
+    dateLocale: 'en-US',
+  },
+  es: {
+    tagline: 'Datos Abiertos',
+    district: 'Distrito Escolar de Redwood City',
+    rcsdShort: 'RCSD',
+    meetingTitles: {
+      'Regular': { headline: 'Junta de Síndicos', sub: 'Reunión Regular' },
+      'Special': { headline: 'Sesión Especial', sub: '' },
+      'Special (Closed)': { headline: 'Sesión Cerrada', sub: '' },
+      'Retreat (Offsite)': { headline: 'Retiro de la Junta', sub: 'Fuera del distrito' },
+      'Workshop': { headline: 'Taller', sub: '' },
+      'Study Session': { headline: 'Sesión de Estudio', sub: '' },
+      _default: { headline: 'Reunión de la Junta', sub: '' },
+    },
+    plannedMins: (h, m) => h ? (m ? `${h}h ${m}m planeado` : `${h}h planeado`) : `${m}m planeado`,
+    agendaItems: n => `${n} puntos en la agenda`,
+    videoTranscript: 'Video + Transcripción',
+    video: 'Video',
+    liveZoom: 'En vivo por Zoom',
+    grades: span => `Grados ${span.replace(/^Grados?\s+/i, '').replace(/^Grades?\s+/i, '')}`,
+    principal: name => `Director(a) ${name}`,
+    students: n => `${n} estudiantes`,
+    highNeed: pct => `${pct}% alta necesidad`,
+    charterEyebrow: 'ESCUELA AUTÓNOMA (CHARTER)',
+    schoolEyebrowFallback: 'DISTRITO ESCOLAR DE REDWOOD CITY',
+    dateLocale: 'es-MX', // Mexican Spanish — most common Californian variant
+  },
+};
 
 // ---- shared layout helpers ----
 //
@@ -167,7 +229,8 @@ function badges(parts) {
   }, children);
 }
 
-function footer({ wordmark = 'rcsd.info', tagline = 'Open Data' } = {}) {
+function footer(lang = 'en') {
+  const S = STRINGS[lang] || STRINGS.en;
   return col({
     position: 'absolute',
     bottom: 48,
@@ -183,19 +246,19 @@ function footer({ wordmark = 'rcsd.info', tagline = 'Open Data' } = {}) {
       letterSpacing: 1.8,
     }, [
       row({ gap: 14, alignItems: 'baseline' }, [
-        text({ color: PALETTE.cream, fontWeight: 500 }, wordmark),
+        text({ color: PALETTE.cream, fontWeight: 500 }, 'rcsd.info'),
         text({ color: PALETTE.amber }, '—'),
         text({
           color: PALETTE.creamDim,
           textTransform: 'uppercase',
           letterSpacing: 3,
-        }, tagline),
+        }, S.tagline),
       ]),
       text({
         color: PALETTE.creamFaint,
         fontSize: 17,
         letterSpacing: 1.5,
-      }, 'Redwood City School District'),
+      }, S.district),
     ]),
   ]);
 }
@@ -245,27 +308,21 @@ function splitTopics(s, maxBullets = 3, maxLen = 56) {
 
 // ---- per-template renderers ----
 
-function meetingTemplate({ date, type, topics, items, planned, hasVideo, hasZoom, hasTranscript }) {
+function meetingTemplate({ date, type, topics, items, planned, hasVideo, hasZoom, hasTranscript, lang = 'en' }) {
+  const S = STRINGS[lang] || STRINGS.en;
   const dateObj = new Date(date + 'T12:00:00');
-  const dateStr = dateObj.toLocaleDateString('en-US', {
+  const dateStr = dateObj.toLocaleDateString(S.dateLocale, {
     weekday: 'long', month: 'long', day: 'numeric', year: 'numeric',
   }).toUpperCase();
 
-  const title = type === 'Regular' ? 'Board of Trustees'
-              : type === 'Special' ? 'Special Session'
-              : type === 'Special (Closed)' ? 'Closed Session'
-              : type === 'Retreat (Offsite)' ? 'Board Retreat'
-              : type === 'Workshop' ? 'Workshop'
-              : type === 'Study Session' ? 'Study Session'
-              : 'Board Meeting';
-
+  const titles = S.meetingTitles[type] || S.meetingTitles._default;
+  const title = titles.headline;
   const subParts = [];
-  if (type === 'Regular') subParts.push('Regular Meeting');
-  else if (type === 'Special (Closed)') subParts.push('Closed Session');
+  if (titles.sub) subParts.push(titles.sub);
   if (planned) {
     const h = Math.floor(planned / 60);
     const m = planned % 60;
-    subParts.push(h ? (m ? `${h}h ${m}m planned` : `${h}h planned`) : `${m}m planned`);
+    subParts.push(S.plannedMins(h, m));
   }
 
   const topicList = Array.isArray(topics) ? topics : [topics];
@@ -273,9 +330,9 @@ function meetingTemplate({ date, type, topics, items, planned, hasVideo, hasZoom
   const bulletItems = splitTopics(topicString);
 
   const badgeParts = [];
-  if (items) badgeParts.push(`${items} agenda items`);
-  if (hasVideo) badgeParts.push(hasTranscript ? 'Video + Transcript' : 'Video');
-  else if (hasZoom) badgeParts.push('Live on Zoom');
+  if (items) badgeParts.push(S.agendaItems(items));
+  if (hasVideo) badgeParts.push(hasTranscript ? S.videoTranscript : S.video);
+  else if (hasZoom) badgeParts.push(S.liveZoom);
 
   return frame([
     eyebrow(dateStr),
@@ -284,19 +341,24 @@ function meetingTemplate({ date, type, topics, items, planned, hasVideo, hasZoom
     rule(220),
     bulletItems.length ? bullets(bulletItems) : null,
     badgeParts.length ? badges(badgeParts) : null,
-    footer(),
+    footer(lang),
   ].filter(Boolean));
 }
 
-function schoolTemplate({ name, gradeSpan, program, enrollment, highNeedPct, principal }) {
-  const eyebrowText = (program || 'Redwood City School District').toUpperCase();
+function schoolTemplate({ name, gradeSpan, program, enrollment, highNeedPct, principal, isCharter = false, lang = 'en' }) {
+  const S = STRINGS[lang] || STRINGS.en;
+  let eyebrowText;
+  if (isCharter) eyebrowText = S.charterEyebrow;
+  else if (program) eyebrowText = program.toUpperCase();
+  else eyebrowText = S.schoolEyebrowFallback;
+
   const subParts = [];
-  if (gradeSpan) subParts.push(`Grades ${gradeSpan.replace(/^Grades?\s+/i, '')}`);
-  if (principal) subParts.push(`Principal ${principal}`);
+  if (gradeSpan) subParts.push(S.grades(gradeSpan));
+  if (principal) subParts.push(S.principal(principal));
 
   const badgeParts = [];
-  if (enrollment) badgeParts.push(`${enrollment} students`);
-  if (highNeedPct != null) badgeParts.push(`${highNeedPct}% high-need`);
+  if (enrollment) badgeParts.push(S.students(enrollment));
+  if (highNeedPct != null) badgeParts.push(S.highNeed(highNeedPct));
   badgeParts.push('rcsdk8.net');
 
   return frame([
@@ -305,33 +367,34 @@ function schoolTemplate({ name, gradeSpan, program, enrollment, highNeedPct, pri
     subParts.length ? subhead(subParts.join(' · ')) : null,
     rule(220),
     badges(badgeParts),
-    footer(),
+    footer(lang),
   ].filter(Boolean));
 }
 
-function blogTemplate({ title, date, excerpt }) {
+function blogTemplate({ title, date, excerpt, lang = 'en' }) {
+  const S = STRINGS[lang] || STRINGS.en;
   const dateStr = date
-    ? new Date(date + 'T12:00:00').toLocaleDateString('en-US', {
+    ? new Date(date + 'T12:00:00').toLocaleDateString(S.dateLocale, {
         month: 'long', day: 'numeric', year: 'numeric',
       }).toUpperCase()
-    : 'NOTES FROM RCSD.INFO';
+    : (lang === 'es' ? 'NOTAS DE RCSD.INFO' : 'NOTES FROM RCSD.INFO');
   return frame([
     eyebrow(dateStr),
     headline(title, fitHeadline(title, 72, 44)),
     rule(220),
     excerpt ? subhead(excerpt.length > 200 ? excerpt.slice(0, 197) + '…' : excerpt) : null,
-    footer(),
+    footer(lang),
   ].filter(Boolean));
 }
 
-function pageTemplate({ kicker, title, tagline, badgeParts = [] }) {
+function pageTemplate({ kicker, title, tagline, badgeParts = [], lang = 'en' }) {
   return frame([
     eyebrow(kicker),
     headline(title, fitHeadline(title, 96, 56)),
     tagline ? subhead(tagline) : null,
     rule(220),
     badgeParts.length ? badges(badgeParts) : null,
-    footer(),
+    footer(lang),
   ].filter(Boolean));
 }
 
@@ -340,10 +403,9 @@ function pageTemplate({ kicker, title, tagline, badgeParts = [] }) {
 function loadMeetingsCatalog() {
   const path = resolve(ROOT, 'data/meetings-data.json');
   const data = JSON.parse(readFileSync(path, 'utf-8'));
-  return data.meetings.map(m => ({
-    slug: m.slug,
-    sources: [path],
-    render: () => meetingTemplate({
+  const out = [];
+  for (const m of data.meetings) {
+    const props = {
       date: m.date,
       type: m.type,
       topics: m.topics || [],
@@ -352,9 +414,18 @@ function loadMeetingsCatalog() {
       hasVideo: !!m.youtube,
       hasZoom: !!m.zoom,
       hasTranscript: m.hasTranscript,
-    }),
-    output: resolve(OUT_DIR, `meeting-${m.slug}.png`),
-  }));
+    };
+    for (const lang of ['en', 'es']) {
+      const suffix = lang === 'es' ? '-es' : '';
+      out.push({
+        slug: `${m.slug}${suffix}`,
+        sources: [path],
+        render: () => meetingTemplate({ ...props, lang }),
+        output: resolve(OUT_DIR, `meeting-${m.slug}${suffix}.png`),
+      });
+    }
+  }
+  return out;
 }
 
 function loadSchoolsCatalog() {
@@ -366,19 +437,28 @@ function loadSchoolsCatalog() {
     const schools = JSON.parse(readFileSync(schoolsPath, 'utf-8')).schools || [];
     for (const s of schools) {
       if (!s.slug) continue;
-      out.push({
-        slug: s.slug,
-        sources: [schoolsPath],
-        render: () => schoolTemplate({
-          name: s.nameShort || s.name || s.slug,
-          gradeSpan: s.grades || null,
-          program: s.program ? s.program.split('·')[0].trim() : null,
-          enrollment: s.enrollment || null,
-          highNeedPct: s.highNeedPct ?? null,
-          principal: s.principal || null,
-        }),
-        output: resolve(OUT_DIR, `school-${s.slug}.png`),
-      });
+      // School program label is bilingual ("Spanish · Español") — pick the half matching the lang.
+      const splitProgram = s.program ? s.program.split('·').map(t => t.trim()) : [];
+      const programEn = splitProgram[0] || null;
+      const programEs = splitProgram[1] || splitProgram[0] || null;
+      for (const lang of ['en', 'es']) {
+        const suffix = lang === 'es' ? '-es' : '';
+        out.push({
+          slug: `${s.slug}${suffix}`,
+          sources: [schoolsPath],
+          render: () => schoolTemplate({
+            name: (lang === 'es' && s.nameEs) ? s.nameEs : (s.nameShort || s.name || s.slug),
+            gradeSpan: s.grades || null,
+            program: lang === 'es' ? programEs : programEn,
+            enrollment: s.enrollment || null,
+            highNeedPct: s.highNeedPct ?? null,
+            principal: s.principal || null,
+            isCharter: false,
+            lang,
+          }),
+          output: resolve(OUT_DIR, `school-${s.slug}${suffix}.png`),
+        });
+      }
     }
   }
 
@@ -388,25 +468,34 @@ function loadSchoolsCatalog() {
       if (!c.slug) continue;
       const leader = Array.isArray(c.schoolLeaders) && c.schoolLeaders.length
         ? c.schoolLeaders[0].name : null;
-      out.push({
-        slug: c.slug,
-        sources: [chartersPath],
-        render: () => schoolTemplate({
-          name: c.nameShort || c.name || c.slug,
-          gradeSpan: c.grades || null,
-          program: 'Charter School',
-          enrollment: c.enrollment || null,
-          highNeedPct: null,
-          principal: leader,
-        }),
-        output: resolve(OUT_DIR, `charter-${c.slug}.png`),
-      });
+      for (const lang of ['en', 'es']) {
+        const suffix = lang === 'es' ? '-es' : '';
+        out.push({
+          slug: `${c.slug}${suffix}`,
+          sources: [chartersPath],
+          render: () => schoolTemplate({
+            name: (lang === 'es' && c.nameEs) ? c.nameEs : (c.nameShort || c.name || c.slug),
+            gradeSpan: c.grades || null,
+            program: null,
+            isCharter: true,
+            enrollment: c.enrollment || null,
+            highNeedPct: null,
+            principal: leader,
+            lang,
+          }),
+          output: resolve(OUT_DIR, `charter-${c.slug}${suffix}.png`),
+        });
+      }
     }
   }
   return out;
 }
 
 function loadBlogCatalog() {
+  // Blog posts have separate per-language slugs (e.g. "open-data-for-rcsd"
+  // vs "datos-abiertos-para-rcsd") — so the filename already carries the
+  // language signal. No -es suffix needed here; the right card is selected
+  // by the page builder via ogImageKey: `blog-${slug}`.
   const path = resolve(ROOT, 'data/blog-posts.json');
   if (!existsSync(path)) return [];
   const posts = JSON.parse(readFileSync(path, 'utf-8'));
@@ -416,7 +505,7 @@ function loadBlogCatalog() {
       out.push({
         slug: p.slug,
         sources: [path],
-        render: () => blogTemplate({ title: p.title.en, date: p.date, excerpt: p.description?.en }),
+        render: () => blogTemplate({ title: p.title.en, date: p.date, excerpt: p.description?.en, lang: 'en' }),
         output: resolve(OUT_DIR, `blog-${p.slug}.png`),
       });
     }
@@ -424,7 +513,7 @@ function loadBlogCatalog() {
       out.push({
         slug: p.slugEs,
         sources: [path],
-        render: () => blogTemplate({ title: p.title.es, date: p.date, excerpt: p.description?.es }),
+        render: () => blogTemplate({ title: p.title.es, date: p.date, excerpt: p.description?.es, lang: 'es' }),
         output: resolve(OUT_DIR, `blog-${p.slugEs}.png`),
       });
     }
@@ -432,55 +521,110 @@ function loadBlogCatalog() {
   return out;
 }
 
+// One entry per top-level page, with EN and ES copy. The page-builder
+// chooses which to reference via ogImageKey.
 const TOP_LEVEL_PAGES = [
   {
     name: 'home',
-    kicker: 'RCSD · OPEN DATA',
-    title: 'Redwood City School District',
-    tagline: 'Public records, board meetings, and school data — searchable and translated.',
-    badgeParts: ['200+ meetings', '15 schools', 'EN · ES'],
+    en: {
+      kicker: 'RCSD · OPEN DATA',
+      title: 'Redwood City School District',
+      tagline: 'Public records, board meetings, and school data — searchable and translated.',
+      badgeParts: ['200+ meetings', '15 schools', 'EN · ES'],
+    },
+    es: {
+      kicker: 'RCSD · DATOS ABIERTOS',
+      title: 'Distrito Escolar de Redwood City',
+      tagline: 'Documentos públicos, reuniones de la junta y datos de las escuelas — todo en un sitio.',
+      badgeParts: ['200+ reuniones', '15 escuelas', 'EN · ES'],
+    },
   },
   {
     name: 'meetings',
-    kicker: 'BOARD OF TRUSTEES',
-    title: 'Meetings & Minutes',
-    tagline: 'Every board meeting since 2020 — agendas, minutes, and AI-assisted transcripts.',
-    badgeParts: ['200+ meetings', '8,000 agenda items'],
+    en: {
+      kicker: 'BOARD OF TRUSTEES',
+      title: 'Meetings & Minutes',
+      tagline: 'Every board meeting since 2020 — agendas, minutes, and AI-assisted transcripts.',
+      badgeParts: ['200+ meetings', '8,000 agenda items'],
+    },
+    es: {
+      kicker: 'JUNTA DE SÍNDICOS',
+      title: 'Reuniones y Actas',
+      tagline: 'Todas las reuniones de la junta desde 2020 — con agendas, actas y transcripciones.',
+      badgeParts: ['200+ reuniones', '8,000 puntos de agenda'],
+    },
   },
   {
     name: 'schools',
-    kicker: 'SCHOOLS',
-    title: 'Schools at a Glance',
-    tagline: 'Enrollment, demographics, programs, and contact info for every RCSD school.',
-    badgeParts: ['12 RCSD + 3 Charter', 'TK – 8'],
+    en: {
+      kicker: 'SCHOOLS',
+      title: 'Schools at a Glance',
+      tagline: 'Enrollment, demographics, programs, and contact info for every RCSD school.',
+      badgeParts: ['12 RCSD + 3 Charter', 'TK – 8'],
+    },
+    es: {
+      kicker: 'ESCUELAS',
+      title: 'Las Escuelas en Resumen',
+      tagline: 'Inscripción, demografía, programas e información de contacto de cada escuela.',
+      badgeParts: ['12 RCSD + 3 Charter', 'TK – 8'],
+    },
   },
   {
     name: 'district',
-    kicker: 'GOVERNANCE',
-    title: 'District & Board',
-    tagline: 'Trustees, policies, leadership, and the bodies that run RCSD.',
+    en: {
+      kicker: 'GOVERNANCE',
+      title: 'District & Board',
+      tagline: 'Trustees, policies, leadership, and the bodies that run RCSD.',
+    },
+    es: {
+      kicker: 'GOBERNANZA',
+      title: 'El Distrito y la Junta',
+      tagline: 'Síndicos, pólizas, liderazgo y los organismos que dirigen RCSD.',
+    },
   },
   {
     name: 'budget',
-    kicker: 'FINANCE',
-    title: 'District Budget',
-    tagline: 'Where the money comes from and where it goes — with sources cited.',
+    en: {
+      kicker: 'FINANCE',
+      title: 'District Budget',
+      tagline: 'Where the money comes from and where it goes — with sources cited.',
+    },
+    es: {
+      kicker: 'FINANZAS',
+      title: 'Presupuesto del Distrito',
+      tagline: 'De dónde viene el dinero y a dónde va — con fuentes citadas.',
+    },
   },
   {
     name: 'blog',
-    kicker: 'NOTES',
-    title: 'Blog',
-    tagline: 'Notes on data, methodology, and what we are learning building this site.',
+    en: {
+      kicker: 'NOTES',
+      title: 'Blog',
+      tagline: 'Notes on data, methodology, and what we are learning building this site.',
+    },
+    es: {
+      kicker: 'NOTAS',
+      title: 'Blog',
+      tagline: 'Notas sobre los datos, la metodología y lo que vamos aprendiendo en este sitio.',
+    },
   },
 ];
 
 function loadPagesCatalog() {
-  return TOP_LEVEL_PAGES.map(p => ({
-    slug: p.name,
-    sources: [],
-    render: () => pageTemplate(p),
-    output: resolve(OUT_DIR, `page-${p.name}.png`),
-  }));
+  const out = [];
+  for (const p of TOP_LEVEL_PAGES) {
+    for (const lang of ['en', 'es']) {
+      const suffix = lang === 'es' ? '-es' : '';
+      const copy = p[lang];
+      out.push({
+        slug: `${p.name}${suffix}`,
+        sources: [],
+        render: () => pageTemplate({ ...copy, lang }),
+        output: resolve(OUT_DIR, `page-${p.name}${suffix}.png`),
+      });
+    }
+  }
+  return out;
 }
 
 // ---- render pipeline ----

@@ -1813,7 +1813,7 @@ ${headMeta({
   description: L.metaDescription,
   canonical: L.canonicalUrl,
   ogLocale: L.ogLocale,
-  ogImageKey: 'page-meetings',
+  ogImageKey: `page-meetings${L.lang === 'es' ? '-es' : ''}`,
   hreflang: [
     { lang: L.lang, href: L.canonicalUrl },
     { lang: L.hreflangAltLang, href: L.hreflangAlt },

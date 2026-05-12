@@ -334,7 +334,7 @@ ${headMeta({
     : 'Posts del blog sobre el proyecto de datos abiertos rcsd.info para el Distrito Escolar de Redwood City.',
   canonical,
   ogLocale: isEn ? 'en_US' : 'es_US',
-  ogImageKey: 'page-blog',
+  ogImageKey: `page-blog${isEn ? '' : '-es'}`,
   hreflang: [
     { lang: 'en', href: 'https://rcsd.info/blog/' },
     { lang: 'es', href: 'https://rcsd.info/blog/es/' },
