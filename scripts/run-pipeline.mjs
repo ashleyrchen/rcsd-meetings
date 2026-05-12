@@ -57,6 +57,7 @@ if (!quick) {
 // Phase 5: Summaries + HTML generation
 let step = quick ? 2 : 9;
 run(`${step++}. Meeting summaries`, 'generate-meeting-summaries.mjs');
+run(`${step++}. OG images`, 'generate-og-images.mjs');
 run(`${step++}. Meetings index`, 'build-meetings-html.mjs');
 run(`${step++}. Meeting detail pages`, 'build-meeting-pages.mjs');
 run(`${step++}. Homepage`, 'build-homepage.mjs');
@@ -71,6 +72,8 @@ console.log('\nDeploy:');
 console.log('  npx wrangler pages deploy docs --project-name=rcsd-meetings');
 console.log('\nUpload data to R2:');
 console.log('  rclone copy data/ r2:rcsd-meetings/json/ --filter "- llm-timestamp-cache/**" --filter "- chapter-markers-cache/**" --filter "- boarddocs-scraped.json" --filter "- board-memos/**" --filter "+ *.json" --filter "- *" --s3-no-check-bucket');
+console.log('\nUpload OG images to R2:');
+console.log('  rclone copy artifacts/og/ r2:rcsd-meetings/og/ --s3-no-check-bucket');
 if (!quick) {
   console.log('  rclone copy artifacts/transcripts-slim/ r2:rcsd-meetings/transcripts/ --s3-no-check-bucket');
 }

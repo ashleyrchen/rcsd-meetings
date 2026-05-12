@@ -642,6 +642,7 @@ ${headMeta({
   title,
   description,
   canonical: `https://rcsd.info${canonicalPath}`,
+  ogImageKey: `meeting-${m.slug}`,
   pageCSS,
 })}
 </head>
@@ -1085,6 +1086,7 @@ ${headMeta({
   title: `${L.lang === 'es' ? 'Reuniones' : 'Meetings'} — ${dateFormatted}`,
   description: `${L.disambigMultiple}`,
   canonical: `https://rcsd.info/${L.prefix}/${date}/`,
+  ogImageKey: 'page-meetings',
   pageCSS: disambigCSS,
 })}
 </head>

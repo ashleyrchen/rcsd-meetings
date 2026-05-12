@@ -480,6 +480,7 @@ ${headMeta({
   description: `${displayName}: ${charter.grades || ''}, ${charter.enrollment || ''} students (${charter.enrollmentYear}). Charter school authorized by Redwood City School District.`,
   canonical,
   ogLocale: isEs ? 'es_US' : 'en_US',
+  ogImageKey: `charter-${charter.slug}`,
   hreflang: [
     { lang: 'en', href: `https://rcsd.info${enPath}` },
     { lang: 'es', href: `https://rcsd.info${esPath}` },
