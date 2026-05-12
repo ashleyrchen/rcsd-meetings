@@ -1808,6 +1808,7 @@ ${headMeta({
     : `Public data for ${displayName}: academic performance, demographics, funding, and staffing for the 2025-26 school year.`,
   canonical: `https://rcsd.info${isEs ? esPath : enPath}`,
   ogLocale: isEs ? 'es_US' : 'en_US',
+  ogImageKey: `school-${slug}`,
   hreflang: [
     { lang: 'en', href: `https://rcsd.info${enPath}` },
     { lang: 'es', href: `https://rcsd.info${esPath}` },
@@ -2625,6 +2626,7 @@ ${headMeta({
   description,
   canonical,
   ogLocale: isEs ? 'es_US' : 'en_US',
+  ogImageKey: 'page-schools',
   hreflang: [
     { lang: 'en', href: 'https://rcsd.info/schools/' },
     { lang: 'es', href: 'https://rcsd.info/escuelas/' },

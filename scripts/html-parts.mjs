@@ -159,20 +159,36 @@ export function faviconLinks() {
 <link rel="manifest" href="/site.webmanifest">`;
 }
 
-// ---- OG / Twitter boilerplate (same image on every page) ----
+// ---- OG / Twitter boilerplate ----
+//
+// Per-page OG images are PNGs hosted on R2 at https://data.rcsd.info/og/.
+// Pass an `ogImage` URL to override the default site-wide image; pass
+// `ogImageKey` (e.g. "meeting-2026-05-13-regular") as a shorthand that
+// expands to data.rcsd.info/og/<key>.png.
 
-function ogBoilerplate({ title, description, url, ogLocale = 'en_US' }) {
+const DEFAULT_OG_IMAGE = 'https://rcsd.info/og-1200.jpg';
+const OG_BASE = 'https://data.rcsd.info/og';
+
+function resolveOgImage({ ogImage, ogImageKey }) {
+  if (ogImage) return ogImage;
+  if (ogImageKey) return `${OG_BASE}/${ogImageKey}.png`;
+  return DEFAULT_OG_IMAGE;
+}
+
+function ogBoilerplate({ title, description, url, ogLocale = 'en_US', ogImage, ogImageKey }) {
+  const img = resolveOgImage({ ogImage, ogImageKey });
   return `<meta property="og:title" content="${title}">
 <meta property="og:description" content="${description}">
 <meta property="og:url" content="${url}">
 <meta property="og:type" content="website">
-<meta property="og:image" content="https://rcsd.info/og-1200.jpg">
+<meta property="og:image" content="${img}">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="${title}">
 <meta property="og:locale" content="${ogLocale}">
 <meta property="og:site_name" content="RCSD Open Data">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://rcsd.info/og-1200.jpg">
+<meta name="twitter:image" content="${img}">
 <meta name="twitter:title" content="${title}">
 <meta name="twitter:description" content="${description}">`;
 }
@@ -189,6 +205,8 @@ export function headMeta({
   description,
   canonical,
   ogLocale = 'en_US',
+  ogImage,
+  ogImageKey,
   hreflang = [],
   robots = 'index, follow',
   jsonLd = '',
@@ -207,7 +225,7 @@ export function headMeta({
 ${faviconLinks()}
 ${canonical ? `<link rel="canonical" href="${canonical}">` : ''}
 ${hreflangTags}
-${ogBoilerplate({ title, description, url: canonical || '', ogLocale })}
+${ogBoilerplate({ title, description, url: canonical || '', ogLocale, ogImage, ogImageKey })}
 ${fontsLink()}
 ${jsonLd}
 ${extraHead}

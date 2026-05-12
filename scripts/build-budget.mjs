@@ -1502,6 +1502,7 @@ ${headMeta({
   description: page.description,
   canonical: page.canonical,
   ogLocale: page.ogLocale,
+  ogImageKey: 'page-budget',
   hreflang: page.hreflang,
   pageCSS: budgetCSS,
 })}

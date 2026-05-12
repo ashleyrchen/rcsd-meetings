@@ -707,6 +707,7 @@ ${headMeta({
   description: `Open data portal for the Redwood City School District. ${numSchools} schools, ${totalEnrollment.toLocaleString()} students, ${meetingStats.total} board meetings with agendas, minutes, and video. Bilingual English/Spanish.`,
   canonical: 'https://rcsd.info/',
   ogLocale: 'en_US',
+  ogImageKey: 'page-home',
   hreflang: [
     { lang: 'x-default', href: 'https://rcsd.info/' },
     { lang: 'en', href: 'https://rcsd.info/' },

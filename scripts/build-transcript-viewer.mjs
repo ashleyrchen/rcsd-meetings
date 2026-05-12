@@ -559,6 +559,7 @@ ${headMeta({
   title,
   description,
   canonical: `https://rcsd.info${canonicalPath}`,
+  ogImageKey: `meeting-${m.slug}`,
   pageCSS,
 })}
 </head>
@@ -938,6 +939,7 @@ ${headMeta({
   title: `Meetings — ${dateFormatted}`,
   description: `Multiple board meetings on ${dateFormatted}.`,
   canonical: `https://rcsd.info/meetings/${date}/`,
+  ogImageKey: 'page-meetings',
   pageCSS: disambigCSS,
 })}
 </head>
