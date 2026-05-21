@@ -573,6 +573,7 @@
     gap: 0.8rem;
   }
   .school-card {
+    position: relative;
     display: block;
     background: #fff;
     border: 1px solid var(--rule-light);
@@ -580,11 +581,14 @@
     transition: border-color 0.2s, box-shadow 0.2s;
     text-decoration: none;
     color: inherit;
-    cursor: pointer;
   }
   .school-card:hover {
     border-color: var(--green-light);
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  .school-card:focus-within {
+    border-color: var(--green-light);
+    box-shadow: 0 0 0 2px var(--green-light);
   }
   .school-card:hover .school-name-link { color: var(--green-mid); }
   .school-card-header {
@@ -599,6 +603,12 @@
     font-weight: 600;
     color: var(--green-deep);
     transition: color 0.2s;
+  }
+  .school-name-link::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
   }
   .school-grades {
     font-family: 'IBM Plex Mono', monospace;
@@ -644,6 +654,8 @@
     color: var(--text-muted);
   }
   .school-links {
+    position: relative;
+    z-index: 2;
     display: flex;
     gap: 0.5rem;
     flex-wrap: wrap;
@@ -925,7 +937,7 @@
   <div class="school-section">
     <div class="school-grid">
 
-    <div class="school-card" onclick="window.location='/schools/adelante-selby/'">
+    <div class="school-card">
       <div class="school-card-header">
         <a href="/schools/adelante-selby/" class="school-name-link">Adelante Selby →</a>
         <span class="school-grades">TK-5</span>
@@ -935,7 +947,7 @@
       <div class="school-details">
         <div class="school-detail">630 students · 42% EL · 63% FRL</div>
       </div>
-      <div class="school-links" onclick="event.stopPropagation()">
+      <div class="school-links">
         <a href="https://adelanteselby.rcsdk8.net" target="_blank" rel="noopener" title="School website">🌐 Web</a>
         <a href="https://menus.healthepro.com/organizations/1184/sites/9274/menus/103750" target="_blank" rel="noopener" title="Lunch menu">🍽️ Lunch</a>
         <a href="https://www.caschooldashboard.org/reports/41690056044580/2024" target="_blank" rel="noopener" title="CA School Dashboard">📊 Dash</a>
@@ -944,7 +956,7 @@
       </div>
     </div>
 
-    <div class="school-card" onclick="window.location='/schools/clifford/'">
+    <div class="school-card">
       <div class="school-card-header">
         <a href="/schools/clifford/" class="school-name-link">Clifford →</a>
         <span class="school-grades">TK-8</span>
@@ -954,7 +966,7 @@
       <div class="school-details">
         <div class="school-detail">664 students · 24% EL · 44% FRL</div>
       </div>
-      <div class="school-links" onclick="event.stopPropagation()">
+      <div class="school-links">
         <a href="https://clifford.rcsdk8.net" target="_blank" rel="noopener" title="School website">🌐 Web</a>
         <a href="https://menus.healthepro.com/organizations/1184/sites/9275/menus/103731" target="_blank" rel="noopener" title="Lunch menu">🍽️ Lunch</a>
         <a href="https://www.caschooldashboard.org/reports/41690056044424/2024" target="_blank" rel="noopener" title="CA School Dashboard">📊 Dash</a>
@@ -963,7 +975,7 @@
       </div>
     </div>
 
-    <div class="school-card" onclick="window.location='/schools/garfield/'">
+    <div class="school-card">
       <div class="school-card-header">
         <a href="/schools/garfield/" class="school-name-link">Garfield →</a>
         <span class="school-grades">K-5</span>
@@ -973,7 +985,7 @@
       <div class="school-details">
         <div class="school-detail">260 students · 68% EL · 95% FRL</div>
       </div>
-      <div class="school-links" onclick="event.stopPropagation()">
+      <div class="school-links">
         <a href="https://garfield.rcsdk8.net" target="_blank" rel="noopener" title="School website">🌐 Web</a>
         <a href="https://menus.healthepro.com/organizations/1184/sites/9277/menus/103763" target="_blank" rel="noopener" title="Lunch menu">🍽️ Lunch</a>
         <a href="https://www.caschooldashboard.org/reports/41690056044473/2024" target="_blank" rel="noopener" title="CA School Dashboard">📊 Dash</a>
@@ -982,7 +994,7 @@
       </div>
     </div>
 
-    <div class="school-card" onclick="window.location='/schools/henry-ford/'">
+    <div class="school-card">
       <div class="school-card-header">
         <a href="/schools/henry-ford/" class="school-name-link">Henry Ford →</a>
         <span class="school-grades">TK-5</span>
@@ -992,7 +1004,7 @@
       <div class="school-details">
         <div class="school-detail">461 students · 36% EL · 63% FRL</div>
       </div>
-      <div class="school-links" onclick="event.stopPropagation()">
+      <div class="school-links">
         <a href="https://henryford.rcsdk8.net" target="_blank" rel="noopener" title="School website">🌐 Web</a>
         <a href="https://menus.healthepro.com/organizations/1184/sites/9278/menus/103766" target="_blank" rel="noopener" title="Lunch menu">🍽️ Lunch</a>
         <a href="https://www.caschooldashboard.org/reports/41690056044499/2024" target="_blank" rel="noopener" title="CA School Dashboard">📊 Dash</a>
@@ -1001,7 +1013,7 @@
       </div>
     </div>
 
-    <div class="school-card" onclick="window.location='/schools/hoover/'">
+    <div class="school-card">
       <div class="school-card-header">
         <a href="/schools/hoover/" class="school-name-link">Hoover →</a>
         <span class="school-grades">TK-8</span>
@@ -1011,7 +1023,7 @@
       <div class="school-details">
         <div class="school-detail">659 students · 67% EL · 97% FRL</div>
       </div>
-      <div class="school-links" onclick="event.stopPropagation()">
+      <div class="school-links">
         <a href="https://hoover.rcsdk8.net" target="_blank" rel="noopener" title="School website">🌐 Web</a>
         <a href="https://menus.healthepro.com/organizations/1184/sites/9279/menus/103767" target="_blank" rel="noopener" title="Lunch menu">🍽️ Lunch</a>
         <a href="https://www.caschooldashboard.org/reports/41690056044507/2024" target="_blank" rel="noopener" title="CA School Dashboard">📊 Dash</a>
@@ -1020,7 +1032,7 @@
       </div>
     </div>
 
-    <div class="school-card" onclick="window.location='/schools/kennedy/'">
+    <div class="school-card">
       <div class="school-card-header">
         <a href="/schools/kennedy/" class="school-name-link">Kennedy →</a>
         <span class="school-grades">6-8</span>
@@ -1030,7 +1042,7 @@
       <div class="school-details">
         <div class="school-detail">788 students · 26% EL · 66% FRL</div>
       </div>
-      <div class="school-links" onclick="event.stopPropagation()">
+      <div class="school-links">
         <a href="https://kennedy.rcsdk8.net" target="_blank" rel="noopener" title="School website">🌐 Web</a>
         <a href="https://menus.healthepro.com/organizations/1184/sites/9280/menus/103754" target="_blank" rel="noopener" title="Lunch menu">🍽️ Lunch</a>
         <a href="https://www.caschooldashboard.org/reports/41690056044531/2024" target="_blank" rel="noopener" title="CA School Dashboard">📊 Dash</a>
@@ -1039,7 +1051,7 @@
       </div>
     </div>
 
-    <div class="school-card" onclick="window.location='/schools/mckinley-mit/'">
+    <div class="school-card">
       <div class="school-card-header">
         <a href="/schools/mckinley-mit/" class="school-name-link">McKinley →</a>
         <span class="school-grades">6-8</span>
@@ -1049,7 +1061,7 @@
       <div class="school-details">
         <div class="school-detail">401 students · 46% EL · 93% FRL</div>
       </div>
-      <div class="school-links" onclick="event.stopPropagation()">
+      <div class="school-links">
         <a href="https://mit.rcsdk8.net" target="_blank" rel="noopener" title="School website">🌐 Web</a>
         <a href="https://menus.healthepro.com/organizations/1184/sites/9281/menus/103771" target="_blank" rel="noopener" title="Lunch menu">🍽️ Lunch</a>
         <a href="https://www.caschooldashboard.org/reports/41690056044556/2024" target="_blank" rel="noopener" title="CA School Dashboard">📊 Dash</a>
@@ -1058,7 +1070,7 @@
       </div>
     </div>
 
-    <div class="school-card" onclick="window.location='/schools/north-star/'">
+    <div class="school-card">
       <div class="school-card-header">
         <a href="/schools/north-star/" class="school-name-link">North Star →</a>
         <span class="school-grades">3-8</span>
@@ -1068,7 +1080,7 @@
       <div class="school-details">
         <div class="school-detail">553 students · 3% EL · 9% FRL</div>
       </div>
-      <div class="school-links" onclick="event.stopPropagation()">
+      <div class="school-links">
         <a href="https://northstar.rcsdk8.net" target="_blank" rel="noopener" title="School website">🌐 Web</a>
         <a href="https://menus.healthepro.com/organizations/1184/sites/9366/menus/103771" target="_blank" rel="noopener" title="Lunch menu">🍽️ Lunch</a>
         <a href="https://www.caschooldashboard.org/reports/41690056115026/2024" target="_blank" rel="noopener" title="CA School Dashboard">📊 Dash</a>
@@ -1077,7 +1089,7 @@
       </div>
     </div>
 
-    <div class="school-card" onclick="window.location='/schools/orion/'">
+    <div class="school-card">
       <div class="school-card-header">
         <a href="/schools/orion/" class="school-name-link">Orion →</a>
         <span class="school-grades">TK-5</span>
@@ -1087,7 +1099,7 @@
       <div class="school-details">
         <div class="school-detail">549 students · 23% EL · 32% FRL</div>
       </div>
-      <div class="school-links" onclick="event.stopPropagation()">
+      <div class="school-links">
         <a href="https://orion.rcsdk8.net" target="_blank" rel="noopener" title="School website">🌐 Web</a>
         <a href="https://menus.healthepro.com/organizations/1184/sites/9282/menus/103774" target="_blank" rel="noopener" title="Lunch menu">🍽️ Lunch</a>
         <a href="https://www.caschooldashboard.org/reports/41690056102941/2024" target="_blank" rel="noopener" title="CA School Dashboard">📊 Dash</a>
@@ -1096,7 +1108,7 @@
       </div>
     </div>
 
-    <div class="school-card" onclick="window.location='/schools/roosevelt/'">
+    <div class="school-card">
       <div class="school-card-header">
         <a href="/schools/roosevelt/" class="school-name-link">Roosevelt →</a>
         <span class="school-grades">TK-5</span>
@@ -1106,7 +1118,7 @@
       <div class="school-details">
         <div class="school-detail">344 students · 43% EL · 70% FRL</div>
       </div>
-      <div class="school-links" onclick="event.stopPropagation()">
+      <div class="school-links">
         <a href="https://roosevelt.rcsdk8.net" target="_blank" rel="noopener" title="School website">🌐 Web</a>
         <a href="https://menus.healthepro.com/organizations/1184/sites/9284/menus/103755" target="_blank" rel="noopener" title="Lunch menu">🍽️ Lunch</a>
         <a href="https://www.caschooldashboard.org/reports/41690056044572/2024" target="_blank" rel="noopener" title="CA School Dashboard">📊 Dash</a>
@@ -1115,7 +1127,7 @@
       </div>
     </div>
 
-    <div class="school-card" onclick="window.location='/schools/roy-cloud/'">
+    <div class="school-card">
       <div class="school-card-header">
         <a href="/schools/roy-cloud/" class="school-name-link">Roy Cloud →</a>
         <span class="school-grades">TK-8</span>
@@ -1125,7 +1137,7 @@
       <div class="school-details">
         <div class="school-detail">665 students · 3% EL · 11% FRL</div>
       </div>
-      <div class="school-links" onclick="event.stopPropagation()">
+      <div class="school-links">
         <a href="https://roycloud.rcsdk8.net" target="_blank" rel="noopener" title="School website">🌐 Web</a>
         <a href="https://menus.healthepro.com/organizations/1184/sites/9283/menus/103751" target="_blank" rel="noopener" title="Lunch menu">🍽️ Lunch</a>
         <a href="https://www.caschooldashboard.org/reports/41690056044432/2024" target="_blank" rel="noopener" title="CA School Dashboard">📊 Dash</a>
@@ -1134,7 +1146,7 @@
       </div>
     </div>
 
-    <div class="school-card" onclick="window.location='/schools/taft/'">
+    <div class="school-card">
       <div class="school-card-header">
         <a href="/schools/taft/" class="school-name-link">Taft →</a>
         <span class="school-grades">TK-5</span>
@@ -1144,7 +1156,7 @@
       <div class="school-details">
         <div class="school-detail">325 students · 66% EL · 90% FRL</div>
       </div>
-      <div class="school-links" onclick="event.stopPropagation()">
+      <div class="school-links">
         <a href="https://taft.rcsdk8.net" target="_blank" rel="noopener" title="School website">🌐 Web</a>
         <a href="https://menus.healthepro.com/organizations/1184/sites/9285/menus/103756" target="_blank" rel="noopener" title="Lunch menu">🍽️ Lunch</a>
         <a href="https://www.caschooldashboard.org/reports/41690056044598/2024" target="_blank" rel="noopener" title="CA School Dashboard">📊 Dash</a>
@@ -1164,11 +1176,6 @@
   <div class="bi-row events-section">
     <div class="bi-en events-col">
 
-        <div class="event-row event--board-meeting">
-          <span class="event-date-inline">Wed, MAY 13</span>
-          <span class="event-text"><a href="/meetings/#sy2526" class="event-label-link">Board Meeting</a><span class="event-summary">The Board approved multiple facility and infrastructure improvements including <strong>EV charger installations</strong> at four schools through agreements with <strong>PowerFlex</strong> and <strong>Atlas Pellizzari Electric</strong> (totaling over $70K), authorized a <strong>$75,000</strong> increase to the Daylight purchase order, and reviewed school site plans and annual financial reports for <strong>North Star School</strong>, <strong>Henry Ford School</strong>, and three charter schools.</span></span>
-        </div>
-
         <div class="event-row event--no-school">
           <span class="event-date-inline">Mon, MAY 25</span>
           <span class="event-text">Memorial Day <span class="no-school-icon" aria-label="No School">🏫</span></span>
@@ -1182,6 +1189,21 @@
         <div class="event-row event--milestone">
           <span class="event-date-inline">Fri, JUN 5</span>
           <span class="event-text">Last Day of School</span>
+        </div>
+
+        <div class="event-row event--board-meeting">
+          <span class="event-date-inline">Wed, JUN 10</span>
+          <span class="event-text"><a href="/meetings/#sy2526" class="event-label-link">Board Meeting</a><span class="event-summary event-summary--provisional" title="Provisional topics from the Schedule of Board Agenda Items">Planned: Year-End Budget Transfer Resolution</span></span>
+        </div>
+
+        <div class="event-row event--board-meeting">
+          <span class="event-date-inline">Wed, JUN 17</span>
+          <span class="event-text"><a href="/meetings/#sy2526" class="event-label-link">Board Meeting</a><span class="event-summary event-summary--provisional" title="Provisional topics from the Schedule of Board Agenda Items">Planned: LCAP public hearing; iReady end-of-year data; 2025-26 Proposed Budget public hearing</span></span>
+        </div>
+
+        <div class="event-row event--board-meeting">
+          <span class="event-date-inline">Wed, JUN 24</span>
+          <span class="event-text"><a href="/meetings/#sy2526" class="event-label-link">Board Meeting</a><span class="event-summary event-summary--provisional" title="Provisional topics from the Schedule of Board Agenda Items">Planned: LCAP adoption; 2026/27 Budget adoption; EPA Resolution; ESSA Addendum; Local Indicators</span></span>
         </div>
 
         <div class="event-row event--milestone">
@@ -1213,23 +1235,8 @@
           <span class="event-date-inline">Wed, NOV 11</span>
           <span class="event-text">Veterans Day <span class="no-school-icon" aria-label="No School">🏫</span></span>
         </div>
-
-        <div class="event-row event--no-school event--multi">
-          <span class="event-date-inline">Wed–Fri, NOV 25–27</span>
-          <span class="event-text">Thanksgiving Break <span class="no-school-icon" aria-label="No School">🏫</span></span>
-        </div>
-
-        <div class="event-row event--no-school event--multi">
-          <span class="event-date-inline">Fri DEC 18 – Fri JAN 1</span>
-          <span class="event-text">Winter Break <span class="no-school-icon" aria-label="No School">🏫</span></span>
-        </div>
     </div>
     <div class="bi-es events-col" lang="es">
-
-        <div class="event-row event--board-meeting">
-          <span class="event-date-inline">mié, MAY 13</span>
-          <span class="event-text"><a href="/reuniones/#sy2526" class="event-label-link">Reunión de la Junta</a><span class="event-summary">La Junta aprobó varias mejoras de infraestructura incluyendo instalaciones de <strong>cargadores eléctricos</strong> en cuatro escuelas a través de acuerdos con <strong>PowerFlex</strong> y <strong>Atlas Pellizzari Electric</strong> (totalizando más de $70K), autorizó un aumento de <strong>$75,000</strong> a la orden de compra de Daylight, y revisó planes de sitio escolar y reportes financieros anuales para <strong>North Star School</strong>, <strong>Henry Ford School</strong>, y tres escuelas charter.</span></span>
-        </div>
 
         <div class="event-row event--no-school">
           <span class="event-date-inline">lun, MAY 25</span>
@@ -1244,6 +1251,21 @@
         <div class="event-row event--milestone">
           <span class="event-date-inline">vie, JUN 5</span>
           <span class="event-text">Último Día de Clases</span>
+        </div>
+
+        <div class="event-row event--board-meeting">
+          <span class="event-date-inline">mié, JUN 10</span>
+          <span class="event-text"><a href="/reuniones/#sy2526" class="event-label-link">Reunión de la Junta</a><span class="event-summary event-summary--provisional" title="Temas provisionales del calendario de temas de la agenda">Planificado: Resolución de transferencia presupuestaria de fin de año</span></span>
+        </div>
+
+        <div class="event-row event--board-meeting">
+          <span class="event-date-inline">mié, JUN 17</span>
+          <span class="event-text"><a href="/reuniones/#sy2526" class="event-label-link">Reunión de la Junta</a><span class="event-summary event-summary--provisional" title="Temas provisionales del calendario de temas de la agenda">Planificado: Audiencia pública de LCAP; Datos de fin de año de iReady; Audiencia pública del presupuesto propuesto 2025-26</span></span>
+        </div>
+
+        <div class="event-row event--board-meeting">
+          <span class="event-date-inline">mié, JUN 24</span>
+          <span class="event-text"><a href="/reuniones/#sy2526" class="event-label-link">Reunión de la Junta</a><span class="event-summary event-summary--provisional" title="Temas provisionales del calendario de temas de la agenda">Planificado: Adopción de LCAP; Adopción del presupuesto 2026/27; Resolución EPA; Adenda ESSA; Indicadores locales</span></span>
         </div>
 
         <div class="event-row event--milestone">
@@ -1274,16 +1296,6 @@
         <div class="event-row event--no-school">
           <span class="event-date-inline">mié, NOV 11</span>
           <span class="event-text">Día de los Veteranos <span class="no-school-icon" aria-label="No School">🏫</span></span>
-        </div>
-
-        <div class="event-row event--no-school event--multi">
-          <span class="event-date-inline">mié–vie, NOV 25–27</span>
-          <span class="event-text">Vacaciones de Acción de Gracias <span class="no-school-icon" aria-label="No School">🏫</span></span>
-        </div>
-
-        <div class="event-row event--no-school event--multi">
-          <span class="event-date-inline">vie DIC 18 – vie ENE 1</span>
-          <span class="event-text">Vacaciones de Invierno <span class="no-school-icon" aria-label="No School">🏫</span></span>
         </div>
     </div>
   </div>

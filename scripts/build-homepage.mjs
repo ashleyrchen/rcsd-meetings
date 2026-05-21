@@ -67,7 +67,7 @@ function schoolCard(s) {
   const spsaUrl = `https://data.rcsd.info/documents/spsa/2025-26/${s.slug}.pdf`;
 
   return `
-    <div class="school-card" onclick="window.location='${detailUrl}'">
+    <div class="school-card">
       <div class="school-card-header">
         <a href="${detailUrl}" class="school-name-link">${s.nameShort} →</a>
         <span class="school-grades">${s.grades}</span>
@@ -77,7 +77,7 @@ function schoolCard(s) {
       <div class="school-details">
         <div class="school-detail">${s.enrollment.toLocaleString()} students · ${Math.round(DEMO[s.slug]?.el || 0)}% EL · ${Math.round(DEMO[s.slug]?.sed || 0)}% FRL</div>
       </div>
-      <div class="school-links" onclick="event.stopPropagation()">
+      <div class="school-links">
         <a href="${s.website}" target="_blank" rel="noopener" title="School website">🌐 Web</a>
         <a href="${s.lunchUrl}" target="_blank" rel="noopener" title="Lunch menu">🍽️ Lunch</a>
         <a href="${dashboardUrl}" target="_blank" rel="noopener" title="CA School Dashboard">📊 Dash</a>
@@ -345,6 +345,7 @@ const homepageCSS = `
     gap: 0.8rem;
   }
   .school-card {
+    position: relative;
     display: block;
     background: #fff;
     border: 1px solid var(--rule-light);
@@ -352,11 +353,14 @@ const homepageCSS = `
     transition: border-color 0.2s, box-shadow 0.2s;
     text-decoration: none;
     color: inherit;
-    cursor: pointer;
   }
   .school-card:hover {
     border-color: var(--green-light);
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  .school-card:focus-within {
+    border-color: var(--green-light);
+    box-shadow: 0 0 0 2px var(--green-light);
   }
   .school-card:hover .school-name-link { color: var(--green-mid); }
   .school-card-header {
@@ -371,6 +375,12 @@ const homepageCSS = `
     font-weight: 600;
     color: var(--green-deep);
     transition: color 0.2s;
+  }
+  .school-name-link::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
   }
   .school-grades {
     font-family: 'IBM Plex Mono', monospace;
@@ -416,6 +426,8 @@ const homepageCSS = `
     color: var(--text-muted);
   }
   .school-links {
+    position: relative;
+    z-index: 2;
     display: flex;
     gap: 0.5rem;
     flex-wrap: wrap;

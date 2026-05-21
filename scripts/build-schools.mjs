@@ -2485,13 +2485,12 @@ function buildSchoolsIndex(lang) {
       const w = barWidthForPct(val);
       const num = `<span class="bar bar-${color}" style="width:${w}px"></span>${Math.round(val)}%`;
       if (!srcUrl) return `<td class="num" data-sort-value="${val}">${num}</td>`;
-      // Link opens the source PDF at the exact slide; stopPropagation keeps the
-      // row-level click (which navigates to the school page) from firing too.
+      // Link opens the source PDF at the exact slide; event delegation handles row clicks
       const title = L.growthCellSourceTitle(ir.source.presentationDate, srcPage);
-      return `<td class="num" data-sort-value="${val}"><a class="growth-cell-link" href="${srcUrl}" target="_blank" rel="noopener" title="${title}" onclick="event.stopPropagation()">${num}</a></td>`;
+      return `<td class="num" data-sort-value="${val}"><a class="growth-cell-link" href="${srcUrl}" target="_blank" rel="noopener" title="${title}">${num}</a></td>`;
     };
     const gv = gradesSortVal(s.grades);
-    return `          <tr onclick="location.href='${href}'" style="cursor:pointer">
+    return `          <tr data-href="${href}">
             <td class="school-name" data-sort-value="${(s.nameShort || s.name).toLowerCase()}"><a href="${href}">${s.nameShort || s.name} <span class="arrow">&rarr;</span></a></td>
             <td data-sort-value="${gv ?? ''}">${s.grades}</td>
             <td class="num" data-sort-value="${s.enrollment}">${s.enrollment.toLocaleString()}</td>
@@ -2507,7 +2506,7 @@ function buildSchoolsIndex(lang) {
     const name = isEs ? (c.nameEs || c.name) : c.name;
     const gv = gradesSortVal(c.grades);
     const openedYear = (c.dateOpened || '').slice(0, 4);
-    return `          <tr onclick="location.href='${href}'" style="cursor:pointer">
+    return `          <tr data-href="${href}">
             <td class="school-name" data-sort-value="${name.toLowerCase()}"><a href="${href}">${name} <span class="arrow">&rarr;</span></a></td>
             <td data-sort-value="${gv ?? ''}">${c.grades || ''}</td>
             <td class="num" data-sort-value="${c.enrollment ?? ''}">${c.enrollment ? c.enrollment.toLocaleString() : ''}</td>
@@ -2588,6 +2587,7 @@ function buildSchoolsIndex(lang) {
   .schools-table-wrap tbody td.school-name a { color: var(--green-mid); text-decoration: underline; text-decoration-color: var(--rule); text-underline-offset: 2px; }
   .schools-table-wrap tbody td.school-name a:hover { color: var(--green-deep); text-decoration-color: var(--green-mid); }
   .schools-table-wrap tbody td.school-name .arrow { color: var(--text-muted); font-size: 0.8em; transition: transform 0.15s, color 0.15s; display: inline-block; }
+  .schools-table-wrap tbody tr[data-href] { cursor: pointer; }
   .schools-table-wrap tbody tr:hover td { background: var(--green-wash); }
   .schools-table-wrap tbody tr:hover .arrow { color: var(--green-mid); transform: translateX(3px); }
   .schools-table-wrap tbody tr:last-child td { border-bottom: 2px solid var(--rule); }
@@ -2771,6 +2771,14 @@ ${siteFooter({ lang })}
     });
   }
   document.querySelectorAll('table.sortable').forEach(init);
+
+  // Set up row-level clicks for table rows with data-href dynamically
+  document.querySelectorAll('tr[data-href]').forEach(function (row) {
+    row.addEventListener('click', function (e) {
+      if (e.target.closest('a')) return;
+      window.location = row.getAttribute('data-href');
+    });
+  });
 })();
 </script>
 

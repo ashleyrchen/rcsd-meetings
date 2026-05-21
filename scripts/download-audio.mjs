@@ -15,6 +15,7 @@ import { fileURLToPath } from 'url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
 const AUDIO_DIR = resolve(ROOT, 'artifacts/audio');
+const TRANSCRIPTS_DIR = resolve(ROOT, 'artifacts/transcripts-aai');
 
 mkdirSync(AUDIO_DIR, { recursive: true });
 
@@ -27,8 +28,12 @@ function hasAudio(videoId) {
   return false;
 }
 
-const needed = videos.filter(v => !hasAudio(v.id));
-console.log(`Total videos: ${videos.length}, already have audio: ${videos.length - needed.length}, to download: ${needed.length}`);
+function hasTranscript(videoId) {
+  return existsSync(resolve(TRANSCRIPTS_DIR, `${videoId}.json`));
+}
+
+const needed = videos.filter(v => !hasAudio(v.id) && !hasTranscript(v.id));
+console.log(`Total videos: ${videos.length}, already transcribed: ${videos.length - needed.length - videos.filter(v => hasAudio(v.id) && !hasTranscript(v.id)).length}, to download: ${needed.length}`);
 
 let downloaded = 0;
 let failed = 0;

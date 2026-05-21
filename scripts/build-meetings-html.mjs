@@ -491,13 +491,12 @@ data.meetings.forEach(m => m.threads.forEach(t => {
 }));
 
 // Split into school years dynamically.
-// School year N starts June 11 of year N-1 (i.e. 2025-26 starts 2025-06-11).
+// Fiscal school year N starts July 1 of year N-1 and ends June 30 of year N.
 function getSchoolYear(dateStr) {
   const y = parseInt(dateStr.slice(0, 4));
   const m = parseInt(dateStr.slice(5, 7));
-  const d = parseInt(dateStr.slice(8, 10));
-  // Jun 11+ belongs to the next school year
-  if (m > 6 || (m === 6 && d >= 11)) return `${y}${(y + 1).toString().slice(2)}`;
+  // July (7) or later starts the next school year
+  if (m >= 7) return `${y}${(y + 1).toString().slice(2)}`;
   return `${y - 1}${y.toString().slice(2)}`;
 }
 
@@ -1919,6 +1918,7 @@ ${siteFooter({ lang: L.lang })}
   var activeType = null;
   var btns = document.querySelectorAll('.thread-btn');
   var allRows = document.querySelectorAll('.meeting-row');
+  var dividers = document.querySelectorAll('.rotation-divider');
 
   btns.forEach(function(btn) {
     btn.addEventListener('click', function() {
@@ -1928,12 +1928,18 @@ ${siteFooter({ lang: L.lang })}
         activeFilter = null;
         activeType = null;
         btns.forEach(function(b) { b.classList.remove('active'); });
-        allRows.forEach(function(r) { r.classList.remove('hidden'); });
+        allRows.forEach(function(r) {
+          if (!r.closest('#upcoming')) {
+            r.classList.remove('hidden');
+          }
+        });
+        dividers.forEach(function(d) { d.classList.remove('hidden'); });
       } else {
         activeFilter = filter;
         activeType = type;
         btns.forEach(function(b) { b.classList.toggle('active', b.dataset.filter === filter && b.dataset.filterType === type); });
         allRows.forEach(function(r) {
+          if (r.closest('#upcoming')) return;
           var match = false;
           if (type === 'thread') {
             var threads = r.dataset.threads || '';
@@ -1947,6 +1953,7 @@ ${siteFooter({ lang: L.lang })}
           }
           r.classList.toggle('hidden', !match);
         });
+        dividers.forEach(function(d) { d.classList.add('hidden'); });
       }
     });
   });
