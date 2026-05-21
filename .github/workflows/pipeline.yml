@@ -1,0 +1,84 @@
+name: Scheduled Board Ingestion Pipeline
+
+on:
+  schedule:
+    # Run twice daily at 6:00 AM and 6:00 PM UTC (11:00 PM and 11:00 AM PDT)
+    - cron: '0 6,18 * * *'
+  workflow_dispatch:
+    inputs:
+      quick:
+        description: 'Quick mode (skip transcription, translation, and LLM mapping)'
+        required: true
+        type: boolean
+        default: false
+
+jobs:
+  ingest-and-deploy:
+    runs-on: ubuntu-latest
+
+    env:
+      # API Keys & Auth Tokens
+      ASSEMBLYAI_API_KEY: ${{ secrets.ASSEMBLYAI_API_KEY }}
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+
+      # Rclone Cloudflare R2 Remote Configuration
+      RCLONE_CONFIG_R2_TYPE: s3
+      RCLONE_CONFIG_R2_PROVIDER: Cloudflare
+      RCLONE_CONFIG_R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+      RCLONE_CONFIG_R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+      RCLONE_CONFIG_R2_ENDPOINT: ${{ secrets.R2_ENDPOINT }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: 'npm'
+
+      - name: Install System Dependencies (rclone)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y rclone
+
+      - name: Install yt-dlp (YouTube downloader)
+        run: |
+          sudo wget https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -O /usr/local/bin/yt-dlp
+          sudo chmod a+rx /usr/local/bin/yt-dlp
+
+      - name: Install Project Dependencies
+        run: npm ci || npm install
+
+      - name: Install Playwright Chromium
+        run: npx playwright install chromium --with-deps
+
+      - name: Run Data Pipeline (Full or Quick)
+        run: |
+          if [ "${{ github.event.inputs.quick }}" = "true" ]; then
+            node scripts/run-pipeline.mjs --quick
+          else
+            # On scheduled cron triggers, run the full pipeline
+            node scripts/run-pipeline.mjs
+          fi
+
+      - name: Deploy Static Web App to Cloudflare Pages
+        run: npx wrangler pages deploy docs --project-name=rcsd-meetings
+
+      - name: Upload Data & Assets to Cloudflare R2 Archival Storage
+        run: npm run upload
+
+      - name: Commit Scraped Agenda Metadata Changes (Incremental)
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/board-memos/ data/youtube-index.json
+          if ! git diff-index --quiet HEAD; then
+            git commit -m "chore(data): auto-update scraped agenda/meeting metadata [skip ci]"
+            git push
+          else
+            echo "No incremental data updates to commit."
+          fi

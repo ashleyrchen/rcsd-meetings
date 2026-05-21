@@ -35,6 +35,7 @@ console.log(`Mode: ${quick ? 'QUICK (skip transcription/translation)' : 'FULL'}\
 // Phase 0: Pull any newly-posted Simbli agendas (items + attachments) before
 // the build reads them. Idempotent — only fetches MIDs without a memo file.
 run('0. Scrape new Simbli agendas', 'scrape-simbli-agendas.mjs');
+run('0a. Scrape new YouTube videos', 'scrape-youtube-index.mjs');
 
 // Phase 1: Data assembly
 run('1. Build meetings data', 'build-meetings.mjs');
