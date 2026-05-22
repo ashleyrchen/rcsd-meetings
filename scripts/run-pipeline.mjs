@@ -43,6 +43,9 @@ run('0a. Scrape new YouTube videos', 'scrape-youtube-index.mjs');
 run('1. Build meetings data', 'build-meetings.mjs');
 
 if (!quick) {
+  // Restore any existing transcription/translation caches to avoid duplicate API calls
+  run('1b. Restore cache from CDN', 'restore-cache.mjs');
+
   // Phase 2: Audio + transcription (slow, costs API $)
   run('2. Download audio', 'download-audio.mjs');
   run('3. Transcribe (AssemblyAI)', 'transcribe-assemblyai.mjs');

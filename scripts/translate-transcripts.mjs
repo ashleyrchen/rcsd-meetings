@@ -145,7 +145,23 @@ async function translateMeeting(date) {
       translations.push(batch[translations.length].t);
     }
 
-    allTranslations.push(...translations.slice(0, batch.length));
+    // Clean translations to ensure they are strictly strings and handle any object returned by Claude
+    const cleanTranslations = translations.slice(0, batch.length).map((val, idx) => {
+      if (val === null || val === undefined) {
+        return batch[idx].t; // Fallback to original English
+      }
+      if (typeof val === 'object') {
+        // Claude sometimes returns an object like {"i": 59, "t": "Buenas noches..."} or {"text": "..."}
+        const textStr = val.t !== undefined ? val.t : (val.text !== undefined ? val.text : (val.translation !== undefined ? val.translation : null));
+        if (typeof textStr === 'string') {
+          return textStr;
+        }
+        return JSON.stringify(val); // Fallback string representation
+      }
+      return String(val);
+    });
+
+    allTranslations.push(...cleanTranslations);
 
     if (batches.length > 1) {
       process.stdout.write(`  batch ${b + 1}/${batches.length} `);
@@ -171,11 +187,77 @@ async function translateMeeting(date) {
 
 // ---- Main ----
 
+async function checkAndRestoreTranslation(date) {
+  const enPath = resolve(SLIM_DIR, `${date}.json`);
+  const esPath = resolve(SLIM_DIR, `${date}-es.json`);
+
+  // Ensure SLIM_DIR exists
+  if (!existsSync(SLIM_DIR)) {
+    mkdirSync(SLIM_DIR, { recursive: true });
+  }
+
+  // 1. Try to restore English slim transcript if missing locally
+  if (!existsSync(enPath)) {
+    try {
+      const url = `https://data.rcsd.info/transcripts/${date}.json`;
+      const res = await fetch(url);
+      if (res.ok) {
+        const text = await res.text();
+        const parsed = JSON.parse(text);
+        if (parsed.utterances && parsed.utterances.length > 0) {
+          writeFileSync(enPath, JSON.stringify(parsed, null, 2));
+          console.log(`  [Cache Restore] Restored English slim transcript for ${date} from CDN`);
+        }
+      }
+    } catch (err) {
+      console.warn(`  [Cache Restore] Failed to check English CDN cache for ${date}: ${err.message}`);
+    }
+  }
+
+  // 2. Try to restore Spanish slim transcript if missing locally
+  if (!force && !existsSync(esPath)) {
+    try {
+      const url = `https://data.rcsd.info/transcripts/${date}-es.json`;
+      const res = await fetch(url);
+      if (res.ok) {
+        const text = await res.text();
+        const parsed = JSON.parse(text);
+        if (parsed.utterances && parsed.utterances.length > 0) {
+          writeFileSync(esPath, JSON.stringify(parsed, null, 2));
+          console.log(`  [Cache Restore] Restored Spanish slim transcript for ${date} from CDN`);
+          return true;
+        }
+      }
+    } catch (err) {
+      console.warn(`  [Cache Restore] Failed to check Spanish CDN cache for ${date}: ${err.message}`);
+    }
+  }
+
+  return !force && existsSync(esPath);
+}
+
 async function main() {
-  const files = readdirSync(SLIM_DIR)
-    .filter(f => f.match(/^\d{4}-\d{2}-\d{2}\.json$/) && !f.includes('-es'))
-    .map(f => f.replace('.json', ''))
-    .sort();
+  // Load meetings from database to find all dates that should have transcripts
+  let dbDates = [];
+  try {
+    const dataPath = resolve(ROOT, 'data/meetings-data.json');
+    if (existsSync(dataPath)) {
+      const data = JSON.parse(readFileSync(dataPath, 'utf-8'));
+      dbDates = (data.meetings || data)
+        .filter(m => m.youtube && m.hasTranscript)
+        .map(m => m.date);
+    }
+  } catch (err) {
+    console.warn(`  [Cache Restore] Failed to read meetings-data.json: ${err.message}`);
+  }
+
+  const localFiles = existsSync(SLIM_DIR)
+    ? readdirSync(SLIM_DIR)
+        .filter(f => f.match(/^\d{4}-\d{2}-\d{2}\.json$/) && !f.includes('-es'))
+        .map(f => f.replace('.json', ''))
+    : [];
+
+  const files = Array.from(new Set([...dbDates, ...localFiles])).sort();
 
   const toProcess = dateFilter ? files.filter(d => d === dateFilter) : files;
   let translated = 0, cached = 0, errors = 0;
@@ -184,10 +266,13 @@ async function main() {
   // Filter to uncached
   const needsWork = [];
   for (const date of toProcess) {
-    const esPath = resolve(SLIM_DIR, `${date}-es.json`);
+    const isCached = await checkAndRestoreTranslation(date);
+    if (isCached) {
+      cached++;
+      continue;
+    }
     const enPath = resolve(SLIM_DIR, `${date}.json`);
     if (!existsSync(enPath)) continue;
-    if (!force && existsSync(esPath)) { cached++; continue; }
     needsWork.push(date);
   }
 

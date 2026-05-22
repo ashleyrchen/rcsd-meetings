@@ -80,6 +80,23 @@ for (const m of data.meetings) {
   if (!m.youtube || !m.hasTranscript) continue;
 
   const aaiPath = resolve(AAI_DIR, `${m.youtube}.json`);
+  if (!existsSync(aaiPath)) {
+    try {
+      const url = `https://data.rcsd.info/transcripts-aai/${m.youtube}.json`;
+      const res = await fetch(url);
+      if (res.ok) {
+        const text = await res.text();
+        const data = JSON.parse(text);
+        if (data.status === 'completed' || data.text) {
+          writeFileSync(aaiPath, JSON.stringify(data, null, 2));
+          console.log(`    [Cache Restore] Restored raw AssemblyAI transcript for ${m.date} (${m.youtube}) from CDN`);
+        }
+      }
+    } catch (err) {
+      console.warn(`    [Cache Restore] Failed to fetch raw transcript for ${m.date} from CDN: ${err.message}`);
+    }
+  }
+
   if (!existsSync(aaiPath)) continue;
 
   const aai = JSON.parse(readFileSync(aaiPath, 'utf-8'));

@@ -80,8 +80,28 @@ function cachePath(videoId) {
   return resolve(CACHE_DIR, `${videoId}.json`);
 }
 
-function hasCached(videoId) {
-  return !forceAll && existsSync(cachePath(videoId));
+async function hasCachedOrRestored(videoId, date) {
+  const local = cachePath(videoId);
+  if (!forceAll && existsSync(local)) return true;
+
+  if (!forceAll) {
+    try {
+      const url = `https://data.rcsd.info/transcripts-aai/${videoId}.json`;
+      const res = await fetch(url);
+      if (res.ok) {
+        const text = await res.text();
+        const data = JSON.parse(text);
+        if (data.status === 'completed' || data.text) {
+          writeFileSync(local, JSON.stringify(data, null, 2));
+          console.log(`  [Cache Restore] Restored raw AssemblyAI transcript for ${date} (${videoId}) from CDN`);
+          return true;
+        }
+      }
+    } catch (err) {
+      console.warn(`  [Cache Restore] Failed to check CDN cache for ${videoId}: ${err.message}`);
+    }
+  }
+  return false;
 }
 
 /**
@@ -210,11 +230,12 @@ async function transcribe(audioPath, meeting) {
 
 // ---- Main ----
 async function main() {
-  const toProcess = meetings.filter(m => {
-    if (filterDate && m.date !== filterDate) return false;
-    if (hasCached(m.youtube)) return false;
-    return true;
-  });
+  const toProcess = [];
+  for (const m of meetings) {
+    if (filterDate && m.date !== filterDate) continue;
+    if (await hasCachedOrRestored(m.youtube, m.date)) continue;
+    toProcess.push(m);
+  }
 
   if (toProcess.length === 0) {
     console.log('All meetings already transcribed.');
