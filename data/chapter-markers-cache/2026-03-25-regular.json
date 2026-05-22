@@ -1,7 +1,7 @@
 {
   "date": "2026-03-25",
   "slug": "2026-03-25-regular",
-  "itemCount": 60,
+  "itemCount": 65,
   "llmResponse": {
     "speakers": {
       "A": {
@@ -26,7 +26,7 @@
       },
       "F": {
         "name": "Charlie (AI presenter)",
-        "role": "Technology Presenter (external)"
+        "role": "External Technology Presenter"
       },
       "G": {
         "name": "Mike Wells",
@@ -45,7 +45,7 @@
         "role": "Trustee"
       }
     },
-    "agendaChanges": "Board President David Weekly proposed and board approved moving Item 17.1 (AI-Assisted Literacy and Numeracy presentation) to be heard after Item 13.2 (Garfield SPSA) and before Item 13.3 (Second Interim Budget). All other items proceeded in original order. Sections 1-5 (closed session) occurred prior to the recording's main open session content; the recording begins with what appears to be the closed session call to order and roll call transitioning into the open session welcome.",
+    "agendaChanges": "Board President David Weekly moved Item 17.1 (AI-Assisted Literacy and Numeracy informational presentation) to be heard after Item 13.2 (Garfield SPSA) and before Item 13.3 (Second Interim Budget). The motion was approved without objection. All other items were heard in their original order. Section 2 (if any) and Section 11 (Bond Program Action Items) had no items taken up. The closed session (Sections 1-4) occurred prior to the open session recording.",
     "items": [
       {
         "itemLabel": "1",
@@ -63,6 +63,20 @@
       },
       {
         "itemLabel": "3",
+        "title": "Public Comment on Closed Session Items Only",
+        "phases": {
+          "opened": 165,
+          "presentation": null,
+          "publicComment": 165,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
         "title": "Announcement of Closed Session Purpose",
         "phases": {
           "opened": 165,
@@ -76,8 +90,8 @@
         "pulled": false
       },
       {
-        "itemLabel": "4",
-        "title": "Closed Session — Conference with Legal Counsel (Existing Litigation)",
+        "itemLabel": "5",
+        "title": "Closed Session – Conference with Legal Counsel (Existing Litigation, Gov. Code 54956.9(d)(1))",
         "phases": {
           "opened": 165,
           "presentation": null,
@@ -90,10 +104,10 @@
         "pulled": false
       },
       {
-        "itemLabel": "5",
+        "itemLabel": "6",
         "title": "Reconvene to Open Session / Roll Call / Report Out on Closed Session",
         "phases": {
-          "opened": 194,
+          "opened": 128,
           "presentation": null,
           "publicComment": null,
           "discussion": null,
@@ -104,7 +118,7 @@
         "pulled": false
       },
       {
-        "itemLabel": "6",
+        "itemLabel": "7",
         "title": "Welcome / Pledge of Allegiance",
         "phases": {
           "opened": 194,
@@ -118,7 +132,7 @@
         "pulled": false
       },
       {
-        "itemLabel": "7",
+        "itemLabel": "8",
         "title": "Changes to the Agenda",
         "phases": {
           "opened": 369,
@@ -132,8 +146,8 @@
         "pulled": false
       },
       {
-        "itemLabel": "8",
-        "title": "Approval of the Agenda",
+        "itemLabel": "9",
+        "title": "Approval of the Agenda (Action Required)",
         "phases": {
           "opened": 435,
           "presentation": null,
@@ -150,8 +164,8 @@
         "pulled": false
       },
       {
-        "itemLabel": "9",
-        "title": "Public Comment / Labor Association Comments",
+        "itemLabel": "10",
+        "title": "Public Comment (General – Items Not on Agenda)",
         "phases": {
           "opened": 454,
           "presentation": null,
@@ -164,51 +178,66 @@
             "name": "Christy Herrera",
             "startSeconds": 468,
             "endSeconds": 650,
-            "summary": "Described kindergarten classrooms at Hoover as overwhelmed emergency rooms, noting class sizes of 27-28 students with high-needs populations, and urged the board to prioritize smaller class sizes and consistent instructional support across the district."
+            "summary": "Kindergarten teacher at Hoover described the intense and unsustainable needs in her classroom of 27–28 students, urging the board to prioritize smaller class sizes and consistent instructional support across the district."
           },
           {
             "name": "Henry Taura",
             "startSeconds": 666,
             "endSeconds": 848,
-            "summary": "Requested additional space expansion for the Play Thrive after-school program at Orion Alternative Public School to support Mandarin immersion students and preserve cultural and linguistic heritage."
+            "summary": "Father of incoming TK student at Orion requested additional classroom space for the Play Thrive after-school program to support Mandarin immersion students and preserve cultural and linguistic heritage."
           },
           {
             "name": "Renee Lowe",
             "startSeconds": 858,
             "endSeconds": 948,
-            "summary": "Asked the board to approve additional classrooms for Play Thrive at Orion Elementary, noting that every new family applying for the program has been waitlisted and that after-school care is essential for the growing Mandarin Immersion Program."
+            "summary": "Parent of incoming TK student at Orion urged the board to approve additional classrooms for the Play Thrive after-school program, which is at capacity as the Mandarin Immersion Program grows."
           },
           {
             "name": "Anjian Wu",
             "startSeconds": 973,
             "endSeconds": 1125,
-            "summary": "Described being waitlisted second for Play Thrive despite applying within two minutes of applications opening, and urged the district to proactively expand on-campus after-school capacity at Orion as the Mandarin Immersion Program grows."
-          },
-          {
-            "name": "Maria Stockton",
-            "startSeconds": 1152,
-            "endSeconds": 1159,
-            "summary": "CSEA Chapter President offered a brief greeting and deferred her time to the board."
-          },
-          {
-            "name": "Brenna",
-            "startSeconds": 1190,
-            "endSeconds": 1211,
-            "summary": "Thanked the board for scheduling her for upcoming presentations she described as critical."
-          },
-          {
-            "name": "Ms. Martinez",
-            "startSeconds": 1223,
-            "endSeconds": 1327,
-            "summary": "A second-grade bilingual teacher at Garfield spoke against plans for combination classes, warning that students already behind cannot work independently and that combo classes would widen learning gaps particularly in math and literacy."
+            "summary": "Parent of incoming TK student at Orion, waitlisted for Play Thrive within 2 minutes of the application opening, asked the district to proactively expand on-campus after-school capacity to keep pace with program growth."
           }
         ],
         "consent": false,
         "pulled": false
       },
       {
-        "itemLabel": "10",
-        "title": "Approval of Bond Program Consent Items — Steel Casing Cost Change Order #3 for Solar Phase 2 at Taft (Measure T)",
+        "itemLabel": "10.1",
+        "title": "Labor Association Comments",
+        "phases": {
+          "opened": 1125,
+          "presentation": null,
+          "publicComment": 1125,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Maria Stockton",
+            "startSeconds": 1152,
+            "endSeconds": 1159,
+            "summary": "CSEA Chapter President briefly greeted the board and deferred her time."
+          },
+          {
+            "name": "Brenna (online)",
+            "startSeconds": 1190,
+            "endSeconds": 1210,
+            "summary": "Thanked the board for scheduling her for upcoming presentations on critical topics."
+          },
+          {
+            "name": "Ms. Martinez",
+            "startSeconds": 1223,
+            "endSeconds": 1327,
+            "summary": "Second-grade bilingual teacher at Garfield warned that proposed combo classes would widen the learning gap for already-struggling students who need their teacher's full attention, and asked the board to reconsider the plan."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "Approval of the Bond Program Consent Items – Approval of Steel Casing Cost, Change Order #3 for Solar Phase 2 Project at Taft Community School with Holt Renewables (Measure T)",
         "phases": {
           "opened": 1327,
           "presentation": null,
@@ -225,7 +254,7 @@
         "pulled": false
       },
       {
-        "itemLabel": "11",
+        "itemLabel": "12",
         "title": "Bond Program Action Items",
         "phases": {
           "opened": null,
@@ -239,8 +268,8 @@
         "pulled": false
       },
       {
-        "itemLabel": "12",
-        "title": "Information on Financial Audit Report for Redwood City School District for the 2024–25 School Year",
+        "itemLabel": "13",
+        "title": "School/Community Reports – Information on Financial Audit Report for Redwood City School District for the 2024–25 School Year",
         "phases": {
           "opened": 1351,
           "presentation": 1373,
@@ -253,7 +282,7 @@
         "pulled": false
       },
       {
-        "itemLabel": "13.1",
+        "itemLabel": "14.1",
         "title": "Taft School Presentation and School Plan for Student Achievement (SPSA) Approval",
         "phases": {
           "opened": 1955,
@@ -271,7 +300,7 @@
         "pulled": false
       },
       {
-        "itemLabel": "13.2",
+        "itemLabel": "14.2",
         "title": "Garfield School Presentation and School Plan for Student Achievement (SPSA) Approval",
         "phases": {
           "opened": 3757,
@@ -289,8 +318,8 @@
         "pulled": false
       },
       {
-        "itemLabel": "17.1",
-        "title": "AI-Assisted Literacy and Numeracy: Current Landscape and Framework for Evaluation (moved earlier in agenda)",
+        "itemLabel": "18.1",
+        "title": "AI-Assisted Literacy and Numeracy: Current Landscape and Framework for Evaluation (moved from Section 18 / Item 17.1)",
         "phases": {
           "opened": 5502,
           "presentation": 5537,
@@ -303,7 +332,7 @@
         "pulled": false
       },
       {
-        "itemLabel": "13.3",
+        "itemLabel": "14.3",
         "title": "Approval of the 2025-26 Second Interim Budget Report for Redwood City School District",
         "phases": {
           "opened": 6424,
@@ -321,13 +350,13 @@
         "pulled": false
       },
       {
-        "itemLabel": "14",
-        "title": "Second Reading and Discussion of Board Policy 3515.21: Unmanned Aircraft Systems (Drones)",
+        "itemLabel": "15",
+        "title": "Discussion Items – Second Reading and Discussion of Board Policy 3515.21: Unmanned Aircraft Systems (Drones)",
         "phases": {
-          "opened": 7370,
+          "opened": 7375,
           "presentation": null,
           "publicComment": null,
-          "discussion": 7370,
+          "discussion": 7375,
           "vote": null
         },
         "publicComments": [],
@@ -335,8 +364,8 @@
         "pulled": false
       },
       {
-        "itemLabel": "15",
-        "title": "Approval of Consent Items",
+        "itemLabel": "16",
+        "title": "Approval of Consent Items (Action Required)",
         "phases": {
           "opened": 7570,
           "presentation": null,
@@ -353,7 +382,7 @@
         "pulled": false
       },
       {
-        "itemLabel": "16",
+        "itemLabel": "17",
         "title": "Board and Superintendent Reports",
         "phases": {
           "opened": 7619,
@@ -367,7 +396,7 @@
         "pulled": false
       },
       {
-        "itemLabel": "17.2",
+        "itemLabel": "18.2",
         "title": "Redwood City School District Review of Connect's Audit Report for FY 2024–25",
         "phases": {
           "opened": 7863,
@@ -381,7 +410,7 @@
         "pulled": false
       },
       {
-        "itemLabel": "17.3",
+        "itemLabel": "18.3",
         "title": "Learning Communities for School Success Program End-of-Project Information",
         "phases": {
           "opened": 7892,
@@ -395,8 +424,8 @@
         "pulled": false
       },
       {
-        "itemLabel": "17.4",
-        "title": "Information on San Mateo County Investment Fund — February 2026",
+        "itemLabel": "18.4",
+        "title": "Information on San Mateo County Investment Fund – February 2026",
         "phases": {
           "opened": 7893,
           "presentation": null,
@@ -409,8 +438,64 @@
         "pulled": false
       },
       {
-        "itemLabel": "18",
-        "title": "Adjournment",
+        "itemLabel": "19",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 7895,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "20",
+        "title": "Other Business / Suggested Items for Future Agenda",
+        "phases": {
+          "opened": 7900,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 7937,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "21",
+        "title": "Board of Trustees Meeting Reflection",
+        "phases": {
+          "opened": 7951,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 7960,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "22",
+        "title": "Board of Trustees Meeting Calendar",
+        "phases": {
+          "opened": 8820,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 8820,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "23",
+        "title": "Adjournment (Action Required)",
         "phases": {
           "opened": 8840,
           "presentation": null,
@@ -453,7 +538,7 @@
       },
       "F": {
         "name": "Charlie (AI presenter)",
-        "role": "Technology Presenter (external)"
+        "role": "External Technology Presenter"
       },
       "G": {
         "name": "Mike Wells",
@@ -472,7 +557,7 @@
         "role": "Trustee"
       }
     },
-    "agendaChanges": "Board President David Weekly proposed and board approved moving Item 17.1 (AI-Assisted Literacy and Numeracy presentation) to be heard after Item 13.2 (Garfield SPSA) and before Item 13.3 (Second Interim Budget). All other items proceeded in original order. Sections 1-5 (closed session) occurred prior to the recording's main open session content; the recording begins with what appears to be the closed session call to order and roll call transitioning into the open session welcome.",
+    "agendaChanges": "Board President David Weekly moved Item 17.1 (AI-Assisted Literacy and Numeracy informational presentation) to be heard after Item 13.2 (Garfield SPSA) and before Item 13.3 (Second Interim Budget). The motion was approved without objection. All other items were heard in their original order. Section 2 (if any) and Section 11 (Bond Program Action Items) had no items taken up. The closed session (Sections 1-4) occurred prior to the open session recording.",
     "items": [
       {
         "itemLabel": "1",
@@ -490,6 +575,20 @@
       },
       {
         "itemLabel": "3",
+        "title": "Public Comment on Closed Session Items Only",
+        "phases": {
+          "opened": 165,
+          "presentation": null,
+          "publicComment": 165,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
         "title": "Announcement of Closed Session Purpose",
         "phases": {
           "opened": 165,
@@ -503,8 +602,8 @@
         "pulled": false
       },
       {
-        "itemLabel": "4",
-        "title": "Closed Session — Conference with Legal Counsel (Existing Litigation)",
+        "itemLabel": "5",
+        "title": "Closed Session – Conference with Legal Counsel (Existing Litigation, Gov. Code 54956.9(d)(1))",
         "phases": {
           "opened": 165,
           "presentation": null,
@@ -517,10 +616,10 @@
         "pulled": false
       },
       {
-        "itemLabel": "5",
+        "itemLabel": "6",
         "title": "Reconvene to Open Session / Roll Call / Report Out on Closed Session",
         "phases": {
-          "opened": 194,
+          "opened": 128,
           "presentation": null,
           "publicComment": null,
           "discussion": null,
@@ -531,7 +630,7 @@
         "pulled": false
       },
       {
-        "itemLabel": "6",
+        "itemLabel": "7",
         "title": "Welcome / Pledge of Allegiance",
         "phases": {
           "opened": 194,
@@ -545,7 +644,7 @@
         "pulled": false
       },
       {
-        "itemLabel": "7",
+        "itemLabel": "8",
         "title": "Changes to the Agenda",
         "phases": {
           "opened": 369,
@@ -559,8 +658,8 @@
         "pulled": false
       },
       {
-        "itemLabel": "8",
-        "title": "Approval of the Agenda",
+        "itemLabel": "9",
+        "title": "Approval of the Agenda (Action Required)",
         "phases": {
           "opened": 435,
           "presentation": null,
@@ -577,8 +676,8 @@
         "pulled": false
       },
       {
-        "itemLabel": "9",
-        "title": "Public Comment / Labor Association Comments",
+        "itemLabel": "10",
+        "title": "Public Comment (General – Items Not on Agenda)",
         "phases": {
           "opened": 454,
           "presentation": null,
@@ -591,51 +690,66 @@
             "name": "Christy Herrera",
             "startSeconds": 468,
             "endSeconds": 650,
-            "summary": "Described kindergarten classrooms at Hoover as overwhelmed emergency rooms, noting class sizes of 27-28 students with high-needs populations, and urged the board to prioritize smaller class sizes and consistent instructional support across the district."
+            "summary": "Kindergarten teacher at Hoover described the intense and unsustainable needs in her classroom of 27–28 students, urging the board to prioritize smaller class sizes and consistent instructional support across the district."
           },
           {
             "name": "Henry Taura",
             "startSeconds": 666,
             "endSeconds": 848,
-            "summary": "Requested additional space expansion for the Play Thrive after-school program at Orion Alternative Public School to support Mandarin immersion students and preserve cultural and linguistic heritage."
+            "summary": "Father of incoming TK student at Orion requested additional classroom space for the Play Thrive after-school program to support Mandarin immersion students and preserve cultural and linguistic heritage."
           },
           {
             "name": "Renee Lowe",
             "startSeconds": 858,
             "endSeconds": 948,
-            "summary": "Asked the board to approve additional classrooms for Play Thrive at Orion Elementary, noting that every new family applying for the program has been waitlisted and that after-school care is essential for the growing Mandarin Immersion Program."
+            "summary": "Parent of incoming TK student at Orion urged the board to approve additional classrooms for the Play Thrive after-school program, which is at capacity as the Mandarin Immersion Program grows."
           },
           {
             "name": "Anjian Wu",
             "startSeconds": 973,
             "endSeconds": 1125,
-            "summary": "Described being waitlisted second for Play Thrive despite applying within two minutes of applications opening, and urged the district to proactively expand on-campus after-school capacity at Orion as the Mandarin Immersion Program grows."
-          },
-          {
-            "name": "Maria Stockton",
-            "startSeconds": 1152,
-            "endSeconds": 1159,
-            "summary": "CSEA Chapter President offered a brief greeting and deferred her time to the board."
-          },
-          {
-            "name": "Brenna",
-            "startSeconds": 1190,
-            "endSeconds": 1211,
-            "summary": "Thanked the board for scheduling her for upcoming presentations she described as critical."
-          },
-          {
-            "name": "Ms. Martinez",
-            "startSeconds": 1223,
-            "endSeconds": 1327,
-            "summary": "A second-grade bilingual teacher at Garfield spoke against plans for combination classes, warning that students already behind cannot work independently and that combo classes would widen learning gaps particularly in math and literacy."
+            "summary": "Parent of incoming TK student at Orion, waitlisted for Play Thrive within 2 minutes of the application opening, asked the district to proactively expand on-campus after-school capacity to keep pace with program growth."
           }
         ],
         "consent": false,
         "pulled": false
       },
       {
-        "itemLabel": "10",
-        "title": "Approval of Bond Program Consent Items — Steel Casing Cost Change Order #3 for Solar Phase 2 at Taft (Measure T)",
+        "itemLabel": "10.1",
+        "title": "Labor Association Comments",
+        "phases": {
+          "opened": 1125,
+          "presentation": null,
+          "publicComment": 1125,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Maria Stockton",
+            "startSeconds": 1152,
+            "endSeconds": 1159,
+            "summary": "CSEA Chapter President briefly greeted the board and deferred her time."
+          },
+          {
+            "name": "Brenna (online)",
+            "startSeconds": 1190,
+            "endSeconds": 1210,
+            "summary": "Thanked the board for scheduling her for upcoming presentations on critical topics."
+          },
+          {
+            "name": "Ms. Martinez",
+            "startSeconds": 1223,
+            "endSeconds": 1327,
+            "summary": "Second-grade bilingual teacher at Garfield warned that proposed combo classes would widen the learning gap for already-struggling students who need their teacher's full attention, and asked the board to reconsider the plan."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "Approval of the Bond Program Consent Items – Approval of Steel Casing Cost, Change Order #3 for Solar Phase 2 Project at Taft Community School with Holt Renewables (Measure T)",
         "phases": {
           "opened": 1327,
           "presentation": null,
@@ -652,7 +766,7 @@
         "pulled": false
       },
       {
-        "itemLabel": "11",
+        "itemLabel": "12",
         "title": "Bond Program Action Items",
         "phases": {
           "opened": null,
@@ -666,8 +780,8 @@
         "pulled": false
       },
       {
-        "itemLabel": "12",
-        "title": "Information on Financial Audit Report for Redwood City School District for the 2024–25 School Year",
+        "itemLabel": "13",
+        "title": "School/Community Reports – Information on Financial Audit Report for Redwood City School District for the 2024–25 School Year",
         "phases": {
           "opened": 1351,
           "presentation": 1373,
@@ -680,7 +794,7 @@
         "pulled": false
       },
       {
-        "itemLabel": "13.1",
+        "itemLabel": "14.1",
         "title": "Taft School Presentation and School Plan for Student Achievement (SPSA) Approval",
         "phases": {
           "opened": 1955,
@@ -698,7 +812,7 @@
         "pulled": false
       },
       {
-        "itemLabel": "13.2",
+        "itemLabel": "14.2",
         "title": "Garfield School Presentation and School Plan for Student Achievement (SPSA) Approval",
         "phases": {
           "opened": 3757,
@@ -716,8 +830,8 @@
         "pulled": false
       },
       {
-        "itemLabel": "17.1",
-        "title": "AI-Assisted Literacy and Numeracy: Current Landscape and Framework for Evaluation (moved earlier in agenda)",
+        "itemLabel": "18.1",
+        "title": "AI-Assisted Literacy and Numeracy: Current Landscape and Framework for Evaluation (moved from Section 18 / Item 17.1)",
         "phases": {
           "opened": 5502,
           "presentation": 5537,
@@ -730,7 +844,7 @@
         "pulled": false
       },
       {
-        "itemLabel": "13.3",
+        "itemLabel": "14.3",
         "title": "Approval of the 2025-26 Second Interim Budget Report for Redwood City School District",
         "phases": {
           "opened": 6424,
@@ -748,13 +862,13 @@
         "pulled": false
       },
       {
-        "itemLabel": "14",
-        "title": "Second Reading and Discussion of Board Policy 3515.21: Unmanned Aircraft Systems (Drones)",
+        "itemLabel": "15",
+        "title": "Discussion Items – Second Reading and Discussion of Board Policy 3515.21: Unmanned Aircraft Systems (Drones)",
         "phases": {
-          "opened": 7370,
+          "opened": 7375,
           "presentation": null,
           "publicComment": null,
-          "discussion": 7370,
+          "discussion": 7375,
           "vote": null
         },
         "publicComments": [],
@@ -762,8 +876,8 @@
         "pulled": false
       },
       {
-        "itemLabel": "15",
-        "title": "Approval of Consent Items",
+        "itemLabel": "16",
+        "title": "Approval of Consent Items (Action Required)",
         "phases": {
           "opened": 7570,
           "presentation": null,
@@ -780,7 +894,7 @@
         "pulled": false
       },
       {
-        "itemLabel": "16",
+        "itemLabel": "17",
         "title": "Board and Superintendent Reports",
         "phases": {
           "opened": 7619,
@@ -794,7 +908,7 @@
         "pulled": false
       },
       {
-        "itemLabel": "17.2",
+        "itemLabel": "18.2",
         "title": "Redwood City School District Review of Connect's Audit Report for FY 2024–25",
         "phases": {
           "opened": 7863,
@@ -808,7 +922,7 @@
         "pulled": false
       },
       {
-        "itemLabel": "17.3",
+        "itemLabel": "18.3",
         "title": "Learning Communities for School Success Program End-of-Project Information",
         "phases": {
           "opened": 7892,
@@ -822,8 +936,8 @@
         "pulled": false
       },
       {
-        "itemLabel": "17.4",
-        "title": "Information on San Mateo County Investment Fund — February 2026",
+        "itemLabel": "18.4",
+        "title": "Information on San Mateo County Investment Fund – February 2026",
         "phases": {
           "opened": 7893,
           "presentation": null,
@@ -836,8 +950,64 @@
         "pulled": false
       },
       {
-        "itemLabel": "18",
-        "title": "Adjournment",
+        "itemLabel": "19",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 7895,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "20",
+        "title": "Other Business / Suggested Items for Future Agenda",
+        "phases": {
+          "opened": 7900,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 7937,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "21",
+        "title": "Board of Trustees Meeting Reflection",
+        "phases": {
+          "opened": 7951,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 7960,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "22",
+        "title": "Board of Trustees Meeting Calendar",
+        "phases": {
+          "opened": 8820,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 8820,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "23",
+        "title": "Adjournment (Action Required)",
         "phases": {
           "opened": 8840,
           "presentation": null,
@@ -855,7 +1025,7 @@
       }
     ]
   },
-  "cachedAt": "2026-03-31T20:43:07.700Z",
-  "inputTokens": 40698,
-  "outputTokens": 3404
+  "cachedAt": "2026-05-22T04:40:25.418Z",
+  "inputTokens": 40824,
+  "outputTokens": 3966
 }

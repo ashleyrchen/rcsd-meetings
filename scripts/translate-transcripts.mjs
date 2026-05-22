@@ -76,7 +76,7 @@ async function translateMeeting(date) {
   const inputJson = JSON.stringify(input);
 
   // For very long transcripts, split into batches
-  const MAX_CHARS = 200000; // 1M context model handles full transcripts in one call
+  const MAX_CHARS = 30000; // Translate in medium-sized batches (~30k chars) to optimize speed and stay within output limits
   const batches = [];
   let currentBatch = [];
   let currentSize = 0;

@@ -34,6 +34,7 @@ const verb = fullSync ? 'sync' : 'copy';
 
 function run(label, args) {
   if (dryRun) args.push('--dry-run');
+  args.push('--s3-no-check-bucket');
   console.log(`\n${label}`);
   try {
     execFileSync('rclone', args, { stdio: 'inherit', timeout: 600_000 });

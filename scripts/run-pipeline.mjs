@@ -15,13 +15,15 @@ import { fileURLToPath } from 'url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
 const quick = process.argv.includes('--quick');
+const upload = process.argv.includes('--upload');
+const deploy = process.argv.includes('--deploy');
 
 function run(label, script) {
   console.log(`\n${'='.repeat(60)}`);
   console.log(`  ${label}`);
   console.log('='.repeat(60));
   try {
-    execFileSync('node', [resolve(ROOT, 'scripts', script)], { cwd: ROOT, stdio: 'inherit', timeout: 600000 });
+    execFileSync('node', [resolve(ROOT, 'scripts', script)], { cwd: ROOT, stdio: 'inherit', timeout: 1800000 });
   } catch (err) {
     console.error(`\n  FAILED: ${label} (${script})`);
     console.error(`  ${err.message}\n`);
@@ -69,13 +71,27 @@ run(`${step++}. Blog`, 'build-blog.mjs');
 console.log(`\n${'='.repeat(60)}`);
 console.log('  Pipeline complete!');
 console.log('='.repeat(60));
-console.log('\nDeploy:');
-console.log('  npx wrangler pages deploy docs --project-name=rcsd-meetings');
-console.log('\nUpload data to R2:');
-console.log('  rclone copy data/ r2:rcsd-meetings/json/ --filter "- llm-timestamp-cache/**" --filter "- chapter-markers-cache/**" --filter "- boarddocs-scraped.json" --filter "- board-memos/**" --filter "+ *.json" --filter "- *" --s3-no-check-bucket');
-console.log('\nUpload OG images to R2:');
-console.log('  rclone copy artifacts/og/ r2:rcsd-meetings/og/ --s3-no-check-bucket');
-if (!quick) {
-  console.log('  rclone copy artifacts/transcripts-slim/ r2:rcsd-meetings/transcripts/ --s3-no-check-bucket');
+
+if (upload) {
+  run('Upload data & transcripts to Cloudflare R2', 'upload-to-r2.mjs');
+} else {
+  console.log('\nUpload data to R2 (run with --upload to automate):');
+  console.log('  node scripts/upload-to-r2.mjs');
+}
+
+if (deploy) {
+  console.log(`\n${'='.repeat(60)}`);
+  console.log('  Deploying to Cloudflare Pages');
+  console.log('='.repeat(60));
+  try {
+    execFileSync('npx', ['wrangler', 'pages', 'deploy', 'docs', '--project-name=rcsd-meetings'], { cwd: ROOT, stdio: 'inherit' });
+  } catch (err) {
+    console.error(`\n  FAILED: Wrangler Deploy`);
+    console.error(`  ${err.message}\n`);
+    process.exit(1);
+  }
+} else {
+  console.log('\nDeploy (run with --deploy to automate):');
+  console.log('  npx wrangler pages deploy docs --project-name=rcsd-meetings');
 }
 console.log('');
