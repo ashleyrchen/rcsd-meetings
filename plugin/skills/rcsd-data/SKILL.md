@@ -1,6 +1,6 @@
 ---
 name: RCSD Data Analyst
-description: This skill should be used when the user asks about "Redwood City schools", "RCSD", "school hours", "school enrollment", "school calendar", "is there school today", "next board meeting", "what's for lunch", "lunch menu", "report an absence", "IEP data", "special education", "EL percentage", "LTEL", "long-term English learner", "chronic absenteeism", "teacher diversity", "staff demographics", "teacher experience", "pupil-teacher ratio", "school site council", "SSC", "SPSA", "free and reduced lunch", "PTO", "Konstella", "ParentSquare", "which school", "board meeting", "SARC", "test scores", "CAASPP", "school budget", "RCEF", "Measure U", "expenditures", "watch board meeting", "compare schools", "school demographics", "meeting transcript", "board discussion", or any question about Redwood City School District schools, demographics, calendars, meetings, lunch menus, funding, staffing, or parent resources. Also activates when the user mentions a child's name in the context of school.
+description: This skill should be used when the user asks about "Redwood City schools", "RCSD", "school hours", "school enrollment", "school calendar", "is there school today", "next board meeting", "what's for lunch", "lunch menu", "report an absence", "IEP data", "special education", "EL percentage", "LTEL", "long-term English learner", "chronic absenteeism", "teacher diversity", "staff demographics", "teacher experience", "pupil-teacher ratio", "school site council", "SSC", "SPSA", "free and reduced lunch", "PTO", "Konstella", "ParentSquare", "which school", "board meeting", "SARC", "test scores", "CAASPP", "school budget", "RCEF", "Measure U", "expenditures", "district property", "former school site", "who leases the old campus", "watch board meeting", "compare schools", "school demographics", "meeting transcript", "board discussion", or any question about Redwood City School District schools, demographics, calendars, meetings, lunch menus, funding, staffing, or parent resources. Also activates when the user mentions a child's name in the context of school.
 version: 0.3.0
 ---
 
@@ -44,6 +44,8 @@ Read these files from `data/` to answer questions. For field-by-field documentat
 | File | Size | Use For |
 |------|------|---------|
 | `schools.json` | 609 lines | School profiles, bell schedules, addresses, principals, PTO/PTA info, parent links, CDS codes |
+| `charters.json` | 3 charters | RCSD-authorized charter schools: addresses, authorizer, enrollment, leaders, CDS codes (separate from district schools) |
+| `properties.json` | 4 properties | District-owned/leased real estate that is **not** an operating school — admin buildings, leased-out former campuses, storage. Keyed by address; use to resolve a district site named only by street address. |
 | `district-calendar-2025-26.json` | ~17 events | "Is there school?" queries for 2025-26 year |
 | `district-calendar-2026-27.json` | ~17 events | "Is there school?" queries for 2026-27 year |
 | `governance-calendar.json` | ~12 events | Board meeting schedule |

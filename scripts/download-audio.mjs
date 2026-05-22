@@ -19,6 +19,17 @@ const TRANSCRIPTS_DIR = resolve(ROOT, 'artifacts/transcripts-aai');
 
 mkdirSync(AUDIO_DIR, { recursive: true });
 
+if (process.env.RUNNER_ENVIRONMENT === 'github-hosted') {
+  console.log('\n============================================================');
+  console.log('WARNING: Running on a GitHub-hosted runner (github-hosted).');
+  console.log('YouTube blocks downloads from datacenter IP addresses.');
+  console.log('Skipping YouTube audio download step.');
+  console.log('To download new audio, run this pipeline on a self-hosted');
+  console.log('residential runner from your home network.');
+  console.log('============================================================\n');
+  process.exit(0);
+}
+
 const videos = JSON.parse(readFileSync(resolve(ROOT, 'data/youtube-index.json'), 'utf-8'));
 
 function hasAudio(videoId) {

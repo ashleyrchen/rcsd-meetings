@@ -20,11 +20,20 @@ const CHANNEL_URL = 'https://www.youtube.com/@redwoodcityschooldistrict/videos';
 console.log('Fetching video list from RCSD YouTube channel...');
 
 // yt-dlp flat playlist: just get metadata, no downloads
-const raw = execFileSync('yt-dlp', [
-  '--flat-playlist',
-  '--print', '%(id)s|%(title)s|%(upload_date)s',
-  CHANNEL_URL
-], { encoding: 'utf-8', maxBuffer: 10 * 1024 * 1024, timeout: 120_000 });
+let raw;
+try {
+  raw = execFileSync('yt-dlp', [
+    '--flat-playlist',
+    '--print', '%(id)s|%(title)s|%(upload_date)s',
+    CHANNEL_URL
+  ], { encoding: 'utf-8', maxBuffer: 10 * 1024 * 1024, timeout: 120_000 });
+} catch (err) {
+  console.warn(`\n============================================================`);
+  console.warn(`WARNING: Failed to fetch video list from YouTube channel: ${err.message}`);
+  console.warn(`Using the existing youtube-index.json instead.`);
+  console.warn(`============================================================\n`);
+  process.exit(0);
+}
 
 const lines = raw.trim().split('\n').filter(Boolean);
 console.log(`Found ${lines.length} total videos on channel`);

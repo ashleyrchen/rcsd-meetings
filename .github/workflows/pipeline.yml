@@ -11,10 +11,18 @@ on:
         required: true
         type: boolean
         default: false
+      runner:
+        description: 'Runner environment to execute on'
+        required: true
+        type: choice
+        options:
+          - self-hosted
+          - ubuntu-latest
+        default: self-hosted
 
 jobs:
   ingest-and-deploy:
-    runs-on: ubuntu-latest
+    runs-on: ${{ github.event.inputs.runner || 'ubuntu-latest' }}
 
     env:
       # API Keys & Auth Tokens
@@ -41,11 +49,13 @@ jobs:
           cache: 'npm'
 
       - name: Install System Dependencies (rclone)
+        if: runner.os == 'Linux'
         run: |
           sudo apt-get update
           sudo apt-get install -y rclone
 
       - name: Install yt-dlp (YouTube downloader)
+        if: runner.os == 'Linux'
         run: |
           sudo wget https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -O /usr/local/bin/yt-dlp
           sudo chmod a+rx /usr/local/bin/yt-dlp
@@ -54,7 +64,12 @@ jobs:
         run: npm ci || npm install
 
       - name: Install Playwright Chromium
-        run: npx playwright install chromium --with-deps
+        run: |
+          if [ "${{ runner.os }}" = "Linux" ]; then
+            npx playwright install chromium --with-deps
+          else
+            npx playwright install chromium
+          fi
 
       - name: Sync Cache from Cloudflare R2
         run: |
@@ -76,6 +91,8 @@ jobs:
           fi
 
       - name: Deploy Static Web App to Cloudflare Pages
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_PAGES_API_TOKEN }}
         run: npx wrangler pages deploy docs --project-name=rcsd-meetings
 
       - name: Upload Data & Assets to Cloudflare R2 Archival Storage
@@ -86,7 +103,7 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/board-memos/ data/youtube-index.json
-          if ! git diff-index --quiet HEAD; then
+          if ! git diff --cached --quiet; then
             git commit -m "chore(data): auto-update scraped agenda/meeting metadata [skip ci]"
             git push
           else

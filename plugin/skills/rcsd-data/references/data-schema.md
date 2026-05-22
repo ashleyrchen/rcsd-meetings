@@ -102,6 +102,70 @@ Top-level: `{ schools[], districtLinks, rcef, lastUpdated }`
 
 ---
 
+## data/charters.json
+
+Top-level: `{ _metadata, charters[] }` — 3 RCSD-authorized charter schools, tracked separately from district-operated schools (`schools.json`).
+
+### Key Fields Per Charter
+
+| Field | Description |
+|-------|-------------|
+| `slug` | URL slug |
+| `name`, `nameShort`, `nameEs` | School names (EN / ES) |
+| `cdsCode`, `charterNumber`, `charterFundingType` | State identifiers and funding model |
+| `dateOpened`, `authorizer` | Charter history |
+| `address`, `addressNote`, `phone` | Location |
+| `grades`, `gradesNote`, `enrollment`, `enrollmentYear`, `enrollmentSource` | Size |
+| `schoolLeaders`, `network`, `networkNote` | Leadership / charter-management org |
+| `titlePatterns` | Title regexes used by `build-charters.mjs` to filter `document-index.json` for per-charter board items |
+| `website`, `email`, `socialMedia`, `greatSchools`, `cdeSchoolProfileUrl`, `cdeDirectoryUrl`, `filing990` | External links |
+
+---
+
+## data/properties.json
+
+Top-level: `{ _metadata, properties[] }` — district-owned or district-leased real estate that is **not** an operating RCSD school or RCSD-authorized charter site. Use this to resolve a district address that isn't a school — e.g. a board-packet item that references a site only by street address. Operating schools are in `schools.json`; charters in `charters.json`.
+
+### Sample Record
+
+```json
+{
+  "slug": "former-adelante-campus",
+  "name": "Harper School (private)",
+  "nameEs": "Harper School (privada)",
+  "address": "3150 Granger Way, Redwood City, CA 94063",
+  "use": "leased-out",
+  "useLabel": "Leased to a private school tenant",
+  "useLabelEs": "Alquilado a una escuela privada como inquilino",
+  "tenant": { "name": "Harper School", "url": "https://www.harperschool.org", "type": "private" },
+  "formerUse": "Former Adelante Selby Spanish Immersion campus",
+  "formerUseEs": "Antiguo campus de Adelante Selby Spanish Immersion",
+  "notes": null
+}
+```
+
+### Schema
+
+| Field | Description |
+|-------|-------------|
+| `slug` | Stable identifier |
+| `name`, `nameEs` | Property name (EN / ES) |
+| `address` | Street address — primary lookup key when an agenda item names a site by address only |
+| `use` | One of `admin`, `leased-out`, `district-program`, `leased-in` |
+| `useLabel`, `useLabelEs` | Human-readable use (EN / ES) |
+| `tenant` | If `leased-out`: `{ name, url, type, programs, networkNote }`; otherwise `null` |
+| `landlord` | If `leased-in`: `{ name, propertyManager, note }` |
+| `formerUse`, `formerUseEs` | Prior RCSD use, if any |
+| `squareFeet` | Floor area, where known |
+| `notes`, `source` | Provenance notes and board-meeting source links |
+
+### Key Field Notes
+
+- **Current coverage (4 properties):** District Office (750 Bradford St), former Adelante Selby campus now leased to Harper School (3150 Granger Way), former Orion campus now the Creative Learning Center (815 Allerton St), and the district storage warehouse (1757 E Bayshore Rd).
+- Per `_metadata.status`, the authoritative full district inventory is still pending — this is seed data confirmed by the Board President, not an exhaustive list.
+
+---
+
 ## data/district-calendar-{year}.json
 
 ### Sample

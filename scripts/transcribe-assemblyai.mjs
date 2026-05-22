@@ -45,6 +45,18 @@ const forceAll = args.includes('--force');
 const oldestFirst = args.includes('--oldest-first');
 const filterDate = arg('date');
 const limit = arg('limit') ? parseInt(arg('limit'), 10) : Infinity;
+
+if (process.env.RUNNER_ENVIRONMENT === 'github-hosted') {
+  console.log('\n============================================================');
+  console.log('WARNING: Running on a GitHub-hosted runner (github-hosted).');
+  console.log('Skipping AssemblyAI transcription for any untranscribed videos');
+  console.log('since audio cannot be downloaded from YouTube on datacenter IPs.');
+  console.log('To transcribe new videos, run this pipeline on a self-hosted');
+  console.log('residential runner from your home network.');
+  console.log('============================================================\n');
+  process.exit(0);
+}
+
 const apiKey = arg('key') || process.env.ASSEMBLYAI_API_KEY;
 
 if (!apiKey) {
