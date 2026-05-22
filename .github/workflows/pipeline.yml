@@ -74,11 +74,15 @@ jobs:
       - name: Sync Cache from Cloudflare R2
         run: |
           mkdir -p artifacts
+          # Sync slim transcripts from R2 transcripts/ to local artifacts/transcripts-slim/
+          rclone copy r2:rcsd-meetings/transcripts/ artifacts/transcripts-slim/ --progress
+          # Sync other cache folders (excluding heavy media, json, and transcripts)
           rclone copy r2:rcsd-meetings/ artifacts/ \
             --exclude "audio/**" \
             --exclude "board-packets/**" \
             --exclude "board-packets-cache/**" \
             --exclude "json/**" \
+            --exclude "transcripts/**" \
             --progress
 
       - name: Run Data Pipeline (Full or Quick)

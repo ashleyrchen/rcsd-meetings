@@ -43,12 +43,23 @@ function run(label, args) {
   }
 }
 
-// 1. Artifacts → bucket root (exclude json/ which is managed separately)
+// 1. Artifacts → bucket root (exclude json/ and transcripts-slim/ which are managed separately)
 run(`${verb} artifacts → ${BUCKET}`, [
   verb,
   ARTIFACTS_DIR,
   BUCKET,
   '--exclude', 'json/**',
+  '--exclude', 'transcripts-slim/**',
+  '--progress',
+  '--stats-one-line',
+  '-v',
+]);
+
+// 1a. Slim transcripts → transcripts/ (mapped custom name)
+run(`${verb} transcripts-slim → ${BUCKET}/transcripts`, [
+  verb,
+  resolve(ARTIFACTS_DIR, 'transcripts-slim'),
+  `${BUCKET}/transcripts`,
   '--progress',
   '--stats-one-line',
   '-v',
