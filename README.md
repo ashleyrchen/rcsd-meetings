@@ -8,12 +8,15 @@ Independently compiled public records for the [Redwood City School District](htt
 
 ## What's here
 
-- **58 board meetings** (Aug 2023 – present) from Simbli/GAMUT and BoardDocs
-- **1,422 agenda items** with attachments and source links
-- **49 meeting recordings** with diarized transcripts (AssemblyAI Universal 3 Pro)
-- **694 timestamped video offsets** mapped via LLM analysis of transcripts
+- **192 board meetings** (April 2020 – present) from BoardDocs and Simbli/GAMUT
+- **8,073 agenda items** with **4,845 attachments** and source links
+- **157 meeting recordings** with diarized transcripts (AssemblyAI Universal 3 Pro)
+- **4,198 agenda items mapped to video timestamps** via LLM analysis of transcripts (148 meetings)
 - **12 school profile pages** with demographics, test scores, bell schedules, safety plans, and board presentations
+- **3 charter school profiles** plus a **district property index** (district-owned sites that aren't operating schools)
 - **District budget visualization** with per-pupil funding breakdowns
+
+*Counts reflect the data snapshot of May 2026; the pipeline runs continuously, so live figures will be higher.*
 
 ## Data Provenance
 
@@ -25,6 +28,7 @@ Every dataset on this site is traceable to its public source. We document the or
 | Meeting aggregation | [Data sources](#data-sources) below | Simbli + BoardDocs APIs |
 | School profiles | `data/schools.json` | CDE enrollment, CAASPP, SARC, IRS 990 PTO filings |
 | Charter profiles | `data/charters.json` | CDE School Directory + Profile for metadata; financial docs filtered from `document-index.json` by title patterns |
+| District properties | `data/properties.json` | District-owned/leased sites that aren't operating schools (admin, former campuses, storage); seed list confirmed by the Board President |
 | Budget data | `data/budget/` | RCSD adopted budget documents, CDE LCFF data |
 | CDE datasets | `data/cde/*.json` | Absenteeism, LTEL, staff ethnicity/experience/ratios via `pull-cde-data.mjs` |
 | SPSA extraction | `data/ssc-membership.json`, `data/spsa-budgets.json` | SSC membership and budgets extracted from SPSA PDFs via Claude Haiku |
@@ -52,6 +56,7 @@ AI-generated content (meeting summaries, timestamp mappings) is always labeled a
 | SSC-published docs | Per-meeting SSC agendas and minutes | .docx → PDF via pandoc + headless Chromium (`scripts/convert-ssc-docs.mjs`) | `data/ssc-meetings.json` |
 | [IRS 990 filings](https://projects.propublica.org/nonprofits/) | PTO/PTA per-pupil funding | ProPublica Nonprofit Explorer | `data/schools.json` |
 | [CDE School Directory](https://www.cde.ca.gov/SchoolDirectory/) | Charter entity metadata (CDS, address, charter number, date opened) | Manual transcription | `data/charters.json` |
+| RCSD records / Board President | District-owned non-school properties (admin, former campuses, storage) | Manual transcription, confirmed by Board President | `data/properties.json` |
 
 ## Pipeline
 
@@ -72,7 +77,8 @@ Scripts run in order. Most can be run independently. All cache aggressively — 
 
  CDE Data (California Dept of Education)
  ───────────────────────────────────────
- 5b. pull:cde             → data/cde/*.json (absenteeism, LTEL, staff ethnicity/experience/ratios)
+ 5b. pull-cde-data.mjs    → data/cde/*.json (absenteeism, LTEL, staff ethnicity/experience/ratios)
+ 5c. extract:sarc         → data/sarc/*.json (School Accountability Report Cards)
 
  Processing
  ──────────
@@ -85,8 +91,10 @@ Scripts run in order. Most can be run independently. All cache aggressively — 
  9.  build:home           → docs/index.html, sitemap.xml, robots.txt
  10. build:html           → docs/meetings/index.html
  11. build:schools        → docs/schools/**/index.html
- 12. build:district       → docs/district/index.html
- 13. build:budget         → docs/district/budget/
+ 12. build:charters       → docs/charters/**, docs/escuelas-charter/**
+ 13. build:district       → docs/district/index.html
+ 14. build:budget         → docs/district/budget/
+ 15. build:blog           → docs/blog/**
 
  Deploy
  ──────
