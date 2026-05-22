@@ -1875,7 +1875,7 @@ ${siteNav({ activePage: 'meetings', lang: L.lang, altLangHref: L.altLangHref })}
 <nav class="toc">
   <div class="toc-inner">
     <a href="#threads">${L.navTopics}</a>
-    ${(upcomingPublished.length > 0 || upcomingProvisional.length > 0) ? '<a href="#upcoming">' + L.upcomingTitle + '</a>\n    ' : ''}<select class="toc-year-select" aria-label="${L.lang === 'es' ? 'Año escolar' : 'School year'}">
+    ${(upcomingPublished.length > 0 || upcomingProvisional.length > 0) ? '<a href="#upcoming">' + L.upcomingTitle + '</a>\n    ' : ''}<select id="toc-year-select" name="year" class="toc-year-select" aria-label="${L.lang === 'es' ? 'Año escolar' : 'School year'}">
       <option value="">${L.lang === 'es' ? 'Año escolar' : 'School year'}…</option>
       ${schoolYears.map(([sy]) => `<option value="#sy${sy}">${sy.slice(0,4)}-${sy.slice(4)}</option>`).join('\n      ')}
     </select>
