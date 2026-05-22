@@ -9,6 +9,8 @@ This site publishes structured JSON data files covering school directory informa
 All data is available as JSON at [data.rcsd.info/json/](https://data.rcsd.info/json/).
 
 - [schools.json](https://data.rcsd.info/json/schools.json): Directory of all 12 schools — names, addresses, principals, bell schedules, enrollment, lunch menu URLs, parent platform links, PTO/PTA info, CDS codes
+- [charters.json](https://data.rcsd.info/json/charters.json): Directory of RCSD-authorized charter schools — names, addresses, leaders, enrollment, network details, CDS codes (separate from district-operated schools)
+- [properties.json](https://data.rcsd.info/json/properties.json): Inventory of district-owned or district-leased real estate that is not an operating school — names, addresses, uses, current tenants
 - [meetings-data.json](https://data.rcsd.info/json/meetings-data.json): Comprehensive board meeting archive with agendas, agenda items, attachments, timestamps, and transcripts
 - [meeting-summaries.json](https://data.rcsd.info/json/meeting-summaries.json): Curated English summaries of each board meeting
 - [meeting-summaries-es.json](https://data.rcsd.info/json/meeting-summaries-es.json): Spanish translations of meeting summaries
