@@ -1,0 +1,38 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//rcsd.info//RCSD Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:RCSD Citizens' Bond Oversight Committee
+X-WR-TIMEZONE:America/Los_Angeles
+BEGIN:VEVENT
+UID:committee-cboc-2025-09-17-2025-26@rcsd.info
+DTSTAMP:20260522T200000Z
+DTSTART;TZID=America/Los_Angeles:20250917T183000
+DTEND;TZID=America/Los_Angeles:20250917T200000
+SUMMARY:RCSD Citizens' Bond Oversight Committee Meeting
+DESCRIPTION:CBOC review of Measure S and T bond project expenditures and audit reports.\n\nMeeting of the RCSD Citizens' Bond Oversight Committee (2025-26 school year).
+URL:https://rcsd.info/meetings/
+LOCATION:District Office, Board Room
+END:VEVENT
+BEGIN:VEVENT
+UID:committee-cboc-2026-01-21-2025-26@rcsd.info
+DTSTAMP:20260522T200000Z
+DTSTART;TZID=America/Los_Angeles:20260121T183000
+DTEND;TZID=America/Los_Angeles:20260121T200000
+SUMMARY:RCSD Citizens' Bond Oversight Committee Meeting
+DESCRIPTION:CBOC quarterly meeting and project updates.\n\nMeeting of the RCSD Citizens' Bond Oversight Committee (2025-26 school year).
+URL:https://rcsd.info/meetings/
+LOCATION:District Office, Board Room
+END:VEVENT
+BEGIN:VEVENT
+UID:committee-cboc-2026-04-15-2025-26@rcsd.info
+DTSTAMP:20260522T200000Z
+DTSTART;TZID=America/Los_Angeles:20260415T183000
+DTEND;TZID=America/Los_Angeles:20260415T200000
+SUMMARY:RCSD Citizens' Bond Oversight Committee Meeting
+DESCRIPTION:CBOC spring meeting\, annual report preparation.\n\nMeeting of the RCSD Citizens' Bond Oversight Committee (2025-26 school year).
+URL:https://rcsd.info/meetings/
+LOCATION:District Office, Board Room
+END:VEVENT
+END:VCALENDAR

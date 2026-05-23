@@ -1,0 +1,65 @@
+{
+  "_metadata": {
+    "description": "District-level committee meeting dates, agendas, and minutes (e.g. DELAC, CBOC).",
+    "source": "Redwood City School District BoardDocs and LCAP documentation.",
+    "lastUpdated": "2026-05-22"
+  },
+  "delac": {
+    "nameEn": "RCSD DELAC",
+    "nameEs": "DELAC de RCSD",
+    "meetings": {
+      "2025-26": [
+        {
+          "date": "2025-10-20",
+          "time": "18:00",
+          "location": "District Office, Room D",
+          "descriptionEn": "District English Learner Advisory Committee (DELAC) first regular meeting.",
+          "descriptionEs": "Primera reunión regular del Comité Asesor de Estudiantes de Inglés del Distrito (DELAC)."
+        },
+        {
+          "date": "2026-01-26",
+          "time": "18:00",
+          "location": "District Office, Room D",
+          "descriptionEn": "DELAC mid-year review and LCAP priorities discussion.",
+          "descriptionEs": "Revisión de medio año de DELAC y discusión de las prioridades del LCAP."
+        },
+        {
+          "date": "2026-05-18",
+          "time": "18:00",
+          "location": "District Office, Room D",
+          "descriptionEn": "Annual LCAP review and final draft recommendation.",
+          "descriptionEs": "Revisión anual del LCAP y recomendación final del borrador."
+        }
+      ]
+    }
+  },
+  "cboc": {
+    "nameEn": "RCSD Citizens' Bond Oversight Committee",
+    "nameEs": "Comité Ciudadano de Supervisión de Bonos de RCSD",
+    "meetings": {
+      "2025-26": [
+        {
+          "date": "2025-09-17",
+          "time": "18:30",
+          "location": "District Office, Board Room",
+          "descriptionEn": "CBOC review of Measure S and T bond project expenditures and audit reports.",
+          "descriptionEs": "Revisión de CBOC de los gastos de proyectos de bonos de las Medidas S y T e informes de auditoría."
+        },
+        {
+          "date": "2026-01-21",
+          "time": "18:30",
+          "location": "District Office, Board Room",
+          "descriptionEn": "CBOC quarterly meeting and project updates.",
+          "descriptionEs": "Reunión trimestral de CBOC y actualizaciones de proyectos."
+        },
+        {
+          "date": "2026-04-15",
+          "time": "18:30",
+          "location": "District Office, Board Room",
+          "descriptionEn": "CBOC spring meeting, annual report preparation.",
+          "descriptionEs": "Reunión de primavera de CBOC, preparación del informe anual."
+        }
+      ]
+    }
+  }
+}

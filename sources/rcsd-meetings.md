@@ -12,6 +12,7 @@ Last updated: May 8, 2026
 
 | Date | Type | MID | YouTube | Key Topics |
 |------|------|-----|---------|------------|
+| 05/27/2026 | Regular | 51014 | — | Update on K-8 Math Program (Imagine Mathematics 3-year plan), 2026-27 Board Calendar, Prop 28 Arts & Music Funding Plan, agreements with Boys & Girls Club (Summer 2026) and One Life Counseling, SMCOE teacher residency agreement, CBO Richard Edson II employment agreement, CSEA successor negotiations proposals, 48 board policy approvals |
 | 05/13/2026 | Regular | 51013 | — | North Star/Henry Ford SPSA presentations, EV chargers (Hoover, Roy Cloud — PowerFlex; Adelante Selby/Clifford/Kennedy — Atlas Pellizzari $70.5K), Res 24/25 final non-reemployment notifications (classified/certificated), Res 26 EV charging contract (PCC §20118.2), Cumming PMS Amendment #7, Looking Point Azure server migration, classified reclassification, Casa Circulo summer 2026, TadHealth counseling 2026-27, charter Q2 interim reviews (Connect/KIPP/Rocketship), 35 board policy approvals, 2026-27 board calendar discussion |
 | 04/22/2026 | Regular | 51012 | — | Kennedy/Orion/Adelante Selby SPSA presentations, HVAC Upgrades Phase 3 (Henry Ford, Roy Cloud), HVAC Phase 2 GMP Amendment (Clifford, Orion, Kennedy), Res 22 Ed Code teaching assignments, Res 23 KIPP Excelencia Prop 2 facilities funding, IMC lease renewal (777 3rd Ave), RCTA teacher salary info, Q3 Williams report, 23 CSBA policy approvals (HR/library) |
 | 04/01/2026 | Regular | 51011 | [Video](https://www.youtube.com/watch?v=MUo_j2IxTzw) | Roy Cloud/Clifford SPSA presentations, EV charger PowerFlex replacement (Shell Recharge discontinuation), RCTA class size info item, BP/AR 3580 District Records second reading, 22 CSBA policy updates (employee HR policies), MIT/Kennedy field trips, election services agreement |
@@ -44,6 +45,14 @@ Last updated: May 8, 2026
 ---
 
 ## Detailed Meeting Agendas
+
+### 05/27/2026 — Regular Meeting (MID 51014)
+- **Simbli:** https://simbli.eboardsolutions.com/SB_Meetings/ViewMeeting.aspx?S=36030397&MID=51014
+- **Zoom:** https://rcsdk8-net.zoom.us/s/89765238481
+
+(Items and attachments scraped to data/board-memos/2026-05-27.json by scripts/scrape-simbli-agendas.mjs)
+
+---
 
 ### 05/13/2026 — Regular Meeting (MID 51013)
 - **Simbli:** https://simbli.eboardsolutions.com/SB_Meetings/ViewMeeting.aspx?S=36030397&MID=51013

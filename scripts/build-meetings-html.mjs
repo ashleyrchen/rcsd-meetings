@@ -213,6 +213,10 @@ Comments in Spanish are welcome — an interpreter is available at every meeting
 <strong>"Other Business" section:</strong> Near the end of each meeting, the Board discusses suggested items for future agendas.<br>
 <strong>Written communication:</strong> Send a letter or email to the Board Secretary at the District Office (750 Bradford St, Redwood City, CA 94063).`,
     resourcesTitle: 'Resources',
+    resCalMeetingsTitle: 'Board Meetings Feed',
+    resCalMeetingsDesc: 'Subscribe to automatic updates of all school board meetings in Apple Calendar, Google Calendar, or Outlook.',
+    resCalSchoolTitle: 'School Calendar Feed',
+    resCalSchoolDesc: 'Subscribe to key school dates, milestones, holidays, and minimum days in Apple Calendar, Google Calendar, or Outlook.',
     resBoardPortalTitle: 'Board Meeting Portal',
     resBoardPortalDesc: 'Current agendas and attachments on GAMUT/Simbli.',
     resBoardDocsTitle: 'BoardDocs Archive',
@@ -312,6 +316,10 @@ Los comentarios en espa\u00f1ol son bienvenidos \u2014 hay un int\u00e9rprete di
 <strong>Secci\u00f3n "Otros asuntos":</strong> Cerca del final de cada reuni\u00f3n, la Junta discute temas sugeridos para futuras agendas.<br>
 <strong>Comunicaci\u00f3n escrita:</strong> Env\u00eda una carta o email a la Secretaria de la Junta en la Oficina del Distrito (750 Bradford St, Redwood City, CA 94063).`,
     resourcesTitle: 'Recursos',
+    resCalMeetingsTitle: 'Calendario de Reuniones',
+    resCalMeetingsDesc: 'Suscríbase a las actualizaciones automáticas de las reuniones de la junta en Apple Calendar, Google Calendar u Outlook.',
+    resCalSchoolTitle: 'Calendario Escolar',
+    resCalSchoolDesc: 'Suscríbase a las fechas clave, vacaciones, feriados y días de salida temprana en Apple Calendar, Google Calendar u Outlook.',
     resBoardPortalTitle: 'Portal de Reuniones',
     resBoardPortalDesc: 'Agendas actuales y anexos en GAMUT/Simbli.',
     resBoardDocsTitle: 'Archivo de BoardDocs',
@@ -824,30 +832,49 @@ function renderUpcomingSection() {
     </div>`;
   }
 
-  // Tier 2: Provisional meetings (no agenda yet) — show date and planned topics
-  for (const dateStr of upcomingProvisional) {
-    const { month, day, year } = formatDateBadge(dateStr);
-    const topics = govCalTopics[dateStr];
-    const topicText = topics ? topics[L.lang] || topics.en : null;
+  // Tier 2: Provisional meetings (no agenda yet) — render in a beautiful, compact list with collapsible drawer
+  let provisionalHtml = '';
+  if (upcomingProvisional.length > 0) {
+    const listItems = upcomingProvisional.map(dateStr => {
+      const [yStr, mStr, dStr] = dateStr.split('-');
+      const monthIdx = parseInt(mStr, 10) - 1;
+      const dayVal = parseInt(dStr, 10);
+      const dateLabel = L.lang === 'es' 
+        ? `${dayVal} de ${L.monthFull[monthIdx]}`
+        : `${L.monthFull[monthIdx]} ${dayVal}, ${yStr}`;
 
-    const topicHtml = topicText
-      ? `<p class="meeting-summary upcoming-provisional-topics"><em>${L.plannedPrefix} ${escapeHtml(topicText)}</em></p>`
-      : '';
+      const topics = govCalTopics[dateStr];
+      const topicText = topics ? topics[L.lang] || topics.en : null;
+      const topicHtml = topicText
+        ? ` — <span class="upcoming-provisional-topic">${escapeHtml(topicText)}</span>`
+        : '';
 
-    cards += `    <div class="meeting-row upcoming-provisional">
-      <div class="meeting-date">
-        <span class="meeting-date-month">${month}</span>
-        <span class="meeting-date-day">${day}</span>
-        <span class="meeting-date-year">${year}</span>
+      return `      <div class="upcoming-provisional-item">
+        <span class="upcoming-provisional-date"><strong>${dateLabel}</strong></span>
+        <span class="upcoming-provisional-type">${escapeHtml(L.meetingTypes['Board Meeting'] || 'Board Meeting')}${topicHtml}</span>
+      </div>`;
+    });
+
+    const visibleItems = listItems.slice(0, 3).join('\n');
+    const hiddenItems = listItems.slice(3).join('\n');
+
+    let collapsibleHtml = '';
+    if (hiddenItems) {
+      collapsibleHtml = `
+    <details class="upcoming-details-toggle">
+      <summary>${L.lang === 'es' ? `▶ Ver ${listItems.length - 3} fechas futuras más (tentativas)` : `▶ Show ${listItems.length - 3} more future tentative dates`}</summary>
+      <div class="upcoming-provisional-list-hidden">
+        ${hiddenItems}
       </div>
-      <div class="meeting-body">
-        <div class="meeting-header">
-          <span class="meeting-type">${escapeHtml(L.meetingTypes['Board Meeting'] || 'Board Meeting')}</span>
-          <span class="upcoming-badge upcoming-badge--provisional">${L.badgeUpcoming}</span>
-          <div class="meeting-links">
-          </div>
-        </div>
-        ${topicHtml}
+    </details>`;
+    }
+
+    provisionalHtml = `
+    <div class="upcoming-provisional-section">
+      <h3 class="upcoming-provisional-title">${L.lang === 'es' ? 'Fechas Futuras Planeadas (Sin Agenda)' : 'Planned Future Dates (No Agenda)'}</h3>
+      <div class="upcoming-provisional-list">
+        ${visibleItems}
+        ${collapsibleHtml}
       </div>
     </div>`;
   }
@@ -859,6 +886,7 @@ function renderUpcomingSection() {
   <div class="meeting-list">
 ${cards}
   </div>
+  ${provisionalHtml}
 </section>`;
 }
 
@@ -985,6 +1013,24 @@ function renderResources(data) {
   <h2>${L.resourcesTitle}</h2>
   <div class="resource-grid">${govCalCard}
     <div class="resource-card">
+      <h3>${L.resCalMeetingsTitle}</h3>
+      <p>${L.resCalMeetingsDesc}</p>
+      <div class="calendar-links">
+        <a href="webcal://rcsd.info/${L.lang === 'en' ? 'board-meetings' : 'reuniones-junta'}.ics" class="calendar-btn">Apple / Outlook</a>
+        <a href="https://calendar.google.com/calendar/r?cid=https://rcsd.info/${L.lang === 'en' ? 'board-meetings' : 'reuniones-junta'}.ics" class="calendar-btn" target="_blank" rel="noopener">Google Calendar</a>
+        <a href="/${L.lang === 'en' ? 'board-meetings' : 'reuniones-junta'}.ics" class="calendar-btn" download>Download ICS</a>
+      </div>
+    </div>
+    <div class="resource-card">
+      <h3>${L.resCalSchoolTitle}</h3>
+      <p>${L.resCalSchoolDesc}</p>
+      <div class="calendar-links">
+        <a href="webcal://rcsd.info/${L.lang === 'en' ? 'school-dates' : 'fechas-escolares'}.ics" class="calendar-btn">Apple / Outlook</a>
+        <a href="https://calendar.google.com/calendar/r?cid=https://rcsd.info/${L.lang === 'en' ? 'school-dates' : 'fechas-escolares'}.ics" class="calendar-btn" target="_blank" rel="noopener">Google Calendar</a>
+        <a href="/${L.lang === 'en' ? 'school-dates' : 'fechas-escolares'}.ics" class="calendar-btn" download>Download ICS</a>
+      </div>
+    </div>
+    <div class="resource-card">
       <h3>${L.resBoardPortalTitle}</h3>
       <p>${L.resBoardPortalDesc}</p>
       <a href="https://simbli.eboardsolutions.com/SB_Meetings/SB_MeetingListing.aspx?S=36030397" target="_blank" rel="noopener">simbli.eboardsolutions.com &#8599;</a>
@@ -1020,6 +1066,30 @@ const pageCSS = `
   .section a:hover {
     color: var(--green-deep);
     text-decoration-color: var(--green-mid);
+  }
+
+  .calendar-links {
+    margin-top: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .calendar-btn {
+    display: inline-block;
+    padding: 5px 10px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.02em;
+    background: var(--cream-dark);
+    color: var(--green-deep) !important;
+    text-decoration: none !important;
+    border-radius: 4px;
+    border: 1px solid var(--rule);
+    transition: background 0.15s, border-color 0.15s;
+  }
+  .calendar-btn:hover {
+    background: var(--green-pale);
+    border-color: var(--green-light);
   }
 
   /* ---- HEADER ---- */
@@ -1786,16 +1856,100 @@ const pageCSS = `
     border: 1px solid #fde68a;
   }
 
-  .upcoming-provisional {
-    opacity: 0.75;
+  .upcoming-provisional-section {
+    margin-top: 1.5rem;
+    border-top: 1px solid rgba(0, 128, 0, 0.1);
+    padding-top: 1.2rem;
   }
 
-  .upcoming-provisional:hover {
-    opacity: 0.9;
+  .upcoming-provisional-title {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--green-deep);
+    margin: 0 0 0.8rem;
   }
 
-  .upcoming-provisional-topics {
-    color: var(--text-muted);
+  .upcoming-provisional-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    background: rgba(255, 255, 255, 0.65);
+    border: 1px solid rgba(0, 128, 0, 0.12);
+    border-radius: 6px;
+    padding: 0.8rem 1.2rem;
+  }
+
+  .upcoming-provisional-item {
+    display: flex;
+    align-items: baseline;
+    font-size: 0.85rem;
+    padding: 0.35rem 0;
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.05);
+    line-height: 1.4;
+  }
+
+  .upcoming-provisional-item:last-child {
+    border-bottom: none;
+  }
+
+  .upcoming-provisional-date {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--green-mid);
+    flex-shrink: 0;
+    width: 9rem;
+  }
+
+  .upcoming-provisional-type {
+    color: var(--text);
+  }
+
+  .upcoming-provisional-topic {
+    color: var(--text-secondary);
+    font-style: italic;
+  }
+
+  .upcoming-details-toggle {
+    margin-top: 0.4rem;
+    padding-top: 0.4rem;
+  }
+
+  .upcoming-details-toggle summary {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--green-mid);
+    cursor: pointer;
+    user-select: none;
+    outline: none;
+    transition: color 0.2s;
+    display: inline-block;
+  }
+
+  .upcoming-details-toggle summary:hover {
+    color: var(--green-deep);
+    text-decoration: underline;
+  }
+
+  .upcoming-provisional-list-hidden {
+    margin-top: 0.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  @media (max-width: 640px) {
+    .upcoming-provisional-item {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.15rem;
+      padding: 0.5rem 0;
+    }
+    .upcoming-provisional-date {
+      width: auto;
+    }
   }
 
   /* page-specific footer overrides */

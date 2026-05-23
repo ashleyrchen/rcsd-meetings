@@ -72,7 +72,33 @@ function getSummaryKey(meeting, allMeetings) {
   return meeting.date;
 }
 
+const args = process.argv.slice(2);
+const refreshNoMinutes = args.includes('--refresh-no-minutes') || args.includes('--refresh');
+const targetDates = args.filter(arg => /^\d{4}-\d{2}-\d{2}$/.test(arg));
+
 const allMeetings = meetingsData.meetings;
+
+// Delete specific entries to force regeneration if CLI args specify
+for (const meeting of allMeetings) {
+  const key = getSummaryKey(meeting, allMeetings);
+  const hasMinutes = !!(meeting.minutes && (meeting.minutes.documents?.length > 0 || meeting.minutes.approvedAt));
+  
+  const shouldRefresh = 
+    (refreshNoMinutes && !hasMinutes) ||
+    targetDates.includes(meeting.date) ||
+    targetDates.includes(meeting.slug) ||
+    targetDates.includes(key);
+
+  if (shouldRefresh) {
+    delete enSummaries[key];
+    delete enSummaries[meeting.date];
+    delete enSummaries[meeting.slug];
+    delete esSummaries[key];
+    delete esSummaries[meeting.date];
+    delete esSummaries[meeting.slug];
+  }
+}
+
 const enKeys = new Set(Object.keys(enSummaries));
 const esKeys = new Set(Object.keys(esSummaries));
 
@@ -137,6 +163,11 @@ for (const meeting of needsSummary) {
   const dateStr = meeting.date;
   const typeStr = meeting.type || 'Board Meeting';
 
+  const hasMinutes = !!(meeting.minutes && (meeting.minutes.documents?.length > 0 || meeting.minutes.approvedAt));
+  const tenseInstruction = hasMinutes
+    ? '8. Formal, approved meeting minutes exist for this meeting. You MUST write in a decisive past tense (e.g., "The Board approved multiple agreements..." or "The Board adopted the budget..."). Write the Spanish summary in matching decisive past tense (e.g., "La Junta aprobó múltiples acuerdos..." or "La Junta adoptó el presupuesto...").'
+    : '8. No formal, approved meeting minutes exist for this meeting (either because it is scheduled in the future or because the minutes have not been approved/parsed yet). You MUST write in speculative, agenda-focused, or planned tense, describing what is scheduled, proposed, or planned to be discussed or voted on. Do NOT use decisive past-tense language like "approved" or "adopted" as the final outcome is not formally verified. Use phrases like "The agenda proposed...", "The Board was scheduled to consider...", "The Board will consider...", or "The meeting scheduled discussion of...". Write the Spanish summary in matching speculative or future tense (e.g., "La agenda propuso...", "La Junta tenía programado considerar...", "La Junta considerará...", or "La reunión programó la discusión de..."). Do NOT use "La Junta aprobó..." or "La Junta adoptó...".';
+
   const prompt = `You are writing a concise summary for a school board meeting card on a public website (rcsd.info) for the Redwood City School District.
 
 Meeting date: ${dateStr}
@@ -153,7 +184,7 @@ Instructions:
 5. Do NOT include HTML other than <strong> tags. No links, no lists.
 6. For closed sessions: note the general topics discussed (e.g., "personnel matters", "litigation", "property negotiations") without revealing confidential details.
 7. For retreats/study sessions: describe the focus topic.
-8. Write in past tense (e.g., "Board approved..." not "Board approves...").
+8. ${tenseInstruction}
 
 Respond with exactly this JSON format (no markdown code fences, just raw JSON):
 {

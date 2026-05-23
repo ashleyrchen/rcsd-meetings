@@ -1036,6 +1036,30 @@ const schoolCSS = `
     color: var(--text-muted);
   }
 
+  .calendar-links {
+    margin-top: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .calendar-btn {
+    display: inline-block;
+    padding: 3px 8px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.02em;
+    background: var(--cream-dark);
+    color: var(--green-deep) !important;
+    text-decoration: none !important;
+    border-radius: 4px;
+    border: 1px solid var(--rule);
+    transition: background 0.15s, border-color 0.15s;
+  }
+  .calendar-btn:hover {
+    background: var(--green-pale);
+    border-color: var(--green-light);
+  }
+
   /* ---- SSC MEMBERSHIP ---- */
   .ssc-members {
     font-size: 0.85rem;
@@ -1395,6 +1419,8 @@ const LABELS = {
     sscMeetings: 'Meetings',
     sscMeetingAgenda: 'Agenda',
     sscMeetingMinutes: 'Minutes',
+    sscSubscribeTitle: 'Subscribe to Calendar',
+    sscSubscribeDesc: 'Sync SSC meetings to your Apple, Google, or Outlook calendar.',
     ptoPtaOrg: 'PTO / PTA',
     afterSchool: 'After-School Programs',
     parentComm: 'Parent Communication',
@@ -1550,6 +1576,8 @@ const LABELS = {
     sscMeetings: 'Reuniones',
     sscMeetingAgenda: 'Agenda',
     sscMeetingMinutes: 'Acta',
+    sscSubscribeTitle: 'Suscribirse al calendario',
+    sscSubscribeDesc: 'Sincronice las reuniones de SSC con su calendario de Apple, Google o Outlook.',
     ptoPtaOrg: 'PTO / PTA',
     afterSchool: 'Programas Extracurriculares',
     parentComm: 'Comunicación con Padres',
@@ -2313,9 +2341,22 @@ ${siteNav({ activePage: 'schools', lang, altLangHref })}
               if (m.minutesPdf) links.push(`<a href="https://data.rcsd.info/${m.minutesPdf}" target="_blank">${L.sscMeetingMinutes} &#8599;</a>`);
               return `<li style="margin-bottom:0.25rem"><span style="font-family:'IBM Plex Mono',monospace; font-size:0.78rem; color:#666; margin-right:0.5rem">${dateStr}</span>${links.join(' &nbsp;·&nbsp; ')}</li>`;
             }).join('');
+            const feedFilename = lang === 'en' ? `ssc-${slug}.ics` : `ssc-${slug}-es.ics`;
+            const feedUrl = `https://rcsd.info/${feedFilename}`;
+            const webcalUrl = `webcal://rcsd.info/${feedFilename}`;
+            const gcalUrl = `https://calendar.google.com/calendar/r?cid=${encodeURIComponent(feedUrl)}`;
             return `<div style="margin-top:0.8rem; padding-top:0.6rem; border-top:1px solid var(--rule-light)">
               <p style="margin:0 0 0.3rem; font-size:0.82rem; font-weight:600">${L.sscMeetings}</p>
-              <ul style="list-style:none; padding:0; margin:0; font-size:0.82rem">${rows}</ul>
+              <ul style="list-style:none; padding:0; margin:0; font-size:0.82rem; margin-bottom:0.6rem">${rows}</ul>
+              <div style="margin-top:0.6rem; padding-top:0.5rem; border-top:1px dashed var(--rule-light)">
+                <p style="margin:0 0 0.2rem; font-size:0.78rem; font-weight:600; color:var(--green-mid)">${L.sscSubscribeTitle}</p>
+                <p style="margin:0 0 0.5rem; font-size:0.75rem; color:var(--text-muted); line-height:1.35">${L.sscSubscribeDesc}</p>
+                <div class="calendar-links">
+                  <a href="${webcalUrl}" class="calendar-btn">Apple / Outlook</a>
+                  <a href="${gcalUrl}" class="calendar-btn" target="_blank" rel="noopener">Google</a>
+                  <a href="/${feedFilename}" class="calendar-btn" download>ICS</a>
+                </div>
+              </div>
             </div>`;
           })()}`;
         })()}

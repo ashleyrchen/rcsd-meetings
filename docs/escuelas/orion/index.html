@@ -661,6 +661,30 @@
     color: var(--text-muted);
   }
 
+  .calendar-links {
+    margin-top: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .calendar-btn {
+    display: inline-block;
+    padding: 3px 8px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.02em;
+    background: var(--cream-dark);
+    color: var(--green-deep) !important;
+    text-decoration: none !important;
+    border-radius: 4px;
+    border: 1px solid var(--rule);
+    transition: background 0.15s, border-color 0.15s;
+  }
+  .calendar-btn:hover {
+    background: var(--green-pale);
+    border-color: var(--green-light);
+  }
+
   /* ---- SSC MEMBERSHIP ---- */
   .ssc-members {
     font-size: 0.85rem;
@@ -1281,7 +1305,16 @@
           <p style="margin-top:0.5rem"><a href="https://data.rcsd.info/documents/spsa/2025-26/orion.pdf" target="_blank">Ver SPSA &#8599;</a></p>
           <div style="margin-top:0.8rem; padding-top:0.6rem; border-top:1px solid var(--rule-light)">
               <p style="margin:0 0 0.3rem; font-size:0.82rem; font-weight:600">Reuniones</p>
-              <ul style="list-style:none; padding:0; margin:0; font-size:0.82rem"><li style="margin-bottom:0.25rem"><span style="font-family:'IBM Plex Mono',monospace; font-size:0.78rem; color:#666; margin-right:0.5rem">24 sept 2025</span><a href="https://data.rcsd.info/documents/ssc/orion/2025-26/2025-09-24-agenda.pdf" target="_blank">Agenda &#8599;</a> &nbsp;·&nbsp; <a href="https://data.rcsd.info/documents/ssc/orion/2025-26/2025-09-24-minutes.pdf" target="_blank">Acta &#8599;</a></li><li style="margin-bottom:0.25rem"><span style="font-family:'IBM Plex Mono',monospace; font-size:0.78rem; color:#666; margin-right:0.5rem">22 oct 2025</span><a href="https://data.rcsd.info/documents/ssc/orion/2025-26/2025-10-22-agenda.pdf" target="_blank">Agenda &#8599;</a> &nbsp;·&nbsp; <a href="https://data.rcsd.info/documents/ssc/orion/2025-26/2025-10-22-minutes.pdf" target="_blank">Acta &#8599;</a></li><li style="margin-bottom:0.25rem"><span style="font-family:'IBM Plex Mono',monospace; font-size:0.78rem; color:#666; margin-right:0.5rem">19 nov 2025</span><a href="https://data.rcsd.info/documents/ssc/orion/2025-26/2025-11-19-agenda.pdf" target="_blank">Agenda &#8599;</a></li><li style="margin-bottom:0.25rem"><span style="font-family:'IBM Plex Mono',monospace; font-size:0.78rem; color:#666; margin-right:0.5rem">16 dic 2025</span><a href="https://data.rcsd.info/documents/ssc/orion/2025-26/2025-12-16-agenda.pdf" target="_blank">Agenda &#8599;</a></li><li style="margin-bottom:0.25rem"><span style="font-family:'IBM Plex Mono',monospace; font-size:0.78rem; color:#666; margin-right:0.5rem">28 ene 2026</span><a href="https://data.rcsd.info/documents/ssc/orion/2025-26/2026-01-28-minutes.pdf" target="_blank">Acta &#8599;</a></li><li style="margin-bottom:0.25rem"><span style="font-family:'IBM Plex Mono',monospace; font-size:0.78rem; color:#666; margin-right:0.5rem">25 feb 2026</span><a href="https://data.rcsd.info/documents/ssc/orion/2025-26/2026-02-25-agenda.pdf" target="_blank">Agenda &#8599;</a></li><li style="margin-bottom:0.25rem"><span style="font-family:'IBM Plex Mono',monospace; font-size:0.78rem; color:#666; margin-right:0.5rem">25 mar 2026</span><a href="https://data.rcsd.info/documents/ssc/orion/2025-26/2026-03-25-agenda.pdf" target="_blank">Agenda &#8599;</a></li></ul>
+              <ul style="list-style:none; padding:0; margin:0; font-size:0.82rem; margin-bottom:0.6rem"><li style="margin-bottom:0.25rem"><span style="font-family:'IBM Plex Mono',monospace; font-size:0.78rem; color:#666; margin-right:0.5rem">24 sept 2025</span><a href="https://data.rcsd.info/documents/ssc/orion/2025-26/2025-09-24-agenda.pdf" target="_blank">Agenda &#8599;</a> &nbsp;·&nbsp; <a href="https://data.rcsd.info/documents/ssc/orion/2025-26/2025-09-24-minutes.pdf" target="_blank">Acta &#8599;</a></li><li style="margin-bottom:0.25rem"><span style="font-family:'IBM Plex Mono',monospace; font-size:0.78rem; color:#666; margin-right:0.5rem">22 oct 2025</span><a href="https://data.rcsd.info/documents/ssc/orion/2025-26/2025-10-22-agenda.pdf" target="_blank">Agenda &#8599;</a> &nbsp;·&nbsp; <a href="https://data.rcsd.info/documents/ssc/orion/2025-26/2025-10-22-minutes.pdf" target="_blank">Acta &#8599;</a></li><li style="margin-bottom:0.25rem"><span style="font-family:'IBM Plex Mono',monospace; font-size:0.78rem; color:#666; margin-right:0.5rem">19 nov 2025</span><a href="https://data.rcsd.info/documents/ssc/orion/2025-26/2025-11-19-agenda.pdf" target="_blank">Agenda &#8599;</a></li><li style="margin-bottom:0.25rem"><span style="font-family:'IBM Plex Mono',monospace; font-size:0.78rem; color:#666; margin-right:0.5rem">16 dic 2025</span><a href="https://data.rcsd.info/documents/ssc/orion/2025-26/2025-12-16-agenda.pdf" target="_blank">Agenda &#8599;</a></li><li style="margin-bottom:0.25rem"><span style="font-family:'IBM Plex Mono',monospace; font-size:0.78rem; color:#666; margin-right:0.5rem">28 ene 2026</span><a href="https://data.rcsd.info/documents/ssc/orion/2025-26/2026-01-28-minutes.pdf" target="_blank">Acta &#8599;</a></li><li style="margin-bottom:0.25rem"><span style="font-family:'IBM Plex Mono',monospace; font-size:0.78rem; color:#666; margin-right:0.5rem">25 feb 2026</span><a href="https://data.rcsd.info/documents/ssc/orion/2025-26/2026-02-25-agenda.pdf" target="_blank">Agenda &#8599;</a></li><li style="margin-bottom:0.25rem"><span style="font-family:'IBM Plex Mono',monospace; font-size:0.78rem; color:#666; margin-right:0.5rem">25 mar 2026</span><a href="https://data.rcsd.info/documents/ssc/orion/2025-26/2026-03-25-agenda.pdf" target="_blank">Agenda &#8599;</a></li></ul>
+              <div style="margin-top:0.6rem; padding-top:0.5rem; border-top:1px dashed var(--rule-light)">
+                <p style="margin:0 0 0.2rem; font-size:0.78rem; font-weight:600; color:var(--green-mid)">Suscribirse al calendario</p>
+                <p style="margin:0 0 0.5rem; font-size:0.75rem; color:var(--text-muted); line-height:1.35">Sincronice las reuniones de SSC con su calendario de Apple, Google o Outlook.</p>
+                <div class="calendar-links">
+                  <a href="webcal://rcsd.info/ssc-orion-es.ics" class="calendar-btn">Apple / Outlook</a>
+                  <a href="https://calendar.google.com/calendar/r?cid=https%3A%2F%2Frcsd.info%2Fssc-orion-es.ics" class="calendar-btn" target="_blank" rel="noopener">Google</a>
+                  <a href="/ssc-orion-es.ics" class="calendar-btn" download>ICS</a>
+                </div>
+              </div>
             </div>
       </div>
     </div>
@@ -1296,6 +1329,25 @@
     <p class="source" style="margin-bottom:1.5rem">Reuniones de la Mesa Directiva con temas de agenda que mencionan esta escuela.</p>
 
     <div style="margin-bottom:2rem">
+          <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
+            <h3 style="margin:0; font-size:1rem">27 de mayo de 2026</h3>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Regular</span>
+            <a href="/meetings/#2026-05-27" style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--green-mid); text-decoration:none">Reunión completa &rarr;</a>
+          </div>
+          <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of the Agreements for Special Inspection and Testing Services with Applied Materials and Engineering for the HVAC Upgrade projects Phase 2 at Clifford, Orion, and Kennedy Schools</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2026-05-27/Clifford-Special-Inspection-_-Testing-Agreement-sig-AME_.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Clifford Special Inspection _ Testing Agreement sig AME_ &#8599;</a><a href="https://data.rcsd.info/board-packets/2026-05-27/Orion-Special-Inspection-_-Testing-Agreement-sig-AME_.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Orion Special Inspection _ Testing Agreement sig AME_ &#8599;</a><a href="https://data.rcsd.info/board-packets/2026-05-27/Kennedy-Special-Inspection-_-Testing-Agreement-sig-AME_.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Kennedy Special Inspection _ Testing Agreement sig AME_ &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of the Agreements for Commissioning Services with Cypress Engineering Group for the HVAC Upgrade projects Phase 2 at Clifford, Orion, and Kennedy Schools</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2026-05-27/Orion-CX-Agreement-sig-Cypress.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Orion CX Agreement sig Cypress &#8599;</a><a href="https://data.rcsd.info/board-packets/2026-05-27/Kennedy-CX-Agreement-sig-Cypress.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Kennedy CX Agreement sig Cypress &#8599;</a><a href="https://data.rcsd.info/board-packets/2026-05-27/Clifford-CX-Agreement-sig-Cypress.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Clifford CX Agreement sig Cypress &#8599;</a></div>
+            </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
+              <div style="font-size:0.9rem; line-height:1.4">Approval of the Agreements for DSA Inspection Services with MWC Associates for the HVAC Upgrade projects Phase 2 at Clifford, Orion, and Kennedy</div>
+              <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2026-05-27/Orion-IOR-Agreement-sig-MWC.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Orion IOR Agreement sig MWC &#8599;</a><a href="https://data.rcsd.info/board-packets/2026-05-27/Kennedy-IOR-Agreement-sig-MWC.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Kennedy IOR Agreement sig MWC &#8599;</a><a href="https://data.rcsd.info/board-packets/2026-05-27/Clifford-IOR-Agreement-sig-MWC.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Clifford IOR Agreement sig MWC &#8599;</a></div>
+            </div>
+        </div><div style="margin-bottom:2rem">
           <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
             <h3 style="margin:0; font-size:1rem">22 de abril de 2026</h3>
             <span style="font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em">Regular</span>

@@ -661,6 +661,30 @@
     color: var(--text-muted);
   }
 
+  .calendar-links {
+    margin-top: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .calendar-btn {
+    display: inline-block;
+    padding: 3px 8px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.02em;
+    background: var(--cream-dark);
+    color: var(--green-deep) !important;
+    text-decoration: none !important;
+    border-radius: 4px;
+    border: 1px solid var(--rule);
+    transition: background 0.15s, border-color 0.15s;
+  }
+  .calendar-btn:hover {
+    background: var(--green-pale);
+    border-color: var(--green-light);
+  }
+
   /* ---- SSC MEMBERSHIP ---- */
   .ssc-members {
     font-size: 0.85rem;

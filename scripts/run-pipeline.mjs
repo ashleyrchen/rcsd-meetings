@@ -65,6 +65,7 @@ let step = quick ? 2 : 9;
 run(`${step++}. Meeting summaries`, 'generate-meeting-summaries.mjs');
 run(`${step++}. OG images`, 'generate-og-images.mjs');
 run(`${step++}. Meetings index`, 'build-meetings-html.mjs');
+run(`${step++}. iCalendar feeds`, 'build-ics.mjs');
 run(`${step++}. Meeting detail pages`, 'build-meeting-pages.mjs');
 run(`${step++}. Homepage`, 'build-homepage.mjs');
 run(`${step++}. School pages`, 'build-schools.mjs');

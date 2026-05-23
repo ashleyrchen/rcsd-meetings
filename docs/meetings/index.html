@@ -176,6 +176,30 @@
     text-decoration-color: var(--green-mid);
   }
 
+  .calendar-links {
+    margin-top: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .calendar-btn {
+    display: inline-block;
+    padding: 5px 10px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.02em;
+    background: var(--cream-dark);
+    color: var(--green-deep) !important;
+    text-decoration: none !important;
+    border-radius: 4px;
+    border: 1px solid var(--rule);
+    transition: background 0.15s, border-color 0.15s;
+  }
+  .calendar-btn:hover {
+    background: var(--green-pale);
+    border-color: var(--green-light);
+  }
+
   /* ---- HEADER ---- */
   .site-header {
     background: var(--green-deep);
@@ -940,16 +964,100 @@
     border: 1px solid #fde68a;
   }
 
-  .upcoming-provisional {
-    opacity: 0.75;
+  .upcoming-provisional-section {
+    margin-top: 1.5rem;
+    border-top: 1px solid rgba(0, 128, 0, 0.1);
+    padding-top: 1.2rem;
   }
 
-  .upcoming-provisional:hover {
-    opacity: 0.9;
+  .upcoming-provisional-title {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--green-deep);
+    margin: 0 0 0.8rem;
   }
 
-  .upcoming-provisional-topics {
-    color: var(--text-muted);
+  .upcoming-provisional-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    background: rgba(255, 255, 255, 0.65);
+    border: 1px solid rgba(0, 128, 0, 0.12);
+    border-radius: 6px;
+    padding: 0.8rem 1.2rem;
+  }
+
+  .upcoming-provisional-item {
+    display: flex;
+    align-items: baseline;
+    font-size: 0.85rem;
+    padding: 0.35rem 0;
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.05);
+    line-height: 1.4;
+  }
+
+  .upcoming-provisional-item:last-child {
+    border-bottom: none;
+  }
+
+  .upcoming-provisional-date {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--green-mid);
+    flex-shrink: 0;
+    width: 9rem;
+  }
+
+  .upcoming-provisional-type {
+    color: var(--text);
+  }
+
+  .upcoming-provisional-topic {
+    color: var(--text-secondary);
+    font-style: italic;
+  }
+
+  .upcoming-details-toggle {
+    margin-top: 0.4rem;
+    padding-top: 0.4rem;
+  }
+
+  .upcoming-details-toggle summary {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--green-mid);
+    cursor: pointer;
+    user-select: none;
+    outline: none;
+    transition: color 0.2s;
+    display: inline-block;
+  }
+
+  .upcoming-details-toggle summary:hover {
+    color: var(--green-deep);
+    text-decoration: underline;
+  }
+
+  .upcoming-provisional-list-hidden {
+    margin-top: 0.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  @media (max-width: 640px) {
+    .upcoming-provisional-item {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.15rem;
+      padding: 0.5rem 0;
+    }
+    .upcoming-provisional-date {
+      width: auto;
+    }
   }
 
   /* page-specific footer overrides */
@@ -981,18 +1089,18 @@
   <div class="header-inner">
     <div class="header-district">Redwood City School District</div>
     <h1 class="header-title">Board Meeting Index</h1>
-    <p class="header-subtitle">192 board meetings (2019–26) with agendas, video recordings, and key topics. Data compiled from <a href="https://simbli.eboardsolutions.com/SB_Meetings/SB_MeetingListing.aspx?S=36030397" style="color:rgba(255,255,255,0.75)">GAMUT/Simbli</a> and <a href="https://go.boarddocs.com/ca/redwood/Board.nsf/goto?open&id=CVLPDX62089F" style="color:rgba(255,255,255,0.75)">BoardDocs</a>.</p>
+    <p class="header-subtitle">193 board meetings (2019–26) with agendas, video recordings, and key topics. Data compiled from <a href="https://simbli.eboardsolutions.com/SB_Meetings/SB_MeetingListing.aspx?S=36030397" style="color:rgba(255,255,255,0.75)">GAMUT/Simbli</a> and <a href="https://go.boarddocs.com/ca/redwood/Board.nsf/goto?open&id=CVLPDX62089F" style="color:rgba(255,255,255,0.75)">BoardDocs</a>.</p>
     <div class="header-meta">
       <div class="header-stat">
-        <span class="header-stat-value">192</span>
+        <span class="header-stat-value">193</span>
         <span class="header-stat-label">Meetings</span>
       </div>
       <div class="header-stat">
-        <span class="header-stat-value">8,073</span>
+        <span class="header-stat-value">8,158</span>
         <span class="header-stat-label">Agenda items</span>
       </div>
       <div class="header-stat">
-        <span class="header-stat-value">4,845</span>
+        <span class="header-stat-value">4,946</span>
         <span class="header-stat-label">Attachments</span>
       </div>
       <div class="header-stat">
@@ -1004,7 +1112,7 @@
         <span class="header-stat-label">With transcript</span>
       </div>
       <div class="header-stat">
-        <span class="header-stat-value">188</span>
+        <span class="header-stat-value">189</span>
         <span class="header-stat-label">With minutes</span>
       </div>
     </div>
@@ -1067,14 +1175,14 @@
     </button>
     <button class="thread-btn" data-filter="policy" data-filter-type="thread">
       <span class="thread-btn-label">Policy Updates</span>
-      <span class="thread-btn-count">31</span>
+      <span class="thread-btn-count">32</span>
     </button>
   </div>
   <h3 style="margin-top:1.5rem; font-family:'IBM Plex Mono',monospace; font-size:0.7rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--text-muted)">Schools</h3>
   <div class="thread-filters" style="margin-top:0.5rem">
     <button class="thread-btn" data-filter="orion" data-filter-type="school">
       <span class="thread-btn-label">Orion</span>
-      <span class="thread-btn-count">67</span>
+      <span class="thread-btn-count">68</span>
     </button>
     <button class="thread-btn" data-filter="garfield" data-filter-type="school">
       <span class="thread-btn-label">Garfield</span>
@@ -1086,15 +1194,15 @@
     </button>
     <button class="thread-btn" data-filter="hoover" data-filter-type="school">
       <span class="thread-btn-label">Hoover</span>
-      <span class="thread-btn-count">49</span>
+      <span class="thread-btn-count">50</span>
     </button>
     <button class="thread-btn" data-filter="kennedy" data-filter-type="school">
       <span class="thread-btn-label">Kennedy</span>
-      <span class="thread-btn-count">42</span>
+      <span class="thread-btn-count">43</span>
     </button>
     <button class="thread-btn" data-filter="clifford" data-filter-type="school">
       <span class="thread-btn-label">Clifford</span>
-      <span class="thread-btn-count">40</span>
+      <span class="thread-btn-count">41</span>
     </button>
     <button class="thread-btn" data-filter="roosevelt" data-filter-type="school">
       <span class="thread-btn-label">Roosevelt</span>
@@ -1118,18 +1226,18 @@
     </button>
     <button class="thread-btn" data-filter="north-star" data-filter-type="school">
       <span class="thread-btn-label">North Star</span>
-      <span class="thread-btn-count">22</span>
+      <span class="thread-btn-count">23</span>
     </button>
   </div>
   <h3 style="margin-top:1.5rem; font-family:'IBM Plex Mono',monospace; font-size:0.7rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--text-muted)">Topics</h3>
   <div class="thread-filters" style="margin-top:0.5rem">
     <button class="thread-btn" data-filter="solar" data-filter-type="topic">
       <span class="thread-btn-label">Solar</span>
-      <span class="thread-btn-count">11</span>
+      <span class="thread-btn-count">12</span>
     </button>
     <button class="thread-btn" data-filter="hvac" data-filter-type="topic">
       <span class="thread-btn-label">HVAC / Air Conditioning</span>
-      <span class="thread-btn-count">17</span>
+      <span class="thread-btn-count">18</span>
     </button>
     <button class="thread-btn" data-filter="sped" data-filter-type="topic">
       <span class="thread-btn-label">Special Education</span>
@@ -1166,68 +1274,140 @@ Comments in Spanish are welcome — an interpreter is available at every meeting
   <h2>Upcoming Meetings</h2>
   <p class="section-subtitle">Board meetings scheduled for the coming weeks.</p>
   <div class="meeting-list">
-    <div class="meeting-row upcoming-provisional">
-      <div class="meeting-date">
+    <div class="meeting-row" data-threads="policy" data-schools="clifford hoover kennedy north-star orion" data-topics="solar hvac">
+      <a href="/meetings/2026-05-27/" class="meeting-date">
         <span class="meeting-date-month">MAY</span>
         <span class="meeting-date-day">27</span>
         <span class="meeting-date-year">2026</span>
-      </div>
+      </a>
       <div class="meeting-body">
         <div class="meeting-header">
-          <span class="meeting-type">Board Meeting</span>
-          <span class="upcoming-badge upcoming-badge--provisional">Upcoming</span>
-          <div class="meeting-links">
-          </div>
+          <a href="/meetings/2026-05-27/" class="meeting-type">Regular</a>
+          <span class="upcoming-badge upcoming-badge--published">Agenda Posted</span>
+          
+          <div class="meeting-links"><a href="https://rcsdk8-net.zoom.us/s/89765238481" class="meeting-link meeting-link--zoom" data-zoom-date="2026-05-27" target="_blank" rel="noopener">&#9678; Join via Zoom</a><a href="https://simbli.eboardsolutions.com/SB_Meetings/ViewMeeting.aspx?S=36030397&amp;MID=51014" class="meeting-link meeting-link--agenda" target="_blank" rel="noopener">&#8599; Agenda</a></div>
         </div>
-        <p class="meeting-summary upcoming-provisional-topics"><em>Planned: ConApp approval; Special Education Report</em></p>
-      </div>
-    </div>    <div class="meeting-row upcoming-provisional">
-      <div class="meeting-date">
-        <span class="meeting-date-month">JUN</span>
-        <span class="meeting-date-day">10</span>
-        <span class="meeting-date-year">2026</span>
-      </div>
-      <div class="meeting-body">
-        <div class="meeting-header">
-          <span class="meeting-type">Board Meeting</span>
-          <span class="upcoming-badge upcoming-badge--provisional">Upcoming</span>
-          <div class="meeting-links">
-          </div>
-        </div>
-        <p class="meeting-summary upcoming-provisional-topics"><em>Planned: Year-End Budget Transfer Resolution</em></p>
-      </div>
-    </div>    <div class="meeting-row upcoming-provisional">
-      <div class="meeting-date">
-        <span class="meeting-date-month">JUN</span>
-        <span class="meeting-date-day">17</span>
-        <span class="meeting-date-year">2026</span>
-      </div>
-      <div class="meeting-body">
-        <div class="meeting-header">
-          <span class="meeting-type">Board Meeting</span>
-          <span class="upcoming-badge upcoming-badge--provisional">Upcoming</span>
-          <div class="meeting-links">
-          </div>
-        </div>
-        <p class="meeting-summary upcoming-provisional-topics"><em>Planned: LCAP public hearing; iReady end-of-year data; 2025-26 Proposed Budget public hearing</em></p>
-      </div>
-    </div>    <div class="meeting-row upcoming-provisional">
-      <div class="meeting-date">
-        <span class="meeting-date-month">JUN</span>
-        <span class="meeting-date-day">24</span>
-        <span class="meeting-date-year">2026</span>
-      </div>
-      <div class="meeting-body">
-        <div class="meeting-header">
-          <span class="meeting-type">Board Meeting</span>
-          <span class="upcoming-badge upcoming-badge--provisional">Upcoming</span>
-          <div class="meeting-links">
-          </div>
-        </div>
-        <p class="meeting-summary upcoming-provisional-topics"><em>Planned: LCAP adoption; 2026/27 Budget adoption; EPA Resolution; ESSA Addendum; Local Indicators</em></p>
+        <p class="meeting-summary">The Board was scheduled to consider multiple facility improvement agreements for <strong>HVAC Upgrade projects Phase 2</strong> at <strong>Clifford, Orion, and Kennedy Schools</strong>, as well as an amendment to the geotechnical services agreement for the <strong>Solar Phase II Project</strong>. The agenda also proposed discussion of the district's <strong>Imagine Mathematics (IM) Three-Year Implementation and Sustainability Plan</strong> and approval of numerous curriculum and operational board policies.</p>
+        <a href="/meetings/2026-05-27/#agenda" class="meeting-item-count">43 agenda items &#8594;</a>
       </div>
     </div>
   </div>
+  
+    <div class="upcoming-provisional-section">
+      <h3 class="upcoming-provisional-title">Planned Future Dates (No Agenda)</h3>
+      <div class="upcoming-provisional-list">
+              <div class="upcoming-provisional-item">
+        <span class="upcoming-provisional-date"><strong>June 10, 2026</strong></span>
+        <span class="upcoming-provisional-type">Board Meeting — <span class="upcoming-provisional-topic">Year-End Budget Transfer Resolution</span></span>
+      </div>
+      <div class="upcoming-provisional-item">
+        <span class="upcoming-provisional-date"><strong>June 17, 2026</strong></span>
+        <span class="upcoming-provisional-type">Board Meeting — <span class="upcoming-provisional-topic">LCAP public hearing; iReady end-of-year data; 2026-27 Proposed Budget public hearing</span></span>
+      </div>
+      <div class="upcoming-provisional-item">
+        <span class="upcoming-provisional-date"><strong>June 24, 2026</strong></span>
+        <span class="upcoming-provisional-type">Board Meeting — <span class="upcoming-provisional-topic">LCAP adoption; 2026/27 Budget adoption; EPA Resolution; ESSA Addendum; Local Indicators</span></span>
+      </div>
+        
+    <details class="upcoming-details-toggle">
+      <summary>▶ Show 23 more future tentative dates</summary>
+      <div class="upcoming-provisional-list-hidden">
+              <div class="upcoming-provisional-item">
+        <span class="upcoming-provisional-date"><strong>August 10, 2026</strong></span>
+        <span class="upcoming-provisional-type">Board Meeting — <span class="upcoming-provisional-topic">Tentative Board Meeting</span></span>
+      </div>
+      <div class="upcoming-provisional-item">
+        <span class="upcoming-provisional-date"><strong>August 26, 2026</strong></span>
+        <span class="upcoming-provisional-type">Board Meeting — <span class="upcoming-provisional-topic">Tentative Board Meeting</span></span>
+      </div>
+      <div class="upcoming-provisional-item">
+        <span class="upcoming-provisional-date"><strong>September 9, 2026</strong></span>
+        <span class="upcoming-provisional-type">Board Meeting — <span class="upcoming-provisional-topic">Tentative Board Meeting</span></span>
+      </div>
+      <div class="upcoming-provisional-item">
+        <span class="upcoming-provisional-date"><strong>September 23, 2026</strong></span>
+        <span class="upcoming-provisional-type">Board Meeting — <span class="upcoming-provisional-topic">Tentative Board Meeting</span></span>
+      </div>
+      <div class="upcoming-provisional-item">
+        <span class="upcoming-provisional-date"><strong>October 14, 2026</strong></span>
+        <span class="upcoming-provisional-type">Board Meeting — <span class="upcoming-provisional-topic">Tentative Board Meeting</span></span>
+      </div>
+      <div class="upcoming-provisional-item">
+        <span class="upcoming-provisional-date"><strong>October 28, 2026</strong></span>
+        <span class="upcoming-provisional-type">Board Meeting — <span class="upcoming-provisional-topic">Tentative Board Meeting</span></span>
+      </div>
+      <div class="upcoming-provisional-item">
+        <span class="upcoming-provisional-date"><strong>November 4, 2026</strong></span>
+        <span class="upcoming-provisional-type">Board Meeting — <span class="upcoming-provisional-topic">Tentative Board Meeting</span></span>
+      </div>
+      <div class="upcoming-provisional-item">
+        <span class="upcoming-provisional-date"><strong>November 18, 2026</strong></span>
+        <span class="upcoming-provisional-type">Board Meeting — <span class="upcoming-provisional-topic">Tentative Board Meeting</span></span>
+      </div>
+      <div class="upcoming-provisional-item">
+        <span class="upcoming-provisional-date"><strong>December 9, 2026</strong></span>
+        <span class="upcoming-provisional-type">Board Meeting — <span class="upcoming-provisional-topic">Tentative Board Meeting</span></span>
+      </div>
+      <div class="upcoming-provisional-item">
+        <span class="upcoming-provisional-date"><strong>December 16, 2026</strong></span>
+        <span class="upcoming-provisional-type">Board Meeting — <span class="upcoming-provisional-topic">Tentative Board Meeting</span></span>
+      </div>
+      <div class="upcoming-provisional-item">
+        <span class="upcoming-provisional-date"><strong>January 13, 2027</strong></span>
+        <span class="upcoming-provisional-type">Board Meeting — <span class="upcoming-provisional-topic">Tentative Board Meeting</span></span>
+      </div>
+      <div class="upcoming-provisional-item">
+        <span class="upcoming-provisional-date"><strong>January 20, 2027</strong></span>
+        <span class="upcoming-provisional-type">Board Meeting — <span class="upcoming-provisional-topic">Tentative Board Meeting</span></span>
+      </div>
+      <div class="upcoming-provisional-item">
+        <span class="upcoming-provisional-date"><strong>February 10, 2027</strong></span>
+        <span class="upcoming-provisional-type">Board Meeting — <span class="upcoming-provisional-topic">Tentative Board Meeting</span></span>
+      </div>
+      <div class="upcoming-provisional-item">
+        <span class="upcoming-provisional-date"><strong>February 24, 2027</strong></span>
+        <span class="upcoming-provisional-type">Board Meeting — <span class="upcoming-provisional-topic">Tentative Board Meeting</span></span>
+      </div>
+      <div class="upcoming-provisional-item">
+        <span class="upcoming-provisional-date"><strong>March 10, 2027</strong></span>
+        <span class="upcoming-provisional-type">Board Meeting — <span class="upcoming-provisional-topic">Tentative Board Meeting</span></span>
+      </div>
+      <div class="upcoming-provisional-item">
+        <span class="upcoming-provisional-date"><strong>March 24, 2027</strong></span>
+        <span class="upcoming-provisional-type">Board Meeting — <span class="upcoming-provisional-topic">Tentative Board Meeting</span></span>
+      </div>
+      <div class="upcoming-provisional-item">
+        <span class="upcoming-provisional-date"><strong>April 7, 2027</strong></span>
+        <span class="upcoming-provisional-type">Board Meeting — <span class="upcoming-provisional-topic">Tentative Board Meeting</span></span>
+      </div>
+      <div class="upcoming-provisional-item">
+        <span class="upcoming-provisional-date"><strong>April 28, 2027</strong></span>
+        <span class="upcoming-provisional-type">Board Meeting — <span class="upcoming-provisional-topic">Tentative Board Meeting</span></span>
+      </div>
+      <div class="upcoming-provisional-item">
+        <span class="upcoming-provisional-date"><strong>May 12, 2027</strong></span>
+        <span class="upcoming-provisional-type">Board Meeting — <span class="upcoming-provisional-topic">Tentative Board Meeting</span></span>
+      </div>
+      <div class="upcoming-provisional-item">
+        <span class="upcoming-provisional-date"><strong>May 26, 2027</strong></span>
+        <span class="upcoming-provisional-type">Board Meeting — <span class="upcoming-provisional-topic">Tentative Board Meeting</span></span>
+      </div>
+      <div class="upcoming-provisional-item">
+        <span class="upcoming-provisional-date"><strong>June 9, 2027</strong></span>
+        <span class="upcoming-provisional-type">Board Meeting — <span class="upcoming-provisional-topic">Tentative Board Meeting</span></span>
+      </div>
+      <div class="upcoming-provisional-item">
+        <span class="upcoming-provisional-date"><strong>June 16, 2027</strong></span>
+        <span class="upcoming-provisional-type">Board Meeting — <span class="upcoming-provisional-topic">Tentative Board Meeting</span></span>
+      </div>
+      <div class="upcoming-provisional-item">
+        <span class="upcoming-provisional-date"><strong>June 23, 2027</strong></span>
+        <span class="upcoming-provisional-type">Board Meeting — <span class="upcoming-provisional-topic">Tentative Board Meeting</span></span>
+      </div>
+      </div>
+    </details>
+      </div>
+    </div>
 </section>
 
 <section class="section" id="sy202526">
@@ -1247,7 +1427,7 @@ Comments in Spanish are welcome — an interpreter is available at every meeting
           <div class="meeting-links"><a href="https://rcsdk8-net.zoom.us/s/88656026675" class="meeting-link meeting-link--zoom" data-zoom-date="2026-05-13" target="_blank" rel="noopener">&#9678; Join via Zoom</a><a href="https://www.youtube.com/watch?v=37aRsr2VKEY" class="meeting-link meeting-link--video" target="_blank" rel="noopener">&#9654; Video</a><a href="https://simbli.eboardsolutions.com/SB_Meetings/ViewMeeting.aspx?S=36030397&amp;MID=51013" class="meeting-link meeting-link--agenda" target="_blank" rel="noopener">&#8599; Agenda</a><a href="/meetings/2026-05-13/" class="meeting-link meeting-link--transcript">&#128221; Transcript</a></div>
         </div>
         <div class="meeting-threads"><span class="meeting-thread-tag" data-thread="policy">Policy Updates</span><span class="meeting-thread-tag" data-thread="charter">Charter School Oversight</span></div>
-        <p class="meeting-summary">The Board approved multiple facility and infrastructure improvements including <strong>EV charger installations</strong> at four schools through agreements with <strong>PowerFlex</strong> and <strong>Atlas Pellizzari Electric</strong> (totaling over <strong>$70K</strong>), authorized a <strong><strong>$75,000</strong></strong> increase to the Daylight purchase order, and reviewed school site plans and annual financial reports for <strong>North Star School</strong>, <strong>Henry Ford School</strong>, and three charter schools.</p>
+        <p class="meeting-summary">The Board was scheduled to consider multiple infrastructure and sustainability initiatives, including approval of agreements for <strong>8 EV chargers</strong> at <strong>Hoover Community School</strong> and <strong>Roy Cloud School</strong> through <strong>PowerFlex</strong>, plus installation agreements with <strong>Atlas Pellizzari Electric</strong> (<strong>$70,520</strong>) for chargers at <strong>Adelante Selby</strong>, <strong>Clifford</strong>, and <strong>Kennedy Schools</strong>. The agenda also proposed discussions of school plans for <strong>North Star School</strong> and <strong>Henry Ford School</strong>, migration of district servers to <strong>Microsoft Azure Cloud Services</strong> via <strong>Looking Point</strong>, and approval of numerous board policies related to student conduct, health benefits, and academic programs.</p>
         <a href="/meetings/2026-05-13/#agenda" class="meeting-item-count">45 agenda items &#8594;</a>
       </div>
     </div>
@@ -1260,7 +1440,7 @@ Comments in Spanish are welcome — an interpreter is available at every meeting
       <div class="meeting-body">
         <div class="meeting-header">
           <a href="/meetings/2026-04-22/" class="meeting-type">Regular</a><span class="meeting-duration">2h 48m</span>
-          <div class="meeting-links"><a href="https://rcsdk8-net.zoom.us/s/87859569873" class="meeting-link meeting-link--zoom" data-zoom-date="2026-04-22" target="_blank" rel="noopener">&#9678; Join via Zoom</a><a href="https://www.youtube.com/watch?v=8ypMIkdV5jw" class="meeting-link meeting-link--video" target="_blank" rel="noopener">&#9654; Video</a><a href="https://simbli.eboardsolutions.com/SB_Meetings/ViewMeeting.aspx?S=36030397&amp;MID=51012" class="meeting-link meeting-link--agenda" target="_blank" rel="noopener">&#8599; Agenda</a><a href="/meetings/2026-04-22/" class="meeting-link meeting-link--transcript">&#128221; Transcript</a></div>
+          <div class="meeting-links"><a href="https://rcsdk8-net.zoom.us/s/87859569873" class="meeting-link meeting-link--zoom" data-zoom-date="2026-04-22" target="_blank" rel="noopener">&#9678; Join via Zoom</a><a href="https://www.youtube.com/watch?v=8ypMIkdV5jw" class="meeting-link meeting-link--video" target="_blank" rel="noopener">&#9654; Video</a><a href="https://simbli.eboardsolutions.com/SB_Meetings/ViewMeeting.aspx?S=36030397&amp;MID=51012" class="meeting-link meeting-link--agenda" target="_blank" rel="noopener">&#8599; Agenda</a><a href="https://data.rcsd.info/board-packets/2026-05-27/2026.04.22-Minutes-DRAFT-Closed.Regular.pdf" class="meeting-link meeting-link--minutes" target="_blank" rel="noopener">&#128196; Minutes</a><a href="/meetings/2026-04-22/" class="meeting-link meeting-link--transcript">&#128221; Transcript</a></div>
         </div>
         <div class="meeting-threads"><span class="meeting-thread-tag" data-thread="facilities-bond">Facilities Bonds (Measure S/T)</span><span class="meeting-thread-tag" data-thread="policy">Policy Updates</span></div>
         <p class="meeting-summary">The Board approved multiple facility improvement projects including <strong>HVAC Upgrades Phase 3</strong> at <strong>Henry Ford and Roy Cloud Schools</strong>, a <strong>Guaranteed Maximum Price Amendment</strong> with <strong>Blach Construction</strong> for Phase 2 upgrades, and <strong>Industrial Hygienist Services Agreements</strong>; additionally, the Board reviewed School Plans for Student Achievement (SPSA) for <strong>Kennedy Middle School</strong>, <strong>Orion Alternative and Mandarin Immersion</strong>, and <strong>Adelante Selby Spanish Immersion</strong>, and approved multiple board policy updates and a <strong><strong>$100,000</strong> increase</strong> to the <strong>Bonami Baking Company</strong> purchase order.</p>
@@ -3770,7 +3950,7 @@ Comments in Spanish are welcome — an interpreter is available at every meeting
           <div class="meeting-links"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/goto?open&amp;id=CRM2R703650F" class="meeting-link meeting-link--agenda" target="_blank" rel="noopener">&#8599; Agenda</a></div>
         </div>
         <div class="meeting-threads"><span class="meeting-thread-tag" data-thread="budget">Budget & Resource Alignment</span><span class="meeting-thread-tag" data-thread="facilities-bond">Facilities Bonds (Measure S/T)</span></div>
-        <p class="meeting-summary">The Board reviewed and adopted the <strong>Measure T</strong> Bond Program budget study, addressing funding allocations and program priorities for district improvement projects.</p>
+        <p class="meeting-summary">The Board was scheduled to consider the <strong><strong>Measure T</strong> Bond Program</strong> budget study, update, and adoption during this special meeting. Action on bond program items was planned for discussion.</p>
         <a href="/meetings/2021-04-28/#agenda" class="meeting-item-count">1 agenda items &#8594;</a>
       </div>
     </div>
@@ -3834,7 +4014,7 @@ Comments in Spanish are welcome — an interpreter is available at every meeting
           <div class="meeting-links"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/goto?open&amp;id=CRJ2QE00512B" class="meeting-link meeting-link--agenda" target="_blank" rel="noopener">&#8599; Agenda</a></div>
         </div>
         
-        <p class="meeting-summary">The Board held a closed session to conduct the <strong>Superintendent</strong>'s Performance Evaluation, a personnel matter.</p>
+        <p class="meeting-summary">The Board was scheduled to hold a closed session to discuss the <strong><strong>Superintendent</strong>'s Performance Evaluation</strong>, a personnel matter.</p>
         
       </div>
     </div>
@@ -4406,8 +4586,26 @@ Comments in Spanish are welcome — an interpreter is available at every meeting
   <div class="resource-grid">
     <div class="resource-card">
       <h3>Governance Calendar</h3>
-      <p>Planned board agenda items for the school year. From the May 13, 2026 agenda.</p>
-      <a href="https://simbli.eboardsolutions.com/Meetings/Attachment.aspx?S=36030397&amp;AID=1518167&amp;MID=51013" target="_blank" rel="noopener">View Schedule (PDF) &#8599;</a>
+      <p>Planned board agenda items for the school year. From the May 27, 2026 agenda.</p>
+      <a href="https://data.rcsd.info/board-packets/2026-05-27/25-26-Schedule-of-Board-Agenda-Items.pdf" target="_blank" rel="noopener">View Schedule (PDF) &#8599;</a>
+    </div>
+    <div class="resource-card">
+      <h3>Board Meetings Feed</h3>
+      <p>Subscribe to automatic updates of all school board meetings in Apple Calendar, Google Calendar, or Outlook.</p>
+      <div class="calendar-links">
+        <a href="webcal://rcsd.info/board-meetings.ics" class="calendar-btn">Apple / Outlook</a>
+        <a href="https://calendar.google.com/calendar/r?cid=https://rcsd.info/board-meetings.ics" class="calendar-btn" target="_blank" rel="noopener">Google Calendar</a>
+        <a href="/board-meetings.ics" class="calendar-btn" download>Download ICS</a>
+      </div>
+    </div>
+    <div class="resource-card">
+      <h3>School Calendar Feed</h3>
+      <p>Subscribe to key school dates, milestones, holidays, and minimum days in Apple Calendar, Google Calendar, or Outlook.</p>
+      <div class="calendar-links">
+        <a href="webcal://rcsd.info/school-dates.ics" class="calendar-btn">Apple / Outlook</a>
+        <a href="https://calendar.google.com/calendar/r?cid=https://rcsd.info/school-dates.ics" class="calendar-btn" target="_blank" rel="noopener">Google Calendar</a>
+        <a href="/school-dates.ics" class="calendar-btn" download>Download ICS</a>
+      </div>
     </div>
     <div class="resource-card">
       <h3>Board Meeting Portal</h3>
