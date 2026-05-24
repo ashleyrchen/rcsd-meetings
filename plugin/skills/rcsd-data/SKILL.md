@@ -80,6 +80,13 @@ Read these files from `data/` to answer questions. For field-by-field documentat
 | `timestamp-map.json` | 694 offsets | Agenda item to video timestamp mapping |
 | `document-index.json` | Taxonomy | Categorized index of all board attachments |
 
+### Board Policies (619 policies, bylaws, and regulations)
+
+| File/Directory | Size | Use For |
+|------|------|---------|
+| `policies-index.json` | 619 entries | School board policies global catalog, including codes, titles, revision IDs, and revision dates |
+| `board-policies/` | 619 JSONs | Directory of individual files per policy (e.g. `0100-BP.json`) with full HTML content, sanitized text, footnotes (legal references), and cross-references |
+
 ### School Slugs
 
 | Slug | School | Grades | Type |
@@ -107,6 +114,12 @@ Read multiple files and reason across them. Examples: "Which schools have high E
 
 ### Temporal/topical analysis (meetings corpus)
 For "what has the board discussed about X?", search `meetings-data.json` for topic keywords in the `topics` array and item titles, then read `meeting-summaries.json` for context. For deeper detail, read the specific `board-memos/{date}.json` files. See `references/meetings-guide.md` for navigating the meeting corpus.
+
+### Board Policies queries
+For "what is the district's policy on X?", follow this 3-step strategy:
+1. **Search Index**: First, read `data/policies-index.json`. Perform a text or regex search on the `title` or `code` fields of the `policies` array to identify candidate policy codes and types (e.g. `5141.22 BP` or `9223 AR`).
+2. **Read Detail File**: Once you identify the relevant policy code and type, read its individual detail JSON file directly from `data/board-policies/{code}-{type}.json` (e.g. `data/board-policies/9223-AR.json`).
+3. **Analyze & Present**: Extract the `contentText` for the core policy rules, the `footnotes` for statutory citations (like the CA Education or Government Code), and the `crossRefs` for related governance rules to synthesize an authoritative answer.
 
 ### Comparative queries
 Read the relevant data for all schools and present side-by-side. The data is small enough to load entirely.

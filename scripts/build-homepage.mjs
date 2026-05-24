@@ -798,6 +798,10 @@ ${siteNav({ activePage: 'home', lang: 'en' })}
         <p>Budget reports, LCAP, school plans (SPSA), and school report cards (SARC).</p>
       </div>
       <div class="nav-link-item">
+        <h3><a href="/policies/">Board Policies &#8599;</a></h3>
+        <p>Interactive catalog of all active school board policies, bylaws, and administrative regulations.</p>
+      </div>
+      <div class="nav-link-item">
         <h3><a href="https://github.com/dweekly/rcsd-meetings">Source Code &#8599;</a></h3>
         <p>Open source on GitHub. Data pipeline, scraping tools, and website code.</p>
       </div>
@@ -814,6 +818,10 @@ ${siteNav({ activePage: 'home', lang: 'en' })}
       <div class="nav-link-item">
         <h3><a href="/reuniones/#documents">Documentos Clave &#8599;</a></h3>
         <p>Informes de presupuesto, LCAP, planes escolares (SPSA) y boletas de calificaciones (SARC).</p>
+      </div>
+      <div class="nav-link-item">
+        <h3><a href="/policies/">Políticas de la Junta &#8599;</a></h3>
+        <p>Catálogo interactivo de todas las políticas, reglamentos y estatutos vigentes de la mesa directiva.</p>
       </div>
       <div class="nav-link-item">
         <h3><a href="https://github.com/dweekly/rcsd-meetings">Código Fuente &#8599;</a></h3>

@@ -10,6 +10,7 @@ Independently compiled public records for the [Redwood City School District](htt
 
 - **192 board meetings** (April 2020 – present) from BoardDocs and Simbli/GAMUT
 - **8,073 agenda items** with **4,845 attachments** and source links
+- **619 school board policies, bylaws, and regulations** across 9 governance sections
 - **157 meeting recordings** with diarized transcripts (AssemblyAI Universal 3 Pro)
 - **4,198 agenda items mapped to video timestamps** via LLM analysis of transcripts (148 meetings)
 - **12 school profile pages** with demographics, test scores, bell schedules, safety plans, and board presentations
@@ -26,6 +27,7 @@ Every dataset on this site is traceable to its public source. We document the or
 |----------|-------------|-------------|
 | Meeting transcription | [`data/METHODOLOGY-transcription.md`](data/METHODOLOGY-transcription.md) | AssemblyAI Universal 3 Pro, Opus audio from YouTube, speaker diarization |
 | Meeting aggregation | [Data sources](#data-sources) below | Simbli + BoardDocs APIs |
+| Board policies | `data/policies-index.json`, `data/board-policies/` | Full policy text, cross-references, footnotes, and metadata scraped from Simbli's REST APIs |
 | School profiles | `data/schools.json` | CDE enrollment, CAASPP, SARC, IRS 990 PTO filings |
 | Charter profiles | `data/charters.json` | CDE School Directory + Profile for metadata; financial docs filtered from `document-index.json` by title patterns |
 | District properties | `data/properties.json` | District-owned/leased sites that aren't operating schools (admin, former campuses, storage); seed list confirmed by the Board President |
@@ -41,6 +43,7 @@ AI-generated content (meeting summaries, timestamp mappings) is always labeled a
 | Source | What | Method | Scripts |
 |--------|------|--------|---------|
 | [Simbli/GAMUT](https://simbli.eboardsolutions.com/SB_Meetings/SB_MeetingListing.aspx?S=36030397) | Agendas, minutes, attachments (Jun 2025+) | Playwright browser scraping | `scrape-simbli-agendas.mjs`, `scrape-board-packets.mjs` |
+| [Simbli Policies](https://simbli.eboardsolutions.com/Policy/PolicyListing.aspx?S=36030397) | Board Policy manual, bylaws, regulations | Playwright session interception + REST API calls | `scrape-board-policies.mjs` |
 | [BoardDocs](https://go.boarddocs.com/ca/redwood/Board.nsf) | Agendas, attachments (Aug 2023 – Jun 2025) | REST API scraping | `scrape-boarddocs.mjs` |
 | [YouTube](https://www.youtube.com/@redwoodcityschooldistrict) | Meeting videos | `yt-dlp` channel index | `scrape-youtube-index.mjs` |
 | YouTube audio | Raw Opus 48kHz audio streams | `yt-dlp -f bestaudio` | `transcribe-assemblyai.mjs` |
@@ -68,6 +71,7 @@ Scripts run in order. Most can be run independently. All cache aggressively — 
  1. scrape:youtube        → data/youtube-index.json
  2. scrape:boarddocs      → data/boarddocs-scraped.json
  3. scrape:simbli         → data/board-memos/*.json (agenda + attachment metadata)
+ 3b. scrape:policies      → data/policies-index.json + data/board-policies/*.json (raw text + refs)
  4. scrape:packets        → adds local PDFs under artifacts/board-packets/ + memo fields
 
  Transcription (AssemblyAI)
@@ -120,6 +124,16 @@ npm run scrape:simbli -- --list-only # discovery report; no scrape
 ```
 
 `scrape:simbli` runs as Phase 0 of `run-pipeline.mjs`, so a fresh `node scripts/run-pipeline.mjs --quick` automatically picks up newly-posted agendas before the build.
+
+### Simbli board policies manual scraping
+
+The entire district board policy manual (619 active policies, bylaws, and regulations across 9 sections) is dynamically fetched from Simbli's REST APIs. `scrape:policies` starts Chromium via Playwright to clear Imperva/Incapsula, intercepts the session-specific security tokens (`sct`, `ensid`, `ptid`) from the first catalog payload, and then uses direct, polite batch-concurrency REST calls inside the page context to download, sanitize, and cache every single policy text and reference in `data/board-policies/` as JSON.
+
+```bash
+npm run scrape:policies                # discover and fetch all policies (idempotent/cached)
+npm run scrape:policies -- --force     # ignore cache, re-fetch all 619 policies
+npm run scrape:policies -- --limit 5   # cap download at 5 policies (excellent for testing)
+```
 
 ### Board packet PDF download
 

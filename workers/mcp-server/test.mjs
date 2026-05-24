@@ -84,17 +84,19 @@ await test("initialize returns server info", async () => {
   assert(r.result.capabilities.tools, "missing tools capability");
 });
 
-await test("tools/list returns 8 tools", async () => {
+await test("tools/list returns 10 tools", async () => {
   const r = await mcpCall(2, "tools/list");
   const names = r.result.tools.map((t) => t.name).sort();
-  assert(names.length === 8, `expected 8 tools, got ${names.length}`);
+  assert(names.length === 10, `expected 10 tools, got ${names.length}`);
   for (const expected of [
     "check-calendar",
     "get-lunch-menu",
     "get-meeting-details",
     "get-meeting-summary",
+    "get-policy",
     "get-school-board-items",
     "get-sped-data",
+    "list-policies",
     "list-schools",
     "query-school",
   ]) {
@@ -205,6 +207,19 @@ await test("get-sped-data district-wide", async () => {
   const text = await toolCall("get-sped-data", {});
   assert(text.includes("District"), "should mention district");
   assert(text.includes("Per school"), "should list per-school data");
+});
+
+await test("list-policies returns policies", async () => {
+  const text = await toolCall("list-policies", { query: "Philosophy" });
+  assert(text.includes("Philosophy"), "should include Philosophy policy");
+  assert(text.includes("0100"), "should have code 0100");
+});
+
+await test("get-policy returns rules and citations", async () => {
+  const text = await toolCall("get-policy", { code: "0100", type: "BP" });
+  assert(text.includes("Philosophy"), "should mention Philosophy");
+  assert(text.includes("Legal & Resource Citations"), "should include citations header");
+  assert(text.includes("Ed. Code 51002"), "should have Education Code reference");
 });
 
 // Landing page

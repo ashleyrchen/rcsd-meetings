@@ -21,6 +21,9 @@ All data is available as JSON at [data.rcsd.info/json/](https://data.rcsd.info/j
 - [sped-categories.json](https://data.rcsd.info/json/sped-categories.json): Disability categories and LRE placement per school (CDE 2024-25)
 - [sarc/sarc-summary.json](https://data.rcsd.info/json/sarc/sarc-summary.json): SARC data — demographics, CAASPP test scores, expenditures per school
 - [youtube-index.json](https://data.rcsd.info/json/youtube-index.json): YouTube video links for board meeting recordings
+- [policies-index.json](https://data.rcsd.info/json/policies-index.json): Global catalog of all 619 board policies, bylaws, and administrative regulations
+- [board-policies/](https://data.rcsd.info/json/board-policies/): Directory containing structured JSON files for each individual policy (e.g. `0100-BP.json`) with full HTML content, plain-text body, legal references, and cross-references
+
 
 ## School Slugs
 
@@ -47,6 +50,8 @@ All data is available as JSON at [data.rcsd.info/json/](https://data.rcsd.info/j
 - [/schools/{slug}/](https://rcsd.info/schools/): Individual school pages (English)
 - [/escuelas/{slug}/](https://rcsd.info/escuelas/): Individual school pages (Spanish)
 - [/budget/](https://rcsd.info/budget/): District budget visualization
+- [/policies/](https://rcsd.info/policies/): Interactive Board Policies Manual browser
+
 
 ## MCP Server
 

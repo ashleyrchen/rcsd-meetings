@@ -1027,3 +1027,155 @@ Parse the `setting` JSON string → `current_display` array:
 
 - `type: "category"` = section header; `type: "recipe"` = menu item
 - `weight` = display order
+
+---
+
+## data/policies-index.json
+
+Top-level: `{ _metadata, sections[], policies[] }` — The global index of Redwood City School District board policies, bylaws, and administrative regulations.
+
+### Sample Index Record
+
+```json
+{
+  "_metadata": {
+    "source": "https://simbli.eboardsolutions.com/Policy/PolicyListing.aspx?S=36030397",
+    "scrapedAt": "2026-05-24T15:20:00.000Z",
+    "method": "Playwright + Simbli ViewPolicy API scraper"
+  },
+  "sections": [
+    {
+      "code": "0000",
+      "name": "Philosophy, Goals, Objectives and Comprehensive Plans",
+      "encrId": "6XAK9hcueplusL8NJI1ShcBkQ=="
+    }
+  ],
+  "policies": [
+    {
+      "id": "6XAK9hcueplusL8NJI1ShcBkQ==",
+      "code": "0100",
+      "title": "Philosophy",
+      "type": "BP",
+      "section": "0000",
+      "lastRevised": "11/04/2009",
+      "lastReviewed": "11/04/2009",
+      "hasAttachment": false,
+      "revid": "6XAK9hcueplusL8NJI1ShcBkQ=="
+    }
+  ]
+}
+```
+
+### Schema Description
+
+#### Top-level fields
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `_metadata` | object | Provenance metadata including source URL, scraped timestamp, and method. |
+| `sections` | array of objects | Section directories mapping the 1000s series (e.g. `0000`, `1000`, etc.) to descriptive titles. |
+| `policies` | array of objects | Catalog of all policies and regulations. |
+
+#### Section fields (`sections[]`)
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `code` | string | Numeric identifier for the section (e.g. `"0000"`, `"1000"`, `"5000"`). |
+| `name` | string | English name of the section. |
+| `encrId` | string | Internal encrypted ID from Simbli for the section. |
+
+#### Policy Catalog fields (`policies[]`)
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `id` | string | Internal unique ID of the policy revision. |
+| `code` | string | The policy code number (e.g. `"0100"`, `"5141.22"`). |
+| `title` | string | Description/title of the policy. |
+| `type` | string | `"BP"` (Board Policy), `"AR"` (Administrative Regulation), `"BB"` (Board Bylaw), `"E"` (Exhibit), etc. |
+| `section` | string | Matches the `sections[]` code prefix representing the functional division. |
+| `lastRevised` | string | MM/DD/YYYY representation of when the policy was last revised/reviewed. |
+| `lastReviewed` | string | MM/DD/YYYY representation of when the policy was last reviewed. |
+| `hasAttachment` | boolean | Indicates whether this policy has attached files. |
+| `revid` | string | Revision ID matching the `id` field, used to request full detail. |
+
+---
+
+## data/board-policies/{code}-{type}.json
+
+Individual, structured detailed records of each board policy, regulation, and bylaw.
+
+### Sample Policy Detail
+
+```json
+{
+  "code": "0100",
+  "title": "Philosophy",
+  "type": "BP",
+  "section": "0000",
+  "lastRevised": "11/04/2009",
+  "lastReviewed": "11/04/2009",
+  "hasAttachment": false,
+  "revid": "6XAK9hcueplusL8NJI1ShcBkQ==",
+  "contentHtml": "<p>As part of its responsibility...</p>",
+  "contentText": "As part of its responsibility...",
+  "footnotes": [
+    {
+      "type": "State",
+      "references": [
+        {
+          "code": "Ed. Code 51002",
+          "description": "Local development of...",
+          "url": ""
+        }
+      ]
+    }
+  ],
+  "crossRefs": [
+    {
+      "code": "0200",
+      "title": "Goals For The School District",
+      "type": "BP"
+    }
+  ],
+  "attachments": []
+}
+```
+
+### Schema Description
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `code` | string | The policy code number (e.g. `"0100"`, `"5141.22"`). |
+| `title` | string | Description/title of the policy. |
+| `type` | string | `"BP"` (Board Policy), `"AR"` (Administrative Regulation), `"BB"` (Board Bylaw), etc. |
+| `section` | string | Numeric identifier for the parent section division. |
+| `lastRevised` | string | MM/DD/YYYY date of last revision. |
+| `lastReviewed` | string | MM/DD/YYYY date of last review. |
+| `hasAttachment` | boolean | Flag showing if attachments are present. |
+| `revid` | string | Revision ID string used in Simbli URLs. |
+| `contentHtml` | string | Full HTML content of the policy as rendered by Simbli. |
+| `contentText` | string | Cleaned and sanitized plain-text format of the policy body (ideal for LLM context). |
+| `footnotes` | array | Grouped legal or management references associated with this policy (e.g. State, Federal, Management). |
+| `crossRefs` | array | Cross-references to other related board policies. |
+| `attachments` | array | Listing of downloadable attachments (e.g. PDFs or forms) linked with this policy. |
+
+#### Footnotes Structure (`footnotes[]`)
+
+- `type`: string (e.g., `"State"`, `"Federal"`, `"Management"`)
+- `references`: array of objects, each containing:
+  - `code`: string (e.g. `"Ed. Code 35160"`)
+  - `description`: string describing the legal basis
+  - `url`: string (URL to reference text, if available)
+
+#### Cross References Structure (`crossRefs[]`)
+
+- `code`: string (code of the referenced policy)
+- `title`: string (description of the referenced policy)
+- `type`: string (e.g. `"BP"`, `"AR"`, `"BB"`)
+
+#### Attachments Structure (`attachments[]`)
+
+- `id`: string (unique attachment identifier in Simbli)
+- `name`: string (display name of the attached file)
+- `filename`: string (file name on server)
+

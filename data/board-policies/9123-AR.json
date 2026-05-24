@@ -1,0 +1,92 @@
+{
+  "code": "9123",
+  "title": "Clerk",
+  "type": "AR",
+  "section": "9000",
+  "lastRevised": "01/28/2009",
+  "lastReviewed": "01/28/2009",
+  "hasAttachment": false,
+  "revid": "L77AuONpEdOXEtlCFgHplusmg==",
+  "contentHtml": "<html>\n<head>\n\t<title></title>\n\t<link href=\"https://simbli.eboardsolutions.com/ckeditor/plugins/lance/css/annotate.css\" rel=\"stylesheet\" type=\"text/css\">\n\t<link href=\"https://simbli.eboardsolutions.com/ckeditor/plugins/lite/css/lite.css?n=1234671010\" id=\"__lite__css__\" rel=\"stylesheet\" type=\"text/css\">\n\t<link href=\"https://simbli.eboardsolutions.com/ckeditor/plugins/lite/css/opentip.css\" id=\"__lite_tt_css__\" rel=\"stylesheet\" type=\"text/css\">\n\t<link href=\"https://svc.webspellchecker.net/spellcheck31/wscbundle/css/wsc.css\" rel=\"stylesheet\" type=\"text/css\">\n</head>\n\n<body data-gramm_editor=\"false\" data-wsc-instance=\"true\">\n<p>At the annual organizational meeting, the Board of Education shall elect a clerk from its own membership. (Education Code <span>35143</span>)</p>\n\n<p>The duties of the clerk shall be to:</p>\n\n<ol>\n\t<li>Certify or attest to actions taken by the Board when required<br>\n\t&nbsp;</li>\n\t<li>Maintain such other records or reports as required by law<br>\n\t&nbsp;</li>\n\t<li>Review draft minutes before publishing minutes in meeting notes<br>\n\t&nbsp;</li>\n\t<li>Sign the minutes of Board meetings following their approval<br>\n\t&nbsp;</li>\n\t<li>Sign documents on behalf of the district as directed by the Board<br>\n\t&nbsp;</li>\n\t<li>Serve as presiding officer in the absence of the president and vice president<br>\n\t&nbsp;</li>\n\t<li>Perform any other duties assigned by the Board</li>\n</ol>\n</body>\n</html>\n",
+  "contentText": "At the annual organizational meeting, the Board of Education shall elect a clerk from its own membership. (Education Code 35143)\n\nThe duties of the clerk shall be to:\n\n- Certify or attest to actions taken by the Board when required\n\n- Maintain such other records or reports as required by law\n\n- Review draft minutes before publishing minutes in meeting notes\n\n- Sign the minutes of Board meetings following their approval\n\n- Sign documents on behalf of the district as directed by the Board\n\n- Serve as presiding officer in the absence of the president and vice president\n\n- Perform any other duties assigned by the Board",
+  "footnotes": [
+    {
+      "type": "State",
+      "references": [
+        {
+          "code": "Ed. Code 17593",
+          "description": "Repair and supervision of property (duty of district clerk)",
+          "url": "https://leginfo.legislature.ca.gov/faces/codes_displayText.xhtml?lawCode=EDC&division=1.&title=1.&part=10.5.&chapter=5.&article=2."
+        },
+        {
+          "code": "Ed. Code 35038",
+          "description": "Appointment of clerk by county superintendent of schools",
+          "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=EDC&sectionNum=35038."
+        },
+        {
+          "code": "Ed. Code 35039",
+          "description": "Dismissal of clerk",
+          "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=EDC&sectionNum=35039."
+        },
+        {
+          "code": "Ed. Code 35121",
+          "description": "Appointment of clerk in certain city and high school districts",
+          "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=EDC&sectionNum=35121."
+        },
+        {
+          "code": "Ed. Code 35143",
+          "description": "Annual organizational meetings;  date and notice",
+          "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=EDC&sectionNum=35143."
+        },
+        {
+          "code": "Ed. Code 35250",
+          "description": "Duty to keep certain records",
+          "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=EDC&sectionNum=35250."
+        },
+        {
+          "code": "Ed. Code 38113",
+          "description": "Duty of clerk (re provision of school supplies)",
+          "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=EDC&sectionNum=38113."
+        },
+        {
+          "code": "Gov. Code 54950-54963",
+          "description": "The Ralph M. Brown Act",
+          "url": "https://leginfo.legislature.ca.gov/faces/codes_displayText.xhtml?lawCode=GOV&division=2.&title=5.&part=1.&chapter=9.&article="
+        }
+      ]
+    },
+    {
+      "type": "Management Resources",
+      "references": [
+        {
+          "code": "CSBA Publication",
+          "description": "Professional Governance Standards",
+          "url": "https://www.csba.org/en/GovernanceAndPolicyResources/EffectiveGovernance/ProfessionalGovStandards#gsc.tab=0"
+        },
+        {
+          "code": "Website",
+          "description": "CSBA District and County Office of Education Legal Services",
+          "url": "https://legalservices.csba.org/"
+        },
+        {
+          "code": "Website",
+          "description": "CSBA",
+          "url": "http://www.csba.org"
+        }
+      ]
+    }
+  ],
+  "crossRefs": [
+    {
+      "code": "9100",
+      "title": "Organization",
+      "type": "AR"
+    },
+    {
+      "code": "9121",
+      "title": "President",
+      "type": "AR"
+    }
+  ],
+  "attachments": []
+}

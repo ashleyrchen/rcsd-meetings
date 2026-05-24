@@ -13,6 +13,8 @@
  *   get-meeting-details   — Comprehensive details for a single board meeting
  *   get-school-board-items — Board items for a specific school
  *   get-sped-data         — Special education stats
+ *   list-policies         — List board policies, bylaws, and regulations
+ *   get-policy            — Get plain-text rules and citations of a specific board policy
  */
 
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
@@ -851,6 +853,109 @@ function createServer(): McpServer {
     }
   );
 
+  // ---- list-policies ----
+  server.tool(
+    "list-policies",
+    "List all RCSD school board policies, bylaws, and regulations, with optional filtering",
+    {
+      section: z.string().optional().describe("Filter by section code (e.g. '0000', '1000', '5000', '9000')"),
+      type: z.string().optional().describe("Filter by type (BP, AR, BB)"),
+      query: z.string().optional().describe("Search keywords in code or title"),
+    },
+    async ({ section, type, query }) => {
+      const data = await fetchJSON("policies-index.json");
+      let list = data.policies || [];
+      
+      if (section) {
+        list = list.filter((p: any) => p.section === section);
+      }
+      if (type) {
+        const t = type.toUpperCase();
+        list = list.filter((p: any) => p.type === t);
+      }
+      if (query) {
+        const q = query.toLowerCase();
+        list = list.filter((p: any) => 
+          p.code.toLowerCase().includes(q) || 
+          p.title.toLowerCase().includes(q)
+        );
+      }
+
+      if (list.length === 0) {
+        return { content: [{ type: "text", text: "No policies match the specified filters." }] };
+      }
+
+      const lines = list.map(
+        (p: any) =>
+          `[${p.code}] ${p.title} (${p.type}) - Revised: ${p.lastRevised || 'Unmodified'}`
+      );
+
+      return {
+        content: [{ type: "text", text: `Redwood City SD Board Policies (${list.length} matches):\n\n${lines.join("\n")}` }],
+      };
+    }
+  );
+
+  // ---- get-policy ----
+  server.tool(
+    "get-policy",
+    "Get the full plain-text rules, legal citations, and cross-references of a specific board policy by code and type",
+    {
+      code: z.string().describe("The policy code number (e.g., '0100', '5141.22')"),
+      type: z.string().describe("The policy type abbreviation: 'BP' (Board Policy), 'AR' (Administrative Regulation), 'BB' (Board Bylaw), etc."),
+    },
+    async ({ code, type }) => {
+      const formattedType = type.toUpperCase();
+      const filename = `board-policies/${code}-${formattedType}.json`;
+      
+      try {
+        const data = await fetchJSON(filename);
+        const lines = [
+          `=== RCSD Board Policy: ${data.code} (${data.type}) ===`,
+          `Title: ${data.title}`,
+          `Section: ${data.section || 'N/A'}`,
+          `Last Revised: ${data.lastRevised || 'Unmodified'}`,
+          `Last Reviewed: ${data.lastReviewed || 'N/A'}`,
+          "",
+          "--- Policy Rules & Content ---",
+          data.contentText || "(No plain text content available)",
+        ];
+
+        // Footnotes / Legal References
+        if (data.footnotes && data.footnotes.length > 0) {
+          lines.push("", "--- Legal & Resource Citations ---");
+          for (const group of data.footnotes) {
+            lines.push(`[${group.type}]`);
+            for (const ref of group.references || []) {
+              const urlPart = ref.url ? ` (${ref.url})` : "";
+              lines.push(`  - ${ref.code}: ${ref.description}${urlPart}`);
+            }
+          }
+        }
+
+        // Cross References
+        if (data.crossRefs && data.crossRefs.length > 0) {
+          lines.push("", "--- Cross References ---");
+          for (const ref of data.crossRefs) {
+            lines.push(`  - [${ref.code} ${ref.type}] ${ref.title}`);
+          }
+        }
+
+        return { content: [{ type: "text", text: lines.join("\n") }] };
+      } catch (err: any) {
+        return {
+          isError: true,
+          content: [
+            {
+              type: "text",
+              text: `Failed to retrieve policy ${code} (${formattedType}). Verify that the code and type are correct.\nError: ${err.message}`,
+            },
+          ],
+        };
+      }
+    }
+  );
+
   return server;
 }
 
@@ -896,6 +1001,8 @@ Tools available:
   get-meeting-details    — Full details for a board meeting (agenda, timestamps, transcript)
   get-school-board-items — Board items for a specific school
   get-sped-data          — Special education enrollment data
+  list-policies          — List board policies, bylaws, and regulations
+  get-policy             — Full plain-text rules of a specific policy by code and type
 
 Data source: https://rcsd.info
 GitHub: https://github.com/dweekly/rcsd-meetings

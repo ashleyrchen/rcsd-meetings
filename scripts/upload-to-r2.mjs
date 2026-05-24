@@ -71,6 +71,7 @@ run(`${verb} data → ${BUCKET}/json`, [
   DATA_DIR,
   `${BUCKET}/json`,
   '--filter', '- llm-timestamp-cache/**',
+  '--filter', '+ board-policies/*.json',
   '--filter', '+ *.json',
   '--filter', '- *',
   '--progress',

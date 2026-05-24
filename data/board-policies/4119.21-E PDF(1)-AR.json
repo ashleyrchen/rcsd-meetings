@@ -1,0 +1,672 @@
+{
+  "code": "4119.21-E PDF(1)",
+  "title": "Professional Standards",
+  "type": "AR",
+  "section": "4000",
+  "lastRevised": "11/04/2009",
+  "lastReviewed": null,
+  "hasAttachment": false,
+  "revid": "wWpO9fzplusX5dheSvTDCJ75g==",
+  "contentHtml": "",
+  "contentText": "",
+  "footnotes": [
+    {
+      "type": "State",
+      "references": [
+        {
+          "code": "5 CCR 80300",
+          "description": "Committee of credentials; definitions",
+          "url": ""
+        },
+        {
+          "code": "5 CCR 80303",
+          "description": "Reports of change in employment status; alleged misconduct",
+          "url": "https://govt.westlaw.com/calregs/Document/I7B1196734C6911EC93A8000D3A7C4BC3?viewType=FullText&originationContext=documenttoc&transitionType=CategoryPageItem&contextData=(sc.Default)"
+        },
+        {
+          "code": "5 CCR 80331-80338",
+          "description": "Rules of conduct for professional educators",
+          "url": "https://govt.westlaw.com/calregs/Browse/Home/California/CaliforniaCodeofRegulations?guid=I7B7784304C6911EC93A8000D3A7C4BC3&transitionType=Default&contextData=%28sc.Default%29#I7B7B54C14C6911EC93A8000D3A7C4BC3"
+        },
+        {
+          "code": "Bus. Code 25608",
+          "description": "Alcohol on school property; use in connection with instruction",
+          "url": "http://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?sectionNum=25608.&lawCode=BPC"
+        },
+        {
+          "code": "Ed. Code 200-262.4",
+          "description": "Prohibition of discrimination",
+          "url": "http://leginfo.legislature.ca.gov/faces/codes_displayText.xhtml?division=1.&chapter=2.&part=1.&lawCode=EDC&title=1.&article=1."
+        },
+        {
+          "code": "Ed. Code 32100",
+          "description": "Professional boundaries between adults and students and the safety of learning environments",
+          "url": ""
+        },
+        {
+          "code": "Ed. Code 44010",
+          "description": "Sex offense; definition",
+          "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=EDC&sectionNum=44010."
+        },
+        {
+          "code": "Ed. Code 44011",
+          "description": "Controlled substance offense; definition",
+          "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=EDC&sectionNum=44011."
+        },
+        {
+          "code": "Ed. Code 44050",
+          "description": "Employee code of conduct; interaction with students",
+          "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=EDC&sectionNum=44050."
+        },
+        {
+          "code": "Ed. Code 44420-44440",
+          "description": "Revocation and suspension of credentials",
+          "url": "https://leginfo.legislature.ca.gov/faces/codes_displayText.xhtml?lawCode=EDC&division=3.&title=2.&part=25.&chapter=3.&article=1."
+        },
+        {
+          "code": "Ed. Code 44811",
+          "description": "Disruption of classwork or extracurricular activities",
+          "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=EDC&sectionNum=44811."
+        },
+        {
+          "code": "Ed. Code 44932",
+          "description": "Grounds for dismissal of permanent employees",
+          "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=EDC&sectionNum=44932."
+        },
+        {
+          "code": "Ed. Code 44939.5",
+          "description": "Certificated applicant screening",
+          "url": ""
+        },
+        {
+          "code": "Ed. Code 48980",
+          "description": "Parent/Guardian notifications",
+          "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=EDC&sectionNum=48980."
+        },
+        {
+          "code": "Ed. Code 49060-49070",
+          "description": "Student records",
+          "url": ""
+        },
+        {
+          "code": "H&S Code 104559",
+          "description": "Tobacco use prohibition",
+          "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=HSC&sectionNum=104559."
+        },
+        {
+          "code": "Pen. Code 11164-11174.4",
+          "description": "Child Abuse and Neglect Reporting Act",
+          "url": "https://leginfo.legislature.ca.gov/faces/codes_displayexpandedbranch.xhtml?tocCode=PEN&division=&title=&part=4.&chapter=&article=&nodetreepath=7"
+        },
+        {
+          "code": "Pen. Code 270-273.76",
+          "description": "Abandonment and neglect of children",
+          "url": ""
+        },
+        {
+          "code": "Pen. Code 311-312.7",
+          "description": "Obscene matter",
+          "url": ""
+        }
+      ]
+    },
+    {
+      "type": "Federal",
+      "references": [
+        {
+          "code": "20 USC 1232g",
+          "description": "Family Educational Rights and Privacy Act (FERPA) of 1974",
+          "url": "https://uscode.house.gov/view.xhtml?req=(title:20%20section:1232g%20edition:prelim)%20OR%20(granuleid:USC-prelim-title20-section1232g)&f=treesort&edition=prelim&num=0&jumpTo=true"
+        },
+        {
+          "code": "34 CFR 99.1-99.8",
+          "description": "Family Educational Rights and Privacy Act",
+          "url": "https://www.ecfr.gov/current/title-34/subtitle-A/part-99/subpart-A"
+        }
+      ]
+    },
+    {
+      "type": "Management Resources",
+      "references": [
+        {
+          "code": "CA School Employees Association Publication",
+          "description": "Code of Ethics, 1954",
+          "url": "https://csea.com/system/files/2022-06/CSEACoE.pdf"
+        },
+        {
+          "code": "Commission on Teacher Credentialing Publication",
+          "description": "California Professional Standards for Education Leaders, 2014",
+          "url": "https://docs.ctc.ca.gov/Document/Download/30697"
+        },
+        {
+          "code": "Commission on Teacher Credentialing Publication",
+          "description": "California Professional Standards for Educational Leaders, February 2014",
+          "url": "https://www.ctc.ca.gov/"
+        },
+        {
+          "code": "Commission on Teacher Credentialing Publication",
+          "description": "California Standards for the Teaching Profession (CSTP), April 2024",
+          "url": "https://www.ctc.ca.gov/docs/default-source/educator-prep/standards/2024-cstp.pdf?sfvrsn=62eb3cb1_12"
+        },
+        {
+          "code": "Nat'l Policy Board for Educational Administration",
+          "description": "Professional Standards for Educational Leaders, 2015",
+          "url": "https://www.npbea.org/wp-content/uploads/2017/06/Professional-Standards-for-Educational-Leaders_2015.pdf"
+        },
+        {
+          "code": "National Education Association Publication",
+          "description": "Code of Ethics for Educators, 2020 ",
+          "url": "https://www.nea.org/resource-library/code-ethics-educators"
+        },
+        {
+          "code": "Website",
+          "description": "National Education Association",
+          "url": "https://www.nea.org/"
+        },
+        {
+          "code": "Website",
+          "description": "CSBA District and County Office of Education Legal Services",
+          "url": "https://legalservices.csba.org/"
+        },
+        {
+          "code": "Website",
+          "description": "Council of Chief State School Officers",
+          "url": "http://www.ccsso.org"
+        },
+        {
+          "code": "Website",
+          "description": "California Federation of Teachers",
+          "url": "http://www.cft.org"
+        },
+        {
+          "code": "Website",
+          "description": "California School Employees Association",
+          "url": "http://www.csea.com"
+        },
+        {
+          "code": "Website",
+          "description": "California Teachers Association",
+          "url": "http://www.cta.org"
+        },
+        {
+          "code": "Website",
+          "description": "Commission on Teacher Credentialing",
+          "url": "http://www.ctc.ca.gov"
+        },
+        {
+          "code": "Website",
+          "description": "Association of California School Administrators",
+          "url": "http://www.acsa.org"
+        },
+        {
+          "code": "Website",
+          "description": "WestEd",
+          "url": "http://www.wested.org"
+        },
+        {
+          "code": "Website",
+          "description": "California Department of Education",
+          "url": "http://www.cde.ca.gov"
+        },
+        {
+          "code": "Website",
+          "description": "CSBA",
+          "url": "http://www.csba.org"
+        },
+        {
+          "code": "WestEd Publication",
+          "description": "Moving Leadership Standards into Everyday Work: Descriptions of Practice, 2015",
+          "url": "https://www.wested.org/resource/moving-leadership-standards-into-everyday-work-descriptions-of-practice-ebook/"
+        }
+      ]
+    }
+  ],
+  "crossRefs": [
+    {
+      "code": "0200",
+      "title": "Goals For The School District",
+      "type": "AR"
+    },
+    {
+      "code": "0410",
+      "title": "Nondiscrimination In District Programs And Activities",
+      "type": "AR"
+    },
+    {
+      "code": "0420.4",
+      "title": "Charter School Authorization",
+      "type": "AR"
+    },
+    {
+      "code": "0420.4",
+      "title": "Charter School Authorization",
+      "type": "AR"
+    },
+    {
+      "code": "0420.41",
+      "title": "Charter School Oversight",
+      "type": "AR"
+    },
+    {
+      "code": "0420.41-E PDF(1)",
+      "title": "Charter School Oversight",
+      "type": "AR"
+    },
+    {
+      "code": "0450",
+      "title": "Comprehensive Safety Plan",
+      "type": "AR"
+    },
+    {
+      "code": "0450",
+      "title": "Comprehensive Safety Plan",
+      "type": "AR"
+    },
+    {
+      "code": "1113",
+      "title": "District And School Websites",
+      "type": "AR"
+    },
+    {
+      "code": "1113",
+      "title": "District And School Websites",
+      "type": "AR"
+    },
+    {
+      "code": "1114",
+      "title": "District-Sponsored Social Media",
+      "type": "AR"
+    },
+    {
+      "code": "1114",
+      "title": "District-Sponsored Social Media",
+      "type": "AR"
+    },
+    {
+      "code": "1114-E PDF(1)",
+      "title": "District-Sponsored Social Media",
+      "type": "AR"
+    },
+    {
+      "code": "1312.1",
+      "title": "Complaints Concerning District Employees",
+      "type": "AR"
+    },
+    {
+      "code": "1312.1",
+      "title": "Complaints Concerning District Employees",
+      "type": "AR"
+    },
+    {
+      "code": "1313",
+      "title": "Civility",
+      "type": "AR"
+    },
+    {
+      "code": "2111",
+      "title": "Superintendent Governance Standards",
+      "type": "AR"
+    },
+    {
+      "code": "3513.3",
+      "title": "Tobacco-Free Schools",
+      "type": "AR"
+    },
+    {
+      "code": "3513.3",
+      "title": "Tobacco-Free Schools",
+      "type": "AR"
+    },
+    {
+      "code": "3513.4",
+      "title": "Drug And Alcohol Free Schools",
+      "type": "AR"
+    },
+    {
+      "code": "3515.2",
+      "title": "Disruptions",
+      "type": "AR"
+    },
+    {
+      "code": "3515.2",
+      "title": "Disruptions",
+      "type": "AR"
+    },
+    {
+      "code": "3515.7",
+      "title": "Firearms On School Grounds",
+      "type": "AR"
+    },
+    {
+      "code": "3580",
+      "title": "District Records",
+      "type": "AR"
+    },
+    {
+      "code": "3580",
+      "title": "District Records",
+      "type": "AR"
+    },
+    {
+      "code": "4020",
+      "title": "Drug And Alcohol-Free Workplace",
+      "type": "AR"
+    },
+    {
+      "code": "4040",
+      "title": "Employee Use Of Technology",
+      "type": "AR"
+    },
+    {
+      "code": "4112.2",
+      "title": "Certification",
+      "type": "AR"
+    },
+    {
+      "code": "4112.2",
+      "title": "Certification",
+      "type": "AR"
+    },
+    {
+      "code": "4112.42",
+      "title": "Drug And Alcohol Testing For School Bus Drivers",
+      "type": "AR"
+    },
+    {
+      "code": "4115",
+      "title": "Evaluation/Supervision",
+      "type": "AR"
+    },
+    {
+      "code": "4115",
+      "title": "Evaluation/Supervision",
+      "type": "AR"
+    },
+    {
+      "code": "4116",
+      "title": "Probationary/Permanent Status",
+      "type": "AR"
+    },
+    {
+      "code": "4116",
+      "title": "Probationary/Permanent Status",
+      "type": "AR"
+    },
+    {
+      "code": "4117.7",
+      "title": "Employment Status Reports",
+      "type": "AR"
+    },
+    {
+      "code": "4118",
+      "title": "Dismissal/Suspension/Disciplinary Action",
+      "type": "AR"
+    },
+    {
+      "code": "4118",
+      "title": "Dismissal/Suspension/Disciplinary Action",
+      "type": "AR"
+    },
+    {
+      "code": "4119.1",
+      "title": "Civil And Legal Rights",
+      "type": "AR"
+    },
+    {
+      "code": "4119.11",
+      "title": "Sexual Harassment",
+      "type": "AR"
+    },
+    {
+      "code": "4119.11",
+      "title": "Sexual Harassment",
+      "type": "AR"
+    },
+    {
+      "code": "4119.22",
+      "title": "Dress And Grooming",
+      "type": "AR"
+    },
+    {
+      "code": "4119.23",
+      "title": "Unauthorized Release Of Confidential/Privileged Information",
+      "type": "AR"
+    },
+    {
+      "code": "4119.24",
+      "title": "Maintaining Appropriate Adult-Student Interactions",
+      "type": "AR"
+    },
+    {
+      "code": "4119.25",
+      "title": "Political Activities Of Employees",
+      "type": "AR"
+    },
+    {
+      "code": "4119.25",
+      "title": "Political Activities Of Employees",
+      "type": "AR"
+    },
+    {
+      "code": "4121",
+      "title": "Temporary/Substitute Personnel",
+      "type": "AR"
+    },
+    {
+      "code": "4131",
+      "title": "Staff Development",
+      "type": "AR"
+    },
+    {
+      "code": "4131",
+      "title": "Staff Development",
+      "type": "AR"
+    },
+    {
+      "code": "4132",
+      "title": "Publication Or Creation Of Materials",
+      "type": "AR"
+    },
+    {
+      "code": "4136",
+      "title": "Nonschool Employment",
+      "type": "AR"
+    },
+    {
+      "code": "4158",
+      "title": "Employee Security",
+      "type": "AR"
+    },
+    {
+      "code": "4158",
+      "title": "Employee Security",
+      "type": "AR"
+    },
+    {
+      "code": "4212.41",
+      "title": "Employee Drug Testing",
+      "type": "AR"
+    },
+    {
+      "code": "4216",
+      "title": "Probationary/Permanent Status",
+      "type": "AR"
+    },
+    {
+      "code": "4218",
+      "title": "Dismissal/Suspension/Disciplinary Action",
+      "type": "AR"
+    },
+    {
+      "code": "4218",
+      "title": "Dismissal/Suspension/Disciplinary Action",
+      "type": "AR"
+    },
+    {
+      "code": "4219.1",
+      "title": "Civil And Legal Rights",
+      "type": "AR"
+    },
+    {
+      "code": "4219.11",
+      "title": "Sexual Harassment",
+      "type": "AR"
+    },
+    {
+      "code": "4219.11",
+      "title": "Sexual Harassment",
+      "type": "AR"
+    },
+    {
+      "code": "4219.22",
+      "title": "Dress And Grooming",
+      "type": "AR"
+    },
+    {
+      "code": "4219.23",
+      "title": "Unauthorized Release Of Confidential/Privileged Information",
+      "type": "AR"
+    },
+    {
+      "code": "4219.24",
+      "title": "Maintaining Appropriate Adult-Student Interactions",
+      "type": "AR"
+    },
+    {
+      "code": "4219.25",
+      "title": "Political Activities Of Employees",
+      "type": "AR"
+    },
+    {
+      "code": "4231",
+      "title": "Staff Development",
+      "type": "AR"
+    },
+    {
+      "code": "4236",
+      "title": "Nonschool Employment",
+      "type": "AR"
+    },
+    {
+      "code": "4258",
+      "title": "Employee Security",
+      "type": "AR"
+    },
+    {
+      "code": "4258",
+      "title": "Employee Security",
+      "type": "AR"
+    },
+    {
+      "code": "4312.41",
+      "title": "Employee Drug Testing",
+      "type": "AR"
+    },
+    {
+      "code": "4315",
+      "title": "Evaluation/Supervision",
+      "type": "AR"
+    },
+    {
+      "code": "4319.1",
+      "title": "Civil And Legal Rights",
+      "type": "AR"
+    },
+    {
+      "code": "4319.11",
+      "title": "Sexual Harassment",
+      "type": "AR"
+    },
+    {
+      "code": "4319.11",
+      "title": "Sexual Harassment",
+      "type": "AR"
+    },
+    {
+      "code": "4319.22",
+      "title": "Dress And Grooming",
+      "type": "AR"
+    },
+    {
+      "code": "4319.24",
+      "title": "Maintaining Appropriate Adult-Student Interactions",
+      "type": "AR"
+    },
+    {
+      "code": "4331",
+      "title": "Staff Development",
+      "type": "AR"
+    },
+    {
+      "code": "4336",
+      "title": "Nonschool Employment",
+      "type": "AR"
+    },
+    {
+      "code": "4358",
+      "title": "Employee Security",
+      "type": "AR"
+    },
+    {
+      "code": "4358",
+      "title": "Employee Security",
+      "type": "AR"
+    },
+    {
+      "code": "5141.4",
+      "title": "Child Abuse Prevention And Reporting",
+      "type": "AR"
+    },
+    {
+      "code": "5141.4",
+      "title": "Child Abuse Prevention And Reporting",
+      "type": "AR"
+    },
+    {
+      "code": "5142",
+      "title": "Safety",
+      "type": "AR"
+    },
+    {
+      "code": "5142",
+      "title": "Safety",
+      "type": "AR"
+    },
+    {
+      "code": "5145.3",
+      "title": "Nondiscrimination/Harassment",
+      "type": "AR"
+    },
+    {
+      "code": "5145.3",
+      "title": "Nondiscrimination/Harassment",
+      "type": "AR"
+    },
+    {
+      "code": "5145.6",
+      "title": "Parent/Guardian Notifications",
+      "type": "AR"
+    },
+    {
+      "code": "5145.6-E PDF(1)",
+      "title": "Parent/Guardian Notifications",
+      "type": "AR"
+    },
+    {
+      "code": "6162.54",
+      "title": "Test Integrity/Test Preparation",
+      "type": "AR"
+    },
+    {
+      "code": "6162.6",
+      "title": "Use Of Copyrighted Materials",
+      "type": "AR"
+    },
+    {
+      "code": "6162.6",
+      "title": "Use Of Copyrighted Materials",
+      "type": "AR"
+    }
+  ],
+  "attachments": []
+}

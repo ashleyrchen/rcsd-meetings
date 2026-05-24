@@ -1,0 +1,407 @@
+{
+  "code": "6163.4-E PDF(1)",
+  "title": "Student Use Of Technology",
+  "type": "AR",
+  "section": "6000",
+  "lastRevised": "02/15/2017",
+  "lastReviewed": null,
+  "hasAttachment": false,
+  "revid": "193WQ9oh0bWy4PzCbmzTbQ==",
+  "contentHtml": "",
+  "contentText": "",
+  "footnotes": [
+    {
+      "type": "State",
+      "references": [
+        {
+          "code": "Civ. Code 3120-3123",
+          "description": "Digital Bill of Rights",
+          "url": "https://leginfo.legislature.ca.gov/faces/codes_displayText.xhtml?lawCode=CIV&division=3.&title=15.5.&part=4.&chapter=&article="
+        },
+        {
+          "code": "Ed. Code 49073.6",
+          "description": "Student records; social media",
+          "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=EDC&sectionNum=49073.6."
+        },
+        {
+          "code": "Ed. Code 51006",
+          "description": "Computer education and resources",
+          "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=EDC&sectionNum=51006."
+        },
+        {
+          "code": "Ed. Code 51007",
+          "description": "Programs to strengthen technological skills",
+          "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=EDC&sectionNum=51007."
+        },
+        {
+          "code": "Ed. Code 60044",
+          "description": "Prohibited instructional materials",
+          "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=EDC&sectionNum=60044."
+        },
+        {
+          "code": "Pen. Code 313",
+          "description": "Harmful matter",
+          "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=PEN&sectionNum=313."
+        },
+        {
+          "code": "Pen. Code 502",
+          "description": "Computer crimes; remedies",
+          "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=PEN&sectionNum=502."
+        },
+        {
+          "code": "Pen. Code 632",
+          "description": "Eavesdropping on or recording confidential communications",
+          "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=PEN&sectionNum=632."
+        },
+        {
+          "code": "Pen. Code 653.2",
+          "description": "Electronic communication devices; threats to safety",
+          "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=PEN&sectionNum=653.2."
+        }
+      ]
+    },
+    {
+      "type": "Federal",
+      "references": [
+        {
+          "code": "15 USC 6501-6506",
+          "description": "Children's Online Privacy Protection Act",
+          "url": "https://uscode.house.gov/view.xhtml?path=/prelim@title15/chapter91&edition=prelim"
+        },
+        {
+          "code": "16 CFR 312.1-312.12",
+          "description": "Children's Online Privacy Protection Act",
+          "url": ""
+        },
+        {
+          "code": "20 USC 7101-7122",
+          "description": "Student Support and Academic Enrichment Grants",
+          "url": ""
+        },
+        {
+          "code": "20 USC 7131",
+          "description": "Internet Safety",
+          "url": "https://uscode.house.gov/view.xhtml?req=(title:20%20section:7131%20edition:prelim)%20OR%20(granuleid:USC-prelim-title20-section7131)&f=treesort&edition=prelim&num=0&jumpTo=true"
+        },
+        {
+          "code": "47 CFR 54.520",
+          "description": "Internet safety policy and technology protection measures; E-rate discounts",
+          "url": "https://www.ecfr.gov/current/title-47/chapter-I/subchapter-B/part-54/subpart-F/section-54.520"
+        },
+        {
+          "code": "47 USC 254",
+          "description": "Universal service discounts (E-rate)",
+          "url": "https://uscode.house.gov/view.xhtml?req=(title:47%20section:254%20edition:prelim)%20OR%20(granuleid:USC-prelim-title47-section254)&f=treesort&edition=prelim&num=0&jumpTo=true"
+        }
+      ]
+    },
+    {
+      "type": "Management Resources",
+      "references": [
+        {
+          "code": "California Department of Education Publication",
+          "description": "Artificial Intelligence: Learning With AI Learning About AI",
+          "url": "https://www.cde.ca.gov/ci/pl/documents/cdeairesourcekit.pdf"
+        },
+        {
+          "code": "Court Decision",
+          "description": "New Jersey v. T.L.O. (1985) 469 U.S. 325",
+          "url": "https://law.justia.com/cases/"
+        },
+        {
+          "code": "CSBA Publication",
+          "description": "Cyberbullying:  Policy Considerations for Boards, Policy Brief, July 2007",
+          "url": "https://www.csba.org/GovernanceAndPolicyResources/DistrictPolicyServices/~/media/CSBA/Files/GovernanceResources/PolicyNews_Briefs/SchoolSafety/2010_07_PolicyBrief_Cyberbullying.ashx"
+        },
+        {
+          "code": "Federal Trade Commission Publication",
+          "description": "How to Protect Kids' Privacy Online:  A Guide for Teachers, December 2000",
+          "url": "https://www.govinfo.gov/app/details/GOVPUB-FT-PURL-LPS78293"
+        },
+        {
+          "code": "U.S. Department of Education Publication",
+          "description": "2024 National Education Technology Plan",
+          "url": "https://tech.ed.gov/netp/"
+        },
+        {
+          "code": "USDOE Office of Educational Technology Publication",
+          "description": "Artificial Intelligence and the Future of Teaching and Learning: Insights and Recommendations, May 2023",
+          "url": "https://oet.wp.nnth.dev/wp-content/uploads/sites/3/2023/03/ai-future-of-teaching-and-learning-report.pdf"
+        },
+        {
+          "code": "Website",
+          "description": "California Governor’s Office of Emergency Services",
+          "url": "https://www.caloes.ca.gov/"
+        },
+        {
+          "code": "Website",
+          "description": "CSBA District and County Office of Education Legal Services",
+          "url": "https://legalservices.csba.org/"
+        },
+        {
+          "code": "Website",
+          "description": "California Coalition for Children's Internet Safety",
+          "url": "http://www.cybersafety.ca.gov"
+        },
+        {
+          "code": "Website",
+          "description": "Center for Safe and Responsible Internet Use",
+          "url": "https://www.ewa.org/organization/center-safe-and-responsible-internet-use"
+        },
+        {
+          "code": "Website",
+          "description": "Federal Trade Commission, Children's Online Privacy Protection",
+          "url": "http://www.ftc.gov/privacy/privacyinitiatives/childrens.html"
+        },
+        {
+          "code": "Website",
+          "description": "American Library Association",
+          "url": "http://www.ala.org"
+        },
+        {
+          "code": "Website",
+          "description": "Federal Communications Commission",
+          "url": "http://www.fcc.gov"
+        },
+        {
+          "code": "Website",
+          "description": "California Department of Education",
+          "url": "http://www.cde.ca.gov"
+        },
+        {
+          "code": "Website",
+          "description": "U.S. Department of Education",
+          "url": "http://www.ed.gov"
+        },
+        {
+          "code": "Website",
+          "description": "CSBA",
+          "url": "http://www.csba.org"
+        }
+      ]
+    }
+  ],
+  "crossRefs": [
+    {
+      "code": "0410",
+      "title": "Nondiscrimination In District Programs And Activities",
+      "type": "AR"
+    },
+    {
+      "code": "0440",
+      "title": "District Technology Plan",
+      "type": "AR"
+    },
+    {
+      "code": "0440",
+      "title": "District Technology Plan",
+      "type": "AR"
+    },
+    {
+      "code": "1113",
+      "title": "District And School Websites",
+      "type": "AR"
+    },
+    {
+      "code": "1113",
+      "title": "District And School Websites",
+      "type": "AR"
+    },
+    {
+      "code": "1114",
+      "title": "District-Sponsored Social Media",
+      "type": "AR"
+    },
+    {
+      "code": "1114",
+      "title": "District-Sponsored Social Media",
+      "type": "AR"
+    },
+    {
+      "code": "1114-E PDF(1)",
+      "title": "District-Sponsored Social Media",
+      "type": "AR"
+    },
+    {
+      "code": "3260",
+      "title": "Fees And Charges",
+      "type": "AR"
+    },
+    {
+      "code": "3260",
+      "title": "Fees And Charges",
+      "type": "AR"
+    },
+    {
+      "code": "3512",
+      "title": "Equipment",
+      "type": "AR"
+    },
+    {
+      "code": "4040",
+      "title": "Employee Use Of Technology",
+      "type": "AR"
+    },
+    {
+      "code": "4131",
+      "title": "Staff Development",
+      "type": "AR"
+    },
+    {
+      "code": "4131",
+      "title": "Staff Development",
+      "type": "AR"
+    },
+    {
+      "code": "5125",
+      "title": "Student Records",
+      "type": "AR"
+    },
+    {
+      "code": "5125",
+      "title": "Student Records",
+      "type": "AR"
+    },
+    {
+      "code": "5125.2",
+      "title": "Withholding Grades, Diploma Or Transcripts",
+      "type": "AR"
+    },
+    {
+      "code": "5131",
+      "title": "Conduct",
+      "type": "AR"
+    },
+    {
+      "code": "5131.2",
+      "title": "Bullying",
+      "type": "AR"
+    },
+    {
+      "code": "5131.2",
+      "title": "Bullying",
+      "type": "AR"
+    },
+    {
+      "code": "5131.8",
+      "title": "Mobile Communication Devices",
+      "type": "AR"
+    },
+    {
+      "code": "5131.9",
+      "title": "Academic Honesty",
+      "type": "AR"
+    },
+    {
+      "code": "5144",
+      "title": "Discipline",
+      "type": "AR"
+    },
+    {
+      "code": "5144",
+      "title": "Discipline",
+      "type": "AR"
+    },
+    {
+      "code": "5144.1",
+      "title": "Suspension And Expulsion/Due Process",
+      "type": "AR"
+    },
+    {
+      "code": "5144.1",
+      "title": "Suspension And Expulsion/Due Process",
+      "type": "AR"
+    },
+    {
+      "code": "5144.2",
+      "title": "Suspension And Expulsion/Due Process (Students With Disabilities)",
+      "type": "AR"
+    },
+    {
+      "code": "5145.12",
+      "title": "Search And Seizure",
+      "type": "AR"
+    },
+    {
+      "code": "5145.3",
+      "title": "Nondiscrimination/Harassment",
+      "type": "AR"
+    },
+    {
+      "code": "5145.3",
+      "title": "Nondiscrimination/Harassment",
+      "type": "AR"
+    },
+    {
+      "code": "5145.7",
+      "title": "Sexual Harassment",
+      "type": "AR"
+    },
+    {
+      "code": "5145.7",
+      "title": "Sexual Harassment",
+      "type": "AR"
+    },
+    {
+      "code": "5145.9",
+      "title": "Hate-Motivated Behavior",
+      "type": "AR"
+    },
+    {
+      "code": "5148.2",
+      "title": "Before/After School Programs",
+      "type": "AR"
+    },
+    {
+      "code": "5148.2",
+      "title": "Before/After School Programs",
+      "type": "AR"
+    },
+    {
+      "code": "6142.8",
+      "title": "Comprehensive Health Education",
+      "type": "AR"
+    },
+    {
+      "code": "6142.8",
+      "title": "Comprehensive Health Education",
+      "type": "AR"
+    },
+    {
+      "code": "6154",
+      "title": "Homework/Makeup Work",
+      "type": "AR"
+    },
+    {
+      "code": "6162.5",
+      "title": "Student Assessment",
+      "type": "AR"
+    },
+    {
+      "code": "6162.6",
+      "title": "Use Of Copyrighted Materials",
+      "type": "AR"
+    },
+    {
+      "code": "6162.6",
+      "title": "Use Of Copyrighted Materials",
+      "type": "AR"
+    },
+    {
+      "code": "6162.8",
+      "title": "Research",
+      "type": "AR"
+    },
+    {
+      "code": "6162.8",
+      "title": "Research",
+      "type": "AR"
+    },
+    {
+      "code": "6163.1",
+      "title": "Library Media Centers",
+      "type": "AR"
+    }
+  ],
+  "attachments": []
+}
