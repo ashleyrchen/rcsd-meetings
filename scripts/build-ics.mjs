@@ -47,6 +47,36 @@ function cleanDescription(text) {
     .trim();
 }
 
+function foldLine(line) {
+  const bytes = Buffer.from(line, 'utf-8');
+  if (bytes.length <= 75) {
+    return line;
+  }
+
+  const chunks = [];
+  let currentChunk = '';
+  let currentByteLength = 0;
+
+  for (const char of line) {
+    const charBytes = Buffer.from(char, 'utf-8').length;
+    const limit = chunks.length === 0 ? 75 : 74;
+
+    if (currentByteLength + charBytes > limit) {
+      chunks.push(currentChunk);
+      currentChunk = char;
+      currentByteLength = charBytes;
+    } else {
+      currentChunk += char;
+      currentByteLength += charBytes;
+    }
+  }
+  if (currentChunk) {
+    chunks.push(currentChunk);
+  }
+
+  return chunks.join('\r\n ');
+}
+
 /**
  * Compiles events list into RFC 5545 iCalendar format.
  */
@@ -82,7 +112,8 @@ function buildCalendar(name, timezone, events) {
   }
 
   ics.push('END:VCALENDAR');
-  return ics.join('\r\n') + '\r\n';
+  const foldedIcs = ics.map(line => foldLine(line));
+  return foldedIcs.join('\r\n') + '\r\n';
 }
 
 // ---- Calendar Generators ----
