@@ -249,6 +249,11 @@ async function main() {
         }));
 
         const policyDetail = {
+          _metadata: {
+            source: `https://simbli.eboardsolutions.com/Policy/ViewPolicy.aspx?S=36030397&revid=${policy.revid}`,
+            scrapedAt: new Date().toISOString(),
+            method: 'Playwright + Simbli ViewPolicy API scraper',
+          },
           code: policy.code,
           title: policy.title,
           type: policy.type,

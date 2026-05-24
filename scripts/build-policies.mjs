@@ -512,10 +512,13 @@ function main() {
                 const data = await res.json();
                 
                 // Format details
+                const scrapedDate = data._metadata?.scrapedAt ? new Date(data._metadata.scrapedAt).toLocaleDateString() : 'N/A';
+                const officialUrl = data._metadata?.source || \`https://simbli.eboardsolutions.com/Policy/ViewPolicy.aspx?S=36030397&revid=\${data.revid}\`;
                 let detailsHtml = \`
                   <div class="drawer-meta-bar">
-                    <div>REVISION ID: \${data.revid} | REVISED: \${data.lastRevised || 'N/A'}</div>
+                    <div>REVISION ID: \${data.revid} | REVISED: \${data.lastRevised || 'N/A'} | CHECKED: \${scrapedDate}</div>
                     <div class="drawer-actions">
+                      <a href="\${officialUrl}" class="drawer-btn" target="_blank" style="margin-right: 1.5rem;">Official Version on Simbli ↗</a>
                       <a href="/board-policies/\${code}-\${type}.json" class="drawer-btn" target="_blank">View JSON ↗</a>
                     </div>
                   </div>

@@ -18,7 +18,7 @@ The skill ships as a plugin (`plugin/`) and does not auto-load in a plain Claude
 
 ## Conventions
 
-- **Provenance is non-negotiable** — every data file carries a `_metadata` block (source, date, method). See `README.md`.
+- **Provenance is non-negotiable** — Every bit of data pulled from external sources must have a link back to the official source along with when it was checked/scraped. This applies to **both** the user-facing plain English/Spanish templates (HTML) and the machine-readable information (`_metadata` block in JSON files containing `source`, `scrapedAt`, and `method`). See `README.md`.
 - **Bilingual by default** — every user-visible artifact ships English *and* Spanish (`/schools/` + `/escuelas/`, OG cards, PDFs, etc.).
 - **Adding data?** Follow the Dataset Expansion Checklist in `CLAUDE.md` — it requires updating the skill's `SKILL.md` and `data-schema.md` so new data stays discoverable. Skipping that step is what makes the skill go stale.
 - **Git** — never squash merge; use merge commits to preserve history.
