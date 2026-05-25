@@ -1176,7 +1176,7 @@ try {
   meetingUrls = meetings.meetings.map(m => {
     const isMulti = byDate[m.date].length > 1;
     const path = isMulti ? m.slug : m.date;
-    return singleUrl(`/meetings/${path}/`, m.date);
+    return bilingualUrl(`/meetings/${path}/`, `/reuniones/${path}/`, m.date);
   }).join('\n');
 } catch {}
 
