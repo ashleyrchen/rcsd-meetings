@@ -1738,6 +1738,174 @@ function renderBellScheduleHTML(bs, L) {
   return html;
 }
 
+// ---- JSON-LD Generator ----
+
+function schoolJsonLd(school, data, lang) {
+  const isEs = lang === 'es';
+  const slug = school.slug;
+  const displayName = isEs ? school.nameEs : school.name;
+  const description = isEs ? data.descriptionEs : data.description;
+  const enPath = `/schools/${slug}/`;
+  const esPath = `/escuelas/${slug}/`;
+  const canonicalUrl = `https://rcsd.info${isEs ? esPath : enPath}`;
+
+  let types = "School";
+  if (school.grades === "6-8") {
+    types = "MiddleSchool";
+  } else if (school.grades === "TK-5" || school.grades === "K-5") {
+    types = "ElementarySchool";
+  } else {
+    types = ["ElementarySchool", "MiddleSchool"];
+  }
+
+  const schoolId = `https://rcsd.info/schools/${slug}/#school`;
+  const pageId = `https://rcsd.info${isEs ? esPath : enPath}#webpage`;
+
+  const schoolSchema = {
+    "@type": types,
+    "@id": schoolId,
+    "name": displayName,
+    "description": description,
+    "url": `https://rcsd.info/schools/${slug}/`,
+    "telephone": school.phone ? `+1-${school.phone.replace(/[()]/g, '').replace(/\s+/g, '-').trim()}` : "",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": school.address.split(',')[0].trim(),
+      "addressLocality": school.address.split(',')[1]?.trim() || "Redwood City",
+      "addressRegion": "CA",
+      "postalCode": school.address.match(/\d{5}/)?.[0] || "94063",
+      "addressCountry": "US"
+    },
+    "parentOrganization": {
+      "@type": "GovernmentOrganization",
+      "name": isEs ? "Distrito Escolar de Redwood City" : "Redwood City School District",
+      "url": "https://www.rcsdk8.net"
+    }
+  };
+
+  const logoExt = slug === 'clifford' ? 'png' : 'jpg';
+  schoolSchema.image = `https://data.rcsd.info/logos/${slug}.${logoExt}`;
+
+  if (school.principal) {
+    schoolSchema.leader = {
+      "@type": "Person",
+      "name": school.principal,
+      "jobTitle": isEs ? "Director/a" : "Principal"
+    };
+  }
+
+  if (school.enrollment) {
+    schoolSchema.numberOfStudents = {
+      "@type": "QuantitativeValue",
+      "value": school.enrollment,
+      "unitText": isEs ? "Estudiantes" : "Students"
+    };
+  }
+
+  const sameAs = [school.website];
+  if (school.cdsCode) {
+    sameAs.push(`https://www.caschooldashboard.org/reports/${school.cdsCode}/2024`);
+  }
+  if (school.greatSchools?.url) {
+    sameAs.push(school.greatSchools.url);
+  }
+  schoolSchema.sameAs = sameAs;
+
+  if (school.bellSchedule && school.bellSchedule.regular) {
+    const regularSchedule = school.bellSchedule.regular;
+    const earlyReleaseSchedule = school.bellSchedule.earlyRelease;
+    const earlyDay = school.bellSchedule.earlyReleaseDay || 'Thursday';
+
+    const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+    const regDays = days.filter(d => d.toLowerCase() !== earlyDay.toLowerCase());
+
+    const specs = [];
+    const primaryReg = regularSchedule[regularSchedule.length - 1] || regularSchedule[0];
+    if (primaryReg && primaryReg.start && primaryReg.end) {
+      const formatTime = (tStr) => {
+        const [time, ampm] = tStr.split(' ');
+        let [h, m] = time.split(':');
+        let hours = parseInt(h);
+        if (ampm === 'PM' && hours < 12) hours += 12;
+        if (ampm === 'AM' && hours === 12) hours = 0;
+        return `${String(hours).padStart(2, '0')}:${m}:00`;
+      };
+      
+      try {
+        const opens = formatTime(primaryReg.start);
+        const closes = formatTime(primaryReg.end);
+        
+        specs.push({
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": regDays,
+          "opens": opens,
+          "closes": closes
+        });
+
+        const primaryEarly = earlyReleaseSchedule?.[earlyReleaseSchedule.length - 1] || earlyReleaseSchedule?.[0];
+        if (primaryEarly && primaryEarly.end) {
+          const earlyCloses = formatTime(primaryEarly.end);
+          specs.push({
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [earlyDay],
+            "opens": opens,
+            "closes": earlyCloses,
+            "description": isEs ? "Horario de salida temprana" : "Early Release Bell Schedule"
+          });
+        }
+      } catch (e) {
+        // Ignored
+      }
+    }
+
+    if (specs.length > 0) {
+      schoolSchema.openingHoursSpecification = specs;
+    }
+  }
+
+  if (slug === 'adelante-selby' || slug === 'garfield' || slug === 'taft') {
+    schoolSchema.knowsLanguage = [
+      { "@type": "Language", "name": "English", "alternateName": "en" },
+      { "@type": "Language", "name": "Spanish", "alternateName": "es" }
+    ];
+  } else if (slug === 'orion') {
+    schoolSchema.knowsLanguage = [
+      { "@type": "Language", "name": "English", "alternateName": "en" },
+      { "@type": "Language", "name": "Mandarin Chinese", "alternateName": "zh" }
+    ];
+  }
+
+  // Construct WebPage container pointing to the school as its main entity/subject
+  const pageSchema = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "@id": pageId,
+    "url": canonicalUrl,
+    "name": displayName,
+    "description": description,
+    "inLanguage": isEs ? "es" : "en",
+    "about": schoolSchema
+  };
+
+  if (isEs) {
+    pageSchema.translationOfWork = {
+      "@type": "AboutPage",
+      "@id": `https://rcsd.info${enPath}#webpage`,
+      "url": `https://rcsd.info${enPath}`,
+      "inLanguage": "en"
+    };
+  } else {
+    pageSchema.workTranslation = {
+      "@type": "AboutPage",
+      "@id": `https://rcsd.info${esPath}#webpage`,
+      "url": `https://rcsd.info${esPath}`,
+      "inLanguage": "es"
+    };
+  }
+
+  return `<script type="application/ld+json">\n${JSON.stringify(pageSchema, null, 2)}\n</script>`;
+}
+
 // ---- HTML generation ----
 
 function buildSchoolPage(school, data, lang) {
@@ -1841,6 +2009,7 @@ ${headMeta({
     { lang: 'en', href: `https://rcsd.info${enPath}` },
     { lang: 'es', href: `https://rcsd.info${esPath}` },
   ],
+  jsonLd: schoolJsonLd(school, data, lang),
   pageCSS: schoolCSS,
 })}
 </head>

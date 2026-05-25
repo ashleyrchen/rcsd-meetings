@@ -23,6 +23,37 @@ const INDEX_DOCS_PATH = resolve(DOCS_DIR, 'policies-index.json');
 const HTML_OUTPUT_DIR = resolve(DOCS_DIR, 'policies');
 const HTML_OUTPUT_PATH = resolve(HTML_OUTPUT_DIR, 'index.html');
 
+function policiesIndexJsonLd(policies) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "name": "Redwood City School District Board Policies Manual",
+    "description": "Interactive and machine-readable school board policies, bylaws, and administrative regulations of the Redwood City School District.",
+    "url": "https://rcsd.info/policies/",
+    "publisher": {
+      "@type": "GovernmentOrganization",
+      "name": "Redwood City School District",
+      "url": "https://www.rcsdk8.net"
+    },
+    "about": {
+      "@type": "GovernmentOrganization",
+      "name": "Redwood City School District Board of Trustees"
+    },
+    "inLanguage": "en",
+    "genre": "Government Policy",
+    "hasPart": policies.map((p, i) => ({
+      "@type": ["Legislation", "DigitalDocument"],
+      "name": `${p.type} ${p.code}: ${p.title}`,
+      "legislationIdentifier": `${p.type} ${p.code}`,
+      "legislationType": p.type === 'BP' ? 'Board Policy' : (p.type === 'AR' ? 'Administrative Regulation' : 'Board Bylaw'),
+      "url": `https://rcsd.info/board-policies/${p.code}-${p.type}.json`,
+      "dateModified": p.lastRevised || undefined
+    }))
+  };
+
+  return `<script type="application/ld+json">\n${JSON.stringify(schema, null, 2)}\n</script>`;
+}
+
 function main() {
   console.log('Publishing policies in machine-readable form...');
   
@@ -646,6 +677,7 @@ ${headMeta({
     { lang: 'x-default', href: 'https://rcsd.info/policies/' },
     { lang: 'en', href: 'https://rcsd.info/policies/' },
   ],
+  jsonLd: policiesIndexJsonLd(policies),
   extraHead: `<link rel="describedby" href="/llms.txt" type="text/markdown">`,
   pageCSS,
 })}
