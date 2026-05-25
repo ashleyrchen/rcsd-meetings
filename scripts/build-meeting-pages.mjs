@@ -262,9 +262,12 @@ function meetingJsonLd(m, lang) {
     ? 'Distrito Escolar de Redwood City - Mesa Directiva'
     : 'Redwood City School District Board of Trustees';
 
-  const schema = {
-    "@context": "https://schema.org",
+  const meetingId = `https://rcsd.info/meetings/${m.slug}/#meeting`;
+  const pageId = `https://rcsd.info/${prefix}/${pagePath}/#webpage`;
+
+  const eventSchema = {
     "@type": "Event",
+    "@id": meetingId,
     "name": name,
     "description": description,
     "startDate": startDate,
@@ -295,13 +298,13 @@ function meetingJsonLd(m, lang) {
   };
 
   if (m.zoom) {
-    schema.location.push({
+    eventSchema.location.push({
       "@type": "VirtualLocation",
       "name": "Zoom Webinar",
       "url": m.zoom
     });
   } else if (m.youtube) {
-    schema.location.push({
+    eventSchema.location.push({
       "@type": "VirtualLocation",
       "name": "YouTube Live Stream",
       "url": `https://www.youtube.com/watch?v=${m.youtube}`
@@ -309,7 +312,7 @@ function meetingJsonLd(m, lang) {
   }
 
   if (m.youtube) {
-    schema.recordedIn = {
+    eventSchema.recordedIn = {
       "@type": "VideoObject",
       "name": isEs ? `Grabación de la reunión de la junta - ${formatDateEs(m.date)}` : `School Board Meeting Recording - ${formatDate(m.date)}`,
       "description": description,
@@ -354,10 +357,41 @@ function meetingJsonLd(m, lang) {
   }
 
   if (subjectOf.length > 0) {
-    schema.subjectOf = subjectOf;
+    eventSchema.subjectOf = subjectOf;
   }
 
-  return `<script type="application/ld+json">\n${JSON.stringify(schema, null, 2)}\n</script>`;
+  // Construct ItemPage container pointing to the meeting event as its main subject
+  const pageSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemPage",
+    "@id": pageId,
+    "url": canonicalUrl,
+    "name": name,
+    "description": description,
+    "inLanguage": isEs ? "es" : "en",
+    "about": eventSchema
+  };
+
+  const enUrl = `https://rcsd.info/meetings/${pagePath}/`;
+  const esUrl = `https://rcsd.info/reuniones/${pagePath}/`;
+
+  if (isEs) {
+    pageSchema.translationOfWork = {
+      "@type": "ItemPage",
+      "@id": `${enUrl}#webpage`,
+      "url": enUrl,
+      "inLanguage": "en"
+    };
+  } else {
+    pageSchema.workTranslation = {
+      "@type": "ItemPage",
+      "@id": `${esUrl}#webpage`,
+      "url": esUrl,
+      "inLanguage": "es"
+    };
+  }
+
+  return `<script type="application/ld+json">\n${JSON.stringify(pageSchema, null, 2)}\n</script>`;
 }
 
 // ---- CSS ----

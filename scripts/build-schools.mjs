@@ -1758,12 +1758,15 @@ function schoolJsonLd(school, data, lang) {
     types = ["ElementarySchool", "MiddleSchool"];
   }
 
-  const schema = {
-    "@context": "https://schema.org",
+  const schoolId = `https://rcsd.info/schools/${slug}/#school`;
+  const pageId = `https://rcsd.info${isEs ? esPath : enPath}#webpage`;
+
+  const schoolSchema = {
     "@type": types,
+    "@id": schoolId,
     "name": displayName,
     "description": description,
-    "url": canonicalUrl,
+    "url": `https://rcsd.info/schools/${slug}/`,
     "telephone": school.phone ? `+1-${school.phone.replace(/[()]/g, '').replace(/\s+/g, '-').trim()}` : "",
     "address": {
       "@type": "PostalAddress",
@@ -1781,10 +1784,10 @@ function schoolJsonLd(school, data, lang) {
   };
 
   const logoExt = slug === 'clifford' ? 'png' : 'jpg';
-  schema.image = `https://data.rcsd.info/logos/${slug}.${logoExt}`;
+  schoolSchema.image = `https://data.rcsd.info/logos/${slug}.${logoExt}`;
 
   if (school.principal) {
-    schema.leader = {
+    schoolSchema.leader = {
       "@type": "Person",
       "name": school.principal,
       "jobTitle": isEs ? "Director/a" : "Principal"
@@ -1792,7 +1795,7 @@ function schoolJsonLd(school, data, lang) {
   }
 
   if (school.enrollment) {
-    schema.numberOfStudents = {
+    schoolSchema.numberOfStudents = {
       "@type": "QuantitativeValue",
       "value": school.enrollment,
       "unitText": isEs ? "Estudiantes" : "Students"
@@ -1806,7 +1809,7 @@ function schoolJsonLd(school, data, lang) {
   if (school.greatSchools?.url) {
     sameAs.push(school.greatSchools.url);
   }
-  schema.sameAs = sameAs;
+  schoolSchema.sameAs = sameAs;
 
   if (school.bellSchedule && school.bellSchedule.regular) {
     const regularSchedule = school.bellSchedule.regular;
@@ -1856,23 +1859,51 @@ function schoolJsonLd(school, data, lang) {
     }
 
     if (specs.length > 0) {
-      schema.openingHoursSpecification = specs;
+      schoolSchema.openingHoursSpecification = specs;
     }
   }
 
   if (slug === 'adelante-selby' || slug === 'garfield' || slug === 'taft') {
-    schema.knowsLanguage = [
+    schoolSchema.knowsLanguage = [
       { "@type": "Language", "name": "English", "alternateName": "en" },
       { "@type": "Language", "name": "Spanish", "alternateName": "es" }
     ];
   } else if (slug === 'orion') {
-    schema.knowsLanguage = [
+    schoolSchema.knowsLanguage = [
       { "@type": "Language", "name": "English", "alternateName": "en" },
       { "@type": "Language", "name": "Mandarin Chinese", "alternateName": "zh" }
     ];
   }
 
-  return `<script type="application/ld+json">\n${JSON.stringify(schema, null, 2)}\n</script>`;
+  // Construct WebPage container pointing to the school as its main entity/subject
+  const pageSchema = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "@id": pageId,
+    "url": canonicalUrl,
+    "name": displayName,
+    "description": description,
+    "inLanguage": isEs ? "es" : "en",
+    "about": schoolSchema
+  };
+
+  if (isEs) {
+    pageSchema.translationOfWork = {
+      "@type": "AboutPage",
+      "@id": `https://rcsd.info${enPath}#webpage`,
+      "url": `https://rcsd.info${enPath}`,
+      "inLanguage": "en"
+    };
+  } else {
+    pageSchema.workTranslation = {
+      "@type": "AboutPage",
+      "@id": `https://rcsd.info${esPath}#webpage`,
+      "url": `https://rcsd.info${esPath}`,
+      "inLanguage": "es"
+    };
+  }
+
+  return `<script type="application/ld+json">\n${JSON.stringify(pageSchema, null, 2)}\n</script>`;
 }
 
 // ---- HTML generation ----
