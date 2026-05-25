@@ -1017,7 +1017,7 @@ function renderResources(data) {
       <p>${L.resCalMeetingsDesc}</p>
       <div class="calendar-links">
         <a href="webcal://rcsd.info/${L.lang === 'en' ? 'board-meetings' : 'reuniones-junta'}.ics" class="calendar-btn">Apple / Outlook</a>
-        <a href="https://calendar.google.com/calendar/r?cid=https%3A%2F%2Frcsd.info%2F${L.lang === 'en' ? 'board-meetings' : 'reuniones-junta'}.ics" class="calendar-btn" target="_blank" rel="noopener">Google Calendar</a>
+        <a href="https://calendar.google.com/calendar/r?cid=http%3A%2F%2Frcsd.info%2F${L.lang === 'en' ? 'board-meetings' : 'reuniones-junta'}.ics" class="calendar-btn" target="_blank" rel="noopener">Google Calendar</a>
         <a href="/${L.lang === 'en' ? 'board-meetings' : 'reuniones-junta'}.ics" class="calendar-btn" download>Download ICS</a>
       </div>
     </div>
@@ -1026,7 +1026,7 @@ function renderResources(data) {
       <p>${L.resCalSchoolDesc}</p>
       <div class="calendar-links">
         <a href="webcal://rcsd.info/${L.lang === 'en' ? 'school-dates' : 'fechas-escolares'}.ics" class="calendar-btn">Apple / Outlook</a>
-        <a href="https://calendar.google.com/calendar/r?cid=https%3A%2F%2Frcsd.info%2F${L.lang === 'en' ? 'school-dates' : 'fechas-escolares'}.ics" class="calendar-btn" target="_blank" rel="noopener">Google Calendar</a>
+        <a href="https://calendar.google.com/calendar/r?cid=http%3A%2F%2Frcsd.info%2F${L.lang === 'en' ? 'school-dates' : 'fechas-escolares'}.ics" class="calendar-btn" target="_blank" rel="noopener">Google Calendar</a>
         <a href="/${L.lang === 'en' ? 'school-dates' : 'fechas-escolares'}.ics" class="calendar-btn" download>Download ICS</a>
       </div>
     </div>

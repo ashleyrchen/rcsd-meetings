@@ -2342,7 +2342,7 @@ ${siteNav({ activePage: 'schools', lang, altLangHref })}
               return `<li style="margin-bottom:0.25rem"><span style="font-family:'IBM Plex Mono',monospace; font-size:0.78rem; color:#666; margin-right:0.5rem">${dateStr}</span>${links.join(' &nbsp;·&nbsp; ')}</li>`;
             }).join('');
             const feedFilename = lang === 'en' ? `ssc-${slug}.ics` : `ssc-${slug}-es.ics`;
-            const feedUrl = `https://rcsd.info/${feedFilename}`;
+            const feedUrl = `http://rcsd.info/${feedFilename}`;
             const webcalUrl = `webcal://rcsd.info/${feedFilename}`;
             const gcalUrl = `https://calendar.google.com/calendar/r?cid=${encodeURIComponent(feedUrl)}`;
             return `<div style="margin-top:0.8rem; padding-top:0.6rem; border-top:1px solid var(--rule-light)">
