@@ -1787,7 +1787,7 @@ function schoolJsonLd(school, data, lang) {
   schoolSchema.image = `https://data.rcsd.info/logos/${slug}.${logoExt}`;
 
   if (school.principal) {
-    schoolSchema.leader = {
+    schoolSchema.employee = {
       "@type": "Person",
       "name": school.principal,
       "jobTitle": isEs ? "Director/a" : "Principal"
@@ -1795,10 +1795,10 @@ function schoolJsonLd(school, data, lang) {
   }
 
   if (school.enrollment) {
-    schoolSchema.numberOfStudents = {
-      "@type": "QuantitativeValue",
-      "value": school.enrollment,
-      "unitText": isEs ? "Estudiantes" : "Students"
+    schoolSchema.additionalProperty = {
+      "@type": "PropertyValue",
+      "name": isEs ? "Matrícula" : "Student Enrollment",
+      "value": school.enrollment
     };
   }
 
