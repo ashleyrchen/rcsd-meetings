@@ -231,6 +231,135 @@ function buildMinutesHtml(m, L) {
   return html;
 }
 
+// ---- JSON-LD Generator ----
+
+function meetingJsonLd(m, lang) {
+  const isEs = lang === 'es';
+  const summaries = summariesByLang[lang] || summariesByLang.en || {};
+  const summary = summaries[m.date] || '';
+  const cleanSummary = summary.replace(/<[^>]+>/g, '');
+
+  const startTime = '19:00:00-07:00';
+  const endTime = '22:00:00-07:00';
+  const startDate = `${m.date}T${startTime}`;
+  const endDate = `${m.date}T${endTime}`;
+
+  const prefix = isEs ? 'reuniones' : 'meetings';
+  const isMulti = meetingsByDate[m.date].length > 1;
+  const pagePath = isMulti ? m.slug : m.date;
+  const canonicalUrl = `https://rcsd.info/${prefix}/${pagePath}/`;
+
+  const meetingTypeLabel = isEs ? (LOCALES.es.meetingTypes[m.type] || m.type) : m.type;
+  const name = isEs
+    ? `Reunión de la Junta de RCSD: Sesión ${meetingTypeLabel} (${formatDateEs(m.date)})`
+    : `RCSD School Board Meeting: ${meetingTypeLabel} Session (${formatDate(m.date)})`;
+
+  const description = cleanSummary || (isEs
+    ? `Agenda, transcripción y actas de la reunión ${meetingTypeLabel} del Distrito Escolar de Redwood City del ${formatDateEs(m.date)}.`
+    : `Agenda, transcript, and minutes for the Redwood City School District ${m.type} board meeting on ${formatDate(m.date)}.`);
+
+  const organizerName = isEs
+    ? 'Distrito Escolar de Redwood City - Mesa Directiva'
+    : 'Redwood City School District Board of Trustees';
+
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": name,
+    "description": description,
+    "startDate": startDate,
+    "endDate": endDate,
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+    "url": canonicalUrl,
+    "organizer": {
+      "@type": "GovernmentOrganization",
+      "name": organizerName,
+      "url": "https://www.rcsdk8.net",
+      "sameAs": "https://rcsd.info/"
+    },
+    "location": [
+      {
+        "@type": "Place",
+        "name": isEs ? "Oficina del Distrito Escolar de Redwood City" : "Redwood City School District Office",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "750 Bradford Street",
+          "addressLocality": "Redwood City",
+          "addressRegion": "CA",
+          "postalCode": "94063",
+          "addressCountry": "US"
+        }
+      }
+    ]
+  };
+
+  if (m.zoom) {
+    schema.location.push({
+      "@type": "VirtualLocation",
+      "name": "Zoom Webinar",
+      "url": m.zoom
+    });
+  } else if (m.youtube) {
+    schema.location.push({
+      "@type": "VirtualLocation",
+      "name": "YouTube Live Stream",
+      "url": `https://www.youtube.com/watch?v=${m.youtube}`
+    });
+  }
+
+  if (m.youtube) {
+    schema.recordedIn = {
+      "@type": "VideoObject",
+      "name": isEs ? `Grabación de la reunión de la junta - ${formatDateEs(m.date)}` : `School Board Meeting Recording - ${formatDate(m.date)}`,
+      "description": description,
+      "uploadDate": `${m.date}T19:00:00-07:00`,
+      "thumbnailUrl": `https://img.youtube.com/vi/${m.youtube}/maxresdefault.jpg`,
+      "embedUrl": `https://www.youtube.com/embed/${m.youtube}`
+    };
+  }
+
+  const subjectOf = [];
+  const minutesPdf = `${m.date}-minutes.pdf`;
+  if (existsSync(resolve(ROOT, 'artifacts/minutes', minutesPdf))) {
+    subjectOf.push({
+      "@type": "DigitalDocument",
+      "name": isEs ? "Actas de la reunión (PDF)" : "Official Meeting Minutes (PDF)",
+      "url": `${R2_BASE}/minutes/${minutesPdf}`,
+      "encodingFormat": "application/pdf"
+    });
+  } else if (m.minutes && m.minutes.documents && m.minutes.documents.length > 0) {
+    for (const doc of m.minutes.documents) {
+      const r2Path = doc.aid && aidToR2Path[doc.aid];
+      const url = r2Path ? `${R2_BASE}/${r2Path}` : doc.href;
+      if (url && url !== '#') {
+        subjectOf.push({
+          "@type": "DigitalDocument",
+          "name": doc.title || (isEs ? "Actas aprobadas" : "Approved Minutes Document"),
+          "url": url,
+          "encodingFormat": "application/pdf"
+        });
+      }
+    }
+  }
+
+  const agendaPdf = `${m.date}-agenda.pdf`;
+  if (existsSync(resolve(ROOT, 'artifacts/agendas', agendaPdf))) {
+    subjectOf.push({
+      "@type": "DigitalDocument",
+      "name": isEs ? "Agenda oficial (PDF)" : "Official Meeting Agenda (PDF)",
+      "url": `${R2_BASE}/agendas/${agendaPdf}`,
+      "encodingFormat": "application/pdf"
+    });
+  }
+
+  if (subjectOf.length > 0) {
+    schema.subjectOf = subjectOf;
+  }
+
+  return `<script type="application/ld+json">\n${JSON.stringify(schema, null, 2)}\n</script>`;
+}
+
 // ---- CSS ----
 
 const pageCSS = `
@@ -644,6 +773,7 @@ ${headMeta({
   canonical: `https://rcsd.info${canonicalPath}`,
   ogLocale: L.lang === 'es' ? 'es_US' : 'en_US',
   ogImageKey: `meeting-${m.slug}${L.lang === 'es' ? '-es' : ''}`,
+  jsonLd: meetingJsonLd(m, L.lang),
   pageCSS,
 })}
 </head>
