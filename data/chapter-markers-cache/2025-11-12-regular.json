@@ -1,6 +1,7 @@
 {
   "date": "2025-11-12",
-  "itemCount": 60,
+  "slug": "2025-11-12-regular",
+  "itemCount": 62,
   "llmResponse": {
     "speakers": {
       "A": {
@@ -12,11 +13,11 @@
         "role": "Executive Assistant to Superintendent / Board Secretary"
       },
       "C": {
-        "name": "Amy Gerstein / Kristin Geiser / Ana Paula Garay / Jackie Campos",
-        "role": "Multiple external presenters (Gardner Center, Mental Health, Community School Coordinators)"
+        "name": "Various presenters / Amy Gerstein / Ana Paula Garay / Kristin Geiser / Apurva Bhatt / Jackie Campos",
+        "role": "Multiple presenters throughout meeting"
       }
     },
-    "agendaChanges": "Section 7 (Bond Program Action Items) had no items. The meeting proceeded in agenda order. Speaker C represents multiple individuals who spoke at different points: Amy Gerstein (Gardner Center Executive Director), Kristin Geiser (Gardner Center Deputy Director), Ana Paula Garay (Lead Mental Health Counselor), Jackie Campos (MIT Community School Coordinator), and Dr. Apurva Bhatt. The board voted to extend the meeting to 11:00 PM after the Mental Health report, and again to 11:10 PM before the consent items vote.",
+    "agendaChanges": null,
     "items": [
       {
         "itemLabel": "1",
@@ -64,7 +65,7 @@
         "itemLabel": "3",
         "title": "Changes to the Agenda",
         "phases": {
-          "opened": 89,
+          "opened": 100,
           "presentation": null,
           "publicComment": null,
           "discussion": null,
@@ -78,14 +79,14 @@
         "itemLabel": "4",
         "title": "Approval of the Agenda",
         "phases": {
-          "opened": 91,
+          "opened": 102,
           "presentation": null,
           "publicComment": null,
           "discussion": null,
           "vote": {
-            "seconds": 95,
+            "seconds": 107,
             "type": "voice",
-            "result": "3-0 (Weekly, Li; Márquez and King absent)"
+            "result": "3-0 (Márquez and King absent)"
           }
         },
         "publicComments": [],
@@ -96,7 +97,7 @@
         "itemLabel": "5",
         "title": "Public Comment",
         "phases": {
-          "opened": 97,
+          "opened": 112,
           "presentation": null,
           "publicComment": 134,
           "discussion": null,
@@ -107,7 +108,7 @@
             "name": "Agustin Espino",
             "startSeconds": 148,
             "endSeconds": 270,
-            "summary": "RCSD parent expressing concern that Latino and other students have been struggling for years, the current process is not yielding desired results, and requesting the board consider adding teacher assistants or reducing class sizes, noting the district receives additional funds for second language learners that should be reflected in student outcomes."
+            "summary": "Expressed concern that Latino and other students have been struggling for years, cited state data, and asked the board to find solutions including possible teacher assistants or smaller class sizes."
           }
         ],
         "consent": false,
@@ -115,16 +116,16 @@
       },
       {
         "itemLabel": "6",
-        "title": "Approval of the Bond Program Consent Item(s)",
+        "title": "Approval of the Bond Program Consent Item(s) — Geotechnical, Special Testing, and Inspection Agreement between RCSD and Ninyo and Moore",
         "phases": {
-          "opened": 292,
+          "opened": 275,
           "presentation": null,
           "publicComment": null,
           "discussion": null,
           "vote": {
-            "seconds": 304,
+            "seconds": 292,
             "type": "voice",
-            "result": "3-0 (Li, Weekly; Márquez and King absent)"
+            "result": "3-0 (Márquez and King absent)"
           }
         },
         "publicComments": [],
@@ -133,9 +134,9 @@
       },
       {
         "itemLabel": "7",
-        "title": "Bond Program Action Items",
+        "title": "Bond Program Action Item(s)",
         "phases": {
-          "opened": 316,
+          "opened": 302,
           "presentation": null,
           "publicComment": null,
           "discussion": null,
@@ -149,10 +150,10 @@
         "itemLabel": "8.1",
         "title": "Community Schools & Partnerships Department Board Report",
         "phases": {
-          "opened": 320,
+          "opened": 307,
           "presentation": 386,
           "publicComment": 4261,
-          "discussion": 4738,
+          "discussion": 4734,
           "vote": null
         },
         "publicComments": [
@@ -160,13 +161,13 @@
             "name": "Lisbeth Estrada",
             "startSeconds": 4290,
             "endSeconds": 4489,
-            "summary": "Hoover parent (speaking in Spanish, then translated) praising community schools as the heart of the community, requesting new workshops to help families prepare younger children for school, and noting concern about special education resource class support cuts."
+            "summary": "Spoke (in Spanish) about the importance of community schools as the heart of the community, and requested new workshops to help families prepare younger children for school and support special education students."
           },
           {
             "name": "Leighann Thompson",
-            "startSeconds": 6527,
-            "endSeconds": 6577,
-            "summary": "PTO President at Clifford School noting that the Mathnasium tutoring program is run by a Clifford parent and funded by the PTO, encouraging the district to better leverage parent-owned businesses and community resources."
+            "startSeconds": 6514,
+            "endSeconds": 6578,
+            "summary": "Noted that the Mathnasium tutoring program at Clifford is run by a parent and funded by the PTO, and encouraged the district to better leverage parents and local businesses as resources."
           }
         ],
         "consent": false,
@@ -190,7 +191,7 @@
         "itemLabel": "9.1",
         "title": "First Reading and Discussion of Board Policy 3311.1: Uniform Public Construction Cost Accounting Procedures",
         "phases": {
-          "opened": 11786,
+          "opened": 11793,
           "presentation": null,
           "publicComment": null,
           "discussion": null,
@@ -204,7 +205,7 @@
         "itemLabel": "9.2",
         "title": "First Reading and Discussion of Board Policy and Administrative Regulation 0420.4: Charter School Authorization",
         "phases": {
-          "opened": 11796,
+          "opened": 11803,
           "presentation": null,
           "publicComment": null,
           "discussion": null,
@@ -218,7 +219,7 @@
         "itemLabel": "9.3",
         "title": "First Reading and Discussion of Board Policy 0420.41: Charter School Oversight",
         "phases": {
-          "opened": 11808,
+          "opened": 11812,
           "presentation": null,
           "publicComment": null,
           "discussion": null,
@@ -232,10 +233,10 @@
         "itemLabel": "9.4",
         "title": "First Reading and Discussion of Board Policy and Administrative Regulation 3100: Budget",
         "phases": {
-          "opened": 11815,
+          "opened": 11819,
           "presentation": null,
           "publicComment": null,
-          "discussion": 11815,
+          "discussion": 11847,
           "vote": null
         },
         "publicComments": [],
@@ -246,7 +247,7 @@
         "itemLabel": "9.5",
         "title": "First Reading and Discussion of Board Policy and Administrative Regulation 3260: Fees and Charges",
         "phases": {
-          "opened": 11849,
+          "opened": 11880,
           "presentation": null,
           "publicComment": null,
           "discussion": null,
@@ -260,7 +261,7 @@
         "itemLabel": "9.6",
         "title": "First Reading and Discussion of Board Policy and Administrative Regulation 3311: Bids",
         "phases": {
-          "opened": 11936,
+          "opened": 11918,
           "presentation": null,
           "publicComment": null,
           "discussion": null,
@@ -274,10 +275,10 @@
         "itemLabel": "9.7",
         "title": "First Reading and Discussion of Board Policy 3312: Contracts",
         "phases": {
-          "opened": 11856,
+          "opened": 11884,
           "presentation": null,
           "publicComment": null,
-          "discussion": 11856,
+          "discussion": 11999,
           "vote": null
         },
         "publicComments": [],
@@ -288,10 +289,10 @@
         "itemLabel": "9.8",
         "title": "First Reading and Discussion of Board Policy and Administrative Regulation 3550: Food Service/Child Nutrition Program",
         "phases": {
-          "opened": 12050,
+          "opened": 12013,
           "presentation": null,
           "publicComment": null,
-          "discussion": 12050,
+          "discussion": 12035,
           "vote": null
         },
         "publicComments": [],
@@ -302,7 +303,7 @@
         "itemLabel": "9.9",
         "title": "First Reading and Discussion of Board Policy and Administrative Regulation 3551: Food Service Operations/Cafeteria Fund",
         "phases": {
-          "opened": 12100,
+          "opened": 12095,
           "presentation": null,
           "publicComment": null,
           "discussion": 12100,
@@ -316,10 +317,10 @@
         "itemLabel": "9.10",
         "title": "First Reading and Discussion of Board Policy and Administrative Regulation 3553: Free and Reduced Price Meals",
         "phases": {
-          "opened": 12218,
+          "opened": 12210,
           "presentation": null,
           "publicComment": null,
-          "discussion": 12218,
+          "discussion": null,
           "vote": null
         },
         "publicComments": [],
@@ -327,10 +328,10 @@
         "pulled": false
       },
       {
-        "itemLabel": "11",
+        "itemLabel": "9.11",
         "title": "First Reading and Discussion of Board Policy and Administrative Regulation 4121: Temporary/Substitute Personnel",
         "phases": {
-          "opened": 12232,
+          "opened": 12222,
           "presentation": null,
           "publicComment": null,
           "discussion": null,
@@ -344,10 +345,10 @@
         "itemLabel": "9.12",
         "title": "First Reading and Discussion of Board Policy 6144: Controversial Issues",
         "phases": {
-          "opened": 12242,
+          "opened": 12228,
           "presentation": null,
           "publicComment": null,
-          "discussion": 12242,
+          "discussion": 12236,
           "vote": null
         },
         "publicComments": [],
@@ -355,7 +356,7 @@
         "pulled": false
       },
       {
-        "itemLabel": "13",
+        "itemLabel": "9.13",
         "title": "First Reading and Discussion of Board Policy and Administrative Regulation 7214: General Obligation Bonds",
         "phases": {
           "opened": 13484,
@@ -372,7 +373,7 @@
         "itemLabel": "9.14",
         "title": "First Reading and Discussion of Board Bylaw 9250: Remuneration, Reimbursement, and Other Benefits",
         "phases": {
-          "opened": 13524,
+          "opened": 13497,
           "presentation": null,
           "publicComment": null,
           "discussion": 13524,
@@ -383,17 +384,17 @@
         "pulled": false
       },
       {
-        "itemLabel": "Consent",
-        "title": "Approval of Consent Items (Action Required) — Second Readings and Other Consent Items (Sections 15–26)",
+        "itemLabel": "10",
+        "title": "Approval of Consent Items (Action Required)",
         "phases": {
           "opened": 14095,
           "presentation": null,
           "publicComment": null,
           "discussion": null,
           "vote": {
-            "seconds": 14099,
+            "seconds": 14100,
             "type": "voice",
-            "result": "3-0"
+            "result": "3-0 (Márquez and King absent)"
           }
         },
         "publicComments": [],
@@ -401,13 +402,27 @@
         "pulled": false
       },
       {
-        "itemLabel": "Board Reports",
+        "itemLabel": "11",
+        "title": "Action Items (Action Required)",
+        "phases": {
+          "opened": 14108,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12",
         "title": "Board and Superintendent Reports",
         "phases": {
-          "opened": 14105,
+          "opened": 14110,
           "presentation": null,
           "publicComment": null,
-          "discussion": 14105,
+          "discussion": 14110,
           "vote": null
         },
         "publicComments": [],
@@ -415,13 +430,13 @@
         "pulled": false
       },
       {
-        "itemLabel": "Other Business",
-        "title": "Other Business / Suggested Items for Future Agenda",
+        "itemLabel": "13",
+        "title": "Information",
         "phases": {
-          "opened": 14560,
+          "opened": null,
           "presentation": null,
           "publicComment": null,
-          "discussion": 14560,
+          "discussion": null,
           "vote": null
         },
         "publicComments": [],
@@ -429,13 +444,41 @@
         "pulled": false
       },
       {
-        "itemLabel": "Reflection",
+        "itemLabel": "14",
+        "title": "Correspondence",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Other Business/Suggested Items for Future Agenda",
+        "phases": {
+          "opened": 14390,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 14390,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16",
         "title": "Board of Trustees Meeting Reflection",
         "phases": {
-          "opened": 14560,
+          "opened": 14422,
           "presentation": null,
           "publicComment": null,
-          "discussion": 14560,
+          "discussion": 14422,
           "vote": null
         },
         "publicComments": [],
@@ -443,17 +486,31 @@
         "pulled": false
       },
       {
-        "itemLabel": "Adjournment",
+        "itemLabel": "17",
+        "title": "Board of Trustees Meeting Calendar",
+        "phases": {
+          "opened": 14658,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 14658,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "18",
         "title": "Adjournment",
         "phases": {
-          "opened": 14718,
+          "opened": 14696,
           "presentation": null,
           "publicComment": null,
           "discussion": null,
           "vote": {
-            "seconds": 14725,
+            "seconds": 14730,
             "type": "voice",
-            "result": "approved"
+            "result": "3-0 (Márquez and King absent)"
           }
         },
         "publicComments": [],
@@ -474,11 +531,11 @@
         "role": "Executive Assistant to Superintendent / Board Secretary"
       },
       "C": {
-        "name": "Amy Gerstein / Kristin Geiser / Ana Paula Garay / Jackie Campos",
-        "role": "Multiple external presenters (Gardner Center, Mental Health, Community School Coordinators)"
+        "name": "Various presenters / Amy Gerstein / Ana Paula Garay / Kristin Geiser / Apurva Bhatt / Jackie Campos",
+        "role": "Multiple presenters throughout meeting"
       }
     },
-    "agendaChanges": "Section 7 (Bond Program Action Items) had no items. The meeting proceeded in agenda order. Speaker C represents multiple individuals who spoke at different points: Amy Gerstein (Gardner Center Executive Director), Kristin Geiser (Gardner Center Deputy Director), Ana Paula Garay (Lead Mental Health Counselor), Jackie Campos (MIT Community School Coordinator), and Dr. Apurva Bhatt. The board voted to extend the meeting to 11:00 PM after the Mental Health report, and again to 11:10 PM before the consent items vote.",
+    "agendaChanges": null,
     "items": [
       {
         "itemLabel": "1",
@@ -526,7 +583,7 @@
         "itemLabel": "3",
         "title": "Changes to the Agenda",
         "phases": {
-          "opened": 89,
+          "opened": 100,
           "presentation": null,
           "publicComment": null,
           "discussion": null,
@@ -540,14 +597,14 @@
         "itemLabel": "4",
         "title": "Approval of the Agenda",
         "phases": {
-          "opened": 91,
+          "opened": 102,
           "presentation": null,
           "publicComment": null,
           "discussion": null,
           "vote": {
-            "seconds": 95,
+            "seconds": 107,
             "type": "voice",
-            "result": "3-0 (Weekly, Li; Márquez and King absent)"
+            "result": "3-0 (Márquez and King absent)"
           }
         },
         "publicComments": [],
@@ -558,7 +615,7 @@
         "itemLabel": "5",
         "title": "Public Comment",
         "phases": {
-          "opened": 97,
+          "opened": 112,
           "presentation": null,
           "publicComment": 134,
           "discussion": null,
@@ -569,7 +626,7 @@
             "name": "Agustin Espino",
             "startSeconds": 148,
             "endSeconds": 270,
-            "summary": "RCSD parent expressing concern that Latino and other students have been struggling for years, the current process is not yielding desired results, and requesting the board consider adding teacher assistants or reducing class sizes, noting the district receives additional funds for second language learners that should be reflected in student outcomes."
+            "summary": "Expressed concern that Latino and other students have been struggling for years, cited state data, and asked the board to find solutions including possible teacher assistants or smaller class sizes."
           }
         ],
         "consent": false,
@@ -577,16 +634,16 @@
       },
       {
         "itemLabel": "6",
-        "title": "Approval of the Bond Program Consent Item(s)",
+        "title": "Approval of the Bond Program Consent Item(s) — Geotechnical, Special Testing, and Inspection Agreement between RCSD and Ninyo and Moore",
         "phases": {
-          "opened": 292,
+          "opened": 275,
           "presentation": null,
           "publicComment": null,
           "discussion": null,
           "vote": {
-            "seconds": 304,
+            "seconds": 292,
             "type": "voice",
-            "result": "3-0 (Li, Weekly; Márquez and King absent)"
+            "result": "3-0 (Márquez and King absent)"
           }
         },
         "publicComments": [],
@@ -595,9 +652,9 @@
       },
       {
         "itemLabel": "7",
-        "title": "Bond Program Action Items",
+        "title": "Bond Program Action Item(s)",
         "phases": {
-          "opened": 316,
+          "opened": 302,
           "presentation": null,
           "publicComment": null,
           "discussion": null,
@@ -611,10 +668,10 @@
         "itemLabel": "8.1",
         "title": "Community Schools & Partnerships Department Board Report",
         "phases": {
-          "opened": 320,
+          "opened": 307,
           "presentation": 386,
           "publicComment": 4261,
-          "discussion": 4738,
+          "discussion": 4734,
           "vote": null
         },
         "publicComments": [
@@ -622,13 +679,13 @@
             "name": "Lisbeth Estrada",
             "startSeconds": 4290,
             "endSeconds": 4489,
-            "summary": "Hoover parent (speaking in Spanish, then translated) praising community schools as the heart of the community, requesting new workshops to help families prepare younger children for school, and noting concern about special education resource class support cuts."
+            "summary": "Spoke (in Spanish) about the importance of community schools as the heart of the community, and requested new workshops to help families prepare younger children for school and support special education students."
           },
           {
             "name": "Leighann Thompson",
-            "startSeconds": 6527,
-            "endSeconds": 6577,
-            "summary": "PTO President at Clifford School noting that the Mathnasium tutoring program is run by a Clifford parent and funded by the PTO, encouraging the district to better leverage parent-owned businesses and community resources."
+            "startSeconds": 6514,
+            "endSeconds": 6578,
+            "summary": "Noted that the Mathnasium tutoring program at Clifford is run by a parent and funded by the PTO, and encouraged the district to better leverage parents and local businesses as resources."
           }
         ],
         "consent": false,
@@ -652,7 +709,7 @@
         "itemLabel": "9.1",
         "title": "First Reading and Discussion of Board Policy 3311.1: Uniform Public Construction Cost Accounting Procedures",
         "phases": {
-          "opened": 11786,
+          "opened": 11793,
           "presentation": null,
           "publicComment": null,
           "discussion": null,
@@ -666,7 +723,7 @@
         "itemLabel": "9.2",
         "title": "First Reading and Discussion of Board Policy and Administrative Regulation 0420.4: Charter School Authorization",
         "phases": {
-          "opened": 11796,
+          "opened": 11803,
           "presentation": null,
           "publicComment": null,
           "discussion": null,
@@ -680,7 +737,7 @@
         "itemLabel": "9.3",
         "title": "First Reading and Discussion of Board Policy 0420.41: Charter School Oversight",
         "phases": {
-          "opened": 11808,
+          "opened": 11812,
           "presentation": null,
           "publicComment": null,
           "discussion": null,
@@ -694,10 +751,10 @@
         "itemLabel": "9.4",
         "title": "First Reading and Discussion of Board Policy and Administrative Regulation 3100: Budget",
         "phases": {
-          "opened": 11815,
+          "opened": 11819,
           "presentation": null,
           "publicComment": null,
-          "discussion": 11815,
+          "discussion": 11847,
           "vote": null
         },
         "publicComments": [],
@@ -708,7 +765,7 @@
         "itemLabel": "9.5",
         "title": "First Reading and Discussion of Board Policy and Administrative Regulation 3260: Fees and Charges",
         "phases": {
-          "opened": 11849,
+          "opened": 11880,
           "presentation": null,
           "publicComment": null,
           "discussion": null,
@@ -722,7 +779,7 @@
         "itemLabel": "9.6",
         "title": "First Reading and Discussion of Board Policy and Administrative Regulation 3311: Bids",
         "phases": {
-          "opened": 11936,
+          "opened": 11918,
           "presentation": null,
           "publicComment": null,
           "discussion": null,
@@ -736,10 +793,10 @@
         "itemLabel": "9.7",
         "title": "First Reading and Discussion of Board Policy 3312: Contracts",
         "phases": {
-          "opened": 11856,
+          "opened": 11884,
           "presentation": null,
           "publicComment": null,
-          "discussion": 11856,
+          "discussion": 11999,
           "vote": null
         },
         "publicComments": [],
@@ -750,10 +807,10 @@
         "itemLabel": "9.8",
         "title": "First Reading and Discussion of Board Policy and Administrative Regulation 3550: Food Service/Child Nutrition Program",
         "phases": {
-          "opened": 12050,
+          "opened": 12013,
           "presentation": null,
           "publicComment": null,
-          "discussion": 12050,
+          "discussion": 12035,
           "vote": null
         },
         "publicComments": [],
@@ -764,7 +821,7 @@
         "itemLabel": "9.9",
         "title": "First Reading and Discussion of Board Policy and Administrative Regulation 3551: Food Service Operations/Cafeteria Fund",
         "phases": {
-          "opened": 12100,
+          "opened": 12095,
           "presentation": null,
           "publicComment": null,
           "discussion": 12100,
@@ -778,10 +835,10 @@
         "itemLabel": "9.10",
         "title": "First Reading and Discussion of Board Policy and Administrative Regulation 3553: Free and Reduced Price Meals",
         "phases": {
-          "opened": 12218,
+          "opened": 12210,
           "presentation": null,
           "publicComment": null,
-          "discussion": 12218,
+          "discussion": null,
           "vote": null
         },
         "publicComments": [],
@@ -789,10 +846,10 @@
         "pulled": false
       },
       {
-        "itemLabel": "11",
+        "itemLabel": "9.11",
         "title": "First Reading and Discussion of Board Policy and Administrative Regulation 4121: Temporary/Substitute Personnel",
         "phases": {
-          "opened": 12232,
+          "opened": 12222,
           "presentation": null,
           "publicComment": null,
           "discussion": null,
@@ -806,10 +863,10 @@
         "itemLabel": "9.12",
         "title": "First Reading and Discussion of Board Policy 6144: Controversial Issues",
         "phases": {
-          "opened": 12242,
+          "opened": 12228,
           "presentation": null,
           "publicComment": null,
-          "discussion": 12242,
+          "discussion": 12236,
           "vote": null
         },
         "publicComments": [],
@@ -817,7 +874,7 @@
         "pulled": false
       },
       {
-        "itemLabel": "13",
+        "itemLabel": "9.13",
         "title": "First Reading and Discussion of Board Policy and Administrative Regulation 7214: General Obligation Bonds",
         "phases": {
           "opened": 13484,
@@ -834,7 +891,7 @@
         "itemLabel": "9.14",
         "title": "First Reading and Discussion of Board Bylaw 9250: Remuneration, Reimbursement, and Other Benefits",
         "phases": {
-          "opened": 13524,
+          "opened": 13497,
           "presentation": null,
           "publicComment": null,
           "discussion": 13524,
@@ -845,17 +902,17 @@
         "pulled": false
       },
       {
-        "itemLabel": "Consent",
-        "title": "Approval of Consent Items (Action Required) — Second Readings and Other Consent Items (Sections 15–26)",
+        "itemLabel": "10",
+        "title": "Approval of Consent Items (Action Required)",
         "phases": {
           "opened": 14095,
           "presentation": null,
           "publicComment": null,
           "discussion": null,
           "vote": {
-            "seconds": 14099,
+            "seconds": 14100,
             "type": "voice",
-            "result": "3-0"
+            "result": "3-0 (Márquez and King absent)"
           }
         },
         "publicComments": [],
@@ -863,13 +920,27 @@
         "pulled": false
       },
       {
-        "itemLabel": "Board Reports",
+        "itemLabel": "11",
+        "title": "Action Items (Action Required)",
+        "phases": {
+          "opened": 14108,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12",
         "title": "Board and Superintendent Reports",
         "phases": {
-          "opened": 14105,
+          "opened": 14110,
           "presentation": null,
           "publicComment": null,
-          "discussion": 14105,
+          "discussion": 14110,
           "vote": null
         },
         "publicComments": [],
@@ -877,13 +948,13 @@
         "pulled": false
       },
       {
-        "itemLabel": "Other Business",
-        "title": "Other Business / Suggested Items for Future Agenda",
+        "itemLabel": "13",
+        "title": "Information",
         "phases": {
-          "opened": 14560,
+          "opened": null,
           "presentation": null,
           "publicComment": null,
-          "discussion": 14560,
+          "discussion": null,
           "vote": null
         },
         "publicComments": [],
@@ -891,13 +962,41 @@
         "pulled": false
       },
       {
-        "itemLabel": "Reflection",
+        "itemLabel": "14",
+        "title": "Correspondence",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Other Business/Suggested Items for Future Agenda",
+        "phases": {
+          "opened": 14390,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 14390,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16",
         "title": "Board of Trustees Meeting Reflection",
         "phases": {
-          "opened": 14560,
+          "opened": 14422,
           "presentation": null,
           "publicComment": null,
-          "discussion": 14560,
+          "discussion": 14422,
           "vote": null
         },
         "publicComments": [],
@@ -905,17 +1004,31 @@
         "pulled": false
       },
       {
-        "itemLabel": "Adjournment",
+        "itemLabel": "17",
+        "title": "Board of Trustees Meeting Calendar",
+        "phases": {
+          "opened": 14658,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 14658,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "18",
         "title": "Adjournment",
         "phases": {
-          "opened": 14718,
+          "opened": 14696,
           "presentation": null,
           "publicComment": null,
           "discussion": null,
           "vote": {
-            "seconds": 14725,
+            "seconds": 14730,
             "type": "voice",
-            "result": "approved"
+            "result": "3-0 (Márquez and King absent)"
           }
         },
         "publicComments": [],
@@ -924,7 +1037,7 @@
       }
     ]
   },
-  "cachedAt": "2026-03-15T17:05:58.748Z",
-  "inputTokens": 56799,
-  "outputTokens": 3683
+  "cachedAt": "2026-05-28T19:33:05.258Z",
+  "inputTokens": 56817,
+  "outputTokens": 3905
 }

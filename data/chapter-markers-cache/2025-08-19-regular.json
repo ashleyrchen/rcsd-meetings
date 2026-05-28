@@ -1,6 +1,7 @@
 {
   "date": "2025-08-19",
-  "itemCount": 60,
+  "slug": "2025-08-19-regular",
+  "itemCount": 66,
   "llmResponse": {
     "speakers": {
       "A": {
@@ -24,79 +25,19 @@
         "role": "Superintendent"
       },
       "F": {
-        "name": "Rick Edson",
-        "role": "Chief Business Official (also Bryan Godbe, remote presenter, shares label in presentation segment)"
+        "name": "Bryan Godbe",
+        "role": "Godbe Research (remote presenter)"
       },
       "G": {
         "name": "Jeremy Hauser",
-        "role": "Partner, TeamCivX (parcel tax consultant)"
+        "role": "TeamCivX Partner (presenter)"
       }
     },
-    "agendaChanges": "The recording begins at reconvene to open session (Section 4); the closed session and pre-reconvene items (Sections 1–3) occurred before the recording. The Report Out on Closed Session and Welcome were delivered together by President Wells at the start of the recording without a distinct break. Sections 4 Roll Call, Report Out, and Welcome all occur in rapid sequence at the opening. The Consent Items (Section 13) encompassed all items through Section 31 as a single bundle vote. Action Items followed the consent bundle. Board and Superintendent Reports, Information, and adjournment closed the meeting. No items were pulled from consent. No other resequencing noted.",
+    "agendaChanges": "No changes to the agenda were made. The recording begins at the Reconvene to Open Session (Section 4); the Closed Session (Section 3) and earlier items are not captured in the transcript. The Roll Call, Report Out on Closed Session, Welcome, Changes to the Agenda, and Approval of the Agenda all occur in rapid succession at the start of the recording. The public hearing (Section 12) and its associated action item (Resolution No. 3, Section 14) were handled in the order listed on the agenda. Section 13 consent items were approved as a bundle. Sections 15 through 20 followed in order.",
     "items": [
       {
         "itemLabel": "1",
         "title": "Call to Order",
-        "phases": {
-          "opened": null,
-          "presentation": null,
-          "publicComment": null,
-          "discussion": null,
-          "vote": null
-        },
-        "publicComments": [],
-        "consent": false,
-        "pulled": false,
-        "notes": "Occurred before recording began (closed session called to order at 6:30 PM per minutes)"
-      },
-      {
-        "itemLabel": "1",
-        "title": "Roll Call (Closed Session)",
-        "phases": {
-          "opened": null,
-          "presentation": null,
-          "publicComment": null,
-          "discussion": null,
-          "vote": null
-        },
-        "publicComments": [],
-        "consent": false,
-        "pulled": false,
-        "notes": "Occurred before recording began"
-      },
-      {
-        "itemLabel": "2",
-        "title": "Public Comment on Closed Session Items Only",
-        "phases": {
-          "opened": null,
-          "presentation": null,
-          "publicComment": null,
-          "discussion": null,
-          "vote": null
-        },
-        "publicComments": [],
-        "consent": false,
-        "pulled": false,
-        "notes": "Occurred before recording began; minutes note 'None'"
-      },
-      {
-        "itemLabel": "3",
-        "title": "Closed Session - 6:30 PM",
-        "phases": {
-          "opened": null,
-          "presentation": null,
-          "publicComment": null,
-          "discussion": null,
-          "vote": null
-        },
-        "publicComments": [],
-        "consent": false,
-        "pulled": false,
-        "notes": "Occurred before recording began"
-      },
-      {
-        "itemLabel": "4",
-        "title": "Reconvene to Open Session",
         "phases": {
           "opened": 6,
           "presentation": null,
@@ -109,7 +50,7 @@
         "pulled": false
       },
       {
-        "itemLabel": "4",
+        "itemLabel": "Roll Call",
         "title": "Roll Call (Open Session)",
         "phases": {
           "opened": 6,
@@ -123,8 +64,50 @@
         "pulled": false
       },
       {
+        "itemLabel": "2",
+        "title": "Public Comment on Closed Session Items Only",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Closed Session - 6:30 PM",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
         "itemLabel": "4",
-        "title": "Report Out on Closed Session from August 19, 2025",
+        "title": "Reconvene to Open Session / Roll Call / Report Out on Closed Session",
+        "phases": {
+          "opened": 6,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Welcome",
         "phases": {
           "opened": 22,
           "presentation": null,
@@ -134,23 +117,7 @@
         },
         "publicComments": [],
         "consent": false,
-        "pulled": false,
-        "notes": "President Wells reported the 5-0 vote to initiate IDEA due process complaint"
-      },
-      {
-        "itemLabel": "5",
-        "title": "Welcome",
-        "phases": {
-          "opened": 67,
-          "presentation": null,
-          "publicComment": null,
-          "discussion": null,
-          "vote": null
-        },
-        "publicComments": [],
-        "consent": false,
-        "pulled": false,
-        "notes": "President Wells welcomed attendees and provided Spanish interpretation instructions starting around 67s"
+        "pulled": false
       },
       {
         "itemLabel": "6",
@@ -164,14 +131,13 @@
         },
         "publicComments": [],
         "consent": false,
-        "pulled": false,
-        "notes": "President Wells asked for changes; none reported"
+        "pulled": false
       },
       {
         "itemLabel": "7",
         "title": "Approval of the Agenda",
         "phases": {
-          "opened": 141,
+          "opened": 140,
           "presentation": null,
           "publicComment": null,
           "discussion": null,
@@ -189,16 +155,15 @@
         "itemLabel": "8",
         "title": "Public Comment",
         "phases": {
-          "opened": 155,
+          "opened": 157,
           "presentation": null,
-          "publicComment": 155,
+          "publicComment": 157,
           "discussion": null,
           "vote": null
         },
         "publicComments": [],
         "consent": false,
-        "pulled": false,
-        "notes": "No public comment received"
+        "pulled": false
       },
       {
         "itemLabel": "9",
@@ -222,6 +187,20 @@
         "itemLabel": "10",
         "title": "Bond Program Action Items",
         "phases": {
+          "opened": 179,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "Discussion Items",
+        "phases": {
           "opened": 183,
           "presentation": null,
           "publicComment": null,
@@ -230,15 +209,14 @@
         },
         "publicComments": [],
         "consent": false,
-        "pulled": false,
-        "notes": "None — no action items were presented"
+        "pulled": false
       },
       {
-        "itemLabel": "11",
-        "title": "Discussion Items — Discussion of Parcel Tax Survey Findings and Recommended Next Steps",
+        "itemLabel": "11.1",
+        "title": "Discussion of Parcel Tax Survey Findings and Recommended Next Steps",
         "phases": {
-          "opened": 188,
-          "presentation": 363,
+          "opened": 183,
+          "presentation": 357,
           "publicComment": 2323,
           "discussion": 2647,
           "vote": null
@@ -247,30 +225,30 @@
           {
             "name": "Jessica Shade",
             "startSeconds": 2345,
-            "endSeconds": 2441,
-            "summary": "Expressed strong parent support for the parcel tax, noted the square-footage structure is more equitable, and urged all hands on deck given how close the polling numbers are to the two-thirds threshold."
+            "endSeconds": 2440,
+            "summary": "Expressed strong parent support for the parcel tax, praised the equity of the square-footage model, noted polls are close to the two-thirds threshold and called for all-hands-on-deck community involvement."
           },
           {
             "name": "Carlo Contavalli",
             "startSeconds": 2466,
-            "endSeconds": 2537,
-            "summary": "Urged the board to put the measure on the ballot and let voters decide, citing urgent funding needs and the risk of continued cuts if nothing is done."
+            "endSeconds": 2536,
+            "summary": "Argued that the poll results show a good chance of passage and urged the board to put the measure on the ballot, warning that inaction would only worsen the district's funding situation."
           },
           {
             "name": "Brandon Matthews",
             "startSeconds": 2548,
             "endSeconds": 2645,
-            "summary": "Offered full-throated support for the parcel tax on behalf of the Unidos PTO at Adelante Selby, specifically praising its progressive, equitable structure and opposing a cap."
+            "summary": "Expressed wholehearted support for the parcel tax on behalf of Unidos/Adelante Selby PTO, highlighting the equitable and progressive nature of the square-footage structure and the school's limited fundraising capacity."
           }
         ],
         "consent": false,
         "pulled": false
       },
       {
-        "itemLabel": "11",
-        "title": "Discussion Items — Discussion of School Assignments and Committee Assignments for Board Members for the 2025–26 School Year",
+        "itemLabel": "11.2",
+        "title": "Discussion of School Assignments and Committee Assignments for Board Members for the 2025–26 School Year",
         "phases": {
-          "opened": 3719,
+          "opened": 3728,
           "presentation": null,
           "publicComment": null,
           "discussion": 3728,
@@ -282,7 +260,7 @@
       },
       {
         "itemLabel": "12",
-        "title": "Public Hearing — Sufficiency of Instructional Materials for the 2025-2026 School Year",
+        "title": "Public Hearing of Sufficiency of Instructional Materials for the 2025-2026 School Year",
         "phases": {
           "opened": 4183,
           "presentation": 4247,
@@ -292,12 +270,11 @@
         },
         "publicComments": [],
         "consent": false,
-        "pulled": false,
-        "notes": "Public hearing opened at 8:11 PM (~4183s) and closed at 8:12 PM (~4275s); no public speakers"
+        "pulled": false
       },
       {
         "itemLabel": "13",
-        "title": "Approval of Consent Items (Action Required) — Full Bundle",
+        "title": "Approval of Consent Items",
         "phases": {
           "opened": 4397,
           "presentation": null,
@@ -311,8 +288,7 @@
         },
         "publicComments": [],
         "consent": true,
-        "pulled": false,
-        "notes": "Bundle included all items listed under Section 13 through Section 31 of the agenda (items 13.1 through 13.22 per minutes numbering, plus food service bid extensions and warrant ratifications)"
+        "pulled": false
       },
       {
         "itemLabel": "13.1",
@@ -334,7 +310,7 @@
       },
       {
         "itemLabel": "13.2",
-        "title": "Third Reading and Approval of Board Policy and Administrative Regulation 5123 – Promotion/Acceleration/Retention",
+        "title": "Third Reading and Approval of Board Policy and Administrative Regulation 5123 - Promotion/Acceleration/Retention",
         "phases": {
           "opened": 4397,
           "presentation": null,
@@ -352,7 +328,7 @@
       },
       {
         "itemLabel": "13.3",
-        "title": "Approval of Roy Cloud School Field Trip to Golden Gate National Recreation Area (GGNRA) – October 1–3, 2025",
+        "title": "Approval of Roy Cloud School Field Trip to Golden Gate National Recreation Area (GGNRA) – October 1, 2025 – October 3, 2025",
         "phases": {
           "opened": 4397,
           "presentation": null,
@@ -388,7 +364,7 @@
       },
       {
         "itemLabel": "13.5",
-        "title": "Approval of the Agreement between Redwood City School District and Casa Circulo Cultural Inc. for the 2025-2026 School Year",
+        "title": "Approval of the Agreement between the Redwood City School District and Casa Circulo Cultural Inc. for the 2025-2026 School Year",
         "phases": {
           "opened": 4397,
           "presentation": null,
@@ -586,7 +562,7 @@
       },
       {
         "itemLabel": "13.16",
-        "title": "Approval of Local Interagency Agreement to Provide Education and Training to Credential Candidates - San Jose State University - Intern Program (Multiple and Single Subject)",
+        "title": "Approval of Local Interagency Agreement to Provide Education and Training to Credential Candidates - San Jose State University - Intern Program - (Multiple and Single Subject)",
         "phases": {
           "opened": 4397,
           "presentation": null,
@@ -603,7 +579,7 @@
         "pulled": false
       },
       {
-        "itemLabel": "17",
+        "itemLabel": "13.17",
         "title": "Approval of Local Interagency Agreement to Provide Education and Training to Credential Candidates - REACH University",
         "phases": {
           "opened": 4397,
@@ -621,7 +597,7 @@
         "pulled": false
       },
       {
-        "itemLabel": "18",
+        "itemLabel": "13.18",
         "title": "Approval of Local Interagency Agreement to Provide Education and Training to Credential Candidates - Notre Dame de Namur University - Unpaid Student Teachers",
         "phases": {
           "opened": 4397,
@@ -639,7 +615,7 @@
         "pulled": false
       },
       {
-        "itemLabel": "19",
+        "itemLabel": "13.19",
         "title": "Approval of Local Interagency Agreement to Provide Education and Training to Credential Candidates - Notre Dame de Namur University - Intern Program",
         "phases": {
           "opened": 4397,
@@ -657,7 +633,7 @@
         "pulled": false
       },
       {
-        "itemLabel": "20",
+        "itemLabel": "13.20",
         "title": "Approval of Personnel Report",
         "phases": {
           "opened": 4397,
@@ -675,7 +651,7 @@
         "pulled": false
       },
       {
-        "itemLabel": "21",
+        "itemLabel": "13.21",
         "title": "Approval of Non-Public School (NPS)/Non-Public Agency (NPA) Master Contracts",
         "phases": {
           "opened": 4397,
@@ -693,7 +669,7 @@
         "pulled": false
       },
       {
-        "itemLabel": "22",
+        "itemLabel": "13.22",
         "title": "Approval of the Facilities Use Agreement between Redwood City School District and Connect Community Charter School for the 2025-2030 School Years",
         "phases": {
           "opened": 4397,
@@ -711,7 +687,7 @@
         "pulled": false
       },
       {
-        "itemLabel": "23",
+        "itemLabel": "13.23",
         "title": "Extension of Bid with Healthy Kids/Tasty Pizza for the 25-26 School Year",
         "phases": {
           "opened": 4397,
@@ -729,7 +705,7 @@
         "pulled": false
       },
       {
-        "itemLabel": "24",
+        "itemLabel": "13.24",
         "title": "Extension of Bid with Allen Bros./Del Monte Meats for the 25-26 School Year",
         "phases": {
           "opened": 4397,
@@ -747,7 +723,7 @@
         "pulled": false
       },
       {
-        "itemLabel": "25",
+        "itemLabel": "13.25",
         "title": "Extension of Bid with Bonami Baking Company for the 25-26 School Year",
         "phases": {
           "opened": 4397,
@@ -765,7 +741,7 @@
         "pulled": false
       },
       {
-        "itemLabel": "26",
+        "itemLabel": "13.26",
         "title": "Extension of Bid with Sysco Foods for Grocery Products for the 25-26 School Year",
         "phases": {
           "opened": 4397,
@@ -783,7 +759,7 @@
         "pulled": false
       },
       {
-        "itemLabel": "27",
+        "itemLabel": "13.27",
         "title": "Extension of Bid with Pacific Produce Company/Pacific Rim Produce for the 25-26 School Year",
         "phases": {
           "opened": 4397,
@@ -801,7 +777,7 @@
         "pulled": false
       },
       {
-        "itemLabel": "28",
+        "itemLabel": "13.28",
         "title": "Extension of Bid with Daylight Foods for the 25-26 School Year",
         "phases": {
           "opened": 4397,
@@ -819,7 +795,7 @@
         "pulled": false
       },
       {
-        "itemLabel": "29",
+        "itemLabel": "13.29",
         "title": "Extension of Bid with Sysco Foods Protein for the 25-26 School Year",
         "phases": {
           "opened": 4397,
@@ -837,7 +813,7 @@
         "pulled": false
       },
       {
-        "itemLabel": "30",
+        "itemLabel": "13.30",
         "title": "Ratification of Warrant Registers, June 1, 2025 - June 30, 2025",
         "phases": {
           "opened": 4397,
@@ -855,7 +831,7 @@
         "pulled": false
       },
       {
-        "itemLabel": "31",
+        "itemLabel": "13.31",
         "title": "Ratification of Warrant Registers, July 1, 2025 - July 31, 2025",
         "phases": {
           "opened": 4397,
@@ -873,7 +849,21 @@
         "pulled": false
       },
       {
-        "itemLabel": "Action Items",
+        "itemLabel": "14",
+        "title": "Action Items",
+        "phases": {
+          "opened": 4419,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.1",
         "title": "Approval of Memorandum of Understanding – Connect Community Charter School (2025–2030)",
         "phases": {
           "opened": 4419,
@@ -891,7 +881,7 @@
         "pulled": false
       },
       {
-        "itemLabel": "Action Items",
+        "itemLabel": "14.2",
         "title": "Adoption of Resolution No. 1: Teachers Gaining Permanent Status",
         "phases": {
           "opened": 4499,
@@ -909,13 +899,13 @@
         "pulled": false
       },
       {
-        "itemLabel": "Action Items",
+        "itemLabel": "14.3",
         "title": "Adoption of Resolution No. 2, Approval of Education Code and Title V Options for Teaching Assignments",
         "phases": {
           "opened": 4567,
           "presentation": 4577,
           "publicComment": null,
-          "discussion": 4641,
+          "discussion": 4640,
           "vote": {
             "seconds": 4661,
             "type": "voice",
@@ -927,8 +917,8 @@
         "pulled": false
       },
       {
-        "itemLabel": "Action Items",
-        "title": "Adoption of Resolution No. 3, Sufficiency of Instructional Materials for the 2025-26 School Year",
+        "itemLabel": "14.4",
+        "title": "Adoption of Resolution No. 3 Sufficiency of Instructional Materials for the 2025-26 School Year",
         "phases": {
           "opened": 4662,
           "presentation": 4672,
@@ -945,7 +935,7 @@
         "pulled": false
       },
       {
-        "itemLabel": "Action Items",
+        "itemLabel": "14.5",
         "title": "Approval of Provisional Internship Permit",
         "phases": {
           "opened": 4700,
@@ -953,7 +943,7 @@
           "publicComment": null,
           "discussion": 4751,
           "vote": {
-            "seconds": 4761,
+            "seconds": 4762,
             "type": "voice",
             "result": "5-0"
           }
@@ -963,22 +953,21 @@
         "pulled": false
       },
       {
-        "itemLabel": "Action Items",
+        "itemLabel": "15",
         "title": "Board and Superintendent Reports",
         "phases": {
-          "opened": 4763,
+          "opened": 4765,
           "presentation": null,
           "publicComment": null,
-          "discussion": 4763,
+          "discussion": 4765,
           "vote": null
         },
         "publicComments": [],
         "consent": false,
-        "pulled": false,
-        "notes": "Reports delivered by Trustee Li (SMCSBA meeting), Trustee King (transition to Gamut acknowledgment), and Superintendent Baker (welcome back and school opening)"
+        "pulled": false
       },
       {
-        "itemLabel": "Action Items",
+        "itemLabel": "16",
         "title": "Information",
         "phases": {
           "opened": 4918,
@@ -989,12 +978,25 @@
         },
         "publicComments": [],
         "consent": false,
-        "pulled": false,
-        "notes": "Included Prop 2 KIPP correspondence and Citizens Bond Oversight Committee application inquiry noted by Trustee Li"
+        "pulled": false
       },
       {
-        "itemLabel": "Action Items",
-        "title": "Other Business and Suggested Items for Future Agenda",
+        "itemLabel": "17",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 4935,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 4935,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "18",
+        "title": "Other Business/Suggested Items for Future Agenda",
         "phases": {
           "opened": 4964,
           "presentation": null,
@@ -1004,12 +1006,11 @@
         },
         "publicComments": [],
         "consent": false,
-        "pulled": false,
-        "notes": "Trustee Weekly requested time to prioritize parking lot/BD topics; Trustee King raised board policy reimbursement rate item for future Policy Committee"
+        "pulled": false
       },
       {
-        "itemLabel": "Action Items",
-        "title": "Meeting Calendar",
+        "itemLabel": "19",
+        "title": "Board of Trustees Meeting Calendar",
         "phases": {
           "opened": 5018,
           "presentation": null,
@@ -1019,11 +1020,10 @@
         },
         "publicComments": [],
         "consent": false,
-        "pulled": false,
-        "notes": "Next meeting noted as the following Wednesday"
+        "pulled": false
       },
       {
-        "itemLabel": "Action Items",
+        "itemLabel": "20",
         "title": "Adjournment",
         "phases": {
           "opened": 5075,
@@ -1066,79 +1066,19 @@
         "role": "Superintendent"
       },
       "F": {
-        "name": "Rick Edson",
-        "role": "Chief Business Official (also Bryan Godbe, remote presenter, shares label in presentation segment)"
+        "name": "Bryan Godbe",
+        "role": "Godbe Research (remote presenter)"
       },
       "G": {
         "name": "Jeremy Hauser",
-        "role": "Partner, TeamCivX (parcel tax consultant)"
+        "role": "TeamCivX Partner (presenter)"
       }
     },
-    "agendaChanges": "The recording begins at reconvene to open session (Section 4); the closed session and pre-reconvene items (Sections 1–3) occurred before the recording. The Report Out on Closed Session and Welcome were delivered together by President Wells at the start of the recording without a distinct break. Sections 4 Roll Call, Report Out, and Welcome all occur in rapid sequence at the opening. The Consent Items (Section 13) encompassed all items through Section 31 as a single bundle vote. Action Items followed the consent bundle. Board and Superintendent Reports, Information, and adjournment closed the meeting. No items were pulled from consent. No other resequencing noted.",
+    "agendaChanges": "No changes to the agenda were made. The recording begins at the Reconvene to Open Session (Section 4); the Closed Session (Section 3) and earlier items are not captured in the transcript. The Roll Call, Report Out on Closed Session, Welcome, Changes to the Agenda, and Approval of the Agenda all occur in rapid succession at the start of the recording. The public hearing (Section 12) and its associated action item (Resolution No. 3, Section 14) were handled in the order listed on the agenda. Section 13 consent items were approved as a bundle. Sections 15 through 20 followed in order.",
     "items": [
       {
         "itemLabel": "1",
         "title": "Call to Order",
-        "phases": {
-          "opened": null,
-          "presentation": null,
-          "publicComment": null,
-          "discussion": null,
-          "vote": null
-        },
-        "publicComments": [],
-        "consent": false,
-        "pulled": false,
-        "notes": "Occurred before recording began (closed session called to order at 6:30 PM per minutes)"
-      },
-      {
-        "itemLabel": "1",
-        "title": "Roll Call (Closed Session)",
-        "phases": {
-          "opened": null,
-          "presentation": null,
-          "publicComment": null,
-          "discussion": null,
-          "vote": null
-        },
-        "publicComments": [],
-        "consent": false,
-        "pulled": false,
-        "notes": "Occurred before recording began"
-      },
-      {
-        "itemLabel": "2",
-        "title": "Public Comment on Closed Session Items Only",
-        "phases": {
-          "opened": null,
-          "presentation": null,
-          "publicComment": null,
-          "discussion": null,
-          "vote": null
-        },
-        "publicComments": [],
-        "consent": false,
-        "pulled": false,
-        "notes": "Occurred before recording began; minutes note 'None'"
-      },
-      {
-        "itemLabel": "3",
-        "title": "Closed Session - 6:30 PM",
-        "phases": {
-          "opened": null,
-          "presentation": null,
-          "publicComment": null,
-          "discussion": null,
-          "vote": null
-        },
-        "publicComments": [],
-        "consent": false,
-        "pulled": false,
-        "notes": "Occurred before recording began"
-      },
-      {
-        "itemLabel": "4",
-        "title": "Reconvene to Open Session",
         "phases": {
           "opened": 6,
           "presentation": null,
@@ -1151,7 +1091,7 @@
         "pulled": false
       },
       {
-        "itemLabel": "4",
+        "itemLabel": "Roll Call",
         "title": "Roll Call (Open Session)",
         "phases": {
           "opened": 6,
@@ -1165,8 +1105,50 @@
         "pulled": false
       },
       {
+        "itemLabel": "2",
+        "title": "Public Comment on Closed Session Items Only",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Closed Session - 6:30 PM",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
         "itemLabel": "4",
-        "title": "Report Out on Closed Session from August 19, 2025",
+        "title": "Reconvene to Open Session / Roll Call / Report Out on Closed Session",
+        "phases": {
+          "opened": 6,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Welcome",
         "phases": {
           "opened": 22,
           "presentation": null,
@@ -1176,23 +1158,7 @@
         },
         "publicComments": [],
         "consent": false,
-        "pulled": false,
-        "notes": "President Wells reported the 5-0 vote to initiate IDEA due process complaint"
-      },
-      {
-        "itemLabel": "5",
-        "title": "Welcome",
-        "phases": {
-          "opened": 67,
-          "presentation": null,
-          "publicComment": null,
-          "discussion": null,
-          "vote": null
-        },
-        "publicComments": [],
-        "consent": false,
-        "pulled": false,
-        "notes": "President Wells welcomed attendees and provided Spanish interpretation instructions starting around 67s"
+        "pulled": false
       },
       {
         "itemLabel": "6",
@@ -1206,14 +1172,13 @@
         },
         "publicComments": [],
         "consent": false,
-        "pulled": false,
-        "notes": "President Wells asked for changes; none reported"
+        "pulled": false
       },
       {
         "itemLabel": "7",
         "title": "Approval of the Agenda",
         "phases": {
-          "opened": 141,
+          "opened": 140,
           "presentation": null,
           "publicComment": null,
           "discussion": null,
@@ -1231,16 +1196,15 @@
         "itemLabel": "8",
         "title": "Public Comment",
         "phases": {
-          "opened": 155,
+          "opened": 157,
           "presentation": null,
-          "publicComment": 155,
+          "publicComment": 157,
           "discussion": null,
           "vote": null
         },
         "publicComments": [],
         "consent": false,
-        "pulled": false,
-        "notes": "No public comment received"
+        "pulled": false
       },
       {
         "itemLabel": "9",
@@ -1264,6 +1228,20 @@
         "itemLabel": "10",
         "title": "Bond Program Action Items",
         "phases": {
+          "opened": 179,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "Discussion Items",
+        "phases": {
           "opened": 183,
           "presentation": null,
           "publicComment": null,
@@ -1272,15 +1250,14 @@
         },
         "publicComments": [],
         "consent": false,
-        "pulled": false,
-        "notes": "None — no action items were presented"
+        "pulled": false
       },
       {
-        "itemLabel": "11",
-        "title": "Discussion Items — Discussion of Parcel Tax Survey Findings and Recommended Next Steps",
+        "itemLabel": "11.1",
+        "title": "Discussion of Parcel Tax Survey Findings and Recommended Next Steps",
         "phases": {
-          "opened": 188,
-          "presentation": 363,
+          "opened": 183,
+          "presentation": 357,
           "publicComment": 2323,
           "discussion": 2647,
           "vote": null
@@ -1289,30 +1266,30 @@
           {
             "name": "Jessica Shade",
             "startSeconds": 2345,
-            "endSeconds": 2441,
-            "summary": "Expressed strong parent support for the parcel tax, noted the square-footage structure is more equitable, and urged all hands on deck given how close the polling numbers are to the two-thirds threshold."
+            "endSeconds": 2440,
+            "summary": "Expressed strong parent support for the parcel tax, praised the equity of the square-footage model, noted polls are close to the two-thirds threshold and called for all-hands-on-deck community involvement."
           },
           {
             "name": "Carlo Contavalli",
             "startSeconds": 2466,
-            "endSeconds": 2537,
-            "summary": "Urged the board to put the measure on the ballot and let voters decide, citing urgent funding needs and the risk of continued cuts if nothing is done."
+            "endSeconds": 2536,
+            "summary": "Argued that the poll results show a good chance of passage and urged the board to put the measure on the ballot, warning that inaction would only worsen the district's funding situation."
           },
           {
             "name": "Brandon Matthews",
             "startSeconds": 2548,
             "endSeconds": 2645,
-            "summary": "Offered full-throated support for the parcel tax on behalf of the Unidos PTO at Adelante Selby, specifically praising its progressive, equitable structure and opposing a cap."
+            "summary": "Expressed wholehearted support for the parcel tax on behalf of Unidos/Adelante Selby PTO, highlighting the equitable and progressive nature of the square-footage structure and the school's limited fundraising capacity."
           }
         ],
         "consent": false,
         "pulled": false
       },
       {
-        "itemLabel": "11",
-        "title": "Discussion Items — Discussion of School Assignments and Committee Assignments for Board Members for the 2025–26 School Year",
+        "itemLabel": "11.2",
+        "title": "Discussion of School Assignments and Committee Assignments for Board Members for the 2025–26 School Year",
         "phases": {
-          "opened": 3719,
+          "opened": 3728,
           "presentation": null,
           "publicComment": null,
           "discussion": 3728,
@@ -1324,7 +1301,7 @@
       },
       {
         "itemLabel": "12",
-        "title": "Public Hearing — Sufficiency of Instructional Materials for the 2025-2026 School Year",
+        "title": "Public Hearing of Sufficiency of Instructional Materials for the 2025-2026 School Year",
         "phases": {
           "opened": 4183,
           "presentation": 4247,
@@ -1334,12 +1311,11 @@
         },
         "publicComments": [],
         "consent": false,
-        "pulled": false,
-        "notes": "Public hearing opened at 8:11 PM (~4183s) and closed at 8:12 PM (~4275s); no public speakers"
+        "pulled": false
       },
       {
         "itemLabel": "13",
-        "title": "Approval of Consent Items (Action Required) — Full Bundle",
+        "title": "Approval of Consent Items",
         "phases": {
           "opened": 4397,
           "presentation": null,
@@ -1353,8 +1329,7 @@
         },
         "publicComments": [],
         "consent": true,
-        "pulled": false,
-        "notes": "Bundle included all items listed under Section 13 through Section 31 of the agenda (items 13.1 through 13.22 per minutes numbering, plus food service bid extensions and warrant ratifications)"
+        "pulled": false
       },
       {
         "itemLabel": "13.1",
@@ -1376,7 +1351,7 @@
       },
       {
         "itemLabel": "13.2",
-        "title": "Third Reading and Approval of Board Policy and Administrative Regulation 5123 – Promotion/Acceleration/Retention",
+        "title": "Third Reading and Approval of Board Policy and Administrative Regulation 5123 - Promotion/Acceleration/Retention",
         "phases": {
           "opened": 4397,
           "presentation": null,
@@ -1394,7 +1369,7 @@
       },
       {
         "itemLabel": "13.3",
-        "title": "Approval of Roy Cloud School Field Trip to Golden Gate National Recreation Area (GGNRA) – October 1–3, 2025",
+        "title": "Approval of Roy Cloud School Field Trip to Golden Gate National Recreation Area (GGNRA) – October 1, 2025 – October 3, 2025",
         "phases": {
           "opened": 4397,
           "presentation": null,
@@ -1430,7 +1405,7 @@
       },
       {
         "itemLabel": "13.5",
-        "title": "Approval of the Agreement between Redwood City School District and Casa Circulo Cultural Inc. for the 2025-2026 School Year",
+        "title": "Approval of the Agreement between the Redwood City School District and Casa Circulo Cultural Inc. for the 2025-2026 School Year",
         "phases": {
           "opened": 4397,
           "presentation": null,
@@ -1628,7 +1603,7 @@
       },
       {
         "itemLabel": "13.16",
-        "title": "Approval of Local Interagency Agreement to Provide Education and Training to Credential Candidates - San Jose State University - Intern Program (Multiple and Single Subject)",
+        "title": "Approval of Local Interagency Agreement to Provide Education and Training to Credential Candidates - San Jose State University - Intern Program - (Multiple and Single Subject)",
         "phases": {
           "opened": 4397,
           "presentation": null,
@@ -1645,7 +1620,7 @@
         "pulled": false
       },
       {
-        "itemLabel": "17",
+        "itemLabel": "13.17",
         "title": "Approval of Local Interagency Agreement to Provide Education and Training to Credential Candidates - REACH University",
         "phases": {
           "opened": 4397,
@@ -1663,7 +1638,7 @@
         "pulled": false
       },
       {
-        "itemLabel": "18",
+        "itemLabel": "13.18",
         "title": "Approval of Local Interagency Agreement to Provide Education and Training to Credential Candidates - Notre Dame de Namur University - Unpaid Student Teachers",
         "phases": {
           "opened": 4397,
@@ -1681,7 +1656,7 @@
         "pulled": false
       },
       {
-        "itemLabel": "19",
+        "itemLabel": "13.19",
         "title": "Approval of Local Interagency Agreement to Provide Education and Training to Credential Candidates - Notre Dame de Namur University - Intern Program",
         "phases": {
           "opened": 4397,
@@ -1699,7 +1674,7 @@
         "pulled": false
       },
       {
-        "itemLabel": "20",
+        "itemLabel": "13.20",
         "title": "Approval of Personnel Report",
         "phases": {
           "opened": 4397,
@@ -1717,7 +1692,7 @@
         "pulled": false
       },
       {
-        "itemLabel": "21",
+        "itemLabel": "13.21",
         "title": "Approval of Non-Public School (NPS)/Non-Public Agency (NPA) Master Contracts",
         "phases": {
           "opened": 4397,
@@ -1735,7 +1710,7 @@
         "pulled": false
       },
       {
-        "itemLabel": "22",
+        "itemLabel": "13.22",
         "title": "Approval of the Facilities Use Agreement between Redwood City School District and Connect Community Charter School for the 2025-2030 School Years",
         "phases": {
           "opened": 4397,
@@ -1753,7 +1728,7 @@
         "pulled": false
       },
       {
-        "itemLabel": "23",
+        "itemLabel": "13.23",
         "title": "Extension of Bid with Healthy Kids/Tasty Pizza for the 25-26 School Year",
         "phases": {
           "opened": 4397,
@@ -1771,7 +1746,7 @@
         "pulled": false
       },
       {
-        "itemLabel": "24",
+        "itemLabel": "13.24",
         "title": "Extension of Bid with Allen Bros./Del Monte Meats for the 25-26 School Year",
         "phases": {
           "opened": 4397,
@@ -1789,7 +1764,7 @@
         "pulled": false
       },
       {
-        "itemLabel": "25",
+        "itemLabel": "13.25",
         "title": "Extension of Bid with Bonami Baking Company for the 25-26 School Year",
         "phases": {
           "opened": 4397,
@@ -1807,7 +1782,7 @@
         "pulled": false
       },
       {
-        "itemLabel": "26",
+        "itemLabel": "13.26",
         "title": "Extension of Bid with Sysco Foods for Grocery Products for the 25-26 School Year",
         "phases": {
           "opened": 4397,
@@ -1825,7 +1800,7 @@
         "pulled": false
       },
       {
-        "itemLabel": "27",
+        "itemLabel": "13.27",
         "title": "Extension of Bid with Pacific Produce Company/Pacific Rim Produce for the 25-26 School Year",
         "phases": {
           "opened": 4397,
@@ -1843,7 +1818,7 @@
         "pulled": false
       },
       {
-        "itemLabel": "28",
+        "itemLabel": "13.28",
         "title": "Extension of Bid with Daylight Foods for the 25-26 School Year",
         "phases": {
           "opened": 4397,
@@ -1861,7 +1836,7 @@
         "pulled": false
       },
       {
-        "itemLabel": "29",
+        "itemLabel": "13.29",
         "title": "Extension of Bid with Sysco Foods Protein for the 25-26 School Year",
         "phases": {
           "opened": 4397,
@@ -1879,7 +1854,7 @@
         "pulled": false
       },
       {
-        "itemLabel": "30",
+        "itemLabel": "13.30",
         "title": "Ratification of Warrant Registers, June 1, 2025 - June 30, 2025",
         "phases": {
           "opened": 4397,
@@ -1897,7 +1872,7 @@
         "pulled": false
       },
       {
-        "itemLabel": "31",
+        "itemLabel": "13.31",
         "title": "Ratification of Warrant Registers, July 1, 2025 - July 31, 2025",
         "phases": {
           "opened": 4397,
@@ -1915,7 +1890,21 @@
         "pulled": false
       },
       {
-        "itemLabel": "Action Items",
+        "itemLabel": "14",
+        "title": "Action Items",
+        "phases": {
+          "opened": 4419,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.1",
         "title": "Approval of Memorandum of Understanding – Connect Community Charter School (2025–2030)",
         "phases": {
           "opened": 4419,
@@ -1933,7 +1922,7 @@
         "pulled": false
       },
       {
-        "itemLabel": "Action Items",
+        "itemLabel": "14.2",
         "title": "Adoption of Resolution No. 1: Teachers Gaining Permanent Status",
         "phases": {
           "opened": 4499,
@@ -1951,13 +1940,13 @@
         "pulled": false
       },
       {
-        "itemLabel": "Action Items",
+        "itemLabel": "14.3",
         "title": "Adoption of Resolution No. 2, Approval of Education Code and Title V Options for Teaching Assignments",
         "phases": {
           "opened": 4567,
           "presentation": 4577,
           "publicComment": null,
-          "discussion": 4641,
+          "discussion": 4640,
           "vote": {
             "seconds": 4661,
             "type": "voice",
@@ -1969,8 +1958,8 @@
         "pulled": false
       },
       {
-        "itemLabel": "Action Items",
-        "title": "Adoption of Resolution No. 3, Sufficiency of Instructional Materials for the 2025-26 School Year",
+        "itemLabel": "14.4",
+        "title": "Adoption of Resolution No. 3 Sufficiency of Instructional Materials for the 2025-26 School Year",
         "phases": {
           "opened": 4662,
           "presentation": 4672,
@@ -1987,7 +1976,7 @@
         "pulled": false
       },
       {
-        "itemLabel": "Action Items",
+        "itemLabel": "14.5",
         "title": "Approval of Provisional Internship Permit",
         "phases": {
           "opened": 4700,
@@ -1995,7 +1984,7 @@
           "publicComment": null,
           "discussion": 4751,
           "vote": {
-            "seconds": 4761,
+            "seconds": 4762,
             "type": "voice",
             "result": "5-0"
           }
@@ -2005,22 +1994,21 @@
         "pulled": false
       },
       {
-        "itemLabel": "Action Items",
+        "itemLabel": "15",
         "title": "Board and Superintendent Reports",
         "phases": {
-          "opened": 4763,
+          "opened": 4765,
           "presentation": null,
           "publicComment": null,
-          "discussion": 4763,
+          "discussion": 4765,
           "vote": null
         },
         "publicComments": [],
         "consent": false,
-        "pulled": false,
-        "notes": "Reports delivered by Trustee Li (SMCSBA meeting), Trustee King (transition to Gamut acknowledgment), and Superintendent Baker (welcome back and school opening)"
+        "pulled": false
       },
       {
-        "itemLabel": "Action Items",
+        "itemLabel": "16",
         "title": "Information",
         "phases": {
           "opened": 4918,
@@ -2031,12 +2019,25 @@
         },
         "publicComments": [],
         "consent": false,
-        "pulled": false,
-        "notes": "Included Prop 2 KIPP correspondence and Citizens Bond Oversight Committee application inquiry noted by Trustee Li"
+        "pulled": false
       },
       {
-        "itemLabel": "Action Items",
-        "title": "Other Business and Suggested Items for Future Agenda",
+        "itemLabel": "17",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 4935,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 4935,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "18",
+        "title": "Other Business/Suggested Items for Future Agenda",
         "phases": {
           "opened": 4964,
           "presentation": null,
@@ -2046,12 +2047,11 @@
         },
         "publicComments": [],
         "consent": false,
-        "pulled": false,
-        "notes": "Trustee Weekly requested time to prioritize parking lot/BD topics; Trustee King raised board policy reimbursement rate item for future Policy Committee"
+        "pulled": false
       },
       {
-        "itemLabel": "Action Items",
-        "title": "Meeting Calendar",
+        "itemLabel": "19",
+        "title": "Board of Trustees Meeting Calendar",
         "phases": {
           "opened": 5018,
           "presentation": null,
@@ -2061,11 +2061,10 @@
         },
         "publicComments": [],
         "consent": false,
-        "pulled": false,
-        "notes": "Next meeting noted as the following Wednesday"
+        "pulled": false
       },
       {
-        "itemLabel": "Action Items",
+        "itemLabel": "20",
         "title": "Adjournment",
         "phases": {
           "opened": 5075,
@@ -2084,7 +2083,7 @@
       }
     ]
   },
-  "cachedAt": "2026-03-15T17:11:32.900Z",
-  "inputTokens": 26121,
-  "outputTokens": 8557
+  "cachedAt": "2026-05-28T19:34:34.555Z",
+  "inputTokens": 26224,
+  "outputTokens": 7966
 }

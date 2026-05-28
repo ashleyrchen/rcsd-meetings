@@ -3,6 +3,7 @@ node_modules/
 .venv/
 artifacts
 artifacts/
+tmp/
 .wrangler/
 .claude/
 CLAUDE.md

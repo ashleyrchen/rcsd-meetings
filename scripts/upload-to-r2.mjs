@@ -21,6 +21,7 @@
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { execFileSync } from 'child_process';
+import { readdirSync } from 'fs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
@@ -41,6 +42,22 @@ function run(label, args) {
   } catch (err) {
     process.exit(err.status || 1);
   }
+}
+
+// Safety guard: step 1 copies the artifacts/ root to the PUBLIC bucket root, so any
+// loose file sitting directly in artifacts/ gets published at https://data.rcsd.info/<file>.
+// Only subdirectories (json/, audio/, og/, transcripts-*/, etc.) are intended to ship.
+// A stray top-level file is almost always a scratch/working file (email draft, repro,
+// notes) that does NOT belong on a public CDN — refuse to upload until it's moved out.
+// Non-public scratch files belong in tmp/ (gitignored, never synced). See CLAUDE.md.
+const strayFiles = readdirSync(ARTIFACTS_DIR, { withFileTypes: true })
+  .filter((d) => d.isFile())
+  .map((d) => d.name);
+if (strayFiles.length > 0) {
+  console.error(`\nRefusing to upload: ${strayFiles.length} loose file(s) at artifacts/ root would be published to the public bucket:`);
+  for (const f of strayFiles) console.error(`  artifacts/${f}`);
+  console.error(`\nMove non-public scratch files to tmp/ (gitignored), or into the correct artifacts/ subdirectory, then re-run.`);
+  process.exit(1);
 }
 
 // 1. Artifacts → bucket root (exclude json/ and transcripts-slim/ which are managed separately)

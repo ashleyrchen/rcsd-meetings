@@ -49,6 +49,13 @@ if (!quick) {
   // Phase 2: Audio + transcription (slow, costs API $)
   run('2. Download audio', 'download-audio.mjs');
   run('3. Transcribe (AssemblyAI)', 'transcribe-assemblyai.mjs');
+
+  // Rebuild so meetings just transcribed get hasTranscript=true BEFORE the slim
+  // and translate steps run — both skip meetings where hasTranscript is false
+  // (publish-transcripts.mjs / translate-transcripts.mjs), so without this a
+  // newly-transcribed meeting would otherwise be skipped until the next run.
+  run('3b. Rebuild meetings data (flag new transcripts)', 'build-meetings.mjs');
+
   run('4. Slim transcripts', 'publish-transcripts.mjs');
   run('5. Translate transcripts (ES)', 'translate-transcripts.mjs');
 

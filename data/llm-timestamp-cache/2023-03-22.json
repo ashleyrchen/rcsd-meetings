@@ -17,27 +17,27 @@
     "Adjourn the Meeting"
   ],
   "llmResponse": {
-    "agenda_changes": "No changes to agenda announced at start of meeting",
-    "consent_vote_words": "can I please get a motion to approve the consent bond program",
+    "agenda_changes": "No agenda changes were announced at the start of the meeting. The agenda proceeded as posted with all items addressed.",
+    "consent_vote_words": "Can I please get a motion to approve the consent bond program? I'll move to approve second. All those in favor? Aye.",
     "items": [
       {
         "item": 1,
-        "intro_words": "Great. At seven o'. Clock. Welcome, everyone. Roll call,",
+        "intro_words": "Great. At seven o'. Clock. Welcome, everyone. Roll call, please.",
         "status": "found"
       },
       {
         "item": 2,
-        "intro_words": "Roll call, please. Trustee Weekley? Present. Trustee McAvoy?",
+        "intro_words": "Trustee Weekley? Present. Trustee McAvoy? Present. Trustee Wells?",
         "status": "found"
       },
       {
         "item": 3,
-        "intro_words": "Again. Welcome, everyone, to another Redwood City School",
+        "intro_words": "Again. Welcome, everyone, to another Redwood City School District board meeting.",
         "status": "found"
       },
       {
         "item": 4,
-        "intro_words": "Again. Welcome, everyone, to another Redwood City School",
+        "intro_words": "Again. Welcome, everyone, to another Redwood City School District board meeting.",
         "status": "found"
       },
       {
@@ -72,22 +72,22 @@
       },
       {
         "item": 11,
-        "intro_words": "Moving along to board program consent items 6.1. Approval",
+        "intro_words": "Moving along to board program consent items 6.1. Approval of.",
         "status": "found"
       },
       {
         "item": 12,
-        "intro_words": "can I please get a motion to approve the consent bond program",
+        "intro_words": "Can I please get a motion to approve the consent bond program?",
         "status": "consent_bundle"
       },
       {
         "item": 13,
-        "intro_words": "I would like to adjourn the meeting and honor a woman's month",
+        "intro_words": "I would like to adjourn the meeting and honor a woman's month.",
         "status": "found"
       },
       {
         "item": 14,
-        "intro_words": "I would like to adjourn the meeting and honor a woman's month",
+        "intro_words": "I would like to adjourn the meeting and honor a woman's month.",
         "status": "found"
       }
     ]
@@ -154,7 +154,7 @@
       }
     ]
   },
-  "cachedAt": "2026-05-22T04:43:49.426Z",
+  "cachedAt": "2026-05-28T19:43:16.603Z",
   "inputTokens": 27924,
-  "outputTokens": 677
+  "outputTokens": 716
 }

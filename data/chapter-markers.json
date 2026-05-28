@@ -1,4 +1,1837 @@
 {
+  "2026-05-27-regular": {
+    "videoId": "7Ri8cI3wF-o",
+    "speakers": {
+      "A": {
+        "name": "David Weekly",
+        "role": "Board President"
+      },
+      "B": {
+        "name": "John Baker",
+        "role": "Superintendent"
+      },
+      "C": {
+        "name": "Unknown",
+        "role": "Roll call reader (possibly Evelyn Sanchez reading names)"
+      },
+      "D": {
+        "name": "David Li",
+        "role": "Trustee"
+      },
+      "E": {
+        "name": "Anna Herrera",
+        "role": "Assistant Superintendent, Educational Services"
+      },
+      "F": {
+        "name": "Jennifer Ng Kwing King",
+        "role": "Board Clerk"
+      },
+      "G": {
+        "name": "Cecilia I. Márquez",
+        "role": "Vice President"
+      },
+      "H": {
+        "name": "Mike Wells",
+        "role": "Trustee"
+      },
+      "I": {
+        "name": "Mike Wells",
+        "role": "Trustee (secondary label cross-check: Wells makes motions at 455s, 1741s, 1747s, 2619s, 2650s — confirmed)"
+      },
+      "J": {
+        "name": "Cecilia I. Márquez",
+        "role": "Vice President (secondary label: speaks at 940s asking question, makes motion at 2908s)"
+      }
+    },
+    "agendaChanges": "The meeting recording begins at the Reconvene to Open Session (Section 5); the earlier Call to Order, Roll Call for closed session, Public Comment on Closed Session Items, Announcement of Closed Session Purpose, and Closed Session itself are not captured in the transcript. Section 11 (Bond Program Action Items) had no items and was skipped. Section 13 (Discussion Items) had no items and was skipped. Section 17 (Information) had no items and was skipped. Section 18 (Correspondence) had no notable items. The Pledge of Allegiance occurred after the Welcome rather than as a distinct separate step. No agenda items were pulled from consent.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false,
+        "note": "Closed session portion not captured in transcript recording."
+      },
+      {
+        "itemLabel": "1",
+        "title": "Roll Call (pre-closed session)",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false,
+        "note": "Not captured in transcript."
+      },
+      {
+        "itemLabel": "1",
+        "title": "Public Comment on Closed Session Items Only",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false,
+        "note": "Not captured in transcript."
+      },
+      {
+        "itemLabel": "3",
+        "title": "Announcement of Closed Session Purpose",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false,
+        "note": "Not captured in transcript."
+      },
+      {
+        "itemLabel": "4",
+        "title": "Closed Session at 5:50 PM",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false,
+        "note": "Not captured in transcript."
+      },
+      {
+        "itemLabel": "5",
+        "title": "Reconvene to Open Session / Roll Call / Report Out on Closed Session",
+        "phases": {
+          "opened": 5,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Welcome / Pledge of Allegiance",
+        "phases": {
+          "opened": 23,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 201,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8",
+        "title": "Approval of the Agenda",
+        "phases": {
+          "opened": 201,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 222,
+            "type": "voice",
+            "result": "approved unanimously"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9",
+        "title": "Public Comment",
+        "phases": {
+          "opened": 224,
+          "presentation": null,
+          "publicComment": 224,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9",
+        "title": "Labor Association Comments",
+        "phases": {
+          "opened": 234,
+          "presentation": null,
+          "publicComment": 234,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Maria Stockton",
+            "startSeconds": 257,
+            "endSeconds": 428,
+            "summary": "CSEA Chapter 5 President apologized for missing the retirement party, announced $100 scholarships for 8th graders, thanked classified employees during Classified School Employee Week, praised the new superintendent Dr. Rubalcaba's attendance at the appreciation dinner, and congratulated Superintendent Baker on his retirement."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "Approval of the Bond Program Consent Items",
+        "phases": {
+          "opened": 428,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 458,
+            "type": "voice",
+            "result": "approved unanimously"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "Bond Program Action Items",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false,
+        "note": "No action items listed under this section; skipped."
+      },
+      {
+        "itemLabel": "12",
+        "title": "Update on the Redwood City School District K-8 Math Program: Imagine Mathematics (IM) Three-Year Implementation and Sustainability Plan",
+        "phases": {
+          "opened": 460,
+          "presentation": 478,
+          "publicComment": null,
+          "discussion": 893,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "Discussion Items",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false,
+        "note": "No discussion items listed; skipped."
+      },
+      {
+        "itemLabel": "14",
+        "title": "Approval of Consent Items",
+        "phases": {
+          "opened": 2459,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 2530,
+            "type": "voice",
+            "result": "approved unanimously"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Acceptance of the California School Employees Association Chapter V Initial Proposal - Successor Negotiations for 2026-2029",
+        "phases": {
+          "opened": 2530,
+          "presentation": 2549,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 2630,
+            "type": "voice",
+            "result": "approved unanimously"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Receipt of Governing Board's Initial Proposal for Negotiations with California School Employees Association Chapter V for the 2026-2027 School Year",
+        "phases": {
+          "opened": 2630,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 2656,
+            "type": "voice",
+            "result": "approved unanimously"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Approval of the Employment Agreement between the Redwood City School District and Richard W. Edson II, Chief Business Official",
+        "phases": {
+          "opened": 2660,
+          "presentation": 2664,
+          "publicComment": null,
+          "discussion": 2831,
+          "vote": {
+            "seconds": 2919,
+            "type": "voice",
+            "result": "approved unanimously"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16",
+        "title": "Board and Superintendent Reports",
+        "phases": {
+          "opened": 2926,
+          "presentation": 2940,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "17",
+        "title": "Information",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false,
+        "note": "No information items; skipped."
+      },
+      {
+        "itemLabel": "18",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 3531,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "19",
+        "title": "Other Business / Suggested Items for Future Agenda",
+        "phases": {
+          "opened": 3537,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "20",
+        "title": "Board of Trustees Meeting Reflection",
+        "phases": {
+          "opened": 3543,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 3559,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "21",
+        "title": "Board of Trustees Meeting Calendar",
+        "phases": {
+          "opened": 3810,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "22",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 3841,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3844,
+            "type": "voice",
+            "result": "approved unanimously"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "2026-05-13-regular": {
+    "videoId": "37aRsr2VKEY",
+    "speakers": {
+      "A": {
+        "name": "David Weekly",
+        "role": "Board President"
+      },
+      "B": {
+        "name": "Evelyn Sanchez",
+        "role": "Executive Assistant to Superintendent / Board Secretary"
+      },
+      "C": {
+        "name": "Mike Wells",
+        "role": "Trustee"
+      },
+      "D": {
+        "name": "David Li",
+        "role": "Trustee"
+      },
+      "E": {
+        "name": "Jennifer Ng Kwing King",
+        "role": "Board Clerk"
+      },
+      "F": {
+        "name": "Martín Cervantes",
+        "role": "Director of Facilities and Bond Program Director"
+      },
+      "G": {
+        "name": "John Baker",
+        "role": "Superintendent (Dr. Baker / Dr. Rubalcaba referenced interchangeably in ASR)"
+      },
+      "H": {
+        "name": "Erin Kacos",
+        "role": "Principal, North Star Academy"
+      },
+      "I": {
+        "name": "Arthur Singh / Carlos Reyna / Josh Levinson",
+        "role": "Multiple speakers share label I in ASR; context-dependent"
+      },
+      "J": {
+        "name": "Johnson Hang",
+        "role": "Operations Systems Manager, Technology"
+      }
+    },
+    "agendaChanges": "Item 8.2 (Henry Ford School Presentation and SPSA Approval) was removed from the agenda at the start of the meeting. The Pledge of Allegiance (Section 2) was noted as not happening (no student-led pledge). Welcome remarks were delivered by the president during Call to Order/opening. All other items proceeded in agenda order.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order",
+        "phases": {
+          "opened": 5,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "Roll Call",
+        "title": "Roll Call",
+        "phases": {
+          "opened": 5,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Welcome / Pledge of Allegiance",
+        "phases": {
+          "opened": 28,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 284,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 284,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Approval of the Agenda (Action Required)",
+        "phases": {
+          "opened": 285,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 303,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Public Comment",
+        "phases": {
+          "opened": 303,
+          "presentation": null,
+          "publicComment": 334,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Pam Barash",
+            "startSeconds": 334,
+            "endSeconds": 479,
+            "summary": "A kindergarten teacher at Henry Ford School spoke about the rising cost of living in the Bay Area, arguing that teachers deserve compensation sufficient to afford to live near where they teach, in order to attract and retain quality educators."
+          },
+          {
+            "name": "Bree Henney",
+            "startSeconds": 496,
+            "endSeconds": 669,
+            "summary": "A Clifford parent expressed outrage about a teacher with a history of inappropriate conduct being hired at the school, demanded full transparency from the district about its hiring practices and safeguards, and called for accountability."
+          },
+          {
+            "name": "Sarah Heder-Spack",
+            "startSeconds": 684,
+            "endSeconds": 819,
+            "summary": "A Clifford parent of two students questioned how the district found it acceptable to hire an accused sexual harasser, called for a retroactive review of hiring across the district under AB 2534, and said community trust had been shattered."
+          },
+          {
+            "name": "Josh Levinson",
+            "startSeconds": 828,
+            "endSeconds": 924,
+            "summary": "A Clifford parent of three students said he filed a formal Title IX complaint after learning from his son about ongoing concerning behavior by the teacher, and urged the board to acknowledge the issue is not merely historical and commit to transparency and long-term change."
+          },
+          {
+            "name": "Jonathan Cantu",
+            "startSeconds": 980,
+            "endSeconds": 1007,
+            "summary": "Asked via Zoom whether the board finds it acceptable to employ a teacher fired for inappropriately touching students, and what action the board will take if not."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Labor Association Comments",
+        "phases": {
+          "opened": 1007,
+          "presentation": 1045,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Shauna Ingersoll",
+            "startSeconds": 1045,
+            "endSeconds": 1163,
+            "summary": "Chapter 5 President announced a $100 scholarship for an outstanding 8th grade graduating student, reminded principals of the submission deadline, and invited classified staff to a Classified Appreciation Week dinner on May 16th."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Approval of the Bond Program Consent Items",
+        "phases": {
+          "opened": 1163,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 1184,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6.1",
+        "title": "Approval of Program and Construction Management Services Amendment #7 with Cumming Group",
+        "phases": {
+          "opened": 1163,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 1184,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6.2",
+        "title": "Approval of Measure T Bond Program Tracking List of Items Under $20k",
+        "phases": {
+          "opened": 1163,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 1184,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Bond Program Action Items",
+        "phases": {
+          "opened": 1184,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7.1",
+        "title": "Approval of Agreement between the Redwood City School District and PowerFlex for the Purchase of 8 EV Chargers for Hoover Community School and Roy Cloud School",
+        "phases": {
+          "opened": 1184,
+          "presentation": 1205,
+          "publicComment": null,
+          "discussion": 1284,
+          "vote": {
+            "seconds": 1417,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.1",
+        "title": "North Star School Presentation and School Plan for Student Achievement (SPSA) Approval",
+        "phases": {
+          "opened": 1417,
+          "presentation": 1439,
+          "publicComment": null,
+          "discussion": 2232,
+          "vote": {
+            "seconds": 1120,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.2",
+        "title": "Henry Ford School Presentation and School Plan for Student Achievement (SPSA) Approval",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.3",
+        "title": "Approval of Reclassification of Classified Employees",
+        "phases": {
+          "opened": 3133,
+          "presentation": 3140,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3177,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.4",
+        "title": "Adoption of Resolution No. 24, Final Notification Regarding Non-Reemployment of Classified Employees for the 2026–27 School Year",
+        "phases": {
+          "opened": 3184,
+          "presentation": 3188,
+          "publicComment": null,
+          "discussion": 3242,
+          "vote": {
+            "seconds": 3291,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.5",
+        "title": "Adoption of Resolution No. 25, Final Notification Regarding Non-Reemployment of Certificated Employees for the 2026–27 School Year",
+        "phases": {
+          "opened": 3293,
+          "presentation": 3296,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 3398,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.6",
+        "title": "Adoption of Resolution No. 26, Approval of EV Charging Hardware and Software Contract Pursuant to Public Contract Code §20118.2",
+        "phases": {
+          "opened": 3409,
+          "presentation": 3421,
+          "publicComment": null,
+          "discussion": 3485,
+          "vote": {
+            "seconds": 3519,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.7",
+        "title": "Approval of the Agreement for Atlas Pellizzari Electric for the amount of $70,520 to Install the PowerFlex Electric Vehicle Chargers at Adelante Selby, Clifford, and Kennedy Schools",
+        "phases": {
+          "opened": 3520,
+          "presentation": 3534,
+          "publicComment": null,
+          "discussion": 3566,
+          "vote": {
+            "seconds": 3583,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.8",
+        "title": "Approval of Contract with Looking Point to move Redwood City School District Servers to Microsoft Azure Cloud Services",
+        "phases": {
+          "opened": 3589,
+          "presentation": 3604,
+          "publicComment": null,
+          "discussion": 3913,
+          "vote": {
+            "seconds": 3543,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.1",
+        "title": "Discussion of Proposed Board Meeting Calendar for the 2026–27 School Year",
+        "phases": {
+          "opened": 4550,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 4550,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "Approval of Consent Items (Action Required)",
+        "phases": {
+          "opened": 5719,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 5790,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.1",
+        "title": "Acceptance of Donation",
+        "phases": {
+          "opened": 5719,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 5790,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.2",
+        "title": "Approval of the Agreement between Redwood City School District and Casa Circulo Cultural Inc. for Summer 2026",
+        "phases": {
+          "opened": 5719,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 5790,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.3",
+        "title": "Approval of Agreement between Redwood City School District and TadHealth to Bill for Counseling Services for the 2026–2027 School Year",
+        "phases": {
+          "opened": 5719,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 5790,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.4",
+        "title": "Approval of the Amendment No. 1 to the Agreement between the Redwood City School District and Redwood City PAL for the 2025-2026 School Year",
+        "phases": {
+          "opened": 5719,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 5790,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.5",
+        "title": "Approval of the Amendment No. 1 between Redwood City School District and Rebekah Will Audiology, P.C. for Audiology Services for the 2025–2026 School Year",
+        "phases": {
+          "opened": 5719,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 5790,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.6",
+        "title": "Approval of the increase of Daylight PO by $75,000",
+        "phases": {
+          "opened": 5719,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 5790,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.7",
+        "title": "Approval of Agreement with CP Mechanical to Replace the Kitchen Rooftop Unit (RTU) & the RTU #7 unit at McKinley",
+        "phases": {
+          "opened": 5719,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 5790,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.8",
+        "title": "Approval of Agreement with CP Mechanical to Repair the AC #4 Compressor at the District Office",
+        "phases": {
+          "opened": 5719,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 5790,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.9",
+        "title": "Approval of Board Policy 0400: Comprehensive Plans",
+        "phases": {
+          "opened": 5719,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 5790,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.10",
+        "title": "Approval of Board Policy 0420: School Plans/Site Councils",
+        "phases": {
+          "opened": 5719,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 5790,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.11",
+        "title": "Approval of Board Policy 0420.42: Charter School Renewal",
+        "phases": {
+          "opened": 5719,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 5790,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.12",
+        "title": "Approval of Board Policy 4156.2: Awards And Recognition",
+        "phases": {
+          "opened": 5719,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 5790,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.13",
+        "title": "Approval of Board Policy 4256.2: Awards And Recognition",
+        "phases": {
+          "opened": 5719,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 5790,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.14",
+        "title": "Approval of Board Policy 4154: Health And Welfare Benefits",
+        "phases": {
+          "opened": 5719,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 5790,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.15",
+        "title": "Approval of Board Policy 4254: Health And Welfare Benefits",
+        "phases": {
+          "opened": 5719,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 5790,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.16",
+        "title": "Approval of Board Policy 4354: Health And Welfare Benefits",
+        "phases": {
+          "opened": 5719,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 5790,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.17",
+        "title": "Approval of Board Policy 4361: Leaves",
+        "phases": {
+          "opened": 5719,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 5790,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.18",
+        "title": "Approval of Board Policy 5000: Concepts And Roles",
+        "phases": {
+          "opened": 5719,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 5790,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.19",
+        "title": "Approval of Board Policy 5020: Parent Rights And Responsibilities",
+        "phases": {
+          "opened": 5719,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 5790,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.20",
+        "title": "Approval of Board Policy 5111: Admission",
+        "phases": {
+          "opened": 5719,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 5790,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.21",
+        "title": "Approval of Board Policy 5112.3: Student Leave Of Absence",
+        "phases": {
+          "opened": 5719,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 5790,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.22",
+        "title": "Approval of Board Policy 5112.5: Open/Closed Campus",
+        "phases": {
+          "opened": 5719,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 5790,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.23",
+        "title": "Approval of Board Policy 5113: Absences And Excuses",
+        "phases": {
+          "opened": 5719,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 5790,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.24",
+        "title": "Approval of Board Policy 5116.2: Involuntary Student Transfers",
+        "phases": {
+          "opened": 5719,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 5790,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.25",
+        "title": "Approval of Board Policy 5117: Interdistrict Attendance",
+        "phases": {
+          "opened": 5719,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 5790,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.26",
+        "title": "Approval of Board Policy 5119: Students Expelled From Other Districts",
+        "phases": {
+          "opened": 5719,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 5790,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.27",
+        "title": "Approval of Board Policy 5125: Student Records",
+        "phases": {
+          "opened": 5719,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 5790,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.28",
+        "title": "Approval of Board Policy 5125.1: Release Of Directory Information",
+        "phases": {
+          "opened": 5719,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 5790,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.29",
+        "title": "Approval of Board Policy 5131.2: Bullying",
+        "phases": {
+          "opened": 5719,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 5790,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.30",
+        "title": "Approval of Board Policy 5131.7: Weapons And Dangerous Instruments",
+        "phases": {
+          "opened": 5719,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 5790,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.31",
+        "title": "Approval of Board Policy 5136: Gangs",
+        "phases": {
+          "opened": 5719,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 5790,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.32",
+        "title": "Approval of Board Policy 5141.4: Child Abuse Prevention And Reporting",
+        "phases": {
+          "opened": 5719,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 5790,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.33",
+        "title": "Approval of Board Policy 5142: Safety",
+        "phases": {
+          "opened": 5719,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 5790,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.34",
+        "title": "Approval of Board Policy 5144: Discipline",
+        "phases": {
+          "opened": 5719,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 5790,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.35",
+        "title": "Approval of Board Policy 5144.1: Suspension And Expulsion/Due Process",
+        "phases": {
+          "opened": 5719,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 5790,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.36",
+        "title": "Approval of Board Policy 5144.4: Required Parental Attendance",
+        "phases": {
+          "opened": 5719,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 5790,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.37",
+        "title": "Approval of Board Policy 5145.12: Search And Seizure",
+        "phases": {
+          "opened": 5719,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 5790,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.38",
+        "title": "Approval of Board Policy 5145.2: Freedom Of Speech/Expression",
+        "phases": {
+          "opened": 5719,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 5790,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.39",
+        "title": "Approval of Board Policy 5146: Married/Pregnant/Parenting Students",
+        "phases": {
+          "opened": 5719,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 5790,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.40",
+        "title": "Approval of Board Policy 6142.92: Mathematics Instruction",
+        "phases": {
+          "opened": 5719,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 5790,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.41",
+        "title": "Approval of Request to Discard Obsolete and Damaged Library Books",
+        "phases": {
+          "opened": 5719,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 5790,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.42",
+        "title": "Ratification of Warrant Registers, April 1, 2026 – April 30, 2026",
+        "phases": {
+          "opened": 5719,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 5790,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10.43",
+        "title": "Approval to Participate in PG&E's Government K-12 Program for Water Heater Replacement Program",
+        "phases": {
+          "opened": 5719,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 5790,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "Board and Superintendent Reports",
+        "phases": {
+          "opened": 5794,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 5794,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12",
+        "title": "Information",
+        "phases": {
+          "opened": 6406,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.1",
+        "title": "Information on San Mateo County Investment Fund - March 2026",
+        "phases": {
+          "opened": 6406,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.2",
+        "title": "RCSD Review of Connect Community Charter Second Interim Financial Report for FY 2025-26",
+        "phases": {
+          "opened": 6434,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.3",
+        "title": "RCSD Review of KIPP Excelencia Community Prep Charter Second Interim Financial Report for FY 2025-26",
+        "phases": {
+          "opened": 6435,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12.4",
+        "title": "RCSD Review of Rocketship Redwood City Prep Charter School Second Interim Financial Report for FY 2025-26",
+        "phases": {
+          "opened": 6436,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 6437,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 6458,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14",
+        "title": "Other Business/Suggested Items for Future Agenda",
+        "phases": {
+          "opened": 6518,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 6518,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Board of Trustees Meeting Reflection",
+        "phases": {
+          "opened": 6557,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 6568,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16",
+        "title": "Board of Trustees Meeting Calendar",
+        "phases": {
+          "opened": 6971,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 6971,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "17",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 6999,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 7005,
+            "type": "voice",
+            "result": "unanimous aye"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
   "2026-04-22-regular": {
     "videoId": "8ypMIkdV5jw",
     "speakers": {
@@ -7413,6 +9246,524 @@
       }
     ]
   },
+  "2025-11-12-regular": {
+    "videoId": "Pk0Zg38fzKc",
+    "speakers": {
+      "A": {
+        "name": "Mike Wells",
+        "role": "Board President"
+      },
+      "B": {
+        "name": "Evelyn Sanchez",
+        "role": "Executive Assistant to Superintendent / Board Secretary"
+      },
+      "C": {
+        "name": "Various presenters / Amy Gerstein / Ana Paula Garay / Kristin Geiser / Apurva Bhatt / Jackie Campos",
+        "role": "Multiple presenters throughout meeting"
+      }
+    },
+    "agendaChanges": null,
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order",
+        "phases": {
+          "opened": 5,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "Roll Call",
+        "title": "Roll Call",
+        "phases": {
+          "opened": 5,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Welcome",
+        "phases": {
+          "opened": 20,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 100,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Approval of the Agenda",
+        "phases": {
+          "opened": 102,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 107,
+            "type": "voice",
+            "result": "3-0 (Márquez and King absent)"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Public Comment",
+        "phases": {
+          "opened": 112,
+          "presentation": null,
+          "publicComment": 134,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Agustin Espino",
+            "startSeconds": 148,
+            "endSeconds": 270,
+            "summary": "Expressed concern that Latino and other students have been struggling for years, cited state data, and asked the board to find solutions including possible teacher assistants or smaller class sizes."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Approval of the Bond Program Consent Item(s) — Geotechnical, Special Testing, and Inspection Agreement between RCSD and Ninyo and Moore",
+        "phases": {
+          "opened": 275,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 292,
+            "type": "voice",
+            "result": "3-0 (Márquez and King absent)"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Bond Program Action Item(s)",
+        "phases": {
+          "opened": 302,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.1",
+        "title": "Community Schools & Partnerships Department Board Report",
+        "phases": {
+          "opened": 307,
+          "presentation": 386,
+          "publicComment": 4261,
+          "discussion": 4734,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Lisbeth Estrada",
+            "startSeconds": 4290,
+            "endSeconds": 4489,
+            "summary": "Spoke (in Spanish) about the importance of community schools as the heart of the community, and requested new workshops to help families prepare younger children for school and support special education students."
+          },
+          {
+            "name": "Leighann Thompson",
+            "startSeconds": 6514,
+            "endSeconds": 6578,
+            "summary": "Noted that the Mathnasium tutoring program at Clifford is run by a parent and funded by the PTO, and encouraged the district to better leverage parents and local businesses as resources."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8.2",
+        "title": "Mental Health Program Board Report",
+        "phases": {
+          "opened": 6578,
+          "presentation": 6616,
+          "publicComment": null,
+          "discussion": 10547,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.1",
+        "title": "First Reading and Discussion of Board Policy 3311.1: Uniform Public Construction Cost Accounting Procedures",
+        "phases": {
+          "opened": 11793,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.2",
+        "title": "First Reading and Discussion of Board Policy and Administrative Regulation 0420.4: Charter School Authorization",
+        "phases": {
+          "opened": 11803,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.3",
+        "title": "First Reading and Discussion of Board Policy 0420.41: Charter School Oversight",
+        "phases": {
+          "opened": 11812,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.4",
+        "title": "First Reading and Discussion of Board Policy and Administrative Regulation 3100: Budget",
+        "phases": {
+          "opened": 11819,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 11847,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.5",
+        "title": "First Reading and Discussion of Board Policy and Administrative Regulation 3260: Fees and Charges",
+        "phases": {
+          "opened": 11880,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.6",
+        "title": "First Reading and Discussion of Board Policy and Administrative Regulation 3311: Bids",
+        "phases": {
+          "opened": 11918,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.7",
+        "title": "First Reading and Discussion of Board Policy 3312: Contracts",
+        "phases": {
+          "opened": 11884,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 11999,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.8",
+        "title": "First Reading and Discussion of Board Policy and Administrative Regulation 3550: Food Service/Child Nutrition Program",
+        "phases": {
+          "opened": 12013,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 12035,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.9",
+        "title": "First Reading and Discussion of Board Policy and Administrative Regulation 3551: Food Service Operations/Cafeteria Fund",
+        "phases": {
+          "opened": 12095,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 12100,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.10",
+        "title": "First Reading and Discussion of Board Policy and Administrative Regulation 3553: Free and Reduced Price Meals",
+        "phases": {
+          "opened": 12210,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.11",
+        "title": "First Reading and Discussion of Board Policy and Administrative Regulation 4121: Temporary/Substitute Personnel",
+        "phases": {
+          "opened": 12222,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.12",
+        "title": "First Reading and Discussion of Board Policy 6144: Controversial Issues",
+        "phases": {
+          "opened": 12228,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 12236,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.13",
+        "title": "First Reading and Discussion of Board Policy and Administrative Regulation 7214: General Obligation Bonds",
+        "phases": {
+          "opened": 13484,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9.14",
+        "title": "First Reading and Discussion of Board Bylaw 9250: Remuneration, Reimbursement, and Other Benefits",
+        "phases": {
+          "opened": 13497,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 13524,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "Approval of Consent Items (Action Required)",
+        "phases": {
+          "opened": 14095,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 14100,
+            "type": "voice",
+            "result": "3-0 (Márquez and King absent)"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "Action Items (Action Required)",
+        "phases": {
+          "opened": 14108,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12",
+        "title": "Board and Superintendent Reports",
+        "phases": {
+          "opened": 14110,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 14110,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "Information",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14",
+        "title": "Correspondence",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Other Business/Suggested Items for Future Agenda",
+        "phases": {
+          "opened": 14390,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 14390,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16",
+        "title": "Board of Trustees Meeting Reflection",
+        "phases": {
+          "opened": 14422,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 14422,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "17",
+        "title": "Board of Trustees Meeting Calendar",
+        "phases": {
+          "opened": 14658,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 14658,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "18",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 14696,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 14730,
+            "type": "voice",
+            "result": "3-0 (Márquez and King absent)"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
   "2025-10-22-regular": {
     "videoId": "RAoGh9R-GDM",
     "speakers": {
@@ -9962,6 +12313,1047 @@
           "discussion": null,
           "vote": {
             "seconds": 3435,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      }
+    ]
+  },
+  "2025-08-19-regular": {
+    "videoId": "B8blJsqUL_4",
+    "speakers": {
+      "A": {
+        "name": "Mike Wells",
+        "role": "Board President"
+      },
+      "B": {
+        "name": "Evelyn Sanchez",
+        "role": "Executive Assistant to Superintendent / Board Secretary"
+      },
+      "C": {
+        "name": "David Li",
+        "role": "Trustee"
+      },
+      "D": {
+        "name": "David Weekly",
+        "role": "Vice President"
+      },
+      "E": {
+        "name": "John Baker",
+        "role": "Superintendent"
+      },
+      "F": {
+        "name": "Bryan Godbe",
+        "role": "Godbe Research (remote presenter)"
+      },
+      "G": {
+        "name": "Jeremy Hauser",
+        "role": "TeamCivX Partner (presenter)"
+      }
+    },
+    "agendaChanges": "No changes to the agenda were made. The recording begins at the Reconvene to Open Session (Section 4); the Closed Session (Section 3) and earlier items are not captured in the transcript. The Roll Call, Report Out on Closed Session, Welcome, Changes to the Agenda, and Approval of the Agenda all occur in rapid succession at the start of the recording. The public hearing (Section 12) and its associated action item (Resolution No. 3, Section 14) were handled in the order listed on the agenda. Section 13 consent items were approved as a bundle. Sections 15 through 20 followed in order.",
+    "items": [
+      {
+        "itemLabel": "1",
+        "title": "Call to Order",
+        "phases": {
+          "opened": 6,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "Roll Call",
+        "title": "Roll Call (Open Session)",
+        "phases": {
+          "opened": 6,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "2",
+        "title": "Public Comment on Closed Session Items Only",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "3",
+        "title": "Closed Session - 6:30 PM",
+        "phases": {
+          "opened": null,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "4",
+        "title": "Reconvene to Open Session / Roll Call / Report Out on Closed Session",
+        "phases": {
+          "opened": 6,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "5",
+        "title": "Welcome",
+        "phases": {
+          "opened": 22,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "6",
+        "title": "Changes to the Agenda",
+        "phases": {
+          "opened": 138,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "7",
+        "title": "Approval of the Agenda",
+        "phases": {
+          "opened": 140,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 151,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "8",
+        "title": "Public Comment",
+        "phases": {
+          "opened": 157,
+          "presentation": null,
+          "publicComment": 157,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "9",
+        "title": "Approval of the Bond Program Consent Items",
+        "phases": {
+          "opened": 162,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 175,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "10",
+        "title": "Bond Program Action Items",
+        "phases": {
+          "opened": 179,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11",
+        "title": "Discussion Items",
+        "phases": {
+          "opened": 183,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11.1",
+        "title": "Discussion of Parcel Tax Survey Findings and Recommended Next Steps",
+        "phases": {
+          "opened": 183,
+          "presentation": 357,
+          "publicComment": 2323,
+          "discussion": 2647,
+          "vote": null
+        },
+        "publicComments": [
+          {
+            "name": "Jessica Shade",
+            "startSeconds": 2345,
+            "endSeconds": 2440,
+            "summary": "Expressed strong parent support for the parcel tax, praised the equity of the square-footage model, noted polls are close to the two-thirds threshold and called for all-hands-on-deck community involvement."
+          },
+          {
+            "name": "Carlo Contavalli",
+            "startSeconds": 2466,
+            "endSeconds": 2536,
+            "summary": "Argued that the poll results show a good chance of passage and urged the board to put the measure on the ballot, warning that inaction would only worsen the district's funding situation."
+          },
+          {
+            "name": "Brandon Matthews",
+            "startSeconds": 2548,
+            "endSeconds": 2645,
+            "summary": "Expressed wholehearted support for the parcel tax on behalf of Unidos/Adelante Selby PTO, highlighting the equitable and progressive nature of the square-footage structure and the school's limited fundraising capacity."
+          }
+        ],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "11.2",
+        "title": "Discussion of School Assignments and Committee Assignments for Board Members for the 2025–26 School Year",
+        "phases": {
+          "opened": 3728,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 3728,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "12",
+        "title": "Public Hearing of Sufficiency of Instructional Materials for the 2025-2026 School Year",
+        "phases": {
+          "opened": 4183,
+          "presentation": 4247,
+          "publicComment": 4264,
+          "discussion": 4294,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13",
+        "title": "Approval of Consent Items",
+        "phases": {
+          "opened": 4397,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4416,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13.1",
+        "title": "Approval of the June 11, June 18, and June 25, 2025, Board Meeting Minutes",
+        "phases": {
+          "opened": 4397,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4416,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13.2",
+        "title": "Third Reading and Approval of Board Policy and Administrative Regulation 5123 - Promotion/Acceleration/Retention",
+        "phases": {
+          "opened": 4397,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4416,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13.3",
+        "title": "Approval of Roy Cloud School Field Trip to Golden Gate National Recreation Area (GGNRA) – October 1, 2025 – October 3, 2025",
+        "phases": {
+          "opened": 4397,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4416,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13.4",
+        "title": "Approval of the Agreement between Redwood City School District and YMCA of Silicon Valley for the 2025-2026 School Year",
+        "phases": {
+          "opened": 4397,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4416,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13.5",
+        "title": "Approval of the Agreement between the Redwood City School District and Casa Circulo Cultural Inc. for the 2025-2026 School Year",
+        "phases": {
+          "opened": 4397,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4416,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13.6",
+        "title": "Approval of the Agreement between Redwood City School District and the City of Redwood City (REACH) for the 2025-2026 School Year",
+        "phases": {
+          "opened": 4397,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4416,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13.7",
+        "title": "Approval of the Agreement between Redwood City School District and the Regents of the University of California for the 2025-2026 School Year",
+        "phases": {
+          "opened": 4397,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4416,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13.8",
+        "title": "Approval of the Agreements between Redwood City School District and Procare Therapy to fill two vacant Licensed Vocational Nurse (LVN) Positions for the 2025-2026 School Year",
+        "phases": {
+          "opened": 4397,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4416,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13.9",
+        "title": "Approval of the Agreement between Redwood City School District and Amergis Healthcare Staffing for the 2025-2026 School Year",
+        "phases": {
+          "opened": 4397,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4416,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13.10",
+        "title": "Approval of the Amendment to the Agreement between Redwood City School District and Catalyst Family Inc. for the 2025-2026 School Year and Summer",
+        "phases": {
+          "opened": 4397,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4416,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13.11",
+        "title": "Approval of the Memorandum of Understanding between Redwood City School District and the Santa Clara County Office of Education (SCCOE) for the 2025-2026 School Year",
+        "phases": {
+          "opened": 4397,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4416,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13.12",
+        "title": "Approval of the Teacher Induction Agreement with San Mateo County Office of Education",
+        "phases": {
+          "opened": 4397,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4416,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13.13",
+        "title": "Approval of Teacher Created Materials Language Power ELD Curriculum for the school year 2025-2026",
+        "phases": {
+          "opened": 4397,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4416,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13.14",
+        "title": "Approval of Local Interagency Agreement to Provide Education and Training to Credential Candidates - San Francisco State University - Student Teachers",
+        "phases": {
+          "opened": 4397,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4416,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13.15",
+        "title": "Approval of Local Interagency Agreement to Provide Education and Training to Credential Candidates - San Jose State University - Intern Program (Pre-K to 3rd)",
+        "phases": {
+          "opened": 4397,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4416,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13.16",
+        "title": "Approval of Local Interagency Agreement to Provide Education and Training to Credential Candidates - San Jose State University - Intern Program - (Multiple and Single Subject)",
+        "phases": {
+          "opened": 4397,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4416,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13.17",
+        "title": "Approval of Local Interagency Agreement to Provide Education and Training to Credential Candidates - REACH University",
+        "phases": {
+          "opened": 4397,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4416,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13.18",
+        "title": "Approval of Local Interagency Agreement to Provide Education and Training to Credential Candidates - Notre Dame de Namur University - Unpaid Student Teachers",
+        "phases": {
+          "opened": 4397,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4416,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13.19",
+        "title": "Approval of Local Interagency Agreement to Provide Education and Training to Credential Candidates - Notre Dame de Namur University - Intern Program",
+        "phases": {
+          "opened": 4397,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4416,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13.20",
+        "title": "Approval of Personnel Report",
+        "phases": {
+          "opened": 4397,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4416,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13.21",
+        "title": "Approval of Non-Public School (NPS)/Non-Public Agency (NPA) Master Contracts",
+        "phases": {
+          "opened": 4397,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4416,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13.22",
+        "title": "Approval of the Facilities Use Agreement between Redwood City School District and Connect Community Charter School for the 2025-2030 School Years",
+        "phases": {
+          "opened": 4397,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4416,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13.23",
+        "title": "Extension of Bid with Healthy Kids/Tasty Pizza for the 25-26 School Year",
+        "phases": {
+          "opened": 4397,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4416,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13.24",
+        "title": "Extension of Bid with Allen Bros./Del Monte Meats for the 25-26 School Year",
+        "phases": {
+          "opened": 4397,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4416,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13.25",
+        "title": "Extension of Bid with Bonami Baking Company for the 25-26 School Year",
+        "phases": {
+          "opened": 4397,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4416,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13.26",
+        "title": "Extension of Bid with Sysco Foods for Grocery Products for the 25-26 School Year",
+        "phases": {
+          "opened": 4397,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4416,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13.27",
+        "title": "Extension of Bid with Pacific Produce Company/Pacific Rim Produce for the 25-26 School Year",
+        "phases": {
+          "opened": 4397,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4416,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13.28",
+        "title": "Extension of Bid with Daylight Foods for the 25-26 School Year",
+        "phases": {
+          "opened": 4397,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4416,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13.29",
+        "title": "Extension of Bid with Sysco Foods Protein for the 25-26 School Year",
+        "phases": {
+          "opened": 4397,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4416,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13.30",
+        "title": "Ratification of Warrant Registers, June 1, 2025 - June 30, 2025",
+        "phases": {
+          "opened": 4397,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4416,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "13.31",
+        "title": "Ratification of Warrant Registers, July 1, 2025 - July 31, 2025",
+        "phases": {
+          "opened": 4397,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 4416,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": true,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14",
+        "title": "Action Items",
+        "phases": {
+          "opened": 4419,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.1",
+        "title": "Approval of Memorandum of Understanding – Connect Community Charter School (2025–2030)",
+        "phases": {
+          "opened": 4419,
+          "presentation": 4447,
+          "publicComment": null,
+          "discussion": 4487,
+          "vote": {
+            "seconds": 4496,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.2",
+        "title": "Adoption of Resolution No. 1: Teachers Gaining Permanent Status",
+        "phases": {
+          "opened": 4499,
+          "presentation": 4506,
+          "publicComment": null,
+          "discussion": 4543,
+          "vote": {
+            "seconds": 4561,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.3",
+        "title": "Adoption of Resolution No. 2, Approval of Education Code and Title V Options for Teaching Assignments",
+        "phases": {
+          "opened": 4567,
+          "presentation": 4577,
+          "publicComment": null,
+          "discussion": 4640,
+          "vote": {
+            "seconds": 4661,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.4",
+        "title": "Adoption of Resolution No. 3 Sufficiency of Instructional Materials for the 2025-26 School Year",
+        "phases": {
+          "opened": 4662,
+          "presentation": 4672,
+          "publicComment": null,
+          "discussion": 4683,
+          "vote": {
+            "seconds": 4697,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "14.5",
+        "title": "Approval of Provisional Internship Permit",
+        "phases": {
+          "opened": 4700,
+          "presentation": 4708,
+          "publicComment": null,
+          "discussion": 4751,
+          "vote": {
+            "seconds": 4762,
+            "type": "voice",
+            "result": "5-0"
+          }
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "15",
+        "title": "Board and Superintendent Reports",
+        "phases": {
+          "opened": 4765,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 4765,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "16",
+        "title": "Information",
+        "phases": {
+          "opened": 4918,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 4918,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "17",
+        "title": "Correspondence",
+        "phases": {
+          "opened": 4935,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 4935,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "18",
+        "title": "Other Business/Suggested Items for Future Agenda",
+        "phases": {
+          "opened": 4964,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 4964,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "19",
+        "title": "Board of Trustees Meeting Calendar",
+        "phases": {
+          "opened": 5018,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": 5018,
+          "vote": null
+        },
+        "publicComments": [],
+        "consent": false,
+        "pulled": false
+      },
+      {
+        "itemLabel": "20",
+        "title": "Adjournment",
+        "phases": {
+          "opened": 5075,
+          "presentation": null,
+          "publicComment": null,
+          "discussion": null,
+          "vote": {
+            "seconds": 5094,
             "type": "voice",
             "result": "5-0"
           }
