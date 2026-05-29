@@ -35,6 +35,7 @@ Every dataset on this site is traceable to its public source. We document the or
 | CDE datasets | `data/cde/*.json` | Absenteeism, LTEL, staff ethnicity/experience/ratios via `pull-cde-data.mjs` |
 | SPSA extraction | `data/ssc-membership.json`, `data/spsa-budgets.json` | SSC membership and budgets extracted from SPSA PDFs via Claude Haiku |
 | SSC meetings | `data/ssc-meetings.json` | Per-meeting SSC agenda/minutes PDFs, published per-school to `documents/ssc/{school}/{year}/` on R2 |
+| Committees | `data/committees/*.json`, [`docs/COMMITTEES.md`](docs/COMMITTEES.md) | District/school committees (CBOC, DELAC, …); recordings discovered from the YouTube index, transcribed + translated like board meetings (transcripts at `transcripts/<id>-<date>.json`) |
 
 AI-generated content (meeting summaries, timestamp mappings) is always labeled as such and links back to the source transcript or agenda.
 
@@ -92,11 +93,13 @@ Scripts run in order. Most can be run independently. All cache aggressively — 
  Build
  ─────
  8.  build:data           → data/meetings-data.json
+ 8b. build-committees.mjs → data/committees/*.json (recordings + transcript status)
  9.  build:home           → docs/index.html, sitemap.xml, robots.txt
  10. build:html           → docs/meetings/index.html
+ 10b. build-committee-pages.mjs → docs/committees/**, docs/comites/** (EN + ES)
  11. build:schools        → docs/schools/**/index.html
  12. build:charters       → docs/charters/**, docs/escuelas-charter/**
- 13. build:district       → docs/district/index.html
+ 13. build:district       → docs/district/index.html (incl. Committees section)
  14. build:budget         → docs/district/budget/
  15. build:blog           → docs/blog/**
 

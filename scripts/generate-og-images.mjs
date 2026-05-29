@@ -608,7 +608,82 @@ const TOP_LEVEL_PAGES = [
       tagline: 'Notas sobre los datos, la metodología y lo que vamos aprendiendo en este sitio.',
     },
   },
+  {
+    name: 'committees',
+    en: {
+      kicker: 'GOVERNANCE · OVERSIGHT',
+      title: 'Committees',
+      tagline: 'District and school committees — meetings, members, and recordings where available.',
+      badgeParts: ['CBOC', 'DELAC', 'Video + Transcript'],
+    },
+    es: {
+      kicker: 'GOBERNANZA · SUPERVISIÓN',
+      title: 'Comités',
+      tagline: 'Comités del distrito y de las escuelas — reuniones, miembros y grabaciones cuando hay.',
+      badgeParts: ['CBOC', 'DELAC', 'Video + Transcripción'],
+    },
+  },
 ];
+
+// Per-committee home card (page-<id>) and per-recorded-meeting card (<transcriptKey>).
+function committeeHomeTemplate({ committee, lang }) {
+  const name = lang === 'es' ? committee.nameEs : committee.nameEn;
+  const desc = (lang === 'es' ? committee.descriptionEs : committee.descriptionEn) || '';
+  const kicker = (committee.scope === 'school' ? 'SCHOOL COMMITTEE' : 'DISTRICT COMMITTEE');
+  return frame([
+    eyebrow(lang === 'es' ? (committee.scope === 'school' ? 'COMITÉ ESCOLAR' : 'COMITÉ DEL DISTRITO') : kicker),
+    headline(name, fitHeadline(name, 88, 48)),
+    desc ? subhead(desc.slice(0, 140)) : null,
+    rule(220),
+    footer(lang),
+  ].filter(Boolean));
+}
+
+function committeeMeetingTemplate({ committee, date, duration, lang }) {
+  const S = STRINGS[lang] || STRINGS.en;
+  const name = lang === 'es' ? committee.nameEs : committee.nameEn;
+  const dateStr = new Date(date + 'T12:00:00').toLocaleDateString(S.dateLocale, {
+    weekday: 'long', month: 'long', day: 'numeric', year: 'numeric',
+  }).toUpperCase();
+  const badgeParts = [duration, lang === 'es' ? 'Video + Transcripción' : 'Video + Transcript'].filter(Boolean);
+  return frame([
+    eyebrow(dateStr),
+    headline(name, fitHeadline(name, 72, 44)),
+    rule(220),
+    badges(badgeParts),
+    footer(lang),
+  ].filter(Boolean));
+}
+
+function loadCommitteesCatalog() {
+  const dir = resolve(ROOT, 'data/committees');
+  if (!existsSync(dir)) return [];
+  const out = [];
+  for (const file of readdirSync(dir).filter(f => f.endsWith('.json'))) {
+    const path = resolve(dir, file);
+    const c = JSON.parse(readFileSync(path, 'utf-8'));
+    for (const lang of ['en', 'es']) {
+      const suffix = lang === 'es' ? '-es' : '';
+      out.push({
+        slug: `page-${c.id}${suffix}`,
+        sources: [path],
+        render: () => committeeHomeTemplate({ committee: c, lang }),
+        output: resolve(OUT_DIR, `page-${c.id}${suffix}.png`),
+      });
+      for (const m of (c.meetings || [])) {
+        if (!m.youtube) continue;
+        const key = m.transcriptKey || `${c.id}-${m.date}`;
+        out.push({
+          slug: `${key}${suffix}`,
+          sources: [path],
+          render: () => committeeMeetingTemplate({ committee: c, date: m.date, duration: m.duration, lang }),
+          output: resolve(OUT_DIR, `${key}${suffix}.png`),
+        });
+      }
+    }
+  }
+  return out;
+}
 
 function loadPagesCatalog() {
   const out = [];
@@ -658,6 +733,7 @@ async function main() {
     { kind: 'meeting', items: loadMeetingsCatalog() },
     { kind: 'school',  items: loadSchoolsCatalog() },
     { kind: 'blog',    items: loadBlogCatalog() },
+    { kind: 'committee', items: loadCommitteesCatalog() },
     { kind: 'page',    items: loadPagesCatalog() },
   ];
 

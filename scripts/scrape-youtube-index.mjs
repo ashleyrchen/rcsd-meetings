@@ -1,19 +1,51 @@
 #!/usr/bin/env node
 /**
- * Scrape RCSD YouTube channel for board meeting videos.
- * Uses yt-dlp to fetch the channel's video list, filters to "Board of Trustees"
- * meetings, parses dates, and outputs youtube-index.json.
+ * Scrape RCSD YouTube channel for meeting videos.
+ * Uses yt-dlp to fetch the channel's video list, classifies each video by `kind`
+ * ("board" for Board of Trustees meetings, or a committee id such as "cboc" when the
+ * title matches a committee's videoTitleMatch hints), parses dates, and outputs
+ * youtube-index.json. Board-only consumers should filter to kind === 'board'.
  *
  * Usage: node scripts/scrape-youtube-index.mjs
  */
 
 import { execFileSync } from 'child_process';
-import { writeFileSync } from 'fs';
+import { writeFileSync, readFileSync, readdirSync, existsSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
+
+// Load committee video-title classifiers from data/committees/*.json. Each committee
+// may declare `videoTitleMatch` (case-insensitive substrings) used to tag its recordings.
+function loadCommitteeMatchers() {
+  const dir = resolve(ROOT, 'data/committees');
+  if (!existsSync(dir)) return [];
+  const matchers = [];
+  for (const file of readdirSync(dir).filter((f) => f.endsWith('.json'))) {
+    try {
+      const c = JSON.parse(readFileSync(resolve(dir, file), 'utf-8'));
+      const patterns = (c.videoTitleMatch || []).map((p) => p.toLowerCase());
+      if (c.id && patterns.length) matchers.push({ id: c.id, patterns });
+    } catch (err) {
+      console.warn(`  Skipping unreadable committee file ${file}: ${err.message}`);
+    }
+  }
+  return matchers;
+}
+
+const COMMITTEE_MATCHERS = loadCommitteeMatchers();
+
+// Classify a video title into a kind: 'board', a committee id, or null (skip).
+function classifyKind(title) {
+  if (title.includes('Board of Trustees')) return 'board';
+  const lower = title.toLowerCase();
+  for (const m of COMMITTEE_MATCHERS) {
+    if (m.patterns.some((p) => lower.includes(p))) return m.id;
+  }
+  return null;
+}
 
 const CHANNEL_URL = 'https://www.youtube.com/@redwoodcityschooldistrict/videos';
 
@@ -62,8 +94,8 @@ function parseDateFromTitle(title) {
   return `${m[3]}-${month}-${day}`;
 }
 
-// Filter to board meeting videos
-const boardMeetings = [];
+// Classify each video by kind (board / committee id), parse its date
+const meetings = [];
 for (const line of lines) {
   const parts = line.split('|');
   const id = parts[0];
@@ -71,8 +103,9 @@ for (const line of lines) {
   const uploadDate = parts[2];
   if (!title) continue;
 
-  // Must contain "Board of Trustees" (excludes superintendent updates, "Meet RCSD", etc.)
-  if (!title.includes('Board of Trustees')) continue;
+  // Classify: board, a committee id, or skip (superintendent updates, "Meet RCSD", etc.)
+  const kind = classifyKind(title);
+  if (!kind) continue;
 
   const meetingDate = parseDateFromTitle(title);
   if (!meetingDate) {
@@ -83,28 +116,33 @@ for (const line of lines) {
   // Only include videos from Apr 2020 onward (first board meeting on the channel)
   if (meetingDate < '2020-04-01') continue;
 
-  boardMeetings.push({ id, title: title.trim(), date: meetingDate, uploadDate });
+  meetings.push({ id, title: title.trim(), date: meetingDate, kind, uploadDate });
 }
 
-// For dates with multiple videos (e.g. closed + public session), prefer the public/regular one
-const byDate = new Map();
-for (const v of boardMeetings) {
-  const existing = byDate.get(v.date);
+// Dedup per (kind, date): a date can host both a board meeting and a committee meeting,
+// so keying on date alone would let one evict the other. Within board dates with multiple
+// videos (e.g. closed + public session), prefer the public/regular one.
+const byKindDate = new Map();
+for (const v of meetings) {
+  const key = `${v.kind}|${v.date}`;
+  const existing = byKindDate.get(key);
   if (!existing) {
-    byDate.set(v.date, v);
+    byKindDate.set(key, v);
   } else {
     // Prefer "Public Meeting" or "Regular Meeting" over "Closed Session" or "Special"
     const isPublic = v.title.includes('Public') || v.title.includes('Regular');
     const existingIsPublic = existing.title.includes('Public') || existing.title.includes('Regular');
     if (isPublic && !existingIsPublic) {
-      byDate.set(v.date, v);
+      byKindDate.set(key, v);
     }
   }
 }
 
-const deduped = [...byDate.values()].sort((a, b) => b.date.localeCompare(a.date));
+const deduped = [...byKindDate.values()].sort((a, b) => b.date.localeCompare(a.date));
 
-console.log(`Found ${boardMeetings.length} Board of Trustees meeting videos (${deduped.length} unique dates)`);
+const counts = deduped.reduce((acc, v) => { acc[v.kind] = (acc[v.kind] || 0) + 1; return acc; }, {});
+const countStr = Object.entries(counts).map(([k, n]) => `${n} ${k}`).join(', ');
+console.log(`Indexed ${deduped.length} meeting videos (${countStr})`);
 if (deduped.length > 0) {
   console.log(`  Date range: ${deduped[deduped.length - 1].date} to ${deduped[0].date}`);
 }

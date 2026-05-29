@@ -237,7 +237,9 @@ async function checkAndRestoreTranslation(date) {
 }
 
 async function main() {
-  // Load meetings from database to find all dates that should have transcripts
+  // Transcript keys that should have translations: board dates (meetings-data.json) plus
+  // committee transcriptKeys (<id>-<date>) from data/committees/*.json. Keys feed straight
+  // into translateMeeting() since it builds <key>.json / <key>-es.json paths.
   let dbDates = [];
   try {
     const dataPath = resolve(ROOT, 'data/meetings-data.json');
@@ -251,9 +253,22 @@ async function main() {
     console.warn(`  [Cache Restore] Failed to read meetings-data.json: ${err.message}`);
   }
 
+  const committeesDir = resolve(ROOT, 'data/committees');
+  if (existsSync(committeesDir)) {
+    for (const file of readdirSync(committeesDir).filter(f => f.endsWith('.json'))) {
+      try {
+        const c = JSON.parse(readFileSync(resolve(committeesDir, file), 'utf-8'));
+        for (const m of c.meetings || []) {
+          if (m.youtube && m.hasTranscript && m.transcriptKey) dbDates.push(m.transcriptKey);
+        }
+      } catch { /* skip unreadable committee file */ }
+    }
+  }
+
+  // Match board keys (2026-04-30.json) and committee keys (cboc-2026-04-30.json), excluding -es.
   const localFiles = existsSync(SLIM_DIR)
     ? readdirSync(SLIM_DIR)
-        .filter(f => f.match(/^\d{4}-\d{2}-\d{2}\.json$/) && !f.includes('-es'))
+        .filter(f => f.match(/^(?:[a-z][a-z0-9-]*-)?\d{4}-\d{2}-\d{2}\.json$/) && !f.includes('-es'))
         .map(f => f.replace('.json', ''))
     : [];
 

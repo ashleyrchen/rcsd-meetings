@@ -11,7 +11,7 @@
  * object to the CALENDARS registry in this script.
  */
 
-import { readFileSync, writeFileSync, existsSync } from 'fs';
+import { readFileSync, writeFileSync, existsSync, readdirSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
@@ -274,55 +274,61 @@ function generateSscCalendar(schoolSlug, schoolName, lang, context) {
 /**
  * Generates events for a specific district committee (e.g. DELAC, CBOC).
  */
-function generateCommitteeCalendar(committeeId, committeeMeta, lang, context) {
+function generateCommitteeCalendar(committee, lang, context) {
   const events = [];
-  const schoolYears = committeeMeta.meetings || {};
+  const committeeId = committee.id;
+  const homeUrl = lang === 'en'
+    ? `https://rcsd.info/committees/${committeeId}/`
+    : `https://rcsd.info/comites/${committeeId}/`;
 
-  for (const [year, meetings] of Object.entries(schoolYears)) {
-    for (const m of meetings) {
-      if (!m.date) continue;
-      const uid = `committee-${committeeId}-${m.date}-${year}@rcsd.info`;
-      const startHour = m.time || '18:00'; // Default to 6:00 PM if unspecified
-      
-      // Calculate end time (default to 1.5 hours later)
-      let endHour = '19:30';
-      const [h, min] = startHour.split(':').map(Number);
-      if (!isNaN(h) && !isNaN(min)) {
-        const endD = new Date();
-        endD.setHours(h);
-        endD.setMinutes(min + 90);
-        endHour = `${String(endD.getHours()).padStart(2, '0')}:${String(endD.getMinutes()).padStart(2, '0')}`;
-      }
+  for (const m of committee.meetings || []) {
+    if (!m.date) continue;
+    const uid = `committee-${committeeId}-${m.date}@rcsd.info`;
+    const startHour = m.time || '18:00'; // Default to 6:00 PM if unspecified
 
-      const agendaUrl = m.agendaPdf ? `https://data.rcsd.info/${m.agendaPdf}` : '';
-      const minutesUrl = m.minutesPdf ? `https://data.rcsd.info/${m.minutesPdf}` : '';
-      const location = m.location || (lang === 'en' ? 'District Office' : 'Oficina del Distrito');
-
-      const summary = lang === 'en' 
-        ? `${committeeMeta.nameEn} Meeting` 
-        : `Reunión de ${committeeMeta.nameEs}`;
-
-      let description = lang === 'en'
-        ? `Meeting of the ${committeeMeta.nameEn} (${year} school year).`
-        : `Reunión de ${committeeMeta.nameEs} (año escolar ${year}).`;
-
-      if (m.descriptionEn && lang === 'en') description = `${m.descriptionEn}\n\n${description}`;
-      if (m.descriptionEs && lang === 'es') description = `${m.descriptionEs}\n\n${description}`;
-
-      if (agendaUrl) description += `\nAgenda: ${agendaUrl}`;
-      if (minutesUrl) description += `\nMinutes/Actas: ${minutesUrl}`;
-
-      events.push({
-        uid,
-        isAllDay: false,
-        dtstart: formatTime(m.date, startHour),
-        dtend: formatTime(m.date, endHour),
-        summary,
-        description,
-        url: agendaUrl || minutesUrl || (lang === 'en' ? 'https://rcsd.info/meetings/' : 'https://rcsd.info/reuniones/'),
-        location,
-      });
+    // Calculate end time (default to 1.5 hours later)
+    let endHour = '19:30';
+    const [h, min] = startHour.split(':').map(Number);
+    if (!isNaN(h) && !isNaN(min)) {
+      const endD = new Date();
+      endD.setHours(h);
+      endD.setMinutes(min + 90);
+      endHour = `${String(endD.getHours()).padStart(2, '0')}:${String(endD.getMinutes()).padStart(2, '0')}`;
     }
+
+    const agendaUrl = m.agendaPdf ? `https://data.rcsd.info/${m.agendaPdf}` : '';
+    const minutesUrl = m.minutesPdf ? `https://data.rcsd.info/${m.minutesPdf}` : '';
+    // Link recorded meetings to their detail page; otherwise to the committee home.
+    const detailUrl = m.youtube
+      ? `${homeUrl}${m.date}/`
+      : (agendaUrl || minutesUrl || homeUrl);
+    const location = m.location || (lang === 'en' ? 'District Office' : 'Oficina del Distrito');
+
+    const summary = lang === 'en'
+      ? `${committee.nameEn} Meeting`
+      : `Reunión de ${committee.nameEs}`;
+
+    let description = lang === 'en'
+      ? `Meeting of the ${committee.nameEn}.`
+      : `Reunión de ${committee.nameEs}.`;
+
+    if (m.descriptionEn && lang === 'en') description = `${m.descriptionEn}\n\n${description}`;
+    if (m.descriptionEs && lang === 'es') description = `${m.descriptionEs}\n\n${description}`;
+
+    if (m.youtube) description += `\nVideo: https://www.youtube.com/watch?v=${m.youtube}`;
+    if (agendaUrl) description += `\nAgenda: ${agendaUrl}`;
+    if (minutesUrl) description += `\nMinutes/Actas: ${minutesUrl}`;
+
+    events.push({
+      uid,
+      isAllDay: false,
+      dtstart: formatTime(m.date, startHour),
+      dtend: formatTime(m.date, endHour),
+      summary,
+      description,
+      url: detailUrl,
+      location,
+    });
   }
 
   events.sort((a, b) => a.dtstart.localeCompare(b.dtstart));
@@ -381,14 +387,16 @@ function main() {
     context.schools = JSON.parse(readFileSync(schoolsPath, 'utf-8'));
   }
 
-  // Load committee data if exists
-  const committeePath = resolve(ROOT, 'data/committee-meetings.json');
-  let committeeData = {};
-  if (existsSync(committeePath)) {
-    try {
-      committeeData = JSON.parse(readFileSync(committeePath, 'utf-8'));
-    } catch (e) {
-      console.warn('Warning: Failed to parse committee-meetings.json:', e);
+  // Load committee data: one JSON file per committee in data/committees/.
+  const committeesDir = resolve(ROOT, 'data/committees');
+  const committees = [];
+  if (existsSync(committeesDir)) {
+    for (const file of readdirSync(committeesDir).filter(f => f.endsWith('.json'))) {
+      try {
+        committees.push(JSON.parse(readFileSync(resolve(committeesDir, file), 'utf-8')));
+      } catch (e) {
+        console.warn(`Warning: Failed to parse committees/${file}:`, e);
+      }
     }
   }
 
@@ -430,19 +438,16 @@ function main() {
     });
   }
 
-  // Dynamic discovery: Add committee calendars found in committee-meetings.json
-  for (const [committeeId, committeeMeta] of Object.entries(committeeData)) {
-    if (committeeId === '_metadata') continue;
-    const nameEn = committeeMeta.nameEn || committeeId;
-    const nameEs = committeeMeta.nameEs || committeeId;
-    
+  // Dynamic discovery: one calendar per committee file in data/committees/ that has meetings.
+  for (const committee of committees) {
+    if (!committee.id || !(committee.meetings || []).length) continue;
     CALENDARS.push({
-      id: `committee-${committeeId}`,
-      nameEn: nameEn,
-      nameEs: nameEs,
-      fileNameEn: `committee-${committeeId}.ics`,
-      fileNameEs: `committee-${committeeId}-es.ics`,
-      generator: (lang, ctx) => generateCommitteeCalendar(committeeId, committeeMeta, lang, ctx),
+      id: `committee-${committee.id}`,
+      nameEn: committee.nameEn || committee.id,
+      nameEs: committee.nameEs || committee.id,
+      fileNameEn: `committee-${committee.id}.ics`,
+      fileNameEs: `committee-${committee.id}-es.ics`,
+      generator: (lang, ctx) => generateCommitteeCalendar(committee, lang, ctx),
     });
   }
 

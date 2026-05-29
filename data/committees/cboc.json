@@ -1,0 +1,161 @@
+{
+  "_metadata": {
+    "description": "RCSD Citizens' Bond Oversight Committee (CBOC). Curated metadata; the meetings[] recordings are populated by scripts/build-committees.mjs from the committee-tagged YouTube index and AssemblyAI transcript cache.",
+    "source": "RCSD YouTube channel (recordings), RCSD board minutes/ROADMAP (membership). Measure S and Measure T are voter-approved RCSD general obligation bonds.",
+    "lastUpdated": "2026-05-29"
+  },
+  "id": "cboc",
+  "type": "cboc",
+  "scope": "district",
+  "school": null,
+  "nameEn": "Citizens' Bond Oversight Committee",
+  "nameEs": "Comité Ciudadano de Supervisión de Bonos",
+  "shortName": "CBOC",
+  "descriptionEn": "The Citizens' Bond Oversight Committee provides independent oversight of how Redwood City School District spends voter-approved general obligation bond funds (Measures S and T), reviewing expenditures and audits to confirm the money is used for authorized school facilities projects.",
+  "descriptionEs": "El Comité Ciudadano de Supervisión de Bonos revisa de forma independiente cómo el Distrito Escolar de Redwood City gasta el dinero de los bonos aprobados por los votantes (las Medidas S y T), revisando los gastos y las auditorías para confirmar que el dinero se use en proyectos autorizados de instalaciones escolares.",
+  "homepage": null,
+  "email": null,
+  "chair": null,
+  "members": [
+    {
+      "name": "Alan Hansen",
+      "role": "Taxpayer Representative",
+      "since": "2025-12"
+    }
+  ],
+  "videoTitleMatch": [
+    "Bond Oversight"
+  ],
+  "meetings": [
+    {
+      "date": "2026-04-30",
+      "youtube": "PnOi-XcblAE",
+      "title": "April 30, 2026--Citizens' Bond Oversight Committee Meeting",
+      "status": "past",
+      "transcriptKey": "cboc-2026-04-30",
+      "hasTranscript": false,
+      "duration": null,
+      "durationSeconds": null
+    },
+    {
+      "date": "2025-11-05",
+      "youtube": "7LxtZHhcALg",
+      "title": "November 5, 2025--Citizens' Bond Oversight Committee Meeting",
+      "status": "past",
+      "transcriptKey": "cboc-2025-11-05",
+      "hasTranscript": false,
+      "duration": null,
+      "durationSeconds": null
+    },
+    {
+      "date": "2025-08-06",
+      "youtube": "8Zvv208Qsu0",
+      "title": "August 6, 2025--Citizens' Bond Oversight Committee Meeting",
+      "status": "past",
+      "transcriptKey": "cboc-2025-08-06",
+      "hasTranscript": false,
+      "duration": null,
+      "durationSeconds": null
+    },
+    {
+      "date": "2025-05-07",
+      "youtube": "nnEA6RTn_OU",
+      "title": "May 7, 2025--Citizens' Bond Oversight Committee Meeting",
+      "status": "past",
+      "transcriptKey": "cboc-2025-05-07",
+      "hasTranscript": false,
+      "duration": null,
+      "durationSeconds": null
+    },
+    {
+      "date": "2025-02-25",
+      "youtube": "AUh3FIhQDy8",
+      "title": "February 25, 2025--Citizens' Bond Oversight Committee Meeting",
+      "status": "past",
+      "transcriptKey": "cboc-2025-02-25",
+      "hasTranscript": false,
+      "duration": null,
+      "durationSeconds": null
+    },
+    {
+      "date": "2025-01-22",
+      "youtube": "Jvh94J4I3Bs",
+      "title": "January 22, 2025--Citizens' Bond Oversight Committee Meeting",
+      "status": "past",
+      "transcriptKey": "cboc-2025-01-22",
+      "hasTranscript": false,
+      "duration": null,
+      "durationSeconds": null
+    },
+    {
+      "date": "2024-08-29",
+      "youtube": "kDqgjt56aXc",
+      "title": "August 29, 2024--Citizens' Bond Oversight Committee Meeting",
+      "status": "past",
+      "transcriptKey": "cboc-2024-08-29",
+      "hasTranscript": false,
+      "duration": null,
+      "durationSeconds": null
+    },
+    {
+      "date": "2024-06-18",
+      "youtube": "cY66uY9Z-MY",
+      "title": "June 18, 2024--Citizens' Bond Oversight Committee Meeting",
+      "status": "past",
+      "transcriptKey": "cboc-2024-06-18",
+      "hasTranscript": false,
+      "duration": null,
+      "durationSeconds": null
+    },
+    {
+      "date": "2024-03-21",
+      "youtube": "icioqpwTI18",
+      "title": "March 21, 2024--Citizens' Bond Oversight Committee Meeting",
+      "status": "past",
+      "transcriptKey": "cboc-2024-03-21",
+      "hasTranscript": false,
+      "duration": null,
+      "durationSeconds": null
+    },
+    {
+      "date": "2023-09-14",
+      "youtube": "4-QHZIibVA8",
+      "title": "September 14, 2023 -- Citizens' Bond Oversight Committee",
+      "status": "past",
+      "transcriptKey": "cboc-2023-09-14",
+      "hasTranscript": false,
+      "duration": null,
+      "durationSeconds": null
+    },
+    {
+      "date": "2023-05-11",
+      "youtube": "F_bIShM89Bg",
+      "title": "May 11, 2023 -- Measure T Citizens' Bond Oversight Committee",
+      "status": "past",
+      "transcriptKey": "cboc-2023-05-11",
+      "hasTranscript": false,
+      "duration": null,
+      "durationSeconds": null
+    },
+    {
+      "date": "2023-02-02",
+      "youtube": "A9QEGSzkuK0",
+      "title": "February 2, 2023 -- Measure T Citizens' Bond Oversight Committee Meeting",
+      "status": "past",
+      "transcriptKey": "cboc-2023-02-02",
+      "hasTranscript": false,
+      "duration": null,
+      "durationSeconds": null
+    },
+    {
+      "date": "2022-10-27",
+      "youtube": "8lU3HmcuhqI",
+      "title": "October 27, 2022 -- Measure T Citizens' Bond Oversight Committee Meeting",
+      "status": "past",
+      "transcriptKey": "cboc-2022-10-27",
+      "hasTranscript": false,
+      "duration": null,
+      "durationSeconds": null
+    }
+  ]
+}

@@ -75,25 +75,48 @@ let generated = 0;
 let uploaded = 0;
 let totalSize = 0;
 
+// Build a combined target list. Board meetings publish to transcripts/<date>.json;
+// committee meetings publish to transcripts/<id>-<date>.json (transcriptKey) so the
+// two never collide on a shared date. Committees have no chapter markers → empty speakers.
+const targets = [];
 for (const m of data.meetings) {
-  if (filterDate && m.date !== filterDate) continue;
   if (!m.youtube || !m.hasTranscript) continue;
+  const cm = chapterMarkers[m.slug] || chapterMarkers[m.date];
+  targets.push({ key: m.date, date: m.date, type: m.type, youtube: m.youtube, speakers: cm?.speakers || {} });
+}
+const committeesDir = resolve(ROOT, 'data/committees');
+if (existsSync(committeesDir)) {
+  for (const file of readdirSync(committeesDir).filter(f => f.endsWith('.json'))) {
+    const c = JSON.parse(readFileSync(resolve(committeesDir, file), 'utf-8'));
+    for (const m of c.meetings || []) {
+      if (!m.youtube || !m.hasTranscript) continue;
+      targets.push({
+        key: m.transcriptKey || `${c.id}-${m.date}`,
+        date: m.date, type: c.shortName || c.type || 'Committee',
+        youtube: m.youtube, speakers: {},
+      });
+    }
+  }
+}
 
-  const aaiPath = resolve(AAI_DIR, `${m.youtube}.json`);
+for (const t of targets) {
+  if (filterDate && t.key !== filterDate && t.date !== filterDate) continue;
+
+  const aaiPath = resolve(AAI_DIR, `${t.youtube}.json`);
   if (!existsSync(aaiPath)) {
     try {
-      const url = `https://data.rcsd.info/transcripts-aai/${m.youtube}.json`;
+      const url = `https://data.rcsd.info/transcripts-aai/${t.youtube}.json`;
       const res = await fetch(url);
       if (res.ok) {
         const text = await res.text();
         const data = JSON.parse(text);
         if (data.status === 'completed' || data.text) {
           writeFileSync(aaiPath, JSON.stringify(data, null, 2));
-          console.log(`    [Cache Restore] Restored raw AssemblyAI transcript for ${m.date} (${m.youtube}) from CDN`);
+          console.log(`    [Cache Restore] Restored raw AssemblyAI transcript for ${t.key} (${t.youtube}) from CDN`);
         }
       }
     } catch (err) {
-      console.warn(`    [Cache Restore] Failed to fetch raw transcript for ${m.date} from CDN: ${err.message}`);
+      console.warn(`    [Cache Restore] Failed to fetch raw transcript for ${t.key} from CDN: ${err.message}`);
     }
   }
 
@@ -102,16 +125,12 @@ for (const m of data.meetings) {
   const aai = JSON.parse(readFileSync(aaiPath, 'utf-8'));
   if (!aai.utterances || aai.utterances.length === 0) continue;
 
-  // Build speaker map from chapter markers (slug-keyed, with date fallback)
-  const cm = chapterMarkers[m.slug] || chapterMarkers[m.date];
-  const speakers = cm?.speakers || {};
-
   const slim = {
-    date: m.date,
-    type: m.type,
-    videoId: m.youtube,
+    date: t.date,
+    type: t.type,
+    videoId: t.youtube,
     audioDuration: Math.round(aai.audio_duration || 0),
-    speakers,
+    speakers: t.speakers,
     utterances: stripTrailingHallucinations(aai.utterances.map(u => ({
       start: u.start,
       end: u.end,
@@ -121,7 +140,7 @@ for (const m of data.meetings) {
   };
 
   const json = JSON.stringify(slim);
-  const outPath = resolve(SLIM_DIR, `${m.date}.json`);
+  const outPath = resolve(SLIM_DIR, `${t.key}.json`);
   writeFileSync(outPath, json);
   totalSize += json.length;
   generated++;
@@ -130,14 +149,14 @@ for (const m of data.meetings) {
     try {
       execFileSync('npx', [
         'wrangler', 'r2', 'object', 'put',
-        `rcsd-meetings/transcripts/${m.date}.json`,
+        `rcsd-meetings/transcripts/${t.key}.json`,
         '--file', outPath,
         '--content-type', 'application/json',
         '--remote',
       ], { cwd: ROOT, timeout: 30000 });
       uploaded++;
     } catch (err) {
-      console.error(`  Upload failed for ${m.date}: ${err.message}`);
+      console.error(`  Upload failed for ${t.key}: ${err.message}`);
     }
   }
 }

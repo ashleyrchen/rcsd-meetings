@@ -41,6 +41,8 @@ run('0a. Scrape new YouTube videos', 'scrape-youtube-index.mjs');
 
 // Phase 1: Data assembly
 run('1. Build meetings data', 'build-meetings.mjs');
+// Enrich committee registries (recordings + transcript status) from the YouTube index.
+run('1a. Build committee registries', 'build-committees.mjs');
 
 if (!quick) {
   // Restore any existing transcription/translation caches to avoid duplicate API calls
@@ -55,6 +57,8 @@ if (!quick) {
   // (publish-transcripts.mjs / translate-transcripts.mjs), so without this a
   // newly-transcribed meeting would otherwise be skipped until the next run.
   run('3b. Rebuild meetings data (flag new transcripts)', 'build-meetings.mjs');
+  // Same rationale for committees: flip hasTranscript before slim/translate read it.
+  run('3c. Rebuild committee registries', 'build-committees.mjs');
 
   run('4. Slim transcripts', 'publish-transcripts.mjs');
   run('5. Translate transcripts (ES)', 'translate-transcripts.mjs');
@@ -74,6 +78,7 @@ run(`${step++}. OG images`, 'generate-og-images.mjs');
 run(`${step++}. Meetings index`, 'build-meetings-html.mjs');
 run(`${step++}. iCalendar feeds`, 'build-ics.mjs');
 run(`${step++}. Meeting detail pages`, 'build-meeting-pages.mjs');
+run(`${step++}. Committee pages`, 'build-committee-pages.mjs');
 run(`${step++}. Homepage`, 'build-homepage.mjs');
 run(`${step++}. School pages`, 'build-schools.mjs');
 run(`${step++}. Charter school pages`, 'build-charters.mjs');

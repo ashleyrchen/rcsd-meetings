@@ -66,6 +66,7 @@ Read these files from `data/` to answer questions. For field-by-field documentat
 | `ssc-membership.json` | School Site Council members, roles, chairperson per school (3 years from SPSA PDFs) |
 | `ssc-meetings.json` | Per-school SSC meeting agendas and minutes (PDFs on R2). Currently covers Orion 2025-26. |
 | `spsa-budgets.json` | SPSA budget summaries: funding by source per school (from 2025-26 SPSA PDFs) |
+| `committees/<id>.json` | One file per committee (CBOC, DELAC, …): name, scope, members, chair, email, homepage, and meetings (past/scheduled). CBOC includes 13 video recordings with transcripts (`transcripts/cboc-<date>.json`). Built by `build-committees.mjs`. |
 
 ### Board Meetings (190 meetings, Aug 2020 - present)
 
@@ -76,7 +77,7 @@ Read these files from `data/` to answer questions. For field-by-field documentat
 | `meeting-summaries-es.json` | 194 entries | Spanish translations of summaries |
 | `school-board-summaries.json` | ~750 entries | Agenda items tagged to specific schools |
 | `board-memos/{date}.json` | Per-meeting | Per-meeting agenda details and attachments |
-| `youtube-index.json` | ~893 entries | YouTube video links for meeting recordings |
+| `youtube-index.json` | ~893 entries | YouTube video links for meeting recordings. Each entry has a `kind` field (`board` or a committee id like `cboc`); board consumers filter to `kind === 'board'`. |
 | `timestamp-map.json` | 694 offsets | Agenda item to video timestamp mapping |
 | `document-index.json` | Taxonomy | Categorized index of all board attachments |
 
