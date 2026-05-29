@@ -21,7 +21,7 @@
  */
 
 import 'dotenv/config';
-import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'fs';
+import { readFileSync, writeFileSync, existsSync, mkdirSync, readdirSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { execFileSync } from 'child_process';
@@ -67,14 +67,33 @@ if (!apiKey) {
 const client = new AssemblyAI({ apiKey });
 
 // ---- Load meetings ----
+// Board meetings (kind 'board') from meetings-data.json plus committee recordings
+// (kind = committee id, e.g. 'cboc') from data/committees/*.json. The AAI cache is keyed
+// by video ID, so both kinds share all download/transcribe/cache machinery; only the
+// prompt branches on kind.
 const meetingsRaw = JSON.parse(readFileSync(resolve(ROOT, 'data/meetings-data.json'), 'utf-8'));
-const meetings = (meetingsRaw.meetings || meetingsRaw)
+const boardMeetings = (meetingsRaw.meetings || meetingsRaw)
   .filter(m => m.youtube)
+  .map(m => ({ ...m, kind: m.kind ?? 'board' }));
+
+const committeeMeetings = [];
+const committeesDir = resolve(ROOT, 'data/committees');
+if (existsSync(committeesDir)) {
+  for (const file of readdirSync(committeesDir).filter(f => f.endsWith('.json'))) {
+    const c = JSON.parse(readFileSync(resolve(committeesDir, file), 'utf-8'));
+    for (const m of c.meetings || []) {
+      if (!m.youtube) continue;
+      committeeMeetings.push({ ...m, kind: c.id, committeeType: c.type, committeeName: c.nameEn });
+    }
+  }
+}
+
+const meetings = [...boardMeetings, ...committeeMeetings]
   .sort((a, b) => oldestFirst
     ? a.date.localeCompare(b.date)
     : b.date.localeCompare(a.date));
 
-console.log(`${meetings.length} meetings with video`);
+console.log(`${meetings.length} meetings with video (${boardMeetings.length} board, ${committeeMeetings.length} committee)`);
 
 function cachePath(videoId) {
   return resolve(CACHE_DIR, `${videoId}.json`);
@@ -175,12 +194,34 @@ function getBoardEra(date) {
 }
 
 /**
+ * Build a transcription prompt for a committee recording (kind !== 'board').
+ * Committees have no board roster/agenda; CBOC gets bond-oversight context, other
+ * committee types get a generic district-committee prompt. meeting.committeeName and
+ * meeting.committeeType are attached when committee meetings are loaded.
+ */
+function buildCommitteePrompt(meeting) {
+  const date = meeting.date;
+  const name = meeting.committeeName || 'a district committee';
+
+  if (meeting.committeeType === 'cboc' || meeting.kind === 'cboc') {
+    return `You are transcribing a recording of a meeting of the Redwood City School District's Citizens' Bond Oversight Committee (CBOC) on ${date}. Accurately transcribe and diarize speakers. Do not include disfluencies or repetitions. If there is silence, produce no output for that segment. The meeting is mostly in English; some public comments may be in Spanish.
+
+This committee provides independent oversight of how the district spends voter-approved general obligation bond funds — Measure S and Measure T — for school construction, modernization, and facilities projects. Discussion typically covers the bond program, capital projects, construction and budget updates, financial and performance audits, expenditure reports, and citizen oversight. Speakers include the committee chair, citizen committee members, and district staff (notably Rick Edson, Chief Business Official; plus facilities, construction, and finance staff).
+
+Key terms: RCSD, CBOC, Citizens' Bond Oversight Committee, Measure S, Measure T, general obligation bond, GO bond, bond program, Proposition 39, Prop 39, financial audit, performance audit, expenditure report, capital projects, modernization, Master Facilities Plan, Brown Act, Rick Edson.`;
+  }
+
+  return `You are transcribing a recording of a meeting of ${name} (a committee of the Redwood City School District) on ${date}. Accurately transcribe and diarize speakers. Do not include disfluencies or repetitions. If there is silence, produce no output for that segment. The meeting is mostly in English; some public comments may be in Spanish. Speakers include the committee chair, committee members, and district staff. Key terms: RCSD, LCAP, Brown Act, English learners, DELAC, ELAC, SSC, SPSA.`;
+}
+
+/**
  * Build a transcription prompt with meeting context.
  * Universal-3 Pro supports up to 1,500 words of prompt context.
  * Note: prompt and keyterms_prompt are mutually exclusive in the API,
  * so we embed key terms directly in the prompt text.
  */
 function buildPrompt(meeting) {
+  if (meeting.kind && meeting.kind !== 'board') return buildCommitteePrompt(meeting);
   const date = meeting.date;
   const type = meeting.type || 'Board Meeting';
   const era = getBoardEra(date);

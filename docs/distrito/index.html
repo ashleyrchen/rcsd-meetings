@@ -756,6 +756,36 @@
     text-decoration: underline;
   }
 
+  .committee-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 0.75rem;
+  }
+  .committee-card {
+    display: block;
+    padding: 0.9rem 1rem;
+    border: 1px solid var(--border, #e5e7eb);
+    border-radius: 10px;
+    text-decoration: none;
+    color: inherit;
+  }
+  .committee-card:hover { border-color: var(--green-mid); }
+  .committee-name {
+    display: block;
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 1.05rem;
+    color: var(--green-deep);
+    margin-bottom: 0.25rem;
+  }
+  .committee-desc { display: block; font-size: 0.85rem; color: var(--text-muted); line-height: 1.45; }
+  .committee-rec {
+    display: inline-block;
+    margin-top: 0.4rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.68rem;
+    color: var(--green-mid);
+  }
+
   .doc-school-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
@@ -1738,6 +1768,26 @@
       <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/spanish/taft.pdf" target="_blank" rel="noopener">Taft</a>
     </div>
   </div>
+</section>
+
+<section class="section" id="committees">
+  <div class="section-rule"></div>
+  <div class="section-num">09</div>
+  <h2>Comités y Supervisión</h2>
+  <p class="section-subtitle">Comités permanentes del distrito y de las escuelas, con grabaciones y transcripciones de reuniones cuando están disponibles.</p>
+  <div class="committee-grid">
+    <a class="committee-card" href="/comites/cboc/">
+      <span class="committee-name">Comité Ciudadano de Supervisión de Bonos</span>
+      <span class="committee-desc">El Comité Ciudadano de Supervisión de Bonos revisa de forma independiente cómo el Distrito Escolar de Redwood City gasta el dinero de los bonos aprobados por lo</span>
+      <span class="committee-rec">13 grabaciones</span>
+    </a>
+    <a class="committee-card" href="/comites/delac/">
+      <span class="committee-name">Comité Asesor del Distrito para Estudiantes de Inglés</span>
+      <span class="committee-desc">El Comité Asesor del Distrito para Estudiantes de Inglés asesora a la mesa directiva y al personal de RCSD sobre los programas y servicios para los estudiantes </span>
+      
+    </a>
+  </div>
+  <p style="margin-top:1rem"><a class="doc-link" href="/comites/">Ver todos los comités →</a></p>
 </section>
 
 </main>

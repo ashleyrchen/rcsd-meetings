@@ -3,40 +3,149 @@ VERSION:2.0
 PRODID:-//rcsd.info//RCSD Calendar//EN
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-X-WR-CALNAME:RCSD Citizens' Bond Oversight Committee
+X-WR-CALNAME:Citizens' Bond Oversight Committee
 X-WR-TIMEZONE:America/Los_Angeles
 BEGIN:VEVENT
-UID:committee-cboc-2025-09-17-2025-26@rcsd.info
+UID:committee-cboc-2022-10-27@rcsd.info
 DTSTAMP:20260522T200000Z
-DTSTART;TZID=America/Los_Angeles:20250917T183000
-DTEND;TZID=America/Los_Angeles:20250917T200000
-SUMMARY:RCSD Citizens' Bond Oversight Committee Meeting
-DESCRIPTION:CBOC review of Measure S and T bond project expenditures and au
- dit reports.\n\nMeeting of the RCSD Citizens' Bond Oversight Committee (20
- 25-26 school year).
-URL:https://rcsd.info/meetings/
-LOCATION:District Office, Board Room
+DTSTART;TZID=America/Los_Angeles:20221027T180000
+DTEND;TZID=America/Los_Angeles:20221027T193000
+SUMMARY:Citizens' Bond Oversight Committee Meeting
+DESCRIPTION:Meeting of the Citizens' Bond Oversight Committee.\nVideo: http
+ s://www.youtube.com/watch?v=8lU3HmcuhqI
+URL:https://rcsd.info/committees/cboc/2022-10-27/
+LOCATION:District Office
 END:VEVENT
 BEGIN:VEVENT
-UID:committee-cboc-2026-01-21-2025-26@rcsd.info
+UID:committee-cboc-2023-02-02@rcsd.info
 DTSTAMP:20260522T200000Z
-DTSTART;TZID=America/Los_Angeles:20260121T183000
-DTEND;TZID=America/Los_Angeles:20260121T200000
-SUMMARY:RCSD Citizens' Bond Oversight Committee Meeting
-DESCRIPTION:CBOC quarterly meeting and project updates.\n\nMeeting of the R
- CSD Citizens' Bond Oversight Committee (2025-26 school year).
-URL:https://rcsd.info/meetings/
-LOCATION:District Office, Board Room
+DTSTART;TZID=America/Los_Angeles:20230202T180000
+DTEND;TZID=America/Los_Angeles:20230202T193000
+SUMMARY:Citizens' Bond Oversight Committee Meeting
+DESCRIPTION:Meeting of the Citizens' Bond Oversight Committee.\nVideo: http
+ s://www.youtube.com/watch?v=A9QEGSzkuK0
+URL:https://rcsd.info/committees/cboc/2023-02-02/
+LOCATION:District Office
 END:VEVENT
 BEGIN:VEVENT
-UID:committee-cboc-2026-04-15-2025-26@rcsd.info
+UID:committee-cboc-2023-05-11@rcsd.info
 DTSTAMP:20260522T200000Z
-DTSTART;TZID=America/Los_Angeles:20260415T183000
-DTEND;TZID=America/Los_Angeles:20260415T200000
-SUMMARY:RCSD Citizens' Bond Oversight Committee Meeting
-DESCRIPTION:CBOC spring meeting\, annual report preparation.\n\nMeeting of 
- the RCSD Citizens' Bond Oversight Committee (2025-26 school year).
-URL:https://rcsd.info/meetings/
-LOCATION:District Office, Board Room
+DTSTART;TZID=America/Los_Angeles:20230511T180000
+DTEND;TZID=America/Los_Angeles:20230511T193000
+SUMMARY:Citizens' Bond Oversight Committee Meeting
+DESCRIPTION:Meeting of the Citizens' Bond Oversight Committee.\nVideo: http
+ s://www.youtube.com/watch?v=F_bIShM89Bg
+URL:https://rcsd.info/committees/cboc/2023-05-11/
+LOCATION:District Office
+END:VEVENT
+BEGIN:VEVENT
+UID:committee-cboc-2023-09-14@rcsd.info
+DTSTAMP:20260522T200000Z
+DTSTART;TZID=America/Los_Angeles:20230914T180000
+DTEND;TZID=America/Los_Angeles:20230914T193000
+SUMMARY:Citizens' Bond Oversight Committee Meeting
+DESCRIPTION:Meeting of the Citizens' Bond Oversight Committee.\nVideo: http
+ s://www.youtube.com/watch?v=4-QHZIibVA8
+URL:https://rcsd.info/committees/cboc/2023-09-14/
+LOCATION:District Office
+END:VEVENT
+BEGIN:VEVENT
+UID:committee-cboc-2024-03-21@rcsd.info
+DTSTAMP:20260522T200000Z
+DTSTART;TZID=America/Los_Angeles:20240321T180000
+DTEND;TZID=America/Los_Angeles:20240321T193000
+SUMMARY:Citizens' Bond Oversight Committee Meeting
+DESCRIPTION:Meeting of the Citizens' Bond Oversight Committee.\nVideo: http
+ s://www.youtube.com/watch?v=icioqpwTI18
+URL:https://rcsd.info/committees/cboc/2024-03-21/
+LOCATION:District Office
+END:VEVENT
+BEGIN:VEVENT
+UID:committee-cboc-2024-06-18@rcsd.info
+DTSTAMP:20260522T200000Z
+DTSTART;TZID=America/Los_Angeles:20240618T180000
+DTEND;TZID=America/Los_Angeles:20240618T193000
+SUMMARY:Citizens' Bond Oversight Committee Meeting
+DESCRIPTION:Meeting of the Citizens' Bond Oversight Committee.\nVideo: http
+ s://www.youtube.com/watch?v=cY66uY9Z-MY
+URL:https://rcsd.info/committees/cboc/2024-06-18/
+LOCATION:District Office
+END:VEVENT
+BEGIN:VEVENT
+UID:committee-cboc-2024-08-29@rcsd.info
+DTSTAMP:20260522T200000Z
+DTSTART;TZID=America/Los_Angeles:20240829T180000
+DTEND;TZID=America/Los_Angeles:20240829T193000
+SUMMARY:Citizens' Bond Oversight Committee Meeting
+DESCRIPTION:Meeting of the Citizens' Bond Oversight Committee.\nVideo: http
+ s://www.youtube.com/watch?v=kDqgjt56aXc
+URL:https://rcsd.info/committees/cboc/2024-08-29/
+LOCATION:District Office
+END:VEVENT
+BEGIN:VEVENT
+UID:committee-cboc-2025-01-22@rcsd.info
+DTSTAMP:20260522T200000Z
+DTSTART;TZID=America/Los_Angeles:20250122T180000
+DTEND;TZID=America/Los_Angeles:20250122T193000
+SUMMARY:Citizens' Bond Oversight Committee Meeting
+DESCRIPTION:Meeting of the Citizens' Bond Oversight Committee.\nVideo: http
+ s://www.youtube.com/watch?v=Jvh94J4I3Bs
+URL:https://rcsd.info/committees/cboc/2025-01-22/
+LOCATION:District Office
+END:VEVENT
+BEGIN:VEVENT
+UID:committee-cboc-2025-02-25@rcsd.info
+DTSTAMP:20260522T200000Z
+DTSTART;TZID=America/Los_Angeles:20250225T180000
+DTEND;TZID=America/Los_Angeles:20250225T193000
+SUMMARY:Citizens' Bond Oversight Committee Meeting
+DESCRIPTION:Meeting of the Citizens' Bond Oversight Committee.\nVideo: http
+ s://www.youtube.com/watch?v=AUh3FIhQDy8
+URL:https://rcsd.info/committees/cboc/2025-02-25/
+LOCATION:District Office
+END:VEVENT
+BEGIN:VEVENT
+UID:committee-cboc-2025-05-07@rcsd.info
+DTSTAMP:20260522T200000Z
+DTSTART;TZID=America/Los_Angeles:20250507T180000
+DTEND;TZID=America/Los_Angeles:20250507T193000
+SUMMARY:Citizens' Bond Oversight Committee Meeting
+DESCRIPTION:Meeting of the Citizens' Bond Oversight Committee.\nVideo: http
+ s://www.youtube.com/watch?v=nnEA6RTn_OU
+URL:https://rcsd.info/committees/cboc/2025-05-07/
+LOCATION:District Office
+END:VEVENT
+BEGIN:VEVENT
+UID:committee-cboc-2025-08-06@rcsd.info
+DTSTAMP:20260522T200000Z
+DTSTART;TZID=America/Los_Angeles:20250806T180000
+DTEND;TZID=America/Los_Angeles:20250806T193000
+SUMMARY:Citizens' Bond Oversight Committee Meeting
+DESCRIPTION:Meeting of the Citizens' Bond Oversight Committee.\nVideo: http
+ s://www.youtube.com/watch?v=8Zvv208Qsu0
+URL:https://rcsd.info/committees/cboc/2025-08-06/
+LOCATION:District Office
+END:VEVENT
+BEGIN:VEVENT
+UID:committee-cboc-2025-11-05@rcsd.info
+DTSTAMP:20260522T200000Z
+DTSTART;TZID=America/Los_Angeles:20251105T180000
+DTEND;TZID=America/Los_Angeles:20251105T193000
+SUMMARY:Citizens' Bond Oversight Committee Meeting
+DESCRIPTION:Meeting of the Citizens' Bond Oversight Committee.\nVideo: http
+ s://www.youtube.com/watch?v=7LxtZHhcALg
+URL:https://rcsd.info/committees/cboc/2025-11-05/
+LOCATION:District Office
+END:VEVENT
+BEGIN:VEVENT
+UID:committee-cboc-2026-04-30@rcsd.info
+DTSTAMP:20260522T200000Z
+DTSTART;TZID=America/Los_Angeles:20260430T180000
+DTEND;TZID=America/Los_Angeles:20260430T193000
+SUMMARY:Citizens' Bond Oversight Committee Meeting
+DESCRIPTION:Meeting of the Citizens' Bond Oversight Committee.\nVideo: http
+ s://www.youtube.com/watch?v=PnOi-XcblAE
+URL:https://rcsd.info/committees/cboc/2026-04-30/
+LOCATION:District Office
 END:VEVENT
 END:VCALENDAR

@@ -3,40 +3,41 @@ VERSION:2.0
 PRODID:-//rcsd.info//RCSD Calendar//EN
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-X-WR-CALNAME:DELAC de RCSD
+X-WR-CALNAME:Comité Asesor del Distrito para Estudiantes de Inglés
 X-WR-TIMEZONE:America/Los_Angeles
 BEGIN:VEVENT
-UID:committee-delac-2025-10-20-2025-26@rcsd.info
+UID:committee-delac-2025-10-20@rcsd.info
 DTSTAMP:20260522T200000Z
 DTSTART;TZID=America/Los_Angeles:20251020T180000
 DTEND;TZID=America/Los_Angeles:20251020T193000
-SUMMARY:Reunión de DELAC de RCSD
-DESCRIPTION:Primera reunión regular del Comité Asesor de Estudiantes de I
- nglés del Distrito (DELAC).\n\nReunión de DELAC de RCSD (año escolar 20
- 25-26).
-URL:https://rcsd.info/reuniones/
+SUMMARY:Reunión de Comité Asesor del Distrito para Estudiantes de Inglés
+DESCRIPTION:Primera reunión regular del Comité Asesor del Distrito para E
+ studiantes de Inglés (DELAC).\n\nReunión de Comité Asesor del Distrito 
+ para Estudiantes de Inglés.
+URL:https://rcsd.info/comites/delac/
 LOCATION:District Office, Room D
 END:VEVENT
 BEGIN:VEVENT
-UID:committee-delac-2026-01-26-2025-26@rcsd.info
+UID:committee-delac-2026-01-26@rcsd.info
 DTSTAMP:20260522T200000Z
 DTSTART;TZID=America/Los_Angeles:20260126T180000
 DTEND;TZID=America/Los_Angeles:20260126T193000
-SUMMARY:Reunión de DELAC de RCSD
+SUMMARY:Reunión de Comité Asesor del Distrito para Estudiantes de Inglés
 DESCRIPTION:Revisión de medio año de DELAC y discusión de las prioridade
- s del LCAP.\n\nReunión de DELAC de RCSD (año escolar 2025-26).
-URL:https://rcsd.info/reuniones/
+ s del LCAP.\n\nReunión de Comité Asesor del Distrito para Estudiantes de
+  Inglés.
+URL:https://rcsd.info/comites/delac/
 LOCATION:District Office, Room D
 END:VEVENT
 BEGIN:VEVENT
-UID:committee-delac-2026-05-18-2025-26@rcsd.info
+UID:committee-delac-2026-05-18@rcsd.info
 DTSTAMP:20260522T200000Z
 DTSTART;TZID=America/Los_Angeles:20260518T180000
 DTEND;TZID=America/Los_Angeles:20260518T193000
-SUMMARY:Reunión de DELAC de RCSD
+SUMMARY:Reunión de Comité Asesor del Distrito para Estudiantes de Inglés
 DESCRIPTION:Revisión anual del LCAP y recomendación final del borrador.\n
- \nReunión de DELAC de RCSD (año escolar 2025-26).
-URL:https://rcsd.info/reuniones/
+ \nReunión de Comité Asesor del Distrito para Estudiantes de Inglés.
+URL:https://rcsd.info/comites/delac/
 LOCATION:District Office, Room D
 END:VEVENT
 END:VCALENDAR

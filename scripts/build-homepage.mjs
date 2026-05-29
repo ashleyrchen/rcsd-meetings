@@ -5,7 +5,7 @@
  * Run before build-meetings-html.mjs
  */
 
-import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'fs';
+import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { headMeta, siteNav, siteFooter } from './html-parts.mjs';
@@ -1180,6 +1180,22 @@ try {
   }).join('\n');
 } catch {}
 
+// Committee pages: landing, per-committee home, and recorded-meeting detail pages
+let committeeUrls = '';
+try {
+  const dir = resolve(ROOT, 'data/committees');
+  const files = readdirSync(dir).filter(f => f.endsWith('.json'));
+  const rows = [bilingualUrl('/committees/', '/comites/', sitemapDate)];
+  for (const f of files) {
+    const c = JSON.parse(readFileSync(resolve(dir, f), 'utf-8'));
+    rows.push(bilingualUrl(`/committees/${c.id}/`, `/comites/${c.id}/`, sitemapDate));
+    for (const m of (c.meetings || [])) {
+      if (m.youtube) rows.push(bilingualUrl(`/committees/${c.id}/${m.date}/`, `/comites/${c.id}/${m.date}/`, m.date));
+    }
+  }
+  committeeUrls = rows.join('\n');
+} catch {}
+
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
@@ -1193,6 +1209,7 @@ ${bilingualUrl('/budget/', '/presupuesto/', sitemapDate)}
 ${bilingualUrl('/blog/', '/blog/es/', sitemapDate)}
 ${blogPosts.map(p => bilingualUrl(`/blog/${p.slug}/`, `/blog/${p.slugEs}/`, p.date)).join('\n')}
 ${meetingUrls}
+${committeeUrls}
 ${singleUrl('/llms.txt', sitemapDate)}
 </urlset>
 `;

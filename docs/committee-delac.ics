@@ -3,39 +3,39 @@ VERSION:2.0
 PRODID:-//rcsd.info//RCSD Calendar//EN
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-X-WR-CALNAME:RCSD DELAC
+X-WR-CALNAME:District English Learner Advisory Committee
 X-WR-TIMEZONE:America/Los_Angeles
 BEGIN:VEVENT
-UID:committee-delac-2025-10-20-2025-26@rcsd.info
+UID:committee-delac-2025-10-20@rcsd.info
 DTSTAMP:20260522T200000Z
 DTSTART;TZID=America/Los_Angeles:20251020T180000
 DTEND;TZID=America/Los_Angeles:20251020T193000
-SUMMARY:RCSD DELAC Meeting
+SUMMARY:District English Learner Advisory Committee Meeting
 DESCRIPTION:District English Learner Advisory Committee (DELAC) first regul
- ar meeting.\n\nMeeting of the RCSD DELAC (2025-26 school year).
-URL:https://rcsd.info/meetings/
+ ar meeting.\n\nMeeting of the District English Learner Advisory Committee.
+URL:https://rcsd.info/committees/delac/
 LOCATION:District Office, Room D
 END:VEVENT
 BEGIN:VEVENT
-UID:committee-delac-2026-01-26-2025-26@rcsd.info
+UID:committee-delac-2026-01-26@rcsd.info
 DTSTAMP:20260522T200000Z
 DTSTART;TZID=America/Los_Angeles:20260126T180000
 DTEND;TZID=America/Los_Angeles:20260126T193000
-SUMMARY:RCSD DELAC Meeting
+SUMMARY:District English Learner Advisory Committee Meeting
 DESCRIPTION:DELAC mid-year review and LCAP priorities discussion.\n\nMeetin
- g of the RCSD DELAC (2025-26 school year).
-URL:https://rcsd.info/meetings/
+ g of the District English Learner Advisory Committee.
+URL:https://rcsd.info/committees/delac/
 LOCATION:District Office, Room D
 END:VEVENT
 BEGIN:VEVENT
-UID:committee-delac-2026-05-18-2025-26@rcsd.info
+UID:committee-delac-2026-05-18@rcsd.info
 DTSTAMP:20260522T200000Z
 DTSTART;TZID=America/Los_Angeles:20260518T180000
 DTEND;TZID=America/Los_Angeles:20260518T193000
-SUMMARY:RCSD DELAC Meeting
+SUMMARY:District English Learner Advisory Committee Meeting
 DESCRIPTION:Annual LCAP review and final draft recommendation.\n\nMeeting o
- f the RCSD DELAC (2025-26 school year).
-URL:https://rcsd.info/meetings/
+ f the District English Learner Advisory Committee.
+URL:https://rcsd.info/committees/delac/
 LOCATION:District Office, Room D
 END:VEVENT
 END:VCALENDAR

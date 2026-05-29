@@ -12,6 +12,7 @@ import { readFileSync, writeFileSync, existsSync, readdirSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { parseSimbliAgenda, parseBoarddocsAgenda } from './parse-formal-agenda.mjs';
+import { hasTranscript, getDurationFromTranscript } from './lib/aai.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
@@ -274,8 +275,12 @@ const youtubeIndexPath = resolve(ROOT, 'data/youtube-index.json');
 let youtubeByDate = {};
 if (existsSync(youtubeIndexPath)) {
   const ytIndex = JSON.parse(readFileSync(youtubeIndexPath, 'utf-8'));
-  youtubeByDate = Object.fromEntries(ytIndex.map(v => [v.date, v.id]));
-  console.log(`Loaded YouTube index: ${ytIndex.length} videos`);
+  // Only board videos attach to board meetings. Committee videos (kind: 'cboc', etc.)
+  // share the date space and must never adopt a board meeting on the same calendar day —
+  // they are handled separately by build-committees.mjs. Treat absent kind as 'board'.
+  const boardVideos = ytIndex.filter(v => (v.kind ?? 'board') === 'board');
+  youtubeByDate = Object.fromEntries(boardVideos.map(v => [v.date, v.id]));
+  console.log(`Loaded YouTube index: ${ytIndex.length} videos (${boardVideos.length} board)`);
 }
 
 // ---- Load timestamp map ----
@@ -303,28 +308,7 @@ const manualDurations = {
   '2026-02-11': { seconds: 6120, display: '1h 42m' }, // no auto-captions on YouTube
 };
 
-const transcriptAaiDir = resolve(ROOT, 'artifacts/transcripts-aai');
-function hasTranscript(videoId) {
-  if (!videoId) return false;
-  return existsSync(resolve(transcriptAaiDir, `${videoId}.json`));
-}
-
-function getDurationFromTranscript(videoId) {
-  if (!videoId) return null;
-  const aaiPath = resolve(transcriptAaiDir, `${videoId}.json`);
-  if (!existsSync(aaiPath)) return null;
-  try {
-    const aai = JSON.parse(readFileSync(aaiPath, 'utf-8'));
-    const totalSeconds = Math.round(aai.audio_duration || 0);
-    if (totalSeconds > 0) {
-      const hours = Math.floor(totalSeconds / 3600);
-      const minutes = Math.floor((totalSeconds % 3600) / 60);
-      if (hours > 0) return { seconds: totalSeconds, display: `${hours}h ${minutes}m` };
-      return { seconds: totalSeconds, display: `${minutes}m` };
-    }
-  } catch {}
-  return null;
-}
+// hasTranscript / getDurationFromTranscript are shared with build-committees.mjs (scripts/lib/aai.mjs).
 
 // ---- Replace Simbli attachments with authoritative agenda PDF data ----
 // For meetings that have board memos, attachments are already inline from parseSimbliAgenda.

@@ -4,7 +4,7 @@
  * from templates/district-{en,es}.html + shared html-parts.
  */
 
-import { readFileSync, writeFileSync, mkdirSync } from 'fs';
+import { readFileSync, writeFileSync, mkdirSync, readdirSync, existsSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { headMeta, siteNav, siteFooter } from './html-parts.mjs';
@@ -609,6 +609,36 @@ const districtCSS = `
     text-decoration: underline;
   }
 
+  .committee-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 0.75rem;
+  }
+  .committee-card {
+    display: block;
+    padding: 0.9rem 1rem;
+    border: 1px solid var(--border, #e5e7eb);
+    border-radius: 10px;
+    text-decoration: none;
+    color: inherit;
+  }
+  .committee-card:hover { border-color: var(--green-mid); }
+  .committee-name {
+    display: block;
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 1.05rem;
+    color: var(--green-deep);
+    margin-bottom: 0.25rem;
+  }
+  .committee-desc { display: block; font-size: 0.85rem; color: var(--text-muted); line-height: 1.45; }
+  .committee-rec {
+    display: inline-block;
+    margin-top: 0.4rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.68rem;
+    color: var(--green-mid);
+  }
+
   .doc-school-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
@@ -833,9 +863,46 @@ const PAGES = [
   },
 ];
 
+const COMMITTEE_LABELS = {
+  en: { title: 'Committees & Oversight', subtitle: 'Standing district and school committees, with meeting recordings and transcripts where available.', viewAll: 'View all committees →', prefix: 'committees', recordings: 'recordings' },
+  es: { title: 'Comités y Supervisión', subtitle: 'Comités permanentes del distrito y de las escuelas, con grabaciones y transcripciones de reuniones cuando están disponibles.', viewAll: 'Ver todos los comités →', prefix: 'comites', recordings: 'grabaciones' },
+};
+
+/** Render the Committees & Oversight section from data/committees/*.json. */
+function renderCommittees(lang) {
+  const dir = resolve(ROOT, 'data/committees');
+  if (!existsSync(dir)) return '';
+  const committees = readdirSync(dir)
+    .filter(f => f.endsWith('.json'))
+    .map(f => JSON.parse(readFileSync(resolve(dir, f), 'utf-8')))
+    .sort((a, b) => (a.nameEn || '').localeCompare(b.nameEn || ''));
+  if (!committees.length) return '';
+  const L = COMMITTEE_LABELS[lang];
+  const cards = committees.map(c => {
+    const name = lang === 'es' ? c.nameEs : c.nameEn;
+    const desc = (lang === 'es' ? c.descriptionEs : c.descriptionEn) || '';
+    const rec = (c.meetings || []).filter(m => m.youtube).length;
+    return `\n    <a class="committee-card" href="/${L.prefix}/${c.id}/">
+      <span class="committee-name">${name}</span>
+      ${desc ? `<span class="committee-desc">${desc.slice(0, 160)}</span>` : ''}
+      ${rec ? `<span class="committee-rec">${rec} ${L.recordings}</span>` : ''}
+    </a>`;
+  }).join('');
+  return `<section class="section" id="committees">
+  <div class="section-rule"></div>
+  <div class="section-num">09</div>
+  <h2>${L.title}</h2>
+  <p class="section-subtitle">${L.subtitle}</p>
+  <div class="committee-grid">${cards}
+  </div>
+  <p style="margin-top:1rem"><a class="doc-link" href="/${L.prefix}/">${L.viewAll}</a></p>
+</section>`;
+}
+
 for (const page of PAGES) {
   const bodyContent = readFileSync(resolve(ROOT, page.template), 'utf-8');
   const documentsSection = renderDocuments(page.lang);
+  const committeesSection = renderCommittees(page.lang);
 
   const html = `<!DOCTYPE html>
 <html lang="${page.lang}">
@@ -857,6 +924,8 @@ ${siteNav({ activePage: 'district', lang: page.lang, altLangHref: page.altLangHr
 ${bodyContent}
 
 ${documentsSection}
+
+${committeesSection}
 
 </main>
 

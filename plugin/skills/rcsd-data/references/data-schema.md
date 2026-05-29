@@ -851,6 +851,30 @@ School Site Council (SSC) membership extracted from SPSA (School Plan for Studen
 - Multiple school years may be present per school as SPSAs are updated annually
 - `composition` totals should satisfy: `principal + classroomTeachers + otherStaff = parentCommunity` (parity requirement)
 
+## data/committees/&lt;id&gt;.json
+
+One file per committee instance (`cboc`, `delac`, and — as they are added — `ssc-<school>`, `elac-<school>`). Builders glob `data/committees/*.json`. Curated metadata is hand-authored; the `meetings[]` recordings + transcript status are enriched by `scripts/build-committees.mjs` from the committee-tagged YouTube index and the AAI cache. Sparse by default: only `id`, `type`, `scope`, `nameEn`, `nameEs` are required.
+
+Committee transcripts are namespaced to avoid colliding with board transcripts: `transcriptKey = "<id>-<date>"` → `https://data.rcsd.info/transcripts/<id>-<date>.json` (EN) and `<id>-<date>-es.json` (ES).
+
+### Schema
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `id` | string | Committee instance id (e.g. `cboc`, `ssc-orion`). |
+| `type` | string | Committee type (`cboc`, `delac`, `elac`, `ssc`). |
+| `scope` | string | `district` or `school`. |
+| `school` | string\|null | School slug when `scope === 'school'`. |
+| `nameEn` / `nameEs` | string | Bilingual committee name. |
+| `shortName` | string | Acronym (e.g. `CBOC`). |
+| `descriptionEn` / `descriptionEs` | string\|null | Bilingual blurb. |
+| `homepage` / `email` / `chair` | string\|null | Optional contact/links. |
+| `members` | array | `[{ name, role, since }]` — optional, sparse. |
+| `videoTitleMatch` | string[] | Case-insensitive substrings used by `scrape-youtube-index.mjs` to tag this committee's recordings. |
+| `meetings[]` | array | Per-meeting: `date`, `status` (`past`/`scheduled`), `time`, `location`, `youtube`, `transcriptKey`, `hasTranscript`, `duration`, `durationSeconds`, `agendaPdf`, `minutesPdf`, `descriptionEn`/`descriptionEs`. Most fields optional. |
+
+(Replaces the former `data/committee-meetings.json`, which held only DELAC/CBOC scheduled dates for the ICS feeds.)
+
 ## data/ssc-meetings.json
 
 Per-school, per-year index of SSC meeting agendas and minutes. Meeting documents are published to R2 under `documents/ssc/{school}/{year}/` and served from `data.rcsd.info`.
