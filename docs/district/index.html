@@ -756,6 +756,36 @@
     text-decoration: underline;
   }
 
+  .committee-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 0.75rem;
+  }
+  .committee-card {
+    display: block;
+    padding: 0.9rem 1rem;
+    border: 1px solid var(--border, #e5e7eb);
+    border-radius: 10px;
+    text-decoration: none;
+    color: inherit;
+  }
+  .committee-card:hover { border-color: var(--green-mid); }
+  .committee-name {
+    display: block;
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 1.05rem;
+    color: var(--green-deep);
+    margin-bottom: 0.25rem;
+  }
+  .committee-desc { display: block; font-size: 0.85rem; color: var(--text-muted); line-height: 1.45; }
+  .committee-rec {
+    display: inline-block;
+    margin-top: 0.4rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.68rem;
+    color: var(--green-mid);
+  }
+
   .doc-school-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
@@ -1738,6 +1768,26 @@
       <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/spanish/taft.pdf" target="_blank" rel="noopener">Taft</a>
     </div>
   </div>
+</section>
+
+<section class="section" id="committees">
+  <div class="section-rule"></div>
+  <div class="section-num">09</div>
+  <h2>Committees & Oversight</h2>
+  <p class="section-subtitle">Standing district and school committees, with meeting recordings and transcripts where available.</p>
+  <div class="committee-grid">
+    <a class="committee-card" href="/committees/cboc/">
+      <span class="committee-name">Citizens' Bond Oversight Committee</span>
+      <span class="committee-desc">The Citizens' Bond Oversight Committee provides independent oversight of how Redwood City School District spends voter-approved general obligation bond funds (M</span>
+      <span class="committee-rec">13 recordings</span>
+    </a>
+    <a class="committee-card" href="/committees/delac/">
+      <span class="committee-name">District English Learner Advisory Committee</span>
+      <span class="committee-desc">The District English Learner Advisory Committee advises the RCSD board and staff on programs and services for English learners, including review of the district</span>
+      
+    </a>
+  </div>
+  <p style="margin-top:1rem"><a class="doc-link" href="/committees/">View all committees →</a></p>
 </section>
 
 </main>
