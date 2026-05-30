@@ -114,6 +114,11 @@ const pageCSS = `
   .cm-desc { font-size: 1.05rem; line-height: 1.6; margin: 0 0 1.5rem; max-width: 70ch; }
   .cm-facts { font-family: 'IBM Plex Mono', monospace; font-size: 0.8rem; color: var(--text-muted); margin: 0 0 1.5rem; }
   .cm-facts a { color: var(--green-mid); }
+  .cm-docrow { display: flex; gap: .5rem; align-items: center; flex-wrap: wrap; margin: .25rem 0 1.25rem; }
+  .cm-docrow .lbl { font-family: 'IBM Plex Mono', monospace; font-size: .72rem; color: var(--text-muted); }
+  .cm-doc { display: inline-flex; align-items: center; gap: .35rem; font-family: 'IBM Plex Mono', monospace; font-size: .72rem; padding: .3rem .75rem; border: 1px solid var(--green-mid); border-radius: 999px; color: var(--green-deep); text-decoration: none; }
+  .cm-doc::before { content: "📄"; font-size: .8rem; }
+  .cm-doc:hover { background: var(--green-pale, #e7f1ea); }
   .cm-h2 { font-family: 'Fraunces', Georgia, serif; font-size: 1.25rem; color: var(--green-deep); margin: 1.75rem 0 .75rem; }
   .cm-members { list-style: none; padding: 0; margin: 0 0 1.5rem; }
   .cm-members li { padding: .35rem 0; border-bottom: 1px solid var(--border, #e5e7eb); font-size: .95rem; }
@@ -242,7 +247,15 @@ function generateMeetingPage(c, m, L) {
     <a href="https://www.youtube.com/watch?v=${m.youtube}" target="_blank" rel="noopener">${L.watchYouTube}</a>
   </div>
   ${meetingDesc(m, L.lang) ? `<p class="cm-desc">${escapeHtml(meetingDesc(m, L.lang))}</p>` : ''}
-  ${(() => { const d = meetingDocLinks(m, L); return d.length ? `<div class="cm-facts">${L.documentsLabel}: ${d.join(' &middot; ')}</div>` : ''; })()}
+  ${(() => {
+    const items = [];
+    if (m.agendaUrl) items.push([L.agendaLabel, m.agendaUrl]);
+    if (m.handoutsUrl) items.push([L.handoutsLabel, m.handoutsUrl]);
+    if (m.minutesUrl) items.push([L.minutesLabel, m.minutesUrl]);
+    return items.length
+      ? `<div class="cm-docrow"><span class="lbl">${L.documentsLabel}:</span>${items.map(([t, u]) => `<a class="cm-doc" href="${escapeHtml(u)}" target="_blank" rel="noopener">${t}</a>`).join('')}</div>`
+      : '';
+  })()}
 
   <div class="tv-video-wrap"><div id="yt-player"></div></div>
   ${transcriptUrl ? `<div class="tv-controls">
@@ -398,7 +411,7 @@ function generateCommitteeHome(c, L) {
   if (c.homepage) facts.push(`<a href="${escapeHtml(c.homepage)}" target="_blank" rel="noopener"><strong>${L.officialPage} ↗</strong></a>`);
   if (c.chair) facts.push(`${L.chairLabel}: ${escapeHtml(c.chair)}`);
   if (c.email) facts.push(`${L.emailLabel}: <a href="mailto:${escapeHtml(c.email)}">${escapeHtml(c.email)}</a>`);
-  if (c.bylawsUrl) facts.push(`<a href="${escapeHtml(c.bylawsUrl)}" target="_blank" rel="noopener">${L.bylawsLabel}</a>`);
+  if (c.bylawsUrl) facts.push(`<a href="${escapeHtml(c.bylawsUrl)}" target="_blank" rel="noopener">${L.bylawsLabel}${c.bylawsApproved ? ` (${escapeHtml(c.bylawsApproved.slice(0, 4))})` : ''}</a>`);
   if (c.applyUrl) facts.push(`<a href="${escapeHtml(c.applyUrl)}" target="_blank" rel="noopener">${L.applyLabel}</a>`);
 
   const termTag = (d) => d ? ` <span class="role">(${L.termLabel} ${escapeHtml(d.slice(0, 4))})</span>` : '';
@@ -408,10 +421,19 @@ function generateCommitteeHome(c, L) {
         (c.vacancies && c.vacancies.length) ? `<li class="role">${L.vacanciesLabel}: ${c.vacancies.map(escapeHtml).join(', ')}</li>` : ''}</ul>`
     : '';
 
-  const annualHtml = (c.annualReports && c.annualReports.length)
-    ? `<h2 class="cm-h2">${L.annualReportsHeading}</h2><ul class="cm-list">${c.annualReports.map((r) =>
-        `<li class="cm-row"><span class="cm-date">${escapeHtml(r.year)}</span><a href="${escapeHtml(r.url)}" target="_blank" rel="noopener">${L.measureLabel} ${escapeHtml(r.measure)} — ${escapeHtml(r.year)}</a></li>`).join('')}</ul>`
-    : '';
+  const annualHtml = (() => {
+    if (!c.annualReports || !c.annualReports.length) return '';
+    const byYear = {};
+    for (const r of c.annualReports) (byYear[r.year] ||= []).push(r);
+    const rows = Object.keys(byYear).sort().reverse().map((y) => {
+      const links = byYear[y]
+        .sort((a, b) => (a.measure > b.measure ? 1 : -1)) // S before T
+        .map((r) => `<a href="${escapeHtml(r.url)}" target="_blank" rel="noopener">${L.measureLabel} ${escapeHtml(r.measure)}</a>`)
+        .join(' &middot; ');
+      return `<li class="cm-row"><span class="cm-date">${escapeHtml(y)}</span>${links}</li>`;
+    }).join('');
+    return `<h2 class="cm-h2">${L.annualReportsHeading}</h2><ul class="cm-list">${rows}</ul>`;
+  })();
 
   const meetingsHtml = meetings.length
     ? `<ul class="cm-list">${meetings.map((m) => {
