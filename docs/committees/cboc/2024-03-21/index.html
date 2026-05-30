@@ -176,6 +176,11 @@
   .cm-desc { font-size: 1.05rem; line-height: 1.6; margin: 0 0 1.5rem; max-width: 70ch; }
   .cm-facts { font-family: 'IBM Plex Mono', monospace; font-size: 0.8rem; color: var(--text-muted); margin: 0 0 1.5rem; }
   .cm-facts a { color: var(--green-mid); }
+  .cm-docrow { display: flex; gap: .5rem; align-items: center; flex-wrap: wrap; margin: .25rem 0 1.25rem; }
+  .cm-docrow .lbl { font-family: 'IBM Plex Mono', monospace; font-size: .72rem; color: var(--text-muted); }
+  .cm-doc { display: inline-flex; align-items: center; gap: .35rem; font-family: 'IBM Plex Mono', monospace; font-size: .72rem; padding: .3rem .75rem; border: 1px solid var(--green-mid); border-radius: 999px; color: var(--green-deep); text-decoration: none; }
+  .cm-doc::before { content: "📄"; font-size: .8rem; }
+  .cm-doc:hover { background: var(--green-pale, #e7f1ea); }
   .cm-h2 { font-family: 'Fraunces', Georgia, serif; font-size: 1.25rem; color: var(--green-deep); margin: 1.75rem 0 .75rem; }
   .cm-members { list-style: none; padding: 0; margin: 0 0 1.5rem; }
   .cm-members li { padding: .35rem 0; border-bottom: 1px solid var(--border, #e5e7eb); font-size: .95rem; }
@@ -246,7 +251,7 @@
     <a href="https://www.youtube.com/watch?v=icioqpwTI18" target="_blank" rel="noopener">YouTube</a>
   </div>
   
-  <div class="cm-facts">Documents: <a href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/march-21-2024-agenda-and-handouts" target="_blank" rel="noopener">Agenda & handouts</a> &middot; <a href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/march-21-2024-minutes" target="_blank" rel="noopener">Minutes</a></div>
+  <div class="cm-docrow"><span class="lbl">Documents:</span><a class="cm-doc" href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/march-21-2024-agenda-and-handouts" target="_blank" rel="noopener">Agenda & handouts</a><a class="cm-doc" href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/march-21-2024-minutes" target="_blank" rel="noopener">Minutes</a></div>
 
   <div class="tv-video-wrap"><div id="yt-player"></div></div>
   <div class="tv-controls">
