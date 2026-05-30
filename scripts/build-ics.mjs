@@ -296,8 +296,8 @@ function generateCommitteeCalendar(committee, lang, context) {
       endHour = `${String(endD.getHours()).padStart(2, '0')}:${String(endD.getMinutes()).padStart(2, '0')}`;
     }
 
-    const agendaUrl = m.agendaPdf ? `https://data.rcsd.info/${m.agendaPdf}` : '';
-    const minutesUrl = m.minutesPdf ? `https://data.rcsd.info/${m.minutesPdf}` : '';
+    const agendaUrl = m.agendaUrl || (m.agendaPdf ? `https://data.rcsd.info/${m.agendaPdf}` : '');
+    const minutesUrl = m.minutesUrl || (m.minutesPdf ? `https://data.rcsd.info/${m.minutesPdf}` : '');
     // Link recorded meetings to their detail page; otherwise to the committee home.
     const detailUrl = m.youtube
       ? `${homeUrl}${m.date}/`
