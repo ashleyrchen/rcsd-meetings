@@ -1,8 +1,8 @@
 {
   "_metadata": {
-    "description": "RCSD Citizens' Bond Oversight Committee (CBOC). Curated metadata; the meetings[] recordings are populated by scripts/build-committees.mjs from the committee-tagged YouTube index and AssemblyAI transcript cache.",
-    "source": "RCSD YouTube channel (recordings), RCSD board minutes/ROADMAP (membership). Measure S and Measure T are voter-approved RCSD general obligation bonds.",
-    "lastUpdated": "2026-05-29"
+    "description": "RCSD Citizens' Bond Oversight Committee (CBOC) for Measures S and T. Curated metadata + documents from the district's authoritative committee page; meetings[] recordings + transcript status are populated by scripts/build-committees.mjs from the committee-tagged YouTube index and AssemblyAI transcript cache.",
+    "source": "Authoritative: https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee (members, annual reports, agendas, handouts, minutes, bylaws). Recordings from the RCSD YouTube channel.",
+    "lastUpdated": "2026-05-30"
   },
   "id": "cboc",
   "type": "cboc",
@@ -11,16 +11,104 @@
   "nameEn": "Citizens' Bond Oversight Committee",
   "nameEs": "Comité Ciudadano de Supervisión de Bonos",
   "shortName": "CBOC",
-  "descriptionEn": "The Citizens' Bond Oversight Committee provides independent oversight of how Redwood City School District spends voter-approved general obligation bond funds (Measures S and T), reviewing expenditures and audits to confirm the money is used for authorized school facilities projects.",
-  "descriptionEs": "El Comité Ciudadano de Supervisión de Bonos revisa de forma independiente cómo el Distrito Escolar de Redwood City gasta el dinero de los bonos aprobados por los votantes (las Medidas S y T), revisando los gastos y las auditorías para confirmar que el dinero se use en proyectos autorizados de instalaciones escolares.",
-  "homepage": null,
+  "descriptionEn": "California Education Code requires a Citizens' Bond Oversight Committee to review and report to the public on the use of school bond proceeds. RCSD's committee oversees the voter-approved Measure S and Measure T general obligation bonds, reviewing expenditures and audits to confirm the money is spent only on authorized school facilities projects. The committee meets quarterly (typically August, November, February, and May) at the District Office.",
+  "descriptionEs": "El Código de Educación de California exige un Comité Ciudadano de Supervisión de Bonos que revise e informe al público sobre el uso del dinero de los bonos escolares. El comité de RCSD supervisa los bonos de obligación general aprobados por los votantes (las Medidas S y T), revisando los gastos y las auditorías para confirmar que el dinero se use solo en proyectos autorizados de instalaciones escolares. El comité se reúne cada trimestre (por lo general en agosto, noviembre, febrero y mayo) en la Oficina del Distrito.",
+  "homepage": "https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee",
+  "applyUrl": "https://forms.gle/PNjb1FhwsW5KExxMA",
+  "bylawsUrl": "https://drive.google.com/file/d/1A1l4CDcn7PGOe2d6gpJCTE43zQpCPdJI/view",
   "email": null,
   "chair": null,
   "members": [
     {
+      "name": "Jennifer Givens",
+      "role": "Parent/Guardian, District",
+      "termExpires": "2027-06-30"
+    },
+    {
+      "name": "Anthony Hanni",
+      "role": "Member at Large",
+      "termExpires": "2028-06-30"
+    },
+    {
       "name": "Alan Hansen",
-      "role": "Taxpayer Representative",
-      "since": "2025-12"
+      "role": "Taxpayer Organization",
+      "termExpires": "2027-06-30"
+    },
+    {
+      "name": "Rick Hunter",
+      "role": "Member at Large",
+      "termExpires": "2027-06-30"
+    },
+    {
+      "name": "Carl Landers",
+      "role": "Parent/Guardian, District/PTA",
+      "termExpires": "2027-06-30"
+    },
+    {
+      "name": "Jitpal Sahai",
+      "role": "Parent/Guardian, District",
+      "termExpires": "2027-06-30"
+    }
+  ],
+  "vacancies": [
+    "Business Organization",
+    "Senior Citizen Organization"
+  ],
+  "annualReports": [
+    {
+      "year": "2023-24",
+      "measure": "S",
+      "url": "https://drive.google.com/file/d/12r2SlhiZnv798q-xBo2zy7lW5iTZxHZ3/view"
+    },
+    {
+      "year": "2023-24",
+      "measure": "T",
+      "url": "https://drive.google.com/file/d/1RnI2MGo8GwBvwtH0iR0pAlP__wpzEO22/view"
+    },
+    {
+      "year": "2022-23",
+      "measure": "S",
+      "url": "https://drive.google.com/file/d/1myIMn4azMdUcqNPRYRxg8TIbYMY9ud9a/view"
+    },
+    {
+      "year": "2022-23",
+      "measure": "T",
+      "url": "https://drive.google.com/file/d/1YehNLmKmjWZg9ilH86sH1pO6vtt6bOmt/view"
+    },
+    {
+      "year": "2021-22",
+      "measure": "T",
+      "url": "https://drive.google.com/file/d/1RlgYnNhRS7-LecFku70RMy0qlhonBRWd/view"
+    },
+    {
+      "year": "2020-21",
+      "measure": "T",
+      "url": "https://drive.google.com/file/d/12kSj3p4nlvAS1tVfufr_PtZWjpCkcTFJ/view"
+    },
+    {
+      "year": "2019-20",
+      "measure": "T",
+      "url": "https://drive.google.com/file/d/1b9FmR6tC_7dFakjJkR2GpyPzLlo7T5pI/view"
+    },
+    {
+      "year": "2018-19",
+      "measure": "T",
+      "url": "https://drive.google.com/file/d/1mO-erD5ZCXHSJjSD3IeIOQz11CjomNPg/view"
+    },
+    {
+      "year": "2017-18",
+      "measure": "T",
+      "url": "https://drive.google.com/file/d/1h68rRLpxYRhBrpWChFbXGAeCCk4ozPkz/view"
+    },
+    {
+      "year": "2016-17",
+      "measure": "T",
+      "url": "https://drive.google.com/file/d/1aToEsISKzTV1YdkOT0jU3t0-RJC7c81F/view"
+    },
+    {
+      "year": "2015-16",
+      "measure": "T",
+      "url": "https://drive.google.com/file/d/145W0WddRIxD-rRDISbP0hq6q-4B4ALop/view"
     }
   ],
   "videoTitleMatch": [
@@ -28,8 +116,23 @@
   ],
   "meetings": [
     {
+      "date": "2026-06-11",
+      "time": "18:00",
+      "location": "District Office",
+      "youtube": null,
+      "agendaUrl": null,
+      "handoutsUrl": null,
+      "minutesUrl": null,
+      "descriptionEn": "Regular quarterly CBOC meeting.",
+      "descriptionEs": "Reunión trimestral regular del CBOC.",
+      "status": "scheduled"
+    },
+    {
       "date": "2026-04-30",
       "youtube": "PnOi-XcblAE",
+      "agendaUrl": "https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/april-30-2026-agenda-and-handouts",
+      "handoutsUrl": null,
+      "minutesUrl": null,
       "title": "April 30, 2026--Citizens' Bond Oversight Committee Meeting",
       "status": "past",
       "transcriptKey": "cboc-2026-04-30",
@@ -40,6 +143,9 @@
     {
       "date": "2025-11-05",
       "youtube": "7LxtZHhcALg",
+      "agendaUrl": "https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/november-5-2025-agenda-and-handouts",
+      "handoutsUrl": null,
+      "minutesUrl": "https://drive.google.com/file/d/1EvaLAkp4mW1hnSqQ4Oskb1JVf0hBsp7A/view",
       "title": "November 5, 2025--Citizens' Bond Oversight Committee Meeting",
       "status": "past",
       "transcriptKey": "cboc-2025-11-05",
@@ -50,6 +156,9 @@
     {
       "date": "2025-08-06",
       "youtube": "8Zvv208Qsu0",
+      "agendaUrl": "https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/august-6-2025-agenda-and-handouts",
+      "handoutsUrl": null,
+      "minutesUrl": "https://drive.google.com/file/d/1q_BMSD6EycA5XFL5ZhICgyIDHRxIKgca/view",
       "title": "August 6, 2025--Citizens' Bond Oversight Committee Meeting",
       "status": "past",
       "transcriptKey": "cboc-2025-08-06",
@@ -60,6 +169,9 @@
     {
       "date": "2025-05-07",
       "youtube": "nnEA6RTn_OU",
+      "agendaUrl": "https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/may-7-2025-agenda-and-handouts",
+      "handoutsUrl": null,
+      "minutesUrl": "https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/may-7-2025-minutes",
       "title": "May 7, 2025--Citizens' Bond Oversight Committee Meeting",
       "status": "past",
       "transcriptKey": "cboc-2025-05-07",
@@ -70,6 +182,9 @@
     {
       "date": "2025-02-25",
       "youtube": "AUh3FIhQDy8",
+      "agendaUrl": "https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/february-25-2025-agenda-and-handouts",
+      "handoutsUrl": null,
+      "minutesUrl": "https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/february-25-2025-minutes",
       "title": "February 25, 2025--Citizens' Bond Oversight Committee Meeting",
       "status": "past",
       "transcriptKey": "cboc-2025-02-25",
@@ -80,6 +195,9 @@
     {
       "date": "2025-01-22",
       "youtube": "Jvh94J4I3Bs",
+      "agendaUrl": "https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/january-22-2025-agenda-and-handouts",
+      "handoutsUrl": null,
+      "minutesUrl": "https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/january-22-2025-minutes",
       "title": "January 22, 2025--Citizens' Bond Oversight Committee Meeting",
       "status": "past",
       "transcriptKey": "cboc-2025-01-22",
@@ -90,6 +208,9 @@
     {
       "date": "2024-08-29",
       "youtube": "kDqgjt56aXc",
+      "agendaUrl": "https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/august-29-2024-agenda-and-handouts",
+      "handoutsUrl": null,
+      "minutesUrl": "https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/august-29-2024-minutes",
       "title": "August 29, 2024--Citizens' Bond Oversight Committee Meeting",
       "status": "past",
       "transcriptKey": "cboc-2024-08-29",
@@ -100,6 +221,10 @@
     {
       "date": "2024-06-18",
       "youtube": "cY66uY9Z-MY",
+      "agendaUrl": "https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/june-17-2024-agenda-and-handouts",
+      "handoutsUrl": null,
+      "minutesUrl": "https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/june-17-2024-minutes",
+      "note": "District page lists this meeting as June 17, 2024; the recording is titled June 18, 2024.",
       "title": "June 18, 2024--Citizens' Bond Oversight Committee Meeting",
       "status": "past",
       "transcriptKey": "cboc-2024-06-18",
@@ -110,6 +235,9 @@
     {
       "date": "2024-03-21",
       "youtube": "icioqpwTI18",
+      "agendaUrl": "https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/march-21-2024-agenda-and-handouts",
+      "handoutsUrl": null,
+      "minutesUrl": "https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/march-21-2024-minutes",
       "title": "March 21, 2024--Citizens' Bond Oversight Committee Meeting",
       "status": "past",
       "transcriptKey": "cboc-2024-03-21",
@@ -118,8 +246,19 @@
       "durationSeconds": 8848
     },
     {
+      "date": "2023-11-14",
+      "youtube": null,
+      "agendaUrl": "https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/may-11-2023-agenda-and-handouts-2",
+      "handoutsUrl": null,
+      "minutesUrl": "https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/november-14-2023-minutes",
+      "status": "past"
+    },
+    {
       "date": "2023-09-14",
       "youtube": "4-QHZIibVA8",
+      "agendaUrl": "https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/september-14-2023-agenda-and-handouts",
+      "handoutsUrl": null,
+      "minutesUrl": "https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/september-14-2023-minutes",
       "title": "September 14, 2023 -- Citizens' Bond Oversight Committee",
       "status": "past",
       "transcriptKey": "cboc-2023-09-14",
@@ -130,6 +269,9 @@
     {
       "date": "2023-05-11",
       "youtube": "F_bIShM89Bg",
+      "agendaUrl": "https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/may-11-2023-agenda-and-handouts",
+      "handoutsUrl": null,
+      "minutesUrl": "https://drive.google.com/file/d/1czerh8o9Jy8pCjLFYZxYH7U4Vh3PUZlU/view",
       "title": "May 11, 2023 -- Measure T Citizens' Bond Oversight Committee",
       "status": "past",
       "transcriptKey": "cboc-2023-05-11",
@@ -140,6 +282,9 @@
     {
       "date": "2023-02-02",
       "youtube": "A9QEGSzkuK0",
+      "agendaUrl": "https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/february-2-2023",
+      "handoutsUrl": null,
+      "minutesUrl": "https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/february-2-2023-minutes",
       "title": "February 2, 2023 -- Measure T Citizens' Bond Oversight Committee Meeting",
       "status": "past",
       "transcriptKey": "cboc-2023-02-02",
@@ -150,12 +295,143 @@
     {
       "date": "2022-10-27",
       "youtube": "8lU3HmcuhqI",
+      "agendaUrl": "https://www.rcsdk8.net/fs/pages/6952",
+      "handoutsUrl": null,
+      "minutesUrl": "https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/october-27-2022-minutes-regular-meeting",
       "title": "October 27, 2022 -- Measure T Citizens' Bond Oversight Committee Meeting",
       "status": "past",
       "transcriptKey": "cboc-2022-10-27",
       "hasTranscript": true,
       "duration": "2h 15m",
       "durationSeconds": 8111
+    },
+    {
+      "date": "2022-04-21",
+      "youtube": null,
+      "agendaUrl": "https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/april-21-2022-agenda",
+      "handoutsUrl": "https://drive.google.com/file/d/1QC_TBB65JQCyKERRCpA8IW7aAHVSKF_H/view",
+      "minutesUrl": "https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/april-21-2022-minutes",
+      "status": "past"
+    },
+    {
+      "date": "2021-12-16",
+      "youtube": null,
+      "agendaUrl": "https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/december-16-2021-agenda",
+      "handoutsUrl": "https://drive.google.com/file/d/15wo-Ni0cH9PDX6iQ_5mVcdKxFOSvmlZc/view",
+      "minutesUrl": "https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/december-16-2021-minutes",
+      "status": "past"
+    },
+    {
+      "date": "2021-09-23",
+      "youtube": null,
+      "agendaUrl": "https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/september-23-2021-agenda",
+      "handoutsUrl": "https://drive.google.com/file/d/1oZfASeqpqGDxeahV-O_wlQJ8tPSMvvpz/view",
+      "minutesUrl": "https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/september-23-2021-minutes",
+      "status": "past"
+    },
+    {
+      "date": "2021-04-15",
+      "youtube": null,
+      "agendaUrl": "https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/april-15-2021-agenda",
+      "handoutsUrl": "https://drive.google.com/file/d/1Usa1CZfdUBtNyCAOTtGv0GWIqjXU0ptk/view",
+      "minutesUrl": "https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/april-15-2021-minutes",
+      "status": "past"
+    },
+    {
+      "date": "2020-11-19",
+      "youtube": null,
+      "agendaUrl": "https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/november-19-2020-agenda",
+      "handoutsUrl": "https://drive.google.com/file/d/18HoyDS6w5ATNJfnQWz1CZOX0X86jYz84/view",
+      "minutesUrl": "https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/november-19-2020",
+      "status": "past"
+    },
+    {
+      "date": "2020-05-28",
+      "youtube": null,
+      "agendaUrl": "https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/may-28-2020-agenda",
+      "handoutsUrl": "https://drive.google.com/file/d/1-XNn1v7iM81mB0ON5jgztmteA8FcOr2D/view",
+      "minutesUrl": "https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/may-28-2020-minutes",
+      "status": "past"
+    },
+    {
+      "date": "2020-03-05",
+      "youtube": null,
+      "agendaUrl": "https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/march-5-2020-agenda",
+      "handoutsUrl": "https://drive.google.com/file/d/1tugqdcQRmBA79UMPZXyhn4GboiYLbcQp/view",
+      "minutesUrl": "https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/march-5-2020-minutes",
+      "status": "past"
+    },
+    {
+      "date": "2019-11-21",
+      "youtube": null,
+      "agendaUrl": "https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/november-21-2019-agenda",
+      "handoutsUrl": "https://drive.google.com/file/d/1PtDm2eqHhG56FIl7dPDfdhEQ-FlOyDfb/view",
+      "minutesUrl": "https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/november-21-2019-minutes",
+      "status": "past"
+    },
+    {
+      "date": "2019-05-30",
+      "youtube": null,
+      "agendaUrl": "https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/may-30-2019-agenda",
+      "handoutsUrl": "https://drive.google.com/file/d/19HEIkGau3MubizOmGp0YV3hNQGXnJ89C/view",
+      "minutesUrl": "https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/may-30-2019-minutes",
+      "status": "past"
+    },
+    {
+      "date": "2019-03-21",
+      "youtube": null,
+      "agendaUrl": "https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/march-21-2019-agenda",
+      "handoutsUrl": "https://drive.google.com/file/d/1fDvSimWJgqkJ3qSs7I0tDjDGKNoTjTq2/view",
+      "minutesUrl": "https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/march-21-2019-minutes",
+      "status": "past"
+    },
+    {
+      "date": "2018-11-15",
+      "youtube": null,
+      "agendaUrl": "https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/november-15-2018-agenda",
+      "handoutsUrl": "https://drive.google.com/file/d/1pJcJXObzxTrpqPUrWgS2ebskSVjJpX9f/view",
+      "minutesUrl": "https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/november-15-2018",
+      "status": "past"
+    },
+    {
+      "date": "2018-09-20",
+      "youtube": null,
+      "agendaUrl": "https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/september-20-2018-agenda",
+      "handoutsUrl": "https://drive.google.com/file/d/11XZXBhXOB6kmFkVipvYk3_RFcvHfjFxD/view",
+      "minutesUrl": "https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/september-20-2018",
+      "status": "past"
+    },
+    {
+      "date": "2018-05-31",
+      "youtube": null,
+      "agendaUrl": "https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/may-31-2018-agenda",
+      "handoutsUrl": "https://drive.google.com/file/d/12Wjv8bkLve5HFSzFrprMf7btLnMbVfB7/view",
+      "minutesUrl": "https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/may-31-2018",
+      "status": "past"
+    },
+    {
+      "date": "2018-03-01",
+      "youtube": null,
+      "agendaUrl": "https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/march-1-2018-agenda",
+      "handoutsUrl": "https://drive.google.com/file/d/14D80Uy9xEhN6ql5mBwTFyzXwsXCeUn31/view",
+      "minutesUrl": "https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/march-1-2018",
+      "status": "past"
+    },
+    {
+      "date": "2017-06-01",
+      "youtube": null,
+      "agendaUrl": "https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/june-1-2017-agenda",
+      "handoutsUrl": null,
+      "minutesUrl": "https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/june-1-2017",
+      "status": "past"
+    },
+    {
+      "date": "2016-11-03",
+      "youtube": null,
+      "agendaUrl": "https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/november-3-2016-agenda",
+      "handoutsUrl": null,
+      "minutesUrl": "https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/november-3-2016",
+      "status": "past"
     }
   ]
 }
