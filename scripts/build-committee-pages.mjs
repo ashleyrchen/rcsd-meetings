@@ -62,7 +62,7 @@ const LOCALES = {
     bylawsLabel: 'Bylaws', applyLabel: 'Apply to join', vacanciesLabel: 'Open seats',
     agendaLabel: 'Agenda & handouts', handoutsLabel: 'Handouts', minutesLabel: 'Minutes',
     measureLabel: 'Measure', documentsLabel: 'Documents', termLabel: 'term ends',
-    officialNote: 'Members, annual reports, agendas, and minutes are maintained by the district.',
+    officialNote: 'Members, annual reports, agendas, and minutes are maintained by the district. Meeting summaries are AI-generated from the transcript.',
   },
   es: {
     lang: 'es', prefix: 'comites', altPrefix: 'committees', ogLocale: 'es_US',
@@ -85,13 +85,17 @@ const LOCALES = {
     bylawsLabel: 'Estatutos', applyLabel: 'Solicitar unirse', vacanciesLabel: 'Puestos vacantes',
     agendaLabel: 'Agenda y documentos', handoutsLabel: 'Documentos', minutesLabel: 'Actas',
     measureLabel: 'Medida', documentsLabel: 'Documentos', termLabel: 'fin del término',
-    officialNote: 'Los miembros, informes anuales, agendas y actas son mantenidos por el distrito.',
+    officialNote: 'Los miembros, informes anuales, agendas y actas son mantenidos por el distrito. Los resúmenes de las reuniones se generan con IA a partir de la transcripción.',
   },
 };
 
 function committeeName(c, lang) { return lang === 'es' ? c.nameEs : c.nameEn; }
 function committeeDesc(c, lang) { return lang === 'es' ? c.descriptionEs : c.descriptionEn; }
 function meetingDesc(m, lang) { return lang === 'es' ? m.descriptionEs : m.descriptionEn; }
+// AI summary of what the meeting covered, falling back to any curated description.
+function meetingSummary(m, lang) {
+  return (lang === 'es' ? m.summaryEs : m.summaryEn) || meetingDesc(m, lang) || '';
+}
 
 // External agenda/handouts/minutes links for a meeting (district-hosted). Returns an array of <a>.
 function meetingDocLinks(m, L) {
@@ -124,6 +128,23 @@ const pageCSS = `
   .cm-members li { padding: .35rem 0; border-bottom: 1px solid var(--border, #e5e7eb); font-size: .95rem; }
   .cm-members .role { color: var(--text-muted); font-size: .8rem; }
   .cm-list { list-style: none; padding: 0; margin: 0; }
+  /* rich meeting cards (recorded meetings) */
+  .cm-mcard { display: flex; gap: 1rem; padding: 1.1rem 0; border-bottom: 1px solid var(--border, #e5e7eb); }
+  .cm-mthumb { flex: 0 0 170px; }
+  .cm-mthumb a { display: block; position: relative; aspect-ratio: 16 / 9; border-radius: 8px; overflow: hidden; background: #000; }
+  .cm-mthumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .cm-mthumb .pl { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,.12); transition: background .15s; }
+  .cm-mthumb a:hover .pl { background: rgba(0,0,0,.28); }
+  .cm-mthumb .pl span { width: 38px; height: 38px; border-radius: 999px; background: rgba(20,40,30,.78); display: flex; align-items: center; justify-content: center; }
+  .cm-mthumb .pl span::after { content: ""; border-style: solid; border-width: 7px 0 7px 12px; border-color: transparent transparent transparent #fff; margin-left: 3px; }
+  .cm-mbody { flex: 1; min-width: 0; }
+  .cm-mtop { display: flex; align-items: baseline; gap: .6rem; flex-wrap: wrap; margin-bottom: .25rem; }
+  .cm-mdate { font-family: 'Fraunces', Georgia, serif; font-size: 1.1rem; color: var(--green-deep); text-decoration: none; }
+  .cm-mdate:hover { text-decoration: underline; }
+  .cm-dur { font-family: 'IBM Plex Mono', monospace; font-size: .72rem; color: var(--text-muted); }
+  .cm-msum { font-size: .9rem; line-height: 1.55; color: var(--text, #222); margin: .15rem 0 .6rem; max-width: 64ch; }
+  .cm-mdocs { display: flex; gap: .4rem; flex-wrap: wrap; }
+  @media (max-width: 600px) { .cm-mcard { flex-direction: column; } .cm-mthumb { flex-basis: auto; max-width: 260px; } }
   .cm-row {
     display: flex; align-items: baseline; gap: .75rem; flex-wrap: wrap;
     padding: .7rem 0; border-bottom: 1px solid var(--border, #e5e7eb);
@@ -435,26 +456,37 @@ function generateCommitteeHome(c, L) {
     return `<h2 class="cm-h2">${L.annualReportsHeading}</h2><ul class="cm-list">${rows}</ul>`;
   })();
 
+  // Pill links (agenda/handouts/minutes) for a meeting.
+  const docPills = (m) => meetingDocLinks(m, L).map((a) => a.replace('<a ', '<a class="cm-doc" ')).join('');
+
   const meetingsHtml = meetings.length
     ? `<ul class="cm-list">${meetings.map((m) => {
         const dateFmt = fmtDate(m.date, L.lang);
-        const desc = meetingDesc(m, L.lang);
-        const docs = meetingDocLinks(m, L);
-        const docsHtml = docs.length ? `<span class="cm-rowdesc">${L.documentsLabel}: ${docs.join(' &middot; ')}</span>` : '';
+        const href = `/${L.prefix}/${c.id}/${m.date}/`;
+        const pills = docPills(m);
+        const docsHtml = pills ? `<div class="cm-mdocs">${pills}</div>` : '';
         if (m.youtube) {
-          return `<li class="cm-row">
-            <span class="cm-date">${dateFmt}</span>
-            <a href="/${L.prefix}/${c.id}/${m.date}/">${escapeHtml(name)}</a>
-            <span class="cm-badge">${L.recordingBadge}</span>
-            ${m.duration ? `<span class="cm-date">${m.duration}</span>` : ''}
-            ${desc ? `<span class="cm-rowdesc">${escapeHtml(desc)}</span>` : ''}
-            ${docsHtml}
+          const summary = meetingSummary(m, L.lang);
+          return `<li class="cm-mcard">
+            <div class="cm-mthumb"><a href="${href}" aria-label="${dateFmt}">
+              <img src="https://img.youtube.com/vi/${m.youtube}/mqdefault.jpg" alt="" loading="lazy" width="320" height="180">
+              <span class="pl"><span></span></span>
+            </a></div>
+            <div class="cm-mbody">
+              <div class="cm-mtop">
+                <a class="cm-mdate" href="${href}">${dateFmt}</a>
+                <span class="cm-badge">${L.recordingBadge}</span>
+                ${m.duration ? `<span class="cm-dur">${m.duration}</span>` : ''}
+              </div>
+              ${summary ? `<p class="cm-msum">${escapeHtml(summary)}</p>` : ''}
+              ${docsHtml}
+            </div>
           </li>`;
         }
+        const desc = meetingDesc(m, L.lang);
         return `<li class="cm-row">
           <span class="cm-date">${dateFmt}</span>
-          <span>${escapeHtml(name)}</span>
-          <span class="cm-badge sched">${m.status === 'scheduled' ? L.scheduledBadge : ''}</span>
+          ${m.status === 'scheduled' ? `<span class="cm-badge sched">${L.scheduledBadge}</span>` : ''}
           ${desc ? `<span class="cm-rowdesc">${escapeHtml(desc)}</span>` : ''}
           ${docsHtml}
         </li>`;
