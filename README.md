@@ -37,6 +37,7 @@ Every dataset on this site is traceable to its public source. We document the or
 | SPSA extraction | `data/ssc-membership.json`, `data/spsa-budgets.json` | SSC membership and budgets extracted from SPSA PDFs via Claude Haiku |
 | SSC meetings | `data/ssc-meetings.json` | Per-meeting SSC agenda/minutes PDFs, published per-school to `documents/ssc/{school}/{year}/` on R2 |
 | Committees | `data/committees/*.json`, [`docs/COMMITTEES.md`](docs/COMMITTEES.md) | District/school committees (CBOC, DELAC, …); recordings discovered from the YouTube index, transcribed + translated like board meetings (transcripts at `transcripts/<id>-<date>.json`) |
+| Linked documents | `data/linked-documents.json` | Hand-curated documents linked from agenda memos but hosted off the board portal (e.g. the adopted Facilities Master Plan); each entry cites its source meeting/item. Indexed into search by title — see [`SEARCH.md`](SEARCH.md) |
 
 AI-generated content (meeting summaries, timestamp mappings) is always labeled as such and links back to the source transcript or agenda.
 
@@ -107,7 +108,9 @@ Scripts run in order. Most can be run independently. All cache aggressively — 
 
  Search index (must run last, after all HTML exists)
  ───────────────────────────────────────────────────
- 17. search:index         → docs/pagefind/ (Pagefind; per-language index)
+ 17. search:index         → docs/pagefind/ (Pagefind Node API: HTML pages +
+                            per-document records from document-index.json +
+                            linked-documents.json, per-language)
 
  Deploy
  ──────
@@ -134,7 +137,12 @@ results pages with live autocomplete at `/search` (English) and `/buscar`
 
 Because Pagefind splits its index by each page's `<html lang>` attribute, an
 English page searches **only** the English corpus and a Spanish page **only** the
-Spanish corpus. Result ranking was tuned by evaluating real parent/community
+Spanish corpus. Beyond the HTML pages, the index also carries a record per board
+**document** (title → direct file URL) from `document-index.json` plus
+`data/linked-documents.json` (documents linked from agenda memos but hosted
+off-portal, such as the adopted Facilities Master Plan), so a search like
+"facilities master plan" links straight to the PDF — not just to the meetings
+that discuss it. Result ranking was tuned by evaluating real parent/community
 queries in a browser, and a query-relaxation layer broadens over-specified
 natural-language queries (e.g. "roy cloud principal email") that Pagefind's
 all-terms matching would otherwise collapse. The approach, rationale, relevance

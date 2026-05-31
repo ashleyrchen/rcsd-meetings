@@ -86,19 +86,11 @@ run(`${step++}. Charter school pages`, 'build-charters.mjs');
 run(`${step++}. Blog`, 'build-blog.mjs');
 run(`${step++}. Search pages`, 'build-search.mjs');
 
-// Pagefind must index AFTER all HTML is generated. It crawls docs/ and writes
-// the search bundle to docs/pagefind/, which the wrangler deploy below ships.
-// Config (site dir, excluded chrome) lives in pagefind.yml. See SEARCH.md.
-console.log(`\n${'='.repeat(60)}`);
-console.log(`  ${step++}. Build search index (Pagefind)`);
-console.log('='.repeat(60));
-try {
-  execFileSync('npx', ['pagefind'], { cwd: ROOT, stdio: 'inherit', timeout: 1800000 });
-} catch (err) {
-  console.error(`\n  FAILED: Build search index (Pagefind)`);
-  console.error(`  ${err.message}\n`);
-  process.exit(1);
-}
+// Build the Pagefind index AFTER all HTML is generated. This indexes docs/ HTML
+// AND injects per-document records (board attachments + curated off-portal docs)
+// so searches link directly to files. Writes docs/pagefind/, which the wrangler
+// deploy below ships. See SEARCH.md.
+run(`${step++}. Build search index`, 'build-search-index.mjs');
 
 console.log(`\n${'='.repeat(60)}`);
 console.log('  Pipeline complete!');
