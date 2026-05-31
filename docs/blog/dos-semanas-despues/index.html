@@ -137,6 +137,26 @@
     align-items: center;
     gap: 0.5rem;
   }
+  .site-nav-search { display: flex; }
+  .site-nav-search input {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.02em;
+    color: #fff;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.35);
+    border-radius: 3px;
+    padding: 0.35rem 0.65rem;
+    width: 9rem;
+    transition: border-color 0.2s, background 0.2s, width 0.2s;
+  }
+  .site-nav-search input::placeholder { color: rgba(255,255,255,0.55); }
+  .site-nav-search input:focus {
+    outline: none;
+    background: rgba(255,255,255,0.14);
+    border-color: rgba(255,255,255,0.7);
+    width: 11rem;
+  }
   .site-nav-lang {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 0.75rem;
@@ -184,6 +204,8 @@
   @media (max-width: 640px) {
     .site-nav-tab { padding: 0.6rem 0.7rem; font-size: 0.7rem; }
     .site-nav-inner { padding: 0 1.2rem; }
+    .site-nav-search input { width: 6rem; }
+    .site-nav-search input:focus { width: 7.5rem; }
   }
 
   /* ---- POST HEADER ---- */
@@ -393,6 +415,7 @@
       <a href="/blog/es/" class="site-nav-tab active">Blog</a>
     </div>
     <div class="site-nav-right">
+      <form class="site-nav-search" role="search" action="/buscar/" method="get"><input type="search" name="q" placeholder="Buscar…" aria-label="Buscar" autocomplete="off"></form>
       <a href="/blog/two-weeks-in/" class="site-nav-lang">EN</a>
     </div>
   </div>
