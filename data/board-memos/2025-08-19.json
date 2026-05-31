@@ -10,13 +10,15 @@
       "memo": {
         "Description": "The Board will call the meeting to order and establish a quorum by roll call."
       },
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 2,
       "title": "1. Roll Call",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 3,
@@ -24,13 +26,15 @@
       "memo": {
         "Description": "Speaker cards are available at the entrance and can be submitted to the secretary before the meeting begins. Alternatively, you may raise your hand prior to the start of the meeting to indicate your desire to speak."
       },
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 4,
       "title": "3. Closed Session - 6:30 PM - 30 min",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 5,
@@ -38,7 +42,8 @@
       "memo": {
         "Speaker": "Maeve Mulholland, Director of Special Education"
       },
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 6,
@@ -46,19 +51,22 @@
       "memo": {
         "Description": "The Board will call the open session to order and establish a quorum by roll call."
       },
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 7,
       "title": "1. Roll Call",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 8,
       "title": "2. Report Out on Closed Session from August 19, 2025",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 9,
@@ -66,7 +74,8 @@
       "memo": {
         "Quick Summary / Abstract": "Welcome by the School Board President, Mike Wells."
       },
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 10,
@@ -74,7 +83,8 @@
       "memo": {
         "Quick Summary / Abstract": "The School Board will review and discuss any requested additions, deletions, or modifications to the agenda prior to its adoption."
       },
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 11,
@@ -82,7 +92,8 @@
       "memo": {
         "Recommendation": "Motion to approve the agenda as submitted or amended."
       },
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 12,
@@ -90,7 +101,19 @@
       "memo": {
         "Rationale": "Zoom Attendees: If you have a public comment, please submit a speaker's card using the links available, prior to the Regular Board Meeting or immediately upon the meeting opening. Alternatively, remote participants may also use the “Raise Hand” function in Zoom to indicate their desire to speak. Comment in English: https://forms.gle/idMN2b9B1iTpKWqX7 Comentario en Español: https://forms.gle/QxmEoxSVaEpHwC7V8 In-Person Speakers: Speaker cards are available at the entrance and can be submitted to the secretary."
       },
-      "attachments": []
+      "attachments": [],
+      "memoLinks": [
+        {
+          "url": "https://forms.gle/idMN2b9B1iTpKWqX7",
+          "text": "",
+          "kind": "form"
+        },
+        {
+          "url": "https://forms.gle/QxmEoxSVaEpHwC7V8",
+          "text": "",
+          "kind": "form"
+        }
+      ]
     },
     {
       "order": 13,
@@ -100,7 +123,8 @@
         "Recommendation": "It is the Administration's recommendation that the School Board approve all items on the Bon Program Consent Agenda, as submitted.",
         "Rationale": "Documentation concerning these items has been provided to all Board members and the public in advance to assure an extensive and thorough review. There is no discussion of these items prior to the Board vote. Only members of the Board and the Superintendent may remove items from the Bond Program Consent Agenda. Members of the public may provide comments at the start of the regular meeting, which may convince a Board member or the Superintendent to remove an item for further discussion."
       },
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 14,
@@ -118,19 +142,22 @@
           "filename": "RCSD-POs-20k-and-Under-Tracking-List-FY-25-26-August-19-2025.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 15,
       "title": "10. Bond Program Action Items",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 16,
       "title": "11. Discussion Items - 50 min",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 17,
@@ -147,7 +174,8 @@
           "filename": "2025-Redwood-City-ESD-Parcel-Tax-Measure-Survey-Presentation-08-12-25_TCX-Slides.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 18,
@@ -177,13 +205,15 @@
           "filename": "2024-25-Committee-Assignments-for-Board-Members-FINAL-2024.12.17.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 19,
       "title": "12. Public Hearing - 10 min",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 20,
@@ -207,7 +237,8 @@
           "filename": "2025-2026-Core-Curriculum-List-RCSD.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 21,
@@ -217,7 +248,8 @@
         "Recommendation": "It is the Administration's recommendation that the School Board approve all items on the Consent Agenda, as submitted.",
         "Rationale": "Documentation concerning these items has been provided to all Board members and the public in advance to assure an extensive and thorough review. There is no discussion of these items prior to the Board vote. Only members of the Board and the Superintendent may remove items from the Consent Agenda. Members of the public may provide comments at the start of the regular meeting, which may convince a Board member or the Superintendent to remove an item for further discussion."
       },
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 22,
@@ -247,7 +279,8 @@
           "filename": "2025.06.25-Minutes-DRAFT-Regular.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 23,
@@ -271,7 +304,8 @@
           "filename": "AR-5123_-Promotion_Acceleration_Retention-For-Reference-Only-Third-Reading.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 24,
@@ -289,7 +323,8 @@
           "filename": "24-25-Roy-Cloud.-Golden-Gate-Rec-Area.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 25,
@@ -308,7 +343,8 @@
           "filename": "YMCA-2025.26.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 26,
@@ -327,7 +363,8 @@
           "filename": "Casa-Circulo-2025.26.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 27,
@@ -346,7 +383,8 @@
           "filename": "City-of-Redwood-City-REACH-25_26-Summer.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 28,
@@ -370,7 +408,8 @@
           "filename": "Redwood-City-CRLP-RRC-Proposal-2025-2026.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 29,
@@ -394,7 +433,8 @@
           "filename": "Procare-25.26_26.00350.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 30,
@@ -412,7 +452,8 @@
           "filename": "Amergis-LVN-Agreement.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 31,
@@ -437,7 +478,8 @@
           "filename": "Finalized-Board-Approved-Contract-Catalyst.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 32,
@@ -455,7 +497,8 @@
           "filename": "SCCOE-2025.26.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 33,
@@ -473,7 +516,8 @@
           "filename": "SMCOE-Teacher-Induction-Agreement-25-26.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 34,
@@ -491,7 +535,8 @@
           "filename": "TCM-Board-8.19.25.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 35,
@@ -509,7 +554,8 @@
           "filename": "San-Francisco-State-University-Student-Teaching-MOU.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 36,
@@ -527,7 +573,8 @@
           "filename": "University-Agreement-San-Jose-State-Intern-Program.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 37,
@@ -545,7 +592,8 @@
           "filename": "University-Agreement-San-Jose-State-Student-Teacher-Agreement.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 38,
@@ -563,7 +611,8 @@
           "filename": "University-Agreement-REACH.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 39,
@@ -581,7 +630,8 @@
           "filename": "University-Agreement-Notre-Dame-de-Namur-Student-Teacher-Agreement.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 40,
@@ -599,7 +649,8 @@
           "filename": "University-Agreement-Notre-Dame-de-Namur-Ed-Spec-and-Interns.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 41,
@@ -617,7 +668,8 @@
           "filename": "Personnel-Report-8.19.2025.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 42,
@@ -641,7 +693,8 @@
           "filename": "2024-2025-NPS_A-Approved-Rates-Launchpad.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 43,
@@ -659,7 +712,8 @@
           "filename": "Facilities-Use-Agreement-Connect-2025-2030.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 44,
@@ -678,7 +732,8 @@
           "filename": "RCSDK8-Healthy-Kids-Pizza-Rollover-25.26-SY_Signed.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 45,
@@ -697,7 +752,8 @@
           "filename": "Allen-Bros-Rollover-25.26-SY_RCSD_-Signed.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 46,
@@ -715,7 +771,8 @@
           "filename": "Bonami-Rollover-25.26-SY_RCSD_-Signed.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 47,
@@ -734,7 +791,8 @@
           "filename": "Sysco-Foods-Rollover-25.26-SY_RCSD_-Signed.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 48,
@@ -753,7 +811,8 @@
           "filename": "Pacific-Rollover-25.26-SY_RCSD_-Signed.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 49,
@@ -772,7 +831,8 @@
           "filename": "SIgned-Daylight-Rollover-25_26.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 50,
@@ -791,7 +851,8 @@
           "filename": "SIgned-Sysco-Protein-Rollover-25_26.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 51,
@@ -809,7 +870,8 @@
           "filename": "Warrant-Register-June-2025.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 52,
@@ -827,13 +889,15 @@
           "filename": "Warrant-Register-July-2025.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 53,
       "title": "14. Action Items (Action Required) - 45 min",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 54,
@@ -852,7 +916,8 @@
           "filename": "Connect-Community-Charter-MOU-2025-2030-Final.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 55,
@@ -877,7 +942,8 @@
           "filename": "Certificated-Tenure-Staff-List_August-2025-Attachment.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 56,
@@ -902,7 +968,8 @@
           "filename": "List-of-Employees-Approval-of-Education-Code-and-Title-V-Options-for-Teaching-As.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 57,
@@ -926,7 +993,8 @@
           "filename": "2025-2026-Core-Curriculum-List-RCS5.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 58,
@@ -938,7 +1006,8 @@
         "Financial Impact": "No financial impact to the District at this time.",
         "Speaker": "Prepared by: Wendy Kelly, Deputy Superintendent"
       },
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 59,
@@ -946,13 +1015,15 @@
       "memo": {
         "Quick Summary / Abstract": "The School Board and Superintendent Baker will report out on meetings, attended events, upcoming events, school site visits, etc."
       },
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 60,
       "title": "16. Information - 1 min",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 61,
@@ -963,7 +1034,8 @@
           "name": "Williams UCP Q 04 report 2024-25",
           "aid": "1164503"
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 62,
@@ -978,13 +1050,15 @@
           "name": "Investment Reports and the Compliance Reports",
           "href": "https://www.smcgov.org/treasurer/investment-information"
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 63,
       "title": "17. Correspondence",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 64,
@@ -995,7 +1069,8 @@
           "name": "25-26 Schedule of Board Agenda Items",
           "aid": "1195216"
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 65,
@@ -1006,13 +1081,15 @@
           "name": "25-26 RCSD Board Meeting Calendar",
           "aid": "1195261"
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 66,
       "title": "20. Adjournment (Action Required) - 1 min",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     }
   ]
 }

@@ -7,43 +7,50 @@
       "order": 1,
       "title": "1. Call to Order - 1 min",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 2,
       "title": "1. Roll Call",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 3,
       "title": "2. Welcome - 1 min",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 4,
       "title": "1. Welcome by the School Board President, Mike Wells",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 5,
       "title": "3. Changes to the Agenda - 1 min",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 6,
       "title": "1. Additions, Deletions, or Modifications to the Agenda",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 7,
       "title": "4. Approval of Agenda - 1 min",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 8,
@@ -51,13 +58,15 @@
       "memo": {
         "Recommendation": "Motion to approve the agenda as submitted or amended."
       },
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 9,
       "title": "5. Oral Communication",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 10,
@@ -65,13 +74,26 @@
       "memo": {
         "Rationale": "Public Comment Links: English: https://forms.gle/h5bzxMJ19kQw264A8 Spanish: https://forms.gle/fuoEwoNJnq3NNbsZA"
       },
-      "attachments": []
+      "attachments": [],
+      "memoLinks": [
+        {
+          "url": "https://forms.gle/h5bzxMJ19kQw264A8",
+          "text": "",
+          "kind": "form"
+        },
+        {
+          "url": "https://forms.gle/fuoEwoNJnq3NNbsZA",
+          "text": "",
+          "kind": "form"
+        }
+      ]
     },
     {
       "order": 11,
       "title": "6. Approval of Bond Program Consent Items - 1 min",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 12,
@@ -107,7 +129,8 @@
           "aid": "1273293",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 13,
@@ -143,13 +166,15 @@
           "aid": "1273304",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 14,
       "title": "7. Bond Program Action Items",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 15,
@@ -160,13 +185,15 @@
         "Financial Impact": "Measure S Funded School Site Construction Estimate Kennedy $6,000,000 Clifford $5,500,000 Orion $5,500,000 Total $17,000,000 25% Soft Costs $4,250,000 Project Total $21,250,000",
         "Speaker": "Prepared by: Nick Olsen, Bond Program Manager, VPCS; Eric Van Pelt, Executive VP, VPCS Reviewed by: Martin Cervantes, Interim Bond Director; Rick Edson, Chief Business Official Approved by: John R. Baker, Ed.D., Superintendent"
       },
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 16,
       "title": "8. Discussion Items - 45 min",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 17,
@@ -183,7 +210,8 @@
           "aid": "1273470",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 18,
@@ -206,13 +234,15 @@
           "aid": "1273477",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 19,
       "title": "9. Approval of Consent Items - 1 min",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 20,
@@ -230,7 +260,8 @@
           "aid": "1273676",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 21,
@@ -248,7 +279,8 @@
           "aid": "1273684",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 22,
@@ -266,7 +298,8 @@
           "aid": "1273688",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 23,
@@ -284,7 +317,8 @@
           "aid": "1273712",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 24,
@@ -302,7 +336,8 @@
           "aid": "1273716",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 25,
@@ -320,7 +355,8 @@
           "aid": "1273763",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 26,
@@ -338,7 +374,8 @@
           "aid": "1273786",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 27,
@@ -356,7 +393,8 @@
           "aid": "1273813",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 28,
@@ -380,7 +418,8 @@
           "aid": "1273816",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 29,
@@ -398,7 +437,8 @@
           "aid": "1273825",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 30,
@@ -416,13 +456,15 @@
           "aid": "1273841",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 31,
       "title": "10. Action Items - 1 hr",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 32,
@@ -446,7 +488,8 @@
           "aid": "1273873",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 33,
@@ -470,7 +513,8 @@
           "aid": "1273894",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 34,
@@ -494,7 +538,8 @@
           "aid": "1356197",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 35,
@@ -518,7 +563,8 @@
           "aid": "1356201",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 36,
@@ -536,7 +582,8 @@
           "aid": "1356202",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 37,
@@ -554,7 +601,8 @@
           "aid": "1356211",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 38,
@@ -572,13 +620,15 @@
           "aid": "1356215",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 39,
       "title": "11. Board and Superintendent Reports - 10 min",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 40,
@@ -588,13 +638,15 @@
         "Financial Impact": "None at this moment.",
         "Speaker": "Prepared by: Evelyn Campos, Administrative Assistant to the Superintendent Approved by: John R. Baker, Ed.D., Superintendent"
       },
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 41,
       "title": "12. Information",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 42,
@@ -604,25 +656,40 @@
         "Financial Impact": "Gross pool earnings for Month ending May 31, 2025: 4.078% The current average maturity of the portfolio is 2.26 years, with an average duration of 2.02 years. The portfolio continues to hold no derivative products. Please click the link below to view the investment report for the May 2025 Month End Report: https://www.smcgov.org/media/154506/download?inline= Please click the link below to view the copies of the Investment Reports and the Compliance Reports: https://www.smcgov.org/treasurer/investment-information",
         "Speaker": "Prepared by: Rick Edson, Chief Business Official Approved by: John R. Baker, Ed.D., Superintendent"
       },
-      "attachments": []
+      "attachments": [],
+      "memoLinks": [
+        {
+          "url": "https://www.smcgov.org/media/154506/download?inline=",
+          "text": "",
+          "kind": "document"
+        },
+        {
+          "url": "https://www.smcgov.org/treasurer/investment-information",
+          "text": "",
+          "kind": "other"
+        }
+      ]
     },
     {
       "order": 43,
       "title": "13. Correspondence - 1 min",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 44,
       "title": "1. Correspondence",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 45,
       "title": "14. Other Business/Suggested Items for Future Agenda - 1 min",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 46,
@@ -639,13 +706,15 @@
           "aid": "1356450",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 47,
       "title": "15. Board Meetings Calendar - 1 min",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 48,
@@ -662,13 +731,15 @@
           "aid": "1356453",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 49,
       "title": "16. Adjournment of Meeting - 1 min",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 50,
@@ -676,7 +747,8 @@
       "memo": {
         "Recommendation": "Motion to adjourn the meeting."
       },
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     }
   ]
 }

@@ -10,13 +10,15 @@
       "memo": {
         "Quick Summary / Abstract": "The Board will call the meeting to order and establish a quorum by roll call."
       },
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 2,
       "title": "1. Roll Call",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 3,
@@ -24,7 +26,8 @@
       "memo": {
         "Quick Summary / Abstract": "Welcome by the School Board President, Mike Wells."
       },
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 4,
@@ -32,7 +35,8 @@
       "memo": {
         "Quick Summary / Abstract": "The School Board will review and discuss any requested additions, deletions, or modifications to the agenda prior to its adoption."
       },
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 5,
@@ -40,7 +44,8 @@
       "memo": {
         "Quick Summary / Abstract": "Motion to approve the agenda as submitted or amended."
       },
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 6,
@@ -51,7 +56,19 @@
         "Financial Impact": "None.",
         "Speaker": "Prepared by: Evelyn Campos, Administrative Assistant to the Superintendent Approved by: John R. Baker, Ed.D., Superintendent"
       },
-      "attachments": []
+      "attachments": [],
+      "memoLinks": [
+        {
+          "url": "https://forms.gle/rFTYAZG69p226xox6",
+          "text": "",
+          "kind": "form"
+        },
+        {
+          "url": "https://forms.gle/zGw6fZJpdCXAFMXb6",
+          "text": "",
+          "kind": "form"
+        }
+      ]
     },
     {
       "order": 7,
@@ -61,7 +78,8 @@
         "Recommendation": "It is the Administration's recommendation that the School Board approve all items listed under the Bond Program Consent Agenda, as submitted.",
         "Rationale": "Documentation concerning these items has been provided to all Board members and the public in advance to assure an extensive and thorough review. There is no discussion of these items prior to the Board vote. Only members of the Board and the Superintendent may remove items from the Bond Program Consent Agenda. Members of the public may provide comments at the start of the regular meeting, which may convince a Board member or the Superintendent to remove an item for further discussion."
       },
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 8,
@@ -86,19 +104,22 @@
           "filename": "250811-RCSD-Solar-Ph-2-Geotech-Special-Testing-and-Inspection-Proposal-with-N-M.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 9,
       "title": "7. Bond Program Action Item(s)",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 10,
       "title": "8. School/Community Reports - 2 hr",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 11,
@@ -116,7 +137,8 @@
           "filename": "Community-Schools-Board-Report-2025.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 12,
@@ -134,13 +156,15 @@
           "filename": "Mental-Health-in-RCSD-2025.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 13,
       "title": "9. Discussion Items - 45 min",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 14,
@@ -164,7 +188,8 @@
           "filename": "BP-3311.1-Uniform-Public-Construction-Cost-Accounting-Procedures-New-Clean.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 15,
@@ -200,7 +225,8 @@
           "filename": "AR-0420.4-Charter-School-Authorization-For-Reference-Only-Clean.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 16,
@@ -236,7 +262,8 @@
           "filename": "E-0420.41-Charter-School-Oversight-First-Reading-Clean.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 17,
@@ -272,7 +299,8 @@
           "filename": "AR-3100-Budget-For-Reference-Only-First-Reading-Clean.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 18,
@@ -308,7 +336,8 @@
           "filename": "AR-3260-Fees-and-Charges-First-Reading-Clean.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 19,
@@ -344,7 +373,8 @@
           "filename": "AR-3311-Bids-First-Reading-Clean.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 20,
@@ -368,7 +398,8 @@
           "filename": "BP-3312-Contracts-First-Reading-Clean.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 21,
@@ -404,7 +435,8 @@
           "filename": "AR-3550-Food-Service-Child-Nutrition-Program-Clean.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 22,
@@ -440,7 +472,8 @@
           "filename": "AR-3551-Food-Service-Operations_Cafeteria-Fund-First-Reading-Clean.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 23,
@@ -476,7 +509,8 @@
           "filename": "AR-3553-Free-And-Reduced-Price-Meals-First-Reading-For-Reference-Only-Clean.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 24,
@@ -512,7 +546,8 @@
           "filename": "AR-4121-Temporary_Substitute-Personnel-First-Reading-For-Reference-Only-Clean.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 25,
@@ -536,7 +571,8 @@
           "filename": "BP-6144-Controversial-Issues-First-Reading-Clean.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 26,
@@ -572,7 +608,8 @@
           "filename": "AR-7214-General-Obligation-Bonds-New-First-Reading-Clean.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 27,
@@ -602,7 +639,8 @@
           "filename": "Board-Bylaw-9250_-Remuneration-Reimbursement-And-Other-Benefits-First-Reading-Ne.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 28,
@@ -612,7 +650,8 @@
         "Recommendation": "It is the Administration's recommendation that the School Board approve all items on the Consent Agenda, as submitted.",
         "Rationale": "Documentation concerning these items has been provided to all Board members and the public in advance to ensure an extensive and thorough review. There is no discussion of these items prior to the Board vote. Only members of the Board and the Superintendent may remove items from the Consent Agenda. Members of the public may provide comments at the start of the regular meeting, which may convince a Board member or the Superintendent to remove an item for further discussion."
       },
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 29,
@@ -636,7 +675,8 @@
           "filename": "AR-3515.2-Disruptions-Second-Reading.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 30,
@@ -654,7 +694,8 @@
           "filename": "BP-4020-Drug-and-Alcohol-Free-Workplace-Second-Reading.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 31,
@@ -678,7 +719,8 @@
           "filename": "AR-4200-Classified-Personnel-Second-Reading.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 32,
@@ -696,7 +738,8 @@
           "filename": "BP-4313.4-Temporary-Modified-Light-Duty-Assignment-Second-Reading.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 33,
@@ -714,7 +757,8 @@
           "filename": "BP-4315-Evaluation-Supervision-New-Second-Reading.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 34,
@@ -738,7 +782,8 @@
           "filename": "AR-4257-Employee-Safety-Second-Reading.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 35,
@@ -762,7 +807,8 @@
           "filename": "AR-4357-Employee-Safety-Second-Reading.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 36,
@@ -786,7 +832,8 @@
           "filename": "AR-4158-Employee-Security-Second-Reading.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 37,
@@ -810,7 +857,8 @@
           "filename": "AR-4258-Employee-Security-Second-Reading.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 38,
@@ -834,7 +882,8 @@
           "filename": "AR-4358-Employee-Security-Second-Reading.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 39,
@@ -852,7 +901,8 @@
           "filename": "BP-4259-Employee-Assistance-Programs-Second-Reading.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 40,
@@ -870,7 +920,8 @@
           "filename": "BP-4359-Employee-Assistance-Programs-Second-Reading.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 41,
@@ -894,7 +945,8 @@
           "filename": "AR-5131.6-Alcohol-And-Other-Drugs-Second-Reading.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 42,
@@ -912,7 +964,8 @@
           "filename": "BP-6142.93-Science-Instruction-Second-Reading.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 43,
@@ -930,7 +983,8 @@
           "filename": "BP-6142.94-History-Social-Science-Instruction-Second-Reading.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 44,
@@ -948,7 +1002,8 @@
           "filename": "BP-6161.11-Supplementary-Instructional-Materials-Second-Reading.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 45,
@@ -972,7 +1027,8 @@
           "filename": "AR-6163.2-Animals-At-School-Second-Reading.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 46,
@@ -990,7 +1046,8 @@
           "filename": "2025.10.08-Minutes-DRAFT-Closed.Regular.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 47,
@@ -1008,7 +1065,8 @@
           "filename": "2025.10.16-Minutes-DRAFT-Study-Session.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 48,
@@ -1026,7 +1084,8 @@
           "filename": "2025.10.22-Minutes-DRAFT-Regular.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 49,
@@ -1213,7 +1272,8 @@
           "filename": "909-Roosevelt-2025.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 50,
@@ -1232,7 +1292,8 @@
           "filename": "Hoover-American-Trash-Quote-001584.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 51,
@@ -1251,7 +1312,8 @@
           "filename": "San-Joaquin-COE-25-26-SEIS-Billing-Contract.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 52,
@@ -1276,7 +1338,8 @@
           "filename": "BMR-First-Amendment-25-26.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 53,
@@ -1294,7 +1357,8 @@
           "filename": "25-26-Orion.-Outdoor-Ed.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 54,
@@ -1319,13 +1383,15 @@
           "filename": "One-Life-First-Amendment.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 55,
       "title": "11. Action Items (Action Required)",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 56,
@@ -1335,13 +1401,15 @@
         "Financial Impact": "None.",
         "Speaker": "Prepared by: Evelyn Campos, Administrative Assistant to the Superintendent Approved by: John R. Baker, Ed.D., Superintendent"
       },
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 57,
       "title": "13. Information",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 58,
@@ -1349,7 +1417,8 @@
       "memo": {
         "Quick Summary / Abstract": "The Board of Trustees regularly receives written correspondence from members of the community, staff, or partner agencies. This agenda item is provided to formally acknowledge receipt of these communications and, when appropriate, to make them part of the official record."
       },
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 59,
@@ -1366,7 +1435,8 @@
           "filename": "25-26-Schedule-of-Board-Agenda-Items.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 60,
@@ -1376,7 +1446,8 @@
         "Financial Impact": "None.",
         "Speaker": "Prepared by: Evelyn Campos, Administrative Assistant to the Superintendent Approved by: John R. Baker, Ed.D., Superintendent"
       },
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 61,
@@ -1387,13 +1458,15 @@
           "name": "25-26 RCSD Board Meeting Calendar",
           "aid": "1303177"
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 62,
       "title": "18. Adjournment (Action Required)",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     }
   ]
 }
