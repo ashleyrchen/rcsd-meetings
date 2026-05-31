@@ -9,13 +9,15 @@
       "memo": {
         "Quick Summary / Abstract": "The Board will call the meeting to order and establish a quorum by roll call."
       },
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 2,
       "title": "1. Roll Call",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 3,
@@ -23,7 +25,8 @@
       "memo": {
         "Quick Summary / Abstract": "Welcome by the School Board President, Mike Wells."
       },
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 4,
@@ -31,7 +34,8 @@
       "memo": {
         "Quick Summary / Abstract": "The School Board will review and discuss any requested additions, deletions, or modifications to the agenda prior to its adoption."
       },
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 5,
@@ -39,7 +43,8 @@
       "memo": {
         "Quick Summary / Abstract": "Motion to approve the agenda as submitted or amended."
       },
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 6,
@@ -47,13 +52,26 @@
       "memo": {
         "Rationale": "Zoom Attendees: If you have a public comment, please submit a speaker's card using the links available, prior to the Regular Board Meeting or immediately upon the meeting opening. Remote participants may also use the “Raise Hand” function in Zoom to indicate their desire to speak. Comment in English: https://forms.gle/3eNEQmRwKs14bfYN8 Comentario en Español: https://forms.gle/yektVQEZ2oxUPZdP9 In-Person Speakers: Speaker cards are available at the entrance and can be submitted to the secretary."
       },
-      "attachments": []
+      "attachments": [],
+      "memoLinks": [
+        {
+          "url": "https://forms.gle/3eNEQmRwKs14bfYN8",
+          "text": "",
+          "kind": "form"
+        },
+        {
+          "url": "https://forms.gle/yektVQEZ2oxUPZdP9",
+          "text": "",
+          "kind": "form"
+        }
+      ]
     },
     {
       "order": 7,
       "title": "6. Discussion Items - 30 min",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 8,
@@ -77,7 +95,8 @@
           "aid": "1224753",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 9,
@@ -101,7 +120,8 @@
           "aid": "1224685",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 10,
@@ -137,7 +157,8 @@
           "aid": "1224680",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 11,
@@ -173,7 +194,8 @@
           "aid": "1224669",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 12,
@@ -197,7 +219,8 @@
           "aid": "1224564",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 13,
@@ -207,7 +230,8 @@
         "Recommendation": "It is the Administration's recommendation that the School Board approve all items on the Consent Agenda, as submitted.",
         "Rationale": "Documentation concerning these items has been provided to all Board members and the public in advance to assure an extensive and thorough review. There is no discussion of these items prior to the Board vote. Only members of the Board and the Superintendent may remove items from the Consent Agenda. Members of the public may provide comments at the start of the regular meeting, which may convince a Board member or the Superintendent to remove an item for further discussion."
       },
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 14,
@@ -225,7 +249,8 @@
           "aid": "1223298",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 15,
@@ -243,7 +268,8 @@
           "aid": "1223214",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 16,
@@ -261,7 +287,8 @@
           "aid": "1227219",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 17,
@@ -280,7 +307,8 @@
           "aid": "1223923",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 18,
@@ -304,7 +332,8 @@
           "aid": "1224795",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 19,
@@ -323,7 +352,8 @@
           "aid": "1224392",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 20,
@@ -348,7 +378,8 @@
           "aid": "1226156",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 21,
@@ -373,13 +404,15 @@
           "aid": "1226409",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 22,
       "title": "8. Action Items (Action Required) - 25 min",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 23,
@@ -404,7 +437,8 @@
           "aid": "1223781",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 24,
@@ -441,7 +475,8 @@
           "aid": "1225748",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 25,
@@ -449,13 +484,15 @@
       "memo": {
         "Quick Summary / Abstract": "The School Board and Superintendent Baker will report out on meetings, attended events, upcoming events, school site visits, etc."
       },
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 26,
       "title": "10. Information - 30 min",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 27,
@@ -473,7 +510,8 @@
           "aid": "1224035",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 28,
@@ -481,7 +519,8 @@
       "memo": {
         "Quick Summary / Abstract": "The Board of Trustees regularly receives written correspondence from members of the community, staff, or partner agencies. This agenda item is provided to formally acknowledge receipt of these communications and, when appropriate, to make them part of the official record."
       },
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 29,
@@ -496,7 +535,8 @@
           "aid": "1226319",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 30,
@@ -511,7 +551,8 @@
           "aid": "1226391",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 31,
@@ -519,7 +560,8 @@
       "memo": {
         "Quick Summary / Abstract": "Motion to adjourn the meeting."
       },
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     }
   ]
 }

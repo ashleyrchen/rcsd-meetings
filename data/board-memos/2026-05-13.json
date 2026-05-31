@@ -10,13 +10,15 @@
       "memo": {
         "Quick Summary / Abstract": "The Board will call the meeting to order and establish a quorum by roll call."
       },
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 2,
       "title": "1. Roll Call",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 3,
@@ -24,13 +26,15 @@
       "memo": {
         "Quick Summary / Abstract": "Welcome by the School Board President, David Weekly."
       },
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 4,
       "title": "1. Pledge of Allegiance",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 5,
@@ -38,7 +42,8 @@
       "memo": {
         "Quick Summary / Abstract": "The School Board will review and discuss any requested additions, deletions, or modifications to the agenda prior to its adoption."
       },
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 6,
@@ -46,7 +51,8 @@
       "memo": {
         "Quick Summary / Abstract": "Motion to approve the agenda as submitted or amended."
       },
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 7,
@@ -57,7 +63,19 @@
         "Financial Impact": "None.",
         "Speaker": "Prepared by: Evelyn Campos, Administrative Assistant to the Superintendent Approved by: John R. Baker, Ed.D., Superintendent"
       },
-      "attachments": []
+      "attachments": [],
+      "memoLinks": [
+        {
+          "url": "https://forms.gle/94eW1zZ4WYm1KAcGA",
+          "text": "",
+          "kind": "form"
+        },
+        {
+          "url": "https://forms.gle/YUSmNb8jPJ7N1yiw6",
+          "text": "",
+          "kind": "form"
+        }
+      ]
     },
     {
       "order": 8,
@@ -65,7 +83,8 @@
       "memo": {
         "Quick Summary / Abstract": "RCTA and CSEA labor association leaders/representatives are invited to speak to the School Board on agenda and non-agenda items. Comments are limited to 3 minutes per person per topic unless otherwise noted."
       },
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 9,
@@ -75,7 +94,8 @@
         "Recommendation": "It is the Administration's recommendation that the School Board approve all items listed under the Bond Program Consent Agenda, as submitted.",
         "Rationale": "Documentation concerning these items has been provided to all Board members and the public in advance to assure an extensive and thorough review. There is no discussion of these items prior to the Board vote. Only members of the Board and the Superintendent may remove items from the Bond Program Consent Agenda. Members of the public may provide comments at the start of the regular meeting, which may convince a Board member or the Superintendent to remove an item for further discussion."
       },
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 10,
@@ -94,7 +114,8 @@
           "filename": "260513-RCSD-Cumming-Group-Amendment-7-to-Agreement-for-Program-Management-Svcs.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 11,
@@ -113,13 +134,15 @@
           "filename": "RCSD-POs-20k-and-Under-Tracking-List-FY-25-26-May-13-2026.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 12,
       "title": "7. Bond Program Action Items - 20 min",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 13,
@@ -138,13 +161,15 @@
           "filename": "260513-RCSD-Technology-Purchase-Agreement-with-Powerflex-for-Hoover-and-Roy-Clou.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 14,
       "title": "8. Action Items (Action Required) - 2 hrs",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 15,
@@ -169,7 +194,8 @@
           "filename": "North-Star-2025-26_SPSA.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 16,
@@ -194,7 +220,8 @@
           "filename": "Henry-Ford-25-26-Data-for-Board-presentation.pdf",
           "cached": true
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 17,
@@ -206,7 +233,8 @@
         "Financial Impact": "Approx $25,000 Fund 12",
         "Speaker": "Prepared by: Patricia Perez, Director of Human Resources Approved by: John R. Baker, Ed.D., Superintendent"
       },
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 18,
@@ -231,7 +259,8 @@
           "filename": "Exhibit-A_-Resolution-No.-24_-2025-2026-Sheet1.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 19,
@@ -256,7 +285,8 @@
           "filename": "Exhibit-A-Resolution-25_-2025-2026.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 20,
@@ -293,7 +323,8 @@
           "filename": "25-26-Resolution-No.-5_Authorize-Technology-Procurement.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 21,
@@ -312,7 +343,8 @@
           "filename": "Atlas-EV-Charger-Replacement_Agreement-for-Construction-Services-Small-Projects-.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 22,
@@ -361,13 +393,15 @@
           "filename": "RCSD-Infrastructure-Project-Alternatives-051326.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 23,
       "title": "9. Discussion Items - 15 min",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 24,
@@ -391,7 +425,8 @@
           "filename": "2026-2027-TK-8-Instructional-Calendar-Proposed-Board-Dates.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 25,
@@ -401,7 +436,8 @@
         "Recommendation": "It is the Administration's recommendation that the School Board approve all items on the Consent Agenda, as submitted.",
         "Rationale": "Documentation concerning these items has been provided to all Board members and the public in advance to ensure an extensive and thorough review. There is no discussion of these items prior to the Board vote. Only members of the Board and the Superintendent may remove items from the Consent Agenda. Members of the public may provide comments at the start of the regular meeting, which may convince a Board member or the Superintendent to remove an item for further discussion."
       },
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 26,
@@ -432,7 +468,8 @@
           "filename": "Kiln-Donation-Letter_-B.-Cole.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 27,
@@ -451,7 +488,8 @@
           "filename": "Casa-Circulo-Board-5.13.26.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 28,
@@ -470,7 +508,8 @@
           "filename": "TadHealth-MSA-Form-board-5.13.26.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 29,
@@ -495,7 +534,8 @@
           "filename": "PAL-Amendment-1-Board-5.13.26.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 30,
@@ -520,7 +560,8 @@
           "filename": "Dr.-Rebekah-Will-25_26-Amendment-1.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 31,
@@ -532,7 +573,8 @@
         "Financial Impact": "$75,000 increase, fully offset by Child Nutrition program revenues. No impact to the General Fund. Expenditures remain within program revenue limits and comply with USDA Child Nutrition Program requirements.",
         "Speaker": "Prepared by: Richie Wilim, Director, CNS Approved by: John R. Baker, Ed.D, Superintendent"
       },
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 32,
@@ -557,7 +599,8 @@
           "filename": "McKinely-RTU-7-CP-Mechanical.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 33,
@@ -576,7 +619,8 @@
           "filename": "District-Office-AC-4-CP-Mechanical.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 34,
@@ -601,7 +645,8 @@
           "filename": "0400-Policy-Comprehensive-Plans-Clean.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 35,
@@ -625,7 +670,8 @@
           "filename": "0420-Policy-School-Plans_-Site-Councils-Clean.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 36,
@@ -650,7 +696,8 @@
           "filename": "0420.42-BP-Charter-School-Renewal-Clean.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 37,
@@ -674,7 +721,8 @@
           "filename": "4156.2-BP-Awards-And-Recognition-Marked.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 38,
@@ -699,7 +747,8 @@
           "filename": "Policy-4256.2_-Awards-And-Recognition-Clean.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 39,
@@ -724,7 +773,8 @@
           "filename": "4154-BP-Health-And-Welfare-Benefits-Clean.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 40,
@@ -749,7 +799,8 @@
           "filename": "4254-BP-Health-And-Welfare-Benefits-Clean.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 41,
@@ -774,7 +825,8 @@
           "filename": "4354-BP-Health-And-Welfare-Benefits-Clean.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 42,
@@ -799,7 +851,8 @@
           "filename": "Policy-4361_-Leaves-Clean.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 43,
@@ -823,7 +876,8 @@
           "filename": "5000-BP-Concepts-and-Roles-Clean.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 44,
@@ -848,7 +902,8 @@
           "filename": "5020-BP-Parent-Rights-And-Responsibilities-Clean.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 45,
@@ -873,7 +928,8 @@
           "filename": "5111-BP-Admission-Clean.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 46,
@@ -898,7 +954,8 @@
           "filename": "Policy-5112.3_-Student-Leave-Of-Absence-Clean.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 47,
@@ -923,7 +980,8 @@
           "filename": "Policy-5112.5_-Open_Closed-Campus-Clean.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 48,
@@ -947,7 +1005,8 @@
           "filename": "5113-BP-Absences-And-Excuses-Clean.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 49,
@@ -971,7 +1030,8 @@
           "filename": "Policy-5116.2_-Involuntary-Student-Transfers-Clean.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 50,
@@ -995,7 +1055,8 @@
           "filename": "5117-BP-Interdistrict-Attendance-Clean.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 51,
@@ -1019,7 +1080,8 @@
           "filename": "5119-BP-Students-Expelled-From-Other-Districts-Clean.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 52,
@@ -1043,7 +1105,8 @@
           "filename": "5125-BP-Student-Records-Clean.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 53,
@@ -1067,7 +1130,8 @@
           "filename": "5125.1-BP-Release-of-Directory-Information-Clean.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 54,
@@ -1091,7 +1155,8 @@
           "filename": "5131.2-BP-Bullying-Clean.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 55,
@@ -1115,7 +1180,8 @@
           "filename": "5131.7-BP-Weapons-And-Dangerous-Instruments-Clean.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 56,
@@ -1139,7 +1205,8 @@
           "filename": "5136-BP-Gangs-Clean.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 57,
@@ -1163,7 +1230,8 @@
           "filename": "5141.4-BP-Child-Abuse-Prevention-and-Reporting-Clean.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 58,
@@ -1187,7 +1255,8 @@
           "filename": "5142-Policy-Safety-Clean.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 59,
@@ -1211,7 +1280,8 @@
           "filename": "5144-Policy-Discipline-Clean.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 60,
@@ -1235,7 +1305,8 @@
           "filename": "5144.1-BP-Suspension-and-Expulsion_Due-Process-Clean.pdf",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 61,
@@ -1250,7 +1321,8 @@
           "name": "5144.4 - BP - Required Parental Attendance - Clean",
           "aid": "1510039"
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 62,
@@ -1265,7 +1337,8 @@
           "name": "5145.12 Policy Search and Seizure - Clean",
           "aid": "1510086"
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 63,
@@ -1280,7 +1353,8 @@
           "name": "5145.2 - BP - Freedom of Speech_Expression - Clean",
           "aid": "1510486"
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 64,
@@ -1295,7 +1369,8 @@
           "name": "5146 Policy Married_Pregnant_Parenting Students - Clean",
           "aid": "1510576"
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 65,
@@ -1310,7 +1385,8 @@
           "name": "6142.92 Policy Mathematics Instruction - Clean",
           "aid": "1510615"
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 66,
@@ -1361,7 +1437,8 @@
           "name": "Adelante discards april 6 2026",
           "aid": "1510554"
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 67,
@@ -1372,7 +1449,8 @@
           "name": "Warrant Register April 2026",
           "aid": "1510154"
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 68,
@@ -1391,19 +1469,22 @@
           "name": "Navien NPE-2 Brochure 2412",
           "aid": "1518938"
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 69,
       "title": "11. Board and Superintendent Reports - 10 min",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 70,
       "title": "12. Information",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 71,
@@ -1418,7 +1499,8 @@
           "name": "Compliance Report - March 2026",
           "href": "https://www.smcgov.org/media/158782/download?inline="
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 72,
@@ -1433,7 +1515,8 @@
           "name": "Connect 2025-26 Second Interim Report Board",
           "aid": "1505129"
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 73,
@@ -1448,7 +1531,8 @@
           "name": "KIPP Excelencia 2025-26 Second Interim Report Board",
           "aid": "1505154"
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 74,
@@ -1463,13 +1547,15 @@
           "name": "Rocketship Redwood City 2025-26 Second Interim Report Board",
           "aid": "1505161"
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 75,
       "title": "13. Correspondence - 1 min",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 76,
@@ -1480,13 +1566,15 @@
           "name": "25-26 Schedule of Board Agenda Items",
           "aid": "1518167"
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 77,
       "title": "15. Board of Trustees Meeting Reflection - 10 min",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 78,
@@ -1497,13 +1585,15 @@
           "name": "25-26 RCSD Board Meeting Calendar",
           "aid": "1519527"
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 79,
       "title": "17. Adjournment (Action Required)",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     }
   ]
 }

@@ -7,43 +7,50 @@
       "order": 1,
       "title": "1. Call to Order - 1 min",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 2,
       "title": "1. Roll Call",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 3,
       "title": "2. Welcome - 1 min",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 4,
       "title": "1. Welcome by the School Board President, Mike Wells",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 5,
       "title": "3. Changes to the Agenda - 1 min",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 6,
       "title": "1. Additions, Deletions, or Modifications to the Agenda",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 7,
       "title": "4. Approval of Agenda - 1 min",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 8,
@@ -51,13 +58,15 @@
       "memo": {
         "Recommendation": "Motion to approve the agenda as submitted or amended."
       },
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 9,
       "title": "5. Oral Communication",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 10,
@@ -65,19 +74,33 @@
       "memo": {
         "Rationale": "Public Comment Links: English: https://forms.gle/mvJSzCYsop5LYWMp8 Spanish: https://forms.gle/JioNQ14rE8bBF9Zv8"
       },
-      "attachments": []
+      "attachments": [],
+      "memoLinks": [
+        {
+          "url": "https://forms.gle/mvJSzCYsop5LYWMp8",
+          "text": "",
+          "kind": "form"
+        },
+        {
+          "url": "https://forms.gle/JioNQ14rE8bBF9Zv8",
+          "text": "",
+          "kind": "form"
+        }
+      ]
     },
     {
       "order": 11,
       "title": "6. Approval of Bond Program Consent Items",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 12,
       "title": "7. Bond Program Action Items - 60 min",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 13,
@@ -88,7 +111,14 @@
         "Financial Impact": "This action has no immediate financial impact. The Facilities Master Plan will guide future capital investment decisions, including the allocation of Measure S bond funds and other eligible sources.",
         "Speaker": "Prepared by: Rick Edson, CBO; Martin Cervantes, Interim Bond Director; Quattrocci Kwok Architects (Aaron Jobson, John Dybczak, and Ector Mojica); VPCS, Bond Program Managers (Nick Olsen and Eric Van Pelt) Approved by: John Baker, Superintendent"
       },
-      "attachments": []
+      "attachments": [],
+      "memoLinks": [
+        {
+          "url": "https://bit.ly/rcsd-fmp25-draft-final",
+          "text": "",
+          "kind": "document"
+        }
+      ]
     },
     {
       "order": 14,
@@ -106,7 +136,8 @@
           "aid": "1232364",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 15,
@@ -130,13 +161,15 @@
           "aid": "1232396",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 16,
       "title": "8. Discussion Items - 30 min",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 17,
@@ -159,7 +192,8 @@
           "aid": "1232600",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 18,
@@ -182,7 +216,8 @@
           "aid": "1232617",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 19,
@@ -205,7 +240,8 @@
           "aid": "1232625",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 20,
@@ -228,13 +264,15 @@
           "aid": "1232632",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 21,
       "title": "9. Approval of Consent Items - 1 min",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 22,
@@ -252,7 +290,8 @@
           "aid": "1232634",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 23,
@@ -276,7 +315,8 @@
           "aid": "1232638",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 24,
@@ -330,7 +370,8 @@
           "aid": "1232653",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 25,
@@ -348,7 +389,8 @@
           "aid": "1232662",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 26,
@@ -372,7 +414,8 @@
           "aid": "1232682",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 27,
@@ -402,7 +445,8 @@
           "aid": "1232703",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 28,
@@ -420,7 +464,8 @@
           "aid": "1232707",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 29,
@@ -438,7 +483,8 @@
           "aid": "1232708",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 30,
@@ -456,7 +502,8 @@
           "aid": "1232710",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 31,
@@ -474,7 +521,8 @@
           "aid": "1232713",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 32,
@@ -492,7 +540,8 @@
           "aid": "1232690",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 33,
@@ -510,7 +559,8 @@
           "aid": "1232719",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 34,
@@ -528,7 +578,8 @@
           "aid": "1232736",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 35,
@@ -546,13 +597,15 @@
           "aid": "1232737",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 36,
       "title": "10. Action Items - 45 min",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 37,
@@ -576,7 +629,8 @@
           "aid": "1232744",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 38,
@@ -624,7 +678,8 @@
           "aid": "1233973",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 39,
@@ -672,7 +727,8 @@
           "aid": "1233990",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 40,
@@ -690,13 +746,15 @@
           "aid": "1234002",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 41,
       "title": "11. Board and Superintendent Reports - 10 min",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 42,
@@ -706,31 +764,36 @@
         "Financial Impact": "None at this moment.",
         "Speaker": "Prepared by: Evelyn Campos, Administrative Assistant to the Superintendent Approved by: John R. Baker, Ed.D., Superintendent"
       },
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 43,
       "title": "12. Information",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 44,
       "title": "13. Correspondence - 1 min",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 45,
       "title": "1. Correspondence",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 46,
       "title": "14. Other Business/Suggested Items for Future Agenda - 1 min",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 47,
@@ -747,13 +810,15 @@
           "aid": "1234432",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 48,
       "title": "15. Board Meetings Calendar - 1 min",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 49,
@@ -770,13 +835,15 @@
           "aid": "1234436",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 50,
       "title": "16. Adjournment of Meeting - 1 min",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 51,
@@ -784,7 +851,8 @@
       "memo": {
         "Recommendation": "Motion to adjourn the meeting."
       },
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     }
   ]
 }

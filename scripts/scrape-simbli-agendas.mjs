@@ -31,6 +31,7 @@ import { chromium } from 'playwright';
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
+import { extractMemoLinks } from './lib/memo-links.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
@@ -349,12 +350,16 @@ async function main() {
 
       const merged = mergeWithExisting(date, fresh);
       const totalAtts = merged.items.reduce((s, it) => s + (it.attachments?.length || 0), 0);
+      // Derive embedded memo links (public-comment forms, off-portal documents,
+      // etc.) from each item's memo prose. See scripts/lib/memo-links.mjs and
+      // SEARCH.md — document-kind links are fed into site search.
+      const items = merged.items.map(it => ({ ...it, memoLinks: extractMemoLinks(it.memo) }));
       const out = {
         date,
         mid: String(m.mid),
         scrapedAt: new Date().toISOString(),
         zoom: fresh.zoom || null,
-        items: merged.items,
+        items,
       };
       const outPath = resolve(MEMO_DIR, `${date}.json`);
       writeFileSync(outPath, JSON.stringify(out, null, 2) + '\n');

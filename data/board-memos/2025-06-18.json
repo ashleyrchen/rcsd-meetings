@@ -7,43 +7,50 @@
       "order": 1,
       "title": "1. Call to Order - 1 min",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 2,
       "title": "1. Roll Call",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 3,
       "title": "2. Welcome - 1 min",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 4,
       "title": "1. Welcome by the School Board President, Mike Wells",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 5,
       "title": "3. Changes to the Agenda - 1 min",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 6,
       "title": "1. Additions, Deletions, or Modifications to the Agenda",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 7,
       "title": "4. Approval of Agenda - 1 min",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 8,
@@ -51,13 +58,15 @@
       "memo": {
         "Recommendation": "Motion to approve the agenda as submitted or amended."
       },
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 9,
       "title": "5. Oral Communication",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 10,
@@ -65,13 +74,26 @@
       "memo": {
         "Rationale": "Public Comment Links: English: https://forms.gle/FuyUrePUknJ5uFG3A Spanish: https://forms.gle/i4MpvzBQG2RkVcT46"
       },
-      "attachments": []
+      "attachments": [],
+      "memoLinks": [
+        {
+          "url": "https://forms.gle/FuyUrePUknJ5uFG3A",
+          "text": "",
+          "kind": "form"
+        },
+        {
+          "url": "https://forms.gle/i4MpvzBQG2RkVcT46",
+          "text": "",
+          "kind": "form"
+        }
+      ]
     },
     {
       "order": 11,
       "title": "6. Approval of Bond Program Consent Items - 1 min",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 12,
@@ -89,19 +111,22 @@
           "aid": "1236534",
           "cached": true
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 13,
       "title": "7. Bond Program Action Items",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 14,
       "title": "8. Public Hearing - 1 hr",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 15,
@@ -136,7 +161,8 @@
           "aid": "1236553",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 16,
@@ -177,13 +203,15 @@
           "aid": "1236561",
           "cached": true
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 17,
       "title": "9. Approval of Consent Items - 1 min",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 18,
@@ -207,7 +235,8 @@
           "aid": "1236588",
           "cached": true
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 19,
@@ -243,13 +272,15 @@
           "aid": "1236593",
           "cached": true
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 20,
       "title": "10. Action Items - 20 min",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 21,
@@ -267,13 +298,15 @@
           "aid": "1236642",
           "cached": true
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 22,
       "title": "11. Board and Superintendent Reports - 10 min",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 23,
@@ -283,31 +316,36 @@
         "Financial Impact": "None at this moment.",
         "Speaker": "Prepared by: Evelyn Campos, Administrative Assistant to the Superintendent Approved by: John R. Baker, Ed.D., Superintendent"
       },
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 24,
       "title": "12. Information",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 25,
       "title": "13. Correspondence - 1 min",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 26,
       "title": "1. Correspondence",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 27,
       "title": "14. Other Business/Suggested Items for Future Agenda - 1 min",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 28,
@@ -324,13 +362,15 @@
           "aid": "1236236",
           "cached": true
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 29,
       "title": "15. Board Meetings Calendar - 1 min",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 30,
@@ -347,13 +387,15 @@
           "aid": "1236237",
           "cached": true
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 31,
       "title": "16. Adjournment of Meeting - 1 min",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 32,
@@ -361,7 +403,8 @@
       "memo": {
         "Recommendation": "Motion to adjourn the meeting."
       },
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     }
   ]
 }

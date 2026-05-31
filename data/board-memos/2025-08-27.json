@@ -9,13 +9,15 @@
       "memo": {
         "Quick Summary / Abstract": "The Board will call the meeting to order and establish a quorum by roll call."
       },
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 2,
       "title": "1. Roll Call",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 3,
@@ -23,7 +25,8 @@
       "memo": {
         "Quick Summary / Abstract": "Welcome by the School Board President, Mike Wells."
       },
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 4,
@@ -31,7 +34,8 @@
       "memo": {
         "Quick Summary / Abstract": "The School Board will review and discuss any requested additions, deletions, or modifications to the agenda prior to its adoption."
       },
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 5,
@@ -39,7 +43,8 @@
       "memo": {
         "Quick Summary / Abstract": "Motion to approve the agenda as submitted or amended."
       },
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 6,
@@ -47,7 +52,19 @@
       "memo": {
         "Rationale": "Zoom Attendees: If you have a public comment, please submit a speaker's card using the links available, prior to the Regular Board Meeting or immediately upon the meeting opening. Remote participants may also use the “Raise Hand” function in Zoom to indicate their desire to speak. Comment in English: https://forms.gle/6a89mFXDgy4Dc4rr7 Comentario en Español: https://forms.gle/coZfLPAPxuMjT2GX8 In-Person Speakers: Speaker cards are available at the entrance and can be submitted to the secretary."
       },
-      "attachments": []
+      "attachments": [],
+      "memoLinks": [
+        {
+          "url": "https://forms.gle/6a89mFXDgy4Dc4rr7",
+          "text": "",
+          "kind": "form"
+        },
+        {
+          "url": "https://forms.gle/coZfLPAPxuMjT2GX8",
+          "text": "",
+          "kind": "form"
+        }
+      ]
     },
     {
       "order": 7,
@@ -57,7 +74,8 @@
         "Recommendation": "It is the Administration's recommendation that the School Board approve all items on the Bond Program Consent Agenda, as submitted.",
         "Rationale": "Documentation concerning these items has been provided to all Board members and the public in advance to assure an extensive and thorough review. There is no discussion of these items prior to the Board vote. Only members of the Board and the Superintendent may remove items from the Bond Program Consent Agenda. Members of the public may provide comments at the start of the regular meeting, which may convince a Board member or the Superintendent to remove an item for further discussion."
       },
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 8,
@@ -99,19 +117,22 @@
           "aid": "1203132",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 9,
       "title": "7. Bond Program Action Items",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 10,
       "title": "8. Discussion Items - 1 hr",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 11,
@@ -121,7 +142,8 @@
         "Financial Impact": "None at this time",
         "Speaker": "Prepared by: John Baker, Ed.D., Superintendent Approved by: John Baker, Ed.D., Superintendent"
       },
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 12,
@@ -139,7 +161,8 @@
           "aid": "1204606",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 13,
@@ -157,7 +180,8 @@
           "aid": "1201488",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 14,
@@ -175,7 +199,8 @@
           "aid": "1201499",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 15,
@@ -199,7 +224,8 @@
           "aid": "1201504",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 16,
@@ -217,7 +243,8 @@
           "aid": "1200833",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 17,
@@ -227,7 +254,8 @@
         "Recommendation": "It is the Administration's recommendation that the School Board approve all items on the Consent Agenda, as submitted.",
         "Rationale": "Documentation concerning these items has been provided to all Board members and the public in advance to assure an extensive and thorough review. There is no discussion of these items prior to the Board vote. Only members of the Board and the Superintendent may remove items from the Consent Agenda. Members of the public may provide comments at the start of the regular meeting, which may convince a Board member or the Superintendent to remove an item for further discussion."
       },
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 18,
@@ -245,7 +273,8 @@
           "aid": "1201459",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 19,
@@ -269,7 +298,8 @@
           "aid": "1200947",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 20,
@@ -288,7 +318,8 @@
           "aid": "1206187",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 21,
@@ -306,7 +337,8 @@
           "aid": "1200845",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 22,
@@ -325,7 +357,8 @@
           "aid": "1203537",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 23,
@@ -344,7 +377,8 @@
           "aid": "1203538",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 24,
@@ -369,13 +403,15 @@
           "aid": "1202102",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 25,
       "title": "10. Action Items (Action Required) - 25 min",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 26,
@@ -394,7 +430,8 @@
           "aid": "1202413",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 27,
@@ -413,7 +450,8 @@
           "aid": "1202892",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 28,
@@ -437,7 +475,8 @@
           "aid": "1203032",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 29,
@@ -462,7 +501,8 @@
           "aid": "1201667",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 30,
@@ -470,13 +510,15 @@
       "memo": {
         "Quick Summary / Abstract": "The School Board and Superintendent Baker will report out on meetings, attended events, upcoming events, school site visits, etc."
       },
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 31,
       "title": "12. Information",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 32,
@@ -487,7 +529,8 @@
         "Financial Impact": "Gross pool earnings for Month ending July 31, 2025: 4.021% The current average maturity of the portfolio is 2.44 years, with an average duration of 2.18 years. The portfolio continues to hold no derivative products.",
         "Speaker": "Prepared by: Rick Edson, Chief Business Official Approved by: John R. Baker, Ed.D., Superintendent"
       },
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 33,
@@ -495,7 +538,8 @@
       "memo": {
         "Quick Summary / Abstract": "The Board of Trustees regularly receives written correspondence from members of the community, staff, or partner agencies. This agenda item is provided to formally acknowledge receipt of these communications and, when appropriate, to make them part of the official record."
       },
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 34,
@@ -511,7 +555,8 @@
           "aid": "1203065",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 35,
@@ -528,7 +573,8 @@
           "aid": "1201843",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 36,
@@ -536,7 +582,8 @@
       "memo": {
         "Quick Summary / Abstract": "Motion to adjourn the meeting."
       },
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     }
   ]
 }

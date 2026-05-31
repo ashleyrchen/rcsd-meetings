@@ -138,11 +138,15 @@ results pages with live autocomplete at `/search` (English) and `/buscar`
 Because Pagefind splits its index by each page's `<html lang>` attribute, an
 English page searches **only** the English corpus and a Spanish page **only** the
 Spanish corpus. Beyond the HTML pages, the index also carries a record per board
-**document** (title → direct file URL) from `document-index.json` plus
-`data/linked-documents.json` (documents linked from agenda memos but hosted
-off-portal, such as the adopted Facilities Master Plan), so a search like
-"facilities master plan" links straight to the PDF — not just to the meetings
-that discuss it. Result ranking was tuned by evaluating real parent/community
+**document** (title → direct file URL): board-packet attachments from
+`document-index.json`; documents linked inside agenda memos but hosted
+off-portal, which `scrape-simbli-agendas.mjs` extracts and classifies into each
+item's `memoLinks` (see [`scripts/lib/memo-links.mjs`](scripts/lib/memo-links.mjs));
+and curated entries in `data/linked-documents.json` (e.g. the adopted Facilities
+Master Plan). So a search like "facilities master plan" links straight to the
+PDF — not just to the meetings that discuss it. (Recurring public-comment Google
+Forms found in memos are classified separately and kept out of search results.)
+Result ranking was tuned by evaluating real parent/community
 queries in a browser, and a query-relaxation layer broadens over-specified
 natural-language queries (e.g. "roy cloud principal email") that Pagefind's
 all-terms matching would otherwise collapse. The approach, rationale, relevance

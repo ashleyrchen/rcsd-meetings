@@ -133,10 +133,29 @@ which replaced the `npx pagefind` CLI step). It:
    document title. Titles only; we do **not** index PDF contents.
 3. `index.addCustomRecord(...)` for each entry in `data/linked-documents.json` —
    a hand-curated list of documents linked inside agenda memos but hosted
-   off-portal (so they're absent from `document-index.json`). First entry: the
-   **adopted Facilities Master Plan**, whose `bit.ly` memo link resolves to a
-   district-hosted PDF. After this, `facilities master plan` returns the FMP PDF
-   as the #1 result (verified in both languages).
+   off-portal (so they're absent from `document-index.json`), with the best
+   titles + provenance. First entry: the **adopted Facilities Master Plan**.
+4. `index.addCustomRecord(...)` for **document-kind links embedded in agenda
+   memos** (see "Embedded memo links" below), titled by their agenda item — e.g.
+   the San Mateo County Investment Fund report. Curated entries (source 3) win
+   over the raw memo link they supersede (the FMP's `bit.ly` is claimed by the
+   curated entry, so it isn't double-indexed).
+
+After this, `facilities master plan` returns the adopted FMP PDF as the **#1
+result** in both languages (verified in a browser).
+
+### Embedded memo links
+
+Agenda items carry a `memo` (Recommendation / Rationale / … prose). Staff paste
+links into it — mostly recurring **public-comment Google Forms** (~2 per
+meeting), occasionally an actual **document** (the FMP, a county report).
+`scripts/lib/memo-links.mjs` (`extractMemoLinks`) pulls every embedded URL and
+classifies it by host as `document` | `form` | `video` | `other`;
+`scrape-simbli-agendas.mjs` stores the result on each item as `memoLinks`. Only
+`document`-kind links are fed into search — **forms are deliberately excluded**
+(they'd flood results with near-duplicate sign-up links; verified that
+"public comment" returns no `forms.gle`). Forms/other kinds remain in the data
+for future meeting-page rendering.
 
 Records are added to **both** the `en` and `es` indexes (bilingual-by-default;
 the curated list carries a `titleEs`). Pagefind keys custom records by `url`, so
@@ -165,8 +184,10 @@ so no separate CI change was needed.
 
 | File | Role |
 |------|------|
-| `scripts/build-search-index.mjs` | Builds the Pagefind index via the Node API: indexes `docs/` HTML (`excludeSelectors` drops nav/footer) + injects per-document records from `document-index.json` and `linked-documents.json`, in both languages. Replaced `npx pagefind` + `pagefind.yml`. |
-| `data/linked-documents.json` | Curated documents linked from agenda memos but hosted off-portal (e.g. the adopted FMP), with provenance. Indexed by title. |
+| `scripts/build-search-index.mjs` | Builds the Pagefind index via the Node API: indexes `docs/` HTML (`excludeSelectors` drops nav/footer) + injects per-document records from `document-index.json`, `linked-documents.json`, and document-kind `memoLinks` in `data/board-memos/*.json`, in both languages. Replaced `npx pagefind` + `pagefind.yml`. |
+| `scripts/lib/memo-links.mjs` | `extractMemoLinks(memo)` — pulls embedded URLs out of agenda-item memos and classifies them (`document`/`form`/`video`/`other`). Shared by the scraper and the indexer. |
+| `scripts/scrape-simbli-agendas.mjs` | Now stores `memoLinks` on each agenda item (via the shared extractor) so embedded links are captured structurally. |
+| `data/linked-documents.json` | Curated documents linked from agenda memos but hosted off-portal (e.g. the adopted FMP), with provenance + best titles; supersedes the raw memo link. Indexed by title. |
 | `scripts/build-search.mjs` | Generates `/search` + `/buscar`: composes the Component UI, themes it, applies ranking, installs query relaxation, prefills `?q=`. Holds the `RANKING` + `MIN_RESULTS` tunables. Pages carry `data-pagefind-ignore` + `robots: noindex, follow`. |
 | `scripts/html-parts.mjs` | `siteNav` renders the language-aware nav search `<form>`; `baseCSS` styles `.site-nav-search`. |
 | `scripts/run-pipeline.mjs` | Runs `build-search.mjs` then `build-search-index.mjs` as the last build stages before deploy. |
@@ -202,3 +223,26 @@ pass; add `--deploy` to publish.
 - **Filters/sorts.** Pagefind supports faceted filters (`data-pagefind-filter`)
   and sorts (`data-pagefind-sort`) — none defined yet; the path to typed/grouped
   results without leaving Pagefind.
+
+## Roadmap (sequenced)
+
+Search has shipped in stages; this tracks the effort. Strike through as merged.
+
+- ~~Global bilingual search, Component UI, ranking + query relaxation (PR #25)~~
+- ~~Index board documents by title → direct-to-file results (PR #26)~~
+- ~~Capture embedded memo links (scraper + classify) and index document-kind
+  ones; exclude public-comment forms (this PR)~~
+- **Search-result iconography** — per-result images via record `meta` /
+  `<pagefind-results show-images>`: YouTube thumbnail for meeting hits, a
+  PDF/filetype glyph for document hits, school crest for school pages.
+- **Bespoke OG cards** for `/search` + `/buscar` (EN + ES variants), instead of
+  the site-default image.
+- **Mirror pulled documents to R2** (`data.rcsd.info`) — board attachments and
+  off-portal linked docs (FMP, county reports), for link stability + provenance,
+  then point search records at the mirrored copy.
+- **Index full document contents** (not just titles) for deeper searchability —
+  extract text from mirrored PDFs and add as record `content`.
+- **Render `memoLinks` on meeting pages** — surface the public-comment forms
+  ("📝 Public comment — EN/ES") and reference links now captured per item.
+- **Auto-resolve short links** (`bit.ly`) to canonical URLs at scrape time, so
+  curated overrides aren't needed just to record the real target.

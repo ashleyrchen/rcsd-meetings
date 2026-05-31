@@ -9,13 +9,15 @@
       "memo": {
         "Quick Summary / Abstract": "The Board will call the meeting to order and establish a quorum by roll call."
       },
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 2,
       "title": "1. Roll Call",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 3,
@@ -23,13 +25,15 @@
       "memo": {
         "Quick Summary / Abstract": "Welcome by the School Board President, David Weekly."
       },
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 4,
       "title": "1. Pledge of Allegiance",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 5,
@@ -37,7 +41,8 @@
       "memo": {
         "Quick Summary / Abstract": "The School Board will review and discuss any requested additions, deletions, or modifications to the agenda prior to its adoption."
       },
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 6,
@@ -45,7 +50,8 @@
       "memo": {
         "Quick Summary / Abstract": "Motion to approve the agenda as submitted or amended."
       },
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 7,
@@ -54,13 +60,26 @@
         "Quick Summary / Abstract": "The Board will limit comments to the Study Session item.",
         "Rationale": "Zoom Attendees: If you have a public comment, please submit a speaker's card using the links available, prior to the Board Study Session Meeting or immediately upon the meeting opening. Remote participants may also use the “Raise Hand” function in Zoom to indicate their desire to speak. Comment in English: https://forms.gle/TJzXJkkqmjvpJtNu5 Comentario en Español: https://forms.gle/tMxGdhrqu2S6FPxK6 In-Person Speakers: Speaker cards are available at the entrance and can be submitted to the secretary."
       },
-      "attachments": []
+      "attachments": [],
+      "memoLinks": [
+        {
+          "url": "https://forms.gle/TJzXJkkqmjvpJtNu5",
+          "text": "",
+          "kind": "form"
+        },
+        {
+          "url": "https://forms.gle/tMxGdhrqu2S6FPxK6",
+          "text": "",
+          "kind": "form"
+        }
+      ]
     },
     {
       "order": 8,
       "title": "6. School/Community Reports - 2 hrs",
       "memo": {},
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     },
     {
       "order": 9,
@@ -84,7 +103,8 @@
           "aid": "1360088",
           "cached": false
         }
-      ]
+      ],
+      "memoLinks": []
     },
     {
       "order": 10,
@@ -92,7 +112,8 @@
       "memo": {
         "Quick Summary / Abstract": "Motion to adjourn the meeting."
       },
-      "attachments": []
+      "attachments": [],
+      "memoLinks": []
     }
   ]
 }
