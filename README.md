@@ -16,6 +16,7 @@ Independently compiled public records for the [Redwood City School District](htt
 - **12 school profile pages** with demographics, test scores, bell schedules, safety plans, and board presentations
 - **3 charter school profiles** plus a **district property index** (district-owned sites that aren't operating schools)
 - **District budget visualization** with per-pupil funding breakdowns
+- **Full-site search** (English and Spanish, each searching only its own-language corpus) — see [`SEARCH.md`](SEARCH.md)
 
 *Counts reflect the data snapshot of May 2026; the pipeline runs continuously, so live figures will be higher.*
 
@@ -102,6 +103,11 @@ Scripts run in order. Most can be run independently. All cache aggressively — 
  13. build:district       → docs/district/index.html (incl. Committees section)
  14. build:budget         → docs/district/budget/
  15. build:blog           → docs/blog/**
+ 16. build:search         → docs/search/ (EN), docs/buscar/ (ES)
+
+ Search index (must run last, after all HTML exists)
+ ───────────────────────────────────────────────────
+ 17. search:index         → docs/pagefind/ (Pagefind; per-language index)
 
  Deploy
  ──────
@@ -109,10 +115,30 @@ Scripts run in order. Most can be run independently. All cache aggressively — 
  npm run upload           → R2 (data.rcsd.info)
 ```
 
+`run-pipeline.mjs` performs steps 16–17 automatically as its final build stages,
+so CI's `wrangler pages deploy` ships the search index alongside the pages.
+
 Quick rebuild (build steps only):
 ```bash
 npm run build
 ```
+
+## Search
+
+Full-site search is powered by [Pagefind](https://pagefind.app), which indexes
+the rendered `docs/` HTML at build time — so it covers everything already on the
+pages (meetings, schools, policies, budget, blog) with no separate index to
+maintain. It is exposed through a search box in the global nav and dedicated
+results pages with live autocomplete at `/search` (English) and `/buscar`
+(Spanish), built with Pagefind's accessible Component UI.
+
+Because Pagefind splits its index by each page's `<html lang>` attribute, an
+English page searches **only** the English corpus and a Spanish page **only** the
+Spanish corpus. Result ranking was tuned by evaluating real parent/community
+queries in a browser, and a query-relaxation layer broadens over-specified
+natural-language queries (e.g. "roy cloud principal email") that Pagefind's
+all-terms matching would otherwise collapse. The approach, rationale, relevance
+findings, file map, and extension points are documented in [`SEARCH.md`](SEARCH.md).
 
 ### Simbli agenda scraping
 

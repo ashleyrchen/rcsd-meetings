@@ -87,6 +87,26 @@ export function baseCSS() {
     align-items: center;
     gap: 0.5rem;
   }
+  .site-nav-search { display: flex; }
+  .site-nav-search input {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.02em;
+    color: #fff;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.35);
+    border-radius: 3px;
+    padding: 0.35rem 0.65rem;
+    width: 9rem;
+    transition: border-color 0.2s, background 0.2s, width 0.2s;
+  }
+  .site-nav-search input::placeholder { color: rgba(255,255,255,0.55); }
+  .site-nav-search input:focus {
+    outline: none;
+    background: rgba(255,255,255,0.14);
+    border-color: rgba(255,255,255,0.7);
+    width: 11rem;
+  }
   .site-nav-lang {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 0.75rem;
@@ -134,6 +154,8 @@ export function baseCSS() {
   @media (max-width: 640px) {
     .site-nav-tab { padding: 0.6rem 0.7rem; font-size: 0.7rem; }
     .site-nav-inner { padding: 0 1.2rem; }
+    .site-nav-search input { width: 6rem; }
+    .site-nav-search input:focus { width: 7.5rem; }
   }`;
 }
 
@@ -266,15 +288,28 @@ export function siteNav({ activePage = null, lang = 'en', altLangHref = null } =
     `      <a href="${t.href}" class="site-nav-tab${t.id === activePage ? ' active' : ''}">${t.label}</a>`
   ).join('\n');
 
+  // Language-aware search box. The form GET-submits ?q= to the results page in
+  // the SAME language as the current page (/search for EN, /buscar for ES), so
+  // every search stays within its own-language corpus (see docs/SEARCH.md).
+  const searchAction = lang === 'es' ? '/buscar/' : '/search/';
+  const searchLabel = lang === 'es' ? 'Buscar' : 'Search';
+  const searchHtml =
+    `<form class="site-nav-search" role="search" action="${searchAction}" method="get">` +
+    `<input type="search" name="q" placeholder="${searchLabel}…" aria-label="${searchLabel}" autocomplete="off">` +
+    `</form>`;
+
   const langSwitch = altLangHref
-    ? `\n    <div class="site-nav-right">\n      <a href="${altLangHref}" class="site-nav-lang">${lang === 'en' ? 'ES' : 'EN'}</a>\n    </div>`
+    ? `<a href="${altLangHref}" class="site-nav-lang">${lang === 'en' ? 'ES' : 'EN'}</a>`
     : '';
 
   return `<nav class="site-nav">
   <div class="site-nav-inner">
     <div class="site-nav-tabs">
 ${tabsHtml}
-    </div>${langSwitch}
+    </div>
+    <div class="site-nav-right">
+      ${searchHtml}${langSwitch ? '\n      ' + langSwitch : ''}
+    </div>
   </div>
 </nav>`;
 }

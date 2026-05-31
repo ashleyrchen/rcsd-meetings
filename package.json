@@ -5,7 +5,9 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "build": "node scripts/build-homepage.mjs && node scripts/build-meetings.mjs && node scripts/build-meetings-html.mjs && node scripts/build-district.mjs && node scripts/build-schools.mjs && node scripts/build-charters.mjs && node scripts/build-budget.mjs && node scripts/build-blog.mjs && node scripts/build-policies.mjs",
+    "build": "node scripts/build-homepage.mjs && node scripts/build-meetings.mjs && node scripts/build-meetings-html.mjs && node scripts/build-district.mjs && node scripts/build-schools.mjs && node scripts/build-charters.mjs && node scripts/build-budget.mjs && node scripts/build-blog.mjs && node scripts/build-policies.mjs && node scripts/build-search.mjs",
+    "build:search": "node scripts/build-search.mjs",
+    "search:index": "pagefind",
     "build:blog": "node scripts/build-blog.mjs",
     "build:schools": "node scripts/build-schools.mjs",
     "build:charters": "node scripts/build-charters.mjs",
@@ -37,6 +39,7 @@
     "@fontsource/fraunces": "^5.2.9",
     "@fontsource/ibm-plex-mono": "^5.2.7",
     "@resvg/resvg-js": "^2.6.2",
+    "pagefind": "^1.5.2",
     "satori": "^0.26.0",
     "wrangler": "^4.90.0"
   }

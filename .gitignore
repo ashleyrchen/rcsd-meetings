@@ -9,3 +9,6 @@ tmp/
 CLAUDE.md
 .playwright-mcp/
 data/caaspp-cache/
+# Pagefind search bundle — regenerated from docs/ HTML on every build/deploy.
+# Deployed to Cloudflare Pages directly; no need to track the binary index.
+docs/pagefind/

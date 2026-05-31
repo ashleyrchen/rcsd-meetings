@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, follow">
+<title>Search — RCSD Open Data</title>
+<meta name="description" content="Search Redwood City School District board meetings, schools, board policies, and district data.">
+<meta name="theme-color" content="#1a3a2a">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="canonical" href="https://rcsd.info/search/">
+<link rel="alternate" hreflang="en" href="https://rcsd.info/search/">
+<link rel="alternate" hreflang="es" href="https://rcsd.info/buscar/">
+<meta property="og:title" content="Search — RCSD Open Data">
+<meta property="og:description" content="Search Redwood City School District board meetings, schools, board policies, and district data.">
+<meta property="og:url" content="https://rcsd.info/search/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://rcsd.info/og-1200.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Search — RCSD Open Data">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="RCSD Open Data">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://rcsd.info/og-1200.jpg">
+<meta name="twitter:title" content="Search — RCSD Open Data">
+<meta name="twitter:description" content="Search Redwood City School District board meetings, schools, board policies, and district data.">
+<link rel="preload" href="/fonts/fraunces-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/newsreader-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/ibm-plex-mono-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/fonts/fonts.css">
+
+<link href="/pagefind/pagefind-component-ui.css" rel="stylesheet">
+<style>
+
+  :root {
+    --green-deep: #1a3a2a;
+    --green-mid: #2d5a3f;
+    --green-light: #4a8c6a;
+    --green-pale: #dcebd5;
+    --green-wash: #f0f6ed;
+    --cream: #faf8f4;
+    --cream-dark: #f2efe8;
+    --amber: #c4842d;
+    --amber-light: #f0d9a8;
+    --coral: #c45d4a;
+    --coral-light: #f5ddd8;
+    --text: #2a2a28;
+    --text-secondary: #5a5a56;
+    --text-muted: #8a8a84;
+    --rule: #d4d0c8;
+    --rule-light: #e8e4dc;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html {
+    font-size: 17px;
+    scroll-behavior: smooth;
+    background: var(--cream);
+  }
+
+  body {
+    font-family: 'Newsreader', Georgia, serif;
+    color: var(--text);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    background: var(--cream);
+  }
+
+  a {
+    color: var(--green-mid);
+    text-decoration-color: var(--rule);
+    text-underline-offset: 2px;
+    transition: color 0.15s, text-decoration-color 0.15s;
+  }
+  a:hover {
+    color: var(--green-deep);
+    text-decoration-color: var(--green-mid);
+  }
+
+  /* ---- SITE NAV ---- */
+  .site-nav {
+    background: #1a2e1a;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .site-nav-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .site-nav-tabs { display: flex; gap: 0; }
+  .site-nav-tab {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: rgba(255,255,255,0.7);
+    padding: 0.75rem 1rem;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .site-nav-tab:hover { color: #fff; }
+  .site-nav-tab.active { color: #fff; border-bottom-color: var(--green-light); }
+
+  .site-nav-right {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .site-nav-search { display: flex; }
+  .site-nav-search input {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.02em;
+    color: #fff;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.35);
+    border-radius: 3px;
+    padding: 0.35rem 0.65rem;
+    width: 9rem;
+    transition: border-color 0.2s, background 0.2s, width 0.2s;
+  }
+  .site-nav-search input::placeholder { color: rgba(255,255,255,0.55); }
+  .site-nav-search input:focus {
+    outline: none;
+    background: rgba(255,255,255,0.14);
+    border-color: rgba(255,255,255,0.7);
+    width: 11rem;
+  }
+  .site-nav-lang {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    padding: 0.35rem 0.65rem;
+    border: 1px solid rgba(255,255,255,0.35);
+    border-radius: 3px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .site-nav-lang:hover {
+    color: #fff;
+    border-color: rgba(255,255,255,0.6);
+  }
+
+  /* ---- FOOTER ---- */
+  .site-footer {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2rem 2rem 4rem;
+    border-top: 1px solid var(--rule);
+    text-align: center;
+  }
+  .site-footer p {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    font-style: italic;
+  }
+  .site-footer a { color: var(--green-mid); }
+  .footer-nav {
+    margin-top: 0.8rem;
+    font-style: normal;
+  }
+  .footer-nav a {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--green-mid);
+    text-decoration: none;
+    margin: 0 0.75rem;
+  }
+  .footer-nav a:hover { text-decoration: underline; }
+
+  /* ---- RESPONSIVE (nav + footer) ---- */
+  @media (max-width: 640px) {
+    .site-nav-tab { padding: 0.6rem 0.7rem; font-size: 0.7rem; }
+    .site-nav-inner { padding: 0 1.2rem; }
+    .site-nav-search input { width: 6rem; }
+    .site-nav-search input:focus { width: 7.5rem; }
+  }
+
+  .search-main {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 2.5rem 2rem 3rem;
+  }
+  .search-main .eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--green-light);
+  }
+  .search-main h1 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 2.4rem;
+    line-height: 1.1;
+    margin: 0.2rem 0 0.4rem;
+    color: var(--green-deep);
+  }
+  .search-main .intro {
+    color: var(--text-secondary);
+    margin-bottom: 1.6rem;
+  }
+  #search {
+    /* Pagefind Component UI tokens — https://pagefind.app/docs/ */
+    --pf-font: 'Newsreader', Georgia, serif;
+    --pf-text: var(--text);
+    --pf-text-secondary: var(--text-secondary);
+    --pf-text-muted: var(--text-muted);
+    --pf-background: var(--cream);
+    --pf-border: var(--rule);
+    --pf-border-focus: var(--green-light);
+    --pf-outline-focus: var(--green-light);
+    --pf-hover: var(--green-wash);
+    --pf-border-radius: 6px;
+    --pf-mark: var(--amber-light);
+  }
+  #search pagefind-input { font-family: 'IBM Plex Mono', monospace; }
+
+</style>
+</head>
+<body data-pagefind-ignore>
+
+<nav class="site-nav">
+  <div class="site-nav-inner">
+    <div class="site-nav-tabs">
+      <a href="/" class="site-nav-tab">Home</a>
+      <a href="/meetings/" class="site-nav-tab">Meetings</a>
+      <a href="/schools/" class="site-nav-tab">Schools</a>
+      <a href="/district/" class="site-nav-tab">District</a>
+      <a href="/budget/" class="site-nav-tab">Budget</a>
+      <a href="/blog/" class="site-nav-tab">Blog</a>
+    </div>
+    <div class="site-nav-right">
+      <form class="site-nav-search" role="search" action="/search/" method="get"><input type="search" name="q" placeholder="Search…" aria-label="Search" autocomplete="off"></form>
+      <a href="/buscar/" class="site-nav-lang">ES</a>
+    </div>
+  </div>
+</nav>
+
+<main class="search-main">
+  <div class="eyebrow">RCSD Open Data</div>
+  <h1>Search</h1>
+  <p class="intro">Search across board meetings, schools, board policies, and district data.</p>
+  <div id="search">
+    <pagefind-config language="en"></pagefind-config>
+    <pagefind-input autofocus placeholder="Search meetings, schools, policies…"></pagefind-input>
+    <pagefind-summary></pagefind-summary>
+    <pagefind-results max-results="20"></pagefind-results>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <p>Independently compiled from publicly available RCSD documents. Source documents at <a href="https://www.rcsdk8.net">rcsdk8.net</a> and the <a href="https://simbli.eboardsolutions.com/SB_Meetings/SB_MeetingListing.aspx?S=36030397">GAMUT board portal</a>.</p>
+  <div class="footer-nav">
+    <a href="/">Home</a>
+    <a href="/meetings/">Meetings</a>
+    <a href="/schools/">Schools</a>
+    <a href="/district/">District</a>
+    <a href="/budget/">Budget</a>
+    <a href="https://github.com/dweekly/rcsd-meetings">Source Code &#8599;</a>
+    <a href="mailto:team@rcsd.info">team@rcsd.info</a>
+  </div>
+</footer>
+
+<script type="module" src="/pagefind/pagefind-component-ui.js"></script>
+<script type="module">
+(async function () {
+  var RANKING = {"termFrequency":1,"pageLength":0.75,"termSaturation":1.4,"termSimilarity":1};
+  var MIN_RESULTS = 5;
+
+  function ready() { return window.PagefindComponents && window.PagefindComponents.getInstanceManager; }
+  for (var i = 0; i < 200 && !ready(); i++) { await new Promise(function (r) { setTimeout(r, 25); }); }
+  if (!ready()) return;
+  var inst = window.PagefindComponents.getInstanceManager().getInstance('default');
+  if (!inst) return;
+
+  // Force the core to load so we can tune ranking + relax queries, and so a ?q=
+  // prefill resolves instantly.
+  if (inst.triggerLoad) { try { await inst.triggerLoad(); } catch (e) {} }
+  var pf = inst.__pagefind__;
+  if (pf) {
+    try { await pf.options({ ranking: RANKING }); } catch (e) {}
+
+    // Query relaxation. Pagefind requires ALL terms (AND); a query like
+    // "roy cloud principal email" collapses to ~1 hit because "email" is rare.
+    // When the strict result set is sparse, broaden it by dropping one term at a
+    // time and merging the partial matches, re-sorted by score. Only fires below
+    // MIN_RESULTS, so well-matched queries (most) are left exactly as-is.
+    if (typeof pf.search === 'function' && typeof pf.debouncedSearch === 'function') {
+      var origSearch = pf.search.bind(pf);
+      var origDeb = pf.debouncedSearch.bind(pf);
+      async function broaden(term, base, opts) {
+        var words = (term || '').trim().split(/\s+/).filter(Boolean);
+        if (!base || base.results.length >= MIN_RESULTS || words.length < 2) return base;
+        var seen = new Map(base.results.map(function (x) { return [x.id, x]; }));
+        for (var k = 0; k < words.length; k++) {
+          var sub = words.filter(function (_, j) { return j !== k; }).join(' ');
+          var rr = await origSearch(sub, opts);
+          rr.results.forEach(function (res) { if (!seen.has(res.id)) seen.set(res.id, res); });
+        }
+        var merged = Array.from(seen.values()).sort(function (a, b) { return b.score - a.score; });
+        return Object.assign({}, base, { results: merged, unfilteredResultCount: merged.length });
+      }
+      pf.search = async function (term, opts) { return broaden(term, await origSearch(term, opts), opts); };
+      pf.debouncedSearch = async function (term, opts) { return broaden(term, await origDeb(term, opts), opts); };
+    }
+  }
+
+  // Prefill from ?q= (nav search box submits here).
+  var q = new URLSearchParams(location.search).get('q');
+  if (q) {
+    var input = document.querySelector('pagefind-input input');
+    if (input) input.value = q;
+    if (inst.triggerSearch) inst.triggerSearch(q);
+  }
+})();
+</script>
+</body>
+</html>
