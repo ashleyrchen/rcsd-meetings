@@ -1,0 +1,25 @@
+{
+  "_metadata": {
+    "description": "District documents referenced (linked) inside board agenda memos but hosted OFF the board portal — so they are not captured as board-packet attachments in document-index.json. Hand-curated; each entry cites its source meeting and agenda item. These are indexed into site search by title (see SEARCH.md) so a search like 'facilities master plan' links directly to the document.",
+    "source": "Simbli board agendas — memo body 'Link to file' references (data/board-memos/*.json)",
+    "method": "Manually captured; bit.ly short links resolved to their canonical/CDN target with curl -IL",
+    "retrieved": "2026-05-31"
+  },
+  "documents": [
+    {
+      "slug": "facilities-master-plan-2025",
+      "title": "Final Facilities Master Plan (FMP), 2025 (PDF)",
+      "titleEs": "Plan Maestro de Instalaciones (FMP) Final, 2025 (PDF)",
+      "type": "facilities-plan",
+      "url": "https://resources.finalsite.net/images/v1749242631/rcsdk8net/zzwbnzxpoasxgtbiotnv/RCSD-FMP2025-v1-2.pdf",
+      "meetingDate": "2025-06-11",
+      "itemTitle": "Adoption of Final Facilities Master Plan",
+      "note": "Adopted 2025-06-11 as the District's official long-term facilities roadmap, guiding Measure S bond construction projects. Hosted off BoardDocs due to file size and linked from the agenda memo.",
+      "provenance": {
+        "publishedLink": "https://bit.ly/rcsd-fmp25-draft-final",
+        "canonicalLink": "https://www.rcsdk8.net/fs/resource-manager/view/e3c42ad6-bf34-441b-a6b2-335572c87aac",
+        "sourceMemo": "data/board-memos/2025-06-11.json"
+      }
+    }
+  ]
+}

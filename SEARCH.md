@@ -115,17 +115,49 @@ returns **Roy Cloud School #1** (score 22.1), verified in the rendered UI.
 > so the version is controlled. Revisit if Pagefind exposes a supported
 > match-mode / OR option, which would let us drop the wrapper.
 
+## Indexing documents by title (direct-to-file results)
+
+Board documents (PDFs) live on R2 / off-portal hosts, not in `docs/`, so they
+have no HTML page of their own. Their titles appear only as link text on meeting
+pages — which means a search for "facilities master plan" surfaces the *meetings*
+that discuss it, never the document itself. To return a result that links
+**directly to the file**, we feed document titles into the index as their own
+records, using Pagefind's **NodeJS Indexing API** (`scripts/build-search-index.mjs`,
+which replaced the `npx pagefind` CLI step). It:
+
+1. `index.addDirectory({ path: 'docs' })` — indexes the rendered HTML site,
+   exactly as the CLI did (`excludeSelectors` drops nav/footer; per-language
+   split by `<html lang>`).
+2. `index.addCustomRecord(...)` for each board-packet attachment in
+   `data/document-index.json` (~1,028) — `url` → the file, `meta.title` → the
+   document title. Titles only; we do **not** index PDF contents.
+3. `index.addCustomRecord(...)` for each entry in `data/linked-documents.json` —
+   a hand-curated list of documents linked inside agenda memos but hosted
+   off-portal (so they're absent from `document-index.json`). First entry: the
+   **adopted Facilities Master Plan**, whose `bit.ly` memo link resolves to a
+   district-hosted PDF. After this, `facilities master plan` returns the FMP PDF
+   as the #1 result (verified in both languages).
+
+Records are added to **both** the `en` and `es` indexes (bilingual-by-default;
+the curated list carries a `titleEs`). Pagefind keys custom records by `url`, so
+the same file added for two languages would collide (last-wins) — we append a
+`#en` / `#es` fragment to keep them distinct; the fragment is ignored when the
+PDF opens. Per-language corpus isolation still holds for HTML pages (they split
+by their own `<html lang>`).
+
 ## Data flow
 
 ```
 build scripts (build-*.mjs) ──> docs/**/*.html   (each with <html lang>)
 build-search.mjs ────────────> docs/search/ (en), docs/buscar/ (es)
-pagefind (reads pagefind.yml) ─> docs/pagefind/  (per-language index + Component UI)
+build-search-index.mjs ──────> docs/pagefind/  (HTML pages + per-document records,
+   (Pagefind Node API)            per-language index + Component UI assets)
+   + data/document-index.json + data/linked-documents.json
 wrangler pages deploy docs ───> rcsd.info  (index shipped alongside pages)
 ```
 
-Ordering matters: Pagefind must run **after all HTML exists** (incl. the search
-pages) and **before deploy**. This is wired as the final build stage in
+Ordering matters: the index must build **after all HTML exists** (incl. the
+search pages) and **before deploy**. This is wired as the final build stage in
 `scripts/run-pipeline.mjs`, which CI runs before its `wrangler pages deploy` —
 so no separate CI change was needed.
 
@@ -133,19 +165,20 @@ so no separate CI change was needed.
 
 | File | Role |
 |------|------|
-| `pagefind.yml` | Indexer config: `site: docs`; `exclude_selectors` drops the shared nav/footer chrome. |
+| `scripts/build-search-index.mjs` | Builds the Pagefind index via the Node API: indexes `docs/` HTML (`excludeSelectors` drops nav/footer) + injects per-document records from `document-index.json` and `linked-documents.json`, in both languages. Replaced `npx pagefind` + `pagefind.yml`. |
+| `data/linked-documents.json` | Curated documents linked from agenda memos but hosted off-portal (e.g. the adopted FMP), with provenance. Indexed by title. |
 | `scripts/build-search.mjs` | Generates `/search` + `/buscar`: composes the Component UI, themes it, applies ranking, installs query relaxation, prefills `?q=`. Holds the `RANKING` + `MIN_RESULTS` tunables. Pages carry `data-pagefind-ignore` + `robots: noindex, follow`. |
 | `scripts/html-parts.mjs` | `siteNav` renders the language-aware nav search `<form>`; `baseCSS` styles `.site-nav-search`. |
-| `scripts/run-pipeline.mjs` | Runs `build-search.mjs` then the `pagefind` indexer as the last build stages before deploy. |
-| `package.json` | `pagefind` devDependency; `build:search` + `search:index` scripts. |
-| `.gitignore` | Ignores `docs/pagefind/` — regenerated binary bundle, redeployed every build. |
+| `scripts/run-pipeline.mjs` | Runs `build-search.mjs` then `build-search-index.mjs` as the last build stages before deploy. |
+| `package.json` | `pagefind` devDependency (provides the Node API); `build:search` + `search:index` scripts. |
+| `.gitignore` | Ignores `docs/pagefind/` — regenerated bundle, redeployed every build. |
 
 ## Running it locally
 
 ```bash
 npm install              # pulls the pagefind binary
 npm run build            # builds all pages incl. /search and /buscar
-npm run search:index     # runs pagefind -> docs/pagefind/
+npm run search:index     # build-search-index.mjs -> docs/pagefind/ (HTML + docs)
 cd docs && python3 -m http.server 8799   # or: npx wrangler pages dev docs
 # open /search?q=facilities+master+plan and /buscar?q=plan+maestro
 ```
