@@ -19,19 +19,33 @@
  * those are navigation or already-captured attachments, not embedded refs.
  */
 
-// Hosts that are navigation or already captured elsewhere — never "embedded refs".
-const PORTAL = /(boarddocs\.com|simbli\.eboardsolutions\.com|data\.rcsd\.info|zoom\.us|\/\/(www\.)?rcsd\.info(\/|$))/i;
+// Hosts that are navigation, already-captured, or share-button chrome —
+// never "embedded refs". (Social hosts appear in BoardDocs item share buttons.)
+const PORTAL = /(boarddocs\.com|simbli\.eboardsolutions\.com|data\.rcsd\.info|zoom\.us|\/\/(www\.)?rcsd\.info(\/|$)|twitter\.com|x\.com|facebook\.com|\/sharer|\/intent\/|addtoany)/i;
 
 const FORM_HOST = /(forms\.gle|docs\.google\.com\/forms|google\.com\/forms|surveymonkey|jotform)/i;
 const VIDEO_HOST = /(youtube\.com|youtu\.be|vimeo\.com)/i;
-// Document: explicit file extensions, common doc hosts, and URL shorteners
-// (in this corpus shorteners point at hosted documents, e.g. the FMP bit.ly).
 // Document: explicit file extensions, a `/download` path, known doc hosts, and
 // URL shorteners (in this corpus shorteners point at hosted documents, e.g. the
 // FMP bit.ly). NOTE: matches on file/download/doc-host signals, not on a host
 // alone — so a county *info page* (smcgov.org/treasurer/…) is "other", while its
 // /media/…/download PDF is "document".
 const DOC_HOST = /(\.(pdf|docx?|xlsx?|pptx?|csv)(\?|#|$)|\/download|bit\.ly|tinyurl|drive\.google|docs\.google\.com\/(document|spreadsheets|presentation)|dropbox|box\.com|finalsite)/i;
+
+// BoardDocs memos are often pasted from Gmail/Docs, wrapping real links in a
+// google.com/url?q=<target> redirect (and data-saferedirecturl). Unwrap to the
+// real destination (recursively) so we classify + link the actual document.
+export function unwrapUrl(url) {
+  let u = url;
+  for (let i = 0; i < 3; i++) {
+    const m = u.match(/^https?:\/\/(?:www\.)?google\.com\/url\?(?:[^&]*&)*?q=([^&]+)/i);
+    if (!m) break;
+    try { u = decodeURIComponent(m[1]); } catch { break; }
+  }
+  // Strip leftover HTML entities pasted onto the end of URLs (e.g. a trailing
+  // &nbsp;) and normalize &amp; so near-duplicates collapse to one record.
+  return u.replace(/&nbsp;?$/i, '').replace(/&amp;/gi, '&').replace(/[).,;:'"\s]+$/, '');
+}
 
 /** Classify a single URL into form | video | document | other | portal. */
 export function classifyUrl(url) {
@@ -78,7 +92,7 @@ export function extractMemoLinks(memo) {
     let m;
     HREF_RE.lastIndex = 0;
     while ((m = HREF_RE.exec(s))) {
-      const url = cleanUrl(m[1]);
+      const url = unwrapUrl(cleanUrl(m[1]));
       if (!/^https?:/i.test(url)) continue;
       const text = stripTags(m[2]).slice(0, 200);
       if (!byUrl.has(url)) byUrl.set(url, { url, text, kind: classifyUrl(url) });
@@ -87,7 +101,7 @@ export function extractMemoLinks(memo) {
     // Bare URLs (anything not already captured via an anchor).
     BARE_RE.lastIndex = 0;
     while ((m = BARE_RE.exec(s))) {
-      const url = cleanUrl(m[0]);
+      const url = unwrapUrl(cleanUrl(m[0]));
       if (!byUrl.has(url)) byUrl.set(url, { url, text: '', kind: classifyUrl(url) });
     }
   }

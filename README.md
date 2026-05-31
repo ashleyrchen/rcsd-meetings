@@ -47,7 +47,7 @@ AI-generated content (meeting summaries, timestamp mappings) is always labeled a
 |--------|------|--------|---------|
 | [Simbli/GAMUT](https://simbli.eboardsolutions.com/SB_Meetings/SB_MeetingListing.aspx?S=36030397) | Agendas, minutes, attachments (Jun 2025+) | Playwright browser scraping | `scrape-simbli-agendas.mjs`, `scrape-board-packets.mjs` |
 | [Simbli Policies](https://simbli.eboardsolutions.com/Policy/PolicyListing.aspx?S=36030397) | Board Policy manual, bylaws, regulations | Playwright session interception + REST API calls | `scrape-board-policies.mjs` |
-| [BoardDocs](https://go.boarddocs.com/ca/redwood/Board.nsf) | Agendas, attachments (Aug 2023 – Jun 2025) | REST API scraping | `scrape-boarddocs.mjs` |
+| [BoardDocs](https://go.boarddocs.com/ca/redwood/Board.nsf) | Agendas, item bodies, attachments (Apr 2020 – Jun 2025) | REST API scraping (browser UA) | `scrape-boarddocs.mjs` |
 | [YouTube](https://www.youtube.com/@redwoodcityschooldistrict) | Meeting videos | `yt-dlp` channel index | `scrape-youtube-index.mjs` |
 | YouTube audio | Raw Opus 48kHz audio streams | `yt-dlp -f bestaudio` | `transcribe-assemblyai.mjs` |
 | [AssemblyAI](https://www.assemblyai.com/) | Diarized transcripts with word-level timestamps | Universal 3 Pro API | `transcribe-assemblyai.mjs` |
@@ -140,10 +140,11 @@ English page searches **only** the English corpus and a Spanish page **only** th
 Spanish corpus. Beyond the HTML pages, the index also carries a record per board
 **document** (title → direct file URL): board-packet attachments from
 `document-index.json`; documents linked inside agenda memos but hosted
-off-portal, which `scrape-simbli-agendas.mjs` extracts and classifies into each
-item's `memoLinks` (see [`scripts/lib/memo-links.mjs`](scripts/lib/memo-links.mjs));
-and curated entries in `data/linked-documents.json` (e.g. the adopted Facilities
-Master Plan). So a search like "facilities master plan" links straight to the
+off-portal, which both scrapers extract and classify into each item's
+`memoLinks` (see [`scripts/lib/memo-links.mjs`](scripts/lib/memo-links.mjs)) —
+`scrape-simbli-agendas.mjs` for the Simbli era and `scrape-boarddocs.mjs --bodies`
+(which fetches each item's body) for the older BoardDocs era; and curated entries
+in `data/linked-documents.json` (e.g. the adopted Facilities Master Plan). So a search like "facilities master plan" links straight to the
 PDF — not just to the meetings that discuss it. (Recurring public-comment Google
 Forms found in memos are classified separately and kept out of search results.)
 Result ranking was tuned by evaluating real parent/community

@@ -14,23 +14,77 @@
 import { readFileSync, writeFileSync, existsSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
+import { extractMemoLinks } from './lib/memo-links.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const BASE_URL = 'https://go.boarddocs.com/ca/redwood/Board.nsf';
 const COMMITTEE_ID = 'A4EP6J588C05';
 const CUTOFF_DATE = '20200401'; // Back to first YouTube board meeting (April 2020)
 
+// BoardDocs sits behind CloudFront, which now 403s the default Node fetch
+// User-Agent — a real browser UA is required for every request.
+const USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36';
+
 // Rate limiting: delay between requests
 const DELAY_MS = 300;
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
+// --bodies: backfill item bodies (BD-GetAgendaItem) for already-scraped meetings.
+const BACKFILL_BODIES = process.argv.includes('--bodies');
+
 async function bdPost(endpoint, body) {
   const resp = await fetch(`${BASE_URL}/${endpoint}`, {
     method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+      'User-Agent': USER_AGENT,
+    },
     body,
   });
   return resp.text();
+}
+
+// Pull an agenda item's body (its "public content") + embedded links from the
+// BD-GetAgendaItem detail HTML. The meta header (Meeting/Category/Subject/Type)
+// sits in <dl class="row"> blocks; the pasted public content follows the last
+// </dl>. Links are extracted from that content HTML (Gmail/Docs redirect
+// wrappers unwrapped) and classified via the shared memo-links lib.
+function parseItemDetail(html) {
+  const cleaned = html
+    .replace(/<script[\s\S]*?<\/script>/gi, ' ')
+    .replace(/<style[\s\S]*?<\/style>/gi, ' ');
+  const lastDl = cleaned.lastIndexOf('</dl>');
+  const contentHtml = lastDl >= 0 ? cleaned.slice(lastDl + 5) : cleaned;
+  const body = contentHtml
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/&nbsp;/gi, ' ')
+    .replace(/&amp;/gi, '&')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .slice(0, 8000);
+  return { body, memoLinks: extractMemoLinks(contentHtml) };
+}
+
+const itemUnique = (item) => item.unique || (item.url || '').match(/id=([A-Z0-9]+)/i)?.[1] || null;
+
+// Fetch + attach body/memoLinks for each item that doesn't have one yet.
+// Idempotent: skips items that already carry a `body`, so --bodies is resumable.
+async function fetchItemBodies(items, delay = 150) {
+  for (const item of items) {
+    if (item.body !== undefined) continue;
+    const uid = itemUnique(item);
+    if (!uid) { item.body = ''; item.memoLinks = []; continue; }
+    await sleep(delay);
+    try {
+      const html = await bdPost('BD-GetAgendaItem', `id=${uid}&current_committee_id=${COMMITTEE_ID}`);
+      const { body, memoLinks } = parseItemDetail(html);
+      item.body = body;
+      item.memoLinks = memoLinks;
+    } catch (e) {
+      item.body = '';
+      item.memoLinks = [];
+    }
+  }
 }
 
 async function fetchMeetingsList() {
@@ -140,6 +194,26 @@ async function main() {
     existing = JSON.parse(readFileSync(outPath, 'utf-8'));
     console.log(`Loaded ${existing.length} previously scraped meetings`);
   }
+
+  // --bodies: backfill item bodies + memoLinks into already-scraped meetings,
+  // then exit. Resumable — writes after each meeting and skips items that
+  // already have a `body`, so re-running picks up where it left off.
+  if (BACKFILL_BODIES) {
+    const todo = existing.filter(m => (m.items || []).some(it => it.body === undefined));
+    console.log(`Backfilling bodies: ${todo.length} meetings need item bodies`);
+    let done = 0;
+    for (const mtg of todo) {
+      await fetchItemBodies(mtg.items || []);
+      done++;
+      const docs = (mtg.items || []).reduce((s, it) => s + (it.memoLinks || []).filter(l => l.kind === 'document').length, 0);
+      console.log(`  [${done}/${todo.length}] ${mtg.date} — ${(mtg.items || []).length} items${docs ? `, ${docs} doc link(s)` : ''}`);
+      writeFileSync(outPath, JSON.stringify(existing, null, 2)); // incremental, resumable
+    }
+    const totalDocs = existing.flatMap(m => m.items || []).flatMap(it => it.memoLinks || []).filter(l => l.kind === 'document').length;
+    console.log(`\nDone backfilling bodies. ${totalDocs} document links found across all meetings.`);
+    return;
+  }
+
   const existingKeys = new Set(existing.map(m => m.unique || `${m.date}|${m.name}`));
 
   console.log('Fetching meetings list...');
@@ -182,6 +256,10 @@ async function main() {
       }
     }
 
+    // Fetch each item's body (public content) + embedded links.
+    console.log(`  Fetching item bodies for ${items.length} items...`);
+    await fetchItemBodies(items, DELAY_MS);
+
     totalItems += items.length;
 
     results.push({
@@ -199,6 +277,8 @@ async function main() {
         category: it.categoryName,
         url: it.url,
         attachments: it.attachments,
+        body: it.body || '',
+        memoLinks: it.memoLinks || [],
       })),
     });
   }
