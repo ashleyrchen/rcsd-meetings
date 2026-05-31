@@ -186,6 +186,23 @@
   .cm-members li { padding: .35rem 0; border-bottom: 1px solid var(--border, #e5e7eb); font-size: .95rem; }
   .cm-members .role { color: var(--text-muted); font-size: .8rem; }
   .cm-list { list-style: none; padding: 0; margin: 0; }
+  /* rich meeting cards (recorded meetings) */
+  .cm-mcard { display: flex; gap: 1rem; padding: 1.1rem 0; border-bottom: 1px solid var(--border, #e5e7eb); }
+  .cm-mthumb { flex: 0 0 170px; }
+  .cm-mthumb a { display: block; position: relative; aspect-ratio: 16 / 9; border-radius: 8px; overflow: hidden; background: #000; }
+  .cm-mthumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .cm-mthumb .pl { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,.12); transition: background .15s; }
+  .cm-mthumb a:hover .pl { background: rgba(0,0,0,.28); }
+  .cm-mthumb .pl span { width: 38px; height: 38px; border-radius: 999px; background: rgba(20,40,30,.78); display: flex; align-items: center; justify-content: center; }
+  .cm-mthumb .pl span::after { content: ""; border-style: solid; border-width: 7px 0 7px 12px; border-color: transparent transparent transparent #fff; margin-left: 3px; }
+  .cm-mbody { flex: 1; min-width: 0; }
+  .cm-mtop { display: flex; align-items: baseline; gap: .6rem; flex-wrap: wrap; margin-bottom: .25rem; }
+  .cm-mdate { font-family: 'Fraunces', Georgia, serif; font-size: 1.1rem; color: var(--green-deep); text-decoration: none; }
+  .cm-mdate:hover { text-decoration: underline; }
+  .cm-dur { font-family: 'IBM Plex Mono', monospace; font-size: .72rem; color: var(--text-muted); }
+  .cm-msum { font-size: .9rem; line-height: 1.55; color: var(--text, #222); margin: .15rem 0 .6rem; max-width: 64ch; }
+  .cm-mdocs { display: flex; gap: .4rem; flex-wrap: wrap; }
+  @media (max-width: 600px) { .cm-mcard { flex-direction: column; } .cm-mthumb { flex-basis: auto; max-width: 260px; } }
   .cm-row {
     display: flex; align-items: baseline; gap: .75rem; flex-wrap: wrap;
     padding: .7rem 0; border-bottom: 1px solid var(--border, #e5e7eb);

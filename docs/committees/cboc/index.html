@@ -186,6 +186,23 @@
   .cm-members li { padding: .35rem 0; border-bottom: 1px solid var(--border, #e5e7eb); font-size: .95rem; }
   .cm-members .role { color: var(--text-muted); font-size: .8rem; }
   .cm-list { list-style: none; padding: 0; margin: 0; }
+  /* rich meeting cards (recorded meetings) */
+  .cm-mcard { display: flex; gap: 1rem; padding: 1.1rem 0; border-bottom: 1px solid var(--border, #e5e7eb); }
+  .cm-mthumb { flex: 0 0 170px; }
+  .cm-mthumb a { display: block; position: relative; aspect-ratio: 16 / 9; border-radius: 8px; overflow: hidden; background: #000; }
+  .cm-mthumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .cm-mthumb .pl { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,.12); transition: background .15s; }
+  .cm-mthumb a:hover .pl { background: rgba(0,0,0,.28); }
+  .cm-mthumb .pl span { width: 38px; height: 38px; border-radius: 999px; background: rgba(20,40,30,.78); display: flex; align-items: center; justify-content: center; }
+  .cm-mthumb .pl span::after { content: ""; border-style: solid; border-width: 7px 0 7px 12px; border-color: transparent transparent transparent #fff; margin-left: 3px; }
+  .cm-mbody { flex: 1; min-width: 0; }
+  .cm-mtop { display: flex; align-items: baseline; gap: .6rem; flex-wrap: wrap; margin-bottom: .25rem; }
+  .cm-mdate { font-family: 'Fraunces', Georgia, serif; font-size: 1.1rem; color: var(--green-deep); text-decoration: none; }
+  .cm-mdate:hover { text-decoration: underline; }
+  .cm-dur { font-family: 'IBM Plex Mono', monospace; font-size: .72rem; color: var(--text-muted); }
+  .cm-msum { font-size: .9rem; line-height: 1.55; color: var(--text, #222); margin: .15rem 0 .6rem; max-width: 64ch; }
+  .cm-mdocs { display: flex; gap: .4rem; flex-wrap: wrap; }
+  @media (max-width: 600px) { .cm-mcard { flex-direction: column; } .cm-mthumb { flex-basis: auto; max-width: 260px; } }
   .cm-row {
     display: flex; align-items: baseline; gap: .75rem; flex-wrap: wrap;
     padding: .7rem 0; border-bottom: 1px solid var(--border, #e5e7eb);
@@ -253,205 +270,278 @@
   <h2 class="cm-h2">Meetings</h2>
   <ul class="cm-list"><li class="cm-row">
           <span class="cm-date">June 11, 2026</span>
-          <span>Citizens' Bond Oversight Committee</span>
           <span class="cm-badge sched">Scheduled</span>
           <span class="cm-rowdesc">Regular quarterly CBOC meeting.</span>
           
-        </li><li class="cm-row">
-            <span class="cm-date">April 30, 2026</span>
-            <a href="/committees/cboc/2026-04-30/">Citizens' Bond Oversight Committee</a>
-            <span class="cm-badge">Video + transcript</span>
-            <span class="cm-date">1h 41m</span>
-            
-            <span class="cm-rowdesc">Documents: <a href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/april-30-2026-agenda-and-handouts" target="_blank" rel="noopener">Agenda & handouts</a></span>
-          </li><li class="cm-row">
-            <span class="cm-date">November 5, 2025</span>
-            <a href="/committees/cboc/2025-11-05/">Citizens' Bond Oversight Committee</a>
-            <span class="cm-badge">Video + transcript</span>
-            <span class="cm-date">2h 29m</span>
-            
-            <span class="cm-rowdesc">Documents: <a href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/november-5-2025-agenda-and-handouts" target="_blank" rel="noopener">Agenda & handouts</a> &middot; <a href="https://drive.google.com/file/d/1EvaLAkp4mW1hnSqQ4Oskb1JVf0hBsp7A/view" target="_blank" rel="noopener">Minutes</a></span>
-          </li><li class="cm-row">
-            <span class="cm-date">August 6, 2025</span>
-            <a href="/committees/cboc/2025-08-06/">Citizens' Bond Oversight Committee</a>
-            <span class="cm-badge">Video + transcript</span>
-            <span class="cm-date">2h 28m</span>
-            
-            <span class="cm-rowdesc">Documents: <a href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/august-6-2025-agenda-and-handouts" target="_blank" rel="noopener">Agenda & handouts</a> &middot; <a href="https://drive.google.com/file/d/1q_BMSD6EycA5XFL5ZhICgyIDHRxIKgca/view" target="_blank" rel="noopener">Minutes</a></span>
-          </li><li class="cm-row">
-            <span class="cm-date">May 7, 2025</span>
-            <a href="/committees/cboc/2025-05-07/">Citizens' Bond Oversight Committee</a>
-            <span class="cm-badge">Video + transcript</span>
-            <span class="cm-date">1h 48m</span>
-            
-            <span class="cm-rowdesc">Documents: <a href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/may-7-2025-agenda-and-handouts" target="_blank" rel="noopener">Agenda & handouts</a> &middot; <a href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/may-7-2025-minutes" target="_blank" rel="noopener">Minutes</a></span>
-          </li><li class="cm-row">
-            <span class="cm-date">February 25, 2025</span>
-            <a href="/committees/cboc/2025-02-25/">Citizens' Bond Oversight Committee</a>
-            <span class="cm-badge">Video + transcript</span>
-            <span class="cm-date">1h 8m</span>
-            
-            <span class="cm-rowdesc">Documents: <a href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/february-25-2025-agenda-and-handouts" target="_blank" rel="noopener">Agenda & handouts</a> &middot; <a href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/february-25-2025-minutes" target="_blank" rel="noopener">Minutes</a></span>
-          </li><li class="cm-row">
-            <span class="cm-date">January 22, 2025</span>
-            <a href="/committees/cboc/2025-01-22/">Citizens' Bond Oversight Committee</a>
-            <span class="cm-badge">Video + transcript</span>
-            <span class="cm-date">2h 35m</span>
-            
-            <span class="cm-rowdesc">Documents: <a href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/january-22-2025-agenda-and-handouts" target="_blank" rel="noopener">Agenda & handouts</a> &middot; <a href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/january-22-2025-minutes" target="_blank" rel="noopener">Minutes</a></span>
-          </li><li class="cm-row">
-            <span class="cm-date">August 29, 2024</span>
-            <a href="/committees/cboc/2024-08-29/">Citizens' Bond Oversight Committee</a>
-            <span class="cm-badge">Video + transcript</span>
-            <span class="cm-date">2h 1m</span>
-            
-            <span class="cm-rowdesc">Documents: <a href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/august-29-2024-agenda-and-handouts" target="_blank" rel="noopener">Agenda & handouts</a> &middot; <a href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/august-29-2024-minutes" target="_blank" rel="noopener">Minutes</a></span>
-          </li><li class="cm-row">
-            <span class="cm-date">June 18, 2024</span>
-            <a href="/committees/cboc/2024-06-18/">Citizens' Bond Oversight Committee</a>
-            <span class="cm-badge">Video + transcript</span>
-            <span class="cm-date">1h 31m</span>
-            
-            <span class="cm-rowdesc">Documents: <a href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/june-17-2024-agenda-and-handouts" target="_blank" rel="noopener">Agenda & handouts</a> &middot; <a href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/june-17-2024-minutes" target="_blank" rel="noopener">Minutes</a></span>
-          </li><li class="cm-row">
-            <span class="cm-date">March 21, 2024</span>
-            <a href="/committees/cboc/2024-03-21/">Citizens' Bond Oversight Committee</a>
-            <span class="cm-badge">Video + transcript</span>
-            <span class="cm-date">2h 27m</span>
-            
-            <span class="cm-rowdesc">Documents: <a href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/march-21-2024-agenda-and-handouts" target="_blank" rel="noopener">Agenda & handouts</a> &middot; <a href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/march-21-2024-minutes" target="_blank" rel="noopener">Minutes</a></span>
+        </li><li class="cm-mcard">
+            <div class="cm-mthumb"><a href="/committees/cboc/2026-04-30/" aria-label="April 30, 2026">
+              <img src="https://img.youtube.com/vi/PnOi-XcblAE/mqdefault.jpg" alt="" loading="lazy" width="320" height="180">
+              <span class="pl"><span></span></span>
+            </a></div>
+            <div class="cm-mbody">
+              <div class="cm-mtop">
+                <a class="cm-mdate" href="/committees/cboc/2026-04-30/">April 30, 2026</a>
+                <span class="cm-badge">Video + transcript</span>
+                <span class="cm-dur">1h 41m</span>
+              </div>
+              <p class="cm-msum">CBOC reviewed clean audit reports for Measure S and Measure T for fiscal year 2024-25 with no findings on allowability or compliance. Committee approved the annual report process for 2024-25, discussed HVAC modernization Phase 1 completing under budget (~$22M vs. $25M approved), and heard Phase 2 GMP approved for summer 2026 construction at Kennedy and Orion.</p>
+              <div class="cm-mdocs"><a class="cm-doc" href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/april-30-2026-agenda-and-handouts" target="_blank" rel="noopener">Agenda & handouts</a></div>
+            </div>
+          </li><li class="cm-mcard">
+            <div class="cm-mthumb"><a href="/committees/cboc/2025-11-05/" aria-label="November 5, 2025">
+              <img src="https://img.youtube.com/vi/7LxtZHhcALg/mqdefault.jpg" alt="" loading="lazy" width="320" height="180">
+              <span class="pl"><span></span></span>
+            </a></div>
+            <div class="cm-mbody">
+              <div class="cm-mtop">
+                <a class="cm-mdate" href="/committees/cboc/2025-11-05/">November 5, 2025</a>
+                <span class="cm-badge">Video + transcript</span>
+                <span class="cm-dur">2h 29m</span>
+              </div>
+              <p class="cm-msum">CBOC approved the 2023-24 Measure S and T annual reports after corrections clarified accounting discrepancies. The committee discussed the Measure S $298 million implementation plan, with three prioritization scenarios presented to the board for January decision-making. Significant debate centered on the $17 million LED lighting retrofit project's sequencing, with concern that $1 million per campus is being spent on buildings that may be demolished under the Master Plan.</p>
+              <div class="cm-mdocs"><a class="cm-doc" href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/november-5-2025-agenda-and-handouts" target="_blank" rel="noopener">Agenda & handouts</a><a class="cm-doc" href="https://drive.google.com/file/d/1EvaLAkp4mW1hnSqQ4Oskb1JVf0hBsp7A/view" target="_blank" rel="noopener">Minutes</a></div>
+            </div>
+          </li><li class="cm-mcard">
+            <div class="cm-mthumb"><a href="/committees/cboc/2025-08-06/" aria-label="August 6, 2025">
+              <img src="https://img.youtube.com/vi/8Zvv208Qsu0/mqdefault.jpg" alt="" loading="lazy" width="320" height="180">
+              <span class="pl"><span></span></span>
+            </a></div>
+            <div class="cm-mbody">
+              <div class="cm-mtop">
+                <a class="cm-mdate" href="/committees/cboc/2025-08-06/">August 6, 2025</a>
+                <span class="cm-badge">Video + transcript</span>
+                <span class="cm-dur">2h 28m</span>
+              </div>
+              <p class="cm-msum">The CBOC discussed the FY 2023–24 annual reports for Measures T and S but deferred approval pending corrected auditor's reports; numerical discrepancies in fund balance and revenue figures for Measure T must be reconciled. The committee also received updates on Measure S HVAC upgrades at four schools (Selby, Hoover, Roosevelt, Taft) nearing completion, LED lighting retrofits progressing ahead of schedule, and Measure T solar projects on track to meet the PG&amp;E NEM 2 deadline by April 2026.</p>
+              <div class="cm-mdocs"><a class="cm-doc" href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/august-6-2025-agenda-and-handouts" target="_blank" rel="noopener">Agenda & handouts</a><a class="cm-doc" href="https://drive.google.com/file/d/1q_BMSD6EycA5XFL5ZhICgyIDHRxIKgca/view" target="_blank" rel="noopener">Minutes</a></div>
+            </div>
+          </li><li class="cm-mcard">
+            <div class="cm-mthumb"><a href="/committees/cboc/2025-05-07/" aria-label="May 7, 2025">
+              <img src="https://img.youtube.com/vi/nnEA6RTn_OU/mqdefault.jpg" alt="" loading="lazy" width="320" height="180">
+              <span class="pl"><span></span></span>
+            </a></div>
+            <div class="cm-mbody">
+              <div class="cm-mtop">
+                <a class="cm-mdate" href="/committees/cboc/2025-05-07/">May 7, 2025</a>
+                <span class="cm-badge">Video + transcript</span>
+                <span class="cm-dur">1h 48m</span>
+              </div>
+              <p class="cm-msum">The committee discussed Measure S progress including a facilities master plan update (board approval expected May 28), HVAC upgrades at four schools (~$5M each, construction summer 2025), and a $17M district-wide LED lighting retrofit underway. Financial reports showed $3M in Measure S expenditures through March 2025, with annual bond oversight reports due for approval at the next meeting.</p>
+              <div class="cm-mdocs"><a class="cm-doc" href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/may-7-2025-agenda-and-handouts" target="_blank" rel="noopener">Agenda & handouts</a><a class="cm-doc" href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/may-7-2025-minutes" target="_blank" rel="noopener">Minutes</a></div>
+            </div>
+          </li><li class="cm-mcard">
+            <div class="cm-mthumb"><a href="/committees/cboc/2025-02-25/" aria-label="February 25, 2025">
+              <img src="https://img.youtube.com/vi/AUh3FIhQDy8/mqdefault.jpg" alt="" loading="lazy" width="320" height="180">
+              <span class="pl"><span></span></span>
+            </a></div>
+            <div class="cm-mbody">
+              <div class="cm-mtop">
+                <a class="cm-mdate" href="/committees/cboc/2025-02-25/">February 25, 2025</a>
+                <span class="cm-badge">Video + transcript</span>
+                <span class="cm-dur">1h 8m</span>
+              </div>
+              <p class="cm-msum">CBOC reviewed clean audit opinions for Measure S and T (2023-24 fiscal year). District detailed HVAC upgrades at four schools ($19M construction, ~$2M architectural fees) launching June-August 2025, plus $17M lighting retrofit and $14M solar project. Bond expenditures through December 31, 2024 total $213.6M; roughly $80M earmarked for current projects.</p>
+              <div class="cm-mdocs"><a class="cm-doc" href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/february-25-2025-agenda-and-handouts" target="_blank" rel="noopener">Agenda & handouts</a><a class="cm-doc" href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/february-25-2025-minutes" target="_blank" rel="noopener">Minutes</a></div>
+            </div>
+          </li><li class="cm-mcard">
+            <div class="cm-mthumb"><a href="/committees/cboc/2025-01-22/" aria-label="January 22, 2025">
+              <img src="https://img.youtube.com/vi/Jvh94J4I3Bs/mqdefault.jpg" alt="" loading="lazy" width="320" height="180">
+              <span class="pl"><span></span></span>
+            </a></div>
+            <div class="cm-mbody">
+              <div class="cm-mtop">
+                <a class="cm-mdate" href="/committees/cboc/2025-01-22/">January 22, 2025</a>
+                <span class="cm-badge">Video + transcript</span>
+                <span class="cm-dur">2h 35m</span>
+              </div>
+              <p class="cm-msum">CBOC reviewed Measure S and T bond spending through September 30, 2024. Key discussion centered on a $16.9 million LED lighting retrofit project approved by the board in November, raising questions about whether it qualifies as a sole-source contract under Government Code 4217 and whether competitive bidding could reduce costs. The committee also approved a $540,000 energy consultant contract with Sage. An ad hoc subcommittee was formed to review the lighting retrofit analysis before the next meeting.</p>
+              <div class="cm-mdocs"><a class="cm-doc" href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/january-22-2025-agenda-and-handouts" target="_blank" rel="noopener">Agenda & handouts</a><a class="cm-doc" href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/january-22-2025-minutes" target="_blank" rel="noopener">Minutes</a></div>
+            </div>
+          </li><li class="cm-mcard">
+            <div class="cm-mthumb"><a href="/committees/cboc/2024-08-29/" aria-label="August 29, 2024">
+              <img src="https://img.youtube.com/vi/kDqgjt56aXc/mqdefault.jpg" alt="" loading="lazy" width="320" height="180">
+              <span class="pl"><span></span></span>
+            </a></div>
+            <div class="cm-mbody">
+              <div class="cm-mtop">
+                <a class="cm-mdate" href="/committees/cboc/2024-08-29/">August 29, 2024</a>
+                <span class="cm-badge">Video + transcript</span>
+                <span class="cm-dur">2h 1m</span>
+              </div>
+              <p class="cm-msum">CBOC approved Measure T and Measure S annual reports for fiscal 2022–23 after correcting bond financial summaries and adding contract counts to no-bid and change-order tables. The committee also heard district counsel explain why independent legal counsel is not required by statute, and received updates on Measure S facilities master plan progress and Measure T project closeouts.</p>
+              <div class="cm-mdocs"><a class="cm-doc" href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/august-29-2024-agenda-and-handouts" target="_blank" rel="noopener">Agenda & handouts</a><a class="cm-doc" href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/august-29-2024-minutes" target="_blank" rel="noopener">Minutes</a></div>
+            </div>
+          </li><li class="cm-mcard">
+            <div class="cm-mthumb"><a href="/committees/cboc/2024-06-18/" aria-label="June 18, 2024">
+              <img src="https://img.youtube.com/vi/cY66uY9Z-MY/mqdefault.jpg" alt="" loading="lazy" width="320" height="180">
+              <span class="pl"><span></span></span>
+            </a></div>
+            <div class="cm-mbody">
+              <div class="cm-mtop">
+                <a class="cm-mdate" href="/committees/cboc/2024-06-18/">June 18, 2024</a>
+                <span class="cm-badge">Video + transcript</span>
+                <span class="cm-dur">1h 31m</span>
+              </div>
+              <p class="cm-msum">The CBOC reviewed fiscal year 2023 financial audits for Measure T and S, finding no deficiencies or non-compliance issues. The committee also received updates on Measure S progress, including energy efficiency reviews, HVAC upgrade procurement with six pre-qualified architects, and launch of the Master Facilities Plan (cost ~$400K, delivery January-February 2025). Measure T closeout continues with solar Phase 2 project (15 contractors responding) targeting April 2026 completion.</p>
+              <div class="cm-mdocs"><a class="cm-doc" href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/june-17-2024-agenda-and-handouts" target="_blank" rel="noopener">Agenda & handouts</a><a class="cm-doc" href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/june-17-2024-minutes" target="_blank" rel="noopener">Minutes</a></div>
+            </div>
+          </li><li class="cm-mcard">
+            <div class="cm-mthumb"><a href="/committees/cboc/2024-03-21/" aria-label="March 21, 2024">
+              <img src="https://img.youtube.com/vi/icioqpwTI18/mqdefault.jpg" alt="" loading="lazy" width="320" height="180">
+              <span class="pl"><span></span></span>
+            </a></div>
+            <div class="cm-mbody">
+              <div class="cm-mtop">
+                <a class="cm-mdate" href="/committees/cboc/2024-03-21/">March 21, 2024</a>
+                <span class="cm-badge">Video + transcript</span>
+                <span class="cm-dur">2h 27m</span>
+              </div>
+              <p class="cm-msum">The committee reviewed Van Pelt Construction Services' selection as Measure S bond program manager through a competitive RFP process, heard their management approach emphasizing community engagement and financial stewardship, and received the first Measure S financial report showing $90 million in Series A bonds sold June 2023 with $728,770 in interest revenue through December and minimal expenditures to date as planning phases begin.</p>
+              <div class="cm-mdocs"><a class="cm-doc" href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/march-21-2024-agenda-and-handouts" target="_blank" rel="noopener">Agenda & handouts</a><a class="cm-doc" href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/march-21-2024-minutes" target="_blank" rel="noopener">Minutes</a></div>
+            </div>
           </li><li class="cm-row">
           <span class="cm-date">November 14, 2023</span>
-          <span>Citizens' Bond Oversight Committee</span>
-          <span class="cm-badge sched"></span>
           
-          <span class="cm-rowdesc">Documents: <a href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/may-11-2023-agenda-and-handouts-2" target="_blank" rel="noopener">Agenda & handouts</a> &middot; <a href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/november-14-2023-minutes" target="_blank" rel="noopener">Minutes</a></span>
-        </li><li class="cm-row">
-            <span class="cm-date">September 14, 2023</span>
-            <a href="/committees/cboc/2023-09-14/">Citizens' Bond Oversight Committee</a>
-            <span class="cm-badge">Video + transcript</span>
-            <span class="cm-date">2h 45m</span>
-            
-            <span class="cm-rowdesc">Documents: <a href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/september-14-2023-agenda-and-handouts" target="_blank" rel="noopener">Agenda & handouts</a> &middot; <a href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/september-14-2023-minutes" target="_blank" rel="noopener">Minutes</a></span>
-          </li><li class="cm-row">
-            <span class="cm-date">May 11, 2023</span>
-            <a href="/committees/cboc/2023-05-11/">Citizens' Bond Oversight Committee</a>
-            <span class="cm-badge">Video + transcript</span>
-            <span class="cm-date">3h 43m</span>
-            
-            <span class="cm-rowdesc">Documents: <a href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/may-11-2023-agenda-and-handouts" target="_blank" rel="noopener">Agenda & handouts</a> &middot; <a href="https://drive.google.com/file/d/1czerh8o9Jy8pCjLFYZxYH7U4Vh3PUZlU/view" target="_blank" rel="noopener">Minutes</a></span>
-          </li><li class="cm-row">
-            <span class="cm-date">February 2, 2023</span>
-            <a href="/committees/cboc/2023-02-02/">Citizens' Bond Oversight Committee</a>
-            <span class="cm-badge">Video + transcript</span>
-            <span class="cm-date">2h 35m</span>
-            
-            <span class="cm-rowdesc">Documents: <a href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/february-2-2023" target="_blank" rel="noopener">Agenda & handouts</a> &middot; <a href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/february-2-2023-minutes" target="_blank" rel="noopener">Minutes</a></span>
-          </li><li class="cm-row">
-            <span class="cm-date">October 27, 2022</span>
-            <a href="/committees/cboc/2022-10-27/">Citizens' Bond Oversight Committee</a>
-            <span class="cm-badge">Video + transcript</span>
-            <span class="cm-date">2h 15m</span>
-            
-            <span class="cm-rowdesc">Documents: <a href="https://www.rcsdk8.net/fs/pages/6952" target="_blank" rel="noopener">Agenda & handouts</a> &middot; <a href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/october-27-2022-minutes-regular-meeting" target="_blank" rel="noopener">Minutes</a></span>
+          
+          <div class="cm-mdocs"><a class="cm-doc" href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/may-11-2023-agenda-and-handouts-2" target="_blank" rel="noopener">Agenda & handouts</a><a class="cm-doc" href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/november-14-2023-minutes" target="_blank" rel="noopener">Minutes</a></div>
+        </li><li class="cm-mcard">
+            <div class="cm-mthumb"><a href="/committees/cboc/2023-09-14/" aria-label="September 14, 2023">
+              <img src="https://img.youtube.com/vi/4-QHZIibVA8/mqdefault.jpg" alt="" loading="lazy" width="320" height="180">
+              <span class="pl"><span></span></span>
+            </a></div>
+            <div class="cm-mbody">
+              <div class="cm-mtop">
+                <a class="cm-mdate" href="/committees/cboc/2023-09-14/">September 14, 2023</a>
+                <span class="cm-badge">Video + transcript</span>
+                <span class="cm-dur">2h 45m</span>
+              </div>
+              <p class="cm-msum">CBOC reviewed Measure S bond program launch plans, including a $298 million bond approved in November 2022 with $90 million in Series A proceeds sold in June. The committee discussed the district's process for selecting and prioritizing projects through community input, a Master Facilities Plan update, and equity considerations, with board approval expected within 6 months.</p>
+              <div class="cm-mdocs"><a class="cm-doc" href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/september-14-2023-agenda-and-handouts" target="_blank" rel="noopener">Agenda & handouts</a><a class="cm-doc" href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/september-14-2023-minutes" target="_blank" rel="noopener">Minutes</a></div>
+            </div>
+          </li><li class="cm-mcard">
+            <div class="cm-mthumb"><a href="/committees/cboc/2023-05-11/" aria-label="May 11, 2023">
+              <img src="https://img.youtube.com/vi/F_bIShM89Bg/mqdefault.jpg" alt="" loading="lazy" width="320" height="180">
+              <span class="pl"><span></span></span>
+            </a></div>
+            <div class="cm-mbody">
+              <div class="cm-mtop">
+                <a class="cm-mdate" href="/committees/cboc/2023-05-11/">May 11, 2023</a>
+                <span class="cm-badge">Video + transcript</span>
+                <span class="cm-dur">3h 43m</span>
+              </div>
+              <p class="cm-msum">The Citizens' Bond Oversight Committee reviewed the independent financial and performance audits for fiscal year 2021–22, which showed clean opinions with no control deficiencies or audit findings. The committee approved amended bylaws clarifying roles and removing unnecessary procedural constraints, and issued the FY 2020–21 annual report. Discussion focused on sampling methodology for payroll transactions and the district's internal controls on charging employee salaries to bond funds.</p>
+              <div class="cm-mdocs"><a class="cm-doc" href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/may-11-2023-agenda-and-handouts" target="_blank" rel="noopener">Agenda & handouts</a><a class="cm-doc" href="https://drive.google.com/file/d/1czerh8o9Jy8pCjLFYZxYH7U4Vh3PUZlU/view" target="_blank" rel="noopener">Minutes</a></div>
+            </div>
+          </li><li class="cm-mcard">
+            <div class="cm-mthumb"><a href="/committees/cboc/2023-02-02/" aria-label="February 2, 2023">
+              <img src="https://img.youtube.com/vi/A9QEGSzkuK0/mqdefault.jpg" alt="" loading="lazy" width="320" height="180">
+              <span class="pl"><span></span></span>
+            </a></div>
+            <div class="cm-mbody">
+              <div class="cm-mtop">
+                <a class="cm-mdate" href="/committees/cboc/2023-02-02/">February 2, 2023</a>
+                <span class="cm-badge">Video + transcript</span>
+                <span class="cm-dur">2h 35m</span>
+              </div>
+              <p class="cm-msum">The committee discussed Measure T bond construction closeout with substantial completion reached at three major projects; DSA certification expected by early summer. The committee also reviewed a 2020-21 annual report but voted against approval (4-3 vote failed to meet two-thirds threshold), requesting council clarification on what &quot;approval as to substance&quot; means before the next meeting.</p>
+              <div class="cm-mdocs"><a class="cm-doc" href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/february-2-2023" target="_blank" rel="noopener">Agenda & handouts</a><a class="cm-doc" href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/february-2-2023-minutes" target="_blank" rel="noopener">Minutes</a></div>
+            </div>
+          </li><li class="cm-mcard">
+            <div class="cm-mthumb"><a href="/committees/cboc/2022-10-27/" aria-label="October 27, 2022">
+              <img src="https://img.youtube.com/vi/8lU3HmcuhqI/mqdefault.jpg" alt="" loading="lazy" width="320" height="180">
+              <span class="pl"><span></span></span>
+            </a></div>
+            <div class="cm-mbody">
+              <div class="cm-mtop">
+                <a class="cm-mdate" href="/committees/cboc/2022-10-27/">October 27, 2022</a>
+                <span class="cm-badge">Video + transcript</span>
+                <span class="cm-dur">2h 15m</span>
+              </div>
+              <p class="cm-msum">The Citizens' Bond Oversight Committee elected new leadership and welcomed fresh members while discussing Measure T bond program progress. Nearly all projects—including Garfield, Orion Alternative, and Taft modernizations—are substantially complete with $195.3 million spent of $214.7 million authorized. The committee will schedule a site tour and reconvene December 8th to finalize the annual fiscal year 2021-22 report for board submission.</p>
+              <div class="cm-mdocs"><a class="cm-doc" href="https://www.rcsdk8.net/fs/pages/6952" target="_blank" rel="noopener">Agenda & handouts</a><a class="cm-doc" href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/october-27-2022-minutes-regular-meeting" target="_blank" rel="noopener">Minutes</a></div>
+            </div>
           </li><li class="cm-row">
           <span class="cm-date">April 21, 2022</span>
-          <span>Citizens' Bond Oversight Committee</span>
-          <span class="cm-badge sched"></span>
           
-          <span class="cm-rowdesc">Documents: <a href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/april-21-2022-agenda" target="_blank" rel="noopener">Agenda & handouts</a> &middot; <a href="https://drive.google.com/file/d/1QC_TBB65JQCyKERRCpA8IW7aAHVSKF_H/view" target="_blank" rel="noopener">Handouts</a> &middot; <a href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/april-21-2022-minutes" target="_blank" rel="noopener">Minutes</a></span>
+          
+          <div class="cm-mdocs"><a class="cm-doc" href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/april-21-2022-agenda" target="_blank" rel="noopener">Agenda & handouts</a><a class="cm-doc" href="https://drive.google.com/file/d/1QC_TBB65JQCyKERRCpA8IW7aAHVSKF_H/view" target="_blank" rel="noopener">Handouts</a><a class="cm-doc" href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/april-21-2022-minutes" target="_blank" rel="noopener">Minutes</a></div>
         </li><li class="cm-row">
           <span class="cm-date">December 16, 2021</span>
-          <span>Citizens' Bond Oversight Committee</span>
-          <span class="cm-badge sched"></span>
           
-          <span class="cm-rowdesc">Documents: <a href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/december-16-2021-agenda" target="_blank" rel="noopener">Agenda & handouts</a> &middot; <a href="https://drive.google.com/file/d/15wo-Ni0cH9PDX6iQ_5mVcdKxFOSvmlZc/view" target="_blank" rel="noopener">Handouts</a> &middot; <a href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/december-16-2021-minutes" target="_blank" rel="noopener">Minutes</a></span>
+          
+          <div class="cm-mdocs"><a class="cm-doc" href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/december-16-2021-agenda" target="_blank" rel="noopener">Agenda & handouts</a><a class="cm-doc" href="https://drive.google.com/file/d/15wo-Ni0cH9PDX6iQ_5mVcdKxFOSvmlZc/view" target="_blank" rel="noopener">Handouts</a><a class="cm-doc" href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/december-16-2021-minutes" target="_blank" rel="noopener">Minutes</a></div>
         </li><li class="cm-row">
           <span class="cm-date">September 23, 2021</span>
-          <span>Citizens' Bond Oversight Committee</span>
-          <span class="cm-badge sched"></span>
           
-          <span class="cm-rowdesc">Documents: <a href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/september-23-2021-agenda" target="_blank" rel="noopener">Agenda & handouts</a> &middot; <a href="https://drive.google.com/file/d/1oZfASeqpqGDxeahV-O_wlQJ8tPSMvvpz/view" target="_blank" rel="noopener">Handouts</a> &middot; <a href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/september-23-2021-minutes" target="_blank" rel="noopener">Minutes</a></span>
+          
+          <div class="cm-mdocs"><a class="cm-doc" href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/september-23-2021-agenda" target="_blank" rel="noopener">Agenda & handouts</a><a class="cm-doc" href="https://drive.google.com/file/d/1oZfASeqpqGDxeahV-O_wlQJ8tPSMvvpz/view" target="_blank" rel="noopener">Handouts</a><a class="cm-doc" href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/september-23-2021-minutes" target="_blank" rel="noopener">Minutes</a></div>
         </li><li class="cm-row">
           <span class="cm-date">April 15, 2021</span>
-          <span>Citizens' Bond Oversight Committee</span>
-          <span class="cm-badge sched"></span>
           
-          <span class="cm-rowdesc">Documents: <a href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/april-15-2021-agenda" target="_blank" rel="noopener">Agenda & handouts</a> &middot; <a href="https://drive.google.com/file/d/1Usa1CZfdUBtNyCAOTtGv0GWIqjXU0ptk/view" target="_blank" rel="noopener">Handouts</a> &middot; <a href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/april-15-2021-minutes" target="_blank" rel="noopener">Minutes</a></span>
+          
+          <div class="cm-mdocs"><a class="cm-doc" href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/april-15-2021-agenda" target="_blank" rel="noopener">Agenda & handouts</a><a class="cm-doc" href="https://drive.google.com/file/d/1Usa1CZfdUBtNyCAOTtGv0GWIqjXU0ptk/view" target="_blank" rel="noopener">Handouts</a><a class="cm-doc" href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/april-15-2021-minutes" target="_blank" rel="noopener">Minutes</a></div>
         </li><li class="cm-row">
           <span class="cm-date">November 19, 2020</span>
-          <span>Citizens' Bond Oversight Committee</span>
-          <span class="cm-badge sched"></span>
           
-          <span class="cm-rowdesc">Documents: <a href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/november-19-2020-agenda" target="_blank" rel="noopener">Agenda & handouts</a> &middot; <a href="https://drive.google.com/file/d/18HoyDS6w5ATNJfnQWz1CZOX0X86jYz84/view" target="_blank" rel="noopener">Handouts</a> &middot; <a href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/november-19-2020" target="_blank" rel="noopener">Minutes</a></span>
+          
+          <div class="cm-mdocs"><a class="cm-doc" href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/november-19-2020-agenda" target="_blank" rel="noopener">Agenda & handouts</a><a class="cm-doc" href="https://drive.google.com/file/d/18HoyDS6w5ATNJfnQWz1CZOX0X86jYz84/view" target="_blank" rel="noopener">Handouts</a><a class="cm-doc" href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/november-19-2020" target="_blank" rel="noopener">Minutes</a></div>
         </li><li class="cm-row">
           <span class="cm-date">May 28, 2020</span>
-          <span>Citizens' Bond Oversight Committee</span>
-          <span class="cm-badge sched"></span>
           
-          <span class="cm-rowdesc">Documents: <a href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/may-28-2020-agenda" target="_blank" rel="noopener">Agenda & handouts</a> &middot; <a href="https://drive.google.com/file/d/1-XNn1v7iM81mB0ON5jgztmteA8FcOr2D/view" target="_blank" rel="noopener">Handouts</a> &middot; <a href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/may-28-2020-minutes" target="_blank" rel="noopener">Minutes</a></span>
+          
+          <div class="cm-mdocs"><a class="cm-doc" href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/may-28-2020-agenda" target="_blank" rel="noopener">Agenda & handouts</a><a class="cm-doc" href="https://drive.google.com/file/d/1-XNn1v7iM81mB0ON5jgztmteA8FcOr2D/view" target="_blank" rel="noopener">Handouts</a><a class="cm-doc" href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/may-28-2020-minutes" target="_blank" rel="noopener">Minutes</a></div>
         </li><li class="cm-row">
           <span class="cm-date">March 5, 2020</span>
-          <span>Citizens' Bond Oversight Committee</span>
-          <span class="cm-badge sched"></span>
           
-          <span class="cm-rowdesc">Documents: <a href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/march-5-2020-agenda" target="_blank" rel="noopener">Agenda & handouts</a> &middot; <a href="https://drive.google.com/file/d/1tugqdcQRmBA79UMPZXyhn4GboiYLbcQp/view" target="_blank" rel="noopener">Handouts</a> &middot; <a href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/march-5-2020-minutes" target="_blank" rel="noopener">Minutes</a></span>
+          
+          <div class="cm-mdocs"><a class="cm-doc" href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/march-5-2020-agenda" target="_blank" rel="noopener">Agenda & handouts</a><a class="cm-doc" href="https://drive.google.com/file/d/1tugqdcQRmBA79UMPZXyhn4GboiYLbcQp/view" target="_blank" rel="noopener">Handouts</a><a class="cm-doc" href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/march-5-2020-minutes" target="_blank" rel="noopener">Minutes</a></div>
         </li><li class="cm-row">
           <span class="cm-date">November 21, 2019</span>
-          <span>Citizens' Bond Oversight Committee</span>
-          <span class="cm-badge sched"></span>
           
-          <span class="cm-rowdesc">Documents: <a href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/november-21-2019-agenda" target="_blank" rel="noopener">Agenda & handouts</a> &middot; <a href="https://drive.google.com/file/d/1PtDm2eqHhG56FIl7dPDfdhEQ-FlOyDfb/view" target="_blank" rel="noopener">Handouts</a> &middot; <a href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/november-21-2019-minutes" target="_blank" rel="noopener">Minutes</a></span>
+          
+          <div class="cm-mdocs"><a class="cm-doc" href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/november-21-2019-agenda" target="_blank" rel="noopener">Agenda & handouts</a><a class="cm-doc" href="https://drive.google.com/file/d/1PtDm2eqHhG56FIl7dPDfdhEQ-FlOyDfb/view" target="_blank" rel="noopener">Handouts</a><a class="cm-doc" href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/november-21-2019-minutes" target="_blank" rel="noopener">Minutes</a></div>
         </li><li class="cm-row">
           <span class="cm-date">May 30, 2019</span>
-          <span>Citizens' Bond Oversight Committee</span>
-          <span class="cm-badge sched"></span>
           
-          <span class="cm-rowdesc">Documents: <a href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/may-30-2019-agenda" target="_blank" rel="noopener">Agenda & handouts</a> &middot; <a href="https://drive.google.com/file/d/19HEIkGau3MubizOmGp0YV3hNQGXnJ89C/view" target="_blank" rel="noopener">Handouts</a> &middot; <a href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/may-30-2019-minutes" target="_blank" rel="noopener">Minutes</a></span>
+          
+          <div class="cm-mdocs"><a class="cm-doc" href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/may-30-2019-agenda" target="_blank" rel="noopener">Agenda & handouts</a><a class="cm-doc" href="https://drive.google.com/file/d/19HEIkGau3MubizOmGp0YV3hNQGXnJ89C/view" target="_blank" rel="noopener">Handouts</a><a class="cm-doc" href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/may-30-2019-minutes" target="_blank" rel="noopener">Minutes</a></div>
         </li><li class="cm-row">
           <span class="cm-date">March 21, 2019</span>
-          <span>Citizens' Bond Oversight Committee</span>
-          <span class="cm-badge sched"></span>
           
-          <span class="cm-rowdesc">Documents: <a href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/march-21-2019-agenda" target="_blank" rel="noopener">Agenda & handouts</a> &middot; <a href="https://drive.google.com/file/d/1fDvSimWJgqkJ3qSs7I0tDjDGKNoTjTq2/view" target="_blank" rel="noopener">Handouts</a> &middot; <a href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/march-21-2019-minutes" target="_blank" rel="noopener">Minutes</a></span>
+          
+          <div class="cm-mdocs"><a class="cm-doc" href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/march-21-2019-agenda" target="_blank" rel="noopener">Agenda & handouts</a><a class="cm-doc" href="https://drive.google.com/file/d/1fDvSimWJgqkJ3qSs7I0tDjDGKNoTjTq2/view" target="_blank" rel="noopener">Handouts</a><a class="cm-doc" href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/march-21-2019-minutes" target="_blank" rel="noopener">Minutes</a></div>
         </li><li class="cm-row">
           <span class="cm-date">November 15, 2018</span>
-          <span>Citizens' Bond Oversight Committee</span>
-          <span class="cm-badge sched"></span>
           
-          <span class="cm-rowdesc">Documents: <a href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/november-15-2018-agenda" target="_blank" rel="noopener">Agenda & handouts</a> &middot; <a href="https://drive.google.com/file/d/1pJcJXObzxTrpqPUrWgS2ebskSVjJpX9f/view" target="_blank" rel="noopener">Handouts</a> &middot; <a href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/november-15-2018" target="_blank" rel="noopener">Minutes</a></span>
+          
+          <div class="cm-mdocs"><a class="cm-doc" href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/november-15-2018-agenda" target="_blank" rel="noopener">Agenda & handouts</a><a class="cm-doc" href="https://drive.google.com/file/d/1pJcJXObzxTrpqPUrWgS2ebskSVjJpX9f/view" target="_blank" rel="noopener">Handouts</a><a class="cm-doc" href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/november-15-2018" target="_blank" rel="noopener">Minutes</a></div>
         </li><li class="cm-row">
           <span class="cm-date">September 20, 2018</span>
-          <span>Citizens' Bond Oversight Committee</span>
-          <span class="cm-badge sched"></span>
           
-          <span class="cm-rowdesc">Documents: <a href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/september-20-2018-agenda" target="_blank" rel="noopener">Agenda & handouts</a> &middot; <a href="https://drive.google.com/file/d/11XZXBhXOB6kmFkVipvYk3_RFcvHfjFxD/view" target="_blank" rel="noopener">Handouts</a> &middot; <a href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/september-20-2018" target="_blank" rel="noopener">Minutes</a></span>
+          
+          <div class="cm-mdocs"><a class="cm-doc" href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/september-20-2018-agenda" target="_blank" rel="noopener">Agenda & handouts</a><a class="cm-doc" href="https://drive.google.com/file/d/11XZXBhXOB6kmFkVipvYk3_RFcvHfjFxD/view" target="_blank" rel="noopener">Handouts</a><a class="cm-doc" href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/september-20-2018" target="_blank" rel="noopener">Minutes</a></div>
         </li><li class="cm-row">
           <span class="cm-date">May 31, 2018</span>
-          <span>Citizens' Bond Oversight Committee</span>
-          <span class="cm-badge sched"></span>
           
-          <span class="cm-rowdesc">Documents: <a href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/may-31-2018-agenda" target="_blank" rel="noopener">Agenda & handouts</a> &middot; <a href="https://drive.google.com/file/d/12Wjv8bkLve5HFSzFrprMf7btLnMbVfB7/view" target="_blank" rel="noopener">Handouts</a> &middot; <a href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/may-31-2018" target="_blank" rel="noopener">Minutes</a></span>
+          
+          <div class="cm-mdocs"><a class="cm-doc" href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/may-31-2018-agenda" target="_blank" rel="noopener">Agenda & handouts</a><a class="cm-doc" href="https://drive.google.com/file/d/12Wjv8bkLve5HFSzFrprMf7btLnMbVfB7/view" target="_blank" rel="noopener">Handouts</a><a class="cm-doc" href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/may-31-2018" target="_blank" rel="noopener">Minutes</a></div>
         </li><li class="cm-row">
           <span class="cm-date">March 1, 2018</span>
-          <span>Citizens' Bond Oversight Committee</span>
-          <span class="cm-badge sched"></span>
           
-          <span class="cm-rowdesc">Documents: <a href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/march-1-2018-agenda" target="_blank" rel="noopener">Agenda & handouts</a> &middot; <a href="https://drive.google.com/file/d/14D80Uy9xEhN6ql5mBwTFyzXwsXCeUn31/view" target="_blank" rel="noopener">Handouts</a> &middot; <a href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/march-1-2018" target="_blank" rel="noopener">Minutes</a></span>
+          
+          <div class="cm-mdocs"><a class="cm-doc" href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/march-1-2018-agenda" target="_blank" rel="noopener">Agenda & handouts</a><a class="cm-doc" href="https://drive.google.com/file/d/14D80Uy9xEhN6ql5mBwTFyzXwsXCeUn31/view" target="_blank" rel="noopener">Handouts</a><a class="cm-doc" href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/march-1-2018" target="_blank" rel="noopener">Minutes</a></div>
         </li><li class="cm-row">
           <span class="cm-date">June 1, 2017</span>
-          <span>Citizens' Bond Oversight Committee</span>
-          <span class="cm-badge sched"></span>
           
-          <span class="cm-rowdesc">Documents: <a href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/june-1-2017-agenda" target="_blank" rel="noopener">Agenda & handouts</a> &middot; <a href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/june-1-2017" target="_blank" rel="noopener">Minutes</a></span>
+          
+          <div class="cm-mdocs"><a class="cm-doc" href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/june-1-2017-agenda" target="_blank" rel="noopener">Agenda & handouts</a><a class="cm-doc" href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/june-1-2017" target="_blank" rel="noopener">Minutes</a></div>
         </li><li class="cm-row">
           <span class="cm-date">November 3, 2016</span>
-          <span>Citizens' Bond Oversight Committee</span>
-          <span class="cm-badge sched"></span>
           
-          <span class="cm-rowdesc">Documents: <a href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/november-3-2016-agenda" target="_blank" rel="noopener">Agenda & handouts</a> &middot; <a href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/november-3-2016" target="_blank" rel="noopener">Minutes</a></span>
+          
+          <div class="cm-mdocs"><a class="cm-doc" href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/november-3-2016-agenda" target="_blank" rel="noopener">Agenda & handouts</a><a class="cm-doc" href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee/november-3-2016" target="_blank" rel="noopener">Minutes</a></div>
         </li></ul>
-  <p class="tv-ainote">Members, annual reports, agendas, and minutes are maintained by the district.</p>
+  <p class="tv-ainote">Members, annual reports, agendas, and minutes are maintained by the district. Meeting summaries are AI-generated from the transcript.</p>
 </main>
 <footer class="site-footer">
   <p>Independently compiled from publicly available RCSD documents. Source documents at <a href="https://www.rcsdk8.net">rcsdk8.net</a> and the <a href="https://simbli.eboardsolutions.com/SB_Meetings/SB_MeetingListing.aspx?S=36030397">GAMUT board portal</a>.</p>

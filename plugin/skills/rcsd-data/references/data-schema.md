@@ -871,7 +871,7 @@ Committee transcripts are namespaced to avoid colliding with board transcripts: 
 | `homepage` / `email` / `chair` | string\|null | Optional contact/links. |
 | `members` | array | `[{ name, role, since }]` — optional, sparse. |
 | `videoTitleMatch` | string[] | Case-insensitive substrings used by `scrape-youtube-index.mjs` to tag this committee's recordings. |
-| `meetings[]` | array | Per-meeting: `date`, `status` (`past`/`scheduled`), `time`, `location`, `youtube`, `transcriptKey`, `hasTranscript`, `duration`, `durationSeconds`, `agendaPdf`, `minutesPdf`, `descriptionEn`/`descriptionEs`. Most fields optional. |
+| `meetings[]` | array | Per-meeting: `date`, `status` (`past`/`scheduled`), `time`, `location`, `youtube`, `transcriptKey`, `hasTranscript`, `duration`, `durationSeconds`, `agendaPdf`, `minutesPdf`, `descriptionEn`/`descriptionEs`, and AI-generated `summaryEn`/`summaryEs` (from the transcript, via generate-committee-summaries.mjs). Most fields optional. |
 
 (Replaces the former `data/committee-meetings.json`, which held only DELAC/CBOC scheduled dates for the ICS feeds.)
 
