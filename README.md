@@ -126,12 +126,16 @@ Full-site search is powered by [Pagefind](https://pagefind.app), which indexes
 the rendered `docs/` HTML at build time — so it covers everything already on the
 pages (meetings, schools, policies, budget, blog) with no separate index to
 maintain. It is exposed through a search box in the global nav and dedicated
-results pages at `/search` (English) and `/buscar` (Spanish).
+results pages with live autocomplete at `/search` (English) and `/buscar`
+(Spanish), built with Pagefind's accessible Component UI.
 
 Because Pagefind splits its index by each page's `<html lang>` attribute, an
 English page searches **only** the English corpus and a Spanish page **only** the
-Spanish corpus. The approach, rationale, file map, and extension points are
-documented in [`SEARCH.md`](SEARCH.md).
+Spanish corpus. Result ranking was tuned by evaluating real parent/community
+queries in a browser, and a query-relaxation layer broadens over-specified
+natural-language queries (e.g. "roy cloud principal email") that Pagefind's
+all-terms matching would otherwise collapse. The approach, rationale, relevance
+findings, file map, and extension points are documented in [`SEARCH.md`](SEARCH.md).
 
 ### Simbli agenda scraping
 

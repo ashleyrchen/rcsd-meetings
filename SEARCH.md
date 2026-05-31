@@ -11,11 +11,9 @@ A single global search across the whole site — board meetings, schools, board
 policies, district/budget/blog pages — reachable two ways:
 
 1. A **search box in the global nav** on every page (rendered by `siteNav` in
-   `scripts/html-parts.mjs`).
-2. A **dedicated results page**: `/search` (English) and `/buscar` (Spanish).
-
-The nav box GET-submits `?q=` to the results page; the results page runs the
-query and renders hits.
+   `scripts/html-parts.mjs`). It GET-submits `?q=` to the results page.
+2. A **dedicated results page** with live autocomplete: `/search` (English) and
+   `/buscar` (Spanish), built by `scripts/build-search.mjs`.
 
 ## The hard requirement: per-language corpus isolation
 
@@ -24,114 +22,150 @@ from a **Spanish** page, **only Spanish** results. No cross-language leakage.
 
 This is satisfied structurally, not by post-filtering:
 
-- Every generated page already declares its language via `<html lang="en">` or
-  `<html lang="es">` (an existing project convention — all build scripts emit
-  it).
+- Every generated page declares its language via `<html lang="en">` / `"es"` (an
+  existing project convention — all build scripts emit it).
 - Pagefind **splits its index by that `lang` attribute** at build time. The
   bundle contains two independent indexes (verified: `en` ≈ 229 pages, `es` ≈
-  225 pages in `docs/pagefind/pagefind-entry.json`).
-- The Pagefind UI, when initialised on a page, loads **only the index matching
-  that page's `<html lang>`**. So `/search` (lang=en) can only ever see the
-  English index and `/buscar` (lang=es) only the Spanish index.
-- The nav box closes the loop: on an English page it points at `/search`, on a
-  Spanish page at `/buscar`. A user therefore stays in their language's corpus
-  from query to results.
+  225 in `docs/pagefind/pagefind-entry.json`).
+- Each results page sets `<pagefind-config language="…">`, pinning the query to
+  that one index. The nav box routes EN pages → `/search`, ES pages → `/buscar`.
+- Verified in a browser: an English query returned exclusively `lang="en"`
+  result pages; a Spanish query (`plan maestro de instalaciones`) returned
+  exclusively `lang="es"` pages, with the UI auto-translated to Spanish.
 
-Verification (`lang` of every returned result page checked in a browser)
-confirmed a Spanish query returned exclusively `lang="es"` pages and an English
-query exclusively `lang="en"` pages.
+## Why Pagefind
 
-## Why Pagefind (and not the alternatives)
+The site is ~452 static HTML pages built by Node scripts and served from `docs/`
+on Cloudflare Pages. Pagefind crawls the *rendered* HTML after build and produces
+a chunked, lazy-loaded index plus a small WASM runtime — no server, no query
+service, no index schema to hand-maintain as content grows. Multilingual
+splitting via `<html lang>` gives the corpus-isolation requirement for free.
+(A custom JSON index + client matcher was rejected as ongoing maintenance for no
+gain; hosted search as overkill for a static civic-data project.)
 
-The site is ~452 fully static HTML pages built by Node scripts and served from
-`docs/` on Cloudflare Pages. The options were:
+## UI: Pagefind Component UI (not the Default UI)
 
-- **Pagefind (chosen)** — a static-site search indexer. It crawls the *rendered*
-  HTML after build and produces a chunked, lazy-loaded index plus a small WASM
-  search runtime. No server, no API keys, no third-party query service.
-  - *Why it wins here:* it indexes whatever is already on the page, so meeting
-    summaries, policy text, school details, etc. are covered with **zero index
-    schema to hand-maintain** — nothing to drift out of sync as content grows.
-    Multilingual splitting via `<html lang>` gives us the corpus-isolation
-    requirement for free. The runtime only downloads the index shards needed for
-    a query, so the 4.4 MB on-disk bundle costs the user very little per search.
-- **Custom JSON index + client matcher (MiniSearch/Fuse)** — full control over
-  typed results, but every new data source needs index-builder changes, and we'd
-  re-implement ranking, stemming, and bilingual handling ourselves. Rejected as
-  ongoing-maintenance cost for no clear benefit over Pagefind.
-- **Hosted search (Algolia/Cloudflare)** — overkill for a static civic-data
-  side project; adds an external dependency and (for some) cost/keys. Rejected.
+We use the **Component UI** (`pagefind-component-ui.js`), Pagefind's recommended
+UI as of 1.5 — light-DOM web components with better WAI-ARIA accessibility than
+the older Default UI. The results pages compose:
 
-Trade-off accepted: Pagefind is an external binary (shipped via the `pagefind`
-npm wrapper) and its default UI needs theming to match the design system (done —
-see below).
+```html
+<div id="search">
+  <pagefind-config language="en"></pagefind-config>
+  <pagefind-input autofocus placeholder="…"></pagefind-input>
+  <pagefind-summary></pagefind-summary>
+  <pagefind-results max-results="20"></pagefind-results>
+</div>
+<script type="module" src="/pagefind/pagefind-component-ui.js"></script>
+```
+
+The input does **live autocomplete** as you type. Theming is via the Component
+UI's `--pf-*` custom properties (light DOM, no shadow root) set on `#search` in
+`build-search.mjs`, mapped to the green palette and Fraunces/Newsreader/IBM Plex
+Mono fonts; matched terms highlight in `--pf-mark` (amber).
+
+The exact runtime API was discovered kinesthetically in a browser (the public
+docs were thin), not assumed:
+`window.PagefindComponents.getInstanceManager().getInstance('default')` returns
+an instance whose private `__pagefind__` is the Pagefind core
+(`search`, `debouncedSearch`, `options`). `inst.triggerSearch(term)` runs a
+search programmatically; `inst.triggerLoad()` forces the index to load.
+
+## Relevance: ranking + query relaxation
+
+We **evaluated real parent/community queries in the browser** before shipping,
+inspecting the actual ranked top results (not just counts):
+
+| Query | Result |
+|-------|--------|
+| `facilities master plan` | ✅ Top hits are the Study Sessions on the draft Facilities Master Plan + the architect-contract board meeting |
+| `garfield measure u plan` | ✅ Garfield Community School #1, then the Measure U application meetings |
+| `board meeting hvac rental` | ✅ Relevant board meetings on top |
+| `dual immersion enrollment` | ✅ Adelante Selby Spanish Immersion School #1 |
+| `roy cloud principal email` | ❌ **1 hit (wrong page)** before fixing — see below |
+
+Two layers, both tuned from those findings:
+
+**1. Ranking** — Pagefind's defaults already rank well here because the default
+`metaWeights.title` is **5.0**, so school/meeting *titles* win for queries like
+"garfield" or "facilities master plan". We keep the documented defaults but apply
+them explicitly via `pf.options({ ranking })` from a centralized `RANKING`
+constant in `build-search.mjs`, so retuning (`pageLength`, `termFrequency`,
+`termSaturation`, `termSimilarity`) is a one-line change. Verified that
+`pf.options({ranking})` is accepted and reorders results.
+
+**2. Query relaxation** — Pagefind matches **all terms (AND)**. A natural-language
+query with one rare extra word collapses: `roy cloud principal email` → **1 hit**,
+because "email" appears on few pages and the Roy Cloud school page doesn't render
+that word, so the query falls through to the one page containing all four words
+scattered (the meeting index). Fix: when the strict result set is sparse
+(`< MIN_RESULTS`, currently **5**), we **broaden** — drop one term at a time, run
+each `(n-1)`-term subset, merge the partial matches, and re-sort by score. This
+is implemented by wrapping the core `search` **and** `debouncedSearch`
+(they're separate code paths — the typing path uses `debouncedSearch`, which does
+*not* delegate to `search`), so the Component UI renders the broadened results
+transparently with no loss of its accessibility/markup. Well-matched queries
+(≥ MIN_RESULTS) are left exactly as-is. After this, `roy cloud principal email`
+returns **Roy Cloud School #1** (score 22.1), verified in the rendered UI.
+
+> Fragility note: relaxation wraps the private `__pagefind__` core object. It is
+> feature-detected (`typeof pf.search === 'function'`) and fails open — if a
+> future Pagefind version changes internals, relaxation is silently skipped and
+> the UI still works with default matching. We regenerate the bundle every build,
+> so the version is controlled. Revisit if Pagefind exposes a supported
+> match-mode / OR option, which would let us drop the wrapper.
 
 ## Data flow
 
 ```
 build scripts (build-*.mjs) ──> docs/**/*.html   (each with <html lang>)
-                                      │
-build-search.mjs ────────────> docs/search/index.html   (lang=en)
-                               docs/buscar/index.html   (lang=es)
-                                      │
-pagefind (reads pagefind.yml) ─> docs/pagefind/   (per-language index + UI)
-                                      │
+build-search.mjs ────────────> docs/search/ (en), docs/buscar/ (es)
+pagefind (reads pagefind.yml) ─> docs/pagefind/  (per-language index + Component UI)
 wrangler pages deploy docs ───> rcsd.info  (index shipped alongside pages)
 ```
 
-Ordering matters: Pagefind must run **after all HTML exists** (including the
-search pages) and **before deploy**. This is wired as the final build stage in
-`scripts/run-pipeline.mjs`, which CI runs before its `wrangler pages deploy`
-step — so no separate CI change was needed.
+Ordering matters: Pagefind must run **after all HTML exists** (incl. the search
+pages) and **before deploy**. This is wired as the final build stage in
+`scripts/run-pipeline.mjs`, which CI runs before its `wrangler pages deploy` —
+so no separate CI change was needed.
 
 ## Files
 
 | File | Role |
 |------|------|
-| `pagefind.yml` | Indexer config: `site: docs`; `exclude_selectors` drops the shared nav/footer so chrome text doesn't pollute results. |
-| `scripts/build-search.mjs` | Generates `/search` (en) and `/buscar` (es). Loads the Pagefind UI, themes it, reads `?q=` and calls `triggerSearch`. Pages carry `data-pagefind-ignore` (they shouldn't index themselves) and `robots: noindex, follow`. |
-| `scripts/html-parts.mjs` | `siteNav` renders the language-aware search `<form>` (`/search` vs `/buscar`, bilingual placeholder + `aria-label`); `baseCSS` styles `.site-nav-search`. |
-| `scripts/run-pipeline.mjs` | Runs `build-search.mjs` then the `pagefind` indexer as the last build stage before deploy. |
-| `package.json` | `pagefind` devDependency; `build:search` and `search:index` scripts; `build:search` appended to the `build` chain. |
-| `.gitignore` | Ignores `docs/pagefind/` — it's a regenerated binary bundle, redeployed every build. |
-
-## Theming
-
-The Pagefind Default UI is themed entirely through its documented CSS custom
-properties (set on `#search` in `build-search.mjs`): `--pagefind-ui-primary`,
-`--pagefind-ui-background`, `--pagefind-ui-border`, `--pagefind-ui-font`, etc.,
-mapped to the site's green palette and Fraunces/Newsreader/IBM Plex Mono fonts.
-The nav box reuses the existing `.site-nav-lang` visual treatment.
+| `pagefind.yml` | Indexer config: `site: docs`; `exclude_selectors` drops the shared nav/footer chrome. |
+| `scripts/build-search.mjs` | Generates `/search` + `/buscar`: composes the Component UI, themes it, applies ranking, installs query relaxation, prefills `?q=`. Holds the `RANKING` + `MIN_RESULTS` tunables. Pages carry `data-pagefind-ignore` + `robots: noindex, follow`. |
+| `scripts/html-parts.mjs` | `siteNav` renders the language-aware nav search `<form>`; `baseCSS` styles `.site-nav-search`. |
+| `scripts/run-pipeline.mjs` | Runs `build-search.mjs` then the `pagefind` indexer as the last build stages before deploy. |
+| `package.json` | `pagefind` devDependency; `build:search` + `search:index` scripts. |
+| `.gitignore` | Ignores `docs/pagefind/` — regenerated binary bundle, redeployed every build. |
 
 ## Running it locally
 
 ```bash
-npm install                # pulls the pagefind binary
-npm run build              # builds all pages incl. /search and /buscar
-npm run search:index       # runs pagefind -> docs/pagefind/
-npx wrangler pages dev docs   # or: (cd docs && python3 -m http.server)
-# then open /search?q=enrollment and /buscar?q=matrícula
+npm install              # pulls the pagefind binary
+npm run build            # builds all pages incl. /search and /buscar
+npm run search:index     # runs pagefind -> docs/pagefind/
+cd docs && python3 -m http.server 8799   # or: npx wrangler pages dev docs
+# open /search?q=facilities+master+plan and /buscar?q=plan+maestro
 ```
 
-The full pipeline (`node scripts/run-pipeline.mjs`) does the build + index in one
+The full pipeline (`node scripts/run-pipeline.mjs`) does build + index in one
 pass; add `--deploy` to publish.
 
 ## Known limitations / future refinements
 
-- **Pages without a `lang` attribute** merge into the English index. Currently
-  one standalone page (`docs/cheatsheet-2026-02-26.html`) has no `lang`; Pagefind
-  warns and folds it into `en`. Fix by adding `<html lang>` to such pages.
-- **Default UI vs Component UI.** Pagefind ≥1.5 recommends the newer Component UI
-  (search modal, richer a11y/customization). The Default UI is still fully
-  supported and was chosen for its simple `triggerSearch` API and easy theming.
-  Migrating to the Component UI is the natural next step if we want a modal /
-  keyboard-first experience.
-- **Filters & sorts.** Pagefind can expose faceted filters (e.g. by content type
-  — meeting / policy / school) via `data-pagefind-filter` attributes on pages,
-  and custom sorts via `data-pagefind-sort`. None are defined yet; adding them is
-  the path to typed/grouped results without abandoning Pagefind.
-- **Sub-results** are enabled (`showSubResults: true`) so a single long page
-  (e.g. a meeting) can surface the specific section that matched.
-- The **homepage `/`** is English-primary (`build-homepage.mjs` sets `lang="en"`);
-  its nav box routes to `/search`. Revisit if/when the homepage becomes a true
-  bilingual pair.
+- **Nav uses a plain form→page submit**, not a ⌘K modal. The Component UI ships
+  `<pagefind-modal>` / `<pagefind-modal-trigger>` for a keyboard-first
+  search-everywhere modal; we kept the lightweight form to avoid loading the
+  ~175 KB component bundle on all 452 pages. A modal is the natural next upgrade
+  if we accept that cost.
+- **Pages without a `lang` attribute** merge into the English index. One
+  standalone page (`docs/cheatsheet-2026-02-26.html`) currently has none;
+  Pagefind warns and folds it into `en`. Fix by adding `<html lang>`.
+- **Relaxation scoring** mixes scores across sub-queries and re-sorts; this is a
+  heuristic that worked well on the evaluated queries. If it ever surfaces noise,
+  bias toward the highest-coverage subset instead of merging all subsets.
+- **Filters/sorts.** Pagefind supports faceted filters (`data-pagefind-filter`)
+  and sorts (`data-pagefind-sort`) — none defined yet; the path to typed/grouped
+  results without leaving Pagefind.

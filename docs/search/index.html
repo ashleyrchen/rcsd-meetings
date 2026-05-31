@@ -34,7 +34,7 @@
 <link rel="preload" href="/fonts/ibm-plex-mono-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/fonts/fonts.css">
 
-<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+<link href="/pagefind/pagefind-component-ui.css" rel="stylesheet">
 <style>
 
   :root {
@@ -190,7 +190,7 @@
   .search-main {
     max-width: 760px;
     margin: 0 auto;
-    padding: 2.5rem 2rem 1rem;
+    padding: 2.5rem 2rem 3rem;
   }
   .search-main .eyebrow {
     font-family: 'IBM Plex Mono', monospace;
@@ -211,19 +211,20 @@
     margin-bottom: 1.6rem;
   }
   #search {
-    /* Pagefind UI design tokens — see https://pagefind.app/docs/ui-usage/ */
-    --pagefind-ui-scale: 0.9;
-    --pagefind-ui-primary: var(--green-mid);
-    --pagefind-ui-text: var(--text);
-    --pagefind-ui-background: var(--cream);
-    --pagefind-ui-border: var(--rule);
-    --pagefind-ui-tag: var(--green-pale);
-    --pagefind-ui-border-width: 1px;
-    --pagefind-ui-border-radius: 6px;
-    --pagefind-ui-font: 'Newsreader', Georgia, serif;
+    /* Pagefind Component UI tokens — https://pagefind.app/docs/ */
+    --pf-font: 'Newsreader', Georgia, serif;
+    --pf-text: var(--text);
+    --pf-text-secondary: var(--text-secondary);
+    --pf-text-muted: var(--text-muted);
+    --pf-background: var(--cream);
+    --pf-border: var(--rule);
+    --pf-border-focus: var(--green-light);
+    --pf-outline-focus: var(--green-light);
+    --pf-hover: var(--green-wash);
+    --pf-border-radius: 6px;
+    --pf-mark: var(--amber-light);
   }
-  .pagefind-ui__search-input { font-family: 'IBM Plex Mono', monospace !important; }
-  .pagefind-ui__result-title a { color: var(--green-deep); }
+  #search pagefind-input { font-family: 'IBM Plex Mono', monospace; }
 
 </style>
 </head>
@@ -250,7 +251,12 @@
   <div class="eyebrow">RCSD Open Data</div>
   <h1>Search</h1>
   <p class="intro">Search across board meetings, schools, board policies, and district data.</p>
-  <div id="search"></div>
+  <div id="search">
+    <pagefind-config language="en"></pagefind-config>
+    <pagefind-input autofocus placeholder="Search meetings, schools, policies…"></pagefind-input>
+    <pagefind-summary></pagefind-summary>
+    <pagefind-results max-results="20"></pagefind-results>
+  </div>
 </main>
 
 <footer class="site-footer">
@@ -266,18 +272,58 @@
   </div>
 </footer>
 
-<script src="/pagefind/pagefind-ui.js"></script>
-<script>
-  window.addEventListener('DOMContentLoaded', function () {
-    var ui = new PagefindUI({
-      element: '#search',
-      showSubResults: true,
-      showImages: false,
-      translations: {"placeholder":"Search the site"}
-    });
-    var q = new URLSearchParams(window.location.search).get('q');
-    if (q) { ui.triggerSearch(q); }
-  });
+<script type="module" src="/pagefind/pagefind-component-ui.js"></script>
+<script type="module">
+(async function () {
+  var RANKING = {"termFrequency":1,"pageLength":0.75,"termSaturation":1.4,"termSimilarity":1};
+  var MIN_RESULTS = 5;
+
+  function ready() { return window.PagefindComponents && window.PagefindComponents.getInstanceManager; }
+  for (var i = 0; i < 200 && !ready(); i++) { await new Promise(function (r) { setTimeout(r, 25); }); }
+  if (!ready()) return;
+  var inst = window.PagefindComponents.getInstanceManager().getInstance('default');
+  if (!inst) return;
+
+  // Force the core to load so we can tune ranking + relax queries, and so a ?q=
+  // prefill resolves instantly.
+  if (inst.triggerLoad) { try { await inst.triggerLoad(); } catch (e) {} }
+  var pf = inst.__pagefind__;
+  if (pf) {
+    try { await pf.options({ ranking: RANKING }); } catch (e) {}
+
+    // Query relaxation. Pagefind requires ALL terms (AND); a query like
+    // "roy cloud principal email" collapses to ~1 hit because "email" is rare.
+    // When the strict result set is sparse, broaden it by dropping one term at a
+    // time and merging the partial matches, re-sorted by score. Only fires below
+    // MIN_RESULTS, so well-matched queries (most) are left exactly as-is.
+    if (typeof pf.search === 'function' && typeof pf.debouncedSearch === 'function') {
+      var origSearch = pf.search.bind(pf);
+      var origDeb = pf.debouncedSearch.bind(pf);
+      async function broaden(term, base, opts) {
+        var words = (term || '').trim().split(/\s+/).filter(Boolean);
+        if (!base || base.results.length >= MIN_RESULTS || words.length < 2) return base;
+        var seen = new Map(base.results.map(function (x) { return [x.id, x]; }));
+        for (var k = 0; k < words.length; k++) {
+          var sub = words.filter(function (_, j) { return j !== k; }).join(' ');
+          var rr = await origSearch(sub, opts);
+          rr.results.forEach(function (res) { if (!seen.has(res.id)) seen.set(res.id, res); });
+        }
+        var merged = Array.from(seen.values()).sort(function (a, b) { return b.score - a.score; });
+        return Object.assign({}, base, { results: merged, unfilteredResultCount: merged.length });
+      }
+      pf.search = async function (term, opts) { return broaden(term, await origSearch(term, opts), opts); };
+      pf.debouncedSearch = async function (term, opts) { return broaden(term, await origDeb(term, opts), opts); };
+    }
+  }
+
+  // Prefill from ?q= (nav search box submits here).
+  var q = new URLSearchParams(location.search).get('q');
+  if (q) {
+    var input = document.querySelector('pagefind-input input');
+    if (input) input.value = q;
+    if (inst.triggerSearch) inst.triggerSearch(q);
+  }
+})();
 </script>
 </body>
 </html>
