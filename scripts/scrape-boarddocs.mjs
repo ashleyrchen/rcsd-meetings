@@ -50,9 +50,12 @@ async function bdPost(endpoint, body) {
 // </dl>. Links are extracted from that content HTML (Gmail/Docs redirect
 // wrappers unwrapped) and classified via the shared memo-links lib.
 function parseItemDetail(html) {
+  // Match the closing tag tolerantly (e.g. `</script >`) so the strip can't be
+  // circumvented — satisfies CodeQL js/bad-tag-filter. (We then drop ALL tags to
+  // plain text below and only read hrefs, so nothing here is ever rendered.)
   const cleaned = html
-    .replace(/<script[\s\S]*?<\/script>/gi, ' ')
-    .replace(/<style[\s\S]*?<\/style>/gi, ' ');
+    .replace(/<script\b[^>]*>[\s\S]*?<\/script\s*>/gi, ' ')
+    .replace(/<style\b[^>]*>[\s\S]*?<\/style\s*>/gi, ' ');
   const lastDl = cleaned.lastIndexOf('</dl>');
   const contentHtml = lastDl >= 0 ? cleaned.slice(lastDl + 5) : cleaned;
   const body = contentHtml
