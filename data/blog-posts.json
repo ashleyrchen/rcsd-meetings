@@ -1,5 +1,28 @@
 [
   {
+    "slug": "search",
+    "slugEs": "busqueda",
+    "date": "2026-05-31",
+    "author": "David Weekly",
+    "authorUrl": "https://david.weekly.org",
+    "template": {
+      "en": "2026-05-search-en.html",
+      "es": "2026-05-search-es.html"
+    },
+    "title": {
+      "en": "Now you can search the whole thing",
+      "es": "Ahora puedes buscar en todo el sitio"
+    },
+    "description": {
+      "en": "Site-wide search came to rcsd.info — bilingual, private, and it links straight to documents like the adopted Facilities Master Plan, not just the meetings that mention them.",
+      "es": "Llegó la búsqueda en todo el sitio a rcsd.info — bilingüe, privada, y te lleva directo a documentos como el Plan Maestro de Instalaciones aprobado, no solo a las reuniones que los mencionan."
+    },
+    "excerpt": {
+      "en": "There's a search box now. Type a school, a topic, a dollar figure — it searches six years of public record in English or Spanish, and links straight to the document, not just the meeting that mentioned it.",
+      "es": "Ya hay una caja de búsqueda. Escribe una escuela, un tema, una cantidad — busca en seis años de registro público en inglés o español, y te lleva directo al documento, no solo a la reunión que lo mencionó."
+    }
+  },
+  {
     "slug": "charter-schools-and-mcp-fix",
     "slugEs": "escuelas-autonomas-y-arreglo-mcp",
     "date": "2026-04-20",
