@@ -79,9 +79,11 @@ const linked = loadArray('data/linked-documents.json', 'documents');
 let linkedCount = 0;
 for (const d of linked) {
   if (!d.url) continue;
-  // Claim any memo links this curated entry supersedes (its published/short link).
-  const alias = d.provenance && d.provenance.publishedLink;
-  if (alias) claimed.add(alias);
+  // Claim any memo links this curated entry supersedes — its published/short
+  // link plus explicit `supersedes` (e.g. earlier FMP draft URLs) — so only the
+  // curated (final) document is indexed, not the raw/draft memo links.
+  if (d.provenance && d.provenance.publishedLink) claimed.add(d.provenance.publishedLink);
+  for (const s of d.supersedes || []) claimed.add(s);
   await addDoc(d.url, d.title, d.titleEs || d.title, d.note);
   linkedCount++;
 }
@@ -90,22 +92,32 @@ console.log(`  Documents (curated off-portal links): ${linkedCount} records`);
 // 3) Documents linked inside agenda memos but hosted off the board portal
 // (kind === 'document'); titled by their agenda item. Public-comment forms and
 // other kinds are intentionally NOT indexed. See scripts/lib/memo-links.mjs.
-const memoDir = resolve(ROOT, 'data/board-memos');
-let memoDocCount = 0;
-for (const f of readdirSync(memoDir).filter(x => x.endsWith('.json'))) {
-  const j = JSON.parse(readFileSync(resolve(memoDir, f), 'utf8'));
-  for (const it of j.items || []) {
-    const links = it.memoLinks || extractMemoLinks(it.memo);
-    for (const l of links) {
-      if (l.kind !== 'document' || claimed.has(l.url)) continue;
-      const title = cleanTitle(it.title) || l.text || 'Linked document';
-      const before = docCount;
-      await addDoc(l.url, title, title, j.date ? `Board document · ${j.date}` : '');
-      if (docCount > before) memoDocCount++;
+// Two sources: Simbli board-memos (one file per meeting) and the BoardDocs
+// scrape (one file, array of meetings) — both carry per-item `memoLinks`.
+async function indexMemoDocs(meetings) {
+  let n = 0;
+  for (const mtg of meetings) {
+    for (const it of mtg.items || []) {
+      const links = it.memoLinks || extractMemoLinks(it.memo);
+      for (const l of links) {
+        if (l.kind !== 'document' || claimed.has(l.url)) continue;
+        const title = cleanTitle(it.title) || l.text || 'Linked document';
+        const before = docCount;
+        await addDoc(l.url, title, title, mtg.date ? `Board document · ${mtg.date}` : '');
+        if (docCount > before) n++;
+      }
     }
   }
+  return n;
 }
-console.log(`  Documents (memo-linked): ${memoDocCount} records`);
+const memoDir = resolve(ROOT, 'data/board-memos');
+const simbliMeetings = readdirSync(memoDir)
+  .filter(x => x.endsWith('.json'))
+  .map(f => JSON.parse(readFileSync(resolve(memoDir, f), 'utf8')));
+let boarddocsMeetings = [];
+try { boarddocsMeetings = JSON.parse(readFileSync(resolve(ROOT, 'data/boarddocs-scraped.json'), 'utf8')); } catch { /* optional */ }
+const memoDocCount = (await indexMemoDocs(simbliMeetings)) + (await indexMemoDocs(boarddocsMeetings));
+console.log(`  Documents (memo-linked, Simbli + BoardDocs): ${memoDocCount} records`);
 
 // 4) Board-packet attachments: title -> direct file URL.
 const attachments = loadArray('data/document-index.json');

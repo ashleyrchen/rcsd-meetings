@@ -146,16 +146,24 @@ result** in both languages (verified in a browser).
 
 ### Embedded memo links
 
-Agenda items carry a `memo` (Recommendation / Rationale / … prose). Staff paste
+Agenda items carry body prose (Recommendation / Rationale / …). Staff paste
 links into it — mostly recurring **public-comment Google Forms** (~2 per
-meeting), occasionally an actual **document** (the FMP, a county report).
-`scripts/lib/memo-links.mjs` (`extractMemoLinks`) pulls every embedded URL and
-classifies it by host as `document` | `form` | `video` | `other`;
-`scrape-simbli-agendas.mjs` stores the result on each item as `memoLinks`. Only
-`document`-kind links are fed into search — **forms are deliberately excluded**
-(they'd flood results with near-duplicate sign-up links; verified that
-"public comment" returns no `forms.gle`). Forms/other kinds remain in the data
-for future meeting-page rendering.
+meeting), occasionally an actual **document** (the FMP, county reports, Drive
+files). `scripts/lib/memo-links.mjs` (`extractMemoLinks`) pulls every embedded
+URL and classifies it by host as `document` | `form` | `video` | `other`, after
+unwrapping Gmail/Docs `google.com/url?q=` redirect wrappers and dropping
+social-share chrome. Only `document`-kind links are fed into search — **forms
+are deliberately excluded** (they'd flood results with near-duplicate sign-up
+links; verified that "public comment" returns no `forms.gle`). Forms/other kinds
+remain in the data for future meeting-page rendering.
+
+Both scrapers populate `memoLinks` per item, from the two eras of agenda data:
+- **Simbli** (`scrape-simbli-agendas.mjs`, Jun 2025+) — from the `memo` object.
+- **BoardDocs** (`scrape-boarddocs.mjs --bodies`, Apr 2020–Jun 2025) — the
+  BoardDocs scrape historically captured only item titles + attachments; it now
+  fetches each item's detail (`BD-GetAgendaItem`, browser UA required) to capture
+  the item **body** and its embedded links. The indexer reads document-kind
+  `memoLinks` from `data/board-memos/*.json` **and** `data/boarddocs-scraped.json`.
 
 Records are added to **both** the `en` and `es` indexes (bilingual-by-default;
 the curated list carries a `titleEs`). Pagefind keys custom records by `url`, so
@@ -186,7 +194,8 @@ so no separate CI change was needed.
 |------|------|
 | `scripts/build-search-index.mjs` | Builds the Pagefind index via the Node API: indexes `docs/` HTML (`excludeSelectors` drops nav/footer) + injects per-document records from `document-index.json`, `linked-documents.json`, and document-kind `memoLinks` in `data/board-memos/*.json`, in both languages. Replaced `npx pagefind` + `pagefind.yml`. |
 | `scripts/lib/memo-links.mjs` | `extractMemoLinks(memo)` — pulls embedded URLs out of agenda-item memos and classifies them (`document`/`form`/`video`/`other`). Shared by the scraper and the indexer. |
-| `scripts/scrape-simbli-agendas.mjs` | Now stores `memoLinks` on each agenda item (via the shared extractor) so embedded links are captured structurally. |
+| `scripts/scrape-simbli-agendas.mjs` | Stores `memoLinks` on each agenda item (via the shared extractor) so embedded links are captured structurally. |
+| `scripts/scrape-boarddocs.mjs` | Fetches each item's detail (`BD-GetAgendaItem`) to capture the item `body` + `memoLinks` for the BoardDocs era; `--bodies` backfills already-scraped meetings (resumable). Browser User-Agent required (CloudFront). |
 | `data/linked-documents.json` | Curated documents linked from agenda memos but hosted off-portal (e.g. the adopted FMP), with provenance + best titles; supersedes the raw memo link. Indexed by title. |
 | `scripts/build-search.mjs` | Generates `/search` + `/buscar`: composes the Component UI, themes it, applies ranking, installs query relaxation, prefills `?q=`. Holds the `RANKING` + `MIN_RESULTS` tunables. Pages carry `data-pagefind-ignore` + `robots: noindex, follow`. |
 | `scripts/html-parts.mjs` | `siteNav` renders the language-aware nav search `<form>`; `baseCSS` styles `.site-nav-search`. |
@@ -230,8 +239,10 @@ Search has shipped in stages; this tracks the effort. Strike through as merged.
 
 - ~~Global bilingual search, Component UI, ranking + query relaxation (PR #25)~~
 - ~~Index board documents by title → direct-to-file results (PR #26)~~
-- ~~Capture embedded memo links (scraper + classify) and index document-kind
-  ones; exclude public-comment forms (this PR)~~
+- ~~Capture embedded memo links (Simbli scraper + classify) and index
+  document-kind ones; exclude public-comment forms (PR #27)~~
+- ~~Scrape BoardDocs item **bodies** (`--bodies`) to capture embedded links for
+  the Apr 2020–Jun 2025 era; index document-kind ones (this PR)~~
 - **Search-result iconography** — per-result images via record `meta` /
   `<pagefind-results show-images>`: YouTube thumbnail for meeting hits, a
   PDF/filetype glyph for document hits, school crest for school pages.
