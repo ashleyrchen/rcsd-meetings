@@ -38,6 +38,7 @@ Every dataset on this site is traceable to its public source. We document the or
 | SSC meetings | `data/ssc-meetings.json` | Per-meeting SSC agenda/minutes PDFs, published per-school to `documents/ssc/{school}/{year}/` on R2 |
 | Committees | `data/committees/*.json`, [`docs/COMMITTEES.md`](docs/COMMITTEES.md) | District/school committees (CBOC, DELAC, …); recordings discovered from the YouTube index, transcribed + translated like board meetings (transcripts at `transcripts/<id>-<date>.json`) |
 | Linked documents | `data/linked-documents.json` | Hand-curated documents linked from agenda memos but hosted off the board portal (e.g. the adopted Facilities Master Plan); each entry cites its source meeting/item. Indexed into search by title — see [`SEARCH.md`](SEARCH.md) |
+| GSC SEO & Crawl | [`data/METHODOLOGY-gsc.md`](data/METHODOLOGY-gsc.md) | Google Search Console API monitoring for indexing status, sitemaps, and search analytics |
 
 AI-generated content (meeting summaries, timestamp mappings) is always labeled as such and links back to the source transcript or agenda.
 
@@ -63,6 +64,7 @@ AI-generated content (meeting summaries, timestamp mappings) is always labeled a
 | [IRS 990 filings](https://projects.propublica.org/nonprofits/) | PTO/PTA per-pupil funding | ProPublica Nonprofit Explorer | `data/schools.json` |
 | [CDE School Directory](https://www.cde.ca.gov/SchoolDirectory/) | Charter entity metadata (CDS, address, charter number, date opened) | Manual transcription | `data/charters.json` |
 | RCSD records / Board President | District-owned non-school properties (admin, former campuses, storage) | Manual transcription, confirmed by Board President | `data/properties.json` |
+| [Google Search Console](https://search.google.com/search-console) | Indexing status, sitemaps, organic traffic performance | Service Account API queries | `gsc_monitor.py` |
 
 ## Pipeline
 
@@ -91,6 +93,7 @@ Scripts run in order. Most can be run independently. All cache aggressively — 
  ──────────
  6. extract:links         → data/agenda-attachments.json (requires pymupdf)
  7. map:timestamps:llm    → data/timestamp-map.json (requires ANTHROPIC_API_KEY)
+ 7b. monitor:gsc          → GSC SEO and Crawl Error Report (data/gsc-monitoring-report.md)
 
  Build
  ─────
@@ -202,6 +205,20 @@ node scripts/transcribe-dashboard.mjs       # live progress dashboard at localho
 - `artifacts/audio/{videoId}.webm` — raw Opus audio (permanent cache)
 - `artifacts/transcripts-aai/{videoId}.json` — full diarized transcript with word-level timestamps
 - Published to `data.rcsd.info/audio/` and `data.rcsd.info/transcripts-aai/`
+
+### Google Search Console SEO & Crawl Monitoring
+
+The pipeline audits search indexing and crawler health using the Google Search Console API. It lists registered sitemap download errors, queries organic search footprint metrics for the last 30 days, and checks individual pages for crawling permissions and usability errors.
+
+```bash
+npm run monitor:gsc                          # run search console monitoring
+npm run monitor:gsc -- --mock                # preview with realistic simulation data
+npm run monitor:gsc -- --limit 50            # inspect a larger sample of sitemap URLs
+```
+
+**Output** (both gitignored — real Search Console data is operator-specific and stays out of the public repo; run `npm run monitor:gsc` to regenerate locally):
+- `data/gsc-data.json` — raw API results
+- `data/gsc-monitoring-report.md` — human-readable Markdown SEO & crawl error dashboard
 
 ## Document Ontology
 
