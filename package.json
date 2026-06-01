@@ -22,6 +22,7 @@
     "scrape:simbli": "node scripts/scrape-simbli-agendas.mjs",
     "scrape:policies": "node scripts/scrape-board-policies.mjs",
     "extract:links": ".venv/bin/python3 scripts/extract-agenda-links.py",
+    "monitor:gsc": ".venv/bin/python scripts/gsc_monitor.py",
     "map:timestamps:llm": "node scripts/map-timestamps-llm.mjs",
     "upload": "node scripts/upload-to-r2.mjs",
     "scrape:packets": "node scripts/scrape-board-packets.mjs",
