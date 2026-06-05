@@ -38,6 +38,7 @@ Every dataset on this site is traceable to its public source. We document the or
 | SSC meetings | `data/ssc-meetings.json` | Per-meeting SSC agenda/minutes PDFs, published per-school to `documents/ssc/{school}/{year}/` on R2 |
 | Committees | `data/committees/*.json`, [`docs/COMMITTEES.md`](docs/COMMITTEES.md) | District/school committees (CBOC, DELAC, …); recordings discovered from the YouTube index, transcribed + translated like board meetings (transcripts at `transcripts/<id>-<date>.json`) |
 | Linked documents | `data/linked-documents.json` | Hand-curated documents linked from agenda memos but hosted off the board portal (e.g. the adopted Facilities Master Plan); each entry cites its source meeting/item. Indexed into search by title — see [`SEARCH.md`](SEARCH.md) |
+| Board of Trustees | `data/trustees.json` | The five elected trustees (name, photo, trustee area, term, officer role, school assignments, email), plus the superintendent transition and district cabinet. Hand-maintained from the official RCSD "Meet the Trustees" page and district news releases; headshots mirrored to R2 by `scripts/fetch-leadership-photos.mjs`. Rendered on `/district/` + `/distrito/` by `build-district.mjs`. `termStartYear` is derived (`termEndYear − 4`, per Cal. Ed. Code §35107) |
 | GSC SEO & Crawl | [`data/METHODOLOGY-gsc.md`](data/METHODOLOGY-gsc.md) | Google Search Console API monitoring for indexing status, sitemaps, and search analytics |
 
 AI-generated content (meeting summaries, timestamp mappings) is always labeled as such and links back to the source transcript or agenda.
@@ -64,6 +65,7 @@ AI-generated content (meeting summaries, timestamp mappings) is always labeled a
 | [IRS 990 filings](https://projects.propublica.org/nonprofits/) | PTO/PTA per-pupil funding | ProPublica Nonprofit Explorer | `data/schools.json` |
 | [CDE School Directory](https://www.cde.ca.gov/SchoolDirectory/) | Charter entity metadata (CDS, address, charter number, date opened) | Manual transcription | `data/charters.json` |
 | RCSD records / Board President | District-owned non-school properties (admin, former campuses, storage) | Manual transcription, confirmed by Board President | `data/properties.json` |
+| [RCSD "Meet the Trustees"](https://www.rcsdk8.net/our-district/our-board-of-trustees/meet-the-trustees) + district news releases | Board roster (area, term, role, assignments, email), superintendent transition, cabinet; headshots | Manual transcription; headshots mirrored from RCSD Finalsite CDN to R2 | `data/trustees.json`, `scripts/fetch-leadership-photos.mjs` |
 | [Google Search Console](https://search.google.com/search-console) | Indexing status, sitemaps, organic traffic performance | Service Account API queries | `gsc_monitor.py` |
 
 ## Pipeline

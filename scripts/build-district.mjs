@@ -694,6 +694,117 @@ const districtCSS = `
   .footer-nav { margin-top: 1rem; }
   .footer-nav a { font-size: 0.68rem; margin: 0 1.5rem 0 0; }`;
 
+// ---- Board of Trustees / leadership section CSS (appended to districtCSS) ----
+const leadershipCSS = `
+  .trustee-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
+    gap: 1rem;
+    margin-top: 1.2rem;
+  }
+  .trustee-card {
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+  }
+  .trustee-card:hover { border-color: var(--green-mid); }
+  .trustee-photo {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: center top;
+    background: var(--green-wash);
+    display: block;
+  }
+  .trustee-photo.placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 2.6rem;
+    font-weight: 300;
+    color: var(--green-mid);
+  }
+  .trustee-body { padding: 0.85rem 0.95rem 1rem; display: flex; flex-direction: column; gap: 0.28rem; }
+  .trustee-area {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--green-mid);
+  }
+  .trustee-name { font-family: 'Fraunces', Georgia, serif; font-size: 1.08rem; line-height: 1.12; color: var(--green-deep); }
+  .trustee-role { font-size: 0.8rem; font-style: italic; color: var(--text-secondary); line-height: 1.3; }
+  .trustee-term { font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; color: var(--text-muted); }
+  .trustee-assign { font-size: 0.74rem; color: var(--text-muted); line-height: 1.4; margin-top: 0.1rem; }
+  .trustee-email { font-size: 0.74rem; margin-top: 0.15rem; }
+  .trustee-email a { word-break: break-word; }
+
+  .leadership-subhead {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 1.35rem;
+    font-weight: 400;
+    color: var(--green-deep);
+    margin: 2.4rem 0 0.2rem;
+  }
+  .leadership-note { font-size: 0.85rem; color: var(--text-muted); margin: 0 0 0.4rem; }
+  .supt-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(255px, 1fr));
+    gap: 1rem;
+    margin-top: 0.9rem;
+  }
+  .supt-card {
+    display: flex;
+    gap: 0.9rem;
+    align-items: flex-start;
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    padding: 0.95rem;
+    background: #fff;
+  }
+  .supt-card.incoming { border-color: var(--green-mid); background: var(--green-wash); }
+  .supt-photo {
+    width: 78px;
+    height: 96px;
+    flex: 0 0 auto;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 8px;
+    background: var(--green-pale);
+  }
+  .supt-photo.placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 1.5rem;
+    color: var(--green-mid);
+  }
+  .supt-badge {
+    display: inline-block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.56rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.12rem 0.45rem;
+    border-radius: 999px;
+    margin-bottom: 0.3rem;
+  }
+  .supt-badge.incoming { background: var(--green-mid); color: #fff; }
+  .supt-badge.outgoing { background: var(--amber-light); color: var(--green-deep); }
+  .supt-name { font-family: 'Fraunces', Georgia, serif; font-size: 1.05rem; line-height: 1.15; color: var(--green-deep); }
+  .supt-title { font-size: 0.8rem; font-style: italic; color: var(--text-secondary); }
+  .supt-status { font-family: 'IBM Plex Mono', monospace; font-size: 0.68rem; color: var(--text-muted); margin-top: 0.25rem; line-height: 1.35; }
+  .supt-links { font-size: 0.74rem; margin-top: 0.3rem; }
+
+  .cabinet-list { list-style: none; padding: 0; margin: 0.7rem 0 0; display: flex; flex-wrap: wrap; gap: 0.4rem 2rem; }
+  .cabinet-item { font-size: 0.9rem; color: var(--text-secondary); }
+  .cabinet-item strong { font-family: 'Fraunces', Georgia, serif; font-weight: 400; color: var(--green-deep); }`;
+
 // ---- i18n labels for documents section ----
 const DOC_LABELS = {
   en: {
@@ -730,7 +841,7 @@ function renderDocuments(lang) {
 
   let html = `<section class="section" id="documents">
   <div class="section-rule"></div>
-  <div class="section-num">08</div>
+  <div class="section-num">09</div>
   <h2>${L.docsTitle}</h2>
   <p class="section-subtitle">${L.docsSubtitle}</p>
   <div class="doc-tabs">
@@ -863,6 +974,122 @@ const PAGES = [
   },
 ];
 
+// ---- Board of Trustees / district leadership section ----
+const LEADERSHIP_LABELS = {
+  en: {
+    title: 'Board of Trustees',
+    subtitle: 'RCSD is governed by five trustees, each elected from a geographic trustee area to a four-year term.',
+    area: 'Trustee Area',
+    term: 'Term',
+    oversees: 'Oversees',
+    superTitle: 'Superintendent',
+    superNote: 'The district is in a superintendent transition.',
+    cabinetTitle: 'District Cabinet',
+    badgeCurrent: 'Current',
+    badgeIncoming: 'Incoming',
+    contract: 'Employment agreement →',
+    roster: 'Full board roster & bios on rcsdk8.net →',
+  },
+  es: {
+    title: 'Mesa Directiva',
+    subtitle: 'El RCSD es gobernado por cinco síndicos, cada uno elegido por un área electoral geográfica para un período de cuatro años.',
+    area: 'Área Electoral',
+    term: 'Período',
+    oversees: 'Supervisa',
+    superTitle: 'Superintendente',
+    superNote: 'El distrito está en una transición de superintendente.',
+    cabinetTitle: 'Gabinete del Distrito',
+    badgeCurrent: 'Actual',
+    badgeIncoming: 'Entrante',
+    contract: 'Contrato de empleo →',
+    roster: 'Directorio completo de la Mesa Directiva en rcsdk8.net →',
+  },
+};
+
+const esc = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+const initials = (name) => name.replace(/Dr\.|Ed\.D\.|,/g, '').trim().split(/\s+/).filter(Boolean).map(w => w[0]).slice(0, 2).join('').toUpperCase();
+
+/** Render the Board of Trustees + superintendent transition + cabinet section. */
+function renderLeadership(lang) {
+  const file = resolve(ROOT, 'data/trustees.json');
+  if (!existsSync(file)) return '';
+  const data = JSON.parse(readFileSync(file, 'utf-8'));
+  const L = LEADERSHIP_LABELS[lang];
+  const es = lang === 'es';
+
+  // --- Trustee cards (sorted by area) ---
+  const trustees = [...(data.trustees || [])].sort((a, b) => a.area - b.area);
+  const cards = trustees.map(t => {
+    const role = es ? t.roleEs : t.roleEn;
+    const assigns = (es ? t.assignmentsEs : t.assignmentsEn) || [];
+    const photo = t.photo
+      ? `<img class="trustee-photo" src="${R2_BASE}/trustees/${t.photo}" alt="${esc(t.name)}" loading="lazy" decoding="async">`
+      : `<div class="trustee-photo placeholder">${esc(initials(t.name))}</div>`;
+    return `
+      <div class="trustee-card">
+        ${photo}
+        <div class="trustee-body">
+          <span class="trustee-area">${L.area} ${t.area}</span>
+          <span class="trustee-name">${esc(t.name)}</span>
+          <span class="trustee-role">${esc(role)}</span>
+          <span class="trustee-term">${L.term} ${t.termStartYear}–${t.termEndYear}</span>
+          ${assigns.length ? `<span class="trustee-assign">${L.oversees}: ${assigns.map(esc).join(', ')}</span>` : ''}
+          ${t.email ? `<span class="trustee-email"><a href="mailto:${esc(t.email)}">${esc(t.email)}</a></span>` : ''}
+        </div>
+      </div>`;
+  }).join('');
+
+  // --- Superintendent transition cards ---
+  const suptCard = (s, kind) => {
+    if (!s) return '';
+    const badge = kind === 'incoming' ? L.badgeIncoming : L.badgeCurrent;
+    const title = es ? s.titleEs : s.titleEn;
+    const status = es ? s.statusEs : s.statusEn;
+    const photo = s.photo
+      ? `<img class="supt-photo" src="${R2_BASE}/trustees/${s.photo}" alt="${esc(s.name)}" loading="lazy" decoding="async">`
+      : `<div class="supt-photo placeholder">${esc(initials(s.name))}</div>`;
+    return `
+      <div class="supt-card${kind === 'incoming' ? ' incoming' : ''}">
+        ${photo}
+        <div class="supt-meta">
+          <span class="supt-badge ${kind === 'incoming' ? 'incoming' : 'outgoing'}">${badge}</span>
+          <span class="supt-name">${esc(s.name)}</span>
+          <span class="supt-title">${esc(title)}</span>
+          <div class="supt-status">${esc(status)}</div>
+          ${s.contractUrl ? `<div class="supt-links"><a href="${esc(s.contractUrl)}" target="_blank" rel="noopener">${L.contract}</a></div>` : ''}
+        </div>
+      </div>`;
+  };
+  const sup = data.superintendent || {};
+  const suptSection = (sup.current || sup.incoming) ? `
+  <h3 class="leadership-subhead">${L.superTitle}</h3>
+  <p class="leadership-note">${L.superNote}</p>
+  <div class="supt-grid">${suptCard(sup.current, 'current')}${suptCard(sup.incoming, 'incoming')}
+  </div>` : '';
+
+  // --- Cabinet list ---
+  const cabinet = data.cabinet || [];
+  const cabinetSection = cabinet.length ? `
+  <h3 class="leadership-subhead">${L.cabinetTitle}</h3>
+  <ul class="cabinet-list">${cabinet.map(c => `
+    <li class="cabinet-item"><strong>${esc(c.name)}</strong> — ${esc(es ? c.titleEs : c.titleEn)}</li>`).join('')}
+  </ul>` : '';
+
+  const rosterUrl = data._metadata?.source;
+
+  return `<section class="section" id="trustees">
+  <div class="section-rule"></div>
+  <div class="section-num">02</div>
+  <h2>${L.title}</h2>
+  <p class="section-subtitle">${L.subtitle}</p>
+  <div class="trustee-grid">${cards}
+  </div>
+${suptSection}
+${cabinetSection}
+${rosterUrl ? `\n  <p style="margin-top:1.6rem"><a class="doc-link" href="${esc(rosterUrl)}" target="_blank" rel="noopener">${L.roster}</a></p>` : ''}
+</section>`;
+}
+
 const COMMITTEE_LABELS = {
   en: { title: 'Committees & Oversight', subtitle: 'Standing district and school committees, with meeting recordings and transcripts where available.', viewAll: 'View all committees →', prefix: 'committees', recordings: 'recordings' },
   es: { title: 'Comités y Supervisión', subtitle: 'Comités permanentes del distrito y de las escuelas, con grabaciones y transcripciones de reuniones cuando están disponibles.', viewAll: 'Ver todos los comités →', prefix: 'comites', recordings: 'grabaciones' },
@@ -890,7 +1117,7 @@ function renderCommittees(lang) {
   }).join('');
   return `<section class="section" id="committees">
   <div class="section-rule"></div>
-  <div class="section-num">09</div>
+  <div class="section-num">10</div>
   <h2>${L.title}</h2>
   <p class="section-subtitle">${L.subtitle}</p>
   <div class="committee-grid">${cards}
@@ -903,6 +1130,7 @@ for (const page of PAGES) {
   const bodyContent = readFileSync(resolve(ROOT, page.template), 'utf-8');
   const documentsSection = renderDocuments(page.lang);
   const committeesSection = renderCommittees(page.lang);
+  const leadershipSection = renderLeadership(page.lang);
 
   const html = `<!DOCTYPE html>
 <html lang="${page.lang}">
@@ -914,14 +1142,14 @@ ${headMeta({
   ogLocale: page.ogLocale,
   ogImageKey: `page-district${page.lang === 'es' ? '-es' : ''}`,
   hreflang: page.hreflang,
-  pageCSS: districtCSS,
+  pageCSS: districtCSS + leadershipCSS,
 })}
 </head>
 <body>
 
 ${siteNav({ activePage: 'district', lang: page.lang, altLangHref: page.altLangHref })}
 
-${bodyContent}
+${bodyContent.replace('<!-- LEADERSHIP_SECTION -->', leadershipSection)}
 
 ${documentsSection}
 

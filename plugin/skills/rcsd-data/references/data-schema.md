@@ -166,6 +166,53 @@ Top-level: `{ _metadata, properties[] }` — district-owned or district-leased r
 
 ---
 
+## data/trustees.json
+
+The elected Board of Trustees plus district leadership. Three top-level keys: `trustees` (array), `superintendent` (object with `current` + `incoming`), and `cabinet` (array). Plus a `_metadata` provenance block.
+
+### Sample Trustee Record
+
+```json
+{
+  "slug": "david-weekly",
+  "name": "David Weekly",
+  "area": 2,
+  "roleEn": "President",
+  "roleEs": "Presidente",
+  "termStartYear": 2022,
+  "termEndYear": 2026,
+  "email": "dweekly@rcsdk8.net",
+  "assignmentsEn": ["Kennedy Middle School", "Facilities", "Roy Cloud School", "Taft Community School"],
+  "assignmentsEs": ["Kennedy Middle School", "Instalaciones", "Roy Cloud School", "Taft Community School"],
+  "photo": "david-weekly.jpg",
+  "photoSource": "https://resources.finalsite.net/.../TrusteeDavidWeekly.jpg"
+}
+```
+
+### Schema
+
+| Field | Type | Notes |
+|-------|------|-------|
+| `slug` | string | Stable kebab-case id |
+| `area` | int | Trustee area 1–5; the by-area seat the member represents |
+| `roleEn` / `roleEs` | string | Officer role (President, Vice President, Clerk) or special liaison role; ES is gender-correct |
+| `termStartYear` | int | **Derived** as `termEndYear − 4` (Cal. Ed. Code §35107: 4-year terms), not stated on source |
+| `termEndYear` | int | Authoritative — the year the current term expires (from the source page) |
+| `email` | string | District email |
+| `assignmentsEn` / `assignmentsEs` | string[] | School/area oversight; school proper names kept in English in both languages |
+| `photo` | string | Filename under `https://data.rcsd.info/trustees/`; null if none |
+| `photoSource` | string | Upstream CDN URL the headshot was mirrored from |
+
+`superintendent.current` / `superintendent.incoming` and `cabinet[]` use `name`, `titleEn`/`titleEs`, `statusEn`/`statusEs` (superintendent only), `email`, `photo`, `photoSource`, and `contractUrl` (nullable — pending links to executed employment agreements).
+
+### Key Field Notes
+
+- **Areas 2 and 5** (David Weekly, Cecilia I. Márquez) expire 2026 and are on the November 2026 ballot; **Areas 1, 3, 4** expire 2028.
+- **Superintendent transition:** Dr. John R. Baker serves through 2026-06-30; Dr. Christian J. Rubalcaba (appointed 2026-01-21) begins 2026-07-01.
+- Hand-maintained; re-check after each November election and the December board reorganization. See `_metadata.refreshProcedure`.
+
+---
+
 ## data/district-calendar-{year}.json
 
 ### Sample

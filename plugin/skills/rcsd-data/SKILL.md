@@ -1,7 +1,7 @@
 ---
 name: RCSD Data Analyst
-description: This skill should be used when the user asks about "Redwood City schools", "RCSD", "school hours", "school enrollment", "school calendar", "is there school today", "next board meeting", "what's for lunch", "lunch menu", "report an absence", "IEP data", "special education", "EL percentage", "LTEL", "long-term English learner", "chronic absenteeism", "teacher diversity", "staff demographics", "teacher experience", "pupil-teacher ratio", "school site council", "SSC", "SPSA", "free and reduced lunch", "PTO", "Konstella", "ParentSquare", "which school", "board meeting", "SARC", "test scores", "CAASPP", "school budget", "RCEF", "Measure U", "expenditures", "district property", "former school site", "who leases the old campus", "watch board meeting", "compare schools", "school demographics", "meeting transcript", "board discussion", or any question about Redwood City School District schools, demographics, calendars, meetings, lunch menus, funding, staffing, or parent resources. Also activates when the user mentions a child's name in the context of school.
-version: 0.3.0
+description: This skill should be used when the user asks about "Redwood City schools", "RCSD", "school hours", "school enrollment", "school calendar", "is there school today", "next board meeting", "what's for lunch", "lunch menu", "report an absence", "IEP data", "special education", "EL percentage", "LTEL", "long-term English learner", "chronic absenteeism", "teacher diversity", "staff demographics", "teacher experience", "pupil-teacher ratio", "school site council", "SSC", "SPSA", "free and reduced lunch", "PTO", "Konstella", "ParentSquare", "which school", "board meeting", "SARC", "test scores", "CAASPP", "school budget", "RCEF", "Measure U", "expenditures", "district property", "former school site", "who leases the old campus", "watch board meeting", "compare schools", "school demographics", "meeting transcript", "board discussion", "who is my trustee", "who represents my area", "board member", "trustee area", "board president", "who is the superintendent", "new superintendent", "district cabinet", "CBO", "chief business official", or any question about Redwood City School District schools, demographics, calendars, meetings, lunch menus, funding, staffing, trustees, or parent resources. Also activates when the user mentions a child's name in the context of school.
+version: 0.4.0
 ---
 
 # RCSD Data Analyst
@@ -49,6 +49,7 @@ Read these files from `data/` to answer questions. For field-by-field documentat
 | `district-calendar-2025-26.json` | ~17 events | "Is there school?" queries for 2025-26 year |
 | `district-calendar-2026-27.json` | ~17 events | "Is there school?" queries for 2026-27 year |
 | `governance-calendar.json` | ~12 events | Board meeting schedule |
+| `trustees.json` | 5 trustees + leadership | **Who is my board member / trustee?** Board roster keyed by trustee area (name, area, officer role, term years, school assignments, email), the superintendent transition (Dr. Baker through 2026-06-30 → Dr. Rubalcaba from 2026-07-01), and district cabinet (Deputy Supt. Wendy Kelly, CBO Rick Edson). Use for "who represents area N", "who is the board president", "who is the superintendent", "when does X's term end". |
 
 ### Demographics & Academics
 
