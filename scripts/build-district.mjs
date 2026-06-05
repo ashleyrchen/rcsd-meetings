@@ -801,8 +801,15 @@ const leadershipCSS = `
   .supt-status { font-family: 'IBM Plex Mono', monospace; font-size: 0.68rem; color: var(--text-muted); margin-top: 0.25rem; line-height: 1.35; }
   .supt-links { font-size: 0.74rem; margin-top: 0.3rem; }
 
-  .cabinet-list { list-style: none; padding: 0; margin: 0.7rem 0 0; display: flex; flex-wrap: wrap; gap: 0.4rem 2rem; }
-  .cabinet-item { font-size: 0.9rem; color: var(--text-secondary); }
+  .cabinet-list {
+    list-style: none;
+    padding: 0;
+    margin: 0.7rem 0 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+    gap: 0.45rem 2rem;
+  }
+  .cabinet-item { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4; }
   .cabinet-item strong { font-family: 'Fraunces', Georgia, serif; font-weight: 400; color: var(--green-deep); }`;
 
 // ---- i18n labels for documents section ----
@@ -985,6 +992,7 @@ const LEADERSHIP_LABELS = {
     superTitle: 'Superintendent',
     superNote: 'The district is in a superintendent transition.',
     cabinetTitle: 'District Cabinet',
+    leadershipTitle: 'District Leadership',
     badgeCurrent: 'Current',
     badgeIncoming: 'Incoming',
     contract: 'Employment agreement →',
@@ -999,6 +1007,7 @@ const LEADERSHIP_LABELS = {
     superTitle: 'Superintendente',
     superNote: 'El distrito está en una transición de superintendente.',
     cabinetTitle: 'Gabinete del Distrito',
+    leadershipTitle: 'Liderazgo del Distrito',
     badgeCurrent: 'Actual',
     badgeIncoming: 'Entrante',
     contract: 'Contrato de empleo →',
@@ -1067,13 +1076,14 @@ function renderLeadership(lang) {
   <div class="supt-grid">${suptCard(sup.current, 'current')}${suptCard(sup.incoming, 'incoming')}
   </div>` : '';
 
-  // --- Cabinet list ---
-  const cabinet = data.cabinet || [];
-  const cabinetSection = cabinet.length ? `
-  <h3 class="leadership-subhead">${L.cabinetTitle}</h3>
-  <ul class="cabinet-list">${cabinet.map(c => `
+  // --- Cabinet + broader leadership lists ---
+  const renderRoster = (people, title) => people.length ? `
+  <h3 class="leadership-subhead">${title}</h3>
+  <ul class="cabinet-list">${people.map(c => `
     <li class="cabinet-item"><strong>${esc(c.name)}</strong> — ${esc(es ? c.titleEs : c.titleEn)}</li>`).join('')}
   </ul>` : '';
+  const cabinetSection = renderRoster(data.cabinet || [], L.cabinetTitle);
+  const directorsSection = renderRoster(data.directors || [], L.leadershipTitle);
 
   const rosterUrl = data._metadata?.source;
 
@@ -1086,6 +1096,7 @@ function renderLeadership(lang) {
   </div>
 ${suptSection}
 ${cabinetSection}
+${directorsSection}
 ${rosterUrl ? `\n  <p style="margin-top:1.6rem"><a class="doc-link" href="${esc(rosterUrl)}" target="_blank" rel="noopener">${L.roster}</a></p>` : ''}
 </section>`;
 }

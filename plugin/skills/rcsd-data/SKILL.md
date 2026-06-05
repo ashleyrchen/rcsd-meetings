@@ -49,7 +49,7 @@ Read these files from `data/` to answer questions. For field-by-field documentat
 | `district-calendar-2025-26.json` | ~17 events | "Is there school?" queries for 2025-26 year |
 | `district-calendar-2026-27.json` | ~17 events | "Is there school?" queries for 2026-27 year |
 | `governance-calendar.json` | ~12 events | Board meeting schedule |
-| `trustees.json` | 5 trustees + leadership | **Who is my board member / trustee?** Board roster keyed by trustee area (name, area, officer role, term years, school assignments, email), the superintendent transition (Dr. Baker through 2026-06-30 → Dr. Rubalcaba from 2026-07-01), and district cabinet (Deputy Supt. Wendy Kelly, CBO Rick Edson). Use for "who represents area N", "who is the board president", "who is the superintendent", "when does X's term end". |
+| `trustees.json` | 5 trustees + leadership | **Who is my board member / trustee?** Board roster keyed by trustee area (name, area, officer role, term years, school assignments, email), the superintendent transition (Dr. Baker through 2026-06-30 → Dr. Rubalcaba from 2026-07-01), and district cabinet (Deputy Supt. Wendy Kelly, Asst. Supt. Anna Herrera, CBO Rick Edson) + 14 directors/coordinators (`directors[]`). Use for "who represents area N", "who is the board president", "who is the superintendent", "when does X's term end", "who is the director of special education / HR / technology". |
 
 ### Demographics & Academics
 

@@ -2,6 +2,7 @@
   "_metadata": {
     "source": "https://www.rcsdk8.net/our-district/our-board-of-trustees/meet-the-trustees",
     "additionalSources": [
+      "https://www.rcsdk8.net/our-programs-and-services/our-superintendent",
       "https://www.rcsdk8.net/our-stories-and-initiatives/news-details/~board/news-items/post/redwood-city-school-district-board-of-trustees-appoints-dr-christian-j-rubalcaba-as-next-superintendent-of-schools",
       "https://www.rcsdk8.net/our-stories-and-initiatives/news-details/~board/message-from-the-superintendent/post/superintendent-baker-announces-retirement"
     ],
@@ -109,23 +110,24 @@
     }
   },
   "cabinet": [
-    {
-      "slug": "wendy-kelly",
-      "name": "Wendy Kelly",
-      "titleEn": "Deputy Superintendent",
-      "titleEs": "Subsuperintendente",
-      "email": null,
-      "photo": null,
-      "photoSource": null
-    },
-    {
-      "slug": "rick-edson",
-      "name": "Rick Edson",
-      "titleEn": "Chief Business Official",
-      "titleEs": "Director de Finanzas (Chief Business Official)",
-      "email": null,
-      "photo": null,
-      "photoSource": null
-    }
+    { "slug": "wendy-kelly", "name": "Wendy Kelly", "titleEn": "Deputy Superintendent", "titleEs": "Subsuperintendente", "email": null, "photo": null, "photoSource": null },
+    { "slug": "anna-herrera", "name": "Anna Herrera", "titleEn": "Assistant Superintendent of Educational Services", "titleEs": "Subsuperintendente Auxiliar de Servicios Educativos", "email": null, "photo": null, "photoSource": null },
+    { "slug": "rick-edson", "name": "Rick Edson", "titleEn": "Chief Business Official", "titleEs": "Director de Finanzas (Chief Business Official)", "email": null, "photo": null, "photoSource": null }
+  ],
+  "directors": [
+    { "slug": "enrique-calderon", "name": "Enrique Calderon", "titleEn": "Coordinator of Expanded Learning", "titleEs": "Coordinación de Aprendizaje Extendido" },
+    { "slug": "liz-calderon", "name": "Liz Calderon", "titleEn": "Director of Community Schools and Partnerships", "titleEs": "Dirección de Escuelas Comunitarias y Alianzas" },
+    { "slug": "kimberley-chen", "name": "Kimberley Chen", "titleEn": "Director of Fiscal Services", "titleEs": "Dirección de Servicios Fiscales" },
+    { "slug": "martin-cervantes", "name": "Martin Cervantes", "titleEn": "Director of Maintenance, Operations, and Transportation", "titleEs": "Dirección de Mantenimiento, Operaciones y Transporte" },
+    { "slug": "ana-paula-garay", "name": "Ana Paula Garay, LMFT", "titleEn": "Lead Mental Health Clinician", "titleEs": "Clínica Principal de Salud Mental" },
+    { "slug": "maeve-mulholland", "name": "Dr. Maeve Mulholland, Ed.D.", "titleEn": "Director of Special Education", "titleEs": "Dirección de Educación Especial" },
+    { "slug": "jennifer-pare", "name": "Jennifer Pare", "titleEn": "Principal and Director of the Child Development Center", "titleEs": "Dirección del Centro de Desarrollo Infantil" },
+    { "slug": "antonio-perez", "name": "Antonio Pérez", "titleEn": "Director of Student Services", "titleEs": "Dirección de Servicios Estudiantiles" },
+    { "slug": "patricia-perez", "name": "Patricia Pérez", "titleEn": "Director of Human Resources", "titleEs": "Dirección de Recursos Humanos" },
+    { "slug": "jorge-quintana", "name": "Jorge Quintana", "titleEn": "Director of Communications and Community Engagement", "titleEs": "Dirección de Comunicaciones y Participación Comunitaria" },
+    { "slug": "patrinia-redd", "name": "Patrinia Redd", "titleEn": "Director of Health and Wellness", "titleEs": "Dirección de Salud y Bienestar" },
+    { "slug": "carlos-reyna", "name": "Carlos Reyna", "titleEn": "Director of Technology", "titleEs": "Dirección de Tecnología" },
+    { "slug": "katherine-rivera", "name": "Katherine Rivera", "titleEn": "Director of Multilingual English Learners and Categorical Programs", "titleEs": "Dirección de Estudiantes Multilingües y Programas Categóricos" },
+    { "slug": "richie-wilim", "name": "Richie Wilim", "titleEn": "Director of Child Nutrition Services", "titleEs": "Dirección de Servicios de Nutrición Infantil" }
   ]
 }

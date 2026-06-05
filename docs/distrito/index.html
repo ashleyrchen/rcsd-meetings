@@ -967,8 +967,15 @@
   .supt-status { font-family: 'IBM Plex Mono', monospace; font-size: 0.68rem; color: var(--text-muted); margin-top: 0.25rem; line-height: 1.35; }
   .supt-links { font-size: 0.74rem; margin-top: 0.3rem; }
 
-  .cabinet-list { list-style: none; padding: 0; margin: 0.7rem 0 0; display: flex; flex-wrap: wrap; gap: 0.4rem 2rem; }
-  .cabinet-item { font-size: 0.9rem; color: var(--text-secondary); }
+  .cabinet-list {
+    list-style: none;
+    padding: 0;
+    margin: 0.7rem 0 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+    gap: 0.45rem 2rem;
+  }
+  .cabinet-item { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4; }
   .cabinet-item strong { font-family: 'Fraunces', Georgia, serif; font-weight: 400; color: var(--green-deep); }
 </style>
 </head>
@@ -1188,7 +1195,26 @@
   <h3 class="leadership-subhead">Gabinete del Distrito</h3>
   <ul class="cabinet-list">
     <li class="cabinet-item"><strong>Wendy Kelly</strong> — Subsuperintendente</li>
+    <li class="cabinet-item"><strong>Anna Herrera</strong> — Subsuperintendente Auxiliar de Servicios Educativos</li>
     <li class="cabinet-item"><strong>Rick Edson</strong> — Director de Finanzas (Chief Business Official)</li>
+  </ul>
+
+  <h3 class="leadership-subhead">Liderazgo del Distrito</h3>
+  <ul class="cabinet-list">
+    <li class="cabinet-item"><strong>Enrique Calderon</strong> — Coordinación de Aprendizaje Extendido</li>
+    <li class="cabinet-item"><strong>Liz Calderon</strong> — Dirección de Escuelas Comunitarias y Alianzas</li>
+    <li class="cabinet-item"><strong>Kimberley Chen</strong> — Dirección de Servicios Fiscales</li>
+    <li class="cabinet-item"><strong>Martin Cervantes</strong> — Dirección de Mantenimiento, Operaciones y Transporte</li>
+    <li class="cabinet-item"><strong>Ana Paula Garay, LMFT</strong> — Clínica Principal de Salud Mental</li>
+    <li class="cabinet-item"><strong>Dr. Maeve Mulholland, Ed.D.</strong> — Dirección de Educación Especial</li>
+    <li class="cabinet-item"><strong>Jennifer Pare</strong> — Dirección del Centro de Desarrollo Infantil</li>
+    <li class="cabinet-item"><strong>Antonio Pérez</strong> — Dirección de Servicios Estudiantiles</li>
+    <li class="cabinet-item"><strong>Patricia Pérez</strong> — Dirección de Recursos Humanos</li>
+    <li class="cabinet-item"><strong>Jorge Quintana</strong> — Dirección de Comunicaciones y Participación Comunitaria</li>
+    <li class="cabinet-item"><strong>Patrinia Redd</strong> — Dirección de Salud y Bienestar</li>
+    <li class="cabinet-item"><strong>Carlos Reyna</strong> — Dirección de Tecnología</li>
+    <li class="cabinet-item"><strong>Katherine Rivera</strong> — Dirección de Estudiantes Multilingües y Programas Categóricos</li>
+    <li class="cabinet-item"><strong>Richie Wilim</strong> — Dirección de Servicios de Nutrición Infantil</li>
   </ul>
 
   <p style="margin-top:1.6rem"><a class="doc-link" href="https://www.rcsdk8.net/our-district/our-board-of-trustees/meet-the-trustees" target="_blank" rel="noopener">Directorio completo de la Mesa Directiva en rcsdk8.net →</a></p>
