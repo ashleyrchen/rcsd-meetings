@@ -684,6 +684,12 @@ const districtCSS = `
     .header-meta { gap: 1.5rem; }
     .glossary { columns: 1; }
     .toc a { padding: 0.8rem 0.6rem; font-size: 0.6rem; }
+    /* Fade the right edge to signal the section nav scrolls horizontally. */
+    .toc-inner {
+      padding: 0 1.2rem;
+      -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 1.4rem), transparent);
+      mask-image: linear-gradient(to right, #000 calc(100% - 1.4rem), transparent);
+    }
     .goal-metrics { grid-template-columns: 1fr; }
     .doc-school-grid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); }
     .doc-tab { padding: 0.6rem 0.8rem; font-size: 0.6rem; }

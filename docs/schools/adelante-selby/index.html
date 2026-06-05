@@ -203,6 +203,26 @@
     align-items: center;
     gap: 0.5rem;
   }
+  .site-nav-search { display: flex; }
+  .site-nav-search input {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.02em;
+    color: #fff;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.35);
+    border-radius: 3px;
+    padding: 0.35rem 0.65rem;
+    width: 9rem;
+    transition: border-color 0.2s, background 0.2s, width 0.2s;
+  }
+  .site-nav-search input::placeholder { color: rgba(255,255,255,0.55); }
+  .site-nav-search input:focus {
+    outline: none;
+    background: rgba(255,255,255,0.14);
+    border-color: rgba(255,255,255,0.7);
+    width: 11rem;
+  }
   .site-nav-lang {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 0.75rem;
@@ -248,8 +268,24 @@
 
   /* ---- RESPONSIVE (nav + footer) ---- */
   @media (max-width: 640px) {
-    .site-nav-tab { padding: 0.6rem 0.7rem; font-size: 0.7rem; }
-    .site-nav-inner { padding: 0 1.2rem; }
+    .site-nav-inner { padding: 0 0.9rem; gap: 0.4rem; }
+    /* Tabs become a horizontal scroll strip so every link stays reachable
+       without overflowing the viewport; search stays pinned on the right.
+       The right-edge mask fades the last tab to hint there's more to scroll. */
+    .site-nav-tabs {
+      flex: 1 1 auto;
+      min-width: 0;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 1.4rem), transparent);
+      mask-image: linear-gradient(to right, #000 calc(100% - 1.4rem), transparent);
+    }
+    .site-nav-tabs::-webkit-scrollbar { display: none; }
+    .site-nav-tab { flex: 0 0 auto; padding: 0.6rem 0.65rem; font-size: 0.7rem; }
+    .site-nav-right { flex: 0 0 auto; }
+    .site-nav-search input { width: 5rem; }
+    .site-nav-search input:focus { width: 6.5rem; }
   }
 
   .section a {
@@ -970,6 +1006,7 @@
       <a href="/blog/" class="site-nav-tab">Blog</a>
     </div>
     <div class="site-nav-right">
+      <form class="site-nav-search" role="search" action="/search/" method="get"><input type="search" name="q" placeholder="Search…" aria-label="Search" autocomplete="off"></form>
       <a href="/escuelas/adelante-selby/" class="site-nav-lang">ES</a>
     </div>
   </div>

@@ -181,10 +181,24 @@
 
   /* ---- RESPONSIVE (nav + footer) ---- */
   @media (max-width: 640px) {
-    .site-nav-tab { padding: 0.6rem 0.7rem; font-size: 0.7rem; }
-    .site-nav-inner { padding: 0 1.2rem; }
-    .site-nav-search input { width: 6rem; }
-    .site-nav-search input:focus { width: 7.5rem; }
+    .site-nav-inner { padding: 0 0.9rem; gap: 0.4rem; }
+    /* Tabs become a horizontal scroll strip so every link stays reachable
+       without overflowing the viewport; search stays pinned on the right.
+       The right-edge mask fades the last tab to hint there's more to scroll. */
+    .site-nav-tabs {
+      flex: 1 1 auto;
+      min-width: 0;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 1.4rem), transparent);
+      mask-image: linear-gradient(to right, #000 calc(100% - 1.4rem), transparent);
+    }
+    .site-nav-tabs::-webkit-scrollbar { display: none; }
+    .site-nav-tab { flex: 0 0 auto; padding: 0.6rem 0.65rem; font-size: 0.7rem; }
+    .site-nav-right { flex: 0 0 auto; }
+    .site-nav-search input { width: 5rem; }
+    .site-nav-search input:focus { width: 6.5rem; }
   }
 
   .section a {
@@ -853,6 +867,12 @@
     .header-meta { gap: 1.5rem; }
     .glossary { columns: 1; }
     .toc a { padding: 0.8rem 0.6rem; font-size: 0.6rem; }
+    /* Fade the right edge to signal the section nav scrolls horizontally. */
+    .toc-inner {
+      padding: 0 1.2rem;
+      -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 1.4rem), transparent);
+      mask-image: linear-gradient(to right, #000 calc(100% - 1.4rem), transparent);
+    }
     .goal-metrics { grid-template-columns: 1fr; }
     .doc-school-grid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); }
     .doc-tab { padding: 0.6rem 0.8rem; font-size: 0.6rem; }
@@ -1035,6 +1055,7 @@
 <nav class="toc">
   <div class="toc-inner">
     <a href="#about">About</a>
+    <a href="#trustees">Board</a>
     <a href="#performance">Performance</a>
     <a href="#budget">Budget</a>
     <a href="#lcap">LCAP goals</a>
@@ -1187,7 +1208,7 @@
           <span class="supt-name">Dr. Christian J. Rubalcaba</span>
           <span class="supt-title">Superintendent (incoming)</span>
           <div class="supt-status">Begins July 1, 2026 — appointed January 21, 2026</div>
-          
+          <div class="supt-links"><a href="https://data.rcsd.info/board-packets/2026-01-21/Superintendent-s-Employment-Contract_Redwood-City-SD-Dr.-Christian-Rubalcaba-202.pdf" target="_blank" rel="noopener">Employment agreement →</a></div>
         </div>
       </div>
   </div>
