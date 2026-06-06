@@ -1,7 +1,7 @@
 ---
 name: RCSD Data Analyst
-description: This skill should be used when the user asks about "Redwood City schools", "RCSD", "school hours", "school enrollment", "school calendar", "is there school today", "next board meeting", "what's for lunch", "lunch menu", "report an absence", "IEP data", "special education", "EL percentage", "LTEL", "long-term English learner", "chronic absenteeism", "teacher diversity", "staff demographics", "teacher experience", "pupil-teacher ratio", "school site council", "SSC", "SPSA", "free and reduced lunch", "PTO", "Konstella", "ParentSquare", "which school", "board meeting", "SARC", "test scores", "CAASPP", "school budget", "RCEF", "Measure U", "expenditures", "district property", "former school site", "who leases the old campus", "watch board meeting", "compare schools", "school demographics", "meeting transcript", "board discussion", or any question about Redwood City School District schools, demographics, calendars, meetings, lunch menus, funding, staffing, or parent resources. Also activates when the user mentions a child's name in the context of school.
-version: 0.3.0
+description: This skill should be used when the user asks about "Redwood City schools", "RCSD", "school hours", "school enrollment", "school calendar", "is there school today", "next board meeting", "what's for lunch", "lunch menu", "report an absence", "IEP data", "special education", "EL percentage", "LTEL", "long-term English learner", "chronic absenteeism", "teacher diversity", "staff demographics", "teacher experience", "pupil-teacher ratio", "school site council", "SSC", "SPSA", "free and reduced lunch", "PTO", "Konstella", "ParentSquare", "which school", "board meeting", "SARC", "test scores", "CAASPP", "school budget", "RCEF", "Measure U", "expenditures", "district property", "former school site", "who leases the old campus", "watch board meeting", "compare schools", "school demographics", "meeting transcript", "board discussion", "who is my trustee", "who represents my area", "board member", "trustee area", "board president", "who is the superintendent", "new superintendent", "district cabinet", "CBO", "chief business official", "find the resolution", "board resolution", "employment contract", "find the agreement", "MOU", "board packet", "agenda item document", "warrant register", "change order", or any question about Redwood City School District schools, demographics, calendars, meetings, lunch menus, funding, staffing, trustees, board documents, or parent resources. Also activates when the user mentions a child's name in the context of school.
+version: 0.5.0
 ---
 
 # RCSD Data Analyst
@@ -49,6 +49,7 @@ Read these files from `data/` to answer questions. For field-by-field documentat
 | `district-calendar-2025-26.json` | ~17 events | "Is there school?" queries for 2025-26 year |
 | `district-calendar-2026-27.json` | ~17 events | "Is there school?" queries for 2026-27 year |
 | `governance-calendar.json` | ~12 events | Board meeting schedule |
+| `trustees.json` | 5 trustees + leadership | **Who is my board member / trustee?** Board roster keyed by trustee area (name, area, officer role, term years, school assignments, email), the superintendent transition (Dr. Baker through 2026-06-30 → Dr. Rubalcaba from 2026-07-01), and district cabinet (Deputy Supt. Wendy Kelly, Asst. Supt. Anna Herrera, CBO Rick Edson) + 14 directors/coordinators (`directors[]`). Use for "who represents area N", "who is the board president", "who is the superintendent", "when does X's term end", "who is the director of special education / HR / technology". |
 
 ### Demographics & Academics
 
@@ -76,10 +77,11 @@ Read these files from `data/` to answer questions. For field-by-field documentat
 | `meeting-summaries.json` | 194 entries | AI-generated 1-3 sentence summaries per meeting |
 | `meeting-summaries-es.json` | 194 entries | Spanish translations of summaries |
 | `school-board-summaries.json` | ~750 entries | Agenda items tagged to specific schools |
-| `board-memos/{date}.json` | Per-meeting | Per-meeting agenda details and attachments |
+| `board-memos/{date}.json` | Per-meeting | Per-meeting agenda details and staff memo text (the narrative); does **not** carry attachment file URLs — use `agenda-attachments.json` for those |
+| `agenda-attachments.json` | Per-meeting, keyed by date | **The complete raw list of every PDF attached to every agenda item** — `{aid, title, url, page}` per attachment. This is where named documents live: **resolutions, employment contracts, agreements, MOUs, change orders, warrant registers.** grep it by title. Most comprehensive document source. |
 | `youtube-index.json` | ~893 entries | YouTube video links for meeting recordings. Each entry has a `kind` field (`board` or a committee id like `cboc`); board consumers filter to `kind === 'board'`. |
 | `timestamp-map.json` | 694 offsets | Agenda item to video timestamp mapping |
-| `document-index.json` | Taxonomy | Categorized index of all board attachments |
+| `document-index.json` | Taxonomy | Attachments **classified** by type/subtype/school/year (`documents[]` with `meetingDate`, `itemLabel`, `aid`, `filename`). Good for "all SARCs" / "budget docs for school X". **Caveat: it is a curated taxonomy and omits unclassified item types — e.g. the superintendent employment contract is NOT in it. If a title search here is empty, fall back to `agenda-attachments.json` before concluding a document doesn't exist.** |
 
 ### Board Policies (619 policies, bylaws, and regulations)
 
@@ -112,6 +114,16 @@ Read the relevant file and extract the answer. Examples: school phone number, be
 
 ### Cross-file analysis (join reasoning)
 Read multiple files and reason across them. Examples: "Which schools have high EL% but low math scores?" requires joining `sarc/sarc-summary.json` (demographics + CAASPP) with `schools.json` (enrollment context).
+
+### Finding a specific named board document (resolution, contract, agreement, MOU, change order, warrant register)
+Don't conclude "it isn't in our data" from one empty grep. Follow this order:
+
+1. **grep `data/agenda-attachments.json`** by title keyword (e.g. `rubalcaba`, `employment contract`, `Resolution No`). It is keyed by meeting date and lists **every** attachment as `{aid, title, url, page}` — the most complete source.
+2. Also grep `data/document-index.json` (classified) if you want to filter by type/school/year — but remember it omits unclassified items, so a miss here is **not** authoritative.
+3. **Build the public PDF URL** from the attachment's meeting date + `filename` (in `document-index.json`): `https://data.rcsd.info/board-packets/{meetingDate}/{filename}`. (`agenda-attachments.json` carries the original Simbli `Attachment.aspx?AID=…` link; the friendly R2 mirror is `board-packets/{date}/{filename}` or `board-packets/{aid}.pdf`.)
+4. If you know the meeting but not the item, read that meeting in `meetings-data.json` / `board-memos/{date}.json` to get the agenda item label, then look up its attachments.
+
+Example: the superintendent's employment contract → `agenda-attachments.json` under `2026-01-21` (agenda item 12.3) → `https://data.rcsd.info/board-packets/2026-01-21/Superintendent-s-Employment-Contract_Redwood-City-SD-Dr.-Christian-Rubalcaba-202.pdf`.
 
 ### Temporal/topical analysis (meetings corpus)
 For "what has the board discussed about X?", search `meetings-data.json` for topic keywords in the `topics` array and item titles, then read `meeting-summaries.json` for context. For deeper detail, read the specific `board-memos/{date}.json` files. See `references/meetings-guide.md` for navigating the meeting corpus.

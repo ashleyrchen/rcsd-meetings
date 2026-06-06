@@ -166,6 +166,53 @@ Top-level: `{ _metadata, properties[] }` — district-owned or district-leased r
 
 ---
 
+## data/trustees.json
+
+The elected Board of Trustees plus district leadership. Three top-level keys: `trustees` (array), `superintendent` (object with `current` + `incoming`), and `cabinet` (array). Plus a `_metadata` provenance block.
+
+### Sample Trustee Record
+
+```json
+{
+  "slug": "david-weekly",
+  "name": "David Weekly",
+  "area": 2,
+  "roleEn": "President",
+  "roleEs": "Presidente",
+  "termStartYear": 2022,
+  "termEndYear": 2026,
+  "email": "dweekly@rcsdk8.net",
+  "assignmentsEn": ["Kennedy Middle School", "Facilities", "Roy Cloud School", "Taft Community School"],
+  "assignmentsEs": ["Kennedy Middle School", "Instalaciones", "Roy Cloud School", "Taft Community School"],
+  "photo": "david-weekly.jpg",
+  "photoSource": "https://resources.finalsite.net/.../TrusteeDavidWeekly.jpg"
+}
+```
+
+### Schema
+
+| Field | Type | Notes |
+|-------|------|-------|
+| `slug` | string | Stable kebab-case id |
+| `area` | int | Trustee area 1–5; the by-area seat the member represents |
+| `roleEn` / `roleEs` | string | Officer role (President, Vice President, Clerk) or special liaison role; ES is gender-correct |
+| `termStartYear` | int | **Derived** as `termEndYear − 4` (Cal. Ed. Code §35107: 4-year terms), not stated on source |
+| `termEndYear` | int | Authoritative — the year the current term expires (from the source page) |
+| `email` | string | District email |
+| `assignmentsEn` / `assignmentsEs` | string[] | School/area oversight; school proper names kept in English in both languages |
+| `photo` | string | Filename under `https://data.rcsd.info/trustees/`; null if none |
+| `photoSource` | string | Upstream CDN URL the headshot was mirrored from |
+
+`superintendent.current` / `superintendent.incoming` use `name`, `titleEn`/`titleEs`, `statusEn`/`statusEs`, `email`, `photo`, `photoSource`, `bioUrl`, and `contractUrl` (nullable). An optional `photoCrop` (e.g. `"4:5"`) tells `fetch-leadership-photos.mjs` to center-crop a non-portrait source via `sips`; `photoNote` documents why. `cabinet[]` (Deputy Superintendent, Assistant Superintendent of Educational Services, CBO) and `directors[]` (14 directors/coordinators) each use `slug`, `name`, `titleEn`, `titleEs`. ES titles for directors use the gender-neutral "Dirección de …" form to avoid misgendering by name.
+
+### Key Field Notes
+
+- **Areas 2 and 5** (David Weekly, Cecilia I. Márquez) expire 2026 and are on the November 2026 ballot; **Areas 1, 3, 4** expire 2028.
+- **Superintendent transition:** Dr. John R. Baker serves through 2026-06-30; Dr. Christian J. Rubalcaba (appointed 2026-01-21) begins 2026-07-01.
+- Hand-maintained; re-check after each November election and the December board reorganization. See `_metadata.refreshProcedure`.
+
+---
+
 ## data/district-calendar-{year}.json
 
 ### Sample
@@ -452,6 +499,38 @@ Document types and counts:
 - `policy/policy` (52), `budget/first-interim` (48), `lcap/annual` (46), `school-report/presentation` (46)
 - `sarc/report` (42), `compliance/williams-ucp` (40), `budget/adopted-budget` (36)
 - `labor/csea` (30), `labor/rcta` (29), `tax/bond` (18)
+
+**Caveat:** this is a *curated taxonomy* and does not contain every attachment — unclassified item types are absent (e.g. the superintendent employment contract). When a title search here is empty, fall back to `agenda-attachments.json` (below) before concluding a document doesn't exist.
+
+---
+
+## data/agenda-attachments.json
+
+The **complete raw list** of every PDF attached to every agenda item — the authoritative source for finding a specific named document (resolutions, employment contracts, agreements, MOUs, change orders, warrant registers).
+
+Shape: an object keyed by meeting date; each value is an array of attachment records.
+
+```json
+{
+  "2026-01-21": [
+    {
+      "aid": "1376174",
+      "title": "Superintendent's Employment Contract_Redwood City SD & Dr. Christian Rubalcaba 20206-2028",
+      "url": "https://simbli.eboardsolutions.com//Meetings/Attachment.aspx?S=36030397&AID=1376174",
+      "page": 20
+    }
+  ]
+}
+```
+
+| Field | Notes |
+|-------|-------|
+| `aid` | Simbli attachment id; also keys the R2 mirror `board-packets/{aid}.pdf` |
+| `title` | Attachment title — grep this to find a document by name |
+| `url` | Original Simbli `Attachment.aspx` link |
+| `page` | Page within the combined board packet |
+
+**Public PDF URL:** `https://data.rcsd.info/board-packets/{meetingDate}/{filename}`, where `filename` is the sanitized title (from `document-index.json`'s `filename` field, when classified). See the SKILL's "Finding a specific named board document" recipe.
 
 ---
 

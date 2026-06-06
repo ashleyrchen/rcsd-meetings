@@ -116,6 +116,26 @@
     align-items: center;
     gap: 0.5rem;
   }
+  .site-nav-search { display: flex; }
+  .site-nav-search input {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.02em;
+    color: #fff;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.35);
+    border-radius: 3px;
+    padding: 0.35rem 0.65rem;
+    width: 9rem;
+    transition: border-color 0.2s, background 0.2s, width 0.2s;
+  }
+  .site-nav-search input::placeholder { color: rgba(255,255,255,0.55); }
+  .site-nav-search input:focus {
+    outline: none;
+    background: rgba(255,255,255,0.14);
+    border-color: rgba(255,255,255,0.7);
+    width: 11rem;
+  }
   .site-nav-lang {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 0.75rem;
@@ -161,8 +181,24 @@
 
   /* ---- RESPONSIVE (nav + footer) ---- */
   @media (max-width: 640px) {
-    .site-nav-tab { padding: 0.6rem 0.7rem; font-size: 0.7rem; }
-    .site-nav-inner { padding: 0 1.2rem; }
+    .site-nav-inner { padding: 0 0.9rem; gap: 0.4rem; }
+    /* Tabs become a horizontal scroll strip so every link stays reachable
+       without overflowing the viewport; search stays pinned on the right.
+       The right-edge mask fades the last tab to hint there's more to scroll. */
+    .site-nav-tabs {
+      flex: 1 1 auto;
+      min-width: 0;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 1.4rem), transparent);
+      mask-image: linear-gradient(to right, #000 calc(100% - 1.4rem), transparent);
+    }
+    .site-nav-tabs::-webkit-scrollbar { display: none; }
+    .site-nav-tab { flex: 0 0 auto; padding: 0.6rem 0.65rem; font-size: 0.7rem; }
+    .site-nav-right { flex: 0 0 auto; }
+    .site-nav-search input { width: 5rem; }
+    .site-nav-search input:focus { width: 6.5rem; }
   }
 
   .section a {
@@ -831,6 +867,12 @@
     .header-meta { gap: 1.5rem; }
     .glossary { columns: 1; }
     .toc a { padding: 0.8rem 0.6rem; font-size: 0.6rem; }
+    /* Fade the right edge to signal the section nav scrolls horizontally. */
+    .toc-inner {
+      padding: 0 1.2rem;
+      -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 1.4rem), transparent);
+      mask-image: linear-gradient(to right, #000 calc(100% - 1.4rem), transparent);
+    }
     .goal-metrics { grid-template-columns: 1fr; }
     .doc-school-grid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); }
     .doc-tab { padding: 0.6rem 0.8rem; font-size: 0.6rem; }
@@ -840,6 +882,121 @@
   .site-footer { font-size: 0.8rem; text-align: left; }
   .footer-nav { margin-top: 1rem; }
   .footer-nav a { font-size: 0.68rem; margin: 0 1.5rem 0 0; }
+  .trustee-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
+    gap: 1rem;
+    margin-top: 1.2rem;
+  }
+  .trustee-card {
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+  }
+  .trustee-card:hover { border-color: var(--green-mid); }
+  .trustee-photo {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: center top;
+    background: var(--green-wash);
+    display: block;
+  }
+  .trustee-photo.placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 2.6rem;
+    font-weight: 300;
+    color: var(--green-mid);
+  }
+  .trustee-body { padding: 0.85rem 0.95rem 1rem; display: flex; flex-direction: column; gap: 0.28rem; }
+  .trustee-area {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--green-mid);
+  }
+  .trustee-name { font-family: 'Fraunces', Georgia, serif; font-size: 1.08rem; line-height: 1.12; color: var(--green-deep); }
+  .trustee-role { font-size: 0.8rem; font-style: italic; color: var(--text-secondary); line-height: 1.3; }
+  .trustee-term { font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; color: var(--text-muted); }
+  .trustee-assign { font-size: 0.74rem; color: var(--text-muted); line-height: 1.4; margin-top: 0.1rem; }
+  .trustee-email { font-size: 0.74rem; margin-top: 0.15rem; }
+  .trustee-email a { word-break: break-word; }
+
+  .leadership-subhead {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 1.35rem;
+    font-weight: 400;
+    color: var(--green-deep);
+    margin: 2.4rem 0 0.2rem;
+  }
+  .leadership-note { font-size: 0.85rem; color: var(--text-muted); margin: 0 0 0.4rem; }
+  .supt-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(255px, 1fr));
+    gap: 1rem;
+    margin-top: 0.9rem;
+  }
+  .supt-card {
+    display: flex;
+    gap: 0.9rem;
+    align-items: flex-start;
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    padding: 0.95rem;
+    background: #fff;
+  }
+  .supt-card.incoming { border-color: var(--green-mid); background: var(--green-wash); }
+  .supt-photo {
+    width: 78px;
+    height: 96px;
+    flex: 0 0 auto;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 8px;
+    background: var(--green-pale);
+  }
+  .supt-photo.placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 1.5rem;
+    color: var(--green-mid);
+  }
+  .supt-badge {
+    display: inline-block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.56rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.12rem 0.45rem;
+    border-radius: 999px;
+    margin-bottom: 0.3rem;
+  }
+  .supt-badge.incoming { background: var(--green-mid); color: #fff; }
+  .supt-badge.outgoing { background: var(--amber-light); color: var(--green-deep); }
+  .supt-name { font-family: 'Fraunces', Georgia, serif; font-size: 1.05rem; line-height: 1.15; color: var(--green-deep); }
+  .supt-title { font-size: 0.8rem; font-style: italic; color: var(--text-secondary); }
+  .supt-status { font-family: 'IBM Plex Mono', monospace; font-size: 0.68rem; color: var(--text-muted); margin-top: 0.25rem; line-height: 1.35; }
+  .supt-links { font-size: 0.74rem; margin-top: 0.3rem; }
+
+  .cabinet-list {
+    list-style: none;
+    padding: 0;
+    margin: 0.7rem 0 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+    gap: 0.45rem 2rem;
+  }
+  .cabinet-item { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.4; }
+  .cabinet-item strong { font-family: 'Fraunces', Georgia, serif; font-weight: 400; color: var(--green-deep); }
 </style>
 </head>
 <body>
@@ -855,6 +1012,7 @@
       <a href="/blog/es/" class="site-nav-tab">Blog</a>
     </div>
     <div class="site-nav-right">
+      <form class="site-nav-search" role="search" action="/buscar/" method="get"><input type="search" name="q" placeholder="Buscar…" aria-label="Buscar" autocomplete="off"></form>
       <a href="/district/" class="site-nav-lang">EN</a>
     </div>
   </div>
@@ -897,6 +1055,7 @@
 <nav class="toc">
   <div class="toc-inner">
     <a href="#about">Distrito</a>
+    <a href="#trustees">Mesa Directiva</a>
     <a href="#performance">Resultados</a>
     <a href="#budget">Presupuesto</a>
     <a href="#lcap">Metas LCAP</a>
@@ -966,10 +1125,128 @@
     <p>RCSD tambi&eacute;n autoriza y supervisa la gesti&oacute;n fiscal de tres <a href="/escuelas/#charters">escuelas ch&aacute;rter</a> independientes: Connect Community Charter, KIPP Excelencia Community Preparatory y Rocketship Redwood City Prep. Sus presupuestos y auditor&iacute;as se presentan regularmente a la mesa directiva.</p>
   </section>
 
-  <!-- ======== 2. RESULTADOS ======== -->
+  <section class="section" id="trustees">
+  <div class="section-rule"></div>
+  <div class="section-num">02</div>
+  <h2>Mesa Directiva</h2>
+  <p class="section-subtitle">El RCSD es gobernado por cinco síndicos, cada uno elegido por un área electoral geográfica para un período de cuatro años.</p>
+  <div class="trustee-grid">
+      <div class="trustee-card">
+        <img class="trustee-photo" src="https://data.rcsd.info/trustees/jennifer-ng-kwing-king.jpg" alt="Jennifer Ng Kwing King" loading="lazy" decoding="async">
+        <div class="trustee-body">
+          <span class="trustee-area">Área Electoral 1</span>
+          <span class="trustee-name">Jennifer Ng Kwing King</span>
+          <span class="trustee-role">Secretaria</span>
+          <span class="trustee-term">Período 2024–2028</span>
+          <span class="trustee-assign">Supervisa: Child Development Center, Henry Ford Elementary School, McKinley Institute of Technology, Adelante Selby Spanish Immersion School</span>
+          <span class="trustee-email"><a href="mailto:jngkwingking@rcsdk8.net">jngkwingking@rcsdk8.net</a></span>
+        </div>
+      </div>
+      <div class="trustee-card">
+        <img class="trustee-photo" src="https://data.rcsd.info/trustees/david-weekly.jpg" alt="David Weekly" loading="lazy" decoding="async">
+        <div class="trustee-body">
+          <span class="trustee-area">Área Electoral 2</span>
+          <span class="trustee-name">David Weekly</span>
+          <span class="trustee-role">Presidente</span>
+          <span class="trustee-term">Período 2022–2026</span>
+          <span class="trustee-assign">Supervisa: Kennedy Middle School, Instalaciones, Roy Cloud School, Taft Community School</span>
+          <span class="trustee-email"><a href="mailto:dweekly@rcsdk8.net">dweekly@rcsdk8.net</a></span>
+        </div>
+      </div>
+      <div class="trustee-card">
+        <img class="trustee-photo" src="https://data.rcsd.info/trustees/david-li.jpg" alt="David Li" loading="lazy" decoding="async">
+        <div class="trustee-body">
+          <span class="trustee-area">Área Electoral 3</span>
+          <span class="trustee-name">David Li</span>
+          <span class="trustee-role">Representante ante el Comité del Condado de San Mateo para la Organización de Distritos Escolares</span>
+          <span class="trustee-term">Período 2024–2028</span>
+          <span class="trustee-assign">Supervisa: Clifford School, Connect Community Charter School, North Star Academy</span>
+          <span class="trustee-email"><a href="mailto:dli@rcsdk8.net">dli@rcsdk8.net</a></span>
+        </div>
+      </div>
+      <div class="trustee-card">
+        <img class="trustee-photo" src="https://data.rcsd.info/trustees/mike-wells.jpg" alt="Mike Wells" loading="lazy" decoding="async">
+        <div class="trustee-body">
+          <span class="trustee-area">Área Electoral 4</span>
+          <span class="trustee-name">Mike Wells</span>
+          <span class="trustee-role">Enlace con la Asociación de Juntas Escolares de California (CSBA) y la Asociación de Juntas Escolares del Condado de San Mateo</span>
+          <span class="trustee-term">Período 2024–2028</span>
+          <span class="trustee-assign">Supervisa: Garfield Community School, Rocketship Charter School, Roosevelt School</span>
+          <span class="trustee-email"><a href="mailto:mwells@rcsdk8.net">mwells@rcsdk8.net</a></span>
+        </div>
+      </div>
+      <div class="trustee-card">
+        <img class="trustee-photo" src="https://data.rcsd.info/trustees/cecilia-marquez.jpg" alt="Cecilia I. Márquez" loading="lazy" decoding="async">
+        <div class="trustee-body">
+          <span class="trustee-area">Área Electoral 5</span>
+          <span class="trustee-name">Cecilia I. Márquez</span>
+          <span class="trustee-role">Vicepresidenta</span>
+          <span class="trustee-term">Período 2022–2026</span>
+          <span class="trustee-assign">Supervisa: KIPP Charter School, Hoover Community School, Orion Alternative Elementary School, Educación Especial</span>
+          <span class="trustee-email"><a href="mailto:cmarquez@rcsdk8.net">cmarquez@rcsdk8.net</a></span>
+        </div>
+      </div>
+  </div>
+
+  <h3 class="leadership-subhead">Superintendente</h3>
+  <p class="leadership-note">El distrito está en una transición de superintendente.</p>
+  <div class="supt-grid">
+      <div class="supt-card">
+        <img class="supt-photo" src="https://data.rcsd.info/trustees/john-baker.jpg" alt="Dr. John R. Baker, Ed.D." loading="lazy" decoding="async">
+        <div class="supt-meta">
+          <span class="supt-badge outgoing">Actual</span>
+          <span class="supt-name">Dr. John R. Baker, Ed.D.</span>
+          <span class="supt-title">Superintendente</span>
+          <div class="supt-status">En el cargo hasta el 30 de junio de 2026</div>
+          <span class="trustee-email"><a href="mailto:jbaker@rcsdk8.net">jbaker@rcsdk8.net</a></span>
+          
+        </div>
+      </div>
+      <div class="supt-card incoming">
+        <img class="supt-photo" src="https://data.rcsd.info/trustees/christian-rubalcaba.jpg" alt="Dr. Christian J. Rubalcaba" loading="lazy" decoding="async">
+        <div class="supt-meta">
+          <span class="supt-badge incoming">Entrante</span>
+          <span class="supt-name">Dr. Christian J. Rubalcaba</span>
+          <span class="supt-title">Superintendente (entrante)</span>
+          <div class="supt-status">Comienza el 1 de julio de 2026 — nombrado el 21 de enero de 2026</div>
+          <span class="trustee-email"><a href="mailto:crubalcaba@rcsdk8.net">crubalcaba@rcsdk8.net</a></span>
+          <div class="supt-links"><a href="https://www.rcsdk8.net/our-district/superintendent-transition/meet-dr-rubalcaba" target="_blank" rel="noopener">Biografía →</a> · <a href="https://data.rcsd.info/board-packets/2026-01-21/Superintendent-s-Employment-Contract_Redwood-City-SD-Dr.-Christian-Rubalcaba-202.pdf" target="_blank" rel="noopener">Contrato de empleo →</a></div>
+        </div>
+      </div>
+  </div>
+
+  <h3 class="leadership-subhead">Gabinete del Distrito</h3>
+  <ul class="cabinet-list">
+    <li class="cabinet-item"><strong>Wendy Kelly</strong> — Subsuperintendente</li>
+    <li class="cabinet-item"><strong>Anna Herrera</strong> — Subsuperintendente Auxiliar de Servicios Educativos</li>
+    <li class="cabinet-item"><strong>Rick Edson</strong> — Director de Finanzas (Chief Business Official)</li>
+  </ul>
+
+  <h3 class="leadership-subhead">Liderazgo del Distrito</h3>
+  <ul class="cabinet-list">
+    <li class="cabinet-item"><strong>Enrique Calderon</strong> — Coordinación de Aprendizaje Extendido</li>
+    <li class="cabinet-item"><strong>Liz Calderon</strong> — Dirección de Escuelas Comunitarias y Alianzas</li>
+    <li class="cabinet-item"><strong>Kimberley Chen</strong> — Dirección de Servicios Fiscales</li>
+    <li class="cabinet-item"><strong>Martin Cervantes</strong> — Dirección de Mantenimiento, Operaciones y Transporte</li>
+    <li class="cabinet-item"><strong>Ana Paula Garay, LMFT</strong> — Clínica Principal de Salud Mental</li>
+    <li class="cabinet-item"><strong>Dr. Maeve Mulholland, Ed.D.</strong> — Dirección de Educación Especial</li>
+    <li class="cabinet-item"><strong>Jennifer Pare</strong> — Dirección del Centro de Desarrollo Infantil</li>
+    <li class="cabinet-item"><strong>Antonio Pérez</strong> — Dirección de Servicios Estudiantiles</li>
+    <li class="cabinet-item"><strong>Patricia Pérez</strong> — Dirección de Recursos Humanos</li>
+    <li class="cabinet-item"><strong>Jorge Quintana</strong> — Dirección de Comunicaciones y Participación Comunitaria</li>
+    <li class="cabinet-item"><strong>Patrinia Redd</strong> — Dirección de Salud y Bienestar</li>
+    <li class="cabinet-item"><strong>Carlos Reyna</strong> — Dirección de Tecnología</li>
+    <li class="cabinet-item"><strong>Katherine Rivera</strong> — Dirección de Estudiantes Multilingües y Programas Categóricos</li>
+    <li class="cabinet-item"><strong>Richie Wilim</strong> — Dirección de Servicios de Nutrición Infantil</li>
+  </ul>
+
+  <p style="margin-top:1.6rem"><a class="doc-link" href="https://www.rcsdk8.net/our-district/our-board-of-trustees/meet-the-trustees" target="_blank" rel="noopener">Directorio completo de la Mesa Directiva en rcsdk8.net →</a></p>
+</section>
+
+  <!-- ======== 3. RESULTADOS ======== -->
   <section class="section" id="performance">
     <div class="section-rule"></div>
-    <div class="section-num">02</div>
+    <div class="section-num">03</div>
     <h2>C&oacute;mo les va a los estudiantes</h2>
 
     <h3>Por qu&eacute; importa el crecimiento</h3>
@@ -1027,10 +1304,10 @@
     <p>La tasa de suspensiones baj&oacute; de 2.2% a 1.0%. Fue de 0% en Adelante Selby y de 10.8% en McKinley MIT. <span class="source">(<a href="https://www.cde.ca.gov/ta/ac/sa/">SARCs 2023-24</a>, publicados en 2024-25; <a href="https://simbli.eboardsolutions.com/SB_Meetings/SB_MeetingListing.aspx?S=36030397">LCAP 2025-26</a>, adoptado en junio de 2025)</span></p>
   </section>
 
-  <!-- ======== 3. PRESUPUESTO ======== -->
+  <!-- ======== 4. PRESUPUESTO ======== -->
   <section class="section" id="budget">
     <div class="section-rule"></div>
-    <div class="section-num">03</div>
+    <div class="section-num">04</div>
     <h2>De d&oacute;nde viene y a d&oacute;nde va el dinero</h2>
 
     <p>RCSD es un distrito de &ldquo;Ayuda B&aacute;sica&rdquo; (Basic Aid). Eso quiere decir que los impuestos locales a la propiedad le dan m&aacute;s dinero de lo que recibir&iacute;a con la f&oacute;rmula normal del estado. Por eso los impuestos a la propiedad son la fuente principal de ingresos. <span class="source">(<a href="https://simbli.eboardsolutions.com/SB_Meetings/SB_MeetingListing.aspx?S=36030397">Primer Informe Interino 2025-26</a>, dic. 2025, p. 7)</span></p>
@@ -1140,10 +1417,10 @@
     <p>La parte m&aacute;s grande &mdash; 17 puestos de maestros ($2.30 millones) &mdash; se describe como &ldquo;Inscripci&oacute;n/Desgaste&rdquo;. Eso quiere decir que los puestos se eliminan cuando un maestro se va o cuando baja la cantidad de alumnos, no por despidos de maestros actuales. Tambi&eacute;n se reduce $400K en maestros sustitutos. Del lado del personal de apoyo, se eliminan 7 puestos de asistentes de clase y 2 de enfermeras (LVN) ($712K), adem&aacute;s de un especialista en ex&aacute;menes. Los recortes administrativos incluyen al Director de Servicios Estudiantiles y al Coordinador de Escuelas Comunitarias, entre otros. Otros $1.28 millones vienen de manejar servicios de educaci&oacute;n especial dentro del distrito en vez de contratarlos por fuera.</p>
   </section>
 
-  <!-- ======== 4. METAS LCAP ======== -->
+  <!-- ======== 5. METAS LCAP ======== -->
   <section class="section" id="lcap">
     <div class="section-rule"></div>
-    <div class="section-num">04</div>
+    <div class="section-num">05</div>
     <h2>En qu&eacute; est&aacute; trabajando el distrito</h2>
 
     <p class="has-margin-link">El LCAP es el documento principal de planeaci&oacute;n del distrito. Establece metas, describe programas y mide el progreso. El LCAP 2025-26 de RCSD tiene tres metas.
@@ -1247,10 +1524,10 @@
     <p>En la encuesta del LCAP, las familias dijeron que lo m&aacute;s importante es: servicios de salud mental, asistentes biling&uuml;es en las escuelas con m&aacute;s necesidad, tutor&iacute;a despu&eacute;s de clases, personal de apoyo para comportamiento y maestros especializados en lectura. <span class="source">(<a href="https://simbli.eboardsolutions.com/SB_Meetings/SB_MeetingListing.aspx?S=36030397">LCAP 2025-26</a>, adoptado en junio de 2025, p. 20)</span></p>
   </section>
 
-  <!-- ======== 5. MAESTROS ======== -->
+  <!-- ======== 6. MAESTROS ======== -->
   <section class="section" id="staffing">
     <div class="section-rule"></div>
-    <div class="section-num">05</div>
+    <div class="section-num">06</div>
     <h2>Los maestros</h2>
 
     <h3>Credenciales</h3>
@@ -1293,10 +1570,10 @@
     <p>El distrito ten&iacute;a 302 puestos de maestros en 2024-25. La rotaci&oacute;n ha bajado: 60 se fueron en 2022-23, 51 en 2023-24 y 38 en 2024-25 (11.8% de rotaci&oacute;n). De esos 38, a 18 no les renovaron contrato, 16 renunciaron y 4 se jubilaron. <span class="source">(<a href="https://simbli.eboardsolutions.com/SB_Meetings/SB_MeetingListing.aspx?S=36030397">Informe de Datos de Recursos Humanos de RCSD</a>, marzo de 2026)</span></p>
   </section>
 
-  <!-- ======== 6. PRESUPUESTOS ESCOLARES ======== -->
+  <!-- ======== 7. PRESUPUESTOS ESCOLARES ======== -->
   <section class="section" id="spsa">
     <div class="section-rule"></div>
-    <div class="section-num">06</div>
+    <div class="section-num">07</div>
     <h2>Presupuestos extra por escuela</h2>
 
     <p>Adem&aacute;s de los costos b&aacute;sicos de operaci&oacute;n del distrito (sueldos de maestros, edificios, administraci&oacute;n), cada escuela recibe dinero extra a trav&eacute;s de un Plan Escolar para el Logro Estudiantil (SPSA). Ese dinero paga cosas como consejeros adicionales, tutor&iacute;a, actividades de enriquecimiento y materiales.</p>
@@ -1332,10 +1609,10 @@
     <p>De d&oacute;nde viene el dinero depende de la poblaci&oacute;n de estudiantes de cada escuela. T&iacute;tulo I es dinero federal para escuelas con un alto porcentaje de alumnos de bajos recursos; North Star, Roy Cloud y Orion no lo reciben. McKinley MIT recibe $610K del distrito porque el estado lo identific&oacute; como necesitado de apoyo extra para grupos espec&iacute;ficos de estudiantes (una designaci&oacute;n llamada ATSI). Las contribuciones de padres (PTO/PTA) van desde $326K en North Star hasta $0 en Garfield, Taft, Hoover y Roosevelt. Measure U es el impuesto local. La Prop 28 financia artes y m&uacute;sica.</p>
   </section>
 
-  <!-- ======== 7. TENDENCIAS ======== -->
+  <!-- ======== 8. TENDENCIAS ======== -->
   <section class="section" id="trends">
     <div class="section-rule"></div>
-    <div class="section-num">07</div>
+    <div class="section-num">08</div>
     <h2>Lo que hay que observar</h2>
 
     <div class="trend-item">
@@ -1441,7 +1718,7 @@
 
 <section class="section" id="documents">
   <div class="section-rule"></div>
-  <div class="section-num">08</div>
+  <div class="section-num">09</div>
   <h2>Documentos e Informes</h2>
   <p class="section-subtitle">Planes escolares, presupuestos e informes de rendición de cuentas archivados de fuentes oficiales.</p>
   <div class="doc-tabs">
@@ -1708,22 +1985,6 @@
       <a class="doc-school-link" href="https://data.rcsd.info/board-packets/2026-03-11/RoyCloud-2025SARC.pdf" target="_blank" rel="noopener">Roy Cloud</a>
       <a class="doc-school-link" href="https://data.rcsd.info/board-packets/2026-03-11/Taft-2025SARC.pdf" target="_blank" rel="noopener">Taft</a>
     </div>
-    <h3 class="doc-year-heading">2024-25</h3>
-    <div class="doc-lang-label">Inglés</div>
-    <div class="doc-school-grid">
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2024-25/english/adelante-selby.pdf" target="_blank" rel="noopener">Adelante Selby</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2024-25/english/clifford.pdf" target="_blank" rel="noopener">Clifford</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2024-25/english/garfield.pdf" target="_blank" rel="noopener">Garfield</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2024-25/english/henry-ford.pdf" target="_blank" rel="noopener">Henry Ford</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2024-25/english/hoover.pdf" target="_blank" rel="noopener">Hoover</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2024-25/english/kennedy.pdf" target="_blank" rel="noopener">Kennedy</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2024-25/english/mckinley-mit.pdf" target="_blank" rel="noopener">McKinley MIT</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2024-25/english/north-star.pdf" target="_blank" rel="noopener">North Star</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2024-25/english/orion.pdf" target="_blank" rel="noopener">Orion</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2024-25/english/roosevelt.pdf" target="_blank" rel="noopener">Roosevelt</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2024-25/english/roy-cloud.pdf" target="_blank" rel="noopener">Roy Cloud</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2024-25/english/taft.pdf" target="_blank" rel="noopener">Taft</a>
-    </div>
     <h3 class="doc-year-heading">2023-24</h3>
     <div class="doc-school-grid">
       <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CZY2NC02D2CA/$file/ENGLISH-AdelanteSelby-2023SARC.pdf" target="_blank" rel="noopener">Adelante Selby</a>
@@ -1737,42 +1998,12 @@
       <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CZY2MQ02D20E/$file/ENGLISH-RoyCloud-2023SARC.pdf" target="_blank" rel="noopener">Roy Cloud</a>
       <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CZY2MN02D1FB/$file/ENGLISH-Taft-2023SARC.pdf" target="_blank" rel="noopener">Taft</a>
     </div>
-    <div class="doc-lang-label">Inglés</div>
-    <div class="doc-school-grid">
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/english/adelante-selby.pdf" target="_blank" rel="noopener">Adelante Selby</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/english/clifford.pdf" target="_blank" rel="noopener">Clifford</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/english/garfield.pdf" target="_blank" rel="noopener">Garfield</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/english/henry-ford.pdf" target="_blank" rel="noopener">Henry Ford</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/english/hoover.pdf" target="_blank" rel="noopener">Hoover</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/english/kennedy.pdf" target="_blank" rel="noopener">Kennedy</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/english/mckinley-mit.pdf" target="_blank" rel="noopener">McKinley MIT</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/english/north-star.pdf" target="_blank" rel="noopener">North Star</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/english/orion.pdf" target="_blank" rel="noopener">Orion</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/english/roosevelt.pdf" target="_blank" rel="noopener">Roosevelt</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/english/roy-cloud.pdf" target="_blank" rel="noopener">Roy Cloud</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/english/taft.pdf" target="_blank" rel="noopener">Taft</a>
-    </div>
-    <div class="doc-lang-label">Español</div>
-    <div class="doc-school-grid">
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/spanish/adelante-selby.pdf" target="_blank" rel="noopener">Adelante Selby</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/spanish/clifford.pdf" target="_blank" rel="noopener">Clifford</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/spanish/garfield.pdf" target="_blank" rel="noopener">Garfield</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/spanish/henry-ford.pdf" target="_blank" rel="noopener">Henry Ford</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/spanish/hoover.pdf" target="_blank" rel="noopener">Hoover</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/spanish/kennedy.pdf" target="_blank" rel="noopener">Kennedy</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/spanish/mckinley-mit.pdf" target="_blank" rel="noopener">McKinley MIT</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/spanish/north-star.pdf" target="_blank" rel="noopener">North Star</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/spanish/orion.pdf" target="_blank" rel="noopener">Orion</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/spanish/roosevelt.pdf" target="_blank" rel="noopener">Roosevelt</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/spanish/roy-cloud.pdf" target="_blank" rel="noopener">Roy Cloud</a>
-      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/spanish/taft.pdf" target="_blank" rel="noopener">Taft</a>
-    </div>
   </div>
 </section>
 
 <section class="section" id="committees">
   <div class="section-rule"></div>
-  <div class="section-num">09</div>
+  <div class="section-num">10</div>
   <h2>Comités y Supervisión</h2>
   <p class="section-subtitle">Comités permanentes del distrito y de las escuelas, con grabaciones y transcripciones de reuniones cuando están disponibles.</p>
   <div class="committee-grid">
