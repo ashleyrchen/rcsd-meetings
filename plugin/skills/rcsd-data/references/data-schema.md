@@ -500,6 +500,38 @@ Document types and counts:
 - `sarc/report` (42), `compliance/williams-ucp` (40), `budget/adopted-budget` (36)
 - `labor/csea` (30), `labor/rcta` (29), `tax/bond` (18)
 
+**Caveat:** this is a *curated taxonomy* and does not contain every attachment — unclassified item types are absent (e.g. the superintendent employment contract). When a title search here is empty, fall back to `agenda-attachments.json` (below) before concluding a document doesn't exist.
+
+---
+
+## data/agenda-attachments.json
+
+The **complete raw list** of every PDF attached to every agenda item — the authoritative source for finding a specific named document (resolutions, employment contracts, agreements, MOUs, change orders, warrant registers).
+
+Shape: an object keyed by meeting date; each value is an array of attachment records.
+
+```json
+{
+  "2026-01-21": [
+    {
+      "aid": "1376174",
+      "title": "Superintendent's Employment Contract_Redwood City SD & Dr. Christian Rubalcaba 20206-2028",
+      "url": "https://simbli.eboardsolutions.com//Meetings/Attachment.aspx?S=36030397&AID=1376174",
+      "page": 20
+    }
+  ]
+}
+```
+
+| Field | Notes |
+|-------|-------|
+| `aid` | Simbli attachment id; also keys the R2 mirror `board-packets/{aid}.pdf` |
+| `title` | Attachment title — grep this to find a document by name |
+| `url` | Original Simbli `Attachment.aspx` link |
+| `page` | Page within the combined board packet |
+
+**Public PDF URL:** `https://data.rcsd.info/board-packets/{meetingDate}/{filename}`, where `filename` is the sanitized title (from `document-index.json`'s `filename` field, when classified). See the SKILL's "Finding a specific named board document" recipe.
+
 ---
 
 ## data/cde/absenteeism-2024-25.json
