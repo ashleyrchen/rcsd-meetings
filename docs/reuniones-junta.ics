@@ -3237,15 +3237,14 @@ URL:https://rcsd.info/reuniones/2026-05-27/
 LOCATION:Oficina del Distrito, 750 Bradford St, Redwood City, CA 94063
 END:VEVENT
 BEGIN:VEVENT
-UID:provisional-board-meeting-2026-06-10@rcsd.info
+UID:board-meeting-2026-06-10-regular@rcsd.info
 DTSTAMP:20260522T200000Z
 DTSTART;TZID=America/Los_Angeles:20260610T190000
 DTEND;TZID=America/Los_Angeles:20260610T220000
-SUMMARY:Reunión de la Junta de RCSD
-DESCRIPTION:Temas planificados:\nResolución de transferencia presupuestari
- a de fin de año\n\nLas agendas se publican 72 horas antes de las reunione
- s en https://rcsd.info/reuniones/
-URL:https://rcsd.info/reuniones/
+SUMMARY:Reunión de la Junta de RCSD (Regular)
+DESCRIPTION:\n\nAgenda completa y grabaciones: https://rcsd.info/reuniones/
+ 2026-06-10/
+URL:https://rcsd.info/reuniones/2026-06-10/
 LOCATION:Oficina del Distrito, 750 Bradford St, Redwood City, CA 94063
 END:VEVENT
 BEGIN:VEVENT
