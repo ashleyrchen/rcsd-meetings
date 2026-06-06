@@ -1002,6 +1002,7 @@ const LEADERSHIP_LABELS = {
     badgeCurrent: 'Current',
     badgeIncoming: 'Incoming',
     contract: 'Employment agreement →',
+    bio: 'Biography →',
     roster: 'Full board roster & bios on rcsdk8.net →',
   },
   es: {
@@ -1017,6 +1018,7 @@ const LEADERSHIP_LABELS = {
     badgeCurrent: 'Actual',
     badgeIncoming: 'Entrante',
     contract: 'Contrato de empleo →',
+    bio: 'Biografía →',
     roster: 'Directorio completo de la Mesa Directiva en rcsdk8.net →',
   },
 };
@@ -1071,7 +1073,8 @@ function renderLeadership(lang) {
           <span class="supt-name">${esc(s.name)}</span>
           <span class="supt-title">${esc(title)}</span>
           <div class="supt-status">${esc(status)}</div>
-          ${s.contractUrl ? `<div class="supt-links"><a href="${esc(s.contractUrl)}" target="_blank" rel="noopener">${L.contract}</a></div>` : ''}
+          ${s.email ? `<span class="trustee-email"><a href="mailto:${esc(s.email)}">${esc(s.email)}</a></span>` : ''}
+          ${(s.bioUrl || s.contractUrl) ? `<div class="supt-links">${s.bioUrl ? `<a href="${esc(s.bioUrl)}" target="_blank" rel="noopener">${L.bio}</a>` : ''}${s.bioUrl && s.contractUrl ? ' · ' : ''}${s.contractUrl ? `<a href="${esc(s.contractUrl)}" target="_blank" rel="noopener">${L.contract}</a>` : ''}</div>` : ''}
         </div>
       </div>`;
   };

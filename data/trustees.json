@@ -103,9 +103,12 @@
       "titleEs": "Superintendente (entrante)",
       "statusEn": "Begins July 1, 2026 — appointed January 21, 2026",
       "statusEs": "Comienza el 1 de julio de 2026 — nombrado el 21 de enero de 2026",
-      "email": null,
-      "photo": null,
-      "photoSource": null,
+      "email": "crubalcaba@rcsdk8.net",
+      "bioUrl": "https://www.rcsdk8.net/our-district/superintendent-transition/meet-dr-rubalcaba",
+      "photo": "christian-rubalcaba.jpg",
+      "photoSource": "https://resources.finalsite.net/images/t_image_size_4/v1769038357/rcsdk8net/rqj7l0ajxbnk30lcgmwp/SuperintendentRubalcaba.jpg",
+      "photoCrop": "4:5",
+      "photoNote": "Source is a 16:9 environmental portrait (Finalsite serves no portrait variant and blocks custom crops); fetch-leadership-photos.mjs center-crops it to 4:5 to match the other headshots.",
       "contractUrl": "https://data.rcsd.info/board-packets/2026-01-21/Superintendent-s-Employment-Contract_Redwood-City-SD-Dr.-Christian-Rubalcaba-202.pdf"
     }
   },

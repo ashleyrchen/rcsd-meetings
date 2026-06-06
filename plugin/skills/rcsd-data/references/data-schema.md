@@ -203,7 +203,7 @@ The elected Board of Trustees plus district leadership. Three top-level keys: `t
 | `photo` | string | Filename under `https://data.rcsd.info/trustees/`; null if none |
 | `photoSource` | string | Upstream CDN URL the headshot was mirrored from |
 
-`superintendent.current` / `superintendent.incoming` use `name`, `titleEn`/`titleEs`, `statusEn`/`statusEs`, `email`, `photo`, `photoSource`, and `contractUrl` (nullable — pending links to executed employment agreements). `cabinet[]` (Deputy Superintendent, Assistant Superintendent of Educational Services, CBO) and `directors[]` (14 directors/coordinators) each use `slug`, `name`, `titleEn`, `titleEs`. ES titles for directors use the gender-neutral "Dirección de …" form to avoid misgendering by name.
+`superintendent.current` / `superintendent.incoming` use `name`, `titleEn`/`titleEs`, `statusEn`/`statusEs`, `email`, `photo`, `photoSource`, `bioUrl`, and `contractUrl` (nullable). An optional `photoCrop` (e.g. `"4:5"`) tells `fetch-leadership-photos.mjs` to center-crop a non-portrait source via `sips`; `photoNote` documents why. `cabinet[]` (Deputy Superintendent, Assistant Superintendent of Educational Services, CBO) and `directors[]` (14 directors/coordinators) each use `slug`, `name`, `titleEn`, `titleEs`. ES titles for directors use the gender-neutral "Dirección de …" form to avoid misgendering by name.
 
 ### Key Field Notes
 
