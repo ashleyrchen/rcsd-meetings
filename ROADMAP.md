@@ -290,6 +290,7 @@ Build a pipeline for rich per-meeting summaries (inputs already in place: AAI tr
 - [ ] Pull CDE growth model spreadsheet (growthmodeldownload2025.xlsx) to check for useful RCSD data not yet represented
 
 ## Follow-ups from the June 2026 fix-sprint verification (2026-06-10)
+- [ ] **Capture the 12 "E PDF" policy exhibits.** Simbli stores exhibit-series policies (e.g. 1312.4-E PDF(1) Williams complaint forms, 6174-E PDF(1) EL education) as embedded PDFs; scrape-board-policies.mjs captures neither the text nor the PDF (contentText and attachments both empty — only footnotes come through the metadata API). Extend the scraper to download the embedded PDF to R2 and text-extract it, then these 12 flow into the Spanish translation + summary pipelines like the other 607.
 - [ ] **Render AI summaries for multi-meeting dates.** 25 suffixed detail pages (8 multi-meeting dates, e.g. 2020-04-01) have summaries in `data/meeting-summaries.json` under suffixed slugs that the detail builder never looks up — they render unlabeled/summary-less while the data exists.
 - [ ] **Migrate `/mcp/` pages into the build.** `docs/mcp/index.html` + `es/` are hand-maintained static files; they drift from the shared chrome every time html-parts changes (hand-patched 2026-06-10: token, describedby, Committees tab — still no search box or skip link).
 - [ ] **Generate dedicated OG cards for /policies/ + /politicas/** (currently reuse the homepage cards; ES uses page-home-es as a stopgap).
