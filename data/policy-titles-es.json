@@ -1,0 +1,2525 @@
+{
+  "_metadata": {
+    "source": "data/policies-index.json (scraped from https://simbli.eboardsolutions.com/Policy/PolicyListing.aspx?S=36030397)",
+    "method": "AI translation of policy titles and section names via the Claude API (scripts/translate-policy-titles.mjs); batched 50/request with structured JSON output; duplicate English titles translated once for consistency",
+    "model": "claude-sonnet-4-6",
+    "generatedAt": "2026-06-10T08:12:57.744Z",
+    "note": "Machine-generated Spanish translations of official English policy titles. Titles only — policy body text is not translated. May contain errors; the English titles and Simbli are authoritative."
+  },
+  "sections": {
+    "1000": {
+      "en": "Community Relations",
+      "es": "Relaciones con la comunidad"
+    },
+    "2000": {
+      "en": "Administration",
+      "es": "Administración"
+    },
+    "3000": {
+      "en": "Business and Noninstructional Operations",
+      "es": "Operaciones comerciales y no instructivas"
+    },
+    "4000": {
+      "en": "Personnel",
+      "es": "Personal"
+    },
+    "5000": {
+      "en": "Students",
+      "es": "Estudiantes"
+    },
+    "6000": {
+      "en": "Instruction",
+      "es": "Instrucción"
+    },
+    "7000": {
+      "en": "Facilities",
+      "es": "Instalaciones"
+    },
+    "9000": {
+      "en": "Bylaws",
+      "es": "Estatutos"
+    },
+    "0000": {
+      "en": "Philosophy, Goals, Objectives and Comprehensive Plans",
+      "es": "Filosofía, metas, objetivos y planes integrales"
+    }
+  },
+  "titles": {
+    "0100-BP": {
+      "en": "Philosophy",
+      "es": "Filosofía"
+    },
+    "0200-BP": {
+      "en": "Goals For The School District",
+      "es": "Metas del distrito escolar"
+    },
+    "0400-BP": {
+      "en": "Comprehensive Plans",
+      "es": "Planes integrales"
+    },
+    "0410-BP": {
+      "en": "Nondiscrimination In District Programs And Activities",
+      "es": "No discriminación en los programas y actividades del distrito"
+    },
+    "0415-AR": {
+      "en": "Equity",
+      "es": "Equidad"
+    },
+    "0415-BP": {
+      "en": "Equity",
+      "es": "Equidad"
+    },
+    "0420-AR": {
+      "en": "School Plans/Site Councils",
+      "es": "Planes escolares y consejos de sitio"
+    },
+    "0420-BP": {
+      "en": "School Plans/Site Councils",
+      "es": "Planes escolares y consejos de sitio"
+    },
+    "0420.4-AR": {
+      "en": "Charter School Authorization",
+      "es": "Autorización de escuelas Charter"
+    },
+    "0420.4-BP": {
+      "en": "Charter School Authorization",
+      "es": "Autorización de escuelas Charter"
+    },
+    "0420.41-BP": {
+      "en": "Charter School Oversight",
+      "es": "Supervisión de escuelas Charter"
+    },
+    "0420.41-E PDF(1)-AR": {
+      "en": "Charter School Oversight",
+      "es": "Supervisión de escuelas Charter"
+    },
+    "0420.42-BP": {
+      "en": "Charter School Renewal",
+      "es": "Renovación de escuelas Charter"
+    },
+    "0420.43-BP": {
+      "en": "Charter School Revocation",
+      "es": "Revocación de escuelas Charter"
+    },
+    "0430-AR": {
+      "en": "Comprehensive Local Plan For Special Education",
+      "es": "Plan local integral para la educación especial"
+    },
+    "0430-BP": {
+      "en": "Comprehensive Local Plan For Special Education",
+      "es": "Plan local integral para la educación especial"
+    },
+    "0440-AR": {
+      "en": "District Technology Plan",
+      "es": "Plan tecnológico del distrito"
+    },
+    "0440-BP": {
+      "en": "District Technology Plan",
+      "es": "Plan tecnológico del distrito"
+    },
+    "0450-AR": {
+      "en": "Comprehensive Safety Plan",
+      "es": "Plan integral de seguridad"
+    },
+    "0450-BP": {
+      "en": "Comprehensive Safety Plan",
+      "es": "Plan integral de seguridad"
+    },
+    "0460-AR": {
+      "en": "Local Control And Accountability Plan",
+      "es": "Plan de control local y rendición de cuentas"
+    },
+    "0460-BP": {
+      "en": "Local Control And Accountability Plan",
+      "es": "Plan de control local y rendición de cuentas"
+    },
+    "0510-AR": {
+      "en": "School Accountability Report Card",
+      "es": "Informe de rendición de cuentas de la escuela"
+    },
+    "0510-BP": {
+      "en": "School Accountability Report Card",
+      "es": "Informe de rendición de cuentas de la escuela"
+    },
+    "0520-BP": {
+      "en": "Intervention In Underperforming Schools",
+      "es": "Intervención en escuelas de bajo rendimiento"
+    },
+    "0520.1-BP": {
+      "en": "Comprehensive And Targeted School Improvement",
+      "es": "Mejora integral y focalizada de escuelas"
+    },
+    "1000-BP": {
+      "en": "Concepts And Roles",
+      "es": "Conceptos y funciones"
+    },
+    "1020-BP": {
+      "en": "^Youth Services",
+      "es": "^Servicios para jóvenes"
+    },
+    "1100-BP": {
+      "en": "Communication With The Public",
+      "es": "Comunicación con el público"
+    },
+    "1112-BP": {
+      "en": "Media Relations",
+      "es": "Relaciones con los medios de comunicación"
+    },
+    "1113-AR": {
+      "en": "District And School Websites",
+      "es": "Sitios web del distrito y de las escuelas"
+    },
+    "1113-BP": {
+      "en": "District And School Websites",
+      "es": "Sitios web del distrito y de las escuelas"
+    },
+    "1114-AR": {
+      "en": "District-Sponsored Social Media",
+      "es": "Redes sociales patrocinadas por el distrito"
+    },
+    "1114-BP": {
+      "en": "District-Sponsored Social Media",
+      "es": "Redes sociales patrocinadas por el distrito"
+    },
+    "1114-E PDF(1)-AR": {
+      "en": "District-Sponsored Social Media",
+      "es": "Redes sociales patrocinadas por el distrito"
+    },
+    "1150-AR": {
+      "en": "Commendations And Awards",
+      "es": "Reconocimientos y premios"
+    },
+    "1150-BP": {
+      "en": "Commendations And Awards",
+      "es": "Reconocimientos y premios"
+    },
+    "1160-BP": {
+      "en": "Political Processes",
+      "es": "Procesos políticos"
+    },
+    "1220-AR": {
+      "en": "Citizen Advisory Committees",
+      "es": "Comités asesores ciudadanos"
+    },
+    "1220-BP": {
+      "en": "Citizen Advisory Committees",
+      "es": "Comités asesores ciudadanos"
+    },
+    "1221.4-AR": {
+      "en": "^Citizens' Bond Oversight Committees",
+      "es": "^Comités ciudadanos de supervisión de bonos"
+    },
+    "1221.4-BP": {
+      "en": "^Citizens' Bond Oversight Committees",
+      "es": "^Comités ciudadanos de supervisión de bonos"
+    },
+    "1230-AR": {
+      "en": "School-Connected Organizations",
+      "es": "Organizaciones vinculadas a la escuela"
+    },
+    "1230-BP": {
+      "en": "School-Connected Organizations",
+      "es": "Organizaciones vinculadas a la escuela"
+    },
+    "1240-AR": {
+      "en": "Volunteer Assistance",
+      "es": "Asistencia de voluntarios"
+    },
+    "1240-BP": {
+      "en": "Volunteer Assistance",
+      "es": "Asistencia de voluntarios"
+    },
+    "1250-AR": {
+      "en": "Visitors/Outsiders",
+      "es": "Visitantes y personas externas"
+    },
+    "1250-BP": {
+      "en": "Visitors/Outsiders",
+      "es": "Visitantes y personas externas"
+    },
+    "1260-BP": {
+      "en": "Educational Foundation",
+      "es": "Fundación educativa"
+    },
+    "1312.1-AR": {
+      "en": "Complaints Concerning District Employees",
+      "es": "Quejas sobre empleados del distrito"
+    },
+    "1312.1-BP": {
+      "en": "Complaints Concerning District Employees",
+      "es": "Quejas sobre empleados del distrito"
+    },
+    "1312.2-AR": {
+      "en": "Complaints Concerning Instructional Materials",
+      "es": "Quejas sobre materiales didácticos"
+    },
+    "1312.2-BP": {
+      "en": "Complaints Concerning Instructional Materials",
+      "es": "Quejas sobre materiales didácticos"
+    },
+    "1312.2-E(1)-AR": {
+      "en": "Complaints Concerning Instructional Materials",
+      "es": "Quejas sobre materiales didácticos"
+    },
+    "1312.3-AR": {
+      "en": "Uniform Complaint Procedures",
+      "es": "Procedimientos uniformes de quejas"
+    },
+    "1312.3-BP": {
+      "en": "Uniform Complaint Procedures",
+      "es": "Procedimientos uniformes de quejas"
+    },
+    "1312.4-AR": {
+      "en": "Williams Uniform Complaint Procedures",
+      "es": "Procedimientos uniformes de quejas Williams"
+    },
+    "1312.4-E PDF(1)-AR": {
+      "en": "Williams Uniform Complaint Procedures",
+      "es": "Procedimientos uniformes de quejas Williams"
+    },
+    "1312.4-E(2)-AR": {
+      "en": "Williams Uniform Complaint Procedures",
+      "es": "Procedimientos uniformes de quejas Williams"
+    },
+    "1313-BP": {
+      "en": "Civility",
+      "es": "Civismo"
+    },
+    "1321-BP": {
+      "en": "Solicitation Of Funds From And By Students",
+      "es": "Solicitud de fondos a estudiantes y por parte de estudiantes"
+    },
+    "1325-AR": {
+      "en": "Advertising And Promotion",
+      "es": "Publicidad y promoción"
+    },
+    "1325-BP": {
+      "en": "Advertising And Promotion",
+      "es": "Publicidad y promoción"
+    },
+    "1330-AR": {
+      "en": "Use Of School Facilities",
+      "es": "Uso de las instalaciones escolares"
+    },
+    "1330-BP": {
+      "en": "Use Of School Facilities",
+      "es": "Uso de las instalaciones escolares"
+    },
+    "1330.1-BP": {
+      "en": "Joint Use Agreements",
+      "es": "Acuerdos de uso compartido"
+    },
+    "1340-AR": {
+      "en": "Access To District Records",
+      "es": "Acceso a los registros del distrito"
+    },
+    "1340-BP": {
+      "en": "Access To District Records",
+      "es": "Acceso a los registros del distrito"
+    },
+    "1400-BP": {
+      "en": "Relations Between Other Governmental Agencies And The Schools",
+      "es": "Relaciones entre otras agencias gubernamentales y las escuelas"
+    },
+    "1431-BP": {
+      "en": "Waivers",
+      "es": "Exenciones"
+    },
+    "1445-BP": {
+      "en": "Response To Immigration Enforcement",
+      "es": "Respuesta a la aplicación de las leyes de inmigración"
+    },
+    "1700-BP": {
+      "en": "Relations Between Private Industry And The Schools",
+      "es": "Relaciones entre la industria privada y las escuelas"
+    },
+    "2000-BP": {
+      "en": "Concepts And Roles",
+      "es": "Conceptos y funciones"
+    },
+    "2110-BP": {
+      "en": "Superintendent Responsibilities And Duties",
+      "es": "Responsabilidades y funciones del Superintendente"
+    },
+    "2111-BP": {
+      "en": "Superintendent Governance Standards",
+      "es": "Normas de gobernanza del Superintendente"
+    },
+    "2120-BP": {
+      "en": "Superintendent Recruitment And Selection",
+      "es": "Reclutamiento y selección del Superintendente"
+    },
+    "2121-BP": {
+      "en": "Superintendent's Contract",
+      "es": "Contrato del Superintendente"
+    },
+    "2140-BP": {
+      "en": "Evaluation Of The Superintendent",
+      "es": "Evaluación del Superintendente"
+    },
+    "2230-BP": {
+      "en": "Representative And Deliberative Groups",
+      "es": "Grupos representativos y deliberativos"
+    },
+    "3000-BP": {
+      "en": "Concepts And Roles",
+      "es": "Conceptos y funciones"
+    },
+    "3100-AR": {
+      "en": "Budget",
+      "es": "Presupuesto"
+    },
+    "3100-BP": {
+      "en": "Budget",
+      "es": "Presupuesto"
+    },
+    "3110-BP": {
+      "en": "Transfer Of Funds",
+      "es": "Transferencia de fondos"
+    },
+    "3220.1-BP": {
+      "en": "Lottery Funds",
+      "es": "Fondos de lotería"
+    },
+    "3230-AR": {
+      "en": "Federal Grant Funds",
+      "es": "Fondos de subvenciones federales"
+    },
+    "3230-BP": {
+      "en": "Federal Grant Funds",
+      "es": "Fondos de subvenciones federales"
+    },
+    "3250-AR": {
+      "en": "Transportation Fees",
+      "es": "Tarifas de transporte"
+    },
+    "3250-BP": {
+      "en": "Transportation Fees",
+      "es": "Tarifas de transporte"
+    },
+    "3260-AR": {
+      "en": "Fees And Charges",
+      "es": "Tarifas y cargos"
+    },
+    "3260-BP": {
+      "en": "Fees And Charges",
+      "es": "Tarifas y cargos"
+    },
+    "3270-AR": {
+      "en": "Sale And Disposal Of Books, Equipment And Supplies",
+      "es": "Venta y disposición de libros, equipos y materiales"
+    },
+    "3270-BP": {
+      "en": "Sale And Disposal Of Books, Equipment And Supplies",
+      "es": "Venta y disposición de libros, equipos y materiales"
+    },
+    "3280-AR": {
+      "en": "Sale Or Lease Of District-Owned Real Property",
+      "es": "Venta o arrendamiento de bienes inmuebles del distrito"
+    },
+    "3280-BP": {
+      "en": "Sale Or Lease Of District-Owned Real Property",
+      "es": "Venta o arrendamiento de bienes inmuebles del distrito"
+    },
+    "3290-BP": {
+      "en": "Gifts, Grants And Bequests",
+      "es": "Donaciones, subvenciones y legados"
+    },
+    "3300-BP": {
+      "en": "Expenditures And Purchases",
+      "es": "Gastos y compras"
+    },
+    "3311-AR": {
+      "en": "Bids",
+      "es": "Licitaciones"
+    },
+    "3311-BP": {
+      "en": "Bids",
+      "es": "Licitaciones"
+    },
+    "3311.1-AR": {
+      "en": "Uniform Public Construction Cost Accounting Procedures",
+      "es": "Procedimientos uniformes de contabilidad de costos de construcción pública"
+    },
+    "3311.1-BP": {
+      "en": "Uniform Public Construction Cost Accounting Procedures",
+      "es": "Procedimientos uniformes de contabilidad de costos de construcción pública"
+    },
+    "3312-BP": {
+      "en": "Contracts",
+      "es": "Contratos"
+    },
+    "3312.2-AR": {
+      "en": "Educational Travel Program Contracts",
+      "es": "Contratos de programas de viajes educativos"
+    },
+    "3312.2-BP": {
+      "en": "Educational Travel Program Contracts",
+      "es": "Contratos de programas de viajes educativos"
+    },
+    "3314-AR": {
+      "en": "Payment For Goods And Services",
+      "es": "Pago de bienes y servicios"
+    },
+    "3314-BP": {
+      "en": "Payment For Goods And Services",
+      "es": "Pago de bienes y servicios"
+    },
+    "3314.2-BP": {
+      "en": "Revolving Funds",
+      "es": "Fondos rotatorios"
+    },
+    "3320-AR": {
+      "en": "Claims And Actions Against The District",
+      "es": "Reclamaciones y acciones legales contra el distrito"
+    },
+    "3320-BP": {
+      "en": "Claims And Actions Against The District",
+      "es": "Reclamaciones y acciones legales contra el distrito"
+    },
+    "3320-E PDF(1)-AR": {
+      "en": "Claims And Actions Against The District",
+      "es": "Reclamaciones y acciones legales contra el distrito"
+    },
+    "3320-E PDF(2)-AR": {
+      "en": "Claims And Actions Against The District",
+      "es": "Reclamaciones y acciones legales contra el distrito"
+    },
+    "3350-BP": {
+      "en": "Travel Expenses",
+      "es": "Gastos de viaje"
+    },
+    "3400-AR": {
+      "en": "Management Of District Assets/Accounts",
+      "es": "Administración de activos y cuentas del distrito"
+    },
+    "3400-BP": {
+      "en": "Management Of District Assets/Accounts",
+      "es": "Administración de activos y cuentas del distrito"
+    },
+    "3430-AR": {
+      "en": "Investing",
+      "es": "Inversiones"
+    },
+    "3430-BP": {
+      "en": "Investing",
+      "es": "Inversiones"
+    },
+    "3440-AR": {
+      "en": "Inventories",
+      "es": "Inventarios"
+    },
+    "3451-AR": {
+      "en": "Petty Cash Funds",
+      "es": "Fondos de caja chica"
+    },
+    "3452-BP": {
+      "en": "Student Activity Funds",
+      "es": "Fondos de actividades estudiantiles"
+    },
+    "3460-AR": {
+      "en": "Financial Reports And Accountability",
+      "es": "Informes financieros y rendición de cuentas"
+    },
+    "3460-BP": {
+      "en": "Financial Reports And Accountability",
+      "es": "Informes financieros y rendición de cuentas"
+    },
+    "3470-BP": {
+      "en": "Debt Issuance And Management",
+      "es": "Emisión y gestión de deuda"
+    },
+    "3471-BP": {
+      "en": "Parcel Taxes",
+      "es": "Impuestos por parcela"
+    },
+    "3510-BP": {
+      "en": "Green School Operations",
+      "es": "Operaciones de escuelas verdes"
+    },
+    "3511-AR": {
+      "en": "Energy And Water Management",
+      "es": "Gestión de energía y agua"
+    },
+    "3511-BP": {
+      "en": "Energy And Water Management",
+      "es": "Gestión de energía y agua"
+    },
+    "3511.1-AR": {
+      "en": "Integrated Waste Management",
+      "es": "Gestión integral de residuos"
+    },
+    "3511.1-BP": {
+      "en": "Integrated Waste Management",
+      "es": "Gestión integral de residuos"
+    },
+    "3512-AR": {
+      "en": "Equipment",
+      "es": "Equipos"
+    },
+    "3513.1-AR": {
+      "en": "Cellular Phone Reimbursement",
+      "es": "Reembolso de teléfono celular"
+    },
+    "3513.1-BP": {
+      "en": "Cellular Phone Reimbursement",
+      "es": "Reembolso de teléfono celular"
+    },
+    "3513.3-AR": {
+      "en": "Tobacco-Free Schools",
+      "es": "Escuelas libres de tabaco"
+    },
+    "3513.3-BP": {
+      "en": "Tobacco-Free Schools",
+      "es": "Escuelas libres de tabaco"
+    },
+    "3513.4-BP": {
+      "en": "Drug And Alcohol Free Schools",
+      "es": "Escuelas libres de drogas y alcohol"
+    },
+    "3514-AR": {
+      "en": "Environmental Safety",
+      "es": "Seguridad ambiental"
+    },
+    "3514-BP": {
+      "en": "Environmental Safety",
+      "es": "Seguridad ambiental"
+    },
+    "3514.1-AR": {
+      "en": "Hazardous Substances",
+      "es": "Sustancias peligrosas"
+    },
+    "3514.1-BP": {
+      "en": "Hazardous Substances",
+      "es": "Sustancias peligrosas"
+    },
+    "3514.2-AR": {
+      "en": "Integrated Pest Management",
+      "es": "Control integrado de plagas"
+    },
+    "3515-AR": {
+      "en": "Campus Security",
+      "es": "Seguridad del plantel"
+    },
+    "3515-BP": {
+      "en": "Campus Security",
+      "es": "Seguridad del plantel"
+    },
+    "3515.2-AR": {
+      "en": "Disruptions",
+      "es": "Perturbaciones del orden"
+    },
+    "3515.2-BP": {
+      "en": "Disruptions",
+      "es": "Perturbaciones del orden"
+    },
+    "3515.4-AR": {
+      "en": "Recovery For Property Loss Or Damage",
+      "es": "Recuperación por pérdida o daño de propiedad"
+    },
+    "3515.4-BP": {
+      "en": "Recovery For Property Loss Or Damage",
+      "es": "Recuperación por pérdida o daño de propiedad"
+    },
+    "3515.5-AR": {
+      "en": "Sex Offender Notification",
+      "es": "Notificación sobre delincuentes sexuales"
+    },
+    "3515.5-BP": {
+      "en": "Sex Offender Notification",
+      "es": "Notificación sobre delincuentes sexuales"
+    },
+    "3515.7-BP": {
+      "en": "Firearms On School Grounds",
+      "es": "Armas de fuego en los predios escolares"
+    },
+    "3515.21-BP": {
+      "en": "Unmanned Aircraft Systems (Drones)",
+      "es": "Sistemas de aeronaves no tripuladas (drones)"
+    },
+    "3516-AR": {
+      "en": "Emergencies And Disaster Preparedness Plan",
+      "es": "Plan de preparación para emergencias y desastres"
+    },
+    "3516-BP": {
+      "en": "Emergencies And Disaster Preparedness Plan",
+      "es": "Plan de preparación para emergencias y desastres"
+    },
+    "3516.1-AR": {
+      "en": "Fire Drills And Fires",
+      "es": "Simulacros de incendio e incendios"
+    },
+    "3516.2-AR": {
+      "en": "Bomb Threats",
+      "es": "Amenazas de bomba"
+    },
+    "3516.3-AR": {
+      "en": "Earthquake Emergency Procedure System",
+      "es": "Sistema de procedimientos de emergencia por terremoto"
+    },
+    "3516.5-BP": {
+      "en": "Emergency Schedules",
+      "es": "Horarios de emergencia"
+    },
+    "3517-BP": {
+      "en": "Facilities Inspection",
+      "es": "Inspección de instalaciones"
+    },
+    "3523-AR": {
+      "en": "Electronic Signatures",
+      "es": "Firmas electrónicas"
+    },
+    "3523-BP": {
+      "en": "Electronic Signatures",
+      "es": "Firmas electrónicas"
+    },
+    "3530-AR": {
+      "en": "Risk Management/Insurance",
+      "es": "Gestión de riesgos y seguros"
+    },
+    "3530-BP": {
+      "en": "Risk Management/Insurance",
+      "es": "Gestión de riesgos y seguros"
+    },
+    "3540-AR": {
+      "en": "Transportation",
+      "es": "Transporte"
+    },
+    "3540-BP": {
+      "en": "Transportation",
+      "es": "Transporte"
+    },
+    "3541-AR": {
+      "en": "Transportation Routes And Services",
+      "es": "Rutas y servicios de transporte"
+    },
+    "3541.1-AR": {
+      "en": "Transportation For School-Related Trips",
+      "es": "Transporte para excursiones escolares"
+    },
+    "3541.2-AR": {
+      "en": "Transportation For Students With Disabilities",
+      "es": "Transporte para estudiantes con discapacidades"
+    },
+    "3541.2-BP": {
+      "en": "Transportation For Students With Disabilities",
+      "es": "Transporte para estudiantes con discapacidades"
+    },
+    "3542-AR": {
+      "en": "School Bus Drivers",
+      "es": "Conductores de autobús escolar"
+    },
+    "3543-AR": {
+      "en": "Transportation Safety And Emergencies",
+      "es": "Seguridad en el transporte y emergencias"
+    },
+    "3550-AR": {
+      "en": "Food Service/Child Nutrition Program",
+      "es": "Servicio de alimentos y programa de nutrición infantil"
+    },
+    "3550-BP": {
+      "en": "Food Service/Child Nutrition Program",
+      "es": "Servicio de alimentos y programa de nutrición infantil"
+    },
+    "3551-AR": {
+      "en": "Food Service Operations/Cafeteria Fund",
+      "es": "Operaciones del servicio de alimentos y fondo de cafetería"
+    },
+    "3551-BP": {
+      "en": "Food Service Operations/Cafeteria Fund",
+      "es": "Operaciones del servicio de alimentos y fondo de cafetería"
+    },
+    "3553-AR": {
+      "en": "Free And Reduced Price Meals",
+      "es": "Comidas gratuitas y de precio reducido"
+    },
+    "3553-BP": {
+      "en": "Free And Reduced Price Meals",
+      "es": "Comidas gratuitas y de precio reducido"
+    },
+    "3554-AR": {
+      "en": "Other Food Sales",
+      "es": "Otras ventas de alimentos"
+    },
+    "3554-BP": {
+      "en": "Other Food Sales",
+      "es": "Otras ventas de alimentos"
+    },
+    "3555-BP": {
+      "en": "Nutrition Program Compliance",
+      "es": "Cumplimiento del programa de nutrición"
+    },
+    "3555-E PDF(1)-AR": {
+      "en": "Nutrition Program Compliance",
+      "es": "Cumplimiento del programa de nutrición"
+    },
+    "3555-E(1)-AR": {
+      "en": "Nutrition Program Compliance",
+      "es": "Cumplimiento del programa de nutrición"
+    },
+    "3580-AR": {
+      "en": "District Records",
+      "es": "Registros del distrito"
+    },
+    "3580-BP": {
+      "en": "District Records",
+      "es": "Registros del distrito"
+    },
+    "4000-BP": {
+      "en": "Concepts And Roles",
+      "es": "Conceptos y funciones"
+    },
+    "4020-BP": {
+      "en": "Drug And Alcohol-Free Workplace",
+      "es": "Lugar de trabajo libre de drogas y alcohol"
+    },
+    "4030-AR": {
+      "en": "Nondiscrimination In Employment",
+      "es": "No discriminación en el empleo"
+    },
+    "4030-BP": {
+      "en": "Nondiscrimination In Employment",
+      "es": "No discriminación en el empleo"
+    },
+    "4031-AR": {
+      "en": "^Complaints Concerning Discrimination In Employment",
+      "es": "Quejas por discriminación en el empleo"
+    },
+    "4032-AR": {
+      "en": "Reasonable Accommodation",
+      "es": "Adaptaciones razonables"
+    },
+    "4033-BP": {
+      "en": "Lactation Accommodation",
+      "es": "Adaptaciones para la lactancia"
+    },
+    "4040-BP": {
+      "en": "Employee Use Of Technology",
+      "es": "Uso de tecnología por parte del personal"
+    },
+    "4040.1-E(1)-AR": {
+      "en": "^Employee Use Of Email",
+      "es": "Uso del correo electrónico por parte del personal"
+    },
+    "4100-BP": {
+      "en": "Certificated Personnel",
+      "es": "Personal certificado"
+    },
+    "4111.2-BP": {
+      "en": "Legal Status Requirement",
+      "es": "Requisito de estatus legal"
+    },
+    "4112.1-AR": {
+      "en": "Contracts",
+      "es": "Contratos"
+    },
+    "4112.2-AR": {
+      "en": "Certification",
+      "es": "Certificación"
+    },
+    "4112.2-BP": {
+      "en": "Certification",
+      "es": "Certificación"
+    },
+    "4112.4-AR": {
+      "en": "Health Examinations",
+      "es": "Exámenes médicos"
+    },
+    "4112.5-AR": {
+      "en": "Criminal Record Check",
+      "es": "Verificación de antecedentes penales"
+    },
+    "4112.6-AR": {
+      "en": "Personnel Files",
+      "es": "Expedientes del personal"
+    },
+    "4112.8-BP": {
+      "en": "Employment Of Relatives",
+      "es": "Contratación de familiares"
+    },
+    "4112.9-AR": {
+      "en": "Employee Notifications",
+      "es": "Notificaciones al personal"
+    },
+    "4112.9-BP": {
+      "en": "Employee Notifications",
+      "es": "Notificaciones al personal"
+    },
+    "4112.21-AR": {
+      "en": "Interns",
+      "es": "Practicantes"
+    },
+    "4112.21-BP": {
+      "en": "Interns",
+      "es": "Practicantes"
+    },
+    "4112.23-AR": {
+      "en": "Special Education Staff",
+      "es": "Personal de educación especial"
+    },
+    "4112.42-BP": {
+      "en": "Drug And Alcohol Testing For School Bus Drivers",
+      "es": "Pruebas de drogas y alcohol para conductores de autobús escolar"
+    },
+    "4112.61-AR": {
+      "en": "Employment References",
+      "es": "Referencias laborales"
+    },
+    "4112.61-BP": {
+      "en": "Employment References",
+      "es": "Referencias laborales"
+    },
+    "4112.62-AR": {
+      "en": "^Maintenance of Criminal Offender Records",
+      "es": "Mantenimiento de registros de antecedentes penales"
+    },
+    "4113-AR": {
+      "en": "Assignment",
+      "es": "Asignación"
+    },
+    "4113-BP": {
+      "en": "Assignment",
+      "es": "Asignación"
+    },
+    "4113.4-BP": {
+      "en": "Temporary Modified/Light-Duty Assignment",
+      "es": "Asignación temporal modificada o de trabajo ligero"
+    },
+    "4115-AR": {
+      "en": "Evaluation/Supervision",
+      "es": "Evaluación y supervisión"
+    },
+    "4115-BP": {
+      "en": "Evaluation/Supervision",
+      "es": "Evaluación y supervisión"
+    },
+    "4116-AR": {
+      "en": "Probationary/Permanent Status",
+      "es": "Estatus probatorio y permanente"
+    },
+    "4116-BP": {
+      "en": "Probationary/Permanent Status",
+      "es": "Estatus probatorio y permanente"
+    },
+    "4117.2-BP": {
+      "en": "Resignation",
+      "es": "Renuncia"
+    },
+    "4117.3-BP": {
+      "en": "Personnel Reduction",
+      "es": "Reducción de personal"
+    },
+    "4117.5-AR": {
+      "en": "Termination Agreements",
+      "es": "Acuerdos de terminación de empleo"
+    },
+    "4117.7-AR": {
+      "en": "Employment Status Reports",
+      "es": "Informes de situación laboral"
+    },
+    "4117.13-BP": {
+      "en": "Early Retirement Option",
+      "es": "Opción de jubilación anticipada"
+    },
+    "4117.14-AR": {
+      "en": "Postretirement Employment",
+      "es": "Empleo tras la jubilación"
+    },
+    "4118-AR": {
+      "en": "Dismissal/Suspension/Disciplinary Action",
+      "es": "Despido/suspensión/acción disciplinaria"
+    },
+    "4118-BP": {
+      "en": "Dismissal/Suspension/Disciplinary Action",
+      "es": "Despido/suspensión/acción disciplinaria"
+    },
+    "4119.1-BP": {
+      "en": "Civil And Legal Rights",
+      "es": "Derechos civiles y legales"
+    },
+    "4119.11-AR": {
+      "en": "Sexual Harassment",
+      "es": "Acoso sexual"
+    },
+    "4119.11-BP": {
+      "en": "Sexual Harassment",
+      "es": "Acoso sexual"
+    },
+    "4119.21-BP": {
+      "en": "Professional Standards",
+      "es": "Normas profesionales"
+    },
+    "4119.21-E PDF(1)-AR": {
+      "en": "Professional Standards",
+      "es": "Normas profesionales"
+    },
+    "4119.22-BP": {
+      "en": "Dress And Grooming",
+      "es": "Vestimenta y arreglo personal"
+    },
+    "4119.23-BP": {
+      "en": "Unauthorized Release Of Confidential/Privileged Information",
+      "es": "Divulgación no autorizada de información confidencial/privilegiada"
+    },
+    "4119.24-BP": {
+      "en": "Maintaining Appropriate Adult-Student Interactions",
+      "es": "Mantenimiento de interacciones apropiadas entre adultos y estudiantes"
+    },
+    "4119.25-AR": {
+      "en": "Political Activities Of Employees",
+      "es": "Actividades políticas de los empleados"
+    },
+    "4119.25-BP": {
+      "en": "Political Activities Of Employees",
+      "es": "Actividades políticas de los empleados"
+    },
+    "4119.41-BP": {
+      "en": "Employees With Infectious Disease",
+      "es": "Empleados con enfermedades infecciosas"
+    },
+    "4119.42-AR": {
+      "en": "Exposure Control Plan For Bloodborne Pathogens",
+      "es": "Plan de control de exposición a patógenos transmitidos por la sangre"
+    },
+    "4119.42-BP": {
+      "en": "Exposure Control Plan For Bloodborne Pathogens",
+      "es": "Plan de control de exposición a patógenos transmitidos por la sangre"
+    },
+    "4119.42-E PDF(1)-AR": {
+      "en": "Exposure Control Plan For Bloodborne Pathogens",
+      "es": "Plan de control de exposición a patógenos transmitidos por la sangre"
+    },
+    "4119.43-AR": {
+      "en": "Universal Precautions",
+      "es": "Precauciones universales"
+    },
+    "4119.43-BP": {
+      "en": "Universal Precautions",
+      "es": "Precauciones universales"
+    },
+    "4121-AR": {
+      "en": "Temporary/Substitute Personnel",
+      "es": "Personal temporal/sustituto"
+    },
+    "4127-BP": {
+      "en": "Temporary Athletic Team Coaches",
+      "es": "Entrenadores temporales de equipos deportivos"
+    },
+    "4131-AR": {
+      "en": "Staff Development",
+      "es": "Desarrollo del personal"
+    },
+    "4131-BP": {
+      "en": "Staff Development",
+      "es": "Desarrollo del personal"
+    },
+    "4131.1-BP": {
+      "en": "Teacher Support And Guidance",
+      "es": "Apoyo y orientación al maestro"
+    },
+    "4132-BP": {
+      "en": "Publication Or Creation Of Materials",
+      "es": "Publicación o creación de materiales"
+    },
+    "4135-BP": {
+      "en": "Soliciting And Selling",
+      "es": "Solicitudes y ventas"
+    },
+    "4136-BP": {
+      "en": "Nonschool Employment",
+      "es": "Empleo fuera de la escuela"
+    },
+    "4139-AR": {
+      "en": "^Peer Assistance and Review",
+      "es": "Asistencia y revisión entre pares"
+    },
+    "4139-BP": {
+      "en": "^Peer Assistance and Review",
+      "es": "Asistencia y revisión entre pares"
+    },
+    "4140-BP": {
+      "en": "Bargaining Units",
+      "es": "Unidades de negociación colectiva"
+    },
+    "4141.6-BP": {
+      "en": "Concerted Action/Work Stoppage",
+      "es": "Acción concertada/paro laboral"
+    },
+    "4143.1-BP": {
+      "en": "Public Notice - Personnel Negotiations",
+      "es": "Aviso público - Negociaciones de personal"
+    },
+    "4151-BP": {
+      "en": "Employee Compensation",
+      "es": "Compensación de empleados"
+    },
+    "4154-BP": {
+      "en": "Health And Welfare Benefits",
+      "es": "Beneficios de salud y bienestar"
+    },
+    "4156.2-BP": {
+      "en": "Awards And Recognition",
+      "es": "Premios y reconocimientos"
+    },
+    "4156.3-BP": {
+      "en": "Employee Property Reimbursement",
+      "es": "Reembolso de bienes personales de empleados"
+    },
+    "4157-AR": {
+      "en": "Employee Safety",
+      "es": "Seguridad del empleado"
+    },
+    "4157-BP": {
+      "en": "Employee Safety",
+      "es": "Seguridad del empleado"
+    },
+    "4157.1-BP": {
+      "en": "Work-Related Injuries",
+      "es": "Lesiones relacionadas con el trabajo"
+    },
+    "4157.2-AR": {
+      "en": "Ergonomics",
+      "es": "Ergonomía"
+    },
+    "4158-AR": {
+      "en": "Employee Security",
+      "es": "Protección del empleado"
+    },
+    "4158-BP": {
+      "en": "Employee Security",
+      "es": "Protección del empleado"
+    },
+    "4159-BP": {
+      "en": "Employee Assistance Programs",
+      "es": "Programas de asistencia al empleado"
+    },
+    "4161-BP": {
+      "en": "Leaves",
+      "es": "Licencias"
+    },
+    "4161.3-BP": {
+      "en": "Professional Leaves",
+      "es": "Licencias profesionales"
+    },
+    "4161.5-AR": {
+      "en": "Military Leave",
+      "es": "Licencia militar"
+    },
+    "4161.8-AR": {
+      "en": "Family Care And Medical Leave",
+      "es": "Licencia por cuidado familiar y médico"
+    },
+    "4200-AR": {
+      "en": "Classified Personnel",
+      "es": "Personal clasificado"
+    },
+    "4200-BP": {
+      "en": "Classified Personnel",
+      "es": "Personal clasificado"
+    },
+    "4211.2-BP": {
+      "en": "Legal Status Requirement",
+      "es": "Requisito de estatus legal"
+    },
+    "4212.8-BP": {
+      "en": "Employment Of Relatives",
+      "es": "Contratación de familiares"
+    },
+    "4212.9-BP": {
+      "en": "Employee Notifications",
+      "es": "Notificaciones al personal"
+    },
+    "4212.41-BP": {
+      "en": "Employee Drug Testing",
+      "es": "Pruebas de detección de drogas para empleados"
+    },
+    "4213.4-BP": {
+      "en": "Temporary Modified/Light-Duty Assignment",
+      "es": "Asignación temporal modificada o de trabajo ligero"
+    },
+    "4216-BP": {
+      "en": "Probationary/Permanent Status",
+      "es": "Estatus probatorio y permanente"
+    },
+    "4217.2-BP": {
+      "en": "Resignation",
+      "es": "Renuncia"
+    },
+    "4218-AR": {
+      "en": "Dismissal/Suspension/Disciplinary Action",
+      "es": "Despido/suspensión/acción disciplinaria"
+    },
+    "4218-BP": {
+      "en": "Dismissal/Suspension/Disciplinary Action",
+      "es": "Despido/suspensión/acción disciplinaria"
+    },
+    "4219.1-BP": {
+      "en": "Civil And Legal Rights",
+      "es": "Derechos civiles y legales"
+    },
+    "4219.11-AR": {
+      "en": "Sexual Harassment",
+      "es": "Acoso sexual"
+    },
+    "4219.11-BP": {
+      "en": "Sexual Harassment",
+      "es": "Acoso sexual"
+    },
+    "4219.12-AR": {
+      "en": "Title IX Sexual Harassment Complaint Procedures",
+      "es": "Procedimientos de quejas por acoso sexual del Título IX"
+    },
+    "4219.21-BP": {
+      "en": "Professional Standards",
+      "es": "Normas profesionales"
+    },
+    "4219.22-BP": {
+      "en": "Dress And Grooming",
+      "es": "Vestimenta y arreglo personal"
+    },
+    "4219.23-BP": {
+      "en": "Unauthorized Release Of Confidential/Privileged Information",
+      "es": "Divulgación no autorizada de información confidencial/privilegiada"
+    },
+    "4219.24-BP": {
+      "en": "Maintaining Appropriate Adult-Student Interactions",
+      "es": "Mantenimiento de interacciones apropiadas entre adultos y estudiantes"
+    },
+    "4219.25-BP": {
+      "en": "Political Activities Of Employees",
+      "es": "Actividades políticas de los empleados"
+    },
+    "4219.42-AR": {
+      "en": "Exposure Control Plan For Bloodborne Pathogens",
+      "es": "Plan de control de exposición a patógenos transmitidos por la sangre"
+    },
+    "4219.42-BP": {
+      "en": "Exposure Control Plan For Bloodborne Pathogens",
+      "es": "Plan de control de exposición a patógenos transmitidos por la sangre"
+    },
+    "4219.43-AR": {
+      "en": "Universal Precautions",
+      "es": "Precauciones universales"
+    },
+    "4219.43-BP": {
+      "en": "Universal Precautions",
+      "es": "Precauciones universales"
+    },
+    "4222-BP": {
+      "en": "Teacher Aides/Paraprofessionals",
+      "es": "Asistentes de maestro/paraprofesionales"
+    },
+    "4227-BP": {
+      "en": "Temporary Athletic Team Coaches",
+      "es": "Entrenadores temporales de equipos deportivos"
+    },
+    "4231-BP": {
+      "en": "Staff Development",
+      "es": "Desarrollo del personal"
+    },
+    "4235-BP": {
+      "en": "Soliciting And Selling",
+      "es": "Solicitudes y ventas"
+    },
+    "4236-BP": {
+      "en": "Nonschool Employment",
+      "es": "Empleo fuera de la escuela"
+    },
+    "4241.6-BP": {
+      "en": "Concerted Action/Work Stoppage",
+      "es": "Acción concertada/paro laboral"
+    },
+    "4243.1-BP": {
+      "en": "Public Notice - Personnel Negotiations",
+      "es": "Aviso público - Negociaciones de personal"
+    },
+    "4251-BP": {
+      "en": "Employee Compensation",
+      "es": "Compensación de empleados"
+    },
+    "4254-BP": {
+      "en": "Health And Welfare Benefits",
+      "es": "Beneficios de salud y bienestar"
+    },
+    "4256.2-BP": {
+      "en": "Awards And Recognition",
+      "es": "Premios y reconocimientos"
+    },
+    "4257-AR": {
+      "en": "Employee Safety",
+      "es": "Seguridad del empleado"
+    },
+    "4257-BP": {
+      "en": "Employee Safety",
+      "es": "Seguridad del empleado"
+    },
+    "4258-AR": {
+      "en": "Employee Security",
+      "es": "Protección del empleado"
+    },
+    "4258-BP": {
+      "en": "Employee Security",
+      "es": "Protección del empleado"
+    },
+    "4259-BP": {
+      "en": "Employee Assistance Programs",
+      "es": "Programas de asistencia al empleado"
+    },
+    "4261-BP": {
+      "en": "Leaves",
+      "es": "Licencias"
+    },
+    "4261.3-BP": {
+      "en": "Professional Leaves",
+      "es": "Licencias profesionales"
+    },
+    "4261.5-AR": {
+      "en": "Military Leave",
+      "es": "Licencia militar"
+    },
+    "4261.8-AR": {
+      "en": "Family Care And Medical Leave",
+      "es": "Licencia por cuidado familiar y médico"
+    },
+    "4300-BP": {
+      "en": "Administrative And Supervisory Personnel",
+      "es": "Personal administrativo y de supervisión"
+    },
+    "4301-BP": {
+      "en": "Administrative Staff Organization",
+      "es": "Organización del personal administrativo"
+    },
+    "4311.2-BP": {
+      "en": "Legal Status Requirement",
+      "es": "Requisito de estatus legal"
+    },
+    "4312.1-BP": {
+      "en": "Contracts",
+      "es": "Contratos"
+    },
+    "4312.8-BP": {
+      "en": "Employment Of Relatives",
+      "es": "Contratación de familiares"
+    },
+    "4312.9-BP": {
+      "en": "Employee Notifications",
+      "es": "Notificaciones al personal"
+    },
+    "4312.41-BP": {
+      "en": "Employee Drug Testing",
+      "es": "Pruebas de detección de drogas para empleados"
+    },
+    "4313.2-BP": {
+      "en": "Demotion/Reassignment",
+      "es": "Degradación/reasignación"
+    },
+    "4313.4-BP": {
+      "en": "Temporary Modified/Light-Duty Assignment",
+      "es": "Asignación temporal modificada o de trabajo ligero"
+    },
+    "4314-AR": {
+      "en": "Transfers",
+      "es": "Transferencias"
+    },
+    "4315-BP": {
+      "en": "Evaluation/Supervision",
+      "es": "Evaluación y supervisión"
+    },
+    "4317.2-BP": {
+      "en": "Resignation",
+      "es": "Renuncia"
+    },
+    "4317.13-BP": {
+      "en": "Early Retirement Option",
+      "es": "Opción de jubilación anticipada"
+    },
+    "4319.1-BP": {
+      "en": "Civil And Legal Rights",
+      "es": "Derechos civiles y legales"
+    },
+    "4319.11-AR": {
+      "en": "Sexual Harassment",
+      "es": "Acoso sexual"
+    },
+    "4319.11-BP": {
+      "en": "Sexual Harassment",
+      "es": "Acoso sexual"
+    },
+    "4319.12-AR": {
+      "en": "Title IX Sexual Harassment Complaint Procedures",
+      "es": "Procedimientos de quejas por acoso sexual del Título IX"
+    },
+    "4319.21-BP": {
+      "en": "Professional Standards",
+      "es": "Normas profesionales"
+    },
+    "4319.22-BP": {
+      "en": "Dress And Grooming",
+      "es": "Vestimenta y arreglo personal"
+    },
+    "4319.24-BP": {
+      "en": "Maintaining Appropriate Adult-Student Interactions",
+      "es": "Mantenimiento de interacciones apropiadas entre adultos y estudiantes"
+    },
+    "4319.41-BP": {
+      "en": "Employees With Infectious Disease",
+      "es": "Empleados con enfermedades infecciosas"
+    },
+    "4319.42-AR": {
+      "en": "Exposure Control Plan For Bloodborne Pathogens",
+      "es": "Plan de control de exposición a patógenos transmitidos por la sangre"
+    },
+    "4319.42-BP": {
+      "en": "Exposure Control Plan For Bloodborne Pathogens",
+      "es": "Plan de control de exposición a patógenos transmitidos por la sangre"
+    },
+    "4319.43-AR": {
+      "en": "Universal Precautions",
+      "es": "Precauciones universales"
+    },
+    "4319.43-BP": {
+      "en": "Universal Precautions",
+      "es": "Precauciones universales"
+    },
+    "4327-BP": {
+      "en": "Temporary Athletic Team Coaches",
+      "es": "Entrenadores temporales de equipos deportivos"
+    },
+    "4331-BP": {
+      "en": "Staff Development",
+      "es": "Desarrollo del personal"
+    },
+    "4335-BP": {
+      "en": "Soliciting And Selling",
+      "es": "Solicitudes y ventas"
+    },
+    "4336-BP": {
+      "en": "Nonschool Employment",
+      "es": "Empleo fuera de la escuela"
+    },
+    "4351-BP": {
+      "en": "Employee Compensation",
+      "es": "Compensación de empleados"
+    },
+    "4354-BP": {
+      "en": "Health And Welfare Benefits",
+      "es": "Beneficios de salud y bienestar"
+    },
+    "4357-AR": {
+      "en": "Employee Safety",
+      "es": "Seguridad del empleado"
+    },
+    "4357-BP": {
+      "en": "Employee Safety",
+      "es": "Seguridad del empleado"
+    },
+    "4358-AR": {
+      "en": "Employee Security",
+      "es": "Protección del empleado"
+    },
+    "4358-BP": {
+      "en": "Employee Security",
+      "es": "Protección del empleado"
+    },
+    "4359-BP": {
+      "en": "Employee Assistance Programs",
+      "es": "Programas de asistencia al empleado"
+    },
+    "4361-BP": {
+      "en": "Leaves",
+      "es": "Licencias"
+    },
+    "4361.5-AR": {
+      "en": "Military Leave",
+      "es": "Licencia militar"
+    },
+    "4361.8-AR": {
+      "en": "Family Care And Medical Leave",
+      "es": "Licencia por cuidado familiar y médico"
+    },
+    "5000-BP": {
+      "en": "Concepts And Roles",
+      "es": "Conceptos y funciones"
+    },
+    "5020-AR": {
+      "en": "Parent Rights And Responsibilities",
+      "es": "Derechos y responsabilidades de los padres"
+    },
+    "5020-BP": {
+      "en": "Parent Rights And Responsibilities",
+      "es": "Derechos y responsabilidades de los padres"
+    },
+    "5021-BP": {
+      "en": "Noncustodial Parents",
+      "es": "Padres sin custodia"
+    },
+    "5022-AR": {
+      "en": "Student And Family Privacy Rights",
+      "es": "Derechos de privacidad de estudiantes y familias"
+    },
+    "5022-BP": {
+      "en": "Student And Family Privacy Rights",
+      "es": "Derechos de privacidad de estudiantes y familias"
+    },
+    "5030-BP": {
+      "en": "Student Wellness",
+      "es": "Bienestar del estudiante"
+    },
+    "5111-AR": {
+      "en": "Admission",
+      "es": "Admisión"
+    },
+    "5111-BP": {
+      "en": "Admission",
+      "es": "Admisión"
+    },
+    "5111.1-AR": {
+      "en": "District Residency",
+      "es": "Residencia en el distrito"
+    },
+    "5111.1-BP": {
+      "en": "District Residency",
+      "es": "Residencia en el distrito"
+    },
+    "5111.12-AR": {
+      "en": "^Residency Based On Parent/Guardian Employment",
+      "es": "^Residencia basada en el empleo del padre/madre/tutor"
+    },
+    "5111.16-AR": {
+      "en": "^Residency For Homeless Children",
+      "es": "^Residencia para niños sin hogar"
+    },
+    "5112.1-AR": {
+      "en": "Exemptions From Attendance",
+      "es": "Exenciones de asistencia escolar"
+    },
+    "5112.1-BP": {
+      "en": "Exemptions From Attendance",
+      "es": "Exenciones de asistencia escolar"
+    },
+    "5112.2-AR": {
+      "en": "Exclusions From Attendance",
+      "es": "Exclusiones de asistencia escolar"
+    },
+    "5112.3-BP": {
+      "en": "Student Leave Of Absence",
+      "es": "Permiso de ausencia del estudiante"
+    },
+    "5112.5-BP": {
+      "en": "Open/Closed Campus",
+      "es": "Campus abierto/cerrado"
+    },
+    "5113-AR": {
+      "en": "Absences And Excuses",
+      "es": "Ausencias y justificaciones"
+    },
+    "5113-BP": {
+      "en": "Absences And Excuses",
+      "es": "Ausencias y justificaciones"
+    },
+    "5113.1-AR": {
+      "en": "Chronic Absence And Truancy",
+      "es": "Ausencia crónica y ausentismo escolar"
+    },
+    "5113.1-BP": {
+      "en": "Chronic Absence And Truancy",
+      "es": "Ausencia crónica y ausentismo escolar"
+    },
+    "5113.12-AR": {
+      "en": "District School Attendance Review Board",
+      "es": "Junta de revisión de asistencia escolar del distrito"
+    },
+    "5113.12-BP": {
+      "en": "District School Attendance Review Board",
+      "es": "Junta de revisión de asistencia escolar del distrito"
+    },
+    "5116-BP": {
+      "en": "School Attendance Boundaries",
+      "es": "Límites de asistencia escolar"
+    },
+    "5116.1-AR": {
+      "en": "Intradistrict Open Enrollment",
+      "es": "Inscripción abierta dentro del distrito"
+    },
+    "5116.1-BP": {
+      "en": "Intradistrict Open Enrollment",
+      "es": "Inscripción abierta dentro del distrito"
+    },
+    "5116.2-BP": {
+      "en": "Involuntary Student Transfers",
+      "es": "Traslados involuntarios de estudiantes"
+    },
+    "5117-BP": {
+      "en": "Interdistrict Attendance",
+      "es": "Asistencia entre distritos"
+    },
+    "5119-BP": {
+      "en": "Students Expelled From Other Districts",
+      "es": "Estudiantes expulsados de otros distritos"
+    },
+    "5121-AR": {
+      "en": "Grades/Evaluation Of Student Achievement",
+      "es": "Calificaciones/Evaluación del rendimiento estudiantil"
+    },
+    "5121-BP": {
+      "en": "Grades/Evaluation Of Student Achievement",
+      "es": "Calificaciones/Evaluación del rendimiento estudiantil"
+    },
+    "5123-AR": {
+      "en": "Promotion/Acceleration/Retention",
+      "es": "Promoción/Adelanto/Retención"
+    },
+    "5123-BP": {
+      "en": "Promotion/Acceleration/Retention",
+      "es": "Promoción/Adelanto/Retención"
+    },
+    "5125-AR": {
+      "en": "Student Records",
+      "es": "Expedientes estudiantiles"
+    },
+    "5125-BP": {
+      "en": "Student Records",
+      "es": "Expedientes estudiantiles"
+    },
+    "5125.1-AR": {
+      "en": "Release Of Directory Information",
+      "es": "Divulgación de información del directorio"
+    },
+    "5125.1-BP": {
+      "en": "Release Of Directory Information",
+      "es": "Divulgación de información del directorio"
+    },
+    "5125.2-AR": {
+      "en": "Withholding Grades, Diploma Or Transcripts",
+      "es": "Retención de calificaciones, diplomas o expedientes académicos"
+    },
+    "5125.3-AR": {
+      "en": "Challenging Student Records",
+      "es": "Impugnación de expedientes estudiantiles"
+    },
+    "5126-AR": {
+      "en": "Awards For Achievement",
+      "es": "Reconocimientos por logros"
+    },
+    "5126-BP": {
+      "en": "Awards For Achievement",
+      "es": "Reconocimientos por logros"
+    },
+    "5127-BP": {
+      "en": "Graduation Ceremonies And Activities",
+      "es": "Ceremonias y actividades de graduación"
+    },
+    "5131-BP": {
+      "en": "Conduct",
+      "es": "Conducta"
+    },
+    "5131.1-AR": {
+      "en": "Bus Conduct",
+      "es": "Conducta en el autobús escolar"
+    },
+    "5131.1-BP": {
+      "en": "Bus Conduct",
+      "es": "Conducta en el autobús escolar"
+    },
+    "5131.2-AR": {
+      "en": "Bullying",
+      "es": "Acoso escolar (bullying)"
+    },
+    "5131.2-BP": {
+      "en": "Bullying",
+      "es": "Acoso escolar (bullying)"
+    },
+    "5131.4-AR": {
+      "en": "Student Disturbances",
+      "es": "Alteraciones del orden por estudiantes"
+    },
+    "5131.4-BP": {
+      "en": "Student Disturbances",
+      "es": "Alteraciones del orden por estudiantes"
+    },
+    "5131.6-AR": {
+      "en": "Alcohol And Other Drugs",
+      "es": "Alcohol y otras drogas"
+    },
+    "5131.6-BP": {
+      "en": "Alcohol And Other Drugs",
+      "es": "Alcohol y otras drogas"
+    },
+    "5131.7-AR": {
+      "en": "Weapons And Dangerous Instruments",
+      "es": "Armas e instrumentos peligrosos"
+    },
+    "5131.7-BP": {
+      "en": "Weapons And Dangerous Instruments",
+      "es": "Armas e instrumentos peligrosos"
+    },
+    "5131.8-BP": {
+      "en": "Mobile Communication Devices",
+      "es": "Dispositivos de comunicación móvil"
+    },
+    "5131.9-BP": {
+      "en": "Academic Honesty",
+      "es": "Honestidad académica"
+    },
+    "5131.41-AR": {
+      "en": "Use Of Seclusion And Restraint",
+      "es": "Uso de aislamiento y restricción física"
+    },
+    "5131.62-AR": {
+      "en": "Tobacco",
+      "es": "Tabaco"
+    },
+    "5131.62-BP": {
+      "en": "Tobacco",
+      "es": "Tabaco"
+    },
+    "5132-AR": {
+      "en": "Dress And Grooming",
+      "es": "Vestimenta y arreglo personal"
+    },
+    "5132-BP": {
+      "en": "Dress And Grooming",
+      "es": "Vestimenta y arreglo personal"
+    },
+    "5136-AR": {
+      "en": "Gangs",
+      "es": "Pandillas"
+    },
+    "5136-BP": {
+      "en": "Gangs",
+      "es": "Pandillas"
+    },
+    "5137-BP": {
+      "en": "Positive School Climate",
+      "es": "Ambiente escolar positivo"
+    },
+    "5138-BP": {
+      "en": "Conflict Resolution/Peer Mediation",
+      "es": "Resolución de conflictos/Mediación entre pares"
+    },
+    "5141-AR": {
+      "en": "Health Care And Emergencies",
+      "es": "Atención médica y emergencias"
+    },
+    "5141-BP": {
+      "en": "Health Care And Emergencies",
+      "es": "Atención médica y emergencias"
+    },
+    "5141.3-AR": {
+      "en": "Health Examinations",
+      "es": "Exámenes médicos"
+    },
+    "5141.3-BP": {
+      "en": "Health Examinations",
+      "es": "Exámenes médicos"
+    },
+    "5141.4-AR": {
+      "en": "Child Abuse Prevention And Reporting",
+      "es": "Prevención y reporte del maltrato infantil"
+    },
+    "5141.4-BP": {
+      "en": "Child Abuse Prevention And Reporting",
+      "es": "Prevención y reporte del maltrato infantil"
+    },
+    "5141.5-BP": {
+      "en": "Mental Health",
+      "es": "Salud mental"
+    },
+    "5141.6-BP": {
+      "en": "School Health Services",
+      "es": "Servicios de salud escolar"
+    },
+    "5141.7-BP": {
+      "en": "Sun Safety",
+      "es": "Seguridad solar"
+    },
+    "5141.21-AR": {
+      "en": "Administering Medication And Monitoring Health Conditions",
+      "es": "Administración de medicamentos y supervisión de condiciones de salud"
+    },
+    "5141.21-BP": {
+      "en": "Administering Medication And Monitoring Health Conditions",
+      "es": "Administración de medicamentos y supervisión de condiciones de salud"
+    },
+    "5141.22-AR": {
+      "en": "Infectious Diseases",
+      "es": "Enfermedades infecciosas"
+    },
+    "5141.22-BP": {
+      "en": "Infectious Diseases",
+      "es": "Enfermedades infecciosas"
+    },
+    "5141.23-AR": {
+      "en": "Asthma Management",
+      "es": "Manejo del asma"
+    },
+    "5141.23-BP": {
+      "en": "Asthma Management",
+      "es": "Manejo del asma"
+    },
+    "5141.24-AR": {
+      "en": "Specialized Health Care Services",
+      "es": "Servicios de salud especializados"
+    },
+    "5141.26-AR": {
+      "en": "Tuberculosis Testing",
+      "es": "Prueba de tuberculosis"
+    },
+    "5141.26-BP": {
+      "en": "Tuberculosis Testing",
+      "es": "Prueba de tuberculosis"
+    },
+    "5141.27-AR": {
+      "en": "Food Allergies/Special Dietary Needs",
+      "es": "Alergias alimentarias/Necesidades dietéticas especiales"
+    },
+    "5141.27-BP": {
+      "en": "Food Allergies/Special Dietary Needs",
+      "es": "Alergias alimentarias/Necesidades dietéticas especiales"
+    },
+    "5141.31-AR": {
+      "en": "Immunizations",
+      "es": "Vacunas"
+    },
+    "5141.31-BP": {
+      "en": "Immunizations",
+      "es": "Vacunas"
+    },
+    "5141.32-AR": {
+      "en": "Health Screening For School Entry",
+      "es": "Examen de salud para el ingreso escolar"
+    },
+    "5141.33-BP": {
+      "en": "Head Lice",
+      "es": "Piojos"
+    },
+    "5141.52-AR": {
+      "en": "Suicide Prevention",
+      "es": "Prevención del suicidio"
+    },
+    "5141.52-BP": {
+      "en": "Suicide Prevention",
+      "es": "Prevención del suicidio"
+    },
+    "5142-AR": {
+      "en": "Safety",
+      "es": "Seguridad"
+    },
+    "5142-BP": {
+      "en": "Safety",
+      "es": "Seguridad"
+    },
+    "5142.1-AR": {
+      "en": "Identification And Reporting Of Missing Children",
+      "es": "Identificación y reporte de niños desaparecidos"
+    },
+    "5142.1-BP": {
+      "en": "Identification And Reporting Of Missing Children",
+      "es": "Identificación y reporte de niños desaparecidos"
+    },
+    "5142.2-AR": {
+      "en": "Safe Routes To School Program",
+      "es": "Programa de rutas seguras a la escuela"
+    },
+    "5142.2-BP": {
+      "en": "Safe Routes To School Program",
+      "es": "Programa de rutas seguras a la escuela"
+    },
+    "5143-BP": {
+      "en": "Insurance",
+      "es": "Seguros"
+    },
+    "5144-AR": {
+      "en": "Discipline",
+      "es": "Disciplina"
+    },
+    "5144-BP": {
+      "en": "Discipline",
+      "es": "Disciplina"
+    },
+    "5144.1-AR": {
+      "en": "Suspension And Expulsion/Due Process",
+      "es": "Suspensión y expulsión/debido proceso"
+    },
+    "5144.1-BP": {
+      "en": "Suspension And Expulsion/Due Process",
+      "es": "Suspensión y expulsión/debido proceso"
+    },
+    "5144.2-AR": {
+      "en": "Suspension And Expulsion/Due Process (Students With Disabilities)",
+      "es": "Suspensión y expulsión/debido proceso (estudiantes con discapacidades)"
+    },
+    "5144.4-BP": {
+      "en": "Required Parental Attendance",
+      "es": "Asistencia obligatoria de padres o madres"
+    },
+    "5145.2-AR": {
+      "en": "Freedom Of Speech/Expression",
+      "es": "Libertad de expresión"
+    },
+    "5145.2-BP": {
+      "en": "Freedom Of Speech/Expression",
+      "es": "Libertad de expresión"
+    },
+    "5145.3-AR": {
+      "en": "Nondiscrimination/Harassment",
+      "es": "No discriminación/acoso"
+    },
+    "5145.3-BP": {
+      "en": "Nondiscrimination/Harassment",
+      "es": "No discriminación/acoso"
+    },
+    "5145.6-BP": {
+      "en": "Parent/Guardian Notifications",
+      "es": "Notificaciones a padres, madres o tutores"
+    },
+    "5145.6-E PDF(1)-AR": {
+      "en": "Parent/Guardian Notifications",
+      "es": "Notificaciones a padres, madres o tutores"
+    },
+    "5145.7-AR": {
+      "en": "Sexual Harassment",
+      "es": "Acoso sexual"
+    },
+    "5145.7-BP": {
+      "en": "Sexual Harassment",
+      "es": "Acoso sexual"
+    },
+    "5145.8-AR": {
+      "en": "Refusal To Harm Or Destroy Animals",
+      "es": "Negativa a dañar o destruir animales"
+    },
+    "5145.8-BP": {
+      "en": "Refusal To Harm Or Destroy Animals",
+      "es": "Negativa a dañar o destruir animales"
+    },
+    "5145.9-BP": {
+      "en": "Hate-Motivated Behavior",
+      "es": "Conducta motivada por el odio"
+    },
+    "5145.11-BP": {
+      "en": "Questioning And Apprehension By Law Enforcement",
+      "es": "Interrogatorio y detención por parte de las autoridades policiales"
+    },
+    "5145.12-BP": {
+      "en": "Search And Seizure",
+      "es": "Registro e incautación"
+    },
+    "5145.13-AR": {
+      "en": "Response To Immigration Enforcement",
+      "es": "Respuesta a la aplicación de las leyes de inmigración"
+    },
+    "5145.13-BP": {
+      "en": "Response To Immigration Enforcement",
+      "es": "Respuesta a la aplicación de las leyes de inmigración"
+    },
+    "5146-AR": {
+      "en": "Married/Pregnant/Parenting Students",
+      "es": "Estudiantes casados, embarazadas o que son padres o madres"
+    },
+    "5146-BP": {
+      "en": "Married/Pregnant/Parenting Students",
+      "es": "Estudiantes casados, embarazadas o que son padres o madres"
+    },
+    "5147-BP": {
+      "en": "Dropout Prevention",
+      "es": "Prevención del abandono escolar"
+    },
+    "5148.2-AR": {
+      "en": "Before/After School Programs",
+      "es": "Programas antes y después de la escuela"
+    },
+    "5148.2-BP": {
+      "en": "Before/After School Programs",
+      "es": "Programas antes y después de la escuela"
+    },
+    "5148.3-AR": {
+      "en": "Preschool/Early Childhood Education",
+      "es": "Educación preescolar y de la primera infancia"
+    },
+    "5148.3-BP": {
+      "en": "Preschool/Early Childhood Education",
+      "es": "Educación preescolar y de la primera infancia"
+    },
+    "5149-BP": {
+      "en": "^At-Risk Students",
+      "es": "Estudiantes en riesgo"
+    },
+    "5157-AR": {
+      "en": "^Gender Identity and Access",
+      "es": "Identidad de género y acceso"
+    },
+    "5157-BP": {
+      "en": "^Gender Identity and Access",
+      "es": "Identidad de género y acceso"
+    },
+    "6000-BP": {
+      "en": "Concepts And Roles",
+      "es": "Conceptos y funciones"
+    },
+    "6011-BP": {
+      "en": "Academic Standards",
+      "es": "Estándares académicos"
+    },
+    "6020-AR": {
+      "en": "Parent Involvement",
+      "es": "Participación de los padres y madres de familia"
+    },
+    "6020-BP": {
+      "en": "Parent Involvement",
+      "es": "Participación de los padres y madres de familia"
+    },
+    "6111-BP": {
+      "en": "School Calendar",
+      "es": "Calendario escolar"
+    },
+    "6115-AR": {
+      "en": "Ceremonies And Observances",
+      "es": "Ceremonias y conmemoraciones"
+    },
+    "6116-AR": {
+      "en": "Classroom Interruptions",
+      "es": "Interrupciones en el salón de clases"
+    },
+    "6116-BP": {
+      "en": "Classroom Interruptions",
+      "es": "Interrupciones en el salón de clases"
+    },
+    "6141-BP": {
+      "en": "Curriculum Development And Evaluation",
+      "es": "Desarrollo y evaluación del currículo"
+    },
+    "6141.2-AR": {
+      "en": "Recognition Of Religious Beliefs And Customs",
+      "es": "Reconocimiento de creencias y costumbres religiosas"
+    },
+    "6141.2-BP": {
+      "en": "Recognition Of Religious Beliefs And Customs",
+      "es": "Reconocimiento de creencias y costumbres religiosas"
+    },
+    "6141.6-BP": {
+      "en": "^Multicultural Education",
+      "es": "Educación multicultural"
+    },
+    "6142.1-AR": {
+      "en": "Sexual Health And HIV/AIDS Prevention Instruction",
+      "es": "Instrucción sobre salud sexual y prevención del VIH/SIDA"
+    },
+    "6142.1-BP": {
+      "en": "Sexual Health And HIV/AIDS Prevention Instruction",
+      "es": "Instrucción sobre salud sexual y prevención del VIH/SIDA"
+    },
+    "6142.3-BP": {
+      "en": "Civic Education",
+      "es": "Educación cívica"
+    },
+    "6142.5-BP": {
+      "en": "Environmental Education",
+      "es": "Educación ambiental"
+    },
+    "6142.6-BP": {
+      "en": "Visual And Performing Arts Education",
+      "es": "Educación en artes visuales y escénicas"
+    },
+    "6142.7-AR": {
+      "en": "Physical Education And Activity",
+      "es": "Educación física y actividad física"
+    },
+    "6142.7-BP": {
+      "en": "Physical Education And Activity",
+      "es": "Educación física y actividad física"
+    },
+    "6142.8-AR": {
+      "en": "Comprehensive Health Education",
+      "es": "Educación integral para la salud"
+    },
+    "6142.8-BP": {
+      "en": "Comprehensive Health Education",
+      "es": "Educación integral para la salud"
+    },
+    "6142.91-BP": {
+      "en": "Reading/Language Arts Instruction",
+      "es": "Instrucción en lectura y artes del lenguaje"
+    },
+    "6142.92-BP": {
+      "en": "Mathematics Instruction",
+      "es": "Instrucción en matemáticas"
+    },
+    "6142.93-BP": {
+      "en": "Science Instruction",
+      "es": "Instrucción en ciencias"
+    },
+    "6142.94-BP": {
+      "en": "History-Social Science Instruction",
+      "es": "Instrucción en historia y ciencias sociales"
+    },
+    "6143-AR": {
+      "en": "Courses Of Study",
+      "es": "Planes de estudio"
+    },
+    "6143-BP": {
+      "en": "Courses Of Study",
+      "es": "Planes de estudio"
+    },
+    "6144-AR": {
+      "en": "Controversial Issues",
+      "es": "Temas controvertidos"
+    },
+    "6144-BP": {
+      "en": "Controversial Issues",
+      "es": "Temas controvertidos"
+    },
+    "6145-AR": {
+      "en": "Extracurricular And Cocurricular Activities",
+      "es": "Actividades extracurriculares y cocurriculares"
+    },
+    "6145-BP": {
+      "en": "Extracurricular And Cocurricular Activities",
+      "es": "Actividades extracurriculares y cocurriculares"
+    },
+    "6145.5-AR": {
+      "en": "Student Organizations And Equal Access",
+      "es": "Organizaciones estudiantiles e igualdad de acceso"
+    },
+    "6145.5-BP": {
+      "en": "Student Organizations And Equal Access",
+      "es": "Organizaciones estudiantiles e igualdad de acceso"
+    },
+    "6145.8-BP": {
+      "en": "Assemblies And Special Events",
+      "es": "Asambleas y eventos especiales"
+    },
+    "6151-AR": {
+      "en": "Class Size",
+      "es": "Tamaño de grupo"
+    },
+    "6151-BP": {
+      "en": "Class Size",
+      "es": "Tamaño de grupo"
+    },
+    "6152-BP": {
+      "en": "Class Assignment",
+      "es": "Asignación de grupo"
+    },
+    "6153-AR": {
+      "en": "School-Sponsored Trips",
+      "es": "Excursiones patrocinadas por la escuela"
+    },
+    "6153-BP": {
+      "en": "School-Sponsored Trips",
+      "es": "Excursiones patrocinadas por la escuela"
+    },
+    "6154-BP": {
+      "en": "Homework/Makeup Work",
+      "es": "Tarea y trabajo de recuperación"
+    },
+    "6157-BP": {
+      "en": "^Distance Learning",
+      "es": "Aprendizaje a distancia"
+    },
+    "6158-AR": {
+      "en": "Independent Study",
+      "es": "Estudio independiente"
+    },
+    "6158-BP": {
+      "en": "Independent Study",
+      "es": "Estudio independiente"
+    },
+    "6159-AR": {
+      "en": "Individualized Education Program",
+      "es": "Programa de educación individualizada"
+    },
+    "6159-BP": {
+      "en": "Individualized Education Program",
+      "es": "Programa de educación individualizada"
+    },
+    "6159.2-AR": {
+      "en": "Nonpublic, Nonsectarian School And Agency Services For Special Education",
+      "es": "Servicios de escuelas y agencias no públicas y no confesionales para educación especial"
+    },
+    "6159.2-BP": {
+      "en": "Nonpublic, Nonsectarian School And Agency Services For Special Education",
+      "es": "Servicios de escuelas y agencias no públicas y no confesionales para educación especial"
+    },
+    "6159.3-AR": {
+      "en": "Appointment Of Surrogate Parent For Special Education Students",
+      "es": "Nombramiento de padre/madre sustituto para estudiantes de educación especial"
+    },
+    "6159.3-BP": {
+      "en": "Appointment Of Surrogate Parent For Special Education Students",
+      "es": "Nombramiento de padre/madre sustituto para estudiantes de educación especial"
+    },
+    "6161-BP": {
+      "en": "^Equipment, Books and Materials",
+      "es": "^Equipos, libros y materiales"
+    },
+    "6161.1-AR": {
+      "en": "Selection And Evaluation Of Instructional Materials",
+      "es": "Selección y evaluación de materiales didácticos"
+    },
+    "6161.1-BP": {
+      "en": "Selection And Evaluation Of Instructional Materials",
+      "es": "Selección y evaluación de materiales didácticos"
+    },
+    "6161.2-BP": {
+      "en": "Damaged Or Lost Instructional Materials",
+      "es": "Materiales didácticos dañados o perdidos"
+    },
+    "6161.11-BP": {
+      "en": "Supplementary Instructional Materials",
+      "es": "Materiales didácticos complementarios"
+    },
+    "6162.5-BP": {
+      "en": "Student Assessment",
+      "es": "Evaluación del estudiante"
+    },
+    "6162.6-AR": {
+      "en": "Use Of Copyrighted Materials",
+      "es": "Uso de materiales protegidos por derechos de autor"
+    },
+    "6162.6-BP": {
+      "en": "Use Of Copyrighted Materials",
+      "es": "Uso de materiales protegidos por derechos de autor"
+    },
+    "6162.8-AR": {
+      "en": "Research",
+      "es": "Investigación"
+    },
+    "6162.8-BP": {
+      "en": "Research",
+      "es": "Investigación"
+    },
+    "6162.51-BP": {
+      "en": "State Academic Achievement Tests",
+      "es": "Pruebas estatales de rendimiento académico"
+    },
+    "6162.54-BP": {
+      "en": "Test Integrity/Test Preparation",
+      "es": "Integridad de las pruebas / preparación para las pruebas"
+    },
+    "6163.1-BP": {
+      "en": "Library Media Centers",
+      "es": "Centros de medios de biblioteca"
+    },
+    "6163.2-AR": {
+      "en": "Animals At School",
+      "es": "Animales en la escuela"
+    },
+    "6163.2-BP": {
+      "en": "Animals At School",
+      "es": "Animales en la escuela"
+    },
+    "6163.4-AR": {
+      "en": "Student Use Of Technology",
+      "es": "Uso de tecnología por parte de los estudiantes"
+    },
+    "6163.4-BP": {
+      "en": "Student Use Of Technology",
+      "es": "Uso de tecnología por parte de los estudiantes"
+    },
+    "6163.4-E PDF(1)-AR": {
+      "en": "Student Use Of Technology",
+      "es": "Uso de tecnología por parte de los estudiantes"
+    },
+    "6164.2-BP": {
+      "en": "Guidance/Counseling Services",
+      "es": "Servicios de orientación y consejería"
+    },
+    "6164.4-AR": {
+      "en": "Identification And Evaluation Of Individuals For Special Education",
+      "es": "Identificación y evaluación de personas para educación especial"
+    },
+    "6164.4-BP": {
+      "en": "Identification And Evaluation Of Individuals For Special Education",
+      "es": "Identificación y evaluación de personas para educación especial"
+    },
+    "6164.5-AR": {
+      "en": "Student Success Teams",
+      "es": "Equipos de éxito estudiantil"
+    },
+    "6164.5-BP": {
+      "en": "Student Success Teams",
+      "es": "Equipos de éxito estudiantil"
+    },
+    "6164.6-AR": {
+      "en": "Identification And Education Under Section 504",
+      "es": "Identificación y educación bajo la Sección 504"
+    },
+    "6164.6-BP": {
+      "en": "Identification And Education Under Section 504",
+      "es": "Identificación y educación bajo la Sección 504"
+    },
+    "6164.41-AR": {
+      "en": "Children With Disabilities Enrolled By Their Parents In Private School",
+      "es": "Niños con discapacidades matriculados por sus padres en escuelas privadas"
+    },
+    "6164.41-BP": {
+      "en": "Children With Disabilities Enrolled By Their Parents In Private School",
+      "es": "Niños con discapacidades matriculados por sus padres en escuelas privadas"
+    },
+    "6170.1-BP": {
+      "en": "Transitional Kindergarten",
+      "es": "Kínder de transición"
+    },
+    "6170.5-AR": {
+      "en": "^Transition To Kindergarten",
+      "es": "^Transición al kínder"
+    },
+    "6170.5-BP": {
+      "en": "^Transition To Kindergarten",
+      "es": "^Transición al kínder"
+    },
+    "6171-AR": {
+      "en": "Title I Programs",
+      "es": "Programas del Título I"
+    },
+    "6171-BP": {
+      "en": "Title I Programs",
+      "es": "Programas del Título I"
+    },
+    "6172-AR": {
+      "en": "Gifted And Talented Student Program",
+      "es": "Programa para estudiantes con talento y capacidades sobresalientes"
+    },
+    "6173-AR": {
+      "en": "Education For Homeless Children",
+      "es": "Educación para niños en situación de calle"
+    },
+    "6173-BP": {
+      "en": "Education For Homeless Children",
+      "es": "Educación para niños en situación de calle"
+    },
+    "6173-E PDF(1)-AR": {
+      "en": "Education For Homeless Children",
+      "es": "Educación para niños en situación de calle"
+    },
+    "6173.1-AR": {
+      "en": "Education For Foster Youth",
+      "es": "Educación para jóvenes en el sistema de crianza temporal"
+    },
+    "6173.1-BP": {
+      "en": "Education For Foster Youth",
+      "es": "Educación para jóvenes en el sistema de crianza temporal"
+    },
+    "6174-AR": {
+      "en": "Education For English Learners",
+      "es": "Educación para estudiantes aprendices del inglés"
+    },
+    "6174-BP": {
+      "en": "Education For English Learners",
+      "es": "Educación para estudiantes aprendices del inglés"
+    },
+    "6174-E PDF(1)-AR": {
+      "en": "Education For English Learners - Education For English Language Learners",
+      "es": "Educación para estudiantes aprendices del inglés - Educación para estudiantes aprendices del idioma inglés"
+    },
+    "6175-AR": {
+      "en": "Migrant Education Program",
+      "es": "Programa de educación para estudiantes migrantes"
+    },
+    "6175-BP": {
+      "en": "Migrant Education Program",
+      "es": "Programa de educación para estudiantes migrantes"
+    },
+    "6177-BP": {
+      "en": "Summer Learning Programs",
+      "es": "Programas de aprendizaje de verano"
+    },
+    "6179-AR": {
+      "en": "Supplemental Instruction",
+      "es": "Instrucción suplementaria"
+    },
+    "6179-BP": {
+      "en": "Supplemental Instruction",
+      "es": "Instrucción suplementaria"
+    },
+    "6183-AR": {
+      "en": "Home And Hospital Instruction",
+      "es": "Instrucción en el hogar y en el hospital"
+    },
+    "6184-AR": {
+      "en": "Continuation Education",
+      "es": "Educación continua"
+    },
+    "6184-BP": {
+      "en": "Continuation Education",
+      "es": "Educación continua"
+    },
+    "6190-BP": {
+      "en": "Evaluation Of The Instructional Program",
+      "es": "Evaluación del programa de instrucción"
+    },
+    "6300-BP": {
+      "en": "^Preschool/Early Childhood Education",
+      "es": "^Educación preescolar / educación de la primera infancia"
+    },
+    "7110-BP": {
+      "en": "Facilities Master Plan",
+      "es": "Plan maestro de instalaciones"
+    },
+    "7140-BP": {
+      "en": "Architectural And Engineering Services",
+      "es": "Servicios de arquitectura e ingeniería"
+    },
+    "7150-AR": {
+      "en": "Site Selection And Development",
+      "es": "Selección y desarrollo de terrenos"
+    },
+    "7150-BP": {
+      "en": "Site Selection And Development",
+      "es": "Selección y desarrollo de terrenos"
+    },
+    "7160-AR": {
+      "en": "Charter School Facilities",
+      "es": "Instalaciones de escuelas Charter"
+    },
+    "7160-BP": {
+      "en": "Charter School Facilities",
+      "es": "Instalaciones de escuelas Charter"
+    },
+    "7210-BP": {
+      "en": "Facilities Financing",
+      "es": "Financiamiento de instalaciones"
+    },
+    "7211-BP": {
+      "en": "Developer Fees",
+      "es": "Cargos a desarrolladores"
+    },
+    "7214-AR": {
+      "en": "General Obligation Bonds",
+      "es": "Bonos de obligación general"
+    },
+    "7214-BP": {
+      "en": "General Obligation Bonds",
+      "es": "Bonos de obligación general"
+    },
+    "7310-BP": {
+      "en": "Naming Of Facility",
+      "es": "Nombramiento de instalaciones"
+    },
+    "9000-AR": {
+      "en": "Role Of The Board",
+      "es": "Función de la Mesa Directiva"
+    },
+    "9005-AR": {
+      "en": "Governance Standards",
+      "es": "Normas de gobernanza"
+    },
+    "9010-AR": {
+      "en": "Public Statements",
+      "es": "Declaraciones públicas"
+    },
+    "9011-AR": {
+      "en": "Disclosure Of Confidential/Privileged Information",
+      "es": "Divulgación de información confidencial o privilegiada"
+    },
+    "9100-AR": {
+      "en": "Organization",
+      "es": "Organización"
+    },
+    "9110-AR": {
+      "en": "Terms Of Office",
+      "es": "Duración del mandato"
+    },
+    "9121-AR": {
+      "en": "President",
+      "es": "Presidente"
+    },
+    "9122-AR": {
+      "en": "Secretary",
+      "es": "Secretario"
+    },
+    "9123-AR": {
+      "en": "Clerk",
+      "es": "Secretario de actas"
+    },
+    "9124-AR": {
+      "en": "Attorney",
+      "es": "Abogado"
+    },
+    "9130-AR": {
+      "en": "Board Committees",
+      "es": "Comités de la Mesa Directiva"
+    },
+    "9140-AR": {
+      "en": "Board Representatives",
+      "es": "Representantes de la Mesa Directiva"
+    },
+    "9200-AR": {
+      "en": "Limits Of Board Member Authority",
+      "es": "Límites de la autoridad de los miembros de la Mesa Directiva"
+    },
+    "9220-AR": {
+      "en": "Governing Board Elections",
+      "es": "Elecciones de la Mesa Directiva"
+    },
+    "9222-AR": {
+      "en": "Resignation",
+      "es": "Renuncia"
+    },
+    "9223-AR": {
+      "en": "Filling Vacancies",
+      "es": "Llenado de vacantes"
+    },
+    "9224-AR": {
+      "en": "Oath Or Affirmation",
+      "es": "Juramento o promesa"
+    },
+    "9230-AR": {
+      "en": "Orientation",
+      "es": "Orientación"
+    },
+    "9250-AR": {
+      "en": "Remuneration, Reimbursement And Other Benefits",
+      "es": "Remuneración, reembolso y otros beneficios"
+    },
+    "9250-E(1)-AR": {
+      "en": "Remuneration, Reimbursement And Other Benefits",
+      "es": "Remuneración, reembolso y otros beneficios"
+    },
+    "9260-AR": {
+      "en": "Legal Protection",
+      "es": "Protección legal"
+    },
+    "9270-AR": {
+      "en": "Conflict Of Interest",
+      "es": "Conflicto de intereses"
+    },
+    "9270-E(1)-AR": {
+      "en": "Conflict Of Interest",
+      "es": "Conflicto de intereses"
+    },
+    "9310-AR": {
+      "en": "Board Policies",
+      "es": "Políticas de la Mesa Directiva"
+    },
+    "9320-AR": {
+      "en": "Meetings And Notices",
+      "es": "Reuniones y avisos"
+    },
+    "9321.1-AR": {
+      "en": "^Closed Session Actions And Reports",
+      "es": "Acciones e informes de sesión cerrada"
+    },
+    "9322-AR": {
+      "en": "Agenda/Meeting Materials",
+      "es": "Orden del día y materiales de reunión"
+    },
+    "9323-AR": {
+      "en": "Meeting Conduct",
+      "es": "Conducta en las reuniones"
+    },
+    "9323.2-AR": {
+      "en": "Actions By The Board",
+      "es": "Acciones de la Mesa Directiva"
+    },
+    "9324-AR": {
+      "en": "Minutes And Recordings",
+      "es": "Actas y grabaciones"
+    },
+    "9400-AR": {
+      "en": "Board Self-Evaluation",
+      "es": "Autoevaluación de la Mesa Directiva"
+    }
+  }
+}

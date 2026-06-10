@@ -89,6 +89,7 @@ Read these files from `data/` to answer questions. For field-by-field documentat
 |------|------|---------|
 | `policies-index.json` | 619 entries | School board policies global catalog, including codes, titles, revision IDs, and revision dates |
 | `board-policies/` | 619 JSONs | Directory of individual files per policy (e.g. `0100-BP.json`) with full HTML content, sanitized text, footnotes (legal references), and cross-references |
+| `policy-titles-es.json` | 619 entries | Spanish translations of every policy title (Claude-translated, cached, provenance in `_metadata`); powers /politicas/ |
 
 ### School Slugs
 
