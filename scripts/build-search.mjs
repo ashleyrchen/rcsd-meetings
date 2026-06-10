@@ -55,6 +55,10 @@ const RANKING = {
 // otherwise collapses results to ~0. Verified against real queries in SEARCH.md.
 const MIN_RESULTS = 5;
 
+// Hard cap the Component UI renders (its max-results attribute). The summary
+// honesty patch below uses the same number, so keep them defined together.
+const MAX_RESULTS = 20;
+
 // Per-language page strings. Tone follows the project's Spanish register
 // (sixth-grade Californian, colloquial — "Buscar", not literary forms).
 const PAGES = {
@@ -154,7 +158,7 @@ function renderPage(cfg) {
     <pagefind-config language="${cfg.lang}"></pagefind-config>
     <pagefind-input autofocus placeholder="${cfg.placeholder}"></pagefind-input>
     <pagefind-summary></pagefind-summary>
-    <pagefind-results max-results="20"></pagefind-results>
+    <pagefind-results max-results="${MAX_RESULTS}"></pagefind-results>
   </div>`;
 
   // Init: applies ranking, installs query relaxation, and prefills from ?q=.
@@ -167,6 +171,7 @@ function renderPage(cfg) {
 (async function () {
   var RANKING = ${JSON.stringify(RANKING)};
   var MIN_RESULTS = ${MIN_RESULTS};
+  var MAX_RESULTS = ${MAX_RESULTS};
 
   function ready() { return window.PagefindComponents && window.PagefindComponents.getInstanceManager; }
   for (var i = 0; i < 200 && !ready(); i++) { await new Promise(function (r) { setTimeout(r, 25); }); }
@@ -177,6 +182,27 @@ function renderPage(cfg) {
   // Force the core to load so we can tune ranking + relax queries, and so a ?q=
   // prefill resolves instantly.
   if (inst.triggerLoad) { try { await inst.triggerLoad(); } catch (e) {} }
+
+  // The summary says e.g. "75 results" but the UI caps rendering at MAX_RESULTS
+  // with no pager — rewrite the message to be honest about what is shown.
+  // Feature-detected DOM patch; if markup changes, the stock message remains.
+  var summaryEl = document.querySelector('pagefind-summary');
+  if (summaryEl && window.MutationObserver) {
+    var CAP_TEMPLATE = ${JSON.stringify(cfg.lang === 'es'
+      ? 'Mostrando los [CAP] resultados más relevantes de [COUNT]'
+      : 'Showing the top [CAP] of [COUNT] results')};
+    var patchSummary = function () {
+      var t = summaryEl.textContent || '';
+      var m = t.match(/^\\s*(\\d[\\d,]*)\\s/);
+      if (!m) return;
+      var count = parseInt(m[1].replace(/,/g, ''), 10);
+      if (!(count > MAX_RESULTS)) return;
+      var p = summaryEl.querySelector('p') || summaryEl;
+      p.textContent = CAP_TEMPLATE.replace('[CAP]', MAX_RESULTS).replace('[COUNT]', count);
+    };
+    new MutationObserver(patchSummary).observe(summaryEl, { childList: true, subtree: true, characterData: true });
+    patchSummary();
+  }
   var pf = inst.__pagefind__;
   if (pf) {
     try { await pf.options({ ranking: RANKING }); } catch (e) {}
@@ -204,6 +230,24 @@ function renderPage(cfg) {
       pf.search = async function (term, opts) { return broaden(term, await origSearch(term, opts), opts); };
       pf.debouncedSearch = async function (term, opts) { return broaden(term, await origDeb(term, opts), opts); };
     }
+  }
+
+  // Eager hydration. The Component UI renders one skeleton row per result and
+  // hydrates each lazily via IntersectionObserver as it scrolls into view —
+  // so below-the-fold rows sit as blank skeletons ("14 results" but only 9
+  // visible with text). Force-load every rendered result as soon as the list
+  // changes: the wrappers live on the <pagefind-results> element's .results
+  // and their load() is idempotent (guarded by result/loading internally).
+  // Feature-detected and fail-open, same contract as the relaxation wrapper.
+  var resultsEl = document.querySelector('pagefind-results');
+  if (resultsEl && window.MutationObserver) {
+    var hydrateAll = function () {
+      (resultsEl.results || []).forEach(function (r) {
+        if (r && typeof r.load === 'function') { try { r.load(); } catch (e) {} }
+      });
+    };
+    new MutationObserver(hydrateAll).observe(resultsEl, { childList: true, subtree: true });
+    hydrateAll();
   }
 
   // Prefill from ?q= (nav search box submits here).

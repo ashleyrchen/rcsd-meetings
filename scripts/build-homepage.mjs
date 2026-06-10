@@ -65,6 +65,8 @@ function schoolCard(s) {
   const detailUrl = `/schools/${s.slug}/`;
   const dashboardUrl = `https://www.caschooldashboard.org/reports/${s.cdsCode}/2024`;
   const spsaUrl = `https://data.rcsd.info/documents/spsa/2025-26/${s.slug}.pdf`;
+  const el = Math.round(DEMO[s.slug]?.el || 0);
+  const frl = Math.round(DEMO[s.slug]?.sed || 0);
 
   return `
     <div class="school-card">
@@ -75,13 +77,14 @@ function schoolCard(s) {
       <div class="school-badges"><span class="school-badge ${typeCls}">${typeBadgeEn} · ${typeBadgeEs}</span>${communityBadge}</div>
       ${s.program ? `<div class="school-program">${s.program}</div>` : ''}
       <div class="school-details">
-        <div class="school-detail">${s.enrollment.toLocaleString()} students · ${Math.round(DEMO[s.slug]?.el || 0)}% EL · ${Math.round(DEMO[s.slug]?.sed || 0)}% FRL</div>
+        <div class="school-detail">${s.enrollment.toLocaleString()} students · ${el}% learning English · ${frl}% free or low-cost lunch</div>
+        <div class="school-detail" lang="es">${s.enrollment.toLocaleString()} estudiantes · ${el}% aprendiendo inglés · ${frl}% almuerzo gratis o a bajo costo</div>
       </div>
       <div class="school-links">
-        <a href="${s.website}" target="_blank" rel="noopener" title="School website">🌐 Web</a>
-        <a href="${s.lunchUrl}" target="_blank" rel="noopener" title="Lunch menu">🍽️ Lunch</a>
-        <a href="${dashboardUrl}" target="_blank" rel="noopener" title="CA School Dashboard">📊 Dash</a>
-        <a href="${spsaUrl}" target="_blank" rel="noopener" title="School Plan for Student Achievement">📋 SPSA</a>
+        <a href="${s.website}" target="_blank" rel="noopener" title="School website · Sitio web de la escuela">🌐 Web</a>
+        <a href="${s.lunchUrl}" target="_blank" rel="noopener" title="Lunch menu · Menú de almuerzo">🍽️ Lunch · Almuerzo</a>
+        <a href="${dashboardUrl}" target="_blank" rel="noopener" title="CA School Dashboard · Panel Escolar de CA">📊 State data · Datos del estado</a>
+        <a href="${spsaUrl}" target="_blank" rel="noopener" title="School Plan for Student Achievement (SPSA) · Plan Escolar para el Rendimiento Estudiantil (SPSA)">📋 School plan · Plan escolar</a>
         ${s.pto?.url ? `<a href="${s.pto.url}" target="_blank" rel="noopener" title="${s.pto.name || 'PTO/PTA'}">🤝 PTO</a>` : ''}
       </div>
     </div>`;
@@ -228,10 +231,9 @@ const homepageCSS = `
   }
   .hero p {
     margin-top: 1rem;
-    font-size: 0.88rem;
-    color: rgba(255,255,255,0.55);
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.82);
     line-height: 1.6;
-    font-style: italic;
   }
   .hero-stats {
     display: flex;
@@ -395,15 +397,17 @@ const homepageCSS = `
   }
   .school-badge {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.5rem;
+    font-size: 0.6rem;
     letter-spacing: 0.03em;
     text-transform: uppercase;
     padding: 0.1rem 0.4rem;
     border-radius: 2px;
   }
   .school-badge--neighborhood { background: var(--green-wash); color: var(--green-mid); }
-  .school-badge--choice { background: var(--amber-light); color: var(--amber); }
-  .school-badge--community { background: var(--coral-light); color: var(--coral); }
+  /* Badge text darkened from var(--amber)/var(--coral): those tokens only hit
+     2.27:1 / 3.23:1 on their wash backgrounds; these hit >=4.5:1 (WCAG AA). */
+  .school-badge--choice { background: var(--amber-light); color: #7a4f12; }
+  .school-badge--community { background: var(--coral-light); color: #9c3f2e; }
   .school-program {
     font-size: 0.72rem;
     color: var(--green-mid);
@@ -429,16 +433,32 @@ const homepageCSS = `
     position: relative;
     z-index: 2;
     display: flex;
-    gap: 0.5rem;
+    gap: 0.4rem;
     flex-wrap: wrap;
-    margin-top: 0.5rem;
-    padding-top: 0.4rem;
+    margin-top: 0.6rem;
+    padding-top: 0.6rem;
     border-top: 1px solid var(--rule-light);
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.6rem;
   }
-  .school-links a { color: var(--green-mid); text-decoration: none; white-space: nowrap; }
-  .school-links a:hover { text-decoration: underline; }
+  .school-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    min-height: 30px; /* tap target; raised to 44px on mobile below */
+    padding: 0.25rem 0.6rem;
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    background: var(--cream);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    line-height: 1.3;
+    color: var(--green-mid);
+    text-decoration: none;
+  }
+  .school-links a:hover {
+    border-color: var(--green-light);
+    background: var(--green-wash);
+    text-decoration: none;
+  }
 
   /* ---- EVENTS (mirrored bilingual) ---- */
   .events-section { padding-top: 1rem; }
@@ -481,7 +501,10 @@ const homepageCSS = `
     background: var(--cream-dark, #f5f0e8);
     border-radius: 4px;
     padding: 0.5rem 0.65rem;
-    margin: 0.15rem -0.65rem;
+    /* No negative horizontal margin: when the bilingual event columns sit at
+       the viewport edge (641-1023px widths), -0.65rem bled 11px past it and
+       made the whole page pan sideways. */
+    margin: 0.15rem 0;
     border-bottom: none;
   }
   /* No school — red */
@@ -517,7 +540,7 @@ const homepageCSS = `
     padding: 0.7rem 0;
     border-bottom: 1px solid var(--rule-light);
   }
-  .resource-item h4 {
+  .resource-item h3 {
     font-family: 'Fraunces', serif;
     font-size: 0.88rem;
     font-weight: 600;
@@ -592,6 +615,14 @@ const homepageCSS = `
     .content { padding-bottom: 2rem; }
     .school-section { padding: 1rem 1.2rem 0; }
     .school-grid { grid-template-columns: 1fr; }
+    /* Full-size tap targets: two buttons per row, >=44px tall */
+    .school-links a {
+      flex: 1 1 calc(50% - 0.4rem);
+      justify-content: center;
+      text-align: center;
+      min-height: 44px;
+      font-size: 0.8rem;
+    }
     .ai-section { margin: 2rem 1.2rem 0; }
     .events-col .event-row { text-align: left; }
   }`;
@@ -740,11 +771,11 @@ ${siteNav({ activePage: 'home', lang: 'en' })}
     <div class="bi-row">
       <div class="bi-en">
         <h1>Open Data for Redwood City School District</h1>
-        <p>Independently compiled public records, meeting archives, and school data — making district information accessible to families and the community.</p>
+        <p>Check lunch menus, follow school board meetings, and see how each school is doing — public records and school data for Redwood City families, all in one place.</p>
       </div>
       <div class="bi-es" lang="es">
         <h1>Datos Abiertos para el Distrito Escolar de Redwood City</h1>
-        <p>Registros públicos compilados independientemente, archivos de reuniones y datos escolares — haciendo la información del distrito accesible para las familias y la comunidad.</p>
+        <p>Mira los menús de almuerzo, sigue las reuniones de la mesa directiva y ve cómo va cada escuela — registros públicos y datos escolares para las familias de Redwood City, todo en un solo lugar.</p>
       </div>
     </div>
     <div class="hero-stats">
@@ -802,6 +833,10 @@ ${siteNav({ activePage: 'home', lang: 'en' })}
         <p>Interactive catalog of all active school board policies, bylaws, and administrative regulations.</p>
       </div>
       <div class="nav-link-item">
+        <h3><a href="/committees/">Committees &#8599;</a></h3>
+        <p>Bond oversight (CBOC), English learner parent advisory (DELAC), and other district committees — members, meetings, and recordings.</p>
+      </div>
+      <div class="nav-link-item">
         <h3><a href="https://github.com/dweekly/rcsd-meetings">Source Code &#8599;</a></h3>
         <p>Open source on GitHub. Data pipeline, scraping tools, and website code.</p>
       </div>
@@ -820,8 +855,12 @@ ${siteNav({ activePage: 'home', lang: 'en' })}
         <p>Informes de presupuesto, LCAP, planes escolares (SPSA) y boletas de calificaciones (SARC).</p>
       </div>
       <div class="nav-link-item">
-        <h3><a href="/policies/">Políticas de la Junta &#8599;</a></h3>
+        <h3><a href="/politicas/">Políticas de la Junta &#8599;</a></h3>
         <p>Catálogo interactivo de todas las políticas, reglamentos y estatutos vigentes de la mesa directiva.</p>
+      </div>
+      <div class="nav-link-item">
+        <h3><a href="/comites/">Comités &#8599;</a></h3>
+        <p>Supervisión del bono (CBOC), comité de padres de aprendices de inglés (DELAC) y otros comités del distrito — miembros, reuniones y grabaciones.</p>
       </div>
       <div class="nav-link-item">
         <h3><a href="https://github.com/dweekly/rcsd-meetings">Código Fuente &#8599;</a></h3>
@@ -866,44 +905,44 @@ ${upcoming.map(e => eventRow(e, 'es')).join('\n')}
   <div class="bi-row" style="padding-top:0.5rem">
     <div class="bi-en">
       <div class="resource-item">
-        <h4>District Website</h4>
+        <h3>District Website</h3>
         <p>Official RCSD information, news, and announcements.</p>
         <a class="resource-url" href="https://www.rcsdk8.net" target="_blank" rel="noopener">rcsdk8.net &#8599;</a>
       </div>
       <div class="resource-item">
-        <h4>Board Meeting Portal</h4>
+        <h3>Board Meeting Portal</h3>
         <p>Current agendas and attachments on GAMUT/Simbli.</p>
         <a class="resource-url" href="https://simbli.eboardsolutions.com/SB_Meetings/SB_MeetingListing.aspx?S=36030397" target="_blank" rel="noopener">GAMUT/Simbli &#8599;</a>
       </div>
       <div class="resource-item">
-        <h4>YouTube Channel</h4>
+        <h3>YouTube Channel</h3>
         <p>Video recordings of public board meetings.</p>
         <a class="resource-url" href="https://www.youtube.com/@RedwoodCitySchoolDistrict" target="_blank" rel="noopener">YouTube &#8599;</a>
       </div>
       <div class="resource-item">
-        <h4>CA School Dashboard</h4>
+        <h3>CA School Dashboard</h3>
         <p>State performance data and accountability metrics.</p>
         <a class="resource-url" href="https://www.caschooldashboard.org/reports/41690050000000/2024" target="_blank" rel="noopener">caschooldashboard.org &#8599;</a>
       </div>
     </div>
     <div class="bi-es" lang="es">
       <div class="resource-item">
-        <h4>Sitio del Distrito</h4>
+        <h3>Sitio del Distrito</h3>
         <p>Información oficial, noticias y anuncios de RCSD.</p>
         <a class="resource-url" href="https://www.rcsdk8.net" target="_blank" rel="noopener">rcsdk8.net &#8599;</a>
       </div>
       <div class="resource-item">
-        <h4>Portal de Reuniones</h4>
+        <h3>Portal de Reuniones</h3>
         <p>Agendas actuales y anexos en GAMUT/Simbli.</p>
         <a class="resource-url" href="https://simbli.eboardsolutions.com/SB_Meetings/SB_MeetingListing.aspx?S=36030397" target="_blank" rel="noopener">GAMUT/Simbli &#8599;</a>
       </div>
       <div class="resource-item">
-        <h4>Canal de YouTube</h4>
+        <h3>Canal de YouTube</h3>
         <p>Grabaciones de video de reuniones públicas de la junta.</p>
         <a class="resource-url" href="https://www.youtube.com/@RedwoodCitySchoolDistrict" target="_blank" rel="noopener">YouTube &#8599;</a>
       </div>
       <div class="resource-item">
-        <h4>Panel Escolar de CA</h4>
+        <h3>Panel Escolar de CA</h3>
         <p>Datos de rendimiento estatal y métricas de rendición de cuentas.</p>
         <a class="resource-url" href="https://www.caschooldashboard.org/reports/41690050000000/2024" target="_blank" rel="noopener">caschooldashboard.org &#8599;</a>
       </div>
@@ -1080,7 +1119,7 @@ ${siteNav({ lang: 'en' })}
 </main>
 
 <footer class="site-footer">
-  <p><a href="mailto:team@rcsd.info">team@rcsd.info</a></p>
+  <p><a href="mailto:team@rcsd.info">team@rcsd.info</a> · <a href="/mcp/">API &amp; data for developers</a></p>
 </footer>
 
 </body>
@@ -1115,8 +1154,161 @@ console.log('Wrote docs/robots.txt');
 writeFileSync(resolve(ROOT, 'docs/humans.txt'), renderTemplate('humans.txt', templateVars));
 console.log('Wrote docs/humans.txt');
 
-// ---- llms.txt ----
-writeFileSync(resolve(ROOT, 'docs/llms.txt'), renderTemplate('llms.txt', templateVars));
+// ---- llms.txt (generated from sources of truth, never hand-maintained) ----
+// The previous templates/llms.txt drifted: it listed 7 of 10 deployed MCP
+// tools and omitted newer data files. Tools and data files are now derived at
+// build time so additions show up on the next build automatically.
+
+// CONSTRAINT: this is a regex over the server.tool("name", "description", ...)
+// registration calls in workers/mcp-server/src/index.ts. It requires the first
+// two arguments to be double-quoted string literals (true for every tool
+// today). If the worker migrates to another registration style (template
+// literals, registerTool(), an SDK upgrade), update this parser to match.
+function parseMcpTools() {
+  const src = readFileSync(resolve(ROOT, 'workers/mcp-server/src/index.ts'), 'utf-8');
+  const tools = [];
+  const re = /server\.tool\(\s*"((?:[^"\\]|\\.)+)",\s*"((?:[^"\\]|\\.)*)"/g;
+  let m;
+  while ((m = re.exec(src)) !== null) {
+    tools.push({ name: m[1], description: m[2].replace(/\\"/g, '"') });
+  }
+  // Sanity floor: the server has shipped 10 tools since 2026-06. Finding fewer
+  // than 5 means the regex no longer matches the source — fail the build
+  // loudly instead of silently publishing a gutted tool list.
+  if (tools.length < 5) {
+    throw new Error(`parseMcpTools: only ${tools.length} tools matched in workers/mcp-server/src/index.ts — parser out of sync with tool registration style`);
+  }
+  return tools;
+}
+
+// One-line descriptions for known data files. Everything in data/*.json ships
+// to https://data.rcsd.info/json/ (see upload-to-r2.mjs), so any file NOT in
+// this map is still listed — plainly — rather than silently omitted.
+const DATA_FILE_DESCRIPTIONS = {
+  'agenda-attachments.json': 'Board meeting attachment metadata with R2 CDN URLs',
+  'agenda-titles-es.json': 'Spanish translations of board agenda item titles',
+  'blog-posts.json': 'Index of rcsd.info blog posts (EN/ES slugs, dates)',
+  'boarddocs-scraped.json': 'Legacy board meeting data scraped from the retired BoardDocs portal',
+  'chapter-markers.json': 'YouTube chapter markers (agenda item → video offset) per board meeting',
+  'charters.json': 'Directory of RCSD-authorized charter schools — names, addresses, leaders, enrollment, CDS codes',
+  'district-calendar-2025-26.json': '2025-26 school year calendar (holidays, early release, board meetings)',
+  'district-calendar-2026-27.json': '2026-27 school year calendar',
+  'document-index.json': 'Index of board documents — titles mapped to direct file URLs',
+  'governance-calendar.json': 'Provisional topics planned for upcoming board meetings',
+  'linked-documents.json': 'Curated district documents referenced in agenda memos but hosted off the board portal',
+  'meeting-summaries.json': 'Curated English summaries of each board meeting',
+  'meeting-summaries-es.json': 'Spanish translations of meeting summaries',
+  'meeting-titles.json': 'Display titles for board meetings keyed by meeting slug',
+  'meetings-data.json': 'Comprehensive board meeting archive with agendas, agenda items, attachments, timestamps, and transcripts',
+  'minutes-aids.json': 'Per-meeting minutes notes (motions, votes, attendees) keyed by date',
+  'policies-index.json': 'Global catalog of all board policies, bylaws, and administrative regulations',
+  'policy-titles-es.json': 'Spanish translations of board policy titles',
+  'properties.json': 'Inventory of district real estate that is not an operating school — admin buildings, leased campuses',
+  'school-board-summaries.json': 'Board agenda items tagged to specific schools',
+  'schools.json': 'Directory of all district schools — names, addresses, principals, bell schedules, enrollment, lunch menu URLs, PTO/PTA info, CDS codes',
+  'sped-categories.json': 'Special education disability categories and LRE placement per school (CDE 2024-25)',
+  'sped-enrollment.json': 'Special education (IEP) student counts per school per grade (CDE 2024-25)',
+  'spsa-budgets.json': 'SPSA budget summaries extracted from each school plan',
+  'ssc-meetings.json': 'School Site Council meeting agendas and minutes per school',
+  'ssc-membership.json': 'School Site Council member rosters per school',
+  'timestamp-map.json': 'Agenda item → video timestamp mapping per board meeting',
+  'trustees.json': 'Board of Trustees roster with superintendent and cabinet',
+  'youtube-index.json': 'YouTube video metadata for board meeting recordings',
+};
+// Development scratch samples — shipped by the blanket *.json upload rule but
+// useless to readers, so explicitly excluded (new files are NOT excluded).
+const DATA_FILE_SKIP = new Set(['sample-detail.json', 'sample-policies.json']);
+
+function buildLlmsTxt() {
+  const tools = parseMcpTools();
+  const toolLines = tools
+    .map(t => `- \`${t.name}\`: ${t.description}`)
+    .join('\n');
+
+  const dataLines = readdirSync(resolve(ROOT, 'data'))
+    .filter(f => f.endsWith('.json') && !DATA_FILE_SKIP.has(f))
+    .sort()
+    .map(f => `- [${f}](https://data.rcsd.info/json/${f}): ${DATA_FILE_DESCRIPTIONS[f] || 'Data file (no description yet — see the GitHub repo)'}`);
+  // Datasets published under json/ from outside the top-level data/*.json glob:
+  dataLines.push('- [sarc/sarc-summary.json](https://data.rcsd.info/json/sarc/sarc-summary.json): SARC data — demographics, CAASPP test scores, expenditures per school');
+  dataLines.push('- [board-policies/](https://data.rcsd.info/json/board-policies/): Directory of per-policy JSON files (e.g. `0100-BP.json`) with full HTML content, plain-text body, legal references, and cross-references');
+
+  return `# RCSD Open Data
+
+> Open data portal for the Redwood City School District (RCSD) — a TK-8 public school district in Redwood City, California serving ${templateVars.totalEnrollment} students across ${templateVars.numSchools} schools. Independently compiled public records, meeting archives, and school data.
+
+This site publishes structured JSON data files covering school directory information, board meeting archives with transcripts and video, district calendars, special education enrollment, school accountability reports (SARCs), demographics, and live lunch menus.
+
+## Data Files
+
+All data is available as JSON at [data.rcsd.info/json/](https://data.rcsd.info/json/).
+
+${dataLines.join('\n')}
+
+## School Slugs
+
+${templateVars.schoolSlugs}
+
+## Website Pages
+
+- [/](https://rcsd.info/): Homepage (bilingual English/Spanish)
+- [/meetings/](https://rcsd.info/meetings/): Board meeting archive (English)
+- [/reuniones/](https://rcsd.info/reuniones/): Board meeting archive (Spanish)
+- [/district/](https://rcsd.info/district/): District overview (English)
+- [/distrito/](https://rcsd.info/distrito/): District overview (Spanish)
+- [/schools/{slug}/](https://rcsd.info/schools/): Individual school pages (English)
+- [/escuelas/{slug}/](https://rcsd.info/escuelas/): Individual school pages (Spanish)
+- [/budget/](https://rcsd.info/budget/): District budget visualization (English)
+- [/presupuesto/](https://rcsd.info/presupuesto/): District budget visualization (Spanish)
+- [/policies/](https://rcsd.info/policies/): Interactive Board Policies Manual browser (English)
+- [/politicas/](https://rcsd.info/politicas/): Interactive Board Policies Manual browser (Spanish)
+- [/committees/](https://rcsd.info/committees/): District committees — members, meetings, recordings (English)
+- [/comites/](https://rcsd.info/comites/): District committees (Spanish)
+- [/search/](https://rcsd.info/search/): Site search (English)
+- [/buscar/](https://rcsd.info/buscar/): Site search (Spanish)
+
+## MCP Server
+
+A remote [Model Context Protocol](https://modelcontextprotocol.io) server is available at:
+
+\`\`\`
+https://mcp.rcsd.info/mcp
+\`\`\`
+
+Connect it to Claude Desktop, claude.ai, VS Code, Cursor, or any MCP-compatible client. No authentication required. Setup instructions: [rcsd.info/mcp/](https://rcsd.info/mcp/)
+
+### Tools
+
+${toolLines}
+
+## Claude Code Plugin
+
+Install the [rcsd-info plugin](https://github.com/dweekly/rcsd-meetings/tree/main/plugin) for [Claude Code](https://claude.com/claude-code) to query RCSD data from the terminal:
+
+\`\`\`
+/plugin marketplace add dweekly/rcsd-meetings
+/plugin install rcsd-info@rcsd-info
+\`\`\`
+
+The plugin provides school info, live lunch menus, calendars, board meetings, demographics, and special education stats.
+
+## Documents on CDN
+
+- Agendas: \`https://data.rcsd.info/agendas/{YYYY-MM-DD}-agenda.pdf\`
+- Minutes: \`https://data.rcsd.info/minutes/{YYYY-MM-DD}-minutes.pdf\`
+- Board packets: \`https://data.rcsd.info/board-packets/{AID}.pdf\`
+- SARCs: \`https://data.rcsd.info/documents/sarc/2024-25/{slug}-sarc-2024-25.pdf\`
+- SPSAs: \`https://data.rcsd.info/documents/spsa/2025-26/{slug}.pdf\`
+
+## Contact
+
+- Email: team@rcsd.info
+- Source: https://github.com/dweekly/rcsd-meetings
+- Not an official RCSD product. For official info visit [rcsdk8.net](https://www.rcsdk8.net).
+`;
+}
+
+writeFileSync(resolve(ROOT, 'docs/llms.txt'), buildLlmsTxt());
 console.log('Wrote docs/llms.txt');
 
 // ---- sitemap.xml ----
@@ -1196,16 +1388,28 @@ try {
   committeeUrls = rows.join('\n');
 } catch {}
 
+// Homepage is a single bilingual page at one URL: emit ONE entry (the usual
+// bilingualUrl() helper would duplicate the <loc>) and skip the
+// self-referencing `es` alternate — just en + x-default.
+const homepageEntry = `  <url>
+    <loc>https://rcsd.info/</loc>
+    <lastmod>${sitemapDate}</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rcsd.info/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rcsd.info/"/>
+  </url>`;
+
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
-${bilingualUrl('/', '/', sitemapDate)}
+${homepageEntry}
 ${bilingualUrl('/schools/', '/escuelas/', sitemapDate)}
 ${schoolUrls}
 ${charterUrls}
 ${bilingualUrl('/meetings/', '/reuniones/', sitemapDate)}
 ${bilingualUrl('/district/', '/distrito/', sitemapDate)}
 ${bilingualUrl('/budget/', '/presupuesto/', sitemapDate)}
+${bilingualUrl('/policies/', '/politicas/', sitemapDate)}
+${bilingualUrl('/mcp/', '/mcp/es/', sitemapDate)}
 ${bilingualUrl('/blog/', '/blog/es/', sitemapDate)}
 ${blogPosts.map(p => bilingualUrl(`/blog/${p.slug}/`, `/blog/${p.slugEs}/`, p.date)).join('\n')}
 ${meetingUrls}

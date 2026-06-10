@@ -8,22 +8,37 @@ This site publishes structured JSON data files covering school directory informa
 
 All data is available as JSON at [data.rcsd.info/json/](https://data.rcsd.info/json/).
 
-- [schools.json](https://data.rcsd.info/json/schools.json): Directory of all 12 schools — names, addresses, principals, bell schedules, enrollment, lunch menu URLs, parent platform links, PTO/PTA info, CDS codes
-- [charters.json](https://data.rcsd.info/json/charters.json): Directory of RCSD-authorized charter schools — names, addresses, leaders, enrollment, network details, CDS codes (separate from district-operated schools)
-- [properties.json](https://data.rcsd.info/json/properties.json): Inventory of district-owned or district-leased real estate that is not an operating school — names, addresses, uses, current tenants
-- [meetings-data.json](https://data.rcsd.info/json/meetings-data.json): Comprehensive board meeting archive with agendas, agenda items, attachments, timestamps, and transcripts
-- [meeting-summaries.json](https://data.rcsd.info/json/meeting-summaries.json): Curated English summaries of each board meeting
-- [meeting-summaries-es.json](https://data.rcsd.info/json/meeting-summaries-es.json): Spanish translations of meeting summaries
-- [school-board-summaries.json](https://data.rcsd.info/json/school-board-summaries.json): Board agenda items tagged to specific schools
+- [agenda-attachments.json](https://data.rcsd.info/json/agenda-attachments.json): Board meeting attachment metadata with R2 CDN URLs
+- [agenda-titles-es.json](https://data.rcsd.info/json/agenda-titles-es.json): Spanish translations of board agenda item titles
+- [blog-posts.json](https://data.rcsd.info/json/blog-posts.json): Index of rcsd.info blog posts (EN/ES slugs, dates)
+- [boarddocs-scraped.json](https://data.rcsd.info/json/boarddocs-scraped.json): Legacy board meeting data scraped from the retired BoardDocs portal
+- [chapter-markers.json](https://data.rcsd.info/json/chapter-markers.json): YouTube chapter markers (agenda item → video offset) per board meeting
+- [charters.json](https://data.rcsd.info/json/charters.json): Directory of RCSD-authorized charter schools — names, addresses, leaders, enrollment, CDS codes
 - [district-calendar-2025-26.json](https://data.rcsd.info/json/district-calendar-2025-26.json): 2025-26 school year calendar (holidays, early release, board meetings)
 - [district-calendar-2026-27.json](https://data.rcsd.info/json/district-calendar-2026-27.json): 2026-27 school year calendar
+- [document-index.json](https://data.rcsd.info/json/document-index.json): Index of board documents — titles mapped to direct file URLs
+- [governance-calendar.json](https://data.rcsd.info/json/governance-calendar.json): Provisional topics planned for upcoming board meetings
+- [linked-documents.json](https://data.rcsd.info/json/linked-documents.json): Curated district documents referenced in agenda memos but hosted off the board portal
+- [meeting-summaries-es.json](https://data.rcsd.info/json/meeting-summaries-es.json): Spanish translations of meeting summaries
+- [meeting-summaries.json](https://data.rcsd.info/json/meeting-summaries.json): Curated English summaries of each board meeting
+- [meeting-titles.json](https://data.rcsd.info/json/meeting-titles.json): Display titles for board meetings keyed by meeting slug
+- [meetings-data.json](https://data.rcsd.info/json/meetings-data.json): Comprehensive board meeting archive with agendas, agenda items, attachments, timestamps, and transcripts
+- [minutes-aids.json](https://data.rcsd.info/json/minutes-aids.json): Per-meeting minutes notes (motions, votes, attendees) keyed by date
+- [policies-index.json](https://data.rcsd.info/json/policies-index.json): Global catalog of all board policies, bylaws, and administrative regulations
+- [policy-titles-es.json](https://data.rcsd.info/json/policy-titles-es.json): Spanish translations of board policy titles
+- [properties.json](https://data.rcsd.info/json/properties.json): Inventory of district real estate that is not an operating school — admin buildings, leased campuses
+- [school-board-summaries.json](https://data.rcsd.info/json/school-board-summaries.json): Board agenda items tagged to specific schools
+- [schools.json](https://data.rcsd.info/json/schools.json): Directory of all district schools — names, addresses, principals, bell schedules, enrollment, lunch menu URLs, PTO/PTA info, CDS codes
+- [sped-categories.json](https://data.rcsd.info/json/sped-categories.json): Special education disability categories and LRE placement per school (CDE 2024-25)
 - [sped-enrollment.json](https://data.rcsd.info/json/sped-enrollment.json): Special education (IEP) student counts per school per grade (CDE 2024-25)
-- [sped-categories.json](https://data.rcsd.info/json/sped-categories.json): Disability categories and LRE placement per school (CDE 2024-25)
+- [spsa-budgets.json](https://data.rcsd.info/json/spsa-budgets.json): SPSA budget summaries extracted from each school plan
+- [ssc-meetings.json](https://data.rcsd.info/json/ssc-meetings.json): School Site Council meeting agendas and minutes per school
+- [ssc-membership.json](https://data.rcsd.info/json/ssc-membership.json): School Site Council member rosters per school
+- [timestamp-map.json](https://data.rcsd.info/json/timestamp-map.json): Agenda item → video timestamp mapping per board meeting
+- [trustees.json](https://data.rcsd.info/json/trustees.json): Board of Trustees roster with superintendent and cabinet
+- [youtube-index.json](https://data.rcsd.info/json/youtube-index.json): YouTube video metadata for board meeting recordings
 - [sarc/sarc-summary.json](https://data.rcsd.info/json/sarc/sarc-summary.json): SARC data — demographics, CAASPP test scores, expenditures per school
-- [youtube-index.json](https://data.rcsd.info/json/youtube-index.json): YouTube video links for board meeting recordings
-- [policies-index.json](https://data.rcsd.info/json/policies-index.json): Global catalog of all 619 board policies, bylaws, and administrative regulations
-- [board-policies/](https://data.rcsd.info/json/board-policies/): Directory containing structured JSON files for each individual policy (e.g. `0100-BP.json`) with full HTML content, plain-text body, legal references, and cross-references
-
+- [board-policies/](https://data.rcsd.info/json/board-policies/): Directory of per-policy JSON files (e.g. `0100-BP.json`) with full HTML content, plain-text body, legal references, and cross-references
 
 ## School Slugs
 
@@ -49,9 +64,14 @@ All data is available as JSON at [data.rcsd.info/json/](https://data.rcsd.info/j
 - [/distrito/](https://rcsd.info/distrito/): District overview (Spanish)
 - [/schools/{slug}/](https://rcsd.info/schools/): Individual school pages (English)
 - [/escuelas/{slug}/](https://rcsd.info/escuelas/): Individual school pages (Spanish)
-- [/budget/](https://rcsd.info/budget/): District budget visualization
-- [/policies/](https://rcsd.info/policies/): Interactive Board Policies Manual browser
-
+- [/budget/](https://rcsd.info/budget/): District budget visualization (English)
+- [/presupuesto/](https://rcsd.info/presupuesto/): District budget visualization (Spanish)
+- [/policies/](https://rcsd.info/policies/): Interactive Board Policies Manual browser (English)
+- [/politicas/](https://rcsd.info/politicas/): Interactive Board Policies Manual browser (Spanish)
+- [/committees/](https://rcsd.info/committees/): District committees — members, meetings, recordings (English)
+- [/comites/](https://rcsd.info/comites/): District committees (Spanish)
+- [/search/](https://rcsd.info/search/): Site search (English)
+- [/buscar/](https://rcsd.info/buscar/): Site search (Spanish)
 
 ## MCP Server
 
@@ -61,7 +81,24 @@ A remote [Model Context Protocol](https://modelcontextprotocol.io) server is ava
 https://mcp.rcsd.info/mcp
 ```
 
-Connect it to Claude Desktop, claude.ai, VS Code, Cursor, or any MCP-compatible client. No authentication required. Tools available: `list-schools`, `query-school`, `check-calendar`, `get-lunch-menu`, `get-meeting-summary`, `get-school-board-items`, `get-sped-data`.
+Connect it to Claude Desktop, claude.ai, VS Code, Cursor, or any MCP-compatible client. No authentication required. Setup instructions: [rcsd.info/mcp/](https://rcsd.info/mcp/)
+
+### Tools
+
+- `list-schools`: List all 12 RCSD schools with key info (name, grades, type, enrollment)
+- `query-school`: Get detailed information about a specific RCSD school by name or slug
+- `check-calendar`: Check if there is school on a given date, or what event falls on that date
+- `get-lunch-menu`: Get the lunch menu for a school on a specific date (fetches live from HealthePro)
+- `get-trustees`: Get the RCSD Board of Trustees (name, trustee area, officer role, term years, email, school assignments) plus the superintendent and cabinet
+- `list-meetings`: List board meetings newest-first (date, type, slug, video/transcript availability, topic line) with optional year/type filters and offset/limit paging
+- `get-meeting-summary`: Get AI-generated board meeting summaries (English or Spanish). Returns the most recent meetings or a specific date.
+- `get-meeting-details`: Get comprehensive details about a specific board meeting: agenda items, timestamps, chapter markers, transcript link, topics, and threads
+- `search-transcript`: Search one board meeting's transcript for a word or phrase; returns matching utterances with timestamps and speakers. (Full-corpus transcript search is not offered — transcripts are one file per meeting.)
+- `find-document`: Find board documents by title keywords — searches board-packet attachments, the classified document index, and curated off-portal documents; returns title, meeting date, and direct URL
+- `get-school-board-items`: Get board agenda items related to a specific school (AI-generated summaries, English or Spanish)
+- `get-sped-data`: Get special education (IEP) enrollment data for a school or district-wide
+- `list-policies`: List all RCSD school board policies, bylaws, and regulations, with optional filtering
+- `get-policy`: Get the full plain-text rules, legal citations, and cross-references of a specific board policy by code and type
 
 ## Claude Code Plugin
 

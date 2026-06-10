@@ -9,7 +9,7 @@ import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { headMeta, siteNav, siteFooter } from './html-parts.mjs';
 import { prettySchool } from './document-inventory.mjs';
-import { isSubstantiveItem } from './meeting-utils.mjs';
+import { isSubstantiveItem, formatDate } from './meeting-utils.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
@@ -172,6 +172,7 @@ const LOCALES = {
     disclaimer: 'Not an official District document; independently assembled by',
     disclaimerSuffix: 'May contain errors. Questions?',
     disclaimerContact: 'Contact us',
+    aiSummaryNote: 'AI-generated summary — may contain errors. Not an official record.',
     siteNavHome: 'Home',
     siteNavMeetings: 'Meetings',
     siteNavDistrict: 'District',
@@ -275,6 +276,7 @@ Comments in Spanish are welcome — an interpreter is available at every meeting
     disclaimer: 'No es un documento oficial del Distrito; compilado independientemente por',
     disclaimerSuffix: 'Puede contener errores.',
     disclaimerContact: 'Cont\u00e1ctenos',
+    aiSummaryNote: 'Resumen generado por inteligencia artificial (IA) \u2014 puede contener errores. No es un acta oficial.',
     siteNavHome: 'Inicio',
     siteNavMeetings: 'Reuniones',
     siteNavDistrict: 'Distrito',
@@ -336,6 +338,7 @@ Los comentarios en espa\u00f1ol son bienvenidos \u2014 hay un int\u00e9rprete di
     meetingTypes: {
       'Regular': 'Reuni\u00f3n Regular',
       'Special': 'Reuni\u00f3n Especial',
+      'Special Meeting': 'Reuni\u00f3n Especial',
       'Study Session': 'Sesi\u00f3n de Estudio',
       'Workshop': 'Taller',
       'Special (Closed)': 'Sesi\u00f3n Especial (Cerrada)',
@@ -542,20 +545,24 @@ function groupByMonth(meetings) {
 
 // ---- Summary generation ----
 
+// Returns { text, ai } — `ai: true` means the text came from
+// generate-meeting-summaries.mjs (Claude-written prose) and MUST carry a
+// visible AI label when rendered. Topic/item fallbacks are quoted from the
+// official agenda listings, so they are not labeled as AI.
 function generateSummary(m) {
-  // Manual override first
-  if (manualSummaries[m.date]) return manualSummaries[m.date];
+  // AI-written summary first
+  if (manualSummaries[m.date]) return { text: manualSummaries[m.date], ai: true };
 
   // Use topics (already curated for Simbli, auto-extracted for BoardDocs)
   if (m.topics && m.topics.length > 0 && m.topics[0]) {
-    return m.topics.join('; ');
+    return { text: m.topics.join('; '), ai: false };
   }
 
   // Fallback: generate from substantive items
   if (!m.items || m.items.length === 0) return null;
   const sub = m.items.filter(isSubstantiveItem);
   if (sub.length === 0) return null;
-  return sub.slice(0, 5).map(it => it.title).join('; ');
+  return { text: sub.slice(0, 5).map(it => it.title).join('; '), ai: false };
 }
 
 function highlightSummary(text) {
@@ -670,7 +677,7 @@ function renderMeeting(m) {
   // Summary paragraph (replaces topic bullets)
   const summary = generateSummary(m);
   const summaryHtml = summary
-    ? `<p class="meeting-summary">${highlightSummary(summary)}</p>`
+    ? `<p class="meeting-summary">${highlightSummary(summary.text)}${summary.ai ? ` <span class="ai-label">${L.aiSummaryNote}</span>` : ''}</p>`
     : '';
 
   // Linked item count (detail page has full agenda)
@@ -802,7 +809,7 @@ function renderUpcomingSection() {
 
     const summary = generateSummary(m);
     const summaryHtml = summary
-      ? `<p class="meeting-summary">${highlightSummary(summary)}</p>`
+      ? `<p class="meeting-summary">${highlightSummary(summary.text)}${summary.ai ? ` <span class="ai-label">${L.aiSummaryNote}</span>` : ''}</p>`
       : '';
 
     const itemCount = (m.items || []).filter(isSubstantiveItem).length;
@@ -922,6 +929,90 @@ ${meetingRows.join('\n')}
 ${meetingRows.join('\n')}
   </div>
 </section>`;
+}
+
+// ---- JSON-LD: ItemList of Event entries for the index page ----
+// Field mapping mirrors meetingJsonLd() in build-meeting-pages.mjs (same
+// @id per meeting, name formula, times, location, organizer) so search
+// engines see the index entries and detail pages as the same entities.
+
+// Lowercase full months to match formatDateEs in build-meeting-pages.mjs
+// (L.monthFull is capitalized for section headings)
+const MONTHS_ES_LONG = [
+  'enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio',
+  'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre',
+];
+
+function formatDateEsLong(dateStr) {
+  const [y, m, d] = dateStr.split('-');
+  return `${parseInt(d)} de ${MONTHS_ES_LONG[parseInt(m) - 1]} de ${y}`;
+}
+
+function meetingsIndexJsonLd() {
+  const isEs = L.lang === 'es';
+  const prefix = isEs ? 'reuniones' : 'meetings';
+  const organizer = {
+    "@type": "GovernmentOrganization",
+    "name": isEs
+      ? 'Distrito Escolar de Redwood City - Mesa Directiva'
+      : 'Redwood City School District Board of Trustees',
+    "url": "https://www.rcsdk8.net",
+    "sameAs": "https://rcsd.info/"
+  };
+  const location = {
+    "@type": "Place",
+    "name": isEs ? "Oficina del Distrito Escolar de Redwood City" : "Redwood City School District Office",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "750 Bradford Street",
+      "addressLocality": "Redwood City",
+      "addressRegion": "CA",
+      "postalCode": "94063",
+      "addressCountry": "US"
+    }
+  };
+
+  // Newest first, matching the page's display order
+  const sorted = [...data.meetings].sort((a, b) => b.date.localeCompare(a.date));
+  const itemListElement = sorted.map((m, i) => {
+    const isMulti = data.meetings.filter(x => x.date === m.date).length > 1;
+    const pagePath = isMulti ? m.slug : m.date;
+    const typeLabel = isEs ? (L.meetingTypes[m.type] || m.type) : m.type;
+    const name = isEs
+      ? `Reunión de la Junta de RCSD: Sesión ${typeLabel} (${formatDateEsLong(m.date)})`
+      : `RCSD School Board Meeting: ${typeLabel} Session (${formatDate(m.date)})`;
+    return {
+      "@type": "ListItem",
+      "position": i + 1,
+      "item": {
+        "@type": "Event",
+        "@id": `https://rcsd.info/meetings/${m.slug}/#meeting`,
+        "name": name,
+        "startDate": `${m.date}T19:00:00-07:00`,
+        "endDate": `${m.date}T22:00:00-07:00`,
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+        "url": `https://rcsd.info/${prefix}/${pagePath}/`,
+        "location": location,
+        "organizer": organizer
+      }
+    };
+  });
+
+  const list = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "@id": `${L.canonicalUrl}#meetings`,
+    "name": isEs ? 'Reuniones de la Junta de RCSD' : 'RCSD Board Meetings',
+    "description": L.metaDescription,
+    "url": L.canonicalUrl,
+    "inLanguage": L.lang,
+    "numberOfItems": itemListElement.length,
+    "itemListElement": itemListElement,
+  };
+
+  // Minified: ~190 events would add ~100KB extra if pretty-printed
+  return `<script type="application/ld+json">${JSON.stringify(list)}</script>`;
 }
 
 // Thread filter section — now includes schools and topics
@@ -1123,7 +1214,8 @@ const pageCSS = `
     font-size: 0.7rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: var(--green-light);
+    /* lightened from --green-light (3.12:1) for WCAG AA 4.5:1 on --green-deep */
+    color: #73b390;
     margin-bottom: 1.2rem;
   }
 
@@ -1171,7 +1263,8 @@ const pageCSS = `
     font-size: 0.6rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.45);
+    /* raised from 0.45 alpha (3.85:1) for WCAG AA 4.5:1 on --green-deep */
+    color: rgba(255,255,255,0.62);
     margin-top: 0.35rem;
   }
 
@@ -1292,7 +1385,8 @@ const pageCSS = `
   .tip-box-title::before {
     content: '+ ';
     font-weight: 400;
-    color: #c0a030;
+    /* darkened from #c0a030 for WCAG AA 4.5:1 on the #fefbf0 tip-box bg */
+    color: #8f6010;
   }
 
   .tip-box[open] .tip-box-title::before {
@@ -1468,7 +1562,8 @@ const pageCSS = `
   }
 
   .meeting-row--study .meeting-date-month {
-    color: #7c6caf;
+    /* darkened from #7c6caf (4.28:1) for WCAG AA 4.5:1 on cream */
+    color: #655494;
   }
 
   .meeting-row--study .meeting-type {
@@ -1482,11 +1577,13 @@ const pageCSS = `
   }
 
   .meeting-row--special .meeting-date-month {
-    color: var(--amber);
+    /* darkened from --amber (2.96:1) for WCAG AA 4.5:1 on cream */
+    color: #8f6010;
   }
 
   .meeting-row--special .meeting-type {
-    color: #9a6a1e;
+    /* darkened from #9a6a1e (4.44:1, just under AA) */
+    color: #8f6010;
   }
 
   /* Retreat / offsite: teal accent */
@@ -1496,7 +1593,8 @@ const pageCSS = `
   }
 
   .meeting-row--offsite .meeting-date-month {
-    color: #3d8b8b;
+    /* darkened from #3d8b8b (3.76:1) for WCAG AA 4.5:1 on cream */
+    color: #2f7070;
   }
 
   .meeting-row--offsite .meeting-type {
@@ -1536,7 +1634,8 @@ const pageCSS = `
     font-size: 0.65rem;
     font-weight: 500;
     letter-spacing: 0.12em;
-    color: var(--green-light);
+    /* darkened from --green-light (3.7:1) for WCAG AA 4.5:1 on cream + #f0f9f4 */
+    color: #2f7050;
     line-height: 1;
   }
 
@@ -1553,8 +1652,8 @@ const pageCSS = `
     display: block;
     font-family: 'IBM Plex Mono', monospace;
     font-size: 0.5rem;
-    color: var(--text-muted);
-    opacity: 0.5;
+    /* was --text-muted at opacity .5 (1.7:1, invisible); WCAG AA needs 4.5:1 */
+    color: var(--text-secondary);
     line-height: 1.4;
     letter-spacing: 0.04em;
   }
@@ -1587,16 +1686,14 @@ const pageCSS = `
     font-family: 'IBM Plex Mono', monospace;
     font-size: 0.65rem;
     letter-spacing: 0.03em;
-    color: var(--text-muted);
+    color: var(--text-secondary);
     margin-left: 0.5rem;
-    opacity: 0.85;
   }
 
   .meeting-duration {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 0.65rem;
     color: var(--green-mid);
-    opacity: 0.7;
   }
 
   /* ---- BOARD ROSTER ---- */
@@ -1611,7 +1708,8 @@ const pageCSS = `
     font-size: 0.6rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.4);
+    /* raised from 0.4 alpha (3.36:1) for WCAG AA 4.5:1 on --green-deep */
+    color: rgba(255,255,255,0.62);
     margin-bottom: 0.6rem;
   }
 
@@ -1630,7 +1728,8 @@ const pageCSS = `
   }
 
   .board-roster-list .roster-role {
-    color: rgba(255,255,255,0.4);
+    /* raised from 0.4 alpha (3.36:1) for WCAG AA 4.5:1 on --green-deep */
+    color: rgba(255,255,255,0.62);
     font-size: 0.6rem;
   }
 
@@ -1687,7 +1786,8 @@ const pageCSS = `
   }
 
   .meeting-link--video {
-    color: var(--coral);
+    /* darkened from --coral (3.95:1) for WCAG AA 4.5:1 on cream */
+    color: #b0492f;
   }
 
   .meeting-link--video:hover {
@@ -1703,7 +1803,8 @@ const pageCSS = `
   }
 
   .meeting-link--minutes {
-    color: var(--amber);
+    /* darkened from --amber (2.96:1) for WCAG AA 4.5:1 on cream */
+    color: #8f6010;
   }
 
   .meeting-link--minutes:hover {
@@ -1720,11 +1821,12 @@ const pageCSS = `
 
   .meeting-link--zoom {
     display: none;
-    color: #2d8cff;
+    /* darkened from #2d8cff (3.14:1) for WCAG AA 4.5:1 on cream */
+    color: #1668c8;
   }
 
   .meeting-link--zoom:hover {
-    color: #1a6fd4;
+    color: #0d4f9e;
   }
 
   .meeting-link--zoom.zoom-active {
@@ -1760,6 +1862,17 @@ const pageCSS = `
   .meeting-summary strong {
     color: var(--text);
     font-weight: 500;
+  }
+
+  /* AI-provenance label: --text-muted clears 4.5:1 on cream (5.06:1) and on
+     the #f0f9f4 upcoming-section background (5.00:1) */
+  .ai-label {
+    display: block;
+    margin-top: 0.25rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.04em;
+    color: var(--text-muted);
   }
 
   /* ---- RESOURCE GRID ---- */
@@ -1971,6 +2084,7 @@ ${headMeta({
     { lang: L.lang, href: L.canonicalUrl },
     { lang: L.hreflangAltLang, href: L.hreflangAlt },
   ],
+  jsonLd: meetingsIndexJsonLd(),
   pageCSS,
 })}
 </head>
@@ -2010,7 +2124,7 @@ ${siteNav({ activePage: 'meetings', lang: L.lang, altLangHref: L.altLangHref })}
       </div>
     </div>
     <div class="board-roster">
-      <div class="board-roster-label"><a href="https://www.rcsdk8.net/our-district/our-board-of-trustees/meet-the-trustees" style="color:rgba(255,255,255,0.4);text-decoration:none" target="_blank" rel="noopener">${L.boardOfEd}</a></div>
+      <div class="board-roster-label"><a href="https://www.rcsdk8.net/our-district/our-board-of-trustees/meet-the-trustees" style="color:rgba(255,255,255,0.62);text-decoration:none" target="_blank" rel="noopener">${L.boardOfEd}</a></div>
       <ul class="board-roster-list">
         <li>David Weekly <span class="roster-role">${L.president}</span></li>
         <li>Cecilia I. M&aacute;rquez <span class="roster-role">${L.vicePresident}</span></li>

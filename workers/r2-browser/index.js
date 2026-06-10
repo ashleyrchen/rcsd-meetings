@@ -3,6 +3,7 @@
  *
  * - Serves R2 objects with correct Content-Type
  * - Renders directory listings for paths ending in /
+ * - Machine-readable JSON listings at /index.json and /<dir>/index.json
  * - Styled consistently with rcsd.info
  */
 
@@ -88,7 +89,7 @@ function renderDirectory(prefix, objects, prefixes) {
     --cream-dark: #f2efe8;
     --text: #2a2a28;
     --text-secondary: #5a5a56;
-    --text-muted: #8a8a84;
+    --text-muted: #6b6b64; /* >=4.5:1 on cream/white (WCAG AA small text); keep in sync with html-parts.mjs */
     --rule: #d4d0c8;
     --rule-light: #e8e4dc;
   }
@@ -249,8 +250,61 @@ function buildBreadcrumbs(prefix) {
   return parts.join(' / ');
 }
 
+// 5 min: fresh enough to pick up new uploads, cheap enough to list repeatedly
+const INDEX_CACHE_SECONDS = 300;
+
+// Machine-readable directory index, one level deep (clients walk subdirectories
+// via the "prefixes" array). Served at /index.json (root) and /<dir>/index.json.
+async function renderIndexJson(bucket, prefix, corsHeaders) {
+  const prefixes = [];
+  const objects = [];
+  let cursor;
+  // list() pages at 1000 keys; cap pages so a huge prefix can't run away
+  for (let page = 0; page < 10; page++) {
+    const listed = await bucket.list({ prefix, delimiter: '/', cursor });
+    for (const p of listed.delimitedPrefixes || []) prefixes.push(p);
+    for (const obj of listed.objects || []) {
+      objects.push({
+        key: obj.key,
+        size: obj.size,
+        uploaded: obj.uploaded ? obj.uploaded.toISOString() : null,
+      });
+    }
+    if (!listed.truncated) {
+      cursor = undefined;
+      break;
+    }
+    cursor = listed.cursor;
+  }
+  prefixes.sort();
+  objects.sort((a, b) => a.key.localeCompare(b.key));
+  // A nonexistent directory and an empty one look identical to list(); only
+  // the bucket root may legitimately be object-empty. Everything else 404s so
+  // typo'd paths aren't cached as valid-but-empty listings.
+  if (prefix !== '' && prefixes.length === 0 && objects.length === 0) {
+    return new Response(JSON.stringify({ error: 'not found', prefix }), {
+      status: 404,
+      headers: { 'Content-Type': 'application/json; charset=utf-8', ...corsHeaders },
+    });
+  }
+  const body = {
+    prefix,
+    generated: new Date().toISOString(),
+    truncated: Boolean(cursor),
+    prefixes,
+    objects,
+  };
+  return new Response(JSON.stringify(body, null, 1), {
+    headers: {
+      'Content-Type': 'application/json; charset=utf-8',
+      'Cache-Control': `public, max-age=${INDEX_CACHE_SECONDS}`,
+      ...corsHeaders,
+    },
+  });
+}
+
 export default {
-  async fetch(request, env) {
+  async fetch(request, env, ctx) {
     const url = new URL(request.url);
     let key = decodeURIComponent(url.pathname.slice(1)); // strip leading /
 
@@ -262,6 +316,21 @@ export default {
 
     if (request.method === 'OPTIONS') {
       return new Response(null, { headers: corsHeaders });
+    }
+
+    // Synthesized JSON directory listing (e.g. /index.json, /json/index.json).
+    // A real R2 object with the same key takes precedence (falls through below).
+    if (key === 'index.json' || key.endsWith('/index.json')) {
+      const cacheKey = new Request(`${url.origin}/${key}`);
+      const cached = await caches.default.match(cacheKey);
+      if (cached) return cached;
+      const real = await env.BUCKET.head(key);
+      if (!real) {
+        const prefix = key.slice(0, -'index.json'.length); // '' at the root
+        const response = await renderIndexJson(env.BUCKET, prefix, corsHeaders);
+        ctx.waitUntil(caches.default.put(cacheKey, response.clone()));
+        return response;
+      }
     }
 
     // Root or directory listing (path ends in / or is empty)

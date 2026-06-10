@@ -29,6 +29,7 @@
 <meta name="twitter:image" content="https://rcsd.info/og-1200.jpg">
 <meta name="twitter:title" content="Search — RCSD Open Data">
 <meta name="twitter:description" content="Search Redwood City School District board meetings, schools, board policies, and district data.">
+<link rel="describedby" href="/llms.txt">
 <link rel="preload" href="/fonts/fraunces-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/newsreader-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/ibm-plex-mono-400-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -51,7 +52,10 @@
     --coral-light: #f5ddd8;
     --text: #2a2a28;
     --text-secondary: #5a5a56;
-    --text-muted: #8a8a84;
+    /* Muted text must still clear WCAG AA 4.5:1 on every background it
+       appears on: 5.06:1 on --cream, 4.67:1 on --cream-dark, 5.37:1 on
+       #fff. (The old lighter gray token hit only ~3:1 on all three.) */
+    --text-muted: #6b6b64;
     --rule: #d4d0c8;
     --rule-light: #e8e4dc;
   }
@@ -83,6 +87,27 @@
     text-decoration-color: var(--green-mid);
   }
 
+  /* ---- SKIP LINK (keyboard a11y) ---- */
+  /* Visually hidden until keyboard focus; first tab stop on every page.
+     Lives inside nav.site-nav so the search indexer (which excludes the
+     nav) never indexes its text. Targets #main-content, emitted by
+     siteNav() right after the nav closes. */
+  .skip-link {
+    position: absolute;
+    left: -200vw;
+    top: 0;
+    z-index: 100;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+    background: var(--green-mid);
+    padding: 0.8rem 1.25rem;
+  }
+  .skip-link:focus { left: 0; outline: 2px solid #fff; outline-offset: -4px; }
+
   /* ---- SITE NAV ---- */
   .site-nav {
     background: #1a2e1a;
@@ -104,7 +129,9 @@
     text-transform: uppercase;
     text-decoration: none;
     color: rgba(255,255,255,0.7);
-    padding: 0.75rem 1rem;
+    /* 0.75rem horizontal padding (not 1rem): seven tabs incl. COMITÉS plus
+       search + lang toggle must fit the 960px container on one row */
+    padding: 0.75rem;
     border-bottom: 2px solid transparent;
     transition: color 0.2s, border-color 0.2s;
   }
@@ -131,7 +158,9 @@
   }
   .site-nav-search input::placeholder { color: rgba(255,255,255,0.55); }
   .site-nav-search input:focus {
-    outline: none;
+    /* visible focus ring — a background tint alone fails WCAG 2.4.7 */
+    outline: 2px solid #fff;
+    outline-offset: 1px;
     background: rgba(255,255,255,0.14);
     border-color: rgba(255,255,255,0.7);
     width: 11rem;
@@ -175,30 +204,48 @@
     font-size: 0.65rem;
     color: var(--green-mid);
     text-decoration: none;
-    margin: 0 0.75rem;
+    /* inline-block + padding lifts the tap target to ~33px tall (the bare
+       0.65rem text was 13px); padding + margin ≈ the old 0.75rem spacing */
+    display: inline-block;
+    padding: 0.45rem 0.5rem;
+    margin: 0 0.25rem;
   }
   .footer-nav a:hover { text-decoration: underline; }
 
   /* ---- RESPONSIVE (nav + footer) ---- */
-  @media (max-width: 640px) {
-    .site-nav-inner { padding: 0 0.9rem; gap: 0.4rem; }
-    /* Tabs become a horizontal scroll strip so every link stays reachable
-       without overflowing the viewport; search stays pinned on the right.
-       The right-edge mask fades the last tab to hint there's more to scroll. */
-    .site-nav-tabs {
-      flex: 1 1 auto;
-      min-width: 0;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
-      -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 1.4rem), transparent);
-      mask-image: linear-gradient(to right, #000 calc(100% - 1.4rem), transparent);
+  /* The single-row nav needs ~920px (seven ES tabs + search + lang toggle),
+     so below 960px it wraps instead: tabs flow across as many justified rows
+     as needed, then search + lang toggle get a full-width row. Every nav item
+     stays visible — the old horizontal scroll strip hid tabs with no usable
+     affordance, and 641–780px viewports clipped the search box offscreen. */
+  @media (max-width: 960px) {
+    .site-nav-inner {
+      flex-wrap: wrap;
+      padding: 0 0.9rem 0.65rem;
     }
-    .site-nav-tabs::-webkit-scrollbar { display: none; }
-    .site-nav-tab { flex: 0 0 auto; padding: 0.6rem 0.65rem; font-size: 0.7rem; }
-    .site-nav-right { flex: 0 0 auto; }
-    .site-nav-search input { width: 5rem; }
-    .site-nav-search input:focus { width: 6.5rem; }
+    .site-nav-tabs {
+      flex: 1 1 100%;
+      flex-wrap: wrap;
+    }
+    .site-nav-tab {
+      /* flex-grow justifies each wrapped row edge-to-edge; 0.9rem vertical
+         padding keeps tap targets ≥44px tall (0.75rem measured only 41.8px) */
+      flex: 1 0 auto;
+      text-align: center;
+      font-size: 0.7rem;
+      padding: 0.9rem 0.55rem;
+    }
+    .site-nav-right { flex: 1 1 100%; }
+    .site-nav-search { flex: 1 1 auto; }
+    .site-nav-search input,
+    .site-nav-search input:focus { width: 100%; }
+    /* 0.95rem vertical padding -> ≥44px tall tap target (0.75rem gave 39.5px) */
+    .site-nav-search input { padding: 0.95rem 0.75rem; }
+    .site-nav-lang {
+      align-self: stretch;
+      display: flex;
+      align-items: center;
+    }
   }
 
   .search-main {
@@ -245,6 +292,7 @@
 <body data-pagefind-ignore>
 
 <nav class="site-nav">
+  <a class="skip-link" href="#main-content">Skip to content</a>
   <div class="site-nav-inner">
     <div class="site-nav-tabs">
       <a href="/" class="site-nav-tab">Home</a>
@@ -252,6 +300,7 @@
       <a href="/schools/" class="site-nav-tab">Schools</a>
       <a href="/district/" class="site-nav-tab">District</a>
       <a href="/budget/" class="site-nav-tab">Budget</a>
+      <a href="/committees/" class="site-nav-tab">Committees</a>
       <a href="/blog/" class="site-nav-tab">Blog</a>
     </div>
     <div class="site-nav-right">
@@ -260,6 +309,7 @@
     </div>
   </div>
 </nav>
+<span id="main-content" tabindex="-1"></span>
 
 <main class="search-main">
   <div class="eyebrow">RCSD Open Data</div>
@@ -281,6 +331,8 @@
     <a href="/schools/">Schools</a>
     <a href="/district/">District</a>
     <a href="/budget/">Budget</a>
+    <a href="/committees/">Committees</a>
+    <a href="/mcp/">API &amp; data for developers</a>
     <a href="https://github.com/dweekly/rcsd-meetings">Source Code &#8599;</a>
     <a href="mailto:team@rcsd.info">team@rcsd.info</a>
   </div>
@@ -291,6 +343,7 @@
 (async function () {
   var RANKING = {"termFrequency":1,"pageLength":0.75,"termSaturation":1.4,"termSimilarity":1};
   var MIN_RESULTS = 5;
+  var MAX_RESULTS = 20;
 
   function ready() { return window.PagefindComponents && window.PagefindComponents.getInstanceManager; }
   for (var i = 0; i < 200 && !ready(); i++) { await new Promise(function (r) { setTimeout(r, 25); }); }
@@ -301,6 +354,25 @@
   // Force the core to load so we can tune ranking + relax queries, and so a ?q=
   // prefill resolves instantly.
   if (inst.triggerLoad) { try { await inst.triggerLoad(); } catch (e) {} }
+
+  // The summary says e.g. "75 results" but the UI caps rendering at MAX_RESULTS
+  // with no pager — rewrite the message to be honest about what is shown.
+  // Feature-detected DOM patch; if markup changes, the stock message remains.
+  var summaryEl = document.querySelector('pagefind-summary');
+  if (summaryEl && window.MutationObserver) {
+    var CAP_TEMPLATE = "Showing the top [CAP] of [COUNT] results";
+    var patchSummary = function () {
+      var t = summaryEl.textContent || '';
+      var m = t.match(/^\s*(\d[\d,]*)\s/);
+      if (!m) return;
+      var count = parseInt(m[1].replace(/,/g, ''), 10);
+      if (!(count > MAX_RESULTS)) return;
+      var p = summaryEl.querySelector('p') || summaryEl;
+      p.textContent = CAP_TEMPLATE.replace('[CAP]', MAX_RESULTS).replace('[COUNT]', count);
+    };
+    new MutationObserver(patchSummary).observe(summaryEl, { childList: true, subtree: true, characterData: true });
+    patchSummary();
+  }
   var pf = inst.__pagefind__;
   if (pf) {
     try { await pf.options({ ranking: RANKING }); } catch (e) {}
@@ -328,6 +400,24 @@
       pf.search = async function (term, opts) { return broaden(term, await origSearch(term, opts), opts); };
       pf.debouncedSearch = async function (term, opts) { return broaden(term, await origDeb(term, opts), opts); };
     }
+  }
+
+  // Eager hydration. The Component UI renders one skeleton row per result and
+  // hydrates each lazily via IntersectionObserver as it scrolls into view —
+  // so below-the-fold rows sit as blank skeletons ("14 results" but only 9
+  // visible with text). Force-load every rendered result as soon as the list
+  // changes: the wrappers live on the <pagefind-results> element's .results
+  // and their load() is idempotent (guarded by result/loading internally).
+  // Feature-detected and fail-open, same contract as the relaxation wrapper.
+  var resultsEl = document.querySelector('pagefind-results');
+  if (resultsEl && window.MutationObserver) {
+    var hydrateAll = function () {
+      (resultsEl.results || []).forEach(function (r) {
+        if (r && typeof r.load === 'function') { try { r.load(); } catch (e) {} }
+      });
+    };
+    new MutationObserver(hydrateAll).observe(resultsEl, { childList: true, subtree: true });
+    hydrateAll();
   }
 
   // Prefill from ?q= (nav search box submits here).

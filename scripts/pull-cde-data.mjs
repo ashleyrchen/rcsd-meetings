@@ -145,6 +145,7 @@ const LTEL_COL = {
   countyCode:   'CountyCode',
   districtCode: 'DistrictCode',
   schoolCode:   'SchoolCode',
+  gender:       'Gender',
   totalEnroll:  'TotalEnrollment',
   el:           'EL',
   rfep:         'RFEP',
@@ -568,8 +569,11 @@ function processStaffExperience(rows, schoolCodeMap) {
  *   EO, IFEP, EL, RFEP, TBD, TotalEnrollment, AR, LTEL,
  *   EL4+, EL03Y, EL45Y, EL6+Y, Total-EE
  *
- * Note: One row per school x grade x gender. Sum across all grades/genders
- * to get school totals.
+ * Note: One row per school x grade x gender, where Gender is ALL, F, or M and
+ * the ALL row already equals F + M (verified in ltel-2024-25.txt; there is no
+ * all-grades aggregate row — grades run TK-08 individually). So school/district
+ * totals must sum ONLY the Gender=ALL rows across grades; summing every row
+ * double-counts (this bug shipped doubled counts until 2026-06-10).
  */
 function processLTEL(rows, schoolCodeMap) {
   if (rows.length === 0) {
@@ -579,20 +583,23 @@ function processLTEL(rows, schoolCodeMap) {
 
   const L = LTEL_COL;
 
-  // Filter to school-level RCSD rows
+  // Filter to school-level RCSD rows. Gender=ALL only: the ALL row already
+  // aggregates F + M for each grade, so including F/M rows double-counts.
   const filtered = rows.filter(r =>
     field(r, L.aggLevel) === 'S' &&
     field(r, L.countyCode) === COUNTY_CODE &&
-    field(r, L.districtCode) === DISTRICT_CODE
+    field(r, L.districtCode) === DISTRICT_CODE &&
+    field(r, L.gender) === 'ALL'
   );
 
-  console.log(`  Filtered to ${filtered.length} RCSD school-level rows`);
+  console.log(`  Filtered to ${filtered.length} RCSD school-level rows (Gender=ALL)`);
 
-  // District-level rows
+  // District-level rows (same Gender=ALL rule)
   const districtFiltered = rows.filter(r =>
     field(r, L.aggLevel) === 'D' &&
     field(r, L.countyCode) === COUNTY_CODE &&
-    field(r, L.districtCode) === DISTRICT_CODE
+    field(r, L.districtCode) === DISTRICT_CODE &&
+    field(r, L.gender) === 'ALL'
   );
 
   const result = {};

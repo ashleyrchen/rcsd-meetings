@@ -13,7 +13,8 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 <link rel="canonical" href="https://rcsd.info/meetings/2025-08-27/">
-
+<link rel="alternate" hreflang="en" href="https://rcsd.info/meetings/2025-08-27/">
+<link rel="alternate" hreflang="es" href="https://rcsd.info/reuniones/2025-08-27/">
 <meta property="og:title" content="Regular — August 27, 2025 — RCSD Board Meeting">
 <meta property="og:description" content="Agenda, transcript, and minutes for the RCSD Regular on August 27, 2025.">
 <meta property="og:url" content="https://rcsd.info/meetings/2025-08-27/">
@@ -28,6 +29,7 @@
 <meta name="twitter:image" content="https://data.rcsd.info/og/meeting-2025-08-27-regular.png">
 <meta name="twitter:title" content="Regular — August 27, 2025 — RCSD Board Meeting">
 <meta name="twitter:description" content="Agenda, transcript, and minutes for the RCSD Regular on August 27, 2025.">
+<link rel="describedby" href="/llms.txt">
 <link rel="preload" href="/fonts/fraunces-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/newsreader-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/ibm-plex-mono-400-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -118,7 +120,10 @@
     --coral-light: #f5ddd8;
     --text: #2a2a28;
     --text-secondary: #5a5a56;
-    --text-muted: #8a8a84;
+    /* Muted text must still clear WCAG AA 4.5:1 on every background it
+       appears on: 5.06:1 on --cream, 4.67:1 on --cream-dark, 5.37:1 on
+       #fff. (The old lighter gray token hit only ~3:1 on all three.) */
+    --text-muted: #6b6b64;
     --rule: #d4d0c8;
     --rule-light: #e8e4dc;
   }
@@ -150,6 +155,27 @@
     text-decoration-color: var(--green-mid);
   }
 
+  /* ---- SKIP LINK (keyboard a11y) ---- */
+  /* Visually hidden until keyboard focus; first tab stop on every page.
+     Lives inside nav.site-nav so the search indexer (which excludes the
+     nav) never indexes its text. Targets #main-content, emitted by
+     siteNav() right after the nav closes. */
+  .skip-link {
+    position: absolute;
+    left: -200vw;
+    top: 0;
+    z-index: 100;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+    background: var(--green-mid);
+    padding: 0.8rem 1.25rem;
+  }
+  .skip-link:focus { left: 0; outline: 2px solid #fff; outline-offset: -4px; }
+
   /* ---- SITE NAV ---- */
   .site-nav {
     background: #1a2e1a;
@@ -171,7 +197,9 @@
     text-transform: uppercase;
     text-decoration: none;
     color: rgba(255,255,255,0.7);
-    padding: 0.75rem 1rem;
+    /* 0.75rem horizontal padding (not 1rem): seven tabs incl. COMITÉS plus
+       search + lang toggle must fit the 960px container on one row */
+    padding: 0.75rem;
     border-bottom: 2px solid transparent;
     transition: color 0.2s, border-color 0.2s;
   }
@@ -198,7 +226,9 @@
   }
   .site-nav-search input::placeholder { color: rgba(255,255,255,0.55); }
   .site-nav-search input:focus {
-    outline: none;
+    /* visible focus ring — a background tint alone fails WCAG 2.4.7 */
+    outline: 2px solid #fff;
+    outline-offset: 1px;
     background: rgba(255,255,255,0.14);
     border-color: rgba(255,255,255,0.7);
     width: 11rem;
@@ -242,30 +272,61 @@
     font-size: 0.65rem;
     color: var(--green-mid);
     text-decoration: none;
-    margin: 0 0.75rem;
+    /* inline-block + padding lifts the tap target to ~33px tall (the bare
+       0.65rem text was 13px); padding + margin ≈ the old 0.75rem spacing */
+    display: inline-block;
+    padding: 0.45rem 0.5rem;
+    margin: 0 0.25rem;
   }
   .footer-nav a:hover { text-decoration: underline; }
 
   /* ---- RESPONSIVE (nav + footer) ---- */
-  @media (max-width: 640px) {
-    .site-nav-inner { padding: 0 0.9rem; gap: 0.4rem; }
-    /* Tabs become a horizontal scroll strip so every link stays reachable
-       without overflowing the viewport; search stays pinned on the right.
-       The right-edge mask fades the last tab to hint there's more to scroll. */
-    .site-nav-tabs {
-      flex: 1 1 auto;
-      min-width: 0;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
-      -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 1.4rem), transparent);
-      mask-image: linear-gradient(to right, #000 calc(100% - 1.4rem), transparent);
+  /* The single-row nav needs ~920px (seven ES tabs + search + lang toggle),
+     so below 960px it wraps instead: tabs flow across as many justified rows
+     as needed, then search + lang toggle get a full-width row. Every nav item
+     stays visible — the old horizontal scroll strip hid tabs with no usable
+     affordance, and 641–780px viewports clipped the search box offscreen. */
+  @media (max-width: 960px) {
+    .site-nav-inner {
+      flex-wrap: wrap;
+      padding: 0 0.9rem 0.65rem;
     }
-    .site-nav-tabs::-webkit-scrollbar { display: none; }
-    .site-nav-tab { flex: 0 0 auto; padding: 0.6rem 0.65rem; font-size: 0.7rem; }
-    .site-nav-right { flex: 0 0 auto; }
-    .site-nav-search input { width: 5rem; }
-    .site-nav-search input:focus { width: 6.5rem; }
+    .site-nav-tabs {
+      flex: 1 1 100%;
+      flex-wrap: wrap;
+    }
+    .site-nav-tab {
+      /* flex-grow justifies each wrapped row edge-to-edge; 0.9rem vertical
+         padding keeps tap targets ≥44px tall (0.75rem measured only 41.8px) */
+      flex: 1 0 auto;
+      text-align: center;
+      font-size: 0.7rem;
+      padding: 0.9rem 0.55rem;
+    }
+    .site-nav-right { flex: 1 1 100%; }
+    .site-nav-search { flex: 1 1 auto; }
+    .site-nav-search input,
+    .site-nav-search input:focus { width: 100%; }
+    /* 0.95rem vertical padding -> ≥44px tall tap target (0.75rem gave 39.5px) */
+    .site-nav-search input { padding: 0.95rem 0.75rem; }
+    .site-nav-lang {
+      align-self: stretch;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  /* Same unofficial-site banner pattern as the meetings index pages */
+  .disclaimer {
+    background: #fff3cd;
+    border-bottom: 2px solid #e0c36a;
+    padding: 0.75rem 1.5rem;
+    text-align: center;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.01em;
+    line-height: 1.6;
+    color: #664d03;
   }
 
   .tv-layout {
@@ -309,6 +370,16 @@
     color: var(--text-secondary);
     margin-top: 0.5rem;
     max-width: 640px;
+  }
+
+  /* AI-provenance label: --text-muted is 5.06:1 on cream (WCAG AA) */
+  .ai-label {
+    display: block;
+    margin-top: 0.25rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.04em;
+    color: var(--text-muted);
   }
 
   .tv-main {
@@ -439,7 +510,8 @@
     font-weight: 400;
     flex: 0 0 auto;
     width: 1rem;
-    opacity: 0.5;
+    /* was 0.5 (≈3.0:1 on white); 0.75 keeps the near-black speaker colors ≥6:1 */
+    opacity: 0.75;
     padding-top: 0.15rem;
   }
 
@@ -624,6 +696,7 @@
 </head>
 <body>
 <nav class="site-nav">
+  <a class="skip-link" href="#main-content">Skip to content</a>
   <div class="site-nav-inner">
     <div class="site-nav-tabs">
       <a href="/" class="site-nav-tab">Home</a>
@@ -631,13 +704,20 @@
       <a href="/schools/" class="site-nav-tab">Schools</a>
       <a href="/district/" class="site-nav-tab">District</a>
       <a href="/budget/" class="site-nav-tab">Budget</a>
+      <a href="/committees/" class="site-nav-tab">Committees</a>
       <a href="/blog/" class="site-nav-tab">Blog</a>
     </div>
     <div class="site-nav-right">
       <form class="site-nav-search" role="search" action="/search/" method="get"><input type="search" name="q" placeholder="Search…" aria-label="Search" autocomplete="off"></form>
+      <a href="/reuniones/2025-08-27/" class="site-nav-lang">ES</a>
     </div>
   </div>
 </nav>
+<span id="main-content" tabindex="-1"></span>
+
+<div class="disclaimer">
+  Not an official District document; independently assembled by <a href="https://github.com/dweekly/rcsd-meetings" style="color:#664d03">David Weekly</a>. May contain errors. Questions? <a href="mailto:team@rcsd.info" style="color:#664d03">Contact us</a>.
+</div>
 
 <div class="tv-layout">
   <div class="tv-header">
@@ -650,6 +730,7 @@
       
     </div>
     <p class="tv-summary">Board discussed national superintendent search timeline — Wells outlined Sept-Jan schedule for outreach, recruiting, interviews, and hiring. Approved $973K for One Life Counseling mental health services, $118K for ProTech industrial hygienist oversight of HVAC asbestos/lead abatement, and EV charging infrastructure (Resolutions 4-5; VP Weekly raised concern about vendor's limited-adoption charging standard risking obsolescence). Readopted the LCAP after budget revisions. Approved Expanded Learning Opportunities Program Guide. Five policy first readings: media relations (pulled from agenda), social media, claims, immigration enforcement, and public statements. Board reports: Weekly attended CSEA barbecue; Márquez attended DELAC (noted low attendance); Li attended SMCOE School Funding Task Force.</p>
+    <p class="ai-label">AI-generated summary — may contain errors. Not an official record.</p>
   </div>
 
   <div class="tv-main">
@@ -691,6 +772,8 @@
     <a href="/schools/">Schools</a>
     <a href="/district/">District</a>
     <a href="/budget/">Budget</a>
+    <a href="/committees/">Committees</a>
+    <a href="/mcp/">API &amp; data for developers</a>
     <a href="https://github.com/dweekly/rcsd-meetings">Source Code &#8599;</a>
     <a href="mailto:team@rcsd.info">team@rcsd.info</a>
   </div>
@@ -793,8 +876,11 @@
     var text = u.text || '';
     if (text.length < 300) return [u];
 
-    // Split on sentence boundaries (period/question/exclamation followed by space and capital)
-    var sentences = text.match(/[^.!?]*[.!?]+(?:s+|$)/g) || [text];
+    // Split on sentence boundaries (period/question/exclamation followed by space and capital).
+    // This code is emitted inside a JS template literal, so the regex backslash must be
+    // double-escaped (\s) or it cooks to the literal "s" in the published HTML and
+    // silently drops nearly all text of every utterance >= 300 chars.
+    var sentences = text.match(/[^.!?]*[.!?]+(?:\s+|$)/g) || [text];
     var chunks = [];
     var current = '';
     var sentenceCount = 0;
@@ -878,11 +964,20 @@
         if (btn) btn.textContent = defaultLangEs ? 'EN' : 'ES';
       })
       .catch(function() {
+        // Friendly fallback: the raw EN transcript JSON on data.rcsd.info is
+        // the canonical artifact, so link it even when this page's fetch fails
         var c = document.getElementById('panel-transcript');
         c.textContent = '';
         var msg = document.createElement('div');
         msg.className = 'tv-empty';
-        msg.textContent = "Failed to load transcript.";
+        msg.textContent = "Sorry — the transcript didn’t load. Try refreshing the page, or open the raw transcript file directly:";
+        var link = document.createElement('a');
+        link.href = transcriptUrlEn;
+        link.target = '_blank';
+        link.rel = 'noopener';
+        link.textContent = "Raw transcript (JSON)";
+        msg.appendChild(document.createElement('br'));
+        msg.appendChild(link);
         c.appendChild(msg);
       });
 

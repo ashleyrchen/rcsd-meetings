@@ -67,6 +67,9 @@ run(`${verb} artifacts → ${BUCKET}`, [
   BUCKET,
   '--exclude', 'json/**',
   '--exclude', 'transcripts-slim/**',
+  // Scratch/discard dirs must never publish (this one briefly did; the live
+  // tmp-may13-discards/ prefix is deleted at deploy).
+  '--exclude', 'tmp-*/**',
   '--progress',
   '--stats-one-line',
   '-v',

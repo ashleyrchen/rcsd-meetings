@@ -29,6 +29,7 @@
 <meta name="twitter:image" content="https://data.rcsd.info/og/school-roy-cloud.png">
 <meta name="twitter:title" content="Roy Cloud School — RCSD Open Data">
 <meta name="twitter:description" content="Public data for Roy Cloud School: academic performance, demographics, funding, and staffing for the 2025-26 school year.">
+<link rel="describedby" href="/llms.txt">
 <link rel="preload" href="/fonts/fraunces-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/newsreader-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/ibm-plex-mono-400-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -40,7 +41,7 @@
   "@id": "https://rcsd.info/schools/roy-cloud/#webpage",
   "url": "https://rcsd.info/schools/roy-cloud/",
   "name": "Roy Cloud School",
-  "description": "Roy Cloud is a TK-8 neighborhood school serving a relatively low-need population. It is one of the higher-performing schools in the district. Despite strong overall performance, its EL and LTEL subgroups are rated RED on the California Dashboard.",
+  "description": "Roy Cloud is a TK-8 neighborhood school where most families are not low-income, and it is one of the higher-scoring schools in the district. But its students who are still learning English — including those who have been at it for six-plus years — are struggling enough that the state's school report card (the California Dashboard) rates those groups RED, the lowest level.",
   "inLanguage": "en",
   "about": {
     "@type": [
@@ -49,7 +50,7 @@
     ],
     "@id": "https://rcsd.info/schools/roy-cloud/#school",
     "name": "Roy Cloud School",
-    "description": "Roy Cloud is a TK-8 neighborhood school serving a relatively low-need population. It is one of the higher-performing schools in the district. Despite strong overall performance, its EL and LTEL subgroups are rated RED on the California Dashboard.",
+    "description": "Roy Cloud is a TK-8 neighborhood school where most families are not low-income, and it is one of the higher-scoring schools in the district. But its students who are still learning English — including those who have been at it for six-plus years — are struggling enough that the state's school report card (the California Dashboard) rates those groups RED, the lowest level.",
     "url": "https://rcsd.info/schools/roy-cloud/",
     "telephone": "+1-650-482-2414",
     "address": {
@@ -129,7 +130,10 @@
     --coral-light: #f5ddd8;
     --text: #2a2a28;
     --text-secondary: #5a5a56;
-    --text-muted: #8a8a84;
+    /* Muted text must still clear WCAG AA 4.5:1 on every background it
+       appears on: 5.06:1 on --cream, 4.67:1 on --cream-dark, 5.37:1 on
+       #fff. (The old lighter gray token hit only ~3:1 on all three.) */
+    --text-muted: #6b6b64;
     --rule: #d4d0c8;
     --rule-light: #e8e4dc;
   }
@@ -161,6 +165,27 @@
     text-decoration-color: var(--green-mid);
   }
 
+  /* ---- SKIP LINK (keyboard a11y) ---- */
+  /* Visually hidden until keyboard focus; first tab stop on every page.
+     Lives inside nav.site-nav so the search indexer (which excludes the
+     nav) never indexes its text. Targets #main-content, emitted by
+     siteNav() right after the nav closes. */
+  .skip-link {
+    position: absolute;
+    left: -200vw;
+    top: 0;
+    z-index: 100;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+    background: var(--green-mid);
+    padding: 0.8rem 1.25rem;
+  }
+  .skip-link:focus { left: 0; outline: 2px solid #fff; outline-offset: -4px; }
+
   /* ---- SITE NAV ---- */
   .site-nav {
     background: #1a2e1a;
@@ -182,7 +207,9 @@
     text-transform: uppercase;
     text-decoration: none;
     color: rgba(255,255,255,0.7);
-    padding: 0.75rem 1rem;
+    /* 0.75rem horizontal padding (not 1rem): seven tabs incl. COMITÉS plus
+       search + lang toggle must fit the 960px container on one row */
+    padding: 0.75rem;
     border-bottom: 2px solid transparent;
     transition: color 0.2s, border-color 0.2s;
   }
@@ -209,7 +236,9 @@
   }
   .site-nav-search input::placeholder { color: rgba(255,255,255,0.55); }
   .site-nav-search input:focus {
-    outline: none;
+    /* visible focus ring — a background tint alone fails WCAG 2.4.7 */
+    outline: 2px solid #fff;
+    outline-offset: 1px;
     background: rgba(255,255,255,0.14);
     border-color: rgba(255,255,255,0.7);
     width: 11rem;
@@ -253,30 +282,48 @@
     font-size: 0.65rem;
     color: var(--green-mid);
     text-decoration: none;
-    margin: 0 0.75rem;
+    /* inline-block + padding lifts the tap target to ~33px tall (the bare
+       0.65rem text was 13px); padding + margin ≈ the old 0.75rem spacing */
+    display: inline-block;
+    padding: 0.45rem 0.5rem;
+    margin: 0 0.25rem;
   }
   .footer-nav a:hover { text-decoration: underline; }
 
   /* ---- RESPONSIVE (nav + footer) ---- */
-  @media (max-width: 640px) {
-    .site-nav-inner { padding: 0 0.9rem; gap: 0.4rem; }
-    /* Tabs become a horizontal scroll strip so every link stays reachable
-       without overflowing the viewport; search stays pinned on the right.
-       The right-edge mask fades the last tab to hint there's more to scroll. */
-    .site-nav-tabs {
-      flex: 1 1 auto;
-      min-width: 0;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
-      -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 1.4rem), transparent);
-      mask-image: linear-gradient(to right, #000 calc(100% - 1.4rem), transparent);
+  /* The single-row nav needs ~920px (seven ES tabs + search + lang toggle),
+     so below 960px it wraps instead: tabs flow across as many justified rows
+     as needed, then search + lang toggle get a full-width row. Every nav item
+     stays visible — the old horizontal scroll strip hid tabs with no usable
+     affordance, and 641–780px viewports clipped the search box offscreen. */
+  @media (max-width: 960px) {
+    .site-nav-inner {
+      flex-wrap: wrap;
+      padding: 0 0.9rem 0.65rem;
     }
-    .site-nav-tabs::-webkit-scrollbar { display: none; }
-    .site-nav-tab { flex: 0 0 auto; padding: 0.6rem 0.65rem; font-size: 0.7rem; }
-    .site-nav-right { flex: 0 0 auto; }
-    .site-nav-search input { width: 5rem; }
-    .site-nav-search input:focus { width: 6.5rem; }
+    .site-nav-tabs {
+      flex: 1 1 100%;
+      flex-wrap: wrap;
+    }
+    .site-nav-tab {
+      /* flex-grow justifies each wrapped row edge-to-edge; 0.9rem vertical
+         padding keeps tap targets ≥44px tall (0.75rem measured only 41.8px) */
+      flex: 1 0 auto;
+      text-align: center;
+      font-size: 0.7rem;
+      padding: 0.9rem 0.55rem;
+    }
+    .site-nav-right { flex: 1 1 100%; }
+    .site-nav-search { flex: 1 1 auto; }
+    .site-nav-search input,
+    .site-nav-search input:focus { width: 100%; }
+    /* 0.95rem vertical padding -> ≥44px tall tap target (0.75rem gave 39.5px) */
+    .site-nav-search input { padding: 0.95rem 0.75rem; }
+    .site-nav-lang {
+      align-self: stretch;
+      display: flex;
+      align-items: center;
+    }
   }
 
   .section a {
@@ -735,6 +782,11 @@
   .resource-card {
     background: #fff;
     border: 1px solid var(--rule-light);
+    /* min-width:0 removes the grid item's automatic min-content floor —
+       without it one long unbreakable line (e.g. a PDF filename) widens the
+       shared track past a 320-360px viewport and the whole page pans. */
+    min-width: 0;
+    overflow-wrap: anywhere;
     padding: 1.2rem 1.5rem;
     transition: border-color 0.2s;
   }
@@ -743,14 +795,18 @@
     border-color: var(--green-light);
   }
 
-  .resource-card h4 {
+  .resource-card h3 {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 0.7rem;
     font-weight: 500;
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: var(--green-mid);
+    /* margin-top/line-height cancel the generic h3 rule above; these cards
+       were h4 (skipping h2 -> h4) and keep the old h4 rendering exactly */
+    margin-top: 0;
     margin-bottom: 0.4rem;
+    line-height: 1.65;
   }
 
   .resource-card p {
@@ -987,6 +1043,7 @@
 <body>
 
 <nav class="site-nav">
+  <a class="skip-link" href="#main-content">Skip to content</a>
   <div class="site-nav-inner">
     <div class="site-nav-tabs">
       <a href="/" class="site-nav-tab">Home</a>
@@ -994,6 +1051,7 @@
       <a href="/schools/" class="site-nav-tab active">Schools</a>
       <a href="/district/" class="site-nav-tab">District</a>
       <a href="/budget/" class="site-nav-tab">Budget</a>
+      <a href="/committees/" class="site-nav-tab">Committees</a>
       <a href="/blog/" class="site-nav-tab">Blog</a>
     </div>
     <div class="site-nav-right">
@@ -1002,13 +1060,14 @@
     </div>
   </div>
 </nav>
+<span id="main-content" tabindex="-1"></span>
 
 <header class="site-header">
   <div class="header-inner">
     <div class="header-district"><a href="/district/">Redwood City School District</a></div>
     <img src="https://data.rcsd.info/logos/roy-cloud.jpg" alt="Roy Cloud School" class="header-logo" width="1200" height="421" fetchpriority="high">
     <h1 class="header-title">Roy Cloud School</h1>
-    <p class="header-subtitle">Roy Cloud is a TK-8 neighborhood school serving a relatively low-need population. It is one of the higher-performing schools in the district. Despite strong overall performance, its EL and LTEL subgroups are rated RED on the California Dashboard.</p>
+    <p class="header-subtitle">Roy Cloud is a TK-8 neighborhood school where most families are not low-income, and it is one of the higher-scoring schools in the district. But its students who are still learning English — including those who have been at it for six-plus years — are struggling enough that the state's school report card (the California Dashboard) rates those groups RED, the lowest level.</p>
     <div style="margin-top:0.8rem">
       <span class="school-badge neighborhood">Neighborhood <span class="info-bubble" tabindex="0"><span class="info-bubble-icon" style="border-color:rgba(255,255,255,0.2);color:rgba(255,255,255,0.4)">i</span><span class="info-bubble-tip">A neighborhood school enrolls students who live within its attendance area boundaries. Families can also apply through open enrollment.</span></span></span>
     </div>
@@ -1029,7 +1088,7 @@
     <a href="#academics">Academic Performance</a>
     <a href="#demographics">Student Demographics</a>
     <a href="#funding">Funding</a>
-    <a href="#staffing">Staffing</a>
+    <a href="#staffing">Who Teaches Here</a>
     <a href="#resources">Documents & Resources</a>
     <a href="#board">Board Meetings</a>
   </div>
@@ -1138,13 +1197,15 @@
       <div class="stat-card">
         <div class="stat-card-label">Socioeconomically Disadvantaged</div>
         <div class="stat-card-value">11.4% <span class="info-bubble" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://data.rcsd.info/documents/sarc/2024-25/english/roy-cloud.pdf" target="_blank">SARC 2024-25</a></span></span></div>
+        <div class="stat-card-note">Mostly students who qualify for free or low-cost school lunch</div>
       </div>
       <div class="stat-card">
         <div class="stat-card-label">English Learners</div>
         <div class="stat-card-value">3.4% <span class="info-bubble" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://data.rcsd.info/documents/sarc/2024-25/english/roy-cloud.pdf" target="_blank">SARC 2024-25</a></span></span></div>
+        <div class="stat-card-note">Students still learning English</div>
       </div>
       <div class="stat-card">
-        <div class="stat-card-label">Chronic Absenteeism</div>
+        <div class="stat-card-label">Chronic Absenteeism <span class="info-bubble" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://www.caschooldashboard.org/reports/41690056044432/2024" target="_blank">A student is chronically absent if they miss 10% or more of school days — about 18 days a year.</a></span></span></div>
         <div class="stat-card-value">8% <span class="info-bubble" tabindex="0"><span class="info-bubble-icon">i</span><span class="info-bubble-tip"><a href="https://www.caschooldashboard.org/reports/41690056044432/2024" target="_blank">CA Dashboard</a></span></span></div>
         <div class="stat-card-note">District avg: 18.3%</div>
       </div>
@@ -1173,17 +1234,19 @@
             <tbody><tr class="total-row"><td class="label-cell">All Students</td><td class="num">7.3%</td><td class="num">47</td><td class="num">644</td></tr><tr><td class="label-cell">Hispanic/Latino</td><td class="num">12.5%</td><td class="num">18</td><td class="num">144</td></tr><tr><td class="label-cell">White</td><td class="num">6.1%</td><td class="num">22</td><td class="num">362</td></tr><tr><td class="label-cell">Asian</td><td class="num">4%</td><td class="num">2</td><td class="num">50</td></tr><tr><td class="label-cell">Two or More Races</td><td class="num">6.4%</td><td class="num">5</td><td class="num">78</td></tr><tr><td class="label-cell">English Learners</td><td class="num">20%</td><td class="num">7</td><td class="num">35</td></tr><tr><td class="label-cell">Students with Disabilities</td><td class="num">13.6%</td><td class="num">18</td><td class="num">132</td></tr><tr><td class="label-cell">Socioeconomically Disadvantaged</td><td class="num">16.3%</td><td class="num">17</td><td class="num">104</td></tr></tbody>
           </table>
         </div>
-        <p class="source">Chronic absenteeism rate by student subgroup. A student is chronically absent if they miss 10% or more of school days. Source: CDE 2024-25.</p>
+        <p class="source">Chronic absenteeism rate by student subgroup. A student is chronically absent if they miss 10% or more of school days — about 18 days a year. Groups too small to report (fewer than 10 students) are not shown, to protect privacy. Source: California Dept. of Education, 2024-25.</p>
 
     
-        <h3 style="margin-top:2rem">English Learners</h3>
+        <h3 style="margin-top:2rem">English Learners: A Closer Look</h3>
+        <p>In 2024-25, 33 of this school's 636 students (5%) were English Learners — students who are still learning English. Another 24 used to be English Learners and are now fluent: they passed the state's English test and were "reclassified" (RFEP).</p>
         <div class="stat-grid">
-          <div class="stat-card"><div class="stat-card-label">EL Students</div><div class="stat-card-value">66</div></div>
-          <div class="stat-card"><div class="stat-card-label">LTEL Students</div><div class="stat-card-value">10</div><div class="stat-card-note">6+ years as EL</div></div>
-          <div class="stat-card"><div class="stat-card-label">At-Risk of LTEL</div><div class="stat-card-value">4</div><div class="stat-card-note">4-5 years</div></div>
-          <div class="stat-card"><div class="stat-card-label">Reclassified (RFEP)</div><div class="stat-card-value">48</div></div>
+          <div class="stat-card"><div class="stat-card-label">Learning English</div><div class="stat-card-value">33</div><div class="stat-card-note">5% of the school</div></div>
+          <div class="stat-card"><div class="stat-card-label">Long-Term (LTEL)</div><div class="stat-card-value">5</div><div class="stat-card-note">6+ years as an English Learner</div></div>
+          <div class="stat-card"><div class="stat-card-label">At Risk of LTEL</div><div class="stat-card-value">2</div><div class="stat-card-note">4-5 years as an English Learner</div></div>
+          <div class="stat-card"><div class="stat-card-label">Now Fluent (RFEP)</div><div class="stat-card-value">24</div><div class="stat-card-note">Tested out of English Learner status</div></div>
         </div>
-        <p class="source">English Learner status counts. LTEL = 6+ years as EL. At-Risk = 4-5 years. Source: CDE ELAS/LTEL 2024-25.</p>
+        <p>A "long-term English Learner" (LTEL) is a student who has been learning English for 6 or more years without yet reaching fluency; students at 4-5 years are counted as "at risk" of becoming long-term. Schools watch these numbers because the goal is for students to reach fluency well before the 6-year mark.</p>
+        <p class="source">Source: <a href="https://dq.cde.ca.gov/dataquest/longtermel/" target="_blank">California Dept. of Education</a> English Learner data (ELAS/LTEL), 2024-25 school year.</p>
   </section>
 
   <!-- ======== 4. FUNDING ======== -->
@@ -1292,11 +1355,43 @@
     <p class="source">SPSA budgets represent supplemental site-level spending (enrichment, counseling, PD, materials). Base operating costs (teacher salaries, admin, facilities) come from the general fund and vary by school.</p>
   </section>
 
-  <!-- ======== 5. STAFFING ======== -->
+  <!-- ======== 5. WHO TEACHES HERE ======== -->
   <section class="section" id="staffing">
     <div class="section-rule"></div>
     <div class="section-num">05</div>
-    <h2>Staffing</h2>
+    <h2>Who Teaches Here</h2>
+
+    <p>Roy Cloud School has 36 teachers for 636 students — about 19 students per teacher. On average, its teachers have been teaching for 14.6 years, and 7 of the 36 are in their first or second year.</p>
+
+    <div class="stat-grid">
+      <div class="stat-card">
+        <div class="stat-card-label">Teachers</div>
+        <div class="stat-card-value">36</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-label">Students per Teacher</div>
+        <div class="stat-card-value">18.9:1</div>
+        <div class="stat-card-note">District avg: 21:1</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-label">Avg Years Teaching</div>
+        <div class="stat-card-value">14.6</div>
+        <div class="stat-card-note">13.2 years in RCSD</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-label">New Teachers</div>
+        <div class="stat-card-value">7 / 36</div>
+        <div class="stat-card-note">In their 1st or 2nd year of teaching</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-label">Students per Counselor</div>
+        <div class="stat-card-value">636:1</div>
+        <div class="stat-card-note">Counselors, psychologists, social workers & nurses</div>
+      </div>
+    </div>
+    <p class="source">Source: <a href="https://www.cde.ca.gov/ds/ad/fsspex.asp" target="_blank">California Dept. of Education</a> staffing data, 2024-25 school year.</p>
+
+    <h3 style="margin-top:2rem">Credentials</h3>
 
     <div class="stat-grid">
       <div class="stat-card">
@@ -1311,7 +1406,7 @@
       
     </div>
 
-    <p class="source">District target: 100% by 2027</p>
+    <p class="source">"Misassigned" means a teacher was placed in a class they are not credentialed for — most often classes with students learning English (EL). District target: 100% by 2027.</p>
 
     
     <h3>Teacher demographics highlights</h3>
@@ -1327,21 +1422,19 @@
 
     
     <div class="callout">
-      <p>EL/LTEL subgroups rated RED on California Dashboard despite strong overall scores. DEI Literature Lift initiative ($33K). Rainbow Cloud GSA. Hispanic staff improved from 9% to 13.5% over 4 years.</p>
+      <p>Students learning English — including long-term English Learners — are rated RED (the lowest level) on the California Dashboard, the state's school report card, despite strong overall scores. Runs a $33K "Literature Lift" program to bring more diverse books into classrooms. Has a student LGBTQ+ club, Rainbow Cloud. Hispanic teachers grew from 9% to 13.5% of staff over 4 years.</p>
     </div>
 
     
-        <h3 style="margin-top:2rem">Teacher Diversity (CDE)</h3>
+        <h3 style="margin-top:2rem">Teacher Race & Ethnicity</h3>
         <div class="table-wrap">
           <table>
-            <thead><tr><th>Race/Ethnicity</th><th class="num">Teachers</th><th class="num">%</th></tr></thead>
-            <tbody><tr><td class="label-cell">Hispanic/Latino</td><td class="num">5</td><td class="num">13.9%</td></tr><tr><td class="label-cell">White</td><td class="num">27</td><td class="num">75.0%</td></tr><tr><td class="label-cell">Asian</td><td class="num">3</td><td class="num">8.3%</td></tr><tr><td class="label-cell">Filipino</td><td class="num">1</td><td class="num">2.8%</td></tr>
-            <tr class="total-row"><td class="label-cell">Total</td><td class="num">36</td><td class="num">100%</td></tr></tbody>
+            <thead><tr><th scope="col">Race/Ethnicity</th><th scope="col" class="num">Teachers</th><th scope="col" class="num">%</th><th scope="col">Share</th></tr></thead>
+            <tbody><tr><td class="label-cell">Hispanic/Latino</td><td class="num">5</td><td class="num">13.9%</td><td class="bar-cell"><span class="bar" style="width:11px; background:var(--green-light)"></span></td></tr><tr><td class="label-cell">White</td><td class="num">27</td><td class="num">75.0%</td><td class="bar-cell"><span class="bar" style="width:60px; background:var(--green-light)"></span></td></tr><tr><td class="label-cell">Asian</td><td class="num">3</td><td class="num">8.3%</td><td class="bar-cell"><span class="bar" style="width:7px; background:var(--green-light)"></span></td></tr><tr><td class="label-cell">Filipino</td><td class="num">1</td><td class="num">2.8%</td><td class="bar-cell"><span class="bar" style="width:2px; background:var(--green-light)"></span></td></tr>
+            <tr class="total-row"><td class="label-cell">Total</td><td class="num">36</td><td class="num">100%</td><td></td></tr></tbody>
           </table>
         </div>
-        <p class="source">Certificated teacher race/ethnicity from CDE Census Day 2024-25.</p>
-
-    <h3 style="margin-top:2rem">Teacher Experience</h3><div class="stat-grid"><div class="stat-card"><div class="stat-card-label">Avg Years Experience</div><div class="stat-card-value">14.6</div></div><div class="stat-card"><div class="stat-card-label">New Teachers (≤2 yr)</div><div class="stat-card-value">7 / 36</div><div class="stat-card-note">2 first-year</div></div><div class="stat-card"><div class="stat-card-label">Pupil:Teacher</div><div class="stat-card-value">18.9:1</div></div><div class="stat-card"><div class="stat-card-label">Pupil:Counselor</div><div class="stat-card-value">636:1</div></div></div><p class="source">Teacher experience from CDE Census Day 2024-25. Inexperienced = 2 or fewer years total.</p>
+        <p class="source">Counts classroom teachers only. Source: <a href="https://www.cde.ca.gov/ds/ad/fsspre.asp" target="_blank">California Dept. of Education</a> staff data, 2024-25 school year.</p>
   </section>
 
   <!-- ======== 6. DOCUMENTS & RESOURCES ======== -->
@@ -1352,27 +1445,27 @@
 
     <div class="resource-grid">
       <div class="resource-card">
-        <h4>School Accountability Report Card (SARC)</h4>
-        <p>Annual state-mandated report on school conditions and student outcomes.</p>
+        <h3>School Accountability Report Card (SARC)</h3>
+        <p>A yearly report card the state requires from every school: test scores, class sizes, teacher credentials, and campus conditions in one PDF.</p>
         <p style="margin-top:0.5rem"><a href="https://data.rcsd.info/documents/sarc/2024-25/english/roy-cloud.pdf" target="_blank">Download SARC (PDF) &#8599;</a></p>
       </div>
       <div class="resource-card">
-        <h4>School Plan for Student Achievement (SPSA)</h4>
-        <p>Site-level plan for how supplemental funds are spent.</p>
+        <h3>School Plan for Student Achievement (SPSA)</h3>
+        <p>The school’s yearly plan for how it spends its extra (“supplemental”) money — tutoring, counselors, materials, and more.</p>
         <p style="margin-top:0.5rem"><a href="https://data.rcsd.info/documents/spsa/2025-26/roy-cloud.pdf" target="_blank">Download SPSA (PDF) &#8599;</a></p>
       </div>
       <div class="resource-card">
-        <h4>Board Presentation</h4>
+        <h3>Board Presentation</h3>
         <p>2025-26 · April 1, 2026</p>
         <p style="margin-top:0.5rem"><a href="https://data.rcsd.info/board-packets/2026-04-01/Roy-cloud-25-26-Data-for-Board-presentation-1.pdf" target="_blank">View presentation (PDF) &#8599;</a></p>
       </div>
       <div class="resource-card bell-card">
-        <h4>Bell Schedule</h4>
+        <h3>Bell Schedule</h3>
         <p class="bell-supervision">Supervision starts: 8:00 AM</p><div class="bell-card-inner"><table class="bell-table"><thead><tr>
-    <th></th>
-    <th><span class="bell-col-label">Regular</span><span class="bell-col-sub">Mon · Tue · Wed · Fri</span></th>
-    <th><span class="bell-col-label">Thursday</span></th>
-    <th><span class="bell-col-label">Super-min</span></th>
+    <th scope="col"><span class="bell-col-label">Grade</span></th>
+    <th scope="col"><span class="bell-col-label">Regular</span><span class="bell-col-sub">Mon · Tue · Wed · Fri</span></th>
+    <th scope="col"><span class="bell-col-label">Thursday</span></th>
+    <th scope="col"><span class="bell-col-label">Super-min</span></th>
   </tr></thead><tbody><tr>
       <td class="bell-grade">TK</td>
       <td><span class="bell-time-range">8:15 AM<span class="bell-dash"> – </span>1:30 PM</span></td>
@@ -1396,30 +1489,30 @@
     </tr></tbody></table></div>
       </div>
       <div class="resource-card">
-        <h4>Lunch Menu</h4>
+        <h3>Lunch Menu</h3>
         <p><a href="https://menus.healthepro.com/organizations/1184/sites/9283/menus/103751" target="_blank">View menu &#8599;</a></p>
       </div>
       <div class="resource-card">
-        <h4>PTO / PTA</h4>
+        <h3>PTO / PTA</h3>
         <p><a href="https://roycloudpto.com/" target="_blank">Roy Cloud School Parents Club &#8599;</a></p>
         
       </div>
       <div class="resource-card">
-        <h4>Parent Communication</h4>
+        <h3>Parent Communication</h3>
         <p><a href="https://www.parentsquare.com/signin" target="_blank">ParentSquare (district-wide) &#8599;</a></p>
         <p><a href="https://www.konstella.com/cd/TS3MPT" target="_blank">Join on Konstella &#8599;</a></p>
       </div>
       <div class="resource-card">
-        <h4>Report an Absence</h4>
+        <h3>Report an Absence</h3>
         <p>SchoolMessenger</p>
         <p><a href="https://apps.apple.com/us/app/schoolmessenger/id978894818" target="_blank">iOS &#8599;</a> · <a href="http://play.google.com/store/apps/details?id=com.schoolmessenger.recipient" target="_blank">Android &#8599;</a></p>
       </div>
       <div class="resource-card">
-        <h4>Comprehensive Safety Plan</h4>
+        <h3>Comprehensive Safety Plan</h3>
         <p>2025-26 plan, board-approved Feb 4, 2026.</p><p><a href="https://data.rcsd.info/board-packets/2026-02-04/2025_Comprehensive_School_Safety_Plan__Pt._1_-Public-_Roy_Cloud_Elementary_Schoo.pdf" target="_blank">Download CSSP (PDF) &#8599;</a></p>
       </div>
       <div class="resource-card">
-        <h4>School Site Council</h4>
+        <h3>School Site Council</h3>
         <p style="margin-bottom:0.2rem"><strong>Chair:</strong> Keeley Vega</p>
           <p style="margin-bottom:0.4rem; font-size:0.82rem; color:#666">SPSA adopted: April 29, 2025</p>
           <div class="ssc-members"><span class="ssc-role">Principal:</span> Melissa Bowdoin<br><span class="ssc-role">Teacher:</span> Anna Rivoli, Linda Kiefer, Joan Perez<br><span class="ssc-role">Staff:</span> Annette Bacab<br><span class="ssc-role">Parent / Community:</span> Courtney Borrone, Keeley Vega, Zane Rogers, Harmony Younes</div>
@@ -1446,7 +1539,7 @@
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
               <div style="font-size:0.9rem; line-height:1.4">Approval of Agreement between the Redwood City School District and PowerFlex for the Purchase of 8 EV Chargers for Hoover Community School and Roy Cloud School</div>
               <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=37aRsr2VKEY&t=1188" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
-              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2026-05-13/260513-RCSD-Technology-Purchase-Agreement-with-Powerflex-for-Hoover-and-Roy-Clou.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">260513 RCSD Technology Purchase Agreement with Powerflex for Hoover and Roy Cloud &#8599;</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2026-05-13/260513-RCSD-Technology-Purchase-Agreement-with-Powerflex-for-Hoover-and-Roy-Clou.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid); max-width:100%; overflow-wrap:anywhere">260513 RCSD Technology Purchase Agreement with Powerflex for Hoover and Roy Cloud &#8599;</a></div>
             </div>
         </div><div style="margin-bottom:2rem">
           <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
@@ -1468,7 +1561,7 @@
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
               <div style="font-size:0.9rem; line-height:1.4">Roy Cloud School Presentation and School Plan for Student Achievement (SPSA) Approval</div>
               <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=MUo_j2IxTzw&t=1616" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
-              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2026-04-01/Roy-cloud-25-26-Data-for-Board-presentation-1.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Roy cloud 25-26 Data for Board presentation (1) &#8599;</a><a href="https://data.rcsd.info/board-packets/2026-04-01/Roy-Cloud-2025-26_SPSA_-Spring-_Roy_Cloud_Elementary_School_20260323.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Roy Cloud 2025-26_SPSA_(Spring)_Roy_Cloud_Elementary_School_20260323 &#8599;</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2026-04-01/Roy-cloud-25-26-Data-for-Board-presentation-1.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid); max-width:100%; overflow-wrap:anywhere">Roy cloud 25-26 Data for Board presentation (1) &#8599;</a><a href="https://data.rcsd.info/board-packets/2026-04-01/Roy-Cloud-2025-26_SPSA_-Spring-_Roy_Cloud_Elementary_School_20260323.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid); max-width:100%; overflow-wrap:anywhere">Roy Cloud 2025-26_SPSA_(Spring)_Roy_Cloud_Elementary_School_20260323 &#8599;</a></div>
             </div>
         </div><div style="margin-bottom:2rem">
           <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
@@ -1479,11 +1572,11 @@
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
               <div style="font-size:0.9rem; line-height:1.4">Approval of Roy Cloud's Field Trip to Washington DC – May 18 - May 22, 2026</div>
               <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=u4Is6bk2Gh8&t=7587" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
-              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2026-03-25/25-26-Roy-Cloud.-Washington-DC.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">25-26 Roy Cloud. Washington DC &#8599;</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2026-03-25/25-26-Roy-Cloud.-Washington-DC.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid); max-width:100%; overflow-wrap:anywhere">25-26 Roy Cloud. Washington DC &#8599;</a></div>
             </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
               <div style="font-size:0.9rem; line-height:1.4">Approval of Roy Cloud School Field Trip to Elks Club – June 1, 2026</div>
               <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=u4Is6bk2Gh8&t=7587" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
-              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2026-03-25/25-26-Roy-Cloud.-Elks-Club.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">25-26 Roy Cloud. Elks Club &#8599;</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2026-03-25/25-26-Roy-Cloud.-Elks-Club.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid); max-width:100%; overflow-wrap:anywhere">25-26 Roy Cloud. Elks Club &#8599;</a></div>
             </div>
         </div><div style="margin-bottom:2rem">
           <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
@@ -1494,7 +1587,7 @@
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
               <div style="font-size:0.9rem; line-height:1.4">Field trip to Marine Science Institute</div>
               <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=6pIMx-lAQN8" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
-              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2026-03-11/25-26-RoyCloud.-MSI.-FT.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">25-26 RoyCloud. MSI. FT &#8599;</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2026-03-11/25-26-RoyCloud.-MSI.-FT.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid); max-width:100%; overflow-wrap:anywhere">25-26 RoyCloud. MSI. FT &#8599;</a></div>
             </div>
         </div><div style="margin-bottom:2rem">
           <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
@@ -1505,11 +1598,11 @@
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
               <div style="font-size:0.9rem; line-height:1.4">Approval of Overtime Allowance, Change Order #4 for Solar Phase 2 Project at Roy Cloud School with Holt Renewables</div>
               <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=Nw7_DtNMPVk&t=1294" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
-              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2026-02-04/260204-RCSD-Roy-Cloud-CO-4-OT-Allowance.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">260204 RCSD Roy Cloud CO#4 - OT Allowance &#8599;</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2026-02-04/260204-RCSD-Roy-Cloud-CO-4-OT-Allowance.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid); max-width:100%; overflow-wrap:anywhere">260204 RCSD Roy Cloud CO#4 - OT Allowance &#8599;</a></div>
             </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
               <div style="font-size:0.9rem; line-height:1.4">Approval of the Addendum to the Measure U Application for Roy Cloud for the 2025-2026 School Year</div>
               <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=Nw7_DtNMPVk&t=1294" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
-              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2026-02-04/2025-26-Roy-Cloud-School-Measure-U-Addendum_Signed.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">2025-26 Roy Cloud School Measure U Addendum_Signed &#8599;</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2026-02-04/2025-26-Roy-Cloud-School-Measure-U-Addendum_Signed.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid); max-width:100%; overflow-wrap:anywhere">2025-26 Roy Cloud School Measure U Addendum_Signed &#8599;</a></div>
             </div>
         </div><div style="margin-bottom:2rem">
           <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
@@ -1520,7 +1613,7 @@
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
               <div style="font-size:0.9rem; line-height:1.4">Approval of Amendment No. 1 between Redwood City School District and One Life Counseling for Additional Counseling Hours at Roy Cloud and Henry Ford for the 2025-2026 School Year</div>
               <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=Pk0Zg38fzKc" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
-              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2025-11-12/One-Life-2025.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">One Life 2025 &#8599;</a><a href="https://data.rcsd.info/board-packets/2025-11-12/One-Life-First-Amendment.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">One Life First Amendment &#8599;</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2025-11-12/One-Life-2025.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid); max-width:100%; overflow-wrap:anywhere">One Life 2025 &#8599;</a><a href="https://data.rcsd.info/board-packets/2025-11-12/One-Life-First-Amendment.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid); max-width:100%; overflow-wrap:anywhere">One Life First Amendment &#8599;</a></div>
             </div>
         </div><div style="margin-bottom:2rem">
           <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
@@ -1531,7 +1624,7 @@
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
               <div style="font-size:0.9rem; line-height:1.4">Approval of Roy Cloud School Field Trip to Golden Gate National Recreation Area – October 6, 2025 – October 10, 2025</div>
               <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=KWsBnYENz7o" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
-              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2025-09-10/25-26-Roy-Cloud.-Outdoor-Ed.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">25-26 Roy Cloud. Outdoor Ed &#8599;</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2025-09-10/25-26-Roy-Cloud.-Outdoor-Ed.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid); max-width:100%; overflow-wrap:anywhere">25-26 Roy Cloud. Outdoor Ed &#8599;</a></div>
             </div>
         </div><div style="margin-bottom:2rem">
           <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
@@ -1542,7 +1635,7 @@
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
               <div style="font-size:0.9rem; line-height:1.4">Approval of Roy Cloud School Field Trip to Golden Gate National Recreation Area (GGNRA) – October 1, 2025 – October 3, 2025</div>
               <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=B8blJsqUL_4&t=4214" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
-              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2025-08-19/24-25-Roy-Cloud.-Golden-Gate-Rec-Area.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">24-25 Roy Cloud. Golden Gate Rec Area &#8599;</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://data.rcsd.info/board-packets/2025-08-19/24-25-Roy-Cloud.-Golden-Gate-Rec-Area.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid); max-width:100%; overflow-wrap:anywhere">24-25 Roy Cloud. Golden Gate Rec Area &#8599;</a></div>
             </div>
         </div><div style="margin-bottom:2rem">
           <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
@@ -1553,7 +1646,7 @@
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
               <div style="font-size:0.9rem; line-height:1.4">School Plan for Student Achievement (SPSA review)</div>
               <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=KCn4WYhU0wo&t=9587" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
-              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DGUT7W760B8C/$file/Hoover%20SPSA%202025-26_Spring)__20250518.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Hoover SPSA 2025-26_Spring)__20250518.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DGUT9D760E17/$file/Kennedy%20SPSA%202025-26_(Spring)__20250519.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Kennedy SPSA 2025-26_(Spring)__20250519.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DGUT82760FEE/$file/MCKinley%20Middle%20School%20SPSA%20(%20SPRING%202025.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">MCKinley Middle School SPSA &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DGUT85761179/$file/North%20Star%20Academy%202025-26_SPSA(Spring)__20250514.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">North Star Academy 2025-26_SPSA(Spring)__20250514.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DGUT9F761296/$file/Roy%20Cloud%20SPSA%202025-26_20250514.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Roy Cloud SPSA 2025-26_20250514.pdf &#8599;</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DGUT7W760B8C/$file/Hoover%20SPSA%202025-26_Spring)__20250518.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid); max-width:100%; overflow-wrap:anywhere">Hoover SPSA 2025-26_Spring)__20250518.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DGUT9D760E17/$file/Kennedy%20SPSA%202025-26_(Spring)__20250519.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid); max-width:100%; overflow-wrap:anywhere">Kennedy SPSA 2025-26_(Spring)__20250519.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DGUT82760FEE/$file/MCKinley%20Middle%20School%20SPSA%20(%20SPRING%202025.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid); max-width:100%; overflow-wrap:anywhere">MCKinley Middle School SPSA &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DGUT85761179/$file/North%20Star%20Academy%202025-26_SPSA(Spring)__20250514.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid); max-width:100%; overflow-wrap:anywhere">North Star Academy 2025-26_SPSA(Spring)__20250514.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DGUT9F761296/$file/Roy%20Cloud%20SPSA%202025-26_20250514.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid); max-width:100%; overflow-wrap:anywhere">Roy Cloud SPSA 2025-26_20250514.pdf &#8599;</a></div>
             </div>
         </div><div style="margin-bottom:2rem">
           <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
@@ -1564,7 +1657,7 @@
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
               <div style="font-size:0.9rem; line-height:1.4">HVAC replacement for multi-use building</div>
               <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=6qHkEM3tahc" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
-              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DGGQ2D672BDE/$file/Proposal%20MUB%20RTU%20%231%20Replacement%2012-2024%20Revised%205-2025%20(1).pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Proposal MUB RTU #1 Replacement 12-2024 Revised 5-2025 (1).pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DGGQ2E672DAF/$file/Proposal%20MUB%20RTU%20%232%20Replacement%2012-2024%20Revised%205-2025%20(1).pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Proposal MUB RTU #2 Replacement 12-2024 Revised 5-2025 (1).pdf &#8599;</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DGGQ2D672BDE/$file/Proposal%20MUB%20RTU%20%231%20Replacement%2012-2024%20Revised%205-2025%20(1).pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid); max-width:100%; overflow-wrap:anywhere">Proposal MUB RTU #1 Replacement 12-2024 Revised 5-2025 (1).pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DGGQ2E672DAF/$file/Proposal%20MUB%20RTU%20%232%20Replacement%2012-2024%20Revised%205-2025%20(1).pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid); max-width:100%; overflow-wrap:anywhere">Proposal MUB RTU #2 Replacement 12-2024 Revised 5-2025 (1).pdf &#8599;</a></div>
             </div>
         </div><div style="margin-bottom:2rem">
           <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
@@ -1575,7 +1668,7 @@
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
               <div style="font-size:0.9rem; line-height:1.4">Measure U funding addendum</div>
               <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=pydG3eHdP0M&t=5192" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
-              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DDMV847F727F/$file/2024-25%20Roy%20Cloud%20Measure%20U%20ADDENDUM%20%5BPending%20Board%20Approval%5D.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">2024-25 Roy Cloud Measure U ADDENDUM [Pending Board Approval].pdf &#8599;</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DDMV847F727F/$file/2024-25%20Roy%20Cloud%20Measure%20U%20ADDENDUM%20%5BPending%20Board%20Approval%5D.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid); max-width:100%; overflow-wrap:anywhere">2024-25 Roy Cloud Measure U ADDENDUM [Pending Board Approval].pdf &#8599;</a></div>
             </div>
         </div><div style="margin-bottom:2rem">
           <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
@@ -1586,7 +1679,7 @@
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
               <div style="font-size:0.9rem; line-height:1.4">School presented its 2024-25 academic year report to the board.</div>
               <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=yoUvmhll1uk&t=2164" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
-              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DDD33E04E29D/$file/Hoover%2024-25%20Data%20for%20Board%20presentation.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Hoover 24-25 Data for Board presentation.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DDD33H04E6B6/$file/Roy%20cloud%2024-25%20Data%20for%20Board%20presentation.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Roy cloud 24-25 Data for Board presentation.pdf &#8599;</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DDD33E04E29D/$file/Hoover%2024-25%20Data%20for%20Board%20presentation.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid); max-width:100%; overflow-wrap:anywhere">Hoover 24-25 Data for Board presentation.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DDD33H04E6B6/$file/Roy%20cloud%2024-25%20Data%20for%20Board%20presentation.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid); max-width:100%; overflow-wrap:anywhere">Roy cloud 24-25 Data for Board presentation.pdf &#8599;</a></div>
             </div>
         </div><div style="margin-bottom:2rem">
           <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
@@ -1597,7 +1690,7 @@
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
               <div style="font-size:0.9rem; line-height:1.4">Board updated Measure U spending plan.</div>
               <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=hi0IzpDnH9k" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
-              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/D3JTHT777F07/$file/ROY%20CLOUD%20Measure%20U%20Addendum%20No.%201.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">ROY CLOUD Measure U Addendum No. 1.pdf &#8599;</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/D3JTHT777F07/$file/ROY%20CLOUD%20Measure%20U%20Addendum%20No.%201.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid); max-width:100%; overflow-wrap:anywhere">ROY CLOUD Measure U Addendum No. 1.pdf &#8599;</a></div>
             </div>
         </div><div style="margin-bottom:2rem">
           <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
@@ -1608,7 +1701,7 @@
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
               <div style="font-size:0.9rem; line-height:1.4">Adelante Selby and Roy Cloud School Presentations for the 2023-2024 School Year</div>
               <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=P5et35d5g7c&t=1421" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
-              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CWPV587D7868/$file/Adelante%20Selby%20Spanish%20Immersion%20School%20Board%20Presentation.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Adelante Selby Spanish Immersion School Board Presentation.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CWYM5558EF3C/$file/23-24%20Roy%20Cloud%20SPSA%20Board%20Report.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">23-24 Roy Cloud SPSA Board Report.pdf &#8599;</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CWPV587D7868/$file/Adelante%20Selby%20Spanish%20Immersion%20School%20Board%20Presentation.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid); max-width:100%; overflow-wrap:anywhere">Adelante Selby Spanish Immersion School Board Presentation.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CWYM5558EF3C/$file/23-24%20Roy%20Cloud%20SPSA%20Board%20Report.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid); max-width:100%; overflow-wrap:anywhere">23-24 Roy Cloud SPSA Board Report.pdf &#8599;</a></div>
             </div>
         </div><div style="margin-bottom:2rem">
           <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
@@ -1619,11 +1712,11 @@
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
               <div style="font-size:0.9rem; line-height:1.4">Discussion of School Plan for Student Achievement (SPSA): Roy Cloud School and North Star Academy</div>
               <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=TYxODeND3Dw" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
-              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CPXUH57C1536/$file/Roy%20Cloud%20SPSA%20Board%20Report.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Roy Cloud SPSA Board Report.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CPXUH77C168E/$file/North%20Star%20SPSA%20Board%20Report%20.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">North Star SPSA Board Report .pdf &#8599;</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CPXUH57C1536/$file/Roy%20Cloud%20SPSA%20Board%20Report.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid); max-width:100%; overflow-wrap:anywhere">Roy Cloud SPSA Board Report.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CPXUH77C168E/$file/North%20Star%20SPSA%20Board%20Report%20.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid); max-width:100%; overflow-wrap:anywhere">North Star SPSA Board Report .pdf &#8599;</a></div>
             </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
               <div style="font-size:0.9rem; line-height:1.4">Approval of Addendum to 2022-23 Measure U Application for Roy Cloud School</div>
               <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=TYxODeND3Dw" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
-              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CPVS6A711E29/$file/ADDENDUM%20Roy%20Cloud%20%20Measure%20U%202022-23.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">ADDENDUM Roy Cloud  Measure U 2022-23.pdf &#8599;</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CPVS6A711E29/$file/ADDENDUM%20Roy%20Cloud%20%20Measure%20U%202022-23.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid); max-width:100%; overflow-wrap:anywhere">ADDENDUM Roy Cloud  Measure U 2022-23.pdf &#8599;</a></div>
             </div>
         </div><div style="margin-bottom:2rem">
           <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
@@ -1634,7 +1727,7 @@
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
               <div style="font-size:0.9rem; line-height:1.4">Approval of Agreement between Legarza Sports and the Redwood City School District for PE Enrichment Program at Roy Cloud School for the 2022-23 School Year</div>
               <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=ehyzHnix3lo&t=2879" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
-              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CFMTFM76B31C/$file/Legarza%20_%20Cloud%2022.23%20_%20Board%206.29.22.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Legarza _ Cloud 22.23 _ Board 6.29.22.pdf &#8599;</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CFMTFM76B31C/$file/Legarza%20_%20Cloud%2022.23%20_%20Board%206.29.22.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid); max-width:100%; overflow-wrap:anywhere">Legarza _ Cloud 22.23 _ Board 6.29.22.pdf &#8599;</a></div>
             </div>
         </div><div style="margin-bottom:2rem">
           <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
@@ -1645,7 +1738,7 @@
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
               <div style="font-size:0.9rem; line-height:1.4">Approval of Addendum to Measure U Application for 2021-22 School Year for Roy Cloud School</div>
               <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=Ya0CfvXo1kI&t=3468" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
-              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CD7VNQ8196E5/$file/ADDENDUM%20Roy%20Cloud%20%20Measure%20U%202021-22.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">ADDENDUM Roy Cloud  Measure U 2021-22.pdf &#8599;</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CD7VNQ8196E5/$file/ADDENDUM%20Roy%20Cloud%20%20Measure%20U%202021-22.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid); max-width:100%; overflow-wrap:anywhere">ADDENDUM Roy Cloud  Measure U 2021-22.pdf &#8599;</a></div>
             </div>
         </div><div style="margin-bottom:2rem">
           <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
@@ -1656,7 +1749,7 @@
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
               <div style="font-size:0.9rem; line-height:1.4">Approval of Fiber Upgrades Proposal at 3150 Granger Way Site and Roy Cloud School with Vanden Bos</div>
               <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=Gg3x5yYfQBU" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
-              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CALKMR529274/$file/211215%20RCSD%20ADL%20%26%20RC%20Fiber%20Upgrade%20Proposal%20with%20VDB%20-%20Signed%20by%20DD.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">211215 RCSD ADL & RC Fiber Upgrade Proposal with VDB - Signed by DD.pdf &#8599;</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CALKMR529274/$file/211215%20RCSD%20ADL%20%26%20RC%20Fiber%20Upgrade%20Proposal%20with%20VDB%20-%20Signed%20by%20DD.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid); max-width:100%; overflow-wrap:anywhere">211215 RCSD ADL & RC Fiber Upgrade Proposal with VDB - Signed by DD.pdf &#8599;</a></div>
             </div>
         </div><div style="margin-bottom:2rem">
           <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
@@ -1667,7 +1760,7 @@
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
               <div style="font-size:0.9rem; line-height:1.4">Approval of Agreement between the Redwood City School District and LeGarza Sports to Provide PE Instruction, Recess and Lunch Time Supervision for Grades K-5 at Roy Cloud School</div>
               <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=L9391IDRd9A&t=1612" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
-              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/C5LLHC56319A/$file/Legarza%20Agreement%20Cloud_21.22.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Legarza Agreement Cloud_21.22.pdf &#8599;</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/C5LLHC56319A/$file/Legarza%20Agreement%20Cloud_21.22.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid); max-width:100%; overflow-wrap:anywhere">Legarza Agreement Cloud_21.22.pdf &#8599;</a></div>
             </div>
         </div><div style="margin-bottom:2rem">
           <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
@@ -1678,7 +1771,7 @@
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
               <div style="font-size:0.9rem; line-height:1.4">Approval of Multi-Use Building (MUB) Backup Generator Construction Agreements for Roy Cloud School with Various Trade Contractors</div>
               <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"></div>
-              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRW4CK0AEAE0/$file/10_8_BackupGeneratorConcreteConstructionAgreementWithCaseyFogli_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">10_8_BackupGeneratorConcreteConstructionAgreementWithCaseyFogli_0.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRW4CM0AED0D/$file/10_8_BackupGeneratorElectricalConstructionAgreementWithAtlasPellizzari_0.pd" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">10_8_BackupGeneratorElectricalConstructionAgreementWithAtlasPellizzari_0.pd &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRW4CQ0AEF7A/$file/10_8_BackupGeneratorPlumbingConstructionAgreementWithOCMcDonald_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">10_8_BackupGeneratorPlumbingConstructionAgreementWithOCMcDonald_0.pdf &#8599;</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRW4CK0AEAE0/$file/10_8_BackupGeneratorConcreteConstructionAgreementWithCaseyFogli_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid); max-width:100%; overflow-wrap:anywhere">10_8_BackupGeneratorConcreteConstructionAgreementWithCaseyFogli_0.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRW4CM0AED0D/$file/10_8_BackupGeneratorElectricalConstructionAgreementWithAtlasPellizzari_0.pd" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid); max-width:100%; overflow-wrap:anywhere">10_8_BackupGeneratorElectricalConstructionAgreementWithAtlasPellizzari_0.pd &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRW4CQ0AEF7A/$file/10_8_BackupGeneratorPlumbingConstructionAgreementWithOCMcDonald_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid); max-width:100%; overflow-wrap:anywhere">10_8_BackupGeneratorPlumbingConstructionAgreementWithOCMcDonald_0.pdf &#8599;</a></div>
             </div>
         </div><div style="margin-bottom:2rem">
           <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
@@ -1689,11 +1782,11 @@
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
               <div style="font-size:0.9rem; line-height:1.4">Approval of Modernization and Barrier Removal Project for Roy Cloud School with Mar Con Builders, Change Order #5</div>
               <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=z8PdGgT5GxU" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
-              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRSQE568E4EA/$file/11_2_ChangeOrder5_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">11_2_ChangeOrder5_0.pdf &#8599;</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRSQE568E4EA/$file/11_2_ChangeOrder5_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid); max-width:100%; overflow-wrap:anywhere">11_2_ChangeOrder5_0.pdf &#8599;</a></div>
             </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
               <div style="font-size:0.9rem; line-height:1.4">Approval of Backup Generator Purchase Proposal for Clifford, Hoover, and Roy Cloud School with Bayside</div>
               <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=z8PdGgT5GxU" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
-              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRU26C00A1B4/$file/11_7_GeneratorPurchaseProposalClifford_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">11_7_GeneratorPurchaseProposalClifford_0.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRU26E00A379/$file/11_7_GeneratorPurchaseProposalHoover_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">11_7_GeneratorPurchaseProposalHoover_0.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRU26G00A560/$file/11_7_GeneratorPurchaseProposalRoyCloud_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">11_7_GeneratorPurchaseProposalRoyCloud_0.pdf &#8599;</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRU26C00A1B4/$file/11_7_GeneratorPurchaseProposalClifford_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid); max-width:100%; overflow-wrap:anywhere">11_7_GeneratorPurchaseProposalClifford_0.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRU26E00A379/$file/11_7_GeneratorPurchaseProposalHoover_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid); max-width:100%; overflow-wrap:anywhere">11_7_GeneratorPurchaseProposalHoover_0.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRU26G00A560/$file/11_7_GeneratorPurchaseProposalRoyCloud_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid); max-width:100%; overflow-wrap:anywhere">11_7_GeneratorPurchaseProposalRoyCloud_0.pdf &#8599;</a></div>
             </div>
         </div><div style="margin-bottom:2rem">
           <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
@@ -1704,7 +1797,7 @@
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
               <div style="font-size:0.9rem; line-height:1.4">Roy Cloud School's Social Emotional Learning Program during the 2020-21 School Year</div>
               <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=vpbKJKWTv8k&t=677" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
-              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRLUUJ7DC0A3/$file/9_1_PresentationFromRoyCloud_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">9_1_PresentationFromRoyCloud_0.pdf &#8599;</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRLUUJ7DC0A3/$file/9_1_PresentationFromRoyCloud_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid); max-width:100%; overflow-wrap:anywhere">9_1_PresentationFromRoyCloud_0.pdf &#8599;</a></div>
             </div>
         </div><div style="margin-bottom:2rem">
           <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
@@ -1715,11 +1808,11 @@
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
               <div style="font-size:0.9rem; line-height:1.4">Approval of Roy Cloud School Modernization and Barrier Removal Project, Change Order #4 with Mar Con Builders</div>
               <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=sJQNqQu1Jfs" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
-              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRL22M0015C2/$file/7_1_ChangeOrder4_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">7_1_ChangeOrder4_0.pdf &#8599;</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRL22M0015C2/$file/7_1_ChangeOrder4_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid); max-width:100%; overflow-wrap:anywhere">7_1_ChangeOrder4_0.pdf &#8599;</a></div>
             </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
               <div style="font-size:0.9rem; line-height:1.4">Approval of Second Addendum to 2020-21 Measure U Application for Roy Cloud School</div>
               <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=sJQNqQu1Jfs" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
-              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRLU727A9B13/$file/10_4_2ndAddendumTo202021MeasureUApplication_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">10_4_2ndAddendumTo202021MeasureUApplication_0.pdf &#8599;</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRLU727A9B13/$file/10_4_2ndAddendumTo202021MeasureUApplication_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid); max-width:100%; overflow-wrap:anywhere">10_4_2ndAddendumTo202021MeasureUApplication_0.pdf &#8599;</a></div>
             </div>
         </div><div style="margin-bottom:2rem">
           <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
@@ -1730,7 +1823,7 @@
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
               <div style="font-size:0.9rem; line-height:1.4">Approval of Roy Cloud School Modernization and Barrier Removal Project with Mar Con Builders, Change Order #3</div>
               <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=08x22IQb514" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
-              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRG2A2012B73/$file/10_7_ChangeOrder3_0%20(1).pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">10_7_ChangeOrder3_0 (1).pdf &#8599;</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRG2A2012B73/$file/10_7_ChangeOrder3_0%20(1).pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid); max-width:100%; overflow-wrap:anywhere">10_7_ChangeOrder3_0 (1).pdf &#8599;</a></div>
             </div>
         </div><div style="margin-bottom:2rem">
           <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
@@ -1741,11 +1834,11 @@
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
               <div style="font-size:0.9rem; line-height:1.4">Approval of Sink Rental Proposal for Roy Cloud School with United</div>
               <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=tKbeQmP8jmE&t=9719" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
-              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRF64L131FC8/$file/10_2_SinkRentalProposalWithUnited_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">10_2_SinkRentalProposalWithUnited_0.pdf &#8599;</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRF64L131FC8/$file/10_2_SinkRentalProposalWithUnited_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid); max-width:100%; overflow-wrap:anywhere">10_2_SinkRentalProposalWithUnited_0.pdf &#8599;</a></div>
             </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
               <div style="font-size:0.9rem; line-height:1.4">Approval of Addendum to 2020-21 Measure U Application for Roy Cloud School</div>
               <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=tKbeQmP8jmE&t=9719" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
-              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRF6NJ15BFF1/$file/13_5_MeasureUAddendumForRoyCloud_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">13_5_MeasureUAddendumForRoyCloud_0.pdf &#8599;</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CRF6NJ15BFF1/$file/13_5_MeasureUAddendumForRoyCloud_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid); max-width:100%; overflow-wrap:anywhere">13_5_MeasureUAddendumForRoyCloud_0.pdf &#8599;</a></div>
             </div>
         </div><div style="margin-bottom:2rem">
           <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
@@ -1756,11 +1849,11 @@
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
               <div style="font-size:0.9rem; line-height:1.4">Approval of Additional Construction Management Services Fee Proposal for Roosevelt School, Roy Cloud School, and Adelante Selby School with Kitchell</div>
               <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=lRB-pyUKq6E&t=780" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
-              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQYNE85F880A/$file/10_4_AddServiceProposal_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">10_4_AddServiceProposal_0.pdf &#8599;</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQYNE85F880A/$file/10_4_AddServiceProposal_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid); max-width:100%; overflow-wrap:anywhere">10_4_AddServiceProposal_0.pdf &#8599;</a></div>
             </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
               <div style="font-size:0.9rem; line-height:1.4">Approval of Roy Cloud School Modernization and Barrier Removal Project with Mar Con Builders, Change Order #2</div>
               <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=lRB-pyUKq6E&t=780" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
-              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQYNVJ61C641/$file/10_5_ChangeOrder2_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">10_5_ChangeOrder2_0.pdf &#8599;</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQYNVJ61C641/$file/10_5_ChangeOrder2_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid); max-width:100%; overflow-wrap:anywhere">10_5_ChangeOrder2_0.pdf &#8599;</a></div>
             </div>
         </div><div style="margin-bottom:2rem">
           <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
@@ -1771,7 +1864,7 @@
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
               <div style="font-size:0.9rem; line-height:1.4">Approval of Touchless Plumbing Fixture Replacement Construction Management (CM) Fee Proposal for Adelante Selby Spanish Immersion School, McKinley Institute of Technology, North Star Academy, and Roy Cloud School with Kitchell</div>
               <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=C6EkF9qWMJ4&t=3065" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
-              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CU52B201517B/$file/Touchless%20Plumbing%20Fixture%20Replacement%20CM%20Fee%20Proposal.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">Touchless Plumbing Fixture Replacement CM Fee Proposal.pdf &#8599;</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CU52B201517B/$file/Touchless%20Plumbing%20Fixture%20Replacement%20CM%20Fee%20Proposal.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid); max-width:100%; overflow-wrap:anywhere">Touchless Plumbing Fixture Replacement CM Fee Proposal.pdf &#8599;</a></div>
             </div>
         </div><div style="margin-bottom:2rem">
           <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
@@ -1782,11 +1875,11 @@
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
               <div style="font-size:0.9rem; line-height:1.4">Approval of Roy Cloud School Modernization and Barrier Removal Project with Mar Con Builders, Change Order #1</div>
               <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=WuVzcQVlzOI" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
-              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CR6V7G7F5B18/$file/10_12_ChangeOrder1_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">10_12_ChangeOrder1_0.pdf &#8599;</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CR6V7G7F5B18/$file/10_12_ChangeOrder1_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid); max-width:100%; overflow-wrap:anywhere">10_12_ChangeOrder1_0.pdf &#8599;</a></div>
             </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
               <div style="font-size:0.9rem; line-height:1.4">Approval of Backup Power Design Agreement for Multi-Use Buildings (MUB) at Clifford and Roy Cloud Schools and Food Storage at Hoover School with HED</div>
               <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=WuVzcQVlzOI" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
-              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CR6W4N839D7D/$file/10_20_MasterArchitectAgreement_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">10_20_MasterArchitectAgreement_0.pdf &#8599;</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CR6W4N839D7D/$file/10_20_MasterArchitectAgreement_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid); max-width:100%; overflow-wrap:anywhere">10_20_MasterArchitectAgreement_0.pdf &#8599;</a></div>
             </div>
         </div><div style="margin-bottom:2rem">
           <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
@@ -1797,7 +1890,7 @@
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
               <div style="font-size:0.9rem; line-height:1.4">Approval of Toilet Partition Proposal for Roy Cloud School with Service Metal</div>
               <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=lw0ARuWI664" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
-              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CR66SX166523/$file/9_7_ToiletPartitionProposalWithServiceMetal_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">9_7_ToiletPartitionProposalWithServiceMetal_0.pdf &#8599;</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CR66SX166523/$file/9_7_ToiletPartitionProposalWithServiceMetal_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid); max-width:100%; overflow-wrap:anywhere">9_7_ToiletPartitionProposalWithServiceMetal_0.pdf &#8599;</a></div>
             </div>
         </div><div style="margin-bottom:2rem">
           <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
@@ -1808,7 +1901,7 @@
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
               <div style="font-size:0.9rem; line-height:1.4">Approval of Touchless Plumbing Fixture Replacement Proposals for Orion Alternative School (Formerly John Gill School) and Roy Cloud School with CAW</div>
               <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=4nO0pTNJcyc" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
-              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQX3YY0937AE/$file/10_5_TouchlessPlumbingFixtureReplacementProposalRoyCloudSchool_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">10_5_TouchlessPlumbingFixtureReplacementProposalRoyCloudSchool_0.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQX3Z20939C5/$file/10_5_TouchlessPlumbingFixtureReplacementsProposalOrionAlternative_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">10_5_TouchlessPlumbingFixtureReplacementsProposalOrionAlternative_0.pdf &#8599;</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQX3YY0937AE/$file/10_5_TouchlessPlumbingFixtureReplacementProposalRoyCloudSchool_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid); max-width:100%; overflow-wrap:anywhere">10_5_TouchlessPlumbingFixtureReplacementProposalRoyCloudSchool_0.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQX3Z20939C5/$file/10_5_TouchlessPlumbingFixtureReplacementsProposalOrionAlternative_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid); max-width:100%; overflow-wrap:anywhere">10_5_TouchlessPlumbingFixtureReplacementsProposalOrionAlternative_0.pdf &#8599;</a></div>
             </div>
         </div><div style="margin-bottom:2rem">
           <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
@@ -1819,7 +1912,7 @@
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
               <div style="font-size:0.9rem; line-height:1.4">Approval of Construction Agreement for Roy Cloud School with Mar Con Builders</div>
               <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=okRfyGjPflM&t=175" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
-              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQV4GR0B879D/$file/7_1_ConstructionAgreementWithMarCon_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">7_1_ConstructionAgreementWithMarCon_0.pdf &#8599;</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQV4GR0B879D/$file/7_1_ConstructionAgreementWithMarCon_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid); max-width:100%; overflow-wrap:anywhere">7_1_ConstructionAgreementWithMarCon_0.pdf &#8599;</a></div>
             </div>
         </div><div style="margin-bottom:2rem">
           <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
@@ -1830,7 +1923,7 @@
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
               <div style="font-size:0.9rem; line-height:1.4">Approval of Additional Legacy Closeout Support Proposal for Roy Cloud School with WLC</div>
               <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=1B7zQJJk7JM&t=151" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
-              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQR4GD0B7946/$file/6_14_AdditionalServicesAuthorization_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">6_14_AdditionalServicesAuthorization_0.pdf &#8599;</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQR4GD0B7946/$file/6_14_AdditionalServicesAuthorization_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid); max-width:100%; overflow-wrap:anywhere">6_14_AdditionalServicesAuthorization_0.pdf &#8599;</a></div>
             </div>
         </div><div style="margin-bottom:2rem">
           <div style="display:flex; align-items:baseline; gap:0.8rem; margin-bottom:0.3rem">
@@ -1841,11 +1934,11 @@
           <div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
               <div style="font-size:0.9rem; line-height:1.4">Approval of the Covid-19 Safety Compliance Officer Proposal for Clifford School, Garfield School, Roy Cloud School, and Roosevelt School with The Safety Guys</div>
               <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=LXTYptrXhUM" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
-              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQPNRQ6137D9/$file/10_10_SCOProposal_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">10_10_SCOProposal_0.pdf &#8599;</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQPNRQ6137D9/$file/10_10_SCOProposal_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid); max-width:100%; overflow-wrap:anywhere">10_10_SCOProposal_0.pdf &#8599;</a></div>
             </div><div style="padding:0.6rem 0; border-bottom:1px solid var(--rule-light)">
               <div style="font-size:0.9rem; line-height:1.4">Approval of Construction Management Fee Amendments for Adelante Selby Spanish Immersion School, Hawes School, Roosevelt School, and Roy Cloud School with Kitchell</div>
               <div style="margin-top:0.3rem; display:flex; align-items:center; gap:0.8rem; flex-wrap:wrap"><a href="https://www.youtube.com/watch?v=LXTYptrXhUM" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; color:var(--coral); text-decoration:none; white-space:nowrap">&#9654; Watch</a></div>
-              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQPNT6616D47/$file/10_11_ConstructionManagementFeeAmendmentAdelanteSelby_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">10_11_ConstructionManagementFeeAmendmentAdelanteSelby_0.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQPNT861706B/$file/10_11_ConstructionManagementFeeAmendmentHawes_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">10_11_ConstructionManagementFeeAmendmentHawes_0.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQPNTB6173A2/$file/10_11_ConstructionManagementFeeAmendmentRoosevelt_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">10_11_ConstructionManagementFeeAmendmentRoosevelt_0.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQPNTE617789/$file/10_11_ConstructionManagementFeeAmendmentRoyCloud_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">10_11_ConstructionManagementFeeAmendmentRoyCloud_0.pdf &#8599;</a></div>
+              <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem"><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQPNT6616D47/$file/10_11_ConstructionManagementFeeAmendmentAdelanteSelby_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid); max-width:100%; overflow-wrap:anywhere">10_11_ConstructionManagementFeeAmendmentAdelanteSelby_0.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQPNT861706B/$file/10_11_ConstructionManagementFeeAmendmentHawes_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid); max-width:100%; overflow-wrap:anywhere">10_11_ConstructionManagementFeeAmendmentHawes_0.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQPNTB6173A2/$file/10_11_ConstructionManagementFeeAmendmentRoosevelt_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid); max-width:100%; overflow-wrap:anywhere">10_11_ConstructionManagementFeeAmendmentRoosevelt_0.pdf &#8599;</a><a href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CQPNTE617789/$file/10_11_ConstructionManagementFeeAmendmentRoyCloud_0.pdf" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid); max-width:100%; overflow-wrap:anywhere">10_11_ConstructionManagementFeeAmendmentRoyCloud_0.pdf &#8599;</a></div>
             </div>
         </div>
   </section>
@@ -1860,6 +1953,8 @@
     <a href="/schools/">Schools</a>
     <a href="/district/">District</a>
     <a href="/budget/">Budget</a>
+    <a href="/committees/">Committees</a>
+    <a href="/mcp/">API &amp; data for developers</a>
     <a href="https://github.com/dweekly/rcsd-meetings">Source Code &#8599;</a>
     <a href="mailto:team@rcsd.info">team@rcsd.info</a>
   </div>

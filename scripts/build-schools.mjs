@@ -93,6 +93,7 @@ const CDE_STAFF_ETH = (() => { try { return JSON.parse(readFileSync(resolve(ROOT
 const CDE_STAFF_EXP = (() => { try { return JSON.parse(readFileSync(resolve(ROOT, 'data/cde/staff-experience-2024-25.json'), 'utf-8')); } catch { return {}; } })();
 const CDE_RATIOS = (() => { try { return JSON.parse(readFileSync(resolve(ROOT, 'data/cde/staff-ratios-2024-25.json'), 'utf-8')); } catch { return {}; } })();
 
+
 // i-Ready Expected Growth data, extracted from each school's 25-26 Board of
 // Trustees data presentation PDF. See scripts/extract-ireadyu-growth.mjs.
 // Schools without a 25-26 presentation yet have a pending-status record.
@@ -357,8 +358,8 @@ console.log(`Tagged ${Object.values(SCHOOL_BOARD_ITEMS).reduce((s, arr) => s + a
 
 const SCHOOL_DATA = {
   'adelante-selby': {
-    description: 'Adelante Selby is RCSD\'s Spanish dual-language immersion school, using the SEAL bilingual model. It is a Community School and a school of choice, drawing families from across the district.',
-    descriptionEs: 'Adelante Selby es la escuela de inmersión bilingüe en español del RCSD, que utiliza el modelo bilingüe SEAL. Es una Escuela Comunitaria y una escuela de elección, atrayendo familias de todo el distrito.',
+    description: 'At Adelante Selby, students learn in two languages: Spanish and English. The school uses SEAL, a teaching approach that builds both languages at once. Any family in the district can apply to attend, not just neighbors. It is also a Community School, which means it connects families with extra services and support.',
+    descriptionEs: 'En Adelante Selby, los estudiantes aprenden en dos idiomas: español e inglés. La escuela usa SEAL, un método de enseñanza que desarrolla los dos idiomas a la vez. Cualquier familia del distrito puede aplicar, no solo los vecinos. También es una Escuela Comunitaria, o sea que conecta a las familias con servicios y apoyo extra.',
     caaspp: { ela: 34, math: 36 },
     demographics: { sed: 62.6, el: 42.4, chronicAbsent: 15.4, suspension: 0.00 },
     funding: {
@@ -368,12 +369,12 @@ const SCHOOL_DATA = {
     },
     staffing: { credentialed: 90.5, misassigned: 0, elMisassigned: 0 },
     teacherDemo: { hispanicStaff: 66.7, whiteStaff: null, over55: 33.3, under35: null },
-    notes: 'Zero suspensions. Best teacher staffing in the district (91% credentialed, 0% misassignment). SEAL bilingual model. PTO ($150K) plus Unidos PTO ($15K).',
-    notesEs: 'Cero suspensiones. El mejor personal docente del distrito (91% con credencial, 0% asignación incorrecta). Modelo bilingüe SEAL.',
+    notes: 'Zero suspensions. Best teacher staffing in the district: 91% fully credentialed and no teachers placed outside their subject area. Uses the SEAL bilingual teaching model. Two parent groups raise money for the school: the PTO ($150K) and Unidos PTO ($15K).',
+    notesEs: 'Cero suspensiones. El mejor personal docente del distrito: 91% con credencial completa y ningún maestro asignado fuera de su materia. Usa el modelo de enseñanza bilingüe SEAL. Dos grupos de padres recaudan fondos para la escuela: el PTO ($150K) y Unidos PTO ($15K).',
   },
   'clifford': {
-    description: 'Clifford is a TK-8 neighborhood school and one of the larger schools in the district. It serves a socioeconomically mixed population with a notable long-term English Learner challenge.',
-    descriptionEs: 'Clifford es una escuela de vecindario de TK-8 y una de las escuelas más grandes del distrito. Sirve a una población socioeconómicamente diversa con un desafío notable de estudiantes de inglés a largo plazo.',
+    description: 'Clifford is a TK-8 neighborhood school and one of the larger schools in the district. Families here come from a wide mix of income levels. One challenge: a notable group of students has been learning English for six or more years without reaching fluency — the state calls them long-term English Learners.',
+    descriptionEs: 'Clifford es una escuela de vecindario de TK a 8º y una de las más grandes del distrito. Las familias aquí vienen de una gran mezcla de niveles de ingresos. Un reto: un grupo notable de estudiantes lleva seis años o más aprendiendo inglés sin llegar a dominarlo — el estado los llama estudiantes de inglés a largo plazo.',
     caaspp: { ela: 55, math: 45 },
     demographics: { sed: 44.2, el: 23.5, chronicAbsent: 20.7, suspension: 1.39 },
     funding: {
@@ -383,12 +384,12 @@ const SCHOOL_DATA = {
     },
     staffing: { credentialed: 86.1, misassigned: 0, elMisassigned: null },
     teacherDemo: { hispanicStaff: null, whiteStaff: 75.0, over55: null, under35: null },
-    notes: 'Largest PTO contribution ($196K) after North Star. LTEL crisis: 0% of long-term English Learners at grade level. White staff representation trending upward (75%, +8.3% over 4 years).',
-    notesEs: 'La mayor contribución de PTO ($196K) después de North Star. Crisis de LTEL: 0% de estudiantes de inglés a largo plazo al nivel de grado.',
+    notes: 'Parents raise the second-largest PTO total in the district ($196K, after North Star). A serious challenge: none (0%) of its long-term English Learners — students learning English for 6+ years — are at grade level. The share of White teachers has been rising (75%, up 8.3 points over 4 years).',
+    notesEs: 'Los padres recaudan la segunda mayor cantidad de PTO del distrito ($196K, después de North Star). Un reto serio: ninguno (0%) de sus estudiantes de inglés a largo plazo — estudiantes que llevan 6+ años aprendiendo inglés — está al nivel de grado. La proporción de maestros blancos ha ido subiendo (75%, +8.3 puntos en 4 años).',
   },
   'garfield': {
-    description: 'Garfield is a K-5 neighborhood Community School using a 50:50 bilingual model. It is among the highest-need schools in the district and has experienced significant enrollment decline. Despite low proficiency scores, Garfield teachers produce the highest ELA student growth in the district.',
-    descriptionEs: 'Garfield es una Escuela Comunitaria de vecindario K-5 que utiliza un modelo bilingüe 50:50. Es una de las escuelas con mayores necesidades del distrito y ha experimentado una disminución significativa en la inscripción. A pesar de los bajos puntajes de competencia, los maestros de Garfield producen el mayor crecimiento estudiantil en ELA del distrito.',
+    description: 'Garfield is a K-5 neighborhood school where students learn in both Spanish and English, splitting the day 50:50. It serves more high-need families than almost any other school in the district, and enrollment has fallen a lot. The bright spot: even with low test scores, Garfield students improve in reading faster than at any other school in the district. It is also a Community School, with extra family services on site.',
+    descriptionEs: 'Garfield es una escuela de vecindario de K a 5º donde los estudiantes aprenden en español y en inglés, mitad y mitad. Atiende a más familias de alta necesidad que casi cualquier otra escuela del distrito, y su inscripción ha bajado mucho. Lo bueno: aunque los puntajes son bajos, los estudiantes de Garfield mejoran en lectura más rápido que en cualquier otra escuela del distrito. También es una Escuela Comunitaria, con servicios extra para las familias allí mismo.',
     caaspp: { ela: 12, math: 8 },
     demographics: { sed: 95.0, el: 68.2, chronicAbsent: 28.8, suspension: 3.23 },
     funding: {
@@ -398,12 +399,12 @@ const SCHOOL_DATA = {
     },
     staffing: { credentialed: 87.4, misassigned: 0.3, elMisassigned: null },
     teacherDemo: { hispanicStaff: 52.6, whiteStaff: null, over55: null, under35: null },
-    notes: '#1 ELA student growth in the district (49%). Exited CSI status in 2024. Enrollment declined from 515 to 279. No PTO funding. Hispanic staff improved from 35% to 52.6% over 4 years.',
-    notesEs: 'N.º 1 en crecimiento estudiantil en ELA del distrito (49%). Salió del estatus CSI en 2024. La inscripción disminuyó de 515 a 279. Sin financiamiento de PTO.',
+    notes: '#1 in the district for reading growth (49% of students hit their yearly goal). Came off the state\'s list of lowest-performing schools (called CSI) in 2024. Enrollment fell from 515 to 279. No PTO money. Hispanic teachers grew from 35% to 52.6% of staff over 4 years.',
+    notesEs: 'N.º 1 del distrito en crecimiento en lectura (49% de los estudiantes alcanzaron su meta anual). Salió de la lista estatal de escuelas de más bajo rendimiento (llamada CSI) en 2024. La inscripción bajó de 515 a 279. Sin dinero de PTO. Los maestros hispanos subieron del 35% al 52.6% del personal en 4 años.',
   },
   'henry-ford': {
-    description: 'Henry Ford is a TK-5 neighborhood Community School serving a moderately high-need population. It has strong teacher credentialing but the most significant staff-student demographic mismatch in the district.',
-    descriptionEs: 'Henry Ford es una Escuela Comunitaria de vecindario TK-5 que sirve a una población con necesidades moderadamente altas. Tiene una fuerte credencialización docente pero la mayor disparidad demográfica entre personal y estudiantes del distrito.',
+    description: 'Henry Ford is a TK-5 neighborhood school and a Community School, with extra services for families on site. Many students come from lower-income homes. Its teachers are well-credentialed, but the staff looks very different from the students: about 3 in 4 teachers are White, while 2 in 3 students are Hispanic — the widest gap in the district.',
+    descriptionEs: 'Henry Ford es una escuela de vecindario de TK a 5º y una Escuela Comunitaria, con servicios extra para las familias allí mismo. Muchos estudiantes vienen de hogares de bajos ingresos. Sus maestros tienen buenas credenciales, pero el personal se ve muy diferente a los estudiantes: como 3 de cada 4 maestros son blancos, mientras que 2 de cada 3 estudiantes son hispanos — la brecha más grande del distrito.',
     caaspp: { ela: 46, math: 38 },
     demographics: { sed: 63.1, el: 36.2, chronicAbsent: 24.8, suspension: 1.00 },
     funding: {
@@ -413,12 +414,12 @@ const SCHOOL_DATA = {
     },
     staffing: { credentialed: 90.6, misassigned: 1.7, elMisassigned: null },
     teacherDemo: { hispanicStaff: 7.7, whiteStaff: 76.9, over55: null, under35: null },
-    notes: 'Most extreme staff-student demographic mismatch: 77% White staff serving 67% Hispanic students. 20% special education population. Zero regrettable teacher attrition over 3 years.',
-    notesEs: 'La mayor disparidad demográfica entre personal y estudiantes: 77% personal blanco sirviendo a 67% estudiantes hispanos. 20% población de educación especial.',
+    notes: 'Widest staff-student demographic gap in the district: 77% White staff serving 67% Hispanic students. One in five students receives special education services. In the last 3 years the school has not lost a single teacher it wanted to keep.',
+    notesEs: 'La brecha demográfica más grande del distrito entre personal y estudiantes: 77% del personal es blanco y 67% de los estudiantes son hispanos. Uno de cada cinco estudiantes recibe servicios de educación especial. En los últimos 3 años la escuela no ha perdido a ningún maestro que quería conservar.',
   },
   'hoover': {
-    description: 'Hoover is a TK-8 neighborhood Community School and one of the highest-need schools in the district. Despite having the lowest teacher credentialing rate, Hoover\'s young staff produces the second-highest student growth in both ELA and Math. It offers a full K-8 music program and STEAM instruction.',
-    descriptionEs: 'Hoover es una Escuela Comunitaria de vecindario TK-8 y una de las escuelas con mayores necesidades del distrito. A pesar de tener la tasa más baja de credencialización docente, el personal joven de Hoover produce el segundo mayor crecimiento estudiantil en ELA y Matemáticas. Ofrece un programa de música K-8 completo e instrucción STEAM.',
+    description: 'Hoover is a TK-8 neighborhood school serving one of the highest-need communities in the district. Its teachers are the youngest in the district and many are still finishing their teaching credentials — yet Hoover students improve in reading and math faster than at almost any other school (second-highest growth in both). Students get a full K-8 music program plus hands-on science and technology (STEAM). It is also a Community School, with extra family services on site.',
+    descriptionEs: 'Hoover es una escuela de vecindario de TK a 8º que atiende a una de las comunidades con más necesidad del distrito. Sus maestros son los más jóvenes del distrito y muchos todavía están terminando su credencial — aun así, los estudiantes de Hoover mejoran en lectura y matemáticas más rápido que en casi cualquier otra escuela (el segundo mayor crecimiento en ambas materias). Hay un programa completo de música de K a 8º y clases prácticas de ciencia y tecnología (STEAM). También es una Escuela Comunitaria, con servicios extra para las familias allí mismo.',
     caaspp: { ela: 17, math: 13 },
     demographics: { sed: 96.6, el: 66.9, chronicAbsent: 28.5, suspension: 4.79 },
     funding: {
@@ -428,12 +429,12 @@ const SCHOOL_DATA = {
     },
     staffing: { credentialed: 52.0, misassigned: 36.7, elMisassigned: 35.2 },
     teacherDemo: { hispanicStaff: 37.5, whiteStaff: null, over55: null, under35: 47.5 },
-    notes: 'Youngest staff in the district (47.5% under 35). Worst credentialing (52%) but #2 in student growth for both subjects. 10% of students experiencing homelessness. Zero resignations in 2024-25.',
-    notesEs: 'El personal más joven del distrito (47.5% menor de 35 años). La menor credencialización (52%) pero N.º 2 en crecimiento estudiantil en ambas materias. 10% de estudiantes sin hogar.',
+    notes: 'Youngest staff in the district (47.5% under 35). Lowest share of fully credentialed teachers (52%), yet #2 in student growth for both reading and math. 10% of students are experiencing homelessness. Zero teacher resignations in 2024-25.',
+    notesEs: 'El personal más joven del distrito (47.5% menor de 35 años). La proporción más baja de maestros con credencial completa (52%), pero N.º 2 en crecimiento estudiantil en lectura y matemáticas. El 10% de los estudiantes no tiene vivienda fija. Cero renuncias de maestros en 2024-25.',
   },
   'kennedy': {
-    description: 'Kennedy is the largest school in the district, a 6-8 neighborhood Community School and middle school. It has large within-school achievement gaps, with White students scoring significantly higher than Hispanic students. Recent principal leadership changes have led to significant staff turnover.',
-    descriptionEs: 'Kennedy es la escuela más grande del distrito, una Escuela Comunitaria de vecindario de 6-8 grados y escuela secundaria. Tiene grandes brechas de logro dentro de la escuela, con estudiantes blancos obteniendo puntajes significativamente más altos que los estudiantes hispanos.',
+    description: 'Kennedy is the district\'s biggest school: a 6-8 neighborhood middle school and a Community School, with extra services for families. Test scores show a wide gap inside the school — White students score much higher than Hispanic students. The school has also been through several principal changes recently, and many teachers have left.',
+    descriptionEs: 'Kennedy es la escuela más grande del distrito: una secundaria de vecindario de 6º a 8º y una Escuela Comunitaria, con servicios extra para las familias. Los exámenes muestran una brecha grande dentro de la escuela — los estudiantes blancos sacan puntajes mucho más altos que los hispanos. La escuela también ha pasado por varios cambios de director últimamente, y muchos maestros se han ido.',
     caaspp: { ela: 49, math: 30 },
     demographics: { sed: 65.8, el: 25.8, chronicAbsent: 23.8, suspension: 2.97 },
     funding: {
@@ -443,12 +444,12 @@ const SCHOOL_DATA = {
     },
     staffing: { credentialed: 60.5, misassigned: 22.3, elMisassigned: 16.7 },
     teacherDemo: { hispanicStaff: null, whiteStaff: null, over55: null, under35: null },
-    notes: 'Stark within-school gap: White students 81% ELA vs. Hispanic 38%, EL 4%. Highest 3-year staff turnover (20 departures). Largest staff (30 evaluated teachers).',
-    notesEs: 'Brecha marcada dentro de la escuela: estudiantes blancos 81% ELA vs. hispanos 38%, EL 4%. Mayor rotación de personal en 3 años (20 salidas).',
+    notes: 'A stark gap inside the school on the state English test: 81% of White students meet grade level vs. 38% of Hispanic students and 4% of students learning English. More teachers have left here over the last 3 years than at any other school (20 departures). Largest teaching staff in the district (30 evaluated teachers).',
+    notesEs: 'Una brecha marcada dentro de la escuela en el examen estatal de inglés: 81% de los estudiantes blancos están al nivel de grado vs. 38% de los hispanos y 4% de los que están aprendiendo inglés. En los últimos 3 años se han ido más maestros que de cualquier otra escuela (20 salidas). El personal docente más grande del distrito (30 maestros evaluados).',
   },
   'mckinley-mit': {
-    description: 'McKinley MIT is a 6-8 technology-focused middle school of choice and a Community School. It is ATSI-identified (Additional Targeted Support and Improvement) and receives the largest single district investment ($610K) for intervention programs. It has the lowest state test proficiency and highest suspension rate in the district.',
-    descriptionEs: 'McKinley MIT es una escuela secundaria de elección enfocada en tecnología de 6-8 grados y una Escuela Comunitaria. Está identificada como ATSI (Apoyo y Mejora Adicional Dirigido) y recibe la mayor inversión distrital individual ($610K) para programas de intervención.',
+    description: 'McKinley MIT is a 6-8 middle school with a technology focus; any family in the district can apply. The state has flagged it as needing extra help (a designation called ATSI), and the district puts more money into it than any other school — $610K for tutoring and support programs. Right now it has the lowest state test scores and the highest suspension rate in the district. It is also a Community School, with extra family services on site.',
+    descriptionEs: 'McKinley MIT es una secundaria de 6º a 8º enfocada en tecnología; cualquier familia del distrito puede aplicar. El estado la marcó como escuela que necesita ayuda extra (una designación llamada ATSI), y el distrito le invierte más dinero que a ninguna otra escuela — $610K para tutoría y programas de apoyo. Por ahora tiene los puntajes más bajos del distrito en los exámenes estatales y la tasa de suspensión más alta. También es una Escuela Comunitaria, con servicios extra para las familias allí mismo.',
     caaspp: { ela: 10, math: 7 },
     demographics: { sed: 92.6, el: 45.5, chronicAbsent: 0, suspension: 10.78 },
     funding: {
@@ -458,12 +459,12 @@ const SCHOOL_DATA = {
     },
     staffing: { credentialed: 56.5, misassigned: 22.9, elMisassigned: 22.9 },
     teacherDemo: { hispanicStaff: 16.7, whiteStaff: null, over55: null, under35: null },
-    notes: 'ATSI-identified. District\'s largest single public investment ($610K ATSI intervention). Lowest CAASPP proficiency. Highest suspension rate (10.78%). 78-point Hispanic staff-student gap (94.4% students / 16.7% staff). Chronic absenteeism reported as 0% -- likely a data error.',
-    notesEs: 'Identificado como ATSI. La mayor inversión pública individual del distrito ($610K intervención ATSI). La competencia CAASPP más baja. La tasa de suspensión más alta (10.78%). Los datos de ausencia crónica (0%) probablemente contienen un error.',
+    notes: 'Flagged by the state for extra support (ATSI). Gets the district\'s largest single investment ($610K for intervention programs). Lowest scores in the district on the CAASPP state test. Highest suspension rate (10.78%). Students are 94.4% Hispanic but teachers are 16.7% Hispanic — a 78-point gap. Chronic absenteeism reported as 0% — likely a data error.',
+    notesEs: 'Marcada por el estado para recibir apoyo extra (ATSI). Recibe la mayor inversión individual del distrito ($610K para programas de intervención). Los puntajes más bajos del distrito en el examen estatal CAASPP. La tasa de suspensión más alta (10.78%). Los estudiantes son 94.4% hispanos pero los maestros son 16.7% hispanos — una brecha de 78 puntos. La ausencia crónica reportada como 0% — probablemente un error de datos.',
   },
   'north-star': {
-    description: 'North Star Academy is a 3-8 school of choice with the highest state test proficiency in the district but the lowest student growth rates. It receives no Title I or federal funds and has the lowest per-pupil public funding. Its PTA ($326K) covers 58% of the SPSA budget, filling the gap that categorical programs cover at other schools.',
-    descriptionEs: 'North Star Academy es una escuela de elección de 3-8 grados con la mayor competencia en exámenes estatales del distrito pero las tasas más bajas de crecimiento estudiantil. No recibe fondos del Título I ni federales y tiene el financiamiento público per cápita más bajo. Su PTA ($326K) cubre el 58% del presupuesto SPSA.',
+    description: 'North Star Academy is a 3-8 school that any family in the district can apply to. Its students post the highest state test scores in the district — but they also improve the least from year to year. Because few students qualify for need-based federal money (Title I), it gets the least public funding per student. Parents fill the gap: the PTA raises $326K, more than half of the school\'s extra (supplemental) budget.',
+    descriptionEs: 'North Star Academy es una escuela de 3º a 8º a la que cualquier familia del distrito puede aplicar. Sus estudiantes sacan los puntajes más altos del distrito en los exámenes estatales — pero también son los que menos mejoran de un año a otro. Como pocos estudiantes califican para fondos federales por necesidad (Título I), recibe el menor financiamiento público por estudiante. Los papás llenan ese hueco: el PTA recauda $326K, más de la mitad del presupuesto extra (suplementario) de la escuela.',
     caaspp: { ela: 96, math: 96 },
     demographics: { sed: 8.9, el: 2.5, chronicAbsent: 3.2, suspension: 0.19 },
     funding: {
@@ -473,12 +474,12 @@ const SCHOOL_DATA = {
     },
     staffing: { credentialed: 79.7, misassigned: 0, elMisassigned: 0 },
     teacherDemo: { hispanicStaff: 19.0, whiteStaff: null, over55: 42.9, under35: null },
-    notes: 'Highest retirement risk: 42.9% of staff over 55. Lowest ELA student growth (9.6%) despite highest proficiency. Every subgroup performs well (Hispanic 81%, SWD 72%). PTA provides $326K -- 58% of site budget.',
-    notesEs: 'Mayor riesgo de jubilación: 42.9% del personal mayor de 55 años. El menor crecimiento estudiantil en ELA (9.6%) a pesar de la mayor competencia. Todos los subgrupos rinden bien.',
+    notes: 'Highest retirement risk in the district: 42.9% of staff are over 55. Lowest reading growth (9.6% of students hit their yearly goal) despite the highest test scores. Every student group does well — 81% of Hispanic students and 72% of students with disabilities meet grade level. The PTA provides $326K, 58% of the site budget.',
+    notesEs: 'El mayor riesgo de jubilación del distrito: 42.9% del personal tiene más de 55 años. El menor crecimiento en lectura (9.6% de los estudiantes alcanzaron su meta anual) a pesar de los puntajes más altos. A todos los grupos de estudiantes les va bien — 81% de los hispanos y 72% de los estudiantes con discapacidades están al nivel de grado. El PTA aporta $326K, el 58% del presupuesto del sitio.',
   },
   'orion': {
-    description: 'Orion is a TK-5 alternative school of choice offering Mandarin dual-language immersion with a parent participation (co-op) model. It is the most ethnically diverse school in the district. Achievement gaps exist within the school between White and Hispanic students.',
-    descriptionEs: 'Orion es una escuela alternativa de elección TK-5 que ofrece inmersión bilingüe en mandarín con un modelo de participación de padres (cooperativa). Es la escuela más diversa étnicamente del distrito.',
+    description: 'At Orion, students learn in two languages: English and Mandarin. It is a TK-5 school that any family in the district can apply to, and parents pitch in regularly in the classroom — a setup often called a co-op. It is the most ethnically diverse school in the district, though White students currently score well above Hispanic students on state tests.',
+    descriptionEs: 'En Orion, los estudiantes aprenden en dos idiomas: inglés y mandarín. Es una escuela de TK a 5º a la que cualquier familia del distrito puede aplicar, y los papás ayudan seguido en el salón — un modelo que llaman co-op. Es la escuela con más diversidad étnica del distrito, aunque por ahora los estudiantes blancos sacan puntajes bastante más altos que los hispanos en los exámenes estatales.',
     caaspp: { ela: 53, math: 51 },
     demographics: { sed: 31.8, el: 22.8, chronicAbsent: 12.6, suspension: 0.21 },
     funding: {
@@ -488,12 +489,12 @@ const SCHOOL_DATA = {
     },
     staffing: { credentialed: 68.4, misassigned: 14.6, elMisassigned: 14.6 },
     teacherDemo: { hispanicStaff: null, whiteStaff: null, over55: null, under35: null },
-    notes: 'Most ethnically diverse school (35% Hispanic, 23% multiracial, 21% White, 18% Asian). Achievement gap: White 77% vs Hispanic 29% ELA. 33% Chinese staff (Mandarin immersion). Parent co-op model with high engagement.',
-    notesEs: 'La escuela más diversa étnicamente (35% hispanos, 23% multirraciales, 21% blancos, 18% asiáticos). Brecha de logro: blancos 77% vs hispanos 29% ELA. Modelo cooperativo de padres.',
+    notes: 'Most ethnically diverse school in the district (35% Hispanic, 23% multiracial, 21% White, 18% Asian). On the state English test, 77% of White students meet grade level vs. 29% of Hispanic students. A third of teachers are Chinese (for the Mandarin program). Parents are highly involved through the co-op model.',
+    notesEs: 'La escuela con más diversidad étnica del distrito (35% hispanos, 23% multirraciales, 21% blancos, 18% asiáticos). En el examen estatal de inglés, 77% de los estudiantes blancos están al nivel de grado vs. 29% de los hispanos. Un tercio de los maestros son chinos (por el programa de mandarín). Los papás participan mucho gracias al modelo co-op.',
   },
   'roosevelt': {
-    description: 'Roosevelt is a TK-5 neighborhood Community School that has experienced the steepest enrollment decline in the district, transitioning from K-8 to K-5. It has significant teacher qualification challenges, particularly with EL misassignment.',
-    descriptionEs: 'Roosevelt es una Escuela Comunitaria de vecindario TK-5 que ha experimentado la mayor disminución de inscripción del distrito, pasando de K-8 a K-5. Tiene desafíos significativos de calificación docente.',
+    description: 'Roosevelt is a TK-5 neighborhood school and a Community School, with extra services for families on site. It has lost more students than any other school in the district and recently shrank from K-8 down to K-5. It also struggles to put fully qualified teachers in every classroom — especially teachers certified to teach students who are learning English.',
+    descriptionEs: 'Roosevelt es una escuela de vecindario de TK a 5º y una Escuela Comunitaria, con servicios extra para las familias allí mismo. Ha perdido más estudiantes que cualquier otra escuela del distrito y hace poco pasó de K-8 a K-5. También le cuesta tener maestros con todas sus credenciales en cada salón — sobre todo maestros certificados para enseñar a estudiantes que están aprendiendo inglés.',
     caaspp: { ela: 16, math: 18 },
     demographics: { sed: 69.5, el: 42.6, chronicAbsent: 26.9, suspension: 3.11 },
     funding: {
@@ -503,12 +504,12 @@ const SCHOOL_DATA = {
     },
     staffing: { credentialed: 56.5, misassigned: 28.1, elMisassigned: 28.1 },
     teacherDemo: { hispanicStaff: null, whiteStaff: null, over55: null, under35: null },
-    notes: 'Steepest enrollment decline (529 to 344). Transitioned from K-8 to K-5. Science proficiency just 6.8%. 3 regrettable teacher attritions over 3 years (tied for most with McKinley).',
-    notesEs: 'Mayor disminución de inscripción (529 a 344). Transicionó de K-8 a K-5. Competencia en ciencias solo 6.8%.',
+    notes: 'Steepest enrollment decline in the district (529 down to 344). Shrank from K-8 to K-5. Only 6.8% of students meet grade level in science. Lost 3 teachers it wanted to keep over 3 years (tied with McKinley for the most).',
+    notesEs: 'La mayor caída de inscripción del distrito (de 529 a 344). Pasó de K-8 a K-5. Solo el 6.8% de los estudiantes está al nivel de grado en ciencias. Perdió 3 maestros que quería conservar en 3 años (empatada con McKinley en lo más alto).',
   },
   'roy-cloud': {
-    description: 'Roy Cloud is a TK-8 neighborhood school serving a relatively low-need population. It is one of the higher-performing schools in the district. Despite strong overall performance, its EL and LTEL subgroups are rated RED on the California Dashboard.',
-    descriptionEs: 'Roy Cloud es una escuela de vecindario TK-8 que sirve a una población con necesidades relativamente bajas. Es una de las escuelas de mayor rendimiento del distrito. A pesar del fuerte rendimiento general, sus subgrupos de EL y LTEL están calificados en ROJO en el Panel de California.',
+    description: 'Roy Cloud is a TK-8 neighborhood school where most families are not low-income, and it is one of the higher-scoring schools in the district. But its students who are still learning English — including those who have been at it for six-plus years — are struggling enough that the state\'s school report card (the California Dashboard) rates those groups RED, the lowest level.',
+    descriptionEs: 'Roy Cloud es una escuela de vecindario de TK a 8º donde la mayoría de las familias no son de bajos ingresos, y es una de las escuelas con mejores puntajes del distrito. Pero a sus estudiantes que todavía están aprendiendo inglés — incluyendo los que llevan seis años o más — les va lo bastante mal como para que la boleta estatal de las escuelas (el California Dashboard) ponga a esos grupos en ROJO, el nivel más bajo.',
     caaspp: { ela: 67, math: 59 },
     demographics: { sed: 11.4, el: 3.4, chronicAbsent: 8.0, suspension: 1.75 },
     funding: {
@@ -518,12 +519,12 @@ const SCHOOL_DATA = {
     },
     staffing: { credentialed: 79.7, misassigned: 8.3, elMisassigned: null },
     teacherDemo: { hispanicStaff: 13.5, whiteStaff: 70.3, over55: 29.7, under35: null },
-    notes: 'EL/LTEL subgroups rated RED on California Dashboard despite strong overall scores. DEI Literature Lift initiative ($33K). Rainbow Cloud GSA. Hispanic staff improved from 9% to 13.5% over 4 years.',
-    notesEs: 'Subgrupos EL/LTEL calificados en ROJO en el Panel de California a pesar de puntajes generales fuertes. Iniciativa DEI Literature Lift ($33K).',
+    notes: 'Students learning English — including long-term English Learners — are rated RED (the lowest level) on the California Dashboard, the state\'s school report card, despite strong overall scores. Runs a $33K "Literature Lift" program to bring more diverse books into classrooms. Has a student LGBTQ+ club, Rainbow Cloud. Hispanic teachers grew from 9% to 13.5% of staff over 4 years.',
+    notesEs: 'Los estudiantes que están aprendiendo inglés — incluyendo los de largo plazo — están en ROJO (el nivel más bajo) en el California Dashboard, la boleta estatal de las escuelas, a pesar de puntajes generales fuertes. Tiene un programa de $33K llamado "Literature Lift" para traer libros más diversos a los salones. Tiene un club estudiantil LGBTQ+, Rainbow Cloud. Los maestros hispanos subieron del 9% al 13.5% del personal en 4 años.',
   },
   'taft': {
-    description: 'Taft is a TK-5 neighborhood Community School using a 50:50 bilingual model for K-3. It has one of the smallest budgets despite being among the highest-need schools. Taft\'s young teaching staff produces the highest Math student growth in the district.',
-    descriptionEs: 'Taft es una Escuela Comunitaria de vecindario TK-5 que utiliza un modelo bilingüe 50:50 para K-3. Tiene uno de los presupuestos más pequeños a pesar de ser una de las escuelas con mayores necesidades. El personal docente joven de Taft produce el mayor crecimiento estudiantil en matemáticas del distrito.',
+    description: 'Taft is a TK-5 neighborhood school where K-3 students learn in both Spanish and English, splitting the day 50:50. Even though it serves one of the highest-need communities in the district, it runs on one of the smallest budgets. Its young teaching staff gets results: Taft students improve in math faster than at any other school in the district. It is also a Community School, with extra family services on site.',
+    descriptionEs: 'Taft es una escuela de vecindario de TK a 5º donde los estudiantes de K a 3º aprenden en español y en inglés, mitad y mitad. Aunque atiende a una de las comunidades con más necesidad del distrito, funciona con uno de los presupuestos más chicos. Su personal docente joven da resultados: los estudiantes de Taft mejoran en matemáticas más rápido que en cualquier otra escuela del distrito. También es una Escuela Comunitaria, con servicios extra para las familias allí mismo.',
     caaspp: { ela: 19, math: 13 },
     demographics: { sed: 90.0, el: 65.7, chronicAbsent: 26.7, suspension: 0.51 },
     funding: {
@@ -533,8 +534,8 @@ const SCHOOL_DATA = {
     },
     staffing: { credentialed: 56.3, misassigned: 15.6, elMisassigned: 15.6 },
     teacherDemo: { hispanicStaff: 29.2, whiteStaff: null, over55: null, under35: 41.7 },
-    notes: '#1 Math student growth (27.6%), #3 ELA growth. Youngest staff in district alongside Hoover (41.7% under 35). Smallest SPSA budget ($238K). Exited ATSI in 2024-25. 7% of students experiencing homelessness.',
-    notesEs: 'N.º 1 en crecimiento estudiantil en matemáticas (27.6%), N.º 3 en crecimiento en ELA. Personal más joven del distrito junto con Hoover (41.7% menor de 35). El presupuesto SPSA más pequeño ($238K).',
+    notes: '#1 in the district for math growth (27.6%), #3 for reading growth. Youngest staff in the district alongside Hoover (41.7% under 35). Smallest supplemental (SPSA) budget ($238K). Came off the state\'s extra-support list (ATSI) in 2024-25. 7% of students are experiencing homelessness.',
+    notesEs: 'N.º 1 del distrito en crecimiento en matemáticas (27.6%), N.º 3 en lectura. El personal más joven del distrito junto con Hoover (41.7% menor de 35). El presupuesto suplementario (SPSA) más pequeño ($238K). Salió de la lista estatal de apoyo extra (ATSI) en 2024-25. El 7% de los estudiantes no tiene vivienda fija.',
   },
 };
 
@@ -996,6 +997,11 @@ const schoolCSS = `
   .resource-card {
     background: #fff;
     border: 1px solid var(--rule-light);
+    /* min-width:0 removes the grid item's automatic min-content floor —
+       without it one long unbreakable line (e.g. a PDF filename) widens the
+       shared track past a 320-360px viewport and the whole page pans. */
+    min-width: 0;
+    overflow-wrap: anywhere;
     padding: 1.2rem 1.5rem;
     transition: border-color 0.2s;
   }
@@ -1004,14 +1010,18 @@ const schoolCSS = `
     border-color: var(--green-light);
   }
 
-  .resource-card h4 {
+  .resource-card h3 {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 0.7rem;
     font-weight: 500;
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: var(--green-mid);
+    /* margin-top/line-height cancel the generic h3 rule above; these cards
+       were h4 (skipping h2 -> h4) and keep the old h4 rendering exactly */
+    margin-top: 0;
     margin-bottom: 0.4rem;
+    line-height: 1.65;
   }
 
   .resource-card p {
@@ -1313,7 +1323,7 @@ const LABELS = {
     academics: 'Academic Performance',
     demographics: 'Student Demographics',
     funding: 'Funding',
-    staffing: 'Staffing',
+    staffing: 'Who Teaches Here',
     resources: 'Documents & Resources',
     grades: 'Grades',
     csppNote: '+ California State Preschool →',
@@ -1347,8 +1357,11 @@ const LABELS = {
     districtAvgMath: 'District avg: 35%',
     teachersEvaluated: 'teachers evaluated',
     sed: 'Socioeconomically Disadvantaged',
+    sedNote: 'Mostly students who qualify for free or low-cost school lunch',
     el: 'English Learners',
+    elNote: 'Students still learning English',
     chronicAbsent: 'Chronic Absenteeism',
+    chronicAbsentTip: 'A student is chronically absent if they miss 10% or more of school days — about 18 days a year.',
     suspension: 'Suspension Rate',
     iepRate: 'Students with IEPs',
     inclusionRate: 'Inclusive Placement',
@@ -1376,20 +1389,22 @@ const LABELS = {
     noTitle1: 'This school does not receive Title I federal funding.',
     atsiNote: 'This school is designated ATSI (Additional Targeted Support and Improvement).',
     spsaNote: 'SPSA budgets represent supplemental site-level spending (enrichment, counseling, PD, materials). Base operating costs (teacher salaries, admin, facilities) come from the general fund and vary by school.',
+    credentialsHeading: 'Credentials',
     fullyCredentialed: 'Fully Credentialed',
     misassigned: 'Misassigned',
     elMisassigned: 'EL Misassigned',
     districtAvgCredentialed: 'District avg: 75%',
     districtTarget: 'District target: 100% by 2027',
+    misassignedExplainer: '"Misassigned" means a teacher was placed in a class they are not credentialed for — most often classes with students learning English (EL).',
     teacherDemoHighlights: 'Teacher demographics highlights',
     hispanicStaff: 'Hispanic staff',
     whiteStaff: 'White staff',
     over55: 'Staff over 55',
     under35: 'Staff under 35',
     sarc: 'School Accountability Report Card (SARC)',
-    sarcDesc: 'Annual state-mandated report on school conditions and student outcomes.',
+    sarcDesc: 'A yearly report card the state requires from every school: test scores, class sizes, teacher credentials, and campus conditions in one PDF.',
     spsa: 'School Plan for Student Achievement (SPSA)',
-    spsaDesc: 'Site-level plan for how supplemental funds are spent.',
+    spsaDesc: 'The school’s yearly plan for how it spends its extra (“supplemental”) money — tutoring, counselors, materials, and more.',
     viewSarc: 'Download SARC (PDF)',
     viewSpsa: 'Download SPSA (PDF)',
     safetyPlan: 'Comprehensive Safety Plan',
@@ -1448,29 +1463,38 @@ const LABELS = {
     viewFullMeeting: 'Full meeting',
     noBoardItems: 'No board meeting items found for this school.',
     cdeAbsenteeismBreakdown: 'Chronic Absenteeism by Subgroup',
-    cdeAbsenteeismNote: 'Chronic absenteeism rate by student subgroup. A student is chronically absent if they miss 10% or more of school days. Source: CDE 2024-25.',
-    cdeLtel: 'Long-Term ELs',
-    cdeLtelCount: 'LTEL Students',
-    cdeAtRisk: 'At-Risk of LTEL',
-    cdeReclassified: 'Reclassified (RFEP)',
-    cdeLtelNote: 'English Learner status counts. LTEL = 6+ years as EL. At-Risk = 4-5 years. Source: CDE ELAS/LTEL 2024-25.',
-    cdeStaffDiversity: 'Teacher Diversity (CDE)',
-    cdeStaffDiversityNote: 'Certificated teacher race/ethnicity from CDE Census Day 2024-25.',
-    cdeStaffExperience: 'Teacher Experience',
-    cdeAvgYears: 'Avg Years Experience',
-    cdeInexperienced: 'New Teachers (≤2 yr)',
-    cdeStaffExpNote: 'Teacher experience from CDE Census Day 2024-25. Inexperienced = 2 or fewer years total.',
-    cdeRatios: 'Student-Staff Ratios',
-    cdePupilTeacher: 'Pupil:Teacher',
-    cdePupilCounselor: 'Pupil:Counselor',
-    cdeRatiosNote: 'Ratios from CDE Census Day 2024-25. Pupil Services includes counselors, psychologists, social workers.',
+    cdeAbsenteeismNote: 'Chronic absenteeism rate by student subgroup. A student is chronically absent if they miss 10% or more of school days — about 18 days a year. Groups too small to report (fewer than 10 students) are not shown, to protect privacy. Source: California Dept. of Education, 2024-25.',
+    cdeLtelHeading: 'English Learners: A Closer Look',
+    cdeElStudents: 'Learning English',
+    cdeLtelCount: 'Long-Term (LTEL)',
+    cdeLtelCountNote: '6+ years as an English Learner',
+    cdeAtRisk: 'At Risk of LTEL',
+    cdeAtRiskNote: '4-5 years as an English Learner',
+    cdeReclassified: 'Now Fluent (RFEP)',
+    cdeReclassifiedNote: 'Tested out of English Learner status',
+    cdeLtelExplainer: 'A "long-term English Learner" (LTEL) is a student who has been learning English for 6 or more years without yet reaching fluency; students at 4-5 years are counted as "at risk" of becoming long-term. Schools watch these numbers because the goal is for students to reach fluency well before the 6-year mark.',
+    cdeLtelElementaryNote: 'California only starts counting students as long-term English Learners in grade 6, so elementary schools always show zero.',
+    cdeLtelSource: 'Source: <a href="https://dq.cde.ca.gov/dataquest/longtermel/" target="_blank">California Dept. of Education</a> English Learner data (ELAS/LTEL), 2024-25 school year.',
+    cdeSuppressed: 'fewer than 10',
+    cdeStaffDiversity: 'Teacher Race & Ethnicity',
+    cdeStaffDiversityNote: 'Counts classroom teachers only. Source: <a href="https://www.cde.ca.gov/ds/ad/fsspre.asp" target="_blank">California Dept. of Education</a> staff data, 2024-25 school year.',
+    cdeNotReported: 'Not reported',
+    cdeTeachers: 'Teachers',
+    cdeAvgYears: 'Avg Years Teaching',
+    cdeInexperienced: 'New Teachers',
+    cdeInexperiencedNote: 'In their 1st or 2nd year of teaching',
+    cdePupilTeacher: 'Students per Teacher',
+    cdePupilCounselor: 'Students per Counselor',
+    cdeCounselorNote: 'Counselors, psychologists, social workers & nurses',
+    cdeCounselorSuppressed: 'CDE lists less than one full-time position here',
+    cdeStaffSource: 'Source: <a href="https://www.cde.ca.gov/ds/ad/fsspex.asp" target="_blank">California Dept. of Education</a> staffing data, 2024-25 school year.',
   },
   es: {
     overview: 'Resumen',
     academics: 'Rendimiento Académico',
     demographics: 'Demografía Estudiantil',
     funding: 'Financiamiento',
-    staffing: 'Personal',
+    staffing: '¿Quiénes enseñan aquí?',
     resources: 'Documentos y Recursos',
     grades: 'Grados',
     csppNote: '+ Preescolar Estatal de California →',
@@ -1504,8 +1528,11 @@ const LABELS = {
     districtAvgMath: 'Promedio del distrito: 35%',
     teachersEvaluated: 'maestros evaluados',
     sed: 'Desventaja Socioeconómica',
+    sedNote: 'Más que nada, estudiantes que califican para almuerzo gratis o a bajo costo',
     el: 'Estudiantes de Inglés',
+    elNote: 'Estudiantes que todavía están aprendiendo inglés',
     chronicAbsent: 'Absentismo Crónico',
+    chronicAbsentTip: 'Un estudiante está crónicamente ausente si falta el 10% o más de los días de clases — como 18 días al año.',
     suspension: 'Tasa de Suspensión',
     iepRate: 'Estudiantes con IEP',
     inclusionRate: 'Colocación Inclusiva',
@@ -1533,20 +1560,22 @@ const LABELS = {
     noTitle1: 'Esta escuela no recibe financiamiento federal del Título I.',
     atsiNote: 'Esta escuela está designada como ATSI (Apoyo y Mejora Adicional Dirigido).',
     spsaNote: 'Los presupuestos SPSA representan gastos suplementarios a nivel de sitio (enriquecimiento, consejería, desarrollo profesional, materiales). Los costos operativos base (salarios de maestros, administración, instalaciones) provienen del fondo general y varían por escuela.',
+    credentialsHeading: 'Credenciales',
     fullyCredentialed: 'Con Credencial Completa',
     misassigned: 'Asignación Incorrecta',
     elMisassigned: 'Asignación Incorrecta EL',
     districtAvgCredentialed: 'Promedio del distrito: 75%',
     districtTarget: 'Meta del distrito: 100% para 2027',
+    misassignedExplainer: '"Asignación incorrecta" significa que pusieron a un maestro en una clase para la que no tiene credencial — más seguido en clases con estudiantes que están aprendiendo inglés (EL).',
     teacherDemoHighlights: 'Datos demográficos del personal docente',
     hispanicStaff: 'Personal hispano',
     whiteStaff: 'Personal blanco',
     over55: 'Personal mayor de 55',
     under35: 'Personal menor de 35',
     sarc: 'Informe de Responsabilidad Escolar (SARC)',
-    sarcDesc: 'Informe anual estatal sobre las condiciones escolares y los resultados estudiantiles.',
+    sarcDesc: 'Una boleta anual que el estado le exige a cada escuela: puntajes, tamaños de clase, credenciales de maestros y condiciones del campus en un solo PDF.',
     spsa: 'Plan Escolar para el Logro Estudiantil (SPSA)',
-    spsaDesc: 'Plan a nivel de sitio sobre cómo se gastan los fondos suplementarios.',
+    spsaDesc: 'El plan anual de la escuela sobre cómo gasta su dinero extra ("suplementario") — tutoría, consejeros, materiales y más.',
     viewSarc: 'Descargar SARC (PDF)',
     viewSpsa: 'Descargar SPSA (PDF)',
     safetyPlan: 'Plan Integral de Seguridad',
@@ -1605,22 +1634,31 @@ const LABELS = {
     viewFullMeeting: 'Reunión completa',
     noBoardItems: 'No se encontraron temas de reuniones de la mesa directiva para esta escuela.',
     cdeAbsenteeismBreakdown: 'Ausentismo Crónico por Subgrupo',
-    cdeAbsenteeismNote: 'Tasa de ausentismo crónico por subgrupo estudiantil. Un estudiante está crónicamente ausente si falta el 10% o más de los días escolares. Fuente: CDE 2024-25.',
-    cdeLtel: 'ELs a Largo Plazo',
-    cdeLtelCount: 'Estudiantes LTEL',
+    cdeAbsenteeismNote: 'Tasa de ausentismo crónico por subgrupo estudiantil. Un estudiante está crónicamente ausente si falta el 10% o más de los días de clases — como 18 días al año. Los grupos muy chicos (menos de 10 estudiantes) no se muestran, para proteger la privacidad. Fuente: Departamento de Educación de California, 2024-25.',
+    cdeLtelHeading: 'Estudiantes de Inglés: una mirada más de cerca',
+    cdeElStudents: 'Aprendiendo Inglés',
+    cdeLtelCount: 'A Largo Plazo (LTEL)',
+    cdeLtelCountNote: '6+ años como Estudiante de Inglés',
     cdeAtRisk: 'En Riesgo de LTEL',
-    cdeReclassified: 'Reclasificados (RFEP)',
-    cdeLtelNote: 'Conteos de estado de Estudiantes de Inglés. LTEL = 6+ años como EL. En Riesgo = 4-5 años. Fuente: CDE ELAS/LTEL 2024-25.',
-    cdeStaffDiversity: 'Diversidad Docente (CDE)',
-    cdeStaffDiversityNote: 'Raza/etnicidad de maestros certificados del Día del Censo CDE 2024-25.',
-    cdeStaffExperience: 'Experiencia Docente',
-    cdeAvgYears: 'Años Promedio de Experiencia',
-    cdeInexperienced: 'Maestros Nuevos (≤2 años)',
-    cdeStaffExpNote: 'Experiencia docente del Día del Censo CDE 2024-25. Sin experiencia = 2 o menos años en total.',
-    cdeRatios: 'Relación Estudiante-Personal',
-    cdePupilTeacher: 'Alumno:Maestro',
-    cdePupilCounselor: 'Alumno:Consejero',
-    cdeRatiosNote: 'Relaciones del Día del Censo CDE 2024-25. Servicios al Alumno incluye consejeros, psicólogos, trabajadores sociales.',
+    cdeAtRiskNote: '4-5 años como Estudiante de Inglés',
+    cdeReclassified: 'Ya Dominan el Inglés (RFEP)',
+    cdeReclassifiedNote: 'Pasaron el examen y salieron del programa',
+    cdeLtelExplainer: 'Un "Estudiante de Inglés a largo plazo" (LTEL) es un estudiante que lleva 6 años o más aprendiendo inglés sin llegar a dominarlo; los que llevan 4-5 años cuentan como "en riesgo" de volverse de largo plazo. Las escuelas vigilan estos números porque la meta es que los estudiantes dominen el inglés mucho antes de los 6 años.',
+    cdeLtelElementaryNote: 'California empieza a contar a los estudiantes como LTEL hasta el 6º grado, así que las escuelas primarias siempre muestran cero.',
+    cdeLtelSource: 'Fuente: datos de Estudiantes de Inglés (ELAS/LTEL) del <a href="https://dq.cde.ca.gov/dataquest/longtermel/" target="_blank">Departamento de Educación de California</a>, año escolar 2024-25.',
+    cdeSuppressed: 'menos de 10',
+    cdeStaffDiversity: 'Raza y Etnicidad de los Maestros',
+    cdeStaffDiversityNote: 'Cuenta solo a los maestros de salón. Fuente: datos de personal del <a href="https://www.cde.ca.gov/ds/ad/fsspre.asp" target="_blank">Departamento de Educación de California</a>, año escolar 2024-25.',
+    cdeNotReported: 'No reportado',
+    cdeTeachers: 'Maestros',
+    cdeAvgYears: 'Años Promedio Enseñando',
+    cdeInexperienced: 'Maestros Nuevos',
+    cdeInexperiencedNote: 'En su 1er o 2º año enseñando',
+    cdePupilTeacher: 'Estudiantes por Maestro',
+    cdePupilCounselor: 'Estudiantes por Consejero',
+    cdeCounselorNote: 'Consejeros, psicólogos, trabajadores sociales y enfermeras',
+    cdeCounselorSuppressed: 'CDE reporta menos de un puesto de tiempo completo aquí',
+    cdeStaffSource: 'Fuente: datos de personal del <a href="https://www.cde.ca.gov/ds/ad/fsspex.asp" target="_blank">Departamento de Educación de California</a>, año escolar 2024-25.',
   },
 };
 
@@ -1719,10 +1757,10 @@ function renderBellScheduleHTML(bs, L) {
 
   html += '<div class="bell-card-inner"><table class="bell-table">';
   html += `<thead><tr>
-    <th></th>
-    <th><span class="bell-col-label">${L.regularDays}</span><span class="bell-col-sub">${L.regularDaysSub}</span></th>
-    <th><span class="bell-col-label">${L.thursdayEarlyRelease}</span></th>
-    ${hasSuperMin ? `<th><span class="bell-col-label">${L.superMinDays}</span></th>` : ''}
+    <th scope="col"><span class="bell-col-label">${L.grade}</span></th>
+    <th scope="col"><span class="bell-col-label">${L.regularDays}</span><span class="bell-col-sub">${L.regularDaysSub}</span></th>
+    <th scope="col"><span class="bell-col-label">${L.thursdayEarlyRelease}</span></th>
+    ${hasSuperMin ? `<th scope="col"><span class="bell-col-label">${L.superMinDays}</span></th>` : ''}
   </tr></thead><tbody>`;
 
   for (const row of mergedRows) {
@@ -2171,13 +2209,15 @@ ${siteNav({ activePage: 'schools', lang, altLangHref })}
       <div class="stat-card">
         <div class="stat-card-label">${L.sed}</div>
         <div class="stat-card-value">${fmtPct(data.demographics.sed)} ${infoBubble('SARC 2024-25', sarcPdfUrl)}</div>
+        <div class="stat-card-note">${L.sedNote}</div>
       </div>
       <div class="stat-card">
         <div class="stat-card-label">${L.el}</div>
         <div class="stat-card-value">${fmtPct(data.demographics.el)} ${infoBubble('SARC 2024-25', sarcPdfUrl)}</div>
+        <div class="stat-card-note">${L.elNote}</div>
       </div>
       <div class="stat-card">
-        <div class="stat-card-label">${L.chronicAbsent}</div>
+        <div class="stat-card-label">${L.chronicAbsent} ${infoBubble(L.chronicAbsentTip, dashboardUrl)}</div>
         <div class="stat-card-value">${chronicAbsentDisplay} ${infoBubble('CA Dashboard', dashboardUrl)}</div>
         <div class="stat-card-note">${L.districtAvgAbsent}${chronicAbsentNote}</div>
       </div>
@@ -2221,17 +2261,29 @@ ${siteNav({ activePage: 'schools', lang, altLangHref })}
     })()}
 
     ${(() => {
+      // CDE ELAS/LTEL detail. Skips schools absent from the file (e.g.
+      // charters) or with no EL students. A null cell means CDE suppressed a
+      // small count for privacy — render it as "fewer than 10", never 0.
       const ltel = CDE_LTEL[slug];
       if (!ltel || !ltel.el) return '';
+      const supp = (v) => (v === null || v === undefined) ? L.cdeSuppressed : fmt(v);
+      const elPct = ltel.totalEnrollment ? Math.round(ltel.el / ltel.totalEnrollment * 100) : null;
+      // LTEL status only exists for grades 6-12, so TK-5 schools always show 0.
+      const maxGrade = parseInt(String(school.grades).split('-').pop(), 10);
+      const intro = isEs
+        ? `En 2024-25, ${fmt(ltel.el)} de los ${fmt(ltel.totalEnrollment)} estudiantes de esta escuela${elPct !== null ? ` (${elPct}%)` : ''} eran Estudiantes de Inglés — estudiantes que todavía están aprendiendo inglés. Otros ${supp(ltel.rfep)} ya lo dominan: pasaron el examen del estado y fueron "reclasificados" (RFEP).`
+        : `In 2024-25, ${fmt(ltel.el)} of this school's ${fmt(ltel.totalEnrollment)} students${elPct !== null ? ` (${elPct}%)` : ''} were English Learners — students who are still learning English. Another ${supp(ltel.rfep)} used to be English Learners and are now fluent: they passed the state's English test and were "reclassified" (RFEP).`;
       return `
-        <h3 style="margin-top:2rem">${isEs ? 'Estudiantes de Inglés' : 'English Learners'}</h3>
+        <h3 style="margin-top:2rem">${L.cdeLtelHeading}</h3>
+        <p>${intro}</p>
         <div class="stat-grid">
-          <div class="stat-card"><div class="stat-card-label">${isEs ? 'Estudiantes EL' : 'EL Students'}</div><div class="stat-card-value">${fmt(ltel.el)}</div></div>
-          <div class="stat-card"><div class="stat-card-label">${L.cdeLtelCount}</div><div class="stat-card-value">${fmt(ltel.ltel)}</div><div class="stat-card-note">${isEs ? '6+ años como EL' : '6+ years as EL'}</div></div>
-          <div class="stat-card"><div class="stat-card-label">${L.cdeAtRisk}</div><div class="stat-card-value">${fmt(ltel.atRisk)}</div><div class="stat-card-note">${isEs ? '4-5 años' : '4-5 years'}</div></div>
-          <div class="stat-card"><div class="stat-card-label">${L.cdeReclassified}</div><div class="stat-card-value">${fmt(ltel.rfep)}</div></div>
+          <div class="stat-card"><div class="stat-card-label">${L.cdeElStudents}</div><div class="stat-card-value">${supp(ltel.el)}</div>${elPct !== null ? `<div class="stat-card-note">${elPct}% ${isEs ? 'de la escuela' : 'of the school'}</div>` : ''}</div>
+          <div class="stat-card"><div class="stat-card-label">${L.cdeLtelCount}</div><div class="stat-card-value">${supp(ltel.ltel)}</div><div class="stat-card-note">${L.cdeLtelCountNote}</div></div>
+          <div class="stat-card"><div class="stat-card-label">${L.cdeAtRisk}</div><div class="stat-card-value">${supp(ltel.atRisk)}</div><div class="stat-card-note">${L.cdeAtRiskNote}</div></div>
+          <div class="stat-card"><div class="stat-card-label">${L.cdeReclassified}</div><div class="stat-card-value">${supp(ltel.rfep)}</div><div class="stat-card-note">${L.cdeReclassifiedNote}</div></div>
         </div>
-        <p class="source">${L.cdeLtelNote}</p>`;
+        <p>${L.cdeLtelExplainer}${maxGrade < 6 ? ` ${L.cdeLtelElementaryNote}` : ''}</p>
+        <p class="source">${L.cdeLtelSource}</p>`;
     })()}
   </section>
 
@@ -2323,11 +2375,75 @@ ${siteNav({ activePage: 'schools', lang, altLangHref })}
     <p class="source">${L.spsaNote}</p>
   </section>
 
-  <!-- ======== 5. STAFFING ======== -->
+  <!-- ======== 5. WHO TEACHES HERE ======== -->
   <section class="section" id="staffing">
     <div class="section-rule"></div>
     <div class="section-num">05</div>
     <h2>${L.staffing}</h2>
+
+    ${(() => {
+      // CDE staffing basics. Each lookup is independent so a school missing
+      // from one CDE file still renders whatever the other files have.
+      const exp = CDE_STAFF_EXP[slug];
+      const ratios = CDE_RATIOS[slug];
+      if (!exp && !ratios) return '';
+      const dRatio = CDE_RATIOS.district?.studentTeacherRatio;
+      const intro = (exp && ratios)
+        ? (isEs
+          ? `${displayName} tiene ${fmt(exp.total)} maestros para ${fmt(ratios.enrollment)} estudiantes — como ${Math.round(ratios.studentTeacherRatio)} estudiantes por maestro. En promedio, sus maestros llevan ${exp.avgYearsTotal} años enseñando, y ${fmt(exp.inexperienced)} de los ${fmt(exp.total)} están en su primer o segundo año.`
+          : `${displayName} has ${fmt(exp.total)} teachers for ${fmt(ratios.enrollment)} students — about ${Math.round(ratios.studentTeacherRatio)} students per teacher. On average, its teachers have been teaching for ${exp.avgYearsTotal} years, and ${fmt(exp.inexperienced)} of the ${fmt(exp.total)} are in their first or second year.`)
+        : '';
+      let cards = '';
+      if (exp) {
+        cards += `
+      <div class="stat-card">
+        <div class="stat-card-label">${L.cdeTeachers}</div>
+        <div class="stat-card-value">${fmt(exp.total)}</div>
+      </div>`;
+      }
+      if (ratios && ratios.studentTeacherRatio !== null) {
+        cards += `
+      <div class="stat-card">
+        <div class="stat-card-label">${L.cdePupilTeacher}</div>
+        <div class="stat-card-value">${ratios.studentTeacherRatio}:1</div>
+        ${dRatio ? `<div class="stat-card-note">${isEs ? 'Promedio del distrito' : 'District avg'}: ${dRatio}:1</div>` : ''}
+      </div>`;
+      }
+      if (exp) {
+        cards += `
+      <div class="stat-card">
+        <div class="stat-card-label">${L.cdeAvgYears}</div>
+        <div class="stat-card-value">${exp.avgYearsTotal}</div>
+        <div class="stat-card-note">${exp.avgYearsDistrict} ${isEs ? 'años en RCSD' : 'years in RCSD'}</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-label">${L.cdeInexperienced}</div>
+        <div class="stat-card-value">${fmt(exp.inexperienced)} / ${fmt(exp.total)}</div>
+        <div class="stat-card-note">${L.cdeInexperiencedNote}</div>
+      </div>`;
+      }
+      if (ratios) {
+        // null ratio = CDE suppresses the calculation below 1.0 FTE; say so
+        // instead of hiding the card (parents ask about counselors a lot).
+        cards += ratios.studentPupilServicesRatio ? `
+      <div class="stat-card">
+        <div class="stat-card-label">${L.cdePupilCounselor}</div>
+        <div class="stat-card-value">${ratios.studentPupilServicesRatio}:1</div>
+        <div class="stat-card-note">${L.cdeCounselorNote}</div>
+      </div>` : `
+      <div class="stat-card">
+        <div class="stat-card-label">${L.cdePupilCounselor}</div>
+        <div class="stat-card-value">&mdash;</div>
+        <div class="stat-card-note">${L.cdeCounselorSuppressed}</div>
+      </div>`;
+      }
+      return `${intro ? `<p>${intro}</p>\n` : ''}
+    <div class="stat-grid">${cards}
+    </div>
+    <p class="source">${L.cdeStaffSource}</p>`;
+    })()}
+
+    <h3 style="margin-top:2rem">${L.credentialsHeading}</h3>
 
     <div class="stat-grid">
       <div class="stat-card">
@@ -2345,7 +2461,7 @@ ${siteNav({ activePage: 'schools', lang, altLangHref })}
       </div>` : ''}
     </div>
 
-    <p class="source">${L.districtTarget}</p>
+    <p class="source">${L.misassignedExplainer} ${L.districtTarget}.</p>
 
     ${demoItems.length > 0 ? `
     <h3>${L.teacherDemoHighlights}</h3>
@@ -2366,6 +2482,8 @@ ${siteNav({ activePage: 'schools', lang, altLangHref })}
     </div>` : ''}
 
     ${(() => {
+      // CDE teacher race/ethnicity. notReported gets its own row so the
+      // shown rows always sum to the total.
       const eth = CDE_STAFF_ETH[slug];
       if (!eth || !eth.total) return '';
       const cats = [
@@ -2377,41 +2495,22 @@ ${siteNav({ activePage: 'schools', lang, altLangHref })}
         ['twoOrMore', isEs ? 'Dos o Más' : 'Two or More'],
         ['pacificIslander', isEs ? 'Isleño del Pacífico' : 'Pacific Islander'],
         ['americanIndian', isEs ? 'Indígena Americano' : 'American Indian'],
+        ['notReported', L.cdeNotReported],
       ].filter(([k]) => eth[k] > 0);
       const rows = cats.map(([k, label]) => {
         const pct = (eth[k] / eth.total * 100).toFixed(1);
-        return `<tr><td class="label-cell">${label}</td><td class="num">${eth[k]}</td><td class="num">${pct}%</td></tr>`;
+        return `<tr><td class="label-cell">${label}</td><td class="num">${eth[k]}</td><td class="num">${pct}%</td><td class="bar-cell"><span class="bar" style="width:${barWidth(Number(pct), 80)}px; background:var(--green-light)"></span></td></tr>`;
       }).join('');
       return `
         <h3 style="margin-top:2rem">${L.cdeStaffDiversity}</h3>
         <div class="table-wrap">
           <table>
-            <thead><tr><th>${isEs ? 'Raza/Etnicidad' : 'Race/Ethnicity'}</th><th class="num">${isEs ? 'Maestros' : 'Teachers'}</th><th class="num">%</th></tr></thead>
+            <thead><tr><th scope="col">${isEs ? 'Raza/Etnicidad' : 'Race/Ethnicity'}</th><th scope="col" class="num">${isEs ? 'Maestros' : 'Teachers'}</th><th scope="col" class="num">%</th><th scope="col">${isEs ? 'Proporción' : 'Share'}</th></tr></thead>
             <tbody>${rows}
-            <tr class="total-row"><td class="label-cell">Total</td><td class="num">${eth.total}</td><td class="num">100%</td></tr></tbody>
+            <tr class="total-row"><td class="label-cell">Total</td><td class="num">${eth.total}</td><td class="num">100%</td><td></td></tr></tbody>
           </table>
         </div>
         <p class="source">${L.cdeStaffDiversityNote}</p>`;
-    })()}
-
-    ${(() => {
-      const exp = CDE_STAFF_EXP[slug];
-      const ratios = CDE_RATIOS[slug];
-      if (!exp && !ratios) return '';
-      let html = '<h3 style="margin-top:2rem">' + L.cdeStaffExperience + '</h3><div class="stat-grid">';
-      if (exp) {
-        html += `<div class="stat-card"><div class="stat-card-label">${L.cdeAvgYears}</div><div class="stat-card-value">${exp.avgYearsTotal}</div></div>`;
-        html += `<div class="stat-card"><div class="stat-card-label">${L.cdeInexperienced}</div><div class="stat-card-value">${exp.inexperienced} / ${exp.total}</div><div class="stat-card-note">${exp.firstYear} ${isEs ? 'primer año' : 'first-year'}</div></div>`;
-      }
-      if (ratios) {
-        html += `<div class="stat-card"><div class="stat-card-label">${L.cdePupilTeacher}</div><div class="stat-card-value">${ratios.studentTeacherRatio}:1</div></div>`;
-        if (ratios.studentPupilServicesRatio) {
-          html += `<div class="stat-card"><div class="stat-card-label">${L.cdePupilCounselor}</div><div class="stat-card-value">${ratios.studentPupilServicesRatio}:1</div></div>`;
-        }
-      }
-      html += '</div>';
-      if (exp) html += `<p class="source">${L.cdeStaffExpNote}</p>`;
-      return html;
     })()}
   </section>
 
@@ -2423,12 +2522,12 @@ ${siteNav({ activePage: 'schools', lang, altLangHref })}
 
     <div class="resource-grid">
       <div class="resource-card">
-        <h4>${L.sarc}</h4>
+        <h3>${L.sarc}</h3>
         <p>${L.sarcDesc}</p>
         <p style="margin-top:0.5rem"><a href="https://data.rcsd.info/documents/sarc/2024-25/english/${slug}.pdf" target="_blank">${L.viewSarc}${isEs ? ' (inglés)' : ''} &#8599;</a></p>
       </div>
       <div class="resource-card">
-        <h4>${L.spsa}</h4>
+        <h3>${L.spsa}</h3>
         <p>${L.spsaDesc}</p>
         <p style="margin-top:0.5rem"><a href="https://data.rcsd.info/documents/spsa/2025-26/${slug}.pdf" target="_blank">${L.viewSpsa}${isEs ? ' (inglés)' : ''} &#8599;</a></p>
       </div>
@@ -2441,30 +2540,30 @@ ${siteNav({ activePage: 'schools', lang, altLangHref })}
         if (pres.pdfUrl) links.push(`<a href="${pres.pdfUrl}" target="_blank">${L.viewPresentation} &#8599;</a>`);
         if (pres.videoUrl) links.push(`<a href="${pres.videoUrl}" target="_blank">&#9654; ${L.watchPresentation}</a>`);
         return `<div class="resource-card">
-        <h4>${L.boardPresentation}</h4>
+        <h3>${L.boardPresentation}</h3>
         <p>${pres.year} · ${dateStr}</p>
         ${links.length ? `<p style="margin-top:0.5rem">${links.join(' · ')}</p>` : ''}
       </div>`;
       })()}
       <div class="resource-card bell-card">
-        <h4>${L.bellSchedule}</h4>
+        <h3>${L.bellSchedule}</h3>
         ${renderBellScheduleHTML(school.bellSchedule, L)}
       </div>
       <div class="resource-card">
-        <h4>${L.lunchMenu}</h4>
+        <h3>${L.lunchMenu}</h3>
         ${school.lunchUrl
           ? `<p><a href="${school.lunchUrl}" target="_blank">${L.viewMenu} &#8599;</a></p>`
           : `<p class="coming-soon">${L.comingSoon}</p>`}
       </div>
       <div class="resource-card">
-        <h4>${L.ptoPtaOrg}</h4>
+        <h3>${L.ptoPtaOrg}</h3>
         ${school.pto?.url
           ? `<p><a href="${school.pto.url}" target="_blank">${school.pto.name || L.visitWebsite} &#8599;</a></p>${rctStatusNote(school.pto, isEs)}`
           : `<p><a href="https://www.rcef.org/" target="_blank">${isEs ? 'Fundación Educativa de Redwood City (RCEF)' : 'Redwood City Education Foundation (RCEF)'} &#8599;</a></p>`}
         ${school.miBooster?.url ? `<p style="margin-top:0.4rem"><a href="${school.miBooster.url}" target="_blank">${school.miBooster.name} &#8599;</a></p>` : ''}
       </div>
       <div class="resource-card">
-        <h4>${L.parentComm}</h4>
+        <h3>${L.parentComm}</h3>
         <p><a href="${schoolsData.districtLinks.parentSquare}" target="_blank">ParentSquare ${isEs ? '(oficial del distrito)' : '(district-wide)'} &#8599;</a></p>
         ${school.parentLinks?.konstella
           ? `<p><a href="${school.parentLinks.konstella}" target="_blank">${L.joinKonstella} &#8599;</a></p>`
@@ -2475,18 +2574,18 @@ ${siteNav({ activePage: 'schools', lang, altLangHref })}
               : ''}
       </div>
       <div class="resource-card">
-        <h4>${L.absenceReporting}</h4>
+        <h3>${L.absenceReporting}</h3>
         <p>SchoolMessenger</p>
         <p><a href="${schoolsData.districtLinks.absenceReporting.ios}" target="_blank">iOS &#8599;</a> · <a href="${schoolsData.districtLinks.absenceReporting.android}" target="_blank">Android &#8599;</a></p>
       </div>
       <div class="resource-card">
-        <h4>${L.safetyPlan}</h4>
+        <h3>${L.safetyPlan}</h3>
         ${CSSP_URLS[slug]
           ? `<p>${L.csspDesc}</p><p><a href="${CSSP_URLS[slug]}" target="_blank">${L.viewCssp} &#8599;</a></p>`
           : `<p class="coming-soon">${L.comingSoon}</p>`}
       </div>
       <div class="resource-card">
-        <h4>${L.schoolSiteCouncil}</h4>
+        <h3>${L.schoolSiteCouncil}</h3>
         ${(() => {
           const ssc = SSC_DATA[slug]?.['2025-26'];
           if (!ssc?.members?.length) return `<p class="coming-soon">${L.comingSoon}</p>`;
@@ -2566,7 +2665,10 @@ ${siteNav({ activePage: 'schools', lang, altLangHref })}
 
           const attsHtml = item.attachments.length > 0
             ? `<div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem">${item.attachments.map(a =>
-                `<a href="${a.url}" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid)">${a.title} &#8599;</a>`
+                // overflow-wrap:anywhere — attachment titles are often long unbroken
+                // PDF filenames; without a break opportunity they force the whole
+                // page wider than a phone viewport (horizontal scroll bug).
+                `<a href="${a.url}" target="_blank" style="font-family:'IBM Plex Mono',monospace; font-size:0.65rem; background:var(--green-wash); padding:0.2rem 0.5rem; border-radius:3px; text-decoration:none; color:var(--green-mid); max-width:100%; overflow-wrap:anywhere">${a.title} &#8599;</a>`
               ).join('')}</div>`
             : '';
 

@@ -28,7 +28,7 @@ Every dataset on this site is traceable to its public source. We document the or
 |----------|-------------|-------------|
 | Meeting transcription | [`data/METHODOLOGY-transcription.md`](data/METHODOLOGY-transcription.md) | AssemblyAI Universal 3 Pro, Opus audio from YouTube, speaker diarization |
 | Meeting aggregation | [Data sources](#data-sources) below | Simbli + BoardDocs APIs |
-| Board policies | `data/policies-index.json`, `data/board-policies/` | Full policy text, cross-references, footnotes, and metadata scraped from Simbli's REST APIs |
+| Board policies | `data/policies-index.json`, `data/board-policies/`, `data/policy-titles-es.json` | Full policy text, cross-references, footnotes, and metadata scraped from Simbli's REST APIs; titles machine-translated to Spanish via `scripts/translate-policy-titles.mjs` (Claude, cached, labeled) |
 | School profiles | `data/schools.json` | CDE enrollment, CAASPP, SARC, IRS 990 PTO filings |
 | Charter profiles | `data/charters.json` | CDE School Directory + Profile for metadata; financial docs filtered from `document-index.json` by title patterns |
 | District properties | `data/properties.json` | District-owned/leased sites that aren't operating schools (admin, former campuses, storage); seed list confirmed by the Board President |
@@ -93,7 +93,9 @@ Scripts run in order. Most can be run independently. All cache aggressively — 
 
  Processing
  ──────────
- 6. extract:links         → data/agenda-attachments.json (requires pymupdf)
+ 6. extract:links         → data/agenda-attachments.json (requires pymupdf; reads
+    artifacts/agendas/*.pdf — regenerate a missing/broken agenda PDF with
+    scripts/generate-agenda-pdf.mjs, which drives Simbli's own PrintAgenda.aspx)
  7. map:timestamps:llm    → data/timestamp-map.json (requires ANTHROPIC_API_KEY)
  7b. monitor:gsc          → GSC SEO and Crawl Error Report (data/gsc-monitoring-report.md)
 

@@ -81,9 +81,12 @@ run(`${step++}. Meeting detail pages`, 'build-meeting-pages.mjs');
 run(`${step++}. Committee summaries`, 'generate-committee-summaries.mjs');
 run(`${step++}. Committee pages`, 'build-committee-pages.mjs');
 run(`${step++}. Homepage`, 'build-homepage.mjs');
+run(`${step++}. District pages`, 'build-district.mjs');
 run(`${step++}. School pages`, 'build-schools.mjs');
 run(`${step++}. Charter school pages`, 'build-charters.mjs');
+run(`${step++}. Budget pages`, 'build-budget.mjs');
 run(`${step++}. Blog`, 'build-blog.mjs');
+run(`${step++}. Board policy pages`, 'build-policies.mjs');
 run(`${step++}. Search pages`, 'build-search.mjs');
 
 // Build the Pagefind index AFTER all HTML is generated. This indexes docs/ HTML

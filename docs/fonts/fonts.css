@@ -1,6 +1,28 @@
 /* Self-hosted fonts — Fraunces, Newsreader, IBM Plex Mono */
 /* Latin + Latin-ext subsets only (EN/ES bilingual site) */
-/* Source: Google Fonts, downloaded 2026-03-16 */
+/*
+ * Provenance: Google Fonts latin / latin-ext woff2 subsets, downloaded
+ * 2026-03-16, then re-subset locally on 2026-06-10 with fontTools 4.63.0
+ * (pyftsubset + varLib.instancer; pipeline: tmp/subset-fonts.sh in the
+ * repo worktree, originals kept in tmp/fonts-original/). Per file:
+ *
+ *   fonttools varLib.instancer <file> <axis-limits> -o <tmp>
+ *   pyftsubset <tmp> --unicodes=<the unicode-range below, verbatim> \
+ *     --layout-features='*' --name-IDs='*' --flavor=woff2
+ *
+ * Axis limits (min:default:max) and why they are safe:
+ *   newsreader-normal-*  wght=300:400:500 opsz=6:18:36
+ *   newsreader-italic-*  opsz=6:18:36
+ *   fraunces-normal-*    wght=300:900:900 opsz=9:9:96
+ *   fraunces-italic-*    opsz=9:9:96
+ * The @font-face font-weight descriptors below clamp wght to the declared
+ * values (Newsreader 300/400/500, Fraunces 300/400/600/700), so trimmed
+ * wght range was unreachable from CSS. opsz caps are ~2x the largest
+ * rendered size found in a 30-page EN+ES survey (Newsreader <= 17.9px,
+ * Fraunces <= 85px); text larger than a cap clamps to the cap's optical
+ * design rather than breaking. If a redesign adds Newsreader > 36px,
+ * Fraunces > 96px, or weights outside the lists above, re-cut the fonts.
+ */
 
 /* --- Fraunces (headings) — variable font covers weights 300/400/600/700 --- */
 

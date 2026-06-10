@@ -64,6 +64,18 @@ UI's `--pf-*` custom properties (light DOM, no shadow root) set on `#search` in
 `build-search.mjs`, mapped to the green palette and Fraunces/Newsreader/IBM Plex
 Mono fonts; matched terms highlight in `--pf-mark` (amber).
 
+**Eager hydration.** The Component UI renders one skeleton row per result and
+hydrates each lazily via an internal IntersectionObserver as it scrolls into
+view. In practice that read as a bug: "14 results" with only the first ~9 rows
+showing any text — everything below the fold sat as a blank gray skeleton
+(verified live and locally, 2026-06-10). The init script in `build-search.mjs`
+now force-loads every rendered row as soon as the result list changes: the
+per-result wrappers are exposed on the `<pagefind-results>` element's
+`.results` property and their `load()` is internally guarded (idempotent), so
+a MutationObserver that calls `load()` on all of them is safe. Like the
+relaxation wrapper, this touches undocumented internals, is feature-detected,
+and fails open — if the internals change, rows fall back to hydrate-on-scroll.
+
 The exact runtime API was discovered kinesthetically in a browser (the public
 docs were thin), not assumed:
 `window.PagefindComponents.getInstanceManager().getInstance('default')` returns
@@ -83,6 +95,24 @@ inspecting the actual ranked top results (not just counts):
 | `board meeting hvac rental` | ✅ Relevant board meetings on top |
 | `dual immersion enrollment` | ✅ Adelante Selby Spanish Immersion School #1 |
 | `roy cloud principal email` | ❌ **1 hit (wrong page)** before fixing — see below |
+
+A second evaluation round (2026-06 site review) added parent queries and fixes:
+
+| Query | Result |
+|-------|--------|
+| `lunch menu` / `menu de almuerzo` | ❌ `/mcp/` (developer docs, mentions its `get-lunch-menu` tool) was #1 → demoted via `DEMOTED_PAGES` (see below); school pages now fill the top results, `/mcp/` is last |
+| `calendar` / `calendario` | ❌ top hits were 2020 special meetings; the instructional calendars weren't indexed at all → curated entries in `linked-documents.json`; both school-year calendar PDFs now #1–#2 in both languages |
+| `kindergarten enrollment` / `inscripcion kinder` | ❌ nothing useful → curated entry for the district's official enrollment page (rcsdk8.net), now #1 in both languages. (Pagefind normalizes diacritics: `inscripcion` matches `Inscripción`, verified both directions.) |
+
+**Demoting developer pages.** `/mcp/` and `/mcp/es/` document the MCP server's
+tools, so they textually mention many parent-facing terms ("lunch menu",
+"calendar") and — being short, dense pages — outranked real content. The
+indexer (`build-search-index.mjs`) injects `data-pagefind-weight="0.1"` on
+their `<body>` at index time (`DEMOTED_PAGES`), down-weighting every word
+one-tenth: still findable for `mcp`, no longer competitive for generic terms.
+To get a per-page hook, the indexer walks `docs/**/*.html` and feeds each file
+through `addHTMLFile` instead of `addDirectory` (same URL derivation; as a
+bonus the walk picks up one ES page the directory glob missed).
 
 Two layers, both tuned from those findings:
 
@@ -125,16 +155,21 @@ that discuss it, never the document itself. To return a result that links
 records, using Pagefind's **NodeJS Indexing API** (`scripts/build-search-index.mjs`,
 which replaced the `npx pagefind` CLI step). It:
 
-1. `index.addDirectory({ path: 'docs' })` — indexes the rendered HTML site,
-   exactly as the CLI did (`excludeSelectors` drops nav/footer; per-language
-   split by `<html lang>`).
+1. `index.addHTMLFile(...)` for every `docs/**/*.html` — indexes the rendered
+   HTML site exactly as `addDirectory`/the CLI did (`excludeSelectors` drops
+   nav/footer; per-language split by `<html lang>`), but the per-file walk lets
+   us inject `data-pagefind-weight` on `DEMOTED_PAGES` (the `/mcp/` developer
+   docs — see "Demoting developer pages" above).
 2. `index.addCustomRecord(...)` for each board-packet attachment in
    `data/document-index.json` (~1,028) — `url` → the file, `meta.title` → the
    document title. Titles only; we do **not** index PDF contents.
 3. `index.addCustomRecord(...)` for each entry in `data/linked-documents.json` —
-   a hand-curated list of documents linked inside agenda memos but hosted
-   off-portal (so they're absent from `document-index.json`), with the best
-   titles + provenance. First entry: the **adopted Facilities Master Plan**.
+   hand-curated: documents linked inside agenda memos but hosted off-portal
+   (so they're absent from `document-index.json`) **plus** official district
+   resources parents search for but that live on rcsdk8.net (the TK-8
+   instructional calendars, the enrollment page), with the best titles +
+   provenance. Entries carry `note`/`noteEs` so each language's record gets
+   its own excerpt text. First entry: the **adopted Facilities Master Plan**.
 4. `index.addCustomRecord(...)` for **document-kind links embedded in agenda
    memos** (see "Embedded memo links" below), titled by their agenda item — e.g.
    the San Mateo County Investment Fund report. Curated entries (source 3) win
@@ -192,12 +227,12 @@ so no separate CI change was needed.
 
 | File | Role |
 |------|------|
-| `scripts/build-search-index.mjs` | Builds the Pagefind index via the Node API: indexes `docs/` HTML (`excludeSelectors` drops nav/footer) + injects per-document records from `document-index.json`, `linked-documents.json`, and document-kind `memoLinks` in `data/board-memos/*.json`, in both languages. Replaced `npx pagefind` + `pagefind.yml`. |
+| `scripts/build-search-index.mjs` | Builds the Pagefind index via the Node API: walks `docs/**/*.html` through `addHTMLFile` (`excludeSelectors` drops nav/footer; `DEMOTED_PAGES` get `data-pagefind-weight` injected) + injects per-document records from `document-index.json`, `linked-documents.json`, and document-kind `memoLinks` in `data/board-memos/*.json`, in both languages. Replaced `npx pagefind` + `pagefind.yml`. |
 | `scripts/lib/memo-links.mjs` | `extractMemoLinks(memo)` — pulls embedded URLs out of agenda-item memos and classifies them (`document`/`form`/`video`/`other`). Shared by the scraper and the indexer. |
 | `scripts/scrape-simbli-agendas.mjs` | Stores `memoLinks` on each agenda item (via the shared extractor) so embedded links are captured structurally. |
 | `scripts/scrape-boarddocs.mjs` | Fetches each item's detail (`BD-GetAgendaItem`) to capture the item `body` + `memoLinks` for the BoardDocs era; `--bodies` backfills already-scraped meetings (resumable). Browser User-Agent required (CloudFront). |
-| `data/linked-documents.json` | Curated documents linked from agenda memos but hosted off-portal (e.g. the adopted FMP), with provenance + best titles; supersedes the raw memo link. Indexed by title. |
-| `scripts/build-search.mjs` | Generates `/search` + `/buscar`: composes the Component UI, themes it, applies ranking, installs query relaxation, prefills `?q=`. Holds the `RANKING` + `MIN_RESULTS` tunables. Pages carry `data-pagefind-ignore` + `robots: noindex, follow`. |
+| `data/linked-documents.json` | Curated search entries: documents linked from agenda memos but hosted off-portal (e.g. the adopted FMP, superseding its raw memo link) and official district resources parents search for (TK-8 instructional calendars, the rcsdk8.net enrollment page). Provenance + best titles per entry; `note`/`noteEs` give each language its own excerpt. Indexed by title. |
+| `scripts/build-search.mjs` | Generates `/search` + `/buscar`: composes the Component UI, themes it, applies ranking, installs query relaxation, eagerly hydrates result rows, prefills `?q=`. Holds the `RANKING` + `MIN_RESULTS` tunables. Pages carry `data-pagefind-ignore` + `robots: noindex, follow`. |
 | `scripts/html-parts.mjs` | `siteNav` renders the language-aware nav search `<form>`; `baseCSS` styles `.site-nav-search`. |
 | `scripts/run-pipeline.mjs` | Runs `build-search.mjs` then `build-search-index.mjs` as the last build stages before deploy. |
 | `package.json` | `pagefind` devDependency (provides the Node API); `build:search` + `search:index` scripts. |

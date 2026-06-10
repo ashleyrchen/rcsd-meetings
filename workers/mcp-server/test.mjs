@@ -84,21 +84,25 @@ await test("initialize returns server info", async () => {
   assert(r.result.capabilities.tools, "missing tools capability");
 });
 
-await test("tools/list returns 10 tools", async () => {
+await test("tools/list returns 14 tools", async () => {
   const r = await mcpCall(2, "tools/list");
   const names = r.result.tools.map((t) => t.name).sort();
-  assert(names.length === 10, `expected 10 tools, got ${names.length}`);
+  assert(names.length === 14, `expected 14 tools, got ${names.length}`);
   for (const expected of [
     "check-calendar",
+    "find-document",
     "get-lunch-menu",
     "get-meeting-details",
     "get-meeting-summary",
     "get-policy",
     "get-school-board-items",
     "get-sped-data",
+    "get-trustees",
+    "list-meetings",
     "list-policies",
     "list-schools",
     "query-school",
+    "search-transcript",
   ]) {
     assert(names.includes(expected), `missing tool: ${expected}`);
   }
@@ -109,10 +113,12 @@ console.log("\nTools:");
 
 await test("list-schools returns 12 schools", async () => {
   const text = await toolCall("list-schools");
-  const lines = text.trim().split("\n");
-  assert(lines.length === 12, `expected 12 lines, got ${lines.length}`);
+  // one row per school ends in "N students"; a provenance line follows
+  const schoolLines = text.trim().split("\n").filter((l) => l.includes("students"));
+  assert(schoolLines.length === 12, `expected 12 school lines, got ${schoolLines.length}`);
   assert(text.includes("orion"), "missing orion");
   assert(text.includes("kennedy"), "missing kennedy");
+  assert(text.includes("Source:"), "missing provenance line");
 });
 
 await test("query-school by slug", async () => {
@@ -165,8 +171,13 @@ await test("get-lunch-menu returns menu items", async () => {
     school: "orion",
     date: recentWeekday(),
   });
-  assert(text.includes("Orion"), "should include school name");
-  assert(text.includes("Lunch Entree") || text.includes("Entree"), "should have entree category");
+  // During summer/breaks the correct answer is "not in session", not a menu —
+  // accept either a menu (with the school name) or that explicit explanation.
+  const noSchool = text.includes("not in session") || text.includes("School is closed");
+  assert(
+    noSchool || (text.includes("Orion") && (text.includes("Lunch Entree") || text.includes("Entree"))),
+    "should return a menu or explain why there is none"
+  );
 });
 
 await test("get-lunch-menu weekend returns no lunch", async () => {
@@ -177,15 +188,80 @@ await test("get-lunch-menu weekend returns no lunch", async () => {
   assert(text.includes("weekend"), "should say weekend");
 });
 
-await test("get-meeting-summary returns summaries", async () => {
+await test("get-meeting-summary returns summaries with AI disclosure", async () => {
   const text = await toolCall("get-meeting-summary", { limit: 2 });
   assert(text.includes("2026-"), "should have recent dates");
   assert(text.length > 100, "should have substantial content");
+  assert(text.includes("AI-generated"), "should carry the AI disclosure note");
+  assert(text.includes("Source:"), "should carry a provenance line");
 });
 
 await test("get-meeting-summary by date", async () => {
   const text = await toolCall("get-meeting-summary", { date: "2026-03-11" });
   assert(text.includes("2026-03-11"), "should include the date");
+});
+
+await test("get-meeting-summary in Spanish", async () => {
+  const text = await toolCall("get-meeting-summary", { date: "2026-03-11", lang: "es" });
+  assert(text.includes("generado con IA"), "should carry the Spanish AI disclosure note");
+});
+
+await test("get-trustees lists board and superintendent", async () => {
+  const text = await toolCall("get-trustees", {});
+  assert(text.includes("Board of Trustees"), "missing header");
+  assert(text.includes("Trustee Area"), "missing area labels");
+  assert(text.includes("Term:"), "missing term years");
+  assert(text.includes("Superintendent"), "missing superintendent section");
+  assert(text.includes("Source:"), "missing provenance line");
+});
+
+await test("get-trustees in Spanish", async () => {
+  const text = await toolCall("get-trustees", { lang: "es" });
+  assert(text.includes("Mesa Directiva"), "missing Spanish header");
+  assert(text.includes("Período"), "missing Spanish term label");
+});
+
+await test("list-meetings pages by year", async () => {
+  const text = await toolCall("list-meetings", { year: 2026, limit: 3 });
+  assert(text.includes("2026-"), "should list 2026 meetings");
+  assert(/of \d+ in 2026/.test(text), "should report year-filtered total");
+  assert(text.includes("Source:"), "missing provenance line");
+});
+
+await test("list-meetings filters by type", async () => {
+  const text = await toolCall("list-meetings", { type: "Special", limit: 2 });
+  assert(text.includes("Special"), "should list Special meetings");
+});
+
+await test("search-transcript finds utterances with timestamps", async () => {
+  const text = await toolCall("search-transcript", {
+    date: "2026-05-13",
+    query: "EV charger",
+  });
+  assert(text.includes("Matches for"), "missing match header");
+  assert(/\[\d+:\d{2}/.test(text), "missing timestamps");
+  assert(text.includes("machine-generated"), "should carry the ASR disclosure note");
+});
+
+await test("search-transcript handles missing transcript", async () => {
+  const text = await toolCall("search-transcript", {
+    date: "2031-01-01",
+    query: "anything",
+  });
+  assert(text.includes("No"), "should say no transcript");
+  assert(text.includes("list-meetings"), "should point to list-meetings");
+});
+
+await test("find-document locates the Facilities Master Plan", async () => {
+  const text = await toolCall("find-document", { query: "facilities master plan" });
+  assert(text.includes("Facilities Master Plan"), "missing FMP title");
+  assert(text.includes("https://"), "missing direct URL");
+  assert(text.includes("Sources:"), "missing provenance line");
+});
+
+await test("find-document handles no matches", async () => {
+  const text = await toolCall("find-document", { query: "zzzznomatch" });
+  assert(text.includes("No board documents match"), "missing no-match message");
 });
 
 await test("get-school-board-items returns items", async () => {
@@ -230,6 +306,7 @@ await test("/ returns info page", async () => {
   const text = await res.text();
   assert(text.includes("RCSD Open Data MCP Server"), "missing title");
   assert(text.includes("list-schools"), "missing tool list");
+  assert(text.includes("find-document"), "missing new tools in tool list");
 });
 
 // Summary

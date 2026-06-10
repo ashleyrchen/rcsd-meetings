@@ -30,6 +30,7 @@
 <meta name="twitter:image" content="https://data.rcsd.info/og/page-home.png">
 <meta name="twitter:title" content="RCSD Open Data — Redwood City School District Public Records">
 <meta name="twitter:description" content="Open data portal for the Redwood City School District. 12 schools, 6,299 students, 194 board meetings with agendas, minutes, and video. Bilingual English/Spanish.">
+<link rel="describedby" href="/llms.txt">
 <link rel="preload" href="/fonts/fraunces-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/newsreader-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/ibm-plex-mono-400-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -284,7 +285,10 @@
     --coral-light: #f5ddd8;
     --text: #2a2a28;
     --text-secondary: #5a5a56;
-    --text-muted: #8a8a84;
+    /* Muted text must still clear WCAG AA 4.5:1 on every background it
+       appears on: 5.06:1 on --cream, 4.67:1 on --cream-dark, 5.37:1 on
+       #fff. (The old lighter gray token hit only ~3:1 on all three.) */
+    --text-muted: #6b6b64;
     --rule: #d4d0c8;
     --rule-light: #e8e4dc;
   }
@@ -316,6 +320,27 @@
     text-decoration-color: var(--green-mid);
   }
 
+  /* ---- SKIP LINK (keyboard a11y) ---- */
+  /* Visually hidden until keyboard focus; first tab stop on every page.
+     Lives inside nav.site-nav so the search indexer (which excludes the
+     nav) never indexes its text. Targets #main-content, emitted by
+     siteNav() right after the nav closes. */
+  .skip-link {
+    position: absolute;
+    left: -200vw;
+    top: 0;
+    z-index: 100;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+    background: var(--green-mid);
+    padding: 0.8rem 1.25rem;
+  }
+  .skip-link:focus { left: 0; outline: 2px solid #fff; outline-offset: -4px; }
+
   /* ---- SITE NAV ---- */
   .site-nav {
     background: #1a2e1a;
@@ -337,7 +362,9 @@
     text-transform: uppercase;
     text-decoration: none;
     color: rgba(255,255,255,0.7);
-    padding: 0.75rem 1rem;
+    /* 0.75rem horizontal padding (not 1rem): seven tabs incl. COMITÉS plus
+       search + lang toggle must fit the 960px container on one row */
+    padding: 0.75rem;
     border-bottom: 2px solid transparent;
     transition: color 0.2s, border-color 0.2s;
   }
@@ -364,7 +391,9 @@
   }
   .site-nav-search input::placeholder { color: rgba(255,255,255,0.55); }
   .site-nav-search input:focus {
-    outline: none;
+    /* visible focus ring — a background tint alone fails WCAG 2.4.7 */
+    outline: 2px solid #fff;
+    outline-offset: 1px;
     background: rgba(255,255,255,0.14);
     border-color: rgba(255,255,255,0.7);
     width: 11rem;
@@ -408,30 +437,48 @@
     font-size: 0.65rem;
     color: var(--green-mid);
     text-decoration: none;
-    margin: 0 0.75rem;
+    /* inline-block + padding lifts the tap target to ~33px tall (the bare
+       0.65rem text was 13px); padding + margin ≈ the old 0.75rem spacing */
+    display: inline-block;
+    padding: 0.45rem 0.5rem;
+    margin: 0 0.25rem;
   }
   .footer-nav a:hover { text-decoration: underline; }
 
   /* ---- RESPONSIVE (nav + footer) ---- */
-  @media (max-width: 640px) {
-    .site-nav-inner { padding: 0 0.9rem; gap: 0.4rem; }
-    /* Tabs become a horizontal scroll strip so every link stays reachable
-       without overflowing the viewport; search stays pinned on the right.
-       The right-edge mask fades the last tab to hint there's more to scroll. */
-    .site-nav-tabs {
-      flex: 1 1 auto;
-      min-width: 0;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
-      -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 1.4rem), transparent);
-      mask-image: linear-gradient(to right, #000 calc(100% - 1.4rem), transparent);
+  /* The single-row nav needs ~920px (seven ES tabs + search + lang toggle),
+     so below 960px it wraps instead: tabs flow across as many justified rows
+     as needed, then search + lang toggle get a full-width row. Every nav item
+     stays visible — the old horizontal scroll strip hid tabs with no usable
+     affordance, and 641–780px viewports clipped the search box offscreen. */
+  @media (max-width: 960px) {
+    .site-nav-inner {
+      flex-wrap: wrap;
+      padding: 0 0.9rem 0.65rem;
     }
-    .site-nav-tabs::-webkit-scrollbar { display: none; }
-    .site-nav-tab { flex: 0 0 auto; padding: 0.6rem 0.65rem; font-size: 0.7rem; }
-    .site-nav-right { flex: 0 0 auto; }
-    .site-nav-search input { width: 5rem; }
-    .site-nav-search input:focus { width: 6.5rem; }
+    .site-nav-tabs {
+      flex: 1 1 100%;
+      flex-wrap: wrap;
+    }
+    .site-nav-tab {
+      /* flex-grow justifies each wrapped row edge-to-edge; 0.9rem vertical
+         padding keeps tap targets ≥44px tall (0.75rem measured only 41.8px) */
+      flex: 1 0 auto;
+      text-align: center;
+      font-size: 0.7rem;
+      padding: 0.9rem 0.55rem;
+    }
+    .site-nav-right { flex: 1 1 100%; }
+    .site-nav-search { flex: 1 1 auto; }
+    .site-nav-search input,
+    .site-nav-search input:focus { width: 100%; }
+    /* 0.95rem vertical padding -> ≥44px tall tap target (0.75rem gave 39.5px) */
+    .site-nav-search input { padding: 0.95rem 0.75rem; }
+    .site-nav-lang {
+      align-self: stretch;
+      display: flex;
+      align-items: center;
+    }
   }
 
   /* ---- BILINGUAL TWO-COLUMN CORE ---- */
@@ -492,10 +539,9 @@
   }
   .hero p {
     margin-top: 1rem;
-    font-size: 0.88rem;
-    color: rgba(255,255,255,0.55);
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.82);
     line-height: 1.6;
-    font-style: italic;
   }
   .hero-stats {
     display: flex;
@@ -659,15 +705,17 @@
   }
   .school-badge {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.5rem;
+    font-size: 0.6rem;
     letter-spacing: 0.03em;
     text-transform: uppercase;
     padding: 0.1rem 0.4rem;
     border-radius: 2px;
   }
   .school-badge--neighborhood { background: var(--green-wash); color: var(--green-mid); }
-  .school-badge--choice { background: var(--amber-light); color: var(--amber); }
-  .school-badge--community { background: var(--coral-light); color: var(--coral); }
+  /* Badge text darkened from var(--amber)/var(--coral): those tokens only hit
+     2.27:1 / 3.23:1 on their wash backgrounds; these hit >=4.5:1 (WCAG AA). */
+  .school-badge--choice { background: var(--amber-light); color: #7a4f12; }
+  .school-badge--community { background: var(--coral-light); color: #9c3f2e; }
   .school-program {
     font-size: 0.72rem;
     color: var(--green-mid);
@@ -693,16 +741,32 @@
     position: relative;
     z-index: 2;
     display: flex;
-    gap: 0.5rem;
+    gap: 0.4rem;
     flex-wrap: wrap;
-    margin-top: 0.5rem;
-    padding-top: 0.4rem;
+    margin-top: 0.6rem;
+    padding-top: 0.6rem;
     border-top: 1px solid var(--rule-light);
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.6rem;
   }
-  .school-links a { color: var(--green-mid); text-decoration: none; white-space: nowrap; }
-  .school-links a:hover { text-decoration: underline; }
+  .school-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    min-height: 30px; /* tap target; raised to 44px on mobile below */
+    padding: 0.25rem 0.6rem;
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    background: var(--cream);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    line-height: 1.3;
+    color: var(--green-mid);
+    text-decoration: none;
+  }
+  .school-links a:hover {
+    border-color: var(--green-light);
+    background: var(--green-wash);
+    text-decoration: none;
+  }
 
   /* ---- EVENTS (mirrored bilingual) ---- */
   .events-section { padding-top: 1rem; }
@@ -745,7 +809,10 @@
     background: var(--cream-dark, #f5f0e8);
     border-radius: 4px;
     padding: 0.5rem 0.65rem;
-    margin: 0.15rem -0.65rem;
+    /* No negative horizontal margin: when the bilingual event columns sit at
+       the viewport edge (641-1023px widths), -0.65rem bled 11px past it and
+       made the whole page pan sideways. */
+    margin: 0.15rem 0;
     border-bottom: none;
   }
   /* No school — red */
@@ -781,7 +848,7 @@
     padding: 0.7rem 0;
     border-bottom: 1px solid var(--rule-light);
   }
-  .resource-item h4 {
+  .resource-item h3 {
     font-family: 'Fraunces', serif;
     font-size: 0.88rem;
     font-weight: 600;
@@ -856,6 +923,14 @@
     .content { padding-bottom: 2rem; }
     .school-section { padding: 1rem 1.2rem 0; }
     .school-grid { grid-template-columns: 1fr; }
+    /* Full-size tap targets: two buttons per row, >=44px tall */
+    .school-links a {
+      flex: 1 1 calc(50% - 0.4rem);
+      justify-content: center;
+      text-align: center;
+      min-height: 44px;
+      font-size: 0.8rem;
+    }
     .ai-section { margin: 2rem 1.2rem 0; }
     .events-col .event-row { text-align: left; }
   }
@@ -864,6 +939,7 @@
 <body>
 
 <nav class="site-nav">
+  <a class="skip-link" href="#main-content">Skip to content</a>
   <div class="site-nav-inner">
     <div class="site-nav-tabs">
       <a href="/" class="site-nav-tab active">Home</a>
@@ -871,6 +947,7 @@
       <a href="/schools/" class="site-nav-tab">Schools</a>
       <a href="/district/" class="site-nav-tab">District</a>
       <a href="/budget/" class="site-nav-tab">Budget</a>
+      <a href="/committees/" class="site-nav-tab">Committees</a>
       <a href="/blog/" class="site-nav-tab">Blog</a>
     </div>
     <div class="site-nav-right">
@@ -878,6 +955,7 @@
     </div>
   </div>
 </nav>
+<span id="main-content" tabindex="-1"></span>
 
 <header class="hero">
   <div class="hero-inner">
@@ -885,11 +963,11 @@
     <div class="bi-row">
       <div class="bi-en">
         <h1>Open Data for Redwood City School District</h1>
-        <p>Independently compiled public records, meeting archives, and school data — making district information accessible to families and the community.</p>
+        <p>Check lunch menus, follow school board meetings, and see how each school is doing — public records and school data for Redwood City families, all in one place.</p>
       </div>
       <div class="bi-es" lang="es">
         <h1>Datos Abiertos para el Distrito Escolar de Redwood City</h1>
-        <p>Registros públicos compilados independientemente, archivos de reuniones y datos escolares — haciendo la información del distrito accesible para las familias y la comunidad.</p>
+        <p>Mira los menús de almuerzo, sigue las reuniones de la mesa directiva y ve cómo va cada escuela — registros públicos y datos escolares para las familias de Redwood City, todo en un solo lugar.</p>
       </div>
     </div>
     <div class="hero-stats">
@@ -947,6 +1025,10 @@
         <p>Interactive catalog of all active school board policies, bylaws, and administrative regulations.</p>
       </div>
       <div class="nav-link-item">
+        <h3><a href="/committees/">Committees &#8599;</a></h3>
+        <p>Bond oversight (CBOC), English learner parent advisory (DELAC), and other district committees — members, meetings, and recordings.</p>
+      </div>
+      <div class="nav-link-item">
         <h3><a href="https://github.com/dweekly/rcsd-meetings">Source Code &#8599;</a></h3>
         <p>Open source on GitHub. Data pipeline, scraping tools, and website code.</p>
       </div>
@@ -965,8 +1047,12 @@
         <p>Informes de presupuesto, LCAP, planes escolares (SPSA) y boletas de calificaciones (SARC).</p>
       </div>
       <div class="nav-link-item">
-        <h3><a href="/policies/">Políticas de la Junta &#8599;</a></h3>
+        <h3><a href="/politicas/">Políticas de la Junta &#8599;</a></h3>
         <p>Catálogo interactivo de todas las políticas, reglamentos y estatutos vigentes de la mesa directiva.</p>
+      </div>
+      <div class="nav-link-item">
+        <h3><a href="/comites/">Comités &#8599;</a></h3>
+        <p>Supervisión del bono (CBOC), comité de padres de aprendices de inglés (DELAC) y otros comités del distrito — miembros, reuniones y grabaciones.</p>
       </div>
       <div class="nav-link-item">
         <h3><a href="https://github.com/dweekly/rcsd-meetings">Código Fuente &#8599;</a></h3>
@@ -992,13 +1078,14 @@
       <div class="school-badges"><span class="school-badge school-badge--choice">Choice · Elección</span><span class="school-badge school-badge--community" title="Community School · Escuela Comunitaria">🏫 Community</span></div>
       <div class="school-program">Spanish · Español</div>
       <div class="school-details">
-        <div class="school-detail">630 students · 42% EL · 63% FRL</div>
+        <div class="school-detail">630 students · 42% learning English · 63% free or low-cost lunch</div>
+        <div class="school-detail" lang="es">630 estudiantes · 42% aprendiendo inglés · 63% almuerzo gratis o a bajo costo</div>
       </div>
       <div class="school-links">
-        <a href="https://adelanteselby.rcsdk8.net" target="_blank" rel="noopener" title="School website">🌐 Web</a>
-        <a href="https://menus.healthepro.com/organizations/1184/sites/9274/menus/103750" target="_blank" rel="noopener" title="Lunch menu">🍽️ Lunch</a>
-        <a href="https://www.caschooldashboard.org/reports/41690056044580/2024" target="_blank" rel="noopener" title="CA School Dashboard">📊 Dash</a>
-        <a href="https://data.rcsd.info/documents/spsa/2025-26/adelante-selby.pdf" target="_blank" rel="noopener" title="School Plan for Student Achievement">📋 SPSA</a>
+        <a href="https://adelanteselby.rcsdk8.net" target="_blank" rel="noopener" title="School website · Sitio web de la escuela">🌐 Web</a>
+        <a href="https://menus.healthepro.com/organizations/1184/sites/9274/menus/103750" target="_blank" rel="noopener" title="Lunch menu · Menú de almuerzo">🍽️ Lunch · Almuerzo</a>
+        <a href="https://www.caschooldashboard.org/reports/41690056044580/2024" target="_blank" rel="noopener" title="CA School Dashboard · Panel Escolar de CA">📊 State data · Datos del estado</a>
+        <a href="https://data.rcsd.info/documents/spsa/2025-26/adelante-selby.pdf" target="_blank" rel="noopener" title="School Plan for Student Achievement (SPSA) · Plan Escolar para el Rendimiento Estudiantil (SPSA)">📋 School plan · Plan escolar</a>
         <a href="https://unidospto.org/" target="_blank" rel="noopener" title="Unidos Y Adelante">🤝 PTO</a>
       </div>
     </div>
@@ -1011,13 +1098,14 @@
       <div class="school-badges"><span class="school-badge school-badge--neighborhood">Neighborhood · Vecindario</span></div>
       
       <div class="school-details">
-        <div class="school-detail">664 students · 24% EL · 44% FRL</div>
+        <div class="school-detail">664 students · 24% learning English · 44% free or low-cost lunch</div>
+        <div class="school-detail" lang="es">664 estudiantes · 24% aprendiendo inglés · 44% almuerzo gratis o a bajo costo</div>
       </div>
       <div class="school-links">
-        <a href="https://clifford.rcsdk8.net" target="_blank" rel="noopener" title="School website">🌐 Web</a>
-        <a href="https://menus.healthepro.com/organizations/1184/sites/9275/menus/103731" target="_blank" rel="noopener" title="Lunch menu">🍽️ Lunch</a>
-        <a href="https://www.caschooldashboard.org/reports/41690056044424/2024" target="_blank" rel="noopener" title="CA School Dashboard">📊 Dash</a>
-        <a href="https://data.rcsd.info/documents/spsa/2025-26/clifford.pdf" target="_blank" rel="noopener" title="School Plan for Student Achievement">📋 SPSA</a>
+        <a href="https://clifford.rcsdk8.net" target="_blank" rel="noopener" title="School website · Sitio web de la escuela">🌐 Web</a>
+        <a href="https://menus.healthepro.com/organizations/1184/sites/9275/menus/103731" target="_blank" rel="noopener" title="Lunch menu · Menú de almuerzo">🍽️ Lunch · Almuerzo</a>
+        <a href="https://www.caschooldashboard.org/reports/41690056044424/2024" target="_blank" rel="noopener" title="CA School Dashboard · Panel Escolar de CA">📊 State data · Datos del estado</a>
+        <a href="https://data.rcsd.info/documents/spsa/2025-26/clifford.pdf" target="_blank" rel="noopener" title="School Plan for Student Achievement (SPSA) · Plan Escolar para el Rendimiento Estudiantil (SPSA)">📋 School plan · Plan escolar</a>
         <a href="https://cliffordschoolpto.org/" target="_blank" rel="noopener" title="Clifford School Parents Club">🤝 PTO</a>
       </div>
     </div>
@@ -1030,13 +1118,14 @@
       <div class="school-badges"><span class="school-badge school-badge--neighborhood">Neighborhood · Vecindario</span><span class="school-badge school-badge--community" title="Community School · Escuela Comunitaria">🏫 Community</span></div>
       
       <div class="school-details">
-        <div class="school-detail">260 students · 68% EL · 95% FRL</div>
+        <div class="school-detail">260 students · 68% learning English · 95% free or low-cost lunch</div>
+        <div class="school-detail" lang="es">260 estudiantes · 68% aprendiendo inglés · 95% almuerzo gratis o a bajo costo</div>
       </div>
       <div class="school-links">
-        <a href="https://garfield.rcsdk8.net" target="_blank" rel="noopener" title="School website">🌐 Web</a>
-        <a href="https://menus.healthepro.com/organizations/1184/sites/9277/menus/103763" target="_blank" rel="noopener" title="Lunch menu">🍽️ Lunch</a>
-        <a href="https://www.caschooldashboard.org/reports/41690056044473/2024" target="_blank" rel="noopener" title="CA School Dashboard">📊 Dash</a>
-        <a href="https://data.rcsd.info/documents/spsa/2025-26/garfield.pdf" target="_blank" rel="noopener" title="School Plan for Student Achievement">📋 SPSA</a>
+        <a href="https://garfield.rcsdk8.net" target="_blank" rel="noopener" title="School website · Sitio web de la escuela">🌐 Web</a>
+        <a href="https://menus.healthepro.com/organizations/1184/sites/9277/menus/103763" target="_blank" rel="noopener" title="Lunch menu · Menú de almuerzo">🍽️ Lunch · Almuerzo</a>
+        <a href="https://www.caschooldashboard.org/reports/41690056044473/2024" target="_blank" rel="noopener" title="CA School Dashboard · Panel Escolar de CA">📊 State data · Datos del estado</a>
+        <a href="https://data.rcsd.info/documents/spsa/2025-26/garfield.pdf" target="_blank" rel="noopener" title="School Plan for Student Achievement (SPSA) · Plan Escolar para el Rendimiento Estudiantil (SPSA)">📋 School plan · Plan escolar</a>
         
       </div>
     </div>
@@ -1049,13 +1138,14 @@
       <div class="school-badges"><span class="school-badge school-badge--neighborhood">Neighborhood · Vecindario</span><span class="school-badge school-badge--community" title="Community School · Escuela Comunitaria">🏫 Community</span></div>
       
       <div class="school-details">
-        <div class="school-detail">461 students · 36% EL · 63% FRL</div>
+        <div class="school-detail">461 students · 36% learning English · 63% free or low-cost lunch</div>
+        <div class="school-detail" lang="es">461 estudiantes · 36% aprendiendo inglés · 63% almuerzo gratis o a bajo costo</div>
       </div>
       <div class="school-links">
-        <a href="https://henryford.rcsdk8.net" target="_blank" rel="noopener" title="School website">🌐 Web</a>
-        <a href="https://menus.healthepro.com/organizations/1184/sites/9278/menus/103766" target="_blank" rel="noopener" title="Lunch menu">🍽️ Lunch</a>
-        <a href="https://www.caschooldashboard.org/reports/41690056044499/2024" target="_blank" rel="noopener" title="CA School Dashboard">📊 Dash</a>
-        <a href="https://data.rcsd.info/documents/spsa/2025-26/henry-ford.pdf" target="_blank" rel="noopener" title="School Plan for Student Achievement">📋 SPSA</a>
+        <a href="https://henryford.rcsdk8.net" target="_blank" rel="noopener" title="School website · Sitio web de la escuela">🌐 Web</a>
+        <a href="https://menus.healthepro.com/organizations/1184/sites/9278/menus/103766" target="_blank" rel="noopener" title="Lunch menu · Menú de almuerzo">🍽️ Lunch · Almuerzo</a>
+        <a href="https://www.caschooldashboard.org/reports/41690056044499/2024" target="_blank" rel="noopener" title="CA School Dashboard · Panel Escolar de CA">📊 State data · Datos del estado</a>
+        <a href="https://data.rcsd.info/documents/spsa/2025-26/henry-ford.pdf" target="_blank" rel="noopener" title="School Plan for Student Achievement (SPSA) · Plan Escolar para el Rendimiento Estudiantil (SPSA)">📋 School plan · Plan escolar</a>
         <a href="https://henryford.rcsdk8.net/our-community/our-school-pta" target="_blank" rel="noopener" title="Henry Ford Elementary PTA">🤝 PTO</a>
       </div>
     </div>
@@ -1068,13 +1158,14 @@
       <div class="school-badges"><span class="school-badge school-badge--neighborhood">Neighborhood · Vecindario</span><span class="school-badge school-badge--community" title="Community School · Escuela Comunitaria">🏫 Community</span></div>
       
       <div class="school-details">
-        <div class="school-detail">659 students · 67% EL · 97% FRL</div>
+        <div class="school-detail">659 students · 67% learning English · 97% free or low-cost lunch</div>
+        <div class="school-detail" lang="es">659 estudiantes · 67% aprendiendo inglés · 97% almuerzo gratis o a bajo costo</div>
       </div>
       <div class="school-links">
-        <a href="https://hoover.rcsdk8.net" target="_blank" rel="noopener" title="School website">🌐 Web</a>
-        <a href="https://menus.healthepro.com/organizations/1184/sites/9279/menus/103767" target="_blank" rel="noopener" title="Lunch menu">🍽️ Lunch</a>
-        <a href="https://www.caschooldashboard.org/reports/41690056044507/2024" target="_blank" rel="noopener" title="CA School Dashboard">📊 Dash</a>
-        <a href="https://data.rcsd.info/documents/spsa/2025-26/hoover.pdf" target="_blank" rel="noopener" title="School Plan for Student Achievement">📋 SPSA</a>
+        <a href="https://hoover.rcsdk8.net" target="_blank" rel="noopener" title="School website · Sitio web de la escuela">🌐 Web</a>
+        <a href="https://menus.healthepro.com/organizations/1184/sites/9279/menus/103767" target="_blank" rel="noopener" title="Lunch menu · Menú de almuerzo">🍽️ Lunch · Almuerzo</a>
+        <a href="https://www.caschooldashboard.org/reports/41690056044507/2024" target="_blank" rel="noopener" title="CA School Dashboard · Panel Escolar de CA">📊 State data · Datos del estado</a>
+        <a href="https://data.rcsd.info/documents/spsa/2025-26/hoover.pdf" target="_blank" rel="noopener" title="School Plan for Student Achievement (SPSA) · Plan Escolar para el Rendimiento Estudiantil (SPSA)">📋 School plan · Plan escolar</a>
         
       </div>
     </div>
@@ -1087,13 +1178,14 @@
       <div class="school-badges"><span class="school-badge school-badge--neighborhood">Neighborhood · Vecindario</span><span class="school-badge school-badge--community" title="Community School · Escuela Comunitaria">🏫 Community</span></div>
       
       <div class="school-details">
-        <div class="school-detail">788 students · 26% EL · 66% FRL</div>
+        <div class="school-detail">788 students · 26% learning English · 66% free or low-cost lunch</div>
+        <div class="school-detail" lang="es">788 estudiantes · 26% aprendiendo inglés · 66% almuerzo gratis o a bajo costo</div>
       </div>
       <div class="school-links">
-        <a href="https://kennedy.rcsdk8.net" target="_blank" rel="noopener" title="School website">🌐 Web</a>
-        <a href="https://menus.healthepro.com/organizations/1184/sites/9280/menus/103754" target="_blank" rel="noopener" title="Lunch menu">🍽️ Lunch</a>
-        <a href="https://www.caschooldashboard.org/reports/41690056044531/2024" target="_blank" rel="noopener" title="CA School Dashboard">📊 Dash</a>
-        <a href="https://data.rcsd.info/documents/spsa/2025-26/kennedy.pdf" target="_blank" rel="noopener" title="School Plan for Student Achievement">📋 SPSA</a>
+        <a href="https://kennedy.rcsdk8.net" target="_blank" rel="noopener" title="School website · Sitio web de la escuela">🌐 Web</a>
+        <a href="https://menus.healthepro.com/organizations/1184/sites/9280/menus/103754" target="_blank" rel="noopener" title="Lunch menu · Menú de almuerzo">🍽️ Lunch · Almuerzo</a>
+        <a href="https://www.caschooldashboard.org/reports/41690056044531/2024" target="_blank" rel="noopener" title="CA School Dashboard · Panel Escolar de CA">📊 State data · Datos del estado</a>
+        <a href="https://data.rcsd.info/documents/spsa/2025-26/kennedy.pdf" target="_blank" rel="noopener" title="School Plan for Student Achievement (SPSA) · Plan Escolar para el Rendimiento Estudiantil (SPSA)">📋 School plan · Plan escolar</a>
         <a href="https://kennedycougarspto.org/" target="_blank" rel="noopener" title="Kennedy Cougars PTO">🤝 PTO</a>
       </div>
     </div>
@@ -1106,13 +1198,14 @@
       <div class="school-badges"><span class="school-badge school-badge--choice">Choice · Elección</span><span class="school-badge school-badge--community" title="Community School · Escuela Comunitaria">🏫 Community</span></div>
       
       <div class="school-details">
-        <div class="school-detail">401 students · 46% EL · 93% FRL</div>
+        <div class="school-detail">401 students · 46% learning English · 93% free or low-cost lunch</div>
+        <div class="school-detail" lang="es">401 estudiantes · 46% aprendiendo inglés · 93% almuerzo gratis o a bajo costo</div>
       </div>
       <div class="school-links">
-        <a href="https://mit.rcsdk8.net" target="_blank" rel="noopener" title="School website">🌐 Web</a>
-        <a href="https://menus.healthepro.com/organizations/1184/sites/9281/menus/103771" target="_blank" rel="noopener" title="Lunch menu">🍽️ Lunch</a>
-        <a href="https://www.caschooldashboard.org/reports/41690056044556/2024" target="_blank" rel="noopener" title="CA School Dashboard">📊 Dash</a>
-        <a href="https://data.rcsd.info/documents/spsa/2025-26/mckinley-mit.pdf" target="_blank" rel="noopener" title="School Plan for Student Achievement">📋 SPSA</a>
+        <a href="https://mit.rcsdk8.net" target="_blank" rel="noopener" title="School website · Sitio web de la escuela">🌐 Web</a>
+        <a href="https://menus.healthepro.com/organizations/1184/sites/9281/menus/103771" target="_blank" rel="noopener" title="Lunch menu · Menú de almuerzo">🍽️ Lunch · Almuerzo</a>
+        <a href="https://www.caschooldashboard.org/reports/41690056044556/2024" target="_blank" rel="noopener" title="CA School Dashboard · Panel Escolar de CA">📊 State data · Datos del estado</a>
+        <a href="https://data.rcsd.info/documents/spsa/2025-26/mckinley-mit.pdf" target="_blank" rel="noopener" title="School Plan for Student Achievement (SPSA) · Plan Escolar para el Rendimiento Estudiantil (SPSA)">📋 School plan · Plan escolar</a>
         
       </div>
     </div>
@@ -1125,13 +1218,14 @@
       <div class="school-badges"><span class="school-badge school-badge--choice">Choice · Elección</span></div>
       
       <div class="school-details">
-        <div class="school-detail">553 students · 3% EL · 9% FRL</div>
+        <div class="school-detail">553 students · 3% learning English · 9% free or low-cost lunch</div>
+        <div class="school-detail" lang="es">553 estudiantes · 3% aprendiendo inglés · 9% almuerzo gratis o a bajo costo</div>
       </div>
       <div class="school-links">
-        <a href="https://northstar.rcsdk8.net" target="_blank" rel="noopener" title="School website">🌐 Web</a>
-        <a href="https://menus.healthepro.com/organizations/1184/sites/9366/menus/103771" target="_blank" rel="noopener" title="Lunch menu">🍽️ Lunch</a>
-        <a href="https://www.caschooldashboard.org/reports/41690056115026/2024" target="_blank" rel="noopener" title="CA School Dashboard">📊 Dash</a>
-        <a href="https://data.rcsd.info/documents/spsa/2025-26/north-star.pdf" target="_blank" rel="noopener" title="School Plan for Student Achievement">📋 SPSA</a>
+        <a href="https://northstar.rcsdk8.net" target="_blank" rel="noopener" title="School website · Sitio web de la escuela">🌐 Web</a>
+        <a href="https://menus.healthepro.com/organizations/1184/sites/9366/menus/103771" target="_blank" rel="noopener" title="Lunch menu · Menú de almuerzo">🍽️ Lunch · Almuerzo</a>
+        <a href="https://www.caschooldashboard.org/reports/41690056115026/2024" target="_blank" rel="noopener" title="CA School Dashboard · Panel Escolar de CA">📊 State data · Datos del estado</a>
+        <a href="https://data.rcsd.info/documents/spsa/2025-26/north-star.pdf" target="_blank" rel="noopener" title="School Plan for Student Achievement (SPSA) · Plan Escolar para el Rendimiento Estudiantil (SPSA)">📋 School plan · Plan escolar</a>
         <a href="https://www.nsaparents.com/" target="_blank" rel="noopener" title="North Star Academy Parents Club">🤝 PTO</a>
       </div>
     </div>
@@ -1144,13 +1238,14 @@
       <div class="school-badges"><span class="school-badge school-badge--choice">Choice · Elección</span></div>
       <div class="school-program">Mandarin | Co-op</div>
       <div class="school-details">
-        <div class="school-detail">549 students · 23% EL · 32% FRL</div>
+        <div class="school-detail">549 students · 23% learning English · 32% free or low-cost lunch</div>
+        <div class="school-detail" lang="es">549 estudiantes · 23% aprendiendo inglés · 32% almuerzo gratis o a bajo costo</div>
       </div>
       <div class="school-links">
-        <a href="https://orion.rcsdk8.net" target="_blank" rel="noopener" title="School website">🌐 Web</a>
-        <a href="https://menus.healthepro.com/organizations/1184/sites/9282/menus/103774" target="_blank" rel="noopener" title="Lunch menu">🍽️ Lunch</a>
-        <a href="https://www.caschooldashboard.org/reports/41690056102941/2024" target="_blank" rel="noopener" title="CA School Dashboard">📊 Dash</a>
-        <a href="https://data.rcsd.info/documents/spsa/2025-26/orion.pdf" target="_blank" rel="noopener" title="School Plan for Student Achievement">📋 SPSA</a>
+        <a href="https://orion.rcsdk8.net" target="_blank" rel="noopener" title="School website · Sitio web de la escuela">🌐 Web</a>
+        <a href="https://menus.healthepro.com/organizations/1184/sites/9282/menus/103774" target="_blank" rel="noopener" title="Lunch menu · Menú de almuerzo">🍽️ Lunch · Almuerzo</a>
+        <a href="https://www.caschooldashboard.org/reports/41690056102941/2024" target="_blank" rel="noopener" title="CA School Dashboard · Panel Escolar de CA">📊 State data · Datos del estado</a>
+        <a href="https://data.rcsd.info/documents/spsa/2025-26/orion.pdf" target="_blank" rel="noopener" title="School Plan for Student Achievement (SPSA) · Plan Escolar para el Rendimiento Estudiantil (SPSA)">📋 School plan · Plan escolar</a>
         <a href="https://www.starshiporion.org/" target="_blank" rel="noopener" title="Starship Orion">🤝 PTO</a>
       </div>
     </div>
@@ -1163,13 +1258,14 @@
       <div class="school-badges"><span class="school-badge school-badge--neighborhood">Neighborhood · Vecindario</span><span class="school-badge school-badge--community" title="Community School · Escuela Comunitaria">🏫 Community</span></div>
       
       <div class="school-details">
-        <div class="school-detail">344 students · 43% EL · 70% FRL</div>
+        <div class="school-detail">344 students · 43% learning English · 70% free or low-cost lunch</div>
+        <div class="school-detail" lang="es">344 estudiantes · 43% aprendiendo inglés · 70% almuerzo gratis o a bajo costo</div>
       </div>
       <div class="school-links">
-        <a href="https://roosevelt.rcsdk8.net" target="_blank" rel="noopener" title="School website">🌐 Web</a>
-        <a href="https://menus.healthepro.com/organizations/1184/sites/9284/menus/103755" target="_blank" rel="noopener" title="Lunch menu">🍽️ Lunch</a>
-        <a href="https://www.caschooldashboard.org/reports/41690056044572/2024" target="_blank" rel="noopener" title="CA School Dashboard">📊 Dash</a>
-        <a href="https://data.rcsd.info/documents/spsa/2025-26/roosevelt.pdf" target="_blank" rel="noopener" title="School Plan for Student Achievement">📋 SPSA</a>
+        <a href="https://roosevelt.rcsdk8.net" target="_blank" rel="noopener" title="School website · Sitio web de la escuela">🌐 Web</a>
+        <a href="https://menus.healthepro.com/organizations/1184/sites/9284/menus/103755" target="_blank" rel="noopener" title="Lunch menu · Menú de almuerzo">🍽️ Lunch · Almuerzo</a>
+        <a href="https://www.caschooldashboard.org/reports/41690056044572/2024" target="_blank" rel="noopener" title="CA School Dashboard · Panel Escolar de CA">📊 State data · Datos del estado</a>
+        <a href="https://data.rcsd.info/documents/spsa/2025-26/roosevelt.pdf" target="_blank" rel="noopener" title="School Plan for Student Achievement (SPSA) · Plan Escolar para el Rendimiento Estudiantil (SPSA)">📋 School plan · Plan escolar</a>
         <a href="http://roosevelt-pta.com/" target="_blank" rel="noopener" title="Roosevelt Elementary PTA">🤝 PTO</a>
       </div>
     </div>
@@ -1182,13 +1278,14 @@
       <div class="school-badges"><span class="school-badge school-badge--neighborhood">Neighborhood · Vecindario</span></div>
       
       <div class="school-details">
-        <div class="school-detail">665 students · 3% EL · 11% FRL</div>
+        <div class="school-detail">665 students · 3% learning English · 11% free or low-cost lunch</div>
+        <div class="school-detail" lang="es">665 estudiantes · 3% aprendiendo inglés · 11% almuerzo gratis o a bajo costo</div>
       </div>
       <div class="school-links">
-        <a href="https://roycloud.rcsdk8.net" target="_blank" rel="noopener" title="School website">🌐 Web</a>
-        <a href="https://menus.healthepro.com/organizations/1184/sites/9283/menus/103751" target="_blank" rel="noopener" title="Lunch menu">🍽️ Lunch</a>
-        <a href="https://www.caschooldashboard.org/reports/41690056044432/2024" target="_blank" rel="noopener" title="CA School Dashboard">📊 Dash</a>
-        <a href="https://data.rcsd.info/documents/spsa/2025-26/roy-cloud.pdf" target="_blank" rel="noopener" title="School Plan for Student Achievement">📋 SPSA</a>
+        <a href="https://roycloud.rcsdk8.net" target="_blank" rel="noopener" title="School website · Sitio web de la escuela">🌐 Web</a>
+        <a href="https://menus.healthepro.com/organizations/1184/sites/9283/menus/103751" target="_blank" rel="noopener" title="Lunch menu · Menú de almuerzo">🍽️ Lunch · Almuerzo</a>
+        <a href="https://www.caschooldashboard.org/reports/41690056044432/2024" target="_blank" rel="noopener" title="CA School Dashboard · Panel Escolar de CA">📊 State data · Datos del estado</a>
+        <a href="https://data.rcsd.info/documents/spsa/2025-26/roy-cloud.pdf" target="_blank" rel="noopener" title="School Plan for Student Achievement (SPSA) · Plan Escolar para el Rendimiento Estudiantil (SPSA)">📋 School plan · Plan escolar</a>
         <a href="https://roycloudpto.com/" target="_blank" rel="noopener" title="Roy Cloud School Parents Club">🤝 PTO</a>
       </div>
     </div>
@@ -1201,13 +1298,14 @@
       <div class="school-badges"><span class="school-badge school-badge--neighborhood">Neighborhood · Vecindario</span><span class="school-badge school-badge--community" title="Community School · Escuela Comunitaria">🏫 Community</span></div>
       
       <div class="school-details">
-        <div class="school-detail">325 students · 66% EL · 90% FRL</div>
+        <div class="school-detail">325 students · 66% learning English · 90% free or low-cost lunch</div>
+        <div class="school-detail" lang="es">325 estudiantes · 66% aprendiendo inglés · 90% almuerzo gratis o a bajo costo</div>
       </div>
       <div class="school-links">
-        <a href="https://taft.rcsdk8.net" target="_blank" rel="noopener" title="School website">🌐 Web</a>
-        <a href="https://menus.healthepro.com/organizations/1184/sites/9285/menus/103756" target="_blank" rel="noopener" title="Lunch menu">🍽️ Lunch</a>
-        <a href="https://www.caschooldashboard.org/reports/41690056044598/2024" target="_blank" rel="noopener" title="CA School Dashboard">📊 Dash</a>
-        <a href="https://data.rcsd.info/documents/spsa/2025-26/taft.pdf" target="_blank" rel="noopener" title="School Plan for Student Achievement">📋 SPSA</a>
+        <a href="https://taft.rcsdk8.net" target="_blank" rel="noopener" title="School website · Sitio web de la escuela">🌐 Web</a>
+        <a href="https://menus.healthepro.com/organizations/1184/sites/9285/menus/103756" target="_blank" rel="noopener" title="Lunch menu · Menú de almuerzo">🍽️ Lunch · Almuerzo</a>
+        <a href="https://www.caschooldashboard.org/reports/41690056044598/2024" target="_blank" rel="noopener" title="CA School Dashboard · Panel Escolar de CA">📊 State data · Datos del estado</a>
+        <a href="https://data.rcsd.info/documents/spsa/2025-26/taft.pdf" target="_blank" rel="noopener" title="School Plan for Student Achievement (SPSA) · Plan Escolar para el Rendimiento Estudiantil (SPSA)">📋 School plan · Plan escolar</a>
         
       </div>
     </div>
@@ -1222,11 +1320,6 @@
   <div class="section-rule"></div>
   <div class="bi-row events-section">
     <div class="bi-en events-col">
-
-        <div class="event-row event--milestone">
-          <span class="event-date-inline">Fri, JUN 5</span>
-          <span class="event-text">Last Day of School</span>
-        </div>
 
         <div class="event-row event--board-meeting">
           <span class="event-date-inline">Wed, JUN 10</span>
@@ -1282,13 +1375,13 @@
           <span class="event-date-inline">Tue SEP 29 – Fri OCT 2</span>
           <span class="event-text">Parent Teacher Conference Week</span>
         </div>
+
+        <div class="event-row event--no-school">
+          <span class="event-date-inline">Mon, OCT 12</span>
+          <span class="event-text">Indigenous Peoples' Day <span class="no-school-icon" aria-label="No School">🏫</span></span>
+        </div>
     </div>
     <div class="bi-es events-col" lang="es">
-
-        <div class="event-row event--milestone">
-          <span class="event-date-inline">vie, JUN 5</span>
-          <span class="event-text">Último Día de Clases</span>
-        </div>
 
         <div class="event-row event--board-meeting">
           <span class="event-date-inline">mié, JUN 10</span>
@@ -1344,6 +1437,11 @@
           <span class="event-date-inline">mar SEPT 29 – vie OCT 2</span>
           <span class="event-text">Semana de Conferencias con Padres</span>
         </div>
+
+        <div class="event-row event--no-school">
+          <span class="event-date-inline">lun, OCT 12</span>
+          <span class="event-text">Día de los Pueblos Indígenas <span class="no-school-icon" aria-label="No School">🏫</span></span>
+        </div>
     </div>
   </div>
 
@@ -1356,44 +1454,44 @@
   <div class="bi-row" style="padding-top:0.5rem">
     <div class="bi-en">
       <div class="resource-item">
-        <h4>District Website</h4>
+        <h3>District Website</h3>
         <p>Official RCSD information, news, and announcements.</p>
         <a class="resource-url" href="https://www.rcsdk8.net" target="_blank" rel="noopener">rcsdk8.net &#8599;</a>
       </div>
       <div class="resource-item">
-        <h4>Board Meeting Portal</h4>
+        <h3>Board Meeting Portal</h3>
         <p>Current agendas and attachments on GAMUT/Simbli.</p>
         <a class="resource-url" href="https://simbli.eboardsolutions.com/SB_Meetings/SB_MeetingListing.aspx?S=36030397" target="_blank" rel="noopener">GAMUT/Simbli &#8599;</a>
       </div>
       <div class="resource-item">
-        <h4>YouTube Channel</h4>
+        <h3>YouTube Channel</h3>
         <p>Video recordings of public board meetings.</p>
         <a class="resource-url" href="https://www.youtube.com/@RedwoodCitySchoolDistrict" target="_blank" rel="noopener">YouTube &#8599;</a>
       </div>
       <div class="resource-item">
-        <h4>CA School Dashboard</h4>
+        <h3>CA School Dashboard</h3>
         <p>State performance data and accountability metrics.</p>
         <a class="resource-url" href="https://www.caschooldashboard.org/reports/41690050000000/2024" target="_blank" rel="noopener">caschooldashboard.org &#8599;</a>
       </div>
     </div>
     <div class="bi-es" lang="es">
       <div class="resource-item">
-        <h4>Sitio del Distrito</h4>
+        <h3>Sitio del Distrito</h3>
         <p>Información oficial, noticias y anuncios de RCSD.</p>
         <a class="resource-url" href="https://www.rcsdk8.net" target="_blank" rel="noopener">rcsdk8.net &#8599;</a>
       </div>
       <div class="resource-item">
-        <h4>Portal de Reuniones</h4>
+        <h3>Portal de Reuniones</h3>
         <p>Agendas actuales y anexos en GAMUT/Simbli.</p>
         <a class="resource-url" href="https://simbli.eboardsolutions.com/SB_Meetings/SB_MeetingListing.aspx?S=36030397" target="_blank" rel="noopener">GAMUT/Simbli &#8599;</a>
       </div>
       <div class="resource-item">
-        <h4>Canal de YouTube</h4>
+        <h3>Canal de YouTube</h3>
         <p>Grabaciones de video de reuniones públicas de la junta.</p>
         <a class="resource-url" href="https://www.youtube.com/@RedwoodCitySchoolDistrict" target="_blank" rel="noopener">YouTube &#8599;</a>
       </div>
       <div class="resource-item">
-        <h4>Panel Escolar de CA</h4>
+        <h3>Panel Escolar de CA</h3>
         <p>Datos de rendimiento estatal y métricas de rendición de cuentas.</p>
         <a class="resource-url" href="https://www.caschooldashboard.org/reports/41690050000000/2024" target="_blank" rel="noopener">caschooldashboard.org &#8599;</a>
       </div>
@@ -1474,6 +1572,8 @@ Contact: team@rcsd.info</pre>
     <a href="/schools/">Schools</a>
     <a href="/district/">District</a>
     <a href="/budget/">Budget</a>
+    <a href="/committees/">Committees</a>
+    <a href="/mcp/">API &amp; data for developers</a>
     <a href="https://github.com/dweekly/rcsd-meetings">Source Code &#8599;</a>
     <a href="mailto:team@rcsd.info">team@rcsd.info</a>
   </div>
