@@ -1,0 +1,14 @@
+{
+  "code": "5141.23",
+  "type": "BP",
+  "titleEs": "Manejo del asma",
+  "contentTextEs": "La Mesa Directiva desea proporcionar sistemas de apoyo para los estudiantes con asma con el fin de reducir las ausencias escolares, ayudar a garantizar que dichos estudiantes reciban la intervención adecuada si los síntomas se presentan en la escuela, y permitirles participar en el programa educativo y en las actividades escolares en la mayor medida posible.\n\nEl Superintendente o su designado deberá involucrar a enfermeros escolares, otros profesionales de la salud, administradores escolares y educadores de salud en el desarrollo de estrategias para ayudar a proporcionar un entorno escolar saludable y seguro para los estudiantes con asma. También podrá involucrar a consejos o comités de salud escolar y a otras personas interesadas para garantizar que las estrategias del distrito estén coordinadas con otros programas y prácticas de salud escolar.\n\nLas estrategias del distrito incluirán, entre otras, procedimientos para identificar y atender las necesidades individuales de los estudiantes, brindar desarrollo profesional efectivo sobre los síntomas del asma y las responsabilidades del personal, e identificar y reducir los factores ambientales en las escuelas que puedan desencadenar y/o agravar los síntomas del asma.",
+  "_metadata": {
+    "model": "claude-sonnet-4-6",
+    "generatedAt": "2026-06-10T17:18:16.254Z",
+    "method": "AI translation of contentText via the Claude API (scripts/translate-policy-bodies.mjs); one policy per request, bodies over 30KB split at paragraph boundaries into chunks and reassembled; validated for length, paragraph structure, and meta-commentary",
+    "sourceFile": "data/board-policies/5141.23-BP.json",
+    "sourceHash": "d2f1719615132e8718799a717779f92aa345a656ca032dc54bc361d68ee7df75",
+    "note": "Machine translation. The English Simbli version is authoritative."
+  }
+}

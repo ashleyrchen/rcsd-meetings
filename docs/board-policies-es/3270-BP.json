@@ -1,0 +1,14 @@
+{
+  "code": "3270",
+  "type": "BP",
+  "titleEs": "Venta y disposición de libros, equipos y materiales",
+  "contentTextEs": "Cuando los libros, equipos y suministros de propiedad del distrito se vuelvan inutilizables, queden obsoletos o ya no sean necesarios, el Superintendente o su designado deberá identificar estos artículos ante la Mesa Directiva, junto con su valor estimado y una recomendación de que sean vendidos o desechados mediante uno de los métodos establecidos en la ley y en los reglamentos administrativos. Con la aprobación de la Mesa Directiva, el Superintendente o su designado organizará la venta o el desecho de dichos artículos.\n\nLos materiales didácticos podrán considerarse obsoletos o inutilizables cuando:\n\n- Contengan información que haya quedado inexacta o incompleta debido a nuevos descubrimientos o tecnologías\n\n- Hayan sido reemplazados por versiones o ediciones más recientes del mismo material y no tengan ningún valor previsible en otras áreas de instrucción\n\n- Contengan referencias denigrantes, estereotipadas o condescendientes hacia personas por razón de su sexo u orientación sexual, miembros de grupos raciales, étnicos, religiosos, vocacionales o culturales, o personas con discapacidades físicas o mentales\n\n- Hayan sido inspeccionados y se haya determinado que están dañados más allá de su uso o reparación\n\nEl Superintendente o su designado establecerá los procedimientos que se utilizarán al vender equipos respecto de los cuales el gobierno federal tiene derecho a recibir la totalidad o parte de los ingresos obtenidos. Dichos procedimientos deberán garantizar un nivel razonable de competencia con el fin de obtener los mayores ingresos posibles.",
+  "_metadata": {
+    "model": "claude-sonnet-4-6",
+    "generatedAt": "2026-06-10T16:58:56.471Z",
+    "method": "AI translation of contentText via the Claude API (scripts/translate-policy-bodies.mjs); one policy per request, bodies over 30KB split at paragraph boundaries into chunks and reassembled; validated for length, paragraph structure, and meta-commentary",
+    "sourceFile": "data/board-policies/3270-BP.json",
+    "sourceHash": "43cefdcbbdf7229151c0d3036afc1a178b518621ffa281690c5988335591401c",
+    "note": "Machine translation. The English Simbli version is authoritative."
+  }
+}

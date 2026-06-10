@@ -1,0 +1,14 @@
+{
+  "code": "4119.42",
+  "type": "BP",
+  "titleEs": "Plan de control de exposición a patógenos transmitidos por la sangre",
+  "contentTextEs": "Personal Certificado\n\nComo parte de su compromiso de proporcionar un ambiente de trabajo seguro y saludable, la Mesa Directiva reconoce la importancia de proteger a los empleados de posibles infecciones por contacto con patógenos transmitidos por la sangre, incluyendo, pero sin limitarse a, el virus de la hepatitis B, el virus de la hepatitis C y el virus de inmunodeficiencia humana (VIH). El Superintendente o su designado deberá establecer un plan de control de exposición por escrito de conformidad con las normas estatales y federales para el manejo de materiales potencialmente infecciosos en el lugar de trabajo.\n\nEl plan de control de exposición deberá ser consistente con el programa de prevención de lesiones y enfermedades del distrito establecido de conformidad con Labor Code 6401.7 y 8 CCR 3203. (8 CCR 5193)\n\nEl Superintendente o su designado determinará qué empleados tienen exposición ocupacional a patógenos transmitidos por la sangre y otros materiales potencialmente infecciosos. De conformidad con el plan de control de exposición del distrito, los empleados que tengan exposición ocupacional recibirán capacitación y se les ofrecerá la vacuna contra la hepatitis B. (8 CCR 5193; 29 CFR 1910.1030)\n\nCualquier empleado que no haya sido identificado por el Superintendente o su designado como persona con exposición ocupacional podrá presentar una solicitud al Superintendente o su designado para ser incluido en el programa de capacitación y vacunación contra la hepatitis B. El Superintendente o su designado podrá denegar una solicitud cuando no haya una anticipación razonable de contacto con ningún material infeccioso.\n\nEn caso de que un empleado tenga un incidente de exposición, el distrito implementará procedimientos de seguimiento de conformidad con el plan de control de exposición. Todos esos incidentes serán evaluados para determinar si es necesario realizar cambios en las prácticas del distrito.",
+  "_metadata": {
+    "model": "claude-sonnet-4-6",
+    "generatedAt": "2026-06-10T17:06:38.750Z",
+    "method": "AI translation of contentText via the Claude API (scripts/translate-policy-bodies.mjs); one policy per request, bodies over 30KB split at paragraph boundaries into chunks and reassembled; validated for length, paragraph structure, and meta-commentary",
+    "sourceFile": "data/board-policies/4119.42-BP.json",
+    "sourceHash": "238d66711f25d67a099d09fc9c5329feba7a26b922d27853004d30ee410d7329",
+    "note": "Machine translation. The English Simbli version is authoritative."
+  }
+}

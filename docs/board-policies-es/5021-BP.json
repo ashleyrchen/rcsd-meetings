@@ -1,0 +1,14 @@
+{
+  "code": "5021",
+  "type": "BP",
+  "titleEs": "Padres sin custodia",
+  "contentTextEs": "Los padres sin custodia generalmente conservan los mismos derechos que los padres con custodia, a menos que una orden judicial restrinja los derechos del padre sin custodia. Estos derechos incluyen, entre otros, el acceso a los expedientes escolares de su hijo/a, la participación en actividades escolares y las visitas al menor en la escuela. Si una acción legal concluida o en curso limita los derechos del padre sin custodia, el padre/tutor con custodia deberá presentar evidencia de dicha acción al Superintendente o a su designado.\n\nA petición, el distrito proporcionará a los padres sin custodia los anuncios y avisos que se envíen al padre con custodia.\n\nAunque ambos padres pueden visitar al menor en la escuela, solo el padre con custodia tiene el derecho de retirar al menor de las instalaciones escolares. Solo una nota verificada o una tarjeta de emergencia del padre con custodia será motivo de excepción a esta disposición.\n\nEn caso de un intento de violación de una orden judicial que restrinja el acceso a un estudiante, el personal deberá contactar al padre con custodia y a las autoridades policiales locales, y pondrá al estudiante a disposición únicamente después de que una o ambas partes den su consentimiento.",
+  "_metadata": {
+    "model": "claude-sonnet-4-6",
+    "generatedAt": "2026-06-10T17:13:54.293Z",
+    "method": "AI translation of contentText via the Claude API (scripts/translate-policy-bodies.mjs); one policy per request, bodies over 30KB split at paragraph boundaries into chunks and reassembled; validated for length, paragraph structure, and meta-commentary",
+    "sourceFile": "data/board-policies/5021-BP.json",
+    "sourceHash": "4ff923308278a08a0fcf7e752c8905ba2fbdbbedc26bb8e202e469b7c67b7160",
+    "note": "Machine translation. The English Simbli version is authoritative."
+  }
+}

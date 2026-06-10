@@ -1,0 +1,14 @@
+{
+  "code": "6164.5",
+  "type": "AR",
+  "titleEs": "Equipos de éxito estudiantil",
+  "contentTextEs": "Membresía del equipo\n\nLos miembros de los equipos individuales de éxito estudiantil pueden incluir:\n\n- El director o su designado\n\n- Uno o más de los maestros actuales o anteriores del estudiante\n\n- Los padres/tutores del estudiante\n\n- El estudiante, si corresponde\n\n- Personal de recursos o especialistas, como un consejero escolar, psicólogo, enfermero/a, consultor de alcance comunitario, persona de recursos de educación especial, personal financiado con fondos categóricos, jefe de departamento, especialista en habla y lenguaje, especialista en lectura, trabajador social, oficial de libertad condicional, representante de recursos comunitarios, trabajador de salud mental u otra persona relevante para la situación del estudiante\n\nResponsabilidades del equipo\n\nEl director o su designado deberá:\n\n- Programar reuniones y establecer los procedimientos para las reuniones\n\n- Comunicarse con los padres/tutores y demás miembros del equipo sobre las reuniones del equipo\n\n- Consultar con el personal de recursos escolar o del distrito que corresponda\n\n- Organizar la observación del estudiante en la situación problemática según sea necesario\n\n- Recopilar cualquier información de antecedentes adicional necesaria para informar a los miembros del equipo sobre las fortalezas y necesidades del estudiante\n\n- Ayudar al estudiante y a los padres/tutores a prepararse para la reunión\n\n- Facilitar las reuniones del equipo\n\n- Asegurarse de que se monitoree el progreso del estudiante y de que se programen reuniones de seguimiento de manera regular",
+  "_metadata": {
+    "model": "claude-sonnet-4-6",
+    "generatedAt": "2026-06-10T17:28:22.758Z",
+    "method": "AI translation of contentText via the Claude API (scripts/translate-policy-bodies.mjs); one policy per request, bodies over 30KB split at paragraph boundaries into chunks and reassembled; validated for length, paragraph structure, and meta-commentary",
+    "sourceFile": "data/board-policies/6164.5-AR.json",
+    "sourceHash": "8a6cfdfea5c52df595eb3c8f094fd078fa334b78ecf7dac757c8a39c6b78e216",
+    "note": "Machine translation. The English Simbli version is authoritative."
+  }
+}

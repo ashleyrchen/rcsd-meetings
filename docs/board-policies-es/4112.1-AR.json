@@ -1,0 +1,14 @@
+{
+  "code": "4112.1",
+  "type": "AR",
+  "titleEs": "Contratos",
+  "contentTextEs": "Al ser contratados por primera vez, los empleados certificados recibirán una declaración escrita de su estado de empleo y salario. En el caso de los empleados temporales, esta declaración deberá indicar claramente la naturaleza temporal del empleo y el período de tiempo por el cual la persona está siendo contratada. (Education Code 44916)",
+  "_metadata": {
+    "model": "claude-sonnet-4-6",
+    "generatedAt": "2026-06-10T17:04:38.753Z",
+    "method": "AI translation of contentText via the Claude API (scripts/translate-policy-bodies.mjs); one policy per request, bodies over 30KB split at paragraph boundaries into chunks and reassembled; validated for length, paragraph structure, and meta-commentary",
+    "sourceFile": "data/board-policies/4112.1-AR.json",
+    "sourceHash": "e232a2c77f4269b0c5ed6b02cb9bdbad9baada19daf78a0e784d10053fddf9da",
+    "note": "Machine translation. The English Simbli version is authoritative."
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "code": "1150",
+  "type": "AR",
+  "titleEs": "Reconocimientos y premios",
+  "contentTextEs": "Cualquier miembro de la Mesa Directiva, empleado, padre/tutor, estudiante o miembro de la comunidad puede presentar el nombre de un individuo u organización al Superintendente o su designado para reconocimiento por parte de la Mesa Directiva.",
+  "_metadata": {
+    "model": "claude-sonnet-4-6",
+    "generatedAt": "2026-06-10T16:55:40.405Z",
+    "method": "AI translation of contentText via the Claude API (scripts/translate-policy-bodies.mjs); one policy per request, bodies over 30KB split at paragraph boundaries into chunks and reassembled; validated for length, paragraph structure, and meta-commentary",
+    "sourceFile": "data/board-policies/1150-AR.json",
+    "sourceHash": "b5e152bd92fb1f9295b9882b0ecb387248bc08bc352e4435cec10426242a8e75",
+    "note": "Machine translation. The English Simbli version is authoritative."
+  }
+}

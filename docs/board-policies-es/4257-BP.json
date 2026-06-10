@@ -1,0 +1,14 @@
+{
+  "code": "4257",
+  "type": "BP",
+  "titleEs": "Seguridad del empleado",
+  "contentTextEs": "Personal Clasificado\n\nLa Mesa Directiva está comprometida a maximizar la seguridad de los empleados y cree que la seguridad en el lugar de trabajo es responsabilidad de cada empleado. Las condiciones de trabajo y el equipo deberán cumplir con las normas establecidas por las leyes y reglamentos federales, estatales y locales.\n\nNingún empleado deberá ser obligado o permitido a estar en ningún lugar de trabajo que sea inseguro o perjudicial para la salud. (Labor Code 6402)\n\nEl Superintendente o su designado deberá promover la seguridad y corregir cualquier práctica de trabajo insegura mediante la educación y la aplicación de normas.\n\nSe espera que todos los empleados utilicen prácticas de trabajo seguras y, en la medida de lo posible, corrijan cualquier condición insegura que pueda presentarse. Si un empleado no puede corregir una condición insegura, el empleado deberá reportar el problema de inmediato al Superintendente o su designado.\n\nEl Superintendente o su designado deberá establecer e implementar un programa escrito de prevención de lesiones y enfermedades que incluya un plan de prevención de violencia en el lugar de trabajo y que brinde a los empleados acceso a dicho programa de conformidad con la ley. (Labor Code 6401.7; 8 CCR 3203)\n\nEl Superintendente o su designado deberá poner materiales de primeros auxilios fácilmente disponibles en los lugares de trabajo del distrito y deberá tomar medidas efectivas para prepararse para la atención médica oportuna en caso de una lesión o enfermedad grave de un empleado. (8 CCR 3400)\n\nNingún empleado podrá ser despedido o discriminado por ejercer cualquier derecho relacionado con la seguridad o la salud de los empleados especificado en Labor Code 6310, incluyendo:\n\n- Presentar un informe o una queja\n\n- Iniciar procedimientos o hacer que se inicien procedimientos\n\n- Dar testimonio con respecto a la seguridad o la salud de los empleados\n\n- Participar en cualquier comité de salud y seguridad ocupacional establecido conforme a Labor Code 6401.7\n\n- Solicitar acceso a informes y registros de lesiones o enfermedades\n\n- Ejercer cualquier otro derecho protegido por la Ley de Seguridad y Salud Ocupacional",
+  "_metadata": {
+    "model": "claude-sonnet-4-6",
+    "generatedAt": "2026-06-10T17:10:17.856Z",
+    "method": "AI translation of contentText via the Claude API (scripts/translate-policy-bodies.mjs); one policy per request, bodies over 30KB split at paragraph boundaries into chunks and reassembled; validated for length, paragraph structure, and meta-commentary",
+    "sourceFile": "data/board-policies/4257-BP.json",
+    "sourceHash": "01328c831549fc8f45f3b91a56a0f579e4c151130df28f9e9ffee88df8d527e6",
+    "note": "Machine translation. The English Simbli version is authoritative."
+  }
+}

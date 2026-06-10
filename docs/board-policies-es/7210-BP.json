@@ -1,0 +1,14 @@
+{
+  "code": "7210",
+  "type": "BP",
+  "titleEs": "Financiamiento de instalaciones",
+  "contentTextEs": "La Mesa Directiva reconoce su responsabilidad de identificar el método de financiamiento más rentable y eficaz al adquirir o modificar las instalaciones del distrito. El financiamiento puede ser necesario cuando se determina que las instalaciones escolares deben construirse o ampliarse para dar cabida a un aumento real o proyectado en la matrícula, o cuando consideraciones de seguridad y mejoras al programa educativo requieren el reemplazo, la reconstrucción o la modernización de las instalaciones existentes.\n\nEl Superintendente o su designado deberá investigar las alternativas de financiamiento y recomendar a la Mesa Directiva el método de financiamiento que mejor satisfaga las necesidades del distrito según lo identificado en el plan maestro del distrito para las instalaciones escolares.\n\nLas alternativas de financiamiento pueden incluir, entre otras:\n\n- Cobrar cuotas a desarrolladores conforme a Education Code 17620 y Government Code 65995-65998\n\n- Formar un distrito de instalaciones comunitarias conforme a Government Code 53311-53368.3, the Mello-Roos Community Facilities Act\n\n- Formar un distrito de mejora de instalaciones escolares conforme a Education Code 15300-15425\n\n- Emitir bonos de obligación general aprobados por los votantes\n\n- Imponer un impuesto por parcela conforme a Government Code 50079\n\n- Usar ingresos de arrendamiento para gastos de capital provenientes de propiedades escolares en exceso\n\n- Solicitar fondos estatales para instalaciones conforme a the Leroy F. Greene School Facilities Act (Education Code 17070.10-17079.30)\n\n\tEl distrito deberá presentar informes, mantener registros y permitir auditorías del gasto de los fondos estatales para instalaciones, según lo exigido por la ley y AR 3460 - Financial Reports and Accountability. (Education Code 41024)\n\nSegún corresponda, el distrito deberá cumplir con BP 3470 - Debt Issuance and Management.",
+  "_metadata": {
+    "model": "claude-sonnet-4-6",
+    "generatedAt": "2026-06-10T17:31:24.022Z",
+    "method": "AI translation of contentText via the Claude API (scripts/translate-policy-bodies.mjs); one policy per request, bodies over 30KB split at paragraph boundaries into chunks and reassembled; validated for length, paragraph structure, and meta-commentary",
+    "sourceFile": "data/board-policies/7210-BP.json",
+    "sourceHash": "64d5338c70d49debb1ad8b3bffb47ec6bc215317752f7a36877ec7b25429f81b",
+    "note": "Machine translation. The English Simbli version is authoritative."
+  }
+}

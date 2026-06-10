@@ -1,0 +1,14 @@
+{
+  "code": "3220.1",
+  "type": "BP",
+  "titleEs": "Fondos de lotería",
+  "contentTextEs": "La Mesa Directiva tiene la intención de utilizar los fondos de la Lotería del Estado de California para gastos suplementarios y no recurrentes en apoyo de programas y actividades educativas. En reconocimiento a las fluctuaciones anuales de los fondos de lotería recibidos por el distrito, la Mesa Directiva no destinará los fondos de lotería a ningún propósito hasta que hayan sido recibidos.\n\nLa Mesa Directiva establecerá las prioridades de financiamiento y aprobará todas las asignaciones de conformidad con la ley.\n\nLos fondos de lotería asignados por el estado para la compra de materiales de instrucción se destinarán a materiales de instrucción según se definen en Education Code 60010. Los fondos de lotería no podrán utilizarse para la adquisición de bienes inmuebles, la construcción de instalaciones escolares, el financiamiento de investigaciones, ni para ningún otro propósito no educativo. (Government Code 8880.4, 8880.5)\n\nPara la recepción y el gasto de los fondos de lotería, el Superintendente o su designado establecerá una cuenta separada que deberá estar claramente identificada como una cuenta educativa de lotería. (Government Code 8880.5)\n\nLa Mesa Directiva alienta al personal y a los miembros de la comunidad a participar en la determinación de cómo se utilizarán los fondos de lotería. El Superintendente o su designado podrá solicitar opiniones a través de los grupos asesores del distrito, los consejos del plantel escolar y/o estudiantes, personal, padres/tutores y miembros de la comunidad en forma individual.",
+  "_metadata": {
+    "model": "claude-sonnet-4-6",
+    "generatedAt": "2026-06-10T16:58:06.906Z",
+    "method": "AI translation of contentText via the Claude API (scripts/translate-policy-bodies.mjs); one policy per request, bodies over 30KB split at paragraph boundaries into chunks and reassembled; validated for length, paragraph structure, and meta-commentary",
+    "sourceFile": "data/board-policies/3220.1-BP.json",
+    "sourceHash": "579c224a62977ab719c72772dfa5aa8149b867aa96ccb98811d9c21d6b5f52fd",
+    "note": "Machine translation. The English Simbli version is authoritative."
+  }
+}

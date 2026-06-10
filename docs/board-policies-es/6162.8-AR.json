@@ -1,0 +1,14 @@
+{
+  "code": "6162.8",
+  "type": "AR",
+  "titleEs": "Investigación",
+  "contentTextEs": "Las personas o grupos que deseen utilizar al personal del distrito, a los estudiantes o la propiedad del distrito en relación con un proyecto de investigación académica deberán presentar al Superintendente o a su designado una propuesta por escrito que incluya:\n\n- Nombre del investigador o investigadores y sus credenciales académicas\n\n- Propósito y alcance del proyecto\n\n- Método de estudio o investigación que se utilizará\n\n- Grado de participación que se espera de los estudiantes y el personal\n\n- Uso que se dará a los resultados del proyecto\n\n- Beneficios para la(s) escuela(s) o el distrito\n\nEl Superintendente o su designado evaluará en qué medida la propuesta:\n\n- Muestra potencial para mejorar los programas y las estrategias de instrucción\n\n- Aborda un problema, preocupación o asunto educativo relevante\n\n- Está diseñada para minimizar las interrupciones y las demandas sobre el tiempo de los estudiantes y el personal\n\nEl Superintendente o su designado podrá aprobar el proyecto propuesto por un período de un año escolar o menos. Para extender cualquier proyecto a un segundo año escolar, el investigador o los investigadores deberán obtener la aprobación del Superintendente o su designado.\n\nLos investigadores deberán certificar que no utilizarán los nombres de ninguna escuela en la publicación de los hallazgos sin la aprobación del Superintendente o su designado.",
+  "_metadata": {
+    "model": "claude-sonnet-4-6",
+    "generatedAt": "2026-06-10T17:27:14.080Z",
+    "method": "AI translation of contentText via the Claude API (scripts/translate-policy-bodies.mjs); one policy per request, bodies over 30KB split at paragraph boundaries into chunks and reassembled; validated for length, paragraph structure, and meta-commentary",
+    "sourceFile": "data/board-policies/6162.8-AR.json",
+    "sourceHash": "d00ed4d02194c1c5f606a8b7d635f9588cf2b717a2cdd62a7135841c369169e3",
+    "note": "Machine translation. The English Simbli version is authoritative."
+  }
+}

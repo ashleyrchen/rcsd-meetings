@@ -1,0 +1,14 @@
+{
+  "code": "3451",
+  "type": "AR",
+  "titleEs": "Fondos de caja chica",
+  "contentTextEs": "Para facilitar compras menores, el Superintendente o su designado podrá establecer un fondo de caja chica en cada escuela. El fondo de caja chica se utilizará para gastos escolares pequeños e imprevistos, tales como franqueo postal o compras individuales de materiales.\n\nEl monto del fondo de caja chica no deberá exceder $500. El director o su designado será responsable de todos los gastos del fondo y deberá crear un sistema para registrar los gastos del mismo. Cada gasto deberá estar respaldado por la documentación correspondiente.\n\nLos gastos deberán conciliarse y contabilizarse cada vez que el director solicite que se reabastezca el fondo, al final del año fiscal, o a solicitud del Superintendente o su designado.\n\nEl director o su designado deberá asegurarse de que el fondo de caja chica se guarde en un lugar seguro y protegido.",
+  "_metadata": {
+    "model": "claude-sonnet-4-6",
+    "generatedAt": "2026-06-10T17:00:33.236Z",
+    "method": "AI translation of contentText via the Claude API (scripts/translate-policy-bodies.mjs); one policy per request, bodies over 30KB split at paragraph boundaries into chunks and reassembled; validated for length, paragraph structure, and meta-commentary",
+    "sourceFile": "data/board-policies/3451-AR.json",
+    "sourceHash": "d588c6fa6c1dfb6c8f3b37270e8eb5b60685338142319cd7f5463b6691f8a80e",
+    "note": "Machine translation. The English Simbli version is authoritative."
+  }
+}

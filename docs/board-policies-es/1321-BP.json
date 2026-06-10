@@ -1,0 +1,14 @@
+{
+  "code": "1321",
+  "type": "BP",
+  "titleEs": "Solicitud de fondos a estudiantes y por parte de estudiantes",
+  "contentTextEs": "La Mesa Directiva reconoce que la participación de los estudiantes en actividades de recaudación de fondos para las escuelas y organizaciones benéficas sin fines de lucro y no partidistas puede ayudar a desarrollar en los estudiantes un sentido de responsabilidad social, fortalecer la relación entre la escuela y la comunidad, y contribuir a la mejora del programa escolar.\n\nYa sea que las solicitudes se realicen en nombre de la escuela o en nombre de una organización benéfica, no se podrá excluir a los estudiantes de un evento o actividad por no haber participado en la recaudación de fondos. No se debe presionar indebidamente a los posibles donantes, incluyendo a los padres/tutores y miembros de la comunidad, para que contribuyan al sistema escolar o a organizaciones benéficas. Se espera que el personal enfatice el hecho de que las donaciones siempre son voluntarias.\n\nEl Superintendente o su designado deberá asegurarse de que los padres/tutores sean informados sobre el propósito de las actividades de recaudación de fondos.\n\nSolicitudes en nombre de la escuela\n\nCon la aprobación previa por escrito del Superintendente o su designado, las organizaciones oficiales relacionadas con la escuela pueden organizar eventos de recaudación de fondos en los que participen estudiantes.\n\nSolicitudes en nombre de organizaciones benéficas\n\nCuando sea aprobado con anticipación por el Superintendente o su designado, las organizaciones sin fines de lucro y no partidistas que estén debidamente constituidas o con licencia bajo la ley estatal o federal podrán solicitar donaciones a los estudiantes en los terrenos de la escuela durante el horario escolar y dentro de la hora anterior a la apertura de la escuela y la hora posterior al cierre de la escuela. (Education Code 51520)",
+  "_metadata": {
+    "model": "claude-sonnet-4-6",
+    "generatedAt": "2026-06-10T16:56:51.582Z",
+    "method": "AI translation of contentText via the Claude API (scripts/translate-policy-bodies.mjs); one policy per request, bodies over 30KB split at paragraph boundaries into chunks and reassembled; validated for length, paragraph structure, and meta-commentary",
+    "sourceFile": "data/board-policies/1321-BP.json",
+    "sourceHash": "14a6386c11e1876eb1fc50f4eaf6f512b262161544da1c63a941456404a71b3c",
+    "note": "Machine translation. The English Simbli version is authoritative."
+  }
+}

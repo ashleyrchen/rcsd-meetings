@@ -1,0 +1,14 @@
+{
+  "code": "6111",
+  "type": "BP",
+  "titleEs": "Calendario escolar",
+  "contentTextEs": "El Superintendente o su designado recomendará a la Mesa Directiva un calendario para cada escuela que cumpla con los requisitos de la ley, así como con las necesidades de la comunidad, los estudiantes y el año de trabajo según lo negociado para el personal representado.\n\nCada calendario escolar deberá mostrar las fechas de inicio y fin del año escolar, días festivos legales y locales, días de reuniones de orientación, días mínimos, períodos de vacaciones y otras fechas pertinentes.\n\nEl distrito deberá cumplir o superar el mínimo de días de instrucción requerido por el Estado.\n\nLos días de desarrollo de personal no se contarán como días de instrucción.\n\nSe deberá enviar una notificación del calendario de días mínimos a todos los padres/tutores al inicio del año escolar. Si se agregan días mínimos al calendario, el Superintendente o su designado deberá notificar a los padres/tutores de los estudiantes afectados lo antes posible y al menos un mes antes del día mínimo programado. (Education Code 48980)\n\nSi una escuela será utilizada como lugar de votación en un día de elecciones, la Mesa Directiva determinará si continuar con las clases, designar el día para capacitación y desarrollo del personal, o cerrar la escuela a los estudiantes y al personal no clasificado. (Elections Code 12283)",
+  "_metadata": {
+    "model": "claude-sonnet-4-6",
+    "generatedAt": "2026-06-10T17:23:42.837Z",
+    "method": "AI translation of contentText via the Claude API (scripts/translate-policy-bodies.mjs); one policy per request, bodies over 30KB split at paragraph boundaries into chunks and reassembled; validated for length, paragraph structure, and meta-commentary",
+    "sourceFile": "data/board-policies/6111-BP.json",
+    "sourceHash": "6368c8e65c12ca5e8c75d6c843e2a1771cc4694164a2bdb27ea3e0c49e189892",
+    "note": "Machine translation. The English Simbli version is authoritative."
+  }
+}
