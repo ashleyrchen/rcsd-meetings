@@ -1,0 +1,53 @@
+<header class="post-header">
+  <div class="post-header-inner">
+    <div class="post-meta">
+      <span class="post-date">10 de junio de 2026</span>
+      <span class="post-author">por <a href="https://david.weekly.org">David Weekly</a></span>
+    </div>
+    <h1>Le dimos una buena arreglada al sitio (y confesamos dos errores)</h1>
+    <p class="post-subtitle">Políticas de la mesa directiva en español, datos de los maestros de cada escuela, y un sitio que funciona bien en el teléfono. Además: dos errores en nuestros propios datos, y qué hicimos al respecto.</p>
+  </div>
+</header>
+
+<main class="post-content">
+  <div class="post-body">
+
+    <section>
+      <h2>La versión corta</h2>
+      <p>La semana pasada revisamos el sitio completo: cada página, en los dos idiomas, en teléfono y en computadora, y también la parte que usan los asistentes de IA. Después arreglamos lo que encontramos. Aquí está lo que cambió, incluyendo dos cosas que preferiría no haber encontrado, pero que mereces saber.</p>
+    </section>
+
+    <section>
+      <h2>Las políticas de la mesa directiva, ahora en español</h2>
+      <p>Las 619 políticas, estatutos y reglamentos del distrito se podían ver en este sitio desde mayo, pero solo en inglés. Ahora existe <a href="/politicas/">/politicas/</a>: cada título traducido al español, y la búsqueda funciona en español. Escribe <strong>uniformes</strong> y sale la política de vestimenta; escribe <strong>vacunas</strong> y salen las vacunas. El texto completo de cada política sigue solo en inglés por ahora, y la página lo dice claramente desde el principio. Pero encontrar la política correcta ya no requiere saber su nombre en inglés.</p>
+    </section>
+
+    <section>
+      <h2>Quiénes enseñan en tu escuela</h2>
+      <p>Cada página de escuela tiene una sección nueva: cuántos maestros hay, cuántos años llevan enseñando, cuántos están en su primer o segundo año, cuántos estudiantes hay por maestro y por consejero, y de qué razas y orígenes son los maestros. Todos son datos del Departamento de Educación de California del año escolar 2024-25. Donde el estado esconde números pequeños para proteger la privacidad, la página dice "menos de 10" en vez de fingir que la respuesta es cero.</p>
+    </section>
+
+    <section>
+      <h2>Los dos errores</h2>
+      <p>Al construir esa sección encontramos un error real en nuestros propios datos: los conteos de estudiantes que llevan años aprendiendo inglés (LTEL) estaban exactamente al doble de la realidad. El archivo del estado lista cada grado tres veces — niñas, niños, y todos juntos — y nuestro programa sumaba las tres, así que cada número salía duplicado. El dato decía 15,046 estudiantes cuando el número real es 7,523. Ya está corregido de raíz y los números publicados están bien. También dejé apuntado cómo funciona esa trampa, para revisar el próximo dato del estado que agreguemos. Si tú (o tu asistente de IA) sacaste números de estudiantes aprendiendo inglés de este sitio antes del 10 de junio, olvídalos y vuelve a consultar.</p>
+      <p>Aparte: 22 de las transcripciones en español de las reuniones llevaban meses dañadas en nuestro servidor sin que nadie lo notara. Quien las abría en español veía un mensaje de error, mientras que en inglés sí salía la transcripción. Exactamente lo contrario de lo que este sitio busca. Las 22 ya están reparadas, y el sistema ahora se niega a publicar una transcripción que no pase validación, para que esta falla no pueda repetirse en silencio.</p>
+    </section>
+
+    <section>
+      <h2>Mucho mejor en el teléfono</h2>
+      <p>Una mamá o papá nos avisó que no encontraba la caja de búsqueda en su teléfono. Tenía razón: en algunos tamaños de pantalla se salía del borde, y el menú mostraba tres pestañas y escondía las demás sin ninguna señal de que había más. Las dos cosas están arregladas. El menú ahora se acomoda para que todas las secciones se vean, la búsqueda se queda en su lugar hasta en los teléfonos más chicos, las páginas de escuelas ya no se deslizan de lado, y los botoncitos de las tarjetas de escuelas crecieron de 15 píxeles a un tamaño que un pulgar sí puede tocar.</p>
+      <p>También cambiamos jerga por palabras claras en todo el sitio ("42% aprendiendo inglés · 63% almuerzo gratis o a bajo costo" en vez de "42% EL · 63% FRL"), y los resultados de búsqueda ahora dicen la verdad: si hay 75 resultados y estás viendo los mejores 20, te lo dice.</p>
+    </section>
+
+    <section>
+      <h2>Para los curiosos de la tecnología</h2>
+      <p>Los asistentes de IA tienen cuatro herramientas nuevas en el <a href="/mcp/es/">servidor MCP</a>: miembros de la mesa directiva, búsqueda de documentos, listas de reuniones, y búsqueda dentro de la transcripción de una sola reunión. Cada resumen generado por IA ahora lo dice claramente. El archivo de datos en <a href="https://data.rcsd.info" target="_blank">data.rcsd.info</a> tiene un índice que las máquinas pueden leer. El escáner de seguridad de GitHub está en cero hallazgos abiertos. Y ahora hay un <a href="https://github.com/dweekly/rcsd-meetings/blob/main/CHANGELOG.md" target="_blank">CHANGELOG</a> que registra qué cambió y cuándo, desde el lanzamiento del sitio en marzo. Del mismo período de trabajo: la <a href="/distrito/">página del distrito</a> ahora presenta a tus cinco miembros de la mesa directiva con fotos, áreas y períodos, y hay páginas dedicadas a los <a href="/comites/">comités</a> del distrito, como el comité que vigila el bono (CBOC) y DELAC.</p>
+    </section>
+
+    <section>
+      <h2>¿Viste algo raro?</h2>
+      <p>Esta arreglada empezó con una revisión y con la queja de una familia, y las dos hicieron mejor el sitio. Si algo se ve mal — un número que no cuadra, una página rota, un español torpe — avísame: <a href="mailto:team@rcsd.info">team@rcsd.info</a>, o abre un issue en <a href="https://github.com/dweekly/rcsd-meetings" target="_blank">GitHub</a>.</p>
+    </section>
+
+  </div>
+</main>
