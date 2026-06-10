@@ -1,72 +1,83 @@
 {
-  "_metadata": {
-    "description": "Hand-curated documents and official district pages indexed into site search by title (see SEARCH.md). Two kinds: (1) documents referenced (linked) inside board agenda memos but hosted OFF the board portal — so they are not captured as board-packet attachments in document-index.json (e.g. the adopted Facilities Master Plan); (2) official district resources parents actually search for (instructional calendars, enrollment) that otherwise have no searchable record because they live on rcsdk8.net. Each entry cites its source in `provenance`. `note`/`noteEs` become the per-language record content (the search excerpt).",
-    "source": "Simbli board agendas — memo body 'Link to file' references (data/board-memos/*.json); rcsd.info homepage 'Upcoming Key Dates' links (data/district-calendar-*.json calendarUrl); rcsdk8.net official enrollment page",
-    "method": "Manually captured; bit.ly short links resolved to their canonical/CDN target with curl -IL; rcsdk8.net URLs verified live (HTTP 200) at capture time",
-    "retrieved": "2026-06-10"
+ "_metadata": {
+  "description": "Hand-curated documents and official district pages indexed into site search by title (see SEARCH.md). Two kinds: (1) documents referenced (linked) inside board agenda memos but hosted OFF the board portal — so they are not captured as board-packet attachments in document-index.json (e.g. the adopted Facilities Master Plan); (2) official district resources parents actually search for (instructional calendars, enrollment) that otherwise have no searchable record because they live on rcsdk8.net. Each entry cites its source in `provenance`. `note`/`noteEs` become the per-language record content (the search excerpt).",
+  "source": "Simbli board agendas — memo body 'Link to file' references (data/board-memos/*.json); rcsd.info homepage 'Upcoming Key Dates' links (data/district-calendar-*.json calendarUrl); rcsdk8.net official enrollment page",
+  "method": "Manually captured; bit.ly short links resolved to their canonical/CDN target with curl -IL; rcsdk8.net URLs verified live (HTTP 200) at capture time",
+  "retrieved": "2026-06-10"
+ },
+ "documents": [
+  {
+   "slug": "facilities-master-plan-2025",
+   "title": "Final Facilities Master Plan (FMP), 2025 (PDF)",
+   "titleEs": "Plan Maestro de Instalaciones (FMP) Final, 2025 (PDF)",
+   "type": "facilities-plan",
+   "url": "https://resources.finalsite.net/images/v1749242631/rcsdk8net/zzwbnzxpoasxgtbiotnv/RCSD-FMP2025-v1-2.pdf",
+   "meetingDate": "2025-06-11",
+   "itemTitle": "Adoption of Final Facilities Master Plan",
+   "note": "Adopted 2025-06-11 as the District's official long-term facilities roadmap, guiding Measure S bond construction projects. Hosted off BoardDocs due to file size and linked from the agenda memo.",
+   "supersedes": [
+    "https://bit.ly/rcsd-fmp25-draft",
+    "https://bit.ly/rcsd-fmp25",
+    "https://resources.finalsite.net/images/v1744852929/rcsdk8net/zwchl42yjt3mye7iyhcr/DRAFTRCSDFMP2025.pdf"
+   ],
+   "provenance": {
+    "publishedLink": "https://bit.ly/rcsd-fmp25-draft-final",
+    "canonicalLink": "https://www.rcsdk8.net/fs/resource-manager/view/e3c42ad6-bf34-441b-a6b2-335572c87aac",
+    "sourceMemo": "data/board-memos/2025-06-11.json"
+   }
   },
-  "documents": [
-    {
-      "slug": "facilities-master-plan-2025",
-      "title": "Final Facilities Master Plan (FMP), 2025 (PDF)",
-      "titleEs": "Plan Maestro de Instalaciones (FMP) Final, 2025 (PDF)",
-      "type": "facilities-plan",
-      "url": "https://resources.finalsite.net/images/v1749242631/rcsdk8net/zzwbnzxpoasxgtbiotnv/RCSD-FMP2025-v1-2.pdf",
-      "meetingDate": "2025-06-11",
-      "itemTitle": "Adoption of Final Facilities Master Plan",
-      "note": "Adopted 2025-06-11 as the District's official long-term facilities roadmap, guiding Measure S bond construction projects. Hosted off BoardDocs due to file size and linked from the agenda memo.",
-      "supersedes": [
-        "https://bit.ly/rcsd-fmp25-draft",
-        "https://bit.ly/rcsd-fmp25",
-        "https://resources.finalsite.net/images/v1744852929/rcsdk8net/zwchl42yjt3mye7iyhcr/DRAFTRCSDFMP2025.pdf"
-      ],
-      "provenance": {
-        "publishedLink": "https://bit.ly/rcsd-fmp25-draft-final",
-        "canonicalLink": "https://www.rcsdk8.net/fs/resource-manager/view/e3c42ad6-bf34-441b-a6b2-335572c87aac",
-        "sourceMemo": "data/board-memos/2025-06-11.json"
-      }
-    },
-    {
-      "slug": "instructional-calendar-2025-26",
-      "title": "2025-26 School Year Calendar — TK-8 Instructional Calendar (PDF)",
-      "titleEs": "Calendario Escolar 2025-26 — Calendario de Instrucción TK-8 (PDF)",
-      "type": "instructional-calendar",
-      "url": "https://resources.finalsite.net/images/v1734631714/rcsdk8net/chfsfkxeg73jj06flauy/2025-26TK-8InstructionalCalendarBoardapproved12112024.pdf",
-      "note": "Official RCSD school calendar for the 2025-26 school year: first and last day of school, holidays, breaks, parent-teacher conference weeks, and early-release days. Board approved December 11, 2024.",
-      "noteEs": "Calendario oficial de RCSD para el año escolar 2025-26: primer y último día de clases, días feriados, vacaciones, semanas de conferencias con padres y días de salida temprana. Aprobado por la mesa directiva el 11 de diciembre de 2024.",
-      "provenance": {
-        "sourceData": "data/district-calendar-2025-26.json (calendarUrl)",
-        "linkedFrom": "rcsd.info homepage 'Upcoming Key Dates' section",
-        "verified": "2026-06-10 (HTTP 200)"
-      }
-    },
-    {
-      "slug": "instructional-calendar-2026-27",
-      "title": "2026-27 School Year Calendar — TK-8 Instructional Calendar (PDF)",
-      "titleEs": "Calendario Escolar 2026-27 — Calendario de Instrucción TK-8 (PDF)",
-      "type": "instructional-calendar",
-      "url": "https://resources.finalsite.net/images/v1768516513/rcsdk8net/t7o8c7pigujqr9kbrmzl/2026-2027TK-8InstructionalCalendar.pdf",
-      "note": "Official RCSD school calendar for the 2026-27 school year: first and last day of school, holidays, breaks, and early-release days.",
-      "noteEs": "Calendario oficial de RCSD para el año escolar 2026-27: primer y último día de clases, días feriados, vacaciones y días de salida temprana.",
-      "provenance": {
-        "sourceData": "data/district-calendar-2026-27.json (calendarUrl)",
-        "linkedFrom": "rcsd.info homepage 'Upcoming Key Dates' section",
-        "verified": "2026-06-10 (HTTP 200)"
-      }
-    },
-    {
-      "slug": "student-enrollment",
-      "title": "Enroll Your Child — Kindergarten, TK & New Student Enrollment (RCSD website)",
-      "titleEs": "Inscripción de Estudiantes — Kinder, TK y Estudiantes Nuevos (sitio web de RCSD)",
-      "type": "district-page",
-      "url": "https://www.rcsdk8.net/our-programs-and-services/enrollment",
-      "note": "How to enroll your child in a Redwood City School District school: kindergarten and transitional kindergarten (TK) registration, new student enrollment, finding your neighborhood school, and school of choice applications.",
-      "noteEs": "Cómo inscribir a tu hijo en una escuela del Distrito Escolar de Redwood City: inscripción de kinder y kinder de transición (TK), registración de estudiantes nuevos, cómo encontrar tu escuela de vecindario y solicitudes de school of choice.",
-      "provenance": {
-        "canonicalLink": "https://www.rcsdk8.net/our-programs-and-services/enrollment",
-        "linkedFrom": "rcsdk8.net main navigation ('Our Programs and Services'); year-specific page https://www.rcsdk8.net/our-programs-and-services/enrollment/2026-27-school-year-enrollment links from it",
-        "verified": "2026-06-10 (HTTP 200, title 'Enrollment - Redwood City School District')"
-      }
-    }
-  ]
+  {
+   "slug": "instructional-calendar-2025-26",
+   "title": "2025-26 School Year Calendar — TK-8 Instructional Calendar (PDF)",
+   "titleEs": "Calendario Escolar 2025-26 — Calendario de Instrucción TK-8 (PDF)",
+   "type": "instructional-calendar",
+   "url": "https://resources.finalsite.net/images/v1734631714/rcsdk8net/chfsfkxeg73jj06flauy/2025-26TK-8InstructionalCalendarBoardapproved12112024.pdf",
+   "note": "Official RCSD school calendar for the 2025-26 school year: first and last day of school, holidays, breaks, parent-teacher conference weeks, and early-release days. Board approved December 11, 2024.",
+   "noteEs": "Calendario oficial de RCSD para el año escolar 2025-26: primer y último día de clases, días feriados, vacaciones, semanas de conferencias con padres y días de salida temprana. Aprobado por la mesa directiva el 11 de diciembre de 2024.",
+   "provenance": {
+    "sourceData": "data/district-calendar-2025-26.json (calendarUrl)",
+    "linkedFrom": "rcsd.info homepage 'Upcoming Key Dates' section",
+    "verified": "2026-06-10 (HTTP 200)"
+   }
+  },
+  {
+   "slug": "instructional-calendar-2026-27",
+   "title": "2026-27 School Year Calendar — TK-8 Instructional Calendar (PDF)",
+   "titleEs": "Calendario Escolar 2026-27 — Calendario de Instrucción TK-8 (PDF)",
+   "type": "instructional-calendar",
+   "url": "https://resources.finalsite.net/images/v1768516513/rcsdk8net/t7o8c7pigujqr9kbrmzl/2026-2027TK-8InstructionalCalendar.pdf",
+   "note": "Official RCSD school calendar for the 2026-27 school year: first and last day of school, holidays, breaks, and early-release days.",
+   "noteEs": "Calendario oficial de RCSD para el año escolar 2026-27: primer y último día de clases, días feriados, vacaciones y días de salida temprana.",
+   "provenance": {
+    "sourceData": "data/district-calendar-2026-27.json (calendarUrl)",
+    "linkedFrom": "rcsd.info homepage 'Upcoming Key Dates' section",
+    "verified": "2026-06-10 (HTTP 200)"
+   }
+  },
+  {
+   "slug": "student-enrollment",
+   "title": "Enroll Your Child — Kindergarten, TK & New Student Enrollment (RCSD website)",
+   "titleEs": "Inscripción de Estudiantes — Kinder, TK y Estudiantes Nuevos (sitio web de RCSD)",
+   "type": "district-page",
+   "url": "https://www.rcsdk8.net/our-programs-and-services/enrollment",
+   "note": "How to enroll your child in a Redwood City School District school: kindergarten and transitional kindergarten (TK) registration, new student enrollment, finding your neighborhood school, and school of choice applications.",
+   "noteEs": "Cómo inscribir a tu hijo en una escuela del Distrito Escolar de Redwood City: inscripción de kinder y kinder de transición (TK), registración de estudiantes nuevos, cómo encontrar tu escuela de vecindario y solicitudes de school of choice.",
+   "provenance": {
+    "canonicalLink": "https://www.rcsdk8.net/our-programs-and-services/enrollment",
+    "linkedFrom": "rcsdk8.net main navigation ('Our Programs and Services'); year-specific page https://www.rcsdk8.net/our-programs-and-services/enrollment/2026-27-school-year-enrollment links from it",
+    "verified": "2026-06-10 (HTTP 200, title 'Enrollment - Redwood City School District')"
+   }
+  },
+  {
+   "slug": "dress-code-uniforms-policy",
+   "title": "Dress Code & School Uniforms — Board Policy 5132 (Dress and Grooming)",
+   "titleEs": "Vestimenta y Uniformes Escolares — Política 5132 (Vestimenta y arreglo personal)",
+   "type": "board-policy",
+   "url": "https://rcsd.info/policies/5132-bp/",
+   "urlEs": "https://rcsd.info/politicas/5132-bp/",
+   "note": "The district's dress code policy, including school uniforms: what students may wear, how schools set site dress standards, and parent notification requirements.",
+   "noteEs": "La política de vestimenta del distrito, incluyendo uniformes escolares: qué pueden usar los estudiantes, cómo cada escuela fija sus reglas de vestimenta, y cómo se avisa a las familias.",
+   "_provenance": "Curated search entry added 2026-06-10: the Spanish word 'uniformes' ranks the uniform-complaint-procedure pages above the dress-code policy on title matches; this entry gives the parent-intent target a title match of its own. Points at the policy pages built from Simbli data (BP 5132, lastRevised 10/20/2021)."
+  }
+ ]
 }

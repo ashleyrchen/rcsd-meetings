@@ -90,6 +90,8 @@ Read these files from `data/` to answer questions. For field-by-field documentat
 | `policies-index.json` | 619 entries | School board policies global catalog, including codes, titles, revision IDs, and revision dates |
 | `board-policies/` | 619 JSONs | Directory of individual files per policy (e.g. `0100-BP.json`) with full HTML content, sanitized text, footnotes (legal references), and cross-references |
 | `policy-titles-es.json` | 619 entries | Spanish translations of every policy title (Claude-translated, cached, provenance in `_metadata`); powers /politicas/ |
+| `board-policies-es/` | 618 JSONs | Spanish machine-translations of policy **bodies** — `{ code, type, titleEs, contentTextEs, _metadata }`, same filenames as `board-policies/`. One policy (`6174-E PDF(1)-AR`, a scanned PDF exhibit with no extractable text) intentionally has no file; its page falls back to English. The English Simbli version is the only official text |
+| `policy-summaries.json` | 618 entries | AI-generated one-sentence summaries, English AND Spanish, under `.summaries["{code}-{type}"]` = `{ title, en, es, sourceHash }`; powers the /policies/ + /politicas/ index pages. Same one intentional gap (no source text → no summary, never invented) |
 
 ### School Slugs
 
@@ -132,7 +134,7 @@ For "what has the board discussed about X?", search `meetings-data.json` for top
 ### Board Policies queries
 For "what is the district's policy on X?", follow this 3-step strategy:
 1. **Search Index**: First, read `data/policies-index.json`. Perform a text or regex search on the `title` or `code` fields of the `policies` array to identify candidate policy codes and types (e.g. `5141.22 BP` or `9223 AR`).
-2. **Read Detail File**: Once you identify the relevant policy code and type, read its individual detail JSON file directly from `data/board-policies/{code}-{type}.json` (e.g. `data/board-policies/9223-AR.json`).
+2. **Read Detail File**: Once you identify the relevant policy code and type, read its individual detail JSON file directly from `data/board-policies/{code}-{type}.json` (e.g. `data/board-policies/9223-AR.json`). For a Spanish answer, the machine-translated body is in `data/board-policies-es/{code}-{type}.json` (`contentTextEs`); note it is unofficial — the English version is authoritative.
 3. **Analyze & Present**: Extract the `contentText` for the core policy rules, the `footnotes` for statutory citations (like the CA Education or Government Code), and the `crossRefs` for related governance rules to synthesize an authoritative answer.
 
 ### Comparative queries

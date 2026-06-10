@@ -64,13 +64,21 @@ const { index } = await pagefind.createIndex({ excludeSelectors: EXCLUDE_SELECTO
 // file opens. Each url is added at most once (claimed set) across all sources.
 const claimed = new Set();
 let docCount = 0;
-async function addDoc(url, titleEn, titleEs, content, contentEs) {
+async function addDoc(url, titleEn, titleEs, content, contentEs, urlEs = null) {
   if (!url || claimed.has(url)) return;
   claimed.add(url);
-  const variants = [['en', titleEn, content], ['es', titleEs || titleEn, contentEs || content]];
-  for (const [language, title, body] of variants) {
+  if (urlEs) claimed.add(urlEs);
+  // When the entry has a real per-language URL (e.g. /policies/ vs /politicas/
+  // pages), each variant records its own URL and no fragment is needed; a
+  // single shared URL still gets the #en/#es fragments to avoid the
+  // last-wins collision on Pagefind's url key.
+  const variants = [
+    ['en', titleEn, content, urlEs ? url : `${url}#en`],
+    ['es', titleEs || titleEn, contentEs || content, urlEs || `${url}#es`],
+  ];
+  for (const [language, title, body, recordUrl] of variants) {
     await index.addCustomRecord({
-      url: `${url}#${language}`,
+      url: recordUrl,
       content: body ? `${title} — ${body}` : title,
       language,
       meta: { title },
@@ -116,7 +124,7 @@ for (const d of linked) {
   // curated (final) document is indexed, not the raw/draft memo links.
   if (d.provenance && d.provenance.publishedLink) claimed.add(d.provenance.publishedLink);
   for (const s of d.supersedes || []) claimed.add(s);
-  await addDoc(d.url, d.title, d.titleEs || d.title, d.note, d.noteEs);
+  await addDoc(d.url, d.title, d.titleEs || d.title, d.note, d.noteEs, d.urlEs || null);
   linkedCount++;
 }
 console.log(`  Documents (curated off-portal links): ${linkedCount} records`);
