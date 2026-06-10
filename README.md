@@ -17,6 +17,7 @@ Independently compiled public records for the [Redwood City School District](htt
 - **3 charter school profiles** plus a **district property index** (district-owned sites that aren't operating schools)
 - **District budget visualization** with per-pupil funding breakdowns
 - **Full-site search** (English and Spanish, each searching only its own-language corpus) — see [`SEARCH.md`](SEARCH.md)
+- **Site history** — what was added and when, month by month, in [`CHANGELOG.md`](CHANGELOG.md) (fresh as of 2026-06-10)
 
 *Counts reflect the data snapshot of May 2026; the pipeline runs continuously, so live figures will be higher.*
 
