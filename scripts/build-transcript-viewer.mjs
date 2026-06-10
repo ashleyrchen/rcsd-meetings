@@ -9,6 +9,10 @@
  *
  * Output: docs/meetings/{date}/index.html
  *
+ * NOTE: superseded by build-meeting-pages.mjs (bilingual EN+ES, same output
+ * paths) — run-pipeline.mjs no longer runs this script. Running it manually
+ * overwrites the bilingual EN pages with EN-only output.
+ *
  * Security note: all user-facing text is rendered via textContent or
  * pre-escaped at build time. No dynamic innerHTML from untrusted sources.
  */
@@ -741,11 +745,20 @@ ${siteFooter({ lang: 'en' })}
         setInterval(syncHighlight, 250);
       })
       .catch(function() {
+        // Friendly fallback: the raw transcript JSON on data.rcsd.info is the
+        // canonical artifact, so link it even when this page's fetch fails
         var c = document.getElementById('panel-transcript');
         c.textContent = '';
         var msg = document.createElement('div');
         msg.className = 'tv-empty';
-        msg.textContent = 'Failed to load transcript.';
+        msg.textContent = 'Sorry — the transcript didn\\u2019t load. Try refreshing the page, or open the raw transcript file directly:';
+        var link = document.createElement('a');
+        link.href = transcriptUrlEn;
+        link.target = '_blank';
+        link.rel = 'noopener';
+        link.textContent = 'Raw transcript (JSON)';
+        msg.appendChild(document.createElement('br'));
+        msg.appendChild(link);
         c.appendChild(msg);
       });
 

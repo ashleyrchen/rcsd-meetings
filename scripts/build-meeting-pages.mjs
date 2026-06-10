@@ -71,12 +71,17 @@ const LOCALES = {
     meetingTitle: (type, dateFormatted) => `${type} &mdash; ${dateFormatted}`,
     pageTitle: (type, dateFormatted) => `${type} — ${dateFormatted} — RCSD Board Meeting`,
     pageDesc: (type, dateFormatted) => `Agenda, transcript, and minutes for the RCSD ${type} on ${dateFormatted}.`,
-    failedTranscript: 'Failed to load transcript.',
+    failedTranscript: 'Sorry — the transcript didn’t load. Try refreshing the page, or open the raw transcript file directly:',
+    failedTranscriptLink: 'Raw transcript (JSON)',
     switchToEn: 'Switch to English',
     toggleSpanish: 'Toggle Spanish translation',
     disambigMultiple: 'Multiple meetings were held on this date. Select one:',
     disambigItemCount: (n) => `${n} agenda items`,
     summaryLabel: 'Summary',
+    aiSummaryNote: 'AI-generated summary — may contain errors. Not an official record.',
+    disclaimer: 'Not an official District document; independently assembled by',
+    disclaimerSuffix: 'May contain errors. Questions?',
+    disclaimerContact: 'Contact us',
     meetingTypes: {},
   },
   es: {
@@ -100,15 +105,21 @@ const LOCALES = {
     meetingTitle: (type, dateFormatted) => `${type} &mdash; ${dateFormatted}`,
     pageTitle: (type, dateFormatted) => `${type} — ${dateFormatted} — Reuni\u00f3n de la Junta de RCSD`,
     pageDesc: (type, dateFormatted) => `Agenda, transcripci\u00f3n y actas de la ${type} de RCSD del ${dateFormatted}.`,
-    failedTranscript: 'Error al cargar la transcripci\u00f3n.',
+    failedTranscript: 'No se pudo cargar la transcripci\u00f3n en este momento. Intenta recargar la p\u00e1gina o abre el archivo original directamente:',
+    failedTranscriptLink: 'Transcripci\u00f3n original (JSON, en ingl\u00e9s)',
     switchToEn: 'Switch to English',
     toggleSpanish: 'Cambiar a traducci\u00f3n en espa\u00f1ol',
     disambigMultiple: 'Se realizaron m\u00faltiples reuniones en esta fecha. Seleccione una:',
     disambigItemCount: (n) => `${n} puntos de agenda`,
     summaryLabel: 'Resumen',
+    aiSummaryNote: 'Resumen generado por inteligencia artificial (IA) \u2014 puede contener errores. No es un acta oficial.',
+    disclaimer: 'No es un documento oficial del Distrito; compilado independientemente por',
+    disclaimerSuffix: 'Puede contener errores.',
+    disclaimerContact: 'Cont\u00e1ctenos',
     meetingTypes: {
       'Regular': 'Reuni\u00f3n Regular',
       'Special': 'Reuni\u00f3n Especial',
+      'Special Meeting': 'Reuni\u00f3n Especial',
       'Study Session': 'Sesi\u00f3n de Estudio',
       'Workshop': 'Taller',
       'Special (Closed)': 'Sesi\u00f3n Especial (Cerrada)',
@@ -397,6 +408,19 @@ function meetingJsonLd(m, lang) {
 // ---- CSS ----
 
 const pageCSS = `
+  /* Same unofficial-site banner pattern as the meetings index pages */
+  .disclaimer {
+    background: #fff3cd;
+    border-bottom: 2px solid #e0c36a;
+    padding: 0.75rem 1.5rem;
+    text-align: center;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.01em;
+    line-height: 1.6;
+    color: #664d03;
+  }
+
   .tv-layout {
     max-width: 960px;
     margin: 0 auto;
@@ -438,6 +462,16 @@ const pageCSS = `
     color: var(--text-secondary);
     margin-top: 0.5rem;
     max-width: 640px;
+  }
+
+  /* AI-provenance label: --text-muted is 5.06:1 on cream (WCAG AA) */
+  .ai-label {
+    display: block;
+    margin-top: 0.25rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.04em;
+    color: var(--text-muted);
   }
 
   .tv-main {
@@ -568,7 +602,8 @@ const pageCSS = `
     font-weight: 400;
     flex: 0 0 auto;
     width: 1rem;
-    opacity: 0.5;
+    /* was 0.5 (≈3.0:1 on white); 0.75 keeps the near-black speaker colors ≥6:1 */
+    opacity: 0.75;
     padding-top: 0.15rem;
   }
 
@@ -791,12 +826,17 @@ function generateMeetingPage(m, L) {
   // Default tab: agenda if no transcript, otherwise transcript
   const defaultTab = hasTranscript ? 'transcript' : 'agenda';
 
-  // Summary for this meeting
+  // Summary for this meeting (Claude-written prose from
+  // generate-meeting-summaries.mjs — must carry a visible AI label)
   const summaries = summariesByLang[L.lang] || summariesByLang.en || {};
   const summary = summaries[m.date] || null;
   const summaryHtml = summary
-    ? `<p class="tv-summary">${escapeHtml(summary).replace(/&lt;(\/?strong)&gt;/g, '<$1>')}</p>`
+    ? `<p class="tv-summary">${escapeHtml(summary).replace(/&lt;(\/?strong)&gt;/g, '<$1>')}</p>
+    <p class="ai-label">${L.aiSummaryNote}</p>`
     : '';
+
+  // Same page path in the other language (EN /meetings/ ↔ ES /reuniones/)
+  const altLangHref = `/${L.lang === 'es' ? 'meetings' : 'reuniones'}/${pagePath}/`;
 
   const html = `<!DOCTYPE html>
 <html lang="${L.lang}">
@@ -807,12 +847,20 @@ ${headMeta({
   canonical: `https://rcsd.info${canonicalPath}`,
   ogLocale: L.lang === 'es' ? 'es_US' : 'en_US',
   ogImageKey: `meeting-${m.slug}${L.lang === 'es' ? '-es' : ''}`,
+  hreflang: [
+    { lang: L.lang, href: `https://rcsd.info${canonicalPath}` },
+    { lang: L.lang === 'es' ? 'en' : 'es', href: `https://rcsd.info${altLangHref}` },
+  ],
   jsonLd: meetingJsonLd(m, L.lang),
   pageCSS,
 })}
 </head>
 <body>
-${siteNav({ activePage: 'meetings', lang: L.lang })}
+${siteNav({ activePage: 'meetings', lang: L.lang, altLangHref })}
+
+<div class="disclaimer">
+  ${L.disclaimer} <a href="https://github.com/dweekly/rcsd-meetings" style="color:#664d03">David Weekly</a>. ${L.disclaimerSuffix} <a href="mailto:team@rcsd.info" style="color:#664d03">${L.disclaimerContact}</a>.
+</div>
 
 <div class="tv-layout">
   <div class="tv-header">
@@ -957,8 +1005,11 @@ ${siteFooter({ lang: L.lang })}
     var text = u.text || '';
     if (text.length < 300) return [u];
 
-    // Split on sentence boundaries (period/question/exclamation followed by space and capital)
-    var sentences = text.match(/[^.!?]*[.!?]+(?:\s+|$)/g) || [text];
+    // Split on sentence boundaries (period/question/exclamation followed by space and capital).
+    // This code is emitted inside a JS template literal, so the regex backslash must be
+    // double-escaped (\\s) or it cooks to the literal "s" in the published HTML and
+    // silently drops nearly all text of every utterance >= 300 chars.
+    var sentences = text.match(/[^.!?]*[.!?]+(?:\\s+|$)/g) || [text];
     var chunks = [];
     var current = '';
     var sentenceCount = 0;
@@ -1042,11 +1093,20 @@ ${siteFooter({ lang: L.lang })}
         if (btn) btn.textContent = defaultLangEs ? 'EN' : 'ES';
       })
       .catch(function() {
+        // Friendly fallback: the raw EN transcript JSON on data.rcsd.info is
+        // the canonical artifact, so link it even when this page's fetch fails
         var c = document.getElementById('panel-transcript');
         c.textContent = '';
         var msg = document.createElement('div');
         msg.className = 'tv-empty';
         msg.textContent = ${JSON.stringify(L.failedTranscript)};
+        var link = document.createElement('a');
+        link.href = transcriptUrlEn;
+        link.target = '_blank';
+        link.rel = 'noopener';
+        link.textContent = ${JSON.stringify(L.failedTranscriptLink)};
+        msg.appendChild(document.createElement('br'));
+        msg.appendChild(link);
         c.appendChild(msg);
       });
 
@@ -1211,6 +1271,18 @@ ${siteFooter({ lang: L.lang })}
 
 // ---- Disambiguation page CSS ----
 const disambigCSS = `
+  /* Same unofficial-site banner pattern as the meetings index pages */
+  .disclaimer {
+    background: #fff3cd;
+    border-bottom: 2px solid #e0c36a;
+    padding: 0.75rem 1.5rem;
+    text-align: center;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.01em;
+    line-height: 1.6;
+    color: #664d03;
+  }
   .tv-disambig { max-width: 600px; margin: 2rem auto; padding: 2rem; }
   .tv-disambig h1 { font-family: 'Fraunces', Georgia, serif; font-size: 1.5rem; color: var(--green-deep); margin-bottom: 1rem; }
   .tv-disambig p { color: var(--text-secondary); margin-bottom: 1.5rem; }
@@ -1234,6 +1306,7 @@ function generateDisambigPage(date, meetings, L) {
   const outDir = resolve(ROOT, `docs/${L.prefix}/${date}`);
   mkdirSync(outDir, { recursive: true });
   const dateFormatted = L.lang === 'es' ? formatDateEs(date) : formatDate(date);
+  const altLangHref = `/${L.lang === 'es' ? 'meetings' : 'reuniones'}/${date}/`;
 
   const links = meetings.map(m => {
     const href = `/${L.prefix}/${m.slug}/`;
@@ -1253,11 +1326,18 @@ ${headMeta({
   canonical: `https://rcsd.info/${L.prefix}/${date}/`,
   ogLocale: L.lang === 'es' ? 'es_US' : 'en_US',
   ogImageKey: `page-meetings${L.lang === 'es' ? '-es' : ''}`,
+  hreflang: [
+    { lang: L.lang, href: `https://rcsd.info/${L.prefix}/${date}/` },
+    { lang: L.lang === 'es' ? 'en' : 'es', href: `https://rcsd.info${altLangHref}` },
+  ],
   pageCSS: disambigCSS,
 })}
 </head>
 <body>
-${siteNav({ activePage: 'meetings', lang: L.lang })}
+${siteNav({ activePage: 'meetings', lang: L.lang, altLangHref })}
+<div class="disclaimer">
+  ${L.disclaimer} <a href="https://github.com/dweekly/rcsd-meetings" style="color:#664d03">David Weekly</a>. ${L.disclaimerSuffix} <a href="mailto:team@rcsd.info" style="color:#664d03">${L.disclaimerContact}</a>.
+</div>
 <div class="tv-disambig">
   <a href="${L.backHref}" style="font-family:'IBM Plex Mono',monospace;font-size:0.75rem;color:var(--text-muted);text-decoration:none">${L.backLabel}</a>
   <h1>${dateFormatted}</h1>
