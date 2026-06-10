@@ -29,6 +29,7 @@
 <meta name="twitter:image" content="https://data.rcsd.info/og/cboc-2025-01-22-es.png">
 <meta name="twitter:title" content="Comité Ciudadano de Supervisión de Bonos: 22 de enero de 2025 · RCSD">
 <meta name="twitter:description" content="El Código de Educación de California exige un Comité Ciudadano de Supervisión de Bonos que revise e informe al público sobre el uso del dinero de los bonos escolares. El comité de RCSD supervisa los bonos de obligación general aprobados por los votantes (las Medidas S y T), revisando los gastos y la">
+<link rel="describedby" href="/llms.txt">
 <link rel="preload" href="/fonts/fraunces-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/newsreader-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/ibm-plex-mono-400-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -51,7 +52,10 @@
     --coral-light: #f5ddd8;
     --text: #2a2a28;
     --text-secondary: #5a5a56;
-    --text-muted: #8a8a84;
+    /* Muted text must still clear WCAG AA 4.5:1 on every background it
+       appears on: 5.06:1 on --cream, 4.67:1 on --cream-dark, 5.37:1 on
+       #fff. (The old #8a8a84 hit only ~3:1 on all three.) */
+    --text-muted: #6b6b64;
     --rule: #d4d0c8;
     --rule-light: #e8e4dc;
   }
@@ -83,6 +87,27 @@
     text-decoration-color: var(--green-mid);
   }
 
+  /* ---- SKIP LINK (keyboard a11y) ---- */
+  /* Visually hidden until keyboard focus; first tab stop on every page.
+     Lives inside nav.site-nav so the search indexer (which excludes the
+     nav) never indexes its text. Targets #main-content, emitted by
+     siteNav() right after the nav closes. */
+  .skip-link {
+    position: absolute;
+    left: -200vw;
+    top: 0;
+    z-index: 100;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+    background: var(--green-mid);
+    padding: 0.8rem 1.25rem;
+  }
+  .skip-link:focus { left: 0; outline: 2px solid #fff; outline-offset: -4px; }
+
   /* ---- SITE NAV ---- */
   .site-nav {
     background: #1a2e1a;
@@ -104,7 +129,9 @@
     text-transform: uppercase;
     text-decoration: none;
     color: rgba(255,255,255,0.7);
-    padding: 0.75rem 1rem;
+    /* 0.75rem horizontal padding (not 1rem): seven tabs incl. COMITÉS plus
+       search + lang toggle must fit the 960px container on one row */
+    padding: 0.75rem;
     border-bottom: 2px solid transparent;
     transition: color 0.2s, border-color 0.2s;
   }
@@ -115,6 +142,28 @@
     display: flex;
     align-items: center;
     gap: 0.5rem;
+  }
+  .site-nav-search { display: flex; }
+  .site-nav-search input {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.02em;
+    color: #fff;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.35);
+    border-radius: 3px;
+    padding: 0.35rem 0.65rem;
+    width: 9rem;
+    transition: border-color 0.2s, background 0.2s, width 0.2s;
+  }
+  .site-nav-search input::placeholder { color: rgba(255,255,255,0.55); }
+  .site-nav-search input:focus {
+    /* visible focus ring — a background tint alone fails WCAG 2.4.7 */
+    outline: 2px solid #fff;
+    outline-offset: 1px;
+    background: rgba(255,255,255,0.14);
+    border-color: rgba(255,255,255,0.7);
+    width: 11rem;
   }
   .site-nav-lang {
     font-family: 'IBM Plex Mono', monospace;
@@ -155,14 +204,48 @@
     font-size: 0.65rem;
     color: var(--green-mid);
     text-decoration: none;
-    margin: 0 0.75rem;
+    /* inline-block + padding lifts the tap target to ~33px tall (the bare
+       0.65rem text was 13px); padding + margin ≈ the old 0.75rem spacing */
+    display: inline-block;
+    padding: 0.45rem 0.5rem;
+    margin: 0 0.25rem;
   }
   .footer-nav a:hover { text-decoration: underline; }
 
   /* ---- RESPONSIVE (nav + footer) ---- */
-  @media (max-width: 640px) {
-    .site-nav-tab { padding: 0.6rem 0.7rem; font-size: 0.7rem; }
-    .site-nav-inner { padding: 0 1.2rem; }
+  /* The single-row nav needs ~920px (seven ES tabs + search + lang toggle),
+     so below 960px it wraps instead: tabs flow across as many justified rows
+     as needed, then search + lang toggle get a full-width row. Every nav item
+     stays visible — the old horizontal scroll strip hid tabs with no usable
+     affordance, and 641–780px viewports clipped the search box offscreen. */
+  @media (max-width: 960px) {
+    .site-nav-inner {
+      flex-wrap: wrap;
+      padding: 0 0.9rem 0.65rem;
+    }
+    .site-nav-tabs {
+      flex: 1 1 100%;
+      flex-wrap: wrap;
+    }
+    .site-nav-tab {
+      /* flex-grow justifies each wrapped row edge-to-edge; 0.9rem vertical
+         padding keeps tap targets ≥44px tall (0.75rem measured only 41.8px) */
+      flex: 1 0 auto;
+      text-align: center;
+      font-size: 0.7rem;
+      padding: 0.9rem 0.55rem;
+    }
+    .site-nav-right { flex: 1 1 100%; }
+    .site-nav-search { flex: 1 1 auto; }
+    .site-nav-search input,
+    .site-nav-search input:focus { width: 100%; }
+    /* 0.95rem vertical padding -> ≥44px tall tap target (0.75rem gave 39.5px) */
+    .site-nav-search input { padding: 0.95rem 0.75rem; }
+    .site-nav-lang {
+      align-self: stretch;
+      display: flex;
+      align-items: center;
+    }
   }
 
   .cm-layout { max-width: 960px; margin: 0 auto; padding: 1rem 2rem 3rem; }
@@ -245,6 +328,7 @@
 </head>
 <body>
 <nav class="site-nav">
+  <a class="skip-link" href="#main-content">Saltar al contenido</a>
   <div class="site-nav-inner">
     <div class="site-nav-tabs">
       <a href="/" class="site-nav-tab">Inicio</a>
@@ -252,13 +336,16 @@
       <a href="/escuelas/" class="site-nav-tab">Escuelas</a>
       <a href="/distrito/" class="site-nav-tab active">Distrito</a>
       <a href="/presupuesto/" class="site-nav-tab">Presupuesto</a>
+      <a href="/comites/" class="site-nav-tab">Comités</a>
       <a href="/blog/es/" class="site-nav-tab">Blog</a>
     </div>
     <div class="site-nav-right">
+      <form class="site-nav-search" role="search" action="/buscar/" method="get"><input type="search" name="q" placeholder="Buscar…" aria-label="Buscar" autocomplete="off"></form>
       <a href="/committees/cboc/2025-01-22/" class="site-nav-lang">EN</a>
     </div>
   </div>
 </nav>
+<span id="main-content" tabindex="-1"></span>
 <main class="cm-layout">
   <a class="cm-back" href="/comites/cboc/">← Comité Ciudadano de Supervisión de Bonos</a>
   <h1 class="cm-title">Comité Ciudadano de Supervisión de Bonos</h1>
@@ -288,6 +375,8 @@
     <a href="/escuelas/">Escuelas</a>
     <a href="/distrito/">Distrito</a>
     <a href="/presupuesto/">Presupuesto</a>
+    <a href="/comites/">Comités</a>
+    <a href="/mcp/">API y datos para desarrolladores</a>
     <a href="https://github.com/dweekly/rcsd-meetings">Código Fuente &#8599;</a>
     <a href="mailto:team@rcsd.info">team@rcsd.info</a>
   </div>

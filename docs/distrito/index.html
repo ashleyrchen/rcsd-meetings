@@ -29,11 +29,37 @@
 <meta name="twitter:image" content="https://data.rcsd.info/og/page-district-es.png">
 <meta name="twitter:title" content="Resumen del Distrito RCSD 2025-26 — Distrito Escolar de Redwood City">
 <meta name="twitter:description" content="Presupuesto, rendimiento, inscripción y gobernanza del Distrito Escolar de Redwood City para el año escolar 2025-26.">
+<link rel="describedby" href="/llms.txt">
 <link rel="preload" href="/fonts/fraunces-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/newsreader-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/ibm-plex-mono-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/fonts/fonts.css">
-
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "GovernmentOrganization",
+  "additionalType": "https://schema.org/SchoolDistrict",
+  "name": "Redwood City School District",
+  "alternateName": [
+    "RCSD",
+    "Distrito Escolar de Redwood City"
+  ],
+  "url": "https://www.rcsdk8.net",
+  "logo": "https://data.rcsd.info/logos/district.jpg",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "750 Bradford Street",
+    "addressLocality": "Redwood City",
+    "addressRegion": "CA",
+    "postalCode": "94063",
+    "addressCountry": "US"
+  },
+  "sameAs": [
+    "https://www.rcsdk8.net",
+    "https://www.youtube.com/@RedwoodCitySchoolDistrict"
+  ]
+}
+</script>
 
 <style>
 
@@ -51,7 +77,10 @@
     --coral-light: #f5ddd8;
     --text: #2a2a28;
     --text-secondary: #5a5a56;
-    --text-muted: #8a8a84;
+    /* Muted text must still clear WCAG AA 4.5:1 on every background it
+       appears on: 5.06:1 on --cream, 4.67:1 on --cream-dark, 5.37:1 on
+       #fff. (The old #8a8a84 hit only ~3:1 on all three.) */
+    --text-muted: #6b6b64;
     --rule: #d4d0c8;
     --rule-light: #e8e4dc;
   }
@@ -83,6 +112,27 @@
     text-decoration-color: var(--green-mid);
   }
 
+  /* ---- SKIP LINK (keyboard a11y) ---- */
+  /* Visually hidden until keyboard focus; first tab stop on every page.
+     Lives inside nav.site-nav so the search indexer (which excludes the
+     nav) never indexes its text. Targets #main-content, emitted by
+     siteNav() right after the nav closes. */
+  .skip-link {
+    position: absolute;
+    left: -200vw;
+    top: 0;
+    z-index: 100;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+    background: var(--green-mid);
+    padding: 0.8rem 1.25rem;
+  }
+  .skip-link:focus { left: 0; outline: 2px solid #fff; outline-offset: -4px; }
+
   /* ---- SITE NAV ---- */
   .site-nav {
     background: #1a2e1a;
@@ -104,7 +154,9 @@
     text-transform: uppercase;
     text-decoration: none;
     color: rgba(255,255,255,0.7);
-    padding: 0.75rem 1rem;
+    /* 0.75rem horizontal padding (not 1rem): seven tabs incl. COMITÉS plus
+       search + lang toggle must fit the 960px container on one row */
+    padding: 0.75rem;
     border-bottom: 2px solid transparent;
     transition: color 0.2s, border-color 0.2s;
   }
@@ -131,7 +183,9 @@
   }
   .site-nav-search input::placeholder { color: rgba(255,255,255,0.55); }
   .site-nav-search input:focus {
-    outline: none;
+    /* visible focus ring — a background tint alone fails WCAG 2.4.7 */
+    outline: 2px solid #fff;
+    outline-offset: 1px;
     background: rgba(255,255,255,0.14);
     border-color: rgba(255,255,255,0.7);
     width: 11rem;
@@ -175,30 +229,48 @@
     font-size: 0.65rem;
     color: var(--green-mid);
     text-decoration: none;
-    margin: 0 0.75rem;
+    /* inline-block + padding lifts the tap target to ~33px tall (the bare
+       0.65rem text was 13px); padding + margin ≈ the old 0.75rem spacing */
+    display: inline-block;
+    padding: 0.45rem 0.5rem;
+    margin: 0 0.25rem;
   }
   .footer-nav a:hover { text-decoration: underline; }
 
   /* ---- RESPONSIVE (nav + footer) ---- */
-  @media (max-width: 640px) {
-    .site-nav-inner { padding: 0 0.9rem; gap: 0.4rem; }
-    /* Tabs become a horizontal scroll strip so every link stays reachable
-       without overflowing the viewport; search stays pinned on the right.
-       The right-edge mask fades the last tab to hint there's more to scroll. */
-    .site-nav-tabs {
-      flex: 1 1 auto;
-      min-width: 0;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
-      -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 1.4rem), transparent);
-      mask-image: linear-gradient(to right, #000 calc(100% - 1.4rem), transparent);
+  /* The single-row nav needs ~920px (seven ES tabs + search + lang toggle),
+     so below 960px it wraps instead: tabs flow across as many justified rows
+     as needed, then search + lang toggle get a full-width row. Every nav item
+     stays visible — the old horizontal scroll strip hid tabs with no usable
+     affordance, and 641–780px viewports clipped the search box offscreen. */
+  @media (max-width: 960px) {
+    .site-nav-inner {
+      flex-wrap: wrap;
+      padding: 0 0.9rem 0.65rem;
     }
-    .site-nav-tabs::-webkit-scrollbar { display: none; }
-    .site-nav-tab { flex: 0 0 auto; padding: 0.6rem 0.65rem; font-size: 0.7rem; }
-    .site-nav-right { flex: 0 0 auto; }
-    .site-nav-search input { width: 5rem; }
-    .site-nav-search input:focus { width: 6.5rem; }
+    .site-nav-tabs {
+      flex: 1 1 100%;
+      flex-wrap: wrap;
+    }
+    .site-nav-tab {
+      /* flex-grow justifies each wrapped row edge-to-edge; 0.9rem vertical
+         padding keeps tap targets ≥44px tall (0.75rem measured only 41.8px) */
+      flex: 1 0 auto;
+      text-align: center;
+      font-size: 0.7rem;
+      padding: 0.9rem 0.55rem;
+    }
+    .site-nav-right { flex: 1 1 100%; }
+    .site-nav-search { flex: 1 1 auto; }
+    .site-nav-search input,
+    .site-nav-search input:focus { width: 100%; }
+    /* 0.95rem vertical padding -> ≥44px tall tap target (0.75rem gave 39.5px) */
+    .site-nav-search input { padding: 0.95rem 0.75rem; }
+    .site-nav-lang {
+      align-self: stretch;
+      display: flex;
+      align-items: center;
+    }
   }
 
   .section a {
@@ -388,7 +460,8 @@
     font-family: 'Fraunces', serif;
     font-size: 0.8rem;
     font-weight: 600;
-    color: var(--green-light);
+    /* --green-light is only 3.77:1 on --cream; --green-mid hits 7.48:1 (WCAG AA) */
+    color: var(--green-mid);
     display: inline-block;
     margin-bottom: 0.3rem;
     letter-spacing: 0.02em;
@@ -1002,6 +1075,7 @@
 <body>
 
 <nav class="site-nav">
+  <a class="skip-link" href="#main-content">Saltar al contenido</a>
   <div class="site-nav-inner">
     <div class="site-nav-tabs">
       <a href="/" class="site-nav-tab">Inicio</a>
@@ -1009,6 +1083,7 @@
       <a href="/escuelas/" class="site-nav-tab">Escuelas</a>
       <a href="/distrito/" class="site-nav-tab active">Distrito</a>
       <a href="/presupuesto/" class="site-nav-tab">Presupuesto</a>
+      <a href="/comites/" class="site-nav-tab">Comités</a>
       <a href="/blog/es/" class="site-nav-tab">Blog</a>
     </div>
     <div class="site-nav-right">
@@ -1017,6 +1092,7 @@
     </div>
   </div>
 </nav>
+<span id="main-content" tabindex="-1"></span>
 
 <header class="site-header">
   <div class="header-inner">
@@ -1730,16 +1806,24 @@
   <div class="doc-panel active" data-doc-panel="budget">
     <h3 class="doc-year-heading">2025-26</h3>
     <div class="doc-list">
+      <a class="doc-link" href="https://data.rcsd.info/board-packets/2026-03-25/25-26-Adopted-Budget_Form-MYP.pdf" target="_blank" rel="noopener">Adopted Budget — MYP</a>
       <a class="doc-link" href="https://data.rcsd.info/board-packets/2025-12-17/25-26-First-Interim-MYP.pdf" target="_blank" rel="noopener">First Interim Report — MYP</a>
       <a class="doc-link" href="https://data.rcsd.info/board-packets/2025-12-17/25-26-First-Interim-Budget-Report.pdf" target="_blank" rel="noopener">First Interim Report</a>
       <a class="doc-link" href="https://data.rcsd.info/board-packets/2025-12-17/25-26-First-Interim-Presentation.pdf" target="_blank" rel="noopener">First Interim Report — Presentation (2025-12-17)</a>
       <a class="doc-link" href="https://data.rcsd.info/board-packets/2025-12-17/Revised-25-26-First-Interim-Presentation.pdf" target="_blank" rel="noopener">First Interim Report — Presentation (2025-12-17)</a>
+      <a class="doc-link" href="https://data.rcsd.info/board-packets/2026-03-25/25-26-Second-Interim-Book.pdf" target="_blank" rel="noopener">Second Interim Report</a>
+      <a class="doc-link" href="https://data.rcsd.info/board-packets/2026-03-25/25-26-Second-Interim-MYP.pdf" target="_blank" rel="noopener">Second Interim Report — MYP</a>
+      <a class="doc-link" href="https://data.rcsd.info/board-packets/2026-03-25/2025-26-Second-Interim-Presentation.pdf" target="_blank" rel="noopener">Second Interim Report — Presentation</a>
       <a class="doc-link" href="https://data.rcsd.info/board-packets/2025-06-18/8.2-25-26-Budget-MYP.pdf" target="_blank" rel="noopener">Multi-Year Projection</a>
       <a class="doc-link" href="https://data.rcsd.info/board-packets/2025-06-18/8.2-2025-26-Budget-Presentation.pdf" target="_blank" rel="noopener">Budget Presentation (2025-06-18)</a>
       <a class="doc-link" href="https://data.rcsd.info/board-packets/2025-06-18/8.2-2025-26-Budget-Presentation-Updated-2025.06.18.pdf" target="_blank" rel="noopener">Budget Presentation (2025-06-18)</a>
       <a class="doc-link" href="https://data.rcsd.info/board-packets/2025-06-25/2025-26-Budget-Presentation-6.25.25.pdf" target="_blank" rel="noopener">Budget Presentation (2025-06-25)</a>
       <a class="doc-link" href="https://data.rcsd.info/board-packets/2026-02-11/2026_LCAP_Mid-Year_Budget-Report_for_the_2025-26_LCAP_Redwood_City_Elementary_Sc.pdf" target="_blank" rel="noopener">Budget Presentation (2026-02-11)</a>
       <a class="doc-link" href="https://data.rcsd.info/board-packets/2025-10-08/Gann-Limit-Resolution-12-2025-26.pdf" target="_blank" rel="noopener">Gann Limit Resolution</a>
+      <a class="doc-link" href="https://data.rcsd.info/board-packets/2026-03-25/BP-7211-Developer-Fees-Marked.pdf" target="_blank" rel="noopener">Developer Fee Study (2026-03-25)</a>
+      <a class="doc-link" href="https://data.rcsd.info/board-packets/2026-03-25/BP-7211-Developer-Fees-Clean.pdf" target="_blank" rel="noopener">Developer Fee Study (2026-03-25)</a>
+      <a class="doc-link" href="https://data.rcsd.info/board-packets/2026-03-25/AR-7211-Developer-Fees-Marked-Reference-Only.pdf" target="_blank" rel="noopener">Developer Fee Study (2026-03-25)</a>
+      <a class="doc-link" href="https://data.rcsd.info/board-packets/2026-03-25/AR-7211-Developer-Fees-Clean-Reference-Only.pdf" target="_blank" rel="noopener">Developer Fee Study (2026-03-25)</a>
       <a class="doc-link" href="https://data.rcsd.info/board-packets/2026-01-13/Spreadsheet-Scenario-Development_-Preliminary-Budget-Reduction-Options-FSP-P1-1.pdf" target="_blank" rel="noopener">Budget Reduction Plan (2026-01-13)</a>
       <a class="doc-link" href="https://data.rcsd.info/board-packets/2026-02-04/Superintendent-Budget-Reduction-Recommendations-020426pdf.pdf" target="_blank" rel="noopener">Budget Reduction Plan (2026-02-04)</a>
     </div>
@@ -1752,8 +1836,9 @@
       <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DEYVHT80DF44/$file/2024-25%20Second%20Interim.pdf" target="_blank" rel="noopener">Second Interim Report</a>
       <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DEYQ8D680898/$file/2024-25%20Second%20Interim%20Presentation.pdf" target="_blank" rel="noopener">Second Interim Report — Presentation</a>
       <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DEYQHV6957BD/$file/24-25%202nd%20Interim%20MYP.pdf" target="_blank" rel="noopener">Second Interim Report — MYP</a>
-      <a class="doc-link" href="https://data.rcsd.info/board-packets/2025-10-08/24_25-Unaudited-Actuals-Book.pdf" target="_blank" rel="noopener">Unaudited Actuals</a>
+      <a class="doc-link" href="https://data.rcsd.info/board-packets/2025-10-08/24_25-Unaudited-Actuals-Book.pdf" target="_blank" rel="noopener">Unaudited Actuals (2025-10-08)</a>
       <a class="doc-link" href="https://data.rcsd.info/board-packets/2025-10-08/Unaudited-Actuals-24-25-Presentation.pdf" target="_blank" rel="noopener">Unaudited Actuals — Presentation</a>
+      <a class="doc-link" href="https://data.rcsd.info/board-packets/2026-03-25/24-25-Unaudited-Actuals_-Form-CEA.pdf" target="_blank" rel="noopener">Unaudited Actuals (2026-03-25)</a>
       <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/D68SKC730840/$file/24-25%20Proposed%20Budget%20-%20MYP.pdf" target="_blank" rel="noopener">Multi-Year Projection</a>
       <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/D6EQF868C3EE/$file/2024%20RCSD%20LCAP%20LCFF%20Budget%20Overview%20for%20Parents%202024.06.20%20combined.pdf" target="_blank" rel="noopener">Budget Presentation (2024-06-20)</a>
       <a class="doc-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/D6FMQQ5C621D/$file/2024-25%20Budget%20Presentation-.pdf" target="_blank" rel="noopener">Budget Presentation (2024-06-20)</a>
@@ -1841,6 +1926,8 @@
   <div class="doc-panel" data-doc-panel="lcap">
     <h3 class="doc-year-heading">2025-26</h3>
     <div class="doc-list">
+      <a class="doc-link" href="https://data.rcsd.info/board-packets/2026-04-22/0460-BP-Local-Control-and-Accountability-Plan-Marked.pdf" target="_blank" rel="noopener">LCAP (2026-04-22)</a>
+      <a class="doc-link" href="https://data.rcsd.info/board-packets/2026-04-22/0460-BP-Local-Control-and-Accountability-Plan-Clean.pdf" target="_blank" rel="noopener">LCAP (2026-04-22)</a>
       <a class="doc-link" href="https://data.rcsd.info/board-packets/2026-02-11/Mid-year-LCAP-2025-2026-1.pdf" target="_blank" rel="noopener">LCAP Mid-Year Report</a>
       <a class="doc-link" href="https://data.rcsd.info/board-packets/2025-08-27/2025-2026-Local-Control-Accountability-Plan-LCAP-readoption.pdf" target="_blank" rel="noopener">LCAP (2025-08-27)</a>
       <a class="doc-link" href="https://data.rcsd.info/board-packets/2025-06-25/LCAP-Final_Local_Control_and_Accountability_Plan_Redwood_City_Elementary_School_.pdf" target="_blank" rel="noopener">LCAP (2025-06-25)</a>
@@ -1899,17 +1986,18 @@
   <div class="doc-panel" data-doc-panel="spsa">
     <h3 class="doc-year-heading">2025-26</h3>
     <div class="doc-school-grid">
-      <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DGF5DU0FC9EF/$file/Clifford%20SPSA%202025-26_(Spring)__20250506.pdf" target="_blank" rel="noopener">Clifford</a>
-      <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DFSL3A54881C/$file/25-26%20Garfield%20_SPSA_(Spring)%2020250416%20(Updated%204.16.25).pdf" target="_blank" rel="noopener">Garfield</a>
-      <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DFSL3C548A5D/$file/25-26%20Henry%20Ford%20_SPSA_(Spring)%2020250416%20(Updated%204.16.25).pdf" target="_blank" rel="noopener">Henry Ford</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/board-packets/2026-04-22/Adelante-Selby-2025-26-SPSA-Spring-20260408.pdf" target="_blank" rel="noopener">Adelante Selby</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/board-packets/2026-04-01/Clifford-2025-26_SPSA-Spring-_Clifford_Elementary_School_20260320.pdf" target="_blank" rel="noopener">Clifford</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/board-packets/2026-03-25/Garfield-SPSA-2025-26_Elementary_School_20260318.pdf" target="_blank" rel="noopener">Garfield</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/board-packets/2026-06-10/Henry-Ford-SPSA-2025-26_Spring_20260610.pdf" target="_blank" rel="noopener">Henry Ford</a>
       <a class="doc-school-link" href="https://data.rcsd.info/board-packets/2026-03-11/Hoover_-SPSA-2026.pdf" target="_blank" rel="noopener">Hoover</a>
-      <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DGUT9D760E17/$file/Kennedy%20SPSA%202025-26_(Spring)__20250519.pdf" target="_blank" rel="noopener">Kennedy</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/board-packets/2026-04-22/Kennedy-SPSA-2025-26_-Spring-_John_F._Kennedy_Middle_School_20260415-1.pdf" target="_blank" rel="noopener">Kennedy</a>
       <a class="doc-school-link" href="https://data.rcsd.info/board-packets/2026-03-11/MIT-SPSA-2025-26__McKinley_Institute_of_Technology_20260304-combined.pdf" target="_blank" rel="noopener">McKinley MIT</a>
-      <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DGUT85761179/$file/North%20Star%20Academy%202025-26_SPSA(Spring)__20250514.pdf" target="_blank" rel="noopener">North Star</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/board-packets/2026-05-13/North-Star-2025-26_SPSA.pdf" target="_blank" rel="noopener">North Star</a>
       <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DFE49Q0A7FE1/$file/Orion%202025-26_SPSA_(Spring)__20250403.pdf" target="_blank" rel="noopener">Orion</a>
       <a class="doc-school-link" href="https://data.rcsd.info/board-packets/2026-03-11/Roosevelt-2025-26_SPSA-Spring-_20260303.pdf" target="_blank" rel="noopener">Roosevelt</a>
-      <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DGUT9F761296/$file/Roy%20Cloud%20SPSA%202025-26_20250514.pdf" target="_blank" rel="noopener">Roy Cloud</a>
-      <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/DFE49S0A81A0/$file/Taft%202025-26_SPSA%20(Sprin)_20250403.pdf" target="_blank" rel="noopener">Taft</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/board-packets/2026-04-01/Roy-Cloud-2025-26_SPSA_-Spring-_Roy_Cloud_Elementary_School_20260323.pdf" target="_blank" rel="noopener">Roy Cloud</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/board-packets/2026-03-25/Taft-SPSA-2025-26_-Spring-Elementary_School_20260315.pdf" target="_blank" rel="noopener">Taft</a>
     </div>
     <h3 class="doc-year-heading">2024-25</h3>
     <div class="doc-school-grid">
@@ -1985,6 +2073,22 @@
       <a class="doc-school-link" href="https://data.rcsd.info/board-packets/2026-03-11/RoyCloud-2025SARC.pdf" target="_blank" rel="noopener">Roy Cloud</a>
       <a class="doc-school-link" href="https://data.rcsd.info/board-packets/2026-03-11/Taft-2025SARC.pdf" target="_blank" rel="noopener">Taft</a>
     </div>
+    <h3 class="doc-year-heading">2024-25</h3>
+    <div class="doc-lang-label">Inglés</div>
+    <div class="doc-school-grid">
+      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2024-25/english/adelante-selby.pdf" target="_blank" rel="noopener">Adelante Selby</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2024-25/english/clifford.pdf" target="_blank" rel="noopener">Clifford</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2024-25/english/garfield.pdf" target="_blank" rel="noopener">Garfield</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2024-25/english/henry-ford.pdf" target="_blank" rel="noopener">Henry Ford</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2024-25/english/hoover.pdf" target="_blank" rel="noopener">Hoover</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2024-25/english/kennedy.pdf" target="_blank" rel="noopener">Kennedy</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2024-25/english/mckinley-mit.pdf" target="_blank" rel="noopener">McKinley MIT</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2024-25/english/north-star.pdf" target="_blank" rel="noopener">North Star</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2024-25/english/orion.pdf" target="_blank" rel="noopener">Orion</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2024-25/english/roosevelt.pdf" target="_blank" rel="noopener">Roosevelt</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2024-25/english/roy-cloud.pdf" target="_blank" rel="noopener">Roy Cloud</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2024-25/english/taft.pdf" target="_blank" rel="noopener">Taft</a>
+    </div>
     <h3 class="doc-year-heading">2023-24</h3>
     <div class="doc-school-grid">
       <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CZY2NC02D2CA/$file/ENGLISH-AdelanteSelby-2023SARC.pdf" target="_blank" rel="noopener">Adelante Selby</a>
@@ -1997,6 +2101,36 @@
       <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CZY2MS02D21F/$file/ENGLISH-Roosevelt-2023SARC.pdf" target="_blank" rel="noopener">Roosevelt</a>
       <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CZY2MQ02D20E/$file/ENGLISH-RoyCloud-2023SARC.pdf" target="_blank" rel="noopener">Roy Cloud</a>
       <a class="doc-school-link" href="https://go.boarddocs.com/ca/redwood/Board.nsf/files/CZY2MN02D1FB/$file/ENGLISH-Taft-2023SARC.pdf" target="_blank" rel="noopener">Taft</a>
+    </div>
+    <div class="doc-lang-label">Inglés</div>
+    <div class="doc-school-grid">
+      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/english/adelante-selby.pdf" target="_blank" rel="noopener">Adelante Selby</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/english/clifford.pdf" target="_blank" rel="noopener">Clifford</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/english/garfield.pdf" target="_blank" rel="noopener">Garfield</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/english/henry-ford.pdf" target="_blank" rel="noopener">Henry Ford</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/english/hoover.pdf" target="_blank" rel="noopener">Hoover</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/english/kennedy.pdf" target="_blank" rel="noopener">Kennedy</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/english/mckinley-mit.pdf" target="_blank" rel="noopener">McKinley MIT</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/english/north-star.pdf" target="_blank" rel="noopener">North Star</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/english/orion.pdf" target="_blank" rel="noopener">Orion</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/english/roosevelt.pdf" target="_blank" rel="noopener">Roosevelt</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/english/roy-cloud.pdf" target="_blank" rel="noopener">Roy Cloud</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/english/taft.pdf" target="_blank" rel="noopener">Taft</a>
+    </div>
+    <div class="doc-lang-label">Español</div>
+    <div class="doc-school-grid">
+      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/spanish/adelante-selby.pdf" target="_blank" rel="noopener">Adelante Selby</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/spanish/clifford.pdf" target="_blank" rel="noopener">Clifford</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/spanish/garfield.pdf" target="_blank" rel="noopener">Garfield</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/spanish/henry-ford.pdf" target="_blank" rel="noopener">Henry Ford</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/spanish/hoover.pdf" target="_blank" rel="noopener">Hoover</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/spanish/kennedy.pdf" target="_blank" rel="noopener">Kennedy</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/spanish/mckinley-mit.pdf" target="_blank" rel="noopener">McKinley MIT</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/spanish/north-star.pdf" target="_blank" rel="noopener">North Star</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/spanish/orion.pdf" target="_blank" rel="noopener">Orion</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/spanish/roosevelt.pdf" target="_blank" rel="noopener">Roosevelt</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/spanish/roy-cloud.pdf" target="_blank" rel="noopener">Roy Cloud</a>
+      <a class="doc-school-link" href="https://data.rcsd.info/documents/sarc/2023-24/spanish/taft.pdf" target="_blank" rel="noopener">Taft</a>
     </div>
   </div>
 </section>
@@ -2031,6 +2165,8 @@
     <a href="/escuelas/">Escuelas</a>
     <a href="/distrito/">Distrito</a>
     <a href="/presupuesto/">Presupuesto</a>
+    <a href="/comites/">Comités</a>
+    <a href="/mcp/">API y datos para desarrolladores</a>
     <a href="https://github.com/dweekly/rcsd-meetings">Código Fuente &#8599;</a>
     <a href="mailto:team@rcsd.info">team@rcsd.info</a>
   </div>
