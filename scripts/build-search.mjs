@@ -206,6 +206,24 @@ function renderPage(cfg) {
     }
   }
 
+  // Eager hydration. The Component UI renders one skeleton row per result and
+  // hydrates each lazily via IntersectionObserver as it scrolls into view —
+  // so below-the-fold rows sit as blank skeletons ("14 results" but only 9
+  // visible with text). Force-load every rendered result as soon as the list
+  // changes: the wrappers live on the <pagefind-results> element's .results
+  // and their load() is idempotent (guarded by result/loading internally).
+  // Feature-detected and fail-open, same contract as the relaxation wrapper.
+  var resultsEl = document.querySelector('pagefind-results');
+  if (resultsEl && window.MutationObserver) {
+    var hydrateAll = function () {
+      (resultsEl.results || []).forEach(function (r) {
+        if (r && typeof r.load === 'function') { try { r.load(); } catch (e) {} }
+      });
+    };
+    new MutationObserver(hydrateAll).observe(resultsEl, { childList: true, subtree: true });
+    hydrateAll();
+  }
+
   // Prefill from ?q= (nav search box submits here).
   var q = new URLSearchParams(location.search).get('q');
   if (q) {
