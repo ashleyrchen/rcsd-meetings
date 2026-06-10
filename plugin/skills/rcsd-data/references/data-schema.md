@@ -627,26 +627,26 @@ CDE Long-Term English Learner (LTEL) and English Learner Academic Status (ELAS) 
     "pipeline": "scripts/pull-cde-data.mjs --dataset ltel"
   },
   "district": {
-    "totalEnrollment": 15046,
-    "el": 5710,
-    "rfep": 1734,
-    "atRisk": 900,
-    "ltel": 652,
-    "el4plus": 814,
-    "el03y": 3344,
-    "el45y": 1188,
-    "el6plusY": 1178
+    "totalEnrollment": 7523,
+    "el": 2855,
+    "rfep": 867,
+    "atRisk": 450,
+    "ltel": 326,
+    "el4plus": 407,
+    "el03y": 1672,
+    "el45y": 594,
+    "el6plusY": 589
   },
   "clifford": {
-    "totalEnrollment": 1396,
-    "el": 286,
-    "rfep": 128,
-    "atRisk": 24,
-    "ltel": 38,
-    "el4plus": 44,
-    "el03y": 180,
-    "el45y": 40,
-    "el6plusY": 66
+    "totalEnrollment": 698,
+    "el": 143,
+    "rfep": 64,
+    "atRisk": 12,
+    "ltel": 19,
+    "el4plus": 22,
+    "el03y": 90,
+    "el45y": 20,
+    "el6plusY": 33
   }
 }
 ```
@@ -670,8 +670,9 @@ CDE Long-Term English Learner (LTEL) and English Learner Academic Status (ELAS) 
 
 ### Key Field Notes
 
-- `ltel` = 0 at elementary-only schools (students haven't been enrolled long enough to qualify as LTEL)
+- `ltel` counts only students in grades 6-12 (CDE's LTEL definition), so TK-5-only schools show 0 — their long-enrolled ELs appear in `el6plusY` instead
 - `totalEnrollment` here is from the LTEL dataset and may differ slightly from Census Day enrollment
+- Values before 2026-06-10 were exactly 2x reality: the raw file has Gender = F, M, and ALL rows (ALL = F + M) and the old pipeline summed all three; `pull-cde-data.mjs` now sums only Gender=ALL rows
 - RFEP students are no longer classified as EL but are tracked for monitoring
 - `atRisk` students are a subset of EL students who may become LTEL without intervention
 
