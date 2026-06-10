@@ -9,8 +9,12 @@
  *   query-school          — Detailed info for a specific school
  *   check-calendar        — Is there school on a given date?
  *   get-lunch-menu        — Live lunch menu from HealthePro API
- *   get-meeting-summary   — Board meeting summaries
+ *   get-trustees          — Board of Trustees, superintendent, and cabinet
+ *   list-meetings         — Enumerate board meetings with paging
+ *   get-meeting-summary   — Board meeting summaries (EN/ES)
  *   get-meeting-details   — Comprehensive details for a single board meeting
+ *   search-transcript     — Search one meeting's transcript for a word or phrase
+ *   find-document         — Keyword search over board documents by title
  *   get-school-board-items — Board items for a specific school
  *   get-sped-data         — Special education stats
  *   list-policies         — List board policies, bylaws, and regulations
@@ -23,21 +27,67 @@ import { z } from "zod";
 
 const DATA_BASE = "https://data.rcsd.info/json";
 
+// ---- AI-content disclosure (project rule: AI-generated content must be labeled) ----
+
+const AI_NOTE_EN =
+  "Note: this summary is AI-generated from the meeting recording and documents and may contain errors; it is not an official record.";
+const AI_NOTE_ES =
+  "Nota: este resumen fue generado con IA a partir de la grabación y los documentos de la reunión; puede contener errores y no es un registro oficial.";
+const ASR_NOTE_EN =
+  "Note: transcripts are machine-generated (ASR) with AI speaker attribution and may contain errors; they are not an official record.";
+const ASR_NOTE_ES =
+  "Nota: la transcripción fue generada por computadora (ASR) y traducida automáticamente del inglés; puede contener errores y no es un registro oficial.";
+
 // ---- Data fetching with caching ----
 
 const cache = new Map<string, { data: any; expires: number }>();
 const CACHE_TTL = 5 * 60 * 1000; // 5 minutes
 
+// Accepts a path under DATA_BASE (the common case) or a full https:// URL
+// (transcripts live at data.rcsd.info/transcripts/, outside /json/).
 async function fetchJSON(path: string): Promise<any> {
   const now = Date.now();
   const cached = cache.get(path);
   if (cached && cached.expires > now) return cached.data;
 
-  const res = await fetch(`${DATA_BASE}/${path}`);
+  const url = path.startsWith("https://") ? path : `${DATA_BASE}/${path}`;
+  const res = await fetch(url);
   if (!res.ok) throw new Error(`Failed to fetch ${path}: ${res.status}`);
   const data = await res.json();
   cache.set(path, { data, expires: now + CACHE_TTL });
   return data;
+}
+
+// ---- Helper: provenance footer (every tool output ends with a source line) ----
+
+function sourceLine(file: string, asOf?: string | null): string {
+  const url = file.startsWith("https://") ? file : `${DATA_BASE}/${file}`;
+  return `Source: ${url}${asOf ? ` (as of ${asOf})` : ""}`;
+}
+
+// ---- Helper: school year for a date ----
+
+// RCSD school years run roughly mid-August to early June; July 1 is the
+// fiscal-year rollover, so July onward belongs to the next school year.
+function schoolYearFor(date: string): string {
+  const [y, m] = date.split("-").map(Number);
+  const startYear = m >= 7 ? y : y - 1;
+  return `${startYear}-${String((startYear + 1) % 100).padStart(2, "0")}`;
+}
+
+// Fetch the district calendar covering a date; null if not published yet.
+// Calendar files are named district-calendar-<schoolYear>.json, so deriving
+// the school year keeps this working every year without code changes.
+async function fetchCalendarFor(
+  date: string
+): Promise<{ cal: any; schoolYear: string } | null> {
+  const schoolYear = schoolYearFor(date);
+  try {
+    const cal = await fetchJSON(`district-calendar-${schoolYear}.json`);
+    return { cal, schoolYear };
+  } catch {
+    return null;
+  }
 }
 
 // ---- Helper: find a school by slug or name ----
@@ -159,6 +209,7 @@ function createServer(): McpServer {
         (s: any) =>
           `${s.slug.padEnd(16)} ${s.nameShort.padEnd(20)} ${s.grades.padEnd(6)} ${s.type.padEnd(14)} ${s.enrollment} students`
       );
+      lines.push("", sourceLine("schools.json", data.lastUpdated));
       return {
         content: [{ type: "text", text: lines.join("\n") }],
       };
@@ -199,7 +250,11 @@ function createServer(): McpServer {
             text += `\n      ${m.name} — ${roleLabel[m.role] || m.role}`;
           }
         }
-      } catch { /* SSC data not yet available — skip silently */ }
+      } catch {
+        // Distinguish a fetch outage from "this school has no SSC entry"
+        // (which is the silent skip above when the slug key is absent).
+        text += "\n  School Site Council: data temporarily unavailable (fetch failed).";
+      }
       // Append CDE data if available
       try {
         const [absenteeism, ltel, staffEthnicity, staffExperience, staffRatios] = await Promise.all([
@@ -276,9 +331,20 @@ function createServer(): McpServer {
         }
 
         // Only append if we have more than just the header
-        if (cdeLines.length > 1) text += cdeLines.join("\n");
-      } catch { /* CDE data not yet available — skip silently */ }
-      return { content: [{ type: "text", text }] };
+        if (cdeLines.length > 1) {
+          text += cdeLines.join("\n");
+        } else {
+          text += "\n  CDE Data (2024-25): no school-level rows published for this school.";
+        }
+      } catch (err: any) {
+        // A fetch failure is not the same as "no data exists" — say which it is.
+        text += `\n  CDE Data (2024-25): temporarily unavailable (fetch failed: ${err.message}); this is a retrieval error, not missing data.`;
+      }
+      text += "\n\n" + sourceLine("schools.json", data.lastUpdated);
+      return {
+        content: [{ type: "text", text }],
+        structuredContent: { school: found },
+      };
     }
   );
 
@@ -292,42 +358,50 @@ function createServer(): McpServer {
         return { isError: true, content: [{ type: "text", text: "Date must be YYYY-MM-DD format" }] };
       }
 
-      const calendars = await Promise.all([
-        fetchJSON("district-calendar-2025-26.json"),
-        fetchJSON("district-calendar-2026-27.json"),
-      ]);
+      const found = await fetchCalendarFor(date);
+      if (!found) {
+        return {
+          content: [
+            {
+              type: "text",
+              text: `No district calendar published yet for the ${schoolYearFor(date)} school year. Calendars are added to https://rcsd.info as the district releases them.`,
+            },
+          ],
+        };
+      }
+      const { cal, schoolYear } = found;
+      const src = "\n" + sourceLine(`district-calendar-${schoolYear}.json`);
 
       // Check for matching event
-      for (const cal of calendars) {
-        for (const evt of cal.events) {
-          const start = evt.date;
-          const end = evt.dateEnd || evt.date;
-          if (date >= start && date <= end) {
-            const range = evt.dateEnd ? ` (${start} to ${end})` : "";
-            const year = cal.schoolYear ? ` [${cal.schoolYear}]` : "";
-            return {
-              content: [{ type: "text", text: `${date}: ${evt.en} (${evt.type})${range}${year}` }],
-            };
-          }
-        }
-      }
-
-      // Check if within school year
-      for (const cal of calendars) {
-        const first = cal.events.find((e: any) => e.en.includes("First Day"));
-        const last = cal.events.find((e: any) => e.en.includes("Last Day"));
-        if (first && last && date >= first.date && date <= last.date) {
-          const dayOfWeek = new Date(date + "T12:00:00").getDay();
-          if (dayOfWeek === 0 || dayOfWeek === 6) {
-            return { content: [{ type: "text", text: `${date}: Weekend — no school` }] };
-          }
+      for (const evt of cal.events) {
+        const start = evt.date;
+        const end = evt.dateEnd || evt.date;
+        if (date >= start && date <= end) {
+          const range = evt.dateEnd ? ` (${start} to ${end})` : "";
           return {
-            content: [{ type: "text", text: `${date}: Regular school day (${cal.schoolYear})` }],
+            content: [{ type: "text", text: `${date}: ${evt.en} (${evt.type})${range} [${schoolYear}]${src}` }],
           };
         }
       }
 
-      return { content: [{ type: "text", text: `${date}: Not within a school year calendar range` }] };
+      // Check if within school year
+      const first = cal.events.find((e: any) => e.en.includes("First Day"));
+      const last = cal.events.find((e: any) => e.en.includes("Last Day"));
+      if (first && last && date >= first.date && date <= last.date) {
+        const dayOfWeek = new Date(date + "T12:00:00").getDay();
+        if (dayOfWeek === 0 || dayOfWeek === 6) {
+          return { content: [{ type: "text", text: `${date}: Weekend — no school${src}` }] };
+        }
+        return {
+          content: [{ type: "text", text: `${date}: Regular school day (${schoolYear})${src}` }],
+        };
+      }
+
+      return {
+        content: [
+          { type: "text", text: `${date}: Not within the ${schoolYear} school-year calendar range (summer break or before the first day of school)${src}` },
+        ],
+      };
     }
   );
 
@@ -349,53 +423,42 @@ function createServer(): McpServer {
       if (dayOfWeek === 0 || dayOfWeek === 6) {
         return { content: [{ type: "text", text: `${date} is a weekend — no school lunch.` }] };
       }
-      try {
-        const calendars = await Promise.all([
-          fetchJSON("district-calendar-2025-26.json"),
-          fetchJSON("district-calendar-2026-27.json"),
-        ]);
+      const calFound = await fetchCalendarFor(date);
+      if (calFound) {
+        const { cal } = calFound;
         // Check no-school days (holidays, teacher training, planning days, breaks)
-        for (const cal of calendars) {
-          for (const evt of cal.events) {
-            if (evt.type === "no-school") {
-              const start = evt.date;
-              const end = evt.dateEnd || evt.date;
-              if (date >= start && date <= end) {
-                return {
-                  content: [{ type: "text", text: `No school lunch on ${date} — ${evt.en}. School is closed.` }],
-                };
-              }
+        for (const evt of cal.events) {
+          if (evt.type === "no-school") {
+            const start = evt.date;
+            const end = evt.dateEnd || evt.date;
+            if (date >= start && date <= end) {
+              return {
+                content: [{ type: "text", text: `No school lunch on ${date} — ${evt.en}. School is closed.` }],
+              };
             }
-            // Super-minimum / minimum days: students dismissed before lunch
-            if (evt.type === "minimum-day" || evt.type === "super-minimum") {
-              const start = evt.date;
-              const end = evt.dateEnd || evt.date;
-              if (date >= start && date <= end) {
-                return {
-                  content: [{ type: "text", text: `No school lunch on ${date} — ${evt.en}. Students are dismissed before lunch on super-minimum days.` }],
-                };
-              }
+          }
+          // Super-minimum / minimum days: students dismissed before lunch
+          if (evt.type === "minimum-day" || evt.type === "super-minimum") {
+            const start = evt.date;
+            const end = evt.dateEnd || evt.date;
+            if (date >= start && date <= end) {
+              return {
+                content: [{ type: "text", text: `No school lunch on ${date} — ${evt.en}. Students are dismissed before lunch on super-minimum days.` }],
+              };
             }
           }
         }
         // Check if date falls outside school year (summer, pre-session)
-        let withinSchoolYear = false;
-        for (const cal of calendars) {
-          const first = cal.events.find((e: any) => e.en.includes("First Day"));
-          const last = cal.events.find((e: any) => e.en.includes("Last Day"));
-          if (first && last && date >= first.date && date <= last.date) {
-            withinSchoolYear = true;
-            break;
-          }
-        }
+        const first = cal.events.find((e: any) => e.en.includes("First Day"));
+        const last = cal.events.find((e: any) => e.en.includes("Last Day"));
+        const withinSchoolYear = first && last && date >= first.date && date <= last.date;
         if (!withinSchoolYear) {
           return {
             content: [{ type: "text", text: `No school lunch on ${date} — school is not in session.` }],
           };
         }
-      } catch {
-        // Calendar check failed — proceed with menu fetch anyway
       }
+      // No calendar published for that school year yet — proceed with menu fetch
 
       const data = await fetchJSON("schools.json");
       const found = findSchool(data.schools, school);
@@ -460,14 +523,169 @@ function createServer(): McpServer {
           lines.push(`    ${item.name}`);
         }
       }
+      lines.push("", `Source: HealthePro live menu API (menus.healthepro.com), fetched ${new Date().toISOString().slice(0, 10)}`);
       return { content: [{ type: "text", text: lines.join("\n") }] };
+    }
+  );
+
+  // ---- get-trustees ----
+  server.tool(
+    "get-trustees",
+    "Get the RCSD Board of Trustees (name, trustee area, officer role, term years, email, school assignments) plus the superintendent and cabinet",
+    {
+      lang: z
+        .enum(["en", "es"])
+        .optional()
+        .describe("Label language: 'en' (default) or 'es'"),
+    },
+    async ({ lang }) => {
+      const data = await fetchJSON("trustees.json");
+      const es = lang === "es";
+      const lines: string[] = [
+        es ? "=== Mesa Directiva de RCSD (Board of Trustees) ===" : "=== RCSD Board of Trustees ===",
+      ];
+
+      for (const t of data.trustees || []) {
+        const role = es ? t.roleEs : t.roleEn;
+        const assignments = (es ? t.assignmentsEs : t.assignmentsEn) || [];
+        lines.push("");
+        lines.push(`${t.name}${role ? ` — ${role}` : ""}`);
+        lines.push(`  ${es ? "Área" : "Trustee Area"}: ${t.area}`);
+        // termEndYear is authoritative (from the district site); seats turn over
+        // after the November election of the end year.
+        lines.push(`  ${es ? "Período" : "Term"}: ${t.termStartYear}–${t.termEndYear}`);
+        if (t.email) lines.push(`  Email: ${t.email}`);
+        if (assignments.length) {
+          lines.push(`  ${es ? "Escuelas asignadas" : "School assignments"}: ${assignments.join(", ")}`);
+        }
+      }
+
+      const formatExec = (p: any): string[] => {
+        const out = [`${p.name} — ${es ? p.titleEs : p.titleEn}`];
+        const status = es ? p.statusEs : p.statusEn;
+        if (status) out.push(`  ${status}`);
+        if (p.email) out.push(`  Email: ${p.email}`);
+        return out;
+      };
+
+      // Superintendent transition: current serves through 2026-06-30, incoming
+      // starts 2026-07-01 — surface both so answers stay correct across the change.
+      const sup = data.superintendent;
+      if (sup?.current || sup?.incoming) {
+        lines.push("", es ? "=== Superintendente ===" : "=== Superintendent ===");
+        if (sup.current) lines.push(...formatExec(sup.current));
+        if (sup.incoming) {
+          lines.push("");
+          lines.push(...formatExec(sup.incoming));
+        }
+      }
+
+      if (data.cabinet?.length) {
+        lines.push("", es ? "=== Gabinete ===" : "=== Cabinet ===");
+        for (const c of data.cabinet) {
+          lines.push(`${c.name} — ${es ? c.titleEs : c.titleEn}`);
+        }
+      }
+
+      lines.push("", sourceLine("trustees.json", data._metadata?.retrieved));
+      return {
+        content: [{ type: "text", text: lines.join("\n") }],
+        structuredContent: {
+          trustees: data.trustees,
+          superintendent: data.superintendent,
+          cabinet: data.cabinet,
+        },
+      };
+    }
+  );
+
+  // ---- list-meetings ----
+  server.tool(
+    "list-meetings",
+    "List board meetings newest-first (date, type, slug, video/transcript availability, topic line) with optional year/type filters and offset/limit paging",
+    {
+      year: z
+        .number()
+        .int()
+        .min(2020)
+        .max(2100)
+        .optional()
+        .describe("Filter to a calendar year (e.g. 2026); corpus starts in 2020"),
+      type: z
+        .string()
+        .optional()
+        .describe("Filter by meeting type substring (e.g. 'Regular', 'Special', 'Study Session')"),
+      limit: z
+        .number()
+        .min(1)
+        .max(50)
+        .default(20)
+        .optional()
+        .describe("Max meetings to return (default 20)"),
+      offset: z
+        .number()
+        .min(0)
+        .default(0)
+        .optional()
+        .describe("Skip this many meetings (for paging)"),
+    },
+    async ({ year, type, limit, offset }) => {
+      const data = await fetchJSON("meetings-data.json");
+      let meetings = data.meetings; // sorted newest-first
+      if (year) meetings = meetings.filter((m: any) => m.date.startsWith(`${year}-`));
+      if (type) {
+        const t = type.toLowerCase();
+        meetings = meetings.filter((m: any) => (m.type || "").toLowerCase().includes(t));
+      }
+
+      const total = meetings.length;
+      const start = offset || 0;
+      const page = meetings.slice(start, start + (limit || 20));
+      if (page.length === 0) {
+        return {
+          content: [
+            {
+              type: "text",
+              text: `No meetings match (${total} total${year ? ` in ${year}` : ""}${type ? ` of type ~"${type}"` : ""}). Try a different year/type or a smaller offset.`,
+            },
+          ],
+        };
+      }
+
+      const lines = page.map((m: any) => {
+        const flags = [m.youtube ? "video" : null, m.hasTranscript ? "transcript" : null]
+          .filter(Boolean)
+          .join(", ");
+        // topics[0] is a one-line AI-generated summary of the meeting's contents
+        const topic = m.topics?.[0] || "";
+        let line = `${m.date}  ${m.type} (slug: ${m.slug})${flags ? ` [${flags}]` : ""}`;
+        if (topic) line += `\n    ${topic.slice(0, 200)}${topic.length > 200 ? "…" : ""}`;
+        return line;
+      });
+
+      const header = `Board meetings ${start + 1}–${start + page.length} of ${total}${year ? ` in ${year}` : ""}${type ? ` matching type "${type}"` : ""}, newest first (use get-meeting-details for agendas, search-transcript for transcripts):`;
+      const footer = `${AI_NOTE_EN}\n${sourceLine("meetings-data.json", data.generated)}`;
+      return {
+        content: [{ type: "text", text: `${header}\n\n${lines.join("\n")}\n\n${footer}` }],
+        structuredContent: {
+          total,
+          offset: start,
+          meetings: page.map((m: any) => ({
+            date: m.date,
+            type: m.type,
+            slug: m.slug,
+            youtube: m.youtube || null,
+            hasTranscript: !!m.hasTranscript,
+          })),
+        },
+      };
     }
   );
 
   // ---- get-meeting-summary ----
   server.tool(
     "get-meeting-summary",
-    "Get board meeting summaries. Returns the most recent meetings or a specific date.",
+    "Get AI-generated board meeting summaries (English or Spanish). Returns the most recent meetings or a specific date.",
     {
       date: z
         .string()
@@ -480,15 +698,26 @@ function createServer(): McpServer {
         .default(5)
         .optional()
         .describe("Number of recent meetings to return (default 5)"),
+      lang: z
+        .enum(["en", "es"])
+        .optional()
+        .describe("Summary language: 'en' (default) or 'es'"),
     },
-    async ({ date, limit }) => {
-      const summaries = await fetchJSON("meeting-summaries.json");
-      const dates = Object.keys(summaries).sort().reverse();
+    async ({ date, limit, lang }) => {
+      const file = lang === "es" ? "meeting-summaries-es.json" : "meeting-summaries.json";
+      const note = lang === "es" ? AI_NOTE_ES : AI_NOTE_EN;
+      const summaries = await fetchJSON(file);
+      const keys = Object.keys(summaries).sort().reverse();
+      const footer = `\n\n${note}\n${sourceLine(file)}`;
 
       if (date) {
-        const summary = summaries[date];
-        if (!summary) {
-          const nearest = dates.slice(0, 5).join(", ");
+        // Dates with multiple meetings are keyed by slug (e.g.
+        // "2020-04-01-board-meeting-2"), so fall back to prefix matches.
+        const matched: [string, string][] = summaries[date]
+          ? [[date, summaries[date]]]
+          : keys.filter((k) => k.startsWith(date)).map((k) => [k, summaries[k]]);
+        if (matched.length === 0) {
+          const nearest = keys.slice(0, 5).join(", ");
           return {
             content: [
               {
@@ -498,12 +727,13 @@ function createServer(): McpServer {
             ],
           };
         }
-        return { content: [{ type: "text", text: `Board Meeting ${date}:\n${summary}` }] };
+        const body = matched.map(([k, s]) => `Board Meeting ${k}:\n${s}`).join("\n\n");
+        return { content: [{ type: "text", text: `${body}${footer}` }] };
       }
 
       const count = limit || 5;
-      const lines = dates.slice(0, count).map((d) => `${d}: ${summaries[d]}`);
-      return { content: [{ type: "text", text: lines.join("\n\n") }] };
+      const lines = keys.slice(0, count).map((d) => `${d}: ${summaries[d]}`);
+      return { content: [{ type: "text", text: `${lines.join("\n\n")}${footer}` }] };
     }
   );
 
@@ -538,9 +768,9 @@ function createServer(): McpServer {
       );
 
       if (!mtg) {
+        // meetings-data.json is sorted newest-first
         const recent = meetingsData.meetings
-          .slice(-5)
-          .reverse()
+          .slice(0, 5)
           .map((m: any) => `${m.date} (${m.slug})`)
           .join(", ");
         return {
@@ -579,12 +809,13 @@ function createServer(): McpServer {
       if (mtg.youtube) lines.push(`YouTube: https://www.youtube.com/watch?v=${mtg.youtube}`);
       if (mtg.zoom) lines.push(`Zoom: ${mtg.zoom}`);
 
-      // 2. Summary
-      const summary = summaries[mtg.date];
+      // 2. Summary (multi-meeting dates are keyed by slug)
+      const summary = summaries[mtg.date] || summaries[mtg.slug];
       if (summary) {
         lines.push("");
         lines.push("--- Summary ---");
         lines.push(summary);
+        lines.push(AI_NOTE_EN);
       }
 
       // 3. Topics and threads
@@ -690,6 +921,7 @@ function createServer(): McpServer {
         if (res.ok) {
           lines.push(`Transcript available: ${transcriptUrl}`);
           lines.push(`Viewer: ${viewerUrl}`);
+          lines.push(ASR_NOTE_EN);
         } else {
           lines.push("No transcript available for this meeting.");
         }
@@ -697,14 +929,237 @@ function createServer(): McpServer {
         lines.push("Unable to check transcript availability.");
       }
 
+      lines.push("");
+      lines.push(sourceLine("meetings-data.json", meetingsData.generated));
+
       return { content: [{ type: "text", text: lines.join("\n") }] };
+    }
+  );
+
+  // ---- search-transcript ----
+  server.tool(
+    "search-transcript",
+    "Search one board meeting's transcript for a word or phrase; returns matching utterances with timestamps and speakers. (Full-corpus transcript search is not offered — transcripts are one file per meeting.)",
+    {
+      date: z
+        .string()
+        .describe("Meeting date (YYYY-MM-DD); use list-meetings to find dates with the transcript flag"),
+      query: z
+        .string()
+        .min(2)
+        .describe("Word or phrase to find (case-insensitive substring match)"),
+      lang: z
+        .enum(["en", "es"])
+        .optional()
+        .describe("Transcript language: 'en' (default) or 'es' (machine-translated)"),
+      limit: z
+        .number()
+        .min(1)
+        .max(50)
+        .default(20)
+        .optional()
+        .describe("Max matching utterances to return (default 20)"),
+    },
+    async ({ date, query, lang, limit }) => {
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) {
+        return { isError: true, content: [{ type: "text", text: "Date must be YYYY-MM-DD format" }] };
+      }
+      // Transcripts are one ~130 KB JSON per meeting at /transcripts/<date>.json
+      // (Spanish machine translation at <date>-es.json).
+      const url = `https://data.rcsd.info/transcripts/${date}${lang === "es" ? "-es" : ""}.json`;
+      let tr: any;
+      try {
+        tr = await fetchJSON(url);
+      } catch {
+        return {
+          content: [
+            {
+              type: "text",
+              text: `No ${lang === "es" ? "Spanish " : ""}transcript available for ${date}. Use list-meetings to find meetings with the [transcript] flag.`,
+            },
+          ],
+        };
+      }
+
+      const q = query.toLowerCase();
+      // The -es translation files ship an empty speakers map; the speaker
+      // identities live in the English original, so borrow them from there.
+      let speakers = tr.speakers || {};
+      if (lang === "es" && Object.keys(speakers).length === 0) {
+        try {
+          const en = await fetchJSON(`https://data.rcsd.info/transcripts/${date}.json`);
+          speakers = en.speakers || {};
+        } catch {
+          // fall back to letter labels
+        }
+      }
+      const all = (tr.utterances || []).filter((u: any) =>
+        (u.text || "").toLowerCase().includes(q)
+      );
+      const note = lang === "es" ? ASR_NOTE_ES : ASR_NOTE_EN;
+      const footer = `${note}\n${sourceLine(url)}`;
+
+      if (all.length === 0) {
+        return {
+          content: [
+            {
+              type: "text",
+              text: `No matches for "${query}" in the ${date} transcript (${tr.utterances?.length || 0} utterances searched).\n\n${footer}`,
+            },
+          ],
+        };
+      }
+
+      const shown = all.slice(0, limit || 20);
+      const lines: string[] = [
+        `Matches for "${query}" in the ${date} ${tr.type || ""} meeting transcript — showing ${shown.length} of ${all.length}:`,
+      ];
+      if (tr.videoId) {
+        lines.push(
+          `Video: https://www.youtube.com/watch?v=${tr.videoId} (append &t=<seconds>s to jump to a timestamp)`
+        );
+      }
+      for (const u of shown) {
+        const sp = speakers[u.speaker];
+        const who = sp ? `${sp.name}${sp.role ? ` (${sp.role})` : ""}` : `Speaker ${u.speaker}`;
+        // utterance start/end are in milliseconds
+        const secs = Math.floor((u.start || 0) / 1000);
+        const text = (u.text || "").length > 400 ? `${u.text.slice(0, 400)}…` : u.text;
+        lines.push("");
+        lines.push(`[${formatTimestamp(secs)} | t=${secs}s] ${who}:`);
+        lines.push(`  ${text}`);
+      }
+      lines.push("", footer);
+      return { content: [{ type: "text", text: lines.join("\n") }] };
+    }
+  );
+
+  // ---- find-document ----
+  server.tool(
+    "find-document",
+    "Find board documents by title keywords — searches board-packet attachments, the classified document index, and curated off-portal documents; returns title, meeting date, and direct URL",
+    {
+      query: z
+        .string()
+        .min(2)
+        .describe("Keywords matched against document/agenda-item titles (all words must match, case-insensitive; e.g. 'facilities master plan')"),
+      limit: z
+        .number()
+        .min(1)
+        .max(25)
+        .default(10)
+        .optional()
+        .describe("Max documents to return (default 10)"),
+    },
+    async ({ query, limit }) => {
+      // document-index.json (~640 KB, 1000+ docs) and agenda-attachments.json
+      // (~165 KB) are small enough to fetch in-Worker; the 5-minute module cache
+      // means at most one refetch per file per isolate per TTL.
+      const [docIndex, agendaAtt] = await Promise.all([
+        fetchJSON("document-index.json"),
+        fetchJSON("agenda-attachments.json"),
+      ]);
+      // Hand-curated off-portal docs (e.g. the adopted FMP); optional file.
+      let linked: any = null;
+      try {
+        linked = await fetchJSON("linked-documents.json");
+      } catch {
+        // not published — search proceeds without it
+      }
+
+      const terms = query.toLowerCase().split(/\s+/).filter(Boolean);
+      const matchesTerms = (hay: string) => terms.every((t) => hay.includes(t));
+
+      type Hit = {
+        title: string;
+        meetingDate: string | null;
+        itemLabel?: string | null;
+        itemTitle?: string | null;
+        url: string;
+        source: string;
+      };
+      const hits: Hit[] = [];
+      const seenAids = new Set<string>(); // same attachment appears in both indexes
+
+      // 1. Classified document index (preferred: R2-hosted URLs, typed by kind)
+      for (const doc of docIndex.documents || []) {
+        const hay = `${doc.title} ${doc.itemTitle || ""} ${doc.type || ""} ${doc.subtype || ""}`.toLowerCase();
+        if (!matchesTerms(hay)) continue;
+        if (doc.aid) seenAids.add(doc.aid);
+        hits.push({
+          title: doc.title,
+          meetingDate: doc.meetingDate || null,
+          itemLabel: doc.itemLabel,
+          itemTitle: doc.itemTitle,
+          url: doc.url,
+          source: "document-index",
+        });
+      }
+
+      // 2. Raw agenda attachments (Simbli-hosted; covers docs the classifier skipped)
+      for (const [date, mtg] of Object.entries(agendaAtt)) {
+        if (date.startsWith("_")) continue;
+        for (const att of (mtg as any).attachments || []) {
+          if (att.aid && seenAids.has(att.aid)) continue;
+          if (!matchesTerms((att.title || "").toLowerCase())) continue;
+          hits.push({
+            title: att.title,
+            meetingDate: date,
+            url: att.url,
+            source: "agenda-attachments",
+          });
+        }
+      }
+
+      // 3. Curated off-portal documents (linked from agenda memos, hosted elsewhere)
+      for (const doc of linked?.documents || []) {
+        const hay = `${doc.title} ${doc.itemTitle || ""} ${doc.note || ""}`.toLowerCase();
+        if (!matchesTerms(hay)) continue;
+        hits.push({
+          title: doc.title,
+          meetingDate: doc.meetingDate || null,
+          itemTitle: doc.itemTitle,
+          url: doc.url,
+          source: "linked-documents",
+        });
+      }
+
+      const sources = `Sources: ${DATA_BASE}/document-index.json (as of ${docIndex.generated}), ${DATA_BASE}/agenda-attachments.json${linked ? `, ${DATA_BASE}/linked-documents.json` : ""}`;
+
+      if (hits.length === 0) {
+        return {
+          content: [
+            {
+              type: "text",
+              text: `No board documents match "${query}". All words must appear in the document or agenda-item title — try fewer or different keywords.\n\n${sources}`,
+            },
+          ],
+        };
+      }
+
+      hits.sort((a, b) => (b.meetingDate || "").localeCompare(a.meetingDate || ""));
+      const shown = hits.slice(0, limit || 10);
+      const lines: string[] = [
+        `Board documents matching "${query}" — showing ${shown.length} of ${hits.length}, newest first:`,
+      ];
+      for (const h of shown) {
+        lines.push("");
+        lines.push(`${h.meetingDate || "(no date)"} ${h.itemLabel ? `[${h.itemLabel}] ` : ""}${h.title}`);
+        if (h.itemTitle) lines.push(`  Item: ${h.itemTitle}`);
+        lines.push(`  ${h.url}`);
+      }
+      lines.push("", sources);
+      return {
+        content: [{ type: "text", text: lines.join("\n") }],
+        structuredContent: { query, total: hits.length, results: shown },
+      };
     }
   );
 
   // ---- get-school-board-items ----
   server.tool(
     "get-school-board-items",
-    "Get board agenda items related to a specific school",
+    "Get board agenda items related to a specific school (AI-generated summaries, English or Spanish)",
     {
       school: z.string().describe("School name or slug"),
       limit: z
@@ -714,8 +1169,12 @@ function createServer(): McpServer {
         .default(10)
         .optional()
         .describe("Max items to return (default 10)"),
+      lang: z
+        .enum(["en", "es"])
+        .optional()
+        .describe("Summary language: 'en' (default) or 'es'"),
     },
-    async ({ school, limit }) => {
+    async ({ school, limit, lang }) => {
       const data = await fetchJSON("schools.json");
       const found = findSchool(data.schools, school);
       if (!found) {
@@ -740,7 +1199,7 @@ function createServer(): McpServer {
           entries.push({
             date,
             title: titleParts.join("|"),
-            summary: schoolData.en,
+            summary: (lang === "es" ? schoolData.es : schoolData.en) || schoolData.en,
           });
         }
       }
@@ -757,10 +1216,14 @@ function createServer(): McpServer {
         };
       }
 
+      const note = lang === "es" ? AI_NOTE_ES : AI_NOTE_EN;
       const lines = result.map((m) => `${m.date}: ${m.title}\n  ${m.summary}`);
       return {
         content: [
-          { type: "text", text: `Board items for ${found.nameShort}:\n\n${lines.join("\n\n")}` },
+          {
+            type: "text",
+            text: `Board items for ${found.nameShort}:\n\n${lines.join("\n\n")}\n\n${note}\n${sourceLine("school-board-summaries.json")}`,
+          },
         ],
       };
     }
@@ -801,6 +1264,7 @@ function createServer(): McpServer {
         for (const [slug, data] of Object.entries(sped.schools) as [string, any][]) {
           lines.push(`  ${slug}: ${data.total} / ${data.totalEnrollment} students (${data.pct}%)`);
         }
+        lines.push("", `Source: ${sped._source.dataset} ${sped._source.year} (retrieved ${sped._source.retrievedDate}) via ${DATA_BASE}/sped-enrollment.json`);
         return { content: [{ type: "text", text: lines.join("\n") }] };
       }
 
@@ -849,6 +1313,7 @@ function createServer(): McpServer {
         );
       }
 
+      lines.push("", `Source: ${sped._source.dataset} ${sped._source.year} (retrieved ${sped._source.retrievedDate}) via ${DATA_BASE}/sped-enrollment.json`);
       return { content: [{ type: "text", text: lines.join("\n") }] };
     }
   );
@@ -890,8 +1355,14 @@ function createServer(): McpServer {
           `[${p.code}] ${p.title} (${p.type}) - Revised: ${p.lastRevised || 'Unmodified'}`
       );
 
+      const asOf = data._metadata?.scrapedAt?.slice(0, 10);
       return {
-        content: [{ type: "text", text: `Redwood City SD Board Policies (${list.length} matches):\n\n${lines.join("\n")}` }],
+        content: [
+          {
+            type: "text",
+            text: `Redwood City SD Board Policies (${list.length} matches):\n\n${lines.join("\n")}\n\n${sourceLine("policies-index.json", asOf)}`,
+          },
+        ],
       };
     }
   );
@@ -941,6 +1412,7 @@ function createServer(): McpServer {
           }
         }
 
+        lines.push("", sourceLine(filename));
         return { content: [{ type: "text", text: lines.join("\n") }] };
       } catch (err: any) {
         return {
@@ -997,8 +1469,12 @@ Tools available:
   query-school           — Detailed school info by name or slug
   check-calendar         — Is there school on a given date?
   get-lunch-menu         — Live lunch menu from HealthePro
-  get-meeting-summary    — Board meeting summaries
+  get-trustees           — Board of Trustees, superintendent, and cabinet
+  list-meetings          — List board meetings with filters and paging
+  get-meeting-summary    — Board meeting summaries (EN/ES)
   get-meeting-details    — Full details for a board meeting (agenda, timestamps, transcript)
+  search-transcript      — Search one meeting's transcript for a word or phrase
+  find-document          — Find board documents by title keyword
   get-school-board-items — Board items for a specific school
   get-sped-data          — Special education enrollment data
   list-policies          — List board policies, bylaws, and regulations
