@@ -196,12 +196,11 @@ Build a pipeline for rich per-meeting summaries (inputs already in place: AAI tr
   - Link from district page + surface in board meeting summaries when charter items are discussed
 - [ ] Consider same treatment for the KIPP Excelencia Fair Oaks site given the ongoing Prop 2 CSFP funding workstream (Res 11 Sept 2025, Res 23 April 2026)
 
-## Vendors Tab
-- [ ] **Vendor spending dashboard** — a top-level "Vendors" page showing who the district does business with and annual spend
-- [ ] Scrape all warrant registers (ratification of warrants) from board meeting attachments
-- [ ] Parse payee names, amounts, dates, fund sources
-- [ ] Aggregate: which entities have been paid how much over what time period
-- [ ] Surface per-vendor spending trends and per-fund breakdowns
+## Vendors / Warrant Registers
+- [ ] **Warrant-register database (the foundation, build this first)** — index the contents of every warrant register (ratification of warrants) in the board packets into a queryable dataset with one consistent schema. Even a set of CSV tables is enough to start: one row per warrant line (date, warrant #, payee as printed, normalized vendor, amount, fund/object code where printed, source meeting + PDF page for provenance). Target question to validate the schema against: "how much money per year does the district pay to $VENDOR, and how has that been changing over time?" Publish the tables machine-readable (data.rcsd.info + an MCP tool) so the answer is queryable before any dashboard exists.
+  - [ ] Scrape all warrant registers from board meeting attachments (they're PDFs of tabular data; extraction quality per register varies — keep per-cell provenance so bad parses are auditable)
+  - [ ] Payee-name normalization table (the same vendor appears with different spellings/abbreviations across years)
+- [ ] **Vendor spending dashboard** — a top-level "Vendors" page on the database above: who the district does business with, annual spend, per-vendor trends, per-fund breakdowns
 - [ ] Cross-reference contracts from consent agendas (agreements, amendments, service contracts) with warrant payments
 - [ ] Vendor search: "How much have we paid PowerFlex?" or "What contracts does Eide Bailly have?"
 
