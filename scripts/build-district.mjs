@@ -205,7 +205,8 @@ const districtCSS = `
     font-family: 'Fraunces', serif;
     font-size: 0.8rem;
     font-weight: 600;
-    color: var(--green-light);
+    /* --green-light is only 3.77:1 on --cream; --green-mid hits 7.48:1 (WCAG AA) */
+    color: var(--green-mid);
     display: inline-block;
     margin-bottom: 0.3rem;
     letter-spacing: 0.02em;
@@ -987,6 +988,41 @@ const PAGES = [
   },
 ];
 
+// ---- JSON-LD: school district entity ----
+// GovernmentOrganization is the Google-recognized organization type;
+// additionalType points at the more specific schema.org/SchoolDistrict.
+// Address comes from data/properties.json (slug: district-office).
+const districtOfficeAddress = (() => {
+  try {
+    const props = JSON.parse(readFileSync(resolve(ROOT, 'data/properties.json'), 'utf-8'));
+    return (props.properties || []).find(p => p.slug === 'district-office')?.address || null;
+  } catch { return null; }
+})();
+
+function districtJsonLd(lang) {
+  // "750 Bradford Street, Redwood City, CA 94063" → structured PostalAddress
+  let address = { '@type': 'PostalAddress', addressLocality: 'Redwood City', addressRegion: 'CA', addressCountry: 'US' };
+  const m = districtOfficeAddress?.match(/^(.+?),\s*(.+?),\s*([A-Z]{2})\s+(\d{5})$/);
+  if (m) {
+    address = { '@type': 'PostalAddress', streetAddress: m[1], addressLocality: m[2], addressRegion: m[3], postalCode: m[4], addressCountry: 'US' };
+  }
+  const entity = {
+    '@context': 'https://schema.org',
+    '@type': 'GovernmentOrganization',
+    additionalType: 'https://schema.org/SchoolDistrict',
+    name: 'Redwood City School District',
+    alternateName: lang === 'es' ? ['RCSD', 'Distrito Escolar de Redwood City'] : 'RCSD',
+    url: 'https://www.rcsdk8.net',
+    logo: 'https://data.rcsd.info/logos/district.jpg',
+    address,
+    sameAs: [
+      'https://www.rcsdk8.net',
+      'https://www.youtube.com/@RedwoodCitySchoolDistrict',
+    ],
+  };
+  return `<script type="application/ld+json">\n${JSON.stringify(entity, null, 2)}\n</script>`;
+}
+
 // ---- Board of Trustees / district leadership section ----
 const LEADERSHIP_LABELS = {
   en: {
@@ -1162,6 +1198,7 @@ ${headMeta({
   ogLocale: page.ogLocale,
   ogImageKey: `page-district${page.lang === 'es' ? '-es' : ''}`,
   hreflang: page.hreflang,
+  jsonLd: districtJsonLd(page.lang),
   pageCSS: districtCSS + leadershipCSS,
 })}
 </head>
