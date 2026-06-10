@@ -12,6 +12,7 @@ What changed on [rcsd.info](https://rcsd.info) and when — a plain-language his
 
 ## 2026-06
 
+- **Jun 10** — **Policies index folds into sections.** The 619-row policy list now reads as a table of contents: each thousands-series (Community Relations, Students, ...) is a collapsible group with a policy count, auto-expanding when you search or filter, and deep links from policy pages still open the right section. The site-wide search box also gained a spyglass button so it reads as search at a glance.
 - **Jun 10** — **Every board policy got its own page, in both languages.** The single-page policies browser became a light index (number, title, one-sentence AI summary) linking to 1,238 individual policy pages with clickable cross-references. Full policy text machine-translated to Spanish for 618 of 619 policies (each page states the English Simbli version is the official, binding one). Eleven exhibit policies that Simbli stores as embedded PDFs were captured and text-extracted; the twelfth (6174-E, English Learner education) turned out to be a blank PDF on the district's own portal.
 
 - **Jun 10** — **Blog: "A big June tune-up (and two mistakes to own up to)"** — the fix sprint explained for families in both languages, including the doubled English Learner counts and the 22 repaired Spanish transcripts, with a warning to re-pull any EL numbers cited before June 10.
