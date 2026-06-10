@@ -4,8 +4,10 @@
  *
  *   1. INDEX pages — docs/policies/index.html (EN) + docs/politicas/index.html
  *      (ES): one linked row per policy (code, type badge, title, one-sentence
- *      AI summary) grouped into section cards, with client-side search and
- *      type filtering. No policy bodies live on the index.
+ *      AI summary) grouped into native <details> accordion section cards
+ *      (collapsed by default; search/filter auto-opens matching sections;
+ *      #slug / #sec-XXXX deep links open their section), with client-side
+ *      search and type filtering. No policy bodies live on the index.
  *   2. PER-POLICY pages — docs/policies/{slug}/index.html (EN) and
  *      docs/politicas/{slug}/index.html (ES), one pair per policy
  *      (619 × 2 = 1,238 pages). Slugs come from scripts/lib/policy-slug.mjs,
@@ -118,6 +120,8 @@ const PAGES = {
     filterBP: 'Policies (BP)',
     filterAR: 'Regulations (AR)',
     filterBB: 'Bylaws/Exhibits',
+    // Accordion summary chip: "1 policy" / "62 policies".
+    countChip: (n) => (n === 1 ? '1 policy' : `${n} policies`),
     unmodified: 'Unmodified',
     noResultsTitle: 'No matching policies found',
     noResultsBody: 'Try searching for a different keyword or checking your filters. For example, search for "0100" or "Equity".',
@@ -169,6 +173,8 @@ const PAGES = {
     filterBP: 'Políticas (BP)',
     filterAR: 'Reglamentos (AR)',
     filterBB: 'Estatutos/Anexos',
+    // Chip del acordeón: "1 política" / "62 políticas".
+    countChip: (n) => (n === 1 ? '1 política' : `${n} políticas`),
     unmodified: 'Sin modificar',
     noResultsTitle: 'No encontramos políticas con esa búsqueda',
     noResultsBody: 'Prueba con otra palabra o cambia los filtros. Por ejemplo, busca "0100" o "Equidad".',
@@ -328,7 +334,7 @@ ${disclaimerCSS}
     }
     .search-input {
       width: 100%;
-      padding: 0.6rem 1rem 0.6rem 2.2rem;
+      padding: 0.6rem 2.2rem 0.6rem 1rem;
       font-family: inherit;
       font-size: 0.9rem;
       border: 1px solid var(--rule);
@@ -343,7 +349,7 @@ ${disclaimerCSS}
     }
     .search-icon {
       position: absolute;
-      left: 0.8rem;
+      right: 0.8rem;
       top: 50%;
       transform: translateY(-50%);
       color: var(--text-muted);
@@ -392,8 +398,12 @@ ${disclaimerCSS}
       margin: 0 auto;
       padding: 0 2rem 4rem;
     }
+    /* Each section card is a native <details> accordion, collapsed by default
+       so the index reads as a table of contents. Native semantics keep every
+       row in the served HTML (Pagefind still indexes it) and the accordion
+       stays usable with JavaScript disabled. */
     .sec-card {
-      margin-bottom: 2.5rem;
+      margin-bottom: 1rem;
       background: #fff;
       border: 1px solid var(--rule-light);
       box-shadow: 0 1px 4px rgba(0,0,0,0.02);
@@ -401,11 +411,29 @@ ${disclaimerCSS}
     .sec-header {
       background: var(--cream-dark);
       padding: 1rem 1.5rem;
-      border-bottom: 1px solid var(--rule-light);
       display: flex;
       align-items: baseline;
       gap: 0.8rem;
+      cursor: pointer;
+      /* Hide the default disclosure triangle; the .sec-chevron replaces it. */
+      list-style: none;
+      /* Generous tap target (WCAG 2.5.8 wants 24px; we give 44px+). The
+         padding already yields ~52px, the min-height is a guarantee. */
+      min-height: 44px;
+      user-select: none;
+      scroll-margin-top: 1rem;
+      transition: background-color 0.15s;
     }
+    .sec-header::-webkit-details-marker { display: none; }
+    .sec-header:hover { background: var(--green-wash); }
+    /* Visible keyboard focus ring, inset so the card border doesn't clip it. */
+    .sec-header:focus-visible {
+      outline: 3px solid var(--green-mid);
+      outline-offset: -3px;
+    }
+    /* The header/list divider only exists while the section is open;
+       closed cards would otherwise show a doubled bottom border. */
+    details[open] > .sec-header { border-bottom: 1px solid var(--rule-light); }
     .sec-code {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 0.75rem;
@@ -417,6 +445,43 @@ ${disclaimerCSS}
       font-size: 1.15rem;
       font-weight: 500;
       color: var(--green-deep);
+      /* Let the title shrink below its longest word so the nowrap count chip
+         and chevron never push the summary past a 320px viewport. */
+      min-width: 0;
+      overflow-wrap: anywhere;
+    }
+    /* Policy-count chip, pushed to the right edge of the summary. */
+    .sec-count {
+      margin-left: auto;
+      align-self: center;
+      flex-shrink: 0;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+      color: var(--green-mid);
+      background: var(--green-wash);
+      border: 1px solid rgba(74,140,106,0.3);
+      border-radius: 999px;
+      padding: 0.15rem 0.55rem;
+    }
+    /* CSS-drawn chevron: points right when closed, rotates down when open. */
+    .sec-chevron {
+      align-self: center;
+      flex-shrink: 0;
+      width: 0.5em;
+      height: 0.5em;
+      border-right: 2px solid var(--green-mid);
+      border-bottom: 2px solid var(--green-mid);
+      transform: rotate(-45deg);
+      transition: transform 0.2s;
+    }
+    details[open] > .sec-header .sec-chevron { transform: rotate(45deg); }
+    @media print {
+      /* CSS alone cannot force a closed <details> open; the index script's
+         beforeprint handler opens every section for the print run (and
+         restores state after). The chevron is meaningless on paper. */
+      .sec-chevron { display: none; }
     }
     .policy-list {
       display: flex;
@@ -430,6 +495,9 @@ ${disclaimerCSS}
       text-decoration: none;
       color: inherit;
       transition: background-color 0.15s;
+      /* Deep-link landing room: the nav isn't sticky, so this is breathing
+         space rather than overlap-avoidance. */
+      scroll-margin-top: 1rem;
     }
     .policy-row:last-child {
       border-bottom: none;
@@ -529,6 +597,9 @@ ${typeBadgeCSS}
          viewport drops under ~390px; let the input shrink with the panel. */
       .search-wrapper { min-width: 0; }
       .controls-container, .main-content { padding-left: 1rem; padding-right: 1rem; }
+      /* Under ~360px the code + title + chip + chevron can't share one line;
+         let the chip/chevron wrap below instead of overflowing sideways. */
+      .sec-header { flex-wrap: wrap; padding: 0.9rem 1rem; }
     }
   `;
 
@@ -806,7 +877,17 @@ function policyJsonLd({ p, page, displayTitle, summary, canonicalUrl, twinUrl })
   return `<script type="application/ld+json">\n${JSON.stringify(schema, null, 2)}\n</script>`;
 }
 
-// ---- Index page client script (search + type filter; no drawer) ----
+// ---- Index page client script (search + type filter + accordion; no drawer) ----
+// Accordion contract:
+//   - Default state: every <details.sec-card> collapsed (a table of contents).
+//   - While a search query or a non-'all' type filter is active, every
+//     section with visible matching rows auto-opens; clearing back to the
+//     default re-collapses everything except the location.hash target's
+//     section, so deep-linked rows never vanish.
+//   - #'{slug}' (a policy row) and #sec-XXXX (a summary) deep links open
+//     their section and scroll into view, on load and on hashchange.
+//   - beforeprint opens all sections (CSS can't force <details> open);
+//     afterprint restores the prior state.
 
 function indexClientScript() {
   return `
@@ -814,11 +895,14 @@ function indexClientScript() {
       const searchInput = document.getElementById('search-input');
       const filterBtns = document.querySelectorAll('.filter-btn');
       const policyRows = Array.from(document.querySelectorAll('.policy-row'));
-      const secCards = document.querySelectorAll('.sec-card');
+      const secCards = Array.from(document.querySelectorAll('details.sec-card'));
       const noResults = document.getElementById('no-results');
 
       let currentSearch = '';
       let currentFilter = 'all';
+      // The section the current location.hash points into (a row's parent
+      // <details>, or a summary's own). Kept open in the default state.
+      let hashCard = null;
 
       // Accent-insensitive compare so "filosofia" matches "Filosofía".
       function norm(s) {
@@ -842,6 +926,9 @@ function indexClientScript() {
       function updateVisibility() {
         let totalVisible = 0;
         const q = norm(currentSearch);
+        // Any query or non-default filter flips the accordion from
+        // table-of-contents mode into findability mode.
+        const filtering = q !== '' || currentFilter !== 'all';
 
         secCards.forEach(card => {
           const rowsInCard = card.querySelectorAll('.policy-row');
@@ -862,6 +949,10 @@ function indexClientScript() {
           });
 
           card.style.display = visibleInCard > 0 ? '' : 'none';
+          // Findability: matches must be visible without extra clicks, so
+          // matching sections auto-open. Back at the default state, collapse
+          // everything except the hash target's section.
+          card.open = filtering ? visibleInCard > 0 : card === hashCard;
         });
 
         noResults.style.display = totalVisible === 0 ? 'block' : 'none';
@@ -879,6 +970,41 @@ function indexClientScript() {
           currentFilter = btn.getAttribute('data-filter');
           updateVisibility();
         });
+      });
+
+      // ---- Deep links: #{row-slug} or #sec-XXXX ----
+      // Per-policy breadcrumbs link back to the index as /policies/#{slug};
+      // those anchors now live inside collapsed <details>, so the section
+      // must be opened before the row can be scrolled to.
+      function openHashTarget() {
+        hashCard = null;
+        let id = location.hash.slice(1);
+        try { id = decodeURIComponent(id); } catch (e) { /* keep raw */ }
+        if (!id) return;
+        const target = document.getElementById(id);
+        if (!target) return;
+        const card = target.closest('details.sec-card');
+        if (!card) return;
+        hashCard = card;
+        card.open = true;
+        // Scroll after the newly opened section has laid out; CSS
+        // scroll-margin-top gives the row breathing room at the top.
+        requestAnimationFrame(() => target.scrollIntoView());
+      }
+      openHashTarget();
+      window.addEventListener('hashchange', openHashTarget);
+
+      // ---- Print: open everything, then restore ----
+      // No CSS rule can force a closed <details> open, so do it in JS for
+      // the duration of the print run.
+      let printClosed = null;
+      window.addEventListener('beforeprint', () => {
+        printClosed = secCards.filter(c => !c.open);
+        printClosed.forEach(c => { c.open = true; });
+      });
+      window.addEventListener('afterprint', () => {
+        (printClosed || []).forEach(c => { c.open = false; });
+        printClosed = null;
       });
     });
   `;
@@ -937,16 +1063,24 @@ function buildIndexPage({ page, sections, policiesBySection, policies, titlesEs,
       `;
     }
 
+    // Native <details> accordion (collapsed by default — no open attribute).
+    // The summary id (#sec-5000 etc.) is a deep-link target alongside the
+    // per-row #slug anchors. The old <h3 class="sec-title"> became a <span>:
+    // the HTML spec only allows a heading as the summary's SOLE content, and
+    // browsers flatten descendant heading roles inside summary's implicit
+    // button anyway. Visuals are class-driven and unchanged.
     sectionsHtml += `
-      <div class="sec-card" data-sec-code="${escapeAttr(sec.code)}">
-        <div class="sec-header">
+      <details class="sec-card" data-sec-code="${escapeAttr(sec.code)}">
+        <summary class="sec-header" id="sec-${escapeAttr(sec.code)}">
           <span class="sec-code">${escapeText(sec.code)}</span>
-          <h3 class="sec-title">${escapeText(sectionNameFor(sec))}</h3>
-        </div>
+          <span class="sec-title">${escapeText(sectionNameFor(sec))}</span>
+          <span class="sec-count">${escapeText(page.countChip(secPolicies.length))}</span>
+          <span class="sec-chevron" aria-hidden="true"></span>
+        </summary>
         <div class="policy-list">
           ${pRowsHtml}
         </div>
-      </div>
+      </details>
     `;
   }
 

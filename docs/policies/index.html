@@ -6974,7 +6974,25 @@
     align-items: center;
     gap: 0.5rem;
   }
-  .site-nav-search { display: flex; }
+  .site-nav-search { display: flex; position: relative; }
+  /* Spyglass submit button inside the input's right edge: makes the bare
+     input obviously a search box, and gives phones a tappable submit. */
+  .site-nav-search-btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 2rem;
+    background: none;
+    border: 0;
+    padding: 0;
+    font-size: 0.8rem;
+    line-height: 1;
+    cursor: pointer;
+    opacity: 0.75;
+  }
+  .site-nav-search-btn:hover, .site-nav-search-btn:focus-visible { opacity: 1; }
+  .site-nav-search-btn:focus-visible { outline: 2px solid #fff; outline-offset: 1px; }
   .site-nav-search input {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 0.75rem;
@@ -6983,7 +7001,7 @@
     background: rgba(255,255,255,0.08);
     border: 1px solid rgba(255,255,255,0.35);
     border-radius: 3px;
-    padding: 0.35rem 0.65rem;
+    padding: 0.35rem 2rem 0.35rem 0.65rem;
     width: 9rem;
     transition: border-color 0.2s, background 0.2s, width 0.2s;
   }
@@ -7071,7 +7089,8 @@
     .site-nav-search input,
     .site-nav-search input:focus { width: 100%; }
     /* 0.95rem vertical padding -> ≥44px tall tap target (0.75rem gave 39.5px) */
-    .site-nav-search input { padding: 0.95rem 0.75rem; }
+    .site-nav-search input { padding: 0.95rem 2.6rem 0.95rem 0.75rem; }
+    .site-nav-search-btn { width: 2.6rem; font-size: 1rem; }
     .site-nav-lang {
       align-self: stretch;
       display: flex;
@@ -7156,7 +7175,7 @@
     }
     .search-input {
       width: 100%;
-      padding: 0.6rem 1rem 0.6rem 2.2rem;
+      padding: 0.6rem 2.2rem 0.6rem 1rem;
       font-family: inherit;
       font-size: 0.9rem;
       border: 1px solid var(--rule);
@@ -7171,7 +7190,7 @@
     }
     .search-icon {
       position: absolute;
-      left: 0.8rem;
+      right: 0.8rem;
       top: 50%;
       transform: translateY(-50%);
       color: var(--text-muted);
@@ -7220,8 +7239,12 @@
       margin: 0 auto;
       padding: 0 2rem 4rem;
     }
+    /* Each section card is a native <details> accordion, collapsed by default
+       so the index reads as a table of contents. Native semantics keep every
+       row in the served HTML (Pagefind still indexes it) and the accordion
+       stays usable with JavaScript disabled. */
     .sec-card {
-      margin-bottom: 2.5rem;
+      margin-bottom: 1rem;
       background: #fff;
       border: 1px solid var(--rule-light);
       box-shadow: 0 1px 4px rgba(0,0,0,0.02);
@@ -7229,11 +7252,29 @@
     .sec-header {
       background: var(--cream-dark);
       padding: 1rem 1.5rem;
-      border-bottom: 1px solid var(--rule-light);
       display: flex;
       align-items: baseline;
       gap: 0.8rem;
+      cursor: pointer;
+      /* Hide the default disclosure triangle; the .sec-chevron replaces it. */
+      list-style: none;
+      /* Generous tap target (WCAG 2.5.8 wants 24px; we give 44px+). The
+         padding already yields ~52px, the min-height is a guarantee. */
+      min-height: 44px;
+      user-select: none;
+      scroll-margin-top: 1rem;
+      transition: background-color 0.15s;
     }
+    .sec-header::-webkit-details-marker { display: none; }
+    .sec-header:hover { background: var(--green-wash); }
+    /* Visible keyboard focus ring, inset so the card border doesn't clip it. */
+    .sec-header:focus-visible {
+      outline: 3px solid var(--green-mid);
+      outline-offset: -3px;
+    }
+    /* The header/list divider only exists while the section is open;
+       closed cards would otherwise show a doubled bottom border. */
+    details[open] > .sec-header { border-bottom: 1px solid var(--rule-light); }
     .sec-code {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 0.75rem;
@@ -7245,6 +7286,43 @@
       font-size: 1.15rem;
       font-weight: 500;
       color: var(--green-deep);
+      /* Let the title shrink below its longest word so the nowrap count chip
+         and chevron never push the summary past a 320px viewport. */
+      min-width: 0;
+      overflow-wrap: anywhere;
+    }
+    /* Policy-count chip, pushed to the right edge of the summary. */
+    .sec-count {
+      margin-left: auto;
+      align-self: center;
+      flex-shrink: 0;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+      color: var(--green-mid);
+      background: var(--green-wash);
+      border: 1px solid rgba(74,140,106,0.3);
+      border-radius: 999px;
+      padding: 0.15rem 0.55rem;
+    }
+    /* CSS-drawn chevron: points right when closed, rotates down when open. */
+    .sec-chevron {
+      align-self: center;
+      flex-shrink: 0;
+      width: 0.5em;
+      height: 0.5em;
+      border-right: 2px solid var(--green-mid);
+      border-bottom: 2px solid var(--green-mid);
+      transform: rotate(-45deg);
+      transition: transform 0.2s;
+    }
+    details[open] > .sec-header .sec-chevron { transform: rotate(45deg); }
+    @media print {
+      /* CSS alone cannot force a closed <details> open; the index script's
+         beforeprint handler opens every section for the print run (and
+         restores state after). The chevron is meaningless on paper. */
+      .sec-chevron { display: none; }
     }
     .policy-list {
       display: flex;
@@ -7258,6 +7336,9 @@
       text-decoration: none;
       color: inherit;
       transition: background-color 0.15s;
+      /* Deep-link landing room: the nav isn't sticky, so this is breathing
+         space rather than overlap-avoidance. */
+      scroll-margin-top: 1rem;
     }
     .policy-row:last-child {
       border-bottom: none;
@@ -7368,6 +7449,9 @@
          viewport drops under ~390px; let the input shrink with the panel. */
       .search-wrapper { min-width: 0; }
       .controls-container, .main-content { padding-left: 1rem; padding-right: 1rem; }
+      /* Under ~360px the code + title + chip + chevron can't share one line;
+         let the chip/chevron wrap below instead of overflowing sideways. */
+      .sec-header { flex-wrap: wrap; padding: 0.9rem 1rem; }
     }
   
 </style>
@@ -7387,7 +7471,7 @@
       <a href="/blog/" class="site-nav-tab">Blog</a>
     </div>
     <div class="site-nav-right">
-      <form class="site-nav-search" role="search" action="/search/" method="get"><input type="search" name="q" placeholder="Search…" aria-label="Search" autocomplete="off"></form>
+      <form class="site-nav-search" role="search" action="/search/" method="get"><input type="search" name="q" placeholder="Search…" aria-label="Search" autocomplete="off"><button type="submit" class="site-nav-search-btn" aria-label="Search">🔍</button></form>
       <a href="/politicas/" class="site-nav-lang">ES</a>
     </div>
   </div>
@@ -7423,11 +7507,13 @@
 <main class="main-content">
   <div id="policies-catalog">
     
-      <div class="sec-card" data-sec-code="0000">
-        <div class="sec-header">
+      <details class="sec-card" data-sec-code="0000">
+        <summary class="sec-header" id="sec-0000">
           <span class="sec-code">0000</span>
-          <h3 class="sec-title">Philosophy, Goals, Objectives and Comprehensive Plans</h3>
-        </div>
+          <span class="sec-title">Philosophy, Goals, Objectives and Comprehensive Plans</span>
+          <span class="sec-count">26 policies</span>
+          <span class="sec-chevron" aria-hidden="true"></span>
+        </summary>
         <div class="policy-list">
           
         <a class="policy-row" id="0100-bp" href="/policies/0100-bp/" data-code="0100" data-title="Philosophy" data-title-alt="Filosofía" data-type="BP">
@@ -7873,13 +7959,15 @@
         </a>
       
         </div>
-      </div>
+      </details>
     
-      <div class="sec-card" data-sec-code="1000">
-        <div class="sec-header">
+      <details class="sec-card" data-sec-code="1000">
+        <summary class="sec-header" id="sec-1000">
           <span class="sec-code">1000</span>
-          <h3 class="sec-title">Community Relations</h3>
-        </div>
+          <span class="sec-title">Community Relations</span>
+          <span class="sec-count">46 policies</span>
+          <span class="sec-chevron" aria-hidden="true"></span>
+        </summary>
         <div class="policy-list">
           
         <a class="policy-row" id="1000-bp" href="/policies/1000-bp/" data-code="1000" data-title="Concepts And Roles" data-title-alt="Conceptos y funciones" data-type="BP">
@@ -8665,13 +8753,15 @@
         </a>
       
         </div>
-      </div>
+      </details>
     
-      <div class="sec-card" data-sec-code="2000">
-        <div class="sec-header">
+      <details class="sec-card" data-sec-code="2000">
+        <summary class="sec-header" id="sec-2000">
           <span class="sec-code">2000</span>
-          <h3 class="sec-title">Administration</h3>
-        </div>
+          <span class="sec-title">Administration</span>
+          <span class="sec-count">7 policies</span>
+          <span class="sec-chevron" aria-hidden="true"></span>
+        </summary>
         <div class="policy-list">
           
         <a class="policy-row" id="2000-bp" href="/policies/2000-bp/" data-code="2000" data-title="Concepts And Roles" data-title-alt="Conceptos y funciones" data-type="BP">
@@ -8794,13 +8884,15 @@
         </a>
       
         </div>
-      </div>
+      </details>
     
-      <div class="sec-card" data-sec-code="3000">
-        <div class="sec-header">
+      <details class="sec-card" data-sec-code="3000">
+        <summary class="sec-header" id="sec-3000">
           <span class="sec-code">3000</span>
-          <h3 class="sec-title">Business and Noninstructional Operations</h3>
-        </div>
+          <span class="sec-title">Business and Noninstructional Operations</span>
+          <span class="sec-count">101 policies</span>
+          <span class="sec-chevron" aria-hidden="true"></span>
+        </summary>
         <div class="policy-list">
           
         <a class="policy-row" id="3000-bp" href="/policies/3000-bp/" data-code="3000" data-title="Concepts And Roles" data-title-alt="Conceptos y funciones" data-type="BP">
@@ -10521,13 +10613,15 @@
         </a>
       
         </div>
-      </div>
+      </details>
     
-      <div class="sec-card" data-sec-code="4000">
-        <div class="sec-header">
+      <details class="sec-card" data-sec-code="4000">
+        <summary class="sec-header" id="sec-4000">
           <span class="sec-code">4000</span>
-          <h3 class="sec-title">Personnel</h3>
-        </div>
+          <span class="sec-title">Personnel</span>
+          <span class="sec-count">168 policies</span>
+          <span class="sec-chevron" aria-hidden="true"></span>
+        </summary>
         <div class="policy-list">
           
         <a class="policy-row" id="4000-bp" href="/policies/4000-bp/" data-code="4000" data-title="Concepts And Roles" data-title-alt="Conceptos y funciones" data-type="BP">
@@ -13387,13 +13481,15 @@
         </a>
       
         </div>
-      </div>
+      </details>
     
-      <div class="sec-card" data-sec-code="5000">
-        <div class="sec-header">
+      <details class="sec-card" data-sec-code="5000">
+        <summary class="sec-header" id="sec-5000">
           <span class="sec-code">5000</span>
-          <h3 class="sec-title">Students</h3>
-        </div>
+          <span class="sec-title">Students</span>
+          <span class="sec-count">129 policies</span>
+          <span class="sec-chevron" aria-hidden="true"></span>
+        </summary>
         <div class="policy-list">
           
         <a class="policy-row" id="5000-bp" href="/policies/5000-bp/" data-code="5000" data-title="Concepts And Roles" data-title-alt="Conceptos y funciones" data-type="BP">
@@ -15590,13 +15686,15 @@
         </a>
       
         </div>
-      </div>
+      </details>
     
-      <div class="sec-card" data-sec-code="6000">
-        <div class="sec-header">
+      <details class="sec-card" data-sec-code="6000">
+        <summary class="sec-header" id="sec-6000">
           <span class="sec-code">6000</span>
-          <h3 class="sec-title">Instruction</h3>
-        </div>
+          <span class="sec-title">Instruction</span>
+          <span class="sec-count">100 policies</span>
+          <span class="sec-chevron" aria-hidden="true"></span>
+        </summary>
         <div class="policy-list">
           
         <a class="policy-row" id="6000-bp" href="/policies/6000-bp/" data-code="6000" data-title="Concepts And Roles" data-title-alt="Conceptos y funciones" data-type="BP">
@@ -17299,13 +17397,15 @@
         </a>
       
         </div>
-      </div>
+      </details>
     
-      <div class="sec-card" data-sec-code="7000">
-        <div class="sec-header">
+      <details class="sec-card" data-sec-code="7000">
+        <summary class="sec-header" id="sec-7000">
           <span class="sec-code">7000</span>
-          <h3 class="sec-title">Facilities</h3>
-        </div>
+          <span class="sec-title">Facilities</span>
+          <span class="sec-count">11 policies</span>
+          <span class="sec-chevron" aria-hidden="true"></span>
+        </summary>
         <div class="policy-list">
           
         <a class="policy-row" id="7110-bp" href="/policies/7110-bp/" data-code="7110" data-title="Facilities Master Plan" data-title-alt="Plan maestro de instalaciones" data-type="BP">
@@ -17496,13 +17596,15 @@
         </a>
       
         </div>
-      </div>
+      </details>
     
-      <div class="sec-card" data-sec-code="9000">
-        <div class="sec-header">
+      <details class="sec-card" data-sec-code="9000">
+        <summary class="sec-header" id="sec-9000">
           <span class="sec-code">9000</span>
-          <h3 class="sec-title">Bylaws</h3>
-        </div>
+          <span class="sec-title">Bylaws</span>
+          <span class="sec-count">31 policies</span>
+          <span class="sec-chevron" aria-hidden="true"></span>
+        </summary>
         <div class="policy-list">
           
         <a class="policy-row" id="9000-ar" href="/policies/9000-ar/" data-code="9000" data-title="Role Of The Board" data-title-alt="Función de la Mesa Directiva" data-type="AR">
@@ -18033,7 +18135,7 @@
         </a>
       
         </div>
-      </div>
+      </details>
     
   </div>
 
@@ -18064,11 +18166,14 @@
       const searchInput = document.getElementById('search-input');
       const filterBtns = document.querySelectorAll('.filter-btn');
       const policyRows = Array.from(document.querySelectorAll('.policy-row'));
-      const secCards = document.querySelectorAll('.sec-card');
+      const secCards = Array.from(document.querySelectorAll('details.sec-card'));
       const noResults = document.getElementById('no-results');
 
       let currentSearch = '';
       let currentFilter = 'all';
+      // The section the current location.hash points into (a row's parent
+      // <details>, or a summary's own). Kept open in the default state.
+      let hashCard = null;
 
       // Accent-insensitive compare so "filosofia" matches "Filosofía".
       function norm(s) {
@@ -18092,6 +18197,9 @@
       function updateVisibility() {
         let totalVisible = 0;
         const q = norm(currentSearch);
+        // Any query or non-default filter flips the accordion from
+        // table-of-contents mode into findability mode.
+        const filtering = q !== '' || currentFilter !== 'all';
 
         secCards.forEach(card => {
           const rowsInCard = card.querySelectorAll('.policy-row');
@@ -18112,6 +18220,10 @@
           });
 
           card.style.display = visibleInCard > 0 ? '' : 'none';
+          // Findability: matches must be visible without extra clicks, so
+          // matching sections auto-open. Back at the default state, collapse
+          // everything except the hash target's section.
+          card.open = filtering ? visibleInCard > 0 : card === hashCard;
         });
 
         noResults.style.display = totalVisible === 0 ? 'block' : 'none';
@@ -18129,6 +18241,41 @@
           currentFilter = btn.getAttribute('data-filter');
           updateVisibility();
         });
+      });
+
+      // ---- Deep links: #{row-slug} or #sec-XXXX ----
+      // Per-policy breadcrumbs link back to the index as /policies/#{slug};
+      // those anchors now live inside collapsed <details>, so the section
+      // must be opened before the row can be scrolled to.
+      function openHashTarget() {
+        hashCard = null;
+        let id = location.hash.slice(1);
+        try { id = decodeURIComponent(id); } catch (e) { /* keep raw */ }
+        if (!id) return;
+        const target = document.getElementById(id);
+        if (!target) return;
+        const card = target.closest('details.sec-card');
+        if (!card) return;
+        hashCard = card;
+        card.open = true;
+        // Scroll after the newly opened section has laid out; CSS
+        // scroll-margin-top gives the row breathing room at the top.
+        requestAnimationFrame(() => target.scrollIntoView());
+      }
+      openHashTarget();
+      window.addEventListener('hashchange', openHashTarget);
+
+      // ---- Print: open everything, then restore ----
+      // No CSS rule can force a closed <details> open, so do it in JS for
+      // the duration of the print run.
+      let printClosed = null;
+      window.addEventListener('beforeprint', () => {
+        printClosed = secCards.filter(c => !c.open);
+        printClosed.forEach(c => { c.open = true; });
+      });
+      window.addEventListener('afterprint', () => {
+        (printClosed || []).forEach(c => { c.open = false; });
+        printClosed = null;
       });
     });
   
