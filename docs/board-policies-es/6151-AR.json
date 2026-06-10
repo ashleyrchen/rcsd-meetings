@@ -1,0 +1,14 @@
+{
+  "code": "6151",
+  "type": "AR",
+  "titleEs": "Tamaño de grupo",
+  "contentTextEs": "Reducción del tamaño de grupo en los grados K-3\n\nAl establecer un programa para reducir el tamaño de grupo en los grados primarios, el programa se implementará en cada escuela de acuerdo con las siguientes prioridades: (Education Code 52124)\n\n- Si solo se reduce un nivel de grado en una escuela, ese nivel de grado será el 1.°.\n\n- Si solo se reducen dos niveles de grado en una escuela, esos niveles de grado serán el 1.° y el 2.°.\n\n- Si se reducen tres niveles de grado en una escuela, esos niveles de grado serán kindergarten y los grados 1.° y 2.°, o los grados 1.° al 3.°. Se dará prioridad a la reducción del tamaño de grupo en los grados 1.° y 2.° antes de reducir el tamaño de grupo en kindergarten o en el grado 3.°.\n\n- Si se reducen cuatro niveles de grado en una escuela, esos niveles de grado serán de kindergarten al grado 3.°. La primera prioridad se dará a la reducción del tamaño de grupo en los grados 1.° y 2.°; la segunda prioridad se dará a la reducción del tamaño de grupo en kindergarten y en el grado 3.°.\n\nCon el fin de maximizar las ventajas educativas de los grupos más pequeños, se proporcionará capacitación a los maestros que brindan servicios de instrucción directa en los grupos que participan en el programa de reducción del tamaño de grupo del distrito. Esta capacitación incluirá, entre otros, métodos para proporcionar cada uno de los siguientes elementos: (Education Code 52127)\n\n- Instrucción individualizada\n\n- Enseñanza eficaz, incluyendo el manejo del salón de clases, en grupos más pequeños\n\n- Identificar y responder a las necesidades de los estudiantes\n\n- Oportunidades para desarrollar las fortalezas individuales de los estudiantes",
+  "_metadata": {
+    "model": "claude-sonnet-4-6",
+    "generatedAt": "2026-06-10T17:25:53.277Z",
+    "method": "AI translation of contentText via the Claude API (scripts/translate-policy-bodies.mjs); one policy per request, bodies over 30KB split at paragraph boundaries into chunks and reassembled; validated for length, paragraph structure, and meta-commentary",
+    "sourceFile": "data/board-policies/6151-AR.json",
+    "sourceHash": "0ad2482588772f7fe0dd082b944bbe7b95195175cd53f115c553bc3efa86c3b1",
+    "note": "Machine translation. The English Simbli version is authoritative."
+  }
+}

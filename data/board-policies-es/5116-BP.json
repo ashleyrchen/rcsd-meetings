@@ -1,0 +1,14 @@
+{
+  "code": "5116",
+  "type": "BP",
+  "titleEs": "Límites de asistencia escolar",
+  "contentTextEs": "La Mesa Directiva establecerá límites de asistencia escolar con el fin de maximizar el uso eficiente de las instalaciones del distrito y la administración efectiva de las escuelas del distrito. El Superintendente o su designado revisará periódicamente los límites de asistencia escolar y, cuando sea necesario, hará recomendaciones a la Mesa Directiva para ajustar dichos límites.\n\nAl revisar los límites de asistencia escolar, el Superintendente o su designado considerará los siguientes factores:\n\n- Datos de matrícula escolar, incluidos los cambios en los patrones de inscripción\n\n- Capacidad y diseño de las instalaciones, incluidos los posibles desarrollos comerciales y residenciales\n\n- Patrones de transición entre escuelas, incluido el mantenimiento, en la medida de lo posible, de la continuidad de la asistencia de los estudiantes\n\n- Mandatos federales, estatales o judiciales\n\n- Participación de la comunidad\n\n- Seguridad de los estudiantes\n\n- Capacidad de transporte\n\n- Identidad de la comunidad y del vecindario\n\n- Características geográficas del distrito, incluidos los patrones de tráfico\n\n- Programas educativos, como escuelas magnet y escuelas Charter\n\n- Coherencia entre los límites municipales y los límites de las escuelas preparatorias\n\n- Otros factores\n\nCon el fin de aliviar el hacinamiento, el Superintendente o su designado podrá asignar a algunos estudiantes a una escuela fuera de su área de asistencia. A los padres/tutores de los estudiantes que asisten a escuelas fuera de su área de asistencia se les notificará, a la brevedad posible, la escuela a la que asistirá su hijo o hija. Si está disponible, se proporcionará transporte para dichos estudiantes.",
+  "_metadata": {
+    "model": "claude-sonnet-4-6",
+    "generatedAt": "2026-06-10T17:15:19.867Z",
+    "method": "AI translation of contentText via the Claude API (scripts/translate-policy-bodies.mjs); one policy per request, bodies over 30KB split at paragraph boundaries into chunks and reassembled; validated for length, paragraph structure, and meta-commentary",
+    "sourceFile": "data/board-policies/5116-BP.json",
+    "sourceHash": "b240a04042d8fa871bb5c4d002bef8d7c873f4155896c29051c1035c4acfcba7",
+    "note": "Machine translation. The English Simbli version is authoritative."
+  }
+}

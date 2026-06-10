@@ -1,0 +1,14 @@
+{
+  "code": "6141.2",
+  "type": "BP",
+  "titleEs": "Reconocimiento de creencias y costumbres religiosas",
+  "contentTextEs": "La Mesa Directiva respeta el derecho individual de cada estudiante a la libertad de práctica religiosa, y la adoctrinación religiosa está claramente prohibida en las escuelas públicas. La instrucción sobre religión no deberá promover ni denigrar las creencias o costumbres de ninguna religión o secta en particular, ni deberá mostrarse preferencia por un punto de vista religioso sobre otro. El personal deberá ser muy consciente de su obligación de no interferir en el desarrollo religioso de ningún estudiante, cualquiera que sea la tradición que el estudiante profese.\n\nEl personal no deberá respaldar, fomentar ni solicitar expresiones o actividades religiosas o antirreligiosas entre los estudiantes durante el tiempo de clase. Como parte de sus funciones oficiales, el personal no deberá dirigir a los estudiantes en oraciones ni en otras actividades religiosas.\n\nLos estudiantes podrán expresar sus creencias sobre la religión en sus tareas, obras de arte y otros trabajos de clase si la expresión es pertinente a la tarea asignada. Dichos trabajos serán evaluados conforme a los estándares académicos ordinarios.\n\nSi bien enseñar sobre las festividades religiosas es una parte permitida del programa educativo, celebrar festividades religiosas no está permitido en las escuelas públicas. Los programas patrocinados por la escuela no deberán ser, ni tener el efecto de ser, de orientación religiosa ni una celebración religiosa. Las decoraciones de la escuela y del salón de clases podrán expresar temas de temporada que no sean de naturaleza religiosa.\n\nLos programas de música, arte, literatura o drama que tengan temáticas religiosas están permitidos como parte del currículo en actividades y programas patrocinados por la escuela, siempre que se presenten de manera objetiva y como parte tradicional del patrimonio cultural y religioso. El uso de símbolos religiosos que formen parte de una festividad religiosa está permitido como material o recurso didáctico, siempre que dichos símbolos se exhiban como ejemplo del patrimonio cultural y religioso de la festividad y sean de carácter temporal.",
+  "_metadata": {
+    "model": "claude-sonnet-4-6",
+    "generatedAt": "2026-06-10T17:24:03.331Z",
+    "method": "AI translation of contentText via the Claude API (scripts/translate-policy-bodies.mjs); one policy per request, bodies over 30KB split at paragraph boundaries into chunks and reassembled; validated for length, paragraph structure, and meta-commentary",
+    "sourceFile": "data/board-policies/6141.2-BP.json",
+    "sourceHash": "ed8f119c9a3b53f59f34d0c5f2424ec2be2182ebafe307739de7da1003e0da85",
+    "note": "Machine translation. The English Simbli version is authoritative."
+  }
+}

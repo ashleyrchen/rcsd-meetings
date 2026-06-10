@@ -1,0 +1,14 @@
+{
+  "code": "4314",
+  "type": "AR",
+  "titleEs": "Transferencias",
+  "contentTextEs": "Traslado involuntario\n\nEl Superintendente o su designado deberá consultar con el empleado afectado y notificarle la intención de recomendar el traslado. Los empleados afectados deberán ser notificados de la decisión final, por escrito, tan pronto como sea posible.\n\nTraslado voluntario\n\nEl empleado deberá presentar una solicitud de traslado al Superintendente o su designado en el momento en que se tenga conocimiento de la vacante. El empleado deberá ser notificado por escrito de la decisión de aprobar o no la solicitud de traslado.\n\nLas solicitudes de traslado podrán ser retiradas por el empleado en cualquier momento antes de la decisión final.",
+  "_metadata": {
+    "model": "claude-sonnet-4-6",
+    "generatedAt": "2026-06-10T17:11:17.227Z",
+    "method": "AI translation of contentText via the Claude API (scripts/translate-policy-bodies.mjs); one policy per request, bodies over 30KB split at paragraph boundaries into chunks and reassembled; validated for length, paragraph structure, and meta-commentary",
+    "sourceFile": "data/board-policies/4314-AR.json",
+    "sourceHash": "6cbfa7cbfa9611d1041d92b7c7c17cadff80dd6937132573e1a1c2ac64a20825",
+    "note": "Machine translation. The English Simbli version is authoritative."
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "code": "3515.7",
+  "type": "BP",
+  "titleEs": "Armas de fuego en los predios escolares",
+  "contentTextEs": "La Mesa Directiva está comprometida a proporcionar un ambiente seguro para los estudiantes, el personal y los visitantes en el plantel escolar. El Superintendente o su representante deberá consultar con las autoridades policiales locales y otros individuos y agencias apropiados para atender la seguridad de los planteles escolares.\n\nLa posesión de un arma de fuego en terrenos escolares o dentro de 1,000 pies de los mismos está prohibida, excepto bajo las circunstancias limitadas especificadas en Penal Code 626.9. Los terrenos escolares incluyen, entre otros, edificios escolares, campos, áreas de almacenamiento y estacionamientos. (Penal Code 626.9)\n\nSi un empleado del distrito observa o sospecha que cualquier persona no autorizada está en posesión de un arma de fuego en los terrenos escolares o cerca de ellos, o en una actividad escolar, deberá notificar de inmediato al director o su representante y a las autoridades policiales.\n\nLa prohibición contra la posesión de armas de fuego en terrenos escolares deberá incluirse en el plan integral de seguridad del distrito y deberá comunicarse al personal del distrito, a los padres/tutores y a la comunidad.",
+  "_metadata": {
+    "model": "claude-sonnet-4-6",
+    "generatedAt": "2026-06-10T17:02:18.590Z",
+    "method": "AI translation of contentText via the Claude API (scripts/translate-policy-bodies.mjs); one policy per request, bodies over 30KB split at paragraph boundaries into chunks and reassembled; validated for length, paragraph structure, and meta-commentary",
+    "sourceFile": "data/board-policies/3515.7-BP.json",
+    "sourceHash": "181f6a4ac6f15f718a950220a73a7808d2a52a51bfb2918f33030a843c942062",
+    "note": "Machine translation. The English Simbli version is authoritative."
+  }
+}

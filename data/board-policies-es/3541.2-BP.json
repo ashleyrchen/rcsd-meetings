@@ -1,0 +1,14 @@
+{
+  "code": "3541.2",
+  "type": "BP",
+  "titleEs": "Transporte para estudiantes con discapacidades",
+  "contentTextEs": "La Mesa Directiva garantizará que se proporcionen los servicios de transporte adecuados para los estudiantes con discapacidades, según se especifica en su programa de educación individualizado (IEP, por sus siglas en inglés) o plan de acomodaciones. El distrito pondrá a disposición el transporte de casa a la escuela para los estudiantes sin costo alguno para los padres/tutores, según se especifica en el IEP del estudiante.\n\nEl Superintendente o su representante establecerá criterios y procedimientos para determinar el modo de transporte más adecuado para cada estudiante en función de las necesidades identificadas según lo determinado en el IEP o plan de acomodaciones.\n\nEl Superintendente o su representante organizará los horarios de transporte de manera que los estudiantes con discapacidades no pasen una cantidad excesiva de tiempo en los autobuses en comparación con otros estudiantes. Las llegadas y salidas no reducirán la duración de la jornada escolar para estos estudiantes, excepto cuando así se prescriba de manera individual.\n\nEl Superintendente o su representante establecerá procedimientos para garantizar la compatibilidad entre los dispositivos de asiento móviles y los sistemas de sujeción de los autobuses.",
+  "_metadata": {
+    "model": "claude-sonnet-4-6",
+    "generatedAt": "2026-06-10T17:03:03.186Z",
+    "method": "AI translation of contentText via the Claude API (scripts/translate-policy-bodies.mjs); one policy per request, bodies over 30KB split at paragraph boundaries into chunks and reassembled; validated for length, paragraph structure, and meta-commentary",
+    "sourceFile": "data/board-policies/3541.2-BP.json",
+    "sourceHash": "7b6bac19d651f88ef72251829a76eacd438b4cf7a7c5f9132e562d8ebffe49dc",
+    "note": "Machine translation. The English Simbli version is authoritative."
+  }
+}

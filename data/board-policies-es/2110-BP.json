@@ -1,0 +1,14 @@
+{
+  "code": "2110",
+  "type": "BP",
+  "titleEs": "Responsabilidades y funciones del Superintendente",
+  "contentTextEs": "La Mesa Directiva desea establecer una relación de trabajo productiva con el Superintendente y asegurar que el trabajo del Superintendente esté enfocado en el aprendizaje y los logros de los estudiantes, así como en el logro de la visión y los objetivos del distrito. La Mesa Directiva también desea proporcionar una base justa para que el Superintendente rinda cuentas. Las responsabilidades del Superintendente están detalladas en la ley, en el contrato del Superintendente y en todas las políticas de la Mesa Directiva y los reglamentos administrativos.\n\nLa Mesa Directiva deberá aclarar las expectativas y los objetivos para el Superintendente al comienzo de cada año de evaluación.\n\nComo director ejecutivo principal del distrito, el Superintendente deberá implementar todas las decisiones de la Mesa Directiva y administrar las operaciones educativas y no educativas de las escuelas. El Superintendente también forma parte del equipo de gobernanza del distrito y tiene responsabilidades para apoyar las operaciones y la toma de decisiones de la Mesa Directiva.\n\nEl Superintendente puede delegar cualquiera de sus responsabilidades y deberes a otro personal del distrito, pero sigue siendo responsable ante la Mesa Directiva en todas las áreas de operación bajo la autoridad del Superintendente.",
+  "_metadata": {
+    "model": "claude-sonnet-4-6",
+    "generatedAt": "2026-06-10T16:57:44.558Z",
+    "method": "AI translation of contentText via the Claude API (scripts/translate-policy-bodies.mjs); one policy per request, bodies over 30KB split at paragraph boundaries into chunks and reassembled; validated for length, paragraph structure, and meta-commentary",
+    "sourceFile": "data/board-policies/2110-BP.json",
+    "sourceHash": "94448e4f0542657e4a539afd32f2e6cc36d80a0a09e69ad14de68740e151298b",
+    "note": "Machine translation. The English Simbli version is authoritative."
+  }
+}

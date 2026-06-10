@@ -1,0 +1,14 @@
+{
+  "code": "4313.2",
+  "type": "BP",
+  "titleEs": "Degradación/reasignación",
+  "contentTextEs": "La Mesa Directiva podrá autorizar la degradación o reasignación de cualquier empleado administrativo o de supervisión, a recomendación del Superintendente o su designado, y cuando se determine que dicha acción es en el mejor interés del distrito.\n\nEl Superintendente o su designado se asegurará de que el distrito cumpla con todos los plazos legales aplicables y los procedimientos de debido proceso cuando un empleado vaya a ser degradado o reasignado.",
+  "_metadata": {
+    "model": "claude-sonnet-4-6",
+    "generatedAt": "2026-06-10T17:11:12.903Z",
+    "method": "AI translation of contentText via the Claude API (scripts/translate-policy-bodies.mjs); one policy per request, bodies over 30KB split at paragraph boundaries into chunks and reassembled; validated for length, paragraph structure, and meta-commentary",
+    "sourceFile": "data/board-policies/4313.2-BP.json",
+    "sourceHash": "a0a30f543d9be6ffdd0fca5f1398b39d2354759a6d55caeb16c6f9ae244af87d",
+    "note": "Machine translation. The English Simbli version is authoritative."
+  }
+}

@@ -9,6 +9,7 @@ import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync } from 
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { headMeta, siteNav, siteFooter } from './html-parts.mjs';
+import { policySlug } from './lib/policy-slug.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
@@ -1202,6 +1203,7 @@ const DATA_FILE_DESCRIPTIONS = {
   'meetings-data.json': 'Comprehensive board meeting archive with agendas, agenda items, attachments, timestamps, and transcripts',
   'minutes-aids.json': 'Per-meeting minutes notes (motions, votes, attendees) keyed by date',
   'policies-index.json': 'Global catalog of all board policies, bylaws, and administrative regulations',
+  'policy-summaries.json': 'AI-generated one-sentence summaries of every board policy, English and Spanish, keyed by `{code}-{type}`',
   'policy-titles-es.json': 'Spanish translations of board policy titles',
   'properties.json': 'Inventory of district real estate that is not an operating school — admin buildings, leased campuses',
   'school-board-summaries.json': 'Board agenda items tagged to specific schools',
@@ -1232,6 +1234,7 @@ function buildLlmsTxt() {
   // Datasets published under json/ from outside the top-level data/*.json glob:
   dataLines.push('- [sarc/sarc-summary.json](https://data.rcsd.info/json/sarc/sarc-summary.json): SARC data — demographics, CAASPP test scores, expenditures per school');
   dataLines.push('- [board-policies/](https://data.rcsd.info/json/board-policies/): Directory of per-policy JSON files (e.g. `0100-BP.json`) with full HTML content, plain-text body, legal references, and cross-references');
+  dataLines.push('- [board-policies-es/](https://data.rcsd.info/json/board-policies-es/): Spanish machine-translations of each policy body (same `{code}-{type}.json` filenames as board-policies/); the English version on Simbli is the only official text');
 
   return `# RCSD Open Data
 
@@ -1260,8 +1263,10 @@ ${templateVars.schoolSlugs}
 - [/escuelas/{slug}/](https://rcsd.info/escuelas/): Individual school pages (Spanish)
 - [/budget/](https://rcsd.info/budget/): District budget visualization (English)
 - [/presupuesto/](https://rcsd.info/presupuesto/): District budget visualization (Spanish)
-- [/policies/](https://rcsd.info/policies/): Interactive Board Policies Manual browser (English)
-- [/politicas/](https://rcsd.info/politicas/): Interactive Board Policies Manual browser (Spanish)
+- [/policies/](https://rcsd.info/policies/): Board Policies Manual index — number, title, one-sentence summary per policy (English)
+- [/politicas/](https://rcsd.info/politicas/): Board Policies Manual index (Spanish)
+- [/policies/{code}-{type}/](https://rcsd.info/policies/): Individual policy pages — full text with hyperlinked cross-references. The slug is the policy code plus the type (bp or ar; exhibit entries use slugs like 6174-e-pdf-1-ar), lowercased, e.g. \`/policies/5144.1-ar/\` (English)
+- [/politicas/{code}-{type}/](https://rcsd.info/politicas/): Individual policy pages, same slugs, machine-translated body (Spanish; the English Simbli version is the only official text)
 - [/committees/](https://rcsd.info/committees/): District committees — members, meetings, recordings (English)
 - [/comites/](https://rcsd.info/comites/): District committees (Spanish)
 - [/search/](https://rcsd.info/search/): Site search (English)
@@ -1388,6 +1393,27 @@ try {
   committeeUrls = rows.join('\n');
 } catch {}
 
+// Per-policy pages: /policies/{slug}/ (EN) + /politicas/{slug}/ (ES), one pair
+// per entry in the board policy manual catalog. Slugs MUST come from the
+// shared policySlug() helper so the sitemap and build-policies.mjs page
+// emission always agree — drift here means 1,200+ sitemap URLs that 404.
+// No try/catch: policies-index.json is committed to git, so a load failure is
+// a build bug and should fail loudly rather than silently gut the sitemap.
+const policiesIndex = JSON.parse(readFileSync(resolve(ROOT, 'data/policies-index.json'), 'utf-8'));
+
+// Simbli reports lastRevised as MM/DD/YYYY; sitemap lastmod wants YYYY-MM-DD.
+// Missing or unparseable dates fall back to the build date.
+function policyLastmod(usDate) {
+  const m = /^(\d{1,2})\/(\d{1,2})\/(\d{4})$/.exec(usDate || '');
+  if (!m) return sitemapDate;
+  return `${m[3]}-${m[1].padStart(2, '0')}-${m[2].padStart(2, '0')}`;
+}
+
+const policyUrls = policiesIndex.policies.map(p => {
+  const slug = policySlug(p.code, p.type);
+  return bilingualUrl(`/policies/${slug}/`, `/politicas/${slug}/`, policyLastmod(p.lastRevised));
+}).join('\n');
+
 // Homepage is a single bilingual page at one URL: emit ONE entry (the usual
 // bilingualUrl() helper would duplicate the <loc>) and skip the
 // self-referencing `es` alternate — just en + x-default.
@@ -1409,6 +1435,7 @@ ${bilingualUrl('/meetings/', '/reuniones/', sitemapDate)}
 ${bilingualUrl('/district/', '/distrito/', sitemapDate)}
 ${bilingualUrl('/budget/', '/presupuesto/', sitemapDate)}
 ${bilingualUrl('/policies/', '/politicas/', sitemapDate)}
+${policyUrls}
 ${bilingualUrl('/mcp/', '/mcp/es/', sitemapDate)}
 ${bilingualUrl('/blog/', '/blog/es/', sitemapDate)}
 ${blogPosts.map(p => bilingualUrl(`/blog/${p.slug}/`, `/blog/${p.slugEs}/`, p.date)).join('\n')}

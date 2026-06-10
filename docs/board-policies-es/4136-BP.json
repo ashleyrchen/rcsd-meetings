@@ -1,0 +1,14 @@
+{
+  "code": "4136",
+  "type": "BP",
+  "titleEs": "Empleo fuera de la escuela",
+  "contentTextEs": "La Mesa Directiva reconoce que los empleados del distrito pueden recibir compensación por actividades externas, siempre y cuando dichas actividades no sean inconsistentes, incompatibles, estén en conflicto o sean contrarias a los deberes del empleado o a los deberes, funciones o responsabilidades del distrito.\n\nLas actividades externas remuneradas se considerarán inconsistentes, incompatibles o contrarias al empleo en el distrito cuando dicha actividad:\n\n            1.   Requiera períodos de tiempo que interfieran con el desempeño adecuado y eficiente de las funciones del empleado\n\n            2.   Implique compensación de una fuente externa por actividades que forman parte de las funciones regulares del empleado\n\n            3.   Conlleve el uso del nombre, prestigio, tiempo, instalaciones, equipo o materiales del distrito para beneficio privado\n\n            4.   Implique un servicio que esté total o parcialmente sujeto a la aprobación o control de otro empleado del distrito o de un miembro de la Mesa Directiva\n\nUn empleado que desee aceptar un empleo externo que pueda ser inconsistente, incompatible, estar en conflicto o ser contrario a sus funciones deberá presentar una solicitud por escrito a su supervisor inmediato describiendo la naturaleza del empleo y el tiempo requerido. El supervisor evaluará cada solicitud con base en las funciones específicas del empleado dentro del distrito y determinará si autoriza o no dicho empleo.\n\nEl supervisor informará al empleado por escrito si el empleo externo está o no prohibido. El empleado podrá apelar la negativa de autorización del supervisor ante el Superintendente o su designado. Un empleado que continúe realizando una actividad prohibida podrá estar sujeto a medidas disciplinarias.\n\nTutoría\n\nEl Distrito puede ofrecer programas de intervención y enriquecimiento patrocinados por la escuela en los planteles escolares, financiados con fondos del Distrito. Si un empleado certificado desea dar tutoría privada a un estudiante en el plantel, fuera de un programa patrocinado por la escuela, el empleado deberá completar un acuerdo de uso de instalaciones, pagar las tarifas correspondientes y proporcionar los materiales o equipos necesarios.",
+  "_metadata": {
+    "model": "claude-sonnet-4-6",
+    "generatedAt": "2026-06-10T17:07:06.365Z",
+    "method": "AI translation of contentText via the Claude API (scripts/translate-policy-bodies.mjs); one policy per request, bodies over 30KB split at paragraph boundaries into chunks and reassembled; validated for length, paragraph structure, and meta-commentary",
+    "sourceFile": "data/board-policies/4136-BP.json",
+    "sourceHash": "a9f6bee44bfc9b0458235015fd1613275b3137d6ca5b913d6fb4d81ab48a711e",
+    "note": "Machine translation. The English Simbli version is authoritative."
+  }
+}

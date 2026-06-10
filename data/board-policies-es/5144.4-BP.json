@@ -1,0 +1,14 @@
+{
+  "code": "5144.4",
+  "type": "BP",
+  "titleEs": "Asistencia obligatoria de padres o madres",
+  "contentTextEs": "La Mesa Directiva está comprometida a proporcionar un ambiente escolar seguro y a establecer expectativas para la conducta apropiada de los estudiantes. El Superintendente o su designado puede involucrar a los padres/tutores en la disciplina estudiantil según sea necesario para mejorar el comportamiento de un estudiante y fomentar la responsabilidad personal.\n\nAl retirar a un estudiante de clase conforme a Education Code 48910 por cometer un acto de obscenidad, profanidad o vulgaridad habitual, alteración de las actividades escolares, o desobediencia deliberada, el maestro de la clase puede requerir que cualquier padre/tutor que viva con el estudiante lo acompañe durante una parte del día escolar en la clase de la cual el estudiante fue retirado. (Education Code 48900.1)\n\nTodo maestro que requiera la asistencia de los padres conforme a esta política deberá aplicar la política de manera uniforme a todos los estudiantes dentro del salón de clases. (Education Code 48900.1)\n\nLas reglas del distrito y de cada plantel escolar sobre disciplina estudiantil deberán incluir procedimientos para implementar los requisitos de asistencia de los padres. (Education Code 48900.1)",
+  "_metadata": {
+    "model": "claude-sonnet-4-6",
+    "generatedAt": "2026-06-10T17:20:48.938Z",
+    "method": "AI translation of contentText via the Claude API (scripts/translate-policy-bodies.mjs); one policy per request, bodies over 30KB split at paragraph boundaries into chunks and reassembled; validated for length, paragraph structure, and meta-commentary",
+    "sourceFile": "data/board-policies/5144.4-BP.json",
+    "sourceHash": "b56ebe0d89f102a25231daa05087e59e40da325cb359883203e6e2350b8e2ba9",
+    "note": "Machine translation. The English Simbli version is authoritative."
+  }
+}

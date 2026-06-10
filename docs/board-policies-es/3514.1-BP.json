@@ -1,0 +1,14 @@
+{
+  "code": "3514.1",
+  "type": "BP",
+  "titleEs": "Sustancias peligrosas",
+  "contentTextEs": "La Mesa Directiva reconoce que en las operaciones diarias de nuestras escuelas se utilizan sustancias potencialmente peligrosas. El Superintendente o su designado deberá asegurarse de que estas sustancias sean inventariadas, utilizadas, almacenadas y eliminadas regularmente de manera segura y conforme a la ley.\n\nEn la medida de lo posible, el Superintendente o su designado deberá minimizar las cantidades de sustancias peligrosas almacenadas en los predios escolares y deberá sustituir las sustancias peligrosas por materiales menos peligrosos.\n\nPrograma de Comunicación de Riesgos\n\nEl Superintendente o su designado deberá desarrollar, implementar y supervisar un programa escrito de comunicación de riesgos de acuerdo con la ley estatal. Como parte de este programa, él/ella deberá asegurarse de que los empleados estén plenamente informados sobre las propiedades y los riesgos potenciales de las sustancias a las que puedan estar expuestos, y de que las hojas de datos de seguridad de materiales estén fácilmente accesibles para ellos.\n\nLos maestros deberán instruir a los estudiantes sobre la importancia del manejo, almacenamiento, eliminación y protección adecuados al utilizar cualquier sustancia potencialmente peligrosa.",
+  "_metadata": {
+    "model": "claude-sonnet-4-6",
+    "generatedAt": "2026-06-10T17:01:38.377Z",
+    "method": "AI translation of contentText via the Claude API (scripts/translate-policy-bodies.mjs); one policy per request, bodies over 30KB split at paragraph boundaries into chunks and reassembled; validated for length, paragraph structure, and meta-commentary",
+    "sourceFile": "data/board-policies/3514.1-BP.json",
+    "sourceHash": "8bdcec0c1a8b763ef2d349a14f26d9494c7e06df4e5657b8e85da53e1a6c0b17",
+    "note": "Machine translation. The English Simbli version is authoritative."
+  }
+}

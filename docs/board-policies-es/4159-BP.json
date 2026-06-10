@@ -1,0 +1,14 @@
+{
+  "code": "4159",
+  "type": "BP",
+  "titleEs": "Programas de asistencia al empleado",
+  "contentTextEs": "La Mesa Directiva reconoce que los empleados del distrito escolar pueden tener problemas que pueden tener efectos perjudiciales en el desempeño laboral y la seguridad de los estudiantes. La Mesa Directiva alienta a los empleados a buscar ayuda cuando existan tales problemas y a aprovechar los recursos disponibles para asistirlos.\n\nLos empleados tendrán acceso confidencial a información sobre el programa de asistencia al empleado del distrito. Esta información estará disponible para todos los empleados y sus cónyuges y dependientes.\n\nEl personal directivo y de supervisión deberá estar informado sobre el programa de asistencia al empleado del distrito y podrá orientar a los empleados sobre el programa, según corresponda.\n\nLa participación en el programa de asistencia no pondrá en riesgo el empleo ni el avance profesional del empleado, ni tampoco lo protegerá de medidas disciplinarias por un desempeño laboral por debajo de los estándares.",
+  "_metadata": {
+    "model": "claude-sonnet-4-6",
+    "generatedAt": "2026-06-10T17:07:39.232Z",
+    "method": "AI translation of contentText via the Claude API (scripts/translate-policy-bodies.mjs); one policy per request, bodies over 30KB split at paragraph boundaries into chunks and reassembled; validated for length, paragraph structure, and meta-commentary",
+    "sourceFile": "data/board-policies/4159-BP.json",
+    "sourceHash": "e870c417e883e5ba1c20965d368582f6ae2e9baa36d370e19226d7dd3ec804f9",
+    "note": "Machine translation. The English Simbli version is authoritative."
+  }
+}

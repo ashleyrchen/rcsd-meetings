@@ -1,0 +1,14 @@
+{
+  "code": "4300",
+  "type": "BP",
+  "titleEs": "Personal administrativo y de supervisión",
+  "contentTextEs": "La Mesa Directiva de Educación reconoce que una gestión eficaz es fundamental para el éxito de los estudiantes y los programas del distrito. Se espera que el personal directivo demuestre iniciativa y buen juicio en el desarrollo, la implementación y la supervisión de los programas del distrito. Los supervisores deberán promover la productividad, el desarrollo profesional y el trabajo en equipo del personal del distrito.\n\nLa Mesa Directiva adoptará políticas relacionadas con el personal administrativo y de supervisión en la medida en que sean necesarias para cumplir con la ley y para describir las condiciones de empleo dentro del distrito.\n\nLa Mesa Directiva podrá, mediante resolución, crear o eliminar cualquiera o todos los puestos de la alta dirección del servicio clasificado. Todo empleado que ocupe un puesto de alta dirección que sea eliminado por acción de la Mesa Directiva pasará a ser miembro del servicio clasificado o certificado en un puesto clasificado o certificado dentro del distrito al que tendría derecho si no hubiera ocupado un puesto de alta dirección. (Education Code 45104.5)",
+  "_metadata": {
+    "model": "claude-sonnet-4-6",
+    "generatedAt": "2026-06-10T17:10:51.957Z",
+    "method": "AI translation of contentText via the Claude API (scripts/translate-policy-bodies.mjs); one policy per request, bodies over 30KB split at paragraph boundaries into chunks and reassembled; validated for length, paragraph structure, and meta-commentary",
+    "sourceFile": "data/board-policies/4300-BP.json",
+    "sourceHash": "9d723631b52aace2aa6a010b6b954404cf047630c5926a623e0fb602b23e387a",
+    "note": "Machine translation. The English Simbli version is authoritative."
+  }
+}

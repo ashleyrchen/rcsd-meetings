@@ -1,0 +1,14 @@
+{
+  "code": "3554",
+  "type": "BP",
+  "titleEs": "Otras ventas de alimentos",
+  "contentTextEs": "La Mesa Directiva considera que la venta de alimentos y bebidas en la escuela durante el horario escolar debe estar alineada con los objetivos del distrito para promover el bienestar de los estudiantes. Toda venta de alimentos realizada fuera del programa de servicios de alimentación del distrito deberá cumplir con los estándares nutricionales establecidos en la ley, la política de la Mesa Directiva y el reglamento administrativo, y no deberá reducir la participación de los estudiantes en el programa de servicios de alimentación del distrito.\n\nLa Mesa Directiva autoriza al Superintendente o a su designado a aprobar la venta de alimentos y bebidas fuera del programa de servicios de alimentación del distrito, incluyendo las ventas realizadas por organizaciones estudiantiles o vinculadas a la escuela, las ventas a través de máquinas expendedoras y/o las ventas en tiendas escolares de secundaria con fines de recaudación de fondos.\n\nCuando las máquinas expendedoras sean patrocinadas por el distrito o por una organización estudiantil o de adultos, el Superintendente o su designado determinará cómo y dónde podrán colocarse dichas máquinas en los planteles escolares, las oficinas del distrito u otras instalaciones escolares.",
+  "_metadata": {
+    "model": "claude-sonnet-4-6",
+    "generatedAt": "2026-06-10T17:03:38.717Z",
+    "method": "AI translation of contentText via the Claude API (scripts/translate-policy-bodies.mjs); one policy per request, bodies over 30KB split at paragraph boundaries into chunks and reassembled; validated for length, paragraph structure, and meta-commentary",
+    "sourceFile": "data/board-policies/3554-BP.json",
+    "sourceHash": "cd776dda9e54693b68da4a836c8c53f35511297825a2cbc46fd447521ab4ab5e",
+    "note": "Machine translation. The English Simbli version is authoritative."
+  }
+}

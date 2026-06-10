@@ -1,0 +1,14 @@
+{
+  "code": "4112.61",
+  "type": "BP",
+  "titleEs": "Referencias laborales",
+  "contentTextEs": "El Superintendente o su designado procesará todas las solicitudes de referencias, cartas de recomendación o información sobre los motivos de separación del empleo de todos los empleados del distrito, excepto las que se refieran a él/ella mismo/a. Todas las cartas de recomendación que se emitan en nombre del distrito para empleados actuales o anteriores deben ser aprobadas por el Superintendente o su designado.\n\nA su discreción, el Superintendente o su designado puede negarse a dar una recomendación. Cualquier recomendación que él/ella proporcione deberá ofrecer un relato cuidadoso, veraz y completo del desempeño laboral y las calificaciones del empleado.",
+  "_metadata": {
+    "model": "claude-sonnet-4-6",
+    "generatedAt": "2026-06-10T17:05:11.398Z",
+    "method": "AI translation of contentText via the Claude API (scripts/translate-policy-bodies.mjs); one policy per request, bodies over 30KB split at paragraph boundaries into chunks and reassembled; validated for length, paragraph structure, and meta-commentary",
+    "sourceFile": "data/board-policies/4112.61-BP.json",
+    "sourceHash": "9639c904168d72f062b5ca88d46ed2705e44d48275153266ac0ddc6ebf2ab486",
+    "note": "Machine translation. The English Simbli version is authoritative."
+  }
+}

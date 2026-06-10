@@ -1,0 +1,14 @@
+{
+  "code": "4156.3",
+  "type": "BP",
+  "titleEs": "Reembolso de bienes personales de empleados",
+  "contentTextEs": "La Mesa Directiva no autoriza el pago de reembolso por bienes personales de empleados que pudieran ser robados o destruidos o dañados intencionalmente mientras se usan para fines relacionados con el trabajo.",
+  "_metadata": {
+    "model": "claude-sonnet-4-6",
+    "generatedAt": "2026-06-10T17:07:23.795Z",
+    "method": "AI translation of contentText via the Claude API (scripts/translate-policy-bodies.mjs); one policy per request, bodies over 30KB split at paragraph boundaries into chunks and reassembled; validated for length, paragraph structure, and meta-commentary",
+    "sourceFile": "data/board-policies/4156.3-BP.json",
+    "sourceHash": "0cc1c89696588113a1f6b7f77f2b49669aa8495cac710e83cb9c4d22db7f3672",
+    "note": "Machine translation. The English Simbli version is authoritative."
+  }
+}

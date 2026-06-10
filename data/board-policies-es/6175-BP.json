@@ -1,0 +1,14 @@
+{
+  "code": "6175",
+  "type": "BP",
+  "titleEs": "Programa de educación para estudiantes migrantes",
+  "contentTextEs": "La Mesa Directiva desea proporcionar un programa educativo integral para los estudiantes migrantes que intente mitigar el impacto de las interrupciones en su educación y les brinde la oportunidad de alcanzar los estándares académicos del distrito. El distrito hará uso de los fondos disponibles para proporcionar servicios complementarios a los estudiantes migrantes.\n\nEl Superintendente o su designado planificará las inscripciones tardías de estudiantes migrantes y se asegurará de que todos los estudiantes migrantes sean correctamente identificados y ubicados en el grado escolar correspondiente. Él/ella obtendrá los expedientes de los distritos escolares anteriores de los estudiantes, según corresponda, y consultará dichos expedientes al identificar las necesidades integrales de los estudiantes y al preparar sus planes de aprendizaje individuales.\n\nCuando un estudiante migrante se transfiera a otro distrito, sus expedientes serán proporcionados al distrito receptor a solicitud y sin costo alguno, con el fin de ayudar al distrito a satisfacer las necesidades del estudiante. (20 USC 6398)\n\nEl Superintendente o su designado convocará un consejo asesor de padres/tutores del distrito para involucrar activamente a los padres/tutores en la planificación, operación y evaluación del programa de educación para migrantes. (Education Code 54444.2)\n\nEl Superintendente o su designado coordinará los servicios del programa migrante del distrito con otras agencias públicas que atienden a los trabajadores migrantes y sus familias.",
+  "_metadata": {
+    "model": "claude-sonnet-4-6",
+    "generatedAt": "2026-06-10T17:30:16.487Z",
+    "method": "AI translation of contentText via the Claude API (scripts/translate-policy-bodies.mjs); one policy per request, bodies over 30KB split at paragraph boundaries into chunks and reassembled; validated for length, paragraph structure, and meta-commentary",
+    "sourceFile": "data/board-policies/6175-BP.json",
+    "sourceHash": "d5c2826c3549fd40db5d4a6a4c32cfed1b7e89d34b9b41734dab3849a8229749",
+    "note": "Machine translation. The English Simbli version is authoritative."
+  }
+}

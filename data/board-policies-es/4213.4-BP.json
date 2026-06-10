@@ -1,0 +1,14 @@
+{
+  "code": "4213.4",
+  "type": "BP",
+  "titleEs": "Asignación temporal modificada o de trabajo ligero",
+  "contentTextEs": "La Mesa Directiva reconoce que, cuando los empleados tienen condiciones médicas temporalmente incapacitantes, las asignaciones temporales de trabajo modificado o trabajo liviano pueden permitir que el distrito continúe aprovechando sus valiosos conocimientos, habilidades y capacidades, a la vez que se minimiza el tiempo de ausencia del trabajo. Las asignaciones temporales de trabajo modificado/trabajo liviano también pueden servir para facilitar la transición del empleado de regreso a sus funciones habituales o a su trabajo de tiempo completo.\n\nCualquier empleado puede solicitar una asignación de trabajo modificado o trabajo liviano cuando tenga una condición médica temporal que le impida desempeñar las funciones esenciales de su asignación o puesto actual. El Superintendente o su designado determinará, caso por caso, si existe actualmente un puesto temporal adecuado para acomodar las restricciones físicas especificadas por el proveedor médico del empleado.\n\nLa asignación inicial de un empleado a un puesto temporal de trabajo modificado o trabajo liviano será por una duración limitada, que no excederá los 30 días. Al finalizar la asignación inicial, el empleado podrá solicitar al Superintendente o su designado que extienda la asignación. Al solicitar dicha extensión, el empleado deberá presentar documentación de su proveedor médico que certifique que el empleado sigue estando temporalmente incapacitado y que médicamente no está en condiciones de regresar a su asignación habitual. Las asignaciones temporales generalmente no excederán los 90 días, pero podrán extenderse a discreción del Superintendente o su designado por 90 días adicionales, previa verificación por parte del proveedor médico del empleado de que dicha extensión le permitirá al empleado regresar a sus funciones habituales sin restricciones.\n\nUn empleado que rechace una asignación temporal de trabajo modificado/trabajo liviano podrá estar sujeto a la pérdida de los beneficios de compensación laboral de acuerdo con la póliza de seguro del distrito.",
+  "_metadata": {
+    "model": "claude-sonnet-4-6",
+    "generatedAt": "2026-06-10T17:08:14.320Z",
+    "method": "AI translation of contentText via the Claude API (scripts/translate-policy-bodies.mjs); one policy per request, bodies over 30KB split at paragraph boundaries into chunks and reassembled; validated for length, paragraph structure, and meta-commentary",
+    "sourceFile": "data/board-policies/4213.4-BP.json",
+    "sourceHash": "b7c72f8430d189f91b6103a5380d0ed7421d0fa298cd204af40f89b35bd4e113",
+    "note": "Machine translation. The English Simbli version is authoritative."
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "code": "4116",
+  "type": "AR",
+  "titleEs": "Estatus probatorio y permanente",
+  "contentTextEs": "Elegibilidad para el Estado Permanente\n\nUn empleado en período de prueba que, en cualquier año escolar, haya prestado servicio durante al menos el 75 por ciento del número de días que mantienen las escuelas regulares del distrito, se considerará que ha completado un año escolar completo. (Education Code 44908)\n\nLo siguiente no se incluirá para efectos de calcular el servicio requerido como requisito previo para la clasificación como empleado permanente:\n\n- Servicio como instructor en clases impartidas en centros u programas de ocupaciones regionales (Education Code 44910)\n\n- Servicio bajo una credencial provisional que no sea una credencial de emergencia de un año (Education Code 44911)\n\n- Servicio únicamente como maestro de instrucción básica militar en compañías de cadetes de escuela secundaria (Education Code 44912)\n\n- Empleo en la escuela de verano (Education Code 44913)\n\nInternos\n\nUna persona empleada como interno del distrito o de la universidad será clasificada como empleado en período de prueba. Tras completar el internado, si el distrito la reelige para desempeñar un puesto que requiera calificaciones de certificación para el siguiente año escolar, el empleado continuará siendo clasificado como empleado en período de prueba durante ese año. (Education Code 44466, 44885.5)\n\nUn empleado que haya completado un internado y al menos un año escolar completo en un puesto que requiera calificaciones de certificación dentro del distrito deberá obtener el estado permanente cuando sea reelegido para el siguiente año escolar en un puesto que requiera calificaciones de certificación. (Education Code 44466, 44885.5)",
+  "_metadata": {
+    "model": "claude-sonnet-4-6",
+    "generatedAt": "2026-06-10T17:05:32.904Z",
+    "method": "AI translation of contentText via the Claude API (scripts/translate-policy-bodies.mjs); one policy per request, bodies over 30KB split at paragraph boundaries into chunks and reassembled; validated for length, paragraph structure, and meta-commentary",
+    "sourceFile": "data/board-policies/4116-AR.json",
+    "sourceHash": "f6b33f9b9119fad3f619577cede3adc11b6a9eae1da04a792c4b51ad5167bf61",
+    "note": "Machine translation. The English Simbli version is authoritative."
+  }
+}

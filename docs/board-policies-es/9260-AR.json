@@ -1,0 +1,14 @@
+{
+  "code": "9260",
+  "type": "AR",
+  "titleEs": "Protección legal",
+  "contentTextEs": "Seguro de responsabilidad civil\n\nLa Mesa Directiva proporcionará el seguro necesario para proteger a los miembros de la Mesa Directiva y a los empleados mientras actúan dentro del ámbito de su cargo o empleo, de conformidad con Education Code 35208.\n\nProtección contra la responsabilidad civil\n\nNingún miembro de la Mesa Directiva será responsable por daños causados por su acto u omisión cuando actúe dentro del ámbito de las responsabilidades del distrito. El acto u omisión debe estar en conformidad con las leyes federales, estatales y locales, y realizarse en el marco de un esfuerzo por controlar, disciplinar, expulsar o suspender a un estudiante, o por mantener el orden o el control en el salón de clases o en la escuela. (20 USC 6736)\n\nLa protección contra la responsabilidad civil no aplicará cuando: (20 USC 6736)\n\n- El miembro de la Mesa Directiva actuó con conducta dolosa o criminal, negligencia grave, imprudencia temeraria, o una indiferencia consciente y flagrante hacia el derecho a la seguridad de la persona afectada.\n\n- El miembro de la Mesa Directiva causó daños al operar un vehículo de motor.\n\n- El miembro de la Mesa Directiva no contaba con la licencia requerida por el Estado para dichas actividades, en caso de ser necesaria.\n\n- Un tribunal determinó que el miembro de la Mesa Directiva violó una ley federal o estatal de derechos civiles.\n\n- El miembro de la Mesa Directiva se encontraba bajo la influencia del alcohol o cualquier droga en el momento de la conducta indebida.\n\n- La conducta indebida constituyó un delito violento conforme a 18 USC 16 o un acto de terrorismo por el cual el miembro de la Mesa Directiva fue condenado por un tribunal.\n\n- La conducta indebida involucró un delito de naturaleza sexual por el cual el miembro de la Mesa Directiva fue condenado por un tribunal.",
+  "_metadata": {
+    "model": "claude-sonnet-4-6",
+    "generatedAt": "2026-06-10T17:32:44.152Z",
+    "method": "AI translation of contentText via the Claude API (scripts/translate-policy-bodies.mjs); one policy per request, bodies over 30KB split at paragraph boundaries into chunks and reassembled; validated for length, paragraph structure, and meta-commentary",
+    "sourceFile": "data/board-policies/9260-AR.json",
+    "sourceHash": "b3d35d1c3ee5cb1e4aa735605fec8971e29b80d52825daa76821668604ec1718",
+    "note": "Machine translation. The English Simbli version is authoritative."
+  }
+}

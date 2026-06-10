@@ -1,0 +1,14 @@
+{
+  "code": "5131.62",
+  "type": "AR",
+  "titleEs": "Tabaco",
+  "contentTextEs": "Programa de Educación para la Prevención del Uso del Tabaco\n\nEl programa de prevención del uso del tabaco del distrito deberá proporcionar a los estudiantes de los grados 6 a 12 instrucción que aborde los siguientes temas: (Health and Safety Code 104420)\n\n- Consecuencias fisiológicas, cosméticas y sociales indeseables, tanto inmediatas como a largo plazo, del uso del tabaco\n\n- Razones por las que los adolescentes dicen que fuman o usan tabaco\n\n- Normas entre compañeros e influencias sociales que promueven el uso del tabaco\n\n- Habilidades de rechazo para resistir las influencias sociales que promueven el uso del tabaco\n\nSegún corresponda, el distrito deberá proporcionar o referir a los estudiantes de los grados 7 a 12 a actividades de intervención y cesación del uso del tabaco. (Health and Safety Code 104420)\n\nEstos servicios estarán dirigidos a los usuarios actuales y serán voluntarios para los estudiantes que deseen ayuda para dejar de usar tabaco.\n\nAdemás de enfocarse en los estudiantes que actualmente usan tabaco, el programa del distrito deberá dirigirse a los estudiantes con mayor riesgo de comenzar a usar tabaco, según se identifique mediante una evaluación de necesidades locales.\n\nEl distrito deberá proporcionar o referir a todo menor embarazado o que sea padre o madre que esté inscrito en el distrito a servicios de prevención del uso del tabaco. Dichos servicios podrán integrarse con los programas existentes para menores embarazados y que sean padres o madres, e incluirán: (Health and Safety Code 104460)\n\n- Referencia a servicios perinatales y de apoyo relacionados\n\n- Servicios de difusión y evaluación del estado de fumador\n\n- Servicios individualizados de consejería y defensa\n\n- Mensajes de motivación\n\n- Servicios de cesación, si corresponde\n\n- Incentivos para mantener un estilo de vida saludable\n\n- Evaluación de seguimiento\n\n- Servicios de mantenimiento y prevención de recaídas",
+  "_metadata": {
+    "model": "claude-sonnet-4-6",
+    "generatedAt": "2026-06-10T17:17:09.343Z",
+    "method": "AI translation of contentText via the Claude API (scripts/translate-policy-bodies.mjs); one policy per request, bodies over 30KB split at paragraph boundaries into chunks and reassembled; validated for length, paragraph structure, and meta-commentary",
+    "sourceFile": "data/board-policies/5131.62-AR.json",
+    "sourceHash": "826b0c08a64f3879360983c49d4a339a06ba10a498118fcfcf208605bdfa73d1",
+    "note": "Machine translation. The English Simbli version is authoritative."
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "code": "6164.41",
+  "type": "BP",
+  "titleEs": "Niños con discapacidades matriculados por sus padres en escuelas privadas",
+  "contentTextEs": "La Mesa Directiva reconoce sus obligaciones bajo la ley estatal y federal de localizar, identificar, evaluar y proporcionar servicios equitativos a los niños inscritos voluntariamente por sus padres/tutores en escuelas privadas ubicadas dentro del distrito.\n\nEl Superintendente o su designado deberá garantizar que las actividades para localizar, identificar y evaluar a los niños con discapacidades inscritos por sus padres/tutores en escuelas privadas dentro del distrito sean comparables a las actividades realizadas para personas con discapacidades de tres a 22 años en las escuelas públicas dentro del distrito. (Education Code 56171; 34 CFR 300.131)\n\nEl Superintendente o su designado deberá desarrollar un presupuesto para la prestación de servicios a los niños con discapacidades inscritos por sus padres/tutores en escuelas privadas, basado en la participación proporcional de los fondos federales recibidos y el número de niños elegibles, incluyendo la posibilidad de estudiantes que se inscriban a mitad del año escolar, y los tipos de servicios que se proporcionarán.",
+  "_metadata": {
+    "model": "claude-sonnet-4-6",
+    "generatedAt": "2026-06-10T17:28:15.580Z",
+    "method": "AI translation of contentText via the Claude API (scripts/translate-policy-bodies.mjs); one policy per request, bodies over 30KB split at paragraph boundaries into chunks and reassembled; validated for length, paragraph structure, and meta-commentary",
+    "sourceFile": "data/board-policies/6164.41-BP.json",
+    "sourceHash": "64d2d3f286b1abc91b6bfe0044fd546f15d088b3afc314ed4b99cef98eae6243",
+    "note": "Machine translation. The English Simbli version is authoritative."
+  }
+}

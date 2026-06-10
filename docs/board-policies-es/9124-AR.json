@@ -1,0 +1,14 @@
+{
+  "code": "9124",
+  "type": "AR",
+  "titleEs": "Abogado",
+  "contentTextEs": "La Mesa Directiva reconoce el complejo entorno legal en el que operan los distritos escolares y desea contar con asesoramiento legal confiable y seguro. La Mesa Directiva también apoya los esfuerzos legales colaborativos con otras agencias y distritos con el fin de promover los intereses del distrito.\n\nLa Mesa Directiva puede recurrir al asesor legal del condado, al fiscal del distrito o a abogados privados para satisfacer las necesidades del distrito.\n\nEl asesor legal del distrito puede:\n\n- Brindar asesoramiento legal a la Mesa Directiva o a miembros individuales de la misma, así como al Superintendente o a su designado\n\n- Servir a la Mesa Directiva y al Superintendente o su designado en la preparación y conducción de litigios y procedimientos administrativos del distrito\n\n- Brindar asesoramiento sobre medidas de bonos escolares y aumentos de impuestos, y preparar los formularios necesarios para la votación de dichas medidas\n\n- Desempeñar otras funciones administrativas según lo asigne la Mesa Directiva y el Superintendente o su designado\n\nEl Superintendente podrá consultar con el asesor legal del distrito a su discreción y deberá proporcionar a la Mesa Directiva la información legal que se solicite cuando así lo indique la mayoría de la Mesa Directiva. La Mesa Directiva también podrá autorizar a un miembro específico para que consulte con el asesor legal en nombre de la Mesa Directiva. Los miembros de la Mesa Directiva deberán ser conscientes de los costos y limitar las consultas individuales con el asesor legal del condado a no más de cinco horas por año.",
+  "_metadata": {
+    "model": "claude-sonnet-4-6",
+    "generatedAt": "2026-06-10T17:32:12.470Z",
+    "method": "AI translation of contentText via the Claude API (scripts/translate-policy-bodies.mjs); one policy per request, bodies over 30KB split at paragraph boundaries into chunks and reassembled; validated for length, paragraph structure, and meta-commentary",
+    "sourceFile": "data/board-policies/9124-AR.json",
+    "sourceHash": "03243ee24b8921380edeed47882217b25e4521850899a7d175d27c933caf08c6",
+    "note": "Machine translation. The English Simbli version is authoritative."
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "code": "6161",
+  "type": "BP",
+  "titleEs": "^Equipos, libros y materiales",
+  "contentTextEs": "La Mesa Directiva reconoce que el aprendizaje de los estudiantes mejora cuando estos tienen acceso a libros de texto, equipos y otros materiales didácticos de alta calidad para cada una de las materias que estudian. Para respaldar adecuadamente el plan de estudios aprobado por la Mesa Directiva, los materiales didácticos también deben estar actualizados.\n\nEl Superintendente o su designado deberá desarrollar procedimientos para determinar si los materiales didácticos del distrito son suficientes para proporcionar información precisa y actualizada, y para garantizar que los estudiantes tengan acceso a materiales basados en los estándares. Cuando se hayan elegido nuevos materiales didácticos de acuerdo con la política de selección y evaluación del distrito, la Mesa Directiva tomará las decisiones finales respecto a la compra original.",
+  "_metadata": {
+    "model": "claude-sonnet-4-6",
+    "generatedAt": "2026-06-10T17:26:38.106Z",
+    "method": "AI translation of contentText via the Claude API (scripts/translate-policy-bodies.mjs); one policy per request, bodies over 30KB split at paragraph boundaries into chunks and reassembled; validated for length, paragraph structure, and meta-commentary",
+    "sourceFile": "data/board-policies/6161-BP.json",
+    "sourceHash": "8983860496d0a4597a1f14f1abedf14cffa3739f700b50d9903bdc821e144894",
+    "note": "Machine translation. The English Simbli version is authoritative."
+  }
+}

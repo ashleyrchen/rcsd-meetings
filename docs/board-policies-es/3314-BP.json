@@ -1,0 +1,14 @@
+{
+  "code": "3314",
+  "type": "BP",
+  "titleEs": "Pago de bienes y servicios",
+  "contentTextEs": "La Mesa Directiva reconoce la importancia de desarrollar un sistema de procedimientos de control interno con el fin de cumplir con su obligación de supervisar y salvaguardar los recursos del distrito. Para facilitar el procesamiento de órdenes de pago, el Superintendente o su designado deberá asegurarse de que las funciones de compra, recepción y pago se mantengan separadas. El Superintendente o su designado también deberá asegurarse de que las facturas se paguen con prontitud para que el distrito pueda, en la medida de lo posible, aprovechar los descuentos disponibles y evitar cargos por financiamiento.\n\nEl Superintendente o su designado deberá firmar todas las órdenes de pago y deberá asegurarse de que dichas órdenes cuenten con la documentación de respaldo apropiada que verifique que todos los bienes y servicios por los que se va a pagar han sido entregados o prestados de conformidad con el acuerdo de compra.\n\nLa Mesa Directiva deberá aprobar todas las órdenes de pago en una reunión ordinaria programada de la Mesa Directiva.\n\nEl distrito no será responsable por compras no autorizadas.",
+  "_metadata": {
+    "model": "claude-sonnet-4-6",
+    "generatedAt": "2026-06-10T16:59:52.510Z",
+    "method": "AI translation of contentText via the Claude API (scripts/translate-policy-bodies.mjs); one policy per request, bodies over 30KB split at paragraph boundaries into chunks and reassembled; validated for length, paragraph structure, and meta-commentary",
+    "sourceFile": "data/board-policies/3314-BP.json",
+    "sourceHash": "4784a0733259dd4f369833d8586c819bcc3e8b3282ed9df454645c2462ac8b03",
+    "note": "Machine translation. The English Simbli version is authoritative."
+  }
+}

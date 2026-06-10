@@ -1283,3 +1283,82 @@ Individual, structured detailed records of each board policy, regulation, and by
 - `name`: string (display name of the attached file)
 - `filename`: string (file name on server)
 
+---
+
+## data/board-policies-es/{code}-{type}.json
+
+Spanish machine-translations of policy **bodies**, one file per policy with the same `{code}-{type}.json` filename as `data/board-policies/`. 618 of the 619 policies have a file; the one gap (`6174-E PDF(1)-AR`) is a scanned PDF exhibit with no extractable English text, so there is nothing to translate — its page falls back to English. These are unofficial AI translations: the English version on Simbli is the only text with legal force.
+
+### Sample Record
+
+```json
+{
+  "code": "0100",
+  "type": "BP",
+  "titleEs": "Filosofía",
+  "contentTextEs": "Como parte de su responsabilidad de establecer una visión orientadora para el distrito...",
+  "_metadata": {
+    "model": "claude-sonnet-4-6",
+    "generatedAt": "2026-06-10T16:52:48.783Z",
+    "method": "AI translation of contentText via the Claude API (scripts/translate-policy-bodies.mjs); one policy per request, bodies over 30KB split at paragraph boundaries into chunks and reassembled; validated for length, paragraph structure, and meta-commentary",
+    "sourceFile": "data/board-policies/0100-BP.json",
+    "sourceHash": "fd6d807b12ca5d1b9329929bfa3fb60994deac09f2c119604f83250b76ef3b1d",
+    "note": "Machine translation. The English Simbli version is authoritative."
+  }
+}
+```
+
+### Schema Description
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `code` | string | The policy code number, matching the English file (e.g. `"0100"`, `"5141.22"`). |
+| `type` | string | `"BP"`, `"AR"`, `"BB"`, or `"E"` — matches the English file. |
+| `titleEs` | string | Spanish title, copied from `data/policy-titles-es.json` for consistency. |
+| `contentTextEs` | string | The translated plain-text policy body. Footnotes/legal citations and crossRefs are NOT translated — statute names and code strings stay in English; read them from the English file. |
+| `_metadata.model` | string | Claude model id used for the translation. |
+| `_metadata.generatedAt` | string | ISO 8601 timestamp of the translation run. |
+| `_metadata.method` | string | How the translation was produced (script, chunking, validation). |
+| `_metadata.sourceFile` | string | Path of the English source file. |
+| `_metadata.sourceHash` | string | sha256 of the English `contentText` at translation time. The translator skips any policy whose stored hash still matches, so re-runs only touch new/revised policies. |
+| `_metadata.note` | string | Disclaimer that the English Simbli version is authoritative. |
+
+---
+
+## data/policy-summaries.json
+
+AI-generated one-sentence summaries of every board policy, English AND Spanish, for the `/policies/` and `/politicas/` index pages. 618 entries — the same single intentional gap as `board-policies-es/` (`6174-E PDF(1)-AR` has no source text, so no summary is invented for it).
+
+### Sample
+
+```json
+{
+  "_metadata": {
+    "source": "data/board-policies/*.json (scraped from https://simbli.eboardsolutions.com/Policy/PolicyListing.aspx?S=36030397 by scrape-board-policies.mjs)",
+    "method": "AI-generated one-sentence summaries via the Claude API (scripts/generate-policy-summaries.mjs); one request per policy returning English and Spanish together as structured JSON; policy text truncated to the first 8000 chars as a cost/quality tradeoff; sourceHash is the sha256 of the full (untruncated) contentText for cache invalidation",
+    "model": "claude-sonnet-4-6",
+    "generatedAt": "2026-06-10T18:27:09.543Z",
+    "note": "Machine-generated summaries for the policy index pages. They simplify and may omit nuance; the full policy text on Simbli is authoritative. Spanish summaries are AI-generated, not official district translations."
+  },
+  "summaries": {
+    "0100-BP": {
+      "title": "Philosophy",
+      "en": "Commits the Board to a set of core beliefs — including safety, high expectations, family partnership, and equity — that must guide all district programs and activities.",
+      "es": "Establece las creencias fundamentales de la Mesa Directiva — como seguridad, altas expectativas, trabajo con familias y equidad — que deben guiar todos los programas del distrito.",
+      "sourceHash": "fd6d807b12ca5d1b9329929bfa3fb60994deac09f2c119604f83250b76ef3b1d"
+    }
+  }
+}
+```
+
+### Schema Description
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `_metadata` | object | Provenance: source files, generation method, model id, timestamp, and the authoritative-text disclaimer. |
+| `summaries` | object | Map keyed by `"{code}-{type}"` (e.g. `"0100-BP"`, `"5144.1-AR"`) — same key format as the per-policy filenames. |
+| `summaries[key].title` | string | The English policy title at generation time (for sanity-checking against the catalog). |
+| `summaries[key].en` | string | One-sentence English summary. |
+| `summaries[key].es` | string | One-sentence Spanish summary, generated in the same request as the English one so both describe the same substance. |
+| `summaries[key].sourceHash` | string | sha256 of the policy's full English `contentText`; entries whose hash still matches are reused on re-runs, so only new/revised policies hit the API. |
+

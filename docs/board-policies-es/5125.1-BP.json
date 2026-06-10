@@ -1,0 +1,14 @@
+{
+  "code": "5125.1",
+  "type": "BP",
+  "titleEs": "Divulgación de información del directorio",
+  "contentTextEs": "La Mesa Directiva reconoce la importancia de mantener la confidencialidad de la información del directorio estudiantil y, por lo tanto, autoriza la divulgación de dicha información únicamente de conformidad con la ley, la política de la Mesa Directiva y el reglamento administrativo.\n\nEl Superintendente o su designado podrá divulgar información del directorio estudiantil a representantes de los medios de comunicación u organizaciones sin fines de lucro de conformidad con la política de la Mesa Directiva y el reglamento administrativo.\n\nEl Superintendente o su designado podrá limitar o denegar la divulgación de categorías específicas de información del directorio estudiantil a cualquier organización pública o privada sin fines de lucro, basándose en su determinación sobre el mejor interés de los estudiantes del distrito. (Education Code 49073)\n\nBajo ninguna circunstancia se divulgará información del directorio estudiantil a una entidad privada con fines de lucro, excepto a representantes de los medios de comunicación y a posibles empleadores, de conformidad con la política de la Mesa Directiva.",
+  "_metadata": {
+    "model": "claude-sonnet-4-6",
+    "generatedAt": "2026-06-10T17:16:11.614Z",
+    "method": "AI translation of contentText via the Claude API (scripts/translate-policy-bodies.mjs); one policy per request, bodies over 30KB split at paragraph boundaries into chunks and reassembled; validated for length, paragraph structure, and meta-commentary",
+    "sourceFile": "data/board-policies/5125.1-BP.json",
+    "sourceHash": "d5a17ad75010528a5fe2bcb349b8e63c533ba16d30f12ffefd65db7fce3f9dd4",
+    "note": "Machine translation. The English Simbli version is authoritative."
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "code": "4319.22",
+  "type": "BP",
+  "titleEs": "Vestimenta y arreglo personal",
+  "contentTextEs": "La Mesa Directiva considera que la vestimenta y el arreglo personal adecuados por parte de los empleados del distrito contribuyen a un ambiente de aprendizaje productivo y sirven como modelo de conducta positiva. Durante el horario escolar y en las actividades escolares, los empleados deberán mantener estándares profesionales de vestimenta y arreglo personal que demuestren su alto respeto por la educación, proyecten una imagen acorde con sus responsabilidades laborales y su asignación, y no pongan en riesgo la salud o la seguridad de los empleados o los estudiantes. Todos los empleados estarán sujetos a los mismos estándares, a menos que su asignación contemple una vestimenta modificada aprobada por su supervisor.\n\nEl distrito permitirá que los empleados se presenten y vistan de una manera acorde con su identidad de género o expresión de género. (Government Code 12949)\n\nEl distrito no discriminará a los empleados por la textura del cabello ni por los peinados protectores, incluidos, entre otros, las trenzas, los \"locks\" y los trenzados en espiral. (Government Code 12926)\n\nAdemás, el distrito no despedirá a un empleado, no discriminará a un empleado en cuanto a su compensación ni en los términos, condiciones o privilegios del empleo, ni se negará a contratar a un solicitante de empleo por sus prácticas de vestimenta o arreglo personal de carácter religioso. (Government Code 12926, 12940)\n\nEsta política será presentada a los empleados al momento de su contratación, a través del manual del empleado u otros medios apropiados, y podrá ser revisada periódicamente con todos los empleados según sea necesario.",
+  "_metadata": {
+    "model": "claude-sonnet-4-6",
+    "generatedAt": "2026-06-10T17:11:51.550Z",
+    "method": "AI translation of contentText via the Claude API (scripts/translate-policy-bodies.mjs); one policy per request, bodies over 30KB split at paragraph boundaries into chunks and reassembled; validated for length, paragraph structure, and meta-commentary",
+    "sourceFile": "data/board-policies/4319.22-BP.json",
+    "sourceHash": "0716bfa482495e153622ec7d67ea0049eafc1549cc4f123e9d107bfe09bb4859",
+    "note": "Machine translation. The English Simbli version is authoritative."
+  }
+}

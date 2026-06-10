@@ -1,0 +1,14 @@
+{
+  "code": "6141.6",
+  "type": "BP",
+  "titleEs": "Educación multicultural",
+  "contentTextEs": "Para fomentar la comprensión, la comunicación y el respeto intercultural en una sociedad cada vez más diversa, el currículo y la instrucción en todos los niveles escolares deberán reflejar las perspectivas y experiencias de diversos grupos culturales, étnicos, raciales y sociales. La Mesa Directiva desea que la educación multicultural se integre en el currículo a lo largo del mayor número posible de materias, en lugar de ofrecer lecciones aisladas sobre distintas culturas.\n\nEl programa integral de educación multicultural del distrito deberá reconocer las contribuciones de diferentes grupos de personas a la historia, la vida y la cultura de la comunidad local, California, los Estados Unidos y otras naciones. Puede incluir, entre otros aspectos, instrucción sobre los idiomas, las características culturales, los eventos e individuos significativos, y las condiciones sociales, políticas y económicas de diversos grupos étnicos.\n\nAl mismo tiempo que reconoce los aspectos únicos de diferentes culturas y pueblos, la educación multicultural también deberá enfatizar los puntos en común y cuestionar los estereotipos y prejuicios que obstaculizan la comprensión entre grupos. La educación multicultural también deberá estar diseñada para contribuir al desarrollo personal de los estudiantes mediante una mayor comprensión de sí mismos, una imagen propia positiva y el orgullo por su identidad étnica.",
+  "_metadata": {
+    "model": "claude-sonnet-4-6",
+    "generatedAt": "2026-06-10T17:24:03.060Z",
+    "method": "AI translation of contentText via the Claude API (scripts/translate-policy-bodies.mjs); one policy per request, bodies over 30KB split at paragraph boundaries into chunks and reassembled; validated for length, paragraph structure, and meta-commentary",
+    "sourceFile": "data/board-policies/6141.6-BP.json",
+    "sourceHash": "e560983f7764108cfe0fb31f899ea31f948b58327e4417ceaae992f0ef7d807c",
+    "note": "Machine translation. The English Simbli version is authoritative."
+  }
+}

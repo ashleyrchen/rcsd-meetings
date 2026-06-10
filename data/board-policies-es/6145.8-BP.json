@@ -1,0 +1,14 @@
+{
+  "code": "6145.8",
+  "type": "BP",
+  "titleEs": "Asambleas y eventos especiales",
+  "contentTextEs": "La Mesa Directiva considera que las asambleas y los eventos especiales deben promover un ambiente escolar positivo y estar relacionados con el programa educativo del distrito. Las asambleas pueden proporcionar información que complemente el plan de estudios del distrito o pueden destacar los logros de los estudiantes en áreas académicas, deportivas, musicales, artísticas, teatrales u otras actividades extracurriculares o cocurriculares.\n\nEl director deberá asegurarse de que los oradores y los recursos comunitarios presentados en las asambleas escolares y los eventos especiales sean seleccionados cuidadosamente y representen un punto de vista equilibrado. Los posibles oradores deberán comprometerse a presentar material de relevancia educativa que sea apropiado para el nivel de madurez del público, sin declaraciones que sean obscenas, vulgares o que inciten a la violencia.\n\nEl director deberá programar las asambleas y los eventos especiales de manera que se maximice la efectividad del tiempo de instrucción y se cumplan los requisitos de la ley y los acuerdos negociados.\n\nDurante la asamblea, los estudiantes deberán mostrar respeto hacia todos los artistas y oradores. Los estudiantes que interrumpan el programa perderán el privilegio de asistir a la asamblea y podrán ser sujetos a medidas disciplinarias.",
+  "_metadata": {
+    "model": "claude-sonnet-4-6",
+    "generatedAt": "2026-06-10T17:25:50.735Z",
+    "method": "AI translation of contentText via the Claude API (scripts/translate-policy-bodies.mjs); one policy per request, bodies over 30KB split at paragraph boundaries into chunks and reassembled; validated for length, paragraph structure, and meta-commentary",
+    "sourceFile": "data/board-policies/6145.8-BP.json",
+    "sourceHash": "04270c9482a8bd7ece17a0725eb023c4b584d4a67128dd33b2fe182c9a8de372",
+    "note": "Machine translation. The English Simbli version is authoritative."
+  }
+}

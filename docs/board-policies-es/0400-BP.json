@@ -1,0 +1,14 @@
+{
+  "code": "0400",
+  "type": "BP",
+  "titleEs": "Planes integrales",
+  "contentTextEs": "La Mesa Directiva considera que una planificación cuidadosa es esencial para la implementación efectiva de los programas y políticas del distrito. Los planes integrales deberán identificar estrategias cohesivas para la mejora escolar, brindar estabilidad en las operaciones del distrito y estar alineados para garantizar coherencia entre los enfoques del distrito para el crecimiento académico y el logro de los estudiantes.\n\nLos planes integrales adoptados por el distrito incluirán el plan de control local y rendición de cuentas (LCAP, por sus siglas en inglés) y otros planes requeridos por ley o determinados por la Mesa Directiva como convenientes para el mejor interés del distrito. Dichos planes podrán describir las necesidades anticipadas a corto y largo plazo, los resultados medibles, las prioridades, las actividades, los recursos disponibles, los plazos, las responsabilidades del personal y las estrategias de comunicación interna y externa relacionadas con el plan.\n\nEl proceso para desarrollar planes integrales deberá incluir la amplia participación de representantes de las escuelas y la comunidad. Se podrán nombrar comités, y cuando la ley así lo exija, se deberán nombrar, para ayudar en el desarrollo de dichos planes. Los planes integrales del distrito están sujetos a revisión y aprobación por parte de la Mesa Directiva.\n\nSe podrán desarrollar planes a nivel escolar para atender las circunstancias particulares de cada plantel escolar, siempre que sean coherentes con la ley, las políticas de la Mesa Directiva, los reglamentos administrativos del distrito, la visión del distrito, el LCAP y otros planes a nivel de todo el distrito. Los planes escolares estarán sujetos a la revisión y aprobación del Superintendente o su designado, excepto cuando la ley o la política de la Mesa Directiva requiera la aprobación de la Mesa Directiva para el plan.\n\nLos planes integrales deberán estar disponibles al público, y serán revisados y actualizados a intervalos regulares según lo especificado en el plan o requerido por ley.",
+  "_metadata": {
+    "model": "claude-sonnet-4-6",
+    "generatedAt": "2026-06-10T16:52:51.824Z",
+    "method": "AI translation of contentText via the Claude API (scripts/translate-policy-bodies.mjs); one policy per request, bodies over 30KB split at paragraph boundaries into chunks and reassembled; validated for length, paragraph structure, and meta-commentary",
+    "sourceFile": "data/board-policies/0400-BP.json",
+    "sourceHash": "3c7feb84f57a62efccdce1aec34605a6774669e552534459914b02740c4a6912",
+    "note": "Machine translation. The English Simbli version is authoritative."
+  }
+}

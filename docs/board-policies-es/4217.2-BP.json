@@ -1,0 +1,14 @@
+{
+  "code": "4217.2",
+  "type": "BP",
+  "titleEs": "Renuncia",
+  "contentTextEs": "Personal Clasificado\n\nTodo empleado del distrito que desee renunciar a su puesto deberá presentar, por escrito, una carta de renuncia que indique la fecha que el empleado considera como su último día de trabajo. La Mesa Directiva alienta a los empleados a proporcionar un aviso previo que sea apropiado para el puesto que ocupan.\n\nLa renuncia escrita del empleado deberá presentarse ante la Mesa Directiva a través del Superintendente o su designado. La Mesa Directiva establecerá la fecha en que la renuncia entrará en vigor. Una vez que la Mesa Directiva haya establecido formalmente dicha fecha, el empleado no podrá retirar la renuncia.\n\nLa fecha efectiva de la renuncia será una fecha no posterior al cierre del año escolar durante el cual se reciba la renuncia. Sin embargo, el empleado y la Mesa Directiva podrán acordar que la renuncia será aceptada en una fecha mutuamente acordada que no sea posterior a dos años después del cierre del año escolar en que la Mesa Directiva reciba la renuncia. (Education Code 44930, 45201)",
+  "_metadata": {
+    "model": "claude-sonnet-4-6",
+    "generatedAt": "2026-06-10T17:08:14.519Z",
+    "method": "AI translation of contentText via the Claude API (scripts/translate-policy-bodies.mjs); one policy per request, bodies over 30KB split at paragraph boundaries into chunks and reassembled; validated for length, paragraph structure, and meta-commentary",
+    "sourceFile": "data/board-policies/4217.2-BP.json",
+    "sourceHash": "4b1fe180f36f593c65e375bf20c95da34591ac7a9bd192a05afda862bc649578",
+    "note": "Machine translation. The English Simbli version is authoritative."
+  }
+}

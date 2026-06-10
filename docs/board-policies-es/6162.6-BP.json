@@ -1,0 +1,14 @@
+{
+  "code": "6162.6",
+  "type": "BP",
+  "titleEs": "Uso de materiales protegidos por derechos de autor",
+  "contentTextEs": "Todo el personal del distrito deberá cumplir con las disposiciones de la ley federal de derechos de autor y mantener los más altos estándares éticos en el uso de materiales protegidos por derechos de autor. El distrito no brindará apoyo legal a ningún empleado que viole la ley de derechos de autor. La infracción intencional de esta ley por parte de estudiantes o personal podrá resultar en medidas disciplinarias.\n\nLa Mesa Directiva reconoce que la piratería de software informático contribuye a mayores costos y reduce los incentivos comerciales para el desarrollo de software educativo de calidad. En los casos en que la interpretación de la ley de derechos de autor sea ambigua, el distrito determinará el uso apropiado del software informático haciendo referencia al contrato de licencia y/o a las declaraciones de política contenidas en los paquetes de software utilizados en el distrito. La instrucción relacionada con computadoras para estudiantes y personal deberá abordar los problemas éticos y prácticos causados por la piratería de software.\n\nEl Superintendente o su designado será la única persona que podrá firmar contratos de licencia de software para las escuelas del distrito. Cada escuela que utilice software con licencia deberá tener una copia firmada del contrato de software.\n\nEl Superintendente o su designado mantendrá reglamentos para desalentar la violación de todas las leyes de derechos de autor y prevenir actividades ilegales de copia.",
+  "_metadata": {
+    "model": "claude-sonnet-4-6",
+    "generatedAt": "2026-06-10T17:27:08.661Z",
+    "method": "AI translation of contentText via the Claude API (scripts/translate-policy-bodies.mjs); one policy per request, bodies over 30KB split at paragraph boundaries into chunks and reassembled; validated for length, paragraph structure, and meta-commentary",
+    "sourceFile": "data/board-policies/6162.6-BP.json",
+    "sourceHash": "dfcc1dd0bd9eddb46350e7a2a19079aad1a1b1c185a48b2ecc91cf761d787f65",
+    "note": "Machine translation. The English Simbli version is authoritative."
+  }
+}

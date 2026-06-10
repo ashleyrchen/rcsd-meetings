@@ -1,0 +1,14 @@
+{
+  "code": "6164.5",
+  "type": "BP",
+  "titleEs": "Equipos de éxito estudiantil",
+  "contentTextEs": "La Mesa Directiva fomenta la colaboración entre padres/tutores, maestros, personal de recursos, administradores y estudiantes para evaluar las fortalezas y necesidades de los estudiantes que presentan dificultades académicas, de asistencia escolar o de conducta, y para identificar estrategias y programas que puedan ayudarles. El Superintendente o su designado establecerá equipos de éxito estudiantil según sea necesario para atender las necesidades individuales de los estudiantes.\n\nEl Superintendente o su designado establecerá un proceso para iniciar las referencias de estudiantes al equipo de éxito estudiantil.\n\nCada equipo de éxito estudiantil desarrollará estrategias de intervención para apoyar al estudiante. Dichas estrategias pueden incluir cambios en la ubicación del programa o en los métodos de enseñanza, recomendación de servicios educativos complementarios, estrategias de participación de los padres, intervenciones de conducta, disciplina, referencias a otras agencias o recursos, y/u otras intervenciones apropiadas.\n\nEl equipo de éxito estudiantil supervisará el progreso del estudiante, evaluará en qué medida se han implementado las estrategias recomendadas y desarrollará intervenciones adicionales según sea necesario.",
+  "_metadata": {
+    "model": "claude-sonnet-4-6",
+    "generatedAt": "2026-06-10T17:28:22.035Z",
+    "method": "AI translation of contentText via the Claude API (scripts/translate-policy-bodies.mjs); one policy per request, bodies over 30KB split at paragraph boundaries into chunks and reassembled; validated for length, paragraph structure, and meta-commentary",
+    "sourceFile": "data/board-policies/6164.5-BP.json",
+    "sourceHash": "7fc61d7cc9fe225fce9bfcdf91f061c9298ecec471b94a35178cdbe89979d441",
+    "note": "Machine translation. The English Simbli version is authoritative."
+  }
+}

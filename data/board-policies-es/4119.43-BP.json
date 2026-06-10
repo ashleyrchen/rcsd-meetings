@@ -1,0 +1,14 @@
+{
+  "code": "4119.43",
+  "type": "BP",
+  "titleEs": "Precauciones universales",
+  "contentTextEs": "Personal Certificado\n\nCon el fin de proteger a todos los empleados del contacto con sangre o fluidos corporales potencialmente infecciosos, la Mesa Directiva requiere que se observen precauciones universales en todo el distrito.\n\nLas precauciones universales son apropiadas para prevenir la propagación de todas las enfermedades infecciosas y deberán utilizarse independientemente de si se sabe que hay agentes patógenos transmitidos por la sangre presentes.\n\nEl Superintendente o su designado distribuirá a los empleados la información proporcionada por el Departamento de Educación de California (CDE) sobre el síndrome de inmunodeficiencia adquirida (SIDA), las condiciones relacionadas con el SIDA y la hepatitis B. Esta información incluirá, entre otras cosas, los métodos apropiados que los empleados pueden usar para prevenir la exposición al SIDA y la hepatitis B, incluyendo información sobre la disponibilidad de una vacuna para prevenir el contagio de la hepatitis B, y que el costo de esta vacunación puede estar cubierto por el plan de salud de los empleados. La información se distribuirá anualmente, o con mayor frecuencia si el CDE proporciona nueva información. (Health and Safety Code 120875, 120880)\n\nLa información sobre precauciones universales puede incluirse en los manuales del empleado.\n\nLos empleados deberán reportar de inmediato cualquier incidente de exposición o incidente de primeros auxilios de acuerdo con el plan de control de exposición del distrito para agentes patógenos transmitidos por la sangre u otros procedimientos de seguridad.",
+  "_metadata": {
+    "model": "claude-sonnet-4-6",
+    "generatedAt": "2026-06-10T17:06:49.893Z",
+    "method": "AI translation of contentText via the Claude API (scripts/translate-policy-bodies.mjs); one policy per request, bodies over 30KB split at paragraph boundaries into chunks and reassembled; validated for length, paragraph structure, and meta-commentary",
+    "sourceFile": "data/board-policies/4119.43-BP.json",
+    "sourceHash": "3e9b43e0b6befa356d29c597a3570de3de3312e037ea532707d61001527c13d9",
+    "note": "Machine translation. The English Simbli version is authoritative."
+  }
+}

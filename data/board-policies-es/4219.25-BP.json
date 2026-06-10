@@ -1,0 +1,14 @@
+{
+  "code": "4219.25",
+  "type": "BP",
+  "titleEs": "Actividades políticas de los empleados",
+  "contentTextEs": "Personal Clasificado\n\nLa Mesa Directiva reconoce la importancia de la actividad política, el ejercicio del voto y la participación cívica, y respeta el derecho de los empleados del distrito a participar en discusiones y actividades políticas como individuos en su propio tiempo y a su propio costo. Al participar en dichas actividades, los empleados deberán dejar en claro que actúan en su propio nombre y no como representantes del distrito.\n\nLos empleados del distrito, como miembros de la comunidad, pueden usar las instalaciones escolares para reuniones, incluyendo actividades políticas, según lo permitido por la Ley del Centro Cívico y la política del distrito.\n\nLos empleados deberán abstenerse de realizar actividades políticas prohibidas identificadas en la ley, la política de la Mesa Directiva y los reglamentos administrativos. Los empleados que realicen estas actividades estarán sujetos a medidas disciplinarias y/o sanciones penales.",
+  "_metadata": {
+    "model": "claude-sonnet-4-6",
+    "generatedAt": "2026-06-10T17:09:13.402Z",
+    "method": "AI translation of contentText via the Claude API (scripts/translate-policy-bodies.mjs); one policy per request, bodies over 30KB split at paragraph boundaries into chunks and reassembled; validated for length, paragraph structure, and meta-commentary",
+    "sourceFile": "data/board-policies/4219.25-BP.json",
+    "sourceHash": "ad7342647349aa9745b2e31615350fd01b739ec8b4fb6984e44ffee30181e94f",
+    "note": "Machine translation. The English Simbli version is authoritative."
+  }
+}

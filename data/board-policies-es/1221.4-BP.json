@@ -1,0 +1,14 @@
+{
+  "code": "1221.4",
+  "type": "BP",
+  "titleEs": "^Comités ciudadanos de supervisión de bonos",
+  "contentTextEs": "La Proposición 39, aprobada por los votantes de California en las elecciones generales del 7 de noviembre de 2000, establece que la mesa directiva de un distrito escolar puede buscar la autorización y emisión de bonos mediante el voto del 55 por ciento del electorado. Como resultado de la aprobación de la Proposición 39, se agregó lenguaje al Education Code que requiere que los distritos escolares que aprueben un bono designado como elección de bonos de la Proposición 39 establezcan un comité ciudadano de supervisión (\"Comité\") para revisar activamente y reportar sobre el uso de los fondos provenientes de los bonos de la Proposición 39.\n\nPor lo tanto, la Mesa Directiva del Distrito deberá establecer un Comité para revisar activamente y reportar sobre el uso de los fondos de bonos cuando el Distrito apruebe un bono de la Proposición 39. El Comité se formará para garantizar que dichos fondos de bonos se gasten únicamente en propósitos permitidos y no para ningún otro fin. El Comité se establecerá dentro de los sesenta (60) días a partir de la fecha en que la Mesa Directiva registre en sus actas los resultados oficiales de la elección.\n\nLos procedimientos para la selección y nombramiento de los miembros del Comité, la conducción de las reuniones, un resumen de las funciones del Comité, y el alcance de las responsabilidades del Comité ante el público y la Mesa Directiva se establecen en los reglamentos administrativos de la Mesa Directiva.",
+  "_metadata": {
+    "model": "claude-sonnet-4-6",
+    "generatedAt": "2026-06-10T16:55:57.268Z",
+    "method": "AI translation of contentText via the Claude API (scripts/translate-policy-bodies.mjs); one policy per request, bodies over 30KB split at paragraph boundaries into chunks and reassembled; validated for length, paragraph structure, and meta-commentary",
+    "sourceFile": "data/board-policies/1221.4-BP.json",
+    "sourceHash": "ff76a82c92bfe49893635ee8a7fba96629b8654d47d99e213422435ccd960d79",
+    "note": "Machine translation. The English Simbli version is authoritative."
+  }
+}

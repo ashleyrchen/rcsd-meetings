@@ -2,7 +2,7 @@
   "_metadata": {
     "source": "https://simbli.eboardsolutions.com/Policy/ViewPolicy.aspx?S=36030397&revid=wWpO9fzplusX5dheSvTDCJ75g==",
     "scrapedAt": "2026-05-24T20:11:49.868Z",
-    "method": "Playwright + Simbli ViewPolicy API scraper"
+    "method": "Playwright + Simbli ViewPolicy API scraper; embedded exhibit PDF, text-extracted"
   },
   "code": "4119.21-E PDF(1)",
   "title": "Professional Standards",
@@ -13,7 +13,7 @@
   "hasAttachment": false,
   "revid": "wWpO9fzplusX5dheSvTDCJ75g==",
   "contentHtml": "",
-  "contentText": "",
+  "contentText": "CODE OF ETHICS OF THE EDUCATION PROFESSION\n\nPreamble\n\nThe educator, believing in the worth and dignity of each human being, recognizes the supreme\nimportance of the pursuit of truth, devotion to excellence, and the nurturing of democratic principles.\nEssential to these goals is the protection of freedom to learn and to teach and the guarantee of equal\neducational opportunity for all. The educator accepts the responsibility to adhere to the highest ethical\nstandards.\n\nThe educator recognizes the magnitude of the responsibility inherent in the teaching process. The\ndesire for the respect and confidence of one's colleagues, of students, of parents, and of the members of\nthe community provides the incentive to attain and maintain the highest possible degree of ethical\nconduct. The Code of Ethics of the Education Profession indicates the aspiration of all educators and\nprovides standards by which to judge conduct.\n\nPrinciple I. Commitment to the Student\n\nThe educator strives to help each student realize his/her potential as a worthy and effective member of\nsociety. The educator therefore works to stimulate the spirit of inquiry, the acquisition of knowledge\nand understanding, and the thoughtful formulation of worthy goals.\n\nIn fulfillment of the obligation to the student, the educator:\n\n1. Shall not unreasonably restrain the student from independent action in the pursuit of learning\n\n2. Shall not unreasonably deny the student access to varying points of view\n\n3. Shall not deliberately suppress or distort subject matter relevant to the student's progress\n\n4. Shall make reasonable effort to protect the student from conditions harmful to learning or to health\nand safety\n\n5. Shall not intentionally expose the student to embarrassment or disparagement\n\n6. Shall not on the basis of race, color, creed, gender, national origin, marital status, political or\nreligious beliefs, family, social, or cultural background, or sexual orientation, unfairly:\n\na. Exclude any student from participation in any program\n\nb. Deny benefits to any student\n\nc. Grant any advantage to any student\n\n7. Shall not use professional relationships with students for private advantage\n\n8. Shall not disclose information in the course of professional service unless disclosure serves a\ncompelling professional purpose or is required by law\n\nPrinciple II. Commitment to the Profession\n\nThe education profession is vested by the public with a trust and responsibility requiring the highest\nideals of professional service.\n\nIn the belief that the quality of the services of the education profession directly influences the nation\nand its citizens, the educator shall exert every effort to raise professional standards, to promote a\nclimate that encourages the exercise of professional judgment, to achieve conditions that attract\npersons worthy of the trust to careers in education, and to assist in preventing the practice of the\nprofession by unqualified persons.\n\nIn fulfillment of the obligation of the profession, the educator:\n\n1. Shall not in any application for a professional position deliberately make a false statement or fail to\ndisclose a material fact related to competency and qualifications\n\n2. Shall not misrepresent his/her professional qualifications\n\n3. Shall not assist any entry into the profession of a person known to be unqualified in respect to\ncharacter, education, or other relevant attribute\n\n4. Shall not knowingly make a false statement concerning the qualifications of a candidate for a\nprofessional position\n\n5. Shall not assist a noneducator in the unauthorized practice of teaching\n\n6. Shall not disclose information about colleagues obtained in the course of professional service unless\ndisclosure serves a compelling professional purpose or is required by law\n\n7. Shall not knowingly make false or malicious statements about a colleague\n\n8. Shall not accept any gratuity, gift, or favor that might impair or appear to influence professional\ndecisions or action\n\nSource: National Education Association, 1975",
   "footnotes": [
     {
       "type": "State",
@@ -673,5 +673,12 @@
       "type": "AR"
     }
   ],
-  "attachments": []
+  "attachments": [],
+  "exhibitPdf": {
+    "artifact": "artifacts/board-policy-exhibits/4119.21-E-PDF(1)-AR.pdf",
+    "sourceUrl": "https://simbli.eboardsolutions.com/Meetings/TempFolder/Policies/36030397_4119.21-E PDF(1)_20260610142235749.pdf",
+    "sourceUrlNote": "Generated per page view by Simbli (TempFolder) and expires; the ViewPolicy page in _metadata.source is the stable reference.",
+    "capturedAt": "2026-06-10T18:22:36.799Z",
+    "sizeBytes": 17577
+  }
 }

@@ -1,0 +1,14 @@
+{
+  "code": "9400",
+  "type": "AR",
+  "titleEs": "Autoevaluación de la Mesa Directiva",
+  "contentTextEs": "La Mesa Directiva realizará anualmente una autoevaluación con el fin de demostrar responsabilidad ante la comunidad y asegurar que la gobernanza del distrito apoye de manera efectiva el logro estudiantil y el cumplimiento de la visión y los objetivos del distrito.\n\nLa evaluación podrá abordar cualquier área de responsabilidad de la Mesa Directiva, incluyendo, entre otros, el desempeño de la Mesa Directiva en relación con el establecimiento de la visión, el currículo, el personal, las finanzas, las políticas, la negociación colectiva y las relaciones con la comunidad. La evaluación también podrá abordar objetivos relacionados con el funcionamiento de las sesiones de la Mesa Directiva, las relaciones entre los miembros de la Mesa Directiva, la relación con el Superintendente, la comprensión de los roles y responsabilidades de la Mesa Directiva y del Superintendente, las habilidades de comunicación u otras habilidades de gestión de la Mesa Directiva.\n\nLa Mesa Directiva será evaluada en su conjunto. Asimismo, se alienta a los miembros individuales de la Mesa Directiva a utilizar el proceso de evaluación como una oportunidad para valorar de manera privada su propio desempeño personal.\n\nCada año, la Mesa Directiva, con la asistencia del Superintendente, determinará un método o instrumento de evaluación que mida un número razonable de objetivos de desempeño previamente identificados. Las grabaciones en video de una sesión de la Mesa Directiva podrán utilizarse como herramienta de evaluación únicamente con el consentimiento de todos los miembros de la Mesa Directiva.\n\nCualquier debate sobre la autoevaluación de la Mesa Directiva se llevará a cabo en sesión abierta. A solicitud de la Mesa Directiva, se podrá utilizar un facilitador para apoyar el proceso de evaluación. La Mesa Directiva podrá invitar al Superintendente u otras personas a aportar información al proceso de evaluación.\n\nTras la evaluación, la Mesa Directiva desarrollará estrategias para fortalecer el desempeño de la Mesa Directiva y establecerá prioridades y objetivos para la evaluación del año siguiente.",
+  "_metadata": {
+    "model": "claude-sonnet-4-6",
+    "generatedAt": "2026-06-10T17:33:41.900Z",
+    "method": "AI translation of contentText via the Claude API (scripts/translate-policy-bodies.mjs); one policy per request, bodies over 30KB split at paragraph boundaries into chunks and reassembled; validated for length, paragraph structure, and meta-commentary",
+    "sourceFile": "data/board-policies/9400-AR.json",
+    "sourceHash": "2fa4fa48327e7e858cfe663c7acb99642183d7b776b64202da6491a7a15c2185",
+    "note": "Machine translation. The English Simbli version is authoritative."
+  }
+}

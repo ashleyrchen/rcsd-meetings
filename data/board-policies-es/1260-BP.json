@@ -1,0 +1,14 @@
+{
+  "code": "1260",
+  "type": "BP",
+  "titleEs": "Fundación educativa",
+  "contentTextEs": "La Mesa Directiva reconoce la importancia del apoyo de la comunidad a los programas del distrito, incluidas las contribuciones económicas voluntarias, para ayudar al distrito a alcanzar sus metas de aprendizaje estudiantil.\n\nLa Mesa Directiva designa al Superintendente para trabajar de manera cooperativa con la fundación educativa en la determinación de los propósitos para los cuales se pueden utilizar los fondos, con el fin de atender las necesidades cambiantes del distrito y sus estudiantes. La Mesa Directiva reconoce que una fundación educativa es una entidad legal independiente, separada del distrito. Sin embargo, se alienta a la fundación a presentar informes periódicos a la Mesa Directiva sobre el estado de su trabajo y a comunicar las formas en que el distrito puede apoyar las actividades de la fundación.\n\nCon el consentimiento del Superintendente o su designado(a), la fundación educativa, según corresponda, podrá usar el nombre del distrito, el nombre de una escuela, o cualquier logotipo atribuible a una escuela o al distrito. El distrito proporcionará información de contacto de los padres de familia con fines de comunicación.\n\nLa Mesa Directiva apoya las asignaciones de la fundación que sirvan a todas las escuelas del distrito de manera equitativa.",
+  "_metadata": {
+    "model": "claude-sonnet-4-6",
+    "generatedAt": "2026-06-10T16:56:07.930Z",
+    "method": "AI translation of contentText via the Claude API (scripts/translate-policy-bodies.mjs); one policy per request, bodies over 30KB split at paragraph boundaries into chunks and reassembled; validated for length, paragraph structure, and meta-commentary",
+    "sourceFile": "data/board-policies/1260-BP.json",
+    "sourceHash": "88730c9b88422e27a5488b857e17ba420584e5a82ecde1492c4c7518f0db0fb6",
+    "note": "Machine translation. The English Simbli version is authoritative."
+  }
+}
