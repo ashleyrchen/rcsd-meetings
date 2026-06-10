@@ -1,0 +1,14 @@
+# Cloudflare Pages custom response headers.
+# Format: https://developers.cloudflare.com/pages/configuration/headers/
+#
+# Font binaries and images are content-stable: a visually changed asset
+# ships under a new filename, so browsers may cache these for a year and
+# never revalidate. Deliberately NOT covered: /fonts/fonts.css (its
+# @font-face rules can change between deploys) and HTML (Pages' default
+# revalidation keeps deploys visible immediately).
+
+/fonts/*.woff2
+  Cache-Control: public, max-age=31536000, immutable
+
+/img/*
+  Cache-Control: public, max-age=31536000, immutable
