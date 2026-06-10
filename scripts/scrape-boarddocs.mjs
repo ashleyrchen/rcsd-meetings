@@ -59,8 +59,13 @@ function parseItemDetail(html) {
     .replace(/<style\b[^>]*>[\s\S]*?<\/style[^>]*>/gi, ' ');
   const lastDl = cleaned.lastIndexOf('</dl>');
   const contentHtml = lastDl >= 0 ? cleaned.slice(lastDl + 5) : cleaned;
-  const body = contentHtml
-    .replace(/<[^>]+>/g, ' ')
+  // Strip tags to a fixpoint: one pass leaves reassembled tags (<scr<b>ipt>).
+  let text = contentHtml;
+  for (let prev = ''; prev !== text; ) {
+    prev = text;
+    text = text.replace(/<[^>]+>/g, ' ');
+  }
+  const body = text
     .replace(/&nbsp;/gi, ' ')
     .replace(/&amp;/gi, '&')
     .replace(/\s+/g, ' ')
@@ -132,7 +137,13 @@ function parseAgendaHtml(html) {
     const typeMatch = body.match(/<div class="actiontype">\s*([^<]*?)(?:<span|$)/s);
     let actionType = '';
     if (typeMatch) {
-      actionType = typeMatch[1].replace(/<[^>]*>/g, '').trim().replace(/,\s*$/, '');
+      // Strip tags to a fixpoint: one pass leaves reassembled tags (<scr<b>ipt>).
+      actionType = typeMatch[1];
+      for (let prev = ''; prev !== actionType; ) {
+        prev = actionType;
+        actionType = actionType.replace(/<[^>]*>/g, '');
+      }
+      actionType = actionType.trim().replace(/,\s*$/, '');
     }
 
     const hasAttachment = body.includes('fa-file-text-o');
