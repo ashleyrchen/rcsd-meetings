@@ -576,6 +576,23 @@ function clientScript(clientLabels) {
         return (s || '').toLowerCase().normalize('NFD').replace(/[\\u0300-\\u036f]/g, '');
       }
 
+      // Every dynamic value (fetched JSON fields, dataset attributes,
+      // err.message) must pass through esc() before reaching innerHTML.
+      function esc(text) {
+        return String(text ?? '')
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/"/g, "&quot;")
+          .replace(/'/g, "&#039;");
+      }
+
+      // Only http(s) URLs from fetched JSON may become links — blocks
+      // javascript:/data: schemes reaching an href.
+      function safeUrl(u) {
+        return /^https?:\\/\\//i.test(u || '') ? u : null;
+      }
+
       // Simbli dates are MM/DD/YYYY; Spanish renders dd/mm/yyyy (es-MX).
       function fmtDate(s) {
         if (!s) return L.na;
@@ -683,17 +700,17 @@ function clientScript(clientLabels) {
 
                 // Format details
                 const scrapedDate = data._metadata?.scrapedAt ? new Date(data._metadata.scrapedAt).toLocaleDateString(L.dateLocale) : L.na;
-                const officialUrl = data._metadata?.source || \`https://simbli.eboardsolutions.com/Policy/ViewPolicy.aspx?S=36030397&revid=\${data.revid}\`;
+                const officialUrl = safeUrl(data._metadata?.source) || \`https://simbli.eboardsolutions.com/Policy/ViewPolicy.aspx?S=36030397&revid=\${encodeURIComponent(data.revid || '')}\`;
                 let detailsHtml = \`
                   <div class="drawer-meta-bar">
-                    <div>\${L.revisionId}: \${data.revid} | \${L.revised}: \${fmtDate(data.lastRevised)} | \${L.checked}: \${scrapedDate}</div>
+                    <div>\${L.revisionId}: \${esc(data.revid)} | \${L.revised}: \${esc(fmtDate(data.lastRevised))} | \${L.checked}: \${esc(scrapedDate)}</div>
                     <div class="drawer-actions">
-                      <a href="\${officialUrl}" class="drawer-btn" target="_blank" style="margin-right: 1.5rem;">\${L.official}</a>
-                      <a href="/board-policies/\${code}-\${type}.json" class="drawer-btn" target="_blank">\${L.viewJson}</a>
+                      <a href="\${esc(officialUrl)}" class="drawer-btn" target="_blank" style="margin-right: 1.5rem;">\${L.official}</a>
+                      <a href="/board-policies/\${esc(code)}-\${esc(type)}.json" class="drawer-btn" target="_blank">\${L.viewJson}</a>
                     </div>
                   </div>
                   \${L.bodyNote ? '<div class="policy-lang-note">' + L.bodyNote + '</div>' : ''}
-                  <div class="policy-body-text">\${escapeHtml(data.contentText)}</div>
+                  <div class="policy-body-text">\${esc(data.contentText)}</div>
                 \`;
 
                 // Add Footnotes/Citations if present
@@ -703,10 +720,11 @@ function clientScript(clientLabels) {
 
                   data.footnotes.forEach(group => {
                     detailsHtml += \`<div class="ref-group">
-                      <div class="ref-group-title">\${group.type}</div>\`;
+                      <div class="ref-group-title">\${esc(group.type)}</div>\`;
                     group.references.forEach(ref => {
-                      const link = ref.url ? \`<a href="\${ref.url}" target="_blank" rel="noopener">\${ref.code}</a>\` : \`<span class="ref-code">\${ref.code}</span>\`;
-                      detailsHtml += \`<div class="ref-item">\${link} - \${ref.description}</div>\`;
+                      const refUrl = safeUrl(ref.url);
+                      const link = refUrl ? \`<a href="\${esc(refUrl)}" target="_blank" rel="noopener">\${esc(ref.code)}</a>\` : \`<span class="ref-code">\${esc(ref.code)}</span>\`;
+                      detailsHtml += \`<div class="ref-item">\${link} - \${esc(ref.description)}</div>\`;
                     });
                     detailsHtml += \`</div>\`;
                   });
@@ -723,8 +741,8 @@ function clientScript(clientLabels) {
                   data.crossRefs.forEach(ref => {
                     detailsHtml += \`
                       <div style="font-size: 0.75rem;">
-                        <span style="font-family: monospace; font-weight: bold; width: 60px; display: inline-block;">\${ref.code} \${ref.type}</span>
-                        <span>\${ref.title}</span>
+                        <span style="font-family: monospace; font-weight: bold; width: 60px; display: inline-block;">\${esc(ref.code)} \${esc(ref.type)}</span>
+                        <span>\${esc(ref.title)}</span>
                       </div>
                     \`;
                   });
@@ -735,22 +753,12 @@ function clientScript(clientLabels) {
                 drawerInner.innerHTML = detailsHtml;
                 drawer.setAttribute('data-loaded', 'true');
               } catch (err) {
-                drawerInner.innerHTML = \`<div style="color:var(--coral); text-align:center; padding:1rem;">\${L.loadError} \${err.message}</div>\`;
+                drawerInner.innerHTML = \`<div style="color:var(--coral); text-align:center; padding:1rem;">\${L.loadError} \${esc(err.message)}</div>\`;
               }
             }
           }
         });
       });
-
-      function escapeHtml(text) {
-        if (!text) return '';
-        return text
-          .replace(/&/g, "&amp;")
-          .replace(/</g, "&lt;")
-          .replace(/>/g, "&gt;")
-          .replace(/"/g, "&quot;")
-          .replace(/'/g, "&#039;");
-      }
     });
   `;
 }
