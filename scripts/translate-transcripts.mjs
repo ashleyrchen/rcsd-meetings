@@ -36,6 +36,36 @@ const dateFilter = args.includes('--date') ? args[args.indexOf('--date') + 1] : 
 
 const client = new Anthropic();
 
+/**
+ * Validation gate: refuse to write or upload a Spanish transcript whose
+ * utterance texts aren't all non-empty strings (and, when enUtteranceCount is
+ * given, whose utterance count doesn't match the EN source). Model-format
+ * drift once wrote {"i","t"} objects into utterance.text on 22 published
+ * files, which the transcript viewer renders as "Error al cargar la
+ * transcripción." Throws with the offending indices; never write on failure.
+ *
+ * Pass enUtteranceCount only when es was built from that exact EN source:
+ * historic published translations predate EN re-slims (93 of 163 cached
+ * -es.json files have a small count drift vs today's EN) yet render fine,
+ * since the viewer never pairs EN/ES rows by index.
+ */
+function assertValidTranslation(es, enUtteranceCount, label) {
+  if (!es || !Array.isArray(es.utterances)) {
+    throw new Error(`${label}: missing utterances array`);
+  }
+  if (enUtteranceCount !== null && es.utterances.length !== enUtteranceCount) {
+    throw new Error(`${label}: ${es.utterances.length} utterances but EN source has ${enUtteranceCount}`);
+  }
+  const bad = [];
+  es.utterances.forEach((u, i) => {
+    if (typeof u.text !== 'string' || u.text.trim() === '') bad.push(i);
+  });
+  if (bad.length > 0) {
+    const shown = bad.slice(0, 20).join(', ');
+    throw new Error(`${label}: non-string or empty text at ${bad.length} indices [${shown}${bad.length > 20 ? ', …' : ''}]`);
+  }
+}
+
 const SYSTEM_PROMPT = `You are a professional translator specializing in plain, accessible Spanish for California communities. You translate English board meeting transcripts into Spanish.
 
 STYLE GUIDELINES:
@@ -140,26 +170,37 @@ async function translateMeeting(date) {
       }
     }
 
-    // Pad if LLM returned fewer translations than expected
-    while (translations.length < batch.length) {
-      translations.push(batch[translations.length].t);
+    // The model is asked for a bare string array but sometimes echoes the
+    // indexed input format ([{"i":N,"t":"…"}]) instead — un-unwrapped, those
+    // objects landed in utterance.text and corrupted 22 published -es.json
+    // files through May 2026. Unwrap positionally: observed model output
+    // preserves order even when its echoed "i" values drift (+1/+3 offsets in
+    // the 2020-08-26 run), so position — not the echoed index — is
+    // authoritative. Anything unusable falls back to the English source text,
+    // which is valid (just untranslated) rather than corrupt.
+    if (translations.length !== batch.length) {
+      console.warn(`  ${date} batch ${b + 1}/${batches.length}: model returned ${translations.length} items for ${batch.length} inputs`);
     }
-
-    // Clean translations to ensure they are strictly strings and handle any object returned by Claude
-    const cleanTranslations = translations.slice(0, batch.length).map((val, idx) => {
-      if (val === null || val === undefined) {
-        return batch[idx].t; // Fallback to original English
+    const fallbackIndices = [];
+    let indexDrift = 0;
+    const cleanTranslations = batch.map((item, idx) => {
+      const val = translations[idx];
+      if (typeof val === 'string' && val.trim() !== '') return val;
+      if (val !== null && typeof val === 'object') {
+        if (typeof val.i === 'number' && val.i !== item.i) indexDrift++;
+        const t = [val.t, val.text, val.translation].find(v => typeof v === 'string' && v.trim() !== '');
+        if (t !== undefined) return t;
       }
-      if (typeof val === 'object') {
-        // Claude sometimes returns an object like {"i": 59, "t": "Buenas noches..."} or {"text": "..."}
-        const textStr = val.t !== undefined ? val.t : (val.text !== undefined ? val.text : (val.translation !== undefined ? val.translation : null));
-        if (typeof textStr === 'string') {
-          return textStr;
-        }
-        return JSON.stringify(val); // Fallback string representation
-      }
-      return String(val);
+      fallbackIndices.push(item.i);
+      return item.t;
     });
+    if (indexDrift > 0) {
+      console.warn(`  ${date} batch ${b + 1}/${batches.length}: echoed indices drifted on ${indexDrift} items (unwrapped positionally)`);
+    }
+    if (fallbackIndices.length > 0) {
+      const shown = fallbackIndices.slice(0, 10).join(', ');
+      console.warn(`  ${date} batch ${b + 1}/${batches.length}: fell back to English for ${fallbackIndices.length} utterances at [${shown}${fallbackIndices.length > 10 ? ', …' : ''}]`);
+    }
 
     allTranslations.push(...cleanTranslations);
 
@@ -179,6 +220,7 @@ async function translateMeeting(date) {
     })),
   };
 
+  assertValidTranslation(es, en.utterances.length, `${date}-es`);
   writeFileSync(esPath, JSON.stringify(es));
 
   const cost = (totalInput * 3 + totalOutput * 15) / 1_000_000;
@@ -223,6 +265,9 @@ async function checkAndRestoreTranslation(date) {
         const text = await res.text();
         const parsed = JSON.parse(text);
         if (parsed.utterances && parsed.utterances.length > 0) {
+          // Gate the restore: a corrupt published file must not re-seed the
+          // local cache. Count is not checked (see assertValidTranslation).
+          assertValidTranslation(parsed, null, `${date}-es (CDN restore)`);
           writeFileSync(esPath, JSON.stringify(parsed, null, 2));
           console.log(`  [Cache Restore] Restored Spanish slim transcript for ${date} from CDN`);
           return true;
@@ -328,6 +373,14 @@ async function main() {
     for (const date of toProcess) {
       const esPath = resolve(SLIM_DIR, `${date}-es.json`);
       if (!existsSync(esPath)) continue;
+      // Never publish a corrupt file, even from a stale cache.
+      try {
+        assertValidTranslation(JSON.parse(readFileSync(esPath, 'utf-8')), null, `${date}-es (upload)`);
+      } catch (err) {
+        console.error(`  Upload BLOCKED for ${date}: ${err.message}`);
+        errors++;
+        continue;
+      }
       try {
         execFileSync('npx', [
           'wrangler', 'r2', 'object', 'put',
