@@ -3084,16 +3084,15 @@ ${siteFooter({ lang })}
   }
   document.querySelectorAll('table.sortable').forEach(init);
 
-  // Set up row-level clicks for table rows with data-href dynamically.
-  // Only navigate to same-origin paths ('/x' but not '//x') so DOM text can
-  // never feed a javascript: or protocol-relative URL into the location sink.
+  // Row-level clicks delegate to the row's own name-cell anchor instead of
+  // reading data-href into window.location — DOM text never reaches a
+  // navigation sink (CodeQL js/xss-through-dom), and the anchor href stays
+  // the single source of truth for the destination.
   document.querySelectorAll('tr[data-href]').forEach(function (row) {
     row.addEventListener('click', function (e) {
       if (e.target.closest('a')) return;
-      var href = row.getAttribute('data-href') || '';
-      if (href.charAt(0) === '/' && href.charAt(1) !== '/') {
-        window.location = href;
-      }
+      var link = row.querySelector('a[href]');
+      if (link) link.click();
     });
   });
 })();
