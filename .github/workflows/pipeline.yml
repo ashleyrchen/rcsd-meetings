@@ -20,6 +20,11 @@ on:
           - ubuntu-latest
         default: self-hosted
 
+# The final step commits scraped agenda metadata and pushes via GITHUB_TOKEN;
+# Pages/R2 steps authenticate with Cloudflare secrets, not this token.
+permissions:
+  contents: write
+
 jobs:
   ingest-and-deploy:
     runs-on: ${{ github.event.inputs.runner || 'ubuntu-latest' }}

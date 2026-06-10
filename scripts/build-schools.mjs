@@ -3084,11 +3084,15 @@ ${siteFooter({ lang })}
   }
   document.querySelectorAll('table.sortable').forEach(init);
 
-  // Set up row-level clicks for table rows with data-href dynamically
+  // Row-level clicks delegate to the row's own name-cell anchor instead of
+  // reading data-href into window.location — DOM text never reaches a
+  // navigation sink (CodeQL js/xss-through-dom), and the anchor href stays
+  // the single source of truth for the destination.
   document.querySelectorAll('tr[data-href]').forEach(function (row) {
     row.addEventListener('click', function (e) {
       if (e.target.closest('a')) return;
-      window.location = row.getAttribute('data-href');
+      var link = row.querySelector('a[href]');
+      if (link) link.click();
     });
   });
 })();

@@ -6,6 +6,10 @@ on:
       - '**'
   workflow_dispatch:
 
+# Read-only diagnostic: checkout + artifact upload, no pushes or API writes.
+permissions:
+  contents: read
+
 jobs:
   validate:
     runs-on: ubuntu-latest
@@ -25,6 +29,9 @@ jobs:
 
       - name: Install Playwright Chromium
         run: npx playwright install chromium --with-deps
+
+      - name: Run HTML sanitizer regression tests
+        run: node scripts/test-html-sanitizers.mjs
 
       - name: Run Simbli Connectivity Diagnostic
         run: node scripts/test-simbli-environment.mjs

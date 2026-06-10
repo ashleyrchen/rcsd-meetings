@@ -73,7 +73,13 @@ function cleanUrl(u) {
 }
 
 function stripTags(html) {
-  return html.replace(/<[^>]+>/g, ' ').replace(/&nbsp;/gi, ' ').replace(/\s+/g, ' ').trim();
+  // Strip tags to a fixpoint: one pass leaves reassembled tags (<scr<b>ipt>).
+  let out = html;
+  for (let prev = ''; prev !== out; ) {
+    prev = out;
+    out = out.replace(/<[^>]+>/g, ' ');
+  }
+  return out.replace(/&nbsp;/gi, ' ').replace(/\s+/g, ' ').trim();
 }
 
 /**

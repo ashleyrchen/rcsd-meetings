@@ -9,11 +9,13 @@
 function decodeEntities(text) {
   return text
     .replace(/&#039;/g, "'")
-    .replace(/&amp;/g, '&')
     .replace(/&lt;/g, '<')
     .replace(/&gt;/g, '>')
     .replace(/&quot;/g, '"')
-    .replace(/&#(\d+);/g, (_, n) => String.fromCharCode(parseInt(n)));
+    .replace(/&#(\d+);/g, (_, n) => String.fromCharCode(parseInt(n)))
+    // &amp; must decode LAST: decoding it earlier turns &amp;lt; into &lt;
+    // (and &amp;#60; into &#60;), which a later pass double-decodes into <.
+    .replace(/&amp;/g, '&');
 }
 
 /**

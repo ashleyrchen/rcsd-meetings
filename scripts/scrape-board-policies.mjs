@@ -35,14 +35,18 @@ function delay(ms) {
  */
 function cleanHtmlToText(html) {
   if (!html) return '';
-  return html
+  let text = html
     .replace(/<\/p>/gi, '\n\n')
     .replace(/<br\s*\/?>/gi, '\n')
     .replace(/<li>/gi, '\n- ')
-    .replace(/<\/li>/gi, '')
-    .replace(/<[^>]*>/g, '')
+    .replace(/<\/li>/gi, '');
+  // Strip tags to a fixpoint: one pass leaves reassembled tags (<scr<b>ipt>).
+  for (let prev = ''; prev !== text; ) {
+    prev = text;
+    text = text.replace(/<[^>]*>/g, '');
+  }
+  return text
     .replace(/&nbsp;/g, ' ')
-    .replace(/&amp;/g, '&')
     .replace(/&lt;/g, '<')
     .replace(/&gt;/g, '>')
     .replace(/&quot;/g, '"')
@@ -51,6 +55,9 @@ function cleanHtmlToText(html) {
     .replace(/&rdquo;/g, '"')
     .replace(/&lsquo;/g, "'")
     .replace(/&rsquo;/g, "'")
+    // &amp; must decode LAST: decoding it earlier turns &amp;lt; into &lt;,
+    // which a later pass double-decodes into a real <.
+    .replace(/&amp;/g, '&')
     .replace(/\n\s*\n+/g, '\n\n')
     .trim();
 }
