@@ -38,8 +38,13 @@ function formatTime(dateStr, timeStr) {
 
 function cleanDescription(text) {
   if (!text) return '';
-  return text
-    .replace(/<[^>]*>/g, '') // strip HTML
+  // Strip HTML to a fixpoint: one pass leaves reassembled tags (<scr<b>ipt>).
+  let stripped = text;
+  for (let prev = ''; prev !== stripped; ) {
+    prev = stripped;
+    stripped = stripped.replace(/<[^>]*>/g, '');
+  }
+  return stripped
     .replace(/\\/g, '\\\\')
     .replace(/,/g, '\\,')
     .replace(/;/g, '\\;')

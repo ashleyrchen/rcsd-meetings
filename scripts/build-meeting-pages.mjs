@@ -244,11 +244,22 @@ function buildMinutesHtml(m, L) {
 
 // ---- JSON-LD Generator ----
 
+// Strip inline HTML from summaries, looping to a fixpoint so split
+// constructions (<scr<b>ipt>) can't reassemble into a tag after one pass.
+function stripTags(s) {
+  let out = s || '';
+  for (let prev = ''; prev !== out; ) {
+    prev = out;
+    out = out.replace(/<[^>]+>/g, '');
+  }
+  return out;
+}
+
 function meetingJsonLd(m, lang) {
   const isEs = lang === 'es';
   const summaries = summariesByLang[lang] || summariesByLang.en || {};
   const summary = summaries[m.date] || '';
-  const cleanSummary = summary.replace(/<[^>]+>/g, '');
+  const cleanSummary = stripTags(summary);
 
   const startTime = '19:00:00-07:00';
   const endTime = '22:00:00-07:00';

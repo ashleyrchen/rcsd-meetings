@@ -61,9 +61,16 @@ async function fetchJSON(path: string): Promise<any> {
 // ---- Helper: provenance footer (every tool output ends with a source line) ----
 
 // Meeting summaries are stored with inline HTML (<strong>) for the website;
-// MCP tool output is plain text, so strip markup at render time.
+// MCP tool output is plain text, so strip markup at render time. Loops to a
+// fixpoint so split constructions (<scr<b>ipt>) can't reassemble into a tag
+// after one pass (CodeQL js/incomplete-multi-character-sanitization).
 function stripHtml(s: string): string {
-  return (s || "").replace(/<[^>]+>/g, "");
+  let out = s || "";
+  for (let prev = ""; prev !== out; ) {
+    prev = out;
+    out = out.replace(/<[^>]+>/g, "");
+  }
+  return out;
 }
 
 function sourceLine(file: string, asOf?: string | null): string {
