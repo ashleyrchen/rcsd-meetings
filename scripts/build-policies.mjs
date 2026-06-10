@@ -185,6 +185,7 @@ const PAGES = {
     na: 'N/D',
     dateLocale: 'es-MX',
     official: 'Versión oficial en Simbli &#8599;',
+    englishVersion: 'Versión en inglés',
     viewJson: 'Ver JSON &#8599;',
     legalRefs: 'Referencias legales y administrativas',
     crossRefs: 'Referencias cruzadas',
@@ -1095,10 +1096,12 @@ function buildPolicyPage({ p, page, detail, esBody, titlesEs, summaries, catalog
     bodyHtml = `
   <div class="policy-body-text">${escapeText(esBody.contentTextEs)}</div>`;
   } else {
-    // English body — on the ES page this is the honest fallback case.
+    // English body — on the ES page this is the honest fallback case. The
+    // yellow note carries the page's single Simbli link (the ES meta row
+    // links our English version instead).
     if (isEs && page.enFallbackNote) {
       langNoteHtml = `
-  <p class="policy-lang-note">${escapeText(page.enFallbackNote)}</p>`;
+  <p class="policy-lang-note">${escapeText(page.enFallbackNote)} <a href="${escapeAttr(officialUrl)}" target="_blank" rel="noopener">${page.official}</a></p>`;
     }
     bodyHtml = `
   <div class="policy-body-text"${isEs ? ' lang="en"' : ''}>${escapeText(detail.contentText)}</div>`;
@@ -1220,7 +1223,9 @@ ${siteNav({ activePage: 'district', lang: page.lang, altLangHref: `${page.altInd
   <div class="policy-meta-bar">
     <div class="policy-meta-data">${metaParts.join(' &middot; ')}</div>
     <div class="policy-meta-links">
-      <a href="${escapeAttr(officialUrl)}" target="_blank" rel="noopener">${page.official}</a>
+      ${isEs
+        ? `<a href="/policies/${slug}/">${page.englishVersion}</a>`
+        : `<a href="${escapeAttr(officialUrl)}" target="_blank" rel="noopener">${page.official}</a>`}
       <a href="${escapeAttr(jsonHref)}" target="_blank" rel="noopener">${page.viewJson}</a>
     </div>
   </div>
