@@ -1,0 +1,14 @@
+{
+  "code": "9110",
+  "type": "AR",
+  "titleEs": "Duración del mandato",
+  "contentTextEs": "La Mesa Directiva de Educación estará compuesta por cinco miembros, cuyos períodos serán escalonados de modo que, en la medida de lo posible, la mitad de los miembros sea elegida en cada año impar.\n\nEl período en el cargo de los miembros elegidos en elecciones regulares será de cuatro años, con inicio el primer viernes de diciembre siguiente a su elección. (Education Code 5017)\n\nLos períodos de los miembros de la Mesa Directiva vencen cuatro años después de su elección inicial, el primer viernes de diciembre posterior a la elección de los nuevos miembros. (Education Code 5000)\n\nEl miembro cuyo período haya vencido continuará desempeñando las funciones del cargo hasta que su sucesor haya tomado posesión mediante la toma de protesta. (Government Code 1302, 1360; Education Code 5017)",
+  "_metadata": {
+    "model": "claude-sonnet-4-6",
+    "generatedAt": "2026-06-10T17:32:02.935Z",
+    "method": "AI translation of contentText via the Claude API (scripts/translate-policy-bodies.mjs); one policy per request, bodies over 30KB split at paragraph boundaries into chunks and reassembled; validated for length, paragraph structure, and meta-commentary",
+    "sourceFile": "data/board-policies/9110-AR.json",
+    "sourceHash": "b96f60fb508c667ae715fa60b220cd7a1450326a029219dd3f68fa80b01b4c56",
+    "note": "Machine translation. The English Simbli version is authoritative."
+  }
+}

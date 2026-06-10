@@ -1,0 +1,14 @@
+{
+  "code": "0200",
+  "type": "BP",
+  "titleEs": "Metas del distrito escolar",
+  "contentTextEs": "La Mesa Directiva adoptará metas a largo plazo para alcanzar la visión general del distrito para sus escuelas, así como estándares de desempeño y puntos de referencia claros que puedan utilizarse para determinar si el distrito está cumpliendo dichas metas. El número de metas será limitado de modo que sean razonablemente alcanzables dentro de los plazos establecidos.\n\nEl Superintendente o su designado podrá establecer objetivos provisionales a corto plazo y planes integrales para garantizar un progreso adecuado y regular hacia las metas a largo plazo del distrito.\n\nNuestras Metas a Largo Plazo\n\nPara el año 2013:\n\n- Garantizaremos que todos los estudiantes estén preparados para tener éxito en la preparatoria y más allá.\n\n- Garantizaremos un ambiente seguro, saludable y respetuoso para los estudiantes, el personal y la comunidad.\n\n- Garantizaremos que todas las escuelas sean lugares donde los niños crezcan intelectual, social, física y emocionalmente.\n\n- Trabajaremos con nuestra comunidad para involucrarla, apoyarla y asumir una responsabilidad colectiva por nuestros hijos y nuestras escuelas.",
+  "_metadata": {
+    "model": "claude-sonnet-4-6",
+    "generatedAt": "2026-06-10T16:52:48.883Z",
+    "method": "AI translation of contentText via the Claude API (scripts/translate-policy-bodies.mjs); one policy per request, bodies over 30KB split at paragraph boundaries into chunks and reassembled; validated for length, paragraph structure, and meta-commentary",
+    "sourceFile": "data/board-policies/0200-BP.json",
+    "sourceHash": "acb354fd2528a562a83f78864a06f277ad91750f7eccf4b9c7c97f8e6c73c331",
+    "note": "Machine translation. The English Simbli version is authoritative."
+  }
+}

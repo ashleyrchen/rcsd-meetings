@@ -1,0 +1,14 @@
+{
+  "code": "4141.6",
+  "type": "BP",
+  "titleEs": "Acción concertada/paro laboral",
+  "contentTextEs": "La Mesa Directiva reconoce la importancia de mantener relaciones positivas y continuas con los empleados y de participar en negociaciones justas y respetuosas con las organizaciones de empleados. La Mesa Directiva desea llegar a acuerdos sobre los contratos de empleo de una manera que evite interrupciones en las operaciones escolares y minimice el impacto en el rendimiento académico de los estudiantes.\n\nLa Mesa Directiva reconoce que es necesaria una planificación anticipada para garantizar que, en caso de un paro laboral, huelga u otra actividad concertada de los empleados, los estudiantes continúen recibiendo los servicios educativos a los que tienen derecho. El Superintendente o su designado deberá desarrollar un plan escrito que incluya estrategias para proporcionar comunicaciones internas y externas, preservar la seguridad de los estudiantes y del personal, mantener las operaciones del distrito, y garantizar la instrucción y supervisión adecuadas de los estudiantes durante una reducción o paro laboral.\n\nSi una organización de empleados notifica su intención de ir a la huelga, el Superintendente o su designado deberá notificar al Public Employment Relations Board, al Employment Development Department, a los empleados de la unidad en huelga, a otros empleados del distrito, a los padres/tutores, a los estudiantes, a las autoridades policiales, a los medios de comunicación y a otras personas según corresponda.\n\nLos empleados deberán rendir cuentas por su comportamiento durante cualquier disputa laboral. El distrito podrá tomar medidas disciplinarias contra cualquier empleado que participe en una acción concertada ilegal o en un comportamiento ilegal dentro de una actividad que de otro modo estaría protegida, tomando en cuenta la gravedad del comportamiento y los esfuerzos del distrito para restablecer las relaciones tras la suspensión de servicios por parte de los empleados.",
+  "_metadata": {
+    "model": "claude-sonnet-4-6",
+    "generatedAt": "2026-06-10T17:07:16.539Z",
+    "method": "AI translation of contentText via the Claude API (scripts/translate-policy-bodies.mjs); one policy per request, bodies over 30KB split at paragraph boundaries into chunks and reassembled; validated for length, paragraph structure, and meta-commentary",
+    "sourceFile": "data/board-policies/4141.6-BP.json",
+    "sourceHash": "21d44aaa8a9d5328d801c06306935cd28729f4b1c43338e9e4a7db465ac29556",
+    "note": "Machine translation. The English Simbli version is authoritative."
+  }
+}

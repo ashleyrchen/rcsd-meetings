@@ -1,0 +1,14 @@
+{
+  "code": "1220",
+  "type": "BP",
+  "titleEs": "Comités asesores ciudadanos",
+  "contentTextEs": "La Mesa Directiva reconoce que los comités asesores ciudadanos permiten que el Superintendente y la Mesa Directiva comprendan mejor los intereses y preocupaciones de la comunidad.\n\nLa Mesa Directiva establecerá comités asesores ciudadanos cuando la ley lo requiera, para fortalecer la efectividad de las operaciones del distrito y de las escuelas, o para mejorar el aprendizaje de los estudiantes. El propósito de cualquier comité de este tipo que no sea requerido por la ley deberá estar claramente definido y alineado con la visión, misión y metas del distrito. El Superintendente podrá disolver cualquier comité asesor que no sea requerido por la ley cuando el comité haya cumplido con sus funciones o en cualquier momento en que la Mesa Directiva o el Superintendente lo considere necesario.\n\nEl Superintendente o su designado podrá establecer comités asesores que le rendirán cuentas de acuerdo con la ley, la política de la Mesa Directiva y el reglamento administrativo.\n\nLos comités asesores ciudadanos que no sean requeridos por la ley servirán en calidad de asesores; podrán hacer recomendaciones, pero sus acciones no serán vinculantes para la Mesa Directiva ni para el Superintendente.\n\nLa composición de los comités asesores ciudadanos deberá reflejar la diversidad de la comunidad y representar una diversidad de puntos de vista.\n\nEl Superintendente o su designado proporcionará capacitación e información, según sea necesario, para que los miembros del comité comprendan las metas del comité y puedan cumplir con su función como miembros del mismo.\n\nDentro de las asignaciones presupuestarias, el Superintendente o su designado podrá aprobar solicitudes de viaje de los comités y podrá reembolsar a los miembros del comité por sus gastos a las mismas tarifas y bajo las mismas condiciones que las establecidas para los empleados del distrito.",
+  "_metadata": {
+    "model": "claude-sonnet-4-6",
+    "generatedAt": "2026-06-10T16:55:49.653Z",
+    "method": "AI translation of contentText via the Claude API (scripts/translate-policy-bodies.mjs); one policy per request, bodies over 30KB split at paragraph boundaries into chunks and reassembled; validated for length, paragraph structure, and meta-commentary",
+    "sourceFile": "data/board-policies/1220-BP.json",
+    "sourceHash": "47cf46e5f9161abb7e8e5ddb060694096501f2a723862085164fad56363c90c8",
+    "note": "Machine translation. The English Simbli version is authoritative."
+  }
+}

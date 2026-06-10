@@ -1,0 +1,14 @@
+{
+  "code": "4301",
+  "type": "BP",
+  "titleEs": "Organización del personal administrativo",
+  "contentTextEs": "Personal Administrativo y de Supervisión\n\nLa Mesa Directiva autoriza al Superintendente a organizar al personal administrativo y de supervisión de la manera que mejor apoye el rendimiento estudiantil, el programa educativo y las operaciones eficientes.\n\nEl Superintendente establecerá y definirá las responsabilidades del puesto para el personal de supervisión y administrativo. (Education Code 44662)\n\nEl Superintendente o su designado podrá ajustar las responsabilidades del personal de manera temporal o permanente según sea necesario para adaptarse a la carga de trabajo y/o las capacidades individuales.\n\nEl Superintendente mantendrá un organigrama actualizado del distrito que designe las líneas de responsabilidad principal y las relaciones entre todos los puestos del distrito. Las líneas de responsabilidad no deberán impedir de ninguna manera que el personal en todos los niveles colabore, se comunique y coopere para desarrollar los mejores programas posibles y brindar servicios eficientes.",
+  "_metadata": {
+    "model": "claude-sonnet-4-6",
+    "generatedAt": "2026-06-10T17:10:53.029Z",
+    "method": "AI translation of contentText via the Claude API (scripts/translate-policy-bodies.mjs); one policy per request, bodies over 30KB split at paragraph boundaries into chunks and reassembled; validated for length, paragraph structure, and meta-commentary",
+    "sourceFile": "data/board-policies/4301-BP.json",
+    "sourceHash": "60964d7ccca1b2f749eb040485272804f14a4980e1739b0f01cccd647f98031d",
+    "note": "Machine translation. The English Simbli version is authoritative."
+  }
+}

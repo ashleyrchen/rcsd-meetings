@@ -1,0 +1,14 @@
+{
+  "code": "5141.33",
+  "type": "BP",
+  "titleEs": "Piojos",
+  "contentTextEs": "La Mesa Directiva considera que el programa de manejo de piojos del distrito debe enfatizar el diagnóstico y tratamiento correcto de los piojos para minimizar la interrupción del proceso educativo y reducir el número de ausencias escolares de los estudiantes a causa de una infestación. En consulta con la enfermera escolar, el Superintendente o su designado puede establecer un programa de revisión rutinaria para ayudar a prevenir la propagación de los piojos.\n\nLos empleados de la escuela deberán reportar todos los casos sospechosos de piojos a la enfermera escolar o a su designado lo antes posible. La enfermera o su designado puede examinar a otros estudiantes que sean hermanos del estudiante afectado o miembros del mismo hogar.\n\nSi se encuentra que un estudiante tiene piojos adultos activos, el padre/tutor del estudiante recibirá información sobre los procedimientos de tratamiento recomendados y fuentes de información adicional. Se le permitirá al estudiante regresar a la escuela al día siguiente. Al estudiante se le hará una revisión nuevamente dentro de siete (7) a diez (10) días. El Distrito también espera que los padres/tutores proporcionen el tratamiento.\n\nEl director y la enfermera escolar trabajarán con los padres/tutores de cualquier estudiante que haya sido considerado como portador crónico de piojos, con el fin de ayudar a minimizar las ausencias escolares del estudiante.\n\nCuando un estudiante en cualquier clase haya sido identificado como portador de una infestación de piojos, el director puede enviar información sobre los piojos a los hogares de todos los padres/tutores de los estudiantes de esa clase.\n\nEl personal deberá mantener la privacidad de los estudiantes identificados como portadores de piojos.",
+  "_metadata": {
+    "model": "claude-sonnet-4-6",
+    "generatedAt": "2026-06-10T17:18:47.091Z",
+    "method": "AI translation of contentText via the Claude API (scripts/translate-policy-bodies.mjs); one policy per request, bodies over 30KB split at paragraph boundaries into chunks and reassembled; validated for length, paragraph structure, and meta-commentary",
+    "sourceFile": "data/board-policies/5141.33-BP.json",
+    "sourceHash": "2f7bd8b1a693218973c163b24cb7cd42c14e4e082f05a81c535ef43ec7a613e5",
+    "note": "Machine translation. The English Simbli version is authoritative."
+  }
+}

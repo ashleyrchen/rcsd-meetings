@@ -1,0 +1,14 @@
+{
+  "code": "4311.2",
+  "type": "BP",
+  "titleEs": "Requisito de estatus legal",
+  "contentTextEs": "Personal Administrativo y de Supervisión\n\nLa Mesa Directiva se asegurará de que el distrito contrate únicamente a aquellas personas que estén legalmente autorizadas para trabajar en los Estados Unidos.\n\nEl Superintendente o su designado verificará la elegibilidad de empleo de todas las personas contratadas por el distrito completando el Formulario I-9 del Servicio de Ciudadanía e Inmigración de los Estados Unidos, Verificación de Elegibilidad de Empleo, para cada persona contratada, y se asegurará de que el distrito no contrate a sabiendas ni continúe empleando a ninguna persona que no esté autorizada para trabajar en los Estados Unidos. (8 USC 1324a)\n\nDe conformidad con la ley, el Superintendente o su designado se asegurará de que las prácticas de empleo del distrito no discriminen ilegalmente por motivo de estatus migratorio u origen nacional, incluyendo, entre otros, la discriminación en contra de refugiados, beneficiarios de asilo o personas que califican para residencia permanente o temporal.\n\nNada en esta política se interpretará como autorización para que el distrito investigue o comparta información de empleados con las autoridades federales de inmigración más allá de lo que exige la ley federal. (Education Code 234.7; 2 CCR 11028)",
+  "_metadata": {
+    "model": "claude-sonnet-4-6",
+    "generatedAt": "2026-06-10T17:10:58.125Z",
+    "method": "AI translation of contentText via the Claude API (scripts/translate-policy-bodies.mjs); one policy per request, bodies over 30KB split at paragraph boundaries into chunks and reassembled; validated for length, paragraph structure, and meta-commentary",
+    "sourceFile": "data/board-policies/4311.2-BP.json",
+    "sourceHash": "56e68c4d41a82a8a6ac338b3425a6406d13e2763373f99708dd81a1201b7b65e",
+    "note": "Machine translation. The English Simbli version is authoritative."
+  }
+}

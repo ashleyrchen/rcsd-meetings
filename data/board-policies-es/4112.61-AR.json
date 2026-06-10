@@ -1,0 +1,14 @@
+{
+  "code": "4112.61",
+  "type": "AR",
+  "titleEs": "Referencias laborales",
+  "contentTextEs": "Ningún empleado certificado deberá redactar ni firmar ninguna carta o memorando que omita intencionalmente hechos significativos, ni que afirme como hechos cuestiones que el autor no sepa de su propio conocimiento que sean verdaderas, relacionadas con las calificaciones profesionales o la idoneidad personal para desempeñar servicios certificados de cualquier persona que el autor sepa que utilizará la carta o el memorando para obtener empleo profesional. (5 CCR, Section 80332)\n\nNingún empleado certificado deberá acordar proporcionar una carta de recomendación positiva que tergiverse hechos como condición para que otro empleado renuncie o retire una acción en contra del distrito. (5 CCR, Section 80332)",
+  "_metadata": {
+    "model": "claude-sonnet-4-6",
+    "generatedAt": "2026-06-10T17:05:09.595Z",
+    "method": "AI translation of contentText via the Claude API (scripts/translate-policy-bodies.mjs); one policy per request, bodies over 30KB split at paragraph boundaries into chunks and reassembled; validated for length, paragraph structure, and meta-commentary",
+    "sourceFile": "data/board-policies/4112.61-AR.json",
+    "sourceHash": "914ba2bab9bb8296244e960b04e6b15b73bb0d800d4a0c7aa1746111c7642c0e",
+    "note": "Machine translation. The English Simbli version is authoritative."
+  }
+}

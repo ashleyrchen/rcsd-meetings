@@ -1,0 +1,14 @@
+{
+  "code": "3516.2",
+  "type": "AR",
+  "titleEs": "Amenazas de bomba",
+  "contentTextEs": "Recepción de amenazas\n\nTodo miembro del personal que reciba una amenaza de bomba por teléfono deberá intentar mantener al llamante en la línea para obtener información sobre el lugar y el momento de la bomba y la(s) persona(s) responsable(s). También deberá intentar determinar el género y la edad del llamante, y tomar nota de cualquier característica distintiva de la voz o el habla, así como de cualquier ruido de fondo, como música, tráfico, maquinaria u otras voces.\n\nLos miembros del personal que habitualmente reciben llamadas telefónicas o manejan paquetes recibirán capacitación relacionada con amenazas de bomba.\n\nProcedimientos\n\n- Todo empleado que reciba una amenaza de bomba deberá llamar al 911 de inmediato y también reportar la amenaza al director o a su designado. Si la amenaza es por escrito, deberá colocar el mensaje en un sobre y tomar nota de dónde y por quién fue encontrado.\n\n- Todo estudiante o empleado que vea un paquete sospechoso deberá notificar de inmediato al director o a su designado.\n\n- El director o su designado deberá activar de inmediato las señales del simulacro de incendio e implementar los procedimientos estándar de evacuación según lo establecido en el plan de emergencia.\n\n- El director o su designado deberá apagar todo equipo de radio bidireccional que se encuentre en el edificio amenazado.\n\nEl personal de las fuerzas del orden y/o del departamento de bomberos llevará a cabo la búsqueda de la bomba. Los oficiales de policía podrán participar en dicha búsqueda. Ningún otro miembro del personal escolar deberá buscar ni manipular ningún artefacto explosivo o incendiario.\n\nA excepción de los oficiales de policía escolar, ningún miembro del personal ni ningún estudiante podrá reingresar al edificio o los edificios amenazados hasta que el personal de las fuerzas del orden y/o del departamento de bomberos le informe al director o a su designado que el reingreso es seguro.\n\nTodo estudiante que realice una amenaza de bomba estará sujeto a procedimientos disciplinarios.",
+  "_metadata": {
+    "model": "claude-sonnet-4-6",
+    "generatedAt": "2026-06-10T17:02:32.997Z",
+    "method": "AI translation of contentText via the Claude API (scripts/translate-policy-bodies.mjs); one policy per request, bodies over 30KB split at paragraph boundaries into chunks and reassembled; validated for length, paragraph structure, and meta-commentary",
+    "sourceFile": "data/board-policies/3516.2-AR.json",
+    "sourceHash": "ac28e03d51ec53dacb7dfc7a658d36fc061d2ca764f81ac2126a131aeb80f2b1",
+    "note": "Machine translation. The English Simbli version is authoritative."
+  }
+}

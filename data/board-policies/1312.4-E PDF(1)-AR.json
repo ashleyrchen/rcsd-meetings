@@ -2,7 +2,7 @@
   "_metadata": {
     "source": "https://simbli.eboardsolutions.com/Policy/ViewPolicy.aspx?S=36030397&revid=XslshFyPUxEsOFd9favtvu7TA==",
     "scrapedAt": "2026-05-24T20:11:49.868Z",
-    "method": "Playwright + Simbli ViewPolicy API scraper"
+    "method": "Playwright + Simbli ViewPolicy API scraper; embedded exhibit PDF, text-extracted"
   },
   "code": "1312.4-E PDF(1)",
   "title": "Williams Uniform Complaint Procedures",
@@ -13,7 +13,7 @@
   "hasAttachment": false,
   "revid": "XslshFyPUxEsOFd9favtvu7TA==",
   "contentHtml": "",
-  "contentText": "",
+  "contentText": "Exhibit 1312.4-E(1): Williams Uniform Complaint Procedures\n\nNOTICE TO PARENTS/GUARDIANS,STUDENTS, AND TEACHERS:\n\nK-12COMPLAINT RIGHTS\n\nParents/Guardians,Students, and Teachers:\n\nPursuant to Education Code 35186, you are hereby notified that:\n\n1. There should be sufficient textbooks and instructional materials\n\nThat means each student, including an English learner, must have a textbook or\ninstructional materials, or both, to use in class and to take home.\n\n2. School facilities must be clean, safe, and maintained in good repair\n\nThis includes the identification and resolution of emergency or urgent facilities\nconditions that pose a threat to the health and safety of students or staff.\n\n3. There should be no teacher vacancies or misassignments.\n\nThere should be a teacher assigned to each class and not a series of substitutes or other\ntemporary teachers. The teacher should have the proper credential to teach the class,\nincluding the certification required to teach English learners, if present.\n\nMisassignmentmeans the placement of a certificated employee in a teaching or services\nposition for which the employee does not hold a legally recognized certificate or\ncredential or the placement of a certificated employee in a teaching or services position\nthat the employee is not otherwise authorized by statute to hold.\n\nTeacher vacancymeans a position to which a single designated certificated employee has\nnot been assigned at the beginning of the year for an entire year or, if the position is for a\none-semester course, a position to which a single designated certificated employee has\nnot been assigned at the beginning of a semester for an entire semester.\n\nIf you choose to file a complaint alleging that any of the above conditions is not being met, your\ncomplaint will be addressed through the district's Williams uniform complaint procedures as\nrequired by law. A complaint formmaybe obtained at the school office or district office, or\ndownloaded from the school or districtwebsite. You may also download a copy of the California\n\nDepartment of Education(CDE)complaint form fromCDE's, website when available. However,\na complaint need not be filed using either the district's complaint form or the complaint form\nfrom CDE.",
   "footnotes": [
     {
       "type": "State",
@@ -368,5 +368,12 @@
       "type": "AR"
     }
   ],
-  "attachments": []
+  "attachments": [],
+  "exhibitPdf": {
+    "artifact": "artifacts/board-policy-exhibits/1312.4-E-PDF(1)-AR.pdf",
+    "sourceUrl": "https://simbli.eboardsolutions.com/Meetings/TempFolder/Policies/36030397_1312.4-E PDF(1)_20260610142222968.pdf",
+    "sourceUrlNote": "Generated per page view by Simbli (TempFolder) and expires; the ViewPolicy page in _metadata.source is the stable reference.",
+    "capturedAt": "2026-06-10T18:22:24.214Z",
+    "sizeBytes": 82003
+  }
 }

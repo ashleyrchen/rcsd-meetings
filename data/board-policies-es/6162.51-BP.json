@@ -1,0 +1,14 @@
+{
+  "code": "6162.51",
+  "type": "BP",
+  "titleEs": "Pruebas estatales de rendimiento académico",
+  "contentTextEs": "La Mesa Directiva reconoce que los resultados de las pruebas de logro del estado proporcionan una indicación del progreso de los estudiantes en el cumplimiento de los estándares académicos estatales y pueden usarse para promover una enseñanza y un aprendizaje de alta calidad. El Superintendente o su designado administrará las evaluaciones estudiantiles obligatorias dentro del Sistema de Evaluación del Desempeño y Progreso de los Estudiantes de California (CAASPP, por sus siglas en inglés) según lo requerido por la ley y de conformidad con la política de la Mesa Directiva y el reglamento administrativo.\n\nLa Mesa Directiva alienta firmemente a todos los estudiantes en los niveles de grado correspondientes a participar en las evaluaciones estatales con el fin de maximizar la utilidad de los datos y permitir que el distrito cumpla con los niveles de participación requeridos por los sistemas de rendición de cuentas estatales y federales. El Superintendente o su designado notificará a los estudiantes y padres/tutores sobre la importancia de estas evaluaciones y desarrollará estrategias para fomentar la participación de los estudiantes. Los estudiantes quedarán exentos de participar únicamente de conformidad con la ley y el reglamento administrativo.\n\nLa Mesa Directiva examinará anualmente los resultados de las evaluaciones estatales por escuela, nivel de grado y subgrupo de estudiantes como una medida del progreso del distrito en el logro de sus metas de rendimiento estudiantil, y revisará el plan local de control y rendición de cuentas y otros planes del distrito o de las escuelas según sea necesario para mejorar el rendimiento académico de los grupos de estudiantes con bajo rendimiento.",
+  "_metadata": {
+    "model": "claude-sonnet-4-6",
+    "generatedAt": "2026-06-10T17:27:07.589Z",
+    "method": "AI translation of contentText via the Claude API (scripts/translate-policy-bodies.mjs); one policy per request, bodies over 30KB split at paragraph boundaries into chunks and reassembled; validated for length, paragraph structure, and meta-commentary",
+    "sourceFile": "data/board-policies/6162.51-BP.json",
+    "sourceHash": "8c1f58ccd28306aa89e124dc1789c289f0e8d94a13e02fa3bcec1096591dceba",
+    "note": "Machine translation. The English Simbli version is authoritative."
+  }
+}

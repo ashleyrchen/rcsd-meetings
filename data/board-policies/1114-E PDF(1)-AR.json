@@ -2,7 +2,7 @@
   "_metadata": {
     "source": "https://simbli.eboardsolutions.com/Policy/ViewPolicy.aspx?S=36030397&revid=U6WZ4ISYyR0McYLc36VwFA==",
     "scrapedAt": "2026-05-24T20:11:49.868Z",
-    "method": "Playwright + Simbli ViewPolicy API scraper"
+    "method": "Playwright + Simbli ViewPolicy API scraper; embedded exhibit PDF, text-extracted"
   },
   "code": "1114-E PDF(1)",
   "title": "District-Sponsored Social Media",
@@ -13,7 +13,7 @@
   "hasAttachment": false,
   "revid": "U6WZ4ISYyR0McYLc36VwFA==",
   "contentHtml": "",
-  "contentText": "",
+  "contentText": "PLEASE SEE DISTRICT MATERIAL AT THE DISTRICT OFFICE FOR\n\nEXHIBIT 1114 TITLED\n\n\"DISTRICT WEB AND SOCIAL MEDIA USAGE GUIDELINES\"",
   "footnotes": [
     {
       "type": "State",
@@ -543,5 +543,12 @@
       "type": "AR"
     }
   ],
-  "attachments": []
+  "attachments": [],
+  "exhibitPdf": {
+    "artifact": "artifacts/board-policy-exhibits/1114-E-PDF(1)-AR.pdf",
+    "sourceUrl": "https://simbli.eboardsolutions.com/Meetings/TempFolder/Policies/36030397_1114-E PDF(1)_20260610142219937.pdf",
+    "sourceUrlNote": "Generated per page view by Simbli (TempFolder) and expires; the ViewPolicy page in _metadata.source is the stable reference.",
+    "capturedAt": "2026-06-10T18:22:20.913Z",
+    "sizeBytes": 9152
+  }
 }

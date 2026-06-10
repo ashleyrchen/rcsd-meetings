@@ -1,0 +1,14 @@
+{
+  "code": "5145.8",
+  "type": "BP",
+  "titleEs": "Negativa a dañar o destruir animales",
+  "contentTextEs": "La Mesa Directiva apoya el derecho de los estudiantes a abstenerse de participar en instrucción que implique diseccionar o de otro modo dañar o destruir animales cuando tengan una objeción moral a dichas actividades.\n\nLos estudiantes no serán objeto de discriminación por la decisión de ejercer este derecho. (Education Code 32255.1)\n\nDespués de notificar al maestro de su objeción conforme a la ley y a los reglamentos administrativos, el estudiante quedará eximido del proyecto y se le podrá proporcionar un proyecto alternativo apropiado. La Mesa Directiva alienta al personal a que, siempre que sea posible, proporcione un proyecto alternativo que enseñe los mismos conocimientos y habilidades que el proyecto original. En todo caso, el personal deberá garantizar el uso efectivo del tiempo de los estudiantes proporcionando actividades de instrucción relevantes para el plan de estudios.",
+  "_metadata": {
+    "model": "claude-sonnet-4-6",
+    "generatedAt": "2026-06-10T17:21:52.087Z",
+    "method": "AI translation of contentText via the Claude API (scripts/translate-policy-bodies.mjs); one policy per request, bodies over 30KB split at paragraph boundaries into chunks and reassembled; validated for length, paragraph structure, and meta-commentary",
+    "sourceFile": "data/board-policies/5145.8-BP.json",
+    "sourceHash": "d40d28a24840bbb0494a062ef4be7cbf01a893443735674f9a767a9c197405cd",
+    "note": "Machine translation. The English Simbli version is authoritative."
+  }
+}

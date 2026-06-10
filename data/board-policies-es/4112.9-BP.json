@@ -1,0 +1,14 @@
+{
+  "code": "4112.9",
+  "type": "BP",
+  "titleEs": "Notificaciones al personal",
+  "contentTextEs": "Personal Certificado\n\nLa Mesa Directiva considera que brindar comunicaciones claras al personal es esencial para establecer un ambiente de trabajo profesional y positivo, y para mejorar su desempeño laboral. El Superintendente o su designado deberá proporcionar a los empleados del distrito todos los avisos requeridos por ley, así como cualquier otro aviso que el Superintendente o su designado considere que promoverá el conocimiento del personal sobre las políticas, programas, actividades y operaciones del distrito.\n\nCuando la ley, la política de la Mesa Directiva o el reglamento administrativo así lo requieran, se les pedirá a los empleados del distrito que firmen un acuse de recibo indicando que han recibido el aviso. Dichos acuses de recibo se conservarán en el expediente de personal de cada empleado. Una notificación por correo electrónico enviada por el Distrito también deberá considerarse como un comprobante de recepción de un aviso.",
+  "_metadata": {
+    "model": "claude-sonnet-4-6",
+    "generatedAt": "2026-06-10T17:05:19.064Z",
+    "method": "AI translation of contentText via the Claude API (scripts/translate-policy-bodies.mjs); one policy per request, bodies over 30KB split at paragraph boundaries into chunks and reassembled; validated for length, paragraph structure, and meta-commentary",
+    "sourceFile": "data/board-policies/4112.9-BP.json",
+    "sourceHash": "6f7744ab07e8616618b0394c8a1f947d7cd36351fc80d353ffa5142d3d262ebb",
+    "note": "Machine translation. The English Simbli version is authoritative."
+  }
+}

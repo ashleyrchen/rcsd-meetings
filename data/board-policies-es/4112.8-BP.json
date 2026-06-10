@@ -1,0 +1,14 @@
+{
+  "code": "4112.8",
+  "type": "BP",
+  "titleEs": "Contratación de familiares",
+  "contentTextEs": "La Mesa Directiva desea maximizar la confianza del personal y la comunidad en las decisiones del distrito relacionadas con contrataciones, ascensos y otras decisiones de empleo, promoviendo prácticas que estén libres de conflictos de interés o de apariencias de conducta indebida.\n\nLa Mesa Directiva prohíbe el nombramiento de cualquier persona a un puesto en el que su familiar tenga responsabilidades de gestión, supervisión, evaluación o ascenso, y prohíbe que un empleado participe en cualquier decisión que aplique de manera exclusiva a alguno de sus familiares.\n\nPara los efectos de esta política, el término familiar incluye al cónyuge, pareja doméstica, padres, abuelos, bisabuelos, hijos, nietos, bisnietos, hermanos, hermanas, tíos, tías, sobrinos, sobrinas del individuo, así como los familiares equivalentes del cónyuge o pareja doméstica del individuo.\n\nAdemás, el Superintendente o su representante podrá determinar, caso por caso, si se nombra a una persona a un puesto en el mismo departamento o instalación que un empleado con quien mantiene una relación personal, cuando dicha relación tenga el potencial de crear (1) un impacto negativo en la supervisión, seguridad, protección o moral de otros empleados del distrito, o (2) un conflicto de interés para las personas involucradas que sea mayor a causa de su relación de lo que sería para otra persona.\n\nUn empleado deberá notificar a su supervisor dentro de los 30 días posteriores a cualquier cambio en sus circunstancias que pueda constituir una violación de esta política.",
+  "_metadata": {
+    "model": "claude-sonnet-4-6",
+    "generatedAt": "2026-06-10T17:05:17.393Z",
+    "method": "AI translation of contentText via the Claude API (scripts/translate-policy-bodies.mjs); one policy per request, bodies over 30KB split at paragraph boundaries into chunks and reassembled; validated for length, paragraph structure, and meta-commentary",
+    "sourceFile": "data/board-policies/4112.8-BP.json",
+    "sourceHash": "635c0119c9a59c173b60a88634eed9daff5fdef04e7d8c99cba47371ea803c98",
+    "note": "Machine translation. The English Simbli version is authoritative."
+  }
+}

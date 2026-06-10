@@ -1,0 +1,14 @@
+{
+  "code": "6161.2",
+  "type": "BP",
+  "titleEs": "Materiales didácticos dañados o perdidos",
+  "contentTextEs": "La Mesa Directiva reconoce que los materiales didácticos son un recurso costoso y que cada estudiante tiene derecho a contar con materiales didácticos suficientes de acuerdo con la ley. Los materiales didácticos proporcionados para uso de los estudiantes siguen siendo propiedad del distrito. Los estudiantes son responsables de devolver los materiales prestados en buenas condiciones, con un desgaste no mayor al que normalmente resulta del uso ordinario.\n\nCuando los materiales se pierdan o estén tan dañados que ya no sean utilizables, se le deberá entregar al estudiante un material de reemplazo de inmediato. Sin embargo, los estudiantes o los padres/tutores serán responsables del pago equivalente al costo actual de reposición de los materiales. Cuando los materiales estén dañados pero aún sean utilizables, el Superintendente o su designado determinará un cargo apropiado.\n\nSi se puede demostrar a satisfacción del Superintendente o su designado que el estudiante ha tomado todas las precauciones razonables para proteger los materiales didácticos que le fueron asignados, el Superintendente o su designado podrá eximir al estudiante o al padre/tutor del pago de la reparación.\n\nSi la reparación no es eximida y no es pagada por el estudiante o el padre/tutor, el distrito podrá retener las calificaciones, el diploma y los expedientes académicos del estudiante de acuerdo con la ley, la política de la Mesa Directiva y el reglamento administrativo.",
+  "_metadata": {
+    "model": "claude-sonnet-4-6",
+    "generatedAt": "2026-06-10T17:27:03.198Z",
+    "method": "AI translation of contentText via the Claude API (scripts/translate-policy-bodies.mjs); one policy per request, bodies over 30KB split at paragraph boundaries into chunks and reassembled; validated for length, paragraph structure, and meta-commentary",
+    "sourceFile": "data/board-policies/6161.2-BP.json",
+    "sourceHash": "10cfef6e62800be76dc65378d1d4a632cd72e1b38aaf2137dc1bffed3e0263ce",
+    "note": "Machine translation. The English Simbli version is authoritative."
+  }
+}

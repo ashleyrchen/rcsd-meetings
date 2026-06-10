@@ -1,0 +1,14 @@
+{
+  "code": "6144",
+  "type": "AR",
+  "titleEs": "Temas controvertidos",
+  "contentTextEs": "Los temas controversiales pueden discutirse en el salón de clases, siempre que:\n\n- El tema esté relacionado con el plan de estudios y ofrezca oportunidades para el pensamiento crítico, el desarrollo de la tolerancia y la comprensión de puntos de vista en conflicto.\n\n- El tema tenga una relación significativa con asuntos de interés para los estudiantes.\n\n- La información disponible sobre el tema sea suficiente para permitir que se discutan y evalúen puntos de vista alternativos con base en hechos.\n\n- Se dé una audiencia adecuada a todos los aspectos del tema, utilizando hechos establecidos como evidencia principal.\n\n- El tema tenga puntos de vista que los estudiantes puedan comprender y definir.\n\n- El maestro no utilice su posición para promover sus propios prejuicios religiosos, políticos, económicos o sociales. El maestro puede expresar una opinión personal si la identifica como tal y no la expresa con el propósito de persuadir a los estudiantes hacia su punto de vista.\n\n- La discusión o el estudio del tema sea iniciado por los estudiantes o por el plan de estudios establecido, y no por una fuente externa a las escuelas.\n\n- La discusión no afecte negativamente a las personas por motivos de raza, sexo, color, credo, orientación sexual, origen nacional, ascendencia, discapacidad u ocupación.\n\n- La presentación oral o escrita no viole la ley estatal o federal.\n\nEl Superintendente o su designado tendrá la autoridad para determinar si se están cumpliendo las condiciones anteriores.",
+  "_metadata": {
+    "model": "claude-sonnet-4-6",
+    "generatedAt": "2026-06-10T17:25:36.864Z",
+    "method": "AI translation of contentText via the Claude API (scripts/translate-policy-bodies.mjs); one policy per request, bodies over 30KB split at paragraph boundaries into chunks and reassembled; validated for length, paragraph structure, and meta-commentary",
+    "sourceFile": "data/board-policies/6144-AR.json",
+    "sourceHash": "4fe0944e287e35bac0a3e247abc3285d3409a6037e4d374ad21506938ddebdcc",
+    "note": "Machine translation. The English Simbli version is authoritative."
+  }
+}

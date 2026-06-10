@@ -1,0 +1,14 @@
+{
+  "code": "5113",
+  "type": "BP",
+  "titleEs": "Ausencias y justificaciones",
+  "contentTextEs": "La Mesa Directiva considera que la asistencia regular desempeña un papel importante en el rendimiento académico de los estudiantes. La Mesa Directiva trabajará con los padres/tutores y los estudiantes para garantizar el cumplimiento de todas las leyes estatales de asistencia escolar y podrá utilizar los medios legales apropiados para corregir los problemas de ausencia crónica o ausentismo injustificado.\n\nDe conformidad con la ley, la política de la Mesa Directiva y el reglamento administrativo, las ausencias escolares serán justificadas únicamente por razones de salud, emergencias familiares y razones personales justificables según lo especificado en Education Code 48205, y por trabajo en la industria del entretenimiento o industrias relacionadas según lo permitido conforme a Education Code 48225.5.\n\nCuando la ausencia de un estudiante esté justificada, el maestro del estudiante determinará tareas y exámenes idénticos o razonablemente equivalentes a los que se perdieron durante la ausencia, los cuales el estudiante tendrá permitido completar para obtener crédito completo dentro de un plazo razonable según lo determinado por el maestro. (Education Code 48205, 48225.5)\n\nLa ausencia de un estudiante por instrucción religiosa o participación en ejercicios religiosos fuera de las instalaciones escolares podrá considerarse justificada sujeto a la ley y al reglamento administrativo. (Education Code 46014)\n\nDado que la asistencia escolar y la participación en clase son parte integral de las experiencias de aprendizaje de los estudiantes, se alentará a los padres/tutores y a los estudiantes a programar citas médicas y de otro tipo fuera del horario escolar.\n\nLos estudiantes no deberán ausentarse de la escuela sin el conocimiento o consentimiento de sus padres/tutores, excepto en casos de emergencia médica o, según lo autorizado conforme a Education Code 46010.1, para una cita médica confidencial.\n\nLa Mesa Directiva deberá, mediante resolución asentada en sus actas, aprobar métodos razonables que podrán utilizarse para verificar las ausencias de los estudiantes por enfermedad o cuarentena. (5 CCR 421)",
+  "_metadata": {
+    "model": "claude-sonnet-4-6",
+    "generatedAt": "2026-06-10T17:14:52.995Z",
+    "method": "AI translation of contentText via the Claude API (scripts/translate-policy-bodies.mjs); one policy per request, bodies over 30KB split at paragraph boundaries into chunks and reassembled; validated for length, paragraph structure, and meta-commentary",
+    "sourceFile": "data/board-policies/5113-BP.json",
+    "sourceHash": "144b8ae671a25bc284becbf8ccded79565e51625356f0012688a92c226f83509",
+    "note": "Machine translation. The English Simbli version is authoritative."
+  }
+}
