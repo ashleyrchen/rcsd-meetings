@@ -289,3 +289,11 @@ Build a pipeline for rich per-meeting summaries (inputs already in place: AAI tr
   - [ ] Rewrite the tooltip/fine-print text in both EN and ES (scripts/build-schools.mjs:1273-1274 and :1418-1419) to describe i-Ready, not CAASPP.
 - [ ] **Provenance tagging across all hardcoded data.** Every value in the `SCHOOL_DATA` object (CAASPP, demographics, funding, staffing) should carry a `source` attribute pointing to the specific document and page/row it came from, so readers (and future us) can audit each claim. Design a lightweight schema (e.g. `{ value: 11.4, source: "2025-26 SPSA, p.12" }`) and migrate existing fields.
 - [ ] Pull CDE growth model spreadsheet (growthmodeldownload2025.xlsx) to check for useful RCSD data not yet represented
+
+## Follow-ups from the June 2026 fix-sprint verification (2026-06-10)
+- [ ] **Render AI summaries for multi-meeting dates.** 25 suffixed detail pages (8 multi-meeting dates, e.g. 2020-04-01) have summaries in `data/meeting-summaries.json` under suffixed slugs that the detail builder never looks up — they render unlabeled/summary-less while the data exists.
+- [ ] **Migrate `/mcp/` pages into the build.** `docs/mcp/index.html` + `es/` are hand-maintained static files; they drift from the shared chrome every time html-parts changes (hand-patched 2026-06-10: token, describedby, Committees tab — still no search box or skip link).
+- [ ] **Generate dedicated OG cards for /policies/ + /politicas/** (currently reuse the homepage cards; ES uses page-home-es as a stopgap).
+- [ ] **`DATA_BASE` env var for the MCP worker** so `wrangler dev` can point at local `data/` instead of production R2 — today, data-dependent fixes can't be verified end-to-end before upload.
+- [ ] **Dependabot: 5 moderate vulnerabilities** flagged on the default branch (GitHub banner on every push) — review and bump.
+- [ ] **Drop `build-transcript-viewer.mjs`** — legacy, not in run-pipeline, and overwrites bilingual pages with EN-only if run manually (header now warns).

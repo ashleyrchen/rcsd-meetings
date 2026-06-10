@@ -7,7 +7,7 @@
 // Validated empirically against artifacts/agendas/2026-02-04-regular.pdf (MID 50343):
 // identical 69-AID link set; all memo field texts present; no field-label headings.
 //
-// usage: node tmp/gen-agenda-pdf.mjs <outpath>=<mid> [...more]
+// usage: node scripts/generate-agenda-pdf.mjs <outpath>=<mid> [...more]
 import { chromium } from 'playwright';
 
 const SIMBLI_BASE = 'https://simbli.eboardsolutions.com';
@@ -15,7 +15,7 @@ const SCHOOL_ID = '36030397';
 const delay = ms => new Promise(r => setTimeout(r, ms));
 
 const jobs = process.argv.slice(2).map(s => { const [out, mid] = s.split('='); return { out, mid }; });
-if (!jobs.length) { console.error('usage: node gen-agenda-pdf.mjs <outpath>=<mid> ...'); process.exit(1); }
+if (!jobs.length) { console.error('usage: node scripts/generate-agenda-pdf.mjs <outpath>=<mid> ...'); process.exit(1); }
 
 const browser = await chromium.launch({ headless: true, args: ['--disable-blink-features=AutomationControlled'] });
 const context = await browser.newContext({

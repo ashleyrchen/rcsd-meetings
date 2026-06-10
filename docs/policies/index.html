@@ -6866,7 +6866,7 @@
   ]
 }
 </script>
-<link rel="describedby" href="/llms.txt" type="text/markdown">
+
 <style>
 
   :root {
@@ -6885,7 +6885,7 @@
     --text-secondary: #5a5a56;
     /* Muted text must still clear WCAG AA 4.5:1 on every background it
        appears on: 5.06:1 on --cream, 4.67:1 on --cream-dark, 5.37:1 on
-       #fff. (The old #8a8a84 hit only ~3:1 on all three.) */
+       #fff. (The old lighter gray token hit only ~3:1 on all three.) */
     --text-muted: #6b6b64;
     --rule: #d4d0c8;
     --rule-light: #e8e4dc;
@@ -7181,6 +7181,9 @@
     .filter-buttons {
       display: flex;
       gap: 0.5rem;
+      /* Must wrap: on one line the four buttons are ~437px wide and force the
+         whole page to pan sideways on phones. */
+      flex-wrap: wrap;
     }
     .filter-btn {
       font-family: 'IBM Plex Mono', monospace;
@@ -7301,8 +7304,16 @@
       font-size: 0.72rem;
       font-family: 'IBM Plex Mono', monospace;
     }
+    /* Slash-joined titles ("Dismissal/Suspension/Disciplinary Action") are one
+       unbreakable token and pushed rows past a 320px viewport. */
+    .policy-title { overflow-wrap: anywhere; }
     .policy-date {
       white-space: nowrap;
+    }
+    /* The nowrap date pushed rows past a 375px viewport; the revision date is
+       still shown inside the policy drawer. */
+    @media (max-width: 480px) {
+      .policy-date { display: none; }
     }
     .expand-chevron {
       transition: transform 0.2s;
@@ -7481,9 +7492,8 @@
     </div>
     <div class="filter-buttons">
       <button class="filter-btn active" data-filter="all">All (619)</button>
-      <button class="filter-btn" data-filter="BP">Policies (BP)</button>
-      <button class="filter-btn" data-filter="AR">Regulations (AR)</button>
-      <button class="filter-btn" data-filter="BB">Bylaws/Exhibits</button>
+      <button class="filter-btn" data-filter="BP">Policies (BP) (359)</button>
+      <button class="filter-btn" data-filter="AR">Regulations (AR) (260)</button>
     </div>
   </div>
 </div>
@@ -11035,7 +11045,7 @@
           </div>
         </div>
       
-        <div class="policy-row" data-code="3550" data-title="Food Service/Child Nutrition Program" data-title-alt="Servicio de alimentos y programa de nutrición infantil" data-type="BP" data-revid="kTNxuplusjP0UzvOCbEDZfatA==">
+        <div class="policy-row" data-code="3550" data-title="Food Service/Child Nutrition Program" data-title-alt="Servicio de alimentos y programa de nutrición infantil" data-keywords="comida almuerzo lunch cafeteria" data-type="BP" data-revid="kTNxuplusjP0UzvOCbEDZfatA==">
           <div class="policy-row-header">
             <div class="policy-left">
               <span class="policy-code">3550</span>
@@ -11056,7 +11066,7 @@
           </div>
         </div>
       
-        <div class="policy-row" data-code="3550" data-title="Food Service/Child Nutrition Program" data-title-alt="Servicio de alimentos y programa de nutrición infantil" data-type="AR" data-revid="r81Az0qyuslsh54UQg7bPG6bw==">
+        <div class="policy-row" data-code="3550" data-title="Food Service/Child Nutrition Program" data-title-alt="Servicio de alimentos y programa de nutrición infantil" data-keywords="comida almuerzo lunch cafeteria" data-type="AR" data-revid="r81Az0qyuslsh54UQg7bPG6bw==">
           <div class="policy-row-header">
             <div class="policy-left">
               <span class="policy-code">3550</span>
@@ -15045,7 +15055,7 @@
           </div>
         </div>
       
-        <div class="policy-row" data-code="5111.1" data-title="District Residency" data-title-alt="Residencia en el distrito" data-type="BP" data-revid="ALQIpOPkpZTUPOOOFMRdgw==">
+        <div class="policy-row" data-code="5111.1" data-title="District Residency" data-title-alt="Residencia en el distrito" data-keywords="inscripcion inscripciones enrollment residencia" data-type="BP" data-revid="ALQIpOPkpZTUPOOOFMRdgw==">
           <div class="policy-row-header">
             <div class="policy-left">
               <span class="policy-code">5111.1</span>
@@ -15066,7 +15076,7 @@
           </div>
         </div>
       
-        <div class="policy-row" data-code="5111.1" data-title="District Residency" data-title-alt="Residencia en el distrito" data-type="AR" data-revid="ek49ICIXjqwcQmahiWILdQ==">
+        <div class="policy-row" data-code="5111.1" data-title="District Residency" data-title-alt="Residencia en el distrito" data-keywords="inscripcion inscripciones enrollment residencia" data-type="AR" data-revid="ek49ICIXjqwcQmahiWILdQ==">
           <div class="policy-row-header">
             <div class="policy-left">
               <span class="policy-code">5111.1</span>
@@ -15213,7 +15223,7 @@
           </div>
         </div>
       
-        <div class="policy-row" data-code="5112.5" data-title="Open/Closed Campus" data-title-alt="Campus abierto/cerrado" data-type="BP" data-revid="kplusv6ZASshsmblVASEQqVeA==">
+        <div class="policy-row" data-code="5112.5" data-title="Open/Closed Campus" data-title-alt="Campus abierto/cerrado" data-keywords="cierre cierres closure closures" data-type="BP" data-revid="kplusv6ZASshsmblVASEQqVeA==">
           <div class="policy-row-header">
             <div class="policy-left">
               <span class="policy-code">5112.5</span>
@@ -15822,7 +15832,7 @@
           </div>
         </div>
       
-        <div class="policy-row" data-code="5131.2" data-title="Bullying" data-title-alt="Acoso escolar (bullying)" data-type="BP" data-revid="z1ni51a3r5Xl9V3z76wRqw==">
+        <div class="policy-row" data-code="5131.2" data-title="Bullying" data-title-alt="Acoso escolar (bullying)" data-keywords="bullying acoso intimidacion" data-type="BP" data-revid="z1ni51a3r5Xl9V3z76wRqw==">
           <div class="policy-row-header">
             <div class="policy-left">
               <span class="policy-code">5131.2</span>
@@ -15843,7 +15853,7 @@
           </div>
         </div>
       
-        <div class="policy-row" data-code="5131.2" data-title="Bullying" data-title-alt="Acoso escolar (bullying)" data-type="AR" data-revid="4Paj7uncYBGNC5Cplus6eW2lQ==">
+        <div class="policy-row" data-code="5131.2" data-title="Bullying" data-title-alt="Acoso escolar (bullying)" data-keywords="bullying acoso intimidacion" data-type="AR" data-revid="4Paj7uncYBGNC5Cplus6eW2lQ==">
           <div class="policy-row-header">
             <div class="policy-left">
               <span class="policy-code">5131.2</span>
@@ -16095,7 +16105,7 @@
           </div>
         </div>
       
-        <div class="policy-row" data-code="5132" data-title="Dress And Grooming" data-title-alt="Vestimenta y arreglo personal" data-type="BP" data-revid="DxQAt2T6stFCj11sOyZtSg==">
+        <div class="policy-row" data-code="5132" data-title="Dress And Grooming" data-title-alt="Vestimenta y arreglo personal" data-keywords="uniforme uniformes uniform dress code ropa" data-type="BP" data-revid="DxQAt2T6stFCj11sOyZtSg==">
           <div class="policy-row-header">
             <div class="policy-left">
               <span class="policy-code">5132</span>
@@ -16116,7 +16126,7 @@
           </div>
         </div>
       
-        <div class="policy-row" data-code="5132" data-title="Dress And Grooming" data-title-alt="Vestimenta y arreglo personal" data-type="AR" data-revid="PjOkI322mJVoUd4pxeFTMQ==">
+        <div class="policy-row" data-code="5132" data-title="Dress And Grooming" data-title-alt="Vestimenta y arreglo personal" data-keywords="uniforme uniformes uniform dress code ropa" data-type="AR" data-revid="PjOkI322mJVoUd4pxeFTMQ==">
           <div class="policy-row-header">
             <div class="policy-left">
               <span class="policy-code">5132</span>
@@ -16641,7 +16651,7 @@
           </div>
         </div>
       
-        <div class="policy-row" data-code="5141.31" data-title="Immunizations" data-title-alt="Vacunas" data-type="BP" data-revid="AFeZaVyyslsh2slshJIU38eplush4ZQ==">
+        <div class="policy-row" data-code="5141.31" data-title="Immunizations" data-title-alt="Vacunas" data-keywords="vacunas vacuna immunization shots" data-type="BP" data-revid="AFeZaVyyslsh2slshJIU38eplush4ZQ==">
           <div class="policy-row-header">
             <div class="policy-left">
               <span class="policy-code">5141.31</span>
@@ -16662,7 +16672,7 @@
           </div>
         </div>
       
-        <div class="policy-row" data-code="5141.31" data-title="Immunizations" data-title-alt="Vacunas" data-type="AR" data-revid="bsI7ergDl0F7RZyZK12X6w==">
+        <div class="policy-row" data-code="5141.31" data-title="Immunizations" data-title-alt="Vacunas" data-keywords="vacunas vacuna immunization shots" data-type="AR" data-revid="bsI7ergDl0F7RZyZK12X6w==">
           <div class="policy-row-header">
             <div class="policy-left">
               <span class="policy-code">5141.31</span>
@@ -16914,7 +16924,7 @@
           </div>
         </div>
       
-        <div class="policy-row" data-code="5144" data-title="Discipline" data-title-alt="Disciplina" data-type="BP" data-revid="UUqqqTXzQ0K9EObyaavblA==">
+        <div class="policy-row" data-code="5144" data-title="Discipline" data-title-alt="Disciplina" data-keywords="disciplina castigo discipline" data-type="BP" data-revid="UUqqqTXzQ0K9EObyaavblA==">
           <div class="policy-row-header">
             <div class="policy-left">
               <span class="policy-code">5144</span>
@@ -16935,7 +16945,7 @@
           </div>
         </div>
       
-        <div class="policy-row" data-code="5144" data-title="Discipline" data-title-alt="Disciplina" data-type="AR" data-revid="iDUrMlNTBisslshg1dTCdZnkA==">
+        <div class="policy-row" data-code="5144" data-title="Discipline" data-title-alt="Disciplina" data-keywords="disciplina castigo discipline" data-type="AR" data-revid="iDUrMlNTBisslshg1dTCdZnkA==">
           <div class="policy-row-header">
             <div class="policy-left">
               <span class="policy-code">5144</span>
@@ -18394,7 +18404,7 @@
           </div>
         </div>
       
-        <div class="policy-row" data-code="6154" data-title="Homework/Makeup Work" data-title-alt="Tarea y trabajo de recuperación" data-type="BP" data-revid="HLxQbWO9KHhplusBvI4xgVLvA==">
+        <div class="policy-row" data-code="6154" data-title="Homework/Makeup Work" data-title-alt="Tarea y trabajo de recuperación" data-keywords="tarea tareas homework" data-type="BP" data-revid="HLxQbWO9KHhplusBvI4xgVLvA==">
           <div class="policy-row-header">
             <div class="policy-left">
               <span class="policy-code">6154</span>
@@ -20646,10 +20656,12 @@
             // The other language's title — so Spanish searches also work on
             // the English page and vice versa.
             const titleAlt = row.getAttribute('data-title-alt') || '';
+            const keywords = row.getAttribute('data-keywords') || '';
             const type = row.getAttribute('data-type') || '';
 
             const matchesSearch = !q || code.toLowerCase().includes(q)
-              || norm(title).includes(q) || norm(titleAlt).includes(q);
+              || norm(title).includes(q) || norm(titleAlt).includes(q)
+              || norm(keywords).includes(q);
             const matchesFilter = currentFilter === 'all' || type === currentFilter;
 
             if (matchesSearch && matchesFilter) {

@@ -997,6 +997,11 @@ const schoolCSS = `
   .resource-card {
     background: #fff;
     border: 1px solid var(--rule-light);
+    /* min-width:0 removes the grid item's automatic min-content floor —
+       without it one long unbreakable line (e.g. a PDF filename) widens the
+       shared track past a 320-360px viewport and the whole page pans. */
+    min-width: 0;
+    overflow-wrap: anywhere;
     padding: 1.2rem 1.5rem;
     transition: border-color 0.2s;
   }

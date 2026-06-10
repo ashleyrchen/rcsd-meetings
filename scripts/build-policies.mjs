@@ -54,6 +54,7 @@ const PAGES = {
     canonical: 'https://rcsd.info/policies/',
     altLangHref: '/politicas/',
     ogLocale: 'en_US',
+    ogImageKey: 'page-home',
     metaTitle: 'RCSD Board Policies Manual — Redwood City School District',
     metaDescription: 'Interactive and machine-readable school board policies, bylaws, and administrative regulations of the Redwood City School District.',
     jsonLdName: 'Redwood City School District Board Policies Manual',
@@ -93,6 +94,9 @@ const PAGES = {
     canonical: 'https://rcsd.info/politicas/',
     altLangHref: '/policies/',
     ogLocale: 'es_US',
+    // Stopgap: reuses the Spanish homepage card until dedicated page-policies
+    // OG images are generated (per the bilingual-assets rule).
+    ogImageKey: 'page-home-es',
     metaTitle: 'Manual de Políticas de la Mesa Directiva de RCSD — Distrito Escolar de Redwood City',
     metaDescription: 'Políticas, estatutos y reglamentos administrativos de la Mesa Directiva del Distrito Escolar de Redwood City, con títulos en español y búsqueda interactiva.',
     jsonLdName: 'Manual de Políticas de la Mesa Directiva del Distrito Escolar de Redwood City',
@@ -267,6 +271,9 @@ const pageCSS = `
     .filter-buttons {
       display: flex;
       gap: 0.5rem;
+      /* Must wrap: on one line the four buttons are ~437px wide and force the
+         whole page to pan sideways on phones. */
+      flex-wrap: wrap;
     }
     .filter-btn {
       font-family: 'IBM Plex Mono', monospace;
@@ -387,8 +394,16 @@ const pageCSS = `
       font-size: 0.72rem;
       font-family: 'IBM Plex Mono', monospace;
     }
+    /* Slash-joined titles ("Dismissal/Suspension/Disciplinary Action") are one
+       unbreakable token and pushed rows past a 320px viewport. */
+    .policy-title { overflow-wrap: anywhere; }
     .policy-date {
       white-space: nowrap;
+    }
+    /* The nowrap date pushed rows past a 375px viewport; the revision date is
+       still shown inside the policy drawer. */
+    @media (max-width: 480px) {
+      .policy-date { display: none; }
     }
     .expand-chevron {
       transition: transform 0.2s;
@@ -527,6 +542,22 @@ const pageCSS = `
 
 // Dynamic Javascript for Client-Side Interactivity (loading details dynamically!)
 // `clientLabels` is the per-language strings object serialized into the page.
+// Hand-curated search synonyms: words families actually type that appear in
+// neither language's official policy title. Keyed by policy code (matches all
+// BP/AR/E variants of that code). Curated 2026-06-10 from the parent-query
+// review; extend freely — these are additive recall only, rows still display
+// their real titles.
+const SEARCH_SYNONYMS = {
+  '5132':    'uniforme uniformes uniform dress code ropa',          // Dress and Grooming
+  '5141.31': 'vacunas vacuna immunization shots',                   // Immunizations
+  '5131.2':  'bullying acoso intimidacion',                         // Bullying
+  '5144':    'disciplina castigo discipline',                       // Discipline
+  '6154':    'tarea tareas homework',                               // Homework/Makeup Work
+  '5111.1':  'inscripcion inscripciones enrollment residencia',     // District Residency
+  '5112.5':  'cierre cierres closure closures',                     // Open/Closed Campus
+  '3550':    'comida almuerzo lunch cafeteria',                     // Food Service
+};
+
 function clientScript(clientLabels) {
   return `
     document.addEventListener('DOMContentLoaded', () => {
@@ -570,10 +601,12 @@ function clientScript(clientLabels) {
             // The other language's title — so Spanish searches also work on
             // the English page and vice versa.
             const titleAlt = row.getAttribute('data-title-alt') || '';
+            const keywords = row.getAttribute('data-keywords') || '';
             const type = row.getAttribute('data-type') || '';
 
             const matchesSearch = !q || code.toLowerCase().includes(q)
-              || norm(title).includes(q) || norm(titleAlt).includes(q);
+              || norm(title).includes(q) || norm(titleAlt).includes(q)
+              || norm(keywords).includes(q);
             const matchesFilter = currentFilter === 'all' || type === currentFilter;
 
             if (matchesSearch && matchesFilter) {
@@ -726,6 +759,10 @@ function clientScript(clientLabels) {
 
 function buildPolicyPage({ page, sections, policiesBySection, policies, titlesEs }) {
   const isEs = page.lang === 'es';
+  // Per-type totals drive the filter buttons; zero-count types (the catalog
+  // currently has no BB-typed entries) get no button at all rather than a
+  // filter that can only ever show an empty list.
+  const typeCounts = policies.reduce((m, p) => ((m[p.type] = (m[p.type] || 0) + 1), m), {});
   // Per-policy display title: Spanish page uses the AI-translated title,
   // falling back to English if a translation is somehow missing.
   const esTitle = (p) => titlesEs.titles[`${p.code}-${p.type}`]?.es || p.title;
@@ -745,8 +782,9 @@ function buildPolicyPage({ page, sections, policiesBySection, policies, titlesEs
                            : p.type.toLowerCase() === 'ar' ? 'type-badge--ar'
                            : 'type-badge--bb';
 
+      const keywords = SEARCH_SYNONYMS[p.code] || '';
       pRowsHtml += `
-        <div class="policy-row" data-code="${escapeAttr(p.code)}" data-title="${escapeAttr(titleFor(p))}" data-title-alt="${escapeAttr(altTitleFor(p))}" data-type="${escapeAttr(p.type)}" data-revid="${escapeAttr(p.revid)}">
+        <div class="policy-row" data-code="${escapeAttr(p.code)}" data-title="${escapeAttr(titleFor(p))}" data-title-alt="${escapeAttr(altTitleFor(p))}"${keywords ? ` data-keywords="${escapeAttr(keywords)}"` : ''} data-type="${escapeAttr(p.type)}" data-revid="${escapeAttr(p.revid)}">
           <div class="policy-row-header">
             <div class="policy-left">
               <span class="policy-code">${escapeText(p.code)}</span>
@@ -791,10 +829,9 @@ ${headMeta({
   description: page.metaDescription,
   canonical: page.canonical,
   ogLocale: page.ogLocale,
-  ogImageKey: 'page-home',
+  ogImageKey: page.ogImageKey,
   hreflang: HREFLANG,
   jsonLd: policiesIndexJsonLd(policies, page, titleFor),
-  extraHead: `<link rel="describedby" href="/llms.txt" type="text/markdown">`,
   pageCSS,
 })}
 </head>
@@ -821,9 +858,10 @@ ${siteNav({ activePage: 'district', lang: page.lang, altLangHref: page.altLangHr
     </div>
     <div class="filter-buttons">
       <button class="filter-btn active" data-filter="all">${page.filterAll} (${policies.length})</button>
-      <button class="filter-btn" data-filter="BP">${page.filterBP}</button>
-      <button class="filter-btn" data-filter="AR">${page.filterAR}</button>
-      <button class="filter-btn" data-filter="BB">${page.filterBB}</button>
+      ${[['BP', page.filterBP], ['AR', page.filterAR], ['BB', page.filterBB]]
+        .filter(([t]) => typeCounts[t] > 0)
+        .map(([t, label]) => `<button class="filter-btn" data-filter="${t}">${label} (${typeCounts[t]})</button>`)
+        .join('\n      ')}
     </div>
   </div>
 </div>

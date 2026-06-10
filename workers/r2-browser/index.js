@@ -278,6 +278,15 @@ async function renderIndexJson(bucket, prefix, corsHeaders) {
   }
   prefixes.sort();
   objects.sort((a, b) => a.key.localeCompare(b.key));
+  // A nonexistent directory and an empty one look identical to list(); only
+  // the bucket root may legitimately be object-empty. Everything else 404s so
+  // typo'd paths aren't cached as valid-but-empty listings.
+  if (prefix !== '' && prefixes.length === 0 && objects.length === 0) {
+    return new Response(JSON.stringify({ error: 'not found', prefix }), {
+      status: 404,
+      headers: { 'Content-Type': 'application/json; charset=utf-8', ...corsHeaders },
+    });
+  }
   const body = {
     prefix,
     generated: new Date().toISOString(),

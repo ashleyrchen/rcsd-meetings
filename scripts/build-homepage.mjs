@@ -501,7 +501,10 @@ const homepageCSS = `
     background: var(--cream-dark, #f5f0e8);
     border-radius: 4px;
     padding: 0.5rem 0.65rem;
-    margin: 0.15rem -0.65rem;
+    /* No negative horizontal margin: when the bilingual event columns sit at
+       the viewport edge (641-1023px widths), -0.65rem bled 11px past it and
+       made the whole page pan sideways. */
+    margin: 0.15rem 0;
     border-bottom: none;
   }
   /* No school — red */
@@ -1116,7 +1119,7 @@ ${siteNav({ lang: 'en' })}
 </main>
 
 <footer class="site-footer">
-  <p><a href="mailto:team@rcsd.info">team@rcsd.info</a></p>
+  <p><a href="mailto:team@rcsd.info">team@rcsd.info</a> · <a href="/mcp/">API &amp; data for developers</a></p>
 </footer>
 
 </body>

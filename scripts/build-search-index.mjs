@@ -93,7 +93,7 @@ const htmlFiles = readdirSync(DOCS, { recursive: true })
   .filter((f) => f.endsWith('.html'))
   .sort();
 for (const rel of htmlFiles) {
-  const url = '/' + rel.split(sep).join('/').replace(/index\.html$/, '');
+  const url = '/' + rel.split(sep).join('/').replace(/(^|\/)index\.html$/, '$1');
   let content = readFileSync(resolve(DOCS, rel), 'utf8');
   const weight = DEMOTED_PAGES[url];
   if (weight !== undefined) {

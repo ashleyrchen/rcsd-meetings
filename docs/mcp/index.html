@@ -7,6 +7,7 @@
 <title>MCP Server — RCSD Open Data</title>
 <meta name="description" content="Connect your AI assistant to Redwood City School District data via the RCSD MCP server. Installation instructions for Claude Desktop, Claude Code, Claude.ai, and other MCP clients.">
 <meta name="theme-color" content="#1a3a2a">
+<link rel="describedby" href="/llms.txt">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
 <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
@@ -63,7 +64,7 @@
     --coral-light: #f5ddd8;
     --text: #2a2a28;
     --text-secondary: #5a5a56;
-    --text-muted: #8a8a84;
+    --text-muted: #6b6b64; /* >=4.5:1 on cream/white; keep in sync with html-parts.mjs */
     --rule: #d4d0c8;
     --rule-light: #e8e4dc;
   }
@@ -446,6 +447,7 @@
       <a href="/schools/" class="site-nav-tab">Schools</a>
       <a href="/district/" class="site-nav-tab">District</a>
       <a href="/budget/" class="site-nav-tab">Budget</a>
+      <a href="/committees/" class="site-nav-tab">Committees</a>
       <a href="/blog/" class="site-nav-tab">Blog</a>
     </div>
     <div class="site-nav-right">

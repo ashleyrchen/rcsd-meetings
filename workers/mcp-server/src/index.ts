@@ -60,6 +60,12 @@ async function fetchJSON(path: string): Promise<any> {
 
 // ---- Helper: provenance footer (every tool output ends with a source line) ----
 
+// Meeting summaries are stored with inline HTML (<strong>) for the website;
+// MCP tool output is plain text, so strip markup at render time.
+function stripHtml(s: string): string {
+  return (s || "").replace(/<[^>]+>/g, "");
+}
+
 function sourceLine(file: string, asOf?: string | null): string {
   const url = file.startsWith("https://") ? file : `${DATA_BASE}/${file}`;
   return `Source: ${url}${asOf ? ` (as of ${asOf})` : ""}`;
@@ -425,7 +431,7 @@ function createServer(): McpServer {
       }
       const calFound = await fetchCalendarFor(date);
       if (calFound) {
-        const { cal } = calFound;
+        const { cal, schoolYear } = calFound;
         // Check no-school days (holidays, teacher training, planning days, breaks)
         for (const evt of cal.events) {
           if (evt.type === "no-school") {
@@ -433,7 +439,7 @@ function createServer(): McpServer {
             const end = evt.dateEnd || evt.date;
             if (date >= start && date <= end) {
               return {
-                content: [{ type: "text", text: `No school lunch on ${date} — ${evt.en}. School is closed.` }],
+                content: [{ type: "text", text: `No school lunch on ${date} — ${evt.en}. School is closed.\n` + sourceLine(`district-calendar-${schoolYear}.json`) }],
               };
             }
           }
@@ -443,7 +449,7 @@ function createServer(): McpServer {
             const end = evt.dateEnd || evt.date;
             if (date >= start && date <= end) {
               return {
-                content: [{ type: "text", text: `No school lunch on ${date} — ${evt.en}. Students are dismissed before lunch on super-minimum days.` }],
+                content: [{ type: "text", text: `No school lunch on ${date} — ${evt.en}. Students are dismissed before lunch on super-minimum days.\n` + sourceLine(`district-calendar-${schoolYear}.json`) }],
               };
             }
           }
@@ -454,7 +460,7 @@ function createServer(): McpServer {
         const withinSchoolYear = first && last && date >= first.date && date <= last.date;
         if (!withinSchoolYear) {
           return {
-            content: [{ type: "text", text: `No school lunch on ${date} — school is not in session.` }],
+            content: [{ type: "text", text: `No school lunch on ${date} — school is not in session.\n` + sourceLine(`district-calendar-${schoolYear}.json`) }],
           };
         }
       }
@@ -714,8 +720,8 @@ function createServer(): McpServer {
         // Dates with multiple meetings are keyed by slug (e.g.
         // "2020-04-01-board-meeting-2"), so fall back to prefix matches.
         const matched: [string, string][] = summaries[date]
-          ? [[date, summaries[date]]]
-          : keys.filter((k) => k.startsWith(date)).map((k) => [k, summaries[k]]);
+          ? [[date, stripHtml(summaries[date])]]
+          : keys.filter((k) => k.startsWith(date)).map((k) => [k, stripHtml(summaries[k])]);
         if (matched.length === 0) {
           const nearest = keys.slice(0, 5).join(", ");
           return {
@@ -732,7 +738,7 @@ function createServer(): McpServer {
       }
 
       const count = limit || 5;
-      const lines = keys.slice(0, count).map((d) => `${d}: ${summaries[d]}`);
+      const lines = keys.slice(0, count).map((d) => `${d}: ${stripHtml(summaries[d])}`);
       return { content: [{ type: "text", text: `${lines.join("\n\n")}${footer}` }] };
     }
   );
@@ -810,7 +816,7 @@ function createServer(): McpServer {
       if (mtg.zoom) lines.push(`Zoom: ${mtg.zoom}`);
 
       // 2. Summary (multi-meeting dates are keyed by slug)
-      const summary = summaries[mtg.date] || summaries[mtg.slug];
+      const summary = stripHtml(summaries[mtg.date] || summaries[mtg.slug] || "");
       if (summary) {
         lines.push("");
         lines.push("--- Summary ---");
@@ -1199,7 +1205,7 @@ function createServer(): McpServer {
           entries.push({
             date,
             title: titleParts.join("|"),
-            summary: (lang === "es" ? schoolData.es : schoolData.en) || schoolData.en,
+            summary: stripHtml((lang === "es" ? schoolData.es : schoolData.en) || schoolData.en),
           });
         }
       }
@@ -1256,7 +1262,7 @@ function createServer(): McpServer {
           `  Total enrollment: ${totalEnrollment.toLocaleString()}`,
           `  Total IEP students: ${d.total} (${districtPct}% district average)`,
           `  By grade: ${Object.entries(d.grades)
-            .map(([g, n]) => `${g}: ${n}`)
+            .map(([g, n]) => `${g}: ${n ?? "suppressed (<11)"}`)
             .join(", ")}`,
           "",
           "Per school:",
@@ -1295,7 +1301,7 @@ function createServer(): McpServer {
       if (schoolSped.grades) {
         lines.push(
           `  By grade: ${Object.entries(schoolSped.grades)
-            .map(([g, n]) => `${g}: ${n}`)
+            .map(([g, n]) => `${g}: ${n ?? "suppressed (<11)"}`)
             .join(", ")}`
         );
       }

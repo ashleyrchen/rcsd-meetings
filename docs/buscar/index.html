@@ -54,7 +54,7 @@
     --text-secondary: #5a5a56;
     /* Muted text must still clear WCAG AA 4.5:1 on every background it
        appears on: 5.06:1 on --cream, 4.67:1 on --cream-dark, 5.37:1 on
-       #fff. (The old #8a8a84 hit only ~3:1 on all three.) */
+       #fff. (The old lighter gray token hit only ~3:1 on all three.) */
     --text-muted: #6b6b64;
     --rule: #d4d0c8;
     --rule-light: #e8e4dc;
@@ -343,6 +343,7 @@
 (async function () {
   var RANKING = {"termFrequency":1,"pageLength":0.75,"termSaturation":1.4,"termSimilarity":1};
   var MIN_RESULTS = 5;
+  var MAX_RESULTS = 20;
 
   function ready() { return window.PagefindComponents && window.PagefindComponents.getInstanceManager; }
   for (var i = 0; i < 200 && !ready(); i++) { await new Promise(function (r) { setTimeout(r, 25); }); }
@@ -353,6 +354,25 @@
   // Force the core to load so we can tune ranking + relax queries, and so a ?q=
   // prefill resolves instantly.
   if (inst.triggerLoad) { try { await inst.triggerLoad(); } catch (e) {} }
+
+  // The summary says e.g. "75 results" but the UI caps rendering at MAX_RESULTS
+  // with no pager — rewrite the message to be honest about what is shown.
+  // Feature-detected DOM patch; if markup changes, the stock message remains.
+  var summaryEl = document.querySelector('pagefind-summary');
+  if (summaryEl && window.MutationObserver) {
+    var CAP_TEMPLATE = "Mostrando los [CAP] resultados más relevantes de [COUNT]";
+    var patchSummary = function () {
+      var t = summaryEl.textContent || '';
+      var m = t.match(/^\s*(\d[\d,]*)\s/);
+      if (!m) return;
+      var count = parseInt(m[1].replace(/,/g, ''), 10);
+      if (!(count > MAX_RESULTS)) return;
+      var p = summaryEl.querySelector('p') || summaryEl;
+      p.textContent = CAP_TEMPLATE.replace('[CAP]', MAX_RESULTS).replace('[COUNT]', count);
+    };
+    new MutationObserver(patchSummary).observe(summaryEl, { childList: true, subtree: true, characterData: true });
+    patchSummary();
+  }
   var pf = inst.__pagefind__;
   if (pf) {
     try { await pf.options({ ranking: RANKING }); } catch (e) {}
