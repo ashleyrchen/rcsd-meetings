@@ -141,6 +141,11 @@ const budgetCSS = `
     color: var(--green-mid);
     border-bottom-color: var(--green-light);
   }
+  .toc a.active {
+    color: var(--green-deep);
+    border-bottom-color: var(--green-mid);
+    background: var(--cream);
+  }
   .content {
     max-width: 900px;
     margin: 0 auto;
@@ -1519,6 +1524,59 @@ ${siteNav({ activePage: 'budget', lang: page.lang, altLangHref: page.altLangHref
 ${bodyContent}
 
 ${siteFooter({ lang: page.lang })}
+
+<script>
+(function () {
+  var toc = document.querySelector('.toc');
+  if (!toc || !('IntersectionObserver' in window)) return;
+  var links = Array.prototype.slice.call(toc.querySelectorAll('a[href^="#"]'));
+  var byId = {};
+  var sections = [];
+  links.forEach(function (a) {
+    var id = a.getAttribute('href').slice(1);
+    var sec = document.getElementById(id);
+    if (sec) { byId[id] = a; sections.push(sec); }
+  });
+  if (!sections.length) return;
+
+  var current = null;
+  function setActive(id) {
+    if (id === current) return;
+    current = id;
+    links.forEach(function (a) { a.classList.remove('active'); });
+    var link = byId[id];
+    if (!link) return;
+    link.classList.add('active');
+    var inner = link.parentNode;
+    if (inner && inner.scrollWidth > inner.clientWidth) {
+      var left = link.offsetLeft - (inner.clientWidth / 2) + (link.clientWidth / 2);
+      inner.scrollTo({ left: left, behavior: 'smooth' });
+    }
+  }
+
+  function pick() {
+    // Trigger line sits just below the sticky nav; the current section is the
+    // last one whose top has scrolled up past that line.
+    var line = toc.offsetHeight + 24;
+    var activeId = sections[0].id;
+    for (var i = 0; i < sections.length; i++) {
+      if (sections[i].getBoundingClientRect().top - line <= 0) activeId = sections[i].id;
+      else break;
+    }
+    setActive(activeId);
+  }
+
+  var ticking = false;
+  function onScroll() {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(function () { pick(); ticking = false; });
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  pick();
+})();
+</script>
 
 </body>
 </html>`;
