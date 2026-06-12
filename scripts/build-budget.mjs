@@ -572,10 +572,10 @@ function sectionParcelTaxEN() {
 
   <p><strong>Exemptions:</strong> Seniors age 65+, individuals receiving Supplemental Security Income for disability, and those receiving Social Security Disability Insurance with income below 250% of federal poverty guidelines may apply for exemption.</p>
 
-  <h3>Measure C &mdash; June 2026 Parcel Tax (Trailing; Count Ongoing)</h3>
+  <h3>Measure C &mdash; June 2026 Parcel Tax (Just Short; Count Ongoing)</h3>
 
   <div class="callout callout-amber">
-    <p><strong>Measure C is trailing as San Mateo County continues to count.</strong> In returns reported as of mid-June 2026, Measure C had about <strong>57.5% Yes</strong> (roughly 4,262 votes for to 3,150 against) &mdash; short of the <strong>two-thirds (66.67%) supermajority</strong> a parcel tax requires. Ballots are still being tabulated, so totals are not final. The RCSD Board placed the measure on the ballot at a February 26, 2026 special meeting; it would be <em>in addition to</em> Measure U, which runs through 2030.</p>
+    <p><strong>Measure C is just short of passing as San Mateo County continues to count.</strong> In the county's June 10, 2026 results release, Measure C stood at <strong>63.84% Yes</strong> (11,913 votes for to 6,748 against) &mdash; about 2.8 points under the <strong>two-thirds (66.67%) supermajority</strong> a parcel tax requires. Ballots are still being tabulated, so totals are not final. The RCSD Board placed the measure on the ballot at a February 26, 2026 special meeting; it would be <em>in addition to</em> Measure U, which runs through 2030.</p>
   </div>
 
   <div class="table-wrap">
@@ -588,7 +588,7 @@ function sectionParcelTaxEN() {
         <tr><td>Duration</td><td>8 years (July 2026 &ndash; June 2034)</td></tr>
         <tr><td>Vote Required</td><td>Two-thirds (66.67%)</td></tr>
         <tr><td>Election Date</td><td>June 2, 2026</td></tr>
-        <tr><td>Result (count ongoing)</td><td style="color:var(--coral)">~57.5% Yes &mdash; trailing the two-thirds threshold</td></tr>
+        <tr><td>Result (count ongoing)</td><td style="color:var(--coral)">63.84% Yes (11,913&ndash;6,748) &mdash; ~2.8 pts under two-thirds</td></tr>
       </tbody>
     </table>
   </div>
@@ -604,7 +604,7 @@ function sectionParcelTaxEN() {
     <li><strong>Official election results</strong>: <a href="https://www.smcacre.gov/elections" target="_blank">San Mateo County Assessor-Clerk-Recorder &amp; Elections</a></li>
   </ul>
 
-  <p class="source">Sources: <a href="https://www.rwcpulse.com/election/2026/06/03/redwood-city-school-parcel-tax-trails-approval-threshold/" target="_blank">Redwood City Pulse, June 3, 2026</a>; <a href="https://www.smdailyjournal.com/news/local/parcel-tax-for-redwood-city-schools-falling-short/article_524d3412-d013-4734-aa99-8b8e4e80bd19.html" target="_blank">San Mateo Daily Journal, June 2026</a>. Vote totals are unofficial pending the county's final canvass.</p>
+  <p class="source">Source: <a href="https://www.smcacre.gov/elections" target="_blank">San Mateo County Registration &amp; Elections</a>, official results as of the June 10, 2026 release (63.84% Yes, 11,913&ndash;6,748). Earlier election-night coverage: <a href="https://www.rwcpulse.com/election/2026/06/03/redwood-city-school-parcel-tax-trails-approval-threshold/" target="_blank">Redwood City Pulse, June 3, 2026</a>. Vote totals are unofficial pending the county's final canvass.</p>
 </section>`;
 }
 
@@ -692,7 +692,7 @@ function sectionOutlookEN() {
   <p class="source">The "Identified Stabilization" line is the board-approved Fiscal Stabilization Plan (Feb. 4, 2026), shown as a reduction to expenditures. Source: 2025-26 Second Interim Multi-Year Projection (March 25, 2026), p. 1.</p>
 
   <div class="callout">
-    <p><strong>The drawdown has been arrested.</strong> A year ago the fund balance was sliding toward the 3% reserve floor with millions in cuts still unidentified. With the stabilization plan in place, the Second Interim projects the ending balance <em>growing</em> from $15.4M to $22.7M by 2027-28 and the reserve rising to 5.81%. The structural pressures below are real, but the district now has a credible, fully-identified path to balance &mdash; it does not depend on the June 2026 parcel tax (Measure C), which is trailing as the count continues.</p>
+    <p><strong>The drawdown has been arrested.</strong> A year ago the fund balance was sliding toward the 3% reserve floor with millions in cuts still unidentified. With the stabilization plan in place, the Second Interim projects the ending balance <em>growing</em> from $15.4M to $22.7M by 2027-28 and the reserve rising to 5.81%. The structural pressures below are real, but the district now has a credible, fully-identified path to balance &mdash; it does not depend on the June 2026 parcel tax (Measure C), which is running just short of the two-thirds bar as the count continues.</p>
   </div>
 
   <h3>Fiscal Stabilization Plan</h3>
@@ -828,8 +828,8 @@ function sectionDocumentsEN() {
 
   <h3>External Coverage</h3>
   <ul style="margin-bottom:1.5rem">
-    <li><a href="https://www.rwcpulse.com/election/2026/06/03/redwood-city-school-parcel-tax-trails-approval-threshold/" target="_blank">RWC Pulse: Parcel Tax Measure C Trails Approval Threshold</a> (June 2026)</li>
-    <li><a href="https://www.smdailyjournal.com/news/local/parcel-tax-for-redwood-city-schools-falling-short/article_524d3412-d013-4734-aa99-8b8e4e80bd19.html" target="_blank">San Mateo Daily Journal: Parcel Tax for Redwood City Schools Falling Short</a> (June 2026)</li>
+    <li><a href="https://www.smcacre.gov/elections" target="_blank">San Mateo County Registration &amp; Elections</a> &mdash; official Measure C results</li>
+    <li><a href="https://www.rwcpulse.com/election/2026/06/03/redwood-city-school-parcel-tax-trails-approval-threshold/" target="_blank">RWC Pulse: Measure C Trails Approval Threshold</a> (election-night, June 3, 2026)</li>
     <li><a href="https://www.rwcpulse.com/education/2026/02/27/redwood-city-school-district-puts-parcel-tax-measure-on-june-ballot/" target="_blank">RWC Pulse: Parcel Tax on June Ballot</a> (Feb. 2026)</li>
     <li><a href="https://www.rwcpulse.com/education/2026/02/05/redwood-city-school-districts-cuts-another-6m-from-budget/" target="_blank">RWC Pulse: District Cuts $6M from Budget</a> (Feb. 2026)</li>
   </ul>
@@ -1159,10 +1159,10 @@ function sectionParcelTaxES() {
   <p>Los fondos de la Medida U mejoran la instrucci\u00f3n en matem\u00e1ticas, ciencias, lectura y escritura; atraen y retienen maestros calificados; apoyan programas de artes y m\u00fasica; y actualizan la tecnolog\u00eda en las aulas.</p>
   <p><strong>Exenciones:</strong> Personas mayores de 65 a\u00f1os e individuos que reciben apoyo federal por discapacidad pueden solicitar la exenci\u00f3n.</p>
 
-  <h3>Medida C &mdash; Impuesto Parcelario de Junio 2026 (Por Debajo; Conteo en Curso)</h3>
+  <h3>Medida C &mdash; Impuesto Parcelario de Junio 2026 (Por Poco; Conteo en Curso)</h3>
 
   <div class="callout callout-amber">
-    <p><strong>La Medida C va por debajo mientras el Condado de San Mateo sigue contando.</strong> En los resultados reportados a mediados de junio de 2026, la Medida C ten\u00eda cerca del <strong>57.5% de votos a favor</strong> (aproximadamente 4,262 a favor y 3,150 en contra) &mdash; por debajo de la <strong>supermayor\u00eda de dos tercios (66.67%)</strong> que requiere un impuesto parcelario. Todav\u00eda se est\u00e1n contando boletas, as\u00ed que los totales no son finales. La Junta de RCSD puso la medida en la boleta en una reuni\u00f3n especial el 26 de febrero de 2026; ser\u00eda <em>adicional</em> a la Medida U, que sigue vigente hasta 2030.</p>
+    <p><strong>A la Medida C le falta poco para pasar mientras el Condado de San Mateo sigue contando.</strong> En los resultados publicados por el condado el 10 de junio de 2026, la Medida C estaba en <strong>63.84% de votos a favor</strong> (11,913 a favor y 6,748 en contra) &mdash; unos 2.8 puntos por debajo de la <strong>supermayor\u00eda de dos tercios (66.67%)</strong> que requiere un impuesto parcelario. Todav\u00eda se est\u00e1n contando boletas, as\u00ed que los totales no son finales. La Junta de RCSD puso la medida en la boleta en una reuni\u00f3n especial el 26 de febrero de 2026; ser\u00eda <em>adicional</em> a la Medida U, que sigue vigente hasta 2030.</p>
   </div>
 
   <div class="table-wrap">
@@ -1175,7 +1175,7 @@ function sectionParcelTaxES() {
         <tr><td>Duraci\u00f3n</td><td>8 a\u00f1os (julio 2026 &ndash; junio 2034)</td></tr>
         <tr><td>Voto Requerido</td><td>Dos tercios (66.67%)</td></tr>
         <tr><td>Fecha de Elecci\u00f3n</td><td>2 de junio de 2026</td></tr>
-        <tr><td>Resultado (conteo en curso)</td><td style="color:var(--coral)">~57.5% a favor &mdash; por debajo del umbral de dos tercios</td></tr>
+        <tr><td>Resultado (conteo en curso)</td><td style="color:var(--coral)">63.84% a favor (11,913&ndash;6,748) &mdash; ~2.8 pts bajo dos tercios</td></tr>
       </tbody>
     </table>
   </div>
@@ -1191,7 +1191,7 @@ function sectionParcelTaxES() {
     <li><strong>Resultados electorales oficiales</strong>: <a href="https://www.smcacre.gov/elections" target="_blank">San Mateo County Assessor-Clerk-Recorder &amp; Elections</a></li>
   </ul>
 
-  <p class="source">Fuentes: <a href="https://www.rwcpulse.com/election/2026/06/03/redwood-city-school-parcel-tax-trails-approval-threshold/" target="_blank">Redwood City Pulse, 3 de junio de 2026</a>; <a href="https://www.smdailyjournal.com/news/local/parcel-tax-for-redwood-city-schools-falling-short/article_524d3412-d013-4734-aa99-8b8e4e80bd19.html" target="_blank">San Mateo Daily Journal, junio 2026</a>. Los totales de votos son extraoficiales hasta el conteo final del condado.</p>
+  <p class="source">Fuente: <a href="https://www.smcacre.gov/elections" target="_blank">Registro y Elecciones del Condado de San Mateo</a>, resultados oficiales al 10 de junio de 2026 (63.84% a favor, 11,913&ndash;6,748). Cobertura de la noche electoral: <a href="https://www.rwcpulse.com/election/2026/06/03/redwood-city-school-parcel-tax-trails-approval-threshold/" target="_blank">Redwood City Pulse, 3 de junio de 2026</a>. Los totales de votos son extraoficiales hasta el conteo final del condado.</p>
 </section>`;
 }
 
@@ -1273,7 +1273,7 @@ function sectionOutlookES() {
   <p class="source">La l\u00ednea de "Estabilizaci\u00f3n Identificada" es el Plan de Estabilizaci\u00f3n Fiscal aprobado por la Junta (4 de feb. 2026), mostrado como una reducci\u00f3n a los gastos. Fuente: Proyecci\u00f3n Multianual del Segundo Informe Interino 2025-26 (25 de marzo de 2026), p. 1.</p>
 
   <div class="callout">
-    <p><strong>Se detuvo el agotamiento de reservas.</strong> Hace un a\u00f1o el balance del fondo se deslizaba hacia el piso del 3% con millones en recortes todav\u00eda sin identificar. Con el plan de estabilizaci\u00f3n en marcha, el Segundo Informe Interino proyecta que el balance final <em>crece</em> de $15.4M a $22.7M para 2027-28 y que la reserva sube al 5.81%. Las presiones estructurales de abajo son reales, pero el distrito ahora tiene un camino cre\u00edble y totalmente identificado hacia el equilibrio &mdash; que no depende del impuesto parcelario de junio 2026 (Medida C), que va por debajo mientras contin\u00faa el conteo.</p>
+    <p><strong>Se detuvo el agotamiento de reservas.</strong> Hace un a\u00f1o el balance del fondo se deslizaba hacia el piso del 3% con millones en recortes todav\u00eda sin identificar. Con el plan de estabilizaci\u00f3n en marcha, el Segundo Informe Interino proyecta que el balance final <em>crece</em> de $15.4M a $22.7M para 2027-28 y que la reserva sube al 5.81%. Las presiones estructurales de abajo son reales, pero el distrito ahora tiene un camino cre\u00edble y totalmente identificado hacia el equilibrio &mdash; que no depende del impuesto parcelario de junio 2026 (Medida C), al que le falta poco para los dos tercios mientras contin\u00faa el conteo.</p>
   </div>
 
   <h3>Plan de Estabilizaci\u00f3n Fiscal</h3>
