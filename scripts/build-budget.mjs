@@ -572,10 +572,10 @@ function sectionParcelTaxEN() {
 
   <p><strong>Exemptions:</strong> Seniors age 65+, individuals receiving Supplemental Security Income for disability, and those receiving Social Security Disability Insurance with income below 250% of federal poverty guidelines may apply for exemption.</p>
 
-  <h3>Measure C &mdash; June 2026 Parcel Tax (Did Not Pass)</h3>
+  <h3>Measure C &mdash; June 2026 Parcel Tax (Trailing; Count Ongoing)</h3>
 
-  <div class="callout callout-coral">
-    <p><strong>Measure C fell short on the June 2, 2026 ballot.</strong> In returns counted as of mid-June 2026 &mdash; with San Mateo County still processing remaining ballots &mdash; Measure C had about <strong>57.5% Yes</strong> (roughly 4,262 votes for to 3,150 against), well short of the <strong>two-thirds (66.67%) supermajority</strong> a parcel tax requires. The gap is far larger than the outstanding ballot count, so the measure is set to fail. The RCSD Board had placed it on the ballot at a February 26, 2026 special meeting; it would have been <em>in addition to</em> Measure U, which runs through 2030.</p>
+  <div class="callout callout-amber">
+    <p><strong>Measure C is trailing as San Mateo County continues to count.</strong> In returns reported as of mid-June 2026, Measure C had about <strong>57.5% Yes</strong> (roughly 4,262 votes for to 3,150 against) &mdash; short of the <strong>two-thirds (66.67%) supermajority</strong> a parcel tax requires. Ballots are still being tabulated, so totals are not final. The RCSD Board placed the measure on the ballot at a February 26, 2026 special meeting; it would be <em>in addition to</em> Measure U, which runs through 2030.</p>
   </div>
 
   <div class="table-wrap">
@@ -588,7 +588,7 @@ function sectionParcelTaxEN() {
         <tr><td>Duration</td><td>8 years (July 2026 &ndash; June 2034)</td></tr>
         <tr><td>Vote Required</td><td>Two-thirds (66.67%)</td></tr>
         <tr><td>Election Date</td><td>June 2, 2026</td></tr>
-        <tr><td>Result</td><td style="color:var(--coral)">~57.5% Yes &mdash; did not reach two-thirds</td></tr>
+        <tr><td>Result (count ongoing)</td><td style="color:var(--coral)">~57.5% Yes &mdash; trailing the two-thirds threshold</td></tr>
       </tbody>
     </table>
   </div>
@@ -596,7 +596,7 @@ function sectionParcelTaxEN() {
   <p>Measure C would have raised approximately <strong>$12.2 million per year</strong> for eight years &mdash; about $175 a year for a 1,000-square-foot home, with exemptions for seniors and people receiving federal disability support. The district had earmarked the revenue to attract and retain teachers, counselors, and staff; protect science, math, and STEM instruction; preserve reading and writing programs; and keep class sizes manageable.</p>
 
   <h3>What the Result Means for the Budget</h3>
-  <p>Measure C revenue was <em>not</em> built into the district's three-year budget projection. The board had already adopted a $6.04 million Fiscal Stabilization Plan on February 4, 2026, and the 2025-26 Second Interim multi-year projection balances <strong>without</strong> any parcel-tax money &mdash; it carries no unidentified cuts and keeps reserves above the 3% legal minimum in all three years (see the <a href="#outlook">Multi-Year Fiscal Outlook</a>). In other words, Measure C's failure does not trigger new cuts; rather, the roughly $12.2M it would have added each year is revenue the district will <em>not</em> have to restore programs and staffing trimmed in the stabilization plan, or to offset the looming RDA-transfer cliff. The existing Measure U ($1.6M/year) continues through 2030 regardless of the June 2026 outcome.</p>
+  <p>Measure C revenue was <em>not</em> built into the district's three-year budget projection. The board had already adopted a $6.04 million Fiscal Stabilization Plan on February 4, 2026, and the 2025-26 Second Interim multi-year projection balances <strong>without</strong> any parcel-tax money &mdash; it carries no unidentified cuts and keeps reserves above the 3% legal minimum in all three years (see the <a href="#outlook">Multi-Year Fiscal Outlook</a>). In other words, the outcome at the ballot box does not trigger new cuts; rather, if Measure C does not pass, the roughly $12.2M it would have added each year is revenue the district will <em>not</em> have to restore programs and staffing trimmed in the stabilization plan, or to offset the looming RDA-transfer cliff. The existing Measure U ($1.6M/year) continues through 2030 regardless of the June 2026 outcome.</p>
 
   <h3>Community Resources</h3>
   <ul>
@@ -692,7 +692,7 @@ function sectionOutlookEN() {
   <p class="source">The "Identified Stabilization" line is the board-approved Fiscal Stabilization Plan (Feb. 4, 2026), shown as a reduction to expenditures. Source: 2025-26 Second Interim Multi-Year Projection (March 25, 2026), p. 1.</p>
 
   <div class="callout">
-    <p><strong>The drawdown has been arrested.</strong> A year ago the fund balance was sliding toward the 3% reserve floor with millions in cuts still unidentified. With the stabilization plan in place, the Second Interim projects the ending balance <em>growing</em> from $15.4M to $22.7M by 2027-28 and the reserve rising to 5.81%. The structural pressures below are real, but the district now has a credible, fully-identified path to balance &mdash; it did not depend on the June 2026 parcel tax (Measure C), which fell short at the ballot box.</p>
+    <p><strong>The drawdown has been arrested.</strong> A year ago the fund balance was sliding toward the 3% reserve floor with millions in cuts still unidentified. With the stabilization plan in place, the Second Interim projects the ending balance <em>growing</em> from $15.4M to $22.7M by 2027-28 and the reserve rising to 5.81%. The structural pressures below are real, but the district now has a credible, fully-identified path to balance &mdash; it does not depend on the June 2026 parcel tax (Measure C), which is trailing as the count continues.</p>
   </div>
 
   <h3>Fiscal Stabilization Plan</h3>
@@ -1159,10 +1159,10 @@ function sectionParcelTaxES() {
   <p>Los fondos de la Medida U mejoran la instrucci\u00f3n en matem\u00e1ticas, ciencias, lectura y escritura; atraen y retienen maestros calificados; apoyan programas de artes y m\u00fasica; y actualizan la tecnolog\u00eda en las aulas.</p>
   <p><strong>Exenciones:</strong> Personas mayores de 65 a\u00f1os e individuos que reciben apoyo federal por discapacidad pueden solicitar la exenci\u00f3n.</p>
 
-  <h3>Medida C &mdash; Impuesto Parcelario de Junio 2026 (No Pas\u00f3)</h3>
+  <h3>Medida C &mdash; Impuesto Parcelario de Junio 2026 (Por Debajo; Conteo en Curso)</h3>
 
-  <div class="callout callout-coral">
-    <p><strong>La Medida C no alcanz\u00f3 los votos necesarios en la boleta del 2 de junio de 2026.</strong> En el conteo a mediados de junio de 2026 &mdash; con el Condado de San Mateo todav\u00eda procesando boletas &mdash; la Medida C ten\u00eda cerca del <strong>57.5% de votos a favor</strong> (aproximadamente 4,262 a favor y 3,150 en contra), muy por debajo de la <strong>supermayor\u00eda de dos tercios (66.67%)</strong> que requiere un impuesto parcelario. La diferencia es mucho mayor que las boletas que faltan por contar, as\u00ed que la medida va camino a fracasar. La Junta de RCSD la hab\u00eda puesto en la boleta en una reuni\u00f3n especial el 26 de febrero de 2026; habr\u00eda sido <em>adicional</em> a la Medida U, que sigue vigente hasta 2030.</p>
+  <div class="callout callout-amber">
+    <p><strong>La Medida C va por debajo mientras el Condado de San Mateo sigue contando.</strong> En los resultados reportados a mediados de junio de 2026, la Medida C ten\u00eda cerca del <strong>57.5% de votos a favor</strong> (aproximadamente 4,262 a favor y 3,150 en contra) &mdash; por debajo de la <strong>supermayor\u00eda de dos tercios (66.67%)</strong> que requiere un impuesto parcelario. Todav\u00eda se est\u00e1n contando boletas, as\u00ed que los totales no son finales. La Junta de RCSD puso la medida en la boleta en una reuni\u00f3n especial el 26 de febrero de 2026; ser\u00eda <em>adicional</em> a la Medida U, que sigue vigente hasta 2030.</p>
   </div>
 
   <div class="table-wrap">
@@ -1175,7 +1175,7 @@ function sectionParcelTaxES() {
         <tr><td>Duraci\u00f3n</td><td>8 a\u00f1os (julio 2026 &ndash; junio 2034)</td></tr>
         <tr><td>Voto Requerido</td><td>Dos tercios (66.67%)</td></tr>
         <tr><td>Fecha de Elecci\u00f3n</td><td>2 de junio de 2026</td></tr>
-        <tr><td>Resultado</td><td style="color:var(--coral)">~57.5% a favor &mdash; no lleg\u00f3 a dos tercios</td></tr>
+        <tr><td>Resultado (conteo en curso)</td><td style="color:var(--coral)">~57.5% a favor &mdash; por debajo del umbral de dos tercios</td></tr>
       </tbody>
     </table>
   </div>
@@ -1183,7 +1183,7 @@ function sectionParcelTaxES() {
   <p>La Medida C habr\u00eda recaudado aproximadamente <strong>$12.2 millones al a\u00f1o</strong> durante ocho a\u00f1os &mdash; unos $175 al a\u00f1o para una casa de 1,000 pies cuadrados, con exenciones para personas mayores y personas que reciben apoyo federal por discapacidad. El distrito hab\u00eda destinado ese dinero a atraer y retener maestros, consejeros y personal; proteger la instrucci\u00f3n en ciencias, matem\u00e1ticas y STEM; preservar los programas de lectura y escritura; y mantener tama\u00f1os de clase manejables.</p>
 
   <h3>Qu\u00e9 Significa el Resultado para el Presupuesto</h3>
-  <p>El dinero de la Medida C <em>no</em> estaba incluido en la proyecci\u00f3n presupuestaria a tres a\u00f1os del distrito. La Junta ya hab\u00eda adoptado un Plan de Estabilizaci\u00f3n Fiscal de $6.04 millones el 4 de febrero de 2026, y la proyecci\u00f3n multianual del Segundo Informe Interino 2025-26 cuadra <strong>sin</strong> ning\u00fan dinero de impuestos parcelarios &mdash; no tiene recortes no identificados y mantiene las reservas por encima del m\u00ednimo legal del 3% en los tres a\u00f1os (ver <a href="#perspectiva">Perspectiva Fiscal Multianual</a>). En otras palabras, que la Medida C no pase no provoca nuevos recortes; m\u00e1s bien, los aproximadamente $12.2M que habr\u00eda aportado cada a\u00f1o son ingresos que el distrito <em>no</em> tendr\u00e1 para restaurar programas y personal reducidos en el plan de estabilizaci\u00f3n, ni para compensar el inminente precipicio de las transferencias RDA. La Medida U actual ($1.6M/a\u00f1o) contin\u00faa hasta 2030 sin importar el resultado de junio 2026.</p>
+  <p>El dinero de la Medida C <em>no</em> estaba incluido en la proyecci\u00f3n presupuestaria a tres a\u00f1os del distrito. La Junta ya hab\u00eda adoptado un Plan de Estabilizaci\u00f3n Fiscal de $6.04 millones el 4 de febrero de 2026, y la proyecci\u00f3n multianual del Segundo Informe Interino 2025-26 cuadra <strong>sin</strong> ning\u00fan dinero de impuestos parcelarios &mdash; no tiene recortes no identificados y mantiene las reservas por encima del m\u00ednimo legal del 3% en los tres a\u00f1os (ver <a href="#perspectiva">Perspectiva Fiscal Multianual</a>). En otras palabras, el resultado en la boleta no provoca nuevos recortes; m\u00e1s bien, si la Medida C no se aprueba, los aproximadamente $12.2M que habr\u00eda aportado cada a\u00f1o son ingresos que el distrito <em>no</em> tendr\u00e1 para restaurar programas y personal reducidos en el plan de estabilizaci\u00f3n, ni para compensar el inminente precipicio de las transferencias RDA. La Medida U actual ($1.6M/a\u00f1o) contin\u00faa hasta 2030 sin importar el resultado de junio 2026.</p>
 
   <h3>Recursos de la Comunidad</h3>
   <ul>
@@ -1273,7 +1273,7 @@ function sectionOutlookES() {
   <p class="source">La l\u00ednea de "Estabilizaci\u00f3n Identificada" es el Plan de Estabilizaci\u00f3n Fiscal aprobado por la Junta (4 de feb. 2026), mostrado como una reducci\u00f3n a los gastos. Fuente: Proyecci\u00f3n Multianual del Segundo Informe Interino 2025-26 (25 de marzo de 2026), p. 1.</p>
 
   <div class="callout">
-    <p><strong>Se detuvo el agotamiento de reservas.</strong> Hace un a\u00f1o el balance del fondo se deslizaba hacia el piso del 3% con millones en recortes todav\u00eda sin identificar. Con el plan de estabilizaci\u00f3n en marcha, el Segundo Informe Interino proyecta que el balance final <em>crece</em> de $15.4M a $22.7M para 2027-28 y que la reserva sube al 5.81%. Las presiones estructurales de abajo son reales, pero el distrito ahora tiene un camino cre\u00edble y totalmente identificado hacia el equilibrio &mdash; que no depend\u00eda del impuesto parcelario de junio 2026 (Medida C), que no alcanz\u00f3 los votos en la boleta.</p>
+    <p><strong>Se detuvo el agotamiento de reservas.</strong> Hace un a\u00f1o el balance del fondo se deslizaba hacia el piso del 3% con millones en recortes todav\u00eda sin identificar. Con el plan de estabilizaci\u00f3n en marcha, el Segundo Informe Interino proyecta que el balance final <em>crece</em> de $15.4M a $22.7M para 2027-28 y que la reserva sube al 5.81%. Las presiones estructurales de abajo son reales, pero el distrito ahora tiene un camino cre\u00edble y totalmente identificado hacia el equilibrio &mdash; que no depende del impuesto parcelario de junio 2026 (Medida C), que va por debajo mientras contin\u00faa el conteo.</p>
   </div>
 
   <h3>Plan de Estabilizaci\u00f3n Fiscal</h3>
