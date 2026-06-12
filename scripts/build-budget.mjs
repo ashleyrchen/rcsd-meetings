@@ -332,19 +332,19 @@ function enBody() {
     <p class="header-subtitle">A comprehensive guide to how RCSD raises and spends $160 million per year, including school bonds, parcel taxes, and the multi-year fiscal outlook.</p>
     <div class="header-meta">
       <div class="header-stat">
-        <span class="header-stat-value">$160.1M</span>
+        <span class="header-stat-value">$159.8M</span>
         <span class="header-stat-label">Total Expenditures</span>
       </div>
       <div class="header-stat">
-        <span class="header-stat-value">$25,260</span>
+        <span class="header-stat-value">$25,330</span>
         <span class="header-stat-label">Per-Pupil Spending</span>
       </div>
       <div class="header-stat">
-        <span class="header-stat-value">3.01%</span>
-        <span class="header-stat-label">Reserve (Legal Min.)</span>
+        <span class="header-stat-value">3.51%</span>
+        <span class="header-stat-label">Reserve (3% Min.)</span>
       </div>
       <div class="header-stat">
-        <span class="header-stat-value">$2.3M</span>
+        <span class="header-stat-value">$1.7M</span>
         <span class="header-stat-label">Deficit This Year</span>
       </div>
     </div>
@@ -352,7 +352,7 @@ function enBody() {
 </header>
 
 <div class="disclaimer">
-  Data sourced from the 2025-26 First Interim Financial Report (December 2025), adopted LCAP, SPSAs, and official ballot records. This is an independent community resource, not an official district publication.
+  Data sourced from the 2025-26 Second Interim Financial Report (March 2026), adopted LCAP, SPSAs, and official San Mateo County ballot records. This is an independent community resource, not an official district publication.
 </div>
 
 <nav class="toc" aria-label="Page sections">
@@ -392,13 +392,13 @@ function sectionOverviewEN() {
   <span class="section-num">01</span>
   <h2>Budget Overview</h2>
 
-  <p>The Redwood City School District (RCSD) serves approximately 6,337 students in grades TK-8 across 12 schools. The district operates on a General Fund budget of <strong>$160.1 million</strong> in expenditures for the 2025-26 school year.</p>
+  <p>The Redwood City School District (RCSD) serves approximately 6,310 students in grades TK-8 across 12 schools. The district operates on a General Fund budget of <strong>$159.8 million</strong> in expenditures for the 2025-26 school year.</p>
 
   <h3>Community-Funded (Basic Aid) Status</h3>
   <p>RCSD is one of roughly 100 "community-funded" (formerly "Basic Aid") districts in California. This means local property tax revenue <em>exceeds</em> what the state would otherwise provide through the Local Control Funding Formula (LCFF). The district keeps all of its local property tax revenue rather than receiving a state check.</p>
 
   <div class="callout">
-    <p><strong>What does Basic Aid mean in practice?</strong> RCSD's funding rises and falls with local property values, not with state budget decisions. When property values grow, so does district revenue. But unlike state-funded districts, RCSD does not receive automatic cost-of-living adjustments from Sacramento. RCSD still has an LCFF Supplemental and Concentration entitlement of approximately $10.2M based on its 60.7% unduplicated pupils (low-income, English Learner, foster, and homeless students), but in a community-funded district that entitlement is funded from the district's own property tax revenue rather than as a separate state check. Its main effect is to set the LCAP minimum-proportionality spending floor for those students.</p>
+    <p><strong>What does Basic Aid mean in practice?</strong> RCSD's funding rises and falls with local property values, not with state budget decisions. When property values grow, so does district revenue. But unlike state-funded districts, RCSD does not receive automatic cost-of-living adjustments from Sacramento. RCSD still has an LCFF Supplemental and Concentration entitlement of approximately $10.2M based on its 60.3% unduplicated pupils (low-income, English Learner, foster, and homeless students), but in a community-funded district that entitlement is funded from the district's own property tax revenue rather than as a separate state check. Its main effect is to set the LCAP minimum-proportionality spending floor for those students.</p>
   </div>
 
   <h3>Budget at a Glance</h3>
@@ -408,22 +408,22 @@ function sectionOverviewEN() {
         <tr><th>Metric</th><th class="num">2025-26</th></tr>
       </thead>
       <tbody>
-        <tr><td>Total Revenue</td><td class="num">$157.8M</td></tr>
-        <tr><td>Total Expenditures</td><td class="num">$160.1M</td></tr>
-        <tr><td>Operating Deficit</td><td class="num" style="color:var(--coral)">($2.3M)</td></tr>
+        <tr><td>Total Revenue</td><td class="num">$158.1M</td></tr>
+        <tr><td>Total Expenditures</td><td class="num">$159.8M</td></tr>
+        <tr><td>Operating Deficit</td><td class="num" style="color:var(--coral)">($1.7M)</td></tr>
         <tr><td>Beginning Fund Balance</td><td class="num">$17.1M</td></tr>
-        <tr><td>Ending Fund Balance</td><td class="num">$14.8M</td></tr>
-        <tr><td>Reserve for Economic Uncertainty</td><td class="num">$4.8M (3.01%)</td></tr>
-        <tr><td>Per-Pupil Spending</td><td class="num">~$25,260</td></tr>
-        <tr><td>District Enrollment</td><td class="num">6,337</td></tr>
-        <tr><td>Average Daily Attendance</td><td class="num">93.96%</td></tr>
+        <tr><td>Ending Fund Balance</td><td class="num">$15.4M</td></tr>
+        <tr><td>Reserve (3% min. + undesignated)</td><td class="num">$5.6M (3.51%)</td></tr>
+        <tr><td>Per-Pupil Spending</td><td class="num">~$25,330</td></tr>
+        <tr><td>District Enrollment</td><td class="num">6,310</td></tr>
+        <tr><td>Average Daily Attendance</td><td class="num">94.70%</td></tr>
       </tbody>
     </table>
   </div>
-  <p class="source">Source: <a href="https://www.rcsdk8.net/our-programs-and-services/business-services/district-budget">2025-26 First Interim Financial Report</a>, presented December 17, 2025.</p>
+  <p class="source">Source: <a href="https://www.rcsdk8.net/our-programs-and-services/business-services/district-budget">2025-26 Second Interim Financial Report</a>, approved March 25, 2026.</p>
 
   <h3>What This Page Covers (And What It Doesn't)</h3>
-  <p>The numbers above describe <strong>Fund 01, the General Fund</strong> &mdash; RCSD's main operating fund and the source for teacher salaries, instructional programs, and day-to-day operations. The General Fund is the right lens for "what's the district's budget?" because it's by far the largest fund and drives most policy decisions. But the district also operates a few separately-accounted funds that don't appear in the $160.1M figure:</p>
+  <p>The numbers above describe <strong>Fund 01, the General Fund</strong> &mdash; RCSD's main operating fund and the source for teacher salaries, instructional programs, and day-to-day operations. The General Fund is the right lens for "what's the district's budget?" because it's by far the largest fund and drives most policy decisions. But the district also operates a few separately-accounted funds that don't appear in the $159.8M figure:</p>
   <ul>
     <li><strong>Fund 12 &mdash; Child Development Center (CDC):</strong> the State Preschool Program (CSPP) and other early-childhood operations, funded primarily by state preschool grants and parent fees.</li>
     <li><strong>Fund 13 &mdash; Cafeteria / Child Nutrition Services (CNS):</strong> the school meals program, funded by federal and state meal reimbursements plus meal sales.</li>
@@ -441,7 +441,7 @@ function sectionRevenueEN() {
   <span class="section-num">02</span>
   <h2>Where the Money Comes From</h2>
 
-  <p>RCSD's $157.8 million in General Fund revenue comes from a mix of local property taxes, state grants, federal funds, and transfers. Because RCSD is a community-funded district, local property taxes form the single largest source.</p>
+  <p>RCSD's $158.1 million in General Fund revenue comes from a mix of local property taxes, state grants, federal funds, and transfers. Because RCSD is a community-funded district, local property taxes form the single largest source.</p>
 
   <div class="table-wrap">
     <table>
@@ -449,28 +449,28 @@ function sectionRevenueEN() {
         <tr><th>Revenue Source</th><th class="num">Amount</th><th class="num">% of Total</th><th>Visual</th></tr>
       </thead>
       <tbody>
-        <tr><td>LCFF Base (Property Taxes)</td><td class="num">$87,258,712</td><td class="num">55.3%</td><td class="bar-cell"><span class="bar bar-green" style="width:55%"></span></td></tr>
-        <tr><td>LCFF Ed. Protection Acct.</td><td class="num">$1,209,540</td><td class="num">0.8%</td><td class="bar-cell"><span class="bar bar-green" style="width:1%"></span></td></tr>
-        <tr><td>LCFF Supplemental &amp; Concentration</td><td class="num">$10,170,409</td><td class="num">6.4%</td><td class="bar-cell"><span class="bar bar-green" style="width:6%"></span></td></tr>
+        <tr><td>LCFF Base (Property Taxes)</td><td class="num">$87,127,120</td><td class="num">55.1%</td><td class="bar-cell"><span class="bar bar-green" style="width:55%"></span></td></tr>
+        <tr><td>LCFF Ed. Protection Acct.</td><td class="num">$1,198,220</td><td class="num">0.8%</td><td class="bar-cell"><span class="bar bar-green" style="width:1%"></span></td></tr>
+        <tr><td>LCFF Supplemental &amp; Concentration</td><td class="num">$10,106,685</td><td class="num">6.4%</td><td class="bar-cell"><span class="bar bar-green" style="width:6%"></span></td></tr>
         <tr><td>Special Ed Property Taxes</td><td class="num">$5,548,180</td><td class="num">3.5%</td><td class="bar-cell"><span class="bar bar-green" style="width:4%"></span></td></tr>
-        <tr><td>Other State Revenues</td><td class="num">$18,243,708</td><td class="num">11.6%</td><td class="bar-cell"><span class="bar bar-amber" style="width:12%"></span></td></tr>
-        <tr><td>Lottery</td><td class="num">$1,691,545</td><td class="num">1.1%</td><td class="bar-cell"><span class="bar bar-amber" style="width:1%"></span></td></tr>
-        <tr><td>Federal Revenues</td><td class="num">$4,761,781</td><td class="num">3.0%</td><td class="bar-cell"><span class="bar bar-coral" style="width:3%"></span></td></tr>
-        <tr><td>Local Revenues</td><td class="num">$16,253,621</td><td class="num">10.3%</td><td class="bar-cell"><span class="bar bar-green" style="width:10%"></span></td></tr>
+        <tr><td>Other State Revenues</td><td class="num">$18,287,039</td><td class="num">11.6%</td><td class="bar-cell"><span class="bar bar-amber" style="width:12%"></span></td></tr>
+        <tr><td>Lottery</td><td class="num">$1,585,815</td><td class="num">1.0%</td><td class="bar-cell"><span class="bar bar-amber" style="width:1%"></span></td></tr>
+        <tr><td>Federal Revenues</td><td class="num">$4,808,647</td><td class="num">3.0%</td><td class="bar-cell"><span class="bar bar-coral" style="width:3%"></span></td></tr>
+        <tr><td>Local Revenues</td><td class="num">$16,850,820</td><td class="num">10.7%</td><td class="bar-cell"><span class="bar bar-green" style="width:11%"></span></td></tr>
         <tr><td>Measure U Parcel Tax</td><td class="num">$1,621,922</td><td class="num">1.0%</td><td class="bar-cell"><span class="bar bar-amber" style="width:1%"></span></td></tr>
         <tr><td>Transfers - RDA</td><td class="num">$11,000,000</td><td class="num">7.0%</td><td class="bar-cell"><span class="bar bar-coral" style="width:7%"></span></td></tr>
-        <tr class="total-row"><td>Total Revenue</td><td class="num">$157,759,418</td><td class="num">100%</td><td></td></tr>
+        <tr class="total-row"><td>Total Revenue</td><td class="num">$158,134,448</td><td class="num">100%</td><td></td></tr>
       </tbody>
     </table>
   </div>
-  <p class="source">Source: 2025-26 First Interim, General Fund Sources of Revenue (p. 10).</p>
+  <p class="source">Source: 2025-26 Second Interim, General Fund Sources of Revenue (presentation, slide 6).</p>
 
   <h3>Property Taxes &mdash; The Foundation</h3>
-  <p>Local property taxes (the LCFF Base plus Special Education property taxes) total approximately $92.8 million, or 59% of all General Fund revenue. San Mateo County collects property taxes and distributes the district's share. Because RCSD is community-funded, it keeps all allocated property tax revenue rather than returning a portion to the state.</p>
+  <p>Local property taxes (the LCFF Base plus Special Education property taxes) total approximately $92.7 million, or 59% of all General Fund revenue. San Mateo County collects property taxes and distributes the district's share. Because RCSD is community-funded, it keeps all allocated property tax revenue rather than returning a portion to the state.</p>
   <p>The district assumes 5% annual property tax growth in its multi-year projections. However, as the district notes, "the vast majority of homes in the RCSD attendance zone were purchased when property values were much lower," meaning assessed values (and thus tax revenue) may be lower than neighboring districts with higher turnover.</p>
 
   <h3>LCFF Supplemental &amp; Concentration Entitlement</h3>
-  <p>The $10.2 million on the revenue table for "LCFF Supplemental & Concentration" is the <em>entitlement amount</em> calculated by the LCFF formula based on the 60.7% of RCSD's students who are unduplicated pupils (qualifying as low-income, English Learner, foster youth, or homeless). For state-funded districts this would arrive as separate state cash; for a community-funded district like RCSD the entitlement is funded from the district's own property tax revenue and is reported on this line for accounting purposes. The amount still has real consequences: it sets the LCAP minimum-proportionality spending floor, meaning the district must show at least this much being directed toward increased or improved services for unduplicated pupils.</p>
+  <p>The $10.2 million on the revenue table for "LCFF Supplemental & Concentration" is the <em>entitlement amount</em> calculated by the LCFF formula based on the 60.3% of RCSD's students who are unduplicated pupils (qualifying as low-income, English Learner, foster youth, or homeless). For state-funded districts this would arrive as separate state cash; for a community-funded district like RCSD the entitlement is funded from the district's own property tax revenue and is reported on this line for accounting purposes. The amount still has real consequences: it sets the LCAP minimum-proportionality spending floor, meaning the district must show at least this much being directed toward increased or improved services for unduplicated pupils.</p>
 
   <h3>Federal Funds</h3>
   <p>Federal revenues ($4.8 million, 3% of budget) include Title I grants for high-poverty schools, Title III for English Learner programs, and IDEA funding for special education. Seven of the district's 12 schools receive Title I funding. Federal funds are "restricted," meaning they must be spent on specific federally mandated purposes.</p>
@@ -479,7 +479,7 @@ function sectionRevenueEN() {
   <p>The $11 million in Redevelopment Agency (RDA) transfers represents 7% of total revenue. These are pass-through payments from the former city redevelopment agency. This funding source is <strong>temporary</strong> and is expected to phase out entirely in future years, creating a significant revenue cliff.</p>
 
   <div class="callout callout-coral">
-    <p><strong>What are restricted vs. unrestricted funds?</strong> "Restricted" funds come with legal strings attached: federal Title I money must serve low-income students, bond money can only pay for facilities, and Measure U funds can only support the programs voters approved. "Unrestricted" funds (primarily property taxes) can be used for any lawful purpose. Of the $14.8M ending fund balance, $9.0M is restricted, leaving very little unrestricted cushion.</p>
+    <p><strong>What are restricted vs. unrestricted funds?</strong> "Restricted" funds come with legal strings attached: federal Title I money must serve low-income students, bond money can only pay for facilities, and Measure U funds can only support the programs voters approved. "Unrestricted" funds (primarily property taxes) can be used for any lawful purpose. Of the $15.4M ending fund balance, $8.8M is restricted, leaving a modest unrestricted cushion.</p>
   </div>
 </section>`;
 }
@@ -535,7 +535,7 @@ function sectionBondsEN() {
   <p class="source">Source: <a href="https://ballotpedia.org/Redwood_City_Elementary_School_District,_California,_Measure_S,_Bond_Measure_(November_2022)">Ballotpedia: Measure S (2022)</a>.</p>
 
   <h3>Building Fund (Fund 21) Status</h3>
-  <p>As of the First Interim report, the Building Fund/Bond Fund has a balance of <strong>$48.3 million</strong>, with $3.2 million in annual revenue (from bond proceeds) and $29.1 million in planned expenditures for 2025-26, primarily capital outlay ($28.4M). This represents active construction and modernization work funded by Measures T and S.</p>
+  <p>As of the 2025-26 Second Interim (March 2026), the Building Fund/Bond Fund held a balance of <strong>$46.8 million</strong>, reflecting active construction and modernization work funded by Measures T and S.</p>
 
   <h3>Citizens' Bond Oversight Committee</h3>
   <p>California law requires an independent Citizens' Bond Oversight Committee (CBOC) to review bond spending and publish annual reports. RCSD's CBOC has nine members representing senior citizens, parents, taxpayers, and community members. The committee meets quarterly at the District Office and publishes annual reports for both Measure T and Measure S. Meeting agendas and minutes are available on the <a href="https://www.rcsdk8.net/our-programs-and-services/school-modernization-and-construction/phase-i-measure-t/measure-t-oversight-committee">district website</a>.</p>
@@ -548,7 +548,7 @@ function sectionParcelTaxEN() {
 <section class="section" id="parcel-tax">
   <div class="section-rule"></div>
   <span class="section-num">04</span>
-  <h2>Parcel Tax &mdash; Measure U &amp; 2026 Proposal</h2>
+  <h2>Parcel Tax &mdash; Measure U &amp; Measure C (2026)</h2>
 
   <h3>How Parcel Taxes Work</h3>
   <p>A parcel tax is a flat or formula-based tax levied on each parcel of land within a district, regardless of the property's assessed value. Unlike bonds, parcel tax revenue goes into the General Fund and can be used for operations such as teacher salaries and programs. Parcel taxes require a two-thirds supermajority to pass, a higher bar than the 55% needed for bonds.</p>
@@ -572,40 +572,39 @@ function sectionParcelTaxEN() {
 
   <p><strong>Exemptions:</strong> Seniors age 65+, individuals receiving Supplemental Security Income for disability, and those receiving Social Security Disability Insurance with income below 250% of federal poverty guidelines may apply for exemption.</p>
 
-  <h3>2026 Ballot Measure &mdash; New Parcel Tax Proposal</h3>
+  <h3>Measure C &mdash; June 2026 Parcel Tax (Just Short; Count Ongoing)</h3>
 
   <div class="callout callout-amber">
-    <p><strong>Election Day: June 2, 2026.</strong> The RCSD Board unanimously approved placing a new parcel tax on the June 2026 ballot during a special meeting on February 26, 2026. This would be <em>in addition to</em> Measure U, which does not expire until 2030.</p>
+    <p><strong>Measure C is just short of passing as San Mateo County continues to count.</strong> In the county's June 10, 2026 results release, Measure C stood at <strong>63.84% Yes</strong> (11,913 votes for to 6,748 against) &mdash; about 2.8 points under the <strong>two-thirds (66.67%) supermajority</strong> a parcel tax requires. Ballots are still being tabulated, so totals are not final. The RCSD Board placed the measure on the ballot at a February 26, 2026 special meeting; it would be <em>in addition to</em> Measure U, which runs through 2030.</p>
   </div>
 
   <div class="table-wrap">
     <table>
-      <thead><tr><th>Detail</th><th>2026 Proposal</th></tr></thead>
+      <thead><tr><th>Detail</th><th>Measure C (2026)</th></tr></thead>
       <tbody>
         <tr><td>Tax Rate</td><td>17.5 cents per square foot of building space</td></tr>
         <tr><td>Vacant/Unimproved Parcels</td><td class="num">$25/year flat rate</td></tr>
         <tr><td>Expected Revenue</td><td class="num">$12.2 million/year</td></tr>
-        <tr><td>Duration</td><td>8 years</td></tr>
+        <tr><td>Duration</td><td>8 years (July 2026 &ndash; June 2034)</td></tr>
         <tr><td>Vote Required</td><td>Two-thirds (66.67%)</td></tr>
         <tr><td>Election Date</td><td>June 2, 2026</td></tr>
+        <tr><td>Result (count ongoing)</td><td style="color:var(--coral)">63.84% Yes (11,913&ndash;6,748) &mdash; ~2.8 pts under two-thirds</td></tr>
       </tbody>
     </table>
   </div>
 
-  <p>The proposed tax would raise approximately <strong>$12.2 million per year</strong> for eight years. For a 1,000-square-foot home, the annual tax would be $175. Funds would be used to attract and retain qualified teachers, counselors, and staff; maintain science, math, and STEM instruction; preserve reading and writing programs; and maintain manageable class sizes.</p>
+  <p>Measure C would have raised approximately <strong>$12.2 million per year</strong> for eight years &mdash; about $175 a year for a 1,000-square-foot home, with exemptions for seniors and people receiving federal disability support. The district had earmarked the revenue to attract and retain teachers, counselors, and staff; protect science, math, and STEM instruction; preserve reading and writing programs; and keep class sizes manageable.</p>
 
-  <p>Senior citizens and individuals receiving federal financial support for disabilities would be eligible for exemption.</p>
-
-  <h3>What Happens if the 2026 Measure Fails?</h3>
-  <p>The district's multi-year projections already require $5.25 million in unidentified budget cuts for 2026-27. Without the additional $12.2M in parcel tax revenue, the district would face even deeper reductions to staffing, programs, and services. The existing Measure U ($1.6M/year) continues through 2030 regardless of the June 2026 outcome.</p>
+  <h3>What the Result Means for the Budget</h3>
+  <p>Measure C revenue was <em>not</em> built into the district's three-year budget projection. The board had already adopted a $6.04 million Fiscal Stabilization Plan on February 4, 2026, and the 2025-26 Second Interim multi-year projection balances <strong>without</strong> any parcel-tax money &mdash; it carries no unidentified cuts and keeps reserves above the 3% legal minimum in all three years (see the <a href="#outlook">Multi-Year Fiscal Outlook</a>). In other words, the outcome at the ballot box does not trigger new cuts; rather, if Measure C does not pass, the roughly $12.2M it would have added each year is revenue the district will <em>not</em> have to restore programs and staffing trimmed in the stabilization plan, or to offset the looming RDA-transfer cliff. The existing Measure U ($1.6M/year) continues through 2030 regardless of the June 2026 outcome.</p>
 
   <h3>Community Resources</h3>
   <ul>
     <li><strong>Strong Schools for Redwood City</strong> (pro-measure campaign): <a href="https://www.strongschools4rwc.org/en/" target="_blank">strongschools4rwc.org</a></li>
-    <li><strong>Official ballot information</strong>: <a href="https://www.smcacre.org/" target="_blank">San Mateo County Assessor-Clerk-Recorder</a></li>
+    <li><strong>Official election results</strong>: <a href="https://www.smcacre.gov/elections" target="_blank">San Mateo County Assessor-Clerk-Recorder &amp; Elections</a></li>
   </ul>
 
-  <p class="source">Source: <a href="https://www.rwcpulse.com/education/2026/02/27/redwood-city-school-district-puts-parcel-tax-measure-on-june-ballot/">Redwood City Pulse, Feb. 27, 2026</a>.</p>
+  <p class="source">Source: <a href="https://www.smcacre.gov/elections" target="_blank">San Mateo County Registration &amp; Elections</a>, official results as of the June 10, 2026 release (63.84% Yes, 11,913&ndash;6,748). Earlier election-night coverage: <a href="https://www.rwcpulse.com/election/2026/06/03/redwood-city-school-parcel-tax-trails-approval-threshold/" target="_blank">Redwood City Pulse, June 3, 2026</a>. Vote totals are unofficial pending the county's final canvass.</p>
 </section>`;
 }
 
@@ -617,7 +616,7 @@ function sectionSpendingEN() {
   <span class="section-num">05</span>
   <h2>Where the Money Goes</h2>
 
-  <p>RCSD's $160.1 million in General Fund expenditures is dominated by personnel costs, which account for <strong>77.5%</strong> of all spending. This is typical for school districts, where the primary "product" is instruction delivered by people.</p>
+  <p>RCSD's $159.8 million in General Fund expenditures is dominated by personnel costs: salaries and benefits account for <strong>76.4%</strong> of all spending. This is typical for school districts, where the primary "product" is instruction delivered by people.</p>
 
   <h3>Expenditure Breakdown</h3>
   <div class="table-wrap">
@@ -626,23 +625,23 @@ function sectionSpendingEN() {
         <tr><th>Category</th><th class="num">Amount</th><th class="num">% of Total</th><th>Visual</th></tr>
       </thead>
       <tbody>
-        <tr><td>Certificated Salaries (teachers, admin)</td><td class="num">$54,017,947</td><td class="num">33.7%</td><td class="bar-cell"><span class="bar bar-green" style="width:34%"></span></td></tr>
-        <tr><td>Classified Salaries (support staff)</td><td class="num">$29,996,559</td><td class="num">18.7%</td><td class="bar-cell"><span class="bar bar-green" style="width:19%"></span></td></tr>
-        <tr><td>Employee Benefits</td><td class="num">$40,091,839</td><td class="num">25.0%</td><td class="bar-cell"><span class="bar bar-amber" style="width:25%"></span></td></tr>
-        <tr><td>Services &amp; Operating Expenses</td><td class="num">$29,628,400</td><td class="num">18.5%</td><td class="bar-cell"><span class="bar bar-amber" style="width:19%"></span></td></tr>
-        <tr><td>Books &amp; Supplies</td><td class="num">$5,621,063</td><td class="num">3.5%</td><td class="bar-cell"><span class="bar bar-coral" style="width:4%"></span></td></tr>
-        <tr><td>Capital Outlay</td><td class="num">$916,048</td><td class="num">0.6%</td><td class="bar-cell"><span class="bar bar-coral" style="width:1%"></span></td></tr>
-        <tr class="total-row"><td>Total Expenditures</td><td class="num">$160,100,493</td><td class="num">100%</td><td></td></tr>
+        <tr><td>Certificated Salaries (teachers, admin)</td><td class="num">$53,745,487</td><td class="num">33.6%</td><td class="bar-cell"><span class="bar bar-green" style="width:34%"></span></td></tr>
+        <tr><td>Classified Salaries (support staff)</td><td class="num">$28,741,030</td><td class="num">18.0%</td><td class="bar-cell"><span class="bar bar-green" style="width:18%"></span></td></tr>
+        <tr><td>Employee Benefits</td><td class="num">$39,578,283</td><td class="num">24.8%</td><td class="bar-cell"><span class="bar bar-amber" style="width:25%"></span></td></tr>
+        <tr><td>Services &amp; Operating Expenses</td><td class="num">$31,271,358</td><td class="num">19.6%</td><td class="bar-cell"><span class="bar bar-amber" style="width:20%"></span></td></tr>
+        <tr><td>Books &amp; Supplies</td><td class="num">$5,772,632</td><td class="num">3.6%</td><td class="bar-cell"><span class="bar bar-coral" style="width:4%"></span></td></tr>
+        <tr><td>Capital Outlay</td><td class="num">$921,767</td><td class="num">0.6%</td><td class="bar-cell"><span class="bar bar-coral" style="width:1%"></span></td></tr>
+        <tr class="total-row"><td>Total Expenditures</td><td class="num">$159,841,595</td><td class="num">100%</td><td></td></tr>
       </tbody>
     </table>
   </div>
-  <p class="source">Source: 2025-26 First Interim, General Fund Expenditures (p. 11). Totals exclude other outgo/indirect costs.</p>
+  <p class="source">Source: 2025-26 Second Interim, General Fund Expenditures (presentation, slides 7-8). Category rows exclude a small net other-outgo/indirect-cost credit.</p>
 
   <h3>Benefits: The Hidden Cost Driver</h3>
-  <p>Employee benefits ($40.1M) represent a quarter of all spending and include CalSTRS pension contributions ($14.1M at 19.10% employer rate), CalPERS pension contributions ($8.1M at 26.81%), health and welfare benefits ($10.7M), and other statutory benefits ($7.1M). Both CalSTRS and CalPERS rates are projected to continue rising through 2027-28 (CalPERS to 26.90%).</p>
+  <p>Employee benefits ($39.6M) represent about a quarter of all spending and include CalSTRS pension contributions (19.10% employer rate), CalPERS pension contributions (26.81%), health and welfare benefits, and other statutory benefits. Both CalSTRS and CalPERS rates are projected to keep rising through 2027-28 (CalPERS to 26.90%).</p>
 
   <h3>Services &amp; Operating Expenses</h3>
-  <p>The $29.6 million in services and operations includes contracted services ($5.9M), professional services and operating expenses ($22.0M), and insurance ($1.6M). This category covers everything from special education service providers to utilities, transportation, legal fees, and technology contracts.</p>
+  <p>The $31.3 million in services and operations includes contracted services, professional and operating expenses, and insurance. This category covers everything from special education service providers to utilities, transportation, legal fees, and technology contracts.</p>
 
   <h3>LCAP Spending Breakdown</h3>
   <p>The district's Local Control and Accountability Plan (LCAP) allocates $65.9 million of the total budget across three goals:</p>
@@ -671,7 +670,7 @@ function sectionOutlookEN() {
   <span class="section-num">06</span>
   <h2>Multi-Year Fiscal Outlook</h2>
 
-  <p>The district's multi-year projection tells a sobering story: expenditures exceed revenues, the fund balance is declining, and significant unidentified cuts are needed to maintain the legally required 3% reserve.</p>
+  <p>At the 2025-26 Second Interim (March 2026), the district's multi-year projection has turned a corner. After the board adopted a $6.04 million Fiscal Stabilization Plan on February 4, 2026, the three-year outlook <strong>no longer carries any unidentified cuts</strong>: the reductions are fully identified and baked in, the fund balance grows rather than shrinks in both projection years, and the reserve climbs from 3.51% to 5.81% &mdash; comfortably above the 3% legal minimum throughout. On that basis the district filed a <strong>Positive Certification</strong>, certifying it can meet its financial obligations for 2025-26 and the two subsequent years.</p>
 
   <h3>Three-Year Projection</h3>
   <div class="table-wrap">
@@ -680,39 +679,40 @@ function sectionOutlookEN() {
         <tr><th></th><th class="num">2025-26</th><th class="num">2026-27</th><th class="num">2027-28</th></tr>
       </thead>
       <tbody>
-        <tr><td>Total Revenues</td><td class="num">$157.8M</td><td class="num">$153.9M</td><td class="num">$160.2M</td></tr>
-        <tr><td>Total Expenditures</td><td class="num">$160.1M</td><td class="num">$154.9M*</td><td class="num">$157.7M*</td></tr>
-        <tr><td style="color:var(--coral)">Unidentified Cuts Required</td><td class="num">&mdash;</td><td class="num" style="color:var(--coral)">($5.25M)</td><td class="num" style="color:var(--coral)">($3.50M)</td></tr>
-        <tr><td>Beginning Balance</td><td class="num">$17.1M</td><td class="num">$14.8M</td><td class="num">$13.8M</td></tr>
-        <tr><td>Ending Balance</td><td class="num">$14.8M</td><td class="num">$13.8M</td><td class="num">$16.3M</td></tr>
-        <tr><td>Reserve %</td><td class="num">3.01%</td><td class="num">3.16%</td><td class="num">3.01%</td></tr>
+        <tr><td>Total Revenues</td><td class="num">$158.1M</td><td class="num">$154.2M</td><td class="num">$161.1M</td></tr>
+        <tr><td>Total Expenditures</td><td class="num">$159.8M</td><td class="num">$153.5M</td><td class="num">$154.4M</td></tr>
+        <tr><td>Identified Stabilization (in expenditures)</td><td class="num">&mdash;</td><td class="num">($6.04M)</td><td class="num">($6.11M)</td></tr>
+        <tr><td>Net Change in Fund Balance</td><td class="num" style="color:var(--coral)">($1.7M)</td><td class="num" style="color:var(--green-mid)">+$0.6M</td><td class="num" style="color:var(--green-mid)">+$6.7M</td></tr>
+        <tr><td>Beginning Balance</td><td class="num">$17.1M</td><td class="num">$15.4M</td><td class="num">$16.0M</td></tr>
+        <tr><td>Ending Balance</td><td class="num">$15.4M</td><td class="num">$16.0M</td><td class="num">$22.7M</td></tr>
+        <tr><td>Reserve %</td><td class="num">3.51%</td><td class="num">3.74%</td><td class="num">5.81%</td></tr>
       </tbody>
     </table>
   </div>
-  <p class="source">* Expenditure figures for 2026-27 and 2027-28 include unidentified fiscal stabilization measures. Source: First Interim Multi-Year Projections (p. 13).</p>
+  <p class="source">The "Identified Stabilization" line is the board-approved Fiscal Stabilization Plan (Feb. 4, 2026), shown as a reduction to expenditures. Source: 2025-26 Second Interim Multi-Year Projection (March 25, 2026), p. 1.</p>
 
-  <div class="callout callout-coral">
-    <p><strong>The fund balance has fallen from $25.4M to $14.8M in two years.</strong> The district is drawing down reserves to cover deficit spending. At the current pace, the reserve would breach the 3% legal minimum without significant budget cuts. The 2026-27 projection alone requires $5.25 million in cuts that have not yet been identified.</p>
+  <div class="callout">
+    <p><strong>The drawdown has been arrested.</strong> A year ago the fund balance was sliding toward the 3% reserve floor with millions in cuts still unidentified. With the stabilization plan in place, the Second Interim projects the ending balance <em>growing</em> from $15.4M to $22.7M by 2027-28 and the reserve rising to 5.81%. The structural pressures below are real, but the district now has a credible, fully-identified path to balance &mdash; it does not depend on the June 2026 parcel tax (Measure C), which is running just short of the two-thirds bar as the count continues.</p>
   </div>
 
-  <h3>Budget Reduction Plan</h3>
-  <p>In February 2026, the district adopted a $6.04 million budget reduction plan that eliminates 31.75 FTE positions. Key reductions include:</p>
+  <h3>Fiscal Stabilization Plan</h3>
+  <p>On February 4, 2026, the board adopted a $6.04 million Fiscal Stabilization Plan ($6.11M ongoing) that eliminates 31.75 FTE positions. These are the reductions now reflected in the three-year projection above. Key elements include:</p>
   <ul style="margin-bottom:1rem;max-width:640px">
+    <li>About $3.5M from restructuring and reduced services at the district office</li>
+    <li>About $2.9M from adjustments at school sites, the largest share (17 teaching positions, ~$2.3M) absorbed through enrollment-driven attrition</li>
     <li>Increased K-2 class sizes from 25:1 to 28:1</li>
-    <li>Elimination of some counselor and mental health positions</li>
-    <li>Defunding of GSA teacher-lead stipends</li>
-    <li>Replacement of district Mental Health Counselors with contracted services at several schools</li>
+    <li>Elimination of some counselor and mental-health positions; several school sites move to contracted mental-health services</li>
   </ul>
-  <p class="source">Source: <a href="https://www.rwcpulse.com/education/2026/02/05/redwood-city-school-districts-cuts-another-6m-from-budget/">Redwood City Pulse, Feb. 5, 2026</a>.</p>
+  <p class="source">Sources: <a href="https://www.rwcpulse.com/education/2026/02/05/redwood-city-school-districts-cuts-another-6m-from-budget/">Redwood City Pulse, Feb. 5, 2026</a>; Approved Fiscal Stabilization Plan (Feb. 4, 2026), Second Interim board packet.</p>
 
   <h3>Structural Deficit Drivers</h3>
   <div class="trend-item">
     <div class="trend-label trend-down">Declining Enrollment</div>
-    <p>Enrollment is falling by approximately 130 students per year (from 6,337 to a projected 6,086 by 2027-28). Each lost student represents roughly $15,000-$16,000 in LCFF funding, translating to roughly $2 million per year in lost revenue. Fixed costs (facilities, administration, transportation) do not decline proportionally.</p>
+    <p>Enrollment continues to decline &mdash; from 6,310 in 2025-26 to a projected 6,212 by 2027-28 (the Second Interim assumes a gentler slide than earlier projections). Each lost student represents roughly $15,000-$16,000 in LCFF-equivalent funding. Fixed costs (facilities, administration, transportation) do not decline proportionally.</p>
   </div>
   <div class="trend-item">
     <div class="trend-label trend-down">Rising Personnel Costs</div>
-    <p>Salary step-and-column increases (1.5% annually), growing pension contribution rates (CalPERS rising to 26.90%), and health benefit inflation drive expenditures upward even as enrollment falls. Personnel costs consume 77.5% of the budget.</p>
+    <p>Salary step-and-column increases (1.5% annually), growing pension contribution rates (CalPERS rising to 26.90%), and health benefit inflation drive expenditures upward even as enrollment falls. Salaries and benefits consume about 76% of the budget.</p>
   </div>
   <div class="trend-item">
     <div class="trend-label trend-down">RDA Transfer Cliff</div>
@@ -730,8 +730,8 @@ function sectionOutlookEN() {
         <tr><th>Assumption</th><th class="num">2025-26</th><th class="num">2026-27</th><th class="num">2027-28</th></tr>
       </thead>
       <tbody>
-        <tr><td>District Enrollment</td><td class="num">6,337</td><td class="num">6,210</td><td class="num">6,086</td></tr>
-        <tr><td>LCFF COLA</td><td class="num">2.30%</td><td class="num">3.02%</td><td class="num">3.42%</td></tr>
+        <tr><td>District Enrollment</td><td class="num">6,310</td><td class="num">6,239</td><td class="num">6,212</td></tr>
+        <tr><td>LCFF COLA</td><td class="num">2.30%</td><td class="num">2.41%</td><td class="num">3.06%</td></tr>
         <tr><td>CalSTRS Rate</td><td class="num">19.10%</td><td class="num">19.10%</td><td class="num">19.10%</td></tr>
         <tr><td>CalPERS Rate</td><td class="num">26.81%</td><td class="num">26.40%</td><td class="num">26.90%</td></tr>
         <tr><td>Property Tax Growth</td><td class="num">5.00%</td><td class="num">5.00%</td><td class="num">5.00%</td></tr>
@@ -739,7 +739,7 @@ function sectionOutlookEN() {
       </tbody>
     </table>
   </div>
-  <p class="source">Source: First Interim Budget Assumptions (p. 8).</p>
+  <p class="source">Source: 2025-26 Second Interim Budget Assumptions (presentation, slide 4).</p>
 </section>`;
 }
 
@@ -799,7 +799,7 @@ function sectionDocumentsEN() {
 
   <h3>Budget Documents</h3>
   <ul style="margin-bottom:1.5rem">
-    <li><a href="https://www.rcsdk8.net/our-programs-and-services/business-services/district-budget">2025-26 Adopted Budget &amp; First Interim Report</a> (District website)</li>
+    <li><a href="https://www.rcsdk8.net/our-programs-and-services/business-services/district-budget">2025-26 Adopted Budget &amp; Interim Reports</a> (District website)</li>
     <li><a href="https://www.rcsdk8.net/our-programs-and-services/business-services/district-funding">District Funding Overview</a> &mdash; explains community-funded status</li>
     <li><a href="https://www.rcsdk8.net/our-programs-and-services/business-services/rcsd-as-a-community-funded-district">RCSD as a Community-Funded District</a></li>
   </ul>
@@ -828,8 +828,10 @@ function sectionDocumentsEN() {
 
   <h3>External Coverage</h3>
   <ul style="margin-bottom:1.5rem">
-    <li><a href="https://www.rwcpulse.com/education/2026/02/27/redwood-city-school-district-puts-parcel-tax-measure-on-june-ballot/">RWC Pulse: Parcel Tax on June Ballot</a> (Feb. 2026)</li>
-    <li><a href="https://www.rwcpulse.com/education/2026/02/05/redwood-city-school-districts-cuts-another-6m-from-budget/">RWC Pulse: District Cuts $6M from Budget</a> (Feb. 2026)</li>
+    <li><a href="https://www.smcacre.gov/elections" target="_blank">San Mateo County Registration &amp; Elections</a> &mdash; official Measure C results</li>
+    <li><a href="https://www.rwcpulse.com/election/2026/06/03/redwood-city-school-parcel-tax-trails-approval-threshold/" target="_blank">RWC Pulse: Measure C Trails Approval Threshold</a> (election-night, June 3, 2026)</li>
+    <li><a href="https://www.rwcpulse.com/education/2026/02/27/redwood-city-school-district-puts-parcel-tax-measure-on-june-ballot/" target="_blank">RWC Pulse: Parcel Tax on June Ballot</a> (Feb. 2026)</li>
+    <li><a href="https://www.rwcpulse.com/education/2026/02/05/redwood-city-school-districts-cuts-another-6m-from-budget/" target="_blank">RWC Pulse: District Cuts $6M from Budget</a> (Feb. 2026)</li>
   </ul>
 </section>`;
 }
@@ -845,7 +847,7 @@ function sectionGlossaryEN() {
   <div class="glossary">
     <div class="glossary-item">
       <div class="glossary-term">ADA (Average Daily Attendance)</div>
-      <div class="glossary-def">The average number of students attending school each day, used as the basis for state funding calculations. RCSD's ADA rate is 93.96%.</div>
+      <div class="glossary-def">The average number of students attending school each day, used as the basis for state funding calculations. RCSD's ADA rate is about 94.70%.</div>
     </div>
     <div class="glossary-item">
       <div class="glossary-term">ATSI</div>
@@ -865,7 +867,7 @@ function sectionGlossaryEN() {
     </div>
     <div class="glossary-item">
       <div class="glossary-term">Deficit Spending</div>
-      <div class="glossary-def">When expenditures exceed revenues in a given year. The gap is covered by drawing down the fund balance (reserves). RCSD is deficit spending by $2.3M in 2025-26.</div>
+      <div class="glossary-def">When expenditures exceed revenues in a given year. The gap is covered by drawing down the fund balance (reserves). RCSD is deficit spending by $1.7M in 2025-26.</div>
     </div>
     <div class="glossary-item">
       <div class="glossary-term">Fund Balance</div>
@@ -897,7 +899,7 @@ function sectionGlossaryEN() {
     </div>
     <div class="glossary-item">
       <div class="glossary-term">Reserve Requirement (3%)</div>
-      <div class="glossary-def">California law requires districts to maintain a Reserve for Economic Uncertainty of at least 3% of expenditures. RCSD's reserve is at exactly 3.01%, the effective legal minimum.</div>
+      <div class="glossary-def">California law requires districts to maintain a Reserve for Economic Uncertainty of at least 3% of expenditures. At the 2025-26 Second Interim, RCSD's total reserve is 3.51%, above the 3% legal minimum and projected to rise to 5.81% by 2027-28.</div>
     </div>
     <div class="glossary-item">
       <div class="glossary-term">Restricted vs. Unrestricted</div>
@@ -929,19 +931,19 @@ function esBody() {
     <p class="header-subtitle">Una gu\u00eda completa sobre c\u00f3mo RCSD recauda y gasta $160 millones al a\u00f1o, incluyendo bonos escolares, impuestos parcelarios y la perspectiva fiscal multianual.</p>
     <div class="header-meta">
       <div class="header-stat">
-        <span class="header-stat-value">$160.1M</span>
+        <span class="header-stat-value">$159.8M</span>
         <span class="header-stat-label">Gastos Totales</span>
       </div>
       <div class="header-stat">
-        <span class="header-stat-value">$25,260</span>
+        <span class="header-stat-value">$25,330</span>
         <span class="header-stat-label">Gasto por Alumno</span>
       </div>
       <div class="header-stat">
-        <span class="header-stat-value">3.01%</span>
-        <span class="header-stat-label">Reserva (M\u00edn. Legal)</span>
+        <span class="header-stat-value">3.51%</span>
+        <span class="header-stat-label">Reserva (M\u00edn. 3%)</span>
       </div>
       <div class="header-stat">
-        <span class="header-stat-value">$2.3M</span>
+        <span class="header-stat-value">$1.7M</span>
         <span class="header-stat-label">D\u00e9ficit Este A\u00f1o</span>
       </div>
     </div>
@@ -949,7 +951,7 @@ function esBody() {
 </header>
 
 <div class="disclaimer">
-  Datos obtenidos del Primer Informe Interino Financiero 2025-26 (diciembre 2025), LCAP adoptado, SPSAs y registros electorales oficiales. Este es un recurso comunitario independiente, no una publicaci\u00f3n oficial del distrito.
+  Datos obtenidos del Segundo Informe Interino Financiero 2025-26 (marzo 2026), LCAP adoptado, SPSAs y registros electorales oficiales del Condado de San Mateo. Este es un recurso comunitario independiente, no una publicaci\u00f3n oficial del distrito.
 </div>
 
 <nav class="toc" aria-label="Secciones de la p\u00e1gina">
@@ -989,7 +991,7 @@ function sectionOverviewES() {
   <span class="section-num">01</span>
   <h2>Resumen del Presupuesto</h2>
 
-  <p>El Distrito Escolar de Redwood City (RCSD) atiende a aproximadamente 6,337 estudiantes en grados TK-8 en 12 escuelas. El distrito opera con un presupuesto del Fondo General de <strong>$160.1 millones</strong> en gastos para el a\u00f1o escolar 2025-26.</p>
+  <p>El Distrito Escolar de Redwood City (RCSD) atiende a aproximadamente 6,310 estudiantes en grados TK-8 en 12 escuelas. El distrito opera con un presupuesto del Fondo General de <strong>$159.8 millones</strong> en gastos para el a\u00f1o escolar 2025-26.</p>
 
   <h3>Estatus de Distrito Financiado por la Comunidad (Basic Aid)</h3>
   <p>RCSD es uno de aproximadamente 100 distritos "financiados por la comunidad" (anteriormente "Basic Aid") en California. Esto significa que los ingresos locales por impuestos a la propiedad <em>superan</em> lo que el estado proporcionar\u00eda a trav\u00e9s de la F\u00f3rmula de Financiamiento de Control Local (LCFF). El distrito retiene todos sus ingresos por impuestos a la propiedad en lugar de recibir un cheque del estado.</p>
@@ -1005,22 +1007,22 @@ function sectionOverviewES() {
         <tr><th>M\u00e9trica</th><th class="num">2025-26</th></tr>
       </thead>
       <tbody>
-        <tr><td>Ingresos Totales</td><td class="num">$157.8M</td></tr>
-        <tr><td>Gastos Totales</td><td class="num">$160.1M</td></tr>
-        <tr><td>D\u00e9ficit Operativo</td><td class="num" style="color:var(--coral)">($2.3M)</td></tr>
+        <tr><td>Ingresos Totales</td><td class="num">$158.1M</td></tr>
+        <tr><td>Gastos Totales</td><td class="num">$159.8M</td></tr>
+        <tr><td>D\u00e9ficit Operativo</td><td class="num" style="color:var(--coral)">($1.7M)</td></tr>
         <tr><td>Balance Inicial del Fondo</td><td class="num">$17.1M</td></tr>
-        <tr><td>Balance Final del Fondo</td><td class="num">$14.8M</td></tr>
-        <tr><td>Reserva para Incertidumbre Econ\u00f3mica</td><td class="num">$4.8M (3.01%)</td></tr>
-        <tr><td>Gasto por Alumno</td><td class="num">~$25,260</td></tr>
-        <tr><td>Inscripci\u00f3n del Distrito</td><td class="num">6,337</td></tr>
-        <tr><td>Asistencia Diaria Promedio</td><td class="num">93.96%</td></tr>
+        <tr><td>Balance Final del Fondo</td><td class="num">$15.4M</td></tr>
+        <tr><td>Reserva (m\u00edn. 3% + no designada)</td><td class="num">$5.6M (3.51%)</td></tr>
+        <tr><td>Gasto por Alumno</td><td class="num">~$25,330</td></tr>
+        <tr><td>Inscripci\u00f3n del Distrito</td><td class="num">6,310</td></tr>
+        <tr><td>Asistencia Diaria Promedio</td><td class="num">94.70%</td></tr>
       </tbody>
     </table>
   </div>
-  <p class="source">Fuente: <a href="https://www.rcsdk8.net/our-programs-and-services/business-services/district-budget">Primer Informe Interino Financiero 2025-26</a>, presentado el 17 de diciembre de 2025.</p>
+  <p class="source">Fuente: <a href="https://www.rcsdk8.net/our-programs-and-services/business-services/district-budget">Segundo Informe Interino Financiero 2025-26</a>, aprobado el 25 de marzo de 2026.</p>
 
   <h3>Qué cubre esta página (y qué no)</h3>
-  <p>Los números arriba describen el <strong>Fondo 01, el Fondo General</strong> &mdash; el fondo operativo principal de RCSD y la fuente de los salarios de maestros, programas de instrucción y operaciones diarias. El Fondo General es el lente correcto para "¿cuál es el presupuesto del distrito?" porque es por mucho el fondo más grande y el que guía la mayoría de las decisiones de política. Pero el distrito también opera algunos otros fondos con contabilidad separada que no aparecen en la cifra de $160.1M:</p>
+  <p>Los números arriba describen el <strong>Fondo 01, el Fondo General</strong> &mdash; el fondo operativo principal de RCSD y la fuente de los salarios de maestros, programas de instrucción y operaciones diarias. El Fondo General es el lente correcto para "¿cuál es el presupuesto del distrito?" porque es por mucho el fondo más grande y el que guía la mayoría de las decisiones de política. Pero el distrito también opera algunos otros fondos con contabilidad separada que no aparecen en la cifra de $159.8M:</p>
   <ul>
     <li><strong>Fondo 12 &mdash; Centro de Desarrollo Infantil (CDC):</strong> el Programa Estatal de Preescolar (CSPP) y otras operaciones de la primera infancia, financiadas principalmente por subvenciones estatales para preescolar y cuotas de los padres.</li>
     <li><strong>Fondo 13 &mdash; Cafetería / Servicios de Nutrición Infantil (CNS):</strong> el programa de comidas escolares, financiado por reembolsos de comidas federales y estatales más ventas de comidas.</li>
@@ -1038,7 +1040,7 @@ function sectionRevenueES() {
   <span class="section-num">02</span>
   <h2>De D\u00f3nde Viene el Dinero</h2>
 
-  <p>Los $157.8 millones en ingresos del Fondo General de RCSD provienen de una mezcla de impuestos locales a la propiedad, subsidios estatales, fondos federales y transferencias.</p>
+  <p>Los $158.1 millones en ingresos del Fondo General de RCSD provienen de una mezcla de impuestos locales a la propiedad, subsidios estatales, fondos federales y transferencias.</p>
 
   <div class="table-wrap">
     <table>
@@ -1046,27 +1048,27 @@ function sectionRevenueES() {
         <tr><th>Fuente de Ingresos</th><th class="num">Monto</th><th class="num">% del Total</th></tr>
       </thead>
       <tbody>
-        <tr><td>LCFF Base (Impuestos a la Propiedad)</td><td class="num">$87,258,712</td><td class="num">55.3%</td></tr>
-        <tr><td>Cuenta de Protecci\u00f3n Educativa LCFF</td><td class="num">$1,209,540</td><td class="num">0.8%</td></tr>
-        <tr><td>Suplementario y Concentraci\u00f3n LCFF</td><td class="num">$10,170,409</td><td class="num">6.4%</td></tr>
+        <tr><td>LCFF Base (Impuestos a la Propiedad)</td><td class="num">$87,127,120</td><td class="num">55.1%</td></tr>
+        <tr><td>Cuenta de Protecci\u00f3n Educativa LCFF</td><td class="num">$1,198,220</td><td class="num">0.8%</td></tr>
+        <tr><td>Suplementario y Concentraci\u00f3n LCFF</td><td class="num">$10,106,685</td><td class="num">6.4%</td></tr>
         <tr><td>Impuestos de Educaci\u00f3n Especial</td><td class="num">$5,548,180</td><td class="num">3.5%</td></tr>
-        <tr><td>Otros Ingresos Estatales</td><td class="num">$18,243,708</td><td class="num">11.6%</td></tr>
-        <tr><td>Loter\u00eda</td><td class="num">$1,691,545</td><td class="num">1.1%</td></tr>
-        <tr><td>Ingresos Federales</td><td class="num">$4,761,781</td><td class="num">3.0%</td></tr>
-        <tr><td>Ingresos Locales</td><td class="num">$16,253,621</td><td class="num">10.3%</td></tr>
+        <tr><td>Otros Ingresos Estatales</td><td class="num">$18,287,039</td><td class="num">11.6%</td></tr>
+        <tr><td>Loter\u00eda</td><td class="num">$1,585,815</td><td class="num">1.0%</td></tr>
+        <tr><td>Ingresos Federales</td><td class="num">$4,808,647</td><td class="num">3.0%</td></tr>
+        <tr><td>Ingresos Locales</td><td class="num">$16,850,820</td><td class="num">10.7%</td></tr>
         <tr><td>Impuesto Parcelario Medida U</td><td class="num">$1,621,922</td><td class="num">1.0%</td></tr>
         <tr><td>Transferencias - RDA</td><td class="num">$11,000,000</td><td class="num">7.0%</td></tr>
-        <tr class="total-row"><td>Ingresos Totales</td><td class="num">$157,759,418</td><td class="num">100%</td></tr>
+        <tr class="total-row"><td>Ingresos Totales</td><td class="num">$158,134,448</td><td class="num">100%</td></tr>
       </tbody>
     </table>
   </div>
-  <p class="source">Fuente: Primer Informe Interino 2025-26, Fuentes de Ingresos del Fondo General (p. 10).</p>
+  <p class="source">Fuente: Segundo Informe Interino 2025-26, Fuentes de Ingresos del Fondo General (presentaci\u00f3n, l\u00e1mina 6).</p>
 
   <h3>Impuestos a la Propiedad &mdash; La Base</h3>
-  <p>Los impuestos locales a la propiedad (la base LCFF m\u00e1s los impuestos de Educaci\u00f3n Especial) totalizan aproximadamente $92.8 millones, o el 59% de todos los ingresos del Fondo General.</p>
+  <p>Los impuestos locales a la propiedad (la base LCFF m\u00e1s los impuestos de Educaci\u00f3n Especial) totalizan aproximadamente $92.7 millones, o el 59% de todos los ingresos del Fondo General.</p>
 
   <h3>Derecho ("Entitlement") Suplementario y de Concentraci\u00f3n LCFF</h3>
-  <p>Los $10.2 millones que aparecen en la tabla de ingresos como "Suplementario y Concentraci\u00f3n LCFF" son el <em>monto del derecho</em> ("entitlement") calculado por la f\u00f3rmula LCFF, basado en el 60.7% de los estudiantes de RCSD que son alumnos no duplicados (de bajos ingresos, estudiantes de ingl\u00e9s, j\u00f3venes en cuidado temporal o sin hogar). Para los distritos financiados por el estado, esto llegar\u00eda como dinero estatal aparte; para un distrito financiado por la comunidad como RCSD, el derecho se paga con los propios impuestos a la propiedad del distrito y se reporta en esta l\u00ednea por motivos contables. El monto sigue teniendo consecuencias reales: establece el piso m\u00ednimo de gasto proporcional del LCAP, lo que significa que el distrito debe demostrar que al menos esta cantidad se est\u00e1 destinando a aumentar o mejorar los servicios para los alumnos no duplicados.</p>
+  <p>Los $10.2 millones que aparecen en la tabla de ingresos como "Suplementario y Concentraci\u00f3n LCFF" son el <em>monto del derecho</em> ("entitlement") calculado por la f\u00f3rmula LCFF, basado en el 60.3% de los estudiantes de RCSD que son alumnos no duplicados (de bajos ingresos, estudiantes de ingl\u00e9s, j\u00f3venes en cuidado temporal o sin hogar). Para los distritos financiados por el estado, esto llegar\u00eda como dinero estatal aparte; para un distrito financiado por la comunidad como RCSD, el derecho se paga con los propios impuestos a la propiedad del distrito y se reporta en esta l\u00ednea por motivos contables. El monto sigue teniendo consecuencias reales: establece el piso m\u00ednimo de gasto proporcional del LCAP, lo que significa que el distrito debe demostrar que al menos esta cantidad se est\u00e1 destinando a aumentar o mejorar los servicios para los alumnos no duplicados.</p>
 
   <h3>Fondos Federales</h3>
   <p>Los ingresos federales ($4.8 millones, 3% del presupuesto) incluyen subsidios T\u00edtulo I para escuelas de alta pobreza, T\u00edtulo III para programas de Estudiantes de Ingl\u00e9s e IDEA para educaci\u00f3n especial.</p>
@@ -1137,7 +1139,7 @@ function sectionParcelTaxES() {
 <section class="section" id="impuesto">
   <div class="section-rule"></div>
   <span class="section-num">04</span>
-  <h2>Impuesto Parcelario &mdash; Medida U y Propuesta 2026</h2>
+  <h2>Impuesto Parcelario &mdash; Medida U y Medida C (2026)</h2>
 
   <h3>C\u00f3mo Funcionan los Impuestos Parcelarios</h3>
   <p>Un impuesto parcelario es un impuesto fijo o basado en f\u00f3rmula que se cobra por cada parcela de tierra dentro de un distrito. A diferencia de los bonos, los ingresos del impuesto parcelario van al Fondo General y pueden usarse para operaciones como salarios de maestros y programas. Los impuestos parcelarios requieren una supermayori\u0301a de dos tercios para ser aprobados.</p>
@@ -1157,38 +1159,39 @@ function sectionParcelTaxES() {
   <p>Los fondos de la Medida U mejoran la instrucci\u00f3n en matem\u00e1ticas, ciencias, lectura y escritura; atraen y retienen maestros calificados; apoyan programas de artes y m\u00fasica; y actualizan la tecnolog\u00eda en las aulas.</p>
   <p><strong>Exenciones:</strong> Personas mayores de 65 a\u00f1os e individuos que reciben apoyo federal por discapacidad pueden solicitar la exenci\u00f3n.</p>
 
-  <h3>Medida Electoral 2026 &mdash; Nueva Propuesta de Impuesto Parcelario</h3>
+  <h3>Medida C &mdash; Impuesto Parcelario de Junio 2026 (Por Poco; Conteo en Curso)</h3>
 
   <div class="callout callout-amber">
-    <p><strong>D\u00eda de Elecciones: 2 de junio de 2026.</strong> La Junta de RCSD aprob\u00f3 un\u00e1nimemente colocar un nuevo impuesto parcelario en la boleta de junio 2026. Esto ser\u00eda <em>adicional</em> a la Medida U, que no expira hasta 2030.</p>
+    <p><strong>A la Medida C le falta poco para pasar mientras el Condado de San Mateo sigue contando.</strong> En los resultados publicados por el condado el 10 de junio de 2026, la Medida C estaba en <strong>63.84% de votos a favor</strong> (11,913 a favor y 6,748 en contra) &mdash; unos 2.8 puntos por debajo de la <strong>supermayor\u00eda de dos tercios (66.67%)</strong> que requiere un impuesto parcelario. Todav\u00eda se est\u00e1n contando boletas, as\u00ed que los totales no son finales. La Junta de RCSD puso la medida en la boleta en una reuni\u00f3n especial el 26 de febrero de 2026; ser\u00eda <em>adicional</em> a la Medida U, que sigue vigente hasta 2030.</p>
   </div>
 
   <div class="table-wrap">
     <table>
-      <thead><tr><th>Detalle</th><th>Propuesta 2026</th></tr></thead>
+      <thead><tr><th>Detalle</th><th>Medida C (2026)</th></tr></thead>
       <tbody>
         <tr><td>Tasa de Impuesto</td><td>17.5 centavos por pie cuadrado de edificio</td></tr>
         <tr><td>Parcelas Vac\u00edas</td><td class="num">$25/a\u00f1o tarifa fija</td></tr>
         <tr><td>Ingresos Esperados</td><td class="num">$12.2 millones/a\u00f1o</td></tr>
-        <tr><td>Duraci\u00f3n</td><td>8 a\u00f1os</td></tr>
+        <tr><td>Duraci\u00f3n</td><td>8 a\u00f1os (julio 2026 &ndash; junio 2034)</td></tr>
         <tr><td>Voto Requerido</td><td>Dos tercios (66.67%)</td></tr>
         <tr><td>Fecha de Elecci\u00f3n</td><td>2 de junio de 2026</td></tr>
+        <tr><td>Resultado (conteo en curso)</td><td style="color:var(--coral)">63.84% a favor (11,913&ndash;6,748) &mdash; ~2.8 pts bajo dos tercios</td></tr>
       </tbody>
     </table>
   </div>
 
-  <p>El impuesto propuesto recaudar\u00eda aproximadamente <strong>$12.2 millones al a\u00f1o</strong> durante ocho a\u00f1os. Para una casa de 1,000 pies cuadrados, el impuesto anual ser\u00eda de $175. Los fondos se usar\u00edan para atraer y retener maestros, consejeros y personal calificado; mantener la instrucci\u00f3n en ciencias, matem\u00e1ticas y STEM; y mantener tama\u00f1os de clase manejables.</p>
+  <p>La Medida C habr\u00eda recaudado aproximadamente <strong>$12.2 millones al a\u00f1o</strong> durante ocho a\u00f1os &mdash; unos $175 al a\u00f1o para una casa de 1,000 pies cuadrados, con exenciones para personas mayores y personas que reciben apoyo federal por discapacidad. El distrito hab\u00eda destinado ese dinero a atraer y retener maestros, consejeros y personal; proteger la instrucci\u00f3n en ciencias, matem\u00e1ticas y STEM; preservar los programas de lectura y escritura; y mantener tama\u00f1os de clase manejables.</p>
 
-  <h3>\u00bfQu\u00e9 Pasa si la Medida 2026 No se Aprueba?</h3>
-  <p>Las proyecciones multianuales del distrito ya requieren $5.25 millones en recortes no identificados para 2026-27. Sin los $12.2M adicionales en ingresos de impuestos parcelarios, el distrito enfrentar\u00eda reducciones a\u00fan m\u00e1s profundas en personal, programas y servicios.</p>
+  <h3>Qu\u00e9 Significa el Resultado para el Presupuesto</h3>
+  <p>El dinero de la Medida C <em>no</em> estaba incluido en la proyecci\u00f3n presupuestaria a tres a\u00f1os del distrito. La Junta ya hab\u00eda adoptado un Plan de Estabilizaci\u00f3n Fiscal de $6.04 millones el 4 de febrero de 2026, y la proyecci\u00f3n multianual del Segundo Informe Interino 2025-26 cuadra <strong>sin</strong> ning\u00fan dinero de impuestos parcelarios &mdash; no tiene recortes no identificados y mantiene las reservas por encima del m\u00ednimo legal del 3% en los tres a\u00f1os (ver <a href="#perspectiva">Perspectiva Fiscal Multianual</a>). En otras palabras, el resultado en la boleta no provoca nuevos recortes; m\u00e1s bien, si la Medida C no se aprueba, los aproximadamente $12.2M que habr\u00eda aportado cada a\u00f1o son ingresos que el distrito <em>no</em> tendr\u00e1 para restaurar programas y personal reducidos en el plan de estabilizaci\u00f3n, ni para compensar el inminente precipicio de las transferencias RDA. La Medida U actual ($1.6M/a\u00f1o) contin\u00faa hasta 2030 sin importar el resultado de junio 2026.</p>
 
   <h3>Recursos de la Comunidad</h3>
   <ul>
     <li><strong>Strong Schools for Redwood City</strong> (campa\u00f1a a favor): <a href="https://www.strongschools4rwc.org/es/" target="_blank">strongschools4rwc.org</a></li>
-    <li><strong>Informaci\u00f3n oficial de la boleta</strong>: <a href="https://www.smcacre.org/" target="_blank">San Mateo County Assessor-Clerk-Recorder</a></li>
+    <li><strong>Resultados electorales oficiales</strong>: <a href="https://www.smcacre.gov/elections" target="_blank">San Mateo County Assessor-Clerk-Recorder &amp; Elections</a></li>
   </ul>
 
-  <p class="source">Fuente: <a href="https://www.rwcpulse.com/education/2026/02/27/redwood-city-school-district-puts-parcel-tax-measure-on-june-ballot/">Redwood City Pulse, 27 de feb. 2026</a>.</p>
+  <p class="source">Fuente: <a href="https://www.smcacre.gov/elections" target="_blank">Registro y Elecciones del Condado de San Mateo</a>, resultados oficiales al 10 de junio de 2026 (63.84% a favor, 11,913&ndash;6,748). Cobertura de la noche electoral: <a href="https://www.rwcpulse.com/election/2026/06/03/redwood-city-school-parcel-tax-trails-approval-threshold/" target="_blank">Redwood City Pulse, 3 de junio de 2026</a>. Los totales de votos son extraoficiales hasta el conteo final del condado.</p>
 </section>`;
 }
 
@@ -1200,7 +1203,7 @@ function sectionSpendingES() {
   <span class="section-num">05</span>
   <h2>En Qu\u00e9 se Gasta el Dinero</h2>
 
-  <p>Los $160.1 millones en gastos del Fondo General de RCSD est\u00e1n dominados por costos de personal, que representan el <strong>77.5%</strong> de todo el gasto.</p>
+  <p>Los $159.8 millones en gastos del Fondo General de RCSD est\u00e1n dominados por costos de personal: los salarios y beneficios representan el <strong>76.4%</strong> de todo el gasto.</p>
 
   <div class="table-wrap">
     <table>
@@ -1208,20 +1211,20 @@ function sectionSpendingES() {
         <tr><th>Categor\u00eda</th><th class="num">Monto</th><th class="num">% del Total</th></tr>
       </thead>
       <tbody>
-        <tr><td>Salarios Certificados (maestros, admin.)</td><td class="num">$54,017,947</td><td class="num">33.7%</td></tr>
-        <tr><td>Salarios Clasificados (personal de apoyo)</td><td class="num">$29,996,559</td><td class="num">18.7%</td></tr>
-        <tr><td>Beneficios de Empleados</td><td class="num">$40,091,839</td><td class="num">25.0%</td></tr>
-        <tr><td>Servicios y Gastos Operativos</td><td class="num">$29,628,400</td><td class="num">18.5%</td></tr>
-        <tr><td>Libros y Materiales</td><td class="num">$5,621,063</td><td class="num">3.5%</td></tr>
-        <tr><td>Gastos de Capital</td><td class="num">$916,048</td><td class="num">0.6%</td></tr>
-        <tr class="total-row"><td>Gastos Totales</td><td class="num">$160,100,493</td><td class="num">100%</td></tr>
+        <tr><td>Salarios Certificados (maestros, admin.)</td><td class="num">$53,745,487</td><td class="num">33.6%</td></tr>
+        <tr><td>Salarios Clasificados (personal de apoyo)</td><td class="num">$28,741,030</td><td class="num">18.0%</td></tr>
+        <tr><td>Beneficios de Empleados</td><td class="num">$39,578,283</td><td class="num">24.8%</td></tr>
+        <tr><td>Servicios y Gastos Operativos</td><td class="num">$31,271,358</td><td class="num">19.6%</td></tr>
+        <tr><td>Libros y Materiales</td><td class="num">$5,772,632</td><td class="num">3.6%</td></tr>
+        <tr><td>Gastos de Capital</td><td class="num">$921,767</td><td class="num">0.6%</td></tr>
+        <tr class="total-row"><td>Gastos Totales</td><td class="num">$159,841,595</td><td class="num">100%</td></tr>
       </tbody>
     </table>
   </div>
-  <p class="source">Fuente: Primer Informe Interino 2025-26, Gastos del Fondo General (p. 11).</p>
+  <p class="source">Fuente: Segundo Informe Interino 2025-26, Gastos del Fondo General (presentaci\u00f3n, l\u00e1minas 7-8).</p>
 
   <h3>Beneficios: El Costo Oculto</h3>
-  <p>Los beneficios de empleados ($40.1M) representan una cuarta parte de todos los gastos e incluyen contribuciones de pensi\u00f3n CalSTRS ($14.1M), CalPERS ($8.1M), beneficios de salud ($10.7M) y otros beneficios estatutarios ($7.1M).</p>
+  <p>Los beneficios de empleados ($39.6M) representan cerca de una cuarta parte de todos los gastos e incluyen contribuciones de pensi\u00f3n CalSTRS (tasa patronal del 19.10%), CalPERS (26.81%), beneficios de salud y otros beneficios estatutarios. Se proyecta que las tasas de CalSTRS y CalPERS sigan subiendo hasta 2027-28 (CalPERS al 26.90%).</p>
 
   <h3>Desglose de Gastos LCAP</h3>
   <div class="table-wrap">
@@ -1248,7 +1251,7 @@ function sectionOutlookES() {
   <span class="section-num">06</span>
   <h2>Perspectiva Fiscal Multianual</h2>
 
-  <p>La proyecci\u00f3n multianual del distrito muestra una historia preocupante: los gastos superan los ingresos, el balance del fondo est\u00e1 disminuyendo y se necesitan recortes significativos no identificados.</p>
+  <p>En el Segundo Informe Interino 2025-26 (marzo 2026), la proyecci\u00f3n multianual del distrito cambi\u00f3 de rumbo. Despu\u00e9s de que la Junta adopt\u00f3 un Plan de Estabilizaci\u00f3n Fiscal de $6.04 millones el 4 de febrero de 2026, la perspectiva a tres a\u00f1os <strong>ya no incluye recortes no identificados</strong>: las reducciones est\u00e1n totalmente identificadas e incorporadas, el balance del fondo crece en lugar de encogerse en los dos a\u00f1os de proyecci\u00f3n, y la reserva sube del 3.51% al 5.81% &mdash; c\u00f3modamente por encima del m\u00ednimo legal del 3% en todo el periodo. Sobre esa base, el distrito present\u00f3 una <strong>Certificaci\u00f3n Positiva</strong>, certificando que puede cumplir sus obligaciones financieras para 2025-26 y los dos a\u00f1os siguientes.</p>
 
   <h3>Proyecci\u00f3n a Tres A\u00f1os</h3>
   <div class="table-wrap">
@@ -1257,27 +1260,29 @@ function sectionOutlookES() {
         <tr><th></th><th class="num">2025-26</th><th class="num">2026-27</th><th class="num">2027-28</th></tr>
       </thead>
       <tbody>
-        <tr><td>Ingresos Totales</td><td class="num">$157.8M</td><td class="num">$153.9M</td><td class="num">$160.2M</td></tr>
-        <tr><td>Gastos Totales</td><td class="num">$160.1M</td><td class="num">$154.9M*</td><td class="num">$157.7M*</td></tr>
-        <tr><td style="color:var(--coral)">Recortes No Identificados Requeridos</td><td class="num">&mdash;</td><td class="num" style="color:var(--coral)">($5.25M)</td><td class="num" style="color:var(--coral)">($3.50M)</td></tr>
-        <tr><td>Balance Final</td><td class="num">$14.8M</td><td class="num">$13.8M</td><td class="num">$16.3M</td></tr>
-        <tr><td>% de Reserva</td><td class="num">3.01%</td><td class="num">3.16%</td><td class="num">3.01%</td></tr>
+        <tr><td>Ingresos Totales</td><td class="num">$158.1M</td><td class="num">$154.2M</td><td class="num">$161.1M</td></tr>
+        <tr><td>Gastos Totales</td><td class="num">$159.8M</td><td class="num">$153.5M</td><td class="num">$154.4M</td></tr>
+        <tr><td>Estabilizaci\u00f3n Identificada (en gastos)</td><td class="num">&mdash;</td><td class="num">($6.04M)</td><td class="num">($6.11M)</td></tr>
+        <tr><td>Cambio Neto en el Balance</td><td class="num" style="color:var(--coral)">($1.7M)</td><td class="num" style="color:var(--green-mid)">+$0.6M</td><td class="num" style="color:var(--green-mid)">+$6.7M</td></tr>
+        <tr><td>Balance Inicial</td><td class="num">$17.1M</td><td class="num">$15.4M</td><td class="num">$16.0M</td></tr>
+        <tr><td>Balance Final</td><td class="num">$15.4M</td><td class="num">$16.0M</td><td class="num">$22.7M</td></tr>
+        <tr><td>% de Reserva</td><td class="num">3.51%</td><td class="num">3.74%</td><td class="num">5.81%</td></tr>
       </tbody>
     </table>
   </div>
-  <p class="source">* Las cifras de gastos para 2026-27 y 2027-28 incluyen medidas de estabilizaci\u00f3n fiscal no identificadas. Fuente: Proyecciones Multianuales del Primer Informe Interino (p. 13).</p>
+  <p class="source">La l\u00ednea de "Estabilizaci\u00f3n Identificada" es el Plan de Estabilizaci\u00f3n Fiscal aprobado por la Junta (4 de feb. 2026), mostrado como una reducci\u00f3n a los gastos. Fuente: Proyecci\u00f3n Multianual del Segundo Informe Interino 2025-26 (25 de marzo de 2026), p. 1.</p>
 
-  <div class="callout callout-coral">
-    <p><strong>El balance del fondo ha ca\u00eddo de $25.4M a $14.8M en dos a\u00f1os.</strong> El distrito est\u00e1 utilizando sus reservas para cubrir el gasto deficitario. La proyecci\u00f3n para 2026-27 requiere $5.25 millones en recortes que a\u00fan no han sido identificados.</p>
+  <div class="callout">
+    <p><strong>Se detuvo el agotamiento de reservas.</strong> Hace un a\u00f1o el balance del fondo se deslizaba hacia el piso del 3% con millones en recortes todav\u00eda sin identificar. Con el plan de estabilizaci\u00f3n en marcha, el Segundo Informe Interino proyecta que el balance final <em>crece</em> de $15.4M a $22.7M para 2027-28 y que la reserva sube al 5.81%. Las presiones estructurales de abajo son reales, pero el distrito ahora tiene un camino cre\u00edble y totalmente identificado hacia el equilibrio &mdash; que no depende del impuesto parcelario de junio 2026 (Medida C), al que le falta poco para los dos tercios mientras contin\u00faa el conteo.</p>
   </div>
 
-  <h3>Plan de Reducci\u00f3n de Presupuesto</h3>
-  <p>En febrero de 2026, el distrito adopt\u00f3 un plan de reducci\u00f3n presupuestaria de $6.04 millones que elimina 31.75 posiciones FTE.</p>
+  <h3>Plan de Estabilizaci\u00f3n Fiscal</h3>
+  <p>El 4 de febrero de 2026, la Junta adopt\u00f3 un Plan de Estabilizaci\u00f3n Fiscal de $6.04 millones ($6.11M continuos) que elimina 31.75 posiciones FTE. Estas son las reducciones ahora reflejadas en la proyecci\u00f3n a tres a\u00f1os de arriba. Incluye cerca de $3.5M por reestructuraci\u00f3n y reducci\u00f3n de servicios en la oficina del distrito, y cerca de $2.9M por ajustes en las escuelas (la mayor parte, 17 puestos docentes de ~$2.3M, absorbida por la disminuci\u00f3n natural de inscripci\u00f3n).</p>
 
   <h3>Factores del D\u00e9ficit Estructural</h3>
   <div class="trend-item">
     <div class="trend-label trend-down">Inscripci\u00f3n en Descenso</div>
-    <p>La inscripci\u00f3n est\u00e1 cayendo aproximadamente 130 estudiantes por a\u00f1o. Cada estudiante perdido representa ~$15,000-$16,000 en financiamiento LCFF, traducido en aproximadamente $2 millones por a\u00f1o en ingresos perdidos.</p>
+    <p>La inscripci\u00f3n sigue bajando &mdash; de 6,310 en 2025-26 a una proyecci\u00f3n de 6,212 para 2027-28 (el Segundo Informe Interino asume un descenso m\u00e1s suave que las proyecciones anteriores). Cada estudiante perdido representa ~$15,000-$16,000 en financiamiento equivalente a LCFF. Los costos fijos (instalaciones, administraci\u00f3n, transporte) no bajan en la misma proporci\u00f3n.</p>
   </div>
   <div class="trend-item">
     <div class="trend-label trend-down">Costos de Personal en Aumento</div>
@@ -1384,7 +1389,7 @@ function sectionGlossaryES() {
   <div class="glossary">
     <div class="glossary-item">
       <div class="glossary-term">ADA (Asistencia Diaria Promedio)</div>
-      <div class="glossary-def">El n\u00famero promedio de estudiantes que asisten a la escuela cada d\u00eda, utilizado como base para los c\u00e1lculos de financiamiento estatal. La tasa ADA de RCSD es 93.96%.</div>
+      <div class="glossary-def">El n\u00famero promedio de estudiantes que asisten a la escuela cada d\u00eda, utilizado como base para los c\u00e1lculos de financiamiento estatal. La tasa ADA de RCSD es cerca del 94.70%.</div>
     </div>
     <div class="glossary-item">
       <div class="glossary-term">ATSI</div>
@@ -1404,7 +1409,7 @@ function sectionGlossaryES() {
     </div>
     <div class="glossary-item">
       <div class="glossary-term">Gasto Deficitario</div>
-      <div class="glossary-def">Cuando los gastos superan los ingresos en un a\u00f1o dado. La diferencia se cubre con el balance del fondo. RCSD tiene un gasto deficitario de $2.3M en 2025-26.</div>
+      <div class="glossary-def">Cuando los gastos superan los ingresos en un a\u00f1o dado. La diferencia se cubre con el balance del fondo. RCSD tiene un gasto deficitario de $1.7M en 2025-26.</div>
     </div>
     <div class="glossary-item">
       <div class="glossary-term">Balance del Fondo</div>
@@ -1436,7 +1441,7 @@ function sectionGlossaryES() {
     </div>
     <div class="glossary-item">
       <div class="glossary-term">Requisito de Reserva (3%)</div>
-      <div class="glossary-def">La ley de California requiere que los distritos mantengan una Reserva para Incertidumbre Econ\u00f3mica de al menos 3% de los gastos. La reserva de RCSD est\u00e1 en exactamente 3.01%.</div>
+      <div class="glossary-def">La ley de California requiere que los distritos mantengan una Reserva para Incertidumbre Econ\u00f3mica de al menos 3% de los gastos. En el Segundo Informe Interino 2025-26, la reserva total de RCSD es del 3.51%, por encima del m\u00ednimo legal del 3% y con proyecci\u00f3n de subir al 5.81% para 2027-28.</div>
     </div>
     <div class="glossary-item">
       <div class="glossary-term">Restringido vs. No Restringido</div>
