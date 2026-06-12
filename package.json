@@ -32,10 +32,10 @@
     "pipeline": "node scripts/run-pipeline.mjs"
   },
   "dependencies": {
-    "@anthropic-ai/sdk": "^0.95.1",
-    "assemblyai": "^4.32.1",
+    "@anthropic-ai/sdk": "^0.104.1",
+    "assemblyai": "^4.34.5",
     "dotenv": "^17.4.2",
-    "playwright": "^1.59.1"
+    "playwright": "^1.60.0"
   },
   "devDependencies": {
     "@fontsource/fraunces": "^5.2.9",
@@ -43,10 +43,11 @@
     "@resvg/resvg-js": "^2.6.2",
     "pagefind": "^1.5.2",
     "satori": "^0.26.0",
-    "wrangler": "^4.90.0"
+    "wrangler": "^4.100.0"
   },
-  "//overrides": "ws: miniflare (via wrangler) pins ws@8.18.0 exactly, vulnerable to GHSA-58qx-3vcg-4xpx (fixed in 8.20.1). Remove once wrangler ships a miniflare with ws >= 8.20.1.",
+  "//overrides": "ws: miniflare (via wrangler) pins ws@8.18.0 exactly, vulnerable to GHSA-58qx-3vcg-4xpx (fixed in 8.20.1). Remove once wrangler ships a miniflare with ws >= 8.20.1. esbuild: wrangler pins esbuild@0.27.x, vulnerable to GHSA-gv7w-rqvm-qjhr + GHSA-g7r4-m6w7-qqqr (fixed in 0.28.1); we only run `wrangler pages deploy` (no esbuild bundling), so the bump is audit-hygiene. Remove once wrangler ships esbuild >= 0.28.1.",
   "overrides": {
-    "ws": "^8.20.1"
+    "ws": "^8.20.1",
+    "esbuild": "^0.28.1"
   }
 }
