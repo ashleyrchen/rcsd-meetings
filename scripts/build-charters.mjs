@@ -31,6 +31,23 @@ const ROOT = resolve(__dirname, '..');
 
 const chartersData = JSON.parse(readFileSync(resolve(ROOT, 'data/charters.json'), 'utf8'));
 const docIndex = JSON.parse(readFileSync(resolve(ROOT, 'data/document-index.json'), 'utf8'));
+const meetingsData = JSON.parse(readFileSync(resolve(ROOT, 'data/meetings-data.json'), 'utf8'));
+
+// Build lookup map from date to pagePath
+const dateToPagePath = {};
+const meetingsByDate = {};
+for (const m of meetingsData.meetings) {
+  if (!meetingsByDate[m.date]) meetingsByDate[m.date] = [];
+  meetingsByDate[m.date].push(m);
+}
+for (const [date, siblings] of Object.entries(meetingsByDate)) {
+  if (siblings.length === 1) {
+    dateToPagePath[date] = date;
+  } else {
+    const regular = siblings.find(s => s.type === 'Regular' || s.type === 'Board Meeting') || siblings[0];
+    dateToPagePath[date] = regular.slug;
+  }
+}
 
 // ---- Document classification / grouping ----
 
@@ -151,7 +168,8 @@ function renderDocsTimeline(group, lang) {
       const label = L[subtype] || subtype;
       const anchor = primary || review || all[0];
       const meetingDate = anchor?.meetingDate;
-      const meetingHref = meetingDate ? `${isEs ? '/reuniones' : '/meetings'}/${meetingDate}-regular/` : null;
+      const pagePath = meetingDate ? dateToPagePath[meetingDate] : null;
+      const meetingHref = pagePath ? `${isEs ? '/reuniones' : '/meetings'}/${pagePath}/` : null;
 
       const links = [];
       if (primary) {
