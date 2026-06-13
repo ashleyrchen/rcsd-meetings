@@ -107,6 +107,63 @@ const budgetCSS = `
     line-height: 1.6;
     color: #664d03;
   }
+  .proposed-banner {
+    max-width: 900px;
+    margin: 1.5rem auto 0;
+    padding: 1.1rem 1.4rem;
+    background: var(--green-wash);
+    border: 1px solid var(--green-light);
+    border-left: 4px solid var(--green-deep);
+    border-radius: 6px;
+  }
+  .proposed-banner .pb-tag {
+    display: inline-block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.66rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--green-deep);
+    margin-bottom: 0.35rem;
+  }
+  .proposed-banner h2 {
+    font-size: 1.15rem;
+    margin: 0 0 0.2rem;
+    border: none;
+    padding: 0;
+  }
+  .proposed-banner .pb-dates {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--green-mid);
+    margin: 0 0 0.8rem;
+  }
+  .proposed-banner .pb-figs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem 2rem;
+    margin: 0.4rem 0 0.9rem;
+  }
+  .proposed-banner .pb-fig { line-height: 1.2; }
+  .proposed-banner .pb-fig .pb-val {
+    display: block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--green-deep);
+  }
+  .proposed-banner .pb-fig .pb-lbl {
+    display: block;
+    font-size: 0.7rem;
+    color: var(--green-mid);
+  }
+  .proposed-banner .pb-docs { font-size: 0.82rem; margin: 0; }
+  .proposed-banner .pb-note {
+    font-size: 0.72rem;
+    color: var(--green-mid);
+    margin: 0.55rem 0 0;
+    font-style: italic;
+  }
   .toc {
     background: var(--cream-dark);
     border-bottom: 1px solid var(--rule);
@@ -327,6 +384,44 @@ const budgetCSS = `
   .footer-nav a { font-size: 0.68rem; margin: 0 1.5rem 0 0; }
 `;
 
+// ---- 2026-27 Proposed Budget banner (bilingual) ----
+// Figures: 2026-27 Multi-Year Projection (combined Unrestricted+Restricted),
+//   data/board-memos/2026-06-17.json item "Public Hearing - RCSD 2026/27 Proposed Budget".
+//   Total Revenues $150,289,231; Total Expenditures $151,272,528 (net -$983,297).
+//   Reserve above 3% minimum $4,791,899 — 2026-27 Statement of Reasons for Excess Reserves.
+//   Budget Book cover: Public Hearing June 17, 2026; Scheduled Adoption June 24, 2026.
+// Source PDFs live on R2 under board-packets/2026-06-17/ (uploaded with the agenda).
+const PROPOSED_DOCS_BASE = 'https://data.rcsd.info/board-packets/2026-06-17';
+function proposedBudgetBanner(lang) {
+  const es = lang === 'es';
+  const docLink = (file, label) =>
+    `<a href="${PROPOSED_DOCS_BASE}/${file}" target="_blank" rel="noopener">${label}</a>`;
+  const figs = es
+    ? [['$150.3M', 'Ingresos'], ['$151.3M', 'Gastos'], ['$4.79M', 'Reserva sobre el mínimo del 3%']]
+    : [['$150.3M', 'Revenues'], ['$151.3M', 'Expenditures'], ['$4.79M', 'Reserve above 3% min.']];
+  const docs = [
+    docLink('2026-27-Budget-Book.pdf', es ? 'Libro de Presupuesto' : 'Budget Book'),
+    docLink('2026-27-MYP-Budget-Adoption.pdf', es ? 'Proyección Multianual' : 'Multi-Year Projection'),
+    docLink('2026-27-Statement-of-Reasons-for-Excess-Reserves.pdf', es ? 'Razones de Reservas Excedentes' : 'Statement of Reasons for Excess Reserves'),
+    docLink('LCAP-Final-REPORT-June-2026.pdf', es ? 'LCAP 2026-27' : '2026-27 LCAP'),
+  ].join(' · ');
+  return `
+<div class="proposed-banner">
+  <span class="pb-tag">${es ? 'Presupuesto Propuesto 2026-27' : '2026-27 Proposed Budget'}</span>
+  <h2>${es ? 'Presupuesto Propuesto 2026–27' : '2026–27 Proposed Budget'}</h2>
+  <p class="pb-dates">${es
+    ? 'Audiencia pública: 17 de junio de 2026 · Adopción programada: 24 de junio de 2026'
+    : 'Public hearing: June 17, 2026 · Adoption scheduled: June 24, 2026'}</p>
+  <div class="pb-figs">
+    ${figs.map(([v, l]) => `<div class="pb-fig"><span class="pb-val">${v}</span><span class="pb-lbl">${l}</span></div>`).join('\n    ')}
+  </div>
+  <p class="pb-docs">${es ? 'Documentos: ' : 'Documents: '}${docs}</p>
+  <p class="pb-note">${es
+    ? 'Cifras propuestas — aún no adoptadas. El resto de esta página refleja el Segundo Informe Interino 2025-26 ya adoptado y se actualizará cuando la Junta adopte el presupuesto 2026-27.'
+    : 'Proposed figures — not yet adopted. The rest of this page reflects the adopted 2025-26 Second Interim and will be refreshed once the Board adopts the 2026-27 budget.'}</p>
+</div>`;
+}
+
 // ---- English body content ----
 function enBody() {
   return `
@@ -359,6 +454,8 @@ function enBody() {
 <div class="disclaimer">
   Data sourced from the 2025-26 Second Interim Financial Report (March 2026), adopted LCAP, SPSAs, and official San Mateo County ballot records. This is an independent community resource, not an official district publication.
 </div>
+
+${proposedBudgetBanner('en')}
 
 <nav class="toc" aria-label="Page sections">
   <div class="toc-inner">
@@ -958,6 +1055,8 @@ function esBody() {
 <div class="disclaimer">
   Datos obtenidos del Segundo Informe Interino Financiero 2025-26 (marzo 2026), LCAP adoptado, SPSAs y registros electorales oficiales del Condado de San Mateo. Este es un recurso comunitario independiente, no una publicaci\u00f3n oficial del distrito.
 </div>
+
+${proposedBudgetBanner('es')}
 
 <nav class="toc" aria-label="Secciones de la p\u00e1gina">
   <div class="toc-inner">
