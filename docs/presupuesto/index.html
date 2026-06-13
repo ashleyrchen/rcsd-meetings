@@ -360,6 +360,63 @@
     line-height: 1.6;
     color: #664d03;
   }
+  .proposed-banner {
+    max-width: 900px;
+    margin: 1.5rem auto 0;
+    padding: 1.1rem 1.4rem;
+    background: var(--green-wash);
+    border: 1px solid var(--green-light);
+    border-left: 4px solid var(--green-deep);
+    border-radius: 6px;
+  }
+  .proposed-banner .pb-tag {
+    display: inline-block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.66rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--green-deep);
+    margin-bottom: 0.35rem;
+  }
+  .proposed-banner h2 {
+    font-size: 1.15rem;
+    margin: 0 0 0.2rem;
+    border: none;
+    padding: 0;
+  }
+  .proposed-banner .pb-dates {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--green-mid);
+    margin: 0 0 0.8rem;
+  }
+  .proposed-banner .pb-figs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem 2rem;
+    margin: 0.4rem 0 0.9rem;
+  }
+  .proposed-banner .pb-fig { line-height: 1.2; }
+  .proposed-banner .pb-fig .pb-val {
+    display: block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--green-deep);
+  }
+  .proposed-banner .pb-fig .pb-lbl {
+    display: block;
+    font-size: 0.7rem;
+    color: var(--green-mid);
+  }
+  .proposed-banner .pb-docs { font-size: 0.82rem; margin: 0; }
+  .proposed-banner .pb-note {
+    font-size: 0.72rem;
+    color: var(--green-mid);
+    margin: 0.55rem 0 0;
+    font-style: italic;
+  }
   .toc {
     background: var(--cream-dark);
     border-bottom: 1px solid var(--rule);
@@ -632,6 +689,20 @@
 
 <div class="disclaimer">
   Datos obtenidos del Segundo Informe Interino Financiero 2025-26 (marzo 2026), LCAP adoptado, SPSAs y registros electorales oficiales del Condado de San Mateo. Este es un recurso comunitario independiente, no una publicación oficial del distrito.
+</div>
+
+
+<div class="proposed-banner">
+  <span class="pb-tag">Presupuesto Propuesto 2026-27</span>
+  <h2>Presupuesto Propuesto 2026–27</h2>
+  <p class="pb-dates">Audiencia pública: 17 de junio de 2026 · Adopción programada: 24 de junio de 2026</p>
+  <div class="pb-figs">
+    <div class="pb-fig"><span class="pb-val">$150.3M</span><span class="pb-lbl">Ingresos</span></div>
+    <div class="pb-fig"><span class="pb-val">$151.3M</span><span class="pb-lbl">Gastos</span></div>
+    <div class="pb-fig"><span class="pb-val">$4.79M</span><span class="pb-lbl">Reserva sobre el mínimo del 3%</span></div>
+  </div>
+  <p class="pb-docs">Documentos: <a href="https://data.rcsd.info/board-packets/2026-06-17/2026-27-Budget-Book.pdf" target="_blank" rel="noopener">Libro de Presupuesto</a> · <a href="https://data.rcsd.info/board-packets/2026-06-17/2026-27-MYP-Budget-Adoption.pdf" target="_blank" rel="noopener">Proyección Multianual</a> · <a href="https://data.rcsd.info/board-packets/2026-06-17/2026-27-Statement-of-Reasons-for-Excess-Reserves.pdf" target="_blank" rel="noopener">Razones de Reservas Excedentes</a> · <a href="https://data.rcsd.info/board-packets/2026-06-17/LCAP-Final-REPORT-June-2026.pdf" target="_blank" rel="noopener">LCAP 2026-27</a></p>
+  <p class="pb-note">Cifras propuestas — aún no adoptadas. El resto de esta página refleja el Segundo Informe Interino 2025-26 ya adoptado y se actualizará cuando la Junta adopte el presupuesto 2026-27.</p>
 </div>
 
 <nav class="toc" aria-label="Secciones de la página">
