@@ -1,8 +1,8 @@
 # RCSD Board Meetings — 2025-2026 School Year
-Last updated: May 8, 2026
+Last updated: June 12, 2026
 
 ## Overview
-- 26 meetings on Simbli (June 2025 - present)
+- 27 meetings on Simbli (June 2025 - present)
 - Pre-June 2025 meetings on BoardDocs: https://go.boarddocs.com/ca/redwood/Board.nsf/goto?open&id=CVLPDX62089F
 - Agendas: https://simbli.eboardsolutions.com/SB_Meetings/SB_MeetingListing.aspx?S=36030397
 - YouTube: https://www.youtube.com/@redwoodcityschooldistrict
@@ -12,6 +12,7 @@ Last updated: May 8, 2026
 
 | Date | Type | MID | YouTube | Key Topics |
 |------|------|-----|---------|------------|
+| 06/17/2026 | Regular | 51016 | — | Public hearings on the 2026-27 LCAP and 2026-27 Proposed Budget, bond program consent items (Kennedy DG path/mow-curb CO#4, Measure T sub-$20k tracking list, QKA HVAC design contracts, Siemens HVAC final change order, Carducci landscape architectural services, DSA additional fees, Change Order #2 cancelling the 3150 Granger Way solar project), Measure U 2026-27 disbursements (KIPP, Rocketship), Boys & Girls Club Amendment No. 1, credential-program interagency agreement, updated management salary schedule, ~34 governance board policy/bylaw approvals (0000/0100/0200 series, 2120/2121/2210, 9000-series bylaws) |
 | 06/10/2026 | Regular | 51015 | — | Henry Ford SPSA presentation, 2024-25 Measure T & S bond financial/performance audit (Eide Bailly), RCEF overview, Res 27 (Nov 3 2026 election — Trustee Areas 2 & 5), Res 28 (Measure S Series 2 bond tax rate), Res 29 (year-end budget transfers), Res 30 (temporary interfund borrowing), DWK legal services agreements 2026-28 (bond $150K + general district), solar project cancellation at 3150 Granger Way (Holt Renewables Change Order #2), YMCA/Casa Circulo expanded learning 2026-27, Bullseye IEP interpretation amendment, NorCal Milestone XProtect video upgrade, Park Planet Orion playground replacement, ~28 board policy approvals, Measure U disbursements (Connect/Garfield), May warrant registers ($5.39M) |
 | 05/27/2026 | Regular | 51014 | — | Update on K-8 Math Program (Imagine Mathematics 3-year plan), 2026-27 Board Calendar, Prop 28 Arts & Music Funding Plan, agreements with Boys & Girls Club (Summer 2026) and One Life Counseling, SMCOE teacher residency agreement, CBO Richard Edson II employment agreement, CSEA successor negotiations proposals, 48 board policy approvals |
 | 05/13/2026 | Regular | 51013 | — | North Star/Henry Ford SPSA presentations, EV chargers (Hoover, Roy Cloud — PowerFlex; Adelante Selby/Clifford/Kennedy — Atlas Pellizzari $70.5K), Res 24/25 final non-reemployment notifications (classified/certificated), Res 26 EV charging contract (PCC §20118.2), Cumming PMS Amendment #7, Looking Point Azure server migration, classified reclassification, Casa Circulo summer 2026, TadHealth counseling 2026-27, charter Q2 interim reviews (Connect/KIPP/Rocketship), 35 board policy approvals, 2026-27 board calendar discussion |
