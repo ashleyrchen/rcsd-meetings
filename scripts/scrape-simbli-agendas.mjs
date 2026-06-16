@@ -281,6 +281,11 @@ async function main() {
   const midFilter = midIdx >= 0 ? args[midIdx + 1] : null;
   const refresh = args.includes('--refresh');
   const listOnly = args.includes('--list-only');
+  // --json: print every meeting discovered on the Simbli listing as a JSON array
+  // ([{date, mid, title, rawType}]) to stdout and exit. Used by scripts/watchdog.mjs
+  // to diff Simbli against published meetings-data.json. Status goes to stderr so
+  // stdout stays pure JSON.
+  const jsonOut = args.includes('--json');
 
   mkdirSync(MEMO_DIR, { recursive: true });
 
@@ -288,6 +293,12 @@ async function main() {
   const page = await context.newPage();
 
   try {
+    if (jsonOut) {
+      const all = await discoverMeetings(page);
+      process.stdout.write(JSON.stringify(all));
+      return;
+    }
+
     let meetings;
     if (midFilter) {
       meetings = [{ mid: midFilter, date: dateFilter || null, title: '', rawType: null }];
