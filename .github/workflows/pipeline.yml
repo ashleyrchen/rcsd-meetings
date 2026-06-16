@@ -25,9 +25,20 @@ on:
 permissions:
   contents: write
 
+# Serialize runs so an overlapping scheduled + manual run can't collide on the
+# git push / Pages deploy. Queue rather than cancel (don't kill an in-flight
+# transcription).
+concurrency:
+  group: ingest-pipeline
+  cancel-in-progress: false
+
 jobs:
   ingest-and-deploy:
-    runs-on: ${{ github.event.inputs.runner || 'ubuntu-latest' }}
+    # Default to the self-hosted residential runner (trogdor) so scheduled cron
+    # runs can transcribe — GitHub-hosted datacenter IPs are blocked by YouTube,
+    # and transcribe-assemblyai.mjs hard-skips on RUNNER_ENVIRONMENT=github-hosted.
+    # workflow_dispatch can still pick ubuntu-latest for an agenda-only fallback.
+    runs-on: ${{ github.event.inputs.runner || 'self-hosted' }}
 
     env:
       # API Keys & Auth Tokens
@@ -53,14 +64,16 @@ jobs:
           node-version: 22
           cache: 'npm'
 
+      # The self-hosted runner (trogdor) has rclone + yt-dlp pre-installed and no
+      # passwordless sudo, so only install on GitHub-hosted runners.
       - name: Install System Dependencies (rclone)
-        if: runner.os == 'Linux'
+        if: runner.os == 'Linux' && runner.environment == 'github-hosted'
         run: |
           sudo apt-get update
           sudo apt-get install -y rclone
 
       - name: Install yt-dlp (YouTube downloader)
-        if: runner.os == 'Linux'
+        if: runner.os == 'Linux' && runner.environment == 'github-hosted'
         run: |
           sudo wget https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -O /usr/local/bin/yt-dlp
           sudo chmod a+rx /usr/local/bin/yt-dlp
@@ -68,9 +81,11 @@ jobs:
       - name: Install Project Dependencies
         run: npm ci || npm install
 
+      # --with-deps needs sudo for system libs (fine on hosted); on self-hosted the
+      # chromium libs are already present, so install the browser without sudo.
       - name: Install Playwright Chromium
         run: |
-          if [ "${{ runner.os }}" = "Linux" ]; then
+          if [ "${{ runner.environment }}" = "github-hosted" ]; then
             npx playwright install chromium --with-deps
           else
             npx playwright install chromium
