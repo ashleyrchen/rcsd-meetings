@@ -48,6 +48,7 @@ function sourceLink(href, label) {
 function nav(prefix, active = '') {
   const entries = [
     ['home', `${prefix}index.html`, 'Home'],
+    ['search', `${prefix}search/index.html`, 'Search'],
     ['board', `${prefix}board/index.html`, 'Board of Trustees'],
     ['cboc', `${prefix}cboc/index.html`, 'CBOC'],
     ['minutes', `${prefix}minutes/index.html`, 'Minutes'],
@@ -158,7 +159,8 @@ function build() {
 
   const committeePanels = committees.map(committee => `<article class="committee-panel"><div class="eyebrow">Public body</div><h2>${link(`${committee.key}/index.html`, committee.name)}</h2><p>${committee.meetings.length} meetings in the archive.</p><p>${link(`${committee.key}/index.html`, 'Browse meetings →')}</p></article>`).join('');
   const recent = allMeetings.slice(0, 12).map(({ committee, meeting }) => meetingCard(meeting, `${committee.key}/${meetingSlug(meeting)}/index.html`)).join('');
-  const homeBody = `<section class="hero"><div class="eyebrow">Public records, made browsable</div><h1>${escapeHtml(config.site.title)}</h1><p class="lede">${escapeHtml(config.site.description)}</p><p>Every record links back to the official West Valley-Mission BoardDocs portal.</p></section><section class="committee-grid">${committeePanels}</section><section><div class="section-heading"><div><div class="eyebrow">Across both bodies</div><h2>Recent meetings</h2></div></div>${recent ? `<div class="meeting-list">${recent}</div>` : '<p class="notice">Run the scraper to populate the archive.</p>'}</section>`;
+  const homeSearch = `<form class="home-search" action="search/index.html" method="get" role="search"><input type="search" name="q" aria-label="Search all agendas and minutes" placeholder="Search every agenda item &amp; minutes — e.g. Wellness Center"><button type="submit">Search</button></form>`;
+  const homeBody = `<section class="hero"><div class="eyebrow">Public records, made browsable</div><h1>${escapeHtml(config.site.title)}</h1><p class="lede">${escapeHtml(config.site.description)}</p>${homeSearch}<p>Every record links back to the official West Valley-Mission BoardDocs portal.</p></section><section class="committee-grid">${committeePanels}</section><section><div class="section-heading"><div><div class="eyebrow">Across both bodies</div><h2>Recent meetings</h2></div></div>${recent ? `<div class="meeting-list">${recent}</div>` : '<p class="notice">Run the scraper to populate the archive.</p>'}</section>`;
   writePage(config.outDir, '', layout({ title: config.site.title, description: config.site.description, body: homeBody, active: 'home' }));
 
   for (const committee of committees) {
@@ -181,12 +183,89 @@ function build() {
   const attachmentBody = `<div class="breadcrumbs">${link('../index.html', 'Home')} / Attachments</div><section class="hero compact"><div class="eyebrow">Agenda files</div><h1>All attachments</h1><p class="lede">Every file BoardDocs lists on a public agenda item.</p></section>${filterBox('Filter attachments by filename, agenda item, committee, or date')}<div class="record-list">${attachments || '<p class="notice">No attachments were found.</p>'}</div>`;
   writePage(config.outDir, 'attachments', layout({ title: `Attachments · ${config.site.title}`, description: 'BoardDocs agenda attachments', body: attachmentBody, prefix: '../', active: 'attachments' }));
 
-  console.log(`Built ${allMeetings.length} meetings and ${attachmentEntries.length} attachments in ${relative(ROOT, config.outDir)}/`);
+  // Full-text search index: one record per agenda item (deep-linked to its
+  // anchor) plus one per published minutes set. Paths are relative to /search/.
+  const searchRecords = [];
+  for (const { committee, meeting } of allMeetings) {
+    const base = `../${committee.key}/${meetingSlug(meeting)}/index.html`;
+    (meeting.items || []).forEach((item, index) => {
+      searchRecords.push({
+        c: committee.name, d: meeting.date, m: meeting.name || '',
+        u: `${base}#item-${index + 1}`, a: item.actionType || '',
+        t: item.title || '', b: item.body || '',
+      });
+    });
+    if (meeting.minutes?.available && meeting.minutes.text) {
+      searchRecords.push({
+        c: committee.name, d: meeting.date, m: meeting.name || '',
+        u: base, a: 'Minutes', t: 'Published minutes', b: meeting.minutes.text,
+      });
+    }
+  }
+  writeFileSync(resolve(config.outDir, 'search-index.json'), JSON.stringify(searchRecords));
+
+  const searchBody = `<div class="breadcrumbs">${link('../index.html', 'Home')} / Search</div>
+    <section class="hero compact"><div class="eyebrow">Search everything</div><h1>Search the archive</h1><p class="lede">Full-text search across every agenda item and published minutes from both public bodies. Each result links straight to the record.</p></section>
+    <div class="filter-box"><label for="site-search">Search agendas &amp; minutes</label><input id="site-search" type="search" placeholder="e.g. Wellness Center" autocomplete="off" data-search-input><p class="filter-status" aria-live="polite" data-search-status></p></div>
+    <div data-search-page data-index="../search-index.json"><div class="record-list" data-search-results></div></div>`;
+  writePage(config.outDir, 'search', layout({ title: `Search · ${config.site.title}`, description: 'Full-text search across all agenda items and minutes', body: searchBody, prefix: '../', active: 'search' }));
+
+  console.log(`Built ${allMeetings.length} meetings, ${attachmentEntries.length} attachments, ${searchRecords.length} search records in ${relative(ROOT, config.outDir)}/`);
 }
 
-const CSS = `:root{--ink:#16212b;--muted:#5b6873;--line:#d9e0e5;--paper:#fff;--wash:#f3f6f8;--navy:#173b57;--blue:#176b87;--gold:#d8a928}*{box-sizing:border-box}body{margin:0;color:var(--ink);background:var(--paper);font:16px/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.shell{width:min(1120px,calc(100% - 2rem));margin:auto}.skip-link{position:absolute;left:-9999px}.skip-link:focus{left:1rem;top:1rem;background:#fff;padding:.75rem;z-index:10}.site-header{background:var(--navy);color:#fff}.header-inner{display:flex;align-items:center;justify-content:space-between;gap:2rem;padding:1rem 0}.brand{font-weight:750;color:#fff;text-decoration:none}.site-header nav{display:flex;gap:.25rem;flex-wrap:wrap}.site-header nav a{color:#dce9ef;text-decoration:none;padding:.5rem .65rem;border-radius:.35rem}.site-header nav a:hover,.site-header nav a.active{background:#fff;color:var(--navy)}main{padding-bottom:5rem}.hero{padding:5.5rem 0 3.5rem;max-width:850px}.hero.compact{padding:3rem 0 2rem}.hero h1{font-family:Georgia,serif;font-size:clamp(2.4rem,6vw,5rem);line-height:1.02;margin:.25rem 0 1rem;color:var(--navy)}.hero.compact h1{font-size:clamp(2rem,5vw,3.75rem)}.lede{font-size:1.25rem;color:var(--muted);max-width:720px}.eyebrow{text-transform:uppercase;letter-spacing:.08em;font-size:.76rem;font-weight:800;color:var(--blue)}h2,h3,h4{line-height:1.2}a{color:#075f7d}a:hover{text-decoration-thickness:2px}.committee-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;margin-bottom:4rem}.committee-panel{background:var(--wash);border-top:4px solid var(--gold);padding:1.5rem}.committee-panel h2{font-family:Georgia,serif;font-size:1.75rem}.section-heading{display:flex;align-items:end;justify-content:space-between;gap:1rem;border-bottom:1px solid var(--line);margin:3rem 0 1rem}.section-heading h2{font:2rem Georgia,serif;margin:.25rem 0 .75rem}.meeting-list,.record-list{display:grid;gap:.75rem}.meeting-card,.record-card,.attachment-card{border:1px solid var(--line);padding:1.15rem 1.25rem;border-radius:.35rem;background:#fff}.meeting-card h3,.record-card h2,.attachment-card h2{margin:.25rem 0;font-size:1.15rem}.meta{display:flex;gap:1rem;flex-wrap:wrap;color:var(--muted);font-size:.9rem}.breadcrumbs{padding-top:1.5rem;color:var(--muted)}.breadcrumbs a{color:inherit}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-bottom:3rem}.stats div{background:var(--paper);padding:1.25rem}.stats strong,.stats span{display:block}.stats strong{font:2rem Georgia,serif;color:var(--navy)}.stats span{color:var(--muted)}section+section{margin-top:3.5rem}.agenda-item{border-top:1px solid var(--line);padding:1.5rem 0}.agenda-item h3{font:1.45rem Georgia,serif;margin:.3rem 0}.agenda-item h4{margin-bottom:.25rem}.item-body{white-space:pre-line;max-width:850px}.attachment-list{padding-left:1.2rem}.attachment-list li{margin:.45rem 0}.file-size,.muted{color:var(--muted);font-size:.9rem}.source-link{font-weight:650}.minutes-text{white-space:pre-wrap;background:var(--wash);border-left:4px solid var(--blue);padding:1.5rem;max-height:42rem;overflow:auto}.notice{background:#fff8df;border-left:4px solid var(--gold);padding:1rem}.filter-box{background:var(--wash);padding:1rem;margin:1rem 0}.filter-box label{display:block;font-weight:700;margin-bottom:.35rem}.filter-box input{width:min(100%,600px);font:inherit;padding:.7rem;border:1px solid #9cabb6;border-radius:.25rem}.filter-status{display:inline;margin-left:.75rem;color:var(--muted)}footer{background:var(--wash);border-top:1px solid var(--line);padding:2rem 0;color:var(--muted);font-size:.9rem}@media(max-width:760px){.header-inner{align-items:flex-start;flex-direction:column;gap:.5rem}.site-header nav{display:grid;grid-template-columns:1fr 1fr;width:100%}.committee-grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr}.hero{padding-top:3rem}.section-heading{align-items:start;flex-direction:column}.section-heading>.source-link{margin-bottom:1rem}}`;
+const CSS = `:root{--ink:#16212b;--muted:#5b6873;--line:#d9e0e5;--paper:#fff;--wash:#f3f6f8;--navy:#173b57;--blue:#176b87;--gold:#d8a928}*{box-sizing:border-box}body{margin:0;color:var(--ink);background:var(--paper);font:16px/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.shell{width:min(1120px,calc(100% - 2rem));margin:auto}.skip-link{position:absolute;left:-9999px}.skip-link:focus{left:1rem;top:1rem;background:#fff;padding:.75rem;z-index:10}.site-header{background:var(--navy);color:#fff}.header-inner{display:flex;align-items:center;justify-content:space-between;gap:2rem;padding:1rem 0}.brand{font-weight:750;color:#fff;text-decoration:none}.site-header nav{display:flex;gap:.25rem;flex-wrap:wrap}.site-header nav a{color:#dce9ef;text-decoration:none;padding:.5rem .65rem;border-radius:.35rem}.site-header nav a:hover,.site-header nav a.active{background:#fff;color:var(--navy)}main{padding-bottom:5rem}.hero{padding:5.5rem 0 3.5rem;max-width:850px}.hero.compact{padding:3rem 0 2rem}.hero h1{font-family:Georgia,serif;font-size:clamp(2.4rem,6vw,5rem);line-height:1.02;margin:.25rem 0 1rem;color:var(--navy)}.hero.compact h1{font-size:clamp(2rem,5vw,3.75rem)}.lede{font-size:1.25rem;color:var(--muted);max-width:720px}.eyebrow{text-transform:uppercase;letter-spacing:.08em;font-size:.76rem;font-weight:800;color:var(--blue)}h2,h3,h4{line-height:1.2}a{color:#075f7d}a:hover{text-decoration-thickness:2px}.committee-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;margin-bottom:4rem}.committee-panel{background:var(--wash);border-top:4px solid var(--gold);padding:1.5rem}.committee-panel h2{font-family:Georgia,serif;font-size:1.75rem}.section-heading{display:flex;align-items:end;justify-content:space-between;gap:1rem;border-bottom:1px solid var(--line);margin:3rem 0 1rem}.section-heading h2{font:2rem Georgia,serif;margin:.25rem 0 .75rem}.meeting-list,.record-list{display:grid;gap:.75rem}.meeting-card,.record-card,.attachment-card{border:1px solid var(--line);padding:1.15rem 1.25rem;border-radius:.35rem;background:#fff}.meeting-card h3,.record-card h2,.attachment-card h2{margin:.25rem 0;font-size:1.15rem}.meta{display:flex;gap:1rem;flex-wrap:wrap;color:var(--muted);font-size:.9rem}.breadcrumbs{padding-top:1.5rem;color:var(--muted)}.breadcrumbs a{color:inherit}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-bottom:3rem}.stats div{background:var(--paper);padding:1.25rem}.stats strong,.stats span{display:block}.stats strong{font:2rem Georgia,serif;color:var(--navy)}.stats span{color:var(--muted)}section+section{margin-top:3.5rem}.agenda-item{border-top:1px solid var(--line);padding:1.5rem 0}.agenda-item h3{font:1.45rem Georgia,serif;margin:.3rem 0}.agenda-item h4{margin-bottom:.25rem}.item-body{white-space:pre-line;max-width:850px}.attachment-list{padding-left:1.2rem}.attachment-list li{margin:.45rem 0}.file-size,.muted{color:var(--muted);font-size:.9rem}.source-link{font-weight:650}.minutes-text{white-space:pre-wrap;background:var(--wash);border-left:4px solid var(--blue);padding:1.5rem;max-height:42rem;overflow:auto}.notice{background:#fff8df;border-left:4px solid var(--gold);padding:1rem}.filter-box{background:var(--wash);padding:1rem;margin:1rem 0}.filter-box label{display:block;font-weight:700;margin-bottom:.35rem}.filter-box input{width:min(100%,600px);font:inherit;padding:.7rem;border:1px solid #9cabb6;border-radius:.25rem}.filter-status{display:inline;margin-left:.75rem;color:var(--muted)}.home-search{display:flex;gap:.5rem;max-width:640px;margin:1.5rem 0}.home-search input{flex:1;font:inherit;padding:.8rem 1rem;border:1px solid #9cabb6;border-radius:.3rem}.home-search button{font:inherit;font-weight:700;padding:.8rem 1.4rem;border:0;border-radius:.3rem;background:var(--navy);color:#fff;cursor:pointer}.home-search button:hover{background:var(--blue)}.snippet{max-width:850px;line-height:1.5}.snippet mark,.minutes-text mark{background:#fde68a;color:inherit;padding:0 .1em}footer{background:var(--wash);border-top:1px solid var(--line);padding:2rem 0;color:var(--muted);font-size:.9rem}@media(max-width:760px){.header-inner{align-items:flex-start;flex-direction:column;gap:.5rem}.site-header nav{display:grid;grid-template-columns:1fr 1fr;width:100%}.committee-grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr}.hero{padding-top:3rem}.section-heading{align-items:start;flex-direction:column}.section-heading>.source-link{margin-bottom:1rem}}`;
 
-const JS = `document.querySelectorAll('[data-filter-input]').forEach(input=>{const items=[...document.querySelectorAll('[data-filter-item]')];const status=document.querySelector('[data-filter-status]');const update=()=>{const query=input.value.trim().toLowerCase();let shown=0;for(const item of items){const visible=!query||item.dataset.search.includes(query);item.hidden=!visible;if(visible)shown++}if(status)status.textContent=query?shown+' result'+(shown===1?'':'s'):''};input.addEventListener('input',update)});`;
+const JS = `document.querySelectorAll('[data-filter-input]').forEach(input=>{const items=[...document.querySelectorAll('[data-filter-item]')];const status=document.querySelector('[data-filter-status]');const update=()=>{const query=input.value.trim().toLowerCase();let shown=0;for(const item of items){const visible=!query||item.dataset.search.includes(query);item.hidden=!visible;if(visible)shown++}if(status)status.textContent=query?shown+' result'+(shown===1?'':'s'):''};input.addEventListener('input',update)});
+(function(){
+  var root=document.querySelector('[data-search-page]');
+  if(!root)return;
+  var input=document.querySelector('[data-search-input]');
+  var status=document.querySelector('[data-search-status]');
+  var out=root.querySelector('[data-search-results]');
+  var months=['January','February','March','April','May','June','July','August','September','October','November','December'];
+  var data=[];var ready=false;var pending=null;
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+  function fmtDate(d){var p=String(d||'').split('-');if(p.length!==3)return d||'';return months[(+p[1])-1]+' '+(+p[2])+', '+p[0]}
+  function highlight(frag,terms){
+    var lower=frag.toLowerCase();var ranges=[];
+    for(var i=0;i<terms.length;i++){var term=terms[i];if(!term)continue;var from=0;var idx;while((idx=lower.indexOf(term,from))>=0){ranges.push([idx,idx+term.length]);from=idx+term.length}}
+    if(!ranges.length)return frag;
+    ranges.sort(function(a,b){return a[0]-b[0]});
+    var merged=[ranges[0]];for(var r=1;r<ranges.length;r++){var last=merged[merged.length-1];if(ranges[r][0]<=last[1]){if(ranges[r][1]>last[1])last[1]=ranges[r][1]}else merged.push(ranges[r])}
+    var res='';var pos=0;for(var m=0;m<merged.length;m++){res+=frag.slice(pos,merged[m][0])+'<mark>'+frag.slice(merged[m][0],merged[m][1])+'</mark>';pos=merged[m][1]}
+    return res+frag.slice(pos)
+  }
+  function snippet(text,terms){
+    var lc=text.toLowerCase();var pos=-1;
+    for(var i=0;i<terms.length;i++){var p=lc.indexOf(terms[i]);if(p>=0&&(pos<0||p<pos))pos=p}
+    if(pos<0)pos=0;
+    var start=pos>70?pos-70:0;var end=pos+200<text.length?pos+200:text.length;
+    var frag=(start>0?'… ':'')+text.slice(start,end)+(end<text.length?' …':'');
+    return highlight(esc(frag),terms)
+  }
+  function render(q){
+    var phrase=q.toLowerCase().trim();
+    if(!phrase){out.innerHTML='';status.textContent='';return}
+    var terms=[phrase];
+    var res=[];
+    for(var i=0;i<data.length;i++){var r=data[i];var hay=(r.t+' '+r.b+' '+r.m+' '+r.c+' '+r.d).toLowerCase();if(hay.indexOf(phrase)>=0)res.push(r)}
+    res.sort(function(a,b){return a.d<b.d?1:a.d>b.d?-1:0});
+    status.textContent=res.length+' result'+(res.length===1?'':'s');
+    var lim=res.slice(0,300);var html='';
+    for(var k=0;k<lim.length;k++){var x=lim[k];
+      html+='<article class="record-card"><div class="eyebrow">'+esc(x.c)+' · '+esc(fmtDate(x.d))+(x.a?' · '+esc(x.a):'')+'</div>'+
+      '<h2><a href="'+esc(x.u)+'">'+esc(x.t||'Untitled')+'</a></h2>'+
+      (x.m?'<p class="muted">'+esc(x.m)+'</p>':'')+
+      '<p class="snippet">'+snippet(x.b||x.t||'',terms)+'</p></article>'}
+    if(res.length>lim.length)html+='<p class="notice">Showing the first '+lim.length+' of '+res.length+' results. Add another word to narrow your search.</p>';
+    out.innerHTML=html
+  }
+  function load(cb){if(ready){cb();return}status.textContent='Loading search index…';fetch(root.dataset.index).then(function(r){return r.json()}).then(function(j){data=j;ready=true;cb()}).catch(function(){status.textContent='Could not load the search index.'})}
+  function run(){var q=input.value.trim();var u=new URL(window.location.href);if(q)u.searchParams.set('q',q);else u.searchParams.delete('q');history.replaceState(null,'',u);if(!q){out.innerHTML='';status.textContent='';return}load(function(){render(q)})}
+  input.addEventListener('input',function(){clearTimeout(pending);pending=setTimeout(run,180)});
+  var initial=new URL(window.location.href).searchParams.get('q');
+  if(initial){input.value=initial;run()}
+})();`;
 
 try {
   build();
