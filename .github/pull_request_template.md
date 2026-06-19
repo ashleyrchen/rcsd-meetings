@@ -8,6 +8,6 @@
 
 ## Verification
 
-- [ ] `npm run build` succeeds
+- [ ] `npm test` succeeds
 - [ ] No secrets or local paths committed
 - [ ] Data changes verified against authoritative source (if applicable)

@@ -24,7 +24,7 @@ This applies to all project spaces including issues, pull requests, and discussi
 
 ## Enforcement
 
-Instances of unacceptable behavior may be reported to the project maintainer at david@weekly.org. All reports will be reviewed promptly. The maintainer may remove, edit, or reject contributions that violate this code of conduct, and may ban contributors for repeated or serious violations.
+Instances of unacceptable behavior may be reported privately through the repository owner's GitHub profile. Reports will be reviewed promptly. The maintainer may remove, edit, or reject contributions that violate this code of conduct, and may ban contributors for repeated or serious violations.
 
 ## Attribution
 

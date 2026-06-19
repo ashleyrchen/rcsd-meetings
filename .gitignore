@@ -1,22 +1,5 @@
 node_modules/
 .DS_Store
 .env
-.venv/
-artifacts
-artifacts/
 tmp/
-.wrangler/
-.claude/
 CLAUDE.md
-.playwright-mcp/
-data/caaspp-cache/
-# Pagefind search bundle — regenerated from docs/ HTML on every build/deploy.
-# Deployed to Cloudflare Pages directly; no need to track the binary index.
-docs/pagefind/
-
-# Google Search Console monitor (scripts/gsc_monitor.py): credentials + real
-# API output stay out of the (public) repo. The script + methodology are tracked;
-# run `npm run monitor:gsc` locally to regenerate the report/data.
-gsc-key.json
-data/gsc-data.json
-data/gsc-monitoring-report.md

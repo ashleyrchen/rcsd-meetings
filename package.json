@@ -1,54 +1,16 @@
 {
-  "name": "rcsd-meetings",
+  "name": "wvm-boarddocs",
   "version": "1.0.0",
-  "description": "Open data pipeline for RCSD board meetings",
+  "description": "BoardDocs public meeting data scraper for West Valley-Mission Community College District",
   "type": "module",
   "private": true,
   "scripts": {
-    "build": "node scripts/build-homepage.mjs && node scripts/build-meetings.mjs && node scripts/build-meetings-html.mjs && node scripts/build-district.mjs && node scripts/build-schools.mjs && node scripts/build-charters.mjs && node scripts/build-budget.mjs && node scripts/build-blog.mjs && node scripts/build-policies.mjs && node scripts/build-search.mjs && node scripts/validate-links.mjs",
-    "test:links": "node scripts/validate-links.mjs",
-    "build:search": "node scripts/build-search.mjs",
-    "search:index": "node scripts/build-search-index.mjs",
-    "build:blog": "node scripts/build-blog.mjs",
-    "build:schools": "node scripts/build-schools.mjs",
-    "build:charters": "node scripts/build-charters.mjs",
-    "build:budget": "node scripts/build-budget.mjs",
-    "build:home": "node scripts/build-homepage.mjs",
-    "build:district": "node scripts/build-district.mjs",
-    "build:policies": "node scripts/build-policies.mjs",
-    "build:data": "node scripts/build-meetings.mjs",
-    "build:html": "node scripts/build-meetings-html.mjs",
-    "scrape:boarddocs": "node scripts/scrape-boarddocs.mjs",
-    "scrape:youtube": "node scripts/scrape-youtube-index.mjs",
-    "scrape:simbli": "node scripts/scrape-simbli-agendas.mjs",
-    "scrape:policies": "node scripts/scrape-board-policies.mjs",
-    "extract:links": ".venv/bin/python3 scripts/extract-agenda-links.py",
-    "monitor:gsc": ".venv/bin/python scripts/gsc_monitor.py",
-    "map:timestamps:llm": "node scripts/map-timestamps-llm.mjs",
-    "upload": "node scripts/upload-to-r2.mjs",
-    "scrape:packets": "node scripts/scrape-board-packets.mjs",
-    "extract:sarc": "node scripts/extract-sarc.mjs",
-    "transcribe": "node scripts/transcribe-assemblyai.mjs",
-    "pipeline": "node scripts/run-pipeline.mjs"
+    "test": "npm run check",
+    "check": "node --check scripts/scrape-boarddocs.mjs && bash -n scripts/scrape-boarddocs.sh scripts/scrape-wvm-boarddocs.sh && node scripts/scrape-boarddocs.mjs --help",
+    "scrape:boarddocs": "./scripts/scrape-boarddocs.sh",
+    "scrape:wvm": "./scripts/scrape-wvm-boarddocs.sh"
   },
   "dependencies": {
-    "@anthropic-ai/sdk": "^0.104.1",
-    "assemblyai": "^4.34.5",
-    "dotenv": "^17.4.2",
-    "playwright": "^1.60.0",
     "yaml": "^2.9.0"
-  },
-  "devDependencies": {
-    "@fontsource/fraunces": "^5.2.9",
-    "@fontsource/ibm-plex-mono": "^5.2.7",
-    "@resvg/resvg-js": "^2.6.2",
-    "pagefind": "^1.5.2",
-    "satori": "^0.26.0",
-    "wrangler": "^4.100.0"
-  },
-  "//overrides": "ws: miniflare (via wrangler) pins ws@8.18.0 exactly, vulnerable to GHSA-58qx-3vcg-4xpx (fixed in 8.20.1). Remove once wrangler ships a miniflare with ws >= 8.20.1. esbuild: wrangler pins esbuild@0.27.x, vulnerable to GHSA-gv7w-rqvm-qjhr + GHSA-g7r4-m6w7-qqqr (fixed in 0.28.1); we only run `wrangler pages deploy` (no esbuild bundling), so the bump is audit-hygiene. Remove once wrangler ships esbuild >= 0.28.1.",
-  "overrides": {
-    "ws": "^8.20.1",
-    "esbuild": "^0.28.1"
   }
 }

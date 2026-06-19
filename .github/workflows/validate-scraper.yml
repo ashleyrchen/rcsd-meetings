@@ -1,45 +1,23 @@
-name: Validate Simbli Scraper
+name: Validate BoardDocs Scraper
 
 on:
   push:
-    branches:
-      - '**'
+  pull_request:
   workflow_dispatch:
 
-# Read-only diagnostic: checkout + artifact upload, no pushes or API writes.
 permissions:
   contents: read
 
 jobs:
   validate:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: 'npm'
-
-      - name: Install dependencies
-        run: npm ci || npm install
-
-      - name: Install Playwright Chromium
-        run: npx playwright install chromium --with-deps
-
-      - name: Run HTML sanitizer regression tests
-        run: node scripts/test-html-sanitizers.mjs
-
-      - name: Run Simbli Connectivity Diagnostic
-        run: node scripts/test-simbli-environment.mjs
-
-      - name: Upload Diagnostic Artifacts
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: simbli-diagnostics
-          path: test-results/
-          retention-days: 7
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - name: Validate WVM config dispatch
+        run: ./scripts/scrape-wvm-boarddocs.sh --bodies
