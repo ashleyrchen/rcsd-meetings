@@ -19,7 +19,6 @@ import { extractMemoLinks } from './lib/memo-links.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
-const DEFAULT_CONFIG = resolve(ROOT, 'config/boarddocs/wvm.yaml');
 
 // BoardDocs sits behind CloudFront, which now 403s the default Node fetch
 // User-Agent — a real browser UA is required for every request.
@@ -33,7 +32,7 @@ function printUsage() {
   console.log(`Usage: node scripts/scrape-boarddocs.mjs [options]
 
 Options:
-  --config <path>     District YAML config (default: config/boarddocs/wvm.yaml)
+  --config <path>     District YAML config (required)
   --committee <key>  Scrape one committee instead of every configured committee
   --bodies  Backfill item bodies for previously scraped meetings
   --help    Show this help`);
@@ -46,7 +45,7 @@ function parseArgs(args) {
   }
 
   const options = {
-    configPath: DEFAULT_CONFIG,
+    configPath: null,
     committeeKey: null,
     backfillBodies: false,
   };
@@ -67,6 +66,7 @@ function parseArgs(args) {
     }
   }
 
+  if (!options.configPath) throw new Error('--config is required');
   return options;
 }
 
