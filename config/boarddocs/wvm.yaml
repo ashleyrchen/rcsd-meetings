@@ -2,6 +2,11 @@ district: West Valley-Mission Community College District
 baseUrl: https://go.boarddocs.com/ca/wvm/Board.nsf
 cutoffDate: "20200317"
 
+site:
+  title: West Valley-Mission Public Meetings
+  description: Agendas, minutes, and agenda attachments for public governing meetings.
+  output: docs
+
 committees:
   board:
     name: Board of Trustees

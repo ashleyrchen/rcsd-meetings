@@ -5,6 +5,7 @@
  * For each meeting since the configured cutoff date:
  *   1. Fetch BD-GetAgenda -> parse categories + items from HTML
  *   2. For items with attachments, fetch BD-GetPublicFiles -> parse file links
+ *   3. Fetch BD-GetMinutes -> capture published meeting minutes
  *
  * Usage:
  *   node scripts/scrape-boarddocs.mjs --config config/boarddocs/wvm.yaml
@@ -26,7 +27,19 @@ const USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/
 
 // Rate limiting: delay between requests
 const DELAY_MS = 300;
+const REQUEST_CONCURRENCY = 4;
 const sleep = ms => new Promise(r => setTimeout(r, ms));
+
+async function forEachConcurrent(items, limit, callback) {
+  let next = 0;
+  const workers = Array.from({ length: Math.min(limit, items.length) }, async () => {
+    while (next < items.length) {
+      const index = next++;
+      await callback(items[index], index);
+    }
+  });
+  await Promise.all(workers);
+}
 
 function printUsage() {
   console.log(`Usage: node scripts/scrape-boarddocs.mjs [options]
@@ -35,6 +48,7 @@ Options:
   --config <path>     District YAML config (required)
   --committee <key>  Scrape one committee instead of every configured committee
   --bodies  Backfill item bodies for previously scraped meetings
+  --refresh  Re-scrape existing meetings to capture later agendas or minutes
   --help    Show this help`);
 }
 
@@ -48,12 +62,15 @@ function parseArgs(args) {
     configPath: null,
     committeeKey: null,
     backfillBodies: false,
+    refresh: false,
   };
 
   for (let i = 0; i < args.length; i++) {
     const arg = args[i];
     if (arg === '--bodies') {
       options.backfillBodies = true;
+    } else if (arg === '--refresh') {
+      options.refresh = true;
     } else if (arg === '--config' || arg === '--committee') {
       const value = args[++i];
       if (!value || value.startsWith('-')) {
@@ -116,7 +133,39 @@ async function bdPost(baseUrl, endpoint, body) {
     },
     body,
   });
+  if (!resp.ok) throw new Error(`${endpoint} returned HTTP ${resp.status}`);
   return resp.text();
+}
+
+function decodeHtmlEntities(text) {
+  const named = {
+    amp: '&', apos: "'", gt: '>', lt: '<', nbsp: ' ', quot: '"',
+  };
+  return text.replace(/&(#x[0-9a-f]+|#\d+|[a-z]+);/gi, (entity, value) => {
+    if (value[0] !== '#') return named[value.toLowerCase()] ?? entity;
+    const hex = value[1].toLowerCase() === 'x';
+    const codePoint = Number.parseInt(value.slice(hex ? 2 : 1), hex ? 16 : 10);
+    return Number.isFinite(codePoint) ? String.fromCodePoint(codePoint) : entity;
+  });
+}
+
+function htmlToText(html) {
+  let text = html
+    .replace(/<script\b[^>]*>[\s\S]*?<\/script[^>]*>/gi, ' ')
+    .replace(/<style\b[^>]*>[\s\S]*?<\/style[^>]*>/gi, ' ')
+    .replace(/<br\s*\/?>/gi, '\n')
+    .replace(/<\/(div|p|li|tr|h[1-6])\s*>/gi, '\n')
+    .replace(/<\/td\s*>/gi, '\t');
+  for (let prev = ''; prev !== text; ) {
+    prev = text;
+    text = text.replace(/<[^>]+>/g, ' ');
+  }
+  return decodeHtmlEntities(text)
+    .replace(/[ \t]+\n/g, '\n')
+    .replace(/\n[ \t]+/g, '\n')
+    .replace(/[ \t]{2,}/g, ' ')
+    .replace(/\n{3,}/g, '\n\n')
+    .trim();
 }
 
 // Pull an agenda item's body (its "public content") + embedded links from the
@@ -154,10 +203,10 @@ const itemUnique = (item) => item.unique || (item.url || '').match(/id=([A-Z0-9]
 // Fetch + attach body/memoLinks for each item that doesn't have one yet.
 // Idempotent: skips items that already carry a `body`, so --bodies is resumable.
 async function fetchItemBodies(items, baseUrl, committeeId, delay = 150) {
-  for (const item of items) {
-    if (item.body !== undefined) continue;
+  await forEachConcurrent(items, REQUEST_CONCURRENCY, async item => {
+    if (item.body !== undefined) return;
     const uid = itemUnique(item);
-    if (!uid) { item.body = ''; item.memoLinks = []; continue; }
+    if (!uid) { item.body = ''; item.memoLinks = []; return; }
     await sleep(delay);
     try {
       const html = await bdPost(baseUrl, 'BD-GetAgendaItem', `id=${uid}&current_committee_id=${committeeId}`);
@@ -168,12 +217,32 @@ async function fetchItemBodies(items, baseUrl, committeeId, delay = 150) {
       item.body = '';
       item.memoLinks = [];
     }
-  }
+  });
 }
 
 async function fetchMeetingsList(baseUrl, committeeId) {
   const text = await bdPost(baseUrl, 'BD-GetMeetingsList', `current_committee_id=${committeeId}`);
   return JSON.parse(text);
+}
+
+async function fetchMeetingDetails(baseUrl, meetingId, committeeId) {
+  const html = await bdPost(baseUrl, 'BD-GetMeeting', `id=${meetingId}&current_committee_id=${committeeId}`);
+  const descriptionHtml = html.match(/<div class="meeting-description">([\s\S]*?)<\/div>/i)?.[1] || '';
+  return {
+    description: htmlToText(descriptionHtml),
+    agendaAvailable: html.includes('id="btn-view-agenda"'),
+    agendaPdfAvailable: html.includes('id="btn-download-agenda-pdf"'),
+  };
+}
+
+async function fetchMinutes(baseUrl, meetingId, committeeId) {
+  const html = await bdPost(baseUrl, 'BD-GetMinutes', `id=${meetingId}&current_committee_id=${committeeId}`);
+  const text = htmlToText(html);
+  return {
+    available: Boolean(text),
+    text,
+    sourceUrl: `${baseUrl}/goto?open&id=${meetingId}`,
+  };
 }
 
 /**
@@ -276,7 +345,7 @@ function classifyMeetingType(name) {
   return 'Board Meeting';
 }
 
-async function scrapeCommittee(config, committee, backfillBodies) {
+async function scrapeCommittee(config, committee, backfillBodies, refresh) {
   // Load existing scraped data to skip already-scraped meetings
   const outPath = committee.outputPath;
   mkdirSync(dirname(outPath), { recursive: true });
@@ -318,10 +387,11 @@ async function scrapeCommittee(config, committee, backfillBodies) {
     .sort((a, b) => b.numberdate.localeCompare(a.numberdate));
   console.log(`Meetings since ${config.cutoffDate}: ${meetings.length}`);
 
-  const toScrape = meetings.filter(m => !existingKeys.has(m.unique));
+  const toScrape = refresh ? meetings : meetings.filter(m => !existingKeys.has(m.unique));
   console.log(`Already scraped: ${meetings.length - toScrape.length}, to scrape: ${toScrape.length}`);
 
-  const results = [...existing];
+  const scrapeKeys = new Set(toScrape.map(m => m.unique));
+  const results = existing.filter(m => !scrapeKeys.has(m.unique));
   let totalItems = 0;
   let totalAttachments = 0;
   let attachmentFetches = 0;
@@ -333,6 +403,9 @@ async function scrapeCommittee(config, committee, backfillBodies) {
     console.log(`\n[${i + 1}/${toScrape.length}] ${date} — ${mtg.name.slice(0, 60)}`);
 
     await sleep(DELAY_MS);
+    const meetingDetails = await fetchMeetingDetails(config.baseUrl, mtg.unique, committee.id);
+
+    await sleep(DELAY_MS);
     const agendaHtml = await bdPost(config.baseUrl, 'BD-GetAgenda', `id=${mtg.unique}&current_committee_id=${committee.id}`);
     const { categories, items } = parseAgendaHtml(agendaHtml, config.baseUrl);
     console.log(`  ${categories.length} categories, ${items.length} items`);
@@ -340,28 +413,49 @@ async function scrapeCommittee(config, committee, backfillBodies) {
     const itemsWithAttachments = items.filter(it => it.hasAttachment);
     if (itemsWithAttachments.length > 0) {
       console.log(`  Fetching attachments for ${itemsWithAttachments.length} items...`);
-      for (const item of itemsWithAttachments) {
+      await forEachConcurrent(itemsWithAttachments, REQUEST_CONCURRENCY, async item => {
         await sleep(DELAY_MS);
         const filesHtml = await bdPost(config.baseUrl, 'BD-GetPublicFiles', `id=${item.unique}&current_committee_id=${committee.id}`);
         item.attachments = parsePublicFilesHtml(filesHtml);
-        attachmentFetches++;
-        totalAttachments += item.attachments.length;
-      }
+      });
+      attachmentFetches += itemsWithAttachments.length;
+      totalAttachments += itemsWithAttachments.reduce((sum, item) => sum + item.attachments.length, 0);
     }
 
     // Fetch each item's body (public content) + embedded links.
     console.log(`  Fetching item bodies for ${items.length} items...`);
     await fetchItemBodies(items, config.baseUrl, committee.id, DELAY_MS);
 
+    await sleep(DELAY_MS);
+    const minutes = await fetchMinutes(config.baseUrl, mtg.unique, committee.id);
+    console.log(`  Minutes: ${minutes.available ? 'published' : 'not published'}`);
+
     totalItems += items.length;
 
+    const minutesAttachments = items
+      .filter(item => item.actionType.toLowerCase() === 'minutes' || /\bminutes\b/i.test(item.title))
+      .flatMap(item => item.attachments.map(attachment => ({
+        ...attachment,
+        itemOrder: item.order,
+        itemTitle: item.title,
+        itemUrl: item.url,
+      })));
+
     results.push({
+      committeeKey: committee.key,
+      committeeName: committee.name,
       date,
       name: mtg.name,
       type,
+      description: meetingDetails.description,
+      agendaAvailable: meetingDetails.agendaAvailable,
+      agendaPdfAvailable: meetingDetails.agendaPdfAvailable,
       unique: mtg.unique,
       unid: mtg.unid,
       url: config.baseUrl + `/goto?open&id=${mtg.unique}`,
+      scrapedAt: new Date().toISOString(),
+      minutes,
+      minutesAttachments,
       categories: categories.map(c => ({ order: c.order, name: c.name })),
       items: items.map(it => ({
         order: it.order,
@@ -374,6 +468,10 @@ async function scrapeCommittee(config, committee, backfillBodies) {
         memoLinks: it.memoLinks || [],
       })),
     });
+
+    // Checkpoint after each meeting so long archive runs can resume safely.
+    results.sort((a, b) => b.date.localeCompare(a.date));
+    writeFileSync(outPath, JSON.stringify(results, null, 2));
   }
 
   // Sort by date descending and write
@@ -385,7 +483,7 @@ async function scrapeCommittee(config, committee, backfillBodies) {
 }
 
 async function main() {
-  const { configPath, committeeKey, backfillBodies } = parseArgs(process.argv.slice(2));
+  const { configPath, committeeKey, backfillBodies, refresh } = parseArgs(process.argv.slice(2));
   const config = loadConfig(configPath);
   let committees = Object.values(config.committees);
 
@@ -400,7 +498,7 @@ async function main() {
   console.log(`District: ${config.district}`);
   console.log(`Config: ${configPath}`);
   for (const committee of committees) {
-    await scrapeCommittee(config, committee, backfillBodies);
+    await scrapeCommittee(config, committee, backfillBodies, refresh);
   }
 }
 
