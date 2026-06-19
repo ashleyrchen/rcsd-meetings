@@ -13,6 +13,7 @@
     "scrape:wvm": "./scripts/scrape-wvm-boarddocs.sh"
   },
   "dependencies": {
+    "pdfjs-dist": "^6.0.227",
     "yaml": "^2.9.0"
   }
 }
