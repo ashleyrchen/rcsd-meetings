@@ -15,12 +15,10 @@ body:
     attributes:
       label: What's wrong?
       options:
-        - Wrong or missing agenda item
-        - Incorrect video timestamp
-        - Broken link (Simbli, BoardDocs, or YouTube)
+        - Broken BoardDocs link
         - Missing meeting
         - Wrong meeting type or date
-        - Missing or incorrect attachment
+        - Missing or incorrect agenda item or attachment
         - Other
     validations:
       required: true

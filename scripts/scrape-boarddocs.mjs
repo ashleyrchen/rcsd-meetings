@@ -11,7 +11,7 @@
  *   node scripts/scrape-boarddocs.mjs --config config/boarddocs/wvm.yaml --committee cboc
  */
 
-import { readFileSync, writeFileSync, existsSync } from 'fs';
+import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'fs';
 import { resolve, dirname, sep } from 'path';
 import { fileURLToPath } from 'url';
 import { parse as parseYaml } from 'yaml';
@@ -279,6 +279,7 @@ function classifyMeetingType(name) {
 async function scrapeCommittee(config, committee, backfillBodies) {
   // Load existing scraped data to skip already-scraped meetings
   const outPath = committee.outputPath;
+  mkdirSync(dirname(outPath), { recursive: true });
   console.log(`\nCommittee: ${committee.name} (${committee.key})`);
   console.log(`Output: ${outPath}`);
   let existing = [];

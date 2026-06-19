@@ -1,24 +1,19 @@
-# AGENTS.md — rcsd.info
+# AGENTS.md
 
-Orientation for AI coding agents working in this repository. Human-facing project docs live in `README.md`; operator-specific hosting config lives in `CLAUDE.md` (gitignored, so not visible to every agent — this file is the committed, tool-agnostic equivalent).
+Guidance for coding agents working in this repository.
 
-## What this is
+## Scope
 
-`rcsd.info` is a static, bilingual data site for the Redwood City School District (RCSD), a TK-8 public district. Node.js scripts in `scripts/` read JSON from `data/`, pull large/binary artifacts from `artifacts/` (hosted on Cloudflare R2), and generate the static site in `docs/`.
+This project scrapes public BoardDocs meeting data using district-specific YAML configuration. The active configuration is `config/boarddocs/wvm.yaml` for the West Valley-Mission Community College District Board of Trustees and Citizens' Bond Oversight Committee.
 
-## Before answering data questions — read the skill
-
-All RCSD data — schools, 190+ board meetings, demographics, special education, charters, **district property holdings**, budgets, calendars — is indexed as small JSON files in `data/`.
-
-**Read [`plugin/skills/rcsd-data/SKILL.md`](plugin/skills/rcsd-data/SKILL.md) first.** It is the canonical map of `data/`: which file answers which question, the school-slug table, query strategy, and data caveats. Field-by-field schemas are in [`plugin/skills/rcsd-data/references/data-schema.md`](plugin/skills/rcsd-data/references/data-schema.md).
-
-Do not grep `data/` blind, and do not assume a fact isn't recorded — check the skill's Data File Inventory first. Example: `data/properties.json` indexes every district-owned or district-leased property that is *not* an operating school (admin buildings, leased-out former campuses, storage), keyed by address.
-
-The skill ships as a plugin (`plugin/`) and does not auto-load in a plain Claude Code session, so open it explicitly.
+The current project does not use Simbli, YouTube, recorded meeting media, transcription, a static website, or RCSD-specific datasets.
 
 ## Conventions
 
-- **Provenance is non-negotiable** — Every bit of data pulled from external sources must have a link back to the official source along with when it was checked/scraped. This applies to **both** the user-facing plain English/Spanish templates (HTML) and the machine-readable information (`_metadata` block in JSON files containing `source`, `scrapedAt`, and `method`). See `README.md`.
-- **Bilingual by default** — every user-visible artifact ships English *and* Spanish (`/schools/` + `/escuelas/`, OG cards, PDFs, etc.).
-- **Adding data?** Follow the Dataset Expansion Checklist in `CLAUDE.md` — it requires updating the skill's `SKILL.md` and `data-schema.md` so new data stays discoverable. Skipping that step is what makes the skill go stale.
-- **Git** — never squash merge; use merge commits to preserve history.
+- Keep `scripts/scrape-boarddocs.mjs` district-neutral. Put portal URLs, committee IDs, cutoff dates, and output paths in YAML.
+- Add a thin district wrapper when a convenient no-argument command is useful.
+- Preserve direct links to official BoardDocs sources in generated records.
+- Treat generated meeting data as public records, but verify consequential claims against the official source.
+- Use ES modules, two-space indentation, and single quotes.
+- Run `npm test` before committing.
+- Never squash merge; preserve history with merge commits.

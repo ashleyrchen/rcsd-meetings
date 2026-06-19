@@ -6,7 +6,7 @@ body:
     id: script
     attributes:
       label: Which script?
-      placeholder: "build-meetings.mjs"
+      placeholder: "scrape-boarddocs.mjs"
     validations:
       required: true
   - type: textarea

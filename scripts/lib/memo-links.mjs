@@ -1,27 +1,26 @@
 /**
  * Shared extractor for URLs embedded in board agenda memos.
  *
- * Simbli agenda items carry a `memo` (an object of fields like Recommendation /
- * Rationale / Background, each an HTML or text string). Staff frequently paste
+ * BoardDocs agenda items can contain HTML or text fields. Staff frequently paste
  * links into that prose — public-comment Google Forms, and occasionally an
  * actual document hosted off the board portal (e.g. the adopted Facilities
  * Master Plan, a county report). Those links are otherwise invisible: they're
  * not board-packet attachments, so nothing surfaces or indexes them.
  *
  * `extractMemoLinks(memo)` pulls every embedded URL out and classifies it by
- * host so callers can use each kind appropriately (see SEARCH.md):
+ * host so callers can use each kind appropriately:
  *   - document : index it in site search (title-only) and link straight to it
  *   - form     : a public-comment sign-up form — surface on the meeting page,
  *                NOT in search (they're recurring boilerplate, ~2 per meeting)
  *   - video    : an external video reference
  *   - other    : any other reference link
- * Portal/known hosts (BoardDocs, Simbli, our own R2/site, Zoom) are dropped —
+ * Portal and known navigation hosts are dropped —
  * those are navigation or already-captured attachments, not embedded refs.
  */
 
 // Hosts that are navigation, already-captured, or share-button chrome —
 // never "embedded refs". (Social hosts appear in BoardDocs item share buttons.)
-const PORTAL = /(boarddocs\.com|simbli\.eboardsolutions\.com|data\.rcsd\.info|zoom\.us|\/\/(www\.)?rcsd\.info(\/|$)|twitter\.com|x\.com|facebook\.com|\/sharer|\/intent\/|addtoany)/i;
+const PORTAL = /(boarddocs\.com|zoom\.us|twitter\.com|x\.com|facebook\.com|\/sharer|\/intent\/|addtoany)/i;
 
 const FORM_HOST = /(forms\.gle|docs\.google\.com\/forms|google\.com\/forms|surveymonkey|jotform)/i;
 const VIDEO_HOST = /(youtube\.com|youtu\.be|vimeo\.com)/i;
