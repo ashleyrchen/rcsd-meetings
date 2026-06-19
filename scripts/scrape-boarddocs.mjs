@@ -1,25 +1,24 @@
 #!/usr/bin/env node
 /**
- * Scrape BoardDocs API for RCSD meeting agendas and attachments.
+ * Scrape BoardDocs meeting agendas and attachments using a district config.
  *
- * For each meeting in the past 2 years:
+ * For each meeting since the configured cutoff date:
  *   1. Fetch BD-GetAgenda -> parse categories + items from HTML
  *   2. For items with attachments, fetch BD-GetPublicFiles -> parse file links
  *
- * Outputs: data/boarddocs-scraped.json
- *
- * Usage: node scripts/scrape-boarddocs.mjs
+ * Usage:
+ *   node scripts/scrape-boarddocs.mjs --config config/boarddocs/wvm.yaml
+ *   node scripts/scrape-boarddocs.mjs --config config/boarddocs/wvm.yaml --committee cboc
  */
 
 import { readFileSync, writeFileSync, existsSync } from 'fs';
-import { resolve, dirname } from 'path';
+import { resolve, dirname, sep } from 'path';
 import { fileURLToPath } from 'url';
+import { parse as parseYaml } from 'yaml';
 import { extractMemoLinks } from './lib/memo-links.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const BASE_URL = 'https://go.boarddocs.com/ca/redwood/Board.nsf';
-const COMMITTEE_ID = 'A4EP6J588C05';
-const CUTOFF_DATE = '20200401'; // Back to first YouTube board meeting (April 2020)
+const ROOT = resolve(__dirname, '..');
 
 // BoardDocs sits behind CloudFront, which now 403s the default Node fetch
 // User-Agent — a real browser UA is required for every request.
@@ -29,11 +28,87 @@ const USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/
 const DELAY_MS = 300;
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
-// --bodies: backfill item bodies (BD-GetAgendaItem) for already-scraped meetings.
-const BACKFILL_BODIES = process.argv.includes('--bodies');
+function printUsage() {
+  console.log(`Usage: node scripts/scrape-boarddocs.mjs [options]
 
-async function bdPost(endpoint, body) {
-  const resp = await fetch(`${BASE_URL}/${endpoint}`, {
+Options:
+  --config <path>     District YAML config (required)
+  --committee <key>  Scrape one committee instead of every configured committee
+  --bodies  Backfill item bodies for previously scraped meetings
+  --help    Show this help`);
+}
+
+function parseArgs(args) {
+  if (args.includes('--help') || args.includes('-h')) {
+    printUsage();
+    process.exit(0);
+  }
+
+  const options = {
+    configPath: null,
+    committeeKey: null,
+    backfillBodies: false,
+  };
+
+  for (let i = 0; i < args.length; i++) {
+    const arg = args[i];
+    if (arg === '--bodies') {
+      options.backfillBodies = true;
+    } else if (arg === '--config' || arg === '--committee') {
+      const value = args[++i];
+      if (!value || value.startsWith('-')) {
+        throw new Error(`${arg} requires a value`);
+      }
+      if (arg === '--config') options.configPath = resolve(process.cwd(), value);
+      else options.committeeKey = value;
+    } else {
+      throw new Error(`Unknown argument: ${arg}`);
+    }
+  }
+
+  if (!options.configPath) throw new Error('--config is required');
+  return options;
+}
+
+function loadConfig(configPath) {
+  if (!existsSync(configPath)) throw new Error(`Config file not found: ${configPath}`);
+
+  const config = parseYaml(readFileSync(configPath, 'utf8'));
+  if (!config || typeof config !== 'object') throw new Error('Config must be a YAML object');
+  if (typeof config.district !== 'string' || !config.district.trim()) throw new Error('Config requires district');
+  if (typeof config.baseUrl !== 'string' || !/^https:\/\//.test(config.baseUrl)) {
+    throw new Error('Config requires an HTTPS baseUrl');
+  }
+  config.baseUrl = config.baseUrl.replace(/\/$/, '');
+  if (typeof config.cutoffDate !== 'string' || !/^\d{8}$/.test(config.cutoffDate)) {
+    throw new Error('Config cutoffDate must be a quoted YYYYMMDD string');
+  }
+  if (!config.committees || typeof config.committees !== 'object' || Array.isArray(config.committees)) {
+    throw new Error('Config requires a committees mapping');
+  }
+
+  const committees = Object.entries(config.committees);
+  if (!committees.length) throw new Error('Config requires at least one committee');
+  for (const [key, committee] of committees) {
+    if (!committee || typeof committee !== 'object') throw new Error(`Committee ${key} must be an object`);
+    for (const field of ['id', 'name', 'output']) {
+      if (typeof committee[field] !== 'string' || !committee[field].trim()) {
+        throw new Error(`Committee ${key} requires ${field}`);
+      }
+    }
+    const outputPath = resolve(ROOT, committee.output);
+    if (!outputPath.startsWith(`${ROOT}${sep}`)) {
+      throw new Error(`Committee ${key} output must be inside the repository`);
+    }
+    committee.key = key;
+    committee.outputPath = outputPath;
+  }
+
+  return config;
+}
+
+async function bdPost(baseUrl, endpoint, body) {
+  const resp = await fetch(`${baseUrl}/${endpoint}`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
@@ -78,14 +153,14 @@ const itemUnique = (item) => item.unique || (item.url || '').match(/id=([A-Z0-9]
 
 // Fetch + attach body/memoLinks for each item that doesn't have one yet.
 // Idempotent: skips items that already carry a `body`, so --bodies is resumable.
-async function fetchItemBodies(items, delay = 150) {
+async function fetchItemBodies(items, baseUrl, committeeId, delay = 150) {
   for (const item of items) {
     if (item.body !== undefined) continue;
     const uid = itemUnique(item);
     if (!uid) { item.body = ''; item.memoLinks = []; continue; }
     await sleep(delay);
     try {
-      const html = await bdPost('BD-GetAgendaItem', `id=${uid}&current_committee_id=${COMMITTEE_ID}`);
+      const html = await bdPost(baseUrl, 'BD-GetAgendaItem', `id=${uid}&current_committee_id=${committeeId}`);
       const { body, memoLinks } = parseItemDetail(html);
       item.body = body;
       item.memoLinks = memoLinks;
@@ -96,15 +171,15 @@ async function fetchItemBodies(items, delay = 150) {
   }
 }
 
-async function fetchMeetingsList() {
-  const text = await bdPost('BD-GetMeetingsList', `current_committee_id=${COMMITTEE_ID}`);
+async function fetchMeetingsList(baseUrl, committeeId) {
+  const text = await bdPost(baseUrl, 'BD-GetMeetingsList', `current_committee_id=${committeeId}`);
   return JSON.parse(text);
 }
 
 /**
  * Parse BD-GetAgenda HTML into structured categories and items.
  */
-function parseAgendaHtml(html) {
+function parseAgendaHtml(html, baseUrl) {
   const categories = [];
   const items = [];
 
@@ -159,7 +234,7 @@ function parseAgendaHtml(html) {
       actionType,
       hasAttachment,
       categoryName: category ? category.name : '',
-      url: `https://go.boarddocs.com/ca/redwood/Board.nsf/goto?open&id=${unique}`,
+      url: baseUrl + `/goto?open&id=${unique}`,
       attachments: [],
     });
   }
@@ -201,9 +276,11 @@ function classifyMeetingType(name) {
   return 'Board Meeting';
 }
 
-async function main() {
+async function scrapeCommittee(config, committee, backfillBodies) {
   // Load existing scraped data to skip already-scraped meetings
-  const outPath = resolve(__dirname, '../data/boarddocs-scraped.json');
+  const outPath = committee.outputPath;
+  console.log(`\nCommittee: ${committee.name} (${committee.key})`);
+  console.log(`Output: ${outPath}`);
   let existing = [];
   if (existsSync(outPath)) {
     existing = JSON.parse(readFileSync(outPath, 'utf-8'));
@@ -213,12 +290,12 @@ async function main() {
   // --bodies: backfill item bodies + memoLinks into already-scraped meetings,
   // then exit. Resumable — writes after each meeting and skips items that
   // already have a `body`, so re-running picks up where it left off.
-  if (BACKFILL_BODIES) {
+  if (backfillBodies) {
     const todo = existing.filter(m => (m.items || []).some(it => it.body === undefined));
     console.log(`Backfilling bodies: ${todo.length} meetings need item bodies`);
     let done = 0;
     for (const mtg of todo) {
-      await fetchItemBodies(mtg.items || []);
+      await fetchItemBodies(mtg.items || [], config.baseUrl, committee.id);
       done++;
       const docs = (mtg.items || []).reduce((s, it) => s + (it.memoLinks || []).filter(l => l.kind === 'document').length, 0);
       console.log(`  [${done}/${todo.length}] ${mtg.date} — ${(mtg.items || []).length} items${docs ? `, ${docs} doc link(s)` : ''}`);
@@ -232,13 +309,13 @@ async function main() {
   const existingKeys = new Set(existing.map(m => m.unique || `${m.date}|${m.name}`));
 
   console.log('Fetching meetings list...');
-  const allMeetings = await fetchMeetingsList();
+  const allMeetings = await fetchMeetingsList(config.baseUrl, committee.id);
   console.log(`Total meetings in BoardDocs: ${allMeetings.length}`);
 
   const meetings = allMeetings
-    .filter(m => m.numberdate && m.numberdate >= CUTOFF_DATE)
+    .filter(m => m.numberdate && m.numberdate >= config.cutoffDate)
     .sort((a, b) => b.numberdate.localeCompare(a.numberdate));
-  console.log(`Meetings since ${CUTOFF_DATE}: ${meetings.length}`);
+  console.log(`Meetings since ${config.cutoffDate}: ${meetings.length}`);
 
   const toScrape = meetings.filter(m => !existingKeys.has(m.unique));
   console.log(`Already scraped: ${meetings.length - toScrape.length}, to scrape: ${toScrape.length}`);
@@ -255,8 +332,8 @@ async function main() {
     console.log(`\n[${i + 1}/${toScrape.length}] ${date} — ${mtg.name.slice(0, 60)}`);
 
     await sleep(DELAY_MS);
-    const agendaHtml = await bdPost('BD-GetAgenda', `id=${mtg.unique}&current_committee_id=${COMMITTEE_ID}`);
-    const { categories, items } = parseAgendaHtml(agendaHtml);
+    const agendaHtml = await bdPost(config.baseUrl, 'BD-GetAgenda', `id=${mtg.unique}&current_committee_id=${committee.id}`);
+    const { categories, items } = parseAgendaHtml(agendaHtml, config.baseUrl);
     console.log(`  ${categories.length} categories, ${items.length} items`);
 
     const itemsWithAttachments = items.filter(it => it.hasAttachment);
@@ -264,7 +341,7 @@ async function main() {
       console.log(`  Fetching attachments for ${itemsWithAttachments.length} items...`);
       for (const item of itemsWithAttachments) {
         await sleep(DELAY_MS);
-        const filesHtml = await bdPost('BD-GetPublicFiles', `id=${item.unique}&current_committee_id=${COMMITTEE_ID}`);
+        const filesHtml = await bdPost(config.baseUrl, 'BD-GetPublicFiles', `id=${item.unique}&current_committee_id=${committee.id}`);
         item.attachments = parsePublicFilesHtml(filesHtml);
         attachmentFetches++;
         totalAttachments += item.attachments.length;
@@ -273,7 +350,7 @@ async function main() {
 
     // Fetch each item's body (public content) + embedded links.
     console.log(`  Fetching item bodies for ${items.length} items...`);
-    await fetchItemBodies(items, DELAY_MS);
+    await fetchItemBodies(items, config.baseUrl, committee.id, DELAY_MS);
 
     totalItems += items.length;
 
@@ -283,7 +360,7 @@ async function main() {
       type,
       unique: mtg.unique,
       unid: mtg.unid,
-      url: `https://go.boarddocs.com/ca/redwood/Board.nsf/goto?open&id=${mtg.unique}`,
+      url: config.baseUrl + `/goto?open&id=${mtg.unique}`,
       categories: categories.map(c => ({ order: c.order, name: c.name })),
       items: items.map(it => ({
         order: it.order,
@@ -304,6 +381,26 @@ async function main() {
   console.log(`\nDone! Wrote ${outPath}`);
   console.log(`  ${results.length} meetings, ${totalItems} agenda items, ${totalAttachments} attachments`);
   console.log(`  ${attachmentFetches} attachment API calls made`);
+}
+
+async function main() {
+  const { configPath, committeeKey, backfillBodies } = parseArgs(process.argv.slice(2));
+  const config = loadConfig(configPath);
+  let committees = Object.values(config.committees);
+
+  if (committeeKey) {
+    const committee = config.committees[committeeKey];
+    if (!committee) {
+      throw new Error(`Unknown committee "${committeeKey}". Configured committees: ${Object.keys(config.committees).join(', ')}`);
+    }
+    committees = [committee];
+  }
+
+  console.log(`District: ${config.district}`);
+  console.log(`Config: ${configPath}`);
+  for (const committee of committees) {
+    await scrapeCommittee(config, committee, backfillBodies);
+  }
 }
 
 main().catch(err => {

@@ -1,0 +1,13 @@
+district: West Valley-Mission Community College District
+baseUrl: https://go.boarddocs.com/ca/wvm/Board.nsf
+cutoffDate: "20200317"
+
+committees:
+  board:
+    name: Board of Trustees
+    id: A4EP6J588C05
+    output: data/wvm-board-of-trustees-boarddocs.json
+  cboc:
+    name: Citizens' Bond Oversight Committee
+    id: AXGUFA70206A
+    output: data/wvm-cboc-boarddocs.json

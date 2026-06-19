@@ -304,7 +304,7 @@ npx playwright install chromium
 
 This pipeline can be adapted for other California school districts that use BoardDocs or Simbli:
 
-1. **BoardDocs:** Change `COMMITTEE_ID` in `scrape-boarddocs.mjs`
+1. **BoardDocs:** Add a YAML file under `config/boarddocs/`, then call `scripts/scrape-boarddocs.sh --config <path>` from a district-specific wrapper
 2. **Simbli:** Change the `S=` school ID in URL patterns
 3. **YouTube:** Change `CHANNEL_URL` in `scrape-youtube-index.mjs`
 4. **Schools:** Replace `data/schools.json` with your district's school data
