@@ -6,11 +6,12 @@
   "private": true,
   "scripts": {
     "test": "npm run check",
-    "check": "node --check scripts/scrape-boarddocs.mjs && node --check scripts/build-site.mjs && bash -n scripts/scrape-boarddocs.sh scripts/scrape-wvm-boarddocs.sh && node scripts/scrape-boarddocs.mjs --help",
+    "check": "node --check scripts/scrape-boarddocs.mjs && node --check scripts/scrape-election-guide.mjs && node --check scripts/build-site.mjs && bash -n scripts/scrape-boarddocs.sh scripts/scrape-wvm-boarddocs.sh && node scripts/scrape-boarddocs.mjs --help",
     "build:site": "node scripts/build-site.mjs --config config/boarddocs/wvm.yaml",
     "refresh": "npm run scrape:wvm -- --refresh && npm run build:site",
     "scrape:boarddocs": "./scripts/scrape-boarddocs.sh",
     "scrape:wvm": "./scripts/scrape-wvm-boarddocs.sh",
+    "scrape:voter-guide": "node scripts/scrape-election-guide.mjs --config config/boarddocs/wvm.yaml --source measure-w-voter-guide",
     "convert:pages": "node scripts/html-to-markdown.mjs measure-w-records"
   },
   "dependencies": {
