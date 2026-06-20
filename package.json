@@ -10,10 +10,15 @@
     "build:site": "node scripts/build-site.mjs --config config/boarddocs/wvm.yaml",
     "refresh": "npm run scrape:wvm -- --refresh && npm run build:site",
     "scrape:boarddocs": "./scripts/scrape-boarddocs.sh",
-    "scrape:wvm": "./scripts/scrape-wvm-boarddocs.sh"
+    "scrape:wvm": "./scripts/scrape-wvm-boarddocs.sh",
+    "convert:pages": "node scripts/html-to-markdown.mjs measure-w-records"
   },
   "dependencies": {
     "pdfjs-dist": "^6.0.227",
     "yaml": "^2.9.0"
+  },
+  "devDependencies": {
+    "jsdom": "^29.1.1",
+    "turndown": "^7.2.4"
   }
 }
