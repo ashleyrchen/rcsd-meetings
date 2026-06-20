@@ -240,7 +240,7 @@ function layout({ title, description, body, prefix = '', active = '' }) {
   </header>
   <main id="main" class="shell">${body}</main>
   <footer><div class="shell">
-    <p class="disclaimer"><strong>Last updated ${BUILD_DATE}.</strong> This is an independent open-data project by a private citizen — not an official publication of the West Valley-Mission Community College District. Pages and figures are compiled and generated with the assistance of AI and may contain errors or omissions. Use at your own discretion and always verify against the official source before relying on any information.</p>
+    <p class="disclaimer"><strong>Last updated ${BUILD_DATE}.</strong> This is an independent open-data project — not an official publication of the West Valley-Mission Community College District. Pages and figures are compiled and generated with the assistance of AI and may contain errors or omissions. Use at your own discretion and always verify against the official source before relying on any information.</p>
   </div></footer>
   <script src="${prefix}assets/site.js?v=${ASSET_VERSION}"></script>
 </body>
