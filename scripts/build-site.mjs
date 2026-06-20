@@ -7,6 +7,10 @@ import { parse as parseYaml } from 'yaml';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 
+const BUILD_DATE = new Intl.DateTimeFormat('en-US', {
+  year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC',
+}).format(new Date());
+
 function parseArgs(args) {
   const index = args.indexOf('--config');
   if (index < 0 || !args[index + 1]) throw new Error('--config <path> is required');
@@ -48,6 +52,7 @@ function sourceLink(href, label) {
 function nav(prefix, active = '') {
   const entries = [
     ['home', `${prefix}index.html`, 'Home'],
+    ['bond-spending', `${prefix}bond-spending/index.html`, 'Bond spending'],
     ['search', `${prefix}search/index.html`, 'Search'],
     ['board', `${prefix}board/index.html`, 'Board of Trustees'],
     ['cboc', `${prefix}cboc/index.html`, 'CBOC'],
@@ -55,6 +60,65 @@ function nav(prefix, active = '') {
     ['attachments', `${prefix}attachments/index.html`, 'Attachments'],
   ];
   return entries.map(([key, href, label]) => link(href, label, active === key ? 'active' : '')).join('');
+}
+
+function formatMoney(value) {
+  return new Intl.NumberFormat('en-US', {
+    style: 'currency', currency: 'USD', maximumFractionDigits: 0,
+  }).format(value);
+}
+
+function formatCompactMoney(value) {
+  return new Intl.NumberFormat('en-US', {
+    style: 'currency', currency: 'USD', notation: 'compact', maximumFractionDigits: 1,
+  }).format(value);
+}
+
+function loadBondExpenditures(config) {
+  if (!config.site.bondExpenditures) return null;
+  const file = resolve(ROOT, config.site.bondExpenditures);
+  const data = JSON.parse(readFileSync(file, 'utf8'));
+  const rows = [...(data.fundingSources || []), ...(data.locations || [])];
+  for (const key of ['budget', 'expenditures', 'encumbrances', 'remaining']) {
+    if (!Number.isFinite(data.totals?.[key]) || rows.some(row => !Number.isFinite(row[key]))) {
+      throw new Error(`${relative(ROOT, file)} requires numeric ${key} values`);
+    }
+  }
+  if (!data.source?.url || !data.reportingPeriod) {
+    throw new Error(`${relative(ROOT, file)} requires source.url and reportingPeriod`);
+  }
+  return data;
+}
+
+function spendingBar(row) {
+  const width = value => row.budget ? Math.max(0, value / row.budget * 100) : 0;
+  return `<div class="spending-chart-row">
+    <div class="spending-chart-label"><strong>${escapeHtml(row.name)}</strong><span>${formatCompactMoney(row.budget)} budget</span></div>
+    <div class="spending-bar" role="img" aria-label="${escapeHtml(row.name)}: ${formatMoney(row.expenditures)} expended, ${formatMoney(row.encumbrances)} encumbered, and ${formatMoney(row.remaining)} remaining of ${formatMoney(row.budget)}">
+      <span class="bar-expended" style="width:${width(row.expenditures).toFixed(4)}%"></span><span class="bar-encumbered" style="width:${width(row.encumbrances).toFixed(4)}%"></span><span class="bar-remaining" style="width:${width(row.remaining).toFixed(4)}%"></span>
+    </div>
+    <div class="spending-chart-value">${row.budget ? (row.expenditures / row.budget * 100).toFixed(1) : '0.0'}% expended</div>
+  </div>`;
+}
+
+function spendingTable(rows, label) {
+  const body = rows.map(row => `<tr><th scope="row">${escapeHtml(row.name)}</th><td>${formatMoney(row.budget)}</td><td>${formatMoney(row.expenditures)}</td><td>${formatMoney(row.encumbrances)}</td><td>${formatMoney(row.remaining)}</td></tr>`).join('');
+  return `<div class="table-scroll"><table class="spending-table"><caption>${escapeHtml(label)}</caption><thead><tr><th scope="col">Name</th><th scope="col">Budget</th><th scope="col">Expenditures</th><th scope="col">Encumbrances</th><th scope="col">Remaining</th></tr></thead><tbody>${body}</tbody></table></div>`;
+}
+
+function renderBondSpendingPage(config, data) {
+  const totals = data.totals;
+  const committed = totals.expenditures + totals.encumbrances;
+  const legend = `<div class="spending-legend" aria-label="Chart legend"><span><i class="legend-expended"></i>Expenditures</span><span><i class="legend-encumbered"></i>Encumbrances</span><span><i class="legend-remaining"></i>Remaining</span></div>`;
+  const notes = (data.notes || []).map(note => `<li>${escapeHtml(note)}</li>`).join('');
+  const body = `<div class="breadcrumbs">${link('../index.html', 'Home')} / Bond spending</div>
+    <section class="hero compact"><div class="eyebrow">Measure C and Measure W</div><h1>${escapeHtml(data.title || 'Bond spending')}</h1><p class="lede">A snapshot of the district's reported capital-program expenditures, commitments, and remaining budgets.</p><p class="report-meta"><strong>${escapeHtml(data.reportingPeriod)}</strong> · ${escapeHtml(data.status || '')} report published ${escapeHtml(data.published || 'date unavailable')}</p><p>${sourceLink(data.source.url, `Open official ${data.source.name || 'source report'}`)}</p></section>
+    <div class="spending-stats"><div><span>Total program budget</span><strong>${formatCompactMoney(totals.budget)}</strong><small>Includes bond and co-funding sources</small></div><div><span>Paid and accrued</span><strong>${formatCompactMoney(totals.expenditures)}</strong><small>${(totals.expenditures / totals.budget * 100).toFixed(1)}% of budget</small></div><div><span>Committed</span><strong>${formatCompactMoney(committed)}</strong><small>Expenditures plus encumbrances</small></div><div><span>Remaining</span><strong>${formatCompactMoney(totals.remaining)}</strong><small>${(totals.remaining / totals.budget * 100).toFixed(1)}% of budget</small></div></div>
+    <p class="notice"><strong>Snapshot, not live accounting.</strong> These figures were transcribed from a district ${escapeHtml((data.status || '').toLowerCase())} report. Verify consequential uses against the linked official PDF.</p>
+    <section><div class="section-heading"><div><div class="eyebrow">Where the money stands</div><h2>By funding source</h2></div></div>${legend}<div class="spending-chart">${data.fundingSources.map(spendingBar).join('')}</div>${spendingTable(data.fundingSources, 'Bond program status by funding source')}</section>
+    <section><div class="section-heading"><div><div class="eyebrow">Across the district</div><h2>By location</h2></div></div>${legend}<div class="spending-chart">${data.locations.map(spendingBar).join('')}</div>${spendingTable(data.locations, 'Bond program status by location')}</section>
+    <section class="methodology"><h2>How to read this page</h2><ul>${notes}</ul>${data.source.meetingUrl ? `<p>${sourceLink(data.source.meetingUrl, 'Open the CBOC meeting record')}</p>` : ''}</section>`;
+  return layout({ title: `Bond spending · ${config.site.title}`, description: `Bond expenditure snapshot for ${data.reportingPeriod}`, body, prefix: '../', active: 'bond-spending' });
 }
 
 function layout({ title, description, body, prefix = '', active = '' }) {
@@ -76,7 +140,9 @@ function layout({ title, description, body, prefix = '', active = '' }) {
     </div>
   </header>
   <main id="main" class="shell">${body}</main>
-  <footer><div class="shell">Independent public-record archive. Always verify information against the linked official BoardDocs source.</div></footer>
+  <footer><div class="shell">
+    <p class="disclaimer"><strong>Last updated ${BUILD_DATE}.</strong> This is an independent open-data project by a private citizen — not an official publication of the West Valley-Mission Community College District. Pages and figures are compiled and generated with the assistance of AI and may contain errors or omissions. Use at your own discretion and always verify against the official source before relying on any information.</p>
+  </div></footer>
   <script src="${prefix}assets/site.js"></script>
 </body>
 </html>`;
@@ -144,6 +210,7 @@ function readMeetings(committee) {
 function build() {
   const { configPath } = parseArgs(process.argv.slice(2));
   const config = loadConfig(configPath);
+  const bondExpenditures = loadBondExpenditures(config);
   const committees = Object.entries(config.committees).map(([key, value]) => ({ key, ...value, meetings: readMeetings(value) }));
   const allMeetings = committees.flatMap(committee => committee.meetings.map(meeting => ({ committee, meeting }))).sort((a, b) => b.meeting.date.localeCompare(a.meeting.date));
 
@@ -157,6 +224,10 @@ function build() {
   const homeSearch = `<form class="home-search" action="search/index.html" method="get" role="search"><input type="search" name="q" aria-label="Search all agendas and minutes" placeholder="Search every agenda item &amp; minutes by keyword"><button type="submit">Search</button></form>`;
   const homeBody = `<section class="hero"><div class="eyebrow">Public records, made browsable</div><h1>${escapeHtml(config.site.title)}</h1><p class="lede">${escapeHtml(config.site.description)}</p>${homeSearch}<p>Every record links back to the official West Valley-Mission BoardDocs portal.</p></section><section class="committee-grid">${committeePanels}</section><section><div class="section-heading"><div><div class="eyebrow">Across both bodies</div><h2>Recent meetings</h2></div></div>${recent ? `<div class="meeting-list">${recent}</div>` : '<p class="notice">Run the scraper to populate the archive.</p>'}</section>`;
   writePage(config.outDir, '', layout({ title: config.site.title, description: config.site.description, body: homeBody, active: 'home' }));
+
+  if (bondExpenditures) {
+    writePage(config.outDir, 'bond-spending', renderBondSpendingPage(config, bondExpenditures));
+  }
 
   for (const committee of committees) {
     const cards = committee.meetings.map(meeting => meetingCard(meeting, `${meetingSlug(meeting)}/index.html`)).join('');
@@ -208,7 +279,7 @@ function build() {
   console.log(`Built ${allMeetings.length} meetings, ${attachmentEntries.length} attachments, ${searchRecords.length} search records in ${relative(ROOT, config.outDir)}/`);
 }
 
-const CSS = `:root{--ink:#16212b;--muted:#5b6873;--line:#d9e0e5;--paper:#fff;--wash:#f3f6f8;--navy:#173b57;--blue:#176b87;--gold:#d8a928}*{box-sizing:border-box}body{margin:0;color:var(--ink);background:var(--paper);font:16px/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.shell{width:min(1120px,calc(100% - 2rem));margin:auto}.skip-link{position:absolute;left:-9999px}.skip-link:focus{left:1rem;top:1rem;background:#fff;padding:.75rem;z-index:10}.site-header{background:var(--navy);color:#fff}.header-inner{display:flex;align-items:center;justify-content:space-between;gap:2rem;padding:1rem 0}.brand{font-weight:750;color:#fff;text-decoration:none}.site-header nav{display:flex;gap:.25rem;flex-wrap:wrap}.site-header nav a{color:#dce9ef;text-decoration:none;padding:.5rem .65rem;border-radius:.35rem}.site-header nav a:hover,.site-header nav a.active{background:#fff;color:var(--navy)}main{padding-bottom:5rem}.hero{padding:5.5rem 0 3.5rem;max-width:850px}.hero.compact{padding:3rem 0 2rem}.hero h1{font-family:Georgia,serif;font-size:clamp(2.4rem,6vw,5rem);line-height:1.02;margin:.25rem 0 1rem;color:var(--navy)}.hero.compact h1{font-size:clamp(2rem,5vw,3.75rem)}.lede{font-size:1.25rem;color:var(--muted);max-width:720px}.eyebrow{text-transform:uppercase;letter-spacing:.08em;font-size:.76rem;font-weight:800;color:var(--blue)}h2,h3,h4{line-height:1.2}a{color:#075f7d}a:hover{text-decoration-thickness:2px}.committee-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;margin-bottom:4rem}.committee-panel{background:var(--wash);border-top:4px solid var(--gold);padding:1.5rem}.committee-panel h2{font-family:Georgia,serif;font-size:1.75rem}.section-heading{display:flex;align-items:end;justify-content:space-between;gap:1rem;border-bottom:1px solid var(--line);margin:3rem 0 1rem}.section-heading h2{font:2rem Georgia,serif;margin:.25rem 0 .75rem}.meeting-list,.record-list{display:grid;gap:.75rem}.meeting-card,.record-card,.attachment-card{border:1px solid var(--line);padding:1.15rem 1.25rem;border-radius:.35rem;background:#fff}.meeting-card h3,.record-card h2,.attachment-card h2{margin:.25rem 0;font-size:1.15rem}.meta{display:flex;gap:1rem;flex-wrap:wrap;color:var(--muted);font-size:.9rem}.breadcrumbs{padding-top:1.5rem;color:var(--muted)}.breadcrumbs a{color:inherit}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-bottom:3rem}.stats div{background:var(--paper);padding:1.25rem}.stats strong,.stats span{display:block}.stats strong{font:2rem Georgia,serif;color:var(--navy)}.stats span{color:var(--muted)}section+section{margin-top:3.5rem}.agenda-item{border-top:1px solid var(--line);padding:1.5rem 0}.agenda-item h3{font:1.45rem Georgia,serif;margin:.3rem 0}.agenda-item h4{margin-bottom:.25rem}.item-body{white-space:pre-line;max-width:850px}.attachment-list{padding-left:1.2rem}.attachment-list li{margin:.45rem 0}.file-size,.muted{color:var(--muted);font-size:.9rem}.source-link{font-weight:650}.minutes-text{white-space:pre-wrap;background:var(--wash);border-left:4px solid var(--blue);padding:1.5rem;max-height:42rem;overflow:auto}.notice{background:#fff8df;border-left:4px solid var(--gold);padding:1rem}.filter-box{background:var(--wash);padding:1rem;margin:1rem 0}.filter-box label{display:block;font-weight:700;margin-bottom:.35rem}.filter-box input{width:min(100%,600px);font:inherit;padding:.7rem;border:1px solid #9cabb6;border-radius:.25rem}.filter-status{display:inline;margin-left:.75rem;color:var(--muted)}.home-search{display:flex;gap:.5rem;max-width:640px;margin:1.5rem 0}.home-search input{flex:1;font:inherit;padding:.8rem 1rem;border:1px solid #9cabb6;border-radius:.3rem}.home-search button{font:inherit;font-weight:700;padding:.8rem 1.4rem;border:0;border-radius:.3rem;background:var(--navy);color:#fff;cursor:pointer}.home-search button:hover{background:var(--blue)}.snippet{max-width:850px;line-height:1.5}.snippet mark,.minutes-text mark{background:#fde68a;color:inherit;padding:0 .1em}footer{background:var(--wash);border-top:1px solid var(--line);padding:2rem 0;color:var(--muted);font-size:.9rem}@media(max-width:760px){.header-inner{align-items:flex-start;flex-direction:column;gap:.5rem}.site-header nav{display:grid;grid-template-columns:1fr 1fr;width:100%}.committee-grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr}.hero{padding-top:3rem}.section-heading{align-items:start;flex-direction:column}.section-heading>.source-link{margin-bottom:1rem}}`;
+const CSS = `:root{--ink:#16212b;--muted:#5b6873;--line:#d9e0e5;--paper:#fff;--wash:#f3f6f8;--navy:#173b57;--blue:#176b87;--gold:#d8a928}*{box-sizing:border-box}body{margin:0;color:var(--ink);background:var(--paper);font:16px/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.shell{width:min(1120px,calc(100% - 2rem));margin:auto}.skip-link{position:absolute;left:-9999px}.skip-link:focus{left:1rem;top:1rem;background:#fff;padding:.75rem;z-index:10}.site-header{background:var(--navy);color:#fff}.header-inner{display:flex;align-items:center;justify-content:space-between;gap:2rem;padding:1rem 0}.brand{font-weight:750;color:#fff;text-decoration:none}.site-header nav{display:flex;gap:.25rem;flex-wrap:wrap}.site-header nav a{color:#dce9ef;text-decoration:none;padding:.5rem .65rem;border-radius:.35rem}.site-header nav a:hover,.site-header nav a.active{background:#fff;color:var(--navy)}main{padding-bottom:5rem}.hero{padding:5.5rem 0 3.5rem;max-width:850px}.hero.compact{padding:3rem 0 2rem}.hero h1{font-family:Georgia,serif;font-size:clamp(2.4rem,6vw,5rem);line-height:1.02;margin:.25rem 0 1rem;color:var(--navy)}.hero.compact h1{font-size:clamp(2rem,5vw,3.75rem)}.lede{font-size:1.25rem;color:var(--muted);max-width:720px}.eyebrow{text-transform:uppercase;letter-spacing:.08em;font-size:.76rem;font-weight:800;color:var(--blue)}h2,h3,h4{line-height:1.2}a{color:#075f7d}a:hover{text-decoration-thickness:2px}.committee-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;margin-bottom:4rem}.committee-panel{background:var(--wash);border-top:4px solid var(--gold);padding:1.5rem}.committee-panel h2{font-family:Georgia,serif;font-size:1.75rem}.section-heading{display:flex;align-items:end;justify-content:space-between;gap:1rem;border-bottom:1px solid var(--line);margin:3rem 0 1rem}.section-heading h2{font:2rem Georgia,serif;margin:.25rem 0 .75rem}.meeting-list,.record-list{display:grid;gap:.75rem}.meeting-card,.record-card,.attachment-card{border:1px solid var(--line);padding:1.15rem 1.25rem;border-radius:.35rem;background:#fff}.meeting-card h3,.record-card h2,.attachment-card h2{margin:.25rem 0;font-size:1.15rem}.meta{display:flex;gap:1rem;flex-wrap:wrap;color:var(--muted);font-size:.9rem}.breadcrumbs{padding-top:1.5rem;color:var(--muted)}.breadcrumbs a{color:inherit}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-bottom:3rem}.stats div{background:var(--paper);padding:1.25rem}.stats strong,.stats span{display:block}.stats strong{font:2rem Georgia,serif;color:var(--navy)}.stats span{color:var(--muted)}section+section{margin-top:3.5rem}.agenda-item{border-top:1px solid var(--line);padding:1.5rem 0}.agenda-item h3{font:1.45rem Georgia,serif;margin:.3rem 0}.agenda-item h4{margin-bottom:.25rem}.item-body{white-space:pre-line;max-width:850px}.attachment-list{padding-left:1.2rem}.attachment-list li{margin:.45rem 0}.file-size,.muted{color:var(--muted);font-size:.9rem}.source-link{font-weight:650}.minutes-text{white-space:pre-wrap;background:var(--wash);border-left:4px solid var(--blue);padding:1.5rem;max-height:42rem;overflow:auto}.notice{background:#fff8df;border-left:4px solid var(--gold);padding:1rem}.filter-box{background:var(--wash);padding:1rem;margin:1rem 0}.filter-box label{display:block;font-weight:700;margin-bottom:.35rem}.filter-box input{width:min(100%,600px);font:inherit;padding:.7rem;border:1px solid #9cabb6;border-radius:.25rem}.filter-status{display:inline;margin-left:.75rem;color:var(--muted)}.home-search{display:flex;gap:.5rem;max-width:640px;margin:1.5rem 0}.home-search input{flex:1;font:inherit;padding:.8rem 1rem;border:1px solid #9cabb6;border-radius:.3rem}.home-search button{font:inherit;font-weight:700;padding:.8rem 1.4rem;border:0;border-radius:.3rem;background:var(--navy);color:#fff;cursor:pointer}.home-search button:hover{background:var(--blue)}.snippet{max-width:850px;line-height:1.5}.snippet mark,.minutes-text mark{background:#fde68a;color:inherit;padding:0 .1em}footer{background:var(--wash);border-top:1px solid var(--line);padding:2rem 0;color:var(--muted);font-size:.9rem}.disclaimer{max-width:900px;margin:0;line-height:1.6}.disclaimer strong{color:var(--ink)}.report-meta{color:var(--muted)}.spending-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-bottom:1.5rem}.spending-stats div{background:var(--paper);padding:1.15rem}.spending-stats span,.spending-stats strong,.spending-stats small{display:block}.spending-stats span{color:var(--muted);font-size:.85rem;font-weight:700}.spending-stats strong{font:2rem Georgia,serif;color:var(--navy);margin:.2rem 0}.spending-stats small{color:var(--muted)}.spending-legend{display:flex;gap:1.25rem;flex-wrap:wrap;margin:1rem 0;color:var(--muted);font-size:.9rem}.spending-legend span{display:flex;align-items:center;gap:.4rem}.spending-legend i{width:.8rem;height:.8rem;display:inline-block;border-radius:2px}.legend-expended,.bar-expended{background:#176b87}.legend-encumbered,.bar-encumbered{background:#d8a928}.legend-remaining,.bar-remaining{background:#d9e0e5}.spending-chart{display:grid;gap:1rem;margin:1.5rem 0 2rem}.spending-chart-row{display:grid;grid-template-columns:minmax(140px,1.4fr) minmax(260px,4fr) 100px;gap:1rem;align-items:center}.spending-chart-label span{display:block;color:var(--muted);font-size:.82rem}.spending-bar{display:flex;height:1.4rem;background:var(--wash);border-radius:3px;overflow:hidden}.spending-bar span{height:100%}.spending-chart-value{text-align:right;color:var(--muted);font-variant-numeric:tabular-nums;font-size:.88rem}.table-scroll{overflow-x:auto;margin-top:1rem}.spending-table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums;font-size:.92rem}.spending-table caption{text-align:left;font-weight:700;padding:.5rem 0}.spending-table th,.spending-table td{padding:.7rem .6rem;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}.spending-table th:first-child{text-align:left}.spending-table thead th{color:var(--muted);font-size:.78rem;text-transform:uppercase;letter-spacing:.04em}.methodology{max-width:850px}.methodology li{margin:.5rem 0}@media(max-width:900px){.spending-stats{grid-template-columns:1fr 1fr}}@media(max-width:760px){.header-inner{align-items:flex-start;flex-direction:column;gap:.5rem}.site-header nav{display:grid;grid-template-columns:1fr 1fr;width:100%}.committee-grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr}.hero{padding-top:3rem}.section-heading{align-items:start;flex-direction:column}.section-heading>.source-link{margin-bottom:1rem}.spending-chart-row{grid-template-columns:1fr}.spending-chart-value{text-align:left}.spending-bar{height:1.2rem}}@media(max-width:500px){.spending-stats{grid-template-columns:1fr}}`;
 
 const JS = `(function(){
   var root=document.querySelector('[data-search-page]');

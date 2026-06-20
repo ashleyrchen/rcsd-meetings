@@ -1,0 +1,36 @@
+{
+  "title": "Bond spending",
+  "reportingPeriod": "Inception through March 31, 2026",
+  "published": "May 18, 2026",
+  "status": "Draft",
+  "source": {
+    "name": "FY26 Q3 Project Summary Report",
+    "url": "https://go.boarddocs.com/ca/wvm/Board.nsf/files/DUP2UX03F0D7/$file/FY26%20Q3-Project-Summary-Report-WVMCCD-DRAFT%20(1).pdf",
+    "meetingUrl": "https://go.boarddocs.com/ca/wvm/Board.nsf/goto?open&id=DUP2CX0199D4"
+  },
+  "totals": {
+    "budget": 1163598579,
+    "expenditures": 643008012,
+    "encumbrances": 106519392,
+    "remaining": 414071175
+  },
+  "fundingSources": [
+    { "name": "Measure C", "budget": 364196149, "expenditures": 364196149, "encumbrances": 0, "remaining": 0 },
+    { "name": "Measure W", "budget": 723219147, "expenditures": 229349679, "encumbrances": 95712408, "remaining": 398157059 },
+    { "name": "State Match", "budget": 59977595, "expenditures": 33626041, "encumbrances": 10806984, "remaining": 15544570 },
+    { "name": "Measure H", "budget": 15336143, "expenditures": 15336143, "encumbrances": 0, "remaining": 0 },
+    { "name": "BAAQMD", "budget": 500000, "expenditures": 500000, "encumbrances": 0, "remaining": 0 },
+    { "name": "SCC Water District", "budget": 369546, "expenditures": 0, "encumbrances": 0, "remaining": 369546 }
+  ],
+  "locations": [
+    { "name": "District Services", "budget": 207556109, "expenditures": 132381253, "encumbrances": 3907364, "remaining": 71267492 },
+    { "name": "Mission College", "budget": 452966286, "expenditures": 223160268, "encumbrances": 23670079, "remaining": 206135938 },
+    { "name": "West Valley College", "budget": 503076184, "expenditures": 287466490, "encumbrances": 78941949, "remaining": 136667745 }
+  ],
+  "notes": [
+    "Expenditures are paid and accrued expenses through the reporting-period end date.",
+    "Encumbrances are committed amounts not yet reported as expenditures.",
+    "The combined program includes Measure C and Measure W bond proceeds plus state and other co-funding.",
+    "Figures are transcribed from a district draft report and may include rounding differences."
+  ]
+}
