@@ -5,6 +5,10 @@ An open-data scraper for public meetings of the West Valley-Mission Community Co
 - Board of Trustees
 - Citizens' Bond Oversight Committee (CBOC)
 
+It also indexes the official Santa Cruz County 2018 Measure W voter guide,
+including the ballot question, arguments and rebuttals, impartial analysis, tax
+rate statement, full measure text, election resolution, and contact information.
+
 The project does not currently ingest Simbli, meeting recordings, YouTube videos, audio, or transcripts.
 
 ## Requirements
@@ -40,6 +44,15 @@ npm run scrape:wvm -- --bodies
 ```
 
 Outputs are written to the paths declared in [`config/boarddocs/wvm.yaml`](config/boarddocs/wvm.yaml).
+
+Refresh the Measure W voter-guide records:
+
+```bash
+npm run scrape:voter-guide
+```
+
+The structured output is written to `data/wvm-measure-w-voter-guide.json` and is
+included in the generated site's full-text search.
 
 ## Add Another District
 

@@ -7,6 +7,67 @@ site:
   description: Agendas, minutes, and agenda attachments for public governing meetings.
   output: docs
   bondExpenditures: data/wvm-bond-expenditures.json
+  recordCollections:
+    - data/wvm-measure-w-voter-guide.json
+
+recordSources:
+  measure-w-voter-guide:
+    name: Measure W 2018 Voter Guide
+    description: Official ballot materials published by the Santa Cruz County Elections Department.
+    date: "2018-11-06"
+    indexUrl: https://votescount.santacruzcountyca.gov/Home/PastElections/November6%2C2018CaliforniaGeneralElection/Nov18localmeasures/W-WestValley1118.aspx
+    output: data/wvm-measure-w-voter-guide.json
+    records:
+      - slug: ballot-question
+        title: Measure W Ballot Question
+        type: Ballot question
+        heading: Measure W - West Valley-Mission Community College bond measure
+        url: https://votescount.santacruzcountyca.gov/Home/PastElections/November6%2C2018CaliforniaGeneralElection/Nov18localmeasures/W-WestValley1118.aspx
+      - slug: argument-for
+        title: Argument for Measure W
+        type: Argument for
+        heading: Argument for Measure W
+        url: https://votescount.santacruzcountyca.gov/Home/PastElections/November6%2C2018CaliforniaGeneralElection/Nov18localmeasures/W-WestValley1118/W-WVMfavor1118.aspx
+      - slug: rebuttal-to-argument-for
+        title: Rebuttal to Argument for Measure W
+        type: Rebuttal
+        heading: Rebuttal to Argument for Measure W
+        url: https://votescount.santacruzcountyca.gov/Home/PastElections/November6%2C2018CaliforniaGeneralElection/Nov18localmeasures/W-WestValley1118/W-rebuttalfavor1118.aspx
+      - slug: argument-against
+        title: Argument Against Measure W
+        type: Argument against
+        heading: Argument Against Measure W
+        url: https://votescount.santacruzcountyca.gov/Home/PastElections/November6%2C2018CaliforniaGeneralElection/Nov18localmeasures/W-WestValley1118/W-against1118.aspx
+      - slug: rebuttal-to-argument-against
+        title: Rebuttal to Argument Against Measure W
+        type: Rebuttal
+        heading: Rebuttal to Argument against Measure W
+        url: https://votescount.santacruzcountyca.gov/Home/PastElections/November6%2C2018CaliforniaGeneralElection/Nov18localmeasures/W-WestValley1118/W-rebuttalagainst1118.aspx
+      - slug: impartial-analysis
+        title: Impartial Analysis of Measure W
+        type: Impartial analysis
+        heading: Impartial analysis of Measure W
+        url: https://votescount.santacruzcountyca.gov/Home/PastElections/November6%2C2018CaliforniaGeneralElection/2018WImpartialAnalysis.aspx
+      - slug: tax-rate-statement
+        title: Tax Rate Statement for Measure W
+        type: Tax rate statement
+        heading: Tax Rate Statement Measure W
+        url: https://votescount.santacruzcountyca.gov/Home/PastElections/November6%2C2018CaliforniaGeneralElection/Nov18localmeasures/W-WestValley1118/W-TRS1118.aspx
+      - slug: full-text
+        title: Full Text of Measure W
+        type: Full measure text
+        heading: Full text of Measure W
+        url: https://votescount.santacruzcountyca.gov/Home/PastElections/November6%2C2018CaliforniaGeneralElection/Nov18localmeasures/W-WestValley1118/WVMtext1118.aspx
+      - slug: election-resolution
+        title: WVMCCD Resolution No. 18080702
+        type: Election resolution
+        format: pdf
+        url: https://votescount.santacruzcountyca.gov/Portals/16/nov18/West%20Valley%20Resolution.pdf
+      - slug: contact-information
+        title: Measure W Contact Information
+        type: Election administration
+        heading: W - West Valley-Mission Community College Bond Measure
+        url: https://votescount.santacruzcountyca.gov/Home/PastElections/November6%2C2018CaliforniaGeneralElection/2018WContacts.aspx
 
 committees:
   board:
