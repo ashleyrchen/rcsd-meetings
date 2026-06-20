@@ -85,8 +85,7 @@ function layout({ title, description, body, prefix = '', active = '' }) {
 function meetingCard(meeting, href) {
   const attachments = countAttachments(meeting);
   const minutes = meeting.minutes?.available || (meeting.minutesAttachments || []).length;
-  const search = [meeting.date, meeting.name, meeting.type, ...(meeting.items || []).map(item => item.title)].join(' ');
-  return `<article class="meeting-card" data-filter-item data-search="${escapeHtml(search.toLowerCase())}">
+  return `<article class="meeting-card">
     <div class="eyebrow">${escapeHtml(formatDate(meeting.date))}</div>
     <h3>${link(href, meeting.name || meeting.type || 'Meeting')}</h3>
     <div class="meta"><span>${(meeting.items || []).length} agenda items</span><span>${attachments} attachments</span><span>${minutes ? 'Minutes available' : 'Minutes not published'}</span></div>
@@ -159,13 +158,13 @@ function build() {
 
   const committeePanels = committees.map(committee => `<article class="committee-panel"><div class="eyebrow">Public body</div><h2>${link(`${committee.key}/index.html`, committee.name)}</h2><p>${committee.meetings.length} meetings in the archive.</p><p>${link(`${committee.key}/index.html`, 'Browse meetings →')}</p></article>`).join('');
   const recent = allMeetings.slice(0, 12).map(({ committee, meeting }) => meetingCard(meeting, `${committee.key}/${meetingSlug(meeting)}/index.html`)).join('');
-  const homeSearch = `<form class="home-search" action="search/index.html" method="get" role="search"><input type="search" name="q" aria-label="Search all agendas and minutes" placeholder="Search every agenda item &amp; minutes — e.g. Wellness Center"><button type="submit">Search</button></form>`;
+  const homeSearch = `<form class="home-search" action="search/index.html" method="get" role="search"><input type="search" name="q" aria-label="Search all agendas and minutes" placeholder="Search every agenda item &amp; minutes by keyword"><button type="submit">Search</button></form>`;
   const homeBody = `<section class="hero"><div class="eyebrow">Public records, made browsable</div><h1>${escapeHtml(config.site.title)}</h1><p class="lede">${escapeHtml(config.site.description)}</p>${homeSearch}<p>Every record links back to the official West Valley-Mission BoardDocs portal.</p></section><section class="committee-grid">${committeePanels}</section><section><div class="section-heading"><div><div class="eyebrow">Across both bodies</div><h2>Recent meetings</h2></div></div>${recent ? `<div class="meeting-list">${recent}</div>` : '<p class="notice">Run the scraper to populate the archive.</p>'}</section>`;
   writePage(config.outDir, '', layout({ title: config.site.title, description: config.site.description, body: homeBody, active: 'home' }));
 
   for (const committee of committees) {
     const cards = committee.meetings.map(meeting => meetingCard(meeting, `${meetingSlug(meeting)}/index.html`)).join('');
-    const body = `<div class="breadcrumbs">${link('../index.html', 'Home')} / ${escapeHtml(committee.name)}</div><section class="hero compact"><div class="eyebrow">Meeting archive</div><h1>${escapeHtml(committee.name)}</h1><p class="lede">Agendas, minutes, and agenda-item attachments from BoardDocs.</p></section>${filterBox('Filter meetings by date, title, or agenda item')}<div class="meeting-list">${cards || '<p class="notice">No meetings have been scraped yet.</p>'}</div>`;
+    const body = `<div class="breadcrumbs">${link('../index.html', 'Home')} / ${escapeHtml(committee.name)}</div><section class="hero compact"><div class="eyebrow">Meeting archive</div><h1>${escapeHtml(committee.name)}</h1><p class="lede">Agendas, minutes, and agenda-item attachments from BoardDocs.</p><p>${link('../search/index.html', 'Search all agendas and minutes →')}</p></section><div class="meeting-list">${cards || '<p class="notice">No meetings have been scraped yet.</p>'}</div>`;
     writePage(config.outDir, committee.key, layout({ title: `${committee.name} · ${config.site.title}`, description: `Meeting archive for ${committee.name}`, body, prefix: '../', active: committee.key }));
     for (const meeting of committee.meetings) writePage(config.outDir, `${committee.key}/${meetingSlug(meeting)}`, renderMeetingPage(config, committee, meeting));
   }
@@ -206,7 +205,7 @@ function build() {
 
   const searchBody = `<div class="breadcrumbs">${link('../index.html', 'Home')} / Search</div>
     <section class="hero compact"><div class="eyebrow">Search everything</div><h1>Search the archive</h1><p class="lede">Full-text search across every agenda item and published minutes from both public bodies. Each result links straight to the record.</p></section>
-    <div class="filter-box"><label for="site-search">Search agendas &amp; minutes</label><input id="site-search" type="search" placeholder="e.g. Wellness Center" autocomplete="off" data-search-input><p class="filter-status" aria-live="polite" data-search-status></p></div>
+    <div class="filter-box"><label for="site-search">Search agendas &amp; minutes</label><input id="site-search" type="search" placeholder="Search by keyword, project, or person" autocomplete="off" data-search-input><p class="filter-status" aria-live="polite" data-search-status></p></div>
     <div data-search-page data-index="../search-index.json"><div class="record-list" data-search-results></div></div>`;
   writePage(config.outDir, 'search', layout({ title: `Search · ${config.site.title}`, description: 'Full-text search across all agenda items and minutes', body: searchBody, prefix: '../', active: 'search' }));
 
