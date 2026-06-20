@@ -22,7 +22,7 @@ const recordsDir = resolve(process.cwd(), process.argv[2] || 'measure-w-records'
 const PAGES = join(recordsDir, 'pages');
 const SOURCES = JSON.parse(readFileSync(join(recordsDir, 'sources.json'), 'utf8'));
 
-const td = new TurndownService({ headingStyle: 'atx', codeBlockStyle: 'fenced', bulletListMarker: '-' });
+const td = new TurndownService({ headingStyle: 'atx', bulletListMarker: '-' });
 
 for (const file of readdirSync(PAGES).filter(f => f.endsWith('.html'))) {
   const slug = file.replace(/\.html$/, '');

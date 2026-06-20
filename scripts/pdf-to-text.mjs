@@ -9,8 +9,9 @@
 
 import { readFileSync } from 'fs';
 import { resolve } from 'path';
+import { pathToFileURL } from 'url';
 
-async function extract(path, onlyPage) {
+export async function extract(path, onlyPage) {
   const pdfjs = await import('pdfjs-dist/legacy/build/pdf.mjs');
   const data = new Uint8Array(readFileSync(resolve(process.cwd(), path)));
   const doc = await pdfjs.getDocument({ data, useSystemFonts: true }).promise;
@@ -36,11 +37,13 @@ async function extract(path, onlyPage) {
   return out.join('\n');
 }
 
-const args = process.argv.slice(2);
-const pageIdx = args.indexOf('--page');
-const onlyPage = pageIdx >= 0 ? Number(args[pageIdx + 1]) : null;
-const file = args.find(a => !a.startsWith('--') && a !== String(onlyPage));
-if (!file) { console.error('Usage: node scripts/pdf-to-text.mjs <file.pdf> [--page N]'); process.exit(1); }
-
-extract(file, onlyPage).then(t => process.stdout.write(t + '\n'))
-  .catch(e => { console.error('Error:', e.message || e); process.exit(1); });
+// Run as a CLI only when invoked directly (not when imported as a module).
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  const args = process.argv.slice(2);
+  const pageIdx = args.indexOf('--page');
+  const onlyPage = pageIdx >= 0 ? Number(args[pageIdx + 1]) : null;
+  const file = args.find(a => !a.startsWith('--') && a !== String(onlyPage));
+  if (!file) { console.error('Usage: node scripts/pdf-to-text.mjs <file.pdf> [--page N]'); process.exit(1); }
+  extract(file, onlyPage).then(t => process.stdout.write(t + '\n'))
+    .catch(e => { console.error('Error:', e.message || e); process.exit(1); });
+}
