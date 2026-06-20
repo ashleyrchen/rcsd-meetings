@@ -1,0 +1,3 @@
+# Large generated data caches: treat as generated and suppress textual diffs
+# so `git diff`/`git show`/PR views stay readable when they change.
+data/wvm-*.json -diff linguist-generated

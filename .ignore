@@ -1,0 +1,5 @@
+# Files ripgrep (and tools built on it) should skip during search, WITHOUT
+# removing them from git. These are large generated data caches that the
+# build reads but no one edits by hand — searching them wastes time/tokens.
+# (docs/, data/attachments/, measure-w-records/ are already covered by .gitignore.)
+data/wvm-*.json

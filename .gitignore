@@ -3,6 +3,13 @@ node_modules/
 .env
 tmp/
 CLAUDE.md
+
+# Generated site output — built and deployed by .github/workflows/deploy-pages.yml
+docs/
+
+# Downloaded binary attachments — re-fetchable via the scraper; only the manifest index is tracked
+data/attachments/**
+!data/attachments/manifest.json
 rcsd-meetings/
 report-examples/
 measure-w-records/
