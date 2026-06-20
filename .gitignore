@@ -3,6 +3,9 @@ node_modules/
 .env
 tmp/
 CLAUDE.md
+
+# Generated site output — built and deployed by .github/workflows/deploy-pages.yml
+docs/
 rcsd-meetings/
 report-examples/
 measure-w-records/
