@@ -1,4 +1,3 @@
-document.querySelectorAll('[data-filter-input]').forEach(input=>{const items=[...document.querySelectorAll('[data-filter-item]')];const status=document.querySelector('[data-filter-status]');const update=()=>{const query=input.value.trim().toLowerCase();let shown=0;for(const item of items){const visible=!query||item.dataset.search.includes(query);item.hidden=!visible;if(visible)shown++}if(status)status.textContent=query?shown+' result'+(shown===1?'':'s'):''};input.addEventListener('input',update)});
 (function(){
   var root=document.querySelector('[data-search-page]');
   if(!root)return;
