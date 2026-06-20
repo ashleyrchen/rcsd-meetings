@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'fs';
+import { createHash } from 'crypto';
 import { dirname, relative, resolve, sep } from 'path';
 import { fileURLToPath } from 'url';
 import { parse as parseYaml } from 'yaml';
@@ -52,7 +53,7 @@ function sourceLink(href, label) {
 function nav(prefix, active = '') {
   const entries = [
     ['home', `${prefix}index.html`, 'Home'],
-    ['bond-spending', `${prefix}bond-spending/index.html`, 'Bond spending'],
+    ['bond-spending', `${prefix}bond-spending/index.html`, 'Measure W projects'],
     ['search', `${prefix}search/index.html`, 'Search'],
     ['board', `${prefix}board/index.html`, 'Board of Trustees'],
     ['cboc', `${prefix}cboc/index.html`, 'CBOC'],
@@ -87,6 +88,12 @@ function loadBondExpenditures(config) {
   if (!data.source?.url || !data.reportingPeriod) {
     throw new Error(`${relative(ROOT, file)} requires source.url and reportingPeriod`);
   }
+  if (!data.allocationSource?.url || !Array.isArray(data.measureWProjects) || !data.measureWProjects.length) {
+    throw new Error(`${relative(ROOT, file)} requires allocationSource.url and measureWProjects`);
+  }
+  if (data.measureWProjects.some(project => !project.id || !project.name || !project.campus || !Number.isFinite(project.allocation))) {
+    throw new Error(`${relative(ROOT, file)} contains an incomplete Measure W project`);
+  }
   return data;
 }
 
@@ -106,19 +113,46 @@ function spendingTable(rows, label) {
   return `<div class="table-scroll"><table class="spending-table"><caption>${escapeHtml(label)}</caption><thead><tr><th scope="col">Name</th><th scope="col">Budget</th><th scope="col">Expenditures</th><th scope="col">Encumbrances</th><th scope="col">Remaining</th></tr></thead><tbody>${body}</tbody></table></div>`;
 }
 
+function renderAllocationExplorer(data) {
+  const projects = escapeHtml(JSON.stringify(data.measureWProjects));
+  const reportedTotals = escapeHtml(JSON.stringify(data.measureWAllocationTotals || {}));
+  const sortedProjects = [...data.measureWProjects].sort((a, b) => b.allocation - a.allocation || a.name.localeCompare(b.name));
+  const projectRows = sortedProjects.map(project => {
+    const scope = data.measureWProjectScopes?.[project.id];
+    const campusClass = {
+      'Mission College': 'campus-mission',
+      'West Valley College': 'campus-west-valley',
+      'District Services': 'campus-district',
+    }[project.campus] || '';
+    return `<details class="project-disclosure" data-project-row data-campus="${escapeHtml(project.campus)}" data-project-search="${escapeHtml(`${project.id} ${project.name}`.toLowerCase())}">
+      <summary><span class="project-list-title"><i class="${campusClass}"></i><span><strong>${escapeHtml(project.name)}</strong><small>${escapeHtml(project.id)} · ${escapeHtml(project.campus)}</small></span></span><span class="project-list-budget">${formatMoney(project.allocation)}</span><span class="project-list-toggle" aria-hidden="true"></span></summary>
+      <div class="project-scope"><div class="eyebrow">Project scope</div><p>${escapeHtml(scope || 'No project scope was included for this project in the April 2026 rebase Summary of Current Changes.')}</p><p>${sourceLink(data.allocationSource.url, 'Verify in the April 2026 Bond List Rebase')}</p></div>
+    </details>`;
+  }).join('');
+  return `<section class="allocation-section" aria-label="Measure W project allocations" data-allocation-explorer data-projects="${projects}" data-reported-totals="${reportedTotals}">
+    <div class="allocation-explorer">
+      <div class="allocation-controls" role="group" aria-label="Filter projects by campus">
+        <button type="button" class="active" data-campus="All campuses" aria-pressed="true">All campuses</button>
+        <button type="button" data-campus="Mission College" aria-pressed="false">Mission College</button>
+        <button type="button" data-campus="West Valley College" aria-pressed="false">West Valley College</button>
+        <button type="button" data-campus="District Services" aria-pressed="false">District Services</button>
+        <label><span class="sr-only">Search Measure W projects</span><input type="search" placeholder="Search project…" autocomplete="off" data-allocation-search></label>
+      </div>
+      <div class="allocation-legend" aria-label="Campus colors"><span><i class="campus-mission"></i>Mission College</span><span><i class="campus-west-valley"></i>West Valley College</span><span><i class="campus-district"></i>District Services</span></div>
+      <div class="allocation-chart-heading"><strong>Largest Measure W allocations</strong> <span>(current filter)</span></div>
+      <p class="allocation-status" aria-live="polite" data-allocation-status></p>
+      <div class="allocation-chart-scroll"><div class="allocation-chart" data-allocation-chart></div></div>
+    </div>
+    <div class="project-list-header"><div><div class="eyebrow">All projects</div><h2>Full project list</h2><p data-project-list-status>${data.measureWProjects.length} projects, ordered by Measure W allocation.</p></div><div class="project-list-controls"><button type="button" data-expand-all>Expand all</button><button type="button" data-close-all>Close all</button></div></div>
+    <div class="project-list" data-project-list>${projectRows}</div>
+  </section>`;
+}
+
 function renderBondSpendingPage(config, data) {
-  const totals = data.totals;
-  const committed = totals.expenditures + totals.encumbrances;
-  const legend = `<div class="spending-legend" aria-label="Chart legend"><span><i class="legend-expended"></i>Expenditures</span><span><i class="legend-encumbered"></i>Encumbrances</span><span><i class="legend-remaining"></i>Remaining</span></div>`;
-  const notes = (data.notes || []).map(note => `<li>${escapeHtml(note)}</li>`).join('');
   const body = `<div class="breadcrumbs">${link('../index.html', 'Home')} / Bond spending</div>
-    <section class="hero compact"><div class="eyebrow">Measure C and Measure W</div><h1>${escapeHtml(data.title || 'Bond spending')}</h1><p class="lede">A snapshot of the district's reported capital-program expenditures, commitments, and remaining budgets.</p><p class="report-meta"><strong>${escapeHtml(data.reportingPeriod)}</strong> · ${escapeHtml(data.status || '')} report published ${escapeHtml(data.published || 'date unavailable')}</p><p>${sourceLink(data.source.url, `Open official ${data.source.name || 'source report'}`)}</p></section>
-    <div class="spending-stats"><div><span>Total program budget</span><strong>${formatCompactMoney(totals.budget)}</strong><small>Includes bond and co-funding sources</small></div><div><span>Paid and accrued</span><strong>${formatCompactMoney(totals.expenditures)}</strong><small>${(totals.expenditures / totals.budget * 100).toFixed(1)}% of budget</small></div><div><span>Committed</span><strong>${formatCompactMoney(committed)}</strong><small>Expenditures plus encumbrances</small></div><div><span>Remaining</span><strong>${formatCompactMoney(totals.remaining)}</strong><small>${(totals.remaining / totals.budget * 100).toFixed(1)}% of budget</small></div></div>
-    <p class="notice"><strong>Snapshot, not live accounting.</strong> These figures were transcribed from a district ${escapeHtml((data.status || '').toLowerCase())} report. Verify consequential uses against the linked official PDF.</p>
-    <section><div class="section-heading"><div><div class="eyebrow">Where the money stands</div><h2>By funding source</h2></div></div>${legend}<div class="spending-chart">${data.fundingSources.map(spendingBar).join('')}</div>${spendingTable(data.fundingSources, 'Bond program status by funding source')}</section>
-    <section><div class="section-heading"><div><div class="eyebrow">Across the district</div><h2>By location</h2></div></div>${legend}<div class="spending-chart">${data.locations.map(spendingBar).join('')}</div>${spendingTable(data.locations, 'Bond program status by location')}</section>
-    <section class="methodology"><h2>How to read this page</h2><ul>${notes}</ul>${data.source.meetingUrl ? `<p>${sourceLink(data.source.meetingUrl, 'Open the CBOC meeting record')}</p>` : ''}</section>`;
-  return layout({ title: `Bond spending · ${config.site.title}`, description: `Bond expenditure snapshot for ${data.reportingPeriod}`, body, prefix: '../', active: 'bond-spending' });
+    <section class="hero compact"><div class="eyebrow">Measure W · Rebase #19</div><h1>Measure W project allocations</h1><p class="lede">Current Measure W funding by project, effective April 21, 2026.</p><p>${sourceLink(data.allocationSource.url, 'Open official April 2026 Bond List Rebase')}</p></section>
+    ${renderAllocationExplorer(data)}`;
+  return layout({ title: `Measure W project allocations · ${config.site.title}`, description: 'Measure W project allocations and scopes from the April 2026 Bond List Rebase', body, prefix: '../', active: 'bond-spending' });
 }
 
 function layout({ title, description, body, prefix = '', active = '' }) {
@@ -129,7 +163,7 @@ function layout({ title, description, body, prefix = '', active = '' }) {
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="${escapeHtml(description)}">
   <title>${escapeHtml(title)}</title>
-  <link rel="stylesheet" href="${prefix}assets/site.css">
+  <link rel="stylesheet" href="${prefix}assets/site.css?v=${ASSET_VERSION}">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -143,7 +177,7 @@ function layout({ title, description, body, prefix = '', active = '' }) {
   <footer><div class="shell">
     <p class="disclaimer"><strong>Last updated ${BUILD_DATE}.</strong> This is an independent open-data project by a private citizen — not an official publication of the West Valley-Mission Community College District. Pages and figures are compiled and generated with the assistance of AI and may contain errors or omissions. Use at your own discretion and always verify against the official source before relying on any information.</p>
   </div></footer>
-  <script src="${prefix}assets/site.js"></script>
+  <script src="${prefix}assets/site.js?v=${ASSET_VERSION}"></script>
 </body>
 </html>`;
 }
@@ -216,8 +250,8 @@ function build() {
 
   rmSync(config.outDir, { recursive: true, force: true });
   mkdirSync(resolve(config.outDir, 'assets'), { recursive: true });
-  writeFileSync(resolve(config.outDir, 'assets/site.css'), CSS);
-  writeFileSync(resolve(config.outDir, 'assets/site.js'), JS);
+  writeFileSync(resolve(config.outDir, 'assets/site.css'), `${CSS}${BOND_CSS}`);
+  writeFileSync(resolve(config.outDir, 'assets/site.js'), `${JS}\n${BOND_JS}`);
 
   const committeePanels = committees.map(committee => `<article class="committee-panel"><div class="eyebrow">Public body</div><h2>${link(`${committee.key}/index.html`, committee.name)}</h2><p>${committee.meetings.length} meetings in the archive.</p><p>${link(`${committee.key}/index.html`, 'Browse meetings →')}</p></article>`).join('');
   const recent = allMeetings.slice(0, 12).map(({ committee, meeting }) => meetingCard(meeting, `${committee.key}/${meetingSlug(meeting)}/index.html`)).join('');
@@ -281,6 +315,8 @@ function build() {
 
 const CSS = `:root{--ink:#16212b;--muted:#5b6873;--line:#d9e0e5;--paper:#fff;--wash:#f3f6f8;--navy:#173b57;--blue:#176b87;--gold:#d8a928}*{box-sizing:border-box}body{margin:0;color:var(--ink);background:var(--paper);font:16px/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.shell{width:min(1120px,calc(100% - 2rem));margin:auto}.skip-link{position:absolute;left:-9999px}.skip-link:focus{left:1rem;top:1rem;background:#fff;padding:.75rem;z-index:10}.site-header{background:var(--navy);color:#fff}.header-inner{display:flex;align-items:center;justify-content:space-between;gap:2rem;padding:1rem 0}.brand{font-weight:750;color:#fff;text-decoration:none}.site-header nav{display:flex;gap:.25rem;flex-wrap:wrap}.site-header nav a{color:#dce9ef;text-decoration:none;padding:.5rem .65rem;border-radius:.35rem}.site-header nav a:hover,.site-header nav a.active{background:#fff;color:var(--navy)}main{padding-bottom:5rem}.hero{padding:5.5rem 0 3.5rem;max-width:850px}.hero.compact{padding:3rem 0 2rem}.hero h1{font-family:Georgia,serif;font-size:clamp(2.4rem,6vw,5rem);line-height:1.02;margin:.25rem 0 1rem;color:var(--navy)}.hero.compact h1{font-size:clamp(2rem,5vw,3.75rem)}.lede{font-size:1.25rem;color:var(--muted);max-width:720px}.eyebrow{text-transform:uppercase;letter-spacing:.08em;font-size:.76rem;font-weight:800;color:var(--blue)}h2,h3,h4{line-height:1.2}a{color:#075f7d}a:hover{text-decoration-thickness:2px}.committee-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;margin-bottom:4rem}.committee-panel{background:var(--wash);border-top:4px solid var(--gold);padding:1.5rem}.committee-panel h2{font-family:Georgia,serif;font-size:1.75rem}.section-heading{display:flex;align-items:end;justify-content:space-between;gap:1rem;border-bottom:1px solid var(--line);margin:3rem 0 1rem}.section-heading h2{font:2rem Georgia,serif;margin:.25rem 0 .75rem}.meeting-list,.record-list{display:grid;gap:.75rem}.meeting-card,.record-card,.attachment-card{border:1px solid var(--line);padding:1.15rem 1.25rem;border-radius:.35rem;background:#fff}.meeting-card h3,.record-card h2,.attachment-card h2{margin:.25rem 0;font-size:1.15rem}.meta{display:flex;gap:1rem;flex-wrap:wrap;color:var(--muted);font-size:.9rem}.breadcrumbs{padding-top:1.5rem;color:var(--muted)}.breadcrumbs a{color:inherit}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-bottom:3rem}.stats div{background:var(--paper);padding:1.25rem}.stats strong,.stats span{display:block}.stats strong{font:2rem Georgia,serif;color:var(--navy)}.stats span{color:var(--muted)}section+section{margin-top:3.5rem}.agenda-item{border-top:1px solid var(--line);padding:1.5rem 0}.agenda-item h3{font:1.45rem Georgia,serif;margin:.3rem 0}.agenda-item h4{margin-bottom:.25rem}.item-body{white-space:pre-line;max-width:850px}.attachment-list{padding-left:1.2rem}.attachment-list li{margin:.45rem 0}.file-size,.muted{color:var(--muted);font-size:.9rem}.source-link{font-weight:650}.minutes-text{white-space:pre-wrap;background:var(--wash);border-left:4px solid var(--blue);padding:1.5rem;max-height:42rem;overflow:auto}.notice{background:#fff8df;border-left:4px solid var(--gold);padding:1rem}.filter-box{background:var(--wash);padding:1rem;margin:1rem 0}.filter-box label{display:block;font-weight:700;margin-bottom:.35rem}.filter-box input{width:min(100%,600px);font:inherit;padding:.7rem;border:1px solid #9cabb6;border-radius:.25rem}.filter-status{display:inline;margin-left:.75rem;color:var(--muted)}.home-search{display:flex;gap:.5rem;max-width:640px;margin:1.5rem 0}.home-search input{flex:1;font:inherit;padding:.8rem 1rem;border:1px solid #9cabb6;border-radius:.3rem}.home-search button{font:inherit;font-weight:700;padding:.8rem 1.4rem;border:0;border-radius:.3rem;background:var(--navy);color:#fff;cursor:pointer}.home-search button:hover{background:var(--blue)}.snippet{max-width:850px;line-height:1.5}.snippet mark,.minutes-text mark{background:#fde68a;color:inherit;padding:0 .1em}footer{background:var(--wash);border-top:1px solid var(--line);padding:2rem 0;color:var(--muted);font-size:.9rem}.disclaimer{max-width:900px;margin:0;line-height:1.6}.disclaimer strong{color:var(--ink)}.report-meta{color:var(--muted)}.spending-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-bottom:1.5rem}.spending-stats div{background:var(--paper);padding:1.15rem}.spending-stats span,.spending-stats strong,.spending-stats small{display:block}.spending-stats span{color:var(--muted);font-size:.85rem;font-weight:700}.spending-stats strong{font:2rem Georgia,serif;color:var(--navy);margin:.2rem 0}.spending-stats small{color:var(--muted)}.spending-legend{display:flex;gap:1.25rem;flex-wrap:wrap;margin:1rem 0;color:var(--muted);font-size:.9rem}.spending-legend span{display:flex;align-items:center;gap:.4rem}.spending-legend i{width:.8rem;height:.8rem;display:inline-block;border-radius:2px}.legend-expended,.bar-expended{background:#176b87}.legend-encumbered,.bar-encumbered{background:#d8a928}.legend-remaining,.bar-remaining{background:#d9e0e5}.spending-chart{display:grid;gap:1rem;margin:1.5rem 0 2rem}.spending-chart-row{display:grid;grid-template-columns:minmax(140px,1.4fr) minmax(260px,4fr) 100px;gap:1rem;align-items:center}.spending-chart-label span{display:block;color:var(--muted);font-size:.82rem}.spending-bar{display:flex;height:1.4rem;background:var(--wash);border-radius:3px;overflow:hidden}.spending-bar span{height:100%}.spending-chart-value{text-align:right;color:var(--muted);font-variant-numeric:tabular-nums;font-size:.88rem}.table-scroll{overflow-x:auto;margin-top:1rem}.spending-table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums;font-size:.92rem}.spending-table caption{text-align:left;font-weight:700;padding:.5rem 0}.spending-table th,.spending-table td{padding:.7rem .6rem;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}.spending-table th:first-child{text-align:left}.spending-table thead th{color:var(--muted);font-size:.78rem;text-transform:uppercase;letter-spacing:.04em}.methodology{max-width:850px}.methodology li{margin:.5rem 0}@media(max-width:900px){.spending-stats{grid-template-columns:1fr 1fr}}@media(max-width:760px){.header-inner{align-items:flex-start;flex-direction:column;gap:.5rem}.site-header nav{display:grid;grid-template-columns:1fr 1fr;width:100%}.committee-grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr}.hero{padding-top:3rem}.section-heading{align-items:start;flex-direction:column}.section-heading>.source-link{margin-bottom:1rem}.spending-chart-row{grid-template-columns:1fr}.spending-chart-value{text-align:left}.spending-bar{height:1.2rem}}@media(max-width:500px){.spending-stats{grid-template-columns:1fr}}`;
 
+const BOND_CSS = `.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.allocation-section{--mission:#e88b17;--west-valley:#4a9e29;--district:#1f568e;margin-top:0}.allocation-explorer{background:#191a19;color:#d8d8d4;border:1px solid #3e403e;border-radius:.5rem;padding:1rem;box-shadow:0 18px 45px rgba(22,33,43,.12)}.allocation-controls{display:grid;grid-template-columns:repeat(4,max-content) minmax(220px,1fr);gap:.6rem}.allocation-controls button,.allocation-controls input{appearance:none;border:1px solid #565856;border-radius:.65rem;background:#1b1c1b;color:#f4f4f1;font:inherit;font-weight:700;padding:.75rem 1rem;min-height:3rem}.allocation-controls button{cursor:pointer}.allocation-controls button:hover,.allocation-controls button:focus-visible{border-color:#8ba9c8}.allocation-controls button.active{background:#284a70;color:#a9cff7;border-color:#5e7fa2}.allocation-controls label,.allocation-controls input{width:100%}.allocation-controls input{background:#2b2c2a;font-size:1.05rem}.allocation-controls input::placeholder{color:#858783}.allocation-legend{display:flex;gap:1.4rem;flex-wrap:wrap;margin:1.25rem 0 .45rem;font-weight:700}.allocation-legend span{display:flex;align-items:center;gap:.45rem}.allocation-legend i,.project-list-title i{width:.85rem;height:.85rem;border-radius:2px;flex:0 0 auto}.campus-mission{background:var(--mission)}.campus-west-valley{background:var(--west-valley)}.campus-district{background:var(--district)}.allocation-chart-heading{font-size:1rem}.allocation-chart-heading span{color:#aaa}.allocation-status{min-height:1.4rem;margin:.3rem 0;color:#aeb0ac;font-size:.86rem}.allocation-chart-scroll{overflow-x:auto;padding-bottom:.25rem}.allocation-chart{min-width:760px}.allocation-row,.allocation-axis{display:grid;grid-template-columns:235px minmax(480px,1fr);gap:1rem;align-items:center}.allocation-row{min-height:3.35rem}.allocation-project-label{text-align:right;overflow:hidden}.allocation-project-label span{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#b9bbb7}.allocation-project-label small{display:block;color:#737571;font-size:.7rem}.allocation-plot{height:2.15rem;position:relative;background:repeating-linear-gradient(to right,transparent 0,transparent calc(var(--grid-step) - 1px),rgba(255,255,255,.035) calc(var(--grid-step) - 1px),rgba(255,255,255,.035) var(--grid-step))}.allocation-bar{height:100%;min-width:2px;border-radius:0 .25rem .25rem 0;position:relative;outline-offset:2px;transition:width .22s ease,filter .15s ease}.allocation-bar:hover,.allocation-bar:focus-visible{filter:brightness(1.14)}.allocation-bar.campus-mission{background:var(--mission)}.allocation-bar.campus-west-valley{background:var(--west-valley)}.allocation-bar.campus-district{background:var(--district)}.allocation-bar-value{position:absolute;top:50%;left:100%;transform:translate(.5rem,-50%);background:#050505;color:#fff;border:1px solid #555;border-radius:.3rem;padding:.25rem .4rem;white-space:nowrap;font-size:.78rem;font-weight:700;opacity:0;pointer-events:none;z-index:2}.allocation-bar:hover .allocation-bar-value,.allocation-bar:focus-visible .allocation-bar-value{opacity:1}.allocation-axis{color:#858783;font-size:.8rem}.allocation-ticks{display:flex;justify-content:space-between;border-top:1px solid rgba(255,255,255,.04);padding-top:.35rem;font-variant-numeric:tabular-nums}.allocation-empty{padding:3rem 1rem;text-align:center;color:#aaa}.project-list-header{display:flex;align-items:end;justify-content:space-between;gap:1rem;margin:4rem 0 1rem;border-bottom:1px solid var(--line)}.project-list-header h2{font:2rem Georgia,serif;margin:.2rem 0}.project-list-header p{color:var(--muted);margin:.25rem 0 1rem}.project-list-controls{display:flex;gap:.5rem;margin-bottom:1rem}.project-list-controls button{font:inherit;font-weight:700;color:var(--navy);background:#fff;border:1px solid #9cabb6;border-radius:.35rem;padding:.55rem .85rem;cursor:pointer}.project-list-controls button:hover,.project-list-controls button:focus-visible{background:var(--wash)}.project-list{border-top:1px solid var(--line)}.project-disclosure{border-bottom:1px solid var(--line)}.project-disclosure[hidden]{display:none}.project-disclosure summary{list-style:none;display:grid;grid-template-columns:minmax(0,1fr) auto 1.25rem;align-items:center;gap:1rem;padding:1rem .25rem;cursor:pointer}.project-disclosure summary::-webkit-details-marker{display:none}.project-disclosure summary:hover{background:var(--wash)}.project-list-title{display:flex;align-items:center;gap:.75rem;min-width:0}.project-list-title span{min-width:0}.project-list-title strong,.project-list-title small{display:block}.project-list-title strong{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.project-list-title small{color:var(--muted);font-size:.8rem;font-weight:500}.project-list-budget{font:1.2rem Georgia,serif;color:var(--navy);font-variant-numeric:tabular-nums}.project-list-toggle{width:.8rem;height:.8rem;border-right:2px solid var(--blue);border-bottom:2px solid var(--blue);transform:rotate(45deg) translateY(-.2rem);transition:transform .15s}.project-disclosure[open] .project-list-toggle{transform:rotate(225deg) translate(-.15rem,-.1rem)}.project-scope{background:var(--wash);border-left:4px solid var(--blue);padding:1.1rem 1.25rem;margin:0 .25rem 1rem}.project-scope p{max-width:900px}.allocation-explorer noscript{display:block;padding:1rem;color:#fff8df}@media(max-width:1050px){.allocation-controls{grid-template-columns:repeat(2,1fr)}.allocation-controls label{grid-column:1/-1}}@media(max-width:600px){.allocation-controls{grid-template-columns:1fr}.allocation-controls label{grid-column:auto}.allocation-explorer{margin-left:-.25rem;margin-right:-.25rem;padding:.75rem}.allocation-row,.allocation-axis{grid-template-columns:190px minmax(440px,1fr)}.project-list-header{align-items:start;flex-direction:column}.project-list-controls{margin-bottom:1rem}.project-disclosure summary{grid-template-columns:minmax(0,1fr) 1rem}.project-list-budget{grid-column:1;font-size:1rem;margin-left:1.6rem}.project-list-toggle{grid-column:2;grid-row:1/3}}`;
+
 const JS = `(function(){
   var root=document.querySelector('[data-search-page]');
   if(!root)return;
@@ -331,6 +367,58 @@ const JS = `(function(){
   var initial=new URL(window.location.href).searchParams.get('q');
   if(initial){input.value=initial;run()}
 })();`;
+
+const BOND_JS = `(function(){
+  var root=document.querySelector('[data-allocation-explorer]');
+  if(!root)return;
+  var projects=JSON.parse(root.dataset.projects||'[]');
+  var reportedTotals=JSON.parse(root.dataset.reportedTotals||'{}');
+  var buttons=Array.prototype.slice.call(root.querySelectorAll('.allocation-controls button[data-campus]'));
+  var input=root.querySelector('[data-allocation-search]');
+  var chart=root.querySelector('[data-allocation-chart]');
+  var status=root.querySelector('[data-allocation-status]');
+  var listStatus=root.querySelector('[data-project-list-status]');
+  var projectRows=Array.prototype.slice.call(root.querySelectorAll('[data-project-row]'));
+  var expandAll=root.querySelector('[data-expand-all]');
+  var closeAll=root.querySelector('[data-close-all]');
+  var active='All campuses';
+  var colors={'Mission College':'campus-mission','West Valley College':'campus-west-valley','District Services':'campus-district'};
+  function esc(s){return String(s).replace(/[&<>\"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;'}[c]})}
+  function money(n){return new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(n)}
+  function compact(n){if(n===0)return '$0M';return '$'+(n/1000000).toFixed(n>=10000000?0:1).replace(/\\.0$/,'')+'M'}
+  function scaleFor(value){
+    if(value<=0)return {max:1,step:1};
+    var rough=value/6;var power=Math.pow(10,Math.floor(Math.log10(rough)));var unit=rough/power;var nice=unit<=1?1:unit<=2?2:unit<=5?5:10;var step=nice*power;
+    return {max:Math.ceil(value/step)*step,step:step}
+  }
+  function render(){
+    var q=input.value.trim().toLowerCase();
+    var matches=projects.filter(function(p){return (active==='All campuses'||p.campus===active)&&(!q||(p.name+' '+p.id).toLowerCase().indexOf(q)>=0)}).sort(function(a,b){return b.allocation-a.allocation});
+    var visible=matches.slice(0,12);var total=!q&&Number.isFinite(reportedTotals[active])?reportedTotals[active]:matches.reduce(function(sum,p){return sum+p.allocation},0);
+    status.textContent=matches.length+' project'+(matches.length===1?'':'s')+' · '+money(total)+' allocated'+(matches.length>visible.length?' · showing the largest 12':'');
+    var visibleIds={};matches.forEach(function(p){visibleIds[p.id]=true});
+    projectRows.forEach(function(row){var id=row.dataset.projectSearch.split(' ')[0].toUpperCase();row.hidden=!visibleIds[id]});
+    listStatus.textContent=matches.length+' project'+(matches.length===1?'':'s')+', ordered by Measure W allocation.';
+    if(!visible.length){chart.innerHTML='<div class="allocation-empty">No projects match this filter.</div>';return}
+    var scale=scaleFor(visible[0].allocation);var rows='';
+    for(var i=0;i<visible.length;i++){
+      var p=visible[i];var width=p.allocation/scale.max*100;var campusClass=colors[p.campus]||'';
+      rows+='<div class="allocation-row"><div class="allocation-project-label" title="'+esc(p.name)+'"><span>'+esc(p.name)+'</span><small>'+esc(p.id)+'</small></div><div class="allocation-plot" style="--grid-step:'+(scale.step/scale.max*100)+'%"><div class="allocation-bar '+campusClass+'" style="width:'+width+'%" tabindex="0" role="img" aria-label="'+esc(p.name)+', '+esc(p.campus)+': '+money(p.allocation)+' in Measure W funding"><span class="allocation-bar-value">'+money(p.allocation)+'</span></div></div></div>'
+    }
+    var ticks=[];for(var n=0;n<=scale.max;n+=scale.step)ticks.push('<span>'+compact(n)+'</span>');
+    chart.innerHTML=rows+'<div class="allocation-axis"><span></span><div class="allocation-ticks">'+ticks.join('')+'</div></div>'
+  }
+  buttons.forEach(function(button){button.addEventListener('click',function(){active=button.dataset.campus;buttons.forEach(function(candidate){var selected=candidate===button;candidate.classList.toggle('active',selected);candidate.setAttribute('aria-pressed',String(selected))});render()})});
+  input.addEventListener('input',render);
+  expandAll.addEventListener('click',function(){projectRows.forEach(function(row){if(!row.hidden)row.open=true})});
+  closeAll.addEventListener('click',function(){projectRows.forEach(function(row){row.open=false})});
+  render()
+})();`;
+
+const ASSET_VERSION = createHash('sha256')
+  .update(`${CSS}${BOND_CSS}${JS}${BOND_JS}`)
+  .digest('hex')
+  .slice(0, 10);
 
 try {
   build();

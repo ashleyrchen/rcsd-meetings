@@ -48,3 +48,49 @@
   var initial=new URL(window.location.href).searchParams.get('q');
   if(initial){input.value=initial;run()}
 })();
+(function(){
+  var root=document.querySelector('[data-allocation-explorer]');
+  if(!root)return;
+  var projects=JSON.parse(root.dataset.projects||'[]');
+  var reportedTotals=JSON.parse(root.dataset.reportedTotals||'{}');
+  var buttons=Array.prototype.slice.call(root.querySelectorAll('.allocation-controls button[data-campus]'));
+  var input=root.querySelector('[data-allocation-search]');
+  var chart=root.querySelector('[data-allocation-chart]');
+  var status=root.querySelector('[data-allocation-status]');
+  var listStatus=root.querySelector('[data-project-list-status]');
+  var projectRows=Array.prototype.slice.call(root.querySelectorAll('[data-project-row]'));
+  var expandAll=root.querySelector('[data-expand-all]');
+  var closeAll=root.querySelector('[data-close-all]');
+  var active='All campuses';
+  var colors={'Mission College':'campus-mission','West Valley College':'campus-west-valley','District Services':'campus-district'};
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+  function money(n){return new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(n)}
+  function compact(n){if(n===0)return '$0M';return '$'+(n/1000000).toFixed(n>=10000000?0:1).replace(/\.0$/,'')+'M'}
+  function scaleFor(value){
+    if(value<=0)return {max:1,step:1};
+    var rough=value/6;var power=Math.pow(10,Math.floor(Math.log10(rough)));var unit=rough/power;var nice=unit<=1?1:unit<=2?2:unit<=5?5:10;var step=nice*power;
+    return {max:Math.ceil(value/step)*step,step:step}
+  }
+  function render(){
+    var q=input.value.trim().toLowerCase();
+    var matches=projects.filter(function(p){return (active==='All campuses'||p.campus===active)&&(!q||(p.name+' '+p.id).toLowerCase().indexOf(q)>=0)}).sort(function(a,b){return b.allocation-a.allocation});
+    var visible=matches.slice(0,12);var total=!q&&Number.isFinite(reportedTotals[active])?reportedTotals[active]:matches.reduce(function(sum,p){return sum+p.allocation},0);
+    status.textContent=matches.length+' project'+(matches.length===1?'':'s')+' · '+money(total)+' allocated'+(matches.length>visible.length?' · showing the largest 12':'');
+    var visibleIds={};matches.forEach(function(p){visibleIds[p.id]=true});
+    projectRows.forEach(function(row){var id=row.dataset.projectSearch.split(' ')[0].toUpperCase();row.hidden=!visibleIds[id]});
+    listStatus.textContent=matches.length+' project'+(matches.length===1?'':'s')+', ordered by Measure W allocation.';
+    if(!visible.length){chart.innerHTML='<div class="allocation-empty">No projects match this filter.</div>';return}
+    var scale=scaleFor(visible[0].allocation);var rows='';
+    for(var i=0;i<visible.length;i++){
+      var p=visible[i];var width=p.allocation/scale.max*100;var campusClass=colors[p.campus]||'';
+      rows+='<div class="allocation-row"><div class="allocation-project-label" title="'+esc(p.name)+'"><span>'+esc(p.name)+'</span><small>'+esc(p.id)+'</small></div><div class="allocation-plot" style="--grid-step:'+(scale.step/scale.max*100)+'%"><div class="allocation-bar '+campusClass+'" style="width:'+width+'%" tabindex="0" role="img" aria-label="'+esc(p.name)+', '+esc(p.campus)+': '+money(p.allocation)+' in Measure W funding"><span class="allocation-bar-value">'+money(p.allocation)+'</span></div></div></div>'
+    }
+    var ticks=[];for(var n=0;n<=scale.max;n+=scale.step)ticks.push('<span>'+compact(n)+'</span>');
+    chart.innerHTML=rows+'<div class="allocation-axis"><span></span><div class="allocation-ticks">'+ticks.join('')+'</div></div>'
+  }
+  buttons.forEach(function(button){button.addEventListener('click',function(){active=button.dataset.campus;buttons.forEach(function(candidate){var selected=candidate===button;candidate.classList.toggle('active',selected);candidate.setAttribute('aria-pressed',String(selected))});render()})});
+  input.addEventListener('input',render);
+  expandAll.addEventListener('click',function(){projectRows.forEach(function(row){if(!row.hidden)row.open=true})});
+  closeAll.addEventListener('click',function(){projectRows.forEach(function(row){row.open=false})});
+  render()
+})();
